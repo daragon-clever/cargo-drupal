@@ -10,7 +10,7 @@
 /web/sites/sites.php
 
 # Ignore paths that contain generated content.
-/web/sites/*/files
+/web/sites/*/files/*
 !/web/sites/*/files/inline-images
 !/web/sites/*/files/translations
 /web/sites/*/private

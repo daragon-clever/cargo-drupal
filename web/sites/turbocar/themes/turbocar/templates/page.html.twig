@@ -1,0 +1,28 @@
+<!-- Main menu -->
+{% include directory ~ '/partials/navigation.html.twig' %}
+
+<div class="container">
+    {% if page.highlighted %}
+        <div class="row">
+            <div class="col">
+                {{ page.highlighted }}
+            </div>
+        </div>
+    {% endif %}
+
+    {% if page.content %}
+        <div class="row">
+            <div class="col">
+                {{ page.content }}
+            </div>
+        </div>
+    {% endif %}
+</div>
+
+<!-- Footer -->
+{% if page.footer %}
+    {{ page.footer }}
+{% endif %}
+
+<!-- Popup Inscription -->
+{% include directory ~ '/partials/registration-popup.html.twig' %}

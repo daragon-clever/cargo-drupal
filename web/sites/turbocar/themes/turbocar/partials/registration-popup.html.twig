@@ -1,0 +1,28 @@
+<!-- Modal -->
+{% if page.loginpopup %}
+    <div class="modal fade" id="login-popup" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <span class="title">Accédez aux catalogues</span>
+                <p>Pour accéder aux contenus de l'Espace Pro, merci de vous identifier.</p>
+
+                <div class="inner-login-popup">
+                    <div class="mini-form-wrapper">
+                        {{ page.loginpopup }}
+                    </div>
+                    <div class="new-account">
+                        <p class="align-self-center">Vous n'avez pas d'identifiants ?</p>
+                        <div class="btn-more align-self-center">
+                            <a href="/contact?objet=demande_acces" title="">
+                                Demandez des accès
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}

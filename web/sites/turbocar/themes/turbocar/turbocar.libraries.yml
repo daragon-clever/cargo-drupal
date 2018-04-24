@@ -1,0 +1,35 @@
+# Style général
+global-styling:
+  header: true
+  css:
+    theme:
+      css/style.css: {}
+  js:
+    js/custom-js.js: {}
+  dependencies:
+    - core/jquery
+
+######## Plugin & Framework ########
+
+# Bootstrap 4
+bootstrap:
+  css:
+    theme:
+      bootstrap4/css/bootstrap.min.css: {}
+  js:
+    bootstrap4/js/bootstrap.bundle.min.js: {}
+
+# Plugin Slick - Slideshow - # Volontairement en 1.6.0 car vers.supp pose soucis avec transitions CSS
+slick:
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js: { type: external }
+  css:
+    theme:
+      https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css: { type: external }
+      https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css: { type: external }
+
+# Font Awesome
+font-awesome:
+  css:
+    theme:
+      https://use.fontawesome.com/releases/v5.0.9/css/all.css: { type: external }

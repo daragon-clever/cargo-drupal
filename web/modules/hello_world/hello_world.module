@@ -1,0 +1,11 @@
+<?php
+function hello_world_theme() {
+
+    return array(
+        'world' => array(
+            'template' => 'world',
+            'variables' => array('texte' => NULL)
+        ),
+    );
+
+}

@@ -174,6 +174,7 @@ article[about='/node/1'] > h2:first-child {
     padding: 0;
     position: absolute;
     top: 17px;
+    border-radius: 0;
   }
   #block-turbocar-main-menu .navbar-toggler .toggler-icon span {
     display: block;
@@ -228,8 +229,9 @@ article[about='/node/1'] > h2:first-child {
   #block-turbocar-main-menu ul li a {
     color: #dcdcdc;
     margin: 0 !important;
-    padding: 8px 0 8px 25px !important;
+    padding: 10px 0 10px 20px !important;
     position: relative;
+    font-size: 16px;
   }
   #block-turbocar-main-menu ul li a:hover {
     color: white !important;
@@ -542,6 +544,12 @@ div.btn-more.red a:hover {
   background: white;
   border-bottom: 0;
   z-index: 20;
+  /* HACK Retina */
+}
+@media (-webkit-min-device-pixel-ratio: 2) {
+  .text-box-wrapper .text-box > span {
+    top: -54px;
+  }
 }
 .text-box-wrapper .text-box img {
   margin-top: -15px;
@@ -1050,6 +1058,12 @@ div[role='alert'] {
   font-size: 30px;
   font-weight: 300;
   padding-left: 20px;
+  /* HACK Retina */
+}
+@media (-webkit-min-device-pixel-ratio: 2) {
+  #main-img .shape {
+    bottom: -1px;
+  }
 }
 #main-img .shape:before {
   content: "";
@@ -1058,6 +1072,12 @@ div[role='alert'] {
   position: absolute;
   top: 0;
   left: -125px;
+  /* HACK Retina */
+}
+@media (-webkit-min-device-pixel-ratio: 2) {
+  #main-img .shape:before {
+    left: -124px;
+  }
 }
 #main-img .shape h1 {
   line-height: 35px;

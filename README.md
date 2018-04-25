@@ -16,8 +16,6 @@
 	* '**namespace**' => 'Drupal\\Core\\Database\\Driver\\mysql',  
 	* '**driver**' => 'mysql',  
 	
-	
-	
-	Mise à jour de dupral : 
-	docker-compose run --rm php composer outdated
-	docker-compose run --rm php composer update
+# Mise à jour de Drupal : 
+* `docker-compose run --rm php composer outdated`
+* `docker-compose run --rm php composer update`

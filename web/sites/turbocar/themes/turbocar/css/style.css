@@ -780,6 +780,12 @@ div[role='alert'] {
   border-radius: 10px;
   color: #856404;
 }
+button:focus,
+button:active,
+a:focus,
+a:active {
+  outline: none;
+}
 #main-slideshow .slick-slide {
   filter: grayscale(100%);
   transform: scale(0.9);

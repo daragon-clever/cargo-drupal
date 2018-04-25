@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
     /**** DEBUT - Gestion menu déroulant ****/
-    if ($(window).width() <= 575) {
+    if ($(window).width() <= 1024) {
         $('#block-turbocar-main-menu').addClass('js-mobile');
     }
     /* Hover - Desktop */

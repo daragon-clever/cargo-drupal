@@ -17,10 +17,13 @@
         <a class="navbar-brand d-inline-block d-sm-none" href="/">
             <img src="{{ url('<front>') }}sites/turbocar/themes/turbocar/images/logo-tbc.jpg" height="24">
         </a>
-        <a class="deco" href="/user/logout" style="display: none"> </a>
-        <button class="navbar-toggler collapsed close" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
+        {% if logged_in %}
+            <a class="deco" href="/user/logout" style="display: none"> </a>
+            <button class="navbar-toggler collapsed close" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        {% endif %}
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
             <ul class="navbar-nav mr-auto">

@@ -1,0 +1,7 @@
+recherchePdf.form:
+ path: '/recherche'
+ defaults:
+   _title: 'Application form'
+   _form: '\Drupal\recherchePdf\Form\RechercheForm'
+ requirements:
+   _permission: 'access content'

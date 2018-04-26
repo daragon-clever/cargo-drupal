@@ -1,0 +1,16 @@
+<?php
+/*
+ * @file
+ * code for resume module
+*/
+
+function recherchePdf_theme()
+{
+    return [
+        'recherche_temp' => [
+            'render element' => 'form',
+        ],
+    ];
+}
+
+?>

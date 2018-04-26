@@ -1055,7 +1055,7 @@ button:focus, button:active, a:focus, a:active {
       }
 
       span {
-        line-height: 30px;
+        line-height: 24px;
         vertical-align: middle;
         font-size:20px;
         color:#414042;
@@ -1192,6 +1192,7 @@ button:focus, button:active, a:focus, a:active {
 
   .shape {
     @height: 155px;
+    @widthTriangle: @height - 30;
     @color: white;
 
     position: absolute;
@@ -1203,7 +1204,10 @@ button:focus, button:active, a:focus, a:active {
     line-height: @height;
     font-size: 30px;
     font-weight: 300;
-    padding-left: 20px;
+
+    & img {
+      margin-left: -@widthTriangle / 2;
+    }
 
     /* HACK Retina */
     @media (-webkit-min-device-pixel-ratio: 2) {
@@ -1213,14 +1217,14 @@ button:focus, button:active, a:focus, a:active {
     &:before {
       content: "";
       border-bottom: @height solid @color;
-      border-left: @height - 30 solid transparent;
+      border-left: @widthTriangle solid transparent;
       position: absolute;
       top:0;
-      left: -@height + 30;
+      left: -@widthTriangle;
 
       /* HACK Retina */
       @media (-webkit-min-device-pixel-ratio: 2) {
-        left: -@height + 31;
+        left: -@widthTriangle + 1;
       }
     }
 
@@ -1231,10 +1235,15 @@ button:focus, button:active, a:focus, a:active {
       font-weight:300;
       text-transform: none;
       margin:0;
+      padding-left:20px;
 
       b {
         font-weight: 700;
       }
+    }
+
+    & p img {
+
     }
 
     &.black {
@@ -1281,6 +1290,7 @@ button:focus, button:active, a:focus, a:active {
 
     @media @phone {
       @height: 65px;
+      @widthTriangle: @height - 30;
       @color: white;
 
       background-color: @color;
@@ -1289,10 +1299,14 @@ button:focus, button:active, a:focus, a:active {
       line-height: @height;
       padding-left: 10px;
 
+      & img {
+        margin-left: -@widthTriangle / 2;
+      }
+
       &:before {
         border-bottom: @height solid @color;
-        border-left: @height - 30 solid transparent;
-        left: -@height + 30;
+        border-left: @widthTriangle solid transparent;
+        left: -@widthTriangle;
       }
 
       h1 {

@@ -922,7 +922,7 @@ a:active {
   padding-bottom: 15px;
 }
 .red-box .inner a span {
-  line-height: 30px;
+  line-height: 24px;
   vertical-align: middle;
   font-size: 20px;
   color: #414042;
@@ -1063,8 +1063,10 @@ a:active {
   line-height: 155px;
   font-size: 30px;
   font-weight: 300;
-  padding-left: 20px;
   /* HACK Retina */
+}
+#main-img .shape img {
+  margin-left: -62.5px;
 }
 @media (-webkit-min-device-pixel-ratio: 2) {
   #main-img .shape {
@@ -1092,6 +1094,7 @@ a:active {
   font-weight: 300;
   text-transform: none;
   margin: 0;
+  padding-left: 20px;
 }
 #main-img .shape h1 b {
   font-weight: 700;
@@ -1130,6 +1133,9 @@ a:active {
     width: 60%;
     line-height: 65px;
     padding-left: 10px;
+  }
+  #main-img .shape img {
+    margin-left: -17.5px;
   }
   #main-img .shape:before {
     border-bottom: 65px solid white;

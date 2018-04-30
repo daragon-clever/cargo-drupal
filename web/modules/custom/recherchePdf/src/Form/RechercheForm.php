@@ -8,10 +8,17 @@ namespace Drupal\recherchePdf\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Messenger\MessengerInterface;
-
+use Drupal\Core\Database\Connection;
+use Drupal\Core\Url;
 class RechercheForm extends FormBase
 {
+    protected $messenger;
+
+    public function __construct()
+    {
+        $this->messenger = \Drupal::messenger();
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -25,27 +32,25 @@ class RechercheForm extends FormBase
      */
     public function buildForm(array $form, FormStateInterface $form_state)
     {
-
-        $form['ref-produit'] = array(
+        $form['ref_produit'] = array(
             '#type' => 'textfield',
             '#title' => t('Réference du produit:'),
             '#required' => TRUE,
         );
 
-        $form['lot-produit'] = array(
+        $form['lot_produit'] = array(
             '#type' => 'textfield',
             '#title' => t('Lot du produit:'),
-            '#required' => TRUE,
         );
 
-        $form['actions']['#type'] = 'actions';
+        //$form['actions']['#type'] = 'actions';
         $form['actions']['submit'] = array(
             '#type' => 'submit',
             '#value' => $this->t('Rechercher'),
             '#button_type' => 'primary',
         );
 
-        $form['#theme'] = 'recherche';
+        // $form['#theme'] = 'recherche';
         return $form;
     }
 
@@ -54,10 +59,8 @@ class RechercheForm extends FormBase
      */
     public function validateForm(array &$form, FormStateInterface $form_state)
     {
-        //var_dump($form);
-
-        if (strlen($form_state->getValue('candidate_number')) < 10) {
-            $form_state->setErrorByName('candidate_number', $this->t('Mobile number is too short.'));
+        if (strlen($form_state->getValue('ref_produit')) == 0 && strlen($form_state->getValue('lot_produit')) == 0) {
+            $form_state->setErrorByName('ref_produit', $this->t('Entrer la référence du produit ou bien le lot du produit.'));
         }
 
     }
@@ -68,14 +71,83 @@ class RechercheForm extends FormBase
     public function submitForm(array &$form, FormStateInterface $form_state)
     {
 
-        // drupal_set_message($this->t('@can_name ,Your application is being submitted!', array('@can_name' => $form_state->getValue('candidate_name'))));
+        $refProduit = $form_state->getValue('ref_produit');
+        $lotProduit = $form_state->getValue('lot_produit');
 
-        drupal_set_message($form_state->getValue('ref-produit'));
-        drupal_set_message($form_state->getValue('lot-produit'));
+
+        //$this->messenger->addMessage($refProduit);
+        $pdf = $this->getByRefOrLot($refProduit, $lotProduit);
+        $rslt = $pdf[0]->name_fic;
+
+
+        if (!($rslt)) {
+
+            $this->messenger->addMessage("Fiche technique non trouvée merci de vérifier votre saisie");
+
+            $url = Url::fromRoute('recherchePdf.form');
+            $internal_link = \Drupal::l(t(' Retour'), $url);
+
+            echo "Fiche technique non trouvée merci de vérifier votre saisie. ";
+            echo $internal_link->getGeneratedLink();
+
+            die();
+        } else {
+            $form_state->setRedirect('resultSearch.form', [], ['query' => [
+                'fiche_pdf' => $rslt,
+            ]]);
+        }
+        /* $form['#link_pdf'] =$rslt;
+         $form['#theme'] = 'recherche';*/
+        //  return $form;
+    }
+
+    public function getByRefOrLot($refProduit = NULL, $lotProduit = FALSE)
+    {
+        // Switch to external database
+        \Drupal\Core\Database\Database::setActiveConnection('QRcodeTBC');
+
+        // Get a connection going
+        $db = \Drupal\Core\Database\Database::getConnection();
+
+        // $connection = \Drupal::database();
+
+        if ($refProduit && strlen($lotProduit == 0)) {
+
+            $query = $db->query("SELECT name_fic FROM fiches_produit WHERE RefProduit ='" . $refProduit . "'");
+
+
+        } elseif ($lotProduit && strlen($refProduit == 0)) {
+            $query = $db->query("SELECT name_fic FROM fiches_produit WHERE LotProduit ='" . $lotProduit . "'");
+        } else {
+            $query = $db->query("SELECT name_fic FROM fiches_produit WHERE LotProduit = '" . $lotProduit . "'AND  RefProduit = '" . $refProduit . "'");
+        }
+        $result = $query->fetchAll();
+
+
         /*
-              foreach ($form_state->getValue() as $key => $value) {
-                  // var_dump($value);
-                  drupal_set_message($key . ': ' . $value);
-              }*/
+                $query = $db->select('fiches_produit');
+                $query->fields('fiches_produit', array('id_fiches', 'soc_id', 'name_fic'));
+                $fiches = $query->execute()->fetchAll();
+        */
+
+
+        // Switch back
+        \Drupal\Core\Database\Database::setActiveConnection();
+        /*
+        $query = $this->database->select('mypage');
+        $query->fields('mypage', array('id', 'title', 'body'));
+        if ($id) {
+            $query->condition('id', $id);
+        }
+        $result = $query->execute()->fetchAll();
+        if (count($result)) {
+            if ($reset) {
+                $result = reset($result);
+            }
+            return $result;
+        }
+        */
+
+        return $result;
     }
 }

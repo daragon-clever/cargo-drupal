@@ -4,13 +4,41 @@
  * code for resume module
 */
 
+
 function recherchePdf_theme()
 {
     return [
-        'recherche_temp' => [
+        'recherche' => [
             'render element' => 'form',
+            'variables' => [
+                'test_var' => NULL,
+                'ref_produit' => NULL,
+                'lot_produit' => NULL,
+                'link_pdf' => NULL,
+            ],
+        ],
+        'resultat' => [
+            'render element' => 'form',
+            'variables' => [
+                'fiche_pdf' => NULL,
+            ],
+        ],
+    ];
+
+
+}
+
+/*
+function resultPdf_theme()
+{
+    return [
+        'resultat' => [
+            'render element' => 'form',
+            'variables' => [
+                'result_pdf' => NULL,
+            ],
         ],
     ];
 }
-
+*/
 ?>

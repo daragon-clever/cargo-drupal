@@ -386,7 +386,7 @@ ul {
   margin: 0;
 }
 div.cat-desc {
-  width: 80%;
+  width: 85%;
   margin: 40px auto;
   border-left: 1px solid #e40514;
   padding-left: 20px;
@@ -1148,6 +1148,7 @@ a:active {
     line-height: 1.5;
     font-weight: 500;
     vertical-align: middle;
+    padding-left: 0;
   }
   #main-img .shape p {
     display: block;
@@ -1636,6 +1637,8 @@ a:active {
 }
 #footer .liens a.turbocar-entretien img {
   margin-left: 5px;
+  margin-top: -4px;
+  vertical-align: middle;
 }
 @media only screen and (max-width: 768px) {
   #footer .liens a {

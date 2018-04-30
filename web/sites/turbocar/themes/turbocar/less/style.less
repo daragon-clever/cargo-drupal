@@ -1307,6 +1307,11 @@ button:focus, button:active, a:focus, a:active {
         border-bottom: @height solid @color;
         border-left: @widthTriangle solid transparent;
         left: -@widthTriangle;
+
+        /* HACK Retina */
+        @media (-webkit-min-device-pixel-ratio: 2) {
+          left: -@widthTriangle + 1;
+        }
       }
 
       h1 {

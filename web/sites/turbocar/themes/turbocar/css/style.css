@@ -1141,6 +1141,7 @@ a:active {
     border-bottom: 65px solid white;
     border-left: 35px solid transparent;
     left: -35px;
+    /* HACK Retina */
   }
   #main-img .shape h1 {
     font-size: 14px;
@@ -1169,6 +1170,11 @@ a:active {
   }
   #main-img .shape.light-grey:before {
     border-bottom: 65px solid #f8f8f8;
+  }
+}
+@media only screen and (max-width: 575px) and (-webkit-min-device-pixel-ratio: 2) {
+  #main-img .shape:before {
+    left: -34px;
   }
 }
 article[data-history-node-id='5'] {

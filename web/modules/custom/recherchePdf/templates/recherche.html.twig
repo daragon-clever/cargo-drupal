@@ -1,14 +1,25 @@
-{{ form.form_build_id }}
-{{ form.form_token }}
-{{ form.form_id }}
+<p>test_var: {{ test_var }}</p>
 
 <div class="row">
-
-    <div class="col-md-6">
-        Référence du produit : {{ form.ref-produit }}
+    <div class="col-md-12 col-lg-12">
+        <div class="col-md-5 col-lg-5">
+            Référence du produit : <!--input class="form-control" type="text"-->
+             {{ ref_produit }}
+        </div>
+        <div class="col-md-5 col-lg-5">
+            Lot du produit : <!--input class="form-control" type="text"-->
+            {{ lot_produit }}
+        </div>
+        <div class="col-md-2 col-lg-2 text-right">
+            <button class="btn btn-danger" type="submit">Rechercher</button>
+        </div>
     </div>
-    <div class="col-md-6">
-        Lot du produit : {{ form.lot-produit }}
+
+
+    <div>
+        {% if(link_pdf) %}
+            <a href="{{ link_pdf }}" download="">lien</a>
+        {% endif %}
     </div>
 </div>
 

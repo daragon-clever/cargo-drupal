@@ -1636,6 +1636,8 @@ a:active {
 }
 #footer .liens a.turbocar-entretien img {
   margin-left: 5px;
+  margin-top: -4px;
+  vertical-align: middle;
 }
 @media only screen and (max-width: 768px) {
   #footer .liens a {

@@ -10,6 +10,7 @@ use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Database\Connection;
 use Drupal\Core\Url;
+
 class RechercheForm extends FormBase
 {
     protected $messenger;
@@ -50,7 +51,7 @@ class RechercheForm extends FormBase
             '#button_type' => 'primary',
         );
 
-        // $form['#theme'] = 'recherche';
+        $form['#theme'] = 'recherche';
         return $form;
     }
 
@@ -74,31 +75,23 @@ class RechercheForm extends FormBase
         $refProduit = $form_state->getValue('ref_produit');
         $lotProduit = $form_state->getValue('lot_produit');
 
-
         //$this->messenger->addMessage($refProduit);
         $pdf = $this->getByRefOrLot($refProduit, $lotProduit);
         $rslt = $pdf[0]->name_fic;
 
-
         if (!($rslt)) {
-
             $this->messenger->addMessage("Fiche technique non trouvée merci de vérifier votre saisie");
-
             $url = Url::fromRoute('recherchePdf.form');
             $internal_link = \Drupal::l(t(' Retour'), $url);
 
             echo "Fiche technique non trouvée merci de vérifier votre saisie. ";
             echo $internal_link->getGeneratedLink();
-
             die();
         } else {
             $form_state->setRedirect('resultSearch.form', [], ['query' => [
                 'fiche_pdf' => $rslt,
             ]]);
         }
-        /* $form['#link_pdf'] =$rslt;
-         $form['#theme'] = 'recherche';*/
-        //  return $form;
     }
 
     public function getByRefOrLot($refProduit = NULL, $lotProduit = FALSE)
@@ -114,8 +107,6 @@ class RechercheForm extends FormBase
         if ($refProduit && strlen($lotProduit == 0)) {
 
             $query = $db->query("SELECT name_fic FROM fiches_produit WHERE RefProduit ='" . $refProduit . "'");
-
-
         } elseif ($lotProduit && strlen($refProduit == 0)) {
             $query = $db->query("SELECT name_fic FROM fiches_produit WHERE LotProduit ='" . $lotProduit . "'");
         } else {
@@ -123,31 +114,8 @@ class RechercheForm extends FormBase
         }
         $result = $query->fetchAll();
 
-
-        /*
-                $query = $db->select('fiches_produit');
-                $query->fields('fiches_produit', array('id_fiches', 'soc_id', 'name_fic'));
-                $fiches = $query->execute()->fetchAll();
-        */
-
-
         // Switch back
         \Drupal\Core\Database\Database::setActiveConnection();
-        /*
-        $query = $this->database->select('mypage');
-        $query->fields('mypage', array('id', 'title', 'body'));
-        if ($id) {
-            $query->condition('id', $id);
-        }
-        $result = $query->execute()->fetchAll();
-        if (count($result)) {
-            if ($reset) {
-                $result = reset($result);
-            }
-            return $result;
-        }
-        */
-
         return $result;
     }
 }

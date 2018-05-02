@@ -11,7 +11,6 @@ function recherchePdf_theme()
         'recherche' => [
             'render element' => 'form',
             'variables' => [
-                'test_var' => NULL,
                 'ref_produit' => NULL,
                 'lot_produit' => NULL,
                 'link_pdf' => NULL,
@@ -27,18 +26,4 @@ function recherchePdf_theme()
 
 
 }
-
-/*
-function resultPdf_theme()
-{
-    return [
-        'resultat' => [
-            'render element' => 'form',
-            'variables' => [
-                'result_pdf' => NULL,
-            ],
-        ],
-    ];
-}
-*/
 ?>

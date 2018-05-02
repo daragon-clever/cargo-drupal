@@ -1,25 +1,39 @@
-<p>test_var: {{ test_var }}</p>
-
 <div class="row">
-    <div class="col-md-12 col-lg-12">
-        <div class="col-md-5 col-lg-5">
-            Référence du produit : <!--input class="form-control" type="text"-->
-             {{ ref_produit }}
-        </div>
-        <div class="col-md-5 col-lg-5">
-            Lot du produit : <!--input class="form-control" type="text"-->
-            {{ lot_produit }}
-        </div>
-        <div class="col-md-2 col-lg-2 text-right">
-            <button class="btn btn-danger" type="submit">Rechercher</button>
-        </div>
-    </div>
+    <!--form action="/recherche" class="form-control" type="POST"-->
+    <form class="form-control form-search">
+        <div class="col-md-12 col-lg-12">
+            <div class="col-md-5 col-lg-5">
+                Référence du produit : <input name="refProduit" class="form-control" type="text">
 
+            </div>
+            <div class="col-md-5 col-lg-5">
+                Lot du produit : <input name="lotProduit" class="form-control" type="text">
 
-    <div>
-        {% if(link_pdf) %}
-            <a href="{{ link_pdf }}" download="">lien</a>
-        {% endif %}
-    </div>
+            </div>
+            <div class="col-md-2 col-lg-2 text-right">
+                <button class="btn btn-danger" type="submit">Rechercher</button>
+            </div>
+        </div>
+    </form>
 </div>
 
+<script>
+    $(document).ready(function () {
+        $(".recherchepdf-form").submit(function (e) {
+            var data = $(".recherchepdf-form").serializeArray();
+            $.ajax({
+                url: "/fiche-pdf",
+                method: "POST",
+                data: data,
+                dataType: "json",
+                success: function (url, textStatus, jqXHR) {
+                   window.location.href = url;
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                }
+
+            });
+            e.preventDefault();
+        });
+    });
+</script>

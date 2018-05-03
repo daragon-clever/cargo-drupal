@@ -1,59 +1,26 @@
 <div class="row">
-    <form class="form-control form-search" name="formSearch" action="{{ path('resultSearch.form') }}" onsubmit="return validateForm()"
-          type="POST">
-        <!--form class="form-control form-search"-->
-        <div class="col-md-12 col-lg-12">
-            <div class="col-md-5 col-lg-5">
+    <form class="col" id="recherchepdf-form" name="formSearch" action="{{ path('resultSearch.form') }}" onsubmit="return validateForm()" type="POST">
+        <div class="row justify-content-center align-items-end">
+            <div class="col-12 col-md-4 col-lg-3">
                 Référence du produit : <input name="refProduit" class="form-control refProduit" type="text">
             </div>
-            <div class="col-md-5 col-lg-5">
+            <div class="col-12 col-md-4 col-lg-3">
                 Lot du produit : <input name="lotProduit" class="form-control lotProduit" type="text">
             </div>
-            <div class="col-md-2 col-lg-2 text-right">
-                <button class="btn btn-danger" type="submit">Rechercher</button>
+            <div class="col-auto">
+                <button type="submit">Télécharger</button>
             </div>
         </div>
     </form>
 </div>
 
 <script>
-    $(document).ready(function () {
+    jQuery(document).ready(function ($) {
         var msg = '{{ msg }}';
         if (msg != "") {
             alert(msg);
-            window.location.href="/recherche";
+            window.location.href="/recherche-pdf";
         }
-        $(".recherchepdf-form").submit(function (e) {
-            e.preventDefault();
-            var refProduit = $('.refProduit').val();
-            var lotProduit = $('.lotProduit').val();
-            if (refProduit.length == 0 && lotProduit.length == 0) {
-                $("#linkPdf").attr("href", '').hide();
-                alert("Veuillez saisir le reférence du produit ou bien le lot du produit");
-            } else {
-                var data = $(".recherchepdf-form").serializeArray();
-                $.ajax({
-                    url: "/fiche-pdf",
-                    method: "POST",
-                    data: data,
-                    dataType: "json",
-                    success: function (url, textStatus, jqXHR) {
-                        if (url == false) {
-                            $("#linkPdf").attr("href", '').hide();
-                            alert("Fiche technique non trouvée merci de vérifier votre saisie");
-                        } else {
-                            var a = document.getElementById('linkPdf');
-                            $("#linkPdf").attr("href", url).show();
-                            // a.click();
-                        }
-                    },
-                    error: function (jqXHR, textStatus, errorThrown) {
-
-                    }
-                });
-
-            }
-        });
     });
 
     function validateForm() {

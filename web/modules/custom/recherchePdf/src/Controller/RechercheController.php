@@ -11,9 +11,10 @@ namespace Drupal\recherchePdf\Controller;
 use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Symfony\Component\HttpFoundation\Response;
 
-class ResultController extends ControllerBase
+class RechercheController extends ControllerBase
 
 {
     protected $config;
@@ -25,18 +26,44 @@ class ResultController extends ControllerBase
 
     }
 
+    public function displayForm(Request $request)
+    {
+        return array(
+            '#theme' => 'recherche',
+        );
+    }
+
     public function getPdf(Request $request)
     {
-        $refProduit = $request->request->get('refProduit');
-        $lotProduit = $request->request->get('lotProduit');
+        $refProduit = $request->get('refProduit');
+        $lotProduit = $request->get('lotProduit');
+        $rslt =$this->getPdfByRefOrLot($refProduit, $lotProduit);
+        if (count($rslt) > 0) {
+            $fileName = $rslt[0]->name_fic;
 
-        $path = $this->getPdfByRefOrLot($refProduit, $lotProduit);
-        $url = $this->config::URL_SITE . "/" . $this->config::DEFAULT_PDF . "/" . $this->config::DEFAULT_LG . "/" . $this->config::DEFAULT_DIR . "/" . $path[0]->name_fic;
-        $bool = $this->is_url_exist($url);
-        if ($bool) {
-            return new JsonResponse($url, 200, ['Content-Type' => 'application/json']);
+            $url = $this->config::URL_SITE . "/" . $this->config::DEFAULT_PDF . "/" . $this->config::DEFAULT_LG . "/" . $this->config::DEFAULT_DIR . "/" . $fileName;
+            if ($this->is_url_exist($url)) {
+                $response = new Response();
+                $response->headers->set('Content-type', 'application/octet-stream');
+                $response->headers->set('Content-Disposition', sprintf('attachment; filename="%s"', $fileName));
+                $response->setContent(file_get_contents($url));
+                $response->setStatusCode(200);
+                $response->headers->set('Content-Transfer-Encoding', 'binary');
+                $response->headers->set('Pragma', 'no-cache');
+                $response->headers->set('Expires', '0');
+                return $response;
+
+            } else {
+                return array(
+                    '#theme' => 'recherche',
+                    '#msg' => $this->t('Fiche technique non trouvée merci de vérifier votre saisie'),
+                );
+            }
         } else {
-            return new Response("false");
+            return array(
+                '#theme' => 'recherche',
+                '#msg' => $this->t('Fiche technique non trouvée merci de vérifier votre saisie'),
+            );
         }
 
     }
@@ -64,6 +91,7 @@ class ResultController extends ControllerBase
 
         // Switch default database
         \Drupal\Core\Database\Database::setActiveConnection();
+
         return $result;
     }
 

@@ -1,14 +1,16 @@
 recherchePdf.form:
- path: '/recherche-pdf'
+ path: '/recherche'
  defaults:
-   _title: 'Espace de téléchargement PDF'
-   _form: '\Drupal\recherchePdf\Form\RechercheForm'
+   _title: 'Application form'
+   #_form: '\Drupal\recherchePdf\Form\RechercheForm'
+   _controller: '\Drupal\recherchePdf\Controller\RechercheController::displayForm'
  requirements:
    _permission: 'access content'
 
 resultSearch.form:
   path: '/fiche-pdf'
   defaults:
-    _controller: '\Drupal\recherchePdf\Controller\ResultController::getPdf'
+    _controller: '\Drupal\recherchePdf\Controller\RechercheController::getPdf'
+  #  _title: 'Mon premier module'
   requirements:
     _permission: 'access content'

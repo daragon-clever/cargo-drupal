@@ -1,24 +1,17 @@
-<div class="row">
-    <!--form action="/recherche" class="form-control" type="POST"-->
-    <form class="form-control form-search">
-        <div class="col-md-12 col-lg-12">
-            <div class="col-md-5 col-lg-5">
-                Référence du produit : <input name="refProduit" class="form-control" type="text">
-
-            </div>
-            <div class="col-md-5 col-lg-5">
-                Lot du produit : <input name="lotProduit" class="form-control" type="text">
-
-            </div>
-            <div class="col-md-2 col-lg-2 text-right">
-                <button class="btn btn-danger" type="submit">Rechercher</button>
-            </div>
-        </div>
-    </form>
+<div class="row justify-content-center align-items-end">
+    <div class="col-12 col-md-4 col-lg-3">
+    <div class="col-12 col-md-4 col-lg-3">
+        Référence du produit : <input name="refProduit" class="form-control" type="text">
+    </div>
+        Lot du produit : <input name="lotProduit" class="form-control" type="text">
+    </div>
+    <div class="col-auto">
+        <button type="submit">Télécharger</button>
+    </div>
 </div>
 
 <script>
-    $(document).ready(function () {
+    jQuery(document).ready(function ($) {
         $(".recherchepdf-form").submit(function (e) {
             var data = $(".recherchepdf-form").serializeArray();
             $.ajax({

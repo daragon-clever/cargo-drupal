@@ -35,7 +35,7 @@
                     success: function (url, textStatus, jqXHR) {
                         if (url == false) {
                             $("#linkPdf").attr("href", '').hide();
-                            alert("Fiche technique non trouvée merci de vérifier votre saisie");
+                            alert("Fiche de données de sécurité non trouvée merci de vérifier votre saisie");
                         } else {
                             var a = document.getElementById('linkPdf');
                             $("#linkPdf").attr("href", url).show();

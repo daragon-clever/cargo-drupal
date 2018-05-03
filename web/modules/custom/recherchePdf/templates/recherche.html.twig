@@ -3,37 +3,51 @@
     <form class="form-control form-search">
         <div class="col-md-12 col-lg-12">
             <div class="col-md-5 col-lg-5">
-                Référence du produit : <input name="refProduit" class="form-control" type="text">
-
+                Référence du produit : <input name="refProduit" class="form-control refProduit" type="text">
             </div>
             <div class="col-md-5 col-lg-5">
-                Lot du produit : <input name="lotProduit" class="form-control" type="text">
-
+                Lot du produit : <input name="lotProduit" class="form-control lotProduit" type="text">
             </div>
             <div class="col-md-2 col-lg-2 text-right">
                 <button class="btn btn-danger" type="submit">Rechercher</button>
             </div>
         </div>
     </form>
+    <a id="linkPdf" href="" target="_blank" style="display: none;">Télécharger</a>
 </div>
 
 <script>
     $(document).ready(function () {
         $(".recherchepdf-form").submit(function (e) {
-            var data = $(".recherchepdf-form").serializeArray();
-            $.ajax({
-                url: "/fiche-pdf",
-                method: "POST",
-                data: data,
-                dataType: "json",
-                success: function (url, textStatus, jqXHR) {
-                   window.location.href = url;
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-                }
-
-            });
             e.preventDefault();
+            var refProduit = $('.refProduit').val();
+            var lotProduit = $('.lotProduit').val();
+            if (refProduit.length == 0 && lotProduit.length == 0) {
+                $("#linkPdf").attr("href", '').hide();
+                alert("Veuillez saisir le reférence du produit ou bien le lot du produit");
+            } else {
+                var data = $(".recherchepdf-form").serializeArray();
+                $.ajax({
+                    url: "/fiche-pdf",
+                    method: "POST",
+                    data: data,
+                    dataType: "json",
+                    success: function (url, textStatus, jqXHR) {
+                        if (url == false) {
+                            $("#linkPdf").attr("href", '').hide();
+                            alert("Fiche technique non trouvée merci de vérifier votre saisie");
+                        } else {
+                            var a = document.getElementById('linkPdf');
+                            $("#linkPdf").attr("href", url).show();
+                           // a.click();
+                        }
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+
+                    }
+                });
+
+            }
         });
     });
 </script>

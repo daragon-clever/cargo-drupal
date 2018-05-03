@@ -11,6 +11,7 @@ namespace Drupal\recherchePdf\Controller;
 use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Response;
 
 class ResultController extends ControllerBase
 
@@ -31,11 +32,16 @@ class ResultController extends ControllerBase
 
         $path = $this->getPdfByRefOrLot($refProduit, $lotProduit);
         $url = $this->config::URL_SITE . "/" . $this->config::DEFAULT_PDF . "/" . $this->config::DEFAULT_LG . "/" . $this->config::DEFAULT_DIR . "/" . $path[0]->name_fic;
-        return new JsonResponse($url, 200, ['Content-Type' => 'application/json']);
+        $bool = $this->is_url_exist($url);
+        if ($bool) {
+            return new JsonResponse($url, 200, ['Content-Type' => 'application/json']);
+        } else {
+            return new Response("false");
+        }
 
     }
 
-    public function getPdfByRefOrLot($refProduit = NULL, $lotProduit = FALSE)
+    public function getPdfByRefOrLot($refProduit = '', $lotProduit = '')
     {
         // Switch to external database
         \Drupal\Core\Database\Database::setActiveConnection('QRcodeTBC');
@@ -59,5 +65,21 @@ class ResultController extends ControllerBase
         // Switch default database
         \Drupal\Core\Database\Database::setActiveConnection();
         return $result;
+    }
+
+    protected function is_url_exist($url)
+    {
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_NOBODY, true);
+        curl_exec($ch);
+        $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+        if ($code == 200) {
+            $status = true;
+        } else {
+            $status = false;
+        }
+        curl_close($ch);
+        return $status;
     }
 }

@@ -1735,10 +1735,18 @@ form#recherchepdf-form button:before {
   margin-right: 10px;
   margin-top: -5px;
 }
+form#recherchepdf-form input {
+  margin-top: 5px;
+}
 form#recherchepdf-form a#linkPdf {
   display: inline-block;
   border: 1px solid #e40514;
   padding: 5px 25px;
   margin-top: 30px;
   color: #e40514;
+}
+@media only screen and (max-width: 575px) {
+  form#recherchepdf-form > div > div {
+    margin: 5px 0;
+  }
 }

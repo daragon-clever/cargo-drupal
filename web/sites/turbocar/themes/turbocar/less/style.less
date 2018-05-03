@@ -2055,11 +2055,21 @@ form#recherchepdf-form {
     }
   }
 
+  input {
+    margin-top:5px;
+  }
+
   a#linkPdf {
     display: inline-block;
     border: 1px solid @tbc-red;
     padding: 5px 25px;
     margin-top: 30px;
     color:@tbc-red;
+  }
+
+  @media @phone {
+    & > div > div {
+      margin:5px 0;
+    }
   }
 }

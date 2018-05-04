@@ -56,16 +56,15 @@ class RechercheController extends ControllerBase
             } else {
                 return array(
                     '#theme' => 'recherche',
-                    '#msg' => $this->t('Fiche technique non trouvée merci de vérifier votre saisie'),
+                    '#msg' => $this->t('Fiche de données sécurité non trouvée merci de vérifier votre saisie'),
                 );
             }
         } else {
             return array(
                 '#theme' => 'recherche',
-                '#msg' => $this->t('Fiche technique non trouvée merci de vérifier votre saisie'),
+                '#msg' => $this->t('Fiche de données sécurité non trouvée merci de vérifier votre saisie'),
             );
         }
-
     }
 
     public function getPdfByRefOrLot($refProduit = '', $lotProduit = '')

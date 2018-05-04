@@ -1,4 +1,7 @@
 <?php
+
+/* Fichier non utilisé pour le moment - 04/05/2018 - Nico */
+
 /**
  *  * @file
  *  * Contains \Drupal\recherchePdf\Form\recherchePdfForm.
@@ -44,7 +47,6 @@ class RechercheForm extends FormBase
             '#title' => t('Lot du produit:'),
         );
 
-        //$form['actions']['#type'] = 'actions';
         $form['actions']['submit'] = array(
             '#type' => 'submit',
             '#value' => $this->t('Rechercher'),
@@ -75,16 +77,15 @@ class RechercheForm extends FormBase
         $refProduit = $form_state->getValue('ref_produit');
         $lotProduit = $form_state->getValue('lot_produit');
 
-        //$this->messenger->addMessage($refProduit);
         $pdf = $this->getByRefOrLot($refProduit, $lotProduit);
         $rslt = $pdf[0]->name_fic;
 
         if (!($rslt)) {
-            $this->messenger->addMessage("Fiche technique non trouvée merci de vérifier votre saisie");
+            $this->messenger->addMessage("Fiche de données sécurité non trouvée merci de vérifier votre saisie");
             $url = Url::fromRoute('recherchePdf.form');
             $internal_link = \Drupal::l(t(' Retour'), $url);
 
-            echo "Fiche technique non trouvée merci de vérifier votre saisie. ";
+            echo "Fiche de données sécurité non trouvée merci de vérifier votre saisie. ";
             echo $internal_link->getGeneratedLink();
             die();
         } else {

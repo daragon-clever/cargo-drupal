@@ -81,11 +81,6 @@ class RechercheController extends ControllerBase
             );
           }
         }
-        $return = array(
-          '#theme' => 'recherche'
-        );
-
-      return $return;
     }
 
     public function getPdfByRefOrLot($refProduit = '', $lotProduit = '')
@@ -184,26 +179,4 @@ class RechercheController extends ControllerBase
         curl_close($ch);
         return $status;
     }
-
-    protected function headersResponse($url,$fileName)
-    {
-        $response = new Response();
-        $response->headers->set('Content-type', 'application/octet-stream');
-        $response->headers->set('Content-Disposition', sprintf('attachment; filename="%s"', $fileName));
-        $response->setContent(file_get_contents($url));
-        $response->setStatusCode(200);
-        $response->headers->set('Content-Transfer-Encoding', 'binary');
-        $response->headers->set('Pragma', 'no-cache');
-        $response->headers->set('Expires', '0');
-        return $response;
-    }
-
-    protected function redirectResponse($url,$message)
-    {
-      $messenger = \Drupal::messenger();
-      $messenger->addMessage($message,'error', false);
-
-      return new RedirectResponse($url);
-    }
-
 }

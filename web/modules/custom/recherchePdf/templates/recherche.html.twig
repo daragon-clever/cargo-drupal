@@ -21,6 +21,9 @@
             alert(msg);
             window.location.href="/recherche-pdf";
         }
+      setTimeout(function(){
+        $("[role=contentinfo]").hide(1000);
+      }, 3000);
     });
 
     function validateForm() {

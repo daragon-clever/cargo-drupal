@@ -9,11 +9,16 @@
 namespace Drupal\recherchePdf\Config;
 class ConfigFile
 {
-    public const NOM_SITE = 'TURBOCAR distributeur auto, moto,securite auto - produits M6 Turbo';
-    public const URL_SITE = 'http://www.turbocar-entretien.com';
-    public const ID_SOC = 37;
-    public const DEFAULT_PDF = 'Lang';
-    public const DEFAULT_LG = 'Fr';
-    public const DEFAULT_DIR = 'Det';
-    public const CODE_SOC = 'TBC';
+    CONST API_URL = 'http://admin.url-qrcode.com/api/'; /* L'url curl api */
+    CONST QRCODEADM = [
+      'TBC' => [
+          'URL_SITE' => 'http://www.turbocar-entretien.com',
+          'ID_SOC' => 37,
+          'CODE_SOC' => 'TBC',
+          'DEFAULT_PDF' => 'Lang',
+          'DEFAULT_LG' => 'Fr',
+          'DEFAULT_DIR' => 'Det',
+          'tri_soc' => 'turb',
+      ]
+    ];
 }

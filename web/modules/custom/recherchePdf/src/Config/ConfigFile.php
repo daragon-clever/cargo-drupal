@@ -19,6 +19,8 @@ class ConfigFile
           'DEFAULT_LG' => 'Fr',
           'DEFAULT_DIR' => 'Det',
           'tri_soc' => 'turb',
+          'EMAIL_FIC_TO' => ['poleweb@cargo-services.fr','a.delpoux@cargo-services.fr'],
+          'EMAIL_FIC_FROM' => 'no-reply@turbocar-sas.com',
       ]
     ];
 }

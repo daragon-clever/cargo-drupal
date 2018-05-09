@@ -14,6 +14,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Drupal\Core\Url;
 
 class RechercheController extends ControllerBase
 
@@ -39,6 +40,8 @@ class RechercheController extends ControllerBase
         $refProduit = $request->get('refProduit');
         $lotProduit = $request->get('lotProduit');
         $qrcodeadm =  \Drupal::config('system.qrcodeadm')->get('soc', FALSE);
+        $qrcodeadmProd =  \Drupal::config('system.qrcodeadm')->get('prod', FALSE);
+        $qrcodeadmMail =  \Drupal::config('system.qrcodeadm')->get('mailTesterreur', FALSE);
         $configQrcodeadm = false;
 
         $dataSoc = $this->config::QRCODEADM[$qrcodeadm];
@@ -61,7 +64,15 @@ class RechercheController extends ControllerBase
           'DEFAULT_LG' => $dataSoc['DEFAULT_LG'],
           'DEFAULT_DIR' => $dataSoc['DEFAULT_DIR'],
           'tri_soc' => $dataSoc['tri_soc'],
+          'PROD' => $qrcodeadmProd,
         ];
+
+        $paramMail['from'] = $dataSoc['EMAIL_FIC_FROM'];
+        $paramMail['to'] = $qrcodeadmMail != null ? $qrcodeadmMail : implode(', ' , $dataSoc['EMAIL_FIC_TO']);
+        $paramMail['fiches'] = $postData['RefProd']." ".$postData['LotProd'];
+
+        $urlRedirect = Url::fromRoute('recherchePdf.form');
+
         if($qrcodeadm == true) {
           $rslt = $this->getPdfByRefOrLotCurl($postData);
           if ($rslt != null && $rslt->nomfic != '') {
@@ -70,15 +81,23 @@ class RechercheController extends ControllerBase
               return $this->headersResponse($url, $rslt->fileName);
             } else {
               $this->redirectResponse(
-                  '/recherche-pdf',
+                  '/'.$urlRedirect->getInternalPath(),
                   $this->t('Fiche de données sécurité non trouvée merci de vérifier votre saisie')
               );
+
+              $paramMail['subject'] = "Fichier pdf introuvable - ".$paramMail['fiches'];
+              $paramMail['body'] = "Le Fichier ".$rslt->fileName." pour Le produit reference ".$postData['RefProd']." lot ".$postData['LotProd']." est introuvable";
+              $this->sendMailNoFile($paramMail);
             }
           } else {
             $this->redirectResponse(
-              '/recherche-pdf',
+              '/'.$urlRedirect->getInternalPath(),
               $this->t('Fiche de données sécurité non trouvée merci de vérifier votre saisie')
             );
+
+            $paramMail['subject'] = "Produit introuvable - ".$paramMail['fiches'];
+            $paramMail['body'] = "Le produit reference ".$postData['RefProd']." lot ".$postData['LotProd']." est introuvable dans la base de données.";
+            $this->sendMailNoFile($paramMail);
           }
         }
         $return = array(
@@ -97,10 +116,6 @@ class RechercheController extends ControllerBase
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curl, CURLOPT_POST, true);
         curl_setopt($curl, CURLOPT_POSTFIELDS, $postfields);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-            'Content-Type: application/json',
-            'Content-Length: ' . strlen($postfields))
-        );
         $return = curl_exec($curl);
         curl_close($curl);
         $return = \GuzzleHttp\json_decode($return);
@@ -141,8 +156,21 @@ class RechercheController extends ControllerBase
     {
       $messenger = \Drupal::messenger();
       $messenger->addMessage($message,'error', false);
+      /*$redirect = new RedirectResponse($url);
+      $redirect->send();*/
+    }
 
-      return new RedirectResponse($url);
+    protected  function sendMailNoFile($params){
+
+      $mailManager = \Drupal::service('plugin.manager.mail');
+      $module = 'recherchePdf';
+      $key = 'fiche_Pdf';
+      $to = $params['to'];
+      $langcode = \Drupal::currentUser()->getPreferredLangcode();
+
+      $reply = false;
+      $send = true;
+      $result = $mailManager->mail($module, $key, $to, $langcode, $params, $reply, $send);
     }
 
 

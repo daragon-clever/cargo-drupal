@@ -2,10 +2,10 @@
     <form class="col" id="recherchepdf-form" name="formSearch" action="{{ path('resultSearch.form') }}" onsubmit="return validateForm()" type="POST">
         <div class="row justify-content-center align-items-end">
             <div class="col-12 col-md-4 col-lg-3">
-                Référence du produit : <input name="refProduit" class="form-control refProduit" type="text">
+                Référence du produit : <input name="refProduit" class="form-control refProduit" type="text" required>
             </div>
             <div class="col-12 col-md-4 col-lg-3">
-                Lot du produit : <input name="lotProduit" class="form-control lotProduit" type="text">
+                Lot du produit : <input name="lotProduit" class="form-control lotProduit" type="text" required>
             </div>
             <div class="col-auto">
                 <button type="submit">Télécharger</button>
@@ -21,6 +21,9 @@
             alert(msg);
             window.location.href="/recherche-pdf";
         }
+      setTimeout(function(){
+        $("[role=contentinfo]").hide(1000);
+      }, 3000);
     });
 
     function validateForm() {

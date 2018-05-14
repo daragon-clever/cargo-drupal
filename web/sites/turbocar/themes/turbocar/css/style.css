@@ -1647,9 +1647,16 @@ article[data-history-node-id='5'] {
   #footer .liens a {
     color: #dcdcdc;
     border-left: 1px solid;
+    padding: 0 10px;
+    font-size: 12px;
   }
   #footer .liens a.first-mobile {
     border-left: none;
+  }
+}
+@media only screen and (max-width: 575px) and (max-width: 320px) {
+  #footer .liens a {
+    font-size: 11px;
   }
 }
 #footer .logos-marques,

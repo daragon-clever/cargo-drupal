@@ -1919,10 +1919,23 @@ article[data-history-node-id='5'] {
     a {
       color: #414042;
       font-size: 14px;
-      margin: 0 30px;
+      margin: 0 15px;
+
+      @media (max-width: 1199px) {
+        margin: 5px 0;
+      }
 
       &.orange {
         color:#de8c1b;
+      }
+
+      &.linkedin {
+        color:#0084b1;
+
+        img {
+          margin-top: -18px;
+          margin-right: 3px;
+        }
       }
 
       &.turbocar-entretien {
@@ -1934,12 +1947,6 @@ article[data-history-node-id='5'] {
           vertical-align: middle;
         }
       }
-    }
-  }
-
-  @media @tablet {
-    .liens a {
-      margin: 0;
     }
   }
 
@@ -1988,6 +1995,10 @@ article[data-history-node-id='5'] {
       a img {
         transition: all 0.3s;
         filter: grayscale(100%);
+
+        @media @tablet {
+          max-width: 160px;
+        }
 
         &:hover {
           filter: grayscale(0%);

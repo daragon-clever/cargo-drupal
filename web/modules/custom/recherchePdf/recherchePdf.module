@@ -23,7 +23,16 @@ function recherchePdf_theme()
             ],
         ],
     ];
-
-
 }
+
+function recherchePdf_mail($key, &$message, $params) {
+
+    // E-mail formatting will be exactly as below, so do not use indenting!
+    $body = $params['body'];
+    $message['from'] = $params['from'];
+    $message['subject'] = $params['subject'];
+
+    $message['body'][] = Drupal\Core\Mail\MailFormatHelper::htmlToText($body);
+}
+
 ?>

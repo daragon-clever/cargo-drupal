@@ -1617,10 +1617,22 @@ article[data-history-node-id='5'] {
 #footer .liens a {
   color: #414042;
   font-size: 14px;
-  margin: 0 30px;
+  margin: 0 15px;
+}
+@media (max-width: 1199px) {
+  #footer .liens a {
+    margin: 5px 0;
+  }
 }
 #footer .liens a.orange {
   color: #de8c1b;
+}
+#footer .liens a.linkedin {
+  color: #0084b1;
+}
+#footer .liens a.linkedin img {
+  margin-top: -18px;
+  margin-right: 3px;
 }
 #footer .liens a.turbocar-entretien {
   color: #e40514;
@@ -1629,11 +1641,6 @@ article[data-history-node-id='5'] {
   margin-left: 5px;
   margin-top: -4px;
   vertical-align: middle;
-}
-@media only screen and (max-width: 768px) {
-  #footer .liens a {
-    margin: 0;
-  }
 }
 @media only screen and (max-width: 575px) {
   #footer {
@@ -1647,9 +1654,16 @@ article[data-history-node-id='5'] {
   #footer .liens a {
     color: #dcdcdc;
     border-left: 1px solid;
+    padding: 0 10px;
+    font-size: 12px;
   }
   #footer .liens a.first-mobile {
     border-left: none;
+  }
+}
+@media only screen and (max-width: 575px) and (max-width: 320px) {
+  #footer .liens a {
+    font-size: 11px;
   }
 }
 #footer .logos-marques,
@@ -1672,6 +1686,12 @@ article[data-history-node-id='5'] {
 #recherche-pdf .logos-marques .marque a img {
   transition: all 0.3s;
   filter: grayscale(100%);
+}
+@media only screen and (max-width: 768px) {
+  #footer .logos-marques .marque a img,
+  #recherche-pdf .logos-marques .marque a img {
+    max-width: 160px;
+  }
 }
 #footer .logos-marques .marque a img:hover,
 #recherche-pdf .logos-marques .marque a img:hover {
@@ -1713,7 +1733,7 @@ article[data-history-node-id='5'] {
     margin-top: 0;
   }
 }
-#recherche-pdf ² p span {
+#recherche-pdf p span {
   color: #e40514;
 }
 form#recherchepdf-form {

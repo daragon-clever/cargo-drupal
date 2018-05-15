@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1b8b04d2357d688db381480ec235e483",
+    "content-hash": "feb98d1dca9b908e841a6af53c4675ec",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2036,6 +2036,57 @@
             "homepage": "https://www.drupal.org/project/mandrill",
             "support": {
                 "source": "http://cgit.drupalcode.org/mandrill"
+            }
+        },
+        {
+            "name": "drupal/rename_admin_paths",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/rename_admin_paths",
+                "reference": "8.x-1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/rename_admin_paths-8.x-1.1.zip",
+                "reference": "8.x-1.1",
+                "shasum": "baeb57bb0fef03e87f69be7dacee540d3e72cf0f"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.1",
+                    "datestamp": "1476916439",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Raphael Apard",
+                    "homepage": "https://www.drupal.org/user/410831"
+                },
+                {
+                    "name": "slootjes",
+                    "homepage": "https://www.drupal.org/user/3516667"
+                }
+            ],
+            "description": "Rename admin path /admin/.. and /user/.. to /something/..",
+            "homepage": "https://www.drupal.org/project/rename_admin_paths",
+            "support": {
+                "source": "http://cgit.drupalcode.org/rename_admin_paths"
             }
         },
         {

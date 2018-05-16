@@ -1,11 +1,4 @@
 {% if page.navigation %}
-    {#<header class="container">#}
-        {#<div class="row">#}
-            {#<div class="col">#}
-                {#{{ page.navigation }}#}
-            {#</div>#}
-        {#</div>#}
-    {#</header>#}
     <nav id="block-turbocar-main-menu" class="navbar sticky-top navbar-expand-sm navbar-light bg-light">
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="toggler-icon">
@@ -18,7 +11,7 @@
             <img src="{{ url('<front>') }}sites/turbocar/themes/turbocar/images/logo-tbc.jpg" height="24">
         </a>
         {% if logged_in %}
-            <a class="deco" href="/user/logout" style="display: none"> </a>
+            <a class="deco" href="/membertbc/logout" style="display: none"> </a>
             <button class="navbar-toggler collapsed close" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -59,7 +52,7 @@
                 {% if logged_in %}
                     <li class="nav-item cta d-none d-sm-inline-block">
                         <a class="nav-link espace-pro" href="/catalogues">Catalogues</a>
-                        <a class="deco" href="/user/logout">Déconnexion</a>
+                        <a class="deco" href="/membertbc/logout">Déconnexion</a>
                     </li>
                 {% else %}
                     <li class="nav-item cta d-none d-sm-inline-block">

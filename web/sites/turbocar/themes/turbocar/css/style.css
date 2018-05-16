@@ -386,7 +386,7 @@ ul {
   margin: 0;
 }
 div.cat-desc {
-  width: 80%;
+  width: 85%;
   margin: 40px auto;
   border-left: 1px solid #e40514;
   padding-left: 20px;
@@ -1141,6 +1141,7 @@ a:active {
     border-bottom: 65px solid white;
     border-left: 35px solid transparent;
     left: -35px;
+    /* HACK Retina */
   }
   #main-img .shape h1 {
     font-size: 14px;
@@ -1148,6 +1149,7 @@ a:active {
     line-height: 1.5;
     font-weight: 500;
     vertical-align: middle;
+    padding-left: 0;
   }
   #main-img .shape p {
     display: block;
@@ -1170,10 +1172,19 @@ a:active {
     border-bottom: 65px solid #f8f8f8;
   }
 }
+@media only screen and (max-width: 575px) and (-webkit-min-device-pixel-ratio: 2) {
+  #main-img .shape:before {
+    left: -34px;
+  }
+}
+article[data-history-node-id='5'] {
+  text-align: center;
+}
 .formulaire-de-contact {
   width: 700px;
-  display: block;
-  margin: 50px auto;
+  display: inline-block;
+  text-align: left;
+  margin: 15px 0 0 -65px;
 }
 .formulaire-de-contact legend {
   font-size: inherit;
@@ -1262,21 +1273,29 @@ a:active {
 .formulaire-de-contact .field-suffix {
   color: #e40514;
 }
-.formulaire-de-contact input.form-submit {
-  margin: 15px auto;
+.formulaire-de-contact .form-actions {
+  text-align: center;
+}
+.formulaire-de-contact .form-actions input.form-submit {
+  margin: 15px -65px 15px 0;
   background-color: #414042;
   color: white;
   padding: 10px 30px;
   border-radius: 30px;
-  display: block;
+  display: inline-block;
   transition: all 0.3s;
   cursor: pointer;
   border: none;
 }
-.formulaire-de-contact input.form-submit:hover {
+.formulaire-de-contact .form-actions input.form-submit:hover {
   background-color: #272728;
 }
-@media only screen and (max-width: 575px) {
+@media only screen and (max-width: 768px) {
+  .formulaire-de-contact {
+    margin: 0 auto;
+  }
+}
+@media (max-width: 767px) {
   .formulaire-de-contact {
     width: 100% !important;
     margin: 0;
@@ -1344,6 +1363,9 @@ a:active {
     position: absolute;
     top: 5px;
     right: -10px;
+  }
+  .formulaire-de-contact .form-actions input.form-submit {
+    margin: 0 auto;
   }
 }
 .select2-search {
@@ -1589,58 +1611,36 @@ a:active {
   margin-top: 50px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
-#footer .logos-marques {
-  padding: 15px;
-}
-#footer .logos-marques .marque {
-  border-left: 1px solid #c6c6c6;
-  padding: 0 50px;
-  display: inline-block;
-  vertical-align: middle;
-  line-height: 45px;
-}
-#footer .logos-marques .marque:first-child {
-  border-left: none;
-}
-#footer .logos-marques .marque img {
-  transition: all 0.3s;
-  filter: grayscale(100%);
-}
-#footer .logos-marques .marque img:hover {
-  filter: grayscale(0%);
-}
-@media only screen and (max-width: 575px) {
-  #footer .logos-marques .marque {
-    border: none;
-    padding: inherit;
-  }
-}
-@media only screen and (max-width: 768px) {
-  #footer .logos-marques .marque {
-    padding: 0 15px;
-  }
-}
 #footer .liens {
   padding: 15px;
 }
 #footer .liens a {
   color: #414042;
   font-size: 14px;
-  margin: 0 30px;
+  margin: 0 15px;
+}
+@media (max-width: 1199px) {
+  #footer .liens a {
+    margin: 5px 0;
+  }
 }
 #footer .liens a.orange {
   color: #de8c1b;
+}
+#footer .liens a.linkedin {
+  color: #0084b1;
+}
+#footer .liens a.linkedin img {
+  margin-top: -18px;
+  margin-right: 3px;
 }
 #footer .liens a.turbocar-entretien {
   color: #e40514;
 }
 #footer .liens a.turbocar-entretien img {
   margin-left: 5px;
-}
-@media only screen and (max-width: 768px) {
-  #footer .liens a {
-    margin: 0;
-  }
+  margin-top: -4px;
+  vertical-align: middle;
 }
 @media only screen and (max-width: 575px) {
   #footer {
@@ -1654,8 +1654,124 @@ a:active {
   #footer .liens a {
     color: #dcdcdc;
     border-left: 1px solid;
+    padding: 0 10px;
+    font-size: 12px;
   }
   #footer .liens a.first-mobile {
     border-left: none;
+  }
+}
+@media only screen and (max-width: 575px) and (max-width: 320px) {
+  #footer .liens a {
+    font-size: 11px;
+  }
+}
+#footer .logos-marques,
+#recherche-pdf .logos-marques {
+  padding: 15px;
+}
+#footer .logos-marques .marque,
+#recherche-pdf .logos-marques .marque {
+  border-left: 1px solid #c6c6c6;
+  padding: 0 50px;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 45px;
+}
+#footer .logos-marques .marque:first-child,
+#recherche-pdf .logos-marques .marque:first-child {
+  border-left: none;
+}
+#footer .logos-marques .marque a img,
+#recherche-pdf .logos-marques .marque a img {
+  transition: all 0.3s;
+  filter: grayscale(100%);
+}
+@media only screen and (max-width: 768px) {
+  #footer .logos-marques .marque a img,
+  #recherche-pdf .logos-marques .marque a img {
+    max-width: 160px;
+  }
+}
+#footer .logos-marques .marque a img:hover,
+#recherche-pdf .logos-marques .marque a img:hover {
+  filter: grayscale(0%);
+}
+@media only screen and (max-width: 575px) {
+  #footer .logos-marques .marque,
+  #recherche-pdf .logos-marques .marque {
+    border: none;
+    padding: inherit;
+  }
+}
+@media (max-width: 1130px) {
+  #footer .logos-marques .marque,
+  #recherche-pdf .logos-marques .marque {
+    padding: 0 15px;
+  }
+}
+#recherche-pdf h3 {
+  text-transform: none;
+  color: #e40514;
+  font-size: 30px;
+  font-weight: 300;
+  display: inline-block;
+  border-bottom: 1px solid #e40514;
+  width: auto;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+#recherche-pdf .marque img {
+  transition: all 0.3s;
+  filter: grayscale(100%);
+}
+#recherche-pdf .visuel-main {
+  margin: 20px 0 40px;
+}
+@media only screen and (max-width: 575px) {
+  #recherche-pdf .visuel-main {
+    margin-top: 0;
+  }
+}
+#recherche-pdf p span {
+  color: #e40514;
+}
+form#recherchepdf-form {
+  margin-top: 30px;
+}
+form#recherchepdf-form button {
+  background: none;
+  border: none;
+  color: #e40514;
+  padding: 5px 0;
+}
+form#recherchepdf-form button:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  opacity: 0.8;
+}
+form#recherchepdf-form button:before {
+  content: '';
+  height: 31px;
+  width: 24px;
+  background: url('../../../files/inline-images/footer/footer-picto-pdf.png') no-repeat center transparent;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  margin-top: -5px;
+}
+form#recherchepdf-form input {
+  margin-top: 5px;
+}
+form#recherchepdf-form a#linkPdf {
+  display: inline-block;
+  border: 1px solid #e40514;
+  padding: 5px 25px;
+  margin-top: 30px;
+  color: #e40514;
+}
+@media only screen and (max-width: 575px) {
+  form#recherchepdf-form > div > div {
+    margin: 5px 0;
   }
 }

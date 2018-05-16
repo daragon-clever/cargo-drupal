@@ -7,6 +7,7 @@ regions:
   navigation: 'Navigation'
   loginpopup: 'Login Popup'
   highlighted: 'Highlighted'
+  content_searchpdf: 'Contenu page Recherche PDF'
   content: 'Content'
   footer: 'Footer'
 

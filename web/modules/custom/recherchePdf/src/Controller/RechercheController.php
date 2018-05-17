@@ -117,6 +117,9 @@ class RechercheController extends ControllerBase
         curl_setopt($curl, CURLOPT_POST, true);
         curl_setopt($curl, CURLOPT_POSTFIELDS, $postfields);
         $return = curl_exec($curl);
+
+        echo $return;
+
         curl_close($curl);
         $return = \GuzzleHttp\json_decode($return);
 

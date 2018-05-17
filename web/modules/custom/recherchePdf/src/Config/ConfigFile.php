@@ -12,7 +12,7 @@ class ConfigFile
     CONST API_URL = 'http://admin.url-qrcode.com/api/'; /* L'url curl api */
     CONST QRCODEADM = [
       'TBC' => [
-          'URL_SITE' => 'http://www.turbocar-entretien.com',
+          'URL_SITE' => 'http://fiches.turbocar-entretien.com',
           'ID_SOC' => 37,
           'CODE_SOC' => 'TBC',
           'DEFAULT_PDF' => 'Lang',

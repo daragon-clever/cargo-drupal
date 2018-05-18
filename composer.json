@@ -24,6 +24,7 @@
         "drupal/google_analytics": "^2.2",
         "drupal/mandrill": "^1.0",
         "drupal/rename_admin_paths": "^1.1",
+        "drupal/robotstxt": "^1.1",
         "drupal/simple_sitemap": "^2.12",
         "drupal/webform": "^5.0",
         "drush/drush": "^9.0.0",

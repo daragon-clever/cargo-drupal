@@ -19,3 +19,10 @@
 # Mise à jour de Drupal : 
 * `docker-compose run --rm php composer outdated`
 * `docker-compose run --rm php composer update`
+
+## Déploiement
+
+* `docker-compose run --rm bundle install` pour s’assurer d’avoir toutes les dépendances à jour
+* `docker-compose run --rm bundle exec cap preproduction deploy` pour déployer en `preproduction`
+* `docker-compose run --rm bundle exec cap -T` pour lister toutes les tâches disponibles
+* `docker-compose run --rm bundle exec cap preproduction "symfony:console['cache:clear']"`

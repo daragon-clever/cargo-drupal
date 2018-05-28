@@ -19,3 +19,6 @@
 # Mise à jour de Drupal : 
 * `docker-compose run --rm php composer outdated`
 * `docker-compose run --rm php composer update`
+
+# Mise à jour d'un module Drupal :
+* `$ docker-compose run --rm php composer require 'NOMDUMODULE'`

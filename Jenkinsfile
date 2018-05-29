@@ -13,22 +13,26 @@ pipeline {
                 '''
             }
         }
-        stage('TEST') {
+        stage('Deploy Prod') {
             when {
                 branch 'feature/deploy'
             }
             steps {
-                input message: 'You REALLY want to build?', ok: 'Yes'
+                input message: 'Ok pour le déploiement en production ? ', ok: 'Yes'
 
-                echo "Java rocks ?"
+                echo 'Déploiement Prod en cours'
+                sh '''
+                    docker-compose run --rm bundle install
+                    docker-compose run --rm bundle exec cap production deploy
+                '''
             }
         }
-        stage('Deploy') {
+        stage('Deploy PréProd') {
             when {
                 branch 'develop'
             }
             steps {
-                echo 'Deploying....'
+                echo 'Déploiement PréProd en cours'
                 sh '''
                     docker-compose run --rm bundle install
                     docker-compose run --rm bundle exec cap preproduction deploy

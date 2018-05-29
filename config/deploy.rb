@@ -51,5 +51,6 @@ namespace :deploy do
     # TODO Améliorer et remplacer par les vraies tâches drush site-alias
     after :updated, :clear_cache do
         invoke "drupal:updatedb:web"
+        #invoke "drupal:drush, @web cr"
     end
 end

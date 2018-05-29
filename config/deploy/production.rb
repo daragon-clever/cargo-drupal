@@ -3,25 +3,10 @@
 # Defines a single server with a list of roles and multiple properties.
 # You can define all roles on a single server, or split them:
 
-# server "example.com", user: "deploy", roles: %w{app db web}, my_property: :my_value
-# server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
-# server "db.example.com", user: "deploy", roles: %w{db}
+server "sitevitrine.cargo-webproject.com", user: "sitedrupal_prod", roles: %w{app db web}, port: 22922
 
-
-
-# role-based syntax
-# ==================
-
-# Defines a role with one or multiple servers. The primary server in each
-# group is considered to be the first unless any hosts have the primary
-# property set. Specify the username and a domain or IP for the server.
-# Don't use `:all`, it's a meta role.
-
-# role :app, %w{deploy@example.com}, my_property: :my_value
-# role :web, %w{user1@primary.com user2@additional.com}, other_property: :other_value
-# role :db,  %w{deploy@example.com}
-
-
+# Default branch preproduction is :develop
+set :branch, 'master'
 
 # Configuration
 # =============
@@ -30,8 +15,8 @@
 # For available Capistrano configuration variables see the documentation page.
 # http://capistranorb.com/documentation/getting-started/configuration/
 # Feel free to add new variables to customise your setup.
-
-
+set :deploy_to, "/home/www/sitedrupal_prod/deployment/production"
+set :drupal_path, "/home/www/sitedrupal_prod/deployment/production/current/"
 
 # Custom SSH Options
 # ==================
@@ -41,12 +26,12 @@
 #
 # Global options
 # --------------
-#  set :ssh_options, {
-#    keys: %w(/home/rlisowski/.ssh/id_rsa),
-#    forward_agent: false,
-#    auth_methods: %w(password)
-#  }
-#
+set :ssh_options, {
+    forward_agent: true,
+    keys: %w(/.ssh/id_rsa),
+    auth_methods: %w(publickey)
+}
+
 # The server-based syntax can be used to override options:
 # ------------------------------------
 # server "example.com",

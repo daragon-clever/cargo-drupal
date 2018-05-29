@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Deploy Prod') {
             when {
-                branch 'feature/deploy'
+                branch 'master'
             }
             steps {
                 input message: 'Ok pour le déploiement en production ? ', ok: 'Yes'

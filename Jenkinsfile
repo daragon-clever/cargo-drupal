@@ -1,3 +1,5 @@
+import java.util.Random
+
 pipeline {
     agent any
 
@@ -11,12 +13,14 @@ pipeline {
                 '''
             }
         }
-        stage('Example') {
-
-                parameters { booleanParam(name: 'DEBUG_BUILD', defaultValue: true, description: '') }
-
+        stage('TEST') {
+            when {
+                branch 'feature/deploy'
+            }
             steps {
-                echo "Hello, ${PERSON}, nice to meet you."
+                input message: 'You REALLY want to build?', ok: 'Yes'
+
+                echo "Java rocks ?"
             }
         }
         stage('Deploy') {

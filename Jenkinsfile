@@ -12,13 +12,9 @@ pipeline {
             }
         }
         stage('Example') {
-            input {
-                message "Should we continue?"
-                ok "Yes, we should."
-                parameters {
-                    string(booleanParam(name: 'PERSON', defaultValue: true, description: 'test')
-                }
-            }
+
+                parameters { booleanParam(name: 'DEBUG_BUILD', defaultValue: true, description: '') }
+
             steps {
                 echo "Hello, ${PERSON}, nice to meet you."
             }

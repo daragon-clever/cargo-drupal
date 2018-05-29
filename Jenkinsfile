@@ -1,3 +1,5 @@
+import java.util.Random
+
 pipeline {
     agent any
 
@@ -11,12 +13,26 @@ pipeline {
                 '''
             }
         }
-        stage('Deploy') {
+        stage('Deploy Prod') {
+            when {
+                branch 'master'
+            }
+            steps {
+                input message: 'Ok pour le déploiement en production ? ', ok: 'Yes'
+
+                echo 'Déploiement Prod en cours'
+                sh '''
+                    docker-compose run --rm bundle install
+                    docker-compose run --rm bundle exec cap production deploy
+                '''
+            }
+        }
+        stage('Deploy PréProd') {
             when {
                 branch 'develop'
             }
             steps {
-                echo 'Deploying....'
+                echo 'Déploiement PréProd en cours'
                 sh '''
                     docker-compose run --rm bundle install
                     docker-compose run --rm bundle exec cap preproduction deploy

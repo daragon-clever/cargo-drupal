@@ -16,6 +16,8 @@ set :branch, 'develop'
 # http://capistranorb.com/documentation/getting-started/configuration/
 # Feel free to add new variables to customise your setup.
 set :deploy_to, "/home/www/sitedrupal_preprod/deployment/preproduction"
+set :drupal_path, "/home/www/sitedrupal_preprod/deployment/preproduction/current/"
+
 
 
 # Custom SSH Options

@@ -15,9 +15,9 @@ services:
       image: mariadb:10.1.2
       environment:
         MYSQL_ROOT_PASSWORD: root
-        MYSQL_DATABASE: {{ MYSQL_DATABASE }}
-        MYSQL_USER: {{ MYSQL_USER }}
-        MYSQL_PASSWORD: {{ MYSQL_PASSWORD }}
+        MYSQL_DATABASE: drupal
+        MYSQL_USER: drupal
+        MYSQL_PASSWORD: drupal
       volumes:
         - db_data:/var/lib/mysql
 
@@ -33,6 +33,11 @@ services:
       volumes:
           - /sessions
 
+  bundle:
+    build: ./docker/deployment
+    working_dir: /project
+    volumes:
+      - "{{ CHEMIN_LOCAL }}:/project"
 volumes:
   db_data:
     driver: local

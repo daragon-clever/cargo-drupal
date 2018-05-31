@@ -8,7 +8,7 @@ pipeline {
             steps {
                 echo 'Building...'
                 sh '''
-                    sed "s@{{ CHEMIN_LOCAL }}@$WORKSPACE/@" docker-compose.yml.dist > docker-compose.yml
+                    sed "s|{{ CHEMIN_LOCAL }}|$WORKSPACE/|" docker-compose.yml.dist > docker-compose.yml
                     docker-compose build
                 '''
             }
@@ -32,7 +32,7 @@ pipeline {
                 branch 'develop'
             }
             steps {
-                echo 'Déploiement PréProd en cours'
+                echo 'Déploiement PréProd en cours...'
                 sh '''
                     docker-compose run --rm bundle install
                     docker-compose run --rm bundle exec cap preproduction deploy

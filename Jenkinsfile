@@ -42,14 +42,6 @@ pipeline {
                 '''
             }
         }
-        stage('Deploy test') {
-            when {
-                branch 'feature/deploy'
-            }
-            steps {
-                echo 'Déploiement test en cours'
-            }
-        }
     }
 
     post {
@@ -76,7 +68,7 @@ pipeline {
                 )
             emailext (
                 subject: "Jenkins - Erreur déploiements: Job '${env.JOB_NAME} ${env.GIT_BRANCH} [${env.BUILD_NUMBER}]'",
-                to: 'jm.viguie@cargo-services.fr',
+                to: 'poleweb@cargo-services.fr',
                 body: """<p>Erreur déploiements [unstable] '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
                   <p>Verifier la console  &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>""",
                 recipientProviders: [[$class: 'DevelopersRecipientProvider']]
@@ -92,7 +84,7 @@ pipeline {
                 )
             emailext (
                 subject: "Jenkins - Erreur déploiements: Job '${env.JOB_NAME} ${env.GIT_BRANCH} [${env.BUILD_NUMBER}]'",
-                to: 'jm.viguie@cargo-services.fr',
+                to: 'poleweb@cargo-services.fr',
                 body: """<p>Erreur déploiements [failure] '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
                   <p>Verifier la console  &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>""",
                 recipientProviders: [[$class: 'DevelopersRecipientProvider']]

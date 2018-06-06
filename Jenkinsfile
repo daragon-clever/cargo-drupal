@@ -55,7 +55,7 @@ pipeline {
             slackSend (
                 color: '#006400',
                 channel: "#deployjenkinssuccess",
-                message: "Déploiement  '${env.JOB_NAME} ${env.GIT_BRANCH} [${env.BUILD_NUMBER}]' réussit"
+                message: "Déploiement  '${env.JOB_NAME} ${env.GIT_BRANCH} [${env.BUILD_NUMBER}]' réussi"
                 )
        }
         unstable {

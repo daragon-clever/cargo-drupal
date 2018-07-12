@@ -26,7 +26,6 @@
         "drupal/core": "~8.5.1",
         "drupal/google_analytics": "^2.2",
         "drupal/mandrill": "^1.0",
-        "drupal/private_content-private_content": "^2.0@beta",
         "drupal/rename_admin_paths": "^1.1",
         "drupal/robotstxt": "^1.2",
         "drupal/simple_sitemap": "^2.12",

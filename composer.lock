@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "75f1334637db737254ea864e388ea77b",
+    "content-hash": "258fd49058963953bc61a90a36aba25f",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2224,52 +2224,6 @@
             "homepage": "https://www.drupal.org/project/mandrill",
             "support": {
                 "source": "http://cgit.drupalcode.org/mandrill"
-            }
-        },
-        {
-            "name": "drupal/private_content-private_content",
-            "version": "2.0.0-beta1",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupal.org/project/private_content",
-                "reference": "8.x-2.0-beta1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/private_content-8.x-2.0-beta1.zip",
-                "reference": "8.x-2.0-beta1",
-                "shasum": "651b5a14a08c28a16c2ce8d934f7377d4579c2bc"
-            },
-            "require": {
-                "drupal/core": "~8.0"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "branch-alias": {
-                    "dev-2.x": "2.x-dev"
-                },
-                "drupal": {
-                    "version": "8.x-2.0-beta1",
-                    "datestamp": "1528045682",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Project has not opted into security advisory coverage!"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "AdamPS",
-                    "homepage": "https://www.drupal.org/user/2650563"
-                }
-            ],
-            "homepage": "https://www.drupal.org/project/private_content",
-            "support": {
-                "source": "http://cgit.drupalcode.org/private_content"
             }
         },
         {
@@ -7847,7 +7801,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "drupal/private_content-private_content": 10,
         "drupal/webform": 5
     },
     "prefer-stable": true,

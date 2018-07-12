@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "58a0d1547a1b605ae313788e4113cded",
+    "content-hash": "75f1334637db737254ea864e388ea77b",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1743,6 +1743,64 @@
             "time": "2017-07-28T17:11:54+00:00"
         },
         {
+            "name": "drupal/cookieconsent",
+            "version": "1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/cookieconsent",
+                "reference": "8.x-1.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/cookieconsent-8.x-1.4.zip",
+                "reference": "8.x-1.4",
+                "shasum": "4b4d551d80fe133ab5df3d75f1e34f85c58dbed2"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.4",
+                    "datestamp": "1530539621",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Hans van Wezenbeek (Nitebreed)",
+                    "homepage": "https://www.drupal.org/u/nitebreed",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "pjotr",
+                    "homepage": "https://www.drupal.org/user/3487709"
+                }
+            ],
+            "description": "CookieConsent uses the Cookie Consent javascript library for alerting users about the use of cookies on your website",
+            "homepage": "https://www.drupal.org/project/cookieconsent",
+            "keywords": [
+                "Cookie",
+                "CookieConsent",
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/cookieconsent",
+                "issues": "http://drupal.org/project/issues/cookieconsent"
+            }
+        },
+        {
             "name": "drupal/core",
             "version": "8.5.3",
             "source": {
@@ -2169,6 +2227,52 @@
             }
         },
         {
+            "name": "drupal/private_content-private_content",
+            "version": "2.0.0-beta1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/private_content",
+                "reference": "8.x-2.0-beta1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/private_content-8.x-2.0-beta1.zip",
+                "reference": "8.x-2.0-beta1",
+                "shasum": "651b5a14a08c28a16c2ce8d934f7377d4579c2bc"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-2.0-beta1",
+                    "datestamp": "1528045682",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "AdamPS",
+                    "homepage": "https://www.drupal.org/user/2650563"
+                }
+            ],
+            "homepage": "https://www.drupal.org/project/private_content",
+            "support": {
+                "source": "http://cgit.drupalcode.org/private_content"
+            }
+        },
+        {
             "name": "drupal/rename_admin_paths",
             "version": "1.1.0",
             "source": {
@@ -2221,17 +2325,17 @@
         },
         {
             "name": "drupal/robotstxt",
-            "version": "1.1.0",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/robotstxt",
-                "reference": "8.x-1.1"
+                "reference": "8.x-1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/robotstxt-8.x-1.1.zip",
-                "reference": "8.x-1.1",
-                "shasum": "19c61a6daf23a59c7adb441a33f5d1f54cfe363d"
+                "url": "https://ftp.drupal.org/files/projects/robotstxt-8.x-1.2.zip",
+                "reference": "8.x-1.2",
+                "shasum": "d520a92abfd67b55fbffdead510a57f9c9abf46b"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -2242,8 +2346,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.1",
-                    "datestamp": "1491149284",
+                    "version": "8.x-1.2",
+                    "datestamp": "1529154524",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2338,24 +2442,25 @@
         },
         {
             "name": "drupal/webform",
-            "version": "5.0.0-rc12",
+            "version": "5.0.0-rc16",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/webform",
-                "reference": "8.x-5.0-rc12"
+                "reference": "8.x-5.0-rc16"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/webform-8.x-5.0-rc12.zip",
-                "reference": "8.x-5.0-rc12",
-                "shasum": "d677eb59bf2084267476fa482b5fbccb0dc8afb9"
+                "url": "https://ftp.drupal.org/files/projects/webform-8.x-5.0-rc16.zip",
+                "reference": "8.x-5.0-rc16",
+                "shasum": "033611e87c3d715f5081022ebcd1e183333a72e7"
             },
             "require": {
                 "drupal/core": "*"
             },
             "require-dev": {
+                "drupal/address": "~1.4",
                 "drupal/devel": "*",
-                "drupal/token": "*",
+                "drupal/token": "~1.3",
                 "drupal/webform_node": "*",
                 "drupal/webform_scheduled_email": "*"
             },
@@ -2365,8 +2470,8 @@
                     "dev-5.x": "5.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-5.0-rc12",
-                    "datestamp": "1524706684",
+                    "version": "8.x-5.0-rc16",
+                    "datestamp": "1530298420",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "RC releases are not covered by Drupal security advisories."
@@ -7741,7 +7846,10 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "drupal/private_content-private_content": 10,
+        "drupal/webform": 5
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],

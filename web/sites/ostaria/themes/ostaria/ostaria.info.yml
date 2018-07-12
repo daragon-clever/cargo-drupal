@@ -5,9 +5,8 @@ core: 8.x
 
 regions:
   navigation: 'Navigation'
-  loginpopup: 'Login Popup'
+#  loginpopup: 'Login Popup'
   highlighted: 'Highlighted'
-  content_searchpdf: 'Contenu page Recherche PDF'
   content: 'Content'
   footer: 'Footer'
 

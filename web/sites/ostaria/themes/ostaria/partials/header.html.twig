@@ -1,10 +1,20 @@
 <header>
     <div class="inner">
-        Ostaria
-        <span class="toggle-menu">Menu</span>
+        <a href="{{ url('<front>') }}" title="Ostaria">
+            <img class="logo" src="{{ url('<front>') }}sites/ostaria/files/inline-images/header/logo_ostaria.jpg" alt="Ostaria">
+        </a>
+
+        <span class="menu-link js-toggle-menu">
+            Menu
+            <div class="button-wrapper">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </span>
+
         <div class="navigation">
             <div class="nav-inner">
-                Contenu de la navigation
                 {% include directory ~ '/partials/navigation.html.twig' %}
             </div>
         </div>

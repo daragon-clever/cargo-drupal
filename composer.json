@@ -25,6 +25,7 @@
         "drupal/cookieconsent": "^1.4",
         "drupal/core": "~8.5.1",
         "drupal/google_analytics": "^2.2",
+        "drupal/instagramfeed": "1.x-dev",
         "drupal/mandrill": "^1.0",
         "drupal/rename_admin_paths": "^1.1",
         "drupal/robotstxt": "^1.2",

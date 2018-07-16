@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "258fd49058963953bc61a90a36aba25f",
+    "content-hash": "eb67537eb8d6229dcf21c52e038c8198",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2090,6 +2090,47 @@
                 "source": "http://git.drupal.org/project/google_analytics.git",
                 "issues": "https://www.drupal.org/project/issues/google_analytics"
             }
+        },
+        {
+            "name": "drupal/instagramfeed",
+            "version": "dev-1.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/instagramfeed",
+                "reference": "8848aa30382cc506c13407edf9e534f42800b17c"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.x-dev",
+                    "datestamp": "1505374144",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Elfsight",
+                    "homepage": "https://www.drupal.org/user/3544810"
+                }
+            ],
+            "homepage": "https://www.drupal.org/project/instagramfeed",
+            "support": {
+                "source": "http://cgit.drupalcode.org/instagramfeed"
+            },
+            "time": "2017-09-14T07:24:49+00:00"
         },
         {
             "name": "drupal/mailsystem",
@@ -7801,6 +7842,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "drupal/instagramfeed": 20,
         "drupal/webform": 5
     },
     "prefer-stable": true,

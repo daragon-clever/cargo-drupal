@@ -5,13 +5,13 @@ core: 8.x
 
 regions:
   navigation: 'Navigation'
-#  loginpopup: 'Login Popup'
   highlighted: 'Highlighted'
   content: 'Content'
   footer: 'Footer'
 
 libraries:
   - ostaria/bootstrap
+  - ostaria/slick
   - ostaria/global-styling
 
 stylesheets-remove:

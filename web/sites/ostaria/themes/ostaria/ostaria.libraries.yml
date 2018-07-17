@@ -5,6 +5,7 @@ global-styling:
     theme:
       css/style.css: {}
   js:
+    js/instafeed.min.js: {}
     js/custom-js.js: {}
   dependencies:
     - core/jquery
@@ -18,3 +19,11 @@ bootstrap:
       bootstrap4/css/bootstrap.min.css: {}
   js:
     bootstrap4/js/bootstrap.bundle.min.js: {}
+
+# Plugin Slick - Slideshow - # Volontairement en 1.6.0 car vers.supp pose soucis avec transitions CSS
+slick:
+  js:
+    https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js: { type: external }
+  css:
+    theme:
+      https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css: { type: external }

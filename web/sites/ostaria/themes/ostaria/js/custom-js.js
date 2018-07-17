@@ -31,6 +31,7 @@ jQuery(document).ready(function($) {
     });
 });
 
+// Animations - Récup des attr sur elements
 (function ($, window, document, undefined) {
     'use strict';
     var animationObject;
@@ -68,3 +69,28 @@ jQuery(document).ready(function($) {
         nvsAddAnimation();
     });
 }(jQuery, window, document));
+
+// Instafeed
+var userFeed = new Instafeed({
+    get: 'user',
+    userId: '8227460958',
+    accessToken: '8227460958.1677ed0.9042fc03b313415b804d04d205e6bc7c',
+    limit: 8,
+    resolution: 'standard_resolution',
+    after: function () {
+        jQuery('#instafeed').slick({
+            infinite: true,
+            slidesToShow: 4,
+            slidesToScroll: 4
+        });
+    },
+    template:
+    '<div>' +
+        '<a href="{{link}}" id="{{id}}" target="_blank"><img class="img-fluid" src="{{image}}" />' +
+        '<span class="overlay-wrapper"><span>' +
+            '<span class="likes">{{likes}}</span>' +
+            '<span class="comments">{{comments}}</span>' +
+        '</span></span></a>' +
+    '</div>'
+});
+userFeed.run();

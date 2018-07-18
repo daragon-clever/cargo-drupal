@@ -704,3 +704,15 @@ footer a:hover {
   color: #5fafa7;
   text-decoration: none;
 }
+.grid-item {
+  width: 290px;
+  margin-bottom: 35px;
+}
+.grid-item--width2 {
+  width: 580px;
+}
+.grid-item--text {
+  height: 290px;
+  background: #9a7363;
+  color: white;
+}

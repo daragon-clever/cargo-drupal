@@ -6,6 +6,7 @@ global-styling:
       css/style.css: {}
   js:
     js/instafeed.min.js: {}
+    js/masonry.pkgd.min.js: {}
     js/custom-js.js: {}
   dependencies:
     - core/jquery

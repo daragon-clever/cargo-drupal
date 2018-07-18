@@ -29,6 +29,14 @@ jQuery(document).ready(function($) {
             closeNav();
         }
     });
+
+    /* Masonry */
+    $('.grid').masonry({
+        // options
+        itemSelector: '.grid-item',
+        columnWidth: 290,
+        gutter: 35
+    });
 });
 
 // Animations - Récup des attr sur elements

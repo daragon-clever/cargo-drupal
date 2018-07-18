@@ -1,0 +1,21 @@
+// Variables custom
+
+// Media queries
+@xs: 767px;
+@sm: 991px;
+
+@phone:          ~"only screen and (max-width: @{xs})";
+@tablet:         ~"only screen and (max-width: @{sm})";
+
+// Colors
+@lightMint: #47bfa8;
+@mint: #5fafa7;
+@darkMint: #256a63;
+
+// Quick
+.dimOpacityOnHover (@opacity) {
+  transition: opacity 0.3s;
+  &:hover {
+    opacity: @opacity;
+  }
+}

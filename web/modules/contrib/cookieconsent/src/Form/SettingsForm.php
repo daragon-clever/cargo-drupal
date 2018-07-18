@@ -9,6 +9,9 @@ namespace Drupal\cookieconsent\Form;
 
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Config\ConfigFactoryInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\Core\Entity\EntityTypeManager;
 
 /**
  * Class SettingsForm.
@@ -16,6 +19,32 @@ use Drupal\Core\Form\FormStateInterface;
  * @package Drupal\cookieconsent\Form
  */
 class SettingsForm extends ConfigFormBase {
+
+  /**
+   * The entity type manager.
+   *
+   * @var \Drupal\Core\Entity\EntityTypeManager
+   */
+  protected $entityTypeManager;
+
+  /**
+   * Constructs a new SettingsForm object.
+   */
+  public function __construct(ConfigFactoryInterface $config_factory, EntityTypeManager $entity_type_manager) {
+    parent::__construct($config_factory);
+
+    $this->entityTypeManager = $entity_type_manager;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('config.factory'),
+      $container->get('entity_type.manager')
+    );
+  }
 
   /**
    * {@inheritdoc}
@@ -123,7 +152,7 @@ class SettingsForm extends ConfigFormBase {
       '#description' => $this->t('If you already have a cookie policy, link to it here.'),
       '#maxlength' => 255,
       '#size' => 64,
-      '#default_value' => entity_load('node', $config->get('cookie_policy')),
+      '#default_value' => $config->get('cookie_policy') ? $this->entityTypeManager->getStorage('node')->load($config->get('cookie_policy')) : NULL,
     ];
     $form['container'] = [
       '#type' => 'textfield',

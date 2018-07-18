@@ -62,12 +62,15 @@ function cookieconsent_page_attachments(array &$attachments) {
       $attachments['#attached']['drupalSettings']['cookieconsent']['learnMore'] = $config->get('read_more_button_text');
     }
 
+    $alias = '';
     $node_id = $config->get('cookie_policy');
-    $alias = \Drupal::service('path.alias_manager')->getAliasByPath('/node/'.$node_id);
+    if (is_numeric($node_id)) {
+      $alias = \Drupal\Core\Url::fromRoute('entity.node.canonical', ['node' => $node_id])->toString();
+    }
     $attachments['#attached']['drupalSettings']['cookieconsent']['link'] = $alias;
 
     $attachments['#attached']['drupalSettings']['cookieconsent']['path'] = $config->get('path');
-    $attachments['#attached']['drupalSettings']['cookieconsent']['expiry'] = $config->get('expiry');
+    $attachments['#attached']['drupalSettings']['cookieconsent']['expiry'] = (int) $config->get('expiry');
     $attachments['#attached']['drupalSettings']['cookieconsent']['target'] = $config->get('target');
 
     // Set the cookie domain.

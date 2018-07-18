@@ -5,8 +5,8 @@ package: Other
 # core: 8.x
 configure: robotstxt.admin_settings_form
 
-# Information added by Drupal.org packaging script on 2017-04-02
-version: '8.x-1.1'
+# Information added by Drupal.org packaging script on 2018-06-16
+version: '8.x-1.2'
 core: '8.x'
 project: 'robotstxt'
-datestamp: 1491149337
+datestamp: 1529154527

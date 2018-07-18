@@ -66,6 +66,21 @@ body {
     bottom: 0;
   }
 }
+///////////////////////////// UI /////////////////////////////
+.btn-cta {
+  display: inline-block;
+  color: white;
+  font-size: 14px;
+  background: @mint;
+  padding: 10px 35px;
+  line-height: 1;
+  cursor: pointer;
+  .dimOpacityOnHover(0.8);
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
 ///////////////////////////// HEADER /////////////////////////////
 header {
   background: white;
@@ -308,22 +323,10 @@ header {
         padding-left: 15px;
         margin: 25px 0 30px;
         color:#414042;
+        font-weight: 500;
         @media @tablet {
           margin: 10px 0 15px;
           font-size: 13px;
-        }
-      }
-      .cta {
-        display: inline-block;
-        color: white;
-        font-size: 14px;
-        background: @mint;
-        padding: 10px 35px;
-        line-height: 1;
-        cursor: pointer;
-        .dimOpacityOnHover(0.8);
-        &:hover {
-          text-decoration: none;
         }
       }
     }
@@ -450,6 +453,7 @@ footer {
   text-align: center;
   font-size: 14px;
   display: inline-block;
+  font-weight: 500;
   & > div > div {
     padding: 0 40px !important;
     border-left: 1px solid white;
@@ -465,6 +469,23 @@ footer {
     address, ul {
       margin: 0;
       padding: 0;
+    }
+  }
+  .follow-us > span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.2;
+    a {
+      margin-left: 10px;
+      .dimOpacityOnHover(0.8);
+    }
+  }
+  a {
+    color: white;
+    transition: color 0.3s;
+    &:hover {
+      color: @mint;
+      text-decoration: none;
     }
   }
 }

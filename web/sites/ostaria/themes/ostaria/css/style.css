@@ -227,6 +227,23 @@ body:before {
 body:after {
   bottom: 0;
 }
+.btn-cta {
+  display: inline-block;
+  color: white;
+  font-size: 14px;
+  background: #5fafa7;
+  padding: 10px 35px;
+  line-height: 1;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+.btn-cta:hover {
+  opacity: 0.8;
+}
+.btn-cta:hover {
+  color: white;
+  text-decoration: none;
+}
 header {
   background: white;
   text-align: center;
@@ -474,28 +491,13 @@ header .inner .menu-link.active {
   padding-left: 15px;
   margin: 25px 0 30px;
   color: #414042;
+  font-weight: 500;
 }
 @media only screen and (max-width: 991px) {
   .mea-wrapper .txt-wrapper .inner p {
     margin: 10px 0 15px;
     font-size: 13px;
   }
-}
-.mea-wrapper .txt-wrapper .inner .cta {
-  display: inline-block;
-  color: white;
-  font-size: 14px;
-  background: #5fafa7;
-  padding: 10px 35px;
-  line-height: 1;
-  cursor: pointer;
-  transition: opacity 0.3s;
-}
-.mea-wrapper .txt-wrapper .inner .cta:hover {
-  opacity: 0.8;
-}
-.mea-wrapper .txt-wrapper .inner .cta:hover {
-  text-decoration: none;
 }
 .hp-insta .title img {
   display: block;
@@ -619,6 +621,7 @@ footer {
   text-align: center;
   font-size: 14px;
   display: inline-block;
+  font-weight: 500;
 }
 footer > div > div {
   padding: 0 40px !important;
@@ -637,4 +640,24 @@ footer > div > div address,
 footer > div > div ul {
   margin: 0;
   padding: 0;
+}
+footer .follow-us > span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1.2;
+}
+footer .follow-us > span a {
+  margin-left: 10px;
+  transition: opacity 0.3s;
+}
+footer .follow-us > span a:hover {
+  opacity: 0.8;
+}
+footer a {
+  color: white;
+  transition: color 0.3s;
+}
+footer a:hover {
+  color: #5fafa7;
+  text-decoration: none;
 }

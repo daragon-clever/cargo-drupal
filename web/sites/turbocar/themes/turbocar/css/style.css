@@ -1290,6 +1290,20 @@ article[data-history-node-id='5'] {
 .formulaire-de-contact .form-actions input.form-submit:hover {
   background-color: #272728;
 }
+.formulaire-de-contact .captcha {
+  text-align: center;
+}
+.formulaire-de-contact .captcha .g-recaptcha {
+  display: inline-block;
+  margin-left: 65px;
+  margin-top: 15px;
+}
+@media only screen and (max-width: 768px) {
+  .formulaire-de-contact .captcha .g-recaptcha {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 @media only screen and (max-width: 768px) {
   .formulaire-de-contact {
     margin: 0 auto;

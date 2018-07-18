@@ -617,4 +617,24 @@ footer {
   color: white;
   width: 100%;
   text-align: center;
+  font-size: 14px;
+  display: inline-block;
+}
+footer > div > div {
+  padding: 0 40px !important;
+  border-left: 1px solid white;
+  text-align: left;
+}
+footer > div > div:first-child {
+  text-align: right;
+  border-left: none;
+  padding-left: 0;
+}
+footer > div > div:last-child {
+  padding-right: 0;
+}
+footer > div > div address,
+footer > div > div ul {
+  margin: 0;
+  padding: 0;
 }

@@ -288,7 +288,9 @@ header {
       margin: 0 auto;
       @media @tablet {
         max-width: 100%;
-        margin-top: 15px;
+        margin-top: 30px;
+        margin-bottom: 15px;
+        text-align: center;
       }
       h2 {
         font-size: 21px;
@@ -324,6 +326,7 @@ header {
         margin: 25px 0 30px;
         color:#414042;
         font-weight: 500;
+        text-align: left;
         @media @tablet {
           margin: 10px 0 15px;
           font-size: 13px;
@@ -454,21 +457,41 @@ footer {
   font-size: 14px;
   display: inline-block;
   font-weight: 500;
+  @media @tablet {
+    font-size: 13px;
+    padding: 20px 0;
+  }
+  @media @phone {
+    padding: 0;
+  }
   & > div > div {
     padding: 0 40px !important;
     border-left: 1px solid white;
     text-align: left;
+    @media (max-width: 1024px) {
+      padding: 0 15px !important;
+    }
+    @media @phone {
+      padding: 15px !important;
+      text-align: center !important;
+      border-top: 1px solid #484848;
+    }
     &:first-child {
       text-align: right;
       border-left: none;
-      padding-left: 0;
+      padding-left: 15px;
     }
     &:last-child {
-      padding-right: 0;
+      padding-right: 15px;
     }
     address, ul {
       margin: 0;
-      padding: 0;
+    }
+    ul {
+      padding-left: 15px;
+      @media @phone {
+        list-style-type: none;
+      }
     }
   }
   .follow-us > span {
@@ -478,6 +501,16 @@ footer {
     a {
       margin-left: 10px;
       .dimOpacityOnHover(0.8);
+    }
+    @media @tablet {
+      &:first-child {
+        display: none;
+      }
+    }
+    @media @phone {
+      &:first-child {
+        display: inline-block;
+      }
     }
   }
   a {

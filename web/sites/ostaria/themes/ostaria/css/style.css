@@ -86,9 +86,9 @@
 }
 @media (max-width: 768px) {
   [nvs-animation-type] {
-    animation: none;
-    transform: none;
-    transition-property: none;
+    animation: none !important;
+    transform: none !important;
+    transition-property: none !important;
   }
 }
 .animated {
@@ -453,7 +453,9 @@ header .inner .menu-link.active {
 @media only screen and (max-width: 991px) {
   .mea-wrapper .txt-wrapper .inner {
     max-width: 100%;
-    margin-top: 15px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-align: center;
   }
 }
 .mea-wrapper .txt-wrapper .inner h2 {
@@ -492,6 +494,7 @@ header .inner .menu-link.active {
   margin: 25px 0 30px;
   color: #414042;
   font-weight: 500;
+  text-align: left;
 }
 @media only screen and (max-width: 991px) {
   .mea-wrapper .txt-wrapper .inner p {
@@ -623,23 +626,53 @@ footer {
   display: inline-block;
   font-weight: 500;
 }
+@media only screen and (max-width: 991px) {
+  footer {
+    font-size: 13px;
+    padding: 20px 0;
+  }
+}
+@media only screen and (max-width: 767px) {
+  footer {
+    padding: 0;
+  }
+}
 footer > div > div {
   padding: 0 40px !important;
   border-left: 1px solid white;
   text-align: left;
 }
+@media (max-width: 1024px) {
+  footer > div > div {
+    padding: 0 15px !important;
+  }
+}
+@media only screen and (max-width: 767px) {
+  footer > div > div {
+    padding: 15px !important;
+    text-align: center !important;
+    border-top: 1px solid #484848;
+  }
+}
 footer > div > div:first-child {
   text-align: right;
   border-left: none;
-  padding-left: 0;
+  padding-left: 15px;
 }
 footer > div > div:last-child {
-  padding-right: 0;
+  padding-right: 15px;
 }
 footer > div > div address,
 footer > div > div ul {
   margin: 0;
-  padding: 0;
+}
+footer > div > div ul {
+  padding-left: 15px;
+}
+@media only screen and (max-width: 767px) {
+  footer > div > div ul {
+    list-style-type: none;
+  }
 }
 footer .follow-us > span {
   display: inline-block;
@@ -652,6 +685,16 @@ footer .follow-us > span a {
 }
 footer .follow-us > span a:hover {
   opacity: 0.8;
+}
+@media only screen and (max-width: 991px) {
+  footer .follow-us > span:first-child {
+    display: none;
+  }
+}
+@media only screen and (max-width: 767px) {
+  footer .follow-us > span:first-child {
+    display: inline-block;
+  }
 }
 footer a {
   color: white;

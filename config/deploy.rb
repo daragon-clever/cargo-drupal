@@ -20,13 +20,13 @@ set :format_options, command_output: true, log_file: "var/logs/capistrano.log", 
 # set :pty, true
 
 # Default value for :linked_files is []
-append :linked_files, "web/sites/sites.php", "web/sites/turbocar/settings.php", "drush/sites/web.site.yml"
+append :linked_files, "web/sites/sites.php", "web/sites/turbocar/settings.php", "web/sites/ostaria/settings.php", "drush/sites/web.site.yml"
 
 # Default value for linked_dirs is []
-append :linked_dirs, "web/sites/turbocar/private"
+append :linked_dirs, "web/sites/turbocar/private", "web/sites/ostaria/private"
 
 # Configure file permissions
-set :file_permissions_paths, ["web/sites/turbocar/private" ]
+set :file_permissions_paths, ["web/sites/turbocar/private", "web/sites/turbocar/private"]
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }

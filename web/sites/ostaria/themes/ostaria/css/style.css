@@ -610,3 +610,11 @@ header .inner .menu-link.active {
   left: inherit;
   right: 0;
 }
+footer {
+  background-color: #232323;
+  padding: 35px 0;
+  margin-top: 80px;
+  color: white;
+  width: 100%;
+  text-align: center;
+}

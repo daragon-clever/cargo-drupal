@@ -30,12 +30,13 @@ jQuery(document).ready(function($) {
         }
     });
 
-    /* Masonry stuff */
+    /***** Masonry stuff *****/
     /* Blocs texte */
-    $( "<div class='grid-item grid-item--text'>Test</div>" ).insertAfter(".grid-item:nth-child(1)");
-    $( "<div class='grid-item grid-item--text'>Test</div>" ).insertAfter(".grid-item:nth-child(11)");
-    $( "<div class='grid-item grid-item--text'>Test</div>" ).insertAfter(".grid-item:nth-child(17)");
-    $( "<div class='grid-item grid-item--text'>Test</div>" ).insertAfter(".grid-item:nth-child(25)");
+    $( "<div class='grid-item grid-item--text' nvs-animation-delay='200' nvs-animation-type='in-left'>Test</div>" ).insertAfter(".grid-item:nth-child(1)");
+    $( "<div class='grid-item grid-item--text' nvs-animation-delay='200' nvs-animation-type='in-left'>Test</div>" ).insertAfter(".grid-item:nth-child(11)");
+    $( "<div class='grid-item grid-item--text' nvs-animation-delay='200' nvs-animation-type='in-left'>Test</div>" ).insertAfter(".grid-item:nth-child(17)");
+    $( "<div class='grid-item grid-item--text' nvs-animation-delay='200' nvs-animation-type='in-left'>Test</div>" ).insertAfter(".grid-item:nth-child(25)");
+
     /* Add class if width > 290 */
     $('.grid-item > img').each(function() {
         var width = $(this).width();
@@ -43,6 +44,7 @@ jQuery(document).ready(function($) {
             $(this).parent('.grid-item').addClass('grid-item--width2');
         }
     });
+
     /* Init plugin */
     $('.grid').masonry({
         itemSelector: '.grid-item',

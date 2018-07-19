@@ -26,6 +26,7 @@
         "drupal/cookieconsent": "^1.4",
         "drupal/core": "~8.5.1",
         "drupal/google_analytics": "^2.2",
+        "drupal/image_field_repair": "^1.2",
         "drupal/mandrill": "^1.0",
         "drupal/recaptcha": "^2.3",
         "drupal/rename_admin_paths": "^1.1",

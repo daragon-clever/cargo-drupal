@@ -86,9 +86,9 @@
 }
 @media (max-width: 768px) {
   [nvs-animation-type] {
-    animation: none;
-    transform: none;
-    transition-property: none;
+    animation: none !important;
+    transform: none !important;
+    transition-property: none !important;
   }
 }
 .animated {
@@ -226,6 +226,23 @@ body:before {
 }
 body:after {
   bottom: 0;
+}
+.btn-cta {
+  display: inline-block;
+  color: white;
+  font-size: 14px;
+  background: #5fafa7;
+  padding: 10px 35px;
+  line-height: 1;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+.btn-cta:hover {
+  opacity: 0.8;
+}
+.btn-cta:hover {
+  color: white;
+  text-decoration: none;
 }
 header {
   background: white;
@@ -436,7 +453,9 @@ header .inner .menu-link.active {
 @media only screen and (max-width: 991px) {
   .mea-wrapper .txt-wrapper .inner {
     max-width: 100%;
-    margin-top: 15px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-align: center;
   }
 }
 .mea-wrapper .txt-wrapper .inner h2 {
@@ -474,28 +493,14 @@ header .inner .menu-link.active {
   padding-left: 15px;
   margin: 25px 0 30px;
   color: #414042;
+  font-weight: 500;
+  text-align: left;
 }
 @media only screen and (max-width: 991px) {
   .mea-wrapper .txt-wrapper .inner p {
     margin: 10px 0 15px;
     font-size: 13px;
   }
-}
-.mea-wrapper .txt-wrapper .inner .cta {
-  display: inline-block;
-  color: white;
-  font-size: 14px;
-  background: #5fafa7;
-  padding: 10px 35px;
-  line-height: 1;
-  cursor: pointer;
-  transition: opacity 0.3s;
-}
-.mea-wrapper .txt-wrapper .inner .cta:hover {
-  opacity: 0.8;
-}
-.mea-wrapper .txt-wrapper .inner .cta:hover {
-  text-decoration: none;
 }
 .hp-insta .title img {
   display: block;
@@ -617,4 +622,97 @@ footer {
   color: white;
   width: 100%;
   text-align: center;
+  font-size: 14px;
+  display: inline-block;
+  font-weight: 500;
+}
+@media only screen and (max-width: 991px) {
+  footer {
+    font-size: 13px;
+    padding: 20px 0;
+  }
+}
+@media only screen and (max-width: 767px) {
+  footer {
+    padding: 0;
+  }
+}
+footer > div > div {
+  padding: 0 40px !important;
+  border-left: 1px solid white;
+  text-align: left;
+}
+@media (max-width: 1024px) {
+  footer > div > div {
+    padding: 0 15px !important;
+  }
+}
+@media only screen and (max-width: 767px) {
+  footer > div > div {
+    padding: 15px !important;
+    text-align: center !important;
+    border-top: 1px solid #484848;
+  }
+}
+footer > div > div:first-child {
+  text-align: right;
+  border-left: none;
+  padding-left: 15px;
+}
+footer > div > div:last-child {
+  padding-right: 15px;
+}
+footer > div > div address,
+footer > div > div ul {
+  margin: 0;
+}
+footer > div > div ul {
+  padding-left: 15px;
+}
+@media only screen and (max-width: 767px) {
+  footer > div > div ul {
+    list-style-type: none;
+  }
+}
+footer .follow-us > span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1.2;
+}
+footer .follow-us > span a {
+  margin-left: 10px;
+  transition: opacity 0.3s;
+}
+footer .follow-us > span a:hover {
+  opacity: 0.8;
+}
+@media only screen and (max-width: 991px) {
+  footer .follow-us > span:first-child {
+    display: none;
+  }
+}
+@media only screen and (max-width: 767px) {
+  footer .follow-us > span:first-child {
+    display: inline-block;
+  }
+}
+footer a {
+  color: white;
+  transition: color 0.3s;
+}
+footer a:hover {
+  color: #5fafa7;
+  text-decoration: none;
+}
+.grid-item {
+  width: 290px;
+  margin-bottom: 35px;
+}
+.grid-item--width2 {
+  width: 580px;
+}
+.grid-item--text {
+  height: 290px;
+  background: #9a7363;
+  color: white;
 }

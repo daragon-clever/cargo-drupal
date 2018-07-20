@@ -556,7 +556,7 @@ header .inner .menu-link.active {
 }
 .hp-insta #instafeed .slick-slide > a .overlay-wrapper > span .likes:before {
   content: '';
-  background: url("../../../files/inline-images/home/instagram-likes.png") no-repeat center transparent;
+  background: url("../images/home/instagram-likes.png") no-repeat center transparent;
   height: 27px;
   width: 30px;
   vertical-align: middle;
@@ -568,7 +568,7 @@ header .inner .menu-link.active {
 }
 .hp-insta #instafeed .slick-slide > a .overlay-wrapper > span .comments:before {
   content: '';
-  background: url("../../../files/inline-images/home/instagram-comments.png") no-repeat center transparent;
+  background: url("../images/home/instagram-comments.png") no-repeat center transparent;
   height: 27px;
   width: 28px;
   vertical-align: middle;
@@ -598,7 +598,7 @@ header .inner .menu-link.active {
 .hp-insta #instafeed .slick-prev:before,
 .hp-insta #instafeed .slick-next:before {
   content: '';
-  background: url("../../../files/inline-images/home/instagram-arrow.png") no-repeat center transparent;
+  background: url("../images/home/instagram-arrow.png") no-repeat center transparent;
   height: 7px;
   width: 17px;
   vertical-align: middle;

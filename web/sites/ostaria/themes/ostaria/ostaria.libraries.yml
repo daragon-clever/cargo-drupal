@@ -1,16 +1,3 @@
-# Style général
-global-styling:
-  header: true
-  css:
-    theme:
-      css/style.css: {}
-  js:
-    js/instafeed.min.js: {}
-    js/masonry.pkgd.min.js: {}
-    js/custom-js.js: {}
-  dependencies:
-    - core/jquery
-
 ######## Plugin & Framework ########
 
 # Bootstrap 4
@@ -21,10 +8,39 @@ bootstrap:
   js:
     bootstrap4/js/bootstrap.bundle.min.js: {}
 
-# Plugin Slick - Slideshow - # Volontairement en 1.6.0 car vers.supp pose soucis avec transitions CSS
+# Instafeed
+instafeed:
+  header: true
+  js:
+    js/instafeed.min.js: {}
+  dependencies:
+    - core/jquery
+
+# Masonry plugin
+masonry:
+  js:
+    js/masonry.pkgd.min.js: {}
+  dependencies:
+    - core/jquery
+
+# Plugin Slick
 slick:
   js:
     https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js: { type: external }
+  dependencies:
+    - core/jquery
   css:
     theme:
       https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css: { type: external }
+
+# Style général
+global-styling:
+#  header: true
+  css:
+    theme:
+      css/style.css: {}
+  js:
+#    js/masonry.pkgd.min.js: {}
+    js/custom-js.js: {}
+  dependencies:
+    - core/jquery

@@ -15,7 +15,7 @@ function masonry_pre_render(ViewExecutable $view) {
 
 function ostaria_preprocess_node(&$variables) {
     $node = $variables['node'];
-    if ($node->getType() == 'photo') {
+    if ($node->getType() == 'photos_inspirations' OR $node->getType() == 'photo') {
         $variables['#attached']['library'][] = 'ostaria/masonry';
     }
 }

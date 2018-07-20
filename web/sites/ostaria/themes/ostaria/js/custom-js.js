@@ -30,35 +30,95 @@ jQuery(document).ready(function($) {
         }
     });
 
-    /***** Masonry stuff *****/
-    /* Blocs texte */
-    $( "<div class='grid-item grid-item--text' nvs-animation-delay='200' nvs-animation-type='in-left'>Test</div>" ).insertAfter(".grid-item:nth-child(1)");
-    $( "<div class='grid-item grid-item--text' nvs-animation-delay='200' nvs-animation-type='in-left'>Test</div>" ).insertAfter(".grid-item:nth-child(11)");
-    $( "<div class='grid-item grid-item--text' nvs-animation-delay='200' nvs-animation-type='in-left'>Test</div>" ).insertAfter(".grid-item:nth-child(17)");
-    $( "<div class='grid-item grid-item--text' nvs-animation-delay='200' nvs-animation-type='in-left'>Test</div>" ).insertAfter(".grid-item:nth-child(25)");
+    // Instafeed
+    if ($('#instafeed').length) {
+        var userFeed = new Instafeed({
+            get: 'user',
+            userId: '8227460958',
+            accessToken: '8227460958.1677ed0.9042fc03b313415b804d04d205e6bc7c',
+            limit: 8,
+            resolution: 'standard_resolution',
+            // Slick
+            after: function () {
+                $('#instafeed').slick({
+                    infinite: true,
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
+                    responsive: [
+                        {
+                            breakpoint: 1024,
+                            settings: {
+                                slidesToShow: 3,
+                                slidesToScroll: 3,
+                            }
+                        },
+                        {
+                            breakpoint: 600,
+                            settings: {
+                                slidesToShow: 2,
+                                slidesToScroll: 2
+                            }
+                        },
+                        {
+                            breakpoint: 480,
+                            settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1
+                            }
+                        }
+                    ]
+                });
+            },
+            template:
+            '<div>' +
+            '<a href="{{link}}" id="{{id}}" target="_blank"><img class="img-fluid" src="{{image}}" />' +
+            '<span class="overlay-wrapper"><span>' +
+            '<span class="likes">{{likes}}</span>' +
+            '<span class="comments">{{comments}}</span>' +
+            '</span></span></a>' +
+            '</div>'
+        });
+        userFeed.run();
+    }
 
-    /* Add class if width > 290 */
-    $('.grid-item > img').each(function() {
-        var width = $(this).width();
-        if (width > 290) {
-            $(this).parent('.grid-item').addClass('grid-item--width2');
-        }
-    });
+    /***** Masonry *****/
+    if ($('#inspirations-grid').length) {
+        /* Blocs texte */
+        var txtBlock = $("#txt-template").html();
+        $( txtBlock ).insertAfter(".grid-item:not(.grid-item--text):nth-child(1)");
+        $( txtBlock ).insertAfter(".grid-item:not(.grid-item--text):nth-child(11)");
+        $( txtBlock ).insertAfter(".grid-item:not(.grid-item--text):nth-child(17)");
+        $( txtBlock ).insertAfter(".grid-item:not(.grid-item--text):nth-child(25)");
+        /* Ajout des différents style pour bloc texte */
+        $(function(){
+            $(".grid-item--text").each(function(i){
+                $(this).addClass("style-" + i);
+            });
+        });
 
-    /* Function shuffle */
-    (function(d){d.fn.shuffle=function(c){c=[];return this.each(function(){c.push(d(this).clone(true))}).each(function(a,b){d(b).replaceWith(c[a=Math.floor(Math.random()*c.length)]);c.splice(a,1)})};d.shuffle=function(a){return d(a).shuffle()}})(jQuery);
-    // First, shuffle all except text and big one
-    $('.grid-item:not(.grid-item--text):not(.grid-item--width2)').shuffle();
-    // Then the big ones
-    $('.grid-item.grid-item--width2').shuffle();
+        /* Add class if width > 290 */
+        $('.grid-item > img').each(function() {
+            var width = $(this).width();
+            if (width > 290) {
+                $(this).parent('.grid-item').addClass('grid-item--width2');
+            }
+        });
+
+        /* Function shuffle */
+        (function(d){d.fn.shuffle=function(c){c=[];return this.each(function(){c.push(d(this).clone(true))}).each(function(a,b){d(b).replaceWith(c[a=Math.floor(Math.random()*c.length)]);c.splice(a,1)})};d.shuffle=function(a){return d(a).shuffle()}})(jQuery);
+        // First, shuffle all except text and big one
+        $('.grid-item:not(.grid-item--text):not(.grid-item--width2)').shuffle();
+        // Then the big ones
+        $('.grid-item.grid-item--width2').shuffle();
 
 
-    /* Init plugin */
-    $('.grid').masonry({
-        itemSelector: '.grid-item',
-        columnWidth: 290,
-        gutter: 35
-    });
+        /* Init plugin */
+        $('.grid').masonry({
+            itemSelector: '.grid-item',
+            columnWidth: 290,
+            gutter: 35
+        });
+    }
 });
 
 // Animations - Récup des attr sur elements
@@ -99,51 +159,3 @@ jQuery(document).ready(function($) {
         nvsAddAnimation();
     });
 }(jQuery, window, document));
-
-// Instafeed
-var userFeed = new Instafeed({
-    get: 'user',
-    userId: '8227460958',
-    accessToken: '8227460958.1677ed0.9042fc03b313415b804d04d205e6bc7c',
-    limit: 8,
-    resolution: 'standard_resolution',
-    after: function () {
-        jQuery('#instafeed').slick({
-            infinite: true,
-            slidesToShow: 4,
-            slidesToScroll: 4,
-            responsive: [
-                {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3,
-                    }
-                },
-                {
-                    breakpoint: 600,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                }
-            ]
-        });
-    },
-    template:
-    '<div>' +
-        '<a href="{{link}}" id="{{id}}" target="_blank"><img class="img-fluid" src="{{image}}" />' +
-        '<span class="overlay-wrapper"><span>' +
-            '<span class="likes">{{likes}}</span>' +
-            '<span class="comments">{{comments}}</span>' +
-        '</span></span></a>' +
-    '</div>'
-});
-userFeed.run();

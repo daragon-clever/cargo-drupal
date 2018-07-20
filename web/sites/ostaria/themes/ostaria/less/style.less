@@ -523,6 +523,54 @@ footer {
   }
 }
 ///////////////////////////// INSPIRATIONS /////////////////////////////
-.grid-item { width: 290px; margin-bottom: 35px }
-.grid-item--width2 { width: 615px; }
-.grid-item--text { height: 290px; background: #9a7363; color: white }
+.grid-item {
+  width: 290px;
+  margin-bottom: 35px;
+  &.grid-item--width2 {
+    width: 615px;
+  }
+  &.grid-item--text {
+    height: 290px;
+    background: #9a7363;
+    color: white;
+    line-height: 2;
+    font-weight: 300;
+    text-align: center;
+    font-size: 21px;
+    .flex-wrapper {
+      display: flex;
+      height: 100%;
+      .inner {
+        margin: auto;
+        ul {
+          padding: 0;
+          list-style-type: none;
+        }
+      }
+    }
+  }
+  &.style-0 {
+    background-color: #3a7972;
+    li:first-child {
+      font-weight: 600
+    }
+  }
+  &.style-1 {
+    background-color: #3d5a67;
+    li:nth-child(2) {
+      font-weight: 600
+    }
+  }
+  &.style-2 {
+    background-color: #9a7363;
+    li:nth-child(3) {
+      font-weight: 600
+    }
+  }
+  &.style-3 {
+    background-color: #393939;
+    li:nth-child(4) {
+      font-weight: 600
+    }
+  }
+}

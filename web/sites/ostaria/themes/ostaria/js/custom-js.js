@@ -84,10 +84,17 @@ jQuery(document).ready(function($) {
     /***** Masonry *****/
     if ($('#inspirations-grid').length) {
         /* Blocs texte */
-        $( "<div class='grid-item grid-item--text' nvs-animation-delay='200' nvs-animation-type='in-left'>Test</div>" ).insertAfter(".grid-item:nth-child(1)");
-        $( "<div class='grid-item grid-item--text' nvs-animation-delay='200' nvs-animation-type='in-left'>Test</div>" ).insertAfter(".grid-item:nth-child(11)");
-        $( "<div class='grid-item grid-item--text' nvs-animation-delay='200' nvs-animation-type='in-left'>Test</div>" ).insertAfter(".grid-item:nth-child(17)");
-        $( "<div class='grid-item grid-item--text' nvs-animation-delay='200' nvs-animation-type='in-left'>Test</div>" ).insertAfter(".grid-item:nth-child(25)");
+        var txtBlock = $("#txt-template").html();
+        $( txtBlock ).insertAfter(".grid-item:not(.grid-item--text):nth-child(1)");
+        $( txtBlock ).insertAfter(".grid-item:not(.grid-item--text):nth-child(11)");
+        $( txtBlock ).insertAfter(".grid-item:not(.grid-item--text):nth-child(17)");
+        $( txtBlock ).insertAfter(".grid-item:not(.grid-item--text):nth-child(25)");
+        /* Ajout des différents style pour bloc texte */
+        $(function(){
+            $(".grid-item--text").each(function(i){
+                $(this).addClass("style-" + i);
+            });
+        });
 
         /* Add class if width > 290 */
         $('.grid-item > img').each(function() {

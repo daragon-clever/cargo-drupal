@@ -708,11 +708,50 @@ footer a:hover {
   width: 290px;
   margin-bottom: 35px;
 }
-.grid-item--width2 {
+.grid-item.grid-item--width2 {
   width: 615px;
 }
-.grid-item--text {
+.grid-item.grid-item--text {
   height: 290px;
   background: #9a7363;
   color: white;
+  line-height: 2;
+  font-weight: 300;
+  text-align: center;
+  font-size: 21px;
+}
+.grid-item.grid-item--text .flex-wrapper {
+  display: flex;
+  height: 100%;
+}
+.grid-item.grid-item--text .flex-wrapper .inner {
+  margin: auto;
+}
+.grid-item.grid-item--text .flex-wrapper .inner ul {
+  padding: 0;
+  list-style-type: none;
+}
+.grid-item.style-0 {
+  background-color: #3a7972;
+}
+.grid-item.style-0 li:first-child {
+  font-weight: 600;
+}
+.grid-item.style-1 {
+  background-color: #3d5a67;
+}
+.grid-item.style-1 li:nth-child(2) {
+  font-weight: 600;
+}
+.grid-item.style-2 {
+  background-color: #9a7363;
+}
+.grid-item.style-2 li:nth-child(3) {
+  font-weight: 600;
+}
+.grid-item.style-3 {
+  background-color: #393939;
+}
+.grid-item.style-3 li:nth-child(4) {
+  font-weight: 600;
 }

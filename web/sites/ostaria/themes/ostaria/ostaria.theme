@@ -1,0 +1,21 @@
+<?php
+
+// JS call : instafeed only on homepage
+function ostaria_preprocess_page(&$variables){
+    if ($variables['is_front'] == TRUE) {
+        $variables['#attached']['library'][] = 'ostaria/instafeed';
+    }
+}
+
+function masonry_pre_render(ViewExecutable $view) {
+    if (isset($view) && ($view->storage->id() == 'super_awesome_view')) {
+        $view->element['#attached']['library'][] = 'custom/custom_view';
+    }
+}
+
+function ostaria_preprocess_node(&$variables) {
+    $node = $variables['node'];
+    if ($node->getType() == 'photo') {
+        $variables['#attached']['library'][] = 'ostaria/masonry';
+    }
+}

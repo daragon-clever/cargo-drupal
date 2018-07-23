@@ -16,14 +16,6 @@ instafeed:
   dependencies:
     - core/jquery
 
-# Masonry plugin
-masonry:
-  header: true
-  js:
-    js/masonry.pkgd.min.js: {}
-  dependencies:
-    - core/jquery
-
 # Plugin Slick
 slick:
   js:

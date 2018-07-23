@@ -85,39 +85,40 @@ jQuery(document).ready(function($) {
     if ($('#inspirations-grid').length) {
         /* Blocs texte */
         var txtBlock = $("#txt-template").html();
-        $( txtBlock ).insertAfter(".grid-item:not(.grid-item--text):nth-child(1)");
-        $( txtBlock ).insertAfter(".grid-item:not(.grid-item--text):nth-child(11)");
-        $( txtBlock ).insertAfter(".grid-item:not(.grid-item--text):nth-child(17)");
-        $( txtBlock ).insertAfter(".grid-item:not(.grid-item--text):nth-child(25)");
+        $( txtBlock ).insertAfter(".item:not(.text):nth-child(1)");
+        $( txtBlock ).insertAfter(".item:not(.text):nth-child(11)");
+        $( txtBlock ).insertAfter(".item:not(.text):nth-child(17)");
+        $( txtBlock ).insertAfter(".item:not(.text):nth-child(25)");
         /* Ajout des différents style pour bloc texte */
         $(function(){
-            $(".grid-item--text").each(function(i){
+            $(".item.text").each(function(i){
                 $(this).addClass("style-" + i);
             });
         });
 
         /* Add class if width > 290 */
-        $('.grid-item > img').each(function() {
-            var width = $(this).width();
+        $(".item > img").each(function () {
+            var width = $(this).attr('width');
             if (width > 290) {
-                $(this).parent('.grid-item').addClass('grid-item--width2');
+                $(this).parent('.item').addClass('big');
             }
+        });
+
+        /* Float right big right ones */
+        $(function(){
+            $(".item.big").each(function(i){
+                if (i % 2 == 1) {
+                    $(this).addClass("js-float-right");
+                }
+            });
         });
 
         /* Function shuffle */
         (function(d){d.fn.shuffle=function(c){c=[];return this.each(function(){c.push(d(this).clone(true))}).each(function(a,b){d(b).replaceWith(c[a=Math.floor(Math.random()*c.length)]);c.splice(a,1)})};d.shuffle=function(a){return d(a).shuffle()}})(jQuery);
         // First, shuffle all except text and big one
-        $('.grid-item:not(.grid-item--text):not(.grid-item--width2)').shuffle();
+        $('.item:not(.text):not(.big)').shuffle();
         // Then the big ones
-        $('.grid-item.grid-item--width2').shuffle();
-
-
-        /* Init plugin */
-        $('.grid').masonry({
-            itemSelector: '.grid-item',
-            columnWidth: 290,
-            gutter: 35
-        });
+        $('.item.big').shuffle();
     }
 });
 

@@ -1,8 +1,8 @@
 {% if multiple %}
-<div id="inspirations-grid" class="grid row">
+<div id="inspirations-grid">
 {% endif %}
     {% for item in items %}
-    <div class="grid-item" nvs-animation-delay="200" nvs-animation-type="in-left" {{ item.attributes }}>{{ item.content }}</div>
+    <div class="item" nvs-animation-delay="200" nvs-animation-type="in-left" {{ item.attributes }}>{{ item.content }}</div>
     {% endfor %}
 {% if multiple %}
 </div>

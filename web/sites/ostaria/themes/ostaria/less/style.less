@@ -523,54 +523,93 @@ footer {
   }
 }
 ///////////////////////////// INSPIRATIONS /////////////////////////////
-.grid-item {
-  width: 290px;
-  margin-bottom: 35px;
-  &.grid-item--width2 {
-    width: 615px;
-  }
-  &.grid-item--text {
-    height: 290px;
-    background: #9a7363;
-    color: white;
-    line-height: 2;
-    font-weight: 300;
-    text-align: center;
-    font-size: 21px;
-    .flex-wrapper {
-      display: flex;
-      height: 100%;
-      .inner {
-        margin: auto;
-        ul {
-          padding: 0;
-          list-style-type: none;
+#inspirations-grid {
+  margin-left: -15px;
+  margin-right: -15px;
+  .item {
+    width: 20%;
+    border: 14px solid #fff;
+    float: left;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    @media @tablet {
+      border-width: 5px;
+    }
+    @media @phone {
+      width: 50% !important;
+      float: left !important;
+    }
+    &.big {
+      width: 40%;
+      &.js-float-right {
+        float: right;
+      }
+    }
+    &:before {
+      content: '';
+      display: block;
+      padding-top: 100%;
+    }
+    & > img {
+      display: block;
+      height: auto;
+      width: 100%;
+      max-width: 100%;
+      position: absolute;
+      top: 0;
+    }
+    &.text {
+      background: #9a7363;
+      color: white;
+      line-height: 2;
+      font-weight: 300;
+      text-align: center;
+      font-size: 21px;
+      @media (max-width: 1024px) {
+        line-height: 1.6;
+        font-size: 15px;
+      }
+      .flex-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        height: 100%;
+        .inner {
+          margin: auto;
+          ul {
+            padding: 0;
+            margin-bottom: 0;
+            list-style-type: none;
+          }
         }
       }
     }
-  }
-  &.style-0 {
-    background-color: #3a7972;
-    li:first-child {
-      font-weight: 600
+    &.style-0 {
+      background-color: #3a7972;
+      li:first-child {
+        font-weight: 600
+      }
     }
-  }
-  &.style-1 {
-    background-color: #3d5a67;
-    li:nth-child(2) {
-      font-weight: 600
+    &.style-1 {
+      background-color: #3d5a67;
+      li:nth-child(2) {
+        font-weight: 600
+      }
     }
-  }
-  &.style-2 {
-    background-color: #9a7363;
-    li:nth-child(3) {
-      font-weight: 600
+    &.style-2 {
+      background-color: #9a7363;
+      li:nth-child(3) {
+        font-weight: 600
+      }
     }
-  }
-  &.style-3 {
-    background-color: #393939;
-    li:nth-child(4) {
-      font-weight: 600
+    &.style-3 {
+      background-color: #393939;
+      li:nth-child(4) {
+        font-weight: 600
+      }
     }
   }
 }

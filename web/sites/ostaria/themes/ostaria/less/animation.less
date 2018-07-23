@@ -27,6 +27,7 @@
     animation: none !important;
     transform: none !important;;
     transition-property: none !important;;
+    visibility: visible !important;
   }
 }
 // Show elements when on screen
@@ -54,6 +55,16 @@
     transform: translateX(0);
   }
 }
+@keyframes fadeInBottom {
+  from {
+    opacity:0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity:1;
+    transform: translateY(0);
+  }
+}
 @keyframes fadeIn {
   from {
     opacity:0;
@@ -75,6 +86,11 @@
 }
 .in-right {
   animation-name: fadeInRight;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+}
+.in-bottom {
+  animation-name: fadeInBottom;
   animation-fill-mode: both;
   animation-duration: 1s;
 }

@@ -243,6 +243,51 @@ body:before {
 body:after {
   bottom: 0;
 }
+h1 {
+  font-size: 21px;
+  color: #5fafa7;
+  position: relative;
+  text-align: center;
+  padding: 15px 0 10px;
+}
+h1:after {
+  content: '';
+  height: 1px;
+  background: #5fafa7;
+  display: block;
+  width: 40px;
+  margin: 15px auto 0;
+  z-index: 10;
+}
+h2 {
+  font-size: 21px;
+  color: #5fafa7;
+}
+h2:before {
+  display: block;
+  content: '';
+  height: 1px;
+  width: 35px;
+  background: #5fafa7;
+  margin-bottom: 8px;
+}
+@media only screen and (max-width: 991px) {
+  h2 {
+    font-size: 18px;
+    text-align: center;
+  }
+  h2:before {
+    display: none;
+  }
+  h2:after {
+    display: block;
+    margin: 10px auto;
+    content: '';
+    height: 1px;
+    width: 35px;
+    background: #5fafa7;
+  }
+}
 .btn-cta {
   display: inline-block;
   color: white;
@@ -472,35 +517,6 @@ header .inner .menu-link.active {
     margin-top: 30px;
     margin-bottom: 15px;
     text-align: center;
-  }
-}
-.mea-wrapper .txt-wrapper .inner h2 {
-  font-size: 21px;
-  color: #5fafa7;
-}
-.mea-wrapper .txt-wrapper .inner h2:before {
-  display: block;
-  content: '';
-  height: 1px;
-  width: 35px;
-  background: #5fafa7;
-  margin-bottom: 8px;
-}
-@media only screen and (max-width: 991px) {
-  .mea-wrapper .txt-wrapper .inner h2 {
-    font-size: 18px;
-    text-align: center;
-  }
-  .mea-wrapper .txt-wrapper .inner h2:before {
-    display: none;
-  }
-  .mea-wrapper .txt-wrapper .inner h2:after {
-    display: block;
-    margin: 10px auto;
-    content: '';
-    height: 1px;
-    width: 35px;
-    background: #5fafa7;
   }
 }
 .mea-wrapper .txt-wrapper .inner p {
@@ -791,6 +807,17 @@ footer a:hover {
   padding: 0;
   margin-bottom: 0;
   list-style-type: none;
+}
+#inspirations-grid .item.text .flex-wrapper .inner ul li {
+  position: relative;
+}
+#inspirations-grid .item.text .flex-wrapper .inner ul li:last-child:after {
+  content: '';
+  height: 1px;
+  background: white;
+  display: block;
+  margin: 10px auto 0;
+  width: 40px;
 }
 #inspirations-grid .item.style-0 {
   background-color: #3a7972;

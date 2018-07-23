@@ -67,6 +67,49 @@ body {
   }
 }
 ///////////////////////////// UI /////////////////////////////
+h1 {
+  font-size: 21px;
+  color: @mint;
+  position: relative;
+  text-align: center;
+  padding: 15px 0 10px;
+  &:after {
+    content: '';
+    height: 1px;
+    background: @mint;
+    display: block;
+    width: 40px;
+    margin: 15px auto 0;
+    z-index: 10;
+  }
+}
+h2 {
+  font-size: 21px;
+  color: @mint;
+  &:before {
+    display: block;
+    content: '';
+    height: 1px;
+    width: 35px;
+    background: @mint;
+    margin-bottom: 8px;
+  }
+  @media @tablet {
+    font-size: 18px;
+    text-align: center;
+    &:before {
+      display: none;
+    }
+    &:after {
+      display: block;
+      margin: 10px auto;
+      content: '';
+      height: 1px;
+      width: 35px;
+      background: @mint;
+    }
+  }
+}
 .btn-cta {
   display: inline-block;
   color: white;
@@ -291,33 +334,6 @@ header {
         margin-top: 30px;
         margin-bottom: 15px;
         text-align: center;
-      }
-      h2 {
-        font-size: 21px;
-        color: @mint;
-        &:before {
-          display: block;
-          content: '';
-          height: 1px;
-          width: 35px;
-          background: @mint;
-          margin-bottom: 8px;
-        }
-        @media @tablet {
-          font-size: 18px;
-          text-align: center;
-          &:before {
-            display: none;
-          }
-          &:after {
-            display: block;
-            margin: 10px auto;
-            content: '';
-            height: 1px;
-            width: 35px;
-            background: @mint;
-          }
-        }
       }
       p {
         font-size: 14px;
@@ -583,6 +599,17 @@ footer {
             padding: 0;
             margin-bottom: 0;
             list-style-type: none;
+            li {
+              position: relative;
+              &:last-child:after {
+                content: '';
+                height: 1px;
+                background: white;
+                display: block;
+                margin: 10px auto 0;
+                width: 40px;
+              }
+            }
           }
         }
       }

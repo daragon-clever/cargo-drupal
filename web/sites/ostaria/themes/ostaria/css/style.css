@@ -819,27 +819,294 @@ footer a:hover {
   margin: 10px auto 0;
   width: 40px;
 }
-#inspirations-grid .item.style-0 {
+#inspirations-grid .item.style-1 {
   background-color: #3a7972;
 }
-#inspirations-grid .item.style-0 li:first-child {
-  font-weight: 600;
-}
-#inspirations-grid .item.style-1 {
-  background-color: #3d5a67;
-}
-#inspirations-grid .item.style-1 li:nth-child(2) {
+#inspirations-grid .item.style-1 li:first-child {
   font-weight: 600;
 }
 #inspirations-grid .item.style-2 {
-  background-color: #9a7363;
+  background-color: #3d5a67;
 }
-#inspirations-grid .item.style-2 li:nth-child(3) {
+#inspirations-grid .item.style-2 li:nth-child(2) {
   font-weight: 600;
 }
 #inspirations-grid .item.style-3 {
+  background-color: #9a7363;
+}
+#inspirations-grid .item.style-3 li:nth-child(3) {
+  font-weight: 600;
+}
+#inspirations-grid .item.style-4 {
   background-color: #393939;
 }
-#inspirations-grid .item.style-3 li:nth-child(4) {
+#inspirations-grid .item.style-4 li:nth-child(4) {
   font-weight: 600;
+}
+.fullwidth {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 30px;
+  background: #232323;
+  color: white;
+  text-align: center;
+}
+.fullwidth .container {
+  max-width: 1160px;
+}
+.fullwidth .container > div > div {
+  text-align: left;
+  display: flex;
+}
+.fullwidth .title {
+  font-size: 21px;
+  color: #5fafa7;
+  font-weight: 400;
+  margin: auto;
+  line-height: 1.3;
+}
+.fullwidth .title:before {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 40px;
+  margin-bottom: 10px;
+  background: #5fafa7;
+}
+.fullwidth .intro {
+  line-height: 1.3;
+  border-left: 1px solid #5fafa7;
+  font-size: 14px;
+  padding-left: 15px;
+  margin: auto;
+}
+.marque-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+.marque-wrapper .text .title {
+  font-size: 36px;
+  font-weight: 300;
+  position: relative;
+  display: block;
+}
+@media only screen and (max-width: 991px) {
+  .marque-wrapper .text .title {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+}
+.marque-wrapper .text .title b {
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.marque-wrapper .text .title:before,
+.marque-wrapper .text .title:after {
+  top: 50%;
+  display: block;
+  position: absolute;
+  background: black;
+}
+.marque-wrapper .text .title:before {
+  content: '';
+  height: 1px;
+  width: 125px;
+  margin-top: -1px;
+}
+.marque-wrapper .text .title:after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50px;
+  margin-top: -4px;
+}
+.marque-wrapper .text p {
+  position: relative;
+  font-size: 14px;
+  line-height: 1.3;
+  margin: 0;
+}
+.marque-wrapper .text p:before {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 1px;
+  background: black;
+  z-index: 20;
+  position: absolute;
+}
+.marque-wrapper .text.letter-O {
+  max-width: 450px;
+  margin-left: 15px;
+}
+.marque-wrapper .text.letter-O .title {
+  color: #d6a938;
+}
+.marque-wrapper .text.letter-O .title:before,
+.marque-wrapper .text.letter-O .title:after {
+  background: #d6a938;
+}
+.marque-wrapper .text.letter-O p:before {
+  background: #d6a938;
+}
+.marque-wrapper .text.letter-S {
+  max-width: 600px;
+  margin-right: -50px;
+}
+.marque-wrapper .text.letter-S .title {
+  color: #a5bfaf;
+}
+.marque-wrapper .text.letter-S .title:before,
+.marque-wrapper .text.letter-S .title:after {
+  background: #a5bfaf;
+}
+.marque-wrapper .text.letter-S p:before {
+  background: #a5bfaf;
+}
+.marque-wrapper .text.letter-T {
+  max-width: 625px;
+  margin-left: 15px;
+}
+.marque-wrapper .text.letter-T .title {
+  color: #ccb82e;
+}
+.marque-wrapper .text.letter-T .title:before,
+.marque-wrapper .text.letter-T .title:after {
+  background: #ccb82e;
+}
+.marque-wrapper .text.letter-T p:before {
+  background: #ccb82e;
+}
+.marque-wrapper .text.letter-A {
+  max-width: 600px;
+  margin-right: -40px;
+}
+.marque-wrapper .text.letter-A .title {
+  color: #7da9b3;
+}
+.marque-wrapper .text.letter-A .title:before,
+.marque-wrapper .text.letter-A .title:after {
+  background: #7da9b3;
+}
+.marque-wrapper .text.letter-A p:before {
+  background: #7da9b3;
+}
+.marque-wrapper .text.letter-R {
+  max-width: 650px;
+  margin-left: -50px;
+}
+.marque-wrapper .text.letter-R .title {
+  color: #146a8b;
+}
+.marque-wrapper .text.letter-R .title:before,
+.marque-wrapper .text.letter-R .title:after {
+  background: #146a8b;
+}
+.marque-wrapper .text.letter-R p:before {
+  background: #146a8b;
+}
+.marque-wrapper .text.letter-I {
+  max-width: 625px;
+  margin-right: -90px;
+}
+.marque-wrapper .text.letter-I .title {
+  color: #e0aaa5;
+}
+.marque-wrapper .text.letter-I .title:before,
+.marque-wrapper .text.letter-I .title:after {
+  background: #e0aaa5;
+}
+.marque-wrapper .text.letter-I p:before {
+  background: #e0aaa5;
+}
+.marque-wrapper .text.letter-A2 {
+  max-width: 720px;
+  margin-left: 30px;
+}
+.marque-wrapper .text.letter-A2 .title {
+  color: #3d8188;
+}
+.marque-wrapper .text.letter-A2 .title:before,
+.marque-wrapper .text.letter-A2 .title:after {
+  background: #3d8188;
+}
+.marque-wrapper .text.letter-A2 p:before {
+  background: #3d8188;
+}
+@media only screen and (max-width: 991px) {
+  .marque-wrapper .text {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+.marque-wrapper .left-align {
+  text-align: left;
+}
+.marque-wrapper .left-align .text {
+  padding-left: 150px;
+  text-align: left;
+}
+@media only screen and (max-width: 991px) {
+  .marque-wrapper .left-align .text {
+    padding-left: 50px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .marque-wrapper .left-align .text {
+    padding: 0 15px;
+  }
+}
+.marque-wrapper .left-align .text p {
+  padding-left: 10px;
+}
+.marque-wrapper .left-align .text p:before {
+  left: 0;
+}
+.marque-wrapper .left-align .text .title:before,
+.marque-wrapper .left-align .text .title:after {
+  left: -140px;
+}
+@media only screen and (max-width: 991px) {
+  .marque-wrapper .left-align .text .title:before,
+  .marque-wrapper .left-align .text .title:after {
+    display: none;
+  }
+}
+.marque-wrapper .right-align {
+  text-align: right;
+}
+.marque-wrapper .right-align .text {
+  padding-right: 150px;
+  text-align: right;
+}
+@media only screen and (max-width: 991px) {
+  .marque-wrapper .right-align .text {
+    padding-right: 50px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .marque-wrapper .right-align .text {
+    padding: 0 15px;
+  }
+}
+.marque-wrapper .right-align .text p {
+  padding-right: 10px;
+}
+.marque-wrapper .right-align .text p:before {
+  right: 0;
+}
+.marque-wrapper .right-align .text .title:before,
+.marque-wrapper .right-align .text .title:after {
+  right: -140px;
+}
+@media only screen and (max-width: 991px) {
+  .marque-wrapper .right-align .text .title:before,
+  .marque-wrapper .right-align .text .title:after {
+    display: none;
+  }
 }

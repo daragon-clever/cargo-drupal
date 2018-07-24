@@ -12,10 +12,22 @@
 @mint: #5fafa7;
 @darkMint: #256a63;
 
-// Quick
+// Functions
 .dimOpacityOnHover (@opacity) {
   transition: opacity 0.3s;
   &:hover {
     opacity: @opacity;
+  }
+}
+
+.lettersColor (@color) {
+  .title {
+    color: @color;
+    &:before, &:after {
+      background: @color;
+    }
+  }
+  p:before {
+    background: @color;
   }
 }

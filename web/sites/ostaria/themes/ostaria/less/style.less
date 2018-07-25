@@ -152,6 +152,11 @@ header {
         margin-left: 5px;
         width: 20px;
         height: 14px;
+        @media @phone {
+          margin-left: 0;
+          margin-right: 5px;
+          height: auto;
+        }
         .bar {
           width: 14px;
           height: 2px;
@@ -160,6 +165,10 @@ header {
           margin: 4px 0;
           transition: all 0.3s;
           opacity: 1;
+          @media @phone {
+            width: 20px;
+            height: 3px;
+          }
           &:first-child {
             margin-top:0;
           }
@@ -172,8 +181,14 @@ header {
             width: 18px;
             transform: rotate(45deg);
             background: @lightMint;
+            @media @phone {
+              width: 24px;
+            }
             &:first-child {
               transform: rotate(-45deg) translate(-4px, 4px);
+              @media @phone {
+                transform : rotate(-45deg) translate(-5px, 5px)
+              }
             }
             &:last-child {
               opacity: 0;
@@ -330,11 +345,27 @@ header {
     .inner {
       max-width: 315px;
       margin: 0 auto;
+      position: relative;
       @media @tablet {
         max-width: 100%;
         margin-top: 30px;
         margin-bottom: 15px;
         text-align: center;
+      }
+      &:after {
+        content: 'scroll';
+        text-align: center;
+        display: block;
+        width: 50px;
+        height: 50px;
+        color: #5fafa7;
+        position: absolute;
+        bottom: -220px;
+        left: 50%;
+        margin-left: -25px;
+        background: url("../images/home/scroll_arrow.png") no-repeat center bottom transparent;
+        -webkit-animation: mover 1s infinite  alternate;
+        animation: mover 1s infinite  alternate;
       }
       p {
         font-size: 14px;
@@ -350,6 +381,9 @@ header {
         }
       }
     }
+  }
+  &.last .inner:after {
+    display: none;
   }
 }
 .hp-insta {
@@ -953,7 +987,7 @@ footer {
           }
           .date {
             display: block;
-            text-transform: none;
+            text-transform: capitalize;
             font-size: 14px;
             @media @phone {
               font-size: 12px;

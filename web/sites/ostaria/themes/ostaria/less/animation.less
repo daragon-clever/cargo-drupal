@@ -73,6 +73,10 @@
     opacity:1;
   }
 }
+@keyframes mover {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
 .in-left {
   animation-name: fadeInLeft;
   animation-fill-mode: both;
@@ -98,4 +102,8 @@
   animation-name: fadeIn;
   animation-fill-mode: both;
   animation-duration: 1s;
+}
+.vert-move {
+  -webkit-animation: mover 1s infinite  alternate;
+  animation: mover 1s infinite  alternate;
 }

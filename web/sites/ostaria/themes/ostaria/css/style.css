@@ -133,6 +133,14 @@
     opacity: 1;
   }
 }
+@keyframes mover {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
 .in-left {
   animation-name: fadeInLeft;
   animation-fill-mode: both;
@@ -158,6 +166,10 @@
   animation-name: fadeIn;
   animation-fill-mode: both;
   animation-duration: 1s;
+}
+.vert-move {
+  -webkit-animation: mover 1s infinite  alternate;
+  animation: mover 1s infinite  alternate;
 }
 @font-face {
   font-family: 'Roboto';
@@ -336,6 +348,13 @@ header .inner .menu-link .button-wrapper {
   width: 20px;
   height: 14px;
 }
+@media only screen and (max-width: 767px) {
+  header .inner .menu-link .button-wrapper {
+    margin-left: 0;
+    margin-right: 5px;
+    height: auto;
+  }
+}
 header .inner .menu-link .button-wrapper .bar {
   width: 14px;
   height: 2px;
@@ -344,6 +363,12 @@ header .inner .menu-link .button-wrapper .bar {
   margin: 4px 0;
   transition: all 0.3s;
   opacity: 1;
+}
+@media only screen and (max-width: 767px) {
+  header .inner .menu-link .button-wrapper .bar {
+    width: 20px;
+    height: 3px;
+  }
 }
 header .inner .menu-link .button-wrapper .bar:first-child {
   margin-top: 0;
@@ -356,8 +381,18 @@ header .inner .menu-link .button-wrapper.is-active .bar {
   transform: rotate(45deg);
   background: #47bfa8;
 }
+@media only screen and (max-width: 767px) {
+  header .inner .menu-link .button-wrapper.is-active .bar {
+    width: 24px;
+  }
+}
 header .inner .menu-link .button-wrapper.is-active .bar:first-child {
   transform: rotate(-45deg) translate(-4px, 4px);
+}
+@media only screen and (max-width: 767px) {
+  header .inner .menu-link .button-wrapper.is-active .bar:first-child {
+    transform: rotate(-45deg) translate(-5px, 5px);
+  }
 }
 header .inner .menu-link .button-wrapper.is-active .bar:last-child {
   opacity: 0;
@@ -511,6 +546,7 @@ header .inner .menu-link.active {
 .mea-wrapper .txt-wrapper .inner {
   max-width: 315px;
   margin: 0 auto;
+  position: relative;
 }
 @media only screen and (max-width: 991px) {
   .mea-wrapper .txt-wrapper .inner {
@@ -519,6 +555,21 @@ header .inner .menu-link.active {
     margin-bottom: 15px;
     text-align: center;
   }
+}
+.mea-wrapper .txt-wrapper .inner:after {
+  content: 'scroll';
+  text-align: center;
+  display: block;
+  width: 50px;
+  height: 50px;
+  color: #5fafa7;
+  position: absolute;
+  bottom: -220px;
+  left: 50%;
+  margin-left: -25px;
+  background: url("../images/home/scroll_arrow.png") no-repeat center bottom transparent;
+  -webkit-animation: mover 1s infinite  alternate;
+  animation: mover 1s infinite  alternate;
 }
 .mea-wrapper .txt-wrapper .inner p {
   font-size: 14px;
@@ -534,6 +585,9 @@ header .inner .menu-link.active {
     margin: 10px 0 15px;
     font-size: 13px;
   }
+}
+.mea-wrapper.last .inner:after {
+  display: none;
 }
 .hp-insta .title img {
   display: block;
@@ -1252,7 +1306,7 @@ footer a:hover {
 }
 .presse .item .inner .presse-overlay > .inner .date {
   display: block;
-  text-transform: none;
+  text-transform: capitalize;
   font-size: 14px;
 }
 @media only screen and (max-width: 767px) {

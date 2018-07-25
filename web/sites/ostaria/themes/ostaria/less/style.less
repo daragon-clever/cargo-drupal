@@ -28,6 +28,7 @@
 body {
   padding: 80px 15px 15px;
   font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
 }
 html, body {
   position: relative;
@@ -131,7 +132,7 @@ header {
   position: fixed;
   top: 15px;
   left: 0;
-  z-index: 20;
+  z-index: 100;
   line-height: 65px;
   width: 100%;
   .inner {
@@ -640,7 +641,6 @@ footer {
     }
   }
 }
-
 ///////////////////////////// LA MARQUE /////////////////////////////
 .fullwidth {
   width: 100vw;
@@ -884,6 +884,102 @@ footer {
           }
         }
       }
+    }
+  }
+}
+///////////////////////////// ON EN PARLE /////////////////////////////
+.presse {
+  .intro {
+    text-align: center;
+    margin: 10px 0 30px;
+  }
+  .item {
+    cursor: pointer;
+    padding-bottom: 30px;
+    .inner {
+      position: relative;
+      img {
+        padding: 15px;
+        border: 1px solid @mint;
+        @media @tablet {
+          max-width: 215px;
+        }
+        @media @phone {
+          padding: 10px;
+          max-width: 140px;
+        }
+      }
+      a {
+        text-decoration: none;
+      }
+      .presse-overlay {
+        opacity: 0;
+        transition: opacity 0.3s;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        color: white;
+        background: rgba(37, 106, 99, 0.95);
+        & > .inner {
+          margin: auto;
+          text-transform: uppercase;
+          font-size: 21px;
+          font-weight: 400;
+          @media @phone {
+            font-size: 14px;
+            margin-top: 25px;
+          }
+          .title {
+            display: block;
+            line-height: 1.3;
+            &:after {
+              content: '';
+              width: 70px;
+              height: 1px;
+              background: white;
+              display: block;
+              margin: 15px auto;
+              @media @phone {
+                margin: 5px auto;
+              }
+            }
+          }
+          .date {
+            display: block;
+            text-transform: none;
+            font-size: 14px;
+            @media @phone {
+              font-size: 12px;
+            }
+          }
+        }
+        .pdf-icon {
+          position: absolute;
+          background: url("../images/presse/icon-pdf.png") no-repeat center transparent;
+          height: 36px;
+          width: 27px;
+          display: block;
+          bottom: 20px;
+          left: 50%;
+          margin-left: -14px;
+          .dimOpacityOnHover(0.8);
+          &:after {
+            content: '';
+            background: url("../images/presse/arrow-pdf.png") no-repeat center transparent;
+            height: 17px;
+            width: 7px;
+            display: block;
+            margin: 10px 0 0 35px;
+          }
+        }
+      }
+    }
+    &:hover .presse-overlay {
+      opacity: 1;
     }
   }
 }

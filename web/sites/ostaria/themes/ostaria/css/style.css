@@ -234,27 +234,27 @@ body:after {
 }
 html:before,
 html:after {
-  width: 15px;
-  height: 100%;
-  top: 0;
-}
-html:before {
-  left: 0;
-}
-html:after {
-  right: 0;
-}
-body:before,
-body:after {
   height: 15px;
   width: 100%;
   left: 0;
 }
-body:before {
+html:before {
   top: 0;
 }
-body:after {
+html:after {
   bottom: 0;
+}
+body:before,
+body:after {
+  width: 15px;
+  height: 100%;
+  top: 0;
+}
+body:before {
+  left: 0;
+}
+body:after {
+  right: 0;
 }
 h1 {
   font-size: 21px;

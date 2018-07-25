@@ -39,22 +39,8 @@ html, body {
     z-index: 1000;
   }
 }
-// Droite + Gauche
-html {
-  &:before, &:after {
-    width: @largeurBordure;
-    height: 100%;
-    top: 0;
-  }
-  &:before {
-    left: 0;
-  }
-  &:after {
-    right: 0;
-  }
-}
 // Haut + Bas
-body {
+html {
   &:before, &:after {
     height: @largeurBordure;
     width: 100%;
@@ -65,6 +51,20 @@ body {
   }
   &:after {
     bottom: 0;
+  }
+}
+// Droite + Gauche
+body {
+  &:before, &:after {
+    width: @largeurBordure;
+    height: 100%;
+    top: 0;
+  }
+  &:before {
+    left: 0;
+  }
+  &:after {
+    right: 0;
   }
 }
 ///////////////////////////// UI /////////////////////////////

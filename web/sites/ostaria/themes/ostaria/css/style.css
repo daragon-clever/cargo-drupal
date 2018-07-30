@@ -458,6 +458,40 @@ header .inner .menu-link.active {
 .navigation ul li a.is-active {
   color: white;
 }
+.navigation ul li a.big {
+  text-transform: uppercase;
+  padding: 20px 0;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  margin: 10px 0;
+  display: block;
+  font-weight: 500;
+}
+.navigation ul li a.big + span {
+  display: none;
+}
+.navigation ul li a.btn-contact {
+  background: white;
+  color: black;
+  padding: 10px 0 8px;
+  display: block;
+  text-align: center;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1;
+  margin-top: 25px;
+  transition: opacity 0.3s;
+}
+.navigation ul li a.btn-contact:hover {
+  opacity: 0.8;
+}
+.navigation ul li a.btn-contact:hover {
+  margin-left: 0;
+  color: black;
+}
+.navigation ul li a.btn-contact + span {
+  display: none;
+}
 .navigation ul li .arrow {
   display: inline-block;
   vertical-align: middle;

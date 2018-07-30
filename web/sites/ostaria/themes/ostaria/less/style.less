@@ -255,6 +255,37 @@ header {
         &.is-active {
           color: white;
         }
+        &.big {
+          text-transform: uppercase;
+          padding: 20px 0;
+          border-top: 1px solid white;
+          border-bottom: 1px solid white;
+          margin: 10px 0;
+          display: block;
+          font-weight: 500;
+          & + span {
+            display: none;
+          }
+        }
+        &.btn-contact {
+          background: white;
+          color: black;
+          padding: 10px 0 8px;
+          display: block;
+          text-align: center;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 1;
+          margin-top: 25px;
+          .dimOpacityOnHover(0.8);
+          &:hover {
+            margin-left: 0;
+            color: black;
+          }
+          & + span {
+            display: none;
+          }
+        }
       }
       .arrow {
         display: inline-block;

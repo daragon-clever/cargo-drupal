@@ -1,5 +1,5 @@
 jQuery(document).ready(function($) {
-    /** Navigation **/
+    //// Navigation
     /* Functions */
     var openNav = function () {
         $('.overlay').fadeToggle();
@@ -30,7 +30,7 @@ jQuery(document).ready(function($) {
         }
     });
 
-    // Instafeed
+    //// Instafeed
     if ($('#instafeed').length) {
         var userFeed = new Instafeed({
             get: 'user',
@@ -63,7 +63,9 @@ jQuery(document).ready(function($) {
                             breakpoint: 480,
                             settings: {
                                 slidesToShow: 1,
-                                slidesToScroll: 1
+                                slidesToScroll: 1,
+                                arrows:false,
+                                centerMode: true
                             }
                         }
                     ]
@@ -81,7 +83,7 @@ jQuery(document).ready(function($) {
         userFeed.run();
     }
 
-    /***** Masonry *****/
+    //// Masonry Custom
     if ($('#inspirations-grid').length) {
         /* Blocs texte */
         var txtBlock = $("#txt-template").html();
@@ -119,6 +121,29 @@ jQuery(document).ready(function($) {
         $('.item:not(.text):not(.big)').shuffle();
         // Then the big ones
         $('.item.big').shuffle();
+    }
+
+    //// Scroll homepage
+    $(window).scroll(function(){
+        if ($(this).scrollTop() > 50) {
+            $('.js-scroll').fadeOut('slow');
+        } else {
+            $('.js-scroll').fadeIn('slow');
+        }
+    });
+
+    //// Page Contact
+    if ($('.ostaria-contact-form').length) {
+        $('input, textarea').blur(function () {
+            tmpval = $(this).val();
+            if (tmpval == '') {
+                $(this).addClass('js-empty');
+                $(this).removeClass('js-not-empty');
+            } else {
+                $(this).addClass('js-not-empty');
+                $(this).removeClass('js-empty');
+            }
+        });
     }
 });
 

@@ -1298,37 +1298,37 @@ footer a:hover {
     padding-left: 10px;
   }
 }
-² .presse .intro {
+.presse .intro {
   text-align: center;
   margin: 10px 0 30px;
   font-weight: 500;
 }
-² .presse .item {
+.presse .item {
   cursor: pointer;
   padding-bottom: 30px;
 }
-² .presse .item .inner {
+.presse .item .inner {
   position: relative;
 }
-² .presse .item .inner img {
+.presse .item .inner img {
   padding: 15px;
   border: 1px solid #5fafa7;
 }
 @media only screen and (max-width: 991px) {
-  ² .presse .item .inner img {
+  .presse .item .inner img {
     max-width: 215px;
   }
 }
 @media only screen and (max-width: 767px) {
-  ² .presse .item .inner img {
+  .presse .item .inner img {
     padding: 10px;
     max-width: 140px;
   }
 }
-² .presse .item .inner a {
+.presse .item .inner a {
   text-decoration: none;
 }
-² .presse .item .inner .presse-overlay {
+.presse .item .inner .presse-overlay {
   opacity: 0;
   transition: opacity 0.3s;
   position: absolute;
@@ -1341,7 +1341,7 @@ footer a:hover {
   color: white;
   background: rgba(37, 106, 99, 0.95);
 }
-² .presse .item .inner .presse-overlay > .inner {
+.presse .item .inner .presse-overlay > .inner {
   margin: auto;
   text-transform: uppercase;
   font-size: 21px;
@@ -1349,17 +1349,17 @@ footer a:hover {
   padding: 0 30px;
 }
 @media only screen and (max-width: 767px) {
-  ² .presse .item .inner .presse-overlay > .inner {
+  .presse .item .inner .presse-overlay > .inner {
     font-size: 14px;
     margin-top: 25px;
     padding: 0 15px;
   }
 }
-² .presse .item .inner .presse-overlay > .inner .title {
+.presse .item .inner .presse-overlay > .inner .title {
   display: block;
   line-height: 1.3;
 }
-² .presse .item .inner .presse-overlay > .inner .title:after {
+.presse .item .inner .presse-overlay > .inner .title:after {
   content: '';
   width: 70px;
   height: 1px;
@@ -1368,21 +1368,21 @@ footer a:hover {
   margin: 15px auto;
 }
 @media only screen and (max-width: 767px) {
-  ² .presse .item .inner .presse-overlay > .inner .title:after {
+  .presse .item .inner .presse-overlay > .inner .title:after {
     margin: 5px auto;
   }
 }
-² .presse .item .inner .presse-overlay > .inner .date {
+.presse .item .inner .presse-overlay > .inner .date {
   display: block;
   text-transform: capitalize;
   font-size: 14px;
 }
 @media only screen and (max-width: 767px) {
-  ² .presse .item .inner .presse-overlay > .inner .date {
+  .presse .item .inner .presse-overlay > .inner .date {
     font-size: 12px;
   }
 }
-² .presse .item .inner .presse-overlay .pdf-icon {
+.presse .item .inner .presse-overlay .pdf-icon {
   position: absolute;
   background: url("../images/presse/icon-pdf.png") no-repeat center transparent;
   height: 36px;
@@ -1393,10 +1393,10 @@ footer a:hover {
   margin-left: -14px;
   transition: opacity 0.3s;
 }
-² .presse .item .inner .presse-overlay .pdf-icon:hover {
+.presse .item .inner .presse-overlay .pdf-icon:hover {
   opacity: 0.8;
 }
-² .presse .item .inner .presse-overlay .pdf-icon:after {
+.presse .item .inner .presse-overlay .pdf-icon:after {
   content: '';
   background: url("../images/presse/arrow-pdf.png") no-repeat center transparent;
   height: 17px;
@@ -1404,7 +1404,7 @@ footer a:hover {
   display: block;
   margin: 10px 0 0 35px;
 }
-² .presse .item:hover .presse-overlay {
+.presse .item:hover .presse-overlay {
   opacity: 1;
 }
 .ostaria-contact-form {
@@ -1549,7 +1549,7 @@ footer a:hover {
 .qsn .mea-dates > img {
   vertical-align: middle;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
   .qsn .mea-dates > img:nth-child(2) {
     margin-bottom: 30px;
   }

@@ -232,7 +232,7 @@ header {
   right: -@largeurNav;
   background: #232323;
   color: white;
-  padding: 115px 60px 0;
+  padding: 115px 60px 0 45px;
   text-align: left;
   line-height: 1.3;
   ul {
@@ -751,7 +751,7 @@ footer {
     line-height: 1.3;
     @media @phone {
       font-size: 18px;
-      margin-bottom: 30px;
+      margin-bottom: 15px;
     }
     &:before {
       content: '';
@@ -768,6 +768,10 @@ footer {
     font-size: 14px;
     padding-left: 15px;
     margin: auto;
+    @media @phone {
+      padding-left: 0;
+      border-left: none;
+    }
   }
 }
 .marque-wrapper {
@@ -969,7 +973,7 @@ footer {
       }
     }
   }
-}
+}²
 ///////////////////////////// ON EN PARLE /////////////////////////////
 .presse {
   .intro {
@@ -1197,5 +1201,164 @@ footer {
   }
   .select2-dropdown {
     border-radius: 0;
+  }
+}
+///////////////////////////// QSN /////////////////////////////
+.qsn {
+  p.main-intro {
+    font-size: 14px;
+    font-weight: 500;
+    max-width: 940px;
+    margin: 40px auto;
+  }
+  .mea-dates {
+    & > img {
+      vertical-align: middle;
+      @media @phone {
+        &:nth-child(2) {
+          margin-bottom: 30px;
+        }
+      }
+    }
+    h3 {
+      color:@darkMint;
+      font-size: 21px;
+      margin: 30px 0;
+    }
+    .dates {
+      font-size: 21px;
+      color:@mint;
+      font-weight: 500;
+      span.js-date {
+        cursor: pointer;
+        transition: color 0.5s;
+        &:hover {
+          color: @darkMint;
+        }
+      }
+      span.current {
+        color: @darkMint;
+        font-weight: 700;
+        border-top: 1px solid @darkMint;
+        padding-top: 3px;
+      }
+    }
+    span.sep {
+      vertical-align: middle;
+      display: inline-block;
+      height: 1px;
+      background-color: #5fafa7;
+      width: 125px;
+      margin: -1px 10px 0;
+      position: relative;
+      @media @tablet {
+        width: 10%;
+      }
+      &:before, &:after {
+        content: '';
+        display: block;
+        height: 5px;
+        width: 5px;
+        border-radius: 50px;
+        background-color: #5fafa7;
+        position: absolute;
+        top: -2px;
+        left: 0;
+      }
+      &:after {
+        right: 0;
+        left: inherit;
+      }
+    }
+    .textes {
+      max-width: 700px;
+      margin: 20px auto;
+      position: relative;
+      min-height: 50px;
+      p {
+        opacity: 0;
+        font-size: 14px;
+        color: #256a63;
+        font-weight: 500;
+        text-align: left;
+        padding-left: 15px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all 0.8s;
+        @media (max-width: 575px) {
+          position: relative;
+          opacity: 1;
+          color: black;
+          padding-left: 0;
+          line-height: 1.3;
+        }
+        &:before {
+          content: '';
+          position: absolute;
+          top: 4px;
+          left: 0;
+          height: calc(100% - 9px);
+          width: 1px;
+          background: @darkMint;
+          @media @phone {
+            display: none;
+          }
+        }
+        &.current {
+          opacity: 1;
+        }
+      }
+      .dates-xs {
+        color: @mint;
+        width: 100%;
+        text-align: left;
+        border-bottom: 1px solid @mint;
+        font-size: 18px;
+        margin-bottom: 10px;
+        font-weight: 500;
+      }
+    }
+  }
+  .metier {
+    margin-top: 50px;
+    .img-part {
+      text-align: center;
+      @media (min-width: 1369px) {
+        padding-right: 65px;
+      }
+      @media @tablet {
+        margin-bottom: 30px;
+      }
+    }
+    h2 {
+      margin-bottom: 30px;
+    }
+    p {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.3;
+      &.highlight {
+        color: @mint;
+        font-weight: 500;
+        font-size: 21px;
+        position: relative;
+        padding-left: 15px;
+        margin-top: 30px;
+        max-width: 450px;
+        &:before {
+          content: '';
+          position: absolute;
+          top: 4px;
+          left: 0;
+          height: calc(100% - 9px);
+          width: 1px;
+          background: @mint;
+        }
+        @media @phone {
+          font-size: 18px;
+        }
+      }
+    }
   }
 }

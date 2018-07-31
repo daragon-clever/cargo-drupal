@@ -145,6 +145,17 @@ jQuery(document).ready(function($) {
             }
         });
     }
+
+    /// Page QSN
+    if ($('.qsn').length) {
+        $('.js-date').on('click', function () {
+            var dateId = $(this).attr('id');
+            $('.js-date').removeClass('current');
+            $(this).addClass('current');
+            $('.js-date-text').removeClass('current');
+            $('.js-date-text#txt-' + dateId).addClass('current');
+        })
+    }
 });
 
 // Animations - Récup des attr sur elements

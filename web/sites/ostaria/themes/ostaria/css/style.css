@@ -454,6 +454,21 @@ header .inner .menu-link.active {
   text-align: left;
   line-height: 1.3;
 }
+@media only screen and (max-width: 767px) {
+  .navigation {
+    height: auto;
+    width: 100%;
+    top: -100%;
+    left: 0;
+    right: inherit;
+    padding: 40px 15px 25px;
+    display: flex;
+  }
+  .navigation > .nav-inner {
+    margin: auto;
+    width: 100%;
+  }
+}
 .navigation ul {
   padding: 0;
   margin: 0;
@@ -468,6 +483,15 @@ header .inner .menu-link.active {
   margin-bottom: 15px;
   display: inline-block;
   vertical-align: middle;
+}
+@media only screen and (max-width: 767px) {
+  .navigation ul li a {
+    border-bottom: 1px solid #484848;
+    line-height: 50px;
+    display: block;
+    margin-bottom: 0;
+    padding-left: 20px;
+  }
 }
 .navigation ul li a:hover {
   margin-left: 5px;
@@ -488,6 +512,18 @@ header .inner .menu-link.active {
 }
 .navigation ul li a.big + span {
   display: none;
+}
+@media only screen and (max-width: 767px) {
+  .navigation ul li a.big {
+    border-top: 0;
+    border-bottom: 1px solid #484848;
+    line-height: 50px;
+    display: block;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 0;
+    padding-left: 20px;
+  }
 }
 .navigation ul li a.btn-contact {
   background: white;
@@ -510,6 +546,13 @@ header .inner .menu-link.active {
 }
 .navigation ul li a.btn-contact + span {
   display: none;
+}
+@media only screen and (max-width: 767px) {
+  .navigation ul li a.btn-contact {
+    margin-left: 30px;
+    margin-right: 30px;
+    padding: 15px 0;
+  }
 }
 .navigation ul li .arrow {
   display: inline-block;
@@ -561,6 +604,11 @@ header .inner .menu-link.active {
   -webkit-transform-origin: top left;
   transform-origin: top left;
 }
+@media only screen and (max-width: 767px) {
+  .navigation ul li .arrow {
+    display: none;
+  }
+}
 .navigation ul li:hover a {
   color: white;
 }
@@ -583,6 +631,12 @@ header .inner .menu-link.active {
 }
 .navigation.opened {
   right: 0;
+}
+@media only screen and (max-width: 767px) {
+  .navigation.opened {
+    top: 0;
+    right: inherit;
+  }
 }
 .mea-wrapper {
   margin-bottom: 20px;

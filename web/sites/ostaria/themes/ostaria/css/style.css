@@ -318,6 +318,25 @@ h2:before {
   color: white;
   text-decoration: none;
 }
+@media (min-width: 767px) {
+  .collapse.xs-only {
+    display: block;
+  }
+  .collapse.xs-only + .readmore-link {
+    display: none;
+  }
+}
+.readmore-link {
+  display: block;
+  color: #5fafa7;
+  cursor: pointer;
+}
+.readmore-link:not(.collapsed) .more {
+  display: none;
+}
+.readmore-link.collapsed .less {
+  display: none;
+}
 header {
   background: white;
   text-align: center;
@@ -979,12 +998,18 @@ footer a:hover {
   text-align: left;
   display: flex;
 }
+@media only screen and (max-width: 767px) {
+  .fullwidth .container > div > div {
+    display: block;
+  }
+}
 .fullwidth .title {
   font-size: 21px;
   color: #5fafa7;
   font-weight: 400;
   margin: auto;
   line-height: 1.3;
+  display: block;
 }
 @media only screen and (max-width: 767px) {
   .fullwidth .title {
@@ -1012,6 +1037,12 @@ footer a:hover {
     padding-left: 0;
     border-left: none;
   }
+}
+.fullwidth .readmore-link {
+  font-size: 14px;
+}
+.fullwidth .readmore-link .more {
+  color: white;
 }
 .marque-wrapper {
   max-width: 1100px;
@@ -1429,6 +1460,11 @@ footer a:hover {
   margin-top: 5px;
   margin-bottom: 0;
 }
+@media only screen and (max-width: 767px) {
+  .ostaria-contact-form .block-info h1 {
+    margin-top: 25px;
+  }
+}
 .ostaria-contact-form .block-info h1:after {
   position: absolute;
   top: -20px;
@@ -1540,7 +1576,7 @@ footer a:hover {
 .select2-results .select2-dropdown {
   border-radius: 0;
 }
-.qsn p.main-intro {
+.qsn .main-intro {
   font-size: 14px;
   font-weight: 500;
   max-width: 940px;

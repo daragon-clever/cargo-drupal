@@ -350,6 +350,11 @@ header {
 header .inner {
   position: relative;
 }
+@media only screen and (max-width: 767px) {
+  header .inner .logo {
+    max-width: 144px;
+  }
+}
 header .inner .menu-link {
   position: absolute;
   top: 0;
@@ -490,7 +495,7 @@ header .inner .menu-link.active {
     line-height: 50px;
     display: block;
     margin-bottom: 0;
-    padding-left: 20px;
+    padding-left: 30px;
   }
 }
 .navigation ul li a:hover {
@@ -500,6 +505,15 @@ header .inner .menu-link.active {
 }
 .navigation ul li a.is-active {
   color: white;
+}
+@media only screen and (max-width: 767px) {
+  .navigation ul li a.is-active + .arrow {
+    background: white;
+  }
+  .navigation ul li a.is-active + .arrow:after,
+  .navigation ul li a.is-active + .arrow:before {
+    background: white;
+  }
 }
 .navigation ul li a.big {
   text-transform: uppercase;
@@ -522,7 +536,7 @@ header .inner .menu-link.active {
     padding-top: 0;
     padding-bottom: 0;
     margin: 0;
-    padding-left: 20px;
+    padding-left: 30px;
   }
 }
 .navigation ul li a.btn-contact {
@@ -606,7 +620,21 @@ header .inner .menu-link.active {
 }
 @media only screen and (max-width: 767px) {
   .navigation ul li .arrow {
-    display: none;
+    position: absolute;
+    top: calc(50% - 6px);
+    right: 30px;
+    margin: 0;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    height: 17px;
+  }
+  .navigation ul li .arrow:before,
+  .navigation ul li .arrow:after {
+    height: 5px;
+    -webkit-transition-delay: 0.3s;
+    transition-delay: 0.3s;
   }
 }
 .navigation ul li:hover a {
@@ -836,6 +864,12 @@ header .inner .menu-link.active {
 .hp-insta #instafeed .slick-next {
   left: inherit;
   right: 0;
+}
+.logo-mobile {
+  margin: 0 auto;
+  padding-bottom: 15px;
+  text-align: center;
+  border-bottom: 1px solid #484848;
 }
 footer {
   background-color: #232323;

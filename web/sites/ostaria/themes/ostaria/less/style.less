@@ -156,6 +156,11 @@ header {
   width: 100%;
   .inner {
     position:relative;
+    .logo {
+      @media @phone {
+        max-width: 144px;
+      }
+    }
     .menu-link {
       position: absolute;
       top: 0;
@@ -284,7 +289,7 @@ header {
           line-height: 50px;
           display: block;
           margin-bottom: 0;
-          padding-left: 20px;
+          padding-left: 30px;
         }
         &:hover {
           margin-left: 5px;
@@ -293,6 +298,14 @@ header {
         }
         &.is-active {
           color: white;
+          @media @phone {
+            & + .arrow {
+              background: white;
+              &:after, &:before {
+                background: white;
+              }
+            }
+          }
         }
         &.big {
           text-transform: uppercase;
@@ -313,7 +326,7 @@ header {
             padding-top: 0;
             padding-bottom: 0;
             margin: 0;
-            padding-left: 20px;
+            padding-left: 30px;
           }
         }
         &.btn-contact {
@@ -390,7 +403,20 @@ header {
           transform-origin: top left;
         }
         @media @phone {
-          display: none;
+          position: absolute;
+          top: calc(50% - 6px);
+          right: 30px;
+          margin: 0;
+          -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+          -webkit-transform-origin: center;
+          transform-origin: center;
+          height: 17px;
+          &:before, &:after {
+            height: 5px;
+            -webkit-transition-delay: 0.3s;
+            transition-delay: 0.3s;
+          }
         }
       }
       &:hover {
@@ -606,6 +632,12 @@ header {
       right: 0;
     }
   }
+}
+.logo-mobile {
+  margin: 0 auto;
+  padding-bottom: 15px;
+  text-align: center;
+  border-bottom: 1px solid #484848;
 }
 ///////////////////////////// FOOTER /////////////////////////////
 footer {

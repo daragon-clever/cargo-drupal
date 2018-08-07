@@ -134,6 +134,7 @@ jQuery(document).ready(function($) {
 
     //// Page Contact
     if ($('.ostaria-contact-form').length) {
+        $(document.body).addClass('page-contact');
         $('input, textarea').blur(function () {
             tmpval = $(this).val();
             if (tmpval == '') {

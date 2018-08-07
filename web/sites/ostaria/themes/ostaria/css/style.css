@@ -1010,7 +1010,7 @@ footer a:hover {
   text-align: center;
   font-size: 21px;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1215px) {
   #inspirations-grid .item.text {
     line-height: 1.6;
     font-size: 15px;
@@ -1042,6 +1042,11 @@ footer a:hover {
   display: block;
   margin: 10px auto 0;
   width: 40px;
+}
+@media (max-width: 320px) {
+  #inspirations-grid .item.text .flex-wrapper .inner ul li:last-child:after {
+    display: none;
+  }
 }
 #inspirations-grid .item.style-1 {
   background-color: #3a7972;

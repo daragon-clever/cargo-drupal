@@ -8,6 +8,16 @@ bootstrap:
   js:
     bootstrap4/js/bootstrap.bundle.min.js: {}
 
+# Lightbox bootstrap 4
+ekko:
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js: { type: external }
+  dependencies:
+    - core/jquery
+  css:
+    theme:
+      https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css: { type: external }
+
 # Instafeed
 instafeed:
   header: true
@@ -33,7 +43,6 @@ global-styling:
     theme:
       css/style.css: {}
   js:
-#    js/masonry.pkgd.min.js: {}
     js/custom-js.js: {}
   dependencies:
     - core/jquery

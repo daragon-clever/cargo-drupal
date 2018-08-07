@@ -744,13 +744,16 @@ footer {
       display: block;
       padding-top: 100%;
     }
-    & > img {
+    & > a img {
       display: block;
       height: auto;
       width: 100%;
       max-width: 100%;
       position: absolute;
       top: 0;
+      &:hover {
+        .dimOpacityOnHover(0.8)
+      }
     }
     &.text {
       background: #9a7363;

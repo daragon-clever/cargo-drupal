@@ -994,13 +994,19 @@ footer a:hover {
   display: block;
   padding-top: 100%;
 }
-#inspirations-grid .item > img {
+#inspirations-grid .item > a img {
   display: block;
   height: auto;
   width: 100%;
   max-width: 100%;
   position: absolute;
   top: 0;
+}
+#inspirations-grid .item > a img:hover {
+  transition: opacity 0.3s;
+}
+#inspirations-grid .item > a img:hover:hover {
+  opacity: 0.8;
 }
 #inspirations-grid .item.text {
   background: #9a7363;

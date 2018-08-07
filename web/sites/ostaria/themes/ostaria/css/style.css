@@ -1664,6 +1664,25 @@ footer a:hover {
 .select2-results .select2-dropdown {
   border-radius: 0;
 }
+.page-contact div[role=contentinfo] {
+  margin-bottom: -50px;
+}
+@media (max-width: 1220px) {
+  .page-contact div[role=contentinfo] {
+    margin-bottom: -10px;
+  }
+}
+div[role=contentinfo] {
+  color: #5fafa7;
+  text-align: center;
+  margin: 15px;
+  padding: 15px;
+  border: 1px solid #5fafa7;
+  border-radius: 10px;
+}
+div[role=contentinfo] div[role=alert] {
+  color: red;
+}
 .qsn .main-intro {
   font-size: 14px;
   font-weight: 500;

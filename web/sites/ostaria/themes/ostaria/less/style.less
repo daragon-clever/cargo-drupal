@@ -1309,6 +1309,23 @@ footer {
     border-radius: 0;
   }
 }
+.page-contact div[role=contentinfo] {
+  margin-bottom: -50px;
+  @media (max-width: 1220px) {
+    margin-bottom: -10px;
+  }
+}
+div[role=contentinfo] {
+  color: @mint;
+  text-align: center;
+  margin: 15px;
+  padding: 15px;
+  border: 1px solid @mint;
+  border-radius: 10px;
+  div[role=alert] {
+    color: red;
+  }
+}
 ///////////////////////////// QSN /////////////////////////////
 .qsn {
   .main-intro {

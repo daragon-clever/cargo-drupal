@@ -99,10 +99,10 @@ jQuery(document).ready(function($) {
         });
 
         /* Add class if width > 290 */
-        $(".item > img").each(function () {
+        $(".item img").each(function () {
             var width = $(this).attr('width');
             if (width > 290) {
-                $(this).parent('.item').addClass('big');
+                $(this).closest('.item').addClass('big');
             }
         });
 
@@ -121,6 +121,12 @@ jQuery(document).ready(function($) {
         $('.item:not(.text):not(.big)').shuffle();
         // Then the big ones
         $('.item.big').shuffle();
+
+        /* Lien lightbox */
+        $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
+        });
     }
 
     //// Scroll homepage

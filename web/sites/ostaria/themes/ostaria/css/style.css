@@ -1856,3 +1856,11 @@ div[role=contentinfo] div[role=alert] {
     font-size: 18px;
   }
 }
+.page-404 {
+  text-align: center;
+  margin-top: 50px;
+}
+.page-404 .big {
+  color: #5fafa7;
+  font-size: 80px;
+}

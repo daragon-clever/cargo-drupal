@@ -85,6 +85,24 @@ jQuery(document).ready(function($) {
 
     //// Masonry Custom
     if ($('#inspirations-grid').length) {
+        /* Fonctionnement lien HD */
+        $('.paragraph > div:first-child').addClass('d-none link-hd');
+        $('.paragraph > div:last-child').addClass('thumb');
+        $(".link-hd").each(function () {
+            var linkHD = $(this).html();
+            $(this).next().children("a").attr("href", linkHD);
+        });
+
+        $(".thumb a").attr({ "data-toggle":"lightbox" , "data-gallery":"gallery" });
+
+        /* Ekkolightbox */
+        $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
+            $(".ekko-lightbox .modal-body").append("<button type=\"button\" class=\"close\" data-dismiss=\"modal\" " +
+                "aria-label=\"Close\"><span aria-hidden=\"true\">✖</span></button>");
+        });
+
         /* Blocs texte */
         var txtBlock = $("#txt-template").html();
         $( txtBlock ).insertAfter(".item:not(.text):nth-child(1)");
@@ -121,12 +139,6 @@ jQuery(document).ready(function($) {
         $('.item:not(.text):not(.big)').shuffle();
         // Then the big ones
         $('.item.big').shuffle();
-
-        /* Lien lightbox */
-        $(document).on('click', '[data-toggle="lightbox"]', function(event) {
-            event.preventDefault();
-            $(this).ekkoLightbox();
-        });
     }
 
     //// Scroll homepage

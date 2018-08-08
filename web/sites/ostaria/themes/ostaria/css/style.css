@@ -994,7 +994,7 @@ footer a:hover {
   display: block;
   padding-top: 100%;
 }
-#inspirations-grid .item > a img {
+#inspirations-grid .item a img {
   display: block;
   height: auto;
   width: 100%;
@@ -1002,10 +1002,10 @@ footer a:hover {
   position: absolute;
   top: 0;
 }
-#inspirations-grid .item > a img:hover {
+#inspirations-grid .item a img:hover {
   transition: opacity 0.3s;
 }
-#inspirations-grid .item > a img:hover:hover {
+#inspirations-grid .item a img:hover:hover {
   opacity: 0.8;
 }
 #inspirations-grid .item.text {
@@ -1049,7 +1049,7 @@ footer a:hover {
   margin: 10px auto 0;
   width: 40px;
 }
-@media (max-width: 320px) {
+@media (max-width: 768px) {
   #inspirations-grid .item.text .flex-wrapper .inner ul li:last-child:after {
     display: none;
   }
@@ -1077,6 +1077,48 @@ footer a:hover {
 }
 #inspirations-grid .item.style-4 li:nth-child(4) {
   font-weight: 600;
+}
+.ekko-lightbox modal-content {
+  border: 0px;
+  box-shadow: 0 0 25px #00000050;
+}
+.ekko-lightbox .modal-body {
+  padding: 0;
+}
+.ekko-lightbox .close {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  color: white;
+  opacity: 1;
+  font-weight: inherit;
+  transition: opacity 0.3s;
+}
+@media (max-width: 680px) {
+  .ekko-lightbox .close {
+    right: 0;
+  }
+}
+.ekko-lightbox .close span {
+  font-weight: inherit;
+  font-size: 20px;
+  text-shadow: none;
+}
+.ekko-lightbox .close:hover {
+  opacity: 0.8;
+}
+@media (min-width: 730px) {
+  .ekko-lightbox .ekko-lightbox-nav-overlay a:first-child span {
+    position: absolute;
+    left: -80px;
+  }
+  .ekko-lightbox .ekko-lightbox-nav-overlay a:last-child span {
+    position: absolute;
+    right: -80px;
+  }
+}
+.modal-backdrop.show {
+  opacity: 0.8;
 }
 .fullwidth {
   width: 100vw;

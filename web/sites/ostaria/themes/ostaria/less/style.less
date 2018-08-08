@@ -744,7 +744,7 @@ footer {
       display: block;
       padding-top: 100%;
     }
-    & > a img {
+    & a img {
       display: block;
       height: auto;
       width: 100%;
@@ -788,7 +788,7 @@ footer {
                 display: block;
                 margin: 10px auto 0;
                 width: 40px;
-                @media (max-width: 320px) {
+                @media (max-width: 768px) {
                   display: none;
                 }
               }
@@ -822,6 +822,45 @@ footer {
       }
     }
   }
+}
+.ekko-lightbox {
+  modal-content {
+    border: 0px;
+    box-shadow: 0 0 25px #00000050;
+  }
+  .modal-body {
+    padding: 0;
+  }
+  .close {
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    color: white;
+    opacity: 1;
+    font-weight: inherit;
+    @media (max-width: 680px) {
+      right: 0;
+    }
+    span {
+      font-weight: inherit;
+      font-size: 20px;
+      text-shadow: none;
+    }
+    .dimOpacityOnHover(0.8)
+  }
+  @media (min-width: 730px) {
+    .ekko-lightbox-nav-overlay a:first-child span {
+      position: absolute;
+      left: -80px;
+    }
+    .ekko-lightbox-nav-overlay a:last-child span {
+      position: absolute;
+      right: -80px;
+    }
+  }
+}
+.modal-backdrop.show {
+  opacity: 0.8;
 }
 ///////////////////////////// LA MARQUE /////////////////////////////
 .fullwidth {

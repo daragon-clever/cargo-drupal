@@ -1,3 +1,42 @@
+// Animations - Récup des attr sur elements
+(function ($, window, document, undefined) {
+    'use strict';
+    var animationObject;
+
+    function nvsAddAnimation() {
+        animationObject.each(function (index, element) {
+            var $currentElement = $(element),
+                animationType = $currentElement.attr('nvs-animation-type');
+
+            if (nvsOnScreen($currentElement)) {
+                $currentElement.addClass('animated ' + animationType);
+            }
+        });
+    }
+
+    // takes jQuery(element) a.k.a. $('element')
+    function nvsOnScreen(element) {
+        // window bottom edge
+        var windowBottomEdge = $(window).scrollTop() + $(window).height();
+
+        // element top edge
+        var elementTopEdge = element.offset().top;
+        var offset = 100;
+
+        // if element is between window's top and bottom edges
+        return elementTopEdge + offset <= windowBottomEdge;
+    }
+
+    $(window).on('load', function () {
+        animationObject = $('[nvs-animation-type]');
+        nvsAddAnimation();
+    });
+
+    $(window).on('scroll', function (e) {
+        nvsAddAnimation();
+    });
+}(jQuery, window, document));
+
 jQuery(document).ready(function($) {
     //// Navigation
     /* Functions */
@@ -136,9 +175,9 @@ jQuery(document).ready(function($) {
         /* Function shuffle */
         (function(d){d.fn.shuffle=function(c){c=[];return this.each(function(){c.push(d(this).clone(true))}).each(function(a,b){d(b).replaceWith(c[a=Math.floor(Math.random()*c.length)]);c.splice(a,1)})};d.shuffle=function(a){return d(a).shuffle()}})(jQuery);
         // First, shuffle all except text and big one
-        $('.item:not(.text):not(.big)').shuffle();
+        $('.item:not(.text):not(.big) img').shuffle();
         // Then the big ones
-        $('.item.big').shuffle();
+        $('.item.big img').shuffle();
     }
 
     //// Scroll homepage
@@ -176,42 +215,3 @@ jQuery(document).ready(function($) {
         })
     }
 });
-
-// Animations - Récup des attr sur elements
-(function ($, window, document, undefined) {
-    'use strict';
-    var animationObject;
-
-    function nvsAddAnimation() {
-        animationObject.each(function (index, element) {
-            var $currentElement = $(element),
-                animationType = $currentElement.attr('nvs-animation-type');
-
-            if (nvsOnScreen($currentElement)) {
-                $currentElement.addClass('animated ' + animationType);
-            }
-        });
-    }
-
-    // takes jQuery(element) a.k.a. $('element')
-    function nvsOnScreen(element) {
-        // window bottom edge
-        var windowBottomEdge = $(window).scrollTop() + $(window).height();
-
-        // element top edge
-        var elementTopEdge = element.offset().top;
-        var offset = 100;
-
-        // if element is between window's top and bottom edges
-        return elementTopEdge + offset <= windowBottomEdge;
-    }
-
-    $(window).on('load', function () {
-        animationObject = $('[nvs-animation-type]');
-        nvsAddAnimation();
-    });
-
-    $(window).on('scroll', function (e) {
-        nvsAddAnimation();
-    });
-}(jQuery, window, document));

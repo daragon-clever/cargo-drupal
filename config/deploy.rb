@@ -20,7 +20,7 @@ set :format_options, command_output: true, log_file: "var/logs/capistrano.log", 
 # set :pty, true
 
 # Default value for :linked_files is []
-append :linked_files, "web/sites/sites.php", "web/sites/turbocar/settings.php", "web/sites/ostaria/settings.php", "web/sites/yliades/settings.php", "web/sites/groupecargo/settings.php", "drush/sites/web.site.yml"
+append :linked_files, "web/sites/sites.php", "web/sites/default/default.settings.php", "web/sites/turbocar/settings.php", "web/sites/ostaria/settings.php", "web/sites/yliades/settings.php", "web/sites/groupecargo/settings.php", "drush/sites/web.site.yml"
 
 # Default value for linked_dirs is []  
 append :linked_dirs, "web/sites/turbocar/private", "web/sites/ostaria/private", "web/sites/ostaria/files", "web/sites/yliades/private", "web/sites/yliades/files", "web/sites/groupecargo/private", "web/sites/groupecargo/files"

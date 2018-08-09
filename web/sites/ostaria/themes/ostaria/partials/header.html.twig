@@ -1,0 +1,36 @@
+<header>
+    <div class="inner">
+        <a href="{{ url('<front>') }}" title="Ostaria">
+            <img class="logo" src="{{ url('<front>') }}sites/ostaria/themes/ostaria/images/header/logo_ostaria.jpg" alt="Ostaria">
+        </a>
+
+        <div class="menu-link js-toggle-menu">
+            <span class="d-none d-md-inline-block">Menu</span>
+            <div class="button-wrapper">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+
+        <div class="header-rs d-none d-md-block">
+            <a href="{{ url('<front>') }}" title="Facebook - Ostaria">
+                <img src="{{ url('<front>') }}sites/ostaria/themes/ostaria/images/header/facebook.png" alt="Facebook - Ostaria" />
+            </a>
+            <a href="{{ url('<front>') }}" title="Instagram - Ostaria">
+                <img src="{{ url('<front>') }}sites/ostaria/themes/ostaria/images/header/instagram.png" alt="Instagram - Ostaria" />
+            </a>
+        </div>
+
+        <div class="navigation">
+            <div class="nav-inner">
+                <div class="logo-mobile d-block d-sm-none">
+                    <a href="{{ url('<front>') }}" title="Ostaria">
+                        <img src="{{ url('<front>') }}sites/ostaria/themes/ostaria/images/header/logo_ostaria_mobile.png" alt="Ostaria">
+                    </a>
+                </div>
+                {% include directory ~ '/partials/navigation.html.twig' %}
+            </div>
+        </div>
+    </div>
+</header>

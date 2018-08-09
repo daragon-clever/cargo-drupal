@@ -1,0 +1,35 @@
+// Variables custom
+
+// Media queries
+@very-xs: 320px;
+@xs: 767px;
+@sm: 991px;
+
+@smallPhone:     ~"only screen and (max-width: @{very-xs})";
+@phone:          ~"only screen and (max-width: @{xs})";
+@tablet:         ~"only screen and (max-width: @{sm})";
+
+// Colors
+@lightMint: #47bfa8;
+@mint: #5fafa7;
+@darkMint: #256a63;
+
+// Functions
+.dimOpacityOnHover (@opacity) {
+  transition: opacity 0.3s;
+  &:hover {
+    opacity: @opacity;
+  }
+}
+
+.lettersColor (@color) {
+  .title {
+    color: @color;
+    &:before, &:after {
+      background: @color;
+    }
+  }
+  p:before {
+    background: @color;
+  }
+}

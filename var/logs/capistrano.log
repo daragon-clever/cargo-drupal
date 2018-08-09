@@ -6476,3 +6476,178 @@ rm: impossible de supprimer '/home/www/sitedrupal_preprod/deployment/preproducti
   INFO [1c65af1d] Running /usr/bin/env echo "Branch develop (at 17bf4100d549a0a0cd04f4434aa8880552b6f765) deployed as release 20180604143935 by " >> /home/www/sitedrupal_preprod/deployment/preproduction/revisions.log as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
  DEBUG [1c65af1d] Command: cd /home/www/sitedrupal_preprod/deployment/preproduction/releases && /usr/bin/env echo "Branch develop (at 17bf4100d549a0a0cd04f4434aa8880552b6f765) deployed as release 20180604143935 by " >> /home/www/sitedrupal_preprod/deployment/preproduction/revisions.log
   INFO [1c65af1d] Finished in 0.101 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-06-14 15:04:07 +0000 cap preproduction deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [4ab71a1b] Running /usr/bin/env mkdir -p /tmp as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [4ab71a1b] Command: /usr/bin/env mkdir -p /tmp
+  INFO [4ab71a1b] Finished in 0.642 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-drupal-preproduction-.sh 0.0%
+  INFO Uploading /tmp/git-ssh-drupal-preproduction-.sh 100.0%
+  INFO [8dd59445] Running /usr/bin/env chmod 700 /tmp/git-ssh-drupal-preproduction-.sh as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [8dd59445] Command: /usr/bin/env chmod 700 /tmp/git-ssh-drupal-preproduction-.sh
+  INFO [8dd59445] Finished in 0.125 seconds with exit status 0 (successful).
+  INFO [c97407df] Running /usr/bin/env git ls-remote git@github.com:PoleWebCargo/drupal.git HEAD as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [c97407df] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-drupal-preproduction-.sh" ; /usr/bin/env git ls-remote git@github.com:PoleWebCargo/drupal.git HEAD )
+ DEBUG [c97407df] 	351dde38586122e06a6ebe2f217bbf7ade859d37	HEAD
+  INFO [c97407df] Finished in 6.418 seconds with exit status 0 (successful).
+  INFO [36c699b0] Running /usr/bin/env mkdir -p /home/www/sitedrupal_preprod/deployment/preproduction/shared /home/www/sitedrupal_preprod/deployment/preproduction/releases as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [36c699b0] Command: /usr/bin/env mkdir -p /home/www/sitedrupal_preprod/deployment/preproduction/shared /home/www/sitedrupal_preprod/deployment/preproduction/releases
+  INFO [36c699b0] Finished in 0.171 seconds with exit status 0 (successful).
+  INFO [efc64e52] Running /usr/bin/env mkdir -p /home/www/sitedrupal_preprod/deployment/preproduction/shared/web/sites/turbocar/private as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [efc64e52] Command: /usr/bin/env mkdir -p /home/www/sitedrupal_preprod/deployment/preproduction/shared/web/sites/turbocar/private
+  INFO [efc64e52] Finished in 0.125 seconds with exit status 0 (successful).
+  INFO [5a518488] Running /usr/bin/env mkdir -p /home/www/sitedrupal_preprod/deployment/preproduction/shared/web/sites /home/www/sitedrupal_preprod/deployment/preproduction/shared/web/sites/turbocar /home/www/sitedrupal_preprod/deployment/preproduction/shared/drush/sites as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [5a518488] Command: /usr/bin/env mkdir -p /home/www/sitedrupal_preprod/deployment/preproduction/shared/web/sites /home/www/sitedrupal_preprod/deployment/preproduction/shared/web/sites/turbocar /home/www/sitedrupal_preprod/deployment/preproduction/shared/drush/sites
+  INFO [5a518488] Finished in 0.138 seconds with exit status 0 (successful).
+ DEBUG [feb083cb] Running [ -f /home/www/sitedrupal_preprod/deployment/preproduction/shared/web/sites/sites.php ] as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [feb083cb] Command: [ -f /home/www/sitedrupal_preprod/deployment/preproduction/shared/web/sites/sites.php ]
+ DEBUG [feb083cb] Finished in 0.173 seconds with exit status 0 (successful).
+ DEBUG [bf6915dd] Running [ -f /home/www/sitedrupal_preprod/deployment/preproduction/shared/web/sites/turbocar/settings.php ] as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [bf6915dd] Command: [ -f /home/www/sitedrupal_preprod/deployment/preproduction/shared/web/sites/turbocar/settings.php ]
+ DEBUG [bf6915dd] Finished in 0.111 seconds with exit status 0 (successful).
+ DEBUG [71068f33] Running [ -f /home/www/sitedrupal_preprod/deployment/preproduction/shared/drush/sites/web.site.yml ] as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [71068f33] Command: [ -f /home/www/sitedrupal_preprod/deployment/preproduction/shared/drush/sites/web.site.yml ]
+ DEBUG [71068f33] Finished in 0.216 seconds with exit status 0 (successful).
+ DEBUG [f98e688d] Running [ -f /home/www/sitedrupal_preprod/deployment/preproduction/current/REVISION ] as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [f98e688d] Command: [ -f /home/www/sitedrupal_preprod/deployment/preproduction/current/REVISION ]
+ DEBUG [f98e688d] Finished in 0.139 seconds with exit status 0 (successful).
+ DEBUG [f74759b2] Running /usr/bin/env cat /home/www/sitedrupal_preprod/deployment/preproduction/current/REVISION 2>/dev/null as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [f74759b2] Command: /usr/bin/env cat /home/www/sitedrupal_preprod/deployment/preproduction/current/REVISION 2>/dev/null
+ DEBUG [f74759b2] 	4129261e274c76d13201eb3f66c51d844aa32781
+ DEBUG [f74759b2] Finished in 0.119 seconds with exit status 0 (successful).
+ DEBUG [b26c3a9e] Running if test ! -d /home/www/sitedrupal_preprod/deployment/preproduction/shared; then echo "Directory does not exist '/home/www/sitedrupal_preprod/deployment/preproduction/shared'" 1>&2; false; fi as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [b26c3a9e] Command: if test ! -d /home/www/sitedrupal_preprod/deployment/preproduction/shared; then echo "Directory does not exist '/home/www/sitedrupal_preprod/deployment/preproduction/shared'" 1>&2; false; fi
+ DEBUG [b26c3a9e] Finished in 0.159 seconds with exit status 0 (successful).
+ DEBUG [4b78880c] Running /usr/bin/env [ -e composer.phar ] as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [4b78880c] Command: cd /home/www/sitedrupal_preprod/deployment/preproduction/shared && /usr/bin/env [ -e composer.phar ]
+ DEBUG [4b78880c] Finished in 0.133 seconds with exit status 0 (successful).
+ DEBUG [648f5b7c] Running [ -f /home/www/sitedrupal_preprod/deployment/preproduction/repo/HEAD ] as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [648f5b7c] Command: [ -f /home/www/sitedrupal_preprod/deployment/preproduction/repo/HEAD ]
+ DEBUG [648f5b7c] Finished in 0.128 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/www/sitedrupal_preprod/deployment/preproduction/repo
+ DEBUG [999933c8] Running if test ! -d /home/www/sitedrupal_preprod/deployment/preproduction/repo; then echo "Directory does not exist '/home/www/sitedrupal_preprod/deployment/preproduction/repo'" 1>&2; false; fi as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [999933c8] Command: if test ! -d /home/www/sitedrupal_preprod/deployment/preproduction/repo; then echo "Directory does not exist '/home/www/sitedrupal_preprod/deployment/preproduction/repo'" 1>&2; false; fi
+ DEBUG [999933c8] Finished in 0.114 seconds with exit status 0 (successful).
+  INFO [b848d861] Running /usr/bin/env git remote set-url origin git@github.com:PoleWebCargo/drupal.git as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [b848d861] Command: cd /home/www/sitedrupal_preprod/deployment/preproduction/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-drupal-preproduction-.sh" ; /usr/bin/env git remote set-url origin git@github.com:PoleWebCargo/drupal.git )
+  INFO [b848d861] Finished in 0.209 seconds with exit status 0 (successful).
+  INFO [aa9bed72] Running /usr/bin/env git remote update --prune as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [aa9bed72] Command: cd /home/www/sitedrupal_preprod/deployment/preproduction/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-drupal-preproduction-.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [aa9bed72] 	Récupération de origin
+  INFO [aa9bed72] Finished in 1.269 seconds with exit status 0 (successful).
+ DEBUG [6398b926] Running if test ! -d /home/www/sitedrupal_preprod/deployment/preproduction/repo; then echo "Directory does not exist '/home/www/sitedrupal_preprod/deployment/preproduction/repo'" 1>&2; false; fi as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [6398b926] Command: if test ! -d /home/www/sitedrupal_preprod/deployment/preproduction/repo; then echo "Directory does not exist '/home/www/sitedrupal_preprod/deployment/preproduction/repo'" 1>&2; false; fi
+ DEBUG [6398b926] Finished in 0.108 seconds with exit status 0 (successful).
+  INFO [c63689db] Running /usr/bin/env mkdir -p /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416 as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [c63689db] Command: cd /home/www/sitedrupal_preprod/deployment/preproduction/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-drupal-preproduction-.sh" ; /usr/bin/env mkdir -p /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416 )
+  INFO [c63689db] Finished in 0.135 seconds with exit status 0 (successful).
+  INFO [e420d275] Running /usr/bin/env git archive develop | /usr/bin/env tar -x -f - -C /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416 as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [e420d275] Command: cd /home/www/sitedrupal_preprod/deployment/preproduction/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-drupal-preproduction-.sh" ; /usr/bin/env git archive develop | /usr/bin/env tar -x -f - -C /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416 )
+  INFO [e420d275] Finished in 1.578 seconds with exit status 0 (successful).
+ DEBUG [28719e0e] Running if test ! -d /home/www/sitedrupal_preprod/deployment/preproduction/repo; then echo "Directory does not exist '/home/www/sitedrupal_preprod/deployment/preproduction/repo'" 1>&2; false; fi as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [28719e0e] Command: if test ! -d /home/www/sitedrupal_preprod/deployment/preproduction/repo; then echo "Directory does not exist '/home/www/sitedrupal_preprod/deployment/preproduction/repo'" 1>&2; false; fi
+ DEBUG [28719e0e] Finished in 0.184 seconds with exit status 0 (successful).
+ DEBUG [288d8366] Running /usr/bin/env git rev-list --max-count=1 develop as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [288d8366] Command: cd /home/www/sitedrupal_preprod/deployment/preproduction/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-drupal-preproduction-.sh" ; /usr/bin/env git rev-list --max-count=1 develop )
+ DEBUG [288d8366] 	4129261e274c76d13201eb3f66c51d844aa32781
+ DEBUG [288d8366] Finished in 0.170 seconds with exit status 0 (successful).
+ DEBUG [ffde101b] Running if test ! -d /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416; then echo "Directory does not exist '/home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416'" 1>&2; false; fi as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [ffde101b] Command: if test ! -d /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416; then echo "Directory does not exist '/home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416'" 1>&2; false; fi
+ DEBUG [ffde101b] Finished in 0.147 seconds with exit status 0 (successful).
+  INFO [0de3a95a] Running /usr/bin/env echo "4129261e274c76d13201eb3f66c51d844aa32781" > REVISION as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [0de3a95a] Command: cd /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416 && /usr/bin/env echo "4129261e274c76d13201eb3f66c51d844aa32781" > REVISION
+  INFO [0de3a95a] Finished in 0.129 seconds with exit status 0 (successful).
+  INFO [a446afbd] Running /usr/bin/env mkdir -p /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416/web/sites /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416/web/sites/turbocar /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416/drush/sites as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [a446afbd] Command: /usr/bin/env mkdir -p /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416/web/sites /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416/web/sites/turbocar /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416/drush/sites
+  INFO [a446afbd] Finished in 0.140 seconds with exit status 0 (successful).
+ DEBUG [bc4cdde5] Running [ -L /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416/web/sites/sites.php ] as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [bc4cdde5] Command: [ -L /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416/web/sites/sites.php ]
+ DEBUG [bc4cdde5] Finished in 0.111 seconds with exit status 1 (failed).
+ DEBUG [6f808f84] Running [ -f /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416/web/sites/sites.php ] as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [6f808f84] Command: [ -f /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416/web/sites/sites.php ]
+ DEBUG [6f808f84] Finished in 0.172 seconds with exit status 1 (failed).
+  INFO [1f464d2b] Running /usr/bin/env ln -s /home/www/sitedrupal_preprod/deployment/preproduction/shared/web/sites/sites.php /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416/web/sites/sites.php as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [1f464d2b] Command: /usr/bin/env ln -s /home/www/sitedrupal_preprod/deployment/preproduction/shared/web/sites/sites.php /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416/web/sites/sites.php
+  INFO [1f464d2b] Finished in 0.127 seconds with exit status 0 (successful).
+ DEBUG [78b2e4b4] Running [ -L /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416/web/sites/turbocar/settings.php ] as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [78b2e4b4] Command: [ -L /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416/web/sites/turbocar/settings.php ]
+ DEBUG [78b2e4b4] Finished in 0.101 seconds with exit status 1 (failed).
+ DEBUG [989bbc4a] Running [ -f /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416/web/sites/turbocar/settings.php ] as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [989bbc4a] Command: [ -f /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416/web/sites/turbocar/settings.php ]
+ DEBUG [989bbc4a] Finished in 0.108 seconds with exit status 1 (failed).
+  INFO [f3f888f5] Running /usr/bin/env ln -s /home/www/sitedrupal_preprod/deployment/preproduction/shared/web/sites/turbocar/settings.php /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416/web/sites/turbocar/settings.php as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [f3f888f5] Command: /usr/bin/env ln -s /home/www/sitedrupal_preprod/deployment/preproduction/shared/web/sites/turbocar/settings.php /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416/web/sites/turbocar/settings.php
+  INFO [f3f888f5] Finished in 0.120 seconds with exit status 0 (successful).
+ DEBUG [cfd7392c] Running [ -L /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416/drush/sites/web.site.yml ] as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [cfd7392c] Command: [ -L /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416/drush/sites/web.site.yml ]
+ DEBUG [cfd7392c] Finished in 0.139 seconds with exit status 1 (failed).
+ DEBUG [2b7a06aa] Running [ -f /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416/drush/sites/web.site.yml ] as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [2b7a06aa] Command: [ -f /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416/drush/sites/web.site.yml ]
+ DEBUG [2b7a06aa] Finished in 0.242 seconds with exit status 0 (successful).
+  INFO [4c2fba49] Running /usr/bin/env rm /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416/drush/sites/web.site.yml as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [4c2fba49] Command: /usr/bin/env rm /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416/drush/sites/web.site.yml
+  INFO [4c2fba49] Finished in 0.123 seconds with exit status 0 (successful).
+  INFO [0333494b] Running /usr/bin/env ln -s /home/www/sitedrupal_preprod/deployment/preproduction/shared/drush/sites/web.site.yml /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416/drush/sites/web.site.yml as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [0333494b] Command: /usr/bin/env ln -s /home/www/sitedrupal_preprod/deployment/preproduction/shared/drush/sites/web.site.yml /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416/drush/sites/web.site.yml
+  INFO [0333494b] Finished in 0.138 seconds with exit status 0 (successful).
+  INFO [32ee57f3] Running /usr/bin/env mkdir -p /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416/web/sites/turbocar as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [32ee57f3] Command: /usr/bin/env mkdir -p /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416/web/sites/turbocar
+  INFO [32ee57f3] Finished in 0.127 seconds with exit status 0 (successful).
+ DEBUG [1b655006] Running [ -L /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416/web/sites/turbocar/private ] as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [1b655006] Command: [ -L /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416/web/sites/turbocar/private ]
+ DEBUG [1b655006] Finished in 0.119 seconds with exit status 1 (failed).
+ DEBUG [9fa92bed] Running [ -d /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416/web/sites/turbocar/private ] as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [9fa92bed] Command: [ -d /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416/web/sites/turbocar/private ]
+ DEBUG [9fa92bed] Finished in 0.253 seconds with exit status 1 (failed).
+  INFO [63361f01] Running /usr/bin/env ln -s /home/www/sitedrupal_preprod/deployment/preproduction/shared/web/sites/turbocar/private /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416/web/sites/turbocar/private as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [63361f01] Command: /usr/bin/env ln -s /home/www/sitedrupal_preprod/deployment/preproduction/shared/web/sites/turbocar/private /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416/web/sites/turbocar/private
+  INFO [63361f01] Finished in 0.229 seconds with exit status 0 (successful).
+ DEBUG [a83c7079] Running if test ! -d /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416; then echo "Directory does not exist '/home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416'" 1>&2; false; fi as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [a83c7079] Command: if test ! -d /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416; then echo "Directory does not exist '/home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416'" 1>&2; false; fi
+ DEBUG [a83c7079] Finished in 0.141 seconds with exit status 0 (successful).
+  INFO [e8be486d] Running php /home/www/sitedrupal_preprod/deployment/preproduction/shared/composer.phar install --no-dev --no-interaction --quiet --optimize-autoloader --no-scripts as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [e8be486d] Command: cd /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416 && php /home/www/sitedrupal_preprod/deployment/preproduction/shared/composer.phar install --no-dev --no-interaction --quiet --optimize-autoloader --no-scripts
+  INFO [e8be486d] Finished in 3.584 seconds with exit status 0 (successful).
+ DEBUG [d83e276a] Running if test ! -d /home/www/sitedrupal_preprod/deployment/preproduction/shared; then echo "Directory does not exist '/home/www/sitedrupal_preprod/deployment/preproduction/shared'" 1>&2; false; fi as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [d83e276a] Command: if test ! -d /home/www/sitedrupal_preprod/deployment/preproduction/shared; then echo "Directory does not exist '/home/www/sitedrupal_preprod/deployment/preproduction/shared'" 1>&2; false; fi
+ DEBUG [d83e276a] Finished in 0.204 seconds with exit status 0 (successful).
+  INFO [d652b141] Running /usr/bin/env curl -s https://getcomposer.org/installer | php as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [d652b141] Command: cd /home/www/sitedrupal_preprod/deployment/preproduction/shared && /usr/bin/env curl -s https://getcomposer.org/installer | php
+ DEBUG [d652b141] 	/usr/bin/env: « curl »
+ DEBUG [d652b141] 	: Aucun fichier ou dossier de ce type
+  INFO [d652b141] Finished in 0.217 seconds with exit status 0 (successful).
+ DEBUG [e9e1dd2c] Running if test ! -d /home/www/sitedrupal_preprod/deployment/preproduction/current/; then echo "Directory does not exist '/home/www/sitedrupal_preprod/deployment/preproduction/current/'" 1>&2; false; fi as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [e9e1dd2c] Command: if test ! -d /home/www/sitedrupal_preprod/deployment/preproduction/current/; then echo "Directory does not exist '/home/www/sitedrupal_preprod/deployment/preproduction/current/'" 1>&2; false; fi
+ DEBUG [e9e1dd2c] Finished in 0.200 seconds with exit status 0 (successful).
+  INFO [53151f8c] Running /usr/bin/env drush @web updatedb as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [53151f8c] Command: cd /home/www/sitedrupal_preprod/deployment/preproduction/current/ && /usr/bin/env drush @web updatedb
+ DEBUG [53151f8c] 	 [success] No database updates required.
+  INFO [53151f8c] Finished in 1.428 seconds with exit status 0 (successful).
+  INFO [b407df41] Running /usr/bin/env ln -s /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416 /home/www/sitedrupal_preprod/deployment/preproduction/releases/current as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [b407df41] Command: /usr/bin/env ln -s /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416 /home/www/sitedrupal_preprod/deployment/preproduction/releases/current
+  INFO [b407df41] Finished in 0.211 seconds with exit status 0 (successful).
+  INFO [c9b6dc32] Running /usr/bin/env mv /home/www/sitedrupal_preprod/deployment/preproduction/releases/current /home/www/sitedrupal_preprod/deployment/preproduction as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [c9b6dc32] Command: /usr/bin/env mv /home/www/sitedrupal_preprod/deployment/preproduction/releases/current /home/www/sitedrupal_preprod/deployment/preproduction
+  INFO [c9b6dc32] Finished in 0.233 seconds with exit status 0 (successful).
+ DEBUG [7bfe9c02] Running /usr/bin/env ls -x /home/www/sitedrupal_preprod/deployment/preproduction/releases as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [7bfe9c02] Command: /usr/bin/env ls -x /home/www/sitedrupal_preprod/deployment/preproduction/releases
+ DEBUG [7bfe9c02] 	20180604143759	20180604143935	20180606120507	20180614150416
+ DEBUG [7bfe9c02] Finished in 0.110 seconds with exit status 0 (successful).
+  INFO Keeping 3 of 4 deployed releases on preprod-sitevitrine.cargo-webproject.com
+ DEBUG [87c8b430] Running [ -d /home/www/sitedrupal_preprod/deployment/preproduction/current ] as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [87c8b430] Command: [ -d /home/www/sitedrupal_preprod/deployment/preproduction/current ]
+ DEBUG [87c8b430] Finished in 0.245 seconds with exit status 0 (successful).
+ DEBUG [14c50914] Running /usr/bin/env readlink /home/www/sitedrupal_preprod/deployment/preproduction/current as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [14c50914] Command: /usr/bin/env readlink /home/www/sitedrupal_preprod/deployment/preproduction/current
+ DEBUG [14c50914] 	/home/www/sitedrupal_preprod/deployment/preproduction/releases/20180614150416
+ DEBUG [14c50914] Finished in 0.150 seconds with exit status 0 (successful).
+  INFO [97dae91f] Running /usr/bin/env rm -rf /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180604143759 as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [97dae91f] Command: /usr/bin/env rm -rf /home/www/sitedrupal_preprod/deployment/preproduction/releases/20180604143759
+  INFO [97dae91f] Finished in 1.098 seconds with exit status 0 (successful).
+ DEBUG [adaa6181] Running if test ! -d /home/www/sitedrupal_preprod/deployment/preproduction/releases; then echo "Directory does not exist '/home/www/sitedrupal_preprod/deployment/preproduction/releases'" 1>&2; false; fi as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [adaa6181] Command: if test ! -d /home/www/sitedrupal_preprod/deployment/preproduction/releases; then echo "Directory does not exist '/home/www/sitedrupal_preprod/deployment/preproduction/releases'" 1>&2; false; fi
+ DEBUG [adaa6181] Finished in 0.116 seconds with exit status 0 (successful).
+  INFO [48164d47] Running /usr/bin/env echo "Branch develop (at 4129261e274c76d13201eb3f66c51d844aa32781) deployed as release 20180614150416 by " >> /home/www/sitedrupal_preprod/deployment/preproduction/revisions.log as sitedrupal_preprod@preprod-sitevitrine.cargo-webproject.com
+ DEBUG [48164d47] Command: cd /home/www/sitedrupal_preprod/deployment/preproduction/releases && /usr/bin/env echo "Branch develop (at 4129261e274c76d13201eb3f66c51d844aa32781) deployed as release 20180614150416 by " >> /home/www/sitedrupal_preprod/deployment/preproduction/revisions.log
+  INFO [48164d47] Finished in 0.141 seconds with exit status 0 (successful).

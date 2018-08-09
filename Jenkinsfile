@@ -1,5 +1,42 @@
 import java.util.Random
 
+def notifyChangeViaSlackEmail(buildBranch,String buildStatus) {
+    def sendSlack
+    def sendEmail
+    if( buildBranch == 'master' ){
+        sendSlack = 1
+    } else if ( buildBranch == 'develop' ) {
+        sendSlack = 1
+    } else {
+        sendSlack = 0
+    }
+
+    echo "notifyChangeViaSlackEmailtest buildBranch [${buildBranch}] [${buildStatus}] [${sendSlack}]"
+
+    if( sendSlack == 1 ){
+        if( buildStatus == 'success' ){
+            slackSend (
+                color: '#006400',
+                channel: "#deployjenkinssuccess",
+                message: "Déploiement  '${env.JOB_NAME} ${env.GIT_BRANCH} [${env.BUILD_NUMBER}]' réussi"
+                )
+        } else {
+            slackSend (
+                color: '#FF0000',
+                channel: "#deployjenkinsfalse",
+                message: "Erreur déploiements [failure] '${env.JOB_NAME} ${env.GIT_BRANCH} [${env.BUILD_NUMBER}]' (<${env.BUILD_URL}|Open>) "
+                )
+            emailext (
+                subject: "Jenkins - Erreur déploiements: Job '${env.JOB_NAME} ${env.GIT_BRANCH} [${env.BUILD_NUMBER}]'",
+                to: 'poleweb@cargo-services.fr',
+                body: """<p>Erreur déploiements [unstable] '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
+                  <p>Verifier la console  &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>""",
+                recipientProviders: [[$class: 'DevelopersRecipientProvider']]
+              )
+        }
+    }
+}
+
 pipeline {
     agent any
 
@@ -47,48 +84,22 @@ pipeline {
     post {
         always {
             sh "docker-compose down -v"
-            echo 'always'
         }
         success {
             echo 'I succeeeded!'
-            // send to email Déploiements Jenkins réussit
-            slackSend (
-                color: '#006400',
-                channel: "#deployjenkinssuccess",
-                message: "Déploiement  '${env.JOB_NAME} ${env.GIT_BRANCH} [${env.BUILD_NUMBER}]' réussi"
-                )
+            // send build success notifications
+            notifyChangeViaSlackEmail(env.BRANCH_NAME,'success')
+
        }
         unstable {
             echo 'I am unstable :/'
             // send build success notifications
-            slackSend (
-                color: '#FF0000',
-                channel: "#deployjenkinsfalse",
-                message: "Erreur déploiements [unstable] '${env.JOB_NAME} ${env.GIT_BRANCH} [${env.BUILD_NUMBER}]' (<${env.BUILD_URL}|Open>) "
-                )
-            emailext (
-                subject: "Jenkins - Erreur déploiements: Job '${env.JOB_NAME} ${env.GIT_BRANCH} [${env.BUILD_NUMBER}]'",
-                to: 'poleweb@cargo-services.fr',
-                body: """<p>Erreur déploiements [unstable] '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
-                  <p>Verifier la console  &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>""",
-                recipientProviders: [[$class: 'DevelopersRecipientProvider']]
-              )
+             notifyChangeViaSlackEmail(env.BRANCH_NAME,'unstable')
          }
         failure {
             echo 'I failed :('
             // send build success notifications
-            slackSend (
-                color: '#FF0000',
-                channel: "#deployjenkinsfalse",
-                message: "Erreur déploiements [failure] '${env.JOB_NAME} ${env.GIT_BRANCH} [${env.BUILD_NUMBER}]' (<${env.BUILD_URL}|Open>) "
-                )
-            emailext (
-                subject: "Jenkins - Erreur déploiements: Job '${env.JOB_NAME} ${env.GIT_BRANCH} [${env.BUILD_NUMBER}]'",
-                to: 'poleweb@cargo-services.fr',
-                body: """<p>Erreur déploiements [failure] '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
-                  <p>Verifier la console  &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>""",
-                recipientProviders: [[$class: 'DevelopersRecipientProvider']]
-              )
+             notifyChangeViaSlackEmail(env.BRANCH_NAME,'failure')
          }
     }
 }

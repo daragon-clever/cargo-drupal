@@ -175,9 +175,9 @@ jQuery(document).ready(function($) {
         /* Function shuffle */
         (function(d){d.fn.shuffle=function(c){c=[];return this.each(function(){c.push(d(this).clone(true))}).each(function(a,b){d(b).replaceWith(c[a=Math.floor(Math.random()*c.length)]);c.splice(a,1)})};d.shuffle=function(a){return d(a).shuffle()}})(jQuery);
         // First, shuffle all except text and big one
-        $('.item:not(.text):not(.big) img').shuffle();
+        $('.item:not(.text):not(.big) .paragraph').shuffle();
         // Then the big ones
-        $('.item.big img').shuffle();
+        $('.item.big .paragraph').shuffle();
     }
 
     //// Scroll homepage

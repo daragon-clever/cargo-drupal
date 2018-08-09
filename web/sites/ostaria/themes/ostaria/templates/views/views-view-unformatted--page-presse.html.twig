@@ -1,0 +1,14 @@
+<div class="presse">
+  <div class="row justify-content-center" nvs-animation-delay="500" nvs-animation-type="in-left">
+      {% for row in rows %}
+          {%
+              set row_classes = [
+              default_row_class ? 'views-row',
+          ]
+          %}
+        <div{{ row.attributes.addClass(row_classes) }}>
+            {{ row.content }}
+        </div>
+      {% endfor %}
+  </div>
+</div>

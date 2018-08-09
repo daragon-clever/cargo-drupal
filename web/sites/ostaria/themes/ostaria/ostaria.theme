@@ -1,0 +1,30 @@
+<?php
+
+// JS call : instafeed only on homepage
+function ostaria_preprocess_page(&$variables){
+    if ($variables['is_front'] == TRUE) {
+        $variables['#attached']['library'][] = 'ostaria/instafeed';
+    }
+}
+
+function masonry_pre_render(ViewExecutable $view) {
+    if (isset($view) && ($view->storage->id() == 'super_awesome_view')) {
+        $view->element['#attached']['library'][] = 'custom/custom_view';
+    }
+}
+
+function ostaria_preprocess_node(&$variables) {
+    $node = $variables['node'];
+    if (($node->getType() == 'photo') || ($node->getType() == 'photo_page_inspirations')) {
+        $variables['#attached']['library'][] = 'ostaria/ekko';
+    }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function ostaria_theme_suggestions_image_formatter_alter(array &$suggestions, array $variables) {
+    $entity = $variables['item']->getEntity();
+    $field_name = $variables['item']->getParent()->getName();
+    $suggestions[] = 'image_formatter__' . $entity->getEntityTypeId() . '__' . $entity->bundle() . '__' . $field_name;
+}

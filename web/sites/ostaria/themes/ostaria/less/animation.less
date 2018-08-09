@@ -24,9 +24,10 @@
 // Remove animations on small tablets and mobile devices
 @media (max-width: 768px) {
   [nvs-animation-type] {
-    animation: none;
-    transform: none;
-    transition-property: none;
+    animation: none !important;
+    transform: none !important;;
+    transition-property: none !important;;
+    visibility: visible !important;
   }
 }
 // Show elements when on screen
@@ -54,6 +55,16 @@
     transform: translateX(0);
   }
 }
+@keyframes fadeInBottom {
+  from {
+    opacity:0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity:1;
+    transform: translateY(0);
+  }
+}
 @keyframes fadeIn {
   from {
     opacity:0;
@@ -61,6 +72,10 @@
   to {
     opacity:1;
   }
+}
+@keyframes mover {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
 }
 .in-left {
   animation-name: fadeInLeft;
@@ -78,8 +93,17 @@
   animation-fill-mode: both;
   animation-duration: 1s;
 }
+.in-bottom {
+  animation-name: fadeInBottom;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+}
 .fade-in {
   animation-name: fadeIn;
   animation-fill-mode: both;
   animation-duration: 1s;
+}
+.vert-move {
+  -webkit-animation: mover 1s infinite  alternate;
+  animation: mover 1s infinite  alternate;
 }

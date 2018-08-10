@@ -1548,3 +1548,48 @@ div[role=contentinfo] {
     font-size: 80px;
   }
 }
+///////////////////////////// CONNEXION /////////////////////////////
+.user-login-form {
+  margin: 50px auto 0;
+  display: block;
+  width: 350px;
+  padding: 30px;
+  border: 1px solid @mint;
+  border-radius: 10px;
+  color: @darkMint;
+  @media @phone {
+    width: 100%;
+    margin-top: 30px;
+  }
+  label {
+    margin: 0 0 8px 0;
+    font-weight: 500;
+  }
+  .form-text {
+    border: 1px solid @darkMint;
+    outline: none;
+    background: white;
+    width: 100%;
+    margin: 0;
+    padding-left: 8px;
+  }
+  .description {
+    display: none;
+  }
+  .form-item:first-child {
+    margin-bottom: 15px;
+  }
+  #edit-submit {
+    background: @darkMint;
+    color: white;
+    font-weight: 500;
+    text-align: center;
+    width: 100%;
+    display: block;
+    margin-top: 20px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    padding: 8px 0;
+  }
+}

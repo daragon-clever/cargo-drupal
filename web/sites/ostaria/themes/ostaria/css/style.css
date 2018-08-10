@@ -666,6 +666,11 @@ header .inner .menu-link.active {
     right: inherit;
   }
 }
+#block-menuducomptedelutilisateur {
+  border-top: 1px solid white;
+  margin-top: 30px;
+  padding-top: 30px;
+}
 .mea-wrapper {
   margin-bottom: 20px;
 }
@@ -1967,4 +1972,9 @@ div[role=contentinfo] div[role=alert] {
   outline: none;
   font-size: 15px;
   padding: 8px 0;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+.user-login-form #edit-submit:hover {
+  opacity: 0.8;
 }

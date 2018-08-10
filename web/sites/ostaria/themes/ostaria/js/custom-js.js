@@ -214,4 +214,11 @@ jQuery(document).ready(function($) {
             $('.js-date-text#txt-' + dateId).addClass('current');
         })
     }
+
+    /// Footer fixed si body court
+    var body = $(document.body).height();
+    var windowHeight = $(window).height();
+    if (body < windowHeight) {
+        $('footer').addClass('fixed');
+    }
 });

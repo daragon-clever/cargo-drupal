@@ -960,6 +960,11 @@ footer a:hover {
   color: #5fafa7;
   text-decoration: none;
 }
+footer.fixed {
+  position: fixed;
+  bottom: 15px;
+  left: 0;
+}
 #inspirations-grid {
   margin-left: -15px;
   margin-right: -15px;

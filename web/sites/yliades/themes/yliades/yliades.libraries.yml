@@ -1,0 +1,30 @@
+######## Plugin & Framework ########
+
+# Bootstrap 4
+bootstrap:
+  css:
+    theme:
+      bootstrap4/css/bootstrap.min.css: {}
+  js:
+    bootstrap4/js/bootstrap.bundle.min.js: {}
+
+# Plugin Slick
+slick:
+  js:
+    https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js: { type: external }
+  dependencies:
+    - core/jquery
+  css:
+    theme:
+      https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css: { type: external }
+
+# Style général
+global-styling:
+#  header: true
+  css:
+    theme:
+      css/style.css: {}
+  js:
+    js/custom-js.js: {}
+  dependencies:
+    - core/jquery

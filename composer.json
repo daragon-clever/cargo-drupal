@@ -24,7 +24,7 @@
         "drupal/captcha": "^1.0@beta",
         "drupal/console": "^1.0.2",
         "drupal/cookieconsent": "^1.4",
-        "drupal/core": "~8.5.1",
+        "drupal/core": "^8.5",
         "drupal/entity_reference_revisions": "^1.5",
         "drupal/google_analytics": "^2.2",
         "drupal/image_field_repair": "^1.2",

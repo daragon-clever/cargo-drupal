@@ -1,5 +1,5 @@
-name: Ostaria
-description: Ostaria - Thème
+name: Yliades
+description: Yliades - Thème
 type: theme
 core: 8.x
 
@@ -10,9 +10,9 @@ regions:
   footer: 'Footer'
 
 libraries:
-  - ostaria/bootstrap
-  - ostaria/slick
-  - ostaria/global-styling
+  - yliades/bootstrap
+  - yliades/slick
+  - yliades/global-styling
 
 stylesheets-remove:
   - core/themes/stable/css/system/components/ajax-progress.module.css

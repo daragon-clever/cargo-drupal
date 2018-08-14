@@ -1,18 +1,19 @@
-<!-- Overlay à l'ouverture du menu -->
-<div class="overlay js-toggle-menu" style="display: none;"> </div>
-
-<!-- Header et navigation -->
+<!-- Header -->
 {% include directory ~ '/partials/header.html.twig' %}
 
-<div class="container">
-    {% if page.highlighted %}
-        <div class="row">
-            <div class="col">
-                {{ page.highlighted }}
-            </div>
-        </div>
-    {% endif %}
+<!-- Navigation -->
+{% if page.navigation %}
+    {% include directory ~ '/partials/navigation.html.twig' %}
+{% endif %}
 
+<div class="container">
+    {#{% if page.highlighted %}#}
+        {#<div class="row">#}
+            {#<div class="col">#}
+                {#{{ page.highlighted }}#}
+            {#</div>#}
+        {#</div>#}
+    {#{% endif %}#}
     {% if page.content %}
         <div class="row">
             <div class="col">

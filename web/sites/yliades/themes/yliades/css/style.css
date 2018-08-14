@@ -1,0 +1,92 @@
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN_r8OUuhs.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFVZ0e.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UNirkOUuhs.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN7rgOUuhs.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Open Sans ExtraBold'), local('OpenSans-ExtraBold'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN8rsOUuhs.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Dancing Script';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Dancing Script Regular'), local('DancingScript-Regular'), url(https://fonts.gstatic.com/s/dancingscript/v9/If2RXTr6YS-zF4S-kcSWSVi_szLgiuQ.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Dancing Script';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Dancing Script Bold'), local('DancingScript-Bold'), url(https://fonts.gstatic.com/s/dancingscript/v9/If2SXTr6YS-zF4S-kcSWSVi_szpbr_QqqiY.ttf) format('truetype');
+}
+@media (min-width: 1620px) {
+  .container {
+    max-width: 1620px;
+  }
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #232323;
+}
+header a {
+  transition: opacity 0.3s;
+}
+header a:hover {
+  opacity: 0.8;
+}
+header .logo {
+  margin: 30px 0;
+}
+.main-menu {
+  border-top: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+}
+.main-menu ul {
+  padding: 0;
+  margin: 0;
+  font-size: 0;
+}
+.main-menu ul li {
+  display: inline-block;
+  padding: 0 15px;
+  line-height: 42px;
+  font-size: 14px;
+  border-right: 1px solid #bbb;
+}
+.main-menu ul li:last-child {
+  border-right: none;
+}
+.main-menu ul li a {
+  color: #232323;
+  font-weight: 600;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+.main-menu ul li a:hover {
+  color: #b95034;
+  text-decoration: none;
+}

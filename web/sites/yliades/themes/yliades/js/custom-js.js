@@ -13,14 +13,14 @@ jQuery(document).ready(function($) {
                     }
                 },
                 {
-                    breakpoint: 769,
+                    breakpoint: 991,
                     settings: {
                         slidesToShow: 3,
                         slidesToScroll: 3
                     }
                 },
                 {
-                    breakpoint: 480,
+                    breakpoint: 767,
                     settings: {
                         slidesToShow: 1,
                         slidesToScroll: 1,

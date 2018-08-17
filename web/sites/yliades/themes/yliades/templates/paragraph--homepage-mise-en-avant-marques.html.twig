@@ -1,16 +1,36 @@
 {% block paragraph %}
-  <div class="col">
-      {% block content %}
-          <div class="marque" style="background: url({{ content.field_background_image_marque|render|striptags|trim }})
-                                  no-repeat center bottom {{ content.field_couleur_marque|render|striptags|trim }}">
-            <div class="inner">
-                {{ content.field_logo_marque }}
-                {{  content.field_txt_marque }}
-              <a href="/node/{{ content.field_lien_marque|render|striptags|trim }}" title="">
-                Je découvre
-              </a>
+    <div class="col">
+        {% block content %}
+            <div class="marque">
+                <div class="inner">
+                    <a class="cta" href="{{ content.field_lien_marque|render|striptags|trim }}" title="">
+                        <div class="upper" style="background-color:{{ content.field_couleur_marque|render|striptags|trim }};">
+                            <span class="logo">
+                                {{ content.field_logo_marque }}
+                            </span>
+                            <span class="txt">
+                                {{ content.field_txt_marque }}
+                                <span class="hidden-part d-none d-sm-block" style="background-color:{{ content.field_couleur_marque|render|striptags|trim }};">
+                                    <div class="inner">
+                                        <span class="cta">
+                                            Je découvre
+                                        </span>
+                                    </div>
+                                </span>
+                            </span>
+                            <span class="arrow" style="background-color:{{ content.field_couleur_marque|render|striptags|trim }};"></span>
+                        </div>
+                        <div class="d-block d-sm-none">
+                            <span class="cta-mobile">
+                                Je découvre
+                            </span>
+                        </div>
+                        <div class="bottom">
+                            {{ content.field_background_image_marque }}
+                        </div>
+                    </a>
+                </div>
             </div>
-          </div>
-      {% endblock %}
-  </div>
+        {% endblock %}
+    </div>
 {% endblock paragraph %}

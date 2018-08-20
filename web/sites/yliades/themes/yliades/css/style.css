@@ -289,11 +289,25 @@ header .logo {
 }
 .views-exposed-form {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 .views-exposed-form .form-radios > div {
   display: inline-block;
   margin-left: 30px;
+  font-size: 14px;
+  color: #80807f;
+  font-weight: 700;
+}
+.views-exposed-form .form-radios > div input,
+.views-exposed-form .form-radios > div label {
+  vertical-align: middle;
+  margin: 0;
+}
+.views-exposed-form .form-radios > div label {
+  margin-top: -2px;
+}
+.views-exposed-form .form-radios > div input[checked=checked] + label {
+  color: black;
 }
 .views-exposed-form .form-radios > div:first-child {
   margin-left: 0;
@@ -310,6 +324,13 @@ header .logo {
   font-size: 14px;
   font-weight: 600;
 }
+.vue-evenement header {
+  font-family: 'Dancing Script', cursive;
+  text-align: center;
+  font-size: 28px;
+  color: #232323;
+  margin-bottom: 30px;
+}
 .vue-evenement .item {
   text-align: center;
   margin-bottom: 65px;
@@ -323,27 +344,28 @@ header .logo {
   display: inline-block;
   width: 100%;
   height: 220px;
-  overflow: hidden;
-  position: relative;
   text-align: center;
+  padding: 15px;
   border: 1px solid #bbbbbb;
 }
-.vue-evenement .item .views-field-field-image-evenement a {
+.vue-evenement .item .views-field-field-image-evenement .field-content {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.vue-evenement .item .views-field-field-image-evenement .field-content a {
   display: block;
 }
-.vue-evenement .item .views-field-field-image-evenement a img {
-  max-width: 100%;
-  height: auto;
-}
-.vue-evenement .item .views-field-field-image-evenement:before {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
+.vue-evenement .item .views-field-field-image-evenement .field-content a img {
   width: 100%;
   height: 100%;
-  border: 15px solid white;
+  object-fit: cover;
+  transition: all 0.5s;
+}
+.vue-evenement .item .views-field-field-image-evenement:hover img {
+  width: 110% !important;
+  margin-left: -5%;
+  opacity: 0.7;
 }
 .vue-evenement .item .views-field-title {
   font-size: 15px;

@@ -256,3 +256,145 @@ header .logo {
     transition: opacity 0.5s;
   }
 }
+.loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: white;
+  opacity: 0.5;
+}
+.loader #status {
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -18px 0 0 -18px;
+}
+.loader #status .spinner {
+  height: 36px;
+  width: 36px;
+  position: relative;
+  -webkit-animation: rotation .8s infinite linear;
+  -moz-animation: rotation .8s infinite linear;
+  -o-animation: rotation .8s infinite linear;
+  animation: rotation .8s infinite linear;
+  border-left: 3px solid rgba(85, 85, 85, 0.8);
+  border-right: 3px solid rgba(85, 85, 85, 0.8);
+  border-bottom: 3px solid rgba(85, 85, 85, 0.8);
+  border-top: 3px solid rgba(85, 85, 85, 0.8);
+  border-radius: 100%;
+}
+.views-exposed-form {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.views-exposed-form .form-radios > div {
+  display: inline-block;
+  margin-left: 30px;
+}
+.views-exposed-form .form-radios > div:first-child {
+  margin-left: 0;
+}
+.views-exposed-form .form-radios > div * {
+  cursor: pointer;
+}
+.views-exposed-form input[type=submit] {
+  display: none;
+}
+.vue-evenement {
+  max-width: 1420px;
+  margin: 0 auto;
+  font-size: 14px;
+  font-weight: 600;
+}
+.vue-evenement .item {
+  text-align: center;
+  margin-bottom: 65px;
+}
+.vue-evenement .item > div {
+  max-width: 300px;
+  display: block;
+  margin: 0 auto;
+}
+.vue-evenement .item .views-field-field-image-evenement {
+  display: inline-block;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  border: 1px solid #bbbbbb;
+}
+.vue-evenement .item .views-field-field-image-evenement a {
+  display: block;
+}
+.vue-evenement .item .views-field-field-image-evenement a img {
+  max-width: 100%;
+  height: auto;
+}
+.vue-evenement .item .views-field-field-image-evenement:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 15px solid white;
+}
+.vue-evenement .item .views-field-title {
+  font-size: 15px;
+  font-weight: 700;
+  border-bottom: 1px solid #bbbbbb;
+  display: flex;
+  height: 70px;
+  overflow: hidden;
+}
+.vue-evenement .item .views-field-title > span {
+  margin: auto;
+}
+.vue-evenement .item .views-field-title > span a {
+  color: black;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+.vue-evenement .item .views-field-title > span a:hover {
+  opacity: 0.8;
+}
+.vue-evenement .item .views-field-created {
+  color: #b95034;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 15px auto;
+  text-align: left;
+}
+.vue-evenement .item .views-field-field-description-evenement {
+  text-align: left;
+}
+.vue-evenement .item .views-field-view-node {
+  text-align: left;
+  margin-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #bbbbbb;
+}
+.vue-evenement .item .views-field-view-node a {
+  color: #80807f;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+.vue-evenement .item .views-field-view-node a:hover {
+  opacity: 0.8;
+}
+.vue-evenement .item .views-field-view-node a:after {
+  content: '→';
+  display: inline-block;
+  font-size: 17px;
+  margin-left: 5px;
+  transition: margin-left 0.5s;
+}
+.vue-evenement .item .views-field-view-node a:hover:after {
+  margin-left: 10px;
+}

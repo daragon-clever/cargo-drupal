@@ -36,5 +36,4 @@ jQuery(document).ready(function($) {
         this.progress.element = $('<div class="ajax-progress ajax-progress-fullscreen loader"> </div>');
         $('.views-infinite-scroll-content-wrapper').append(this.progress.element);
     };
-
 });

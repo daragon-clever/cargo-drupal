@@ -33,7 +33,10 @@ jQuery(document).ready(function($) {
     }
 
     Drupal.Ajax.prototype.setProgressIndicatorFullscreen = function () {
-        this.progress.element = $('<div class="ajax-progress ajax-progress-fullscreen loader"> </div>');
-        $('.views-infinite-scroll-content-wrapper').append(this.progress.element);
+        this.progress.element = $('' +
+            '<div class="loader">' +
+                '<div id="status"><div class="spinner"> </div> </div>' +
+            '</div>');
+        $('.vue-evenement').append(this.progress.element);
     };
 });

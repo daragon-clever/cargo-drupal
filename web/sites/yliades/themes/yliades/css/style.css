@@ -1,3 +1,11 @@
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
@@ -257,7 +265,7 @@ header .logo {
   }
 }
 .loader {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   height: 100%;
@@ -281,10 +289,10 @@ header .logo {
   -moz-animation: rotation .8s infinite linear;
   -o-animation: rotation .8s infinite linear;
   animation: rotation .8s infinite linear;
-  border-left: 3px solid rgba(85, 85, 85, 0.8);
-  border-right: 3px solid rgba(85, 85, 85, 0.8);
-  border-bottom: 3px solid rgba(85, 85, 85, 0.8);
-  border-top: 3px solid rgba(85, 85, 85, 0.8);
+  border-left: 3px solid rgba(85, 85, 85, 0.3);
+  border-right: 3px solid rgba(85, 85, 85, 0.3);
+  border-bottom: 3px solid rgba(85, 85, 85, 0.3);
+  border-top: 3px solid #555555;
   border-radius: 100%;
 }
 .views-exposed-form {
@@ -318,6 +326,52 @@ header .logo {
 .views-exposed-form input[type=submit] {
   display: none;
 }
+@media only screen and (max-width: 991px) {
+  .views-exposed-form > div > div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+  .views-exposed-form > div > div > div {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 33%;
+    flex: 0 0 33%;
+    max-width: 33%;
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin: 0 !important;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .views-exposed-form > div > div > div {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0;
+  }
+  .views-exposed-form > div > div > div input {
+    display: none;
+  }
+  .views-exposed-form > div > div > div label {
+    color: #8d8d8c;
+    background: #e2e2e2;
+    padding: 10px 0;
+    display: block;
+    width: 100%;
+  }
+  .views-exposed-form > div > div > div input[checked=checked] + label {
+    background: #b95034;
+    color: white !important;
+  }
+}
 .vue-evenement {
   max-width: 1420px;
   margin: 0 auto;
@@ -331,14 +385,31 @@ header .logo {
   color: #232323;
   margin-bottom: 30px;
 }
+@media only screen and (max-width: 767px) {
+  .vue-evenement header {
+    width: 70%;
+    margin: 0 auto;
+    line-height: 1.3;
+  }
+}
 .vue-evenement .item {
   text-align: center;
   margin-bottom: 65px;
+}
+@media only screen and (max-width: 767px) {
+  .vue-evenement .item {
+    margin-bottom: 45px;
+  }
 }
 .vue-evenement .item > div {
   max-width: 300px;
   display: block;
   margin: 0 auto;
+}
+@media only screen and (max-width: 991px) {
+  .vue-evenement .item > div {
+    max-width: 100%;
+  }
 }
 .vue-evenement .item .views-field-field-image-evenement {
   display: inline-block;
@@ -398,7 +469,7 @@ header .logo {
 }
 .vue-evenement .item .views-field-view-node {
   text-align: left;
-  margin-top: 15px;
+  margin-top: 5px;
   padding-bottom: 15px;
   border-bottom: 1px solid #bbbbbb;
 }

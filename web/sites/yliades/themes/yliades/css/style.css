@@ -60,6 +60,7 @@
 }
 body {
   font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
   color: #232323;
 }
 header a {
@@ -76,7 +77,7 @@ header .logo {
   border-bottom: 1px solid #bbb;
   padding-top: 10px;
   padding-bottom: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 .main-menu ul {
   padding: 0;
@@ -263,6 +264,72 @@ header .logo {
     opacity: 1;
     transition: opacity 0.5s;
   }
+}
+h2#title-marques {
+  font-size: 40px;
+  font-family: 'Dancing Script', cursive;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+@media only screen and (max-width: 991px) {
+  h2#title-marques {
+    font-size: 35px;
+    margin-bottom: 20px;
+  }
+}
+.homepage-text-title {
+  padding: 50px;
+  border: 1px solid black;
+  max-width: 1170px;
+  margin: 35px auto 60px;
+}
+@media only screen and (max-width: 767px) {
+  .homepage-text-title {
+    padding: 30px;
+  }
+}
+.homepage-text-title h3 {
+  font-size: 30px;
+  font-family: 'Dancing Script', cursive;
+  text-align: center;
+  font-weight: 700;
+  margin-top: -70px;
+  margin-bottom: 35px;
+}
+@media only screen and (max-width: 991px) {
+  .homepage-text-title h3 {
+    font-size: 25px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .homepage-text-title h3 {
+    margin-top: -50px;
+    margin-bottom: 25px;
+  }
+}
+.homepage-text-title h3 span {
+  background: white;
+  padding: 0 30px;
+}
+@media only screen and (max-width: 991px) {
+  .homepage-text-title h3 span {
+    padding: 0 15px;
+    display: block;
+    max-width: 60%;
+    margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .homepage-text-title h3 span {
+    padding: 0;
+    max-width: 100%;
+  }
+}
+.homepage-text-title p {
+  margin: 0;
+  color: #80807f;
+  font-weight: 600;
 }
 .loader {
   position: absolute;

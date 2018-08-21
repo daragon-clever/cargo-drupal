@@ -1,0 +1,32 @@
+<!-- Header -->
+{% include directory ~ '/partials/header.html.twig' %}
+
+<!-- Navigation -->
+{% if page.navigation %}
+    {% include directory ~ '/partials/navigation.html.twig' %}
+{% endif %}
+
+<div class="container">
+    {% if page.content %}
+    <div class="row">
+        <div class="col">
+            {{ page.content }}
+        </div>
+    </div>
+    {% endif %}
+    <div class="homepage-encarts-bottom">
+        <div class="row">
+            <div class="col-12 col-sm-6">
+                {{ page.homepagebottomleft }}
+            </div>
+            <div class="col-12 col-sm-6">
+                {{ page.homepagebottomright }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+{% if page.footer %}
+    {{ page.footer }}
+{% endif %}

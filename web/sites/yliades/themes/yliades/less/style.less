@@ -23,6 +23,7 @@
 // Body
 body {
   font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
   color: #232323;
 }
 
@@ -44,7 +45,7 @@ header {
   border-bottom: 1px solid #bbb;
   padding-top: 10px;
   padding-bottom: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   ul {
     padding:0;
     margin:0;
@@ -221,6 +222,60 @@ header {
         }
       }
     }
+  }
+}
+h2#title-marques {
+  font-size: 40px;
+  font-family: 'Dancing Script', cursive;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 40px;
+  @media @tablet {
+    font-size: 35px;
+    margin-bottom: 20px;
+  }
+}
+.homepage-text-title {
+  padding: 50px;
+  border: 1px solid black;
+  max-width: 1170px;
+  margin: 35px auto 60px;
+  @media @phone {
+    padding: 30px;
+  }
+  h3 {
+    font-size: 30px;
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+    font-weight: 700;
+    margin-top: -70px;
+    margin-bottom: 35px;
+    @media @tablet {
+      font-size: 25px;
+    }
+    @media @phone {
+      margin-top: -50px;
+      margin-bottom: 25px;
+    }
+    span {
+      background: white;
+      padding: 0 30px;
+      @media @tablet {
+        padding: 0 15px;
+        display: block;
+        max-width: 60%;
+        margin: 0 auto;
+      }
+      @media @phone {
+        padding: 0;
+        max-width: 100%;
+      }
+    }
+  }
+  p {
+    margin: 0;
+    color: #80807f;
+    font-weight: 600;
   }
 }
 

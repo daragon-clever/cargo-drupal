@@ -331,6 +331,68 @@ h2#title-marques {
   color: #80807f;
   font-weight: 600;
 }
+.homepage-encarts-bottom {
+  text-align: center;
+  margin: 0 auto 60px;
+}
+@media (min-width: 1500px) {
+  .homepage-encarts-bottom {
+    max-width: 1400px;
+  }
+  .homepage-encarts-bottom > div {
+    margin-left: -50px;
+    margin-right: -50px;
+  }
+  .homepage-encarts-bottom > div > div {
+    padding: 0 50px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .homepage-encarts-bottom > div > div:first-child {
+    margin-bottom: 30px;
+  }
+}
+.homepage-encarts-bottom .homepage-block-news {
+  border: 1px solid;
+}
+.homepage-encarts-bottom .homepage-block-news header p {
+  margin: 30px 0;
+  font-size: 18px;
+  color: #232323;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.homepage-encarts-bottom .homepage-block-news .views-field-field-image-evenement .field-content {
+  height: 490px;
+  width: 360px;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 991px) {
+  .homepage-encarts-bottom .homepage-block-news .views-field-field-image-evenement .field-content {
+    width: 85%;
+    height: 400px;
+  }
+}
+.homepage-encarts-bottom .homepage-block-news .views-field-field-image-evenement .field-content img {
+  object-fit: cover;
+  box-shadow: 0 0 10px #00000080;
+  height: 100%;
+  width: 100%;
+  transition: opacity 0.3s;
+}
+.homepage-encarts-bottom .homepage-block-news .views-field-field-image-evenement .field-content img:hover {
+  opacity: 0.8;
+}
+.homepage-encarts-bottom .homepage-block-news .homepage-news-link {
+  color: #232323;
+  text-decoration: underline;
+  margin: 20px 0 40px;
+  display: block;
+  transition: opacity 0.3s;
+}
+.homepage-encarts-bottom .homepage-block-news .homepage-news-link:hover {
+  opacity: 0.8;
+}
 .loader {
   position: absolute;
   top: 0;

@@ -278,6 +278,60 @@ h2#title-marques {
     font-weight: 600;
   }
 }
+.homepage-encarts-bottom {
+  text-align: center;
+  margin: 0 auto 60px;
+  @media (min-width: 1500px) {
+    max-width: 1400px;
+    & > div {
+      margin-left: -50px;
+      margin-right: -50px;
+      & > div {
+        padding: 0 50px;
+      }
+    }
+  }
+  @media @phone {
+    & > div > div:first-child {
+      margin-bottom: 30px;
+    }
+  }
+  .homepage-block-news {
+    border: 1px solid;
+    header p {
+      margin: 30px 0;
+      font-size: 18px;
+      color: #232323;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .views-field-field-image-evenement {
+      .field-content {
+        height: 490px;
+        width: 360px;
+        margin: 0 auto;
+        @media @tablet {
+          width: 85%;
+          height: 400px;
+        }
+        img {
+          object-fit: cover;
+          box-shadow: 0 0 10px #00000080;
+          height: 100%;
+          width: 100%;
+          .dimOpacityOnHover(0.8);
+        }
+      }
+    }
+    .homepage-news-link {
+      color: #232323;
+      text-decoration: underline;
+      margin: 20px 0 40px;
+      display: block;
+      .dimOpacityOnHover(0.8);
+    }
+  }
+}
 
 // Page Evenements
 .loader{

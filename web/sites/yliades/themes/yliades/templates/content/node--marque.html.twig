@@ -7,8 +7,8 @@
 </div>
 
 <div>
-    {#{{ content.field_menu_lien_catalogue.0 }}#}
-    --{{ content.field_menu_lien_catalogue[0]['#url'] }}--
+    {#--{{ content.field_menu_lien_catalogue.0 }}-- avec balise lien a#}
+    --{{ content.field_menu_lien_catalogue[0]['#url'] }}-- {#sans balise lien a#}
     {{ content.field_menu_lien_parutions[0]['#url'] }}
     {{ content.field_menu_lien_boutique_pro[0]['#url'] }}
     {{ content.field_menu_lien_e_shop[0]['#url'] }}

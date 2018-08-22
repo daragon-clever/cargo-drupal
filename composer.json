@@ -28,6 +28,7 @@
         "drupal/core": "^8.5",
         "drupal/entity_pager": "^1.0@beta",
         "drupal/entity_reference_revisions": "^1.5",
+        "drupal/field_group": "^1.0",
         "drupal/google_analytics": "^2.2",
         "drupal/image_field_repair": "^1.2",
         "drupal/mandrill": "^1.0",

@@ -6,7 +6,17 @@
     {{ content.field_resume_marque }}
 </div>
 
-<div>{{ content.field_menu }}</div>
+<div>
+    {#{{ content.field_menu_lien_catalogue.0 }}#}
+    --{{ content.field_menu_lien_catalogue[0]['#url'] }}--
+    {{ content.field_menu_lien_parutions[0]['#url'] }}
+    {{ content.field_menu_lien_boutique_pro[0]['#url'] }}
+    {{ content.field_menu_lien_e_shop[0]['#url'] }}
+    {{ content.field_menu_lien_facebook[0]['#url'] }}
+    {{ content.field_menu_lien_instagram[0]['#url'] }}
+    {{ content.field_menu_lien_pinterest[0]['#url'] }}
+    {{ content.field_menu_lien_contact[0]['#url'] }}
+</div>
 
 <div>{{ content.field_description_marque }}</div>
 

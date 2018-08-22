@@ -104,6 +104,196 @@ header .logo {
   color: #b95034;
   text-decoration: none;
 }
+nav#block-menufooter {
+  background: #232323;
+  text-align: center;
+  color: white;
+  position: relative;
+  margin-top: 30px;
+}
+nav#block-menufooter ul {
+  padding: 0;
+  margin: 0;
+  font-size: 0;
+}
+nav#block-menufooter ul li {
+  display: inline-block;
+  font-size: 14px;
+  position: relative;
+  padding: 15px 0;
+}
+@media only screen and (max-width: 991px) {
+  nav#block-menufooter ul li {
+    font-size: 12px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  nav#block-menufooter ul li {
+    display: block;
+    width: 100%;
+    border-top: 1px solid #bbbbbb;
+    font-size: 14px;
+    text-align: left;
+  }
+}
+nav#block-menufooter ul li a {
+  color: white;
+  font-weight: 600;
+  line-height: 35px;
+  border-left: 1px solid #bbbbbb;
+  display: block;
+  padding: 0 55px;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+nav#block-menufooter ul li a:hover {
+  opacity: 0.8;
+}
+@media (max-width: 1024px) {
+  nav#block-menufooter ul li a {
+    padding: 0 15px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  nav#block-menufooter ul li a {
+    padding: 0 10px;
+    line-height: 15px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  nav#block-menufooter ul li a {
+    padding: 0 0 0 20px;
+    border: none;
+  }
+}
+nav#block-menufooter ul li a.dropup {
+  padding-right: 65px;
+}
+@media (max-width: 1024px) {
+  nav#block-menufooter ul li a.dropup {
+    padding-right: 25px;
+  }
+}
+nav#block-menufooter ul li a.dropup:after {
+  content: '';
+  width: 7px;
+  height: 5px;
+  display: block;
+  background: url("../images/footer/arrow_dropup.png") no-repeat transparent;
+  position: absolute;
+  top: 16px;
+  right: 40px;
+  transform: rotate(180deg);
+  transform-origin: center;
+  transition: transform 0.3s;
+}
+@media (max-width: 1024px) {
+  nav#block-menufooter ul li a.dropup:after {
+    right: 10px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  nav#block-menufooter ul li a.dropup:after {
+    top: 6px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  nav#block-menufooter ul li a.dropup:after {
+    right: 20px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  nav#block-menufooter ul li a:after {
+    content: '';
+    width: 7px;
+    height: 5px;
+    display: block;
+    background: url("../images/footer/arrow_dropup.png") no-repeat transparent;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    transform: rotate(90deg);
+    transform-origin: center;
+    transition: transform 0.3s;
+  }
+}
+nav#block-menufooter ul li:first-child a {
+  border-left: none;
+}
+nav#block-menufooter ul li ul {
+  background: #232323;
+  position: absolute;
+  bottom: 65px;
+  display: none;
+  width: 100%;
+  padding: 15px;
+  text-align: left;
+  list-style-type: disc;
+  transition: all 0.3s;
+}
+nav#block-menufooter ul li ul li {
+  display: list-item;
+  padding: 0;
+  margin-left: 25px;
+  transition: color 0.3s;
+}
+nav#block-menufooter ul li ul li:hover {
+  color: #b95034;
+}
+nav#block-menufooter ul li ul li a {
+  border: none;
+  line-height: 2;
+  color: #cbcbcb;
+  padding: 0;
+  transition: color 0.3s;
+}
+nav#block-menufooter ul li ul li a:hover {
+  color: #b95034;
+}
+@media only screen and (max-width: 767px) {
+  nav#block-menufooter ul li ul li {
+    display: block;
+    margin-left: 0;
+    padding: 5px 0 5px 25px;
+  }
+}
+@media (max-width: 1024px) {
+  nav#block-menufooter ul li ul {
+    width: 200px;
+    left: -35px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  nav#block-menufooter ul li ul {
+    bottom: 45px;
+    width: 180px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  nav#block-menufooter ul li ul {
+    position: relative;
+    width: 100%;
+    left: inherit;
+    bottom: inherit;
+    list-style-type: none;
+    padding: 0;
+    margin: 18px 0 -12px;
+  }
+}
+nav#block-menufooter ul li:hover a:after {
+  transform: rotate(0deg);
+}
+nav#block-menufooter ul li:hover > ul {
+  display: block;
+}
+@media (min-width: 768px) {
+  nav#block-menufooter.fixed {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+}
 .mea-marques .marque {
   position: relative;
   text-align: center;

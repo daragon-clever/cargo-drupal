@@ -73,6 +73,171 @@ header {
   }
 }
 
+// Footer
+nav#block-menufooter {
+  background: #232323;
+  text-align: center;
+  color: white;
+  position: relative;
+  margin-top: 30px;
+  ul {
+    padding: 0;
+    margin: 0;
+    font-size: 0;
+    li {
+      display: inline-block;
+      font-size: 14px;
+      position: relative;
+      padding: 15px 0;
+      @media @tablet {
+        font-size: 12px;
+      }
+      @media @phone {
+        display: block;
+        width: 100%;
+        border-top: 1px solid #bbbbbb;
+        font-size: 14px;
+        text-align: left;
+      }
+      a {
+        color: white;
+        font-weight: 600;
+        line-height: 35px;
+        border-left: 1px solid #bbbbbb;
+        display: block;
+        padding: 0 55px;
+        text-decoration: none;
+        .dimOpacityOnHover(0.8);
+        @media (max-width: 1024px) {
+          padding:0 15px;
+        }
+        @media @tablet {
+          padding: 0 10px;
+          line-height: 15px;
+        }
+        @media @phone {
+          padding: 0 0 0 20px;
+          border: none;
+        }
+        &.dropup {
+          padding-right: 65px;
+          @media (max-width: 1024px) {
+            padding-right: 25px;
+          }
+          &:after {
+            content: '';
+            width: 7px;
+            height: 5px;
+            display: block;
+            background: url("../images/footer/arrow_dropup.png") no-repeat transparent;
+            position: absolute;
+            top: 16px;
+            right: 40px;
+            transform: rotate(180deg);
+            transform-origin: center;
+            transition: transform 0.3s;
+            @media (max-width: 1024px) {
+              right: 10px;
+            }
+            @media @tablet {
+              top: 6px;
+            }
+            @media @phone {
+              right: 20px;
+            }
+          }
+        }
+        @media @phone {
+          &:after {
+            content: '';
+            width: 7px;
+            height: 5px;
+            display: block;
+            background: url("../images/footer/arrow_dropup.png") no-repeat transparent;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            transform: rotate(90deg);
+            transform-origin: center;
+            transition: transform 0.3s;
+          }
+        }
+      }
+      &:first-child a {
+        border-left: none;
+      }
+      ul {
+        background: #232323;
+        position: absolute;
+        bottom: 65px;
+        display: none;
+        width: 100%;
+        padding: 15px;
+        text-align: left;
+        list-style-type: disc;
+        transition: all 0.3s;
+        li {
+          display: list-item;
+          padding: 0;
+          margin-left: 25px;
+          transition: color 0.3s;
+          &:hover {
+            color: @cuivre;
+          }
+          a {
+            border: none;
+            line-height: 2;
+            color: #cbcbcb;
+            padding: 0;
+            transition: color 0.3s;
+            &:hover {
+              color: @cuivre;
+            }
+          }
+          @media @phone {
+            display: block;
+            margin-left: 0;
+            padding: 5px 0 5px 25px;
+          }
+        }
+        @media (max-width: 1024px) {
+          width: 200px;
+          left: -35px;
+        }
+        @media @tablet {
+          bottom: 45px;
+          width: 180px;
+        }
+        @media @phone {
+          position: relative;
+          width: 100%;
+          left: inherit;
+          bottom: inherit;
+          list-style-type: none;
+          padding: 0;
+          margin: 18px 0 -12px;
+        }
+      }
+      &:hover {
+        a:after {
+          transform: rotate(0deg);
+        }
+        & > ul {
+          display: block;
+        }
+      }
+    }
+  }
+  @media (min-width: 768px) {
+    &.fixed {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+  }
+}
+
 // Homepage
 .mea-marques {
   .marque {

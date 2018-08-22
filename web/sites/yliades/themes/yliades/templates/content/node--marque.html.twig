@@ -1,38 +1,117 @@
-{{ content.field_couleur_hexa_marque|render|striptags|trim }}
+<div class="page-marque">
 
-<div>
-    {{ content.field_logo_marque }}
-    {{ content.field_titre_marque }}
-    {{ content.field_resume_marque }}
-</div>
+    <div class="header">
+        <div class="row justify-content-center" style="background-color: {{ content.field_couleur_hexa_marque|render|striptags|trim }}">
+            <div class="col-auto logo">
+                {{ content.field_logo_marque }}
+            </div>
+            <div class="col-auto text">
+                {{ content.field_titre_marque }}
+                {{ content.field_resume_marque }}
+            </div>
+        </div>
+    </div>
 
-<div>
-    {#--{{ content.field_menu_lien_catalogue.0 }}-- avec balise lien a#}
-    --{{ content.field_menu_lien_catalogue[0]['#url'] }}-- {#sans balise lien a#}
-    {{ content.field_menu_lien_parutions[0]['#url'] }}
-    {{ content.field_menu_lien_boutique_pro[0]['#url'] }}
-    {{ content.field_menu_lien_e_shop[0]['#url'] }}
-    {{ content.field_menu_lien_facebook[0]['#url'] }}
-    {{ content.field_menu_lien_instagram[0]['#url'] }}
-    {{ content.field_menu_lien_pinterest[0]['#url'] }}
-    {{ content.field_menu_lien_contact[0]['#url'] }}
-</div>
+    <div class="menu">
+        <div class="row" style="background-color: {{ content.field_couleur_hexa_marque|render|striptags|trim }}">
+            <div class="col">
+                {% if content.field_menu_lien_catalogue[0]['#url'] %}
+                    <a class="catalog" href="{{ content.field_menu_lien_catalogue[0]['#url'] }}" title="Catalogue">
+                        <span>Catalogue</span>
+                    </a>
+                {% endif %}
+                {% if content.field_menu_lien_parutions[0]['#url'] %}
+                    <a class="parutions" href="{{ content.field_menu_lien_parutions[0]['#url'] }}" title="Parutions">
+                        <span>Parutions</span>
+                    </a>
+                {% endif %}
+                {% if content.field_menu_lien_boutique_pro[0]['#url'] %}
+                    <a class="boutique-pro" href="{{ content.field_menu_lien_boutique_pro[0]['#url'] }}" title="Boutique pro">
+                        <span>Boutique pro</span>
+                    </a>
+                {% endif %}
+                {% if content.field_menu_lien_e_shop[0]['#url'] %}
+                    <a class="eshop" href="{{ content.field_menu_lien_e_shop[0]['#url'] }}" title="E-Shop">
+                        <span>E-Shop</span>
+                    </a>
+                {% endif %}
+                <div class="rs-wrapper">
+                    {% if content.field_menu_lien_facebook[0]['#url'] %}
+                        <a class="rs facebook" href="{{ content.field_menu_lien_facebook[0]['#url'] }}" title="Facebook">
+                            <span>Facebook</span>
+                        </a>
+                    {% endif %}
+                    {% if content.field_menu_lien_instagram[0]['#url'] %}
+                        <a class="rs instagram" href="{{ content.field_menu_lien_instagram[0]['#url'] }}" title="Instagram">
+                            <span>Instagram</span>
+                        </a>
+                    {% endif %}
+                    {% if content.field_menu_lien_pinterest[0]['#url'] %}
+                        <a class="rs pinterest" href="{{ content.field_menu_lien_pinterest[0]['#url'] }}" title="Pinterest">
+                            <span>Pinterest</span>
+                        </a>
+                    {% endif %}
+                </div>
+                {% if content.field_menu_lien_contact[0]['#url'] %}
+                    <a class="contact" href="{{ content.field_menu_lien_contact[0]['#url'] }}" title="Nous contacter">
+                        <span>Nous contacter</span>
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
 
-<div>{{ content.field_description_marque }}</div>
+    <div class="description">
+        <div class="row">
+            <div class="col">
+                {{ content.field_description_marque }}
+            </div>
+        </div>
+    </div>
 
-<div>
-    {{ content.field_bloc_1 }}
-    {{ content.field_bloc_2 }}
-    {{ content.field_bloc_3 }}
-</div>
+    <div class="container">
+        <div class="lignes-visuels">
+            <div class="row">
+                <div class="item col-6">
+                    {{ content.field_bloc_1 }}
+                </div>
+                <div class="item col-3">
+                    <div class="animated" style="border: 1px solid {{ content.field_couleur_hexa_marque|render|striptags|trim }};">
+                        {{ content.field_bloc_2 }}
+                    </div>
+                </div>
+                <div class="item col-3">
+                    {{ content.field_bloc_3 }}
+                </div>
+            </div>
 
-<div>
-    {{ content.field_bloc_4 }}
-    {{ content.field_bloc_5 }}
-    {{ content.field_bloc_6 }}
-</div>
-<div>
-    {{ content.field_bloc_7 }}
-    {{ content.field_bloc_8 }}
-    {{ content.field_bloc_9 }}
+            <div class="row">
+                <div class="item col-5">
+                    <div class="block-text" style="border: 1px solid {{ content.field_couleur_hexa_marque|render|striptags|trim }};">
+                        {{ content.field_bloc_4 }}
+                    </div>
+                </div>
+                <div class="item col-4">
+                    {{ content.field_bloc_5 }}
+                </div>
+                <div class="item col-3">
+                    {{ content.field_bloc_6 }}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="item col-3">
+                    {{ content.field_bloc_7 }}
+                </div>
+                <div class="item col-4">
+                    {{ content.field_bloc_8 }}
+                </div>
+                <div class="item col-5">
+                    <div class="block-text" style="border: 1px solid {{ content.field_couleur_hexa_marque|render|striptags|trim }};">
+                        {{ content.field_bloc_9 }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

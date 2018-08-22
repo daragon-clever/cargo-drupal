@@ -294,6 +294,10 @@ nav#block-menufooter ul li:hover > ul {
     width: 100%;
   }
 }
+.mea-marques {
+  max-width: 1620px;
+  margin: 0 auto;
+}
 .mea-marques .marque {
   position: relative;
   text-align: center;
@@ -809,4 +813,151 @@ h2#title-marques {
 }
 .vue-evenement .item .views-field-view-node a:hover:after {
   margin-left: 10px;
+}
+#block-pagination-marques {
+  position: absolute;
+  z-index: 20;
+  width: 100%;
+  left: 0;
+}
+#block-pagination-marques .entity-pager-list {
+  max-width: 1100px;
+  position: relative;
+  margin: 75px auto 0;
+}
+#block-pagination-marques .entity-pager-list li {
+  position: absolute;
+}
+#block-pagination-marques .entity-pager-list li.entity-pager-item-prev {
+  left: 0;
+}
+#block-pagination-marques .entity-pager-list li.entity-pager-item-next {
+  right: 0;
+}
+#block-pagination-marques .entity-pager-list li a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+.page-marque {
+  margin-top: -25px;
+}
+.page-marque .header {
+  color: white;
+}
+.page-marque .header > div {
+  padding: 30px;
+}
+.page-marque .header > div > div {
+  padding: 0;
+}
+.page-marque .header > div .logo {
+  display: flex;
+  border-right: 1px solid white;
+  padding: 0 30px 0 15px;
+}
+.page-marque .header > div .logo > div {
+  margin: auto;
+}
+.page-marque .header > div .text {
+  max-width: 700px;
+  padding: 0 15px 0 30px;
+}
+.page-marque .header > div .text > div:first-child {
+  font-size: 21px;
+}
+.page-marque .menu {
+  border-top: 1px solid white;
+  color: white;
+  text-align: center;
+}
+.page-marque .menu > div {
+  position: relative;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.page-marque .menu > div:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: #00000020;
+}
+.page-marque .menu a {
+  color: white;
+  padding: 0 50px;
+  border-right: 1px solid white;
+  text-decoration: none;
+  transition: opacity 0.3s;
+  line-height: 37px;
+  display: inline-block;
+}
+.page-marque .menu a:hover {
+  opacity: 0.8;
+}
+.page-marque .menu a:last-child {
+  border-right: 0;
+}
+.page-marque .menu .rs-wrapper {
+  display: inline-block;
+  vertical-align: top;
+  height: 100%;
+  border-right: 1px solid white;
+  padding: 0 30px;
+}
+.page-marque .menu .rs-wrapper a {
+  border-right: 0;
+  padding: 0 17px;
+  margin-top: 7px;
+}
+.page-marque .menu .rs-wrapper a.facebook {
+  background: url("../images/marques/fb.png") no-repeat center transparent;
+  height: 22px;
+  width: 22px;
+  font-size: 0;
+}
+.page-marque .menu .rs-wrapper a.instagram {
+  background: url("../images/marques/instagram.png") no-repeat center transparent;
+  height: 23px;
+  width: 23px;
+  font-size: 0;
+}
+.page-marque .menu .rs-wrapper a.pinterest {
+  background: url("../images/marques/pinterest.png") no-repeat center transparent;
+  height: 23px;
+  width: 23px;
+  font-size: 0;
+}
+.page-marque .description {
+  max-width: 875px;
+  margin: 50px auto;
+}
+.page-marque .lignes-visuels > div {
+  margin-top: 30px;
+}
+.page-marque .lignes-visuels > div .item > div {
+  height: 315px;
+  overflow: hidden;
+}
+.page-marque .lignes-visuels > div:first-child {
+  margin-top: 0;
+}
+.page-marque .lignes-visuels > div:first-child .item > div,
+.page-marque .lignes-visuels > div:first-child .animated > div {
+  height: 510px;
+}
+.page-marque .lignes-visuels img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.page-marque .lignes-visuels .block-text {
+  display: flex;
+}
+.page-marque .lignes-visuels .block-text > div {
+  margin: auto;
+  text-align: center;
 }

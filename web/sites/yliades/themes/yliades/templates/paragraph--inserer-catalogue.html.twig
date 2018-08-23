@@ -1,0 +1,9 @@
+{% block paragraph %}
+    {% block content %}
+        <a href="{{ content.field_lien_pdf_catalogue|render|striptags|trim }}">
+            {{ content.field_image_catalogue }}
+            {{ content.field_marque_catalogue }}
+            {{ content.field_titre_catalogue }}
+        </a>
+    {% endblock %}
+{% endblock paragraph %}

@@ -1,38 +1,145 @@
-{{ content.field_couleur_hexa_marque|render|striptags|trim }}
+<style type="text/css">
+    svg path { fill : {{ content.field_couleur_hexa_marque|render|striptags|trim }} }
+    .block-text h2 { color: {{ content.field_couleur_hexa_marque|render|striptags|trim }} }
+    .block-text h2:after { background-color: {{ content.field_couleur_hexa_marque|render|striptags|trim }} }
+</style>
 
-<div>
-    {{ content.field_logo_marque }}
-    {{ content.field_titre_marque }}
-    {{ content.field_resume_marque }}
-</div>
+<div class="page-marque">
 
-<div>
-    {#--{{ content.field_menu_lien_catalogue.0 }}-- avec balise lien a#}
-    --{{ content.field_menu_lien_catalogue[0]['#url'] }}-- {#sans balise lien a#}
-    {{ content.field_menu_lien_parutions[0]['#url'] }}
-    {{ content.field_menu_lien_boutique_pro[0]['#url'] }}
-    {{ content.field_menu_lien_e_shop[0]['#url'] }}
-    {{ content.field_menu_lien_facebook[0]['#url'] }}
-    {{ content.field_menu_lien_instagram[0]['#url'] }}
-    {{ content.field_menu_lien_pinterest[0]['#url'] }}
-    {{ content.field_menu_lien_contact[0]['#url'] }}
-</div>
+    <div class="header">
+        <div class="row justify-content-center" style="background-color: {{ content.field_couleur_hexa_marque|render|striptags|trim }}">
+            <div class="col-auto logo">
+                {{ content.field_logo_marque }}
+            </div>
+            <div class="col-auto text">
+                {{ content.field_titre_marque }}
+                {{ content.field_resume_marque }}
+            </div>
+        </div>
+    </div>
 
-<div>{{ content.field_description_marque }}</div>
+    <div class="menu">
+        <div class="row" style="background-color: {{ content.field_couleur_hexa_marque|render|striptags|trim }}">
+            <div class="col">
+                {% if content.field_menu_lien_catalogue[0]['#url'] %}
+                    <a class="catalog" href="{{ content.field_menu_lien_catalogue[0]['#url'] }}" title="Catalogue">
+                        <span>Catalogue</span>
+                    </a>
+                {% endif %}
+                {% if content.field_menu_lien_parutions[0]['#url'] %}
+                    <a class="parutions" href="{{ content.field_menu_lien_parutions[0]['#url'] }}" title="Parutions">
+                        <span>Parutions</span>
+                    </a>
+                {% endif %}
+                {% if content.field_menu_lien_boutique_pro[0]['#url'] %}
+                    <a class="boutique-pro" href="{{ content.field_menu_lien_boutique_pro[0]['#url'] }}" title="Boutique pro">
+                        <span>Boutique pro</span>
+                    </a>
+                {% endif %}
+                {% if content.field_menu_lien_e_shop[0]['#url'] %}
+                    <a class="eshop" href="{{ content.field_menu_lien_e_shop[0]['#url'] }}" title="E-Shop">
+                        <span>E-Shop</span>
+                    </a>
+                {% endif %}
+                <div class="rs-wrapper">
+                    {% if content.field_menu_lien_facebook[0]['#url'] %}
+                        <a class="rs facebook" href="{{ content.field_menu_lien_facebook[0]['#url'] }}" title="Facebook">
+                            <span>Facebook</span>
+                        </a>
+                    {% endif %}
+                    {% if content.field_menu_lien_instagram[0]['#url'] %}
+                        <a class="rs instagram" href="{{ content.field_menu_lien_instagram[0]['#url'] }}" title="Instagram">
+                            <span>Instagram</span>
+                        </a>
+                    {% endif %}
+                    {% if content.field_menu_lien_pinterest[0]['#url'] %}
+                        <a class="rs pinterest" href="{{ content.field_menu_lien_pinterest[0]['#url'] }}" title="Pinterest">
+                            <span>Pinterest</span>
+                        </a>
+                    {% endif %}
+                </div>
+                {% if content.field_menu_lien_contact[0]['#url'] %}
+                    <a class="contact" href="{{ content.field_menu_lien_contact[0]['#url'] }}" title="Nous contacter">
+                        <span>Nous contacter</span>
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
 
-<div>
-    {{ content.field_bloc_1 }}
-    {{ content.field_bloc_2 }}
-    {{ content.field_bloc_3 }}
-</div>
+    <div class="description">
+        <div class="row">
+            <div class="col">
+                <svg class="quote-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22.42 16.33">
+                    <path d="M10.34,0l.27.74c-4.15,1.57-6.55,3-6.55,5.63a3.85,3.85,0,0,0,.28,1.47c2.58.28,4.24,1.94,4.24,4.43a4,4,0,0,1-4.24,4.06C2.12,16.33,0,14.4,0,11,0,4.34,4.89,1.75,10.34,0ZM22.15,0l.27.74c-4.15,1.57-6.55,3-6.55,5.63a4.06,4.06,0,0,0,.28,1.47c2.58.28,4.24,1.94,4.24,4.43a4,4,0,0,1-4.24,4.06c-2.22,0-4.34-1.93-4.34-5.35C11.81,4.34,16.7,1.75,22.15,0Z"/>
+                </svg>
+                {{ content.field_description_marque }}
+                <svg class="quote-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22.42 16.33">
+                    <path d="M10.34,0l.27.74c-4.15,1.57-6.55,3-6.55,5.63a3.85,3.85,0,0,0,.28,1.47c2.58.28,4.24,1.94,4.24,4.43a4,4,0,0,1-4.24,4.06C2.12,16.33,0,14.4,0,11,0,4.34,4.89,1.75,10.34,0ZM22.15,0l.27.74c-4.15,1.57-6.55,3-6.55,5.63a4.06,4.06,0,0,0,.28,1.47c2.58.28,4.24,1.94,4.24,4.43a4,4,0,0,1-4.24,4.06c-2.22,0-4.34-1.93-4.34-5.35C11.81,4.34,16.7,1.75,22.15,0Z"/>
+                </svg>
+            </div>
+        </div>
+    </div>
 
-<div>
-    {{ content.field_bloc_4 }}
-    {{ content.field_bloc_5 }}
-    {{ content.field_bloc_6 }}
-</div>
-<div>
-    {{ content.field_bloc_7 }}
-    {{ content.field_bloc_8 }}
-    {{ content.field_bloc_9 }}
+    <div class="container">
+        <div class="lignes-visuels">
+            <div class="row">
+                <div class="item col-6">
+                    {{ content.field_bloc_1 }}
+                </div>
+                <div class="item col-3">
+                    <div class="animated" style="border: 1px solid {{ content.field_couleur_hexa_marque|render|striptags|trim }};">
+                        {{ content.field_bloc_2 }}
+                    </div>
+                </div>
+                <div class="item col-3">
+                    {{ content.field_bloc_3 }}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-5">
+                    <div class="row">
+                        <div class="item col">
+                            <div class="block-text" style="border: 1px solid {{ content.field_couleur_hexa_marque|render|striptags|trim }};">
+                                {{ content.field_bloc_4 }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-7">
+                    <div class="row">
+                        <div class="item col-6">
+                            {{ content.field_bloc_5 }}
+                        </div>
+                        <div class="item col-6">
+                            {{ content.field_bloc_6 }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-7">
+                    <div class="row">
+                        <div class="item col-6">
+                            {{ content.field_bloc_7 }}
+                        </div>
+                        <div class="item col-6">
+                            {{ content.field_bloc_8 }}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-5">
+                    <div class="row">
+                        <div class="item col">
+                            <div class="block-text" style="border: 1px solid {{ content.field_couleur_hexa_marque|render|striptags|trim }};">
+                                {{ content.field_bloc_9 }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

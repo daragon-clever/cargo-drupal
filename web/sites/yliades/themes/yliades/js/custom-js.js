@@ -1,4 +1,5 @@
 jQuery(document).ready(function($) {
+    // SLICK
     if ($(".mea-marques").length) {
         $(".mea-marques").slick({
             infinite: true,
@@ -32,6 +33,7 @@ jQuery(document).ready(function($) {
         });
     }
 
+    // LOADER AJAX
     if (typeof(Drupal) != "undefined") {
         Drupal.Ajax.prototype.setProgressIndicatorFullscreen = function () {
             this.progress.element = $('' +
@@ -40,5 +42,12 @@ jQuery(document).ready(function($) {
                 '</div>');
             $('.vue-evenement').append(this.progress.element);
         };
+    }
+
+    // FOOTER FIXED SI BODY COURT
+    var body = $(document.body).height();
+    var windowHeight = $(window).height();
+    if (body < windowHeight) {
+        $('#block-menufooter').addClass('fixed');
     }
 });

@@ -41,6 +41,7 @@
                         <span>E-Shop</span>
                     </a>
                 {% endif %}
+                {% if content.field_menu_lien_facebook[0]['#url'] or content.field_menu_lien_instagram[0]['#url'] or content.field_menu_lien_pinterest[0]['#url'] %}
                 <div class="rs-wrapper">
                     {% if content.field_menu_lien_facebook[0]['#url'] %}
                         <a class="rs facebook" href="{{ content.field_menu_lien_facebook[0]['#url'] }}" title="Facebook">
@@ -58,6 +59,7 @@
                         </a>
                     {% endif %}
                 </div>
+                {% endif %}
                 {% if content.field_menu_lien_contact[0]['#url'] %}
                     <a class="contact" href="{{ content.field_menu_lien_contact[0]['#url'] }}" title="Nous contacter">
                         <span>Nous contacter</span>

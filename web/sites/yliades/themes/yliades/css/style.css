@@ -71,6 +71,7 @@ header a:hover {
 }
 header .logo {
   margin: 30px 0;
+  height: 45px;
 }
 .main-menu {
   border-top: 1px solid #bbb;
@@ -941,6 +942,12 @@ h2#title-marques {
     padding: 0 15px;
   }
 }
+@media only screen and (max-width: 991px) {
+  .page-marque .menu a {
+    font-size: 12px;
+    padding: 0 10px;
+  }
+}
 .page-marque .menu a:not(.rs):before {
   content: '';
   height: 20px;
@@ -976,6 +983,11 @@ h2#title-marques {
 @media (max-width: 1024px) {
   .page-marque .menu .rs-wrapper {
     padding: 0 15px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .page-marque .menu .rs-wrapper {
+    padding: 0 10px 0 5px;
   }
 }
 .page-marque .menu .rs-wrapper a {

@@ -880,6 +880,12 @@ h2#title-marques {
   border-right: 1px solid white;
   padding: 0 30px 0 15px;
 }
+@media only screen and (max-width: 767px) {
+  .page-marque .header > div .logo {
+    border: none;
+    padding: 0 0 15px 0;
+  }
+}
 .page-marque .header > div .logo > div {
   margin: auto;
 }
@@ -893,6 +899,12 @@ h2#title-marques {
     font-size: 12px;
   }
 }
+@media only screen and (max-width: 767px) {
+  .page-marque .header > div .text {
+    max-width: 100%;
+    padding: 0 30px;
+  }
+}
 .page-marque .header > div .text > div:first-child {
   font-size: 21px;
   line-height: 1.3;
@@ -900,6 +912,19 @@ h2#title-marques {
 @media (max-width: 1024px) {
   .page-marque .header > div .text > div:first-child {
     font-size: 18px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .page-marque .header > div .text > div:first-child {
+    text-align: center;
+  }
+  .page-marque .header > div .text > div:first-child:after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 70px;
+    background: white;
+    margin: 10px auto 17px;
   }
 }
 .page-marque .menu {
@@ -911,6 +936,14 @@ h2#title-marques {
   position: relative;
   padding-top: 12px;
   padding-bottom: 12px;
+}
+@media only screen and (max-width: 767px) {
+  .page-marque .menu > div {
+    padding: 0;
+  }
+  .page-marque .menu > div > div {
+    padding: 0;
+  }
 }
 .page-marque .menu > div:before {
   position: absolute;
@@ -927,6 +960,7 @@ h2#title-marques {
   padding: 0 50px;
   border-right: 1px solid white;
   text-decoration: none;
+  position: relative;
   transition: opacity 0.3s;
   line-height: 37px;
   display: inline-block;
@@ -946,6 +980,17 @@ h2#title-marques {
   .page-marque .menu a {
     font-size: 12px;
     padding: 0 10px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .page-marque .menu a {
+    display: block;
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid white;
+    text-align: left;
+    font-size: 14px;
+    padding: 6px 20px;
   }
 }
 .page-marque .menu a:not(.rs):before {
@@ -973,6 +1018,21 @@ h2#title-marques {
   background: url("../images/marques/svg/eshop.svg") no-repeat center transparent;
   margin-top: -5px;
 }
+@media only screen and (max-width: 767px) {
+  .page-marque .menu a:not(.rs):after {
+    content: '';
+    width: 7px;
+    height: 5px;
+    display: block;
+    background: url(../images/footer/arrow_dropup.png) no-repeat transparent;
+    position: absolute;
+    top: 23px;
+    right: 20px;
+    transform: rotate(90deg);
+    transform-origin: center;
+    transition: transform 0.3s;
+  }
+}
 .page-marque .menu .rs-wrapper {
   display: inline-block;
   vertical-align: top;
@@ -988,6 +1048,17 @@ h2#title-marques {
 @media only screen and (max-width: 991px) {
   .page-marque .menu .rs-wrapper {
     padding: 0 10px 0 5px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .page-marque .menu .rs-wrapper {
+    display: block;
+    width: 100%;
+    border-right: 0;
+    border-bottom: 1px solid white;
+    height: auto;
+    text-align: left;
+    padding: 13px 15px;
   }
 }
 .page-marque .menu .rs-wrapper a {
@@ -1010,6 +1081,14 @@ h2#title-marques {
   height: 23px;
   font-size: 0;
 }
+@media only screen and (max-width: 767px) {
+  .page-marque .menu .rs-wrapper a {
+    border-bottom: 0;
+    display: inline-block;
+    margin: 0;
+    width: auto;
+  }
+}
 .page-marque .description {
   max-width: 875px;
   margin: 50px auto;
@@ -1019,6 +1098,13 @@ h2#title-marques {
   .page-marque .description {
     max-width: 80%;
     font-size: 13px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .page-marque .description {
+    max-width: 80%;
+    font-size: 12px;
+    margin: 30px auto;
   }
 }
 .page-marque .description .col {
@@ -1032,12 +1118,33 @@ h2#title-marques {
 .page-marque .description svg.quote-left {
   left: -40px;
 }
+@media only screen and (max-width: 767px) {
+  .page-marque .description svg.quote-left {
+    left: -7%;
+  }
+}
 .page-marque .description svg.quote-right {
   right: -30px;
   transform: rotate(180deg);
 }
+@media only screen and (max-width: 767px) {
+  .page-marque .description svg.quote-right {
+    right: -5%;
+  }
+}
 .page-marque .lignes-visuels > div {
   margin-top: 30px;
+}
+@media only screen and (max-width: 767px) {
+  .page-marque .lignes-visuels > div {
+    margin-top: 0;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .page-marque .lignes-visuels > div .item {
+    margin: 7px 0;
+    padding: 0;
+  }
 }
 .page-marque .lignes-visuels > div .item > div {
   height: 315px;
@@ -1059,6 +1166,18 @@ h2#title-marques {
   .page-marque .lignes-visuels > div:first-child .item > div,
   .page-marque .lignes-visuels > div:first-child .animated > div {
     height: 300px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .page-marque .lignes-visuels > div:first-child .item > div,
+  .page-marque .lignes-visuels > div:first-child .animated > div {
+    height: 215px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .page-marque .lignes-visuels > div:first-child .animated,
+  .page-marque .lignes-visuels > div:first-child .animated > div {
+    height: 340px !important;
   }
 }
 .page-marque .lignes-visuels img {
@@ -1108,5 +1227,10 @@ h2#title-marques {
   .page-marque .lignes-visuels .block-text > div p {
     font-size: 13px;
     margin-top: 15px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .page-marque .lignes-visuels .block-text {
+    height: 340px !important;
   }
 }

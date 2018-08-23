@@ -79,7 +79,7 @@ nav#block-menufooter {
   text-align: center;
   color: white;
   position: relative;
-  margin-top: 30px;
+  margin-top: 90px;
   ul {
     padding: 0;
     margin: 0;
@@ -447,7 +447,7 @@ h2#title-marques {
 }
 .homepage-encarts-bottom {
   text-align: center;
-  margin: 0 auto 60px;
+  margin: 0 auto;
   @media (min-width: 1500px) {
     max-width: 1400px;
     & > div {
@@ -731,19 +731,34 @@ h2#title-marques {
   .entity-pager-list {
     max-width: 1100px;
     position: relative;
-    margin: 75px auto 0;
+    margin: 80px auto 0;
     li {
       position: absolute;
       &.entity-pager-item-prev {
         left: 0;
+        a:after {
+          transform: rotate(180deg);
+        }
       }
       &.entity-pager-item-next {
         right: 0;
       }
       a {
-        color: white;
+        color: transparent;
         text-decoration: none;
-        font-size: 20px;
+        display: block;
+        position: relative;
+        .dimOpacityOnHover(0.8);
+        &:after {
+          content: '';
+          background: url("../images/marques/arrow-pagination.png") no-repeat center transparent;
+          height: 11px;
+          width: 7px;
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
       }
     }
   }
@@ -770,6 +785,7 @@ h2#title-marques {
         padding: 0 15px 0 30px;
         & > div:first-child {
           font-size: 21px;
+          line-height: 1.3;
         }
       }
     }
@@ -839,6 +855,22 @@ h2#title-marques {
   .description {
     max-width: 875px;
     margin: 50px auto;
+    font-weight: 600;
+    .col {
+      position: relative;
+    }
+    svg {
+      height: 20px;
+      position: absolute;
+      top: 0;
+      &.quote-left {
+        left: -40px;
+      }
+      &.quote-right {
+        right: -30px;
+        transform: rotate(180deg);
+      }
+    }
   }
   .lignes-visuels {
     & > div {
@@ -867,6 +899,23 @@ h2#title-marques {
       & > div {
         margin: auto;
         text-align: center;
+        padding: 0 90px;
+        h2 {
+          font-family: 'Dancing Script', cursive;
+          font-size: 30px;
+          &:after {
+            content:'';
+            display: block;
+            margin: 0 auto;
+            height: 1px;
+            width: 110px;
+            margin-top: 30px;
+          }
+        }
+        p {
+          margin-top: 30px;
+          font-weight: 600;
+        }
       }
     }
   }

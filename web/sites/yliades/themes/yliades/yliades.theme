@@ -1,0 +1,36 @@
+<?php
+
+function yliades_page_attachments_alter(array &$attachments) {
+    foreach ($attachments['#attached']['html_head'] as $key => $attachment) {
+        if ($attachment[1] == 'system_meta_generator') {
+            unset($attachments['#attached']['html_head'][$key]);
+        }
+    }
+}
+
+//function yliades_theme_suggestions_views_view_fields_alter(array &$suggestions, array $vars) {
+//    $view = $vars['view'];
+//    $id = $view->storage->id();
+//
+//    if ($id == 'evenements_groupe') {
+//        $suggestions[] = 'views_view_fields__' . 'evenements';
+//    }
+//}
+
+function yliades_theme_suggestions_alter(array &$suggestions, array $variables, $hook) {
+    if ( in_array($hook, array(
+            'views_view_unformatted',
+            'views_view_fields'
+        ))) {
+
+        $view = $variables['view'];
+        $id = $view->storage->id();
+
+        if ($id == 'evenements_groupe') {
+            $suggestions[] = $hook . '__' . 'evenement';
+        }
+        else if ($id == 'page_filtre_presse') {
+            $suggestions[] = $hook . '__' . 'presse';
+        }
+    }
+}

@@ -1,10 +1,11 @@
-<!-- Header -->
-{% include directory ~ '/partials/header.html.twig' %}
-
-<!-- Navigation -->
-{% if page.navigation %}
-    {% include directory ~ '/partials/navigation.html.twig' %}
-{% endif %}
+<div class="navbar-expand-sm">
+    <!-- Header -->
+    {% include directory ~ '/partials/header.html.twig' %}
+    <!-- Navigation -->
+    {% if page.navigation %}
+        {% include directory ~ '/partials/navigation.html.twig' %}
+    {% endif %}
+</div>
 
 <div class="container-fluid">
     {% if page.content %}

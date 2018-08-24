@@ -32,7 +32,10 @@ body {
   font-size: 14px;
   color: #232323;
 }
-
+article {
+  max-width: 1590px;
+  margin: 0 auto;
+}
 // UI
 
 // Header
@@ -122,16 +125,24 @@ header {
     }
     li {
       display: inline-block;
-      padding: 4px 15px;
+      padding: 4px 50px;
       line-height: 42px;
       font-size: 14px;
       border-right: 1px solid #bbb;
+      @media (max-width: 1024px) {
+        padding: 4px 20px;
+      }
+      @media @tablet {
+        padding: 4px 15px;
+        line-height: 25px;
+      }
       @media @phone {
         display: block;
         border-right: 0;
         border-bottom: 1px solid black;
         text-align: left;
         padding: 4px 20px;
+        line-height: 42px;
       }
       &:last-child {
         border-right: none;
@@ -145,7 +156,11 @@ header {
           color: @cuivre;
           text-decoration: none;
         }
+        @media @tablet {
+          font-size: 13px;
+        }
         @media @phone {
+          font-size: 14px;
           position: relative;
           width: 100%;
           display: block;
@@ -158,6 +173,18 @@ header {
             position: absolute;
             top: 18px;
             right: 0;
+          }
+        }
+        &.boutique-pro {
+          position: relative;
+          &:before {
+            content: '';
+            display: inline-block;
+            background: url("../images/marques/svg/boutique-pro-black.svg") no-repeat center transparent;
+            height: 18px;
+            width: 18px;
+            vertical-align: middle;
+            margin: -5px 10px 0 0;
           }
         }
       }
@@ -1175,7 +1202,21 @@ h2#title-marques {
 }
 
 // Page article : Evenement
-article img {
-  max-width: 100%;
-  height: auto;
+.article-evenement {
+  max-width: 800px;
+  img {
+    display: block;
+    margin: 25px auto 0;
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #00000020;
+    padding: 15px;
+  }
+  .title {
+    font-weight: 600;
+    font-size: 20px;
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+  }
 }

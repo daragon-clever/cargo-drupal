@@ -41,6 +41,7 @@
                         <span>E-Shop</span>
                     </a>
                 {% endif %}
+                {% if content.field_menu_lien_facebook[0]['#url'] or content.field_menu_lien_instagram[0]['#url'] or content.field_menu_lien_pinterest[0]['#url'] %}
                 <div class="rs-wrapper">
                     {% if content.field_menu_lien_facebook[0]['#url'] %}
                         <a class="rs facebook" href="{{ content.field_menu_lien_facebook[0]['#url'] }}" title="Facebook">
@@ -58,6 +59,7 @@
                         </a>
                     {% endif %}
                 </div>
+                {% endif %}
                 {% if content.field_menu_lien_contact[0]['#url'] %}
                     <a class="contact" href="{{ content.field_menu_lien_contact[0]['#url'] }}" title="Nous contacter">
                         <span>Nous contacter</span>
@@ -84,21 +86,21 @@
     <div class="container">
         <div class="lignes-visuels">
             <div class="row">
-                <div class="item col-6">
+                <div class="item col-12 col-sm-6">
                     {{ content.field_bloc_1 }}
                 </div>
-                <div class="item col-3">
+                <div class="item col-12 col-sm-3">
                     <div class="animated" style="border: 1px solid {{ content.field_couleur_hexa_marque|render|striptags|trim }};">
                         {{ content.field_bloc_2 }}
                     </div>
                 </div>
-                <div class="item col-3">
+                <div class="item col-12 col-sm-3">
                     {{ content.field_bloc_3 }}
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-5">
+                <div class="col-12 col-sm-5">
                     <div class="row">
                         <div class="item col">
                             <div class="block-text" style="border: 1px solid {{ content.field_couleur_hexa_marque|render|striptags|trim }};">
@@ -107,7 +109,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-7">
+                <div class="d-none d-sm-block col-sm-7">
                     <div class="row">
                         <div class="item col-6">
                             {{ content.field_bloc_5 }}
@@ -120,17 +122,17 @@
             </div>
 
             <div class="row">
-                <div class="col-7">
+                <div class="col-12 col-sm-7">
                     <div class="row">
-                        <div class="item col-6">
+                        <div class="item d-none d-sm-block col-6">
                             {{ content.field_bloc_7 }}
                         </div>
-                        <div class="item col-6">
+                        <div class="item col-12 col-sm-6">
                             {{ content.field_bloc_8 }}
                         </div>
                     </div>
                 </div>
-                <div class="col-5">
+                <div class="col-12 col-sm-5">
                     <div class="row">
                         <div class="item col">
                             <div class="block-text" style="border: 1px solid {{ content.field_couleur_hexa_marque|render|striptags|trim }};">

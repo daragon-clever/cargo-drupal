@@ -29,5 +29,8 @@ function yliades_theme_suggestions_alter(array &$suggestions, array $variables, 
         if ($id == 'evenements_groupe') {
             $suggestions[] = $hook . '__' . 'evenement';
         }
+        else if ($id == 'page_filtre_presse') {
+            $suggestions[] = $hook . '__' . 'presse';
+        }
     }
 }

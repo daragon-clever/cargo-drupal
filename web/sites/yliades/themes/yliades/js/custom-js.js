@@ -40,7 +40,7 @@ jQuery(document).ready(function($) {
                 '<div class="loader">' +
                 '<div id="status"><div class="spinner"> </div> </div>' +
                 '</div>');
-            $('.vue-evenement').append(this.progress.element);
+            $('.vue-evenement, .vue-presse').append(this.progress.element);
         };
     }
 

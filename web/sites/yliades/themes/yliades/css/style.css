@@ -63,6 +63,10 @@ body {
   font-size: 14px;
   color: #232323;
 }
+article {
+  max-width: 1590px;
+  margin: 0 auto;
+}
 header {
   text-align: center;
   position: relative;
@@ -157,10 +161,21 @@ header button[aria-expanded=true] .navbar-toggler-icon > span.middle {
 }
 .main-menu ul li {
   display: inline-block;
-  padding: 4px 15px;
+  padding: 4px 50px;
   line-height: 42px;
   font-size: 14px;
   border-right: 1px solid #bbb;
+}
+@media (max-width: 1024px) {
+  .main-menu ul li {
+    padding: 4px 20px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .main-menu ul li {
+    padding: 4px 15px;
+    line-height: 25px;
+  }
 }
 @media only screen and (max-width: 767px) {
   .main-menu ul li {
@@ -169,6 +184,7 @@ header button[aria-expanded=true] .navbar-toggler-icon > span.middle {
     border-bottom: 1px solid black;
     text-align: left;
     padding: 4px 20px;
+    line-height: 42px;
   }
 }
 .main-menu ul li:last-child {
@@ -184,8 +200,14 @@ header button[aria-expanded=true] .navbar-toggler-icon > span.middle {
   color: #b95034;
   text-decoration: none;
 }
+@media only screen and (max-width: 991px) {
+  .main-menu ul li a {
+    font-size: 13px;
+  }
+}
 @media only screen and (max-width: 767px) {
   .main-menu ul li a {
+    font-size: 14px;
     position: relative;
     width: 100%;
     display: block;
@@ -200,6 +222,18 @@ header button[aria-expanded=true] .navbar-toggler-icon > span.middle {
     top: 18px;
     right: 0;
   }
+}
+.main-menu ul li a.boutique-pro {
+  position: relative;
+}
+.main-menu ul li a.boutique-pro:before {
+  content: '';
+  display: inline-block;
+  background: url("../images/marques/svg/boutique-pro-black.svg") no-repeat center transparent;
+  height: 18px;
+  width: 18px;
+  vertical-align: middle;
+  margin: -5px 10px 0 0;
 }
 nav#block-menufooter {
   background: #232323;
@@ -1330,7 +1364,21 @@ h2#title-marques {
     height: 340px !important;
   }
 }
-article img {
+.article-evenement {
+  max-width: 800px;
+}
+.article-evenement img {
+  display: block;
+  margin: 25px auto 0;
   max-width: 100%;
   height: auto;
+  border: 1px solid #00000020;
+  padding: 15px;
+}
+.article-evenement .title {
+  font-weight: 600;
+  font-size: 20px;
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
 }

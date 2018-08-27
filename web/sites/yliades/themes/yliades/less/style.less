@@ -19,12 +19,6 @@
     max-width: 100%;
   }
 }
-//@media (max-width: 575.98px) {
-//  .navbar-expand-sm > .container, .navbar-expand-sm > .container-fluid {
-//    padding-right: 15px !important;
-//    padding-left: 15px !important;
-//  }
-//}
 
 // Body
 body {
@@ -36,6 +30,7 @@ article {
   max-width: 1590px;
   margin: 0 auto;
 }
+
 // UI
 
 // Header
@@ -839,6 +834,26 @@ h2#title-marques {
   }
 }
 
+// Page article : Evenement
+.article-evenement {
+  max-width: 800px;
+  img {
+    display: block;
+    margin: 25px auto 0;
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #00000020;
+    padding: 15px;
+  }
+  .title {
+    font-weight: 600;
+    font-size: 20px;
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+  }
+}
+
 // Page Marques
 #block-pagination-marques {
   position: absolute;
@@ -1201,22 +1216,67 @@ h2#title-marques {
   }
 }
 
-// Page article : Evenement
-.article-evenement {
-  max-width: 800px;
-  img {
-    display: block;
-    margin: 25px auto 0;
-    max-width: 100%;
-    height: auto;
-    border: 1px solid #00000020;
-    padding: 15px;
-  }
-  .title {
-    font-weight: 600;
-    font-size: 20px;
-    border-bottom: 1px solid black;
-    padding-bottom: 10px;
-    margin-bottom: 15px;
+// Page presse
+.vue-presse {
+  max-width: 1430px;
+  margin: 0 auto;
+  .item {
+    margin: 25px 0;
+    cursor: pointer;
+    a {
+      display: inline-block;
+      position: relative;
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      .overlay {
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: #232323;
+        color: white;
+        opacity: 0;
+        transition: opacity 0.3s;
+        .inner {
+          margin: auto;
+          .title {
+            text-transform: uppercase;
+            display: block;
+            font-weight: 700;
+            font-size: 15px;
+            &:after {
+              content: '';
+              width: 50px;
+              height: 1px;
+              background: white;
+              display: block;
+              margin: 30px auto;
+            }
+          }
+          .date {
+            font-weight: 700;
+            font-size: 15px;
+            text-transform: capitalize;
+          }
+          .pdf-icon {
+            display: block;
+            background: url("../images/presse/pdf-icon.png") no-repeat center transparent;
+            height: 36px;
+            width: 45px;
+            margin: 50px auto 0;
+            .dimOpacityOnHover(0.8);
+          }
+        }
+      }
+    }
+    &:hover {
+      .overlay {
+        opacity: 1;
+      }
+    }
   }
 }

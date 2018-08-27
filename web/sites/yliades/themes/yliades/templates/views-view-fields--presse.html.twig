@@ -1,22 +1,14 @@
-{# Contenu pris de la vue evenement - a adapter selon les besoins d'inte #}
-{% for field in fields -%}
-    {{ field.separator }}
-    {%- if field.wrapper_element -%}
-        <{{ field.wrapper_element }}{{ field.wrapper_attributes }}>
-    {%- endif %}
-    {%- if field.label -%}
-        {%- if field.label_element -%}
-            <{{ field.label_element }}{{ field.label_attributes }}>{{ field.label }}{{ field.label_suffix }}</{{ field.label_element }}>
-        {%- else -%}
-            {{ field.label }}{{ field.label_suffix }}
-        {%- endif %}
-    {%- endif %}
-    {%- if field.element_type -%}
-        <{{ field.element_type }}{{ field.element_attributes }}>{{ field.content }}</{{ field.element_type }}>
-    {%- else -%}
-        {{ field.content }}
-    {%- endif %}
-    {%- if field.wrapper_element -%}
-        </{{ field.wrapper_element }}>
-    {%- endif %}
-{%- endfor %}
+<a href="{{ fields.field_lien_pdf_presse.content|render|striptags|trim }}" title="Vu dans la presse" target="_blank">
+    {{ fields.field_image_presse.content }}
+    <span class="overlay">
+        <span class="inner">
+            <span class="title">
+                {{ fields.field_titre_presse.content }}
+            </span>
+            <span class="date">
+                {{ fields.field_date_presse.content }}
+            </span>
+            <span class="pdf-icon"> </span>
+        </span>
+    </span>
+</a>

@@ -1,0 +1,16 @@
+<div class="row">
+    {% block paragraph %}
+        {% block content %}
+            <div class="col-4">
+                <div>{{ content.field_image_portrait }}</div>
+            </div>
+            <div class="col-8">
+                <div>
+                    {{ content.field_prenom }}
+                    {{ content.field_metier }}
+                </div>
+                <div>{{ content.field_questions_reponses }}</div>
+            </div>
+        {% endblock %}
+    {% endblock paragraph %}
+</div>

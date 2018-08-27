@@ -33,6 +33,35 @@ jQuery(document).ready(function($) {
         });
     }
 
+    // FONCTIONNEMENT GALERIE METIER
+    if ($(".page-presentation-groupe").length) {
+        // Galerie
+        $(".portrait").hover( function() {
+            $(this).children(".bulle").show();
+        });
+        $(".portrait").on("mouseleave", function() {
+            $(".bulle").hide();
+        });
+        $(".bulle").on("click", function() {
+            $(this).hide();
+        });
+        $(".big-portrait .portrait").on("click", function() {
+            var portraitIndex = $(this).index();
+            $(".portrait-infos").show();
+            $(".thumb img").eq(portraitIndex).addClass("current");
+            $(".txt > div > div").eq(portraitIndex).addClass("current");
+        });
+
+        // Infos
+        $(".portrait-infos .thumb img").on("click",function() {
+            var thumbIndex = $(this).index();
+            $(".portrait-infos .thumb img").removeClass("current");
+            $(this).addClass("current");
+            $(".txt > div > div").removeClass("current");
+            $(".txt > div > div").eq(thumbIndex).addClass("current");
+        });
+    }
+
     // LOADER AJAX
     if (typeof(Drupal) != "undefined") {
         Drupal.Ajax.prototype.setProgressIndicatorFullscreen = function () {

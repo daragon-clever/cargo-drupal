@@ -977,7 +977,7 @@ h2#title-marques {
 #block-pagination-marques .entity-pager-list {
   max-width: 1100px;
   position: relative;
-  margin: 80px auto 0;
+  margin: 95px auto 0;
 }
 @media (max-width: 1024px) {
   #block-pagination-marques .entity-pager-list {
@@ -1024,6 +1024,7 @@ h2#title-marques {
 }
 .page-marque .header > div {
   padding: 30px 0;
+  min-height: 215px;
 }
 .page-marque .header > div > div {
   padding: 0;
@@ -1038,9 +1039,6 @@ h2#title-marques {
     border: none;
     padding: 0 0 15px 0;
   }
-}
-.page-marque .header > div .logo > div {
-  margin: auto;
 }
 .page-marque .header > div .text {
   max-width: 700px;
@@ -1469,5 +1467,125 @@ h2#title-marques {
 }
 .vue-catalogue .item a img {
   max-width: 247px;
+  height: auto;
+}
+.gallery-metiers {
+  position: relative;
+  margin-top: 30px;
+}
+.gallery-metiers .big-portrait {
+  max-width: 1345px;
+  margin: 0 auto;
+}
+.gallery-metiers .big-portrait .portrait {
+  position: relative;
+  opacity: 0.5;
+  cursor: pointer;
+}
+.gallery-metiers .big-portrait .portrait .bulle {
+  position: absolute;
+  display: none;
+  top: 80px;
+  left: 230px;
+  background: black;
+  color: white;
+  padding: 15px;
+  white-space: nowrap;
+  z-index: 50;
+  cursor: pointer;
+}
+.gallery-metiers .big-portrait .portrait .bulle:after {
+  content: '';
+  height: 15px;
+  width: 15px;
+  position: absolute;
+  background: black;
+  z-index: 0;
+  display: block;
+  left: -7px;
+  top: 50%;
+  margin-top: -7px;
+  transform: rotate(45deg);
+}
+.gallery-metiers .big-portrait .portrait .bulle .name {
+  font-family: 'Dancing Script', cursive;
+  font-size: 21px;
+}
+.gallery-metiers .big-portrait .portrait .bulle .job {
+  color: #bbbbbb;
+  font-weight: 700;
+}
+.gallery-metiers .big-portrait .portrait .bulle button {
+  margin-top: 15px;
+  width: 100%;
+  background: white;
+  border: none;
+  color: black;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 5px 15px;
+}
+.gallery-metiers .big-portrait .portrait:hover {
+  opacity: 1;
+}
+.gallery-metiers .portrait-infos {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  max-height: 100%;
+  overflow: hidden;
+}
+.gallery-metiers .portrait-infos .thumb > img {
+  margin-bottom: 12px;
+  opacity: 0.5;
+  cursor: pointer;
+  display: block;
+}
+.gallery-metiers .portrait-infos .thumb > img:hover {
+  opacity: 1;
+}
+.gallery-metiers .portrait-infos .thumb > img.current {
+  display: none;
+}
+.gallery-metiers .portrait-infos .txt > div > div {
+  display: none;
+}
+.gallery-metiers .portrait-infos .txt > div > div.current {
+  display: block;
+}
+.gallery-metiers .portrait-infos .txt > div > div .name-job {
+  margin: 15px 0 20px;
+}
+.gallery-metiers .portrait-infos .txt > div > div .name-job .name {
+  font-family: 'Dancing Script', cursive;
+  font-size: 21px;
+}
+.gallery-metiers .portrait-infos .txt > div > div .name-job .job {
+  border-left: 1px solid black;
+  margin-left: 15px;
+  padding-left: 15px;
+  font-weight: 700;
+}
+.gallery-metiers .portrait-infos .txt > div > div .title {
+  color: #b95034;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.gallery-metiers .portrait-infos .txt > div > div .title:before {
+  content: '';
+  height: 6px;
+  width: 6px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  border-radius: 100px;
+  background: #b95034;
+  margin-top: -2px;
+}
+.page-presentation-groupe img {
+  max-width: 100%;
   height: auto;
 }

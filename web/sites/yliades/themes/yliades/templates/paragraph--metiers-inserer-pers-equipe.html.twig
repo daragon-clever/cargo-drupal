@@ -1,13 +1,13 @@
 <div class="row">
     {% block paragraph %}
         {% block content %}
-            <div class="col-4">
+            <div class="col-auto">
                 <div>{{ content.field_image_portrait }}</div>
             </div>
-            <div class="col-8">
-                <div>
-                    {{ content.field_prenom }}
-                    {{ content.field_metier }}
+            <div class="col">
+                <div class="name-job">
+                    <span class="name">{{ content.field_prenom|render|striptags|trim }}</span>
+                    <span class="job">{{ content.field_metier|render|striptags|trim }}</span>
                 </div>
                 <div>{{ content.field_questions_reponses }}</div>
             </div>

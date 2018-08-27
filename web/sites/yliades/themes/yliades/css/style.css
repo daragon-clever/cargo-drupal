@@ -67,6 +67,25 @@ article {
   max-width: 1590px;
   margin: 0 auto;
 }
+.vue-evenement header,
+.vue-presse header,
+h2#title-catalogue {
+  font-family: 'Dancing Script', cursive;
+  text-align: center;
+  font-size: 28px;
+  color: #232323;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+@media only screen and (max-width: 767px) {
+  .vue-evenement header,
+  .vue-presse header,
+  h2#title-catalogue {
+    width: 70%;
+    margin: 0 auto;
+    line-height: 1.3;
+  }
+}
 header {
   text-align: center;
   position: relative;
@@ -832,20 +851,6 @@ h2#title-marques {
   font-size: 14px;
   font-weight: 600;
 }
-.vue-evenement header {
-  font-family: 'Dancing Script', cursive;
-  text-align: center;
-  font-size: 28px;
-  color: #232323;
-  margin-bottom: 30px;
-}
-@media only screen and (max-width: 767px) {
-  .vue-evenement header {
-    width: 70%;
-    margin: 0 auto;
-    line-height: 1.3;
-  }
-}
 .vue-evenement .item {
   text-align: center;
   margin-bottom: 65px;
@@ -1382,23 +1387,28 @@ h2#title-marques {
     height: 340px !important;
   }
 }
-.vue-presse {
+.vue-presse,
+.vue-catalogue {
   max-width: 1430px;
   margin: 0 auto;
 }
-.vue-presse .item {
+.vue-presse .item,
+.vue-catalogue .item {
   margin: 25px 0;
   cursor: pointer;
 }
-.vue-presse .item a {
+.vue-presse .item a,
+.vue-catalogue .item a {
   display: inline-block;
   position: relative;
 }
-.vue-presse .item a img {
+.vue-presse .item a img,
+.vue-catalogue .item a img {
   max-width: 100%;
   height: auto;
 }
-.vue-presse .item a .overlay {
+.vue-presse .item a .overlay,
+.vue-catalogue .item a .overlay {
   display: flex;
   position: absolute;
   top: 0;
@@ -1410,16 +1420,19 @@ h2#title-marques {
   opacity: 0;
   transition: opacity 0.3s;
 }
-.vue-presse .item a .overlay .inner {
+.vue-presse .item a .overlay .inner,
+.vue-catalogue .item a .overlay .inner {
   margin: auto;
 }
-.vue-presse .item a .overlay .inner .title {
+.vue-presse .item a .overlay .inner .title,
+.vue-catalogue .item a .overlay .inner .title {
   text-transform: uppercase;
   display: block;
   font-weight: 700;
   font-size: 15px;
 }
-.vue-presse .item a .overlay .inner .title:after {
+.vue-presse .item a .overlay .inner .title:after,
+.vue-catalogue .item a .overlay .inner .title:after {
   content: '';
   width: 50px;
   height: 1px;
@@ -1427,12 +1440,14 @@ h2#title-marques {
   display: block;
   margin: 30px auto;
 }
-.vue-presse .item a .overlay .inner .date {
+.vue-presse .item a .overlay .inner .date,
+.vue-catalogue .item a .overlay .inner .date {
   font-weight: 700;
   font-size: 15px;
   text-transform: capitalize;
 }
-.vue-presse .item a .overlay .inner .pdf-icon {
+.vue-presse .item a .overlay .inner .pdf-icon,
+.vue-catalogue .item a .overlay .inner .pdf-icon {
   display: block;
   background: url("../images/presse/pdf-icon.png") no-repeat center transparent;
   height: 36px;
@@ -1440,9 +1455,19 @@ h2#title-marques {
   margin: 50px auto 0;
   transition: opacity 0.3s;
 }
-.vue-presse .item a .overlay .inner .pdf-icon:hover {
+.vue-presse .item a .overlay .inner .pdf-icon:hover,
+.vue-catalogue .item a .overlay .inner .pdf-icon:hover {
   opacity: 0.8;
 }
-.vue-presse .item:hover .overlay {
+.vue-presse .item:hover .overlay,
+.vue-catalogue .item:hover .overlay {
   opacity: 1;
+}
+.vue-catalogue .item {
+  margin-top: 0;
+  margin-bottom: 50px;
+}
+.vue-catalogue .item a img {
+  max-width: 247px;
+  height: auto;
 }

@@ -26,6 +26,7 @@
         "drupal/console": "^1.0.2",
         "drupal/cookieconsent": "^1.4",
         "drupal/core": "^8.5",
+        "drupal/devel": "^1.2",
         "drupal/entity_pager": "^1.0@beta",
         "drupal/entity_reference_revisions": "^1.5",
         "drupal/field_group": "^1.0",

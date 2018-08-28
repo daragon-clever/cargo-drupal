@@ -707,14 +707,14 @@ h2#title-marques {
   font-weight: 700;
 }
 .homepage-encarts-bottom .homepage-block-bottom .field-content {
-  height: 490px;
-  width: 360px;
+  height: 400px;
+  width: 280px;
   margin: 0 auto;
 }
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 767px) {
   .homepage-encarts-bottom .homepage-block-bottom .field-content {
     width: 85%;
-    height: 400px;
+    height: auto;
   }
 }
 .homepage-encarts-bottom .homepage-block-bottom .field-content img {

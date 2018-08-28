@@ -1,27 +1,36 @@
 <div class="container page-presentation-groupe">
-    <div class="row">
-        <div class="col-7">
-            <div class="row">
-                <div class="col-6">{{ content.field_bloc_1_image_1 }}</div>
-                <div class="col-6">{{ content.field_bloc_1_image_2 }}</div>
-                <div class="col-6">{{ content.field_bloc_1_image_3 }}</div>
-                <div class="col-6">{{ content.field_bloc_1_image_4 }}</div>
+    <div class="upper-part">
+        <div class="row">
+            <div class="col align-self-center">
+                <div class="row groupe-visuel-1 justify-content-center">
+                    <div class="col-6">{{ content.field_bloc_1_image_1 }}</div>
+                    <div class="col-6">{{ content.field_bloc_1_image_2 }}</div>
+                    <div class="col-6">{{ content.field_bloc_1_image_3 }}</div>
+                    <div class="col-6">{{ content.field_bloc_1_image_4 }}</div>
+                </div>
+            </div>
+            <div class="col align-self-center text-center">
+                <div class="block-txt">
+                    {{ content.field_bloc_2_texte }}
+                </div>
             </div>
         </div>
-        <div class="col-5">
-            {{ content.field_bloc_2_texte }}
-        </div>
-        <div class="col-5">
-            {{ content.field_bloc_3_texte }}
-        </div>
-        <div class="col-7">
-            <div class="row">
-                <div class="col-6">{{ content.field_bloc_4_image_1 }}</div>
-                <div class="col-6">{{ content.field_bloc_4_image_2 }}</div>
+        <div class="row">
+            <div class="col align-self-center text-center">
+                <div class="block-txt">
+                    {{ content.field_bloc_3_texte }}
+                </div>
+            </div>
+            <div class="col align-self-center">
+                <div class="row groupe-visuel-2 justify-content-center">
+                    <div class="col-6">{{ content.field_bloc_4_image_1 }}</div>
+                    <div class="col-6">{{ content.field_bloc_4_image_2 }}</div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="row">
+
+    <div class="row intro-metiers">
         <div class="col-12">
             <div>{{ content.field_intro_bloc_metiers }}</div>
         </div>

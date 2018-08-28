@@ -5,10 +5,10 @@
             <span class="overlay">
                 <span class="inner">
                     <span class="title">
-                        {{ content.field_marque_catalogue|render|striptags|trim }}
+                        {{ content.field_marque_catalogue|render|striptags|trim|raw }}
                     </span>
                     <span class="catalog-title">
-                        {{ content.field_titre_catalogue|render|striptags|trim }}
+                        {{ content.field_titre_catalogue|render|striptags|trim|raw }}
                     </span>
                     <span class="pdf-icon"> </span>
                 </span>

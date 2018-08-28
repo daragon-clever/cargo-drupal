@@ -83,4 +83,9 @@ jQuery(document).ready(function($) {
     if (body < windowHeight) {
         $('#block-menufooter').addClass('fixed');
     }
+
+    // DROPUP FOOTER : MOBILE
+    $("a.dropup").on("click", function (e) {
+        e.preventDefault();
+    });
 });

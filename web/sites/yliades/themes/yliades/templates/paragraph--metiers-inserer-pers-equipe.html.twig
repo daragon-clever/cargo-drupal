@@ -6,8 +6,8 @@
             </div>
             <div class="col-12 col-sm">
                 <div class="name-job">
-                    <span class="name">{{ content.field_prenom|render|striptags|trim }}</span>
-                    <span class="job">{{ content.field_metier|render|striptags|trim }}</span>
+                    <span class="name">{{ content.field_prenom|render|striptags|trim|raw }}</span>
+                    <span class="job">{{ content.field_metier|render|striptags|trim|raw }}</span>
                 </div>
                 <div>{{ content.field_questions_reponses }}</div>
             </div>

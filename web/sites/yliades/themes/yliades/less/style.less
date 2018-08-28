@@ -1155,14 +1155,25 @@ h2#title-marques {
       }
       &:first-child {
         margin-top: 0;
-        .item > div,
-        .animated > div {
+        .item > div {
           height: 510px;
           @media (max-width: 1024px) {
             height: 300px;
           }
           @media @phone {
             height: 215px;
+          }
+        }
+        .animated > div {
+          display: flex;
+          height: 100%;
+          padding: 15px;
+          img {
+            margin: auto;
+            max-height: 100%;
+            max-width: 100%;
+            height: auto;
+            width: auto;
           }
         }
         @media @phone {

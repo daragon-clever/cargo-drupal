@@ -1309,21 +1309,30 @@ h2#title-marques {
 .page-marque .lignes-visuels > div:first-child {
   margin-top: 0;
 }
-.page-marque .lignes-visuels > div:first-child .item > div,
-.page-marque .lignes-visuels > div:first-child .animated > div {
+.page-marque .lignes-visuels > div:first-child .item > div {
   height: 510px;
 }
 @media (max-width: 1024px) {
-  .page-marque .lignes-visuels > div:first-child .item > div,
-  .page-marque .lignes-visuels > div:first-child .animated > div {
+  .page-marque .lignes-visuels > div:first-child .item > div {
     height: 300px;
   }
 }
 @media only screen and (max-width: 767px) {
-  .page-marque .lignes-visuels > div:first-child .item > div,
-  .page-marque .lignes-visuels > div:first-child .animated > div {
+  .page-marque .lignes-visuels > div:first-child .item > div {
     height: 215px;
   }
+}
+.page-marque .lignes-visuels > div:first-child .animated > div {
+  display: flex;
+  height: 100%;
+  padding: 15px;
+}
+.page-marque .lignes-visuels > div:first-child .animated > div img {
+  margin: auto;
+  max-height: 100%;
+  max-width: 100%;
+  height: auto;
+  width: auto;
 }
 @media only screen and (max-width: 767px) {
   .page-marque .lignes-visuels > div:first-child .animated,

@@ -33,6 +33,39 @@ jQuery(document).ready(function($) {
         });
     }
 
+    // FONCTIONNEMENT GALERIE METIER
+    if ($(".page-presentation-groupe").length) {
+        // Galerie
+        $(".portrait").hover( function() {
+            $(this).children(".bulle").show();
+        });
+        $(".portrait").on("mouseleave", function() {
+            $(".bulle").hide();
+        });
+        $(".bulle").on("click", function() {
+            $(this).hide();
+        });
+        $(".big-portrait .portrait").on("click", function() {
+            var portraitIndex = $(this).index();
+            $(".portrait-infos").show();
+            $(".thumb img").removeClass("current");
+            $(".txt > div > div").removeClass("current");
+            $(".thumb img").eq(portraitIndex).addClass("current");
+            $(".txt > div > div").eq(portraitIndex).addClass("current");
+        });
+
+        // Infos
+        $(".thumb img").eq(0).addClass("current");
+        $(".txt > div > div").eq(0).addClass("current");
+        $(".portrait-infos .thumb img").on("click",function() {
+            var thumbIndex = $(this).index();
+            $(".portrait-infos .thumb img").removeClass("current");
+            $(this).addClass("current");
+            $(".txt > div > div").removeClass("current");
+            $(".txt > div > div").eq(thumbIndex).addClass("current");
+        });
+    }
+
     // LOADER AJAX
     if (typeof(Drupal) != "undefined") {
         Drupal.Ajax.prototype.setProgressIndicatorFullscreen = function () {
@@ -40,7 +73,7 @@ jQuery(document).ready(function($) {
                 '<div class="loader">' +
                 '<div id="status"><div class="spinner"> </div> </div>' +
                 '</div>');
-            $('.vue-evenement').append(this.progress.element);
+            $('.vue-evenement, .vue-presse').append(this.progress.element);
         };
     }
 

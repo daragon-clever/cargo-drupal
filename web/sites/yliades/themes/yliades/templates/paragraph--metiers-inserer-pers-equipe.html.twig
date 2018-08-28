@@ -1,0 +1,16 @@
+<div class="row">
+    {% block paragraph %}
+        {% block content %}
+            <div class="col-12 col-sm-auto text-center">
+                <div>{{ content.field_image_portrait }}</div>
+            </div>
+            <div class="col-12 col-sm">
+                <div class="name-job">
+                    <span class="name">{{ content.field_prenom|render|striptags|trim }}</span>
+                    <span class="job">{{ content.field_metier|render|striptags|trim }}</span>
+                </div>
+                <div>{{ content.field_questions_reponses }}</div>
+            </div>
+        {% endblock %}
+    {% endblock paragraph %}
+</div>

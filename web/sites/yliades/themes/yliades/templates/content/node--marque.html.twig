@@ -122,6 +122,7 @@
             </div>
 
             <div class="row">
+                {%  if content.field_bloc_7|render or content.field_bloc_8|render %}
                 <div class="col-12 col-sm-7">
                     <div class="row">
                         <div class="item d-none d-sm-block col-6">
@@ -132,6 +133,8 @@
                         </div>
                     </div>
                 </div>
+                {%  endif %}
+                {%  if content.field_bloc_9|render %}
                 <div class="col-12 col-sm-5">
                     <div class="row">
                         <div class="item col">
@@ -141,6 +144,7 @@
                         </div>
                     </div>
                 </div>
+                {%  endif %}
             </div>
         </div>
     </div>

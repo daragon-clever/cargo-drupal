@@ -48,11 +48,15 @@ jQuery(document).ready(function($) {
         $(".big-portrait .portrait").on("click", function() {
             var portraitIndex = $(this).index();
             $(".portrait-infos").show();
+            $(".thumb img").removeClass("current");
+            $(".txt > div > div").removeClass("current");
             $(".thumb img").eq(portraitIndex).addClass("current");
             $(".txt > div > div").eq(portraitIndex).addClass("current");
         });
 
         // Infos
+        $(".thumb img").eq(0).addClass("current");
+        $(".txt > div > div").eq(0).addClass("current");
         $(".portrait-infos .thumb img").on("click",function() {
             var thumbIndex = $(this).index();
             $(".portrait-infos .thumb img").removeClass("current");
@@ -79,4 +83,9 @@ jQuery(document).ready(function($) {
     if (body < windowHeight) {
         $('#block-menufooter').addClass('fixed');
     }
+
+    // DROPUP FOOTER : MOBILE
+    $("a.dropup").on("click", function (e) {
+        e.preventDefault();
+    });
 });

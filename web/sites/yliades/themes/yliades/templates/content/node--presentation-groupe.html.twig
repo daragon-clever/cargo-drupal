@@ -1,56 +1,75 @@
 <div class="container page-presentation-groupe">
-    <div class="row">
-        <div class="col-7">
-            <div class="row">
-                <div class="col-6">{{ content.field_bloc_1_image_1 }}</div>
-                <div class="col-6">{{ content.field_bloc_1_image_2 }}</div>
-                <div class="col-6">{{ content.field_bloc_1_image_3 }}</div>
-                <div class="col-6">{{ content.field_bloc_1_image_4 }}</div>
+    <div class="upper-part">
+        <div class="row">
+            <div class="col align-self-center">
+                <div class="row groupe-visuel-1 justify-content-center">
+                    <div class="col-6">{{ content.field_bloc_1_image_1 }}</div>
+                    <div class="col-6">{{ content.field_bloc_1_image_2 }}</div>
+                    <div class="col-6">{{ content.field_bloc_1_image_3 }}</div>
+                    <div class="col-6">{{ content.field_bloc_1_image_4 }}</div>
+                </div>
+            </div>
+            <div class="col align-self-center text-center">
+                <div class="block-txt">
+                    {{ content.field_bloc_2_texte }}
+                </div>
             </div>
         </div>
-        <div class="col-5">
-            {{ content.field_bloc_2_texte }}
-        </div>
-        <div class="col-5">
-            {{ content.field_bloc_3_texte }}
-        </div>
-        <div class="col-7">
-            <div class="row">
-                <div class="col-6">{{ content.field_bloc_4_image_1 }}</div>
-                <div class="col-6">{{ content.field_bloc_4_image_2 }}</div>
+        <div class="row">
+            <div class="col align-self-center text-center">
+                <div class="block-txt">
+                    {{ content.field_bloc_3_texte }}
+                </div>
+            </div>
+            <div class="col align-self-center">
+                <div class="row groupe-visuel-2 justify-content-center">
+                    <div class="col-6">{{ content.field_bloc_4_image_1 }}</div>
+                    <div class="col-6">{{ content.field_bloc_4_image_2 }}</div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="row">
+
+    <div class="row intro-metiers">
         <div class="col-12">
             <div>{{ content.field_intro_bloc_metiers }}</div>
         </div>
+    </div>
 
-        <div class="col-12">
-            <div class="row">
-                {% for field in content.field_ajout_personne['#items'] %}
-                        {% if (field.entity.field_image_portrait) %}
-                            <div class="col-3">
-                                <img src="{{ file_url(field.entity.field_image_portrait.entity.uri.value) }}" alt="{{ field.entity.field_image_portrait.alt }}" width="300px" />
-                            </div>
-                        {% endif %}
-                {% endfor %}
-            </div>
-        </div>
-        <br />
-        <div class="col-10">
-            <div class="row">
-                <div class="col-2">
+    <div class="gallery-metiers">
+        <div class="row">
+            <div class="col-12">
+                <div class="row big-portrait">
                     {% for field in content.field_ajout_personne['#items'] %}
-                        {% if (field.entity.field_image_miniature) %}
-                            <div class="col-3">
-                                <img src="{{ file_url(field.entity.field_image_miniature.entity.uri.value) }}" alt="{{ field.entity.field_image_miniature.alt }}" width="200px" />
+                        {% if (field.entity.field_image_portrait) %}
+                            <div class="portrait col-3">
+                                <img src="{{ file_url(field.entity.field_image_portrait.entity.uri.value) }}" alt="{{ field.entity.field_image_portrait.alt }}" />
+                                <div class="bulle">
+                                    <div class="name">{{ field.entity.field_prenom.value }}</div>
+                                    <div class="job">{{ field.entity.field_metier.value }}</div>
+                                    <button>Voir l'interview</button>
+                                </div>
                             </div>
                         {% endif %}
                     {% endfor %}
                 </div>
-                <div class="col-10">
-                    <div>{{ content.field_ajout_personne }}</div>
+            </div>
+        </div>
+        <div class="portrait-infos">
+            <div class="row justify-content-center">
+                <div class="col-8">
+                    <div class="row">
+                        <div class="thumb col-auto">
+                            {% for field in content.field_ajout_personne['#items'] %}
+                                {% if (field.entity.field_image_miniature) %}
+                                    <img src="{{ file_url(field.entity.field_image_miniature.entity.uri.value) }}" alt="{{ field.entity.field_image_miniature.alt }}" />
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        <div class="txt col">
+                            {{ content.field_ajout_personne }}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

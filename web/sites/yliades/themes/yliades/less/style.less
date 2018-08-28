@@ -866,7 +866,7 @@ h2#title-marques {
   .entity-pager-list {
     max-width: 1100px;
     position: relative;
-    margin: 80px auto 0;
+    margin: 95px auto 0;
     @media (max-width: 1024px) {
       width: 95%;
     }
@@ -907,6 +907,7 @@ h2#title-marques {
     color: white;
     & > div {
       padding: 30px 0;
+      min-height: 215px;
       & > div {
         padding: 0;
       }
@@ -918,9 +919,9 @@ h2#title-marques {
           border: none;
           padding: 0 0 15px 0;
         }
-        & > div {
-          margin: auto;
-        }
+        //& > div {
+        //  margin: auto;
+        //}
       }
       .text {
         max-width: 700px;
@@ -1292,5 +1293,235 @@ h2#title-marques {
   .item a img {
     max-width: 247px;
     height: auto;
+  }
+}
+
+// Page groupe - Style galerie bas de page
+.gallery-metiers {
+  position: relative;
+  margin-top: 30px;
+  .big-portrait {
+    max-width: 1345px;
+    margin: 0 auto;
+    .portrait {
+      position: relative;
+      opacity: 0.5;
+      cursor: pointer;
+      transition: opacity 0.3s;
+      .bulle {
+        position: absolute;
+        display: none;
+        top: 80px;
+        left: 230px;
+        background: black;
+        color: white;
+        padding: 15px;
+        white-space:nowrap;
+        z-index: 50;
+        cursor: pointer;
+        &:after {
+          content: '';
+          height: 15px;
+          width: 15px;
+          position: absolute;
+          background: black;
+          z-index: 0;
+          display: block;
+          left: -7px;
+          top: 50%;
+          margin-top: -7px;
+          transform: rotate(45deg);
+        }
+        .name {
+          font-family: 'Dancing Script', cursive;
+          font-size: 21px;
+        }
+        .job {
+          color:#bbbbbb;
+          font-weight: 700;
+        }
+        button {
+          margin-top: 15px;
+          width: 100%;
+          background: white;
+          border: none;
+          color: black;
+          font-weight: 700;
+          text-transform: uppercase;
+          padding: 5px 15px;
+          cursor: pointer;
+          .dimOpacityOnHover(0.8);
+        }
+      }
+      &:hover {
+        z-index: 20;
+        opacity: 1;
+      }
+    }
+  }
+  .portrait-infos {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    max-height: 100%;
+    overflow: hidden;
+    z-index: 1000;
+    .thumb > img {
+      margin-bottom: 12px;
+      opacity: 0.5;
+      cursor: pointer;
+      display: block;
+      transition: opacity 0.3s;
+      &:hover {
+        opacity: 1;
+      }
+      &.current {
+        display: none;
+      }
+    }
+    .txt > div > div {
+      display: none;
+      &.current {
+        display: block;
+      }
+      .name-job {
+        margin: 15px 0 20px;
+        .name {
+          font-family: 'Dancing Script', cursive;
+          font-size: 21px;
+        }
+        .job {
+          border-left: 1px solid black;
+          margin-left:15px;
+          padding-left: 15px;
+          font-weight: 700;
+        }
+      }
+      .title {
+        color:@cuivre;
+        font-weight: 700;
+        margin-bottom: 5px;
+        &:before {
+          content: '';
+          height: 6px;
+          width: 6px;
+          display: inline-block;
+          vertical-align: middle;
+          margin-right: 10px;
+          border-radius: 100px;
+          background: @cuivre;
+          margin-top: -2px;
+        }
+      }
+    }
+  }
+}
+
+// Page groupe
+.page-presentation-groupe {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  .upper-part {
+    .groupe-visuel-1,
+    .groupe-visuel-2 {
+      & > div {
+        padding: 15px;
+      }
+    }
+    .block-txt {
+      border: 1px solid @cuivre;
+      padding: 5px 55px 55px;
+      max-width: 575px;
+      position: relative;
+      display: inline-block;
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      h3 {
+        font-family: 'Dancing Script', cursive;
+        font-size: 32px;
+        color: @cuivre;
+        text-align: center;
+        position: absolute;
+        top: -25px;
+        left: 0;
+        width: 100%;
+        & span {
+          background: white;
+          padding: 0 30px;
+        }
+      }
+      h4 {
+        color: #232323;
+        font-size: 14px;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 15px;
+        margin-top: 50px;
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+      p {
+        color: #80807f;
+        line-height: 1.3;
+      }
+    }
+  }
+  .intro-metiers {
+    text-align: center;
+    margin-top: 30px;
+    h3 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 32px;
+      color: @cuivre;
+      font-weight: 700;
+      text-align: center;
+      display: inline-block;
+      background: white;
+      padding: 0 20px;
+      &:before {
+        content:'';
+        height: 1px;
+        width: 100%;
+        position: absolute;
+        top: 20px;
+        left: 0;
+        background: @cuivre;
+        z-index: -1;
+      }
+    }
+    p {
+      font-weight: 700;
+      margin-top: 15px;
+      &.mea {
+        font-family: 'Dancing Script', cursive;
+        font-size: 24px;
+        color:#80807f;
+        line-height: 1.3;
+        margin: 0;
+        &:before, &:after {
+          content: '';
+          background: url("../images/marques/svg/quote.svg") no-repeat center transparent;
+          height: 32px;
+          width: 32px;
+          display: inline-block;
+          margin-right: 15px;
+          opacity: 0.5;
+          vertical-align: bottom;
+        }
+        &:after {
+          margin-right: 0;
+          margin-left: 15px;
+          transform: rotate(180deg);
+        }
+      }
+    }
   }
 }

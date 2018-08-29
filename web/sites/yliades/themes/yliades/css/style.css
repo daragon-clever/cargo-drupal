@@ -854,10 +854,11 @@ h2#title-marques {
   font-weight: 600;
   line-height: 35px;
   display: inline-block;
-  width: auto;
+  min-width: 210px;
   white-space: nowrap;
-  margin: 0 7px;
+  margin: 7px;
   background: black;
+  text-align: left;
   transition: opacity 0.3s;
 }
 .views-exposed-form .form-checkboxes .form-item input {
@@ -872,12 +873,6 @@ h2#title-marques {
 }
 .views-exposed-form .form-checkboxes .form-item:hover {
   opacity: 0.8;
-}
-@media only screen and (max-width: 991px) {
-  .views-exposed-form .form-checkboxes .form-item {
-    width: 30%;
-    margin: 7px;
-  }
 }
 @media only screen and (max-width: 767px) {
   .views-exposed-form .form-checkboxes .form-item {
@@ -1915,10 +1910,11 @@ h2#title-marques {
   font-weight: 600;
   line-height: 35px;
   display: inline-block;
-  width: auto;
+  min-width: 210px;
   white-space: nowrap;
-  margin: 0 7px;
+  margin: 7px;
   background: black;
+  text-align: left;
   transition: opacity 0.3s;
 }
 .contact-form .checkboxes-marques .fieldset-wrapper > div > div input {
@@ -1933,12 +1929,6 @@ h2#title-marques {
 }
 .contact-form .checkboxes-marques .fieldset-wrapper > div > div:hover {
   opacity: 0.8;
-}
-@media only screen and (max-width: 991px) {
-  .contact-form .checkboxes-marques .fieldset-wrapper > div > div {
-    width: 30%;
-    margin: 7px;
-  }
 }
 @media only screen and (max-width: 767px) {
   .contact-form .checkboxes-marques .fieldset-wrapper > div > div {

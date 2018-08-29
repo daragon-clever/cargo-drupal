@@ -23,8 +23,18 @@
             </div>
             <div class="col-12 col-lg-6 col-xl align-self-center">
                 <div class="row groupe-visuel-2 justify-content-center text-center">
-                    <div class="col-12 col-sm-6 col-lg-12 col-xl-6">{{ content.field_bloc_4_image_1 }}</div>
-                    <div class="d-none d-sm-block col-sm-6 d-lg-none d-xl-block col-xl-6">{{ content.field_bloc_4_image_2 }}</div>
+                    <div class="col-12 col-sm-6 col-lg-12 col-xl-6">
+                        <div class="img-wrapper">
+                            {{ content.field_bloc_4_image_1 }}
+                            <span class="alt">{{ node.field_bloc_4_image_1.alt }}</span>
+                        </div>
+                    </div>
+                    <div class="d-none d-sm-block col-sm-6 d-lg-none d-xl-block col-xl-6">
+                        <div class="img-wrapper">
+                            {{ content.field_bloc_4_image_2 }}
+                            <span class="alt">{{ node.field_bloc_4_image_2.alt }}</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

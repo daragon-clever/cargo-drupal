@@ -1611,6 +1611,21 @@ h2#title-marques {
 .page-presentation-groupe .upper-part .groupe-visuel-2 > div {
   padding: 15px;
 }
+.page-presentation-groupe .upper-part .img-wrapper {
+  display: inline-block;
+  position: relative;
+}
+.page-presentation-groupe .upper-part .img-wrapper .alt {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: white;
+  font-weight: 600;
+  text-shadow: 0 0 5px #000000;
+  font-size: 13px;
+  max-width: 100%;
+  padding: 10px 20px;
+}
 .page-presentation-groupe .upper-part .block-txt {
   border: 1px solid #b95034;
   padding: 5px 55px 55px;

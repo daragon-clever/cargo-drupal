@@ -106,7 +106,7 @@ jQuery(document).ready(function($) {
     var body = $(document.body).height();
     var windowHeight = $(window).height();
     if (body < windowHeight) {
-        $('#block-menufooter').addClass('fixed');
+        $("footer").addClass('fixed');
     }
 
     // DROPUP FOOTER : MOBILE

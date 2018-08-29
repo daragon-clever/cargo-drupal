@@ -344,6 +344,12 @@ header button[aria-expanded=true] .navbar-toggler-icon > span.middle {
     top: 3px;
   }
 }
+footer.fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
 nav#block-menufooter {
   background: #232323;
   text-align: center;
@@ -525,14 +531,6 @@ nav#block-menufooter ul li:hover a:after {
 }
 nav#block-menufooter ul li:hover > ul {
   display: block;
-}
-@media (min-width: 768px) {
-  nav#block-menufooter.fixed {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-  }
 }
 .post-footer {
   background: #232323;
@@ -877,6 +875,7 @@ h2#title-marques {
 @media only screen and (max-width: 767px) {
   .views-exposed-form .form-checkboxes .form-item {
     width: 100%;
+    margin: 7px 0;
   }
 }
 .loader {
@@ -1933,6 +1932,7 @@ h2#title-marques {
 @media only screen and (max-width: 767px) {
   .contact-form .checkboxes-marques .fieldset-wrapper > div > div {
     width: 100%;
+    margin: 7px 0;
   }
 }
 .contact-form h2 {

@@ -534,6 +534,17 @@ nav#block-menufooter ul li:hover > ul {
     width: 100%;
   }
 }
+.post-footer {
+  background: #232323;
+  text-align: center;
+  color: white;
+  padding-bottom: 15px;
+}
+.post-footer p {
+  margin: 0;
+  font-size: 13px;
+  opacity: 0.7;
+}
 .mea-marques {
   max-width: 1620px;
   margin: 0 auto;
@@ -573,6 +584,10 @@ nav#block-menufooter ul li:hover > ul {
 .mea-marques .marque .upper .logo {
   display: inline-block;
   margin-bottom: 30px;
+}
+.mea-marques .marque .upper .logo img {
+  max-height: 115px;
+  width: auto;
 }
 @media (max-width: 1024px) {
   .mea-marques .marque .upper .logo img {
@@ -1940,7 +1955,7 @@ h2#title-marques {
   background: #232323;
 }
 .contact-form .contact-form-fields {
-  max-width: 650px;
+  max-width: 600px;
   margin: 0 auto;
 }
 .contact-form .contact-form-fields .form-item {

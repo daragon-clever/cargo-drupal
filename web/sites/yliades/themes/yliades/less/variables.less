@@ -20,3 +20,34 @@
     opacity: @opacity;
   }
 }
+
+// Style filtres et filtres page contact
+
+.filtersStyle() {
+  color: white;
+  font-weight: 600;
+  line-height: 35px;
+  display: inline-block;
+  width: auto;
+  white-space: nowrap;
+  margin: 0 7px;
+  background: black;
+  input {
+    float: right;
+    margin: 12px 15px 0 0;
+    cursor: pointer;
+  }
+  label {
+    margin: 0;
+    padding: 0 15px;
+    cursor: pointer;
+  }
+  .dimOpacityOnHover(0.8);
+  @media @tablet {
+    width: 30%;
+    margin: 7px;
+  }
+  @media @phone {
+    width: 100%;
+  }
+}

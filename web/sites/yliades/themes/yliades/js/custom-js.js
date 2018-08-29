@@ -91,13 +91,15 @@ jQuery(document).ready(function($) {
 
     // LOADER AJAX
     if (typeof(Drupal) != "undefined") {
-        Drupal.Ajax.prototype.setProgressIndicatorFullscreen = function () {
-            this.progress.element = $('' +
-                '<div class="loader">' +
-                '<div id="status"><div class="spinner"> </div> </div>' +
-                '</div>');
-            $('.vue-evenement, .vue-presse').append(this.progress.element);
-        };
+        if (typeof(Drupal.Ajax) != "undefined") {
+            Drupal.Ajax.prototype.setProgressIndicatorFullscreen = function () {
+                this.progress.element = $('' +
+                    '<div class="loader">' +
+                    '<div id="status"><div class="spinner"> </div> </div>' +
+                    '</div>');
+                $('.vue-evenement, .vue-presse').append(this.progress.element);
+            };
+        }
     }
 
     // FOOTER FIXED SI BODY COURT
@@ -111,4 +113,18 @@ jQuery(document).ready(function($) {
     $("a.dropup, a.dropdown").on("click", function (e) {
         e.preventDefault();
     });
+
+    // FORMULAIRES
+    if ($('.webform-submission-form').length) {
+        $('input, textarea').blur(function () {
+            tmpval = $(this).val();
+            if (tmpval == '') {
+                $(this).addClass('js-empty');
+                $(this).removeClass('js-not-empty');
+            } else {
+                $(this).addClass('js-not-empty');
+                $(this).removeClass('js-empty');
+            }
+        });
+    }
 });

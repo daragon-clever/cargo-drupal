@@ -48,6 +48,38 @@ h2#title-catalogue {
   }
 }
 
+// COULEUR FILTRES
+//// Comptoir de famille
+.form-item-marques-1,
+.form-item-field-marque-evenement-target-id-1,
+.form-item-field-marque-presse-target-id-1 {
+  background: #b12c34 !important;
+}
+//// Sema Design
+.form-item-marques-2,
+.form-item-field-marque-evenement-target-id-2,
+.form-item-field-marque-presse-target-id-2 {
+  background: #c5a649 !important;
+}
+//// Coté table
+.form-item-marques-3,
+.form-item-field-marque-evenement-target-id-3,
+.form-item-field-marque-presse-target-id-3 {
+  background: #35585c !important;
+}
+//// Genevieve Lethu
+.form-item-marques-4,
+.form-item-field-marque-evenement-target-id-4,
+.form-item-field-marque-presse-target-id-4 {
+  background: #92aba1 !important;
+}
+//// Jardin d'Ulysse
+.form-item-marques-5,
+.form-item-field-marque-evenement-target-id-5,
+.form-item-field-marque-presse-target-id-5 {
+  background: #c3aa91 !important;
+}
+
 // Header
 header {
   text-align: center;
@@ -57,7 +89,7 @@ header {
   }
   .logo {
     margin: 30px 0;
-    height: 45px;
+    height: 40px;
     @media @phone {
       height: 30px;
       margin: 15px 0;
@@ -114,8 +146,8 @@ header {
 .main-menu {
   border-top: 1px solid #bbb;
   border-bottom: 1px solid #bbb;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 14px;
+  padding-bottom: 14px;
   margin-bottom: 25px;
   text-align: center;
   @media @phone {
@@ -135,8 +167,8 @@ header {
     }
     li {
       display: inline-block;
-      padding: 4px 50px;
-      line-height: 42px;
+      padding: 0 50px;
+      line-height: 35px;
       font-size: 14px;
       border-right: 1px solid #bbb;
       position: relative;
@@ -203,7 +235,7 @@ header {
         display: none;
         position: absolute;
         width: calc(100% + 2px);
-        top: 50px;
+        top: 35px;
         left: -1px;
         z-index: 150;
         background: white;
@@ -236,11 +268,11 @@ header {
           width: 180px;
           white-space: nowrap;
           left: 50%;
-          top: 60px;
+          top: 57px;
           margin-left: -90px;
         }
         @media @tablet {
-          top: 44px;
+          top: 48px;
         }
         @media @phone {
           position: relative;
@@ -686,6 +718,20 @@ h2#title-marques {
   }
 }
 
+// Filtres
+.views-exposed-form {
+  text-align: center;
+  margin-bottom: 40px;
+  input[type=submit] {
+    display: none;
+  }
+  .form-checkboxes {
+    .form-item {
+      .filtersStyle();
+    }
+  }
+}
+
 // Page Evenements
 .loader{
   position: absolute;
@@ -719,36 +765,8 @@ h2#title-marques {
   }
 }
 .views-exposed-form  {
-  text-align: center;
-  margin-bottom: 40px;
-  .form-radios > div {
-    display: inline-block;
-    margin-left: 30px;
-    font-size: 14px;
-    color: #80807f;
-    font-weight: 700;
-    input, label {
-      vertical-align: middle;
-      margin: 0;
-    }
-    label {
-      margin-top: -2px;
-    }
-    input[checked=checked] + label {
-      color: black;
-    }
-    &:first-child {
-      margin-left: 0;
-    }
-    * {
-      cursor: pointer;
-    }
-  }
-  input[type=submit] {
-    display: none;
-  }
   // Temp
-  @media @tablet {
+/*  @media @tablet {
     & > div > div {
       // row
       display: -webkit-box;
@@ -796,7 +814,7 @@ h2#title-marques {
         color: white !important;
       }
     }
-  }
+  }*/
 }
 .vue-evenement {
   max-width: 1420px;
@@ -1641,6 +1659,148 @@ h2#title-marques {
 
 // Formulaire de contact
 .contact-form {
-  max-width: 635px;
-  margin: 0 auto;
+  text-align: center;
+  .block-intro {
+    text-align: center;
+    h1 {
+      font-size: 26px;
+      color: #232323;
+      font-family: 'Dancing Script', cursive;
+      font-weight: 700;
+    }
+    p {
+      font-weight: 700;
+    }
+    p.mea {
+      color: @cuivre;
+      text-transform: uppercase;
+      margin: 20px 0;
+    }
+  }
+  .checkboxes-marques {
+    .fieldset-wrapper {
+      & > div > div {
+        .filtersStyle();
+      }
+    }
+  }
+  h2 {
+    text-align: center;
+    position: relative;
+    font-size: 14px;
+    font-weight: 700;
+    color: #232323;
+    line-height: 1;
+    margin: 30px 0 20px;
+    span {
+      padding: 0 15px;
+      background: white;
+      &:before {
+        content: '';
+        height: 1px;
+        width: 100%;
+        position: absolute;
+        top : 50%;
+        left: 0;
+        z-index: -1;
+        margin-top: -1px;
+        background: #232323;
+      }
+    }
+  }
+  .contact-form-fields {
+    max-width: 650px;
+    margin: 0 auto;
+    .form-item {
+      position: relative;
+      input, textarea {
+        width: 100%;
+        display: inline-block;
+        margin: 8px 0;
+        border: 1px solid #bbb;
+        padding: 5px;
+        outline: none;
+      }
+      textarea {
+        margin-bottom: 0;
+      }
+      & > label {
+        position: absolute;
+        left: 5px;
+        top: 17px;
+        background: white;
+        padding: 0 5px;
+        transition: all 0.3s;
+        margin:0;
+        line-height: 1;
+        color: #80807f;
+        font-size: 13px;
+        font-weight: 600;
+      }
+    }
+    @media (min-width: 768px) {
+      .webform-flexbox {
+        margin: 0 -.5em;
+      }
+    }
+    input:focus + label,
+    input.js-not-empty + label,
+    textarea.js-not-empty + label,
+    textarea:focus + label {
+      top: -2px;
+    }
+    .check-civilite {
+      text-align: left;
+      margin-bottom: 5px;
+      legend {
+        width: auto;
+        vertical-align: middle;
+        margin: 3px 15px 0 0;
+        font-size: 14px;
+        font-weight: 700;
+        color: #232323;
+        line-height: 1;
+        &:after {
+          content: " :";
+          display: inline-block;
+        }
+      }
+      .form-item {
+        display: inline-block;
+        input {
+          width: auto;
+          padding: 0;
+          margin: 0;
+        }
+        label {
+          position: relative;
+          left: inherit;
+          top: inherit;
+          padding: 0;
+        }
+      }
+      .fieldset-wrapper > div > div {
+        margin: 0 7px;
+        label {
+          font-size: 14px;
+        }
+      }
+    }
+    .captcha {
+      margin: 15px 0;
+    }
+    .g-recaptcha {
+      display: inline-block;
+    }
+  }
+  input.form-submit {
+    background: black;
+    color: white;
+    border: 0;
+    font-weight: 700;
+    outline: none;
+    padding: 8px 70px;
+    cursor: pointer;
+    .dimOpacityOnHover(0.8);
+  }
 }

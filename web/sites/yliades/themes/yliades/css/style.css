@@ -266,22 +266,33 @@ header button[aria-expanded=true] .navbar-toggler-icon > span.middle {
   border: 1px solid #bbb;
   border-top: none;
   box-shadow: 0 15px 15px #00000030;
-  padding-bottom: 15px;
+  text-align: left;
+  padding: 15px 0;
 }
 .main-menu ul li ul li {
   display: block;
-  padding: 10px;
-  line-height: 2;
+  padding: 10px 0 10px 15px;
+  line-height: 1;
   border: none;
 }
 .main-menu ul li ul li a {
   color: #888;
 }
+.main-menu ul li ul li a:before {
+  content: '';
+  height: 6px;
+  width: 6px;
+  border-radius: 100px;
+  background: #888;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 7px;
+  margin-top: -3px;
+}
 @media (max-width: 1024px) {
   .main-menu ul li ul {
     width: 180px;
     white-space: nowrap;
-    text-align: center;
     left: 50%;
     top: 60px;
     margin-left: -90px;
@@ -303,6 +314,9 @@ header button[aria-expanded=true] .navbar-toggler-icon > span.middle {
     box-shadow: none;
     width: 100%;
     border-top: 1px dotted #bbb;
+  }
+  .main-menu ul li ul a:after {
+    top: 3px;
   }
 }
 nav#block-menufooter {

@@ -476,6 +476,7 @@ nav#block-menufooter ul li ul {
   text-align: left;
   list-style-type: disc;
   transition: all 0.3s;
+  z-index: 2000;
 }
 nav#block-menufooter ul li ul li {
   display: list-item;

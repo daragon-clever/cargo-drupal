@@ -43,4 +43,3 @@ web/sites/turbocar/files/translations/mandrill-8\.x-1\.0\.fr\.po
 /web/themes/contrib/
 /web/profiles/contrib/
 var/logs/capistrano\.log
-web/sites/yliades/services\.yml

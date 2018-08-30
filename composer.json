@@ -39,6 +39,7 @@
         "drupal/rename_admin_paths": "^1.1",
         "drupal/robotstxt": "^1.2",
         "drupal/simple_sitemap": "^2.12",
+        "drupal/svg_formatter": "^1.7",
         "drupal/views_infinite_scroll": "^1.5",
         "drupal/webform": "^5.0@RC",
         "drush/drush": "^9.0.0",

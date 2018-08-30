@@ -6,7 +6,8 @@
                     <a class="cta" href="{{ content.field_lien_marque|render|striptags|trim }}" title="">
                         <div class="upper" style="background-color:{{ content.field_couleur_marque|render|striptags|trim }};">
                             <span class="logo">
-                                {{ content.field_logo_marque }}
+                                {#{{ content.field_logo_marque }}#}
+                                {{ content.field_logo_svg }}
                             </span>
                             <span class="txt">
                                 {{ content.field_txt_marque }}

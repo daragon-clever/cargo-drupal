@@ -1,4 +1,4 @@
-<div class="navbar-expand-sm">
+<div class="header-wrapper navbar-expand-lg">
     <!-- Header -->
     {% include directory ~ '/partials/header.html.twig' %}
     <!-- Navigation -->
@@ -24,7 +24,11 @@
     {% endif %}
 </div>
 
-<!-- Footer -->
-{% if page.footer %}
-    {{ page.footer }}
-{% endif %}
+<footer>
+    <!-- Footer -->
+    {% if page.footer %}
+        {{ page.footer }}
+    {% endif %}
+    <!-- Post footer -->
+    {{ page.txtfooter }}
+</footer>

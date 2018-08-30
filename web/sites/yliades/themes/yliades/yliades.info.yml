@@ -10,6 +10,7 @@ regions:
   highlighted: 'Highlighted'
   content: 'Content'
   footer: 'Footer'
+  txtfooter: 'Zone de texte sous le footer'
 
 libraries:
   - yliades/bootstrap

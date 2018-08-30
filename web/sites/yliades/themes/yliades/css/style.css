@@ -125,7 +125,7 @@ header .logo {
   margin: 30px 0;
   height: 40px;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
   header .logo {
     height: 30px;
     margin: 15px 0;
@@ -161,11 +161,11 @@ header button[aria-expanded=true] .navbar-toggler-icon > span {
 header button[aria-expanded=true] .navbar-toggler-icon > span.middle {
   margin-left: 0;
 }
-@media (max-width: 575px) {
+@media only screen and (max-width: 991px) {
   body {
     padding-top: 80px;
   }
-  .navbar-expand-sm {
+  .header-wrapper {
     position: fixed;
     background: white;
     width: 100%;
@@ -183,7 +183,7 @@ header button[aria-expanded=true] .navbar-toggler-icon > span.middle {
   margin-bottom: 25px;
   text-align: center;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
   .main-menu {
     border: none;
     margin: 0;
@@ -196,7 +196,7 @@ header button[aria-expanded=true] .navbar-toggler-icon > span.middle {
   margin: 0;
   font-size: 0;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
   .main-menu ul {
     margin-left: -15px;
     margin-right: -15px;
@@ -220,10 +220,6 @@ header button[aria-expanded=true] .navbar-toggler-icon > span.middle {
   .main-menu ul li {
     padding: 4px 15px;
     line-height: 25px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .main-menu ul li {
     display: block;
     border-right: 0;
     border-bottom: 1px solid black;
@@ -246,11 +242,6 @@ header button[aria-expanded=true] .navbar-toggler-icon > span.middle {
   text-decoration: none;
 }
 @media only screen and (max-width: 991px) {
-  .main-menu ul li a {
-    font-size: 13px;
-  }
-}
-@media only screen and (max-width: 767px) {
   .main-menu ul li a {
     font-size: 14px;
     position: relative;
@@ -325,11 +316,6 @@ header button[aria-expanded=true] .navbar-toggler-icon > span.middle {
 }
 @media only screen and (max-width: 991px) {
   .main-menu ul li ul {
-    top: 48px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .main-menu ul li ul {
     position: relative;
     top: 0;
     left: 0;
@@ -343,6 +329,12 @@ header button[aria-expanded=true] .navbar-toggler-icon > span.middle {
   .main-menu ul li ul a:after {
     top: 3px;
   }
+}
+footer.fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
 nav#block-menufooter {
   background: #232323;
@@ -470,6 +462,7 @@ nav#block-menufooter ul li ul {
   text-align: left;
   list-style-type: disc;
   transition: all 0.3s;
+  z-index: 2000;
 }
 nav#block-menufooter ul li ul li {
   display: list-item;
@@ -526,13 +519,16 @@ nav#block-menufooter ul li:hover a:after {
 nav#block-menufooter ul li:hover > ul {
   display: block;
 }
-@media (min-width: 768px) {
-  nav#block-menufooter.fixed {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-  }
+.post-footer {
+  background: #232323;
+  text-align: center;
+  color: white;
+  padding-bottom: 15px;
+}
+.post-footer p {
+  margin: 0;
+  font-size: 13px;
+  opacity: 0.7;
 }
 .mea-marques {
   max-width: 1620px;
@@ -573,6 +569,10 @@ nav#block-menufooter ul li:hover > ul {
 .mea-marques .marque .upper .logo {
   display: inline-block;
   margin-bottom: 30px;
+}
+.mea-marques .marque .upper .logo img {
+  max-height: 115px;
+  width: auto;
 }
 @media (max-width: 1024px) {
   .mea-marques .marque .upper .logo img {
@@ -667,6 +667,12 @@ nav#block-menufooter ul li:hover > ul {
 @media only screen and (max-width: 991px) {
   .mea-marques .slick-list {
     padding: 0 50px;
+  }
+  .mea-marques .slick-list .slick-slide {
+    transition: all 0.3s;
+  }
+  .mea-marques .slick-list .slick-slide:not(.slick-active) {
+    transform: scale(0.9);
   }
 }
 @media only screen and (max-width: 767px) {
@@ -839,10 +845,11 @@ h2#title-marques {
   font-weight: 600;
   line-height: 35px;
   display: inline-block;
-  width: auto;
+  min-width: 210px;
   white-space: nowrap;
-  margin: 0 7px;
+  margin: 7px;
   background: black;
+  text-align: left;
   transition: opacity 0.3s;
 }
 .views-exposed-form .form-checkboxes .form-item input {
@@ -858,15 +865,10 @@ h2#title-marques {
 .views-exposed-form .form-checkboxes .form-item:hover {
   opacity: 0.8;
 }
-@media only screen and (max-width: 991px) {
-  .views-exposed-form .form-checkboxes .form-item {
-    width: 30%;
-    margin: 7px;
-  }
-}
 @media only screen and (max-width: 767px) {
   .views-exposed-form .form-checkboxes .form-item {
     width: 100%;
+    margin: 7px 0;
   }
 }
 .loader {
@@ -1596,6 +1598,21 @@ h2#title-marques {
 .page-presentation-groupe .upper-part .groupe-visuel-2 > div {
   padding: 15px;
 }
+.page-presentation-groupe .upper-part .img-wrapper {
+  display: inline-block;
+  position: relative;
+}
+.page-presentation-groupe .upper-part .img-wrapper .alt {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: white;
+  font-weight: 600;
+  text-shadow: 0 0 5px #000000;
+  font-size: 13px;
+  max-width: 100%;
+  padding: 10px 20px;
+}
 .page-presentation-groupe .upper-part .block-txt {
   border: 1px solid #b95034;
   padding: 5px 55px 55px;
@@ -1885,10 +1902,11 @@ h2#title-marques {
   font-weight: 600;
   line-height: 35px;
   display: inline-block;
-  width: auto;
+  min-width: 210px;
   white-space: nowrap;
-  margin: 0 7px;
+  margin: 7px;
   background: black;
+  text-align: left;
   transition: opacity 0.3s;
 }
 .contact-form .checkboxes-marques .fieldset-wrapper > div > div input {
@@ -1904,15 +1922,10 @@ h2#title-marques {
 .contact-form .checkboxes-marques .fieldset-wrapper > div > div:hover {
   opacity: 0.8;
 }
-@media only screen and (max-width: 991px) {
-  .contact-form .checkboxes-marques .fieldset-wrapper > div > div {
-    width: 30%;
-    margin: 7px;
-  }
-}
 @media only screen and (max-width: 767px) {
   .contact-form .checkboxes-marques .fieldset-wrapper > div > div {
     width: 100%;
+    margin: 7px 0;
   }
 }
 .contact-form h2 {
@@ -1940,7 +1953,7 @@ h2#title-marques {
   background: #232323;
 }
 .contact-form .contact-form-fields {
-  max-width: 650px;
+  max-width: 600px;
   margin: 0 auto;
 }
 .contact-form .contact-form-fields .form-item {

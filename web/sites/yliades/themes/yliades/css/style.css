@@ -125,7 +125,7 @@ header .logo {
   margin: 30px 0;
   height: 40px;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
   header .logo {
     height: 30px;
     margin: 15px 0;
@@ -161,11 +161,11 @@ header button[aria-expanded=true] .navbar-toggler-icon > span {
 header button[aria-expanded=true] .navbar-toggler-icon > span.middle {
   margin-left: 0;
 }
-@media (max-width: 575px) {
+@media only screen and (max-width: 991px) {
   body {
     padding-top: 80px;
   }
-  .navbar-expand-sm {
+  .header-wrapper {
     position: fixed;
     background: white;
     width: 100%;
@@ -183,7 +183,7 @@ header button[aria-expanded=true] .navbar-toggler-icon > span.middle {
   margin-bottom: 25px;
   text-align: center;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
   .main-menu {
     border: none;
     margin: 0;
@@ -196,7 +196,7 @@ header button[aria-expanded=true] .navbar-toggler-icon > span.middle {
   margin: 0;
   font-size: 0;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
   .main-menu ul {
     margin-left: -15px;
     margin-right: -15px;
@@ -220,10 +220,6 @@ header button[aria-expanded=true] .navbar-toggler-icon > span.middle {
   .main-menu ul li {
     padding: 4px 15px;
     line-height: 25px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .main-menu ul li {
     display: block;
     border-right: 0;
     border-bottom: 1px solid black;
@@ -246,11 +242,6 @@ header button[aria-expanded=true] .navbar-toggler-icon > span.middle {
   text-decoration: none;
 }
 @media only screen and (max-width: 991px) {
-  .main-menu ul li a {
-    font-size: 13px;
-  }
-}
-@media only screen and (max-width: 767px) {
   .main-menu ul li a {
     font-size: 14px;
     position: relative;
@@ -324,11 +315,6 @@ header button[aria-expanded=true] .navbar-toggler-icon > span.middle {
   }
 }
 @media only screen and (max-width: 991px) {
-  .main-menu ul li ul {
-    top: 48px;
-  }
-}
-@media only screen and (max-width: 767px) {
   .main-menu ul li ul {
     position: relative;
     top: 0;
@@ -681,6 +667,12 @@ nav#block-menufooter ul li:hover > ul {
 @media only screen and (max-width: 991px) {
   .mea-marques .slick-list {
     padding: 0 50px;
+  }
+  .mea-marques .slick-list .slick-slide {
+    transition: all 0.3s;
+  }
+  .mea-marques .slick-list .slick-slide:not(.slick-active) {
+    transform: scale(0.9);
   }
 }
 @media only screen and (max-width: 767px) {

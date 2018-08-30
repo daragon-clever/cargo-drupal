@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
     // MENU
-    if ($(window).width() <= 575) {
+    if ($(window).width() <= 991) {
         $('.main-menu').addClass('js-mobile');
     }
     // Hover - Desktop
@@ -40,7 +40,8 @@ jQuery(document).ready(function($) {
                     breakpoint: 991,
                     settings: {
                         slidesToShow: 3,
-                        slidesToScroll: 3
+                        slidesToScroll: 3,
+                        arrows:false,
                     }
                 },
                 {

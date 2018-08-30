@@ -9,7 +9,8 @@
     <div class="header">
         <div class="row justify-content-center" style="background-color: {{ content.field_couleur_hexa_marque|render|striptags|trim }}">
             <div class="col-auto logo">
-                {{ content.field_logo_marque }}
+                {#{{ content.field_logo_marque }}#}
+                {{ content.field_logo_svg }}
             </div>
             <div class="col-auto text">
                 {{ content.field_titre_marque }}

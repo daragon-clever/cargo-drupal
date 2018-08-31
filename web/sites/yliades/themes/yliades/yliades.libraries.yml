@@ -20,6 +20,7 @@ slick:
 
 # Style général
 global-styling:
+  header: true
   css:
     theme:
       css/style.css: {}

@@ -1,3 +1,4 @@
+{% if {{ fields.field_titre_presse.content }} %}
 <a href="{{ fields.field_lien_pdf_presse.content|render|striptags|trim }}" title="Vu dans la presse" target="_blank">
     {{ fields.field_image_presse.content }}
     <span class="overlay">
@@ -12,3 +13,4 @@
         </span>
     </span>
 </a>
+{% endif %}

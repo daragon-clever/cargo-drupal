@@ -1,0 +1,18 @@
+{% block paragraph %}
+    {% block content %}
+        <a href="{{ content.field_lien_pdf_catalogue|render|striptags|trim }}" title="Nos catalogues" target="_blank">
+            <img src="{{ content.field_image_catalogue|render|striptags|trim }}" />
+            <span class="overlay">
+                <span class="inner">
+                    <span class="title">
+                        {{ content.field_marque_catalogue|render|striptags|trim|raw }}
+                    </span>
+                    <span class="catalog-title">
+                        {{ content.field_titre_catalogue|render|striptags|trim|raw }}
+                    </span>
+                    <span class="pdf-icon"> </span>
+                </span>
+            </span>
+        </a>
+    {% endblock %}
+{% endblock paragraph %}

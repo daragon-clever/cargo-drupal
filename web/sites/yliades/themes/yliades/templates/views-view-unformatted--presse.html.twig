@@ -1,0 +1,19 @@
+{# Contenu pris de la vue evenement - a adapter selon les besoins d'inte #}
+{% if title %}
+    <h3>{{ title }}</h3>
+{% endif %}
+
+<div class="container">
+    <div class="row text-center justify-content-center">
+        {% for row in rows %}
+            {%
+                set row_classes = [
+                default_row_class ? 'item col-12 col-sm-6 col-lg-4 col-xl-3',
+            ]
+            %}
+            <div{{ row.attributes.addClass(row_classes) }}>
+                {{- row.content -}}
+            </div>
+        {% endfor %}
+    </div>
+</div>

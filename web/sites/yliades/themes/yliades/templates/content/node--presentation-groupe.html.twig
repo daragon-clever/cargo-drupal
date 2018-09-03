@@ -1,0 +1,87 @@
+<div class="page-presentation-groupe">
+    <div class="upper-part">
+        <div class="row">
+            <div class="col-12 col-lg-6 col-xl align-self-center">
+                <div class="row groupe-visuel-1 justify-content-center text-center">
+                    <div class="col-12 col-sm-6 col-lg-12 col-xl-6">{{ content.field_bloc_1_image_1 }}</div>
+                    <div class="d-none d-sm-block col-12 col-sm-6 col-lg-12 col-xl-6">{{ content.field_bloc_1_image_2 }}</div>
+                    <div class="d-none d-xl-block col-xl-6">{{ content.field_bloc_1_image_3 }}</div>
+                    <div class="d-none d-xl-block col-xl-6">{{ content.field_bloc_1_image_4 }}</div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 col-xl align-self-center text-center">
+                <div class="block-txt">
+                    {{ content.field_bloc_2_texte }}
+                </div>
+            </div>
+        </div>
+        <div class="row flex-column-reverse flex-lg-row">
+            <div class="col-12 col-lg-6 col-xl align-self-center text-center">
+                <div class="block-txt">
+                    {{ content.field_bloc_3_texte }}
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 col-xl align-self-center">
+                <div class="row groupe-visuel-2 justify-content-center text-center">
+                    <div class="col-12 col-sm-6 col-lg-12 col-xl-6">
+                        <div class="img-wrapper">
+                            {{ content.field_bloc_4_image_1 }}
+                            <span class="alt">{{ node.field_bloc_4_image_1.alt }}</span>
+                        </div>
+                    </div>
+                    <div class="d-none d-sm-block col-sm-6 d-lg-none d-xl-block col-xl-6">
+                        <div class="img-wrapper">
+                            {{ content.field_bloc_4_image_2 }}
+                            <span class="alt">{{ node.field_bloc_4_image_2.alt }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row intro-metiers">
+        <div class="col-12">
+            <div>{{ content.field_intro_bloc_metiers }}</div>
+        </div>
+    </div>
+
+    <div class="gallery-metiers">
+        <div class="row portrait-gallery">
+            <div class="col-12">
+                <div class="row big-portrait">
+                    {% for field in content.field_ajout_personne['#items'] %}
+                        {% if (field.entity.field_image_portrait) %}
+                            <div class="portrait col-3">
+                                <img src="{{ file_url(field.entity.field_image_portrait.entity.uri.value) }}" alt="{{ field.entity.field_image_portrait.alt }}" />
+                                <div class="bulle">
+                                    <div class="name">{{ field.entity.field_prenom.value }}</div>
+                                    <div class="job">{{ field.entity.field_metier.value }}</div>
+                                    <button>Voir l'interview</button>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="portrait-infos">
+            <div class="row justify-content-center">
+                <div class="col-12 col-xl-8">
+                    <div class="row">
+                        <div class="thumb col-12 col-lg-auto text-center">
+                            {% for field in content.field_ajout_personne['#items'] %}
+                                {% if (field.entity.field_image_miniature) %}
+                                    <img src="{{ file_url(field.entity.field_image_miniature.entity.uri.value) }}" alt="{{ field.entity.field_image_miniature.alt }}" />
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        <div class="txt col-12 col-lg">
+                            {{ content.field_ajout_personne }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

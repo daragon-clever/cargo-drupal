@@ -1,0 +1,44 @@
+<div class="header-wrapper navbar-expand-lg">
+    <!-- Header -->
+    {% include directory ~ '/partials/header.html.twig' %}
+    <!-- Navigation -->
+    {% if page.navigation %}
+        {% include directory ~ '/partials/navigation.html.twig' %}
+    {% endif %}
+</div>
+
+<div class="container-fluid">
+    {% if page.highlighted %}
+        <div class="row message-site">
+            <div class="col">
+                {{ page.highlighted }}
+            </div>
+        </div>
+    {% endif %}
+    {% if page.content %}
+    <div class="row">
+        <div class="col">
+            {{ page.content }}
+        </div>
+    </div>
+    {% endif %}
+    <div class="homepage-encarts-bottom">
+        <div class="row">
+            <div class="col-12 col-sm-6">
+                {{ page.homepagebottomleft }}
+            </div>
+            <div class="col-12 col-sm-6">
+                {{ page.homepagebottomright }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <!-- Footer -->
+    {% if page.footer %}
+        {{ page.footer }}
+    {% endif %}
+    <!-- Post footer -->
+    {{ page.txtfooter }}
+</footer>

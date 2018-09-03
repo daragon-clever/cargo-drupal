@@ -1,5 +1,18 @@
 <?php
 
+function yliades_preprocess_html(&$variables) {
+    // Setup Google Webmasters Verification Meta Tag
+    $google_site_verification = [
+        '#tag' => 'meta',
+        '#attributes' => [
+            'name' => 'google-site-verification',
+            'content' => 'p1owz48pdHOq0jbr22MI3vWrxpkDYL6wkLYBob-f0CM',
+        ],
+    ];
+    // Add Google Webmasters Verification Meta Tag to head
+    $variables['page']['#attached']['html_head'][] = [$google_site_verification, 'google-site-verification'];
+};
+
 function yliades_page_attachments_alter(array &$attachments) {
     foreach ($attachments['#attached']['html_head'] as $key => $attachment) {
         if ($attachment[1] == 'system_meta_generator') {

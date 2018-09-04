@@ -36,5 +36,8 @@ function yliades_theme_suggestions_alter(array &$suggestions, array $variables, 
         else if ($id == 'page_filtre_presse') {
             $suggestions[] = $hook . '__' . 'presse';
         }
+        else if ($id == 'parutions_presse') {
+            $suggestions[] = $hook . '__' . 'presse';
+        }
     }
 }

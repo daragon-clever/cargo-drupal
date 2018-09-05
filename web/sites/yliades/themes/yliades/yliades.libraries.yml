@@ -24,7 +24,6 @@ global-styling:
   css:
     theme:
       css/style.css: {}
-      css/ie.css: {}
   js:
     js/custom-js.js: {}
   dependencies:

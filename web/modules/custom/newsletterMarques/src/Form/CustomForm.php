@@ -8,6 +8,8 @@ use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\HtmlCommand;
 
 use Drupal\newsletterMarques\Controller\NewsletterController;
+use ReCaptcha\ReCaptcha;
+use ReCaptcha\RequestMethod;
 
 class CustomForm extends FormBase {
 /**
@@ -22,7 +24,7 @@ class CustomForm extends FormBase {
  */
     public function getFormId()
     {
-        return 'custom_form_id';
+        return 'customformid';
     }
 
     /**
@@ -86,20 +88,35 @@ class CustomForm extends FormBase {
         //Initialize variables
         $email = $form_state->getValue('mail');
         $choixMarques = $form_state->getValue('marques');
-        $captcha_response = $form_state->getValue('captcha_response');
-        var_dump();
-        $newsletter = new NewsletterController();
-        $return = $newsletter->doAction($choixMarques,$email);
+        $response_recaptcha = $_POST['g-recaptcha-response'];
 
-        if ($return == 'insert')
-        {
-            $msg = "Vous venez de vous inscrire à la newsletter";
-        }
-        else if ($return == 'update')
-        {
-            $msg = "Vous venez de mettre à jour votre préférence pour la newsletter";
+
+        if ($email && $choixMarques) {
+            if (isset($response_recaptcha) && !empty($response_recaptcha)) {
+                //your site secret key
+                $secret = '6Lf-g24UAAAAAIiMGEfFQl4UWEPcoZbh2DQz4CUh';
+                //get verify response data
+                $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . $response_recaptcha);
+                $responseData = json_decode($verifyResponse);
+//            var_dump($responseData);
+                if ($responseData->success) {
+                    $newsletter = new NewsletterController();
+                    $return = $newsletter->doAction($choixMarques, $email);
+                    if ($return == 'insert') {
+                        $msg = "Vous venez de vous inscrire à la newsletter";
+                    } else if ($return == 'update') {
+                        $msg = "Vous venez de mettre à jour vos préférences newsletter pour l'adresse : " . $email;
+                    } else {
+                        $msg = "Erreur";
+                    }
+                } else {
+                    $msg = 'Veuillez réessayer';
+                }
+            } else {
+                $msg = 'Veuillez cocher la case "Je ne suis pas un robot"';
+            }
         } else {
-            $msg = "erreur";
+            $msg = "Veuillez remplir les champs";
         }
 
         //Ajax Request
@@ -107,7 +124,7 @@ class CustomForm extends FormBase {
         $response->addCommand(
             new HtmlCommand(
                 '.result_message',
-                ''.$email.''.$msg.''
+                $msg
             )
         );
         return $response;
@@ -123,5 +140,6 @@ class CustomForm extends FormBase {
      */
     public function submitForm(array &$form, FormStateInterface $form_state)
     {
+        drupal_set_message($form_state->getValue('number_1') + $form_state->getValue('number_2'));
     }
 }

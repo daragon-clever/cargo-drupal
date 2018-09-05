@@ -1,0 +1,75 @@
+<div class="container">
+    <div class="row justify-content-center">
+
+        <div class="col-6">
+            {% if form %}
+                <form {{form.attributes }}>
+                    {{ form.form_build_id }}
+                    {{ form.form_token }}
+                    {{ form.form_id }}
+
+                    <div class="row">
+                        <div class="col-12">
+                            {{ form.message }}
+                        </div>
+                        <div class="col-4">
+                            <div class="form-check">
+                                {{ form.marques.toutes_les_marques }}
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-check">
+                                {{ form.marques.sema_design }}
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-check">
+                                {{ form.marques.comptoir_de_famille }}
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-check">
+                                {{ form.marques.cote_table }}
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-check">
+                                {{ form.marques.genevieve_lethu }}
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-check">
+                                {{ form.marques.jardin_d_ulysse }}
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            {{ form.mail }}
+                        </div>
+                        <div class="col-12">
+                            {{ form.captcha }}
+                        </div>
+                        <div class="col-12">
+                            {{ form.actions }}
+                        </div>
+                    </div>
+
+                </form>
+            {% endif %}
+        </div>
+
+    </div>
+</div>
+
+
+<script>
+    // TODO: A REVOIR
+    function validateForm() {
+        var email = jQuery('#formNewsletter #emailNewsletter').val();
+        var testCheckbox = jQuery('#formNewsletter div.form-check :checkbox:checked').length > 0;
+        if (testCheckbox === true && email != "") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+</script>

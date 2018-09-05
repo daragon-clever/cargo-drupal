@@ -18,13 +18,19 @@ slick:
     theme:
       https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css: { type: external }
 
+# Plugin js pour noir et blanc IE11
+blackandwhite:
+  js:
+    js/jquery.BlackAndWhite.min.js: {}
+  dependencies:
+    - core/jquery
+
 # Style général
 global-styling:
   header: true
   css:
     theme:
       css/style.css: {}
-      css/ie.css: {}
   js:
     js/custom-js.js: {}
   dependencies:

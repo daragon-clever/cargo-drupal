@@ -8,7 +8,7 @@
 
     <div class="header">
         <div class="row justify-content-center" style="background-color: {{ content.field_couleur_hexa_marque|render|striptags|trim }}">
-            <div class="col-auto logo">
+            <div class="col-auto logo text-right">
                 {#{{ content.field_logo_marque }}#}
                 {{ content.field_logo_svg }}
             </div>
@@ -46,17 +46,17 @@
                 <div class="rs-wrapper">
                     {% if content.field_menu_lien_facebook[0]['#url'] %}
                         <a class="rs facebook" href="{{ content.field_menu_lien_facebook[0]['#url'] }}" title="Facebook" target="_blank">
-                            <span>Facebook</span>
+
                         </a>
                     {% endif %}
                     {% if content.field_menu_lien_instagram[0]['#url'] %}
                         <a class="rs instagram" href="{{ content.field_menu_lien_instagram[0]['#url'] }}" title="Instagram" target="_blank">
-                            <span>Instagram</span>
+
                         </a>
                     {% endif %}
                     {% if content.field_menu_lien_pinterest[0]['#url'] %}
                         <a class="rs pinterest" href="{{ content.field_menu_lien_pinterest[0]['#url'] }}" title="Pinterest" target="_blank">
-                            <span>Pinterest</span>
+
                         </a>
                     {% endif %}
                 </div>

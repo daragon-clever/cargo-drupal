@@ -1,0 +1,92 @@
+<?php
+
+function newsletterMarques_theme($existing, $type, $theme, $path) {
+    return [
+        'newsletter' => [
+            'variables' => [
+                'test_var' => NULL,
+                'lesMarques' => NULL,
+                'msg' => NULL,
+                'form' => NULL
+            ],
+            'render element' => 'form'
+        ]
+    ];
+}
+
+/**
+ * Schema table
+ */
+function newsletterMarques_schema() {
+    $schema['newsletter_marques'] = array(
+        'description' => 'Stores email for newsletter.',
+        'fields' => array(
+            'id' => array(
+                'type' => 'serial',
+                'not null' => TRUE,
+                'description' => 'Primary Key: Unique email ID.',
+            ),
+            'email' => array(
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => '',
+                'description' => 'Email of the person.',
+            ),
+            'sema_design' => array(
+                'type' => 'int',
+                'size' => 'tiny',
+                'not null' => TRUE,
+                'default' => '0',
+                'description' => '',
+            ),
+            'comptoir_de_famille' => array(
+                'type' => 'int',
+                'size' => 'tiny',
+                'not null' => TRUE,
+                'default' => '0',
+                'description' => '',
+            ),
+            'cote_table' => array(
+                'type' => 'int',
+                'size' => 'tiny',
+                'not null' => TRUE,
+                'default' => '0',
+                'description' => '',
+            ),
+            'genevieve_lethu' => array(
+                'type' => 'int',
+                'size' => 'tiny',
+                'not null' => TRUE,
+                'default' => '0',
+                'description' => '',
+            ),
+            'jardin_d_ulysse' => array(
+                'type' => 'int',
+                'size' => 'tiny',
+                'not null' => TRUE,
+                'default' => '0',
+                'description' => '',
+            ),
+            'exported' => array(
+                'type' => 'int',
+                'size' => 'tiny',
+                'not null' => TRUE,
+                'default' => '0',
+                'description' => '',
+            ),
+        ),
+        'primary key' => array('id'),
+        'indexes' => array(
+            'email' => array('email'),
+            'sema_design' => array('sema_design'),
+            'comptoir_de_famille' => array('comptoir_de_famille'),
+            'cote_table' => array('cote_table'),
+            'genevieve_lethu' => array('genevieve_lethu'),
+            'jardin_d_ulysse' => array('jardin_d_ulysse'),
+            'exported' => array('exported'),
+        ),
+    );
+
+    return $schema;
+}

@@ -20,9 +20,11 @@ slick:
 
 # Style général
 global-styling:
+  header: true
   css:
     theme:
       css/style.css: {}
+      css/ie.css: {}
   js:
     js/custom-js.js: {}
   dependencies:

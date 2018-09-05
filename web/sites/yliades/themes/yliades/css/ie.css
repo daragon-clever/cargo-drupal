@@ -1,0 +1,29 @@
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .slick-slide img {
+        display: inline-block;
+    }
+    .mea-marques .marque .upper .arrow {
+        margin-left: 50%;
+    }
+    .mea-marques .marque .upper {
+        padding: 66px 0 30px;
+    }
+    .page-marque .description svg.quote-left {
+        left: -30px;
+    }
+    .page-marque .description svg {
+        width: 28px;
+    }
+    .page-marque .menu .rs-wrapper a span {
+        display: none;
+    }
+    .page-marque .lignes-visuels > div:first-child .animated > div img {
+        height: 324px;
+    }
+    .page-marque .lignes-visuels .block-text > div {
+        padding: 55px 90px;
+    }
+    .vue-presse .item a .overlay .inner, .vue-catalogue .item a .overlay .inner {
+        padding-top: 80px;
+    }
+}

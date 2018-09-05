@@ -1358,7 +1358,7 @@ h2#title-marques {
       display: inline-block;
       position: relative;
       img {
-        max-width: 100%;
+        max-width: 250px;
         height: auto;
       }
       .overlay {
@@ -1415,11 +1415,17 @@ h2#title-marques {
 .vue-catalogue {
   .item {
     margin-top: 0;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+    a {
+      text-align: center;
+    }
   }
   .item a img {
     max-width: 247px;
     height: auto;
+    @media @tablet {
+      max-width: 100%;
+    }
   }
 }
 

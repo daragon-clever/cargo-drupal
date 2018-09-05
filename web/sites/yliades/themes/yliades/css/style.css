@@ -1549,7 +1549,7 @@ h2#title-marques {
 }
 .vue-presse .item a img,
 .vue-catalogue .item a img {
-  max-width: 100%;
+  max-width: 250px;
   height: auto;
 }
 .vue-presse .item a .overlay,
@@ -1611,11 +1611,19 @@ h2#title-marques {
 }
 .vue-catalogue .item {
   margin-top: 0;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+}
+.vue-catalogue .item a {
+  text-align: center;
 }
 .vue-catalogue .item a img {
   max-width: 247px;
   height: auto;
+}
+@media only screen and (max-width: 991px) {
+  .vue-catalogue .item a img {
+    max-width: 100%;
+  }
 }
 .page-presentation-groupe {
   max-width: 1590px;

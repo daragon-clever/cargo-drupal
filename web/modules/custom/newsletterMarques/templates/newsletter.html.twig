@@ -1,3 +1,4 @@
+<script src='https://www.google.com/recaptcha/api.js'></script>
 <div class="container">
     <div class="row justify-content-center">
 
@@ -46,7 +47,8 @@
                             {{ form.mail }}
                         </div>
                         <div class="col-12">
-                            {{ form.captcha }}
+                            {#{{ form.captcha }}#}
+                            <div class="g-recaptcha" data-sitekey="6Lf-g24UAAAAAGzls5e99uRmlhKLBxOeCCdynS2x"></div>
                         </div>
                         <div class="col-12">
                             {{ form.actions }}
@@ -59,17 +61,3 @@
 
     </div>
 </div>
-
-
-<script>
-    // TODO: A REVOIR
-    function validateForm() {
-        var email = jQuery('#formNewsletter #emailNewsletter').val();
-        var testCheckbox = jQuery('#formNewsletter div.form-check :checkbox:checked').length > 0;
-        if (testCheckbox === true && email != "") {
-            return true;
-        } else {
-            return false;
-        }
-    }
-</script>

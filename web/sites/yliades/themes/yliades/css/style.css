@@ -218,8 +218,6 @@ header button[aria-expanded=true] .navbar-toggler-icon > span.middle {
 }
 @media only screen and (max-width: 991px) {
   .main-menu ul li {
-    padding: 4px 15px;
-    line-height: 25px;
     display: block;
     border-right: 0;
     border-bottom: 1px solid black;
@@ -571,8 +569,8 @@ nav#block-menufooter ul li:hover > ul {
   margin-bottom: 30px;
 }
 .mea-marques .marque .upper .logo img {
-  max-height: 115px;
   width: auto;
+  display: inline-block;
 }
 @media (max-width: 1024px) {
   .mea-marques .marque .upper .logo img {
@@ -629,10 +627,10 @@ nav#block-menufooter ul li:hover > ul {
 .mea-marques .marque .upper .arrow {
   position: absolute;
   bottom: -6px;
+  left: calc(50% - 7px);
   height: 15px;
   width: 15px;
   z-index: 10;
-  margin-left: -7px;
   transform: rotate(45deg);
 }
 @media only screen and (max-width: 767px) {
@@ -681,6 +679,9 @@ nav#block-menufooter ul li:hover > ul {
   }
   .mea-marques .slick-list .slick-slide {
     transition: all 0.3s;
+  }
+  .mea-marques .slick-list .slick-slide a:hover {
+    text-decoration: none;
   }
   .mea-marques .slick-list .slick-slide:not(.slick-current) {
     transform: scale(0.8);
@@ -892,10 +893,10 @@ h2#title-marques {
   height: 36px;
   width: 36px;
   position: relative;
-  -webkit-animation: rotation 0.8s infinite linear;
-  -moz-animation: rotation 0.8s infinite linear;
-  -o-animation: rotation 0.8s infinite linear;
-  animation: rotation 0.8s infinite linear;
+  -webkit-animation: rotation .8s infinite linear;
+  -moz-animation: rotation .8s infinite linear;
+  -o-animation: rotation .8s infinite linear;
+  animation: rotation .8s infinite linear;
   border-left: 3px solid rgba(85, 85, 85, 0.3);
   border-right: 3px solid rgba(85, 85, 85, 0.3);
   border-bottom: 3px solid rgba(85, 85, 85, 0.3);
@@ -1328,17 +1329,14 @@ h2#title-marques {
 .page-marque .menu .rs-wrapper a.facebook {
   background: url("../images/marques/svg/facebook-logo.svg") no-repeat center transparent;
   height: 22px;
-  font-size: 0;
 }
 .page-marque .menu .rs-wrapper a.instagram {
   background: url("../images/marques/svg/instagram-logo.svg") no-repeat center transparent;
   height: 23px;
-  font-size: 0;
 }
 .page-marque .menu .rs-wrapper a.pinterest {
   background: url("../images/marques/svg/pinterest-logo.svg") no-repeat center transparent;
   height: 23px;
-  font-size: 0;
 }
 @media only screen and (max-width: 767px) {
   .page-marque .menu .rs-wrapper a {
@@ -1371,6 +1369,7 @@ h2#title-marques {
 }
 .page-marque .description svg {
   height: 20px;
+  width: 28px;
   position: absolute;
   top: 0;
 }
@@ -1430,17 +1429,16 @@ h2#title-marques {
     height: 215px;
   }
 }
-.page-marque .lignes-visuels > div:first-child .animated > div {
+.page-marque .lignes-visuels > div:first-child .animated {
   display: flex;
-  height: 100%;
+}
+.page-marque .lignes-visuels > div:first-child .animated > div {
+  margin: auto;
+  align-self: center;
   padding: 15px;
 }
 .page-marque .lignes-visuels > div:first-child .animated > div img {
-  margin: auto;
-  max-height: 100%;
-  max-width: 100%;
-  height: auto;
-  width: auto;
+  max-height: 324px;
 }
 @media only screen and (max-width: 767px) {
   .page-marque .lignes-visuels > div:first-child .animated,
@@ -1458,6 +1456,7 @@ h2#title-marques {
 }
 .page-marque .lignes-visuels .block-text > div {
   margin: auto;
+  align-self: center;
   text-align: center;
   padding: 0 90px;
 }
@@ -1502,30 +1501,36 @@ h2#title-marques {
     height: 340px !important;
   }
 }
-.vue-presse .js-pager__items.pager,
-.vue-evenement .js-pager__items.pager {
-  padding: 0;
+.vue-presse .pager,
+.vue-evenement .pager {
+  all: inherit;
+}
+.vue-presse .pager .pager__item,
+.vue-evenement .pager .pager__item {
   text-align: center;
+  list-style: none;
 }
-.vue-presse .js-pager__items.pager li,
-.vue-evenement .js-pager__items.pager li {
-  display: inline-block;
-}
-.vue-presse .js-pager__items.pager li a,
-.vue-evenement .js-pager__items.pager li a {
+.vue-presse .pager .pager__item a,
+.vue-evenement .pager .pager__item a {
   background-color: #232323;
   color: #fff;
   padding: 8px 100px;
   font-weight: 600;
-}
-.vue-presse .js-pager__items.pager li:hover,
-.vue-evenement .js-pager__items.pager li:hover,
-.vue-presse .js-pager__items.pager li :focus,
-.vue-evenement .js-pager__items.pager li :focus,
-.vue-presse .js-pager__items.pager li :visited,
-.vue-evenement .js-pager__items.pager li :visited {
-  color: #fff;
+  display: inline-block;
+  margin-top: 30px;
   text-decoration: none;
+  transition: opacity 0.3s;
+}
+.vue-presse .pager .pager__item a:hover,
+.vue-evenement .pager .pager__item a:hover {
+  opacity: 0.8;
+}
+@media only screen and (max-width: 767px) {
+  .vue-presse .pager .pager__item a,
+  .vue-evenement .pager .pager__item a {
+    width: 100%;
+    padding: 8px 0;
+  }
 }
 .vue-presse,
 .vue-catalogue {
@@ -1563,6 +1568,7 @@ h2#title-marques {
 .vue-presse .item a .overlay .inner,
 .vue-catalogue .item a .overlay .inner {
   margin: auto;
+  align-self: center;
 }
 .vue-presse .item a .overlay .inner .title,
 .vue-catalogue .item a .overlay .inner .title {
@@ -1823,7 +1829,6 @@ h2#title-marques {
   width: 100%;
   background: white;
   max-height: 100%;
-  overflow: hidden;
   z-index: 1000;
 }
 .gallery-metiers .portrait-infos .thumb > img {
@@ -1888,7 +1893,8 @@ h2#title-marques {
   margin-top: -2px;
 }
 @media only screen and (max-width: 991px) {
-  .gallery-metiers .portrait-infos .txt > div > div p {
+  .gallery-metiers .portrait-infos .txt > div > div p,
+  .gallery-metiers .portrait-infos .txt > div > div li {
     font-size: 13px;
     line-height: 1.3;
   }

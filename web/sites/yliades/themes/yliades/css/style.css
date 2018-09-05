@@ -1450,13 +1450,19 @@ h2#title-marques {
   align-self: center;
   padding: 15px;
 }
-.page-marque .lignes-visuels > div:first-child .animated > div img {
-  max-height: 324px;
+@media (max-width: 1024px) {
+  .page-marque .lignes-visuels > div:first-child .animated > div img {
+    max-height: 270px;
+    width: auto;
+  }
 }
 @media only screen and (max-width: 767px) {
-  .page-marque .lignes-visuels > div:first-child .animated,
-  .page-marque .lignes-visuels > div:first-child .animated > div {
+  .page-marque .lignes-visuels > div:first-child .animated {
     height: 340px !important;
+  }
+  .page-marque .lignes-visuels > div:first-child .animated img {
+    max-height: inherit;
+    width: 100%;
   }
 }
 .page-marque .lignes-visuels img {
@@ -1507,6 +1513,11 @@ h2#title-marques {
   .page-marque .lignes-visuels .block-text > div p {
     font-size: 13px;
     margin-top: 15px;
+  }
+}
+@media (max-width: 1620px) {
+  .page-marque .lignes-visuels .block-text > div br {
+    display: none;
   }
 }
 @media only screen and (max-width: 767px) {

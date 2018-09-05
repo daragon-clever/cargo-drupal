@@ -115,6 +115,16 @@ jQuery(document).ready(function($) {
         e.preventDefault();
     });
 
+    // SOUSMENU POUR FOOTER MOBILE
+    if ($(window).width() <= 575) {
+        var dropUpLink = $("a.dropup");
+        $(dropUpLink).next("ul").hide();
+        $(dropUpLink).on("click", function () {
+            $(this).toggleClass("js-opened");
+            $(this).next("ul").slideToggle();
+        })
+    }
+
     // FORMULAIRES
     if ($('.webform-submission-form').length) {
         $('input, textarea').blur(function () {
@@ -132,7 +142,7 @@ jQuery(document).ready(function($) {
     // BLACK AND WHITE FOR IE11
     if($(".mea-marques").length) {
         $('.mea-marques .bottom > div').BlackAndWhite({
-            hoverEffect : true,
+            hoverEffect : true
         });
     }
 });

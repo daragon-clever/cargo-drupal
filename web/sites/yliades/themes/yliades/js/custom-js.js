@@ -128,4 +128,11 @@ jQuery(document).ready(function($) {
             }
         });
     }
+
+    // BLACK AND WHITE FOR IE11
+    if($(".mea-marques").length) {
+        $('.mea-marques .bottom > div').BlackAndWhite({
+            hoverEffect : true,
+        });
+    }
 });

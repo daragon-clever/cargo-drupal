@@ -176,8 +176,6 @@ header {
         padding: 4px 20px;
       }
       @media @tablet {
-        padding: 4px 15px;
-        line-height: 25px;
         display: block;
         border-right: 0;
         border-bottom: 1px solid black;
@@ -599,6 +597,9 @@ nav#block-menufooter {
       padding: 0 60px !important;
       .slick-slide {
         transition: all 0.3s;
+        a:hover {
+          text-decoration: none;
+        }
         &:not(.slick-current) {
           transform: scale(0.8);
           .cta-mobile {
@@ -1320,23 +1321,28 @@ h2#title-marques {
   }
 }
 
-//Page presse & evenement {
-//audrey - a revoir
-.vue-presse .js-pager__items.pager,
-.vue-evenement .js-pager__items.pager {
-  padding: 0;
-  text-align: center;
-  li {
-    display: inline-block;
-    a {
-      background-color: #232323;
-      color: #fff;
-      padding: 8px 100px;
-      font-weight: 600;
-    }
-    &:hover,:focus, :visited {
-      color: #fff;
-      text-decoration: none;
+//Page presse & evenement
+.vue-presse,
+.vue-evenement {
+  .pager {
+    all: inherit;
+    .pager__item {
+      text-align: center;
+      list-style: none;
+      a {
+        background-color: #232323;
+        color: #fff;
+        padding: 8px 100px;
+        font-weight: 600;
+        display: inline-block;
+        margin-top: 30px;
+        text-decoration: none;
+        .dimOpacityOnHover(0.8);
+        @media @phone {
+          width: 100%;
+          padding: 8px 0;
+        }
+      }
     }
   }
 }
@@ -1629,7 +1635,6 @@ h2#title-marques {
     width: 100%;
     background: white;
     max-height: 100%;
-    overflow: hidden;
     z-index: 1000;
     .thumb > img {
       margin-bottom: 12px;
@@ -1688,7 +1693,7 @@ h2#title-marques {
         }
       }
       @media @tablet {
-        p {
+        p, li {
           font-size: 13px;
           line-height: 1.3;
         }

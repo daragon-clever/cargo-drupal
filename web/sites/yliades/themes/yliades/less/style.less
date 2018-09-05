@@ -362,6 +362,21 @@ nav#block-menufooter {
               right: 20px;
             }
           }
+          @media @phone {
+            &:not(.js-opened):after {
+              transform: rotate(180deg);
+            }
+            &.js-opened {
+              &:after {
+                transform: rotate(0);
+              }
+              & + ul {
+                a:after {
+                  transform: rotate(90deg) !important;
+                }
+              }
+            }
+          }
         }
         @media @phone {
           &:after {
@@ -414,7 +429,7 @@ nav#block-menufooter {
           @media @phone {
             display: block;
             margin-left: 0;
-            padding: 5px 0 5px 25px;
+            padding: 9px 0 8px 25px;
           }
         }
         @media (max-width: 1024px) {
@@ -432,7 +447,9 @@ nav#block-menufooter {
           bottom: inherit;
           list-style-type: none;
           padding: 0;
-          margin: 18px 0 -12px;
+          margin: 18px 0 -15px;
+          transition: none;
+          background: #3e3e3e;
         }
       }
       &:hover {

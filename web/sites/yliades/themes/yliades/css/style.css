@@ -1539,8 +1539,9 @@ h2#title-marques {
 }
 .vue-presse .item,
 .vue-catalogue .item {
-  margin: 25px 0;
+  margin: 32px 0;
   cursor: pointer;
+  text-align: center;
 }
 .vue-presse .item a,
 .vue-catalogue .item a {
@@ -1611,7 +1612,6 @@ h2#title-marques {
 }
 .vue-catalogue .item {
   margin-top: 0;
-  margin-bottom: 30px;
 }
 .vue-catalogue .item a {
   text-align: center;

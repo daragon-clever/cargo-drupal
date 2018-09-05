@@ -91,28 +91,32 @@ class CustomForm extends FormBase {
         $response_recaptcha = $_POST['g-recaptcha-response'];
 
 
-        if(isset($response_recaptcha) && !empty($response_recaptcha)) {
-            //your site secret key
-            $secret = '6Lf-g24UAAAAAIiMGEfFQl4UWEPcoZbh2DQz4CUh';
-            //get verify response data
-            $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$response_recaptcha);
-            $responseData = json_decode($verifyResponse);
+        if ($email && $choixMarques) {
+            if (isset($response_recaptcha) && !empty($response_recaptcha)) {
+                //your site secret key
+                $secret = '6Lf-g24UAAAAAIiMGEfFQl4UWEPcoZbh2DQz4CUh';
+                //get verify response data
+                $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . $response_recaptcha);
+                $responseData = json_decode($verifyResponse);
 //            var_dump($responseData);
-            if($responseData->success) {
-                $newsletter = new NewsletterController();
-                $return = $newsletter->doAction($choixMarques, $email);
-                if ($return == 'insert') {
-                    $msg = "Vous venez de vous inscrire à la newsletter";
-                } else if ($return == 'update') {
-                    $msg = "Vous venez de mettre à jour vos préférences newsletter pour l'adresse : " . $email;
+                if ($responseData->success) {
+                    $newsletter = new NewsletterController();
+                    $return = $newsletter->doAction($choixMarques, $email);
+                    if ($return == 'insert') {
+                        $msg = "Vous venez de vous inscrire à la newsletter";
+                    } else if ($return == 'update') {
+                        $msg = "Vous venez de mettre à jour vos préférences newsletter pour l'adresse : " . $email;
+                    } else {
+                        $msg = "Erreur";
+                    }
                 } else {
-                    $msg = "Erreur";
+                    $msg = 'Veuillez réessayer';
                 }
             } else {
-                $msg = 'Veuillez réessayer';
+                $msg = 'Veuillez cocher la case "Je ne suis pas un robot"';
             }
         } else {
-            $msg = 'Veuillez cocher la case "Je ne suis pas un robot"';
+            $msg = "Veuillez remplir les champs";
         }
 
         //Ajax Request

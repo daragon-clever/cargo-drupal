@@ -362,6 +362,21 @@ nav#block-menufooter {
               right: 20px;
             }
           }
+          @media @phone {
+            &:not(.js-opened):after {
+              transform: rotate(180deg);
+            }
+            &.js-opened {
+              &:after {
+                transform: rotate(0);
+              }
+              & + ul {
+                a:after {
+                  transform: rotate(90deg) !important;
+                }
+              }
+            }
+          }
         }
         @media @phone {
           &:after {
@@ -414,7 +429,7 @@ nav#block-menufooter {
           @media @phone {
             display: block;
             margin-left: 0;
-            padding: 5px 0 5px 25px;
+            padding: 9px 0 8px 25px;
           }
         }
         @media (max-width: 1024px) {
@@ -432,7 +447,9 @@ nav#block-menufooter {
           bottom: inherit;
           list-style-type: none;
           padding: 0;
-          margin: 18px 0 -12px;
+          margin: 18px 0 -15px;
+          transition: none;
+          background: #3e3e3e;
         }
       }
       &:hover {
@@ -1262,13 +1279,20 @@ h2#title-marques {
           align-self: center;
           padding: 15px;
           img {
-            max-height: 324px;
+            //max-height: 324px;
+            @media (max-width: 1024px) {
+              max-height: 270px;
+              width: auto;
+            }
           }
         }
         @media @phone {
-          .animated,
-          .animated > div {
+          .animated {
             height: 340px !important;
+            img {
+              max-height: inherit;
+              width: 100%;
+            }
           }
         }
       }
@@ -1313,6 +1337,11 @@ h2#title-marques {
             margin-top: 15px;
           }
         }
+        @media (max-width: 1620px) {
+          br {
+            display: none;
+          }
+        }
       }
       @media @phone {
         height: 340px !important;
@@ -1352,8 +1381,9 @@ h2#title-marques {
   max-width: 1430px;
   margin: 0 auto;
   .item {
-    margin: 25px 0;
+    margin: 32px 0;
     cursor: pointer;
+    text-align: center;
     a {
       display: inline-block;
       position: relative;
@@ -1415,7 +1445,6 @@ h2#title-marques {
 .vue-catalogue {
   .item {
     margin-top: 0;
-    margin-bottom: 30px;
     a {
       text-align: center;
     }

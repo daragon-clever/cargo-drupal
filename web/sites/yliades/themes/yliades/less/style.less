@@ -1279,13 +1279,20 @@ h2#title-marques {
           align-self: center;
           padding: 15px;
           img {
-            max-height: 324px;
+            //max-height: 324px;
+            @media (max-width: 1024px) {
+              max-height: 270px;
+              width: auto;
+            }
           }
         }
         @media @phone {
-          .animated,
-          .animated > div {
+          .animated {
             height: 340px !important;
+            img {
+              max-height: inherit;
+              width: 100%;
+            }
           }
         }
       }
@@ -1328,6 +1335,11 @@ h2#title-marques {
           @media (max-width: 1024px) {
             font-size: 13px;
             margin-top: 15px;
+          }
+        }
+        @media (max-width: 1620px) {
+          br {
+            display: none;
           }
         }
       }

@@ -25,7 +25,7 @@
         "drupal/captcha": "^1.0@beta",
         "drupal/console": "^1.0.2",
         "drupal/cookieconsent": "^1.4",
-        "drupal/core": "^8.5",
+        "drupal/core": "^8.6.0",
         "drupal/devel": "^1.2",
         "drupal/entity_pager": "^1.0@beta",
         "drupal/entity_reference_revisions": "^1.5",
@@ -52,7 +52,7 @@
         "webmozart/path-util": "^2.3"
     },
     "require-dev": {
-        "webflo/drupal-core-require-dev": "~8.5.1"
+        "webflo/drupal-core-require-dev": "^8.6.0"
     },
     "conflict": {
         "drupal/drupal": "*"

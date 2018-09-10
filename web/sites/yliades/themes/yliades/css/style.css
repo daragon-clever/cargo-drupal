@@ -1863,6 +1863,72 @@ h2#title-marques {
   max-height: 100%;
   z-index: 1000;
 }
+.gallery-metiers .portrait-infos > div > div {
+  padding: 0 40px;
+}
+@media only screen and (max-width: 767px) {
+  .gallery-metiers .portrait-infos > div > div {
+    padding: 0 15px;
+  }
+}
+.gallery-metiers .portrait-infos .arrows-nav {
+  width: 100%;
+}
+.gallery-metiers .portrait-infos .arrows-nav span {
+  position: absolute;
+  display: block;
+  height: 11px;
+  width: 7px;
+  top: 215px;
+  cursor: pointer;
+  background: url("../images/marques/arrow_groupe_gallery.png") no-repeat center transparent;
+  transition: opacity 0.3s;
+  z-index: 100;
+}
+.gallery-metiers .portrait-infos .arrows-nav span:hover {
+  opacity: 0.8;
+}
+@media only screen and (max-width: 991px) {
+  .gallery-metiers .portrait-infos .arrows-nav span {
+    top: 375px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .gallery-metiers .portrait-infos .arrows-nav span {
+    top: 315px;
+    background: url("../images/marques/arrow_groupe_gallery.png") no-repeat center white;
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
+  }
+}
+.gallery-metiers .portrait-infos .arrows-nav span.prev {
+  left: 0;
+  transform: rotate(180deg);
+}
+@media (max-width: 1024px) {
+  .gallery-metiers .portrait-infos .arrows-nav span.prev {
+    left: 15px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .gallery-metiers .portrait-infos .arrows-nav span.prev {
+    left: 0;
+  }
+}
+.gallery-metiers .portrait-infos .arrows-nav span.next {
+  right: 0;
+}
+@media (max-width: 1024px) {
+  .gallery-metiers .portrait-infos .arrows-nav span.next {
+    right: 15px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .gallery-metiers .portrait-infos .arrows-nav span.next {
+    right: 0;
+  }
+}
 .gallery-metiers .portrait-infos .thumb > img {
   margin-bottom: 12px;
   opacity: 0.5;

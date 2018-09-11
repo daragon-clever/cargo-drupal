@@ -88,6 +88,41 @@ jQuery(document).ready(function($) {
             $(".txt > div > div").removeClass("current");
             $(".txt > div > div").eq(thumbIndex).addClass("current");
         });
+
+        // Fleches nav
+        $(".arrows-nav > .prev").on("click", function () {
+            var currentPortrait = $(".portrait-infos .thumb img.current");
+            var prevPortraitIndex = currentPortrait.prev().index();
+
+            var prevPortrait = function() {
+                $(".portrait-infos .thumb img").removeClass("current");
+                $(".txt > div > div").removeClass("current");
+                $(".txt > div > div").eq(prevPortraitIndex).addClass("current");
+                $(".portrait-infos .thumb img").eq(prevPortraitIndex).addClass("current");
+            };
+
+            prevPortrait();
+        });
+        $(".arrows-nav > .next").on("click", function () {
+            var currentPortrait = $(".portrait-infos .thumb img.current");
+            var nextPortraitIndex = currentPortrait.next().index();
+
+            var nextPortrait = function() {
+                $(".portrait-infos .thumb img").removeClass("current");
+                $(".txt > div > div").removeClass("current");
+                console.log(nextPortraitIndex);
+                if (nextPortraitIndex === -1) {
+                    // Si on est au dernier, remettre le 1er
+                    $(".txt > div > div").eq(0).addClass("current");
+                    $(".portrait-infos .thumb img").eq(0).addClass("current");
+                } else {
+                    $(".txt > div > div").eq(nextPortraitIndex).addClass("current");
+                    $(".portrait-infos .thumb img").eq(nextPortraitIndex).addClass("current");
+                }
+            };
+
+            nextPortrait();
+        });
     }
 
     // LOADER AJAX

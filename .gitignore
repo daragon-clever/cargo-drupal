@@ -16,7 +16,6 @@
 web/sites/ostaria/files/inline-images/inspirations/*
 web/sites/*/files/translations/
 web/sites/turbocar/files/translations/mandrill-8\.x-1\.0\.fr\.po
-!/web/sites/yliades/files/inline-images/*
 
 # Ignore default text files
 /web/robots.txt
@@ -40,6 +39,7 @@ web/sites/turbocar/files/translations/mandrill-8\.x-1\.0\.fr\.po
 /drush/contrib/
 /vendor/
 /web/core/
+/web/modules/contrib/
 /web/themes/contrib/
 /web/profiles/contrib/
 var/logs/capistrano\.log

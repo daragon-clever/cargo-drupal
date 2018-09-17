@@ -1990,7 +1990,6 @@ h2#title-marques {
   background-color: #232323;
   color: white;
   text-align: center;
-  position: relative;
   z-index: 0;
   padding: 20px 30px 50px;
   max-width: 730px;
@@ -1998,6 +1997,9 @@ h2#title-marques {
   @media @phone {
     padding: 20px 15px 50px;
     margin-top: 70px;
+  }
+  & > div {
+    position: relative;
   }
   .env-svg {
     content: "";
@@ -2007,9 +2009,9 @@ h2#title-marques {
     border-radius: 100px;
     background-size: 44px;
     position: absolute;
-    top: -58px;
+    top: -105px;
     left: calc(50% - 67px);
-    z-index: -1;
+    z-index: 0;
   }
   h3 {
     font-family: 'Dancing Script', cursive;
@@ -2017,6 +2019,7 @@ h2#title-marques {
     font-weight: 800;
     max-width: 365px;
     margin: 30px auto;
+    position: relative;
     z-index: 10;
   }
   p.mea {

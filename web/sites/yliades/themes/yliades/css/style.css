@@ -2308,7 +2308,7 @@ h2#title-marques {
 }
 .newsletter-wrapper .g-recaptcha {
   display: inline-block;
-  margin: 15px 0;
+  margin: 5px 0 18px;
 }
 @media only screen and (max-width: 767px) {
   .newsletter-wrapper .g-recaptcha > div,

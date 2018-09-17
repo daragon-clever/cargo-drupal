@@ -52,31 +52,36 @@ h2#title-catalogue {
 //// Comptoir de famille
 .form-item-marques-1,
 .form-item-field-marque-evenement-target-id-1,
-.form-item-field-marque-presse-target-id-1 {
+.form-item-field-marque-presse-target-id-1,
+.form-item-marques-comptoir-de-famille {
   background: #b12c34 !important;
 }
 //// Sema Design
 .form-item-marques-2,
 .form-item-field-marque-evenement-target-id-2,
-.form-item-field-marque-presse-target-id-2 {
+.form-item-field-marque-presse-target-id-2,
+.form-item-marques-sema-design {
   background: #c5a649 !important;
 }
 //// Coté table
 .form-item-marques-3,
 .form-item-field-marque-evenement-target-id-3,
-.form-item-field-marque-presse-target-id-3 {
+.form-item-field-marque-presse-target-id-3,
+.form-item-marques-cote-table {
   background: #35585c !important;
 }
 //// Genevieve Lethu
 .form-item-marques-4,
 .form-item-field-marque-evenement-target-id-4,
-.form-item-field-marque-presse-target-id-4 {
+.form-item-field-marque-presse-target-id-4,
+.form-item-marques-genevieve-lethu {
   background: #92aba1 !important;
 }
 //// Jardin d'Ulysse
 .form-item-marques-5,
 .form-item-field-marque-evenement-target-id-5,
-.form-item-field-marque-presse-target-id-5 {
+.form-item-field-marque-presse-target-id-5,
+.form-item-marques-jardin-d-ulysse {
   background: #c3aa91 !important;
 }
 
@@ -1977,5 +1982,130 @@ h2#title-marques {
   h2 {
     font-size: 20px;
     font-weight: 600;
+  }
+}
+
+// Module newsletter
+.newsletter-wrapper {
+  background-color: #232323;
+  color: white;
+  text-align: center;
+  z-index: 0;
+  padding: 20px 30px 50px;
+  max-width: 730px;
+  margin: 100px auto 0;
+  @media @phone {
+    padding: 20px 15px 50px;
+    margin-top: 70px;
+  }
+  & > div {
+    position: relative;
+  }
+  .env-svg {
+    content: "";
+    display: inline-block;
+    background: url(../images/marques/svg/enveloppe.svg) no-repeat center 40px #232323;
+    padding: 67px;
+    border-radius: 100px;
+    background-size: 44px;
+    position: absolute;
+    top: -105px;
+    left: calc(50% - 67px);
+    z-index: 0;
+  }
+  h3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 26px;
+    font-weight: 800;
+    max-width: 365px;
+    margin: 30px auto;
+    position: relative;
+    z-index: 10;
+  }
+  p.mea {
+    color: #d7785e;
+    font-weight: 600;
+    margin-bottom: 7px;
+  }
+  p:not(.mea) {
+    font-style: italic;
+    max-width: 510px;
+    margin: 0 auto 20px;
+  }
+  .marques {
+    margin-bottom: 20px;
+    & > div > div {
+      padding: 0 10px;
+      .dimOpacityOnHover(0.8);
+      @media @phone {
+        padding: 0 15px;
+      }
+      .form-check {
+        padding: 0;
+        .form-item {
+          background: #80807f;
+          padding: 10px 20px;
+          text-align: left;
+          margin: 10px 0;
+          line-height: 1;
+          * {
+            margin: 0;
+            vertical-align: middle;
+            cursor: pointer;
+          }
+          input {
+            width: 20px;
+            float: right;
+            margin-top: 2px
+          }
+          label {
+            width: calc(100% - 20px);
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+  .g-recaptcha {
+    display: inline-block;
+    margin: 15px 0;
+    @media @phone {
+      & > div,
+      iframe {
+        width: 100% !important;
+        overflow: hidden;
+      }
+    }
+  }
+  .msg {
+    display: block;
+    border: 1px solid white;
+    margin: 15px 0;
+    padding: 15px;
+    font-style: italic;
+  }
+  .form-email {
+    font-size: 13px;
+    color: #80807f;
+    font-weight: 600;
+    border: none;
+    padding: 0 15px;
+    line-height: 30px;
+    margin-bottom: 15px;
+    width: calc(100% - 70px);
+    outline: none;
+    @media @phone {
+      width: 100%;
+    }
+  }
+  .form-submit {
+    background: white;
+    color: #232323;
+    padding: 7px 60px;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    .dimOpacityOnHover(0.8);
   }
 }

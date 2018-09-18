@@ -1580,7 +1580,8 @@ h2#title-marques {
 .vue-presse .item a img,
 .vue-catalogue .item a img {
   max-width: 250px;
-  height: auto;
+  max-height: 357px;
+  object-fit: cover;
 }
 .vue-presse .item a .overlay,
 .vue-catalogue .item a .overlay {

@@ -116,6 +116,60 @@ h2#title-catalogue {
 .form-item-marques-jardin-d-ulysse {
   background: #c3aa91 !important;
 }
+.user-login-form {
+  margin: 30px auto 0;
+  display: block;
+  width: 350px;
+  padding: 30px;
+  border: 1px solid #232323;
+  border-radius: 10px;
+  color: #232323;
+}
+@media only screen and (max-width: 767px) {
+  .user-login-form {
+    width: 100%;
+    margin-top: 30px;
+  }
+}
+.user-login-form label {
+  margin: 0 0 8px 0;
+  font-weight: 500;
+}
+.user-login-form .form-text {
+  border: 1px solid #232332;
+  outline: none;
+  background: white;
+  width: 100%;
+  margin: 0;
+  padding-left: 8px;
+}
+.user-login-form .description {
+  display: none;
+}
+.user-login-form .form-item:first-child {
+  margin-bottom: 15px;
+}
+.user-login-form #edit-submit {
+  background: #232323;
+  color: white;
+  font-weight: 500;
+  text-align: center;
+  width: 100%;
+  display: block;
+  margin-top: 20px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  padding: 8px 0;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+.user-login-form #edit-submit:hover {
+  opacity: 0.8;
+}
+div[role="contentinfo"] {
+  text-align: center;
+}
 header {
   text-align: center;
   position: relative;

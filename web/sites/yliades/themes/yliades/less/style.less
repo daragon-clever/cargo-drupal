@@ -136,6 +136,39 @@ div[role="contentinfo"] {
   text-align: center;
 }
 
+// Lien déconnexion
+#block-liendedeconnexion {
+  position: absolute;
+  top: 0;
+  left: 0;
+  @media @tablet {
+    top : -50px;
+    left: 15px;
+    ul, li {
+      border: none;
+    }
+    a:after {
+      display: none;
+    }
+  }
+  li {
+    padding: 0;
+  }
+  a {
+    font-size: 0;
+    &:before {
+      content: '';
+      display: inline-block;
+      background: url("../images/header/logout.svg") no-repeat center transparent;
+      background-size: 100%;
+      height: 30px;
+      width: 30px;
+      vertical-align: middle;
+      margin: -10px 0 0 15px;
+    }
+  }
+}
+
 // Header
 header {
   text-align: center;

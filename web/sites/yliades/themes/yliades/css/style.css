@@ -170,6 +170,40 @@ h2#title-catalogue {
 div[role="contentinfo"] {
   text-align: center;
 }
+#block-liendedeconnexion {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+@media only screen and (max-width: 991px) {
+  #block-liendedeconnexion {
+    top: -50px;
+    left: 15px;
+  }
+  #block-liendedeconnexion ul,
+  #block-liendedeconnexion li {
+    border: none;
+  }
+  #block-liendedeconnexion a:after {
+    display: none;
+  }
+}
+#block-liendedeconnexion li {
+  padding: 0;
+}
+#block-liendedeconnexion a {
+  font-size: 0;
+}
+#block-liendedeconnexion a:before {
+  content: '';
+  display: inline-block;
+  background: url("../images/header/logout.svg") no-repeat center transparent;
+  background-size: 100%;
+  height: 30px;
+  width: 30px;
+  vertical-align: middle;
+  margin: -10px 0 0 15px;
+}
 header {
   text-align: center;
   position: relative;

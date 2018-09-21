@@ -39,6 +39,7 @@ web/sites/turbocar/files/translations/mandrill-8\.x-1\.0\.fr\.po
 /drush/contrib/
 /vendor/
 /web/core/
+/web/modules/contrib/
 /web/themes/contrib/
 /web/profiles/contrib/
 var/logs/capistrano\.log

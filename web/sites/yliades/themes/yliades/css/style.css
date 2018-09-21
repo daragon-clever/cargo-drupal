@@ -88,28 +88,121 @@ h2#title-catalogue {
 }
 .form-item-marques-1,
 .form-item-field-marque-evenement-target-id-1,
-.form-item-field-marque-presse-target-id-1 {
+.form-item-field-marque-presse-target-id-1,
+.form-item-marques-comptoir-de-famille {
   background: #b12c34 !important;
 }
 .form-item-marques-2,
 .form-item-field-marque-evenement-target-id-2,
-.form-item-field-marque-presse-target-id-2 {
+.form-item-field-marque-presse-target-id-2,
+.form-item-marques-sema-design {
   background: #c5a649 !important;
 }
 .form-item-marques-3,
 .form-item-field-marque-evenement-target-id-3,
-.form-item-field-marque-presse-target-id-3 {
+.form-item-field-marque-presse-target-id-3,
+.form-item-marques-cote-table {
   background: #35585c !important;
 }
 .form-item-marques-4,
 .form-item-field-marque-evenement-target-id-4,
-.form-item-field-marque-presse-target-id-4 {
+.form-item-field-marque-presse-target-id-4,
+.form-item-marques-genevieve-lethu {
   background: #92aba1 !important;
 }
 .form-item-marques-5,
 .form-item-field-marque-evenement-target-id-5,
-.form-item-field-marque-presse-target-id-5 {
+.form-item-field-marque-presse-target-id-5,
+.form-item-marques-jardin-d-ulysse {
   background: #c3aa91 !important;
+}
+.user-login-form {
+  margin: 30px auto 0;
+  display: block;
+  width: 350px;
+  padding: 30px;
+  border: 1px solid #232323;
+  border-radius: 10px;
+  color: #232323;
+}
+@media only screen and (max-width: 767px) {
+  .user-login-form {
+    width: 100%;
+    margin-top: 30px;
+  }
+}
+.user-login-form label {
+  margin: 0 0 8px 0;
+  font-weight: 500;
+}
+.user-login-form .form-text {
+  border: 1px solid #232332;
+  outline: none;
+  background: white;
+  width: 100%;
+  margin: 0;
+  padding-left: 8px;
+}
+.user-login-form .description {
+  display: none;
+}
+.user-login-form .form-item:first-child {
+  margin-bottom: 15px;
+}
+.user-login-form #edit-submit {
+  background: #232323;
+  color: white;
+  font-weight: 500;
+  text-align: center;
+  width: 100%;
+  display: block;
+  margin-top: 20px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  padding: 8px 0;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+.user-login-form #edit-submit:hover {
+  opacity: 0.8;
+}
+div[role="contentinfo"] {
+  text-align: center;
+}
+#block-liendedeconnexion {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+@media only screen and (max-width: 991px) {
+  #block-liendedeconnexion {
+    top: -50px;
+    left: 15px;
+  }
+  #block-liendedeconnexion ul,
+  #block-liendedeconnexion li {
+    border: none;
+  }
+  #block-liendedeconnexion a:after {
+    display: none;
+  }
+}
+#block-liendedeconnexion li {
+  padding: 0;
+}
+#block-liendedeconnexion a {
+  font-size: 0;
+}
+#block-liendedeconnexion a:before {
+  content: '';
+  display: inline-block;
+  background: url("../images/header/logout.svg") no-repeat center transparent;
+  background-size: 100%;
+  height: 30px;
+  width: 30px;
+  vertical-align: middle;
+  margin: -10px 0 0 15px;
 }
 header {
   text-align: center;
@@ -1575,7 +1668,8 @@ h2#title-marques {
 .vue-presse .item a img,
 .vue-catalogue .item a img {
   max-width: 250px;
-  height: auto;
+  max-height: 357px;
+  object-fit: cover;
 }
 .vue-presse .item a .overlay,
 .vue-catalogue .item a .overlay {
@@ -1863,6 +1957,72 @@ h2#title-marques {
   max-height: 100%;
   z-index: 1000;
 }
+.gallery-metiers .portrait-infos > div > div {
+  padding: 0 40px;
+}
+@media only screen and (max-width: 767px) {
+  .gallery-metiers .portrait-infos > div > div {
+    padding: 0 15px;
+  }
+}
+.gallery-metiers .portrait-infos .arrows-nav {
+  width: 100%;
+}
+.gallery-metiers .portrait-infos .arrows-nav span {
+  position: absolute;
+  display: block;
+  height: 11px;
+  width: 7px;
+  top: 215px;
+  cursor: pointer;
+  background: url("../images/marques/arrow_groupe_gallery.png") no-repeat center transparent;
+  transition: opacity 0.3s;
+  z-index: 100;
+}
+.gallery-metiers .portrait-infos .arrows-nav span:hover {
+  opacity: 0.8;
+}
+@media only screen and (max-width: 991px) {
+  .gallery-metiers .portrait-infos .arrows-nav span {
+    top: 375px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .gallery-metiers .portrait-infos .arrows-nav span {
+    top: 315px;
+    background: url("../images/marques/arrow_groupe_gallery.png") no-repeat center white;
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
+  }
+}
+.gallery-metiers .portrait-infos .arrows-nav span.prev {
+  left: 0;
+  transform: rotate(180deg);
+}
+@media (max-width: 1024px) {
+  .gallery-metiers .portrait-infos .arrows-nav span.prev {
+    left: 15px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .gallery-metiers .portrait-infos .arrows-nav span.prev {
+    left: 0;
+  }
+}
+.gallery-metiers .portrait-infos .arrows-nav span.next {
+  right: 0;
+}
+@media (max-width: 1024px) {
+  .gallery-metiers .portrait-infos .arrows-nav span.next {
+    right: 15px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .gallery-metiers .portrait-infos .arrows-nav span.next {
+    right: 0;
+  }
+}
 .gallery-metiers .portrait-infos .thumb > img {
   margin-bottom: 12px;
   opacity: 0.5;
@@ -2146,4 +2306,139 @@ h2#title-marques {
 .mentions-legales h2 {
   font-size: 20px;
   font-weight: 600;
+}
+.newsletter-wrapper {
+  background-color: #232323;
+  color: white;
+  text-align: center;
+  z-index: 0;
+  padding: 20px 30px 50px;
+  max-width: 730px;
+  margin: 100px auto 0;
+}
+@media only screen and (max-width: 767px) {
+  .newsletter-wrapper {
+    padding: 20px 15px 50px;
+    margin-top: 70px;
+  }
+}
+.newsletter-wrapper > div {
+  position: relative;
+}
+.newsletter-wrapper .env-svg {
+  content: "";
+  display: inline-block;
+  background: url(../images/marques/svg/enveloppe.svg) no-repeat center 40px #232323;
+  padding: 67px;
+  border-radius: 100px;
+  background-size: 44px;
+  position: absolute;
+  top: -105px;
+  left: calc(50% - 67px);
+  z-index: 0;
+}
+.newsletter-wrapper h3 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 26px;
+  font-weight: 800;
+  max-width: 365px;
+  margin: 30px auto;
+  position: relative;
+  z-index: 10;
+}
+.newsletter-wrapper p.mea {
+  color: #d7785e;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+.newsletter-wrapper p:not(.mea) {
+  font-style: italic;
+  max-width: 510px;
+  margin: 0 auto 20px;
+}
+.newsletter-wrapper .marques {
+  margin-bottom: 20px;
+}
+.newsletter-wrapper .marques > div > div {
+  padding: 0 10px;
+  transition: opacity 0.3s;
+}
+.newsletter-wrapper .marques > div > div:hover {
+  opacity: 0.8;
+}
+@media only screen and (max-width: 767px) {
+  .newsletter-wrapper .marques > div > div {
+    padding: 0 15px;
+  }
+}
+.newsletter-wrapper .marques > div > div .form-check {
+  padding: 0;
+}
+.newsletter-wrapper .marques > div > div .form-check .form-item {
+  background: #80807f;
+  padding: 10px 20px;
+  text-align: left;
+  margin: 10px 0;
+  line-height: 1;
+}
+.newsletter-wrapper .marques > div > div .form-check .form-item * {
+  margin: 0;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.newsletter-wrapper .marques > div > div .form-check .form-item input {
+  width: 20px;
+  float: right;
+  margin-top: 2px;
+}
+.newsletter-wrapper .marques > div > div .form-check .form-item label {
+  width: calc(100% - 20px);
+  font-weight: 600;
+}
+.newsletter-wrapper .g-recaptcha {
+  display: inline-block;
+  margin: 5px 0 18px;
+}
+@media only screen and (max-width: 767px) {
+  .newsletter-wrapper .g-recaptcha > div,
+  .newsletter-wrapper .g-recaptcha iframe {
+    width: 100% !important;
+    overflow: hidden;
+  }
+}
+.newsletter-wrapper .msg {
+  display: block;
+  border: 1px solid white;
+  margin: 15px 0;
+  padding: 15px;
+  font-style: italic;
+}
+.newsletter-wrapper .form-email {
+  font-size: 13px;
+  color: #80807f;
+  font-weight: 600;
+  border: none;
+  padding: 0 15px;
+  line-height: 30px;
+  margin-bottom: 15px;
+  width: calc(100% - 70px);
+  outline: none;
+}
+@media only screen and (max-width: 767px) {
+  .newsletter-wrapper .form-email {
+    width: 100%;
+  }
+}
+.newsletter-wrapper .form-submit {
+  background: white;
+  color: #232323;
+  padding: 7px 60px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+  transition: opacity 0.3s;
+}
+.newsletter-wrapper .form-submit:hover {
+  opacity: 0.8;
 }

@@ -17,9 +17,11 @@
     {% endif %}
     {% if page.content %}
         <div class="row justify-content-center">
-            <div class="col-6">
-                {{ page.content.pourpagenewsletter }}
-                {{ page.content.yliades_content }}
+            <div class="col">
+                <div class="newsletter-wrapper">
+                    {{ page.content.pourpagenewsletter }}
+                    {{ page.content.yliades_content }}
+                </div>
             </div>
         </div>
     {% endif %}

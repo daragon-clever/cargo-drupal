@@ -105,18 +105,18 @@ class CustomForm extends FormBase {
                     if ($return == 'insert') {
                         $msg = "Vous venez de vous inscrire à la newsletter";
                     } else if ($return == 'update') {
-                        $msg = "Vous venez de mettre à jour vos préférences newsletter pour l'adresse : " . $email;
+                        $msg = "<span class='msg info'>Vous venez de mettre à jour vos préférences newsletter pour l'adresse : " . $email . "</span>";
                     } else {
-                        $msg = "Erreur";
+                        $msg = "<span class='msg error'>Erreur</span>";
                     }
                 } else {
-                    $msg = 'Veuillez réessayer';
+                    $msg = "<span class='msg error'>Veuillez réessayer</span>";
                 }
             } else {
-                $msg = 'Veuillez cocher la case "Je ne suis pas un robot"';
+                $msg = "<span class='msg info'>Veuillez cocher la case \"Je ne suis pas un robot\"</span>";
             }
         } else {
-            $msg = "Veuillez remplir les champs";
+            $msg = "<span class='msg info'>Veuillez remplir les champs</span>";
         }
 
         //Ajax Request

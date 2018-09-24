@@ -465,7 +465,7 @@ nav#block-menufooter ul li a {
   line-height: 35px;
   border-left: 1px solid #bbbbbb;
   display: block;
-  padding: 0 55px;
+  padding: 0 40px;
   text-decoration: none;
   transition: opacity 0.3s;
 }
@@ -505,7 +505,7 @@ nav#block-menufooter ul li a.dropup:after {
   background: url("../images/footer/arrow_dropup.png") no-repeat transparent;
   position: absolute;
   top: 16px;
-  right: 40px;
+  right: 25px;
   transform: rotate(180deg);
   transform-origin: center;
   transition: transform 0.3s;
@@ -549,6 +549,44 @@ nav#block-menufooter ul li a.dropup:after {
     transform: rotate(90deg);
     transform-origin: center;
     transition: transform 0.3s;
+  }
+}
+nav#block-menufooter ul li a.linkedin {
+  font-size: 0;
+  vertical-align: middle;
+  display: inline-block;
+  max-height: 35px;
+}
+@media only screen and (max-width: 991px) {
+  nav#block-menufooter ul li a.linkedin {
+    max-height: 15px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  nav#block-menufooter ul li a.linkedin {
+    display: block;
+    max-height: 22px;
+  }
+}
+nav#block-menufooter ul li a.linkedin:before {
+  background: url("../images/footer/svg/linkedin-logo.svg") no-repeat center transparent;
+  height: 22px;
+  content: "";
+  display: block;
+  width: 22px;
+  margin-top: 6px;
+}
+@media only screen and (max-width: 991px) {
+  nav#block-menufooter ul li a.linkedin:before {
+    height: 15px;
+    width: 15px;
+    margin-top: 0;
+  }
+}
+@media only screen and (max-width: 767px) {
+  nav#block-menufooter ul li a.linkedin:before {
+    height: 22px;
+    width: 22px;
   }
 }
 nav#block-menufooter ul li:first-child a {
@@ -999,10 +1037,10 @@ h2#title-marques {
   height: 36px;
   width: 36px;
   position: relative;
-  -webkit-animation: rotation .8s infinite linear;
-  -moz-animation: rotation .8s infinite linear;
-  -o-animation: rotation .8s infinite linear;
-  animation: rotation .8s infinite linear;
+  -webkit-animation: rotation 0.8s infinite linear;
+  -moz-animation: rotation 0.8s infinite linear;
+  -o-animation: rotation 0.8s infinite linear;
+  animation: rotation 0.8s infinite linear;
   border-left: 3px solid rgba(85, 85, 85, 0.3);
   border-right: 3px solid rgba(85, 85, 85, 0.3);
   border-bottom: 3px solid rgba(85, 85, 85, 0.3);

@@ -410,7 +410,7 @@ nav#block-menufooter {
         line-height: 35px;
         border-left: 1px solid #bbbbbb;
         display: block;
-        padding: 0 55px;
+        padding: 0 40px;
         text-decoration: none;
         .dimOpacityOnHover(0.8);
         @media (max-width: 1024px) {
@@ -437,7 +437,7 @@ nav#block-menufooter {
             background: url("../images/footer/arrow_dropup.png") no-repeat transparent;
             position: absolute;
             top: 16px;
-            right: 40px;
+            right: 25px;
             transform: rotate(180deg);
             transform-origin: center;
             transition: transform 0.3s;
@@ -481,6 +481,40 @@ nav#block-menufooter {
             transform-origin: center;
             transition: transform 0.3s;
           }
+        }
+        &.linkedin {
+          font-size: 0;
+          vertical-align: middle;
+          display: inline-block;
+          max-height: 35px;
+          @media @tablet {
+            max-height: 15px;
+          }
+          @media @phone {
+            display: block;
+            max-height: 22px;
+          }
+          &:before {
+            background: url("../images/footer/svg/linkedin-logo.svg") no-repeat center transparent;
+            height: 22px;
+            content: "";
+            display: block;
+            width: 22px;
+            margin-top: 6px;
+            @media @tablet {
+              height: 15px;
+              width: 15px;
+              margin-top: 0;
+            }
+            @media @phone {
+              height: 22px;
+              width: 22px;
+            }
+          }
+          //@media @phone {
+          //  background-position: 20px;
+          //  height: 22px;
+          //}
         }
       }
       &:first-child a {

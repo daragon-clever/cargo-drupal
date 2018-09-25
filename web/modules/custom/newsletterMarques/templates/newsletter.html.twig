@@ -1,0 +1,72 @@
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<div class="row justify-content-center">
+
+        <div class="col">
+            {% if form %}
+                <form {{form.attributes }}>
+                    {{ form.form_build_id }}
+                    {{ form.form_token }}
+                    {{ form.form_id }}
+
+                    <div class="row">
+                        <div class="col-12">
+                            {{ form.message }}
+                        </div>
+                    </div>
+
+                    <div class="marques">
+                            <div class="row">
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-check">
+                                        {{ form.marques.toutes_les_marques }}
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-check">
+                                        {{ form.marques.sema_design }}
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-check">
+                                        {{ form.marques.comptoir_de_famille }}
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-check">
+                                        {{ form.marques.cote_table }}
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-check">
+                                        {{ form.marques.genevieve_lethu }}
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-check">
+                                        {{ form.marques.jardin_d_ulysse }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            {{ form.mail }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            {#{{ form.captcha }}#}
+                            <div class="g-recaptcha" data-sitekey="6Lf-g24UAAAAAGzls5e99uRmlhKLBxOeCCdynS2x"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            {{ form.actions }}
+                        </div>
+                    </div>
+                </form>
+            {% endif %}
+        </div>
+
+    </div>

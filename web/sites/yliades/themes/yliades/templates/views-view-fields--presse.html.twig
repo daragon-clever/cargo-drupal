@@ -1,0 +1,16 @@
+{% if fields.field_titre_presse.content %}
+<a href="{{ fields.field_lien_pdf_presse.content|render|striptags|trim }}" title="Vu dans la presse" target="_blank">
+    {{ fields.field_image_presse.content }}
+    <span class="overlay">
+        <span class="inner">
+            <span class="title">
+                {{ fields.field_titre_presse.content }}
+            </span>
+            <span class="date">
+                {{ fields.field_date_presse.content }}
+            </span>
+            <span class="pdf-icon"> </span>
+        </span>
+    </span>
+</a>
+{% endif %}

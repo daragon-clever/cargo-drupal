@@ -12,6 +12,11 @@
 !/web/sites/*/files/translations
 /web/sites/*/private
 
+# custom
+web/sites/ostaria/files/inline-images/inspirations/*
+web/sites/*/files/translations/
+web/sites/turbocar/files/translations/mandrill-8\.x-1\.0\.fr\.po
+
 # Ignore default text files
 /web/robots.txt
 /web/CHANGELOG.txt
@@ -34,12 +39,7 @@
 /drush/contrib/
 /vendor/
 /web/core/
+/web/modules/contrib/
 /web/themes/contrib/
 /web/profiles/contrib/
-web/sites/turbocar/files/translations/mandrill-8\.x-1\.0\.fr\.po
-
-web/sites/*/files/translations/
-
 var/logs/capistrano\.log
-
-web/sites/ostaria/files/inline-images/inspirations/*

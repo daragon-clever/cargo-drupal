@@ -28,3 +28,11 @@ function ostaria_theme_suggestions_image_formatter_alter(array &$suggestions, ar
     $field_name = $variables['item']->getParent()->getName();
     $suggestions[] = 'image_formatter__' . $entity->getEntityTypeId() . '__' . $entity->bundle() . '__' . $field_name;
 }
+
+function ostaria_page_attachments_alter(array &$attachments) {
+    foreach ($attachments['#attached']['html_head'] as $key => $attachment) {
+        if ($attachment[1] == 'system_meta_generator') {
+            unset($attachments['#attached']['html_head'][$key]);
+        }
+    }
+}

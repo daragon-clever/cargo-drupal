@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "74013ae86396ac963459b4cb091a451b",
+    "content-hash": "97b741c723884856bc5c5726c5f46bd1",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3541,18 +3541,18 @@
             }
         },
         {
-            "name": "drupal/private",
-            "version": "2.0.0-alpha2",
+            "name": "drupal/private_content-private_content",
+            "version": "2.0.0-rc2",
             "source": {
                 "type": "git",
-                "url": "https://git.drupal.org/project/private",
-                "reference": "8.x-2.0-alpha2"
+                "url": "https://git.drupal.org/project/private_content",
+                "reference": "8.x-2.0-rc2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/private-8.x-2.0-alpha2.zip",
-                "reference": "8.x-2.0-alpha2",
-                "shasum": "37e59e3e9d68f3643b733be02106948d89bf370c"
+                "url": "https://ftp.drupal.org/files/projects/private_content-8.x-2.0-rc2.zip",
+                "reference": "8.x-2.0-rc2",
+                "shasum": "c2e139f1172fef6261c0b2df06aa014a35864313"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -3563,11 +3563,11 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.0-alpha2",
-                    "datestamp": "1511376185",
+                    "version": "8.x-2.0-rc2",
+                    "datestamp": "1534495080",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "Alpha releases are not covered by Drupal security advisories."
+                        "message": "Project has not opted into security advisory coverage!"
                     }
                 }
             },
@@ -3579,64 +3579,11 @@
                 {
                     "name": "AdamPS",
                     "homepage": "https://www.drupal.org/user/2650563"
-                },
-                {
-                    "name": "eaton",
-                    "homepage": "https://www.drupal.org/user/16496"
-                },
-                {
-                    "name": "greggles",
-                    "homepage": "https://www.drupal.org/user/36762"
                 }
             ],
-            "homepage": "https://www.drupal.org/project/private",
+            "homepage": "https://www.drupal.org/project/private_content",
             "support": {
-                "source": "http://cgit.drupalcode.org/private"
-            }
-        },
-        {
-            "name": "drupal/private_content",
-            "version": "2.0.0-alpha2",
-            "require": {
-                "drupal/core": "~8.0",
-                "drupal/private": "self.version"
-            },
-            "type": "metapackage",
-            "extra": {
-                "branch-alias": {
-                    "dev-2.x": "2.x-dev"
-                },
-                "drupal": {
-                    "version": "8.x-2.0-alpha2",
-                    "datestamp": "1511376185",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Alpha releases are not covered by Drupal security advisories."
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "AdamPS",
-                    "homepage": "https://www.drupal.org/user/2650563"
-                },
-                {
-                    "name": "eaton",
-                    "homepage": "https://www.drupal.org/user/16496"
-                },
-                {
-                    "name": "greggles",
-                    "homepage": "https://www.drupal.org/user/36762"
-                }
-            ],
-            "description": "Allows users to mark content as private, and hide that content from visitors.",
-            "homepage": "https://www.drupal.org/project/private",
-            "support": {
-                "source": "http://cgit.drupalcode.org/private"
+                "source": "http://cgit.drupalcode.org/private_content"
             }
         },
         {
@@ -9751,7 +9698,6 @@
         "drupal/captcha": 10,
         "drupal/entity_pager": 10,
         "drupal/pdfpreview": 5,
-        "drupal/private_content": 15,
         "drupal/webform": 5
     },
     "prefer-stable": true,

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "008b302e040d8f699563f9a4e39fb969",
+    "content-hash": "97b741c723884856bc5c5726c5f46bd1",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3541,6 +3541,52 @@
             }
         },
         {
+            "name": "drupal/private_content-private_content",
+            "version": "2.0.0-rc2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/private_content",
+                "reference": "8.x-2.0-rc2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/private_content-8.x-2.0-rc2.zip",
+                "reference": "8.x-2.0-rc2",
+                "shasum": "c2e139f1172fef6261c0b2df06aa014a35864313"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-2.0-rc2",
+                    "datestamp": "1534495080",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "AdamPS",
+                    "homepage": "https://www.drupal.org/user/2650563"
+                }
+            ],
+            "homepage": "https://www.drupal.org/project/private_content",
+            "support": {
+                "source": "http://cgit.drupalcode.org/private_content"
+            }
+        },
+        {
             "name": "drupal/recaptcha",
             "version": "2.3.0",
             "source": {
@@ -3874,17 +3920,17 @@
         },
         {
             "name": "drupal/token",
-            "version": "1.4.0",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/token",
-                "reference": "8.x-1.4"
+                "reference": "8.x-1.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/token-8.x-1.4.zip",
-                "reference": "8.x-1.4",
-                "shasum": "fd8d854eaa3fd7698694f4d9a9d66dc437e19cd0"
+                "url": "https://ftp.drupal.org/files/projects/token-8.x-1.5.zip",
+                "reference": "8.x-1.5",
+                "shasum": "6382a7e1aabbd8246f1117a26bf4916d285b401d"
             },
             "require": {
                 "drupal/core": "^8.5"
@@ -3895,8 +3941,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.4",
-                    "datestamp": "1536408480",
+                    "version": "8.x-1.5",
+                    "datestamp": "1537557481",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"

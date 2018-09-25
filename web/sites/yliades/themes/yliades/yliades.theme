@@ -41,3 +41,7 @@ function yliades_theme_suggestions_alter(array &$suggestions, array $variables, 
         }
     }
 }
+
+function yliades_preprocess (&$variables) {
+    $variables['base_path'] = base_path();
+}

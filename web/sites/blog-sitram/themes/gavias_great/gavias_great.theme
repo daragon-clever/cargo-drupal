@@ -314,3 +314,11 @@ function gavias_great_theme_suggestions_page_alter(array &$suggestions, array $v
     }
    }
 }
+
+function gavias_great_page_attachments_alter(array &$attachments) {
+    foreach ($attachments['#attached']['html_head'] as $key => $attachment) {
+        if ($attachment[1] == 'system_meta_generator') {
+            unset($attachments['#attached']['html_head'][$key]);
+        }
+    }
+}

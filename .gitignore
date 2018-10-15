@@ -11,6 +11,7 @@
 !/web/sites/*/files/inline-images
 !/web/sites/*/files/translations
 /web/sites/*/private
+!/web/sites/blog-sitram/files/*
 
 # custom
 web/sites/ostaria/files/inline-images/inspirations/*

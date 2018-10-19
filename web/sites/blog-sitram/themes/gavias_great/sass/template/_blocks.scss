@@ -1,0 +1,329 @@
+// Block Layout styles
+//----------------------------
+.block {
+  background: $nocolor;
+  margin-bottom: 30px;
+  overflow: hidden;
+  .block-title {
+    background: none;
+	  position: relative;
+    margin: 0 0 30px;
+    padding: 0 0 0;
+    padding-right: 15px;
+    border-bottom: 5px solid rgba(0, 0, 0, 0.05);
+    > span{
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      position: relative;
+      letter-spacing: 0.5px;
+      color: $black;
+      padding: 0 0 13px;
+      z-index: 9;
+      &:before{
+        content: "";
+        position: absolute;
+        @include size(100%, 5px);
+        background: $black;
+        left: 0;
+        bottom: -5px;  
+        z-index: 1;
+      }
+    }
+  }
+
+  &.block-system-main-block{
+    margin-bottom: 0;
+  }
+
+  &.block-system-breadcrumb-block{
+    overflow: visible;
+    margin-bottom: 20px;
+  }
+
+  &.block-none, &.no-padding{
+    background: none!important;
+    padding: 0!important;
+    .block-content{
+      padding: 0!important;
+    }
+  }
+
+  &.no-title{
+    margin-top: 0;
+	  border: none;
+  	&:before{
+  		content: none;
+  	}
+  }
+  
+  &.style-higlight{
+    background: #34495E;
+    padding-left: 20px;
+    padding-right: 20px;
+    .block-title {
+		border: none;
+		span:before{
+			content: none;
+		}
+      h2{
+        margin: 0;
+        padding: 0;
+        border: none;
+        span{
+          padding: 10px;
+          background: #4E6984;
+          color: $white;
+        }
+      }
+    }
+    .post-title a{
+      color: $white;
+    }
+    .more-link a{
+      color: $white;
+      padding: 0 15px 15px;
+      display: block;
+      &:hover{
+        color: $theme-color;
+      }
+    }
+  }
+  &#block-system-main{
+    padding-top: 10px;
+  }
+  &.no-title{
+    border: none;
+    > .block-title, > div > .block-title {
+      padding: 0;
+      margin: 0;
+	    border: none;
+  		&:before{
+  			content: none;
+  		}
+    }
+  }
+  &.block-simplenews{
+    form{
+      position: relative;
+      max-width: 370px;
+      min-height: 50px;
+      min-width: 80px;
+      float: right; 
+      .description{
+        display: none;
+      }
+      input#edit-subscribe{
+        margin-top: 8px;
+        background: none;
+        border: none;
+        text-align: center;
+        font-size: 12px;
+        font-weight: 800;
+        color: $white;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        @include transition(all 0.35s);
+        position: absolute;
+        bottom: 17px;
+        right: 22px;
+        z-index: 11;
+        &:hover{
+          background: lighter($theme-color, 20%);
+        }
+      }
+      #edit-message{
+        margin-bottom: 10px;
+      }
+      #edit-mail-wrapper{
+        label{
+          display: none;
+        }
+        input.form-email{
+          padding: 0 10px;
+          width: 100%;
+          background: transparent;
+          max-width: 370px;
+          line-height: 50px;
+          border: 2px solid rgba(255, 255,255, 0.1); 
+        }
+      }
+    }  
+  }
+  &.block-blocktabs{
+    position: relative;
+    .ui-widget{
+      font-family: $font-family-base;
+      font-size: $font-size-base;
+    }
+    .ui-tabs-nav{
+      padding: 0;
+      border: none;
+      background: none!important;
+      display: inline-block;
+      float: right;
+      position: absolute;
+      right: 0;
+      top: -60px;
+      z-index: 99;
+      @media(max-width: $screen-xs-max){
+        top: -55px;
+      }
+      > li{
+        background: none;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        position: relative;
+        > a{
+          font-size: 14px;
+          text-transform: none;
+          font-family: $font-family-base;
+          font-weight: 700;
+          padding: 0;
+          padding-right: 20px;
+          @media(max-width: $screen-xs-max){
+            padding-right: 10px;
+          }
+        }
+        &:last-child{
+          > a{
+            padding-right: 0;
+          }
+        }
+        &.ui-tabs-active{
+           > a{
+            color: $theme-color;
+           }
+        }
+      }
+    }
+    .blocktabs{
+      border: none;
+      padding: 0;
+      @include border-radius(0);
+      .ui-tabs-panel{
+        padding: 0!important;
+      }
+    }
+    .block{
+      margin-bottom: 0!important;
+    }
+  }
+}
+
+.block{
+  &.site-branding{
+    margin-bottom: 0;
+  }
+}
+
+.sidebar{
+  .block{
+   
+  }
+}
+
+.region-main-menu{
+  .block{
+    background: $nocolor;
+    .block-content{
+      padding: 0;
+    }
+  }
+}
+
+.after-footer-fw{
+  padding: 50px 65px;
+  @media(max-width: $screen-sm-max){
+    padding: 30px;
+  }
+  .block{
+    margin-bottom: 0!important;
+    &.block-right{
+      float: right;
+    }
+    &.block-left{
+      float: left;
+    }
+  }
+}
+
+//--------- Block recent comment ---------------------
+.recent-comment-block{
+  .views-field-picture{
+    @include rtl-margin-right(10px);
+  }
+  .views-field-title{
+    margin-top: -4px;
+    a{
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+  }
+  .views-field-name{
+    color: #a4a4a4;
+    a{
+      color: #a4a4a4;
+    }
+  }
+}
+
+.list-tags{
+  .view-list{
+    ul > li{
+      float: left;
+      border: 1px solid $border-color;
+      display: inline-block;
+      width: auto!important;
+      padding: 0!important;
+      margin: 0 10px 10px 0!important;
+      a{
+        padding: 6px 10px;
+        display: block;
+        @include transition(all 0.35s);
+      }
+      &:hover{
+        background: $theme-color;
+        a{
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+.contact-info{
+  line-height: 28px;
+}
+
+.contact-info-page{
+  color: #999999;
+  line-height: 28px;
+}
+
+nav.breadcrumb{
+  margin-bottom: 0!important;
+  background: none;
+  color: #999999;
+  ol{
+    @include clearfix();
+    list-style: none;
+    margin-bottom: 0!important; 
+    padding: 0;
+    > li{
+      float: left;
+      font-size: 13px;
+      a{
+        color: #999999;
+        &:hover{
+          color: $theme-color;
+        }
+      }
+      span{
+        padding: 0 2px 0px 0px;
+      }
+    }
+  }
+}

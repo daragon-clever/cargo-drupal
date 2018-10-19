@@ -1,0 +1,36 @@
+<header id="header" class="header-v3">
+  
+  {% include directory ~ '/templates/page/parts/topbar.html.twig' %}
+
+  <div class="header-bottom {{sticky_menu}}">
+    <div class="main-menu">
+      <div class="container">
+         <div class="row">
+            <div class="col-xs-12 area-main-menu">
+              <div class="area-inner menu-hover">
+                {% if page.main_menu %}
+                  {{ page.main_menu }}
+                {% endif %}  
+                <div id="menu-bar" class="menu-bar">
+                  <span class="one"></span>
+                  <span class="two"></span>
+                  <span class="three"></span>
+                </div>
+              </div>   
+            </div>
+         </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="branding-main text-center">
+      <div class="container">
+        {% if page.branding %}
+          {{ page.branding }}
+        {% else %}
+          <a href="{{custom_link.base_url}}"><img src="{{custom_link.theme_path}}/images/logo-white.png" alt=""/></a>
+        {% endif %}       
+      </div>
+   </div>
+   
+</header>

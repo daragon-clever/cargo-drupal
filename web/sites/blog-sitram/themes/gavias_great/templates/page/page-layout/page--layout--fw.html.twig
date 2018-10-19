@@ -1,0 +1,83 @@
+{#
+/**
+ * @file
+ * Gavias's theme implementation to display a single Drupal page.
+ */
+#}
+<div class="body-page">
+	{% include directory ~ '/templates/page/parts/preloader.html.twig' %}
+   {% include directory ~ header_skin %}
+	
+   {% if page.breadcrumbs %}
+		<div class="breadcrumbs">
+			{{ page.breadcrumbs }}	
+		</div>
+	{% endif %}
+	
+	<div role="main" class="main main-page">	
+		{% include directory ~ '/templates/page/parts/before-content.html.twig' %}
+		<div id="content" class="content content-full">
+			<div class="container-full">	
+				{% include directory ~ '/templates/page/main-no-sidebar.html.twig' %}
+			</div>
+		</div>
+		{% include directory ~ '/templates/page/parts/after-content.html.twig' %}
+	</div>
+
+	{% if page.fw_after_content %}
+		<div class="fw-before-content area">
+			{{ page.fw_after_content }}
+		</div>
+	{% endif %}
+
+	{% if page.fw_after_content_black %}
+		<div class="fw-before-content-black area">
+			{{ page.fw_after_content_black }}
+		</div>
+	{% endif %}
+
+	{% if page.panel_first or panel_second %}
+		{% set cl_panel = 'col-lg-6 col-md-6 col-sm-6 col-xs-12' %}
+		{% set nub_panel = 0  %}
+		{% if page.panel_first %}	
+			{% set nub_panel = nub_panel + 1  %}
+		{% endif %}
+		{% if page.panel_second %}	
+			{% set nub_panel = nub_panel + 1  %}
+		{% endif %}
+		
+		{% if nub_panel == '1' %}
+		   {% set cl_panel = 'col-lg-12 col-md-12 col-sm-12 col-xs-12' %}
+		{% elseif nub_panel == '2' %}
+		   {% set cl_panel = 'col-lg-6 col-md-6 col-sm-6 col-xs-12' %}
+		{% endif %}  
+
+		<div class="area area-panel">
+			<div class="container">
+				<div class="area-panel-inner">
+					<div class="row">	
+						{% if page.panel_first %}
+							<div class="panel_first {{ cl_panel }}">
+								<div class="panel-inner">
+									{{ page.panel_first }}
+								</div>	
+							</div>
+						{% endif %}	
+						{% if page.panel_second %}
+							<div class="panel_second {{ cl_panel }}">
+								<div class="panel-inner">
+									{{ page.panel_second }}
+								</div>
+							</div>
+						{% endif %}	
+					</div>
+				</div>	
+			</div>	
+		</div>
+	{% endif %}	
+
+	{% include directory ~ '/templates/page/footer.html.twig' %}
+	{% include directory ~ '/templates/page/parts/offcanvas.html.twig' %}
+	
+</div>
+

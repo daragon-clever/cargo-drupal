@@ -1,0 +1,47 @@
+{% if page.fw_promotion %}
+  <div class="promotion-fw area">
+    <div class="content-inner">
+      {{ page.fw_promotion }}
+    </div>  
+  </div>
+{% endif %} 
+
+{% if page.promotion %}
+  <div class="promotion area">
+    <div class="container">
+      <div class="content-inner">
+        {{ page.promotion }}
+      </div>
+    </div>    
+  </div>
+{% endif %} 
+
+{% if page.help %}
+  <div class="help">
+    <div class="container">
+      <div class="content-inner">
+        {{ page.help }}
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% if page.fw_before_content %}
+  <div class="fw-before-content area">
+    {{ page.fw_before_content }}
+  </div>
+{% endif %}
+
+<div class="clearfix"></div>
+{% if page.before_content %}
+  <div class="before_content area">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          {{ page.before_content }}
+          </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+<div class="clearfix"></div>

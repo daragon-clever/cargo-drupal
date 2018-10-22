@@ -1,0 +1,97 @@
+global-styling:
+  version: VERSION
+  header: true
+  css:
+    theme:
+      css/font-awesome.css: {}
+      vendor/owl-carousel/assets/owl.carousel.min.css: {}
+      vendor/owl-carousel/assets/owl.theme.default.min.css: {}
+      //fonts.googleapis.com/css?family=Open+Sans:400,600,700,800: { type: external }
+      //fonts.googleapis.com/css?family=Vollkorn:400,700: { type: external }
+  js:
+    js/bootstrap.js: {}
+    js/imagesloader.min.js: {}
+    vendor/jquery.easing.js: {}
+    vendor/owl-carousel/owl.carousel.js: {}
+    vendor/perfect-scrollbar.jquery.min.js: {}
+    js/sidebar-sticky.js: {}
+    vendor/waypoint.js: {}
+    vendor/masonry.pkgd.min.js: {}
+    vendor/isotope.pkgd.min.js: {}
+    vendor/jpreloader.min.js: {}
+    js/main.js: {}
+
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+
+gavias_great.skin.default:
+  version: VERSION
+  css:
+    theme: 
+      css/template.css: {}
+      css/bootstrap.css: {}
+
+gavias_great.skin.green:
+  version: VERSION
+  css:
+    theme: 
+      css/skins/green/template.css: {}
+      css/skins/green/bootstrap.css: {}
+
+gavias_great.skin.lilac:
+  version: VERSION
+  css:
+    theme: 
+      css/skins/lilac/template.css: {}
+      css/skins/lilac/bootstrap.css: {}
+
+gavias_great.skin.orange:
+  version: VERSION
+  css:
+    theme: 
+      css/skins/orange/template.css: {}
+      css/skins/orange/bootstrap.css: {}
+
+gavias_great.skin.red:
+  version: VERSION
+  css:
+    theme: 
+      css/skins/red/template.css: {}
+      css/skins/red/bootstrap.css: {}
+
+gavias_great.skin.yellow:
+  version: VERSION
+  css:
+    theme: 
+      css/skins/yellow/template.css: {}
+      css/skins/yellow/bootstrap.css: {}
+
+gavias_great_admin:
+  version: VERSION
+  css: 
+    theme: 
+      css/theme-settings.css: {}
+      vendor/colorpicker/css/colorpicker.css: {}
+      vendor/codemirror/lib/codemirror.css: {}
+      vendor/codemirror/lib/codemirror.css: {}
+      vendor/codemirror/addon/hint/show-hint.css: {}
+  js:
+      vendor/colorpicker/js/colorpicker.js: {}
+      vendor/codemirror/lib/codemirror.js: {cope: footer}
+      vendor/codemirror/addon/hint/show-hint.js: {cope: footer}
+      vendor/codemirror/addon/hint/xml-hint.js: {cope: footer}
+      vendor/codemirror/addon/hint/html-hint.js: {cope: footer}
+      vendor/codemirror/mode/xml/xml.js: {cope: footer}
+      vendor/codemirror/mode/javascript/javascript.js: {cope: footer}
+      vendor/codemirror/mode/css/css.js: {cope: footer}
+      vendor/codemirror/mode/htmlmixed/htmlmixed.js: {cope: footer}
+      js/customize.js: {}
+
+maintenance_page:
+  version: VERSION
+  css:
+    theme:
+      css/maintenance-page.css: {}
+

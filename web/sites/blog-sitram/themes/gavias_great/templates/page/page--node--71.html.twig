@@ -1,0 +1,39 @@
+{#
+/**
+ * @file
+ * Gavias's theme implementation to display a single Drupal page.
+ */
+#}
+<div class="body-page">
+	{% include directory ~ '/templates/page/parts/preloader.html.twig' %}
+	
+	{% include directory ~ header_skin %}
+
+   {% if page.breadcrumbs %}
+		<div class="breadcrumbs">
+			{{ page.breadcrumbs }}
+		</div>
+	{% endif %}
+		
+	<div role="main" class="main main-page">
+		{% include directory ~ '/templates/page/parts/before-content.html.twig' %}
+		{% include directory ~ '/templates/page/main-no-sidebar.html.twig' %}
+		{% include directory ~ '/templates/page/parts/after-content.html.twig' %}
+	</div>
+	
+	{% if page.fw_after_content %}
+		<div class="fw-before-content area">
+			{{ page.fw_after_content }}
+		</div>
+	{% endif %}
+
+	{% if page.fw_after_content_black %}
+		<div class="fw-before-content-black area">
+			{{ page.fw_after_content_black }}
+		</div>
+	{% endif %}
+
+	{% include directory ~ '/templates/page/footer.html.twig' %}
+	{% include directory ~ '/templates/page/parts/offcanvas.html.twig' %}	
+</div>
+

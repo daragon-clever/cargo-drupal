@@ -49,7 +49,7 @@
         "drupal/search_kint": "^1.0",
         "drupal/simple_sitemap": "^2.12",
         "drupal/simplenews": "^1.0@alpha",
-        "drupal/svg_formatter": "^1.7",
+        "drupal/svg_formatter": "^1.8",
         "drupal/unpublished_node_permissions": "^1.0",
         "drupal/views_infinite_scroll": "^1.5",
         "drupal/webform": "^5.0@RC",

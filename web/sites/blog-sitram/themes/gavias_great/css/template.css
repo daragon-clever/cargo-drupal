@@ -7622,3 +7622,6 @@ div#acquia-agent-no-search {
 .gavias-skins-panel.gavias-skin-demo.active {
   right: 0 !important;
 }
+.comment-form .captcha {
+  margin-bottom: 15px;
+}

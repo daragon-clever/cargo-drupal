@@ -261,6 +261,7 @@ header {
       font-size: 14px;
       border-right: 1px solid #bbb;
       position: relative;
+      min-width: 185px;
       @media (max-width: 1024px) {
         padding: 4px 20px;
       }
@@ -377,6 +378,9 @@ header {
   position: absolute;
   top: 0;
   right: 30px;
+  @media (max-width: 1200px) {
+    top: -60px;
+  }
   @media @tablet {
     position: relative;
     top: inherit;
@@ -389,6 +393,7 @@ header {
     li {
       padding: 0 10px;
       border: none;
+      min-width: inherit;
       @media @tablet {
         padding: 4px 20px;
         border-bottom: 1px solid black;

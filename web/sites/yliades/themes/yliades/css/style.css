@@ -303,6 +303,7 @@ header button[aria-expanded=true] .navbar-toggler-icon > span.middle {
   font-size: 14px;
   border-right: 1px solid #bbb;
   position: relative;
+  min-width: 185px;
 }
 @media (max-width: 1024px) {
   .main-menu ul li {
@@ -426,6 +427,11 @@ header button[aria-expanded=true] .navbar-toggler-icon > span.middle {
   top: 0;
   right: 30px;
 }
+@media (max-width: 1200px) {
+  #block-selecteurdelangue {
+    top: -60px;
+  }
+}
 @media only screen and (max-width: 991px) {
   #block-selecteurdelangue {
     position: relative;
@@ -441,6 +447,7 @@ header button[aria-expanded=true] .navbar-toggler-icon > span.middle {
 #block-selecteurdelangue ul li {
   padding: 0 10px;
   border: none;
+  min-width: inherit;
 }
 @media only screen and (max-width: 991px) {
   #block-selecteurdelangue ul li {

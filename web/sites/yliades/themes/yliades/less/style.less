@@ -261,6 +261,7 @@ header {
       font-size: 14px;
       border-right: 1px solid #bbb;
       position: relative;
+      min-width: 185px;
       @media (max-width: 1024px) {
         padding: 4px 20px;
       }
@@ -367,6 +368,51 @@ header {
             top : 3px;
           }
         }
+      }
+    }
+  }
+}
+
+// Selecteur langue
+#block-selecteurdelangue {
+  position: absolute;
+  top: 0;
+  right: 30px;
+  @media (max-width: 1200px) {
+    top: -60px;
+  }
+  @media @tablet {
+    position: relative;
+    top: inherit;
+    right: inherit;
+  }
+  ul {
+    @media @tablet {
+      margin-top: -1px;
+    }
+    li {
+      padding: 0 10px;
+      border: none;
+      min-width: inherit;
+      @media @tablet {
+        padding: 4px 20px;
+        border-bottom: 1px solid black;
+      }
+      a {
+        font-size: 0;
+        vertical-align: middle;
+        display: inline-block;
+        opacity: 0.3;
+        &.is-active {
+          opacity: 1;
+        }
+        @media @tablet {
+          font-size: 14px;
+          img {
+            margin-right: 10px;
+          }
+        }
+        .dimOpacityOnHover(1);
       }
     }
   }

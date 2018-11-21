@@ -42,7 +42,7 @@ class CustomForm extends FormBase {
     {
         //Les marques
         $marques = [
-            'toutes_les_marques' => $this->t("Toutes les marques"),
+            'toutes_les_marques' => $this->t("All the brands"),
             'sema_design' => $this->t("Sema Design"),
             'comptoir_de_famille' => $this->t("Comptoir de Famille"),
             'cote_table' => $this->t('Côté Table'),
@@ -63,7 +63,7 @@ class CustomForm extends FormBase {
 
         $form['mail'] = [
             '#type' => 'email',
-            '#placeholder' => 'Saisissez votre adresse email',
+            '#placeholder' => $this->t("Enter your e-mail address"),
             '#required' => TRUE
         ];
 
@@ -74,7 +74,7 @@ class CustomForm extends FormBase {
 
         $form['actions'] = [
             '#type' => 'button',
-            '#value' => $this->t('Envoyer'),
+            '#value' => $this->t("Send"),
             '#ajax' => [
                 'callback' => '::setMessage'
             ]
@@ -103,20 +103,20 @@ class CustomForm extends FormBase {
                     $newsletter = new NewsletterController();
                     $return = $newsletter->doAction($choixMarques, $email);
                     if ($return == 'insert') {
-                        $msg = "Vous venez de vous inscrire à la newsletter";
+                        $msg = $this->t("You have just signed up for the newsletter");
                     } else if ($return == 'update') {
-                        $msg = "<span class='msg info'>Vous venez de mettre à jour vos préférences newsletter pour l'adresse : " . $email . "</span>";
+                        $msg = "<span class='msg info'>" . $this->t("You have just updated your newsletter preferences for the e-mail address:") . $email . "</span>";
                     } else {
-                        $msg = "<span class='msg error'>Erreur</span>";
+                        $msg = "<span class='msg error'>" . $this->t("Error") . "</span>";
                     }
                 } else {
-                    $msg = "<span class='msg error'>Veuillez réessayer</span>";
+                    $msg = "<span class='msg error'>" . $this->t("Please try again") ."</span>";
                 }
             } else {
-                $msg = "<span class='msg info'>Veuillez cocher la case \"Je ne suis pas un robot\"</span>";
+                $msg = "<span class='msg info'>" . $this->t("Please check the box 'I'm not a robot'") . "</span>";
             }
         } else {
-            $msg = "<span class='msg info'>Veuillez remplir les champs</span>";
+            $msg = "<span class='msg info'>" . $this->t("Please complete the fields") . "</span>";
         }
 
         //Ajax Request

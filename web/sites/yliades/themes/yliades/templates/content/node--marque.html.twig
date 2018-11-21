@@ -23,18 +23,18 @@
         <div class="row" style="background-color: {{ content.field_couleur_hexa_marque|render|striptags|trim }}">
             <div class="col">
                 {% if content.field_menu_lien_catalogue[0]['#url'] %}
-                    <a class="catalog" href="{{ content.field_menu_lien_catalogue[0]['#url'] }}" title="Catalogue">
-                        <span>Catalogue</span>
+                    <a class="catalog" href="{{ content.field_menu_lien_catalogue[0]['#url'] }}" title="{{ 'Catalogue'|trans }}">
+                        <span>{{ 'Catalogue'|trans }}</span>
                     </a>
                 {% endif %}
                 {% if content.field_menu_lien_parutions[0]['#url'] %}
-                    <a class="parutions" href="{{ content.field_menu_lien_parutions[0]['#url'] }}" title="Parutions">
-                        <span>Parutions</span>
+                    <a class="parutions" href="{{ content.field_menu_lien_parutions[0]['#url'] }}" title="{{ 'Publications'|trans }}">
+                        <span>{{ 'Publications'|trans }}</span>
                     </a>
                 {% endif %}
                 {% if content.field_menu_lien_boutique_pro[0]['#url'] %}
-                    <a class="boutique-pro" href="{{ content.field_menu_lien_boutique_pro[0]['#url'] }}" title="Boutique pro" target="_blank">
-                        <span>Boutique pro</span>
+                    <a class="boutique-pro" href="{{ content.field_menu_lien_boutique_pro[0]['#url'] }}" title="{{ 'Pro store'|trans }}" target="_blank">
+                        <span>{{ 'Pro store'|trans }}</span>
                     </a>
                 {% endif %}
                 {% if content.field_menu_lien_e_shop[0]['#url'] %}
@@ -62,8 +62,8 @@
                 </div>
                 {% endif %}
                 {% if content.field_menu_lien_contact[0]['#url'] %}
-                    <a class="contact" href="{{ content.field_menu_lien_contact[0]['#url'] }}" title="Nous contacter">
-                        <span>Nous contacter</span>
+                    <a class="contact" href="{{ content.field_menu_lien_contact[0]['#url'] }}" title="{{ 'Contact us'|trans }}">
+                        <span>{{ 'Contact us'|trans }}</span>
                     </a>
                 {% endif %}
             </div>

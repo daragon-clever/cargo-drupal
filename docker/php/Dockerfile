@@ -12,3 +12,6 @@ RUN apt-get install -y libpng-dev
 RUN docker-php-ext-install gd
 RUN docker-php-ext-install intl
 RUN rm -rf /var/lib/apt/lists/*
+
+# PHP config
+ADD config/php.ini /usr/local/etc/php

@@ -698,7 +698,20 @@ footer {
     line-height: 1.2;
     a {
       margin-left: 10px;
+      margin-top: 4px;
+      height: 26px;
+      width: 26px;
+      display: inline-block;
       .dimOpacityOnHover(0.8);
+      &.fb {
+        background: url("../images/footer/facebook.svg");
+      }
+      &.inst {
+        background: url("../images/footer/instagram.svg");
+      }
+      &.pint {
+        background: url("../images/footer/pinterest.svg");
+      }
     }
     @media @tablet {
       &:first-child {

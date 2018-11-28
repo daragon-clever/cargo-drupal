@@ -435,9 +435,16 @@ header .inner .menu-link.active {
   display: block;
   margin-bottom: 10px;
   transition: opacity 0.3s;
+  height: 25px;
+  width: 25px;
 }
 .header-rs a:hover {
   opacity: 0.8;
+}
+@media (max-width: 991px) {
+  .header-rs {
+    display: none !important;
+  }
 }
 .overlay {
   position: fixed;

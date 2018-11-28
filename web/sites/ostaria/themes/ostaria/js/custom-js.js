@@ -183,9 +183,9 @@ jQuery(document).ready(function($) {
     //// Scroll homepage
     $(window).scroll(function(){
         if ($(this).scrollTop() > 50) {
-            $('.js-scroll').fadeOut('slow');
+            $('.js-scroll, .header-rs').fadeOut('slow');
         } else {
-            $('.js-scroll').fadeIn('slow');
+            $('.js-scroll, .header-rs').fadeIn('slow');
         }
     });
 

@@ -1,5 +1,16 @@
 <?php
 
+function ostaria_preprocess_html(&$variables) {
+    $pinterestVerify = [
+        '#tag' => 'meta',
+        '#attributes' => [
+            'name' => 'p:domain_verify',
+            'content' => '64db3bf84a5eeff91389629565e08709',
+        ],
+    ];
+    $variables['page']['#attached']['html_head'][] = [$pinterestVerify, 'pinterestVerify'];
+};
+
 // JS call : instafeed only on homepage
 function ostaria_preprocess_page(&$variables){
     if ($variables['is_front'] == TRUE) {
@@ -20,9 +31,6 @@ function ostaria_preprocess_node(&$variables) {
     }
 }
 
-/**
- * Implements hook_theme_suggestions_HOOK_alter().
- */
 function ostaria_theme_suggestions_image_formatter_alter(array &$suggestions, array $variables) {
     $entity = $variables['item']->getEntity();
     $field_name = $variables['item']->getParent()->getName();

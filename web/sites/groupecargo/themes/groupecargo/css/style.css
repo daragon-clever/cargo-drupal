@@ -1,0 +1,192 @@
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN_r8OUuhs.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFVZ0e.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UNirkOUuhs.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN7rgOUuhs.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Open Sans ExtraBold'), local('OpenSans-ExtraBold'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN8rsOUuhs.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Heebo';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Heebo Light'), local('Heebo-Light'), url(https://fonts.gstatic.com/s/heebo/v3/NGS3v5_NC0k9P9ldb6RMkKs.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Heebo';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Heebo'), local('Heebo-Regular'), url(https://fonts.gstatic.com/s/heebo/v3/NGS6v5_NC0k9P9H2TbQ.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Heebo';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Heebo Medium'), local('Heebo-Medium'), url(https://fonts.gstatic.com/s/heebo/v3/NGS3v5_NC0k9P9kFbqRMkKs.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Heebo';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Heebo Bold'), local('Heebo-Bold'), url(https://fonts.gstatic.com/s/heebo/v3/NGS3v5_NC0k9P9lNaKRMkKs.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Heebo';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Heebo ExtraBold'), local('Heebo-ExtraBold'), url(https://fonts.gstatic.com/s/heebo/v3/NGS3v5_NC0k9P9lRa6RMkKs.ttf) format('truetype');
+}
+.adminimal-admin-toolbar:not(.path-admin) {
+  padding-top: 160px !important;
+}
+.adminimal-admin-toolbar:not(.path-admin) #header-wrapper {
+  margin-top: 80px;
+}
+#header-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  max-height: 80px;
+  width: 100%;
+  line-height: 80px;
+  background: white;
+  z-index: 10;
+  font-family: 'Heebo', sans-serif;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: max-height 0.5s;
+  box-shadow: 0 0 5px #00000020;
+}
+@media only screen and (max-width: 991px) {
+  #header-wrapper {
+    max-height: inherit;
+  }
+}
+#header-wrapper.menu-hover {
+  max-height: 500px;
+}
+#header-wrapper header {
+  display: inline-block;
+  float: left;
+}
+#header-wrapper header .logo {
+  transition: opacity 0.3s;
+}
+#header-wrapper header .logo:hover {
+  opacity: 0.7;
+}
+#header-wrapper button {
+  position: absolute;
+  top: 16px;
+  right: 5px;
+  outline: none !important;
+  transition: opacity 0.3s;
+}
+#header-wrapper button:hover {
+  opacity: 0.8;
+}
+#header-wrapper button .navbar-toggler-icon {
+  width: 20px;
+}
+#header-wrapper button .navbar-toggler-icon > span {
+  height: 3px;
+  background: black;
+  width: 100%;
+  display: block;
+  margin-top: 5px;
+  transition: margin 0.5s;
+}
+#header-wrapper button .navbar-toggler-icon > span:first-child {
+  margin-top: 0;
+}
+#header-wrapper button[aria-expanded=true] .navbar-toggler-icon > span {
+  margin-left: -5px;
+}
+#header-wrapper button[aria-expanded=true] .navbar-toggler-icon > span.middle {
+  margin-left: 0;
+}
+#header-wrapper nav > ul {
+  font-size: 0;
+  padding: 0;
+}
+#header-wrapper nav > ul li {
+  display: inline-block;
+  width: 160px;
+  margin: 0 15px;
+  font-size: 14px;
+  font-weight: 500;
+  position: relative;
+  vertical-align: top;
+}
+#header-wrapper nav > ul li:first-child {
+  margin-left: 0;
+}
+#header-wrapper nav > ul li:last-child {
+  margin-right: 0;
+}
+#header-wrapper nav > ul li a {
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+  width: 100%;
+  position: relative;
+  transition: color 0.3s;
+}
+#header-wrapper nav > ul li a:after {
+  content: "";
+  height: 1px;
+  background-color: #d2d2d2;
+  width: 100%;
+  display: block;
+  position: absolute;
+  bottom: 20px;
+  transition: all 0.3s;
+}
+#header-wrapper nav > ul li a:hover {
+  color: #4cbfc6;
+}
+#header-wrapper nav > ul li a:hover:after {
+  background-color: #4cbfc6;
+  height: 2px;
+}
+#header-wrapper nav > ul li > ul {
+  padding: 0;
+  line-height: 1.6;
+  text-transform: none;
+}
+#header-wrapper nav > ul li > ul > li {
+  margin: 3px 0;
+  width: auto;
+  display: block;
+}
+#header-wrapper nav > ul li > ul > li:first-child {
+  margin-top: 0;
+}
+#header-wrapper nav > ul li > ul > li > a:hover {
+  text-decoration: underline;
+}
+#header-wrapper nav > ul li > ul > li > a:after {
+  display: none;
+}

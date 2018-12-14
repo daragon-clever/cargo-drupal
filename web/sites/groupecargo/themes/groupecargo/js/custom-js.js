@@ -5,9 +5,35 @@ jQuery(document).ready(function($) {
     });
 
     // NAV MOBILE
-    $(".navbar-toggler").on( "click", function() {
-        alert("ok");
-    });
+    if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+        var $menu = $("#block-groupecargo-main-menu").mmenu({
+            "extensions": [
+                "theme-white",
+                "border-full",
+                "position-front",
+                "pagedim-black"
+            ]
+        }, {
+            clone: true
+        });
+
+        var $icon = $(".navbar-toggler");
+        var API = $menu.data("mmenu");
+
+        API.bind( "open:start", function() {
+            setTimeout(function() {
+                $icon.addClass( "is-active" );
+                $icon.on("click",function() {
+                    API.close();
+                })
+            }, 100);
+        });
+        API.bind( "close:start", function() {
+            setTimeout(function() {
+                $icon.removeClass( "is-active" );
+            }, 100);
+        });
+    }
 
     // HOMEPAGE - GALLERY RANDOM
     var ids = [];
@@ -43,7 +69,7 @@ jQuery(document).ready(function($) {
     function changeSrc() {
 
         // Random one ID of the 6 displayed images
-        var cells = $(".galery .col-3");
+        var cells = $(".galery .block-img");
         var randomId = (Math.floor(Math.random() * cells.length));
 
         // Get first result
@@ -115,4 +141,22 @@ jQuery(document).ready(function($) {
     }
 
     scrollMove('.items', 60 , 1 );
+
+    // FULLWIDH BG IMAGES
+    // HOMEPAGE - HIGHLIGHT BLOCK TXT GALLERY RANDOM
+    if ($(".full-width-bg .imgs-bg").length) {
+
+        $(".imgs-bg div:first-child").addClass("current");
+        setInterval(elemAnim, 5000);
+
+        function elemAnim() {
+            var current = $(".imgs-bg div.current");
+            current.toggleClass("current");
+            var next = current.next();
+            if (current.is($(".imgs-bg div:last-child"))) {
+                next = $(".imgs-bg div:first-child");
+            }
+            next.toggleClass("current");
+        }
+    }
 });

@@ -11,6 +11,7 @@ regions:
 
 libraries:
   - groupecargo/bootstrap
+  - groupecargo/mmenu
   - groupecargo/slick
   - groupecargo/global-styling
 

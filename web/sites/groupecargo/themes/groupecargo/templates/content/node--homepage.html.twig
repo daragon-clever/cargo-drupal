@@ -27,7 +27,7 @@
 
         <div class="galery">
             <div class="row justify-content-center">
-                <div class="col-3 block-txt">
+                <div class="col-auto col-lg-3 block-txt">
                     {{ content.field_homepage_images_random_txt }}
                     <span class="corner topleft"></span>
                     <span class="corner topright"></span>
@@ -35,7 +35,7 @@
                     <span class="corner bottomright"></span>
                 </div>
                 {% for i in 0..6 %}
-                    <div class="col-3">
+                    <div class="block-img col-auto col-lg-3">
                         <img alt="{{ node.field_homepage_images_random[i].alt }}"
                              src="{{ content.field_homepage_images_random[i] }}"/>
                         <img style="display:none;" class="img-fluid" src=""/>

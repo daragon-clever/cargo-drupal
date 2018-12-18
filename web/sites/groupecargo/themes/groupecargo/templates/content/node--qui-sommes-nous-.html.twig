@@ -19,38 +19,40 @@
             </div>
         </div>
     </div>
-    <div class="container content">
-        <div class="row">
-            <div class="col">
-                <div class="top">
-                    <h2>{{ content.field_qsn_content_top_title|render|striptags|trim }}</h2>
-                    <div class="row imgs-wrapper">
-                        {% for field in content.field_qsn_content_top_imgs['#items'] %}
-                            <div class="col-12 col-md-6 col-xl-4 text-center">
-                                <img class="img-fluid" src="{{ file_url(field.entity.fileuri) }}" alt="{{ field.alt }}" />
-                            </div>
-                        {% endfor %}
-                    </div>
-                </div>
-
-                <div class="middle">
-                    <h2>{{ content.field_qsn_content_middle_title|render|striptags|trim }}</h2>
-                    <div class="inner">
-                        <img class="img-fluid" src="{{ content.field_qsn_content_middle_img|render|striptags|trim|raw }}"
-                             alt="{{ content.field_qsn_content_middle_img.alt }}" />
-                    </div>
-                </div>
-
-                <div class="bottom">
-                    <h2>{{ content.field_qsn_content_bottom_title|render|striptags|trim }}</h2>
-                    <div class="row">
-                        <div class="col-12 col-sm-5 img-wrapper">
-                            <img class="img-fluid" src="{{ content.field_qsn_content_bottom_img|render|striptags|trim|raw }}"
-                                 alt="{{ content.field_qsn_content_bottom_img.alt }}" />
+    <div class="row">
+        <div class="container content">
+            <div class="row">
+                <div class="col">
+                    <div class="top">
+                        <h2>{{ content.field_qsn_content_top_title|render|striptags|trim }}</h2>
+                        <div class="row imgs-wrapper">
+                            {% for field in content.field_qsn_content_top_imgs['#items'] %}
+                                <div class="col-12 col-md-6 col-xl-4 text-center">
+                                    <img class="img-fluid" src="{{ file_url(field.entity.fileuri) }}" alt="{{ field.alt }}" />
+                                </div>
+                            {% endfor %}
                         </div>
-                        <div class="col-12 col-sm-7">
-                            <h3>{{ content.field_qsn_content_bottom_txt_tit|render|striptags|trim }}</h3>
-                            {{ content.field_qsn_content_bottom_txt }}
+                    </div>
+
+                    <div class="middle">
+                        <h2>{{ content.field_qsn_content_middle_title|render|striptags|trim }}</h2>
+                        <div class="inner">
+                            <img class="img-fluid" src="{{ content.field_qsn_content_middle_img|render|striptags|trim|raw }}"
+                                 alt="{{ content.field_qsn_content_middle_img.alt }}" />
+                        </div>
+                    </div>
+
+                    <div class="bottom">
+                        <h2>{{ content.field_qsn_content_bottom_title|render|striptags|trim }}</h2>
+                        <div class="row">
+                            <div class="col-12 col-sm-5 img-wrapper">
+                                <img class="img-fluid" src="{{ content.field_qsn_content_bottom_img|render|striptags|trim|raw }}"
+                                     alt="{{ content.field_qsn_content_bottom_img.alt }}" />
+                            </div>
+                            <div class="col-12 col-sm-7">
+                                <h3>{{ content.field_qsn_content_bottom_txt_tit|render|striptags|trim }}</h3>
+                                {{ content.field_qsn_content_bottom_txt }}
+                            </div>
                         </div>
                     </div>
                 </div>

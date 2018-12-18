@@ -73,8 +73,8 @@ jQuery(document).ready(function($) {
     if ($('#instafeed').length) {
         var userFeed = new Instafeed({
             get: 'user',
-            userId: '8227460958',
-            accessToken: '8227460958.1677ed0.9042fc03b313415b804d04d205e6bc7c',
+            userId: '8890621818',
+            accessToken: '8890621818.1677ed0.f6fb95d77ed742099be30b819e62e378',
             limit: 8,
             resolution: 'standard_resolution',
             // Slick
@@ -88,7 +88,7 @@ jQuery(document).ready(function($) {
                             breakpoint: 1024,
                             settings: {
                                 slidesToShow: 3,
-                                slidesToScroll: 3,
+                                slidesToScroll: 3
                             }
                         },
                         {
@@ -183,9 +183,9 @@ jQuery(document).ready(function($) {
     //// Scroll homepage
     $(window).scroll(function(){
         if ($(this).scrollTop() > 50) {
-            $('.js-scroll').fadeOut('slow');
+            $('.js-scroll, .header-rs').fadeOut('slow');
         } else {
-            $('.js-scroll').fadeIn('slow');
+            $('.js-scroll, .header-rs').fadeIn('slow');
         }
     });
 

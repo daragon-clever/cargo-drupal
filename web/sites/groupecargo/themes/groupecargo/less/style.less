@@ -282,12 +282,23 @@ footer {
   overflow: hidden;
   background: #232323;
 
+  @media @phone {
+    height: auto;
+  }
+
   h1 {
     font-family: @spectral;
     color: white;
     font-size: 48px;
     margin-bottom: 15px;
     font-weight: 600;
+    // Hack anchor
+    padding-top: 150px;
+    margin-top: -150px;
+
+    @media @phone {
+      font-size: 30px;
+    }
   }
 
   .imgs-bg {
@@ -321,9 +332,18 @@ footer {
     margin-top: 40px;
     max-width: 765px;
 
+    @media @phone {
+      margin-top: 15px;
+      padding-bottom: 15px;
+    }
+
     .col > div {
       padding: 25px;
       max-width: 540px;
+
+      @media @phone {
+        padding: 15px;
+      }
     }
 
     .block {
@@ -341,6 +361,11 @@ footer {
 
       &.txt-right {
         margin-left: 190px;
+
+        @media @phone {
+          margin-top: 15px;
+          margin-left: 0;
+        }
       }
     }
   }
@@ -641,9 +666,11 @@ p.bordered-left {
       color: #232323;
       font-weight: 600;
       border-bottom: 1px solid #d2d2d2;
-      margin-top: 50px;
       padding-bottom: 10px;
       margin-bottom: 30px;
+      // Hack anchor
+      padding-top: 100px;
+      margin-top: -50px;
     }
 
     .top {
@@ -755,6 +782,10 @@ p.bordered-left {
 
         img {
           margin: auto;
+
+          @media @phone {
+            margin-bottom: 30px;
+          }
         }
       }
 
@@ -777,6 +808,11 @@ p.bordered-left {
         font-size: 14px;
         margin-top: 5px;
         .dimOpacityOnHover(0.8);
+
+        @media @phone {
+          width: 100%;
+          text-align: center;
+        }
 
         &:hover {
           text-decoration: none;

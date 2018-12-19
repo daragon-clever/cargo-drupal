@@ -456,12 +456,24 @@ footer ul li a:hover {
   overflow: hidden;
   background: #232323;
 }
+@media only screen and (max-width: 767px) {
+  .full-width-bg {
+    height: auto;
+  }
+}
 .full-width-bg h1 {
   font-family: 'Spectral', serif;;
   color: white;
   font-size: 48px;
   margin-bottom: 15px;
   font-weight: 600;
+  padding-top: 150px;
+  margin-top: -150px;
+}
+@media only screen and (max-width: 767px) {
+  .full-width-bg h1 {
+    font-size: 30px;
+  }
 }
 .full-width-bg .imgs-bg {
   position: absolute;
@@ -490,9 +502,20 @@ footer ul li a:hover {
   margin-top: 40px;
   max-width: 765px;
 }
+@media only screen and (max-width: 767px) {
+  .full-width-bg .block-text {
+    margin-top: 15px;
+    padding-bottom: 15px;
+  }
+}
 .full-width-bg .block-text .col > div {
   padding: 25px;
   max-width: 540px;
+}
+@media only screen and (max-width: 767px) {
+  .full-width-bg .block-text .col > div {
+    padding: 15px;
+  }
 }
 .full-width-bg .block-text .block {
   font-size: 13px;
@@ -507,6 +530,12 @@ footer ul li a:hover {
 }
 .full-width-bg .block-text .block.txt-right {
   margin-left: 190px;
+}
+@media only screen and (max-width: 767px) {
+  .full-width-bg .block-text .block.txt-right {
+    margin-top: 15px;
+    margin-left: 0;
+  }
 }
 p.bordered-left {
   border-left: 1px solid #d2d2d2;
@@ -764,9 +793,10 @@ p.bordered-left {
   color: #232323;
   font-weight: 600;
   border-bottom: 1px solid #d2d2d2;
-  margin-top: 50px;
   padding-bottom: 10px;
   margin-bottom: 30px;
+  padding-top: 100px;
+  margin-top: -50px;
 }
 #qsn .content .top h2 {
   margin-bottom: 0;
@@ -858,6 +888,11 @@ p.bordered-left {
 #qsn .content .bottom .img-wrapper img {
   margin: auto;
 }
+@media only screen and (max-width: 767px) {
+  #qsn .content .bottom .img-wrapper img {
+    margin-bottom: 30px;
+  }
+}
 #qsn .content .bottom p a {
   color: #d7ab26;
   font-weight: 500;
@@ -881,6 +916,12 @@ p.bordered-left {
 }
 #qsn .content .bottom a.cta:hover {
   opacity: 0.8;
+}
+@media only screen and (max-width: 767px) {
+  #qsn .content .bottom a.cta {
+    width: 100%;
+    text-align: center;
+  }
 }
 #qsn .content .bottom a.cta:hover {
   text-decoration: none;

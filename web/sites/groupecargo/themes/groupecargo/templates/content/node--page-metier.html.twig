@@ -1,0 +1,28 @@
+<div class="row jobs-bg-img">
+    <div class="container">
+        <div id="jobs" class="row">
+            <div class="col-3 navigation">
+                <div class="inner">
+                    <h2>{{ label }}</h2>
+                    <ul>
+                        {% for field in content.field_jobs_paragraph['#items'] %}
+                            <li>
+                                <a id="js-link-{{ field.entity.field_job_id.value }}" href="" alt="{{ field.entity.field_job_title.value }}">
+                                    {{ field.entity.field_job_title.value }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="col-9 content">
+                <div class="inner">
+                    <div class="job intro">
+                        {{ content.field_jobs_intro }}
+                    </div>
+                    {{ content.field_jobs_paragraph }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

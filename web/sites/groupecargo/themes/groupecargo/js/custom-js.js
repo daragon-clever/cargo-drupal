@@ -115,7 +115,7 @@ jQuery(document).ready(function($) {
         }
     }
 
-    // SCROLLL GALLERY
+    // HOMEPAGE - SCROLL GALLERY LOGO
     function scrollMove( ele ,frame ,step ) {
         var step = step || 1;
         var $item = $(ele).children();
@@ -142,7 +142,7 @@ jQuery(document).ready(function($) {
 
     scrollMove('.items', 60 , 1 );
 
-    // FULLWIDH BG IMAGES - HOMEPAGE - HIGHLIGHT BLOCK TXT GALLERY RANDOM
+    // HOMEPAGE - FULLWIDH BG IMAGES - HIGHLIGHT BLOCK TXT GALLERY RANDOM
     if ($(".full-width-bg .imgs-bg").length) {
 
         $(".imgs-bg div:first-child").addClass("current");
@@ -191,4 +191,56 @@ jQuery(document).ready(function($) {
             }
         });
     });
+
+    // NAV PAGE METIER
+    if ($("#jobs").length) {
+
+        /* var elementHeights = $('.job').map(function() {
+            return $(this).height();
+        }).get();
+
+        var maxHeight = Math.max.apply(null, elementHeights);
+
+        var jobsHeightAjust = function() {
+            $("#jobs").height(maxHeight + 125);
+        };
+
+        jobsHeightAjust(); */
+
+        var jobsNavItem = $(".navigation a");
+
+        jobsNavItem.on("click", function (e) {
+            e.preventDefault();
+            if (!$(this).hasClass("current")) {
+                var eltPosition = $(this).parent().index();
+                var newJobContent = $("#jobs .job:nth-child(" + (eltPosition + 2) + ")");
+                jobsNavItem.removeClass("current");
+                $(this).addClass("current");
+                $(".job").hide();
+                $(newJobContent).fadeIn("slow");
+                $("html, body").animate({ scrollTop: 0 }, "slow");
+            }
+        });
+
+        $(".cross-close").on("click", function () {
+            jobsNavItem.removeClass("current");
+            $(".job").hide();
+            $(".job.intro").fadeIn("slow");
+        });
+
+        // DISPLAY CONTENT BY URL
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+        var anchor = getParameterByName('content');
+        $(("a#js-link-" + anchor)).addClass("current");
+        $(".job").hide();
+        $(".job#js-content-" + anchor).fadeIn("slow");
+    }
 });

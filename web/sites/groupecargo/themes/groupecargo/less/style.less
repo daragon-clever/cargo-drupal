@@ -23,11 +23,35 @@ body {
   #header-wrapper {
     margin-top: 79px;
   }
+
+  #page-container {
+    min-height: calc(100vh - 160px);
+  }
 }
 
 // BODY
 body {
   font-family: @heebo;
+}
+
+// POSITIONNEMENT FOOTER
+#page-container {
+  min-height: calc(100vh - 80px);
+  position: relative;
+
+  @media @tablet {
+    min-height: calc(100vh - 65px);
+  }
+
+  #content-wrap {
+    padding-bottom: 116px
+  }
+
+  #footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
 }
 
 // NAV
@@ -219,6 +243,14 @@ footer {
   width: 100%;
   margin-top: 30px;
   padding-bottom: 15px;
+  z-index: 1;
+
+  &.fixed {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
 
   ul {
     margin: 0;
@@ -927,6 +959,207 @@ p.bordered-left {
 
     &:hover {
       filter: grayscale(0);
+    }
+  }
+}
+
+// METIERS
+.jobs-bg-img {
+  padding-top: 70px;
+  background: url("../images/metiers/metier_bg.jpg") no-repeat top center transparent;
+}
+
+#jobs {
+  .navigation .inner {
+    background: white;
+    padding: 25px 40px;
+    height: 100%;
+    position: fixed;
+    z-index: 0;
+
+    span {
+      font-size: 18px;
+      font-family: @spectral;
+      color: #80807f;
+      font-weight: 600;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+
+      li {
+        list-style: none;
+
+        a {
+          font-size: 18px;
+          font-family: @spectral;
+          text-decoration: none;
+          color: black;
+          font-weight: 600;
+          line-height: 1.8;
+          transition: all 0.3s;
+
+          &:hover {
+            opacity: 0.5;
+          }
+
+          &:before {
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            height: 1px;
+            width: 35px;
+            background: black;
+            margin-right: 10px;
+            margin-top: -2px;
+            transition: all 0.3s;
+          }
+
+          &.current {
+            color: #d7ab26;
+
+            &:hover {
+              opacity: 1;
+            }
+
+            &:before {
+              background: #d7ab26;
+              height: 2px;
+              margin-top: -3px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .content .inner {
+    color: white;
+    position: relative;
+    min-height: 540px;
+
+    .job {
+      display: none;
+      //position: absolute;
+      width: 100%;
+      padding: 25px 50px 50px;
+      background: #232323;
+
+      &.intro {
+        display: block;
+        padding: 20px 25px;
+        font-size: 14px;
+        font-weight: 500;
+        max-width: 525px;
+        background: #0000009c;
+        margin: 115px 0 0 40px;
+      }
+
+      .cross-close {
+        color: @jauneclair;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        cursor: pointer;
+        .dimOpacityOnHover(0.8);
+      }
+
+      h1 {
+        font-family: @spectral;
+        font-size: 18px;
+        color: @jauneclair;
+        font-weight: 600;
+
+        &:before {
+          content: "";
+          display: inline-block;
+          vertical-align: middle;
+          height: 1px;
+          width: 35px;
+          background: @jauneclair;
+          margin-right: 10px;
+          margin-top: -2px;
+        }
+      }
+
+      p {
+        font-family: @spectral;
+        font-size: 18px;
+        color: #d2d2d2;
+      }
+
+      span {
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      ul {
+        padding-left: 18px;
+        margin-top: 15px;
+
+        li {
+          font-size: 14px;
+          font-weight: 500;
+          color: #d2d2d2;
+          text-transform: uppercase;
+          line-height: 1.8;
+        }
+      }
+
+      .cta a {
+        color: #232323;
+        background: @jauneclair;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 10px 30px;
+        margin: 5px 0 15px;
+        display: inline-block;
+        .dimOpacityOnHover(0.8);
+      }
+
+      .testimonial {
+        font-size: 18px;
+
+        .top-title {
+          margin: 15px 0;
+          display: block;
+        }
+
+        img {
+          border: 2px solid white;
+        }
+
+        h3 {
+          font-family: @spectral;
+          font-size: 18px;
+          color: @jauneclair;
+
+          &:before {
+            content: "";
+            height: 1px;
+            width: 35px;
+            background: @jauneclair;
+            display: block;
+            margin: 15px 0;
+          }
+        }
+
+        .question {
+          color: white;
+          font-family: @heebo;
+          font-size: 14px;
+          font-weight: 500;
+          margin: 15px 0;
+        }
+
+        .reponse {
+          font-family: @spectral;
+          font-size: 14px;
+          font-style: italic;
+        }
+      }
     }
   }
 }

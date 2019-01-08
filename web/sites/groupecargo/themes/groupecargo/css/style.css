@@ -233,8 +233,28 @@ body {
 .adminimal-admin-toolbar:not(.path-admin) #header-wrapper {
   margin-top: 79px;
 }
+.adminimal-admin-toolbar:not(.path-admin) #page-container {
+  min-height: calc(100vh - 160px);
+}
 body {
   font-family: 'Heebo', sans-serif;
+}
+#page-container {
+  min-height: calc(100vh - 80px);
+  position: relative;
+}
+@media only screen and (max-width: 991px) {
+  #page-container {
+    min-height: calc(100vh - 65px);
+  }
+}
+#page-container #content-wrap {
+  padding-bottom: 116px;
+}
+#page-container #footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 #header-wrapper {
   position: fixed;
@@ -396,6 +416,13 @@ footer {
   width: 100%;
   margin-top: 30px;
   padding-bottom: 15px;
+  z-index: 1;
+}
+footer.fixed {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
 footer ul {
   margin: 0;
@@ -1012,4 +1039,178 @@ p.bordered-left {
 }
 .marches img:hover {
   filter: grayscale(0);
+}
+.jobs-bg-img {
+  padding-top: 70px;
+  background: url("../images/metiers/metier_bg.jpg") no-repeat top center transparent;
+}
+#jobs .navigation .inner {
+  background: white;
+  padding: 25px 40px;
+  height: 100%;
+  position: fixed;
+  z-index: 0;
+}
+#jobs .navigation .inner span {
+  font-size: 18px;
+  font-family: 'Spectral', serif;;
+  color: #80807f;
+  font-weight: 600;
+}
+#jobs .navigation .inner ul {
+  margin: 0;
+  padding: 0;
+}
+#jobs .navigation .inner ul li {
+  list-style: none;
+}
+#jobs .navigation .inner ul li a {
+  font-size: 18px;
+  font-family: 'Spectral', serif;;
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  line-height: 1.8;
+  transition: all 0.3s;
+}
+#jobs .navigation .inner ul li a:hover {
+  opacity: 0.5;
+}
+#jobs .navigation .inner ul li a:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  height: 1px;
+  width: 35px;
+  background: black;
+  margin-right: 10px;
+  margin-top: -2px;
+  transition: all 0.3s;
+}
+#jobs .navigation .inner ul li a.current {
+  color: #d7ab26;
+}
+#jobs .navigation .inner ul li a.current:hover {
+  opacity: 1;
+}
+#jobs .navigation .inner ul li a.current:before {
+  background: #d7ab26;
+  height: 2px;
+  margin-top: -3px;
+}
+#jobs .content .inner {
+  color: white;
+  position: relative;
+  min-height: 540px;
+}
+#jobs .content .inner .job {
+  display: none;
+  width: 100%;
+  padding: 25px 50px 50px;
+  background: #232323;
+}
+#jobs .content .inner .job.intro {
+  display: block;
+  padding: 20px 25px;
+  font-size: 14px;
+  font-weight: 500;
+  max-width: 525px;
+  background: #0000009c;
+  margin: 115px 0 0 40px;
+}
+#jobs .content .inner .job .cross-close {
+  color: #f7e2a1;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+#jobs .content .inner .job .cross-close:hover {
+  opacity: 0.8;
+}
+#jobs .content .inner .job h1 {
+  font-family: 'Spectral', serif;;
+  font-size: 18px;
+  color: #f7e2a1;
+  font-weight: 600;
+}
+#jobs .content .inner .job h1:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  height: 1px;
+  width: 35px;
+  background: #f7e2a1;
+  margin-right: 10px;
+  margin-top: -2px;
+}
+#jobs .content .inner .job p {
+  font-family: 'Spectral', serif;;
+  font-size: 18px;
+  color: #d2d2d2;
+}
+#jobs .content .inner .job span {
+  font-size: 14px;
+  font-weight: 500;
+}
+#jobs .content .inner .job ul {
+  padding-left: 18px;
+  margin-top: 15px;
+}
+#jobs .content .inner .job ul li {
+  font-size: 14px;
+  font-weight: 500;
+  color: #d2d2d2;
+  text-transform: uppercase;
+  line-height: 1.8;
+}
+#jobs .content .inner .job .cta a {
+  color: #232323;
+  background: #f7e2a1;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 30px;
+  margin: 5px 0 15px;
+  display: inline-block;
+  transition: opacity 0.3s;
+}
+#jobs .content .inner .job .cta a:hover {
+  opacity: 0.8;
+}
+#jobs .content .inner .job .testimonial {
+  font-size: 18px;
+}
+#jobs .content .inner .job .testimonial .top-title {
+  margin: 15px 0;
+  display: block;
+}
+#jobs .content .inner .job .testimonial img {
+  border: 2px solid white;
+}
+#jobs .content .inner .job .testimonial h3 {
+  font-family: 'Spectral', serif;;
+  font-size: 18px;
+  color: #f7e2a1;
+}
+#jobs .content .inner .job .testimonial h3:before {
+  content: "";
+  height: 1px;
+  width: 35px;
+  background: #f7e2a1;
+  display: block;
+  margin: 15px 0;
+}
+#jobs .content .inner .job .testimonial .question {
+  color: white;
+  font-family: 'Heebo', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 15px 0;
+}
+#jobs .content .inner .job .testimonial .reponse {
+  font-family: 'Spectral', serif;;
+  font-size: 14px;
+  font-style: italic;
 }

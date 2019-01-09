@@ -239,8 +239,10 @@ jQuery(document).ready(function($) {
             return decodeURIComponent(results[2].replace(/\+/g, ' '));
         }
         var anchor = getParameterByName('content');
-        $(("a#js-link-" + anchor)).addClass("current");
-        $(".job").hide();
-        $(".job#js-content-" + anchor).fadeIn("slow");
+        if (anchor.length) {
+            $(("a#js-link-" + anchor)).addClass("current");
+            $(".job").hide();
+            $(".job#js-content-" + anchor).fadeIn("slow");
+        }
     }
 });

@@ -205,19 +205,19 @@
   font-family: 'Spectral';
   font-style: normal;
   font-weight: 400;
-  src: local('Spectral Regular'), local('Spectral-Regular'), url(https://fonts.gstatic.com/s/spectral/v4/rnCr-xNNww_2s0amA9M5kn0.ttf) format('truetype');
+  src: local('Spectral Regular'), local('Spectral-Regular'), url(https://fonts.gstatic.com/s/spectral/v5/rnCr-xNNww_2s0amA9M5kn0.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Spectral';
   font-style: normal;
   font-weight: 600;
-  src: local('Spectral SemiBold'), local('Spectral-SemiBold'), url(https://fonts.gstatic.com/s/spectral/v4/rnCs-xNNww_2s0amA9vmtm3BafM.ttf) format('truetype');
+  src: local('Spectral SemiBold'), local('Spectral-SemiBold'), url(https://fonts.gstatic.com/s/spectral/v5/rnCs-xNNww_2s0amA9vmtm3BafM.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Spectral';
   font-style: normal;
   font-weight: 700;
-  src: local('Spectral Bold'), local('Spectral-Bold'), url(https://fonts.gstatic.com/s/spectral/v4/rnCs-xNNww_2s0amA9uCt23BafM.ttf) format('truetype');
+  src: local('Spectral Bold'), local('Spectral-Bold'), url(https://fonts.gstatic.com/s/spectral/v5/rnCs-xNNww_2s0amA9uCt23BafM.ttf) format('truetype');
 }
 body {
   padding-top: 80px;
@@ -1213,4 +1213,25 @@ p.bordered-left {
   font-family: 'Spectral', serif;;
   font-size: 14px;
   font-style: italic;
+}
+#jobs .content .inner .job .more-content {
+  display: block;
+}
+#jobs .content .inner .job .js-read-more {
+  color: #f7e2a1;
+  display: block;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+#jobs .content .inner .job .js-read-more:hover {
+  opacity: 0.6;
+}
+#jobs .content .inner .job .js-read-more > span {
+  font-weight: 600;
+}
+#jobs .content .inner .job .js-read-more.opened .js-more {
+  display: none;
+}
+#jobs .content .inner .job .js-read-more.opened .js-less {
+  display: inline-block !important;
 }

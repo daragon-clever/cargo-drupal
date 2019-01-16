@@ -228,6 +228,10 @@ jQuery(document).ready(function($) {
             $(".job.intro").fadeIn("slow");
         });
 
+        $(".js-read-more").on("click", function () {
+            $(this).toggleClass("opened").prev().slideToggle();
+        });
+
         // DISPLAY CONTENT BY URL
         function getParameterByName(name, url) {
             if (!url) url = window.location.href;

@@ -1041,7 +1041,6 @@ p.bordered-left {
 
     .job {
       display: none;
-      //position: absolute;
       width: 100%;
       padding: 25px 50px 50px;
       background: #232323;
@@ -1158,6 +1157,30 @@ p.bordered-left {
           font-family: @spectral;
           font-size: 14px;
           font-style: italic;
+        }
+      }
+
+      .more-content {
+        display: block;
+      }
+
+      .js-read-more {
+        color: @jauneclair;
+        display: block;
+        cursor: pointer;
+        .dimOpacityOnHover(0.6);
+
+        & > span {
+          font-weight: 600;
+        }
+
+        &.opened {
+          .js-more {
+            display: none;
+          }
+          .js-less {
+            display: inline-block !important;
+          }
         }
       }
     }

@@ -249,4 +249,16 @@ jQuery(document).ready(function($) {
             $(".job#js-content-" + anchor).fadeIn("slow");
         }
     }
+
+    // PAGE CANDIDATURE SPONTANEE
+    if ($('.webform-submission-form').length) {
+        $('input, textarea').blur(function () {
+            tmpval = $(this).val();
+            if (tmpval == '') {
+                $(this).addClass('js-empty').removeClass('js-not-empty');
+            } else {
+                $(this).addClass('js-not-empty').removeClass('js-empty');
+            }
+        });
+    }
 });

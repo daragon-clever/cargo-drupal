@@ -1208,17 +1208,10 @@ p.bordered-left {
     input, textarea {
       width: 100%;
       display: inline-block;
-      margin: 8px 0;
       border: 1px solid #d2d2d2;
-      padding: 5px;
+      padding: 7px 5px;
       outline: none;
       font-size: 14px;
-    }
-
-    legend {
-      height: 0;
-      width: 0;
-      display: none;
     }
 
     textarea {
@@ -1228,7 +1221,7 @@ p.bordered-left {
     & > label {
       position: absolute;
       left: 10px;
-      top: 19px;
+      top: 17px;
       background: white;
       padding: 0 5px;
       transition: all 0.3s;
@@ -1247,17 +1240,26 @@ p.bordered-left {
   }
 
   .select2-container {
-    margin: 10px 0;
+    margin-top: 5px;
 
     .select2-selection {
       border-radius: 0;
       border-color: #d2d2d2;
       outline: none;
-      height: 31px;
+      height: 40px;
     }
 
     .select2-selection__rendered {
-      line-height: 30px;
+      line-height: 40px;
+    }
+
+    .select2-selection__arrow {
+      height: 100%;
+      top: 0;
+    }
+
+    .select2-search {
+      display: none;
     }
   }
 
@@ -1277,5 +1279,22 @@ p.bordered-left {
       cursor: pointer;
       .dimOpacityOnHover(0.8);
     }
+  }
+
+  .webform-element-description {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #b3b3b3;
+    font-size: 14px;
+  }
+
+  legend {
+    font-family: @spectral;
+    font-size: 23px;
+    color: #232323;
+    margin: 0;
+    font-weight: 600;
+    border-bottom: 1px solid #d2d2d2;
+    padding-bottom: 10px;
   }
 }

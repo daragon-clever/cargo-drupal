@@ -421,10 +421,9 @@ header {
 }
 
 // Footer
-footer.fixed {
-  position: fixed;
+footer {
+  position: absolute;
   bottom: 0;
-  left: 0;
   width: 100%;
 }
 nav#block-menufooter {
@@ -432,7 +431,6 @@ nav#block-menufooter {
   text-align: center;
   color: white;
   position: relative;
-  margin-top: 90px;
   ul {
     padding: 0;
     margin: 0;
@@ -559,10 +557,6 @@ nav#block-menufooter {
               width: 22px;
             }
           }
-          //@media @phone {
-          //  background-position: 20px;
-          //  height: 22px;
-          //}
         }
       }
       &:first-child a {
@@ -632,6 +626,15 @@ nav#block-menufooter {
         }
       }
     }
+  }
+}
+.dialog-off-canvas-main-canvas {
+  position: relative;
+  padding-bottom: 150px;
+  min-height: 100vh;
+
+  @media @phone {
+    padding-bottom: 400px;
   }
 }
 
@@ -967,58 +970,6 @@ h2#title-marques {
     }
   }
 }
-.views-exposed-form  {
-  // Temp
-/*  @media @tablet {
-    & > div > div {
-      // row
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-      margin-right: -15px;
-      margin-left: -15px;
-      & > div {
-        // col-4
-        -webkit-box-flex: 0;
-        -ms-flex: 0 0 33%;
-        flex: 0 0 33%;
-        max-width: 33%;
-        position: relative;
-        width: 100%;
-        min-height: 1px;
-        padding-right: 15px;
-        padding-left: 15px;
-        margin: 0 !important;
-      }
-    }
-  }
-  @media @phone {
-    & > div > div > div {
-      // col-6
-      -webkit-box-flex: 0;
-      -ms-flex: 0 0 50%;
-      flex: 0 0 50%;
-      max-width: 50%;
-      padding: 0;
-      input {
-        display: none;
-      }
-      label {
-        color: #8d8d8c;
-        background: #e2e2e2;
-        padding: 10px 0;
-        display: block;
-        width: 100%;
-      }
-      input[checked=checked] + label {
-        background: @cuivre;
-        color: white !important;
-      }
-    }
-  }*/
-}
 .vue-evenement {
   max-width: 1420px;
   margin: 0 auto;
@@ -1199,9 +1150,6 @@ h2#title-marques {
           border: none;
           padding: 0 0 15px 0;
         }
-        //& > div {
-        //  margin: auto;
-        //}
       }
       .text {
         max-width: 700px;
@@ -1450,7 +1398,6 @@ h2#title-marques {
           align-self: center;
           padding: 15px;
           img {
-            //max-height: 324px;
             @media (max-width: 1024px) {
               max-height: 270px;
               width: auto;

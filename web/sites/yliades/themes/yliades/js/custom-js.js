@@ -138,13 +138,6 @@ jQuery(document).ready(function($) {
         }
     }
 
-    // FOOTER FIXED SI BODY COURT
-    var body = $(document.body).height();
-    var windowHeight = $(window).height();
-    if (body < windowHeight) {
-        $("footer").addClass('fixed');
-    }
-
     // DROPUP FOOTER : MOBILE
     $("a.dropup, a.dropdown").on("click", function (e) {
         e.preventDefault();

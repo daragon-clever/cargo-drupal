@@ -1,0 +1,17 @@
+offresEmploi.content:
+  path: '/offres-emploi/{ref}'
+  defaults:
+    _controller: 'Drupal\offres_emploi\Controller\OffresEmploiController::content'
+    ref: 'all'
+    _title: 'Offres emploi'
+  requirements:
+    _permission: 'access content'
+
+
+datajson:content:
+  path: '/demande-recrutement/import'
+  defaults:
+    _controller: 'Drupal\offres_emploi\Controller\ImportController::execute'
+    _title: 'Import offres emploi'
+  requirements:
+    _permission: 'access content'

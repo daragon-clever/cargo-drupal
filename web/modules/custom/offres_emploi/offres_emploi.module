@@ -1,0 +1,151 @@
+<?php
+
+function offres_emploi_theme($existing, $type, $theme, $path) {
+    return [
+        'les-offres-emploi' => [
+            'variables' => [
+                'data' => NULL,
+            ]
+        ],
+        'annonce' => [
+            'variables' => [
+                'data' => NULL,
+            ]
+        ]
+    ];
+}
+
+/**
+ * Schema table
+ */
+function offres_emploi_schema() {
+    $schema['offres_emploi'] = array(
+        'description' => 'Toutes les offres d\'emploi du groupe',
+        'fields' => array(
+            'id' => array(
+                'type' => 'serial',
+                'not null' => TRUE,
+                'description' => 'Primary Key: Unique email ID.',
+            ),
+            'codeRecrutement' => array(
+                'type' => 'varchar',
+                'length' => 25,
+                'not null' => TRUE,
+                'default' => '',
+                'description' => '',
+            ),
+            'intitulePoste' => array(
+                'type' => 'varchar',
+                'length' => 100,
+                'not null' => TRUE,
+                'default' => '',
+                'description' => '',
+            ),
+            'dateCreationDemande' => array(
+                'type' => 'varchar',
+                'mysql_type' => 'datetime',
+                'not null' => TRUE,
+//                'default' => '',
+                'description' => '',
+            ),
+            'dateOuverturePoste' => array(
+                'type' => 'varchar',
+                'mysql_type' => 'datetime',
+                'not null' => FALSE,
+//                'default' => '',
+                'description' => '',
+            ),
+            'filialeSociete' => array(
+                'type' => 'varchar',
+                'length' => 50,
+                'not null' => TRUE,
+                'default' => '',
+                'description' => '',
+            ),
+            'typeContrat' => array(
+                'type' => 'varchar',
+                'length' => 25,
+                'not null' => TRUE,
+                'default' => '',
+                'description' => '',
+            ),
+            'dureeContrat' => array(
+                'type' => 'int',
+                'size' => 'tiny',
+                'not null' => FALSE,
+                'default' => '0',
+                'description' => '',
+            ),
+            'categorie' => array(
+                'type' => 'varchar',
+                'length' => 50,
+                'not null' => FALSE,
+                'default' => '',
+                'description' => '',
+            ),
+            'metier' => array(
+                'type' => 'varchar',
+                'length' => 50,
+                'not null' => FALSE,
+                'default' => '',
+                'description' => '',
+            ),
+            'lieuRecrutement' => array(
+                'type' => 'varchar',
+                'length' => 50,
+                'not null' => TRUE,
+                'default' => '',
+                'description' => '',
+            ),
+            'descriptionEntreprise' => array(
+                'type' => 'text',
+                'not null' => TRUE,
+//                'default' => '0',
+//                'description' => '',
+            ),
+            'descriptionMission' => array(
+                'type' => 'text',
+                'not null' => TRUE,
+//                'default' => '0',
+//                'description' => '',
+            ),
+            'descriptionProfil' => array(
+                'type' => 'text',
+                'not null' => TRUE,
+//                'default' => '0',
+//                'description' => '',
+            ),
+            'active' => array(
+                'type' => 'int',
+                'size' => 'tiny',
+                'not null' => TRUE,
+                'default' => 0,
+                'description' => '',
+            ),
+        ),
+        'primary key' => array('id'),
+        'unique keys' => array(
+            /*'codeRecrutement' => array(
+                'type' => 'varchar',
+                'length' => 25,
+                'not null' => TRUE,
+                'default' => '',
+                'description' => '',
+            ),*/
+            'codeRecrutement' => array(
+                'codeRecrutement',
+            ),
+        ),
+        'indexes' => array(
+            'intitulePoste' => array('intitulePoste'),
+            'filialeSociete' => array('filialeSociete'),
+            'typeContrat' => array('typeContrat'),
+            'metier' => array('metier'),
+            'descriptionEntreprise' => array('descriptionEntreprise'),
+            'descriptionMission' => array('descriptionMission'),
+            'descriptionProfil' => array('descriptionProfil'),
+        ),
+    );
+
+    return $schema;
+}

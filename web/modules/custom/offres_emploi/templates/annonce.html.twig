@@ -1,0 +1,8 @@
+{#{{ data }}#}
+{#{{ dump(data) }}#}
+{#{% for offre in data %}#}
+    {% for key, value in data %}
+        <b>{{ key }}</b> : {{ value }}
+        <br />
+    {% endfor %}
+{#{% endfor %}#}

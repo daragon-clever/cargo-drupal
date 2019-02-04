@@ -1,0 +1,41 @@
+<table>
+    <thead>
+        <tr>
+            {#<td>codeRecrutement</td>#}
+            <td>intitulePoste</td>
+            <td>dateCreationDemande</td>
+            {#<td>dateOuverturePoste</td>#}
+            {#<td>filialeSociete</td>#}
+            <td>typeContrat</td>
+            {#<td>dureeContrat</td>#}
+            {#<td>categorie</td>#}
+            <td>metier</td>
+            {#<td>lieuRecrutement</td>#}
+            {#<td>descriptionEntreprise</td>#}
+            {#<td>descriptionMission</td>#}
+            {#<td>descriptionProfil</td>#}
+        </tr>
+    </thead>
+    <tbody>
+        {% for offre in data %}
+            <tr>
+                {#<td>{{ offre.codeRecrutement }}</td>#}
+                <td>{{ offre.intitulePoste }}</td>
+                {#<td>{{ offre.dateCreationDemande }}</td>#}
+                <td>{{ offre.dateOuverturePoste }}</td>
+                {#<td>{{ offre.filialeSociete }}</td>#}
+                <td>{{ offre.typeContrat }}</td>
+                {#<td>{{ offre.dureeContrat }}</td>#}
+                {#<td>{{ offre.categorie }}</td>#}
+                <td>{{ offre.metier }}</td>
+                {#<td>{{ offre.lieuRecrutement }}</td>#}
+                {#<td>{{ offre.descriptionEntreprise }}</td>#}
+                {#<td>{{ offre.descriptionMission }}</td>#}
+                {#<td>{{ offre.descriptionProfil }}</td>#}
+                <td><a href="{{ offre.codeRecrutement }}">Voir l'annonce</a> </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{#<pre>{{ dump(data) }}</pre>#}

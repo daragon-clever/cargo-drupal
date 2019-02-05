@@ -15,7 +15,11 @@ class ImportController extends ControllerBase{
         if ($this->getSiteName() == "groupecargo") {
             $this->connection = \Drupal::database();
         } else {
-            $this->connection = \Drupal\Core\Database\Database::setActiveConnection('external');
+            $this->connection = \Drupal::database();
+            //$newdb = \Drupal\Core\Database\Database::setActiveConnection('external');
+            //$this->connection = \Drupal::database();
+//            $this->connection = \Drupal\Core\Database\Database::getConnection();
+//            $this->connection = \Drupal\Core\Database\Database::getConnection('default', 'external');
         }
     }
 
@@ -112,8 +116,11 @@ class ImportController extends ControllerBase{
         return $site_name;
     }
 
-
-
+    public function __destruct()
+    {
+        //$olddb = \Drupal\Core\Database\Database::setActiveConnection();
+        //$this->connection = \Drupal::database();
+    }
 
 
 }

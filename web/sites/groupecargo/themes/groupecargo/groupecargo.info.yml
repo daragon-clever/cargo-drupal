@@ -14,6 +14,7 @@ libraries:
   - groupecargo/mmenu
   - groupecargo/slick
   - groupecargo/global-styling
+  - groupecargo/datatables
 
 stylesheets-remove:
   - core/themes/stable/css/system/components/ajax-progress.module.css

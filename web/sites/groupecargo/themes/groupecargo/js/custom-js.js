@@ -261,4 +261,74 @@ jQuery(document).ready(function($) {
             }
         });
     }
+
+    //PAGE OFFRE EMPLOI - AUDREY
+    if ($('.mon-container').length) {
+        var table = $("#toutes-les-offres").DataTable({
+            //config
+            // dom: '<"row"<"col-3"f<"filtres-offres">><"col-9"tp>>',
+            dom: 'tp',
+            language: {
+                url: "http://cdn.datatables.net/plug-ins/1.10.19/i18n/French.json",//todo
+                searchPlaceholder : "Rechercher une offre"
+            },
+            //pages
+            pagingType: "numbers",
+            pageLength: 10,
+            //date
+            order:[3,'desc'],//en fonction d'une date précise
+            "aoColumnDefs": [
+                { "sType": "date-uk", "aTargets": [ 3 ] }
+            ],
+            //filters
+            initComplete: function () {
+                this.api().columns([1,2,4]).every( function () {
+                    var column = this;
+                    var textselect = $('<b>'+ $(this.footer()).text() +'</b>')
+                        .appendTo( $("#filtres-offres") );
+                    var div = $('<div></div>').appendTo( textselect );
+                    $('tfoot').empty();
+                    var select = $('<select><option value="">Voir tous</option></select>')
+                        // .appendTo( $(column.footer()).empty() )
+                        .appendTo( div )
+                        .on( 'change', function () {
+                            var val = $.fn.dataTable.util.escapeRegex(
+                                $(this).val()
+                            );
+
+                            column
+                                .search( val ? '^'+val+'$' : '', true, false )
+                                .draw();
+                        } );
+
+                    column.data().unique().sort().each( function ( d, j ) {
+                        select.append( '<option value="'+d+'">'+d+'</option>' )
+                    } );
+                } );
+            }
+        });
+
+        // $(".dataTables_wrapper").addClass("row");//todo
+
+        //date
+        jQuery.extend( jQuery.fn.dataTableExt.oSort, {
+            "date-uk-pre": function ( a ) {
+                var ukDatea = a.split('/');
+                return (ukDatea[2] + ukDatea[1] + ukDatea[0]) * 1;
+            },
+
+            "date-uk-asc": function ( a, b ) {
+                return ((a < b) ? -1 : ((a > b) ? 1 : 0));
+            },
+
+            "date-uk-desc": function ( a, b ) {
+                return ((a < b) ? 1 : ((a > b) ? -1 : 0));
+            }
+        } );
+
+        //search input
+        $("#searchbox").keyup(function() {
+            table.search(this.value).draw();
+        });
+    }
 });

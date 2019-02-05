@@ -3,12 +3,8 @@
 namespace Drupal\offres_emploi\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\HttpFoundation\BinaryFileResponse;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 use Drupal\Core\Url;
+use \Drupal\Core\Database\Database;
 
 /**
  * Defines OffresEmploiController class.
@@ -16,17 +12,31 @@ use Drupal\Core\Url;
 class OffresEmploiController extends ControllerBase {
 
     protected $table;
-    protected $connection;
 
     public function __construct()
     {
         $this->table = "offres_emploi";
-        if ($this->getSiteName() == "groupecargo") {
-            $this->connection = \Drupal::database();
-        } else {
-            //TODO: a voir avec jm
-            $this->connection = \Drupal\Core\Database\Database::setActiveConnection('external');
+
+        /*$host = 'db.groupecargo.svd2pweb-stm.ressinfo.ad:3306';
+        $db = "groupecargo";
+        $user = "root";
+        $pass = "root";
+
+        try{
+            // create a PDO connection with the configuration data
+            $conn = new \PDO("mysql:host=$host;dbname=$db", $user, $pass);
+
+            // display a message if connected to database successfully
+            if($conn){
+                echo "Connected to the <strong>$db</strong> database successfully!";
+            }
+        }catch (PDOException $e){
+            // report error message
+            echo $e->getMessage();
         }
+
+        die();*/
+
     }
 
     public function content($ref)
@@ -34,13 +44,13 @@ class OffresEmploiController extends ControllerBase {
         if ($ref == "all") {
             $offres = $this->getOffres();
             $build = [
-                '#theme' => 'les-offres-emploi',
+                '#theme' => 'offres_emploi--list',
                 '#data' => $offres
             ];
         } else {
             $offres = $this->getOffre($ref);
             $build = [
-                '#theme' => 'annonce',
+                '#theme' => 'offres_emploi--annonce',
                 '#data' => $offres
             ];
         }
@@ -51,31 +61,35 @@ class OffresEmploiController extends ControllerBase {
     public function getOffres()
     {
         $site_name = $this->getSiteName();
+        $connection = $this->changeDb("on");
 
         if ($site_name == "groupecargo") {
-            $all_offres = $this->connection->select($this->table,"cargo")
+            $all_offres = $connection->select($this->table,"cargo")
                 ->fields("cargo")
                 ->condition('active', 1, '=')
                 ->execute()
                 ->fetchAll();
         } else {
             $societe = $this->getNameDbSociete($site_name);
-            $all_offres = $this->connection->select($this->table,"cargo")
+            $all_offres = $connection->select($this->table,"cargo")
                 ->fields("cargo")
                 ->condition('filialeSociete', $societe, '=')
                 ->condition('active', 1, '=')
                 ->execute()
                 ->fetchAll();
         }
+
+        $connection = $this->changeDb("off");
 
         return $all_offres;
     }
 
     public function getOffre($ref) {
         $site_name = $this->getSiteName();
+        $connection = $this->changeDb("on");
 
         if ($site_name == "groupecargo") {
-            $offre = $this->connection->select($this->table,"codeRecrutement")
+            $offre = $connection->select($this->table,"codeRecrutement")
                 ->fields("codeRecrutement")
                 ->condition('codeRecrutement', $ref, '=')
                 ->condition('active', 1, '=')
@@ -83,7 +97,7 @@ class OffresEmploiController extends ControllerBase {
                 ->fetchAssoc();
         } else {
             $societe = $this->getNameDbSociete($site_name);
-            $offre = $this->connection->select($this->table,"codeRecrutement")
+            $offre = $connection->select($this->table,"codeRecrutement")
                 ->fields("codeRecrutement")
                 ->condition('filialeSociete', $societe, '=')
                 ->condition('codeRecrutement', $ref, '=')
@@ -91,6 +105,8 @@ class OffresEmploiController extends ControllerBase {
                 ->execute()
                 ->fetchAssoc();
         }
+
+        $connection = $this->changeDb("off");
 
         return $offre;
     }
@@ -113,9 +129,29 @@ class OffresEmploiController extends ControllerBase {
         return $site_name;
     }
 
-    public function __destruct()
+    //todo:  a revoir
+    private function changeDb($etat_on_off)
     {
-        db_set_active('');
+        if ($this->getSiteName() == "groupecargo") {
+            $conn = \Drupal::database();
+        } else {
+            if ($etat_on_off == "on") {
+                $old_key = Database::setActiveConnection('external');
+            } else if ($etat_on_off == "off") {
+                Database::setActiveConnection();
+            }
+            $conn = Database::getConnection();
+//            $conn = \Drupal::database();
+        }
+        return $conn;
     }
+
+    /*public function __destruct()
+    {
+        if (!($this->getSiteName() == "groupecargo")) {
+//            \Drupal\Core\Database\Database::setActiveConnection();
+            Database::setActiveConnection($this->old_key);
+        }
+    }*/
 
 }

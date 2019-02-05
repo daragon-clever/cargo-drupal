@@ -2,12 +2,12 @@
 
 function offres_emploi_theme($existing, $type, $theme, $path) {
     return [
-        'les-offres-emploi' => [
+        'offres_emploi--list' => [
             'variables' => [
                 'data' => NULL,
             ]
         ],
-        'annonce' => [
+        'offres_emploi--annonce' => [
             'variables' => [
                 'data' => NULL,
             ]

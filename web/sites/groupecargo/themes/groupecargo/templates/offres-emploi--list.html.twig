@@ -1,0 +1,49 @@
+<div class="container mon-container">
+    <div class="row">
+        <div class="col-3">
+            <h3>Filtrer</h3>
+
+            <input type="text" id="searchbox" placeholder="Rechercher une offre" />
+            <div id="filtres-offres"></div>
+        </div>
+        <div class="col-9">
+            <h3>Les postes à pourvoir</h3>
+
+            <table id="toutes-les-offres" class="display" style="width: 100%">
+                <thead>
+                <tr>
+                    <th>Poste</th>
+                    <th>Type de contrat</th>
+                    <th style="display: none;">Type de poste</th>
+                    <th>Date de publication</th>
+                    <th>Lieu</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for offre in data %}
+                    <tr>
+                        <td>{{ offre.intitulePoste }}</td>
+                        <td>{{ offre.typeContrat }}</td>
+                        <td style="display: none;">{{ offre.metier }}</td>
+                        <td>{{ offre.dateOuverturePoste|date("d/m/Y") }}</td>
+                        <td>{{ offre.lieuRecrutement }}</td>
+                        <td><a href="{{ offre.codeRecrutement }}">Voir l'annonce</a> </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+                <tfoot>
+                <tr>
+                    <th>Poste</th>
+                    <th>Type de contrat</th>
+                    <th style="display: none;">Type de poste</th>
+                    <th>Date de publication</th>
+                    <th>Lieu de travail</th>
+                    <th></th>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+
+</div>

@@ -29,6 +29,16 @@ slick:
   dependencies:
     - core/jquery
 
+# Plugin DataTables Ajax
+datatables:
+  css:
+    theme:
+      https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css: { type: external }
+  js:
+    https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js: { type: external }
+  dependencies:
+    - core/jquery
+
 # Style général
 global-styling:
 #  header: true

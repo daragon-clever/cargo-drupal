@@ -4,7 +4,20 @@
             <h3>Filtrer</h3>
 
             <input type="text" id="searchbox" placeholder="Rechercher une offre" />
-            <div id="filtres-offres"></div>
+            <div id="groupe-filtres-offres-emploi">
+                <div id="filtre-contrat" class="filtres-offres-emploi">
+                    <b>Type de contrat</b>
+                    <div class="select-option"></div>
+                </div>
+                <div id="filtre-poste" class="filtres-offres-emploi">
+                    <b>Type de poste</b>
+                    <div class="select-option"></div>
+                </div>
+                <div id="filtre-lieu" class="filtres-offres-emploi">
+                    <b>Lieu de travail</b>
+                    <div class="select-option"></div>
+                </div>
+            </div>
         </div>
         <div class="col-9">
             <h3>Les postes à pourvoir</h3>
@@ -28,22 +41,18 @@
                         <td style="display: none;">{{ offre.metier }}</td>
                         <td>{{ offre.dateOuverturePoste|date("d/m/Y") }}</td>
                         <td>{{ offre.lieuRecrutement }}</td>
-                        <td><a href="{{ offre.codeRecrutement }}">Voir l'annonce</a> </td>
+                        <td><a href="/offres_emploi/{{ offre.codeRecrutement }}">Voir l'annonce</a> </td>
                     </tr>
                 {% endfor %}
                 </tbody>
-                <tfoot>
-                <tr>
-                    <th>Poste</th>
-                    <th>Type de contrat</th>
-                    <th style="display: none;">Type de poste</th>
-                    <th>Date de publication</th>
-                    <th>Lieu de travail</th>
-                    <th></th>
-                </tr>
-                </tfoot>
             </table>
         </div>
     </div>
-
 </div>
+
+<script type="text/javascript">
+    var my_filter_value_filiale_societe = "{{ filter.filiale_societe }}";
+    var my_filter_value_type_contrat = "{{ filter.type_contrat }}";
+    var my_filter_value_type_metier = "{{ filter.type_metier }}";
+    var my_filter_value_lieu = "{{ filter.lieu }}";
+</script>

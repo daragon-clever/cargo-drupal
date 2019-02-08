@@ -31,7 +31,6 @@ class ImportController extends ControllerBase{
 
         foreach ($data as $offre)
         {
-
             $my_data = array();
             $this->pushDataInMyArray($my_data,$offre);//adapt data for database
             $my_data['active'] = 1;

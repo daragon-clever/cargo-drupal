@@ -5,11 +5,18 @@ function offres_emploi_theme($existing, $type, $theme, $path) {
         'offres_emploi--list' => [
             'variables' => [
                 'data' => NULL,
+                'filter' => NULL
             ]
         ],
         'offres_emploi--annonce' => [
             'variables' => [
                 'data' => NULL,
+            ]
+        ],
+        'offres_emploi--form-postuler' => [
+            'variables' => [
+                'data' => NULL,
+                'form' => NULL
             ]
         ]
     ];
@@ -18,7 +25,8 @@ function offres_emploi_theme($existing, $type, $theme, $path) {
 /**
  * Schema table
  */
-function offres_emploi_schema() {
+function offres_emploi_schema()
+{
     $schema['offres_emploi'] = array(
         'description' => 'Toutes les offres d\'emploi du groupe',
         'fields' => array(
@@ -45,14 +53,12 @@ function offres_emploi_schema() {
                 'type' => 'varchar',
                 'mysql_type' => 'datetime',
                 'not null' => TRUE,
-//                'default' => '',
                 'description' => '',
             ),
             'dateOuverturePoste' => array(
                 'type' => 'varchar',
                 'mysql_type' => 'datetime',
                 'not null' => FALSE,
-//                'default' => '',
                 'description' => '',
             ),
             'filialeSociete' => array(
@@ -100,20 +106,14 @@ function offres_emploi_schema() {
             'descriptionEntreprise' => array(
                 'type' => 'text',
                 'not null' => TRUE,
-//                'default' => '0',
-//                'description' => '',
             ),
             'descriptionMission' => array(
                 'type' => 'text',
                 'not null' => TRUE,
-//                'default' => '0',
-//                'description' => '',
             ),
             'descriptionProfil' => array(
                 'type' => 'text',
                 'not null' => TRUE,
-//                'default' => '0',
-//                'description' => '',
             ),
             'active' => array(
                 'type' => 'int',
@@ -148,4 +148,21 @@ function offres_emploi_schema() {
     );
 
     return $schema;
+}
+
+use Drupal\offres_emploi\Controller\OffresEmploiActionController;
+
+function offres_emploi_webform_element_hidden_alter(array &$element, \Drupal\Core\Form\FormStateInterface $form_state, array $context)
+{
+    $route_match = \Drupal::service('current_route_match');
+    $param_ref = $route_match->getParameter('ref');
+
+    if ($element['#webform_key'] == 'offre') {
+        $element['#value'] = $param_ref;
+    }
+    if ($element['#webform_key'] == 'nom_offre') {
+        $contr = new OffresEmploiActionController();
+        $name = $contr->getOffre($param_ref);
+        $element['#value'] = $name["intitulePoste"];
+    }
 }

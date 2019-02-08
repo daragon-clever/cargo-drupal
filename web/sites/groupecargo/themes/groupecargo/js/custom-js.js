@@ -266,7 +266,6 @@ jQuery(document).ready(function($) {
     if ($('.mon-container').length) {
         var table = $("#toutes-les-offres").DataTable({
             //config
-            // dom: '<"row"<"col-3"f<"filtres-offres">><"col-9"tp>>',
             dom: 'tp',
             language: {
                 url: "http://cdn.datatables.net/plug-ins/1.10.19/i18n/French.json",//todo
@@ -282,33 +281,46 @@ jQuery(document).ready(function($) {
             ],
             //filters
             initComplete: function () {
+                //les filtres
                 this.api().columns([1,2,4]).every( function () {
+                    switch (this[0][0]) {
+                        case 1:
+                            var selector = '#filtre-contrat .select-option';
+                            var filter = my_filter_value_type_contrat;
+                            break;
+                        case 2:
+                            var selector = '#filtre-poste .select-option';
+                            var filter = my_filter_value_type_metier;
+                            break;
+                        case 4:
+                            var selector = '#filtre-lieu .select-option';
+                            var filter = my_filter_value_lieu;
+                            break;
+                    }
+
                     var column = this;
-                    var textselect = $('<b>'+ $(this.footer()).text() +'</b>')
-                        .appendTo( $("#filtres-offres") );
-                    var div = $('<div></div>').appendTo( textselect );
-                    $('tfoot').empty();
-                    var select = $('<select><option value="">Voir tous</option></select>')
-                        // .appendTo( $(column.footer()).empty() )
-                        .appendTo( div )
-                        .on( 'change', function () {
-                            var val = $.fn.dataTable.util.escapeRegex(
-                                $(this).val()
-                            );
+                    var select = $('<select><option value="">Voir tous</option></select>').appendTo( $(selector) );
 
-                            column
-                                .search( val ? '^'+val+'$' : '', true, false )
-                                .draw();
-                        } );
+                    //filtre lors d'un change
+                    select.on( 'change', function () {
+                        var val = $.fn.dataTable.util.escapeRegex(
+                            $(this).val()
+                        );
+                        column.search( val ? '^'+val+'$' : '', true, false ).draw();
+                    } );
 
+                    //remplie le select
                     column.data().unique().sort().each( function ( d, j ) {
                         select.append( '<option value="'+d+'">'+d+'</option>' )
                     } );
+
+                    if (filter != "") {
+                        $(selector + ' option[value=' + filter + ']').attr('selected', 'selected');
+                        select.trigger("change");
+                    }
                 } );
             }
         });
-
-        // $(".dataTables_wrapper").addClass("row");//todo
 
         //date
         jQuery.extend( jQuery.fn.dataTableExt.oSort, {

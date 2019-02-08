@@ -1,14 +1,24 @@
+# LISTES OFFRES EMPLOI + ANNONCE
 offresEmploi.content:
-  path: '/offres-emploi/{ref}'
+  path: '/offres_emploi/{ref}'
   defaults:
-    _controller: 'Drupal\offres_emploi\Controller\OffresEmploiController::content'
+    _controller: 'Drupal\offres_emploi\Controller\OffresEmploiListController::content'
     ref: 'all'
     _title: 'Offres emploi'
   requirements:
     _permission: 'access content'
 
+# FORMULAIRE POUR POSTULER
+offresEmploi.postuler:
+  path: '/offres_emploi/postuler/{ref}'
+  defaults:
+    _controller: 'Drupal\offres_emploi\Controller\OffresEmploiActionController::postuler'
+    _title: 'Offres emploi'
+  requirements:
+    _permission: 'access content'
 
-datajson:content:
+# CRON
+datajson.import:
   path: '/demande-recrutement/import'
   defaults:
     _controller: 'Drupal\offres_emploi\Controller\ImportController::execute'

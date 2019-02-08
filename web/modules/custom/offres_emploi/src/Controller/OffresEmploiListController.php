@@ -5,11 +5,12 @@ namespace Drupal\offres_emploi\Controller;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Url;
 use \Drupal\Core\Database\Database;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
- * Defines OffresEmploiController class.
+ * Defines OffresEmploiListController class.
  */
-class OffresEmploiController extends ControllerBase {
+class OffresEmploiListController extends ControllerBase {
 
     protected $table;
 
@@ -39,19 +40,28 @@ class OffresEmploiController extends ControllerBase {
 
     }
 
-    public function content($ref)
+    public function content($ref, Request $request)
     {
+        $arr_filter = array(
+            "filiale_societe" => $request->get("filiale_societe"),
+            "type_contrat" => $request->get("type_contrat"),
+            "type_metier" => $request->get("type_metier"),
+            "lieu" => $request->get("lieu")
+        );
+
         if ($ref == "all") {
             $offres = $this->getOffres();
             $build = [
                 '#theme' => 'offres_emploi--list',
-                '#data' => $offres
+                '#data' => $offres,
+                '#filter' => $arr_filter
             ];
         } else {
             $offres = $this->getOffre($ref);
             $build = [
                 '#theme' => 'offres_emploi--annonce',
-                '#data' => $offres
+                '#data' => $offres,
+                '#filter' => $arr_filter
             ];
         }
 

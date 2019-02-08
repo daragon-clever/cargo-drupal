@@ -1239,14 +1239,6 @@ p.bordered-left {
   max-width: 920px;
   margin: 0 auto;
 }
-#webform-submission-candidature-spontanee-add-form .form-wrapper > fieldset {
-  float: left;
-  width: calc(100% - 570px);
-}
-#webform-submission-candidature-spontanee-add-form .form-wrapper > fieldset:first-child {
-  width: 540px;
-  margin-right: 30px;
-}
 #webform-submission-candidature-spontanee-add-form .form-item {
   position: relative;
 }
@@ -1299,11 +1291,7 @@ p.bordered-left {
 #webform-submission-candidature-spontanee-add-form .select2-container .select2-search {
   display: none;
 }
-#webform-submission-candidature-spontanee-add-form .form-actions {
-  width: calc(100% - 570px);
-  float: left;
-}
-#webform-submission-candidature-spontanee-add-form .form-actions .form-submit {
+#webform-submission-candidature-spontanee-add-form .form-submit {
   background: #232323;
   border: none;
   color: white;
@@ -1315,10 +1303,11 @@ p.bordered-left {
   cursor: pointer;
   transition: opacity 0.3s;
 }
-#webform-submission-candidature-spontanee-add-form .form-actions .form-submit:hover {
+#webform-submission-candidature-spontanee-add-form .form-submit:hover {
   opacity: 0.8;
 }
-#webform-submission-candidature-spontanee-add-form .webform-element-description {
+#webform-submission-candidature-spontanee-add-form .webform-element-description,
+#webform-submission-candidature-spontanee-add-form #edit-piece-jointe label {
   text-transform: uppercase;
   font-weight: bold;
   color: #b3b3b3;
@@ -1332,4 +1321,89 @@ p.bordered-left {
   font-weight: 600;
   border-bottom: 1px solid #d2d2d2;
   padding-bottom: 10px;
+}
+#webform-submission-candidature-spontanee-add-form #edit-piece-jointe .webform-flex--container {
+  margin: 0;
+}
+#webform-submission-candidature-spontanee-add-form #edit-piece-jointe .js-hide {
+  display: none;
+}
+#webform-submission-candidature-spontanee-add-form #edit-piece-jointe span.file {
+  width: 100%;
+  border: 1px solid #d2d2d2;
+  display: block;
+  margin-top: 8px;
+  padding: 5px 10px;
+  background: white;
+  position: absolute;
+}
+#webform-submission-candidature-spontanee-add-form #edit-piece-jointe input {
+  z-index: 1;
+  cursor: pointer;
+}
+#webform-submission-candidature-spontanee-add-form #edit-piece-jointe input.button {
+  margin-top: 50px;
+  border: none;
+  background: none;
+  color: black;
+  text-transform: inherit;
+  font-weight: inherit;
+  text-align: right;
+  padding: 0 10px 0 0;
+}
+#webform-submission-candidature-spontanee-add-form #edit-piece-jointe legend:before {
+  display: block;
+  content: '';
+  height: 1px;
+  width: 100%;
+  background: black;
+  margin: 30px 0 35px;
+}
+#webform-submission-candidature-spontanee-add-form #edit-piece-jointe .fieldset-wrapper > div {
+  margin: 20px 0;
+}
+#webform-submission-candidature-spontanee-add-form #edit-piece-jointe .fieldset-wrapper > div:last-child {
+  margin-bottom: 25px;
+}
+#webform-submission-candidature-spontanee-add-form #edit-piece-jointe label {
+  position: relative;
+  top: 0;
+  left: 0;
+  padding: 0;
+}
+#webform-submission-candidature-spontanee-add-form #edit-piece-jointe input[type=file] {
+  opacity: 0;
+}
+#webform-submission-candidature-spontanee-add-form #edit-piece-jointe .webform-element-description {
+  border: 1px solid #d2d2d2;
+  padding: 8px 10px 5px;
+  position: absolute;
+  margin-top: 8px;
+  width: 100%;
+  color: black;
+  text-transform: inherit;
+  font-weight: inherit;
+  cursor: pointer;
+}
+#webform-submission-candidature-spontanee-add-form #edit-piece-jointe .webform-element-description:after {
+  content: "+";
+  display: block;
+  font-size: 20px;
+  position: absolute;
+  right: 10px;
+  top: 2px;
+  font-family: initial;
+  cursor: pointer;
+}
+#webform-submission-candidature-spontanee-add-form #edit-right > legend:first-child {
+  display: none;
+}
+#webform-submission-candidature-spontanee-add-form #edit-actions-submit {
+  border: none;
+}
+#webform-submission-candidature-spontanee-add-form input:hover::placeholder {
+  color: white;
+}
+.select2-search {
+  display: none;
 }

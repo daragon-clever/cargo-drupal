@@ -1,5 +1,9 @@
 {% for key, value in data %}
-    <b>{{ key }}</b> : {{ value }}
+    {% if key in ['descriptionEntreprise','descriptionMission','descriptionProfil'] %}
+        <b>{{ key }}</b> : {{ value | raw }}
+    {% else %}
+        <b>{{ key }}</b> : {{ value }}
+    {% endif %}
     <br />
 {% endfor %}
 <a href="/offres-emploi/postuler/{{ data.codeRecrutement }}"><button>POSTULER</button></a>

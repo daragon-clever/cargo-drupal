@@ -261,4 +261,86 @@ jQuery(document).ready(function($) {
             }
         });
     }
+
+    //PAGE OFFRE EMPLOI - AUDREY
+    if ($('.mon-container').length) {
+        var table = $("#toutes-les-offres").DataTable({
+            //config
+            dom: 'tp',
+            language: {
+                url: "http://cdn.datatables.net/plug-ins/1.10.19/i18n/French.json",//todo
+                searchPlaceholder : "Rechercher une offre"
+            },
+            //pages
+            pagingType: "numbers",
+            pageLength: 10,
+            //date
+            order:[3,'desc'],//en fonction d'une date précise
+            "aoColumnDefs": [
+                { "sType": "date-uk", "aTargets": [ 3 ] }
+            ],
+            //filters
+            initComplete: function () {
+                //les filtres
+                this.api().columns([1,2,4]).every( function () {
+                    switch (this[0][0]) {
+                        case 1:
+                            var selector = '#filtre-contrat .select-option';
+                            var filter = my_filter_value_type_contrat;
+                            break;
+                        case 2:
+                            var selector = '#filtre-poste .select-option';
+                            var filter = my_filter_value_type_metier;
+                            break;
+                        case 4:
+                            var selector = '#filtre-lieu .select-option';
+                            var filter = my_filter_value_lieu;
+                            break;
+                    }
+
+                    var column = this;
+                    var select = $('<select><option value="">Voir tous</option></select>').appendTo( $(selector) );
+
+                    //filtre lors d'un change
+                    select.on( 'change', function () {
+                        var val = $.fn.dataTable.util.escapeRegex(
+                            $(this).val()
+                        );
+                        column.search( val ? '^'+val+'$' : '', true, false ).draw();
+                    } );
+
+                    //remplie le select
+                    column.data().unique().sort().each( function ( d, j ) {
+                        select.append( '<option value="'+d+'">'+d+'</option>' )
+                    } );
+
+                    if (filter != "") {
+                        $(selector + ' option[value=' + filter + ']').attr('selected', 'selected');
+                        select.trigger("change");
+                    }
+                } );
+            }
+        });
+
+        //date
+        jQuery.extend( jQuery.fn.dataTableExt.oSort, {
+            "date-uk-pre": function ( a ) {
+                var ukDatea = a.split('/');
+                return (ukDatea[2] + ukDatea[1] + ukDatea[0]) * 1;
+            },
+
+            "date-uk-asc": function ( a, b ) {
+                return ((a < b) ? -1 : ((a > b) ? 1 : 0));
+            },
+
+            "date-uk-desc": function ( a, b ) {
+                return ((a < b) ? 1 : ((a > b) ? -1 : 0));
+            }
+        } );
+
+        //search input
+        $("#searchbox").keyup(function() {
+            table.search(this.value).draw();
+        });
+    }
 });

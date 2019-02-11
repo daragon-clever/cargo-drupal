@@ -1237,7 +1237,7 @@ p.bordered-left {
 }
 #webform-submission-candidature-spontanee-add-form {
   max-width: 920px;
-  margin: 0 auto;
+  margin: 35px auto 0;
 }
 #webform-submission-candidature-spontanee-add-form .form-item {
   position: relative;

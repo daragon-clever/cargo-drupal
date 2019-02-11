@@ -310,14 +310,22 @@ jQuery(document).ready(function($) {
                     } );
 
                     //remplie le select
-                    column.data().unique().sort().each( function ( d, j ) {
-                        select.append( '<option value="'+d+'">'+d+'</option>' )
-                    } );
+                    var ready = (function(){
+                        column.data().unique().sort().each( function ( d, j ) {
+                            var cleanvalue = cleanStr(d);
+                            select.append( '<option value="'+cleanvalue+'">'+d+'</option>' );
+                        } );
+                    })();
 
-                    if (filter != "") {
-                        $(selector + ' option[value=' + filter + ']').attr('selected', 'selected');
-                        select.trigger("change");
-                    }
+                    $.when(select, ready).done( function () {
+                        if (filter != "") {
+                            var cleanfilter = cleanStr(filter).replace('-',' ');
+                            console.log(cleanfilter);
+                            $(selector + ' option[value="' + cleanfilter + '"]').attr('selected', 'selected');
+                            select.trigger("change");
+                        }
+                    });
+
                 } );
             }
         });
@@ -342,5 +350,20 @@ jQuery(document).ready(function($) {
         $("#searchbox").keyup(function() {
             table.search(this.value).draw();
         });
+
+        //remove accent and set lower case
+        function cleanStr(str) {
+            var accents    = 'ÀÁÂÃÄÅàáâãäåÒÓÔÕÕÖØòóôõöøÈÉÊËèéêëðÇçÐÌÍÎÏìíîïÙÚÛÜùúûüÑñŠšŸÿýŽž';
+            var accentsOut = "AAAAAAaaaaaaOOOOOOOooooooEEEEeeeeeCcDIIIIiiiiUUUUuuuuNnSsYyyZz";
+            str = str.split('');
+            var strLen = str.length;
+            var i, x;
+            for (i = 0; i < strLen; i++) {
+                if ((x = accents.indexOf(str[i])) != -1) {
+                    str[i] = accentsOut[x];
+                }
+            }
+            return str.join('').toLowerCase();
+        }
     }
 });

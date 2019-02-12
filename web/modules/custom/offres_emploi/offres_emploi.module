@@ -122,6 +122,20 @@ function offres_emploi_schema()
                 'default' => 0,
                 'description' => '',
             ),
+            'nbVue' => array(
+                'type' => 'int',
+                'size' => 'medium',
+                'not null' => TRUE,
+                'default' => 0,
+                'description' => ''
+            ),
+            'nbCandidature' => array(
+                'type' => 'int',
+                'size' => 'medium',
+                'not null' => TRUE,
+                'default' => 0,
+                'description' => ''
+            )
         ),
         'primary key' => array('id'),
         'unique keys' => array(
@@ -151,7 +165,6 @@ function offres_emploi_schema()
 }
 
 use Drupal\offres_emploi\Controller\OffresEmploiActionController;
-
 function offres_emploi_webform_element_hidden_alter(array &$element, \Drupal\Core\Form\FormStateInterface $form_state, array $context)
 {
     $route_match = \Drupal::service('current_route_match');

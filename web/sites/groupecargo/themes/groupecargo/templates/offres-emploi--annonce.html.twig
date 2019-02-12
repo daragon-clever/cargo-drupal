@@ -1,9 +1,14 @@
-{% for key, value in data %}
+{%  if data == 'false' %}
+    <p>L'annonce n'existe pas</p>
+{% else %}
+    {% for key, value in data %}
     {% if key in ['descriptionEntreprise','descriptionMission','descriptionProfil'] %}
-        <b>{{ key }}</b> : {{ value | raw }}
+    <b>{{ key }}</b> : {{ value | raw }}
     {% else %}
-        <b>{{ key }}</b> : {{ value }}
+    <b>{{ key }}</b> : {{ value }}
     {% endif %}
     <br />
-{% endfor %}
-<a href="/offres-emploi/postuler/{{ data.codeRecrutement }}"><button>POSTULER</button></a>
+    {% endfor %}
+    <a href="/offres-emploi/postuler/{{ data.codeRecrutement }}"><button>POSTULER</button></a>
+{% endif %}
+

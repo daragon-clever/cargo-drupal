@@ -344,6 +344,9 @@ jQuery(document).ready(function($) {
                 clickableRow();
             }
         });
+        $('#toutes-les-offres').on('draw.dt', function () {
+            clickableRow();
+        } );
 
         //date
         jQuery.extend( jQuery.fn.dataTableExt.oSort, {

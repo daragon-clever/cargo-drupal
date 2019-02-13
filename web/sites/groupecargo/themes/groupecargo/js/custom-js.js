@@ -268,8 +268,8 @@ jQuery(document).ready(function($) {
             //config
             dom: 'tp',
             language: {
-                url: "http://cdn.datatables.net/plug-ins/1.10.19/i18n/French.json",//todo
-                searchPlaceholder : "Rechercher une offre"
+                searchPlaceholder : "Rechercher une offre",
+                emptyTable: "Nous n'avons pour le moment aucune offre d'emploi à proposer"
             },
             //pages
             pagingType: "numbers",

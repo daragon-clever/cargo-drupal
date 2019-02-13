@@ -15,6 +15,7 @@ libraries:
   - groupecargo/slick
   - groupecargo/global-styling
   - groupecargo/datatables
+  - groupecargo/select2
 
 stylesheets-remove:
   - core/themes/stable/css/system/components/ajax-progress.module.css

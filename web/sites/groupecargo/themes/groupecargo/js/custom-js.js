@@ -262,8 +262,8 @@ jQuery(document).ready(function($) {
         });
     }
 
-    //PAGE OFFRE EMPLOI - AUDREY
-    if ($('.mon-container').length) {
+    //PAGE OFFRE EMPLOI - AUDREY - NICO
+    if ($('.listing-offres').length) {
         var table = $("#toutes-les-offres").DataTable({
             //config
             dom: 'tp',
@@ -327,6 +327,11 @@ jQuery(document).ready(function($) {
                     });
 
                 } );
+
+                // Select2 filters
+                $('.select-option select').select2({
+                    minimumResultsForSearch: Infinity
+                });
             }
         });
 
@@ -349,6 +354,11 @@ jQuery(document).ready(function($) {
         //search input
         $("#searchbox").keyup(function() {
             table.search(this.value).draw();
+        });
+
+        // Clickable full row
+        $(".clickable-row").click(function() {
+            window.location = $(this).data("href");
         });
 
         //remove accent and set lower case

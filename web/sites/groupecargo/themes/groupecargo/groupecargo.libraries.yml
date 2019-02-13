@@ -29,6 +29,16 @@ slick:
   dependencies:
     - core/jquery
 
+# Plugin select2
+select2:
+  css:
+    theme:
+      https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css: { type: external }
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js: { type: external }
+  dependencies:
+    - core/jquery
+
 # Plugin DataTables Ajax
 datatables:
   css:

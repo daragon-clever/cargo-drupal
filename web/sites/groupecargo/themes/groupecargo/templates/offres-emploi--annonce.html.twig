@@ -1,9 +1,17 @@
-{% for key, value in data %}
-    {% if key in ['descriptionEntreprise','descriptionMission','descriptionProfil'] %}
-        <b>{{ key }}</b> : {{ value | raw }}
-    {% else %}
-        <b>{{ key }}</b> : {{ value }}
-    {% endif %}
-    <br />
-{% endfor %}
-<a href="/offres-emploi/postuler/{{ data.codeRecrutement }}"><button>POSTULER</button></a>
+<div id="offre">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                {% for key, value in data %}
+                    {% if key in ['descriptionEntreprise','descriptionMission','descriptionProfil'] %}
+                        <b>{{ key }}</b> : {{ value | raw }}
+                    {% else %}
+                        <b>{{ key }}</b> : {{ value }}
+                    {% endif %}
+                    <br />
+                {% endfor %}
+                <a href="/offres-emploi/postuler/{{ data.codeRecrutement }}"><button>POSTULER</button></a>
+            </div>
+        </div>
+    </div>
+</div>

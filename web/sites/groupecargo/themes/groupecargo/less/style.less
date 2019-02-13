@@ -11,6 +11,7 @@
 // Style pour menu si log en tant qu'admin
 body {
   padding-top: 80px;
+  color: #232323;
 
   @media @tablet {
     padding-top: 65px;
@@ -1385,6 +1386,158 @@ p.bordered-left {
   }
 }
 
+#candidature-spontanee {
+  h1 {
+    margin-top: 30px;
+    padding: 0;
+  }
+
+  .imgs-bg > div:before {
+    display: none;
+  }
+
+  .block-text .txt {
+    background-color: rgba(35, 35, 35, 0.7);
+    color: white;
+    font-size: 24px;
+    padding: 20px;
+    margin-top: 30px;
+
+    a {
+      color: #f7e2a1;
+      text-decoration: underline;
+    }
+  }
+}
+
 .select2-search {
   display: none;
+}
+
+// OFFRES D'EMPLOI - LISTE
+.listing-offres {
+  padding-top: 30px;
+  font-size: 14px;
+
+  table.dataTable tbody th,
+  table.dataTable tbody td,
+  table.dataTable thead th,
+  table.dataTable thead td {
+    padding: 15px 0;
+    font-weight: normal;
+  }
+
+  table.dataTable thead th,
+  table.dataTable thead td,
+  table.dataTable.no-footer {
+    border-color: #d2d2d2;
+  }
+
+  tbody tr {
+    cursor: pointer;
+    transition: color 0.3s;
+    //.dimOpacityOnHover(0.7)
+
+    &:hover {
+      color: #cba52e;
+    }
+  }
+
+  td {
+    background-color: white !important;
+  }
+
+  thead tr {
+    color: #b3b3b3;
+  }
+
+  a {
+    color: #232323
+  }
+
+  h3 {
+    font-family: @spectral;
+    font-weight: 700;
+    font-size: 23px;
+    border-bottom: 1px solid;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+  }
+
+  select, #searchbox {
+    width: 100%;
+    margin: 5px 0;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #d2d2d2;
+  }
+
+  #searchbox {
+    background: url("../images/offres/picto-search.png") no-repeat center right 10px transparent;
+    padding-right: 35px;
+    padding-left: 15px;
+  }
+
+  .select2-container .select2-selection--single,
+  .select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 40px;
+    padding-left: 8px;
+  }
+
+  .select2-container--default .select2-selection--single {
+    border: 1px solid #d2d2d2;
+    border-radius: 0;
+  }
+
+  .select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: 40px;
+  }
+
+  .filtres-offres-emploi b {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    color: #b3b3b3;
+    display: block;
+  }
+
+  .dataTables_wrapper .dataTables_paginate {
+    text-align: center;
+    float: none;
+
+    .paginate_button {
+      color: #80807f !important;
+      background: none !important;
+      border: none !important;
+      border-radius: 0;
+      margin: 15px;
+      padding: 0;
+      min-width: 15px;
+      box-shadow: none !important;
+
+      &.current {
+        border-bottom: 1px solid !important;
+        font-weight: bold;
+      }
+
+      &:hover {
+        color: inherit !important;
+      }
+    }
+  }
+
+  table.dataTable thead .sorting,
+  table.dataTable thead .sorting_asc,
+  table.dataTable thead .sorting_desc,
+  table.dataTable thead .sorting_asc_disabled,
+  table.dataTable thead .sorting_desc_disabled {
+    background: none;
+  }
+}
+
+// OFFRE D'EMPLOI - FICHE
+#offre {
+  p, li, ul, span {
+    all: unset !important;
+  }
 }

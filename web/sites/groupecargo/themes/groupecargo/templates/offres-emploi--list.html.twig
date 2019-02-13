@@ -1,4 +1,4 @@
-<div class="container mon-container">
+<div class="container listing-offres">
     <div class="row">
         <div class="col-3">
             <h3>Filtrer</h3>
@@ -22,26 +22,26 @@
         <div class="col-9">
             <h3>Les postes à pourvoir</h3>
 
-            <table id="toutes-les-offres" class="display" style="width: 100%">
+            <table id="toutes-les-offres" class="display">
                 <thead>
-                <tr>
-                    <th>Poste</th>
-                    <th>Type de contrat</th>
-                    <th style="display: none;">Type de poste</th>
-                    <th>Date de publication</th>
-                    <th>Lieu</th>
-                    <th></th>
-                </tr>
+                    <tr>
+                        <th>Poste</th>
+                        <th>Type de contrat</th>
+                        <th style="display: none;">Type de poste</th>
+                        <th>Date de publication</th>
+                        <th>Lieu</th>
+                        {#<th></th>#}
+                    </tr>
                 </thead>
                 <tbody>
                 {% for offre in data %}
-                    <tr>
+                    <tr class="clickable-row" data-href="/offres-emploi/{{ offre.codeRecrutement }}">
                         <td>{{ offre.intitulePoste }}</td>
                         <td>{{ offre.typeContrat }}</td>
                         <td style="display: none;">{{ offre.metier }}</td>
                         <td>{{ offre.dateOuverturePoste|date("d/m/Y") }}</td>
                         <td>{{ offre.lieuRecrutement }}</td>
-                        <td><a href="/offres-emploi/{{ offre.codeRecrutement }}">Voir l'annonce</a> </td>
+                        {#<td><a href="/offres-emploi/{{ offre.codeRecrutement }}">Voir l'annonce</a> </td>#}
                     </tr>
                 {% endfor %}
                 </tbody>

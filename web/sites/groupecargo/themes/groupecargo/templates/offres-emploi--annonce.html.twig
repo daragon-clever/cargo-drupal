@@ -1,21 +1,84 @@
 <div id="offre">
     <div class="container">
+        {%  if data == 'false' %}
+            <p>L'annonce n'existe pas</p>
+        {% else %}
         <div class="row">
             <div class="col">
-                {%  if data == 'false' %}
-                    <p>L'annonce n'existe pas</p>
-                {% else %}
-                    {% for key, value in data %}
-                    {% if key in ['descriptionEntreprise','descriptionMission','descriptionProfil'] %}
-                    <b>{{ key }}</b> : {{ value | raw }}
-                    {% else %}
-                    <b>{{ key }}</b> : {{ value }}
-                    {% endif %}
-                    <br />
-                    {% endfor %}
-                    <a href="/offres-emploi/postuler/{{ data.codeRecrutement }}"><button>POSTULER</button></a>
-                {% endif %}
+                <div>
+                    <h1>{{ data.intitulePoste }}</h1>
+                </div>
             </div>
         </div>
+        <div class="row detail-offre">
+            <div class="col-2 left">
+                <div>
+                    <p><b>Code référence :</b> {{ data.codeRecrutement }}</p>
+                </div>
+                <div>
+                    <b>Publiée le :</b> {{ data.dateCreationDemande|date("d/m/Y") }}
+                </div>
+                <div>
+                    <p><b>Date d'ouverture du poste :</b> {{ data.dateOuverturePoste|date("d/m/Y") }}</p>
+                </div>
+                <div>
+                    <p><b>Société :</b> {{ data.filialeSociete }}</p>
+                </div>
+                <div>
+                    <p><b>Lieu :</b> {{ data.lieuRecrutement }}</p>
+                </div>
+                <div>
+                    <p><b>Type de contrat :</b> {{ data.typeContrat }}</p>
+                </div>
+                {% if data.dureeContrat %}
+                <div>
+                    <p>
+                        <b>Durée du contrat :</b>
+                        {% if data.dureeContrat == 12 %}
+                            1 an
+                        {% elseif data.dureeContrat == 24 %}
+                            2 ans
+                        {% else %}
+                            {{ data.dureeContrat }} mois
+                        {% endif %}
+                    </p>
+                </div>
+                {% endif %}
+            </div>
+            <div class="col-10 right">
+                {% if data.categorie %}
+                <div>
+                    <p><b>Niveau de poste :</b> {{ data.categorie }}</p>
+                    {% if data.metier %}| <p><b>Type de poste :</b> {{ data.metier }}{% endif %}</p>
+                </div>
+                {% endif %}
+                {% if data.descriptionEntreprise %}
+                <div>
+                    <p><b>L'entreprise :</b> {{ data.descriptionEntreprise | raw}}</p>
+                </div>
+                {% endif %}
+                {% if data.descriptionMission %}
+                <div>
+                    <p><b>Mission :</b> {{ data.descriptionMission | raw }}</p>
+                </div>
+                {% endif %}
+                {% if data.descriptionProfil %}
+                <div>
+                    <p><b>Profil :</b> {{ data.descriptionProfil | raw }}</p>
+                </div>
+                {% endif %}
+                <a class="btn-cta" href="/offres-emploi/postuler/{{ data.codeRecrutement }}"><button>POSTULER</button></a>
+                <a class="btn-cta back" href="/offres-emploi"><button>Retour aux offres</button></a>
+                {#{% for key, value in data %}#}
+                {#{% if key in ['descriptionEntreprise','descriptionMission','descriptionProfil'] %}#}
+                {#<b>{{ key }}</b> : {{ value | raw }}#}
+                {#{% else %}#}
+                {#<b>{{ key }}</b> : {{ value }}#}
+                {#{% endif %}#}
+                {#<br />#}
+                {#{% endfor %}#}
+            </div>
+        </div>
+        {% endif %}
     </div>
 </div>

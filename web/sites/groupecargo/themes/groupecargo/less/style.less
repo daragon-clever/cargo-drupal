@@ -1248,10 +1248,6 @@ p.bordered-left {
       height: 100%;
       top: 0;
     }
-
-    .select2-search {
-      display: none;
-    }
   }
 
   .form-submit {
@@ -1386,7 +1382,7 @@ p.bordered-left {
   }
 }
 
-#candidature-spontanee {
+#candidature {
   h1 {
     margin-top: 30px;
     padding: 0;
@@ -1411,7 +1407,7 @@ p.bordered-left {
 }
 
 .select2-search {
-  display: none;
+  display: none !important;
 }
 
 // OFFRES D'EMPLOI - LISTE
@@ -1537,7 +1533,73 @@ p.bordered-left {
 
 // OFFRE D'EMPLOI - FICHE
 #offre {
-  p, li, ul, span {
+  p, li, ul, span, strong {
+    //font-size: 14px;
+    //font-weight: normal;
     all: unset !important;
+  }
+
+  h1 {
+    font-family: @spectral;
+    border-bottom: 1px solid;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  .detail-offre {
+    & > div > div {
+      margin: 15px 0;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .left {
+      font-size: 13px;
+      background: #f2f2f2;
+      padding: 15px;
+      color: #7a7a7a;
+    }
+
+    .btn-cta {
+      display: inline-block;
+
+      &:hover {
+        text-decoration: none;
+        .dimOpacityOnHover(0.7);
+      }
+
+      button {
+        background-color: #232323;
+        color: white;
+        border: none;
+        box-shadow: none;
+        padding: 0 25px;
+        line-height: 40px;
+        cursor: pointer;
+      }
+
+      &.back button {
+        background-color: #5c8099;
+        margin-left: 12px;
+      }
+    }
+  }
+}
+
+// OFFRE D'EMPLOI - CANDIDATURE FORM
+.candidature-offre {
+  h1 {
+    font-family: @spectral;
+    border-bottom: 1px solid;
+    padding-bottom: 20px;
+    margin-bottom: 50px;
+    margin-top: 15px;
   }
 }

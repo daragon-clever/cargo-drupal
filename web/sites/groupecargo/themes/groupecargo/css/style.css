@@ -1289,9 +1289,6 @@ p.bordered-left {
   height: 100%;
   top: 0;
 }
-#webform-submission-candidature-spontanee-add-form .select2-container .select2-search {
-  display: none;
-}
 #webform-submission-candidature-spontanee-add-form .form-submit {
   background: #232323;
   border: none;
@@ -1405,26 +1402,26 @@ p.bordered-left {
 #webform-submission-candidature-spontanee-add-form input:hover::placeholder {
   color: white;
 }
-#candidature-spontanee h1 {
+#candidature h1 {
   margin-top: 30px;
   padding: 0;
 }
-#candidature-spontanee .imgs-bg > div:before {
+#candidature .imgs-bg > div:before {
   display: none;
 }
-#candidature-spontanee .block-text .txt {
+#candidature .block-text .txt {
   background-color: rgba(35, 35, 35, 0.7);
   color: white;
   font-size: 24px;
   padding: 20px;
   margin-top: 30px;
 }
-#candidature-spontanee .block-text .txt a {
+#candidature .block-text .txt a {
   color: #f7e2a1;
   text-decoration: underline;
 }
 .select2-search {
-  display: none;
+  display: none !important;
 }
 .listing-offres {
   padding-top: 30px;
@@ -1529,6 +1526,59 @@ p.bordered-left {
 #offre p,
 #offre li,
 #offre ul,
-#offre span {
+#offre span,
+#offre strong {
   all: unset !important;
+}
+#offre h1 {
+  font-family: 'Spectral', serif;;
+  border-bottom: 1px solid;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+#offre .detail-offre > div > div {
+  margin: 15px 0;
+}
+#offre .detail-offre > div > div:first-child {
+  margin-top: 0;
+}
+#offre .detail-offre > div > div:last-child {
+  margin-bottom: 0;
+}
+#offre .detail-offre .left {
+  font-size: 13px;
+  background: #f2f2f2;
+  padding: 15px;
+  color: #7a7a7a;
+}
+#offre .detail-offre .btn-cta {
+  display: inline-block;
+}
+#offre .detail-offre .btn-cta:hover {
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+#offre .detail-offre .btn-cta:hover:hover {
+  opacity: 0.7;
+}
+#offre .detail-offre .btn-cta button {
+  background-color: #232323;
+  color: white;
+  border: none;
+  box-shadow: none;
+  padding: 0 25px;
+  line-height: 40px;
+  cursor: pointer;
+}
+#offre .detail-offre .btn-cta.back button {
+  background-color: #5c8099;
+  margin-left: 12px;
+}
+.candidature-offre h1 {
+  font-family: 'Spectral', serif;;
+  border-bottom: 1px solid;
+  padding-bottom: 20px;
+  margin-bottom: 50px;
+  margin-top: 15px;
 }

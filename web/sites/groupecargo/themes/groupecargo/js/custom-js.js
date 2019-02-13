@@ -262,14 +262,21 @@ jQuery(document).ready(function($) {
         });
     }
 
-    //PAGE OFFRE EMPLOI - AUDREY
-    if ($('.mon-container').length) {
+    //PAGE OFFRE EMPLOI - AUDREY - NICO
+    if ($('.listing-offres').length) {
+        // Clickable full row
+        var clickableRow = function() {
+            $(".clickable-row").click(function() {
+                window.location = $(this).data("href");
+            });
+        };
+
         var table = $("#toutes-les-offres").DataTable({
             //config
             dom: 'tp',
             language: {
-                url: "http://cdn.datatables.net/plug-ins/1.10.19/i18n/French.json",//todo
-                searchPlaceholder : "Rechercher une offre"
+                searchPlaceholder : "Rechercher une offre",
+                emptyTable: "Nous n'avons pour le moment aucune offre d'emploi à proposer"
             },
             //pages
             pagingType: "numbers",
@@ -327,6 +334,14 @@ jQuery(document).ready(function($) {
                     });
 
                 } );
+
+                // Select2 filters
+                $('.select-option select').select2({
+                    minimumResultsForSearch: Infinity
+                });
+
+                // Clickable Row
+                clickableRow();
             }
         });
 

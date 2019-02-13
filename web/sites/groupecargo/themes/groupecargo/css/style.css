@@ -221,6 +221,7 @@
 }
 body {
   padding-top: 80px;
+  color: #232323;
 }
 @media only screen and (max-width: 991px) {
   body {
@@ -1288,9 +1289,6 @@ p.bordered-left {
   height: 100%;
   top: 0;
 }
-#webform-submission-candidature-spontanee-add-form .select2-container .select2-search {
-  display: none;
-}
 #webform-submission-candidature-spontanee-add-form .form-submit {
   background: #232323;
   border: none;
@@ -1404,6 +1402,183 @@ p.bordered-left {
 #webform-submission-candidature-spontanee-add-form input:hover::placeholder {
   color: white;
 }
-.select2-search {
+#candidature h1 {
+  margin-top: 30px;
+  padding: 0;
+}
+#candidature .imgs-bg > div:before {
   display: none;
+}
+#candidature .block-text .txt {
+  background-color: rgba(35, 35, 35, 0.7);
+  color: white;
+  font-size: 24px;
+  padding: 20px;
+  margin-top: 30px;
+}
+#candidature .block-text .txt a {
+  color: #f7e2a1;
+  text-decoration: underline;
+}
+.select2-search {
+  display: none !important;
+}
+.listing-offres {
+  padding-top: 30px;
+  font-size: 14px;
+}
+.listing-offres table.dataTable tbody th,
+.listing-offres table.dataTable tbody td,
+.listing-offres table.dataTable thead th,
+.listing-offres table.dataTable thead td {
+  padding: 15px 0;
+  font-weight: normal;
+}
+.listing-offres table.dataTable thead th,
+.listing-offres table.dataTable thead td,
+.listing-offres table.dataTable.no-footer {
+  border-color: #d2d2d2;
+}
+.listing-offres tbody tr {
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.listing-offres tbody tr:hover {
+  color: #cba52e;
+}
+.listing-offres td {
+  background-color: white !important;
+}
+.listing-offres thead tr {
+  color: #b3b3b3;
+}
+.listing-offres a {
+  color: #232323;
+}
+.listing-offres h3 {
+  font-family: 'Spectral', serif;;
+  font-weight: 700;
+  font-size: 23px;
+  border-bottom: 1px solid;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+}
+.listing-offres select,
+.listing-offres #searchbox {
+  width: 100%;
+  margin: 5px 0;
+  height: 40px;
+  padding: 10px;
+  border: 1px solid #d2d2d2;
+}
+.listing-offres #searchbox {
+  background: url("../images/offres/picto-search.png") no-repeat center right 10px transparent;
+  padding-right: 35px;
+  padding-left: 15px;
+}
+.listing-offres .select2-container .select2-selection--single,
+.listing-offres .select2-container--default .select2-selection--single .select2-selection__arrow {
+  height: 40px;
+  padding-left: 8px;
+}
+.listing-offres .select2-container--default .select2-selection--single {
+  border: 1px solid #d2d2d2;
+  border-radius: 0;
+}
+.listing-offres .select2-container--default .select2-selection--single .select2-selection__rendered {
+  line-height: 40px;
+}
+.listing-offres .filtres-offres-emploi b {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  color: #b3b3b3;
+  display: block;
+}
+.listing-offres .dataTables_wrapper .dataTables_paginate {
+  text-align: center;
+  float: none;
+}
+.listing-offres .dataTables_wrapper .dataTables_paginate .paginate_button {
+  color: #80807f !important;
+  background: none !important;
+  border: none !important;
+  border-radius: 0;
+  margin: 15px;
+  padding: 0;
+  min-width: 15px;
+  box-shadow: none !important;
+}
+.listing-offres .dataTables_wrapper .dataTables_paginate .paginate_button.current {
+  border-bottom: 1px solid !important;
+  font-weight: bold;
+}
+.listing-offres .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  color: inherit !important;
+}
+.listing-offres table.dataTable thead .sorting,
+.listing-offres table.dataTable thead .sorting_asc,
+.listing-offres table.dataTable thead .sorting_desc,
+.listing-offres table.dataTable thead .sorting_asc_disabled,
+.listing-offres table.dataTable thead .sorting_desc_disabled {
+  background: none;
+}
+#offre p,
+#offre li,
+#offre ul,
+#offre span,
+#offre strong {
+  all: unset !important;
+}
+#offre h1 {
+  font-family: 'Spectral', serif;;
+  border-bottom: 1px solid;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+#offre .detail-offre > div > div {
+  margin: 15px 0;
+}
+#offre .detail-offre > div > div:first-child {
+  margin-top: 0;
+}
+#offre .detail-offre > div > div:last-child {
+  margin-bottom: 0;
+}
+#offre .detail-offre .left {
+  font-size: 13px;
+  background: #f2f2f2;
+  padding: 15px;
+  color: #7a7a7a;
+}
+#offre .detail-offre .btn-cta {
+  display: inline-block;
+}
+#offre .detail-offre .btn-cta:hover {
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+#offre .detail-offre .btn-cta:hover:hover {
+  opacity: 0.7;
+}
+#offre .detail-offre .btn-cta button {
+  background-color: #232323;
+  color: white;
+  border: none;
+  box-shadow: none;
+  padding: 0 25px;
+  line-height: 40px;
+  cursor: pointer;
+}
+#offre .detail-offre .btn-cta.back button {
+  background-color: #5c8099;
+  margin-left: 12px;
+}
+.candidature-offre h1 {
+  font-family: 'Spectral', serif;;
+  border-bottom: 1px solid;
+  padding-bottom: 20px;
+  margin-bottom: 50px;
+  margin-top: 15px;
 }

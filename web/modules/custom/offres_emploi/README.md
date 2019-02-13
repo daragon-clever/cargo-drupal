@@ -4,6 +4,14 @@ Ce module affiche les offres d'emploi de :
 * toutes les sociétés pour le site Cargo
 * de la société du site, pour un site précis (ferme Drupal)
 
+## Installation
+
+1. Installez le module.
+2. Exécutez l'url '/demande-recrutement/import' afin d'importer les offres d'emploi dans la BDD.
+3. Créez un Webform avec pour ID 'postuler_annonce'.
+4. Copiez/Collez les 2 champs hidden (offre et nom_offre) du YML d'un site existant.
+5. Ajouter le handler "OffresEmploiHandler" à ce formulaire. Aucune config à réaliser.
+
 ## Developpement
 
 Il y a un cron qui passe tous les jours pour :

@@ -195,18 +195,6 @@ jQuery(document).ready(function($) {
     // NAV PAGE METIER
     if ($("#jobs").length) {
 
-        /* var elementHeights = $('.job').map(function() {
-            return $(this).height();
-        }).get();
-
-        var maxHeight = Math.max.apply(null, elementHeights);
-
-        var jobsHeightAjust = function() {
-            $("#jobs").height(maxHeight + 125);
-        };
-
-        jobsHeightAjust(); */
-
         var jobsNavItem = $(".navigation a");
 
         jobsNavItem.on("click", function (e) {

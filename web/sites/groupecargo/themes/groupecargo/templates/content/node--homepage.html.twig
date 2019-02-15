@@ -74,11 +74,11 @@
         <div class="gallery-logo row">
             <div class="col">
                 <ul class="items">
-                    {% for field in content.field_homepage_gallery_logo['#items'] %}
-                        <li class="item">
+                    {% for field in content.field_homepage_gallery_logo['#items'] %}<!-- fix
+                        --><li class="item">
                             <img alt="{{ field.alt }}" src="{{ file_url(field.entity.fileuri) }}"/>
-                        </li>
-                    {% endfor %}
+                        </li><!-- fix
+                    -->{% endfor %}
                 </ul>
             </div>
         </div>

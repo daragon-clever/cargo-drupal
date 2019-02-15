@@ -887,7 +887,6 @@ p.bordered-left {
 }
 #homepage .gallery-logo li {
   display: inline-block;
-  padding: 0 50px;
   position: relative;
   z-index: -1;
 }
@@ -900,6 +899,9 @@ p.bordered-left {
   top: 30px;
   right: 0;
   background-color: #c8c8c8;
+}
+#homepage .gallery-logo li img {
+  margin: 0 50px;
 }
 #qsn .content .top h2 {
   margin-bottom: 0;
@@ -1536,6 +1538,7 @@ p.bordered-left {
   padding-bottom: 20px;
   margin-bottom: 20px;
   margin-top: 20px;
+  font-size: 2rem;
 }
 #offre .detail-offre > div > div {
   margin: 15px 0;
@@ -1581,4 +1584,5 @@ p.bordered-left {
   padding-bottom: 20px;
   margin-bottom: 50px;
   margin-top: 15px;
+  font-size: 2rem;
 }

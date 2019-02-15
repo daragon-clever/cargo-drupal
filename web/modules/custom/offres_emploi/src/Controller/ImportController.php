@@ -72,11 +72,23 @@ class ImportController extends ControllerBase{
         foreach ($arr_link as $keyDB => $keyJSON) {
             if (isset($offre[$keyJSON])) {
                 if (array_search($keyJSON, array("","DescriptionEntreprise","DescriptionMission","DescriptionProfil"))) {
-                    $arr_insert[$keyDB] = preg_replace(
+                    $desc = preg_replace(
                         '/ (style=("|\')(.*?)("|\'))|(align=("|\')(.*?)("|\'))/',
                         '',
-                        $offre[$keyJSON]
-                    );
+                        $offre[$keyJSON]);
+                    $search = [
+                        "",
+                        "",
+                        ""
+                    ];
+                    $replacements = [
+                        "...",
+                        "'",
+                        "oe"
+                    ];
+                    $desc = str_replace($search, $replacements, $desc);
+
+                    $arr_insert[$keyDB] = $desc;
                 } else {
                     $arr_insert[$keyDB] = $offre[$keyJSON];
                 }

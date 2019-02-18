@@ -471,10 +471,24 @@ footer ul li a {
   display: block;
   font-weight: 700;
   font-size: 13px;
+  position: relative;
 }
 footer ul li a:hover {
   color: white;
   text-decoration: none;
+}
+footer ul li a.linkedin {
+  padding-left: 30px;
+}
+footer ul li a.linkedin:before {
+  background: url("../images/footer/picto_linkedin.png") no-repeat center transparent;
+  height: 18px;
+  width: 19px;
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 30px;
+  left: 0;
 }
 .full-width-bg {
   margin-left: -15px;
@@ -759,7 +773,7 @@ p.bordered-left {
   }
 }
 #homepage .galery .block-txt li.highlight {
-  color: #d7ab26;
+  color: #4cbfc6;
   font-size: 24px;
 }
 @media (max-width: 1024px) {
@@ -786,26 +800,26 @@ p.bordered-left {
 #homepage .galery .block-txt .corner.topleft {
   top: 0;
   left: 15px;
-  border-top: 1px solid #d7ab26;
-  border-left: 1px solid #d7ab26;
+  border-top: 1px solid #4cbfc6;
+  border-left: 1px solid #4cbfc6;
 }
 #homepage .galery .block-txt .corner.topright {
   top: 0;
   right: 15px;
-  border-top: 1px solid #d7ab26;
-  border-right: 1px solid #d7ab26;
+  border-top: 1px solid #4cbfc6;
+  border-right: 1px solid #4cbfc6;
 }
 #homepage .galery .block-txt .corner.bottomleft {
   bottom: 0;
   left: 15px;
-  border-bottom: 1px solid #d7ab26;
-  border-left: 1px solid #d7ab26;
+  border-bottom: 1px solid #4cbfc6;
+  border-left: 1px solid #4cbfc6;
 }
 #homepage .galery .block-txt .corner.bottomright {
   bottom: 0;
   right: 15px;
-  border-bottom: 1px solid #d7ab26;
-  border-right: 1px solid #d7ab26;
+  border-bottom: 1px solid #4cbfc6;
+  border-right: 1px solid #4cbfc6;
 }
 #homepage .block-bottom {
   margin-top: 50px;
@@ -1525,20 +1539,18 @@ p.bordered-left {
 .listing-offres table.dataTable thead .sorting_desc_disabled {
   background: none;
 }
-#offre p,
-#offre li,
-#offre ul,
-#offre span,
-#offre strong {
-  all: unset !important;
+#offre {
+  font-size: 14px;
 }
-#offre h1 {
+#offre h1,
+#offre h2 {
   font-family: 'Spectral', serif;;
-  border-bottom: 1px solid;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
+  border-bottom: 1px solid #d2d2d2;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
   margin-top: 20px;
-  font-size: 2rem;
+  font-size: 1.6rem;
+  font-weight: 600;
 }
 #offre .detail-offre > div > div {
   margin: 15px 0;
@@ -1549,34 +1561,76 @@ p.bordered-left {
 #offre .detail-offre > div > div:last-child {
   margin-bottom: 0;
 }
-#offre .detail-offre .left {
-  font-size: 13px;
-  background: #f2f2f2;
-  padding: 15px;
-  color: #7a7a7a;
+#offre .detail-offre .left .info-title {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  color: #b3b3b3;
+  display: block;
+  font-weight: bold;
 }
-#offre .detail-offre .btn-cta {
-  display: inline-block;
+#offre .detail-offre .left .info-content {
+  color: #232323;
+  border: 1px solid #d2d2d2;
+  height: 40px;
+  line-height: 40px;
+  padding-left: 20px;
+  width: 100%;
+  display: block;
+  font-weight: 500;
 }
-#offre .detail-offre .btn-cta:hover {
+#offre .detail-offre .left .btn-cta {
+  display: block;
+  margin-top: 20px;
+}
+#offre .detail-offre .left .btn-cta:hover {
   text-decoration: none;
   transition: opacity 0.3s;
 }
-#offre .detail-offre .btn-cta:hover:hover {
+#offre .detail-offre .left .btn-cta:hover:hover {
   opacity: 0.7;
 }
-#offre .detail-offre .btn-cta button {
-  background-color: #232323;
+#offre .detail-offre .left .btn-cta button {
+  width: 100%;
+  background-color: #4cbfc6;
   color: white;
   border: none;
   box-shadow: none;
   padding: 0 25px;
   line-height: 40px;
   cursor: pointer;
+  font-weight: 500;
+  position: relative;
 }
-#offre .detail-offre .btn-cta.back button {
-  background-color: #5c8099;
-  margin-left: 12px;
+#offre .detail-offre .left .btn-cta button:before {
+  background: url("../images/offres/picto-checked.png") no-repeat center transparent;
+  height: 13px;
+  width: 17px;
+  position: absolute;
+  left: 20px;
+  display: block;
+  content: "";
+  top: 14px;
+}
+#offre .detail-offre .right b.title {
+  text-transform: uppercase;
+  border-bottom: 1px solid;
+}
+#offre .detail-offre .right .txt-grey {
+  color: #b3b3b3;
+  font-weight: 500;
+}
+#offre .detail-offre .right br {
+  display: none;
+}
+#offre .detail-offre .right a.back {
+  color: #4cbfc6;
+  border-bottom: 1px solid;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+#offre .detail-offre .right a.back:hover {
+  opacity: 0.8;
 }
 .candidature-offre h1 {
   font-family: 'Spectral', serif;;
@@ -1584,5 +1638,5 @@ p.bordered-left {
   padding-bottom: 20px;
   margin-bottom: 50px;
   margin-top: 15px;
-  font-size: 2rem;
+  font-size: 1.9rem;
 }

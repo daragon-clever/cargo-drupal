@@ -296,10 +296,26 @@ footer {
         display: block;
         font-weight: 700;
         font-size: 13px;
+        position: relative;
 
         &:hover {
           color: white;
           text-decoration: none;
+        }
+
+        &.linkedin {
+          padding-left: 30px;
+
+          &:before {
+            background: url("../images/footer/picto_linkedin.png") no-repeat center transparent;
+            height: 18px;
+            width: 19px;
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+          }
         }
       }
     }
@@ -625,7 +641,7 @@ p.bordered-left {
         }
 
         &.highlight {
-          color: #d7ab26;
+          color: @turquoise;
           font-size: 24px;
 
           @media (max-width: 1024px) {
@@ -655,29 +671,29 @@ p.bordered-left {
         &.topleft {
           top: 0;
           left: 15px;
-          border-top: 1px solid #d7ab26;
-          border-left: 1px solid #d7ab26;
+          border-top: 1px solid @turquoise;
+          border-left: 1px solid @turquoise;
         }
 
         &.topright {
           top: 0;
           right: 15px;
-          border-top: 1px solid #d7ab26;
-          border-right: 1px solid #d7ab26;
+          border-top: 1px solid @turquoise;
+          border-right: 1px solid @turquoise;
         }
 
         &.bottomleft {
           bottom: 0;
           left: 15px;
-          border-bottom: 1px solid #d7ab26;
-          border-left: 1px solid #d7ab26;
+          border-bottom: 1px solid @turquoise;
+          border-left: 1px solid @turquoise;
         }
 
         &.bottomright {
           bottom: 0;
           right: 15px;
-          border-bottom: 1px solid #d7ab26;
-          border-right: 1px solid #d7ab26;
+          border-bottom: 1px solid @turquoise;
+          border-right: 1px solid @turquoise;
         }
       }
     }
@@ -1535,17 +1551,16 @@ p.bordered-left {
 
 // OFFRE D'EMPLOI - FICHE
 #offre {
-  p, li, ul, span, strong {
-    all: unset !important;
-  }
+  font-size: 14px;
 
-  h1 {
+  h1, h2 {
     font-family: @spectral;
-    border-bottom: 1px solid;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
+    border-bottom: 1px solid #d2d2d2;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
     margin-top: 20px;
-    font-size: 2rem;
+    font-size: 1.6rem;
+    font-weight: 600;
   }
 
   .detail-offre {
@@ -1562,33 +1577,81 @@ p.bordered-left {
     }
 
     .left {
-      font-size: 13px;
-      background: #f2f2f2;
-      padding: 15px;
-      color: #7a7a7a;
+      .info-title {
+        margin-top: 15px;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+        color: #b3b3b3;
+        display: block;
+        font-weight: bold;
+      }
+
+      .info-content {
+        color: #232323;
+        border:1px solid #d2d2d2;
+        height: 40px;
+        line-height: 40px;
+        padding-left: 20px;
+        width: 100%;
+        display: block;
+        font-weight: 500;
+      }
+
+      .btn-cta {
+        display: block;
+        margin-top: 20px;
+
+        &:hover {
+          text-decoration: none;
+          .dimOpacityOnHover(0.7);
+        }
+
+        button {
+          width: 100%;
+          background-color: #4cbfc6;
+          color: white;
+          border: none;
+          box-shadow: none;
+          padding: 0 25px;
+          line-height: 40px;
+          cursor: pointer;
+          font-weight: 500;
+          position: relative;
+
+          &:before {
+            background: url("../images/offres/picto-checked.png") no-repeat center transparent;
+            height: 13px;
+            width: 17px;
+            position: absolute;
+            left: 20px;
+            display: block;
+            content: "";
+            top: 14px;
+          }
+        }
+      }
     }
 
-    .btn-cta {
-      display: inline-block;
+    .right {
+      b.title {
+        text-transform: uppercase;
+        border-bottom: 1px solid;
+      }
 
-      &:hover {
+      .txt-grey {
+        color: #b3b3b3;
+        font-weight: 500;
+      }
+
+      br {
+        display: none;
+      }
+
+      a.back {
+        color: #4cbfc6;
+        border-bottom: 1px solid;
         text-decoration: none;
-        .dimOpacityOnHover(0.7);
-      }
-
-      button {
-        background-color: #232323;
-        color: white;
-        border: none;
-        box-shadow: none;
-        padding: 0 25px;
-        line-height: 40px;
-        cursor: pointer;
-      }
-
-      &.back button {
-        background-color: #5c8099;
-        margin-left: 12px;
+        .dimOpacityOnHover(0.8)
       }
     }
   }
@@ -1602,6 +1665,6 @@ p.bordered-left {
     padding-bottom: 20px;
     margin-bottom: 50px;
     margin-top: 15px;
-    font-size: 2rem;
+    font-size: 1.9rem;
   }
 }

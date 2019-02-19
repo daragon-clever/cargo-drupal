@@ -23,18 +23,38 @@
         <div class="container content">
             <div class="row">
                 <div class="col">
-                    <div class="top">
+                    <div class="part1">
                         <h2 id="part1">{{ content.field_qsn_content_top_title.0 }}</h2>
                         <div class="row imgs-wrapper">
-                            {% for field in content.field_qsn_content_top_imgs['#items'] %}
-                                <div class="col-12 col-md-6 col-xl-4 text-center">
-                                    <img class="img-fluid" src="{{ file_url(field.entity.fileuri) }}" alt="{{ field.alt }}" />
-                                </div>
-                            {% endfor %}
+                            {#{% for field in content.field_qsn_content_top_imgs['#items'] %}#}
+                                {#<div class="col-12 col-md-6 col-xl-4 text-center">#}
+                                    {#<img class="img-fluid" src="{{ file_url(field.entity.fileuri) }}" alt="{{ field.alt }}" />#}
+                                {#</div>#}
+                            {#{% endfor %}#}
+                            <div class="col-12 col-md-6">
+                                <img class="img-fluid" src="{{ content.field_qsn_content_top_imgs[0] }}"
+                                     alt="{{ node.field_qsn_content_top_imgs[0].alt }}" />
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <img class="img-fluid" src="{{ content.field_qsn_content_top_imgs[1] }}"
+                                     alt="{{ node.field_qsn_content_top_imgs[1].alt }}" />
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <img class="img-fluid" src="{{ content.field_qsn_content_top_imgs[2] }}"
+                                     alt="{{ node.field_qsn_content_top_imgs[2].alt }}" />
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <img class="img-fluid" src="{{ content.field_qsn_content_top_imgs[3] }}"
+                                     alt="{{ node.field_qsn_content_top_imgs[3].alt }}" />
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <img class="img-fluid" src="{{ content.field_qsn_content_top_imgs[4] }}"
+                                     alt="{{ node.field_qsn_content_top_imgs[4].alt }}" />
+                            </div>
                         </div>
                     </div>
 
-                    <div class="middle">
+                    <div class="part2">
                         <h2 id="part2">{{ content.field_qsn_content_middle_title.0 }}</h2>
                         <div class="inner">
                             <img class="img-fluid" src="{{ content.field_qsn_content_middle_img.0 }}"
@@ -42,7 +62,18 @@
                         </div>
                     </div>
 
-                    <div class="bottom">
+                    <div class="part4">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6">
+                                <a class="darkgrey" href="" title=""><span>Valeurs</span></a>
+                            </div>
+                            <div class="col-xs-12 col-sm-6">
+                                <a class="lightgrey" href="" title=""><span>Innovation</span></a>
+                            </div>
+                        </div>
+                    </div>
+
+{#                    <div class="part3">
                         <h2 id="part3">{{ content.field_qsn_content_bottom_title.0 }}</h2>
                         <div class="row">
                             <div class="col-12 col-sm-5 img-wrapper">
@@ -54,7 +85,7 @@
                                 {{ content.field_qsn_content_bottom_txt }}
                             </div>
                         </div>
-                    </div>
+                    </div>#}
                 </div>
             </div>
         </div>

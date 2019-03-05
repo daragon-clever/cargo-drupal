@@ -4,103 +4,72 @@ namespace Drupal\offres_emploi\Controller;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Url;
 
-class ImportController extends ControllerBase{
+class ImportController extends ControllerBase
+{
+    public $siteName;
+    public $table;
+    private $conn;
 
-    protected $table;
-    protected $connection;
-
-    function __construct()
+    public function __construct()
     {
+        $this->siteName = $this->getSiteName();
         $this->table = "offres_emploi";
-        if ($this->getSiteName() == "groupecargo") {
-            $this->connection = \Drupal::database();
-        } else {
-            $this->connection = \Drupal::database();
-            //$newdb = \Drupal\Core\Database\Database::setActiveConnection('external');
-            //$this->connection = \Drupal::database();
-//            $this->connection = \Drupal\Core\Database\Database::getConnection();
-//            $this->connection = \Drupal\Core\Database\Database::getConnection('default', 'external');
-        }
+        $this->setDatabaseConn();
     }
 
-    function execute()
+    private function getSiteName() {
+        $sitePath = \Drupal::service('site.path');
+        $sitePath = explode('/', $sitePath);
+        $siteName = $sitePath[1];
+
+        return $siteName;
+    }
+
+    private function setDatabaseConn()
+    {
+        if ($this->siteName == "groupecargo") {
+            $this->conn = \Drupal::database();
+        } else {
+            Database::setActiveConnection('external');
+            $this->conn = Database::getConnection();
+        }
+
+        return $this->conn;
+    }
+
+    public function execute()
     {
         $path = drupal_get_path('module', 'offres_emploi');
-        $json_data = '['.rtrim(utf8_encode(file_get_contents($path.'/data/DemandeRecrutement.json')),',').']';
-        $data = json_decode($json_data,true);
+        $getContents = file_get_contents($path.'/data/DemandeRecrutement.json');
+        $cleanContent = '['.rtrim(utf8_encode($getContents),',').']';
+        $data = json_decode($cleanContent,true);
 
-        foreach ($data as $offre)
-        {
-            $my_data = array();
-            $this->pushDataInMyArray($my_data,$offre);//adapt data for database
-            $my_data['active'] = 1;
+        $allRefsActive = array();
+        foreach ($data as $offre) {
+            $myData = array();
+            $this->pushDataInMyArray($myData,$offre);//adapt data for database
+            $myData['active'] = 1;
 
-            $all_ref_active[] = $my_data['codeRecrutement'];
+            $allRefsActive[] = $myData['codeRecrutement'];
 
-            if ($this->searchOffre($my_data) === true) {
-                $this->updateOffre($my_data);
+            if ($this->searchOffre($myData['codeRecrutement']) === true) {
+                $this->updateOffre($myData);
             } else {
-                $this->insertOffre($my_data);
+                $this->insertOffre($myData);
             }
         }
 
-        $desactivateOffres = $this->desactivateOffres($all_ref_active);
+        $desactivateOffres = $this->desactivateOffres($allRefsActive);
 
         var_dump('ok');
         die();
     }
 
-    public function desactivateOffres($ref_active)
+    private function searchOffre($codeRecrutement)
     {
-        $desactivateOffres = $this->connection->update($this->table)
-            ->fields(array('active'=>0))
-            ->condition('codeRecrutement', $ref_active, 'NOT IN')
-            ->execute();
-
-        return $desactivateOffres;
-    }
-
-    private function pushDataInMyArray(&$arr_insert,$offre)
-    {
-        $arr_db = array("codeRecrutement","intitulePoste","dateCreationDemande","dateOuverturePoste","filialeSociete",
-            "typeContrat","dureeContrat","categorie","metier","lieuRecrutement","descriptionEntreprise","descriptionMission",
-            "descriptionProfil");
-        $arr_json = array("CodeRecrutement","IntitulePosteARecruter","DateDemande","DateEmbaucheSouhaite","SocieteRecrutement",
-            "TypeContrat","DureeDuContrat","Categorie","Metier","LieuRecrutement","DescriptionEntreprise","DescriptionMission",
-            "DescriptionProfil");
-        $arr_link = array_combine($arr_db,$arr_json);
-        foreach ($arr_link as $keyDB => $keyJSON) {
-            if (isset($offre[$keyJSON])) {
-                if (array_search($keyJSON, array("","DescriptionEntreprise","DescriptionMission","DescriptionProfil"))) {
-                    $desc = preg_replace(
-                        '/ (style=("|\')(.*?)("|\'))|(align=("|\')(.*?)("|\'))/',
-                        '',
-                        $offre[$keyJSON]);
-                    $search = [
-                        "",
-                        "",
-                        ""
-                    ];
-                    $replacements = [
-                        "...",
-                        "'",
-                        "oe"
-                    ];
-                    $desc = str_replace($search, $replacements, $desc);
-
-                    $arr_insert[$keyDB] = $desc;
-                } else {
-                    $arr_insert[$keyDB] = $offre[$keyJSON];
-                }
-            }
-        }
-    }
-
-    public function searchOffre($datainsert)
-    {
-        $insertOffre = $this->connection->select($this->table,'cargo')
+        $insertOffre = $this->conn->select($this->table,'cargo')
             ->fields('cargo')
-            ->condition('codeRecrutement', $datainsert['codeRecrutement'], '=')
+            ->condition('codeRecrutement', $codeRecrutement, '=')
             ->execute()
             ->fetchAssoc();
         if (is_array($insertOffre)) {
@@ -110,36 +79,78 @@ class ImportController extends ControllerBase{
         }
     }
 
-    public function insertOffre($datainsert)
+    private function updateOffre($dataUpdate)
     {
-        $insertOffre = $this->connection->insert($this->table)
-            ->fields($datainsert)
-            ->execute();
-        return $insertOffre;
-    }
-
-    public function updateOffre($datainsert)
-    {
-        $updateOffre = $this->connection->update($this->table)
-            ->fields($datainsert)
-            ->condition('codeRecrutement', $datainsert['codeRecrutement'], '=')
+        $updateOffre = $this->conn->update($this->table)
+            ->fields($dataUpdate)
+            ->condition('codeRecrutement', $dataUpdate['codeRecrutement'], '=')
             ->execute();
         return $updateOffre;
     }
 
-    private function getSiteName() {
-        $site_path = \Drupal::service('site.path');
-        $site_path = explode('/', $site_path);
-        $site_name = $site_path[1];
-
-        return $site_name;
+    private function insertOffre($dataInsert)
+    {
+        $insertOffre = $this->conn->insert($this->table)
+            ->fields($dataInsert)
+            ->execute();
+        return $insertOffre;
     }
+
+    private function desactivateOffres($refsActive)
+    {
+        $desactivateOffres = $this->conn->update($this->table)
+            ->fields(array('active'=>0))
+            ->condition('codeRecrutement', $refsActive, 'NOT IN')
+            ->execute();
+
+        return $desactivateOffres;
+    }
+
+
+    private function pushDataInMyArray(&$arrInsert,$offre)
+    {
+        $arrDB = array("codeRecrutement","intitulePoste","dateCreationDemande","dateOuverturePoste","filialeSociete",
+            "typeContrat","dureeContrat","categorie","metier","lieuRecrutement","descriptionEntreprise","descriptionMission",
+            "descriptionProfil");
+        $arrJSON = array("CodeRecrutement","IntitulePosteARecruter","DateDemande","DateEmbaucheSouhaite","SocieteRecrutement",
+            "TypeContrat","DureeDuContrat","Categorie","Metier","LieuRecrutement","DescriptionEntreprise","DescriptionMission",
+            "DescriptionProfil");
+        $arrLink = array_combine($arrDB,$arrJSON);
+        foreach ($arrLink as $keyDB => $keyJSON) {
+            if (isset($offre[$keyJSON])) {
+                if (in_array($keyJSON, array("DescriptionEntreprise","DescriptionMission","DescriptionProfil"))) {
+                    $arrInsert[$keyDB] = $this->cleanDescription($offre[$keyJSON]);
+                } else {
+                    $arrInsert[$keyDB] = $offre[$keyJSON];
+                }
+            }
+        }
+    }
+
+    private function cleanDescription($descriptionTxt)
+    {
+        $desc = preg_replace(
+            '/ (style=("|\')(.*?)("|\'))|(align=("|\')(.*?)("|\'))/',
+            '',
+            $descriptionTxt);
+        $search = [
+            "",
+            "",
+            ""
+        ];
+        $replacements = [
+            "...",
+            "'",
+            "oe"
+        ];
+        $desc = str_replace($search, $replacements, $desc);
+
+        return $desc;
+    }
+
 
     public function __destruct()
     {
-        //$olddb = \Drupal\Core\Database\Database::setActiveConnection();
-        //$this->connection = \Drupal::database();
+        $this->conn = null;
     }
-
-
 }

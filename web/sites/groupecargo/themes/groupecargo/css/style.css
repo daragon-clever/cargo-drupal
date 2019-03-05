@@ -175,31 +175,31 @@
   font-family: 'Heebo';
   font-style: normal;
   font-weight: 300;
-  src: local('Heebo Light'), local('Heebo-Light'), url(https://fonts.gstatic.com/s/heebo/v3/NGS3v5_NC0k9P9ldb6RMkKs.ttf) format('truetype');
+  src: local('Heebo Light'), local('Heebo-Light'), url(https://fonts.gstatic.com/s/heebo/v4/NGS3v5_NC0k9P9ldb6RMkKs.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Heebo';
   font-style: normal;
   font-weight: 400;
-  src: local('Heebo'), local('Heebo-Regular'), url(https://fonts.gstatic.com/s/heebo/v3/NGS6v5_NC0k9P9H2TbQ.ttf) format('truetype');
+  src: local('Heebo'), local('Heebo-Regular'), url(https://fonts.gstatic.com/s/heebo/v4/NGS6v5_NC0k9P9H2TbQ.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Heebo';
   font-style: normal;
   font-weight: 500;
-  src: local('Heebo Medium'), local('Heebo-Medium'), url(https://fonts.gstatic.com/s/heebo/v3/NGS3v5_NC0k9P9kFbqRMkKs.ttf) format('truetype');
+  src: local('Heebo Medium'), local('Heebo-Medium'), url(https://fonts.gstatic.com/s/heebo/v4/NGS3v5_NC0k9P9kFbqRMkKs.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Heebo';
   font-style: normal;
   font-weight: 700;
-  src: local('Heebo Bold'), local('Heebo-Bold'), url(https://fonts.gstatic.com/s/heebo/v3/NGS3v5_NC0k9P9lNaKRMkKs.ttf) format('truetype');
+  src: local('Heebo Bold'), local('Heebo-Bold'), url(https://fonts.gstatic.com/s/heebo/v4/NGS3v5_NC0k9P9lNaKRMkKs.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Heebo';
   font-style: normal;
   font-weight: 800;
-  src: local('Heebo ExtraBold'), local('Heebo-ExtraBold'), url(https://fonts.gstatic.com/s/heebo/v3/NGS3v5_NC0k9P9lRa6RMkKs.ttf) format('truetype');
+  src: local('Heebo ExtraBold'), local('Heebo-ExtraBold'), url(https://fonts.gstatic.com/s/heebo/v4/NGS3v5_NC0k9P9lRa6RMkKs.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Spectral';
@@ -649,7 +649,7 @@ p.bordered-left {
 }
 .list-keyword {
   padding: 0;
-  margin-top: -10px;
+  margin-top: -9999910px;
 }
 .list-keyword li {
   display: inline-block;

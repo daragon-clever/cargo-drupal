@@ -252,6 +252,9 @@ jQuery(document).ready(function($) {
 
     //PAGE OFFRE EMPLOI - AUDREY - NICO
     if ($('.listing-offres').length) {
+
+        $.fn.dataTable.moment( 'DD/MM/YYYY' );
+
         // Clickable full row
         var clickableRow = function() {
             $(".clickable-row").click(function() {
@@ -271,9 +274,6 @@ jQuery(document).ready(function($) {
             pageLength: 10,
             //date
             order:[3,'desc'],//en fonction d'une date précise
-            "aoColumnDefs": [
-                { "sType": "date-uk", "aTargets": [ 3 ] }
-            ],
             //filters
             initComplete: function () {
                 //les filtres
@@ -334,22 +334,6 @@ jQuery(document).ready(function($) {
         });
         $('#toutes-les-offres').on('draw.dt', function () {
             clickableRow();
-        } );
-
-        //date
-        jQuery.extend( jQuery.fn.dataTableExt.oSort, {
-            "date-uk-pre": function ( a ) {
-                var ukDatea = a.split('/');
-                return (ukDatea[2] + ukDatea[1] + ukDatea[0]) * 1;
-            },
-
-            "date-uk-asc": function ( a, b ) {
-                return ((a < b) ? -1 : ((a > b) ? 1 : 0));
-            },
-
-            "date-uk-desc": function ( a, b ) {
-                return ((a < b) ? 1 : ((a > b) ? -1 : 0));
-            }
         } );
 
         //search input

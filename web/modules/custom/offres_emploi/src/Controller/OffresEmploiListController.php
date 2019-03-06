@@ -12,67 +12,81 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class OffresEmploiListController extends ControllerBase {
 
-    public $site_name;
-    protected $table;
-    protected $actual_time;
-    private $ip_address;
-    protected $file_logip_annonce;
+    public $siteName;
+    private $table;
+    protected $actualTime;
+    private $ipAddress;
+    private $fileLogIPAnnonce;
+
+    private $conn;
 
     public function __construct()
     {
-        $this->site_name = $this->getSiteName();
+        $this->siteName = $this->getSiteName();
         $this->table = "offres_emploi";
-        $this->actual_time = time();
-        $this->ip_address = $_SERVER['REMOTE_ADDR'];
+        $this->actualTime = time();
+        $this->ipAddress = $_SERVER['REMOTE_ADDR'];
 
         /* GET FILE WHICH CONTAIN ALL VISITOR'S IP ADDRESS */
-        $folder_files = \Drupal::service('file_system')->realpath(file_default_scheme() . "://");
-        if (!file_exists($folder_files.'/log')) {
-            mkdir($folder_files . "/log",0777,true);
-        }
-        $this->file_logip_annonce = $folder_files . "/log/logip--annonce.csv";
-        if (!file_exists($this->file_logip_annonce)) {
-            file_put_contents($this->file_logip_annonce,"ref,ip,time"."\n");
-        }
+        $this->setLogFile();
         /* END OF GET FILE */
 
-//        $host = 'db.groupecargo.svd2pweb-stm.ressinfo.ad:3306';
-//        $db = "groupecargo";
-//        $user = "root";
-//        $pass = "root";
-//
-//        try{
-//             create a PDO connection with the configuration data
-//            $conn = new \PDO("mysql:host=$host;dbname=$db", $user, $pass);
-//
-//             display a message if connected to database successfully
-//            if($conn){
-//                echo "Connected to the <strong>$db</strong> database successfully!";
-//            }
-//        }catch (PDOException $e){
-//             report error message
-//            echo $e->getMessage();
-//        }
-//
-//        die();
+        $this->setDatabaseConn();
+    }
+
+    private function getSiteName() {
+        $sitePath = \Drupal::service('site.path');
+        $sitePath = explode('/', $sitePath);
+        $siteName = $sitePath[1];
+
+        return $siteName;
+    }
+
+    private function setLogFile()
+    {
+        $folderFiles = \Drupal::service('file_system')->realpath(file_default_scheme() . "://");
+        if (!file_exists($folderFiles.'/log')) {
+            mkdir($folderFiles . "/log",0777,true);
+        }
+        $this->fileLogIPAnnonce = $folderFiles . "/log/logip--annonce.csv";
+        if (!file_exists($this->fileLogIPAnnonce)) {
+            file_put_contents($this->fileLogIPAnnonce,"ref,ip,time"."\n");
+        }
+    }
+
+    private function setDatabaseConn()
+    {
+        if ($this->siteName == "groupecargo") {
+            $this->conn = \Drupal::database();
+        } else {
+            Database::setActiveConnection('external');
+            $this->conn = Database::getConnection();
+        }
+
+        return $this->conn;
     }
 
     public function content($ref, Request $request)
     {
-        $arr_filter = $this->getAllFilters($request);
 
         if ($ref == "all") {
+            //récupère les filtres
+            $arrFilter = $this->getAllFilters($request);
+
             //return une liste d'offre
             $offres = $this->getOffres();
+
+            //construit le thème
             $build = [
                 '#theme' => 'offres_emploi--list',
                 '#data' => $offres,
-                '#filter' => $arr_filter
+                '#filter' => $arrFilter
             ];
         } else {
             //retour une seule offre
             $offre = $this->getOffre($ref);
             if ($offre === FALSE) {
+                //si la ref de l'offre passée en parm n'existe pas
                 $build = [
                     '#theme' => 'offres_emploi--annonce',
                     '#data' => ($offre) ? 'true' : 'false'
@@ -111,25 +125,21 @@ class OffresEmploiListController extends ControllerBase {
      */
     private function getOffres()
     {
-        $connection = $this->changeDb("on");
-
-        if ($this->site_name == "groupecargo") {
-            $all_offres = $connection->select($this->table,"cargo")
+        if ($this->siteName == "groupecargo") {
+            $all_offres = $this->conn->select($this->table,"cargo")
                 ->fields("cargo")
                 ->condition('active', 1, '=')
                 ->execute()
                 ->fetchAll();
         } else {
             $societe = $this->getNameDbSociete();
-            $all_offres = $connection->select($this->table,"cargo")
+            $all_offres = $this->conn->select($this->table,"cargo")
                 ->fields("cargo")
                 ->condition('filialeSociete', $societe, '=')
                 ->condition('active', 1, '=')
                 ->execute()
                 ->fetchAll();
         }
-
-        $connection = $this->changeDb("off");
 
         return $all_offres;
     }
@@ -137,19 +147,18 @@ class OffresEmploiListController extends ControllerBase {
     /*
      * Get 1 offer
      */
-    private function getOffre($ref) {
-        $connection = $this->changeDb("on");
-
-        if ($this->site_name == "groupecargo") {
-            $offre = $connection->select($this->table,"codeRecrutement")
+    private function getOffre($ref)
+    {
+        if ($this->siteName == "groupecargo") {
+            $offre = $this->conn->select($this->table,"codeRecrutement")
                 ->fields("codeRecrutement")
                 ->condition('codeRecrutement', $ref, '=')
                 ->condition('active', 1, '=')
                 ->execute()
                 ->fetchAssoc();
         } else {
-            $societe = $this->getNameDbSociete($this->site_name);
-            $offre = $connection->select($this->table,"codeRecrutement")
+            $societe = $this->getNameDbSociete();
+            $offre = $this->conn->select($this->table,"codeRecrutement")
                 ->fields("codeRecrutement")
                 ->condition('filialeSociete', $societe, '=')
                 ->condition('codeRecrutement', $ref, '=')
@@ -158,54 +167,42 @@ class OffresEmploiListController extends ControllerBase {
                 ->fetchAssoc();
         }
 
-        $connection = $this->changeDb("off");
-
         return $offre;
     }
 
-    private function getSiteName() {
-        $site_path = \Drupal::service('site.path');
-        $site_path = explode('/', $site_path);
-        $site_name = $site_path[1];
-
-        return $site_name;
-    }
-
     private function getNameDbSociete() {
-        $all_name_drupal = array("blog-sitram","ostaria","turbocar","yliades");
-        $all_name_json = array("sitram","ostaria","turbocar","yliades");
-        $arr = array_combine($all_name_drupal, $all_name_json);
+        $allNameDrupal = array("blog-sitram","ostaria","turbocar","yliades");
+        $allNameJson = array("sitram","ostaria","turbocar","yliades");
+        $arr = array_combine($allNameDrupal, $allNameJson);
 
-        $data = $arr[$this->site_name];
+        $data = $arr[$this->siteName];
 
         return $data;
     }
 
-    /*
-     * Update nbVue +1 in database of an offer
-     */
-    private function updataNbVue($ref)
+
+    private function searchInCSV($ref)
     {
-        $connection = $this->changeDb("on");
+        $arrCSVcontent = $this->getCSV();
+        $new_arr = array_reverse($arrCSVcontent);
+        foreach ($new_arr as $key => $val) {
+            if ($val['ip'] == $this->ipAddress && $val['ref'] == $ref) {
+                $found_time = $val['time'];
+                break;
+            }
+        }
 
-        $nbvue = $connection->update($this->table)
-            ->expression('nbVue', 'nbVue + 1')
-            ->condition('codeRecrutement', $ref, '=')
-            ->execute();
-
-        $connection = $this->changeDb("off");
-
-        return $nbvue;
-    }
-
-    private function logIpAddressOnFile($ref)
-    {
-        file_put_contents($this->file_logip_annonce, $ref.",".$this->ip_address.",".$this->actual_time."\n", FILE_APPEND | LOCK_EX);
+        $fiveMin = $this->actualTime - (60*5);
+        if (isset($foundTime) && $foundTime > $fiveMin) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     private function getCSV()
     {
-        $csv = explode("\n", file_get_contents($this->file_logip_annonce));
+        $csv = explode("\n", file_get_contents($this->fileLogIPAnnonce));
 
         foreach ($csv as $key => $line)
         {
@@ -222,48 +219,28 @@ class OffresEmploiListController extends ControllerBase {
         return $combine;
     }
 
-    private function searchInCSV($ref)
+    private function logIpAddressOnFile($ref)
     {
-        $arr_csv_content = $this->getCSV();
-        $new_arr = array_reverse($arr_csv_content);
-        foreach ($new_arr as $key => $val) {
-            if ($val['ip'] == $this->ip_address && $val['ref'] == $ref) {
-                $found_time = $val['time'];
-                break;
-            }
-        }
-
-        $five_min = $this->actual_time - (60*5);
-        if (isset($found_time) && $found_time > $five_min) {
-            return true;
-        } else {
-            return false;
-        }
+        file_put_contents($this->fileLogIPAnnonce, $ref.",".$this->ipAddress.",".$this->actualTime."\n", FILE_APPEND | LOCK_EX);
     }
 
-    //todo: a revoir et mettre dans le constructeur
-    private function changeDb($etat_on_off)
+    /*
+     * Update nbVue +1 in database of an offer
+     */
+    private function updataNbVue($ref)
     {
-        if ($this->site_name == "groupecargo") {
-            $conn = \Drupal::database();
-        } else {
-            if ($etat_on_off == "on") {
-                $old_key = Database::setActiveConnection('external');
-            } else if ($etat_on_off == "off") {
-                Database::setActiveConnection();
-            }
-            $conn = Database::getConnection();
-//            $conn = \Drupal::database();
-        }
-        return $conn;
+        $nbvue = $this->conn->update($this->table)
+            ->expression('nbVue', 'nbVue + 1')
+            ->condition('codeRecrutement', $ref, '=')
+            ->execute();
+
+        return $nbvue;
     }
+
 
     public function __destruct()
     {
-        /*if (!($this->site_name == "groupecargo")) {
-//            \Drupal\Core\Database\Database::setActiveConnection();
-            Database::setActiveConnection($this->old_key);
-        }*/
+        $this->conn = null;
     }
 
 }

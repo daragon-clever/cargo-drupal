@@ -136,12 +136,14 @@ class ImportController extends ControllerBase
         $search = [
             "",
             "",
-            ""
+            "",
+            "&nbsp;"
         ];
         $replacements = [
             "...",
             "'",
-            "oe"
+            "oe",
+            ""
         ];
         $desc = str_replace($search, $replacements, $desc);
 

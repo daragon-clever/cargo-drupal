@@ -1,17 +1,21 @@
 jQuery(document).ready(function($) {
+    // TEST MOBILE / TAB
+    var isMobile = window.matchMedia("only screen and (max-width: 767px)").matches;
+    var isTabletOrLess = window.matchMedia("only screen and (max-width: 991px)").matches;
     // NAV
     $("#header-wrapper nav").hover(function () {
         $("#header-wrapper").toggleClass("menu-hover");
     });
 
-    // NAV MOBILE
-    if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+    if ( isTabletOrLess ) {
+        // NAV MOBILE
         var $menu = $("#block-groupecargo-main-menu").mmenu({
             "extensions": [
                 "theme-white",
                 "border-full",
                 "position-front",
-                "pagedim-black"
+                "pagedim-black",
+                "fullscreen"
             ]
         }, {
             clone: true
@@ -36,67 +40,51 @@ jQuery(document).ready(function($) {
     }
 
     // HOMEPAGE - GALLERY RANDOM
+    // Tableau des images de la banque
     var ids = [];
-
     function initArray() {
         $(".img-bank img").each(function() {
             ids.push($(this).attr("src"));
-        })
+        });
     }
-
-    function randomArray() {
-        // copie du tableau d'ids car il va etre modifié
-        var tempIds = ids.slice();
-        // init du tableau de resultat
-        var myIds = [];
-        for (var i = 0; i < 6; i++) {
-            // Recupere un int random
-            var randomId = (Math.floor(Math.random() * tempIds.length) + 1);
-            // Recupere la valeur random
-            var myId = tempIds[randomId - 1];
-            // Ajout de la valeur random au tableau de resultat
-            myIds.push(myId);
-            // Recupere l'index de la valeur random pour la suppression
-            var pos = tempIds.indexOf(myId);
-            // Suppression de la valeur choisie pour eviter de retomber dessus
-            tempIds.splice(pos, 1);
-        }
-        return myIds;
-    }
-
     initArray();
-
+    // Fn - Changement du visuel
     function changeSrc() {
-
-        // Random one ID of the 6 displayed images
+        // Prendre une div au hasard sur les 7
         var cells = $(".galery .block-img");
         var randomId = (Math.floor(Math.random() * cells.length));
-
-        // Get first result
-        var result = randomArray();
-        var randomImgFromBank = $(".img-bank img").attr("src");
-        // var randomIdImgFromBank = (Math.floor(Math.random() * randomImgFromBank.length));
-        var newsrc = result[0];
-
-        // if src is already displayed, relaunch
-        if ($(".galery img[src='" + newsrc + "']:visible").length > 0) {
+        // Prendre une image au hasard de la banque
+        var randomImgFromBank = ids[Math.floor(Math.random()*ids.length)];
+        // Si l'image est déjà présente, relancer la fonction
+        if ($(".galery img[src='" + randomImgFromBank + "']:visible").length > 0) {
             changeSrc();
-        }
-        else {
-            // Get one random div of the 6 displayed images
+        } else {
+            // Prendre une div au hasard sur les 7
             var cell = cells.eq(randomId);
-            // for each hidden image in the div, change the src
+            // Changement l'image hidden de cette div
             cell.find("img:hidden").each(function() {
-                $(this).attr("src", newsrc);
+                $(this).attr("src", randomImgFromBank);
             });
-            // toggleFade images of this div
+            // toggleFade les images
             cell.find("img").fadeToggle(1500);
         }
     }
-
+    // Lancer la fonction toutes les x secondes
     setInterval(function() {
         changeSrc();
-    }, 2000);
+    }, 1000);
+
+    if ( isMobile ) {
+        // Galery homepage
+        $(".galery .js-remove-mobile").remove();
+        // Slick homepage + marchés
+        $(".js-galery-slick").slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows:false,
+            centerMode: true
+        });
+    }
 
     // HOMEPAGE - HIGHLIGHT BLOCK TXT GALLERY RANDOM
     if ($(".galery .block-txt").length) {
@@ -257,9 +245,11 @@ jQuery(document).ready(function($) {
 
         // Clickable full row
         var clickableRow = function() {
-            $(".clickable-row").click(function() {
-                window.location = $(this).data("href");
-            });
+            if (isMobile === false) {
+                $(".clickable-row").click(function() {
+                    window.location = $(this).data("href");
+                });
+            }
         };
 
         var table = $("#toutes-les-offres").DataTable({
@@ -269,11 +259,17 @@ jQuery(document).ready(function($) {
                 searchPlaceholder : "Rechercher une offre",
                 emptyTable: "Nous n'avons pour le moment aucune offre d'emploi à proposer"
             },
+
             //pages
             pagingType: "numbers",
             pageLength: 10,
+
             //date
             order:[3,'desc'],//en fonction d'une date précise
+
+            // Responsive
+            responsive: true,
+
             //filters
             initComplete: function () {
                 //les filtres
@@ -332,9 +328,26 @@ jQuery(document).ready(function($) {
                 clickableRow();
             }
         });
+
+        // Masquer la colonne qui sert aux filtres
+        table.columns( '.js-hide' ).visible( false );
+
+        if (isMobile === false) {
+            table.columns( '.js-only-xs' ).visible( false );
+        }
+
+        console.log(isMobile);
+
         $('#toutes-les-offres').on('draw.dt', function () {
             clickableRow();
         } );
+
+        // Mobile : gestion btn filtres
+        $(".js-toggle-filters").on("click", function () {
+            $(".js-toggle-filters").toggle();
+            $("#groupe-filtres-offres-emploi").slideToggle();
+            $(".jobs-list").slideToggle();
+        });
 
         //search input
         $("#searchbox").keyup(function() {
@@ -355,5 +368,13 @@ jQuery(document).ready(function($) {
             }
             return str.join('').toLowerCase();
         }
+    }
+
+    // LIRE PLUS
+    if ( isMobile ) {
+        $(".js-slide-toggle").on("click", function () {
+            $(this).prev().slideToggle();
+            $(".js-slide-toggle span").toggle();
+        })
     }
 });

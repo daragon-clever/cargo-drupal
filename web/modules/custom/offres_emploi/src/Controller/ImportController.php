@@ -39,9 +39,9 @@ class ImportController extends ControllerBase
 
     public function execute()
     {
-        $path = drupal_get_path('module', 'offres_emploi');
-        $getContents = file_get_contents($path.'/data/DemandeRecrutement.json');
-        $cleanContent = '['.rtrim(utf8_encode($getContents),',').']';
+        $path = \Drupal::service('file_system')->realpath(file_default_scheme() . "://");
+        $getContents = file_get_contents($path.'/data/V_DemandeRecrutementOuvert.json');
+        $cleanContent = '['.rtrim($getContents,',').']';
         $data = json_decode($cleanContent,true);
 
         $allRefsActive = array();
@@ -136,12 +136,14 @@ class ImportController extends ControllerBase
         $search = [
             "",
             "",
-            ""
+            "",
+            "&nbsp;"
         ];
         $replacements = [
             "...",
             "'",
-            "oe"
+            "oe",
+            ""
         ];
         $desc = str_replace($search, $replacements, $desc);
 

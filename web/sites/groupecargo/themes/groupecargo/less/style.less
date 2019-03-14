@@ -255,6 +255,11 @@ footer {
   padding-bottom: 15px;
   z-index: 1;
 
+  @media @phone {
+    line-height: 40px;
+    padding-bottom: 0;
+  }
+
   &.fixed {
     position: fixed;
     left: 0;
@@ -280,9 +285,12 @@ footer {
       }
 
       @media @phone {
-        margin: 0 15px;
-        float: left;
-        width: calc(50% - 30px);
+        display: block;
+        margin: 0;
+        width: 100%;
+        border-bottom: 1px solid white;
+        position: relative;
+        padding: 0 15px;
       }
 
       &:last-child {
@@ -298,6 +306,16 @@ footer {
         position: absolute;
         bottom: 15px;
         left: 0;
+
+        @media @phone {
+          background: url("../images/footer/arrow-white-right.png") no-repeat center transparent;
+          height: 10px;
+          width: 6px;
+          left: unset;
+          right: 15px;
+          bottom: unset;
+          top: 15px;
+        }
       }
 
       a {
@@ -324,10 +342,21 @@ footer {
             position: absolute;
             bottom: 30px;
             left: 0;
+
+            @media @phone {
+              bottom:unset;
+              top: 10px;
+            }
           }
         }
       }
     }
+  }
+
+  .txt-sous-footer {
+    font-size: 12px;
+    color: #b4b4b4;
+    text-transform: initial;
   }
 }
 
@@ -1650,27 +1679,27 @@ p.bordered-left {
 
   .block-text {
     padding: 0 30px 15px 30px;
-    margin: 0;
-  }
+    margin: 0 auto;
 
-  .block-text .txt {
-    background-color: rgba(35, 35, 35, 0.7);
-    font-family: @spectral;
-    color: white;
-    font-size: 24px;
-    padding: 20px;
-    margin-top: 30px;
+    .txt {
+      background-color: rgba(35, 35, 35, 0.7);
+      font-family: @spectral;
+      color: white;
+      font-size: 24px;
+      padding: 20px;
+      margin-top: 30px;
 
-    a {
-      color: #f7e2a1;
-      text-decoration: underline;
-    }
+      a {
+        color: #f7e2a1;
+        text-decoration: underline;
+      }
 
-    @media @phone {
-      font-size: 21px;
+      @media @phone {
+        font-size: 21px;
 
-      br {
-        display: none;
+        br {
+          display: none;
+        }
       }
     }
   }

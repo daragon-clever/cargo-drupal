@@ -16,12 +16,3 @@ offresEmploi.postuler:
     _title: 'Offres emploi'
   requirements:
     _permission: 'access content'
-
-# CRON
-datajson.import:
-  path: '/demande-recrutement/import'
-  defaults:
-    _controller: 'Drupal\offres_emploi\Controller\ImportController::execute'
-    _title: 'Import offres emploi'
-  requirements:
-    _permission: 'access content'

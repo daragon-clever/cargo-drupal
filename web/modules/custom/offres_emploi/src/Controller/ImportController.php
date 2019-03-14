@@ -60,9 +60,6 @@ class ImportController extends ControllerBase
         }
 
         $desactivateOffres = $this->desactivateOffres($allRefsActive);
-
-        var_dump('ok');
-        die();
     }
 
     private function searchOffre($codeRecrutement)

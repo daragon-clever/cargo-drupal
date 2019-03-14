@@ -164,6 +164,29 @@ function offres_emploi_schema()
     return $schema;
 }
 
+use Drupal\offres_emploi\Controller\ImportController;
+function offres_emploi_install()
+{
+    $import = new ImportController();
+    $import->execute();
+}
+
+function offres_emploi_cron()
+{
+    $last_run = \Drupal::state()->get('offres_emploi.last_run', 0);
+    // If 60 minutes passed since last time.
+    if ((REQUEST_TIME - $last_run) > 3600) {
+        \Drupal::logger('offres_emploi')->notice('offres_emploi ran');
+        // Do something.
+        $import = new ImportController();
+        $import->execute();
+
+        // Update last run.
+        \Drupal::state()->set('offres_emploi.last_run', REQUEST_TIME);
+    }
+
+}
+
 use Drupal\offres_emploi\Controller\OffresEmploiActionController;
 function offres_emploi_webform_element_hidden_alter(array &$element, \Drupal\Core\Form\FormStateInterface $form_state, array $context)
 {

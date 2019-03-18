@@ -1,0 +1,40 @@
+<div class="header-wrapper">
+    <!-- Header -->
+    {% include directory ~ '/partials/header.html.twig' %}
+</div>
+
+<div class="container-fluid">
+    {% if page.highlighted %}
+        <div class="row message-site">
+            <div class="col">
+                {{ page.highlighted }}
+            </div>
+        </div>
+    {% endif %}
+    {% if page.content %}
+        <div class="row">
+            <div class="col">
+                {{ page.content }}
+            </div>
+        </div>
+    {% endif %}
+</div>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <!-- Footer -->
+                {% if page.footer %}
+                    {{ page.footer }}
+                {% endif %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <!-- Post footer -->
+                {{ page.txtfooter }}
+            </div>
+        </div>
+    </div>
+</footer>

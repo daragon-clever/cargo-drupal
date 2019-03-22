@@ -1,11 +1,11 @@
 <div class="row">
-    <form class="col" id="recherchepdf-form" name="formSearch" action="{{ path('resultSearch.form') }}" onsubmit="return validateForm()" type="POST">
+    <form class="col" id="recherchepdf-form" name="formSearch">
         <div class="row justify-content-center align-items-end">
             <div class="col-12 col-md-4 col-lg-3">
-                Référence du produit : <input name="refProduit" class="form-control refProduit" type="text" required>
+                Référence du produit : <input name="refProduit" id="refProduit" class="form-control refProduit" type="text" required>
             </div>
             <div class="col-12 col-md-4 col-lg-3">
-                Lot du produit : <input name="lotProduit" class="form-control lotProduit" type="text" required>
+                Lot du produit : <input name="lotProduit" id="lotProduit" class="form-control lotProduit" type="text" required>
             </div>
             <div class="col-auto">
                 <button type="submit">Télécharger</button>
@@ -16,25 +16,44 @@
 
 <script>
     jQuery(document).ready(function ($) {
-        var msg = '{{ msg }}';
-        if (msg != "") {
-            alert(msg);
-            window.location.href="/recherche-pdf";
-        }
+        $("#recherchepdf-form").on('submit',function(){
+            var refProduit = document.forms["formSearch"]["refProduit"].value;
+            var lotProduit = document.forms["formSearch"]["lotProduit"].value;
+            if (refProduit == "" && lotProduit == "") {
+                alert("Veuillez saisir le reférence du produit ou bien le lot du produit");
+                return false;
+            } else {
+                return true;
+            }
+        });
+        $('#recherchepdf-form').submit(function (event) {
+            event.preventDefault();
+
+            var refProduit = $("#refProduit").val();
+            var lotProduit = $("#lotProduit").val();
+
+            $.ajax({
+                url: "{{ path('resultSearch.form') }}?refProduit="+refProduit+"&lotProduit="+lotProduit,
+                success: function (resp) {
+                    if (resp == "") {
+                        console.log("Téléchargement réussi");
+                    } else if (resp == "") {
+                        console.log("Fiche de données sécurité non trouvée merci de vérifier votre saisie")
+                    } else {
+                        console.log('erreur');
+                    }
+                }
+            });
+
+        });
+
+        {#var msg = '{{ msg }}';#}
+        {#if (msg != "") {#}
+            {#alert(msg);#}
+            {#window.location.href="/recherche-pdf";#}
+        {#}#}
         setTimeout(function(){
             $("[role=contentinfo]").hide(1000);
         }, 3000);
     });
-
-    function validateForm() {
-
-        var refProduit = document.forms["formSearch"]["refProduit"].value;
-        var lotProduit = document.forms["formSearch"]["lotProduit"].value;
-        if (refProduit == "" && lotProduit == "") {
-            alert("Veuillez saisir le reférence du produit ou bien le lot du produit");
-            return false;
-        } else {
-            return true;
-        }
-    }
 </script>

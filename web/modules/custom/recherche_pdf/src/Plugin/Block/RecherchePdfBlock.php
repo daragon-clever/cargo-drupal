@@ -12,7 +12,7 @@ use Drupal\Core\Session\AccountInterface;
  *
  * @Block(
  *   id = "audrey_block",
- *   admin_label = @Translation("Audrey Block"),
+ *   admin_label = @Translation("Recherche PDF Block"),
  * )
  */
 class RecherchePdfBlock extends BlockBase {

@@ -5,21 +5,7 @@ function recherche_pdf_theme()
     return [
         'recherchepdf_block' => [
             'template' => 'block--recherche-pdf'
-        ],
-        'recherche' => [
-            'render element' => 'form',
-            'variables' => [
-                'ref_produit' => NULL,
-                'lot_produit' => NULL,
-                'msg' => NULL,
-            ],
-        ],
-        'resultat' => [
-            'render element' => 'form',
-            'variables' => [
-                'fiche_pdf' => NULL,
-            ],
-        ],
+        ]
     ];
 }
 

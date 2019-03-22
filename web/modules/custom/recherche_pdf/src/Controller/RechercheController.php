@@ -22,16 +22,11 @@ class RechercheController extends ControllerBase
 
     }
 
-    public function displayForm(Request $request)
-    {
-        return array(
-            '#theme' => 'recherche',
-        );
-    }
     public function getPdf(Request $request)
     {
 
         $refProduit = $request->get('refProduit');
+//        if (\Drupal::config('system.site')->get('name') == "turbocar")
         $lotProduit = $request->get('lotProduit');
         $qrcodeadm =  \Drupal::config('system.qrcodeadm')->get('soc', FALSE);
         $qrcodeadmProd =  \Drupal::config('system.qrcodeadm')->get('prod', FALSE);
@@ -43,11 +38,6 @@ class RechercheController extends ControllerBase
         if($qrcodeadm != null) {
           $configQrcodeadm = true;
         }
-
-        $return = array(
-          '#theme' => 'recherche',
-          '#msg' => $this->t('Une erreur système ne nous permet pas de donnée suite à votre demande.'),
-        );
 
         $postData = [
           'RefProd' => $refProduit,
@@ -65,40 +55,31 @@ class RechercheController extends ControllerBase
         $paramMail['to'] = $qrcodeadmMail != null ? $qrcodeadmMail : implode(', ' , $dataSoc['EMAIL_FIC_TO']);
         $paramMail['fiches'] = $postData['RefProd']." ".$postData['LotProd'];
 
-        $urlRedirect = Url::fromRoute('recherchePdf.form');
-
         if($qrcodeadm == true) {
           $rslt = $this->getPdfByRefOrLotCurl($postData);
           if ($rslt != null && $rslt->nomfic != '') {
             $url = $dataSoc['URL_SITE'] . "/" . $rslt->nomfic;
             if ($this->is_url_exist($url)) {
+                echo "success";
               return $this->headersResponse($url, $rslt->fileName);
             } else {
-              $this->redirectResponse(
-                  '/'.$urlRedirect->getInternalPath(),
-                  $this->t('Fiche de données sécurité non trouvée merci de vérifier votre saisie')
-              );
-
               $paramMail['subject'] = "Fichier pdf introuvable - ".$paramMail['fiches'];
               $paramMail['body'] = "Le Fichier ".$rslt->fileName." pour Le produit reference ".$postData['RefProd']." lot ".$postData['LotProd']." est introuvable";
               $this->sendMailNoFile($paramMail);
+
+              echo "error";
             }
           } else {
-            $this->redirectResponse(
-              '/'.$urlRedirect->getInternalPath(),
-              $this->t('Fiche de données sécurité non trouvée merci de vérifier votre saisie')
-            );
-
             $paramMail['subject'] = "Produit introuvable - ".$paramMail['fiches'];
             $paramMail['body'] = "Le produit reference ".$postData['RefProd']." lot ".$postData['LotProd']." est introuvable dans la base de données.";
             $this->sendMailNoFile($paramMail);
-          }
-        }
-        $return = array(
-          '#theme' => 'recherche'
-        );
 
-      return $return;
+            echo "error";
+          }
+        } else {
+            echo "error";
+        }
+        die();
     }
 
   public function getPdfByRefOrLotCurl($postfields = [])

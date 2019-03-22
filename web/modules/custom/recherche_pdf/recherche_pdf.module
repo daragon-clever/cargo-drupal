@@ -1,0 +1,20 @@
+<?php
+
+function recherche_pdf_theme()
+{
+    return [
+        'recherchepdf_block' => [
+            'template' => 'block--recherche-pdf'
+        ]
+    ];
+}
+
+function recherche_pdf_mail($key, &$message, $params) {
+
+    // E-mail formatting will be exactly as below, so do not use indenting!
+    $body = $params['body'];
+    $message['from'] = $params['from'];
+    $message['subject'] = $params['subject'];
+
+    $message['body'][] = Drupal\Core\Mail\MailFormatHelper::htmlToText($body);
+}

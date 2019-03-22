@@ -4,10 +4,10 @@
 
 /**
  *  * @file
- *  * Contains \Drupal\recherchePdf\Form\recherchePdfForm.
+ *  * Contains \Drupal\recherche_pdf\Form\recherchePdfForm.
  *  */
 
-namespace Drupal\recherchePdf\Form;
+namespace Drupal\recherche_pdf\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;

@@ -1,0 +1,6 @@
+resultSearch.form:
+  path: '/fiche-pdf'
+  defaults:
+    _controller: '\Drupal\recherche_pdf\Controller\RechercheController::getPdf'
+  requirements:
+    _permission: 'access content'

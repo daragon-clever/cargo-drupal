@@ -1,13 +1,11 @@
 <?php
-/*
- * @file
- * code for resume module
-*/
 
-
-function recherchePdf_theme()
+function recherche_pdf_theme()
 {
     return [
+        'recherchepdf_block' => [
+            'template' => 'block--recherche-pdf'
+        ],
         'recherche' => [
             'render element' => 'form',
             'variables' => [
@@ -25,7 +23,7 @@ function recherchePdf_theme()
     ];
 }
 
-function recherchePdf_mail($key, &$message, $params) {
+function recherche_pdf_mail($key, &$message, $params) {
 
     // E-mail formatting will be exactly as below, so do not use indenting!
     $body = $params['body'];
@@ -34,5 +32,3 @@ function recherchePdf_mail($key, &$message, $params) {
 
     $message['body'][] = Drupal\Core\Mail\MailFormatHelper::htmlToText($body);
 }
-
-?>

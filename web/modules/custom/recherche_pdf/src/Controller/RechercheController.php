@@ -1,12 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: abh
- * Date: 27/04/2018
- * Time: 13:55
- */
 
-namespace Drupal\recherchePdf\Controller;
+namespace Drupal\recherche_pdf\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\HttpFoundation\Request;
@@ -24,7 +18,7 @@ class RechercheController extends ControllerBase
 
     public function __construct()
     {
-        $this->config = new \Drupal\recherchePdf\Config\ConfigFile();
+        $this->config = new \Drupal\recherche_pdf\Config\ConfigFile();
 
     }
 

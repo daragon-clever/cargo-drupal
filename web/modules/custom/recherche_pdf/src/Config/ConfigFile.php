@@ -1,12 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: abh
- * Date: 02/05/2018
- * Time: 11:41
- */
 
-namespace Drupal\recherchePdf\Config;
+namespace Drupal\recherche_pdf\Config;
 class ConfigFile
 {
     CONST API_URL = 'http://admin.url-qrcode.com/api/'; /* L'url curl api */

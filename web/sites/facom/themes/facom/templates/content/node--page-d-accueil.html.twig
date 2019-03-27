@@ -1,0 +1,59 @@
+<div id="homepage-content">
+    <div class="bg" style="background: url('{{ content.field_hp_background[0] }}') no-repeat center #141414">
+        <div class="input-wrapper">
+            <form class="col" id="recherchepdf-form" name="formSearch" action="{{ path('resultSearch.form') }}" type="POST">
+                <input name="refProduit" placeholder="{{ 'Saisir la référence produit colle'|trans }}" required>
+                <input name="lang" value="{{ '-F;-NL'|trans }}" type="hidden">
+                <button></button>
+            </form>
+            <a href="#" title="Aide" data-toggle="modal" data-target="#modal-help">{{ 'Aide'|trans }}</a>
+        </div>
+    </div>
+
+  <script>
+    jQuery(document).ready(function ($) {
+      var msg = '{{ msg }}';
+      if (msg != "") {
+        alert(msg);
+        window.location.href="/";
+      }
+      setTimeout(function(){
+        $("[role=contentinfo]").hide(1000);
+      }, 3000);
+    });
+  </script>
+
+
+
+
+
+    <div class="row">
+        <div class="container">
+            <div class="row blocks-imgs">
+                <div class="col-12 col-md-6 bloc-left">
+                    <div class="inner">
+                        {{ content.field_hp_block_bottom_img_1 }}
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 bloc-right">
+                    <div class="inner">
+                        {{ content.field_hp_block_bottom_img_2 }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal-help" tabindex="-1" role="dialog" aria-labelledby="modal-help-label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="modal-body">
+                {{ content.field_hp_help_img }}
+            </div>
+        </div>
+    </div>
+</div>

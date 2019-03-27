@@ -39,6 +39,7 @@ class RechercheController extends ControllerBase
 
         $refProduit = $request->get('refProduit');
         $lotProduit = $request->get('lotProduit');
+        $lang = $request->get('lang');
         $qrcodeadm =  \Drupal::config('system.qrcodeadm')->get('soc', FALSE);
         $qrcodeadmProd =  \Drupal::config('system.qrcodeadm')->get('prod', FALSE);
         $qrcodeadmMail =  \Drupal::config('system.qrcodeadm')->get('mailTesterreur', FALSE);
@@ -58,6 +59,7 @@ class RechercheController extends ControllerBase
         $postData = [
           'RefProd' => $refProduit,
           'LotProd' => $lotProduit,
+          'LANG' => $lang,
           'ID_SOC' => $dataSoc['ID_SOC'],
           'CODE_SOC' => $dataSoc['CODE_SOC'],
           'DEFAULT_PDF' => $dataSoc['DEFAULT_PDF'],
@@ -72,7 +74,7 @@ class RechercheController extends ControllerBase
         $paramMail['fiches'] = $postData['RefProd']." ".$postData['LotProd'];
 
         $urlRedirect = Url::fromRoute('recherchePdf.form');
-
+        //ar_dump($postData);
         if($qrcodeadm == true) {
           $rslt = $this->getPdfByRefOrLotCurl($postData);
           if ($rslt != null && $rslt->nomfic != '') {

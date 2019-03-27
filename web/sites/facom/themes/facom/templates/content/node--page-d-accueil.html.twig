@@ -1,10 +1,31 @@
 <div id="homepage-content">
     <div class="bg" style="background: url('{{ content.field_hp_background[0] }}') no-repeat center #141414">
         <div class="input-wrapper">
-            <input placeholder="{{ 'Saisir la référence produit colle'|trans }}"><button></button>
+          <form class="col" id="recherchepdf-form" name="formSearch" action="{{ path('resultSearch.form') }}" type="POST">
+            <input name="refProduit" placeholder="{{ 'Saisir la référence produit colle'|trans }}">
+            <input name="lang" value="{{ '-F;-NL'|trans }}" type="hidden">
+            <button></button>
             <a href="#" title="Aide" data-toggle="modal" data-target="#modal-help">{{ 'Aide'|trans }}</a>
         </div>
     </div>
+
+  <script>
+    jQuery(document).ready(function ($) {
+      var msg = '{{ msg }}';
+      if (msg != "") {
+        alert(msg);
+        window.location.href="/";
+      }
+      setTimeout(function(){
+        $("[role=contentinfo]").hide(1000);
+      }, 3000);
+    });
+  </script>
+
+
+
+
+
     <div class="row">
         <div class="container">
             <div class="row blocks-imgs">

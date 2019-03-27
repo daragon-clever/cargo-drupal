@@ -19,8 +19,6 @@ body {
   @media @phone {
     padding-top: 80px;
   }
-
-
 }
 
 header {
@@ -255,27 +253,34 @@ div[role="alert"] {
       background: rgba(0, 0, 0, 0.75);
       padding: 30px;
 
-      input {
-        border: none;
-        line-height: 40px;
+      #recherchepdf-form {
+        font-size: 0;
+        display: inline;
         vertical-align: middle;
-        padding: 0 15px;
-        width: 220px;
-        font-size: 14px;
+        padding: 0;
 
-        @media @phone {
-          width: calc(100% - 85px);
+        input {
+          border: none;
+          line-height: 40px;
+          vertical-align: middle;
+          padding: 0 15px;
+          width: 220px;
+          font-size: 14px;
+
+          @media @phone {
+            width: calc(100% - 95px);
+          }
         }
-      }
 
-      button {
-        background: url("../images/picto-loupe.png") no-repeat center @red;
-        height: 40px;
-        width: 40px;
-        border: none;
-        vertical-align: middle;
-        cursor: pointer;
-        .dimOpacityOnHover(0.8)
+        button {
+          background: url("../images/picto-loupe.png") no-repeat center @red;
+          height: 40px;
+          width: 40px;
+          border: none;
+          vertical-align: middle;
+          cursor: pointer;
+          .dimOpacityOnHover(0.8)
+        }
       }
 
       a {

@@ -9,12 +9,14 @@
 namespace Drupal\recherchePdf\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Drupal\Core\Url;
+
 
 class RechercheController extends ControllerBase
 
@@ -40,6 +42,7 @@ class RechercheController extends ControllerBase
         $refProduit = $request->get('refProduit');
         $lotProduit = $request->get('lotProduit');
         $lang = $request->get('lang');
+        $urlRedirect = $request->get('urlRedirect');
         $qrcodeadm =  \Drupal::config('system.qrcodeadm')->get('soc', FALSE);
         $qrcodeadmProd =  \Drupal::config('system.qrcodeadm')->get('prod', FALSE);
         $qrcodeadmMail =  \Drupal::config('system.qrcodeadm')->get('mailTesterreur', FALSE);
@@ -73,8 +76,7 @@ class RechercheController extends ControllerBase
         $paramMail['to'] = $qrcodeadmMail != null ? $qrcodeadmMail : implode(', ' , $dataSoc['EMAIL_FIC_TO']);
         $paramMail['fiches'] = $postData['RefProd']." ".$postData['LotProd'];
 
-        $urlRedirect = Url::fromRoute('recherchePdf.form');
-        //ar_dump($postData);
+        $sendMessage = false;
         if($qrcodeadm == true) {
           $rslt = $this->getPdfByRefOrLotCurl($postData);
           if ($rslt != null && $rslt->nomfic != '') {
@@ -82,24 +84,28 @@ class RechercheController extends ControllerBase
             if ($this->is_url_exist($url)) {
               return $this->headersResponse($url, $rslt->fileName);
             } else {
-              $this->redirectResponse(
-                  '/'.$urlRedirect->getInternalPath(),
-                  $this->t('Fiche de données sécurité non trouvée merci de vérifier votre saisie')
-              );
-
+              $sendMessage = true;
               $paramMail['subject'] = "Fichier pdf introuvable - ".$paramMail['fiches'];
               $paramMail['body'] = "Le Fichier ".$rslt->fileName." pour Le produit reference ".$postData['RefProd']." lot ".$postData['LotProd']." est introuvable";
               $this->sendMailNoFile($paramMail);
             }
           } else {
-            $this->redirectResponse(
-              '/'.$urlRedirect->getInternalPath(),
-              $this->t('Fiche de données sécurité non trouvée merci de vérifier votre saisie')
-            );
-
+            $sendMessage = true;
             $paramMail['subject'] = "Produit introuvable - ".$paramMail['fiches'];
             $paramMail['body'] = "Le produit reference ".$postData['RefProd']." lot ".$postData['LotProd']." est introuvable dans la base de données.";
             $this->sendMailNoFile($paramMail);
+          }
+        }
+
+        if($sendMessage == true) {
+          $messenger = \Drupal::messenger();
+          $messenger->addMessage(
+            $this->t('Fiche de données sécurité non trouvée merci de vérifier votre saisie'),
+            'error',
+            true
+          );
+          if($urlRedirect != '') {
+            return $this->redirect($urlRedirect);
           }
         }
         $return = array(
@@ -152,14 +158,6 @@ class RechercheController extends ControllerBase
         $response->headers->set('Pragma', 'no-cache');
         $response->headers->set('Expires', '0');
         return $response;
-    }
-
-    protected function redirectResponse($url,$message)
-    {
-      $messenger = \Drupal::messenger();
-      $messenger->addMessage($message,'error', false);
-      /*$redirect = new RedirectResponse($url);
-      $redirect->send();*/
     }
 
     protected  function sendMailNoFile($params){

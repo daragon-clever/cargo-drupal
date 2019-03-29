@@ -382,6 +382,7 @@ footer {
     font-size: 48px;
     margin-bottom: 15px;
     font-weight: 600;
+    text-shadow: 0 0 10px black;
     // Hack anchor
     //padding-top: 150px;
     //margin-top: -150px;
@@ -413,7 +414,6 @@ footer {
         display: block;
         height: 100%;
         width: 100%;
-        background-color: #00000060;
       }
     }
   }
@@ -581,7 +581,7 @@ p.bordered-left {
     h3 {
       font-size: 14px;
       padding: 0 15px;
-      border-right: 1px solid #d7ab26;
+      border-right: 1px solid #d2d2d2;
       margin: 0;
       text-transform: uppercase;
 
@@ -1111,28 +1111,21 @@ p.bordered-left {
         padding: 8.8rem 0;
         display: block;
         text-align: center;
-        background: #343434;
+        color: #232323;
         font-family: @spectral;
-        font-size: 23px;
-        color: white;
         text-decoration: none;
+        border: 1px solid black;
+        font-weight: 600;
         .dimOpacityOnHover(0.8);
 
         span {
-          border: 1px solid white;
-          padding: 1.5rem 4.5rem;
+          border: 1px solid black;
+          font-size: 30px;
+          padding: 1rem 4.5rem;
+          background: rgba(255, 255, 255, 80%);
 
           @media @phone {
             padding: 1rem 3rem;
-          }
-        }
-
-        &.lightgrey {
-          background: #efefef;
-
-          span {
-            color: #343434;
-            border-color: #343434;
           }
         }
 

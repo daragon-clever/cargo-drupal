@@ -31,11 +31,6 @@
                     <div class="part1">
                         <h2 id="part1">{{ content.field_qsn_content_top_title.0 }}</h2>
                         <div class="row imgs-wrapper">
-                            {#{% for field in content.field_qsn_content_top_imgs['#items'] %}#}
-                                {#<div class="col-12 col-md-6 col-xl-4 text-center">#}
-                                    {#<img class="img-fluid" src="{{ file_url(field.entity.fileuri) }}" alt="{{ field.alt }}" />#}
-                                {#</div>#}
-                            {#{% endfor %}#}
                             <div class="col-12 col-md-6">
                                 <img class="img-fluid" src="{{ content.field_qsn_content_top_imgs[0] }}"
                                      alt="{{ node.field_qsn_content_top_imgs[0].alt }}" />
@@ -70,27 +65,20 @@
                     <div class="part4">
                         <div class="row">
                             <div class="col-xs-12 col-sm-6">
-                                <a class="darkgrey" href="" title=""><span>Valeurs</span></a>
+                                <a style="background: url('{{ content.field_qsn_bottom_bg_img_1[0] }}') no-repeat center transparent;"
+                                   href="{{ content.field_qsn_bottom_link_1|render|striptags|trim }}">
+                                    <span>{{ content.field_qsn_bottom_txt_1[0] }}</span>
+                                </a>
                             </div>
                             <div class="col-xs-12 col-sm-6">
-                                <a class="lightgrey" href="" title=""><span>Innovation</span></a>
+                                <a style="background: url('{{ content.field_qsn_bottom_bg_img_2[0] }}') no-repeat center transparent;"
+                                   href="{{ content.field_qsn_bottom_link_2|render|striptags|trim }}">
+                                    <span>{{ content.field_qsn_bottom_txt_2[0] }}</span>
+                                </a>
                             </div>
                         </div>
                     </div>
 
-{#                    <div class="part3">
-                        <h2 id="part3">{{ content.field_qsn_content_bottom_title.0 }}</h2>
-                        <div class="row">
-                            <div class="col-12 col-sm-5 img-wrapper">
-                                <img class="img-fluid" src="{{ content.field_qsn_content_bottom_img.0 }}"
-                                     alt="{{ content.field_qsn_content_bottom_img.alt }}" />
-                            </div>
-                            <div class="col-12 col-sm-7">
-                                <h3>{{ content.field_qsn_content_bottom_txt_tit.0 }}</h3>
-                                {{ content.field_qsn_content_bottom_txt }}
-                            </div>
-                        </div>
-                    </div>#}
                 </div>
             </div>
         </div>

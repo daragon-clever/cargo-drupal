@@ -20,6 +20,6 @@ jQuery(document).ready(function($) {
         formElts.blur(function () {
             checkValue($(this));
         });
-        $("input.required + label, textarea.required + label").after("<span class='required-star'>*</span>");
+        $("input.required + label, textarea.required + label, select.required").after("<span class='required-star'>*</span>");
     }
 });

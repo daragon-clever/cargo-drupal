@@ -252,6 +252,7 @@ div[role="contentinfo"] {
       margin: auto;
       background: rgba(0, 0, 0, 0.75);
       padding: 30px;
+      height: 100px;
 
       #recherchepdf-form {
         font-size: 0;
@@ -266,6 +267,7 @@ div[role="contentinfo"] {
           padding: 0 15px;
           width: 220px;
           font-size: 14px;
+          height: 40px;
 
           @media @phone {
             width: calc(100% - 95px);
@@ -399,6 +401,11 @@ div[role="contentinfo"] {
         font-size: 20px;
       }
 
+      select.required + .required-star {
+        top: 38px;
+        right: 30px;
+      }
+
       select {
         height: 40px;
         border: 1px solid black;
@@ -462,7 +469,8 @@ div[role="contentinfo"] {
           width: auto;
           padding: 0;
           margin: 0;
-          min-height: unset;
+          min-height: auto;
+          vertical-align: middle;
         }
 
         label {
@@ -470,6 +478,7 @@ div[role="contentinfo"] {
           left: inherit;
           top: inherit;
           padding: 0;
+          vertical-align: middle;
         }
       }
       .fieldset-wrapper > div > div {

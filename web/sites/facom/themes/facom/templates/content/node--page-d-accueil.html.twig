@@ -10,18 +10,13 @@
             <a href="#" title="Aide" data-toggle="modal" data-target="#modal-help">{{ 'Aide'|trans }}</a>
         </div>
     </div>
-
-  <script>
-    jQuery(document).ready(function ($) {
-      setTimeout(function(){
-        $("[role=contentinfo]").hide(1000);
-      }, 3000);
-    });
-  </script>
-
-
-
-
+    <script>
+        jQuery(document).ready(function ($) {
+            setTimeout(function(){
+                $("[role=contentinfo]").slideToggle(1000);
+            }, 3000);
+        });
+    </script>
 
     <div class="row">
         <div class="container">

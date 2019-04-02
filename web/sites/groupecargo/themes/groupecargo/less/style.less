@@ -507,6 +507,11 @@ p.bordered-left {
   color: #80807f;
   font-size: 14px;
   max-width: 790px;
+
+  @media @phone {
+    border: none;
+    padding-left: 0;
+  }
 }
 
 .content {
@@ -604,8 +609,6 @@ p.bordered-left {
 
 // HOMEPAGE VIDEO
 #homepage-video-wrapper {
-  height: 540px;
-  display: flex;
   margin-left: -15px;
   margin-right: -15px;
   position: relative;
@@ -617,33 +620,28 @@ p.bordered-left {
   }
 
   #homepage-video {
-    position: absolute;
-    right: 0;
-    top: 0;
-    min-width: 100%;
-    min-height: 100%;
-
-    @media @phone {
-      position: relative;
-      right: unset;
-      top: unset;
-      max-height: 240px;
-      margin-top: 125px;
-    }
+    max-width: 100%;
   }
 
   .content {
-    display: block;
-    margin: 110px auto auto;
-    width: 530px;
+    display: flex;
     z-index: 1;
     text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    & > div {
+      margin: auto;
+    }
 
     h1 {
       display: block;
       color: black;
       padding: 20px;
-      background: #ffffff90;
+      background: #fffc;
       font-family: @spectral;
       font-size: 24px;
       line-height: 1.3;
@@ -652,10 +650,7 @@ p.bordered-left {
       @media @phone {
         background: white;
         font-size: 22px;
-        padding: 20px 35px;
-        position: absolute;
-        top: 0;
-        left: 0;
+        padding: 10px 35px;
 
         br {
           display: none;
@@ -677,15 +672,14 @@ p.bordered-left {
       &:hover {
         text-decoration: none;
       }
-
-      @media @phone {
-        margin-top: 17px;
-      }
     }
 
     @media @phone {
-      width: 100%;
-      margin: 0;
+      position: relative;
+      margin-bottom: 30px;
+      display: block;
+      height: auto;
+      width: auto;
     }
   }
 }
@@ -1847,11 +1841,6 @@ p.bordered-left {
       }
     }
   }
-
-  //table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before,
-  //table.dataTable.dtr-inline.collapsed>tbody>tr.parent>th:first-child:before {
-  //  background: #cba52e;
-  //}
 
   table.dataTable thead th,
   table.dataTable thead td,

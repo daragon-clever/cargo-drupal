@@ -336,8 +336,6 @@ jQuery(document).ready(function($) {
             table.columns( '.js-only-xs' ).visible( false );
         }
 
-        console.log(isMobile);
-
         $('#toutes-les-offres').on('draw.dt', function () {
             clickableRow();
         } );

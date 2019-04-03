@@ -311,9 +311,12 @@ jQuery(document).ready(function($) {
                     $.when(select, ready).done( function () {
                         if (filter != "") {
                             var cleanfilter = cleanStr(filter).replace('-',' ');
-                            console.log(cleanfilter);
-                            $(selector + ' option[value="' + cleanfilter + '"]').attr('selected', 'selected');
-                            select.trigger("change");
+                            if ($(selector + ' option[value="' + cleanfilter + '"]').length) {
+                                $(selector + ' option[value="' + cleanfilter + '"]').attr('selected', 'selected');
+                                select.trigger("change");
+                            } else {
+                                $('#alerte-offres').html("Nous n'avons pour le moment aucune offre d'emploi à proposer");
+                            }
                         }
                     });
 

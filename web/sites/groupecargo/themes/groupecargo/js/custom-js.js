@@ -316,7 +316,7 @@ jQuery(document).ready(function($) {
                                 $(selector + ' option[value="' + cleanfilter + '"]').attr('selected', 'selected');
                                 select.trigger("change");
                             } else {
-                                $('#alerte-offres').html("Nous n'avons pour le moment aucune offre d'emploi à proposer");
+                                $('#alerte-offres').html("<div class='error'>Il n'y a pour le moment aucune offre disponible pour ce type de poste</div>");
                             }
                         }
                     });

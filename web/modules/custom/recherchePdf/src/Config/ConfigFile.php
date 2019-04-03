@@ -9,7 +9,7 @@
 namespace Drupal\recherchePdf\Config;
 class ConfigFile
 {
-    CONST API_URL = 'http://admin.url-qrcode.com/api/index-test.php'; /* L'url curl api */
+    CONST API_URL = 'http://admin.url-qrcode.com/api/'; /* L'url curl api */
     CONST QRCODEADM = [
       'TBC' => [
           'URL_SITE' => 'http://fiches.turbocar-entretien.com',

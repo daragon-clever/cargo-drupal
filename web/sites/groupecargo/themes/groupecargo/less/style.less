@@ -501,12 +501,20 @@ footer {
   }
 }
 
-p.bordered-left {
+.bordered-left {
   border-left: 1px solid #d2d2d2;
   padding-left: 20px;
   color: #80807f;
   font-size: 14px;
   max-width: 790px;
+
+  .js-read-more {
+    color: @turquoise;
+
+    span {
+      font-weight: inherit;
+    }
+  }
 
   @media @phone {
     border: none;
@@ -604,6 +612,34 @@ p.bordered-left {
       border-right: none;
       padding-right: 0;
     }
+  }
+}
+
+.js-read-more {
+  display: block;
+  cursor: pointer;
+  .dimOpacityOnHover(0.6);
+
+  & > span {
+    font-weight: 600;
+  }
+
+  &.opened {
+    .js-more {
+      display: none;
+    }
+    .js-less {
+      display: inline-block !important;
+    }
+  }
+}
+
+.xs-more-content {
+  display: inline;
+
+  @media @phone {
+    display: none;
+    margin-bottom: 5px;
   }
 }
 
@@ -742,10 +778,10 @@ p.bordered-left {
 
         &.highlight {
           color: @turquoise;
-          font-size: 24px;
+          transform: scale(1.25);
 
           @media (max-width: 1024px) {
-            font-size: 21px;
+            transform: scale(1.1);
           }
         }
       }
@@ -1406,7 +1442,6 @@ p.bordered-left {
           font-family: @heebo;
           font-size: 14px;
           font-weight: 500;
-          margin: 15px 0;
         }
 
         .reponse {
@@ -1422,22 +1457,8 @@ p.bordered-left {
 
       .js-read-more {
         color: @jauneclair;
-        display: block;
-        cursor: pointer;
-        .dimOpacityOnHover(0.6);
-
-        & > span {
-          font-weight: 600;
-        }
-
-        &.opened {
-          .js-more {
-            display: none;
-          }
-          .js-less {
-            display: inline-block !important;
-          }
-        }
+        font-family: @spectral;
+        font-style: italic;
       }
 
       @media @phone {

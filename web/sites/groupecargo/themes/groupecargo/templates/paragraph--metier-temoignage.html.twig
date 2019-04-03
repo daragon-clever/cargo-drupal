@@ -1,12 +1,13 @@
 <div class="row testimonial">
-    <div class="col-12">
+    <!-- A conserver pour mise en place de la photo -->
+    {#<div class="col-12">
         <span class="top-title">{{ content.field_job_testimonial_img['#items'].alt }}</span>
     </div>
     <div class="col-12 col-sm-5">
         <img class="img-fluid" src="{{ content.field_job_testimonial_img.0 }}"
              alt="{{ content.field_job_testimonial_img['#items'].alt }}" />
-    </div>
-    <div class="col-12 col-sm-7">
+    </div>#}
+    <div class="col-12">
         {{ content.field_job_testimonial_txt.0 }}
     </div>
 </div>

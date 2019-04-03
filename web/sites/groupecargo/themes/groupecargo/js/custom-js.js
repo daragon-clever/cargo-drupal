@@ -204,10 +204,6 @@ jQuery(document).ready(function($) {
             $(".job.intro").fadeIn("slow");
         });
 
-        $(".js-read-more").on("click", function () {
-            $(this).toggleClass("opened").prev().slideToggle();
-        });
-
         // DISPLAY CONTENT BY URL
         function getParameterByName(name, url) {
             if (!url) url = window.location.href;
@@ -219,12 +215,17 @@ jQuery(document).ready(function($) {
             return decodeURIComponent(results[2].replace(/\+/g, ' '));
         }
         var anchor = getParameterByName('content');
-        if (anchor.length) {
+        if (anchor) {
             $(("a#js-link-" + anchor)).addClass("current");
             $(".job").hide();
             $(".job#js-content-" + anchor).fadeIn("slow");
         }
     }
+
+    // READ MORE
+    $(".js-read-more").on("click", function () {
+        $(this).toggleClass("opened").prev().slideToggle();
+    });
 
     // PAGE CANDIDATURE SPONTANEE
     if ($('.webform-submission-form').length) {

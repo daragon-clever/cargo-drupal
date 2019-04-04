@@ -1494,7 +1494,8 @@ footer {
 }
 
 // CANDIDATURE SPONTANNEE
-#webform-submission-candidature-spontanee-add-form {
+#webform-submission-candidature-spontanee-add-form,
+#webform-submission-contact-node-10-add-form {
   max-width: 920px;
   margin: 35px auto 0;
 
@@ -1715,6 +1716,59 @@ footer {
 
   @media @phone {
     margin-top: 15px;
+  }
+}
+
+#webform-submission-contact-node-10-add-form {
+  max-width: 600px;
+
+  .webform-flexbox {
+    margin: 0 -0.5em;
+
+    @media @phone {
+      margin: 0;
+    }
+  }
+
+  .form-item {
+    margin-top: 15px;
+  }
+
+  .webform-button--submit {
+    background: @turquoise;
+  }
+
+  .field-prefix {
+    position: absolute;
+    top: 14px;
+    right: 10px;
+    color: @turquoise;
+    z-index: 10;
+  }
+
+  .js-form-type-select .field-prefix {
+    top: 17px;
+    right: 30px;
+  }
+
+  textarea {
+    margin-bottom: 20px !important;
+
+    @media @phone {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  .g-recaptcha {
+    transform: scale(0.9);
+
+    & > div {
+      margin: 0 auto;
+    }
+
+    @media @phone {
+      margin-bottom: 10px;
+    }
   }
 }
 
@@ -2141,5 +2195,19 @@ footer {
     margin-bottom: 50px;
     margin-top: 15px;
     font-size: 1.9rem;
+  }
+}
+
+// CONTACT
+.contact-txt {
+  max-width: 600px;
+  margin: 25px auto 15px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+
+  a {
+    color: @turquoise;
+    text-decoration: underline;
   }
 }

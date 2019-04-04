@@ -1,0 +1,204 @@
+<?php
+
+function offres_emploi_theme($existing, $type, $theme, $path) {
+    return [
+        'offres_emploi--list' => [
+            'variables' => [
+                'data' => NULL,
+                'filter' => NULL
+            ]
+        ],
+        'offres_emploi--annonce' => [
+            'variables' => [
+                'data' => NULL,
+            ]
+        ],
+        'offres_emploi--form-postuler' => [
+            'variables' => [
+                'data' => NULL,
+                'form' => NULL
+            ]
+        ]
+    ];
+}
+
+/**
+ * Schema table
+ */
+function offres_emploi_schema()
+{
+    $schema['offres_emploi'] = array(
+        'description' => 'Toutes les offres d\'emploi du groupe',
+        'fields' => array(
+            'id' => array(
+                'type' => 'serial',
+                'not null' => TRUE,
+                'description' => 'Primary Key: Unique email ID.',
+            ),
+            'codeRecrutement' => array(
+                'type' => 'varchar',
+                'length' => 25,
+                'not null' => TRUE,
+                'default' => '',
+                'description' => '',
+            ),
+            'intitulePoste' => array(
+                'type' => 'varchar',
+                'length' => 100,
+                'not null' => TRUE,
+                'default' => '',
+                'description' => '',
+            ),
+            'dateCreationDemande' => array(
+                'type' => 'varchar',
+                'mysql_type' => 'datetime',
+                'not null' => TRUE,
+                'description' => '',
+            ),
+            'dateOuverturePoste' => array(
+                'type' => 'varchar',
+                'mysql_type' => 'datetime',
+                'not null' => FALSE,
+                'description' => '',
+            ),
+            'filialeSociete' => array(
+                'type' => 'varchar',
+                'length' => 50,
+                'not null' => TRUE,
+                'default' => '',
+                'description' => '',
+            ),
+            'typeContrat' => array(
+                'type' => 'varchar',
+                'length' => 25,
+                'not null' => TRUE,
+                'default' => '',
+                'description' => '',
+            ),
+            'dureeContrat' => array(
+                'type' => 'int',
+                'size' => 'tiny',
+                'not null' => FALSE,
+                'default' => '0',
+                'description' => '',
+            ),
+            'categorie' => array(
+                'type' => 'varchar',
+                'length' => 50,
+                'not null' => FALSE,
+                'default' => '',
+                'description' => '',
+            ),
+            'metier' => array(
+                'type' => 'varchar',
+                'length' => 50,
+                'not null' => FALSE,
+                'default' => '',
+                'description' => '',
+            ),
+            'lieuRecrutement' => array(
+                'type' => 'varchar',
+                'length' => 50,
+                'not null' => TRUE,
+                'default' => '',
+                'description' => '',
+            ),
+            'descriptionEntreprise' => array(
+                'type' => 'text',
+                'not null' => TRUE,
+            ),
+            'descriptionMission' => array(
+                'type' => 'text',
+                'not null' => TRUE,
+            ),
+            'descriptionProfil' => array(
+                'type' => 'text',
+                'not null' => TRUE,
+            ),
+            'active' => array(
+                'type' => 'int',
+                'size' => 'tiny',
+                'not null' => TRUE,
+                'default' => 0,
+                'description' => '',
+            ),
+            'nbVue' => array(
+                'type' => 'int',
+                'size' => 'medium',
+                'not null' => TRUE,
+                'default' => 0,
+                'description' => ''
+            ),
+            'nbCandidature' => array(
+                'type' => 'int',
+                'size' => 'medium',
+                'not null' => TRUE,
+                'default' => 0,
+                'description' => ''
+            )
+        ),
+        'primary key' => array('id'),
+        'unique keys' => array(
+            /*'codeRecrutement' => array(
+                'type' => 'varchar',
+                'length' => 25,
+                'not null' => TRUE,
+                'default' => '',
+                'description' => '',
+            ),*/
+            'codeRecrutement' => array(
+                'codeRecrutement',
+            ),
+        ),
+        'indexes' => array(
+            'intitulePoste' => array('intitulePoste'),
+            'filialeSociete' => array('filialeSociete'),
+            'typeContrat' => array('typeContrat'),
+            'metier' => array('metier'),
+            'descriptionEntreprise' => array('descriptionEntreprise'),
+            'descriptionMission' => array('descriptionMission'),
+            'descriptionProfil' => array('descriptionProfil'),
+        ),
+    );
+
+    return $schema;
+}
+
+use Drupal\offres_emploi\Controller\ImportController;
+function offres_emploi_install()
+{
+    $import = new ImportController();
+    $import->execute();
+}
+
+function offres_emploi_cron()
+{
+    $last_run = \Drupal::state()->get('offres_emploi.last_run', 0);
+    // If 60 minutes passed since last time.
+    if ((REQUEST_TIME - $last_run) > 3600) {
+        \Drupal::logger('offres_emploi')->notice('offres_emploi ran');
+        // Do something.
+        $import = new ImportController();
+        $import->execute();
+
+        // Update last run.
+        \Drupal::state()->set('offres_emploi.last_run', REQUEST_TIME);
+    }
+
+}
+
+use Drupal\offres_emploi\Controller\OffresEmploiActionController;
+function offres_emploi_webform_element_hidden_alter(array &$element, \Drupal\Core\Form\FormStateInterface $form_state, array $context)
+{
+    $route_match = \Drupal::service('current_route_match');
+    $param_ref = $route_match->getParameter('ref');
+
+    if ($element['#webform_key'] == 'offre') {
+        $element['#value'] = $param_ref;
+    }
+    if ($element['#webform_key'] == 'nom_offre') {
+        $contr = new OffresEmploiActionController();
+        $name = $contr->getOffre($param_ref);
+        $element['#value'] = $name["intitulePoste"];
+    }
+}

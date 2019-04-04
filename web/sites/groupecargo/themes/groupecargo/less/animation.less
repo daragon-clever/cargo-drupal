@@ -1,0 +1,109 @@
+//////////////////////////////////////
+// Source : https://www.newventuresoftware.com/blog/CSS-animations-triggered-when-elements-are-visible-on-screen
+
+// Animations delay
+@animation-ms: 0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 700,
+800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000;
+// Adding the delays from the array in CSS selectors
+.nvs-animation-delay(@i: 1) when (@i =< length(@animation-ms)) {
+  @ms: extract(@animation-ms, @i);
+  @selector: ~'[nvs-animation-delay="@{ms}"]';
+  @{selector} {
+    animation-delay: ~'@{ms}ms';
+  }
+  .nvs-animation-delay(@i + 1);
+}
+// Initializing CSS selectors with predefined delay
+.nvs-animation-delay();
+// Hide animated elements when not on screen
+@media (min-width: 768px) {
+  [nvs-animation-type] {
+    visibility: hidden;
+  }
+}
+// Remove animations on small tablets and mobile devices
+@media (max-width: 768px) {
+  [nvs-animation-type] {
+    animation: none !important;
+    transform: none !important;;
+    transition-property: none !important;;
+    visibility: visible !important;
+  }
+}
+// Show elements when on screen
+.animated {
+  visibility: visible;
+}
+///////////////// CUSTOMS ANIMATIONS /////////////////
+@keyframes fadeInLeft {
+  from {
+    opacity:0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity:1;
+    transform: translateX(0);
+  }
+}
+@keyframes fadeInRight {
+  from {
+    opacity:0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity:1;
+    transform: translateX(0);
+  }
+}
+@keyframes fadeInBottom {
+  from {
+    opacity:0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity:1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity:0;
+  }
+  to {
+    opacity:1;
+  }
+}
+@keyframes mover {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+.in-left {
+  animation-name: fadeInLeft;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+}
+.in-left-menu {
+  animation-name: fadeInLeft;
+  animation-fill-mode: both;
+  animation-duration: 1.3s;
+  animation-delay: 0.8s;
+}
+.in-right {
+  animation-name: fadeInRight;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+}
+.in-bottom {
+  animation-name: fadeInBottom;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+}
+.fade-in {
+  animation-name: fadeIn;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+}
+.vert-move {
+  -webkit-animation: mover 1s infinite  alternate;
+  animation: mover 1s infinite  alternate;
+}

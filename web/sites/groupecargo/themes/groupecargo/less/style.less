@@ -555,9 +555,10 @@ footer {
       height: calc(50% - 15px);
     }
   }
+
   @media @phone {
     & > div {
-      margin: 15px 0;
+      margin: 8px 0;
 
       &:first-child:not(.order-2),
       &.order-sm-2 {
@@ -568,6 +569,38 @@ footer {
       &.order-2 {
         margin-bottom: 0;
       }
+    }
+
+    .double img:first-child {
+      margin-bottom: 15px;
+    }
+
+    .double {
+      &:not(.order-3) {
+        padding-right: 8px;
+      }
+
+      & + div,
+      &.order-3 {
+        padding-left: 8px;
+      }
+
+      img {
+        height: calc(50% - 8px);
+      }
+    }
+
+    .col + .double {
+      padding-left: 8px;
+      padding-right: 15px;
+    }
+
+    .order-2 {
+      padding-right: 8px;
+    }
+
+    & > div:first-child .row > .col:first-child {
+      padding-right: 8px;
     }
   }
 }

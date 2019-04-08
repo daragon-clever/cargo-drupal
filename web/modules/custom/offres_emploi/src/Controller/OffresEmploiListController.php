@@ -70,17 +70,13 @@ class OffresEmploiListController extends ControllerBase {
     {
 
         if ($ref == "all") {
-            //récupère les filtres
-            $arrFilter = $this->getAllFilters($request);
-
             //return une liste d'offre
             $offres = $this->getOffres();
 
             //construit le thème
             $build = [
                 '#theme' => 'offres_emploi--list',
-                '#data' => $offres,
-                '#filter' => $arrFilter
+                '#data' => $offres
             ];
         } else {
             //retour une seule offre
@@ -105,19 +101,6 @@ class OffresEmploiListController extends ControllerBase {
         }
 
         return $build;
-    }
-
-    /*
-     * Get filters _GET of the request
-     */
-    private function getAllFilters($req)
-    {
-        return array(
-            "filiale_societe" => $req->get("filiale_societe"),
-            "type_contrat" => $req->get("type_contrat"),
-            "type_metier" => $req->get("type_metier"),
-            "lieu" => $req->get("lieu")
-        );
     }
 
     /*

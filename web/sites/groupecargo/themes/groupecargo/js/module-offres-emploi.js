@@ -1,6 +1,14 @@
 jQuery(document).ready(function($) {
     var isMobile = window.matchMedia("only screen and (max-width: 767px)").matches;
 
+    $.urlParam = function(name){
+        var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+        if (results==null) {
+            return "";
+        }
+        return decodeURI(results[1]) || 0;
+    }
+
     //PAGE OFFRE EMPLOI - AUDREY - NICO
     if ($('.listing-offres').length) {
 
@@ -40,15 +48,15 @@ jQuery(document).ready(function($) {
                     switch (this[0][0]) {
                         case 1:
                             var selector = '#filtre-contrat .select-option';
-                            var filter = my_filter_value_type_contrat;
+                            var filter = $.urlParam('type_contrat'); // OLD : my_filter_value_type_contrat
                             break;
                         case 2:
                             var selector = '#filtre-poste .select-option';
-                            var filter = my_filter_value_type_metier;
+                            var filter = $.urlParam('type_metier'); // OLD : my_filter_value_type_metier
                             break;
                         case 4:
                             var selector = '#filtre-lieu .select-option';
-                            var filter = my_filter_value_lieu;
+                            var filter = $.urlParam('lieu'); // OLD : my_filter_value_lieu
                             break;
                     }
 

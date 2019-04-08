@@ -62,5 +62,6 @@ global-styling:
   js:
     js/custom-js.js: {}
     js/custom-animation.js: {}
+    js/module-offres-emploi.js: {}
   dependencies:
     - core/jquery

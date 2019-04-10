@@ -1526,6 +1526,121 @@ footer {
   }
 }
 
+// VALEURS
+.valeurs {
+
+  .intro {
+    text-align: center;
+    max-width: 580px;
+    display: block;
+    margin:0 auto;
+
+    h1 {
+      font-family: @spectral;
+      font-size: 48px;
+      font-weight: 600;
+      margin-top: 20px;
+
+      &:after {
+        content: "";
+        height: 1px;
+        background: #dcdcdc;
+        width: 100px;
+        display: block;
+        margin: 15px auto 23px;
+      }
+
+      @media @tablet {
+        font-size: 28px;
+      }
+
+      @media @tablet {
+        max-width: 595px;
+      }
+    }
+
+    p {
+      font-size: 14px;
+      color: #646464;
+    }
+  }
+
+  .desktop {
+    position: relative;
+    margin-top: 60px;
+
+    img {
+      max-width: 1077px;
+      margin:0 auto;
+      display: block;
+    }
+  }
+
+  .txts-wrapper {
+    .block-txt {
+      display: block;
+      max-width: 355px;
+      position: absolute;
+
+      &:nth-child(1) {
+        top: 85px;
+        right: 50px;
+      }
+
+      &:nth-child(2) {
+        top: 325px;
+      }
+
+      &:nth-child(3) {
+        top: 590px;
+        right: 20px;
+      }
+
+      &:nth-child(4) {
+        bottom: 245px;
+        right: 45px;
+      }
+    }
+  }
+
+  h2 {
+    padding-top: 0;
+    padding-bottom: 0;
+    border: none;
+    margin: 0 0 5px 0;
+    font-size: 21px;
+  }
+
+  p {
+    color: #aaaaaa;
+    font-size: 14px;
+
+    a {
+      color: @turquoise;
+      font-weight: 500;
+      text-decoration: underline;
+    }
+
+    @media @tablet {
+      margin: 0;
+    }
+  }
+
+  .tab-mobile {
+    & > div {
+      margin: 30px -15px;
+
+      @media @phone {
+        margin: 0 -15px;
+
+        & > div {
+          margin: 20px 0;
+        }
+      }
+    }
+  }
+}
+
 // CANDIDATURE SPONTANNEE
 #webform-submission-candidature-spontanee-add-form,
 #webform-submission-contact-node-10-add-form {

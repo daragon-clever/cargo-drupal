@@ -3,8 +3,19 @@ jQuery(document).ready(function($) {
     var isMobile = window.matchMedia("only screen and (max-width: 767px)").matches;
     var isTabletOrLess = window.matchMedia("only screen and (max-width: 991px)").matches;
     // NAV
-    $("#header-wrapper nav").hover(function () {
-        $("#header-wrapper").toggleClass("menu-hover");
+    $("#header-wrapper nav").hover(
+        function() {
+            $("#header-wrapper").addClass("menu-hover");
+        },
+        function() {
+            $("#header-wrapper").removeClass("menu-hover");
+        }
+    );
+    // NAV - Si souris déjà sur elt menu au chargement de la page
+    $("#header-wrapper ul > li > a").mouseenter(function () {
+        if (!$("#header-wrapper").hasClass("menu-hover")) {
+            $("#header-wrapper").addClass("menu-hover");
+        }
     });
 
     if ( isTabletOrLess ) {

@@ -1,32 +1,88 @@
-<div class="row">
-    <form class="col" id="recherchepdf-form" name="formSearch" action="{{ path('resultSearch.form') }}" onsubmit="return validateForm()" type="POST">
-        <div class="row justify-content-center align-items-end">
-            <div class="col-12 col-md-4 col-lg-3">
-                Référence du produit : <input name="refProduit" class="form-control refProduit" type="text" required>
-            </div>
-            <div class="col-12 col-md-4 col-lg-3">
-                Lot du produit : <input name="lotProduit" class="form-control lotProduit" type="text" required>
-            </div>
-            <div class="col-auto">
-                <input name="urlRedirect" id="urlRedirect" value="" type="hidden">
-                <button type="submit">Télécharger</button>
-            </div>
+<style>
+    #selection-type-produit select, #selection-type-produit p {
+        display: inline;
+    }
+    #selection-type-produit select {
+        width: 215px;
+        margin-left: 10px;
+    }
+    #chercher-det p span, #chercher-not p span {
+        color: #e40514;
+    }
+    .box-chercher {
+        display: none;
+        border-left: 2px solid gray;
+    }
+</style>
+<div class="row justify-content-center">
+    <div id="selection-type-produit" class="col">
+        <div style="width: max-content; margin: auto;">
+            <p>Veuillez sélectionner votre type de produit : </p>
+            <select class="form-control" id="select-type-produit">
+                <option value="">--Choisir type produit--</option>
+                <option value="chercher-det">Produit d'entretien</option>
+                <option value="chercher-not">Accessoire auto</option>
+            </select>
         </div>
-    </form>
+    </div>
+    <br />
+    <div id="chercher-det" class="box-chercher col">
+        <p>Pour télécharger la fiche technique d'un produit, merci de saisir la <span>référence du produit</span> et le <span>numéro de lot</span> :</p>
+        <form class="col" id="recherchepdf-form" name="formSearchDet" action="{{ path('resultSearch.form') }}" onsubmit="return validateFormDet()" type="POST">
+            <div class="row justify-content-center align-items-end">
+                <div class="col-12 col-md-4 col-lg-4">
+                    Référence du produit : <input name="refProduit" class="form-control refProduit" type="text" required>
+                </div>
+                <div class="col-12 col-md-4 col-lg-4">
+                    Lot du produit : <input name="lotProduit" class="form-control lotProduit" type="text" required>
+                </div>
+                <div class="col-auto">
+                    <input name="urlRedirect" class="urlRedirect" value="" type="hidden">
+                    <button type="submit">Télécharger</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="chercher-not" class="box-chercher col">
+        <p>Pour télécharger la notice d'un produit, merci de saisir la <span>référence du produit</span> :</p>
+        <form class="col" id="recherchepdf-form" name="formSearchNot" action="{{ path('resultSearch.form') }}" onsubmit="return validateFormNot()" type="POST">
+            <div class="row justify-content-center align-items-end">
+                <div class="col-12 col-md-4 col-lg-4">
+                    Référence du produit : <input name="refProduit" class="form-control refProduit" type="text" required>
+                </div>
+                <div class="col-auto">
+                    <input name="urlRedirect" class="urlRedirect" value="" type="hidden">
+                    <button type="submit">Télécharger</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
 </div>
 
 <script>
     var pathname = window.location.pathname;
-    $("#urlRedirect").attr("value",pathname);
+    $(".urlRedirect").attr("value",pathname);
 
-    function validateForm() {
-        var refProduit = document.forms["formSearch"]["refProduit"].value;
-        var lotProduit = document.forms["formSearch"]["lotProduit"].value;
+    function validateFormDet() {
+        var refProduit = document.forms["formSearchDet"]["refProduit"].value;
+        var lotProduit = document.forms["formSearchDet"]["lotProduit"].value;
         if (refProduit == "" && lotProduit == "") {
-            alert("Veuillez saisir le reférence du produit ou bien le lot du produit");
+            alert("Veuillez saisir le reférence du produit et le lot du produit");
+            return false;
+        } else {
+            return true;
+        }
+    }
+    function validateFormNot() {
+        var refProduit = document.forms["formSearchNot"]["refProduit"].value;
+        if (refProduit == "") {
+            alert("Veuillez saisir le reférence du produit");
             return false;
         } else {
             return true;
         }
     }
 </script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>

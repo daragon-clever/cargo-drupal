@@ -8,6 +8,7 @@
                 Lot du produit : <input name="lotProduit" class="form-control lotProduit" type="text" required>
             </div>
             <div class="col-auto">
+                <input name="urlRedirect" id="urlRedirect" value="" type="hidden">
                 <button type="submit">Télécharger</button>
             </div>
         </div>
@@ -15,19 +16,10 @@
 </div>
 
 <script>
-    jQuery(document).ready(function ($) {
-        var msg = '{{ msg }}';
-        if (msg != "") {
-            alert(msg);
-            window.location.href="/recherche-pdf";
-        }
-      setTimeout(function(){
-        $("[role=contentinfo]").hide(1000);
-      }, 3000);
-    });
+    var pathname = window.location.pathname;
+    $("#urlRedirect").attr("value",pathname);
 
     function validateForm() {
-
         var refProduit = document.forms["formSearch"]["refProduit"].value;
         var lotProduit = document.forms["formSearch"]["lotProduit"].value;
         if (refProduit == "" && lotProduit == "") {

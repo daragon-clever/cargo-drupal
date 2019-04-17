@@ -1,0 +1,20 @@
+<form class="col" id="recherchepdf-form" name="formSearch" action="{{ path('resultSearch.form') }}" onsubmit="return validateForm()" type="POST">
+    <input name="refProduit" placeholder="{{ 'Saisir la référence produit colle'|trans }}" required>
+    <input name="urlRedirect" id="urlRedirect" value="" type="hidden">
+    <button></button>
+</form>
+
+<script>
+    var pathname = window.location.pathname;
+    $("#urlRedirect").attr("value",pathname);
+
+    function validateForm() {
+        var refProduit = document.forms["formSearch"]["refProduit"].value;
+        if (refProduit == "") {
+            alert("Veuillez saisir le reférence du produit");
+            return false;
+        } else {
+            return true;
+        }
+    }
+</script>

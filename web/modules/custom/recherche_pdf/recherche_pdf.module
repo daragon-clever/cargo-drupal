@@ -1,0 +1,22 @@
+<?php
+use Drupal\Core\Mail\MailManagerInterface;
+use Drupal\Component\Utility\SafeMarkup;
+use Drupal\Component\Utility\Html;
+
+function recherche_pdf_theme()
+{
+    return [
+        'recherche_pdf--recherche' => [
+            'template' => "recherche-pdf--recherche"
+        ]
+    ];
+}
+
+function recherche_pdf_mail($key, &$message, $params)
+{
+    $message['from'] = $params['from'];
+    $message['subject'] = $params['subject'];
+    $message['body'][] = Html::escape($params['body']);
+}
+
+?>

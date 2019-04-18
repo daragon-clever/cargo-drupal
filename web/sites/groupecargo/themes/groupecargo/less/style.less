@@ -776,9 +776,14 @@ footer {
 // HOME CONTENT
 #homepage {
   .txt-intro {
-    max-width: 730px;
     margin: 20px 0 25px;
     font-size: 16px;
+
+    & > div {
+      max-width: 730px;
+      display: block;
+      margin: 0 auto;
+    }
   }
 
   .galery {

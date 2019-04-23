@@ -26,7 +26,8 @@ jQuery(document).ready(function($) {
                 "border-full",
                 "position-front",
                 "pagedim-black",
-                "fullscreen"
+                "fullscreen",
+                "position-right"
             ]
         }, {
             clone: true

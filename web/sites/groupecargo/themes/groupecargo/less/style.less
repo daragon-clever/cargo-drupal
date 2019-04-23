@@ -847,6 +847,10 @@ footer {
           line-height: 2;
         }
 
+        @media @phone {
+          font-size: 20px;
+        }
+
         &.highlight {
           color: @turquoise;
           transform: scale(1.25);
@@ -902,6 +906,13 @@ footer {
           border-bottom: 1px solid @turquoise;
           border-right: 1px solid @turquoise;
         }
+      }
+
+      @media @phone {
+        width: 100%;
+        min-height: auto !important;
+        display: block;
+        padding: 15px;
       }
     }
 
@@ -2408,6 +2419,11 @@ footer {
 }
 
 // CONTACT
+.webform-submission-contact-form {
+  .field-prefix {
+    display: none;
+  }
+}
 .contact-txt {
   max-width: 600px;
   margin: 25px auto 15px;

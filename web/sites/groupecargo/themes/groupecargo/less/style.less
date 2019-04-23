@@ -680,6 +680,17 @@ footer {
   }
 }
 
+.flex-center {
+  display: flex;
+  height: 100%;
+  width: 100%;
+
+  & > * {
+    align-self: center;
+    margin: 0 auto;
+  }
+}
+
 #alerte-offres  {
   & > div {
     border: 1px solid black;
@@ -1597,6 +1608,96 @@ footer {
           margin: 20px 0;
         }
       }
+    }
+  }
+}
+
+// INNOVATION
+.innovations {
+  h1 {
+    font-family: @spectral;
+    font-size: 48px;
+    font-weight: 600;
+
+    &:after {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 100px;
+      background: #dadada;
+      margin: 10px auto 20px;
+    }
+
+    @media @phone {
+      font-size: 35px;
+    }
+  }
+
+  .intro {
+    max-width: 660px;
+    color: #646464;
+    margin: 0 auto;
+  }
+
+  h2 {
+    font-family: @spectral;
+    font-size: 24px;
+    margin: 0 0 10px 0;
+    padding: 0;
+    border: none;
+
+    &:before {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 65px;
+      margin-bottom: 10px;
+      background: black;
+    }
+
+    @media @phone {
+      margin-top: 15px;
+    }
+  }
+
+  p {
+    color: #959595;
+  }
+
+  img {
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+
+    @media @phone {
+      margin: 15px auto;
+    }
+  }
+
+  & > div {
+    margin-bottom: 35px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @media @phone {
+      margin-bottom: 0;
+    }
+  }
+
+  .txt-block {
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+
+    &.txt-3 {
+      max-width: 325px;
+    }
+
+    &.txt-2,
+    &.txt-4 {
+      max-width: 293px;
     }
   }
 }

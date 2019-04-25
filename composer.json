@@ -43,7 +43,7 @@
         "drupal/console": "^1.0.2",
         "drupal/cookieconsent": "^1.4",
         "drupal/core": "^8.6.0",
-        "drupal/devel": "^1.2",
+        "drupal/devel": "^2.0",
         "drupal/entity_pager": "^1.0@beta",
         "drupal/entity_reference_revisions": "^1.5",
         "drupal/features": "^3.8",

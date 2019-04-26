@@ -78,13 +78,13 @@ jQuery(document).ready(function($) {
                 $(this).attr("src", randomImgFromBank);
             });
             // toggleFade les images
-            cell.find("img").fadeToggle(1500);
+            cell.find("img").fadeToggle(2000);
         }
     }
     // Lancer la fonction toutes les x secondes
     setInterval(function() {
         changeSrc();
-    }, 1000);
+    }, 2000);
 
     if ( isMobile ) {
         // Galery homepage

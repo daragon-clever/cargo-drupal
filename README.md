@@ -14,7 +14,14 @@
 	* '**host**' => '`{{ MYSQL_HOST }}`',  
 	* '**port**' => '3306',  
 	* '**namespace**' => 'Drupal\\Core\\Database\\Driver\\mysql',  
-	* '**driver**' => 'mysql',  
+	* '**driver**' => 'mysql'
+
+# Mettre à jour les médias et la base de données depuis la prépod
+Depuis la racine du projet, exécuter la commande :
+1. `docker-compose run --rm php bash bin/synchfiles.sh`
+    * Entrez le nom du site en local et en distant
+    * Entrez le nom et le mot de passe de l'utilisateur de la base de données préprod
+2. `docker-compose exec db /bin/bash /var/www/html/bin/synchbd.sh`
 	
 # Mise à jour de Drupal : 
 * `docker-compose run --rm php composer outdated`

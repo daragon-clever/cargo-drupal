@@ -116,6 +116,15 @@ class NewsletterController extends ControllerBase {
         return $updatePeople;
     }
 
+    private function setValueAllBrands($val)
+    {
+        foreach ($this->lesMarque as $value)
+        {
+            $newArray[$value] = $val;
+        }
+        return $newArray;
+    }
+
     public function initializeFieldSociety()
     {
         foreach ($this->lesMarque as $value)

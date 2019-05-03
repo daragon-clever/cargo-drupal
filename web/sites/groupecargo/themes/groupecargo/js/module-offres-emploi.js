@@ -9,7 +9,7 @@ jQuery(document).ready(function($) {
         return decodeURI(results[1]) || 0;
     }
 
-    //PAGE OFFRE EMPLOI - AUDREY - NICO
+    //PAGE OFFRE EMPLOI
     if ($('.listing-offres').length) {
 
         $.fn.dataTable.moment( 'DD/MM/YYYY' );
@@ -24,46 +24,35 @@ jQuery(document).ready(function($) {
         };
 
         var table = $("#toutes-les-offres").DataTable({
-            //config
-            dom: 'tp',
+            dom: 'tp',//tpl
             language: {
-                searchPlaceholder : "Rechercher une offre",
-                emptyTable: "Nous n'avons pour le moment aucune offre d'emploi à proposer"
+                "url": "/sites/groupecargo/themes/groupecargo/js/datatables-french.json",
             },
-
-            //pages
             pagingType: "numbers",
             pageLength: 10,
-
-            //date
-            order:[3,'desc'],//en fonction d'une date précise
-
-            // Responsive
-            responsive: true,
+            order:[3,'desc'],//order by date
+            responsive: true,//responsive
 
             //filters
             initComplete: function () {
-                //les filtres
+                //create filter on 3 columns
                 this.api().columns([1,2,4]).every( function () {
                     switch (this[0][0]) {
                         case 1:
                             var selector = '#filtre-contrat .select-option';
-                            var filter = $.urlParam('type_contrat'); // OLD : my_filter_value_type_contrat
                             break;
                         case 2:
                             var selector = '#filtre-poste .select-option';
-                            var filter = $.urlParam('type_metier'); // OLD : my_filter_value_type_metier
                             break;
                         case 4:
                             var selector = '#filtre-lieu .select-option';
-                            var filter = $.urlParam('lieu'); // OLD : my_filter_value_lieu
                             break;
                     }
 
                     var column = this;
                     var select = $('<select><option value="">Voir tous</option></select>').appendTo( $(selector) );
 
-                    //filtre lors d'un change
+                    //filtering rows on select change
                     select.on( 'change', function () {
                         var val = $.fn.dataTable.util.escapeRegex(
                             $(this).val()
@@ -79,19 +68,34 @@ jQuery(document).ready(function($) {
                         } );
                     })();
 
-                    $.when(select, ready).done( function () {
-                        if (filter != "") {
-                            var cleanfilter = replaceSpecialChar(filter);
-                            if ($(selector + ' option[data-clean="' + cleanfilter + '"]').length) {
-                                $(selector + ' option[data-clean="' + cleanfilter + '"]').attr('selected', 'selected');
-                                select.trigger("change");
-                            } else {
-                                $('#alerte-offres').html("<div class='error'>Il n'y a pour le moment aucune offre disponible pour ce type de poste</div>");
-                            }
-                        }
-                    });
-
                 } );
+                this.api().columns([1,2,4]).every( function () {
+                    switch (this[0][0]) {
+                        case 1:
+                            var selector = '#filtre-contrat .select-option';
+                            var filter = $.urlParam('type_contrat');
+                            break;
+                        case 2:
+                            var selector = '#filtre-poste .select-option';
+                            var filter = $.urlParam('type_metier');
+                            break;
+                        case 4:
+                            var selector = '#filtre-lieu .select-option';
+                            var filter = $.urlParam('lieu');
+                            break;
+                    }
+                    var select = $(selector + " select");
+
+                    if (filter != "") {
+                        var cleanfilter = replaceSpecialChar(filter);
+                        if ($(selector + ' option[data-clean="' + cleanfilter + '"]').length) {
+                            $(selector + ' option[data-clean="' + cleanfilter + '"]').attr('selected', 'selected');
+                            select.trigger("change");
+                        } else {
+                            $('#alerte-offres').html("<div class='error'>Il n'y a pour le moment aucune offre disponible pour ce type de poste</div>");
+                        }
+                    }
+                });
 
                 // Select2 filters
                 $('.select-option select').select2({
@@ -102,6 +106,44 @@ jQuery(document).ready(function($) {
                 clickableRow();
             }
         });
+
+        $.when(table).done( function () {
+            table.on('draw', function () {
+                table.columns().indexes().each( function ( idx ) {
+                    switch (idx) {
+                        case 1://ou -1
+                            var selector = '#filtre-contrat .select-option';
+                            var filter = $.urlParam('type_contrat');//get url param value
+                            break;
+                        case 2:
+                            var selector = '#filtre-poste .select-option';
+                            var filter = $.urlParam('type_metier');
+                            break;
+                        case 4:
+                            var selector = '#filtre-lieu .select-option';
+                            var filter = $.urlParam('lieu');
+                            break;
+                    }
+
+                    var select = $(selector + " select");
+
+                    if ( select.val() === '' ) {
+                        select.empty().append('<option value="">Voir tous</option>');
+
+                        table.column(idx, {search:'applied'}).data().unique().sort().each( function ( d, j ) {
+                            var cleanvalue = replaceSpecialChar(d);
+                            select.append( '<option data-clean="'+cleanvalue+'" value="'+d+'">'+d+'</option>' );
+                        } );
+                    }
+                } );
+
+                // Select2 filters
+                $('.select-option select').select2({
+                    minimumResultsForSearch: Infinity
+                });
+            } );
+        });
+
 
         // Masquer la colonne qui sert aux filtres
         table.columns( '.js-hide' ).visible( false );
@@ -126,8 +168,10 @@ jQuery(document).ready(function($) {
             table.search(this.value).draw();
         });
 
-        //remove accent and set lower case
-        function cleanStr(str) {
+
+
+        //replace array of characters by "-" + remove accent and set lower case
+        function replaceSpecialChar(str) {
             var accents    = 'ÀÁÂÃÄÅàáâãäåÒÓÔÕÕÖØòóôõöøÈÉÊËèéêëðÇçÐÌÍÎÏìíîïÙÚÛÜùúûüÑñŠšŸÿýŽž';
             var accentsOut = "AAAAAAaaaaaaOOOOOOOooooooEEEEeeeeeCcDIIIIiiiiUUUUuuuuNnSsYyyZz";
             str = str.split('');
@@ -138,13 +182,8 @@ jQuery(document).ready(function($) {
                     str[i] = accentsOut[x];
                 }
             }
-            return str.join('').toLowerCase();
+            var final = str.join('').toLowerCase().replace(/[^a-zA-Z0-9]/g, '-');
+            return final;
         }
-
-        //replace array of characters by "-"
-        function replaceSpecialChar(metier){
-            return cleanStr(metier).replace(/[^a-zA-Z0-9]/g, '-');
-        }
-
     }
 });

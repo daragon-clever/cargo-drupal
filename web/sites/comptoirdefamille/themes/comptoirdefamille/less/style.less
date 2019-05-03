@@ -24,6 +24,11 @@ h2 {
   }
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 .cta {
   height: 40px;
   line-height: 40px;
@@ -342,5 +347,50 @@ header {
         background: url("../images/motifs/motif_croix_nb.png") repeat transparent;
       }
     }
+  }
+}
+
+#newsletter {
+  margin: 30px -15px 50px;
+  height: 240px;
+  background-color: #d7d0bd;
+  text-align: center;
+  position: relative;
+  display: flex;
+
+  &:before {
+    background: url("../images/newsletter/motif_news_02.png") no-repeat transparent;
+    height: 225px;
+    width: 332px;
+    display: block;
+    content: "";
+    position: absolute;
+    bottom: -54px;
+    left: 0;
+  }
+
+  &:after {
+    background: url("../images/newsletter/motif_news_01.png") no-repeat transparent;
+    height: 203px;
+    width: 410px;
+    display: block;
+    content: "";
+    position: absolute;
+    bottom: -62px;
+    right: 0;
+  }
+
+  .motif {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 37px;
+    background: url("../images/motifs/motif_newsletter.png") repeat-x center transparent;
+  }
+
+  .inner {
+    margin: auto;
   }
 }

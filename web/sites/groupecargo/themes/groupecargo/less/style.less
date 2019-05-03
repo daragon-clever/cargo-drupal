@@ -840,7 +840,7 @@ footer {
         list-style: none;
         font-weight: 600;
         line-height: 2.3;
-        transition: all 1s;
+        transition: all 0.5s;
 
         @media (max-width: 1024px) {
           font-size: 15px;
@@ -853,23 +853,13 @@ footer {
 
         &.highlight {
           color: @turquoise;
-          transform: scale(1.25);
+          //transform: scale(1.25);
+          font-size: 21px;
 
           @media (max-width: 1024px) {
-            transform: scale(1.1);
+            //transform: scale(1.1);
+            font-size: 19px;
           }
-        }
-      }
-
-      @keyframes txt_grow {
-        from {
-          font-size: 18px;
-          color: black;
-        }
-
-        to {
-          color: #d7ab26;
-          font-size: 24px;
         }
       }
 
@@ -2511,4 +2501,27 @@ footer {
 }
 div[role="contentinfo"] {
   text-align: center;
+}
+
+// MSG ERREUR
+.message-site {
+  text-align: center;
+
+  div[role=contentinfo] {
+    margin: 30px 0;
+    border: 1px solid;
+    padding: 15px;
+    display: inline-block;
+
+    ul {
+      padding-left: 20px;
+      margin: 0;
+      text-align: left;
+    }
+
+    div[role=alert] {
+      color: #d40000;
+      font-weight: 500;
+    }
+  }
 }

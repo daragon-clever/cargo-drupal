@@ -130,10 +130,10 @@ jQuery(document).ready(function($) {
 
         var temp = 0;
         function move() {
-            if( temp > w ){
+            if ( temp > w ){
                 temp = 0
-            }else{
-                temp = temp+step ;
+            } else {
+                temp = temp + step ;
             }
             $items.scrollLeft( temp );
         }
@@ -241,17 +241,26 @@ jQuery(document).ready(function($) {
 
     // PAGE CANDIDATURE SPONTANEE
     if ($('.webform-submission-form').length) {
-        $('input, textarea').blur(function () {
-            tmpval = $(this).val();
-            if (tmpval == '') {
-                $(this).addClass('js-empty').removeClass('js-not-empty');
+        // Function
+        var checkValue = function (e) {
+            tmpval = e.val();
+            if (tmpval === '') {
+                e.addClass('js-empty').removeClass('js-not-empty');
             } else {
-                $(this).addClass('js-not-empty').removeClass('js-empty');
+                e.addClass('js-not-empty').removeClass('js-empty');
             }
+        };
+        // Var Elts
+        var formElts = $('input, textarea');
+        // 1er chargement
+        formElts.each(function () {
+            checkValue($(this));
+        });
+        // Au clic sur l'elt
+        formElts.blur(function () {
+            checkValue($(this));
         });
     }
-
-
 
     // LIRE PLUS
     if ( isMobile ) {

@@ -3,15 +3,16 @@ use Drupal\newsletter\Controller\Company;
 
 function newsletter_schema()
 {
-    $company = $siteName = \Drupal::config('system.site')->get('name');
-    switch (strtolower($company)) {
+    $company = \Drupal::config('system.site')->get('name');
+    $cleanCompany = strtolower(str_replace(' ', '', $company));
+    switch ($cleanCompany) {
         case "turbocar":
             $base = new Company\TurbocarController();
             break;
         case "yliades":
             $base = new Company\YliadesController();
             break;
-        case "blog-sitram":
+        case "blog.sitram.fr":
             $base = new Company\BlogSitramController();
             break;
         case "comptoirdefamille":

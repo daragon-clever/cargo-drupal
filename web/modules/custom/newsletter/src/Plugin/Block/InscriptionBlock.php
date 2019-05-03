@@ -26,14 +26,15 @@ class InscriptionBlock extends BlockBase
      */
     public function build()
     {
-        switch (strtolower($this->company)) {
+        $cleanCompany = strtolower(str_replace(' ', '', $this->company));
+        switch ($cleanCompany) {
             case "turbocar":
                 $myForm = \Drupal::formBuilder()->getForm('Drupal\newsletter\Form\Company\TurbocarForm');
                 break;
             case "yliades":
                 $myForm = \Drupal::formBuilder()->getForm('Drupal\newsletter\Form\Company\YliadesForm');
                 break;
-            case "blog-sitram":
+            case "blog.sitram.fr":
                 $myForm = \Drupal::formBuilder()->getForm('Drupal\newsletter\Form\Company\BlogSitramForm');
                 break;
             case "comptoirdefamille":

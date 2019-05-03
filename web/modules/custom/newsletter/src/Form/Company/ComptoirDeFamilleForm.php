@@ -5,9 +5,9 @@ namespace Drupal\newsletter\Form\Company;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\newsletter\Controller\Company\ComptoireDeFamilleController;
+use Drupal\newsletter\Controller\Company\ComptoirDeFamilleController;
 
-class ComptoireDeFamilleForm extends FormBase
+class ComptoirDeFamilleForm extends FormBase
 {
 
     /**
@@ -15,7 +15,7 @@ class ComptoireDeFamilleForm extends FormBase
      */
     public function getFormId()
     {
-        return 'comptoire-de-famille-newsletter';
+        return 'comptoir-de-famille-newsletter';
     }
 
     /**
@@ -70,7 +70,7 @@ class ComptoireDeFamilleForm extends FormBase
             'exported' => 0
         );
 
-        $base = new ComptoireDeFamilleController();
+        $base = new ComptoirDeFamilleController();
         $return = $base->doAction($data);
 
         \Drupal::messenger()->addMessage($return['msg'], $return['type']);//ajouter style class contentinfo for sucess response

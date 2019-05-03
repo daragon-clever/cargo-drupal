@@ -36,8 +36,8 @@ class InscriptionBlock extends BlockBase
             case "blog-sitram":
                 $myForm = \Drupal::formBuilder()->getForm('Drupal\newsletter\Form\Company\BlogSitramForm');
                 break;
-            case "comptoiredefamille":
-                $myForm = \Drupal::formBuilder()->getForm('Drupal\newsletter\Form\Company\ComptoireDeFamilleForm');
+            case "comptoirdefamille":
+                $myForm = \Drupal::formBuilder()->getForm('Drupal\newsletter\Form\Company\ComptoirDeFamilleForm');
                 break;
         }
 

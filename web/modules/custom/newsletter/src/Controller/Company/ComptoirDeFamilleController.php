@@ -6,7 +6,7 @@ namespace Drupal\newsletter\Controller\Company;
 use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\newsletter\Controller\NewsletterController;
 
-class ComptoireDeFamilleController extends NewsletterController
+class ComptoirDeFamilleController extends NewsletterController
 {
     public function __construct()
     {

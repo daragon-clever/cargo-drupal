@@ -69,13 +69,13 @@ class YliadesForm extends FormBase
         $mail = $form_state->getValue('mail');
         $brands = $brands = $form_state->getValue('marques');
         if (is_null($mail) || empty($mail)) {
-            $form_state->setErrorByName('mail', $this->t('Email is required'));//todo : à traduire
+            $form['msg'] = $this->t('Email is required');
         } elseif (!\Drupal::service('email.validator')->isValid($mail)) {
-            $form_state->setErrorByName('mail', $this->t('Email is malformed'));//todo : à traduire
+            $form['msg'] = $this->t('Email is malformed');
         }
 
         if (empty(array_filter($brands))) {
-            $form_state->setErrorByName('marques', $this->t('Brands is required'));//todo : à traduire
+            $form_state->setErrorByName('marques', $this->t('Brands is required'));
         }
     }
 

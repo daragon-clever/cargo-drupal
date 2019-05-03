@@ -52,9 +52,9 @@ class ComptoirDeFamilleForm extends FormBase
     {
         $mail = $form_state->getValue('mail');
         if (is_null($mail) || empty($mail)) {
-            $form_state->setErrorByName('mail', $this->t('Email is required'));//todo : à traduire
+            $form['msg'] = $this->t('Email is required');
         } elseif (!\Drupal::service('email.validator')->isValid($mail)) {
-            $form_state->setErrorByName('mail', $this->t('Email is malformed'));//todo : à traduire
+            $form['msg'] = $this->t('Email is malformed');
         }
     }
 

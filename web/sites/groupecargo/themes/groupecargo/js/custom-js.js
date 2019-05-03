@@ -2,21 +2,21 @@ jQuery(document).ready(function($) {
     // TEST MOBILE / TAB
     var isMobile = window.matchMedia("only screen and (max-width: 767px)").matches;
     var isTabletOrLess = window.matchMedia("only screen and (max-width: 991px)").matches;
+
     // NAV
+    var timerNav;
     $("#header-wrapper nav").hover(
         function() {
-            $("#header-wrapper").addClass("menu-hover");
+            timerNav = setTimeout(function() {
+                $("#header-wrapper").addClass("menu-hover");
+                console.log('test');
+            }, 400);
         },
         function() {
             $("#header-wrapper").removeClass("menu-hover");
+            clearTimeout(timerNav);
         }
     );
-    // NAV - Si souris déjà sur elt menu au chargement de la page
-    $("#header-wrapper ul > li > a").mouseenter(function () {
-        if (!$("#header-wrapper").hasClass("menu-hover")) {
-            $("#header-wrapper").addClass("menu-hover");
-        }
-    });
 
     if ( isTabletOrLess ) {
         // NAV MOBILE

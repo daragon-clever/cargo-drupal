@@ -40,6 +40,9 @@ class NewsletterController extends ControllerBase
             case "blog-sitram":
                 $myForm = \Drupal::formBuilder()->getForm('Drupal\newsletter\Form\Company\BlogSitramForm');
                 break;
+            case "comptoiredefamille":
+                $myForm = \Drupal::formBuilder()->getForm('Drupal\newsletter\Form\Company\ComptoireDeFamilleForm');
+                break;
         }
         if (isset($myForm)) {
             $build['#form'] = $myForm;
@@ -77,8 +80,8 @@ class NewsletterController extends ControllerBase
     {
         $userConnect = $this->userApi;
         $passConnect = $this->passApi;
-        $entityActito = "GersEquipement";
-        $tableActito = "GersEquipement";
+        $entityActito = "GersEquipement";//todo : rendre dynamique
+        $tableActito = "GersEquipement";//todo : rendre dynamique
         $url='http://dcp.cargo-webproject.com/api/web/api_v2/req/profile/import.php?&entity='.$entityActito.'&table='.$tableActito."&allowTest=true";
         $dataString = json_encode($dataUser);
 

@@ -28,7 +28,7 @@ class ConfigFile
           'CODE_SOC' => 'FCA',
           'DEFAULT_PDF' => 'Lang',
           'DEFAULT_LG' => 'Fr',
-          'DEFAULT_DIR' => 'Amp',
+          'DEFAULT_DIR' => 'Fds',
           'tri_soc' => 'faca',
           'EMAIL_FIC_TO' => ['poleweb@cargo-services.fr','a.delpoux@cargo-services.fr'],
           'EMAIL_FIC_FROM' => 'no-reply@facom-colle-adhesif.com',

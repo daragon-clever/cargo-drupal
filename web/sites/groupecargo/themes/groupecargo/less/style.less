@@ -363,6 +363,14 @@ footer {
       text-decoration: none !important;
       .dimOpacityOnHover(0.8);
     }
+
+    @media @phone {
+      line-height: 1.6;
+
+      .mobile-block {
+        display: block;
+      }
+    }
   }
 }
 
@@ -1914,6 +1922,11 @@ footer {
     color: white
   }
 
+  .select2-hidden-accessible {
+    height: 45px !important;
+    width: 100% !important;
+  }
+
   @media @phone {
     margin-top: 15px;
   }
@@ -1974,7 +1987,7 @@ footer {
 
 #candidature {
   h1 {
-    margin-top: 30px;
+    margin-top: 40px;
     padding: 0;
 
     @media @phone {

@@ -1,0 +1,13 @@
+{% block paragraph %}
+    <div id="js-content-{{ content.field_job_id.0 }}" class="job">
+        <span class="cross-close">✕</span>
+        <h1>{{ content.field_job_title.0 }}</h1>
+        <p>{{ content.field_job_txt_intro.0 }}</p>
+        <span>{{ content.field_job_list_title.0 }}</span>
+        {{ content.field_job_list_elements }}
+        <div class="cta">
+            {{ content.field_job_cta.0 }}
+        </div>
+        {{ content.field_job_testimonial }}
+    </div>
+{% endblock paragraph %}

@@ -1,0 +1,86 @@
+<div id="qsn">
+    <div class="full-width-bg">
+        <div class="imgs-bg">
+            {% for field in content.field_qsn_top_bg_img['#items'] %}
+                <div style="background: url({{ file_url(field.entity.fileuri) }}) no-repeat center transparent"></div>
+            {% endfor %}
+        </div>
+        <div class="container block-text">
+            <div class="row">
+                <div class="col">
+                    <h1 id="part0" nvs-animation-delay="500" nvs-animation-type="fade-in">{{ node.label }}</h1>
+                    <div class="block txt-left bg-white" nvs-animation-delay="500" nvs-animation-type="in-left">
+                        {{ content.field_qsn_top_block_txt_1 }}
+                    </div>
+                    <div class="block txt-right bg-black" nvs-animation-delay="500" nvs-animation-type="in-right">
+                        {{ content.field_qsn_top_block_txt_2 }}
+                    </div>
+                    <a class="js-slide-toggle d-block d-sm-none">
+                        <span>Lire la suite</span>
+                        <span style="display: none">Réduire</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="container content">
+            <div class="row">
+                <div class="col">
+                    <div class="part1">
+                        <h2 id="part1">{{ content.field_qsn_content_top_title.0 }}</h2>
+                        <div class="row imgs-wrapper">
+                            <div class="col-12 col-md-6">
+                                <img class="img-fluid" src="{{ content.field_qsn_content_top_imgs[0] }}"
+                                     alt="{{ node.field_qsn_content_top_imgs[0].alt }}" />
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <img class="img-fluid" src="{{ content.field_qsn_content_top_imgs[1] }}"
+                                     alt="{{ node.field_qsn_content_top_imgs[1].alt }}" />
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <img class="img-fluid" src="{{ content.field_qsn_content_top_imgs[2] }}"
+                                     alt="{{ node.field_qsn_content_top_imgs[2].alt }}" />
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <img class="img-fluid" src="{{ content.field_qsn_content_top_imgs[3] }}"
+                                     alt="{{ node.field_qsn_content_top_imgs[3].alt }}" />
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <img class="img-fluid" src="{{ content.field_qsn_content_top_imgs[4] }}"
+                                     alt="{{ node.field_qsn_content_top_imgs[4].alt }}" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="part2">
+                        <h2 id="part2">{{ content.field_qsn_content_middle_title.0 }}</h2>
+                        <div class="inner">
+                            <img class="img-fluid" src="{{ content.field_qsn_content_middle_img.0 }}"
+                                 alt="{{ content.field_qsn_content_middle_img.alt }}" />
+                        </div>
+                    </div>
+
+                    <div class="part3">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6">
+                                <a style="background: url('{{ content.field_qsn_bottom_bg_img_1[0] }}') no-repeat center transparent;"
+                                   href="{{ content.field_qsn_bottom_link_1|render|striptags|trim }}">
+                                    <span>{{ content.field_qsn_bottom_txt_1[0] }}</span>
+                                </a>
+                            </div>
+                            <div class="col-xs-12 col-sm-6">
+                                <a style="background: url('{{ content.field_qsn_bottom_bg_img_2[0] }}') no-repeat center transparent;"
+                                   href="{{ content.field_qsn_bottom_link_2|render|striptags|trim }}">
+                                    <span>{{ content.field_qsn_bottom_txt_2[0] }}</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

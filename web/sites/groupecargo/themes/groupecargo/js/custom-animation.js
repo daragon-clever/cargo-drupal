@@ -21,7 +21,7 @@
 
         // element top edge
         var elementTopEdge = element.offset().top;
-        var offset = 100;
+        var offset = 25;
 
         // if element is between window's top and bottom edges
         return elementTopEdge + offset <= windowBottomEdge;

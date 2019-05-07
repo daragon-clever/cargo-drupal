@@ -1,0 +1,57 @@
+<div id="homepage-slider" class="mea-slider">
+    <div class="js-slides-wrapper">
+        {% for position, field in content.field_hp_slider_img['#items'] %}
+            <div class="slide-item">
+                <div class="img"
+                     style="background: center / cover no-repeat url({{ content.field_hp_slider_img[position] }})">
+                </div>
+                <div class="txt">
+                    {{ content.field_hp_slider_txt[position] }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="row">
+    <div class="container">
+
+        <div id="hp-txt-intro" class="row">
+            <div class="col-12 col-sm-4 txt-intro">
+                {{ content.field_hp_content_txt_intro }}
+            </div>
+            <div class="col-12 col-sm-8">
+                {{ content.field_hp_content_img }}
+            </div>
+        </div>
+
+        <div id="encarts-cta" class="row">
+            <div class="col-12 col-sm-6">
+                <div class="inner left">
+                    <a href="{{ content.field_hp_encarts_cta_link.0['#url'] }}" title="">
+                        {{ content.field_hp_encarts_cta_picto[0] }}
+                        <span class="txt">{{ content.field_hp_encarts_cta_txt[0] }}</span>
+                        <span class="cta">
+                            {{ content.field_hp_encarts_cta_link.0['#title'] }}
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6">
+                <div class="inner right">
+                    <a href="{{ content.field_hp_encarts_cta_link.1['#url'] }}" title="">
+                        {{ content.field_hp_encarts_cta_picto[1] }}
+                        <span class="txt">{{ content.field_hp_encarts_cta_txt[1] }}</span>
+                        <span class="cta">
+                            {{ content.field_hp_encarts_cta_link.1['#title'] }}
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="instagram-feed">
+            Instagram feed (à suivre)
+        </div>
+    </div>
+</div>

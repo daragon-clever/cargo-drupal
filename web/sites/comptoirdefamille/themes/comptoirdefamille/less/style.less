@@ -48,7 +48,8 @@ img {
 
 // HEADER - NAV
 #header-wrapper {
-  margin-bottom: 50px //footer height
+  margin-bottom: 50px; //footer height
+  position: relative;
 }
 
 header {
@@ -81,8 +82,7 @@ header {
   text-align: center;
   line-height: 50px;
   position: absolute;
-  top: 229px;
-  overflow: hidden;
+  top: 150px;
   z-index: 1000;
 
   * {
@@ -132,6 +132,7 @@ header {
         display: block;
         max-height: 0;
         transition: max-height 0.5s;
+        overflow: hidden;
 
         li {
           display: block;
@@ -352,7 +353,8 @@ header {
 
 #newsletter {
   margin: 30px -15px 50px;
-  height: 240px;
+  height: 270px;
+  padding-top: 45px;
   background-color: #d7d0bd;
   text-align: center;
   position: relative;
@@ -392,5 +394,48 @@ header {
 
   .inner {
     margin: auto;
+  }
+
+  .title {
+    font-size: 20px;
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    display: block;
+    font-weight: 600;
+  }
+
+  .g-recaptcha > div {
+    display: inline-block;
+    margin-top: 25px;
+  }
+
+  .form-content {
+    max-width: 500px;
+
+    * {
+      display: inline-block;
+      border: none;
+    }
+
+    .form-item {
+      float: left;
+    }
+
+    input {
+      padding:10px 15px 8px;
+
+      &[type=email] {
+        max-width: 360px;
+      }
+
+      &[type=submit] {
+        padding:10px 40px 8px;
+        background: #858174;
+        cursor: pointer;
+        color: white;
+        .dimOpacityOnHover(0.8);
+      }
+    }
   }
 }

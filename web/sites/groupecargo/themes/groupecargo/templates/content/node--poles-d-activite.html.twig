@@ -10,6 +10,7 @@
 
 <div class="row">
     <div class="container content">
+        {% if content.field_poles_content_1_title %}
         <div class="row">
             <div class="col">
                 <h2 id="part0">{{ content.field_poles_content_1_title.0 }}</h2>
@@ -38,7 +39,9 @@
                 </div>
             </div>
         </div>
+        {% endif %}
 
+        {% if content.field_poles_content_2_title %}
         <div class="row">
             <div class="col">
                 <h2 id="part1">{{ content.field_poles_content_2_title.0 }}</h2>
@@ -63,7 +66,9 @@
                 </div>
             </div>
         </div>
+        {% endif %}
 
+        {% if content.field_poles_content_4_title %}
         <div class="row">
             <div class="col">
                 <h2 id="part3">{{ content.field_poles_content_4_title.0 }}</h2>
@@ -92,7 +97,9 @@
                 </div>
             </div>
         </div>
+        {% endif %}
 
+        {% if content.field_poles_content_3_title %}
         <div class="row">
             <div class="col">
                 <h2 id="part2">{{ content.field_poles_content_3_title.0 }}</h2>
@@ -121,5 +128,6 @@
                 </div>
             </div>
         </div>
+        {% endif %}
     </div>
 </div>

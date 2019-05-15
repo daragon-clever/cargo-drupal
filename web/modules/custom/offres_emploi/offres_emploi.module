@@ -202,4 +202,9 @@ function offres_emploi_webform_element_hidden_alter(array &$element, \Drupal\Cor
         $name = $contr->getOffre($param_ref);
         $element['#value'] = $name["intitulePoste"];
     }
+    if ($element['#webform_key'] == 'filiale_societe') {
+        $contr = new OffresEmploiActionController();
+        $name = $contr->getOffre($param_ref);
+        $element['#value'] = $name["filialeSociete"];
+    }
 }

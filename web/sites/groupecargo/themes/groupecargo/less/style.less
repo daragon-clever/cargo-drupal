@@ -1882,6 +1882,7 @@ footer {
 
     .fieldset-wrapper > div {
       margin: 20px 0;
+      min-height: 70px;
 
       @media @phone {
         margin: 0;
@@ -1901,6 +1902,9 @@ footer {
 
     input[type=file] {
       opacity: 0;
+      position: absolute;
+      top: 30px;
+      cursor: pointer;
     }
 
     .webform-element-description {
@@ -1942,6 +1946,13 @@ footer {
   .select2-hidden-accessible {
     height: 45px !important;
     width: 100% !important;
+  }
+
+  .messages--error {
+    margin-top: 60px;
+    z-index: -1;
+    color: #d40000;
+    font-size: 13px;
   }
 
   @media @phone {

@@ -1228,7 +1228,7 @@ footer {
 
 // METIERS
 .jobs-bg-img {
-  padding-top: 70px;
+  padding-top: 30px;
   background: url("../images/metiers/metier_bg.jpg") no-repeat top center transparent;
   background-size: 100% auto;
 
@@ -1240,11 +1240,20 @@ footer {
 #jobs {
   .navigation .inner {
     background: white;
-    padding: 25px 40px;
-    height: 100%;
+    padding: 10px 40px 20px;
     width: 350px;
     position: fixed;
     z-index: 0;
+
+    &.short {
+      overflow: auto;
+    }
+
+    @media @tablet {
+      width: 225px;
+      overflow: hidden;
+      padding: 0 20px;
+    }
 
     @media @phone {
       position: relative;
@@ -1278,7 +1287,7 @@ footer {
           text-decoration: none;
           color: black;
           font-weight: 600;
-          line-height: 1.8;
+          line-height: 1.6;
           transition: all 0.3s;
 
           &:hover {
@@ -1296,15 +1305,21 @@ footer {
             margin-top: -2px;
             transition: all 0.3s;
 
-            @media @phone {
+            @media @tablet {
               display: none;
             }
+          }
+
+          @media @tablet {
+            font-size: 15px;
+            line-height: 2;
           }
 
           @media @phone {
             line-height: 54px;
             position: relative;
             display: block;
+            font-size: 18px;
 
             &:after {
               background: url("../images/metiers/picto-arrow-right-black.png") no-repeat center transparent;
@@ -2468,9 +2483,6 @@ footer {
     color: #80807f
   }
 }
-
-// MENTIONS LEGALES
-
 
 // CONNEXION
 .user-login-form {

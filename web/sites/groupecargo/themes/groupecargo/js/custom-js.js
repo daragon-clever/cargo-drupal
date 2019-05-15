@@ -234,6 +234,18 @@ jQuery(document).ready(function($) {
         }
     }
 
+    // PAGE METIER RESOLUTION HEIGHT = SHORT
+    if ($("#jobs").length) {
+        if (!isTabletOrLess) {
+            var navHeight = $("#jobs > .navigation").height();
+            var windowHeight = $(window).height();
+
+            if ((navHeight) > windowHeight) {
+                $("#jobs > .navigation .inner").addClass("short").height(windowHeight - 270);
+            }
+        }
+    }
+
     // READ MORE
     $(".js-read-more").on("click", function () {
         $(this).toggleClass("opened").prev().slideToggle();

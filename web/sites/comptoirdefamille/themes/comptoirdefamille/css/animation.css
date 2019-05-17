@@ -1,0 +1,173 @@
+[nvs-animation-delay="0"] {
+  animation-delay: 0ms;
+}
+[nvs-animation-delay="50"] {
+  animation-delay: 50ms;
+}
+[nvs-animation-delay="100"] {
+  animation-delay: 100ms;
+}
+[nvs-animation-delay="150"] {
+  animation-delay: 150ms;
+}
+[nvs-animation-delay="200"] {
+  animation-delay: 200ms;
+}
+[nvs-animation-delay="250"] {
+  animation-delay: 250ms;
+}
+[nvs-animation-delay="300"] {
+  animation-delay: 300ms;
+}
+[nvs-animation-delay="350"] {
+  animation-delay: 350ms;
+}
+[nvs-animation-delay="400"] {
+  animation-delay: 400ms;
+}
+[nvs-animation-delay="450"] {
+  animation-delay: 450ms;
+}
+[nvs-animation-delay="500"] {
+  animation-delay: 500ms;
+}
+[nvs-animation-delay="550"] {
+  animation-delay: 550ms;
+}
+[nvs-animation-delay="600"] {
+  animation-delay: 600ms;
+}
+[nvs-animation-delay="700"] {
+  animation-delay: 700ms;
+}
+[nvs-animation-delay="800"] {
+  animation-delay: 800ms;
+}
+[nvs-animation-delay="900"] {
+  animation-delay: 900ms;
+}
+[nvs-animation-delay="1000"] {
+  animation-delay: 1000ms;
+}
+[nvs-animation-delay="1100"] {
+  animation-delay: 1100ms;
+}
+[nvs-animation-delay="1200"] {
+  animation-delay: 1200ms;
+}
+[nvs-animation-delay="1300"] {
+  animation-delay: 1300ms;
+}
+[nvs-animation-delay="1400"] {
+  animation-delay: 1400ms;
+}
+[nvs-animation-delay="1500"] {
+  animation-delay: 1500ms;
+}
+[nvs-animation-delay="1600"] {
+  animation-delay: 1600ms;
+}
+[nvs-animation-delay="1700"] {
+  animation-delay: 1700ms;
+}
+[nvs-animation-delay="1800"] {
+  animation-delay: 1800ms;
+}
+[nvs-animation-delay="1900"] {
+  animation-delay: 1900ms;
+}
+[nvs-animation-delay="2000"] {
+  animation-delay: 2000ms;
+}
+@media (min-width: 768px) {
+  [nvs-animation-type] {
+    visibility: hidden;
+  }
+}
+@media (max-width: 768px) {
+  [nvs-animation-type] {
+    animation: none !important;
+    transform: none !important;
+    transition-property: none !important;
+    visibility: visible !important;
+  }
+}
+.animated {
+  visibility: visible;
+}
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fadeInBottom {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes mover {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+.in-left {
+  animation-name: fadeInLeft;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+}
+.in-left-menu {
+  animation-name: fadeInLeft;
+  animation-fill-mode: both;
+  animation-duration: 1.3s;
+  animation-delay: 0.8s;
+}
+.in-right {
+  animation-name: fadeInRight;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+}
+.in-bottom {
+  animation-name: fadeInBottom;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+}
+.fade-in {
+  animation-name: fadeIn;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+}
+.vert-move {
+  -webkit-animation: mover 1s infinite  alternate;
+  animation: mover 1s infinite  alternate;
+}

@@ -1,0 +1,53 @@
+<?php
+use Drupal\newsletter\Controller\Company;
+
+function newsletter_schema()
+{
+    $company = \Drupal::config('system.site')->get('name');
+    $cleanCompany = strtolower(str_replace(' ', '', $company));
+    switch ($cleanCompany) {
+        case "turbocar":
+            $base = new Company\TurbocarController();
+            break;
+        case "yliades":
+            $base = new Company\YliadesController();
+            break;
+        case "blog.sitram.fr":
+            $base = new Company\BlogSitramController();
+            break;
+        case "comptoirdefamille":
+            $base = new Company\ComptoirDeFamilleController();
+            break;
+    }
+
+    if (isset($base)) {
+        //Table : newsletter_subscriber
+        if (\Drupal::database()->schema()->tableExists("newsletter_subscriber") == FALSE) {
+            $schema['newsletter_subscriber'] = $base->setSchemaTableSubscriber('newsletter_subscriber');
+        }
+        //Table : newsletter_subscription
+        if (\Drupal::database()->schema()->tableExists("newsletter_subscription") == FALSE) {
+            $schema['newsletter_subscription'] = $base->setSchemaTableSubscription('newsletter_subscription');
+        }
+
+        if (isset($schema) && !empty($schema)) return $schema;
+    }
+}
+
+function newsletter_theme($existing, $type, $theme, $path) {
+    return [
+        'inscription' => [
+            'template' => 'newsletter--inscription',
+            'variables' => [
+                'form' => NULL,
+                'msg' => NULL,
+            ],
+            'render element' => 'form'
+        ]
+    ];
+}
+
+function newsletter_cron()
+{
+    //todo: add action cron to exported people which exported value = 0 and set this value to 1
+}

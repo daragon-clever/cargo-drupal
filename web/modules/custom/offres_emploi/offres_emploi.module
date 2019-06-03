@@ -174,17 +174,18 @@ function offres_emploi_install()
 
 function offres_emploi_cron()
 {
-    $last_run = \Drupal::state()->get('offres_emploi.last_run', 0);
-    // If 60 minutes passed since last time.
-    if ((REQUEST_TIME - $last_run) > 3600) {
-        \Drupal::logger('offres_emploi')->notice('offres_emploi ran');
-        // Do something.
-        $import = new ImportController();
-        $import->execute();
+    \Drupal::logger('offres_emploi')->notice('[OFFRES EMPLOI] Lancement cron');
 
-        // Update last run.
-        \Drupal::state()->set('offres_emploi.last_run', REQUEST_TIME);
-    }
+    // Do something.
+    $import = new ImportController();
+    $import->execute();
+
+    drupal_flush_all_caches();
+
+    // Update last run.
+    \Drupal::state()->set('offres_emploi.last_run', REQUEST_TIME);
+
+    \Drupal::logger('offres_emploi')->notice('[OFFRES EMPLOI] Cron terminé');
 
 }
 

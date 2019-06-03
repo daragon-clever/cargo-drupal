@@ -7,7 +7,11 @@ jQuery(document).ready(function($) {
             return "";
         }
         return decodeURI(results[1]) || 0;
-    }
+    };
+
+    var expireCookiesTime = new Date();
+    var minutes = 15;
+    expireCookiesTime.setTime(expireCookiesTime.getTime() + (minutes * 60 * 1000));
 
     //PAGE OFFRE EMPLOI
     if ($('.listing-offres').length) {
@@ -75,7 +79,7 @@ jQuery(document).ready(function($) {
                         //get attr value of select
                         var valForCookie = $('option:selected', this).data('clean');
                         //save value in cookies
-                        Cookies.set(nameCookies, valForCookie, { expires : 1 });
+                        Cookies.set(nameCookies, valForCookie, { expires : expireCookiesTime });
 
                         //filter data on table
                         column.search( val ? '^'+val+'$' : '', true, false ).draw();
@@ -107,7 +111,7 @@ jQuery(document).ready(function($) {
                             if (oldParam != replaceSpecialChar(filter)) {
                                 var priority = "filtre";
                             }
-                            Cookies.set('oldParam', replaceSpecialChar(filter), { expires : 1 });
+                            Cookies.set('oldParam', replaceSpecialChar(filter), { expires : expireCookiesTime });
                             break;
                         case 4:
                             var selector = '#filtre-lieu .select-option';

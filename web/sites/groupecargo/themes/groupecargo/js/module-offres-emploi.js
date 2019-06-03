@@ -17,8 +17,20 @@ jQuery(document).ready(function($) {
         // Clickable full row
         var clickableRow = function() {
             if (isMobile === false) {
-                $(".clickable-row").click(function() {
-                    window.location = $(this).data("href");
+                $(".clickable-row").click(function(e) {
+                    if (e.ctrlKey) {
+                        //ctrl + Click
+                        window.open($(this).data("href"));
+                    } else {
+                        window.location = $(this).data("href");
+                    }
+                });
+                $(".clickable-row").mousedown(function(e) {
+                    if (e.which === 2) {
+                        //middle Click
+                        window.open($(this).data("href"));
+                    }
+                    return true;// to allow the browser to know that we handled it.
                 });
             }
         };
@@ -128,9 +140,6 @@ jQuery(document).ready(function($) {
                 $('.select-option select').select2({
                     minimumResultsForSearch: Infinity
                 });
-
-                // Clickable Row
-                clickableRow();
             }
         });
 
@@ -138,7 +147,7 @@ jQuery(document).ready(function($) {
             table.on('draw', function () {
                 table.columns().indexes().each( function ( idx ) {
                     switch (idx) {
-                        case 1://ou -1
+                        case 1:
                             var selector = '#filtre-contrat .select-option';
                             var filter = $.urlParam('type_contrat');//get url param value
                             break;
@@ -180,7 +189,7 @@ jQuery(document).ready(function($) {
         }
 
         $('#toutes-les-offres').on('draw.dt', function () {
-            clickableRow();
+            clickableRow();//Permet d'activer le click sur les lignes de TOUT le tableau et pas que la première page
         } );
 
         // Mobile : gestion btn filtres

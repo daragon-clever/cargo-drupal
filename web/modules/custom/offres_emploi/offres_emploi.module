@@ -1,5 +1,9 @@
 <?php
 
+use Drupal\offres_emploi\Controller\ImportController;
+use Drupal\offres_emploi\Controller\OffresEmploiActionController;
+
+
 function offres_emploi_theme($existing, $type, $theme, $path) {
     return [
         'offres_emploi--list' => [
@@ -165,7 +169,6 @@ function offres_emploi_schema()
     }
 }
 
-use Drupal\offres_emploi\Controller\ImportController;
 function offres_emploi_install()
 {
     $import = new ImportController();
@@ -189,7 +192,6 @@ function offres_emploi_cron()
 
 }
 
-use Drupal\offres_emploi\Controller\OffresEmploiActionController;
 function offres_emploi_webform_element_hidden_alter(array &$element, \Drupal\Core\Form\FormStateInterface $form_state, array $context)
 {
     $route_match = \Drupal::service('current_route_match');

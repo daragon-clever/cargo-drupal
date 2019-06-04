@@ -1,14 +1,15 @@
 <div id="page-container">
     <div id="content-wrap">
-        <div id="header-wrapper" class="navbar-expand-lg Fixed">
+        <div id="header-wrapper" class="navbar-expand-md">
             <div class="row no-gutters">
                 <div class="col-12">
                     <!-- Header -->
                     {% include directory ~ '/partials/header.html.twig' %}
                 </div>
-                <div id="nav-wrapper" class="col d-none d-lg-block">
+                <div id="nav-wrapper">
                     <!-- Navigation -->
                     {% if page.navigation %}
+                        {% include directory ~ '/partials/entete-nav-mobile.html.twig' %}
                         {% include directory ~ '/partials/navigation.html.twig' %}
                     {% endif %}
                 </div>

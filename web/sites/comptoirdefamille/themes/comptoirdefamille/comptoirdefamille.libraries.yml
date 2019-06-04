@@ -2,7 +2,7 @@
 bootstrap:
   css:
     theme:
-      bootstrap4/css/bootstrap-grid.min.css: {}
+      bootstrap4/css/bootstrap.min.css: {}
       bootstrap4/css/bootstrap-reboot.min.css: {}
   js:
     bootstrap4/js/bootstrap.min.js: {}

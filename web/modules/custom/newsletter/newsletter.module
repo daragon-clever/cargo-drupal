@@ -3,7 +3,8 @@ use Drupal\newsletter\Controller\Company;
 
 function newsletter_schema()
 {
-    $company = \Drupal::config('system.site')->get('name');
+//    $company = \Drupal::config('system.site')->get('name');
+    $company = \Drupal::config('system.site')->getOriginal("name", false);
     $cleanCompany = strtolower(str_replace(' ', '', $company));
     switch ($cleanCompany) {
         case "turbocar":

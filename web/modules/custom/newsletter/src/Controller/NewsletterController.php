@@ -15,10 +15,13 @@ class NewsletterController extends ControllerBase
 
     private $userApi;
     private $passApi;
+    private $entityActito;
+    private $tableActito;
 
     public function __construct()
     {
-        $this->company = \Drupal::config('system.site')->get('name');
+//        $this->company = \Drupal::config('system.site')->get('name');
+        $this->company = \Drupal::config('system.site')->getOriginal("name", false);
 
         $this->connection = \Drupal::database();
         $this->tableSubscriber = "newsletter_subscriber";
@@ -26,6 +29,26 @@ class NewsletterController extends ControllerBase
 
         $this->userApi = "poleweb_admin";
         $this->passApi = hash("sha512",hash("sha256","57Hc!a5sQ"));
+
+        $cleanCompany = strtolower(str_replace(' ', '', $this->company));
+        switch ($cleanCompany) {
+            case "turbocar":
+                $this->entityActito = "";
+                $this->tableActito = "";
+                break;
+            case "yliades":
+                $this->entityActito = "";
+                $this->tableActito = "";
+                break;
+            case "blog.sitram.fr":
+                $this->entityActito = "GersEquipement";
+                $this->tableActito = "GersEquipement";
+                break;
+            case "comptoirdefamille":
+                $this->entityActito = "";
+                $this->tableActito = "";
+                break;
+        }
     }
 
     public function displayForm()
@@ -79,17 +102,13 @@ class NewsletterController extends ControllerBase
 
     public function savePeopleInActito($dataUser)
     {
-        $userConnect = $this->userApi;
-        $passConnect = $this->passApi;
-        $entityActito = "GersEquipement";//todo : rendre dynamique
-        $tableActito = "GersEquipement";//todo : rendre dynamique
-        $url='http://dcp.cargo-webproject.com/api/web/api_v2/req/profile/import.php?&entity='.$entityActito.'&table='.$tableActito."&allowTest=true";
+        $url='http://dcp.cargo-webproject.com/api/web/api_v2/req/profile/import.php?&entity='.$this->entityActito.'&table='.$this->tableActito."&allowTest=true";
         $dataString = json_encode($dataUser);
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL,$url);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-        curl_setopt($ch, CURLOPT_USERPWD, "$userConnect:$passConnect");
+        curl_setopt($ch, CURLOPT_USERPWD, "$this->userApi:$this->passApi");
         curl_setopt($ch, CURLOPT_POSTFIELDS, $dataString);
         curl_setopt($ch, CURLOPT_HTTPHEADER, array(
                 'Content-Type: application/json',

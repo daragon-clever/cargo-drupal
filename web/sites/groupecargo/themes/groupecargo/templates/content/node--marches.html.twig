@@ -1,0 +1,105 @@
+<div class="row">
+    <div class="container-fluid breadcrumb">
+        <div class="container">
+            <span>
+                {{ content.field_marches_breadcrumb.0 }}
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="container content marches">
+        <div class="row">
+            <div class="col">
+                <h2 id="part0">{{ content.field_marches_title_1.0 }}</h2>
+                <ul class="list-keyword" nvs-animation-delay="500" nvs-animation-type="in-left">
+                    {% for field in content.field_marches_list_1['#items'] %}
+                        <li>
+                            <h3>{{ field.value }}</h3>
+                        </li>
+                    {% endfor %}
+                </ul>
+
+                <p nvs-animation-delay="500" nvs-animation-type="in-left">{{ content.field_marches_txt_1.0 }}</p>
+
+                <div class="row js-galery-slick" nvs-animation-delay="500" nvs-animation-type="in-right">
+                    {% for field in content.field_marches_imgs_1['#items'] %}
+                    <div class="col-12 col-sm-4">
+                        <img alt="{{ field.alt }}" src="{{ file_url(field.entity.fileuri) }}"/>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h2 id="part1">{{ content.field_marches_title_2.0 }}</h2>
+                <ul class="list-keyword" nvs-animation-delay="500" nvs-animation-type="in-left">
+                    {% for field in content.field_marches_list_2['#items'] %}
+                        <li>
+                            <h3>{{ field.value }}</h3>
+                        </li>
+                    {% endfor %}
+                </ul>
+
+                <p nvs-animation-delay="500" nvs-animation-type="in-left">{{ content.field_marches_txt_2.0 }}</p>
+
+                <div class="row js-galery-slick" nvs-animation-delay="500" nvs-animation-type="in-right">
+                    {% for field in content.field_marches_imgs_2['#items'] %}
+                        <div class="col-12 col-sm-4">
+                            <img alt="{{ field.alt }}" src="{{ file_url(field.entity.fileuri) }}"/>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h2 id="part2">{{ content.field_marches_title_3.0 }}</h2>
+                <ul class="list-keyword" nvs-animation-delay="500" nvs-animation-type="in-left">
+                    {% for field in content.field_marches_list_3['#items'] %}
+                        <li>
+                            <h3>{{ field.value }}</h3>
+                        </li>
+                    {% endfor %}
+                </ul>
+
+                <p nvs-animation-delay="500" nvs-animation-type="in-left">{{ content.field_marches_txt_3.0 }}</p>
+
+                <div class="row js-galery-slick" nvs-animation-delay="500" nvs-animation-type="in-right">
+                    {% for field in content.field_marches_imgs_3['#items'] %}
+                        <div class="col-12 col-sm-4">
+                            <img alt="{{ field.alt }}" src="{{ file_url(field.entity.fileuri) }}"/>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h2 id="part3">{{ content.field_marches_title_4.0 }}</h2>
+                <ul class="list-keyword" nvs-animation-delay="500" nvs-animation-type="in-left">
+                    {% for field in content.field_marches_list_4['#items'] %}
+                        <li>
+                            <h3>{{ field.value }}</h3>
+                        </li>
+                    {% endfor %}
+                </ul>
+
+                <p nvs-animation-delay="500" nvs-animation-type="in-left">{{ content.field_marches_txt_4.0 }}</p>
+
+                <div class="row js-galery-slick" nvs-animation-delay="500" nvs-animation-type="in-right">
+                    {% for field in content.field_marches_imgs_4['#items'] %}
+                        <div class="col-12 col-sm-4">
+                            <img alt="{{ field.alt }}" src="{{ file_url(field.entity.fileuri) }}"/>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

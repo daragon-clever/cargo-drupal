@@ -1,0 +1,133 @@
+<div class="row">
+    <div class="container-fluid breadcrumb">
+        <div class="container">
+            <span>
+                {{ content.field_poles_breadcrumb.0 }}
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="container content">
+        {% if content.field_poles_content_1_title %}
+        <div class="row">
+            <div class="col">
+                <h2 id="part0">{{ content.field_poles_content_1_title.0 }}</h2>
+                <div nvs-animation-delay="500" nvs-animation-type="in-left">
+                    {{ content.field_poles_content_1_txt }}
+                </div>
+                <div class="row img-holder" nvs-animation-delay="500" nvs-animation-type="in-right">
+                    <div class="col-12 col-sm">
+                        <img class="img-fluid" src="{{ content.field_poles_content_1_imgs[0] }}"
+                             alt="{{ content.field_poles_content_1_imgs[0].alt }}" />
+                    </div>
+                    <div class="col-12 col-sm">
+                        <div class="row">
+                            <div class="col double">
+                                <img class="img-fluid" src="{{ content.field_poles_content_1_imgs[1] }}"
+                                     alt="{{ content.field_poles_content_1_imgs[1].alt }}" />
+                                <img class="img-fluid" src="{{ content.field_poles_content_1_imgs[2] }}"
+                                     alt="{{ content.field_poles_content_1_imgs[2].alt }}" />
+                            </div>
+                            <div class="col">
+                                <img class="img-fluid" src="{{ content.field_poles_content_1_imgs[3] }}"
+                                     alt="{{ content.field_poles_content_1_imgs[3].alt }}" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if content.field_poles_content_2_title %}
+        <div class="row">
+            <div class="col">
+                <h2 id="part1">{{ content.field_poles_content_2_title.0 }}</h2>
+                <div nvs-animation-delay="500" nvs-animation-type="in-left">
+                    {{ content.field_poles_content_2_txt }}
+                </div>
+                <div class="row img-holder" nvs-animation-delay="500" nvs-animation-type="in-right">
+                    <div class="col order-2 order-sm-1">
+                        <img class="img-fluid" src="{{ content.field_poles_content_2_imgs[0] }}"
+                             alt="{{ content.field_poles_content_2_imgs[0].alt }}" />
+                    </div>
+                    <div class="col-12 col-sm-6 order-sm-2 order-1">
+                        <img class="img-fluid" src="{{ content.field_poles_content_2_imgs[1] }}"
+                             alt="{{ content.field_poles_content_2_imgs[1].alt }}" />
+                    </div>
+                    <div class="col double order-3">
+                        <img class="img-fluid" src="{{ content.field_poles_content_2_imgs[2] }}"
+                             alt="{{ content.field_poles_content_2_imgs[2].alt }}" />
+                        <img class="img-fluid" src="{{ content.field_poles_content_2_imgs[3] }}"
+                             alt="{{ content.field_poles_content_2_imgs[3].alt }}" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if content.field_poles_content_4_title %}
+        <div class="row">
+            <div class="col">
+                <h2 id="part3">{{ content.field_poles_content_4_title.0 }}</h2>
+                <div nvs-animation-delay="500" nvs-animation-type="in-left">
+                    {{ content.field_poles_content_4_txt }}
+                </div>
+                <div class="row img-holder" nvs-animation-delay="500" nvs-animation-type="in-right">
+                    <div class="col-12 col-sm">
+                        <div class="row">
+                            <div class="col">
+                                <img class="img-fluid" src="{{ content.field_poles_content_4_imgs[0] }}"
+                                     alt="{{ content.field_poles_content_4_imgs[0].alt }}" />
+                            </div>
+                            <div class="col double">
+                                <img class="img-fluid" src="{{ content.field_poles_content_4_imgs[1] }}"
+                                     alt="{{ content.field_poles_content_4_imgs[1].alt }}" />
+                                <img class="img-fluid" src="{{ content.field_poles_content_4_imgs[2] }}"
+                                     alt="{{ content.field_poles_content_4_imgs[2].alt }}" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm">
+                        <img class="img-fluid" src="{{ content.field_poles_content_4_imgs[3] }}"
+                             alt="{{ content.field_poles_content_4_imgs[3].alt }}" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if content.field_poles_content_3_title %}
+        <div class="row">
+            <div class="col">
+                <h2 id="part2">{{ content.field_poles_content_3_title.0 }}</h2>
+                <div nvs-animation-delay="500" nvs-animation-type="in-left">
+                    {{ content.field_poles_content_3_txt }}
+                </div>
+                <div class="row img-holder" nvs-animation-delay="500" nvs-animation-type="in-right">
+                    <div class="col-12 col-sm">
+                        <div class="row">
+                            <div class="col double">
+                                <img class="img-fluid" src="{{ content.field_poles_content_3_imgs[0] }}"
+                                     alt="{{ content.field_poles_content_3_imgs[0].alt }}"/>
+                                <img class="img-fluid" src="{{ content.field_poles_content_3_imgs[1] }}"
+                                     alt="{{ content.field_poles_content_3_imgs[1].alt }}"/>
+                            </div>
+                            <div class="col">
+                                <img class="img-fluid" src="{{ content.field_poles_content_3_imgs[2] }}"
+                                     alt="{{ content.field_poles_content_3_imgs[2].alt }}"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm">
+                        <img class="img-fluid" src="{{ content.field_poles_content_3_imgs[3] }}"
+                             alt="{{ content.field_poles_content_3_imgs[3].alt }}"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>

@@ -1,0 +1,63 @@
+<div class="container listing-offres">
+    <div class="row">
+        <div class="col-12 col-md-3 filters">
+            <h3 class="d-none d-sm-block">Filtrer</h3>
+
+            <div class="d-block d-md-none">
+                <button class="cta-filter top js-toggle-filters">
+                    Filtrer
+                </button>
+            </div>
+
+            <input type="text" id="searchbox" placeholder="Rechercher une offre" />
+
+            <div id="groupe-filtres-offres-emploi">
+                <div id="filtre-contrat" class="filtres-offres-emploi">
+                    <b>Type de contrat</b>
+                    <div class="select-option"></div>
+                </div>
+                <div id="filtre-poste" class="filtres-offres-emploi">
+                    <b>Type de poste</b>
+                    <div class="select-option"></div>
+                </div>
+                <div id="filtre-lieu" class="filtres-offres-emploi">
+                    <b>Lieu de travail</b>
+                    <div class="select-option"></div>
+                </div>
+                <div class="d-block d-sm-none">
+                    <button class="cta-filter bottom js-toggle-filters" style="display: none">
+                        Valider
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-9 jobs-list">
+            <h3>Les postes à pourvoir</h3>
+            <div id="alerte-offres"></div>
+            <table id="toutes-les-offres" class="display nowrap">
+                <thead>
+                    <tr>
+                        <th class="all wrap">Poste</th>
+                        <th class="all">Type de contrat</th>
+                        <th class="js-hide">Type de poste</th>
+                        <th>Date de début</th>
+                        <th class="not-mobile">Lieu</th>
+                        <th class="not-mobile js-only-xs"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for offre in data %}
+                    <tr class="clickable-row" data-href="/offres-emploi/{{ offre.codeRecrutement }}">
+                        <td class="wrap">{{ offre.intitulePoste }}</td>
+                        <td class="">{{ offre.typeContrat }}</td>
+                        <td>{{ offre.metier }}</td>
+                        <td>{{ offre.dateOuverturePoste|date("d/m/Y") }}</td>
+                        <td>{{ offre.lieuRecrutement }}</td>
+                        <td><a href="/offres-emploi/{{ offre.codeRecrutement }}">Voir l'annonce</a> </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

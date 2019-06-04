@@ -40,8 +40,19 @@ def notifyChangeViaSlackEmail(buildBranch,String buildStatus) {
 pipeline {
     agent any
 
+    options {
+        disableConcurrentBuilds()
+    }
+
     stages {
         stage('Build') {
+            when {
+                beforeAgent true
+                anyOf {
+                    branch 'master';
+                    branch 'develop'
+                }
+            }
             steps {
                 echo 'Building...'
                 // send build started notifications
@@ -55,6 +66,7 @@ pipeline {
         }
         stage('Deploy Prod') {
             when {
+                beforeAgent true
                 branch 'master'
             }
             steps {
@@ -66,9 +78,15 @@ pipeline {
                     docker-compose run --rm bundle exec cap production deploy
                 '''
             }
+            post {
+                always {
+                    sh "docker-compose down -v"
+                }
+            }
         }
         stage('Deploy PréProd') {
             when {
+                beforeAgent true
                 branch 'develop'
             }
             steps {
@@ -78,28 +96,34 @@ pipeline {
                     docker-compose run --rm bundle exec cap preproduction deploy
                 '''
             }
+            post {
+                always {
+                    sh "docker-compose down -v"
+                }
+            }
         }
     }
 
     post {
-        always {
-            sh "docker-compose down -v"
+        cleanup {
+            cleanWs()
+            deleteDir()
         }
         success {
             echo 'I succeeeded!'
             // send build success notifications
             notifyChangeViaSlackEmail(env.BRANCH_NAME,'success')
 
-       }
+        }
         unstable {
             echo 'I am unstable :/'
             // send build success notifications
              notifyChangeViaSlackEmail(env.BRANCH_NAME,'unstable')
-         }
+        }
         failure {
             echo 'I failed :('
             // send build success notifications
              notifyChangeViaSlackEmail(env.BRANCH_NAME,'failure')
-         }
+        }
     }
 }

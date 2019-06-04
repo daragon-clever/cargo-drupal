@@ -94,7 +94,7 @@ class CustomForm extends FormBase {
         if ($email && $choixMarques) {
             if (isset($response_recaptcha) && !empty($response_recaptcha)) {
                 //your site secret key
-                $secret = '6Lf-g24UAAAAAIiMGEfFQl4UWEPcoZbh2DQz4CUh';
+                $secret = '6LeXxaAUAAAAAGzc8vWvi74jEvlNhK09sMsVE1RZ';
                 //get verify response data
                 $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . $response_recaptcha);
                 $responseData = json_decode($verifyResponse);

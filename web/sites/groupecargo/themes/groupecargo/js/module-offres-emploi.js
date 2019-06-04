@@ -34,7 +34,7 @@ jQuery(document).ready(function($) {
                         //middle Click
                         window.open($(this).data("href"));
                     }
-                    return true;// to allow the browser to know that we handled it.
+                    return true;
                 });
             }
         };
@@ -128,6 +128,7 @@ jQuery(document).ready(function($) {
                         && $(selector + ' option[data-clean="' + cookies + '"]').length
                     ){
                         $(selector + ' option[data-clean="' + cookies + '"]').attr('selected', 'selected');
+                        select.trigger("change");
                     } else if (filter != "") {
                         var cleanfilter = replaceSpecialChar(filter);
                         if ($(selector + ' option[data-clean="' + cleanfilter + '"]').length) {

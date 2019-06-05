@@ -86,10 +86,10 @@ class NewsletterController extends ControllerBase
         } else if ($return == 'update') {
             $msg = $this->t("You have just updated your newsletter preferences");
             $type = 'status';
-        } else if ($return == 'update') {
+        } /*else if ($return == 'delete') {
             $msg = $this->t("You have just unsubscribed for the newsletter");//todo: ajouter la traduction mais pas encore utilisé
             $type = 'status';
-        } else {
+        } */else {
             $msg = $this->t("Error");
             $type = 'error';
         }

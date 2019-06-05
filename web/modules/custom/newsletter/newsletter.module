@@ -47,8 +47,3 @@ function newsletter_theme($existing, $type, $theme, $path) {
         ]
     ];
 }
-
-function newsletter_cron()
-{
-    //todo: add action cron to exported people which exported value = 0 and set this value to 1
-}

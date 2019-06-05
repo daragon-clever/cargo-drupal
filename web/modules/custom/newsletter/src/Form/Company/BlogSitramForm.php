@@ -72,6 +72,17 @@ class BlogSitramForm extends FormBase
         $base = new BlogSitramController();
         $return = $base->doAction($data);
 
+        $searchUser = $base->getPeople($email);
+        $contactIdToUse = intval($searchUser['id']);
+        $contactId = str_pad($contactIdToUse, 6, "0", STR_PAD_LEFT);
+        $dataForActito = array(
+            'email' => $email,
+            'contact_id' => "BLOG".strval($contactId),
+            'newsletter' => 1
+        );
+
+        $insertPeopleInActito = $base->savePeopleInActito($dataForActito);
+
         \Drupal::messenger()->addMessage($return['msg'], $return['type']);
     }
 }

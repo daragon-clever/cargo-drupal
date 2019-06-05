@@ -116,7 +116,7 @@ class BlogSitramController extends NewsletterController
     /************
      * DATABASE
      ************/
-    private function getPeople($email)
+    public function getPeople($email)
     {
         $people = $this->connection->select($this->tableSubscriber,'subscriber')
             ->fields('subscriber')

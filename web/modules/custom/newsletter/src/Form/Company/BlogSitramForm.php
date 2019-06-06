@@ -77,7 +77,7 @@ class BlogSitramForm extends FormBase
         $contactId = str_pad($contactIdToUse, 6, "0", STR_PAD_LEFT);
         $dataForActito = array(
             'email' => $email,
-            'contact_id' => "BLOG".strval($contactId),
+            'contact_id' => "BLG-SIT_".strval($contactId),
             'newsletter' => 1
         );
 

@@ -78,7 +78,8 @@ class BlogSitramForm extends FormBase
         $dataForActito = array(
             'email' => $email,
             'contact_id' => "BLG-SIT_".strval($contactId),
-            'newsletter' => 1
+            'newsletter' => 1,
+            'source' => "blog_sitram"
         );
 
         $base->savePeopleInActito($dataForActito);

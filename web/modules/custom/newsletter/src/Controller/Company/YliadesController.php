@@ -19,7 +19,7 @@ class YliadesController extends NewsletterController
         self::MARQUE_COTE_TABLE, self::MARQUE_GENEVIEVE_LETHU, self::MARQUE_JARDIN_D_ULYSSE
     ];
 
-    public function doAction($arrayData)
+    public function doAction(array $arrayData): array
     {
         $marques = $this->setValueAllBrands(0);//get array with all brands (value -> 0)
 
@@ -48,72 +48,56 @@ class YliadesController extends NewsletterController
         return $this->displayMsg($action);
     }
 
-    private function setValueAllBrands($val)
+    private function setValueAllBrands(int $val): array
     {
-        foreach (self::LES_MARQUES as $marque)
-        {
-            $newArray[$marque] = $val;
-        }
+        $newArray = array_fill_keys(self::LES_MARQUES, $val);
         return $newArray;
     }
 
     /*********
      * SCHEMA
      *********/
-    public function setSchemaTableSubscription()
+    public function setSchemaTableSubscription(): array
     {
-        $array = array(
-            'description' => 'Stores email for newsletter.',
-            'fields' => array(
-                'id' => array(
-                    'type' => 'serial',
-                    'not null' => TRUE,
-                    'description' => 'Primary Key: Unique email ID.',
-                ),
-                'id_subscriber' => array(
-                    'type' => 'int',
-                    'length' => 11,
-                    'not null' => TRUE,
-                    'description' => 'Subscriber ID.',
-                ),
-                'sema_design' => array(
-                    'type' => 'int',
-                    'size' => 'tiny',
-                    'not null' => TRUE,
-                    'default' => '0',
-                    'description' => '',
-                ),
-                'comptoir_de_famille' => array(
-                    'type' => 'int',
-                    'size' => 'tiny',
-                    'not null' => TRUE,
-                    'default' => '0',
-                    'description' => '',
-                ),
-                'cote_table' => array(
-                    'type' => 'int',
-                    'size' => 'tiny',
-                    'not null' => TRUE,
-                    'default' => '0',
-                    'description' => '',
-                ),
-                'genevieve_lethu' => array(
-                    'type' => 'int',
-                    'size' => 'tiny',
-                    'not null' => TRUE,
-                    'default' => '0',
-                    'description' => '',
-                ),
-                'jardin_d_ulysse' => array(
-                    'type' => 'int',
-                    'size' => 'tiny',
-                    'not null' => TRUE,
-                    'default' => '0',
-                    'description' => '',
-                )
+        $array = parent::setSchemaTableSubscription();
+        $arrayPushData = array(
+            'sema_design' => array(
+                'type' => 'int',
+                'size' => 'tiny',
+                'not null' => TRUE,
+                'default' => '0',
+                'description' => '',
             ),
-            'primary key' => array('id')
+            'comptoir_de_famille' => array(
+                'type' => 'int',
+                'size' => 'tiny',
+                'not null' => TRUE,
+                'default' => '0',
+                'description' => '',
+            ),
+            'cote_table' => array(
+                'type' => 'int',
+                'size' => 'tiny',
+                'not null' => TRUE,
+                'default' => '0',
+                'description' => '',
+            ),
+            'genevieve_lethu' => array(
+                'type' => 'int',
+                'size' => 'tiny',
+                'not null' => TRUE,
+                'default' => '0',
+                'description' => '',
+            ),
+            'jardin_d_ulysse' => array(
+                'type' => 'int',
+                'size' => 'tiny',
+                'not null' => TRUE,
+                'default' => '0',
+                'description' => '',
+            )
         );
+        $array['field'] = array_merge($array['field'], $arrayPushData);
 
         return $array;
     }
@@ -121,7 +105,7 @@ class YliadesController extends NewsletterController
     /************
      * DATABASE
      ************/
-    private function getPeople($email)
+    private function getPeople(string $email): ?array
     {
         $people = $this->connection->select($this->tableSubscriber,'subscriber')
             ->fields('subscriber')
@@ -130,11 +114,11 @@ class YliadesController extends NewsletterController
             ->execute()
             ->fetchAssoc();
 
-        return $people;
+        return $people ? $people : null;
     }
 
 
-    private function insertPeople($arrayData)
+    private function insertPeople(array $arrayData): void
     {
         $date = new DrupalDateTime();
         $this->connection->insert($this->tableSubscriber)
@@ -163,7 +147,7 @@ class YliadesController extends NewsletterController
     }
 
 
-    private function updatePeople($arrayData)
+    private function updatePeople(array $arrayData): void
     {
         $date = new DrupalDateTime();
         $this->connection->update($this->tableSubscriber)

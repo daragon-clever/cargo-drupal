@@ -49,7 +49,7 @@ class NewsletterController extends ControllerBase
         }
     }
 
-    public function displayForm()
+    public function displayForm(): array
     {
         $cleanCompany = strtolower(str_replace(' ', '', $this->company));
         switch ($cleanCompany) {
@@ -73,7 +73,7 @@ class NewsletterController extends ControllerBase
         return $build;
     }
 
-    public function displayMsg($return)
+    public function displayMsg(string $return): array
     {
         if ($return == self::ACTION_INSERT) {
             $msg = $this->t("You have just signed up for the newsletter");
@@ -92,7 +92,7 @@ class NewsletterController extends ControllerBase
         );
     }
 
-    public function savePeopleInActito($dataUser)
+    public function savePeopleInActito(array $dataUser): void
     {
         $client = \Drupal::httpClient();
         $url=$this->urlActito.'/profile/import.php?&entity='.$this->entityActito.'&table='.$this->tableActito."&allowTest=true";
@@ -114,12 +114,13 @@ class NewsletterController extends ControllerBase
             $response = $client->post($url, $options);
             $code = $response->getStatusCode();
             if ($code == 200) {
-                $body = $response->getBody()->getContents();
-                return $body;
+                $response->getBody()->getContents();
+                return;
             }
         }
         catch (RequestException $e) {
             watchdog_exception('newsletter_module', $e);
+            return;
         }
     }
 
@@ -129,7 +130,7 @@ class NewsletterController extends ControllerBase
     /*********
      * SCHEMA
      *********/
-    public function setSchemaTableSubscriber()
+    public function setSchemaTableSubscriber(): array
     {
         $array = array(
             'description' => 'Stores email for newsletter.',
@@ -183,7 +184,7 @@ class NewsletterController extends ControllerBase
         return $array;
     }
 
-    public function setSchemaTableSubscription()
+    public function setSchemaTableSubscription(): array
     {
         $array = array(
             'description' => 'Stores subscription for newsletter subscriber.',

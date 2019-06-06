@@ -8,7 +8,7 @@ use Drupal\newsletter\Controller\NewsletterController;
 
 class ComptoirDeFamilleController extends NewsletterController
 {
-    public function doAction($arrayData)
+    public function doAction(array $arrayData): array
     {
         $people = $this->getPeople($arrayData['email']);
 
@@ -28,7 +28,7 @@ class ComptoirDeFamilleController extends NewsletterController
     /************
      * DATABASE
      ************/
-    private function getPeople($email)
+    private function getPeople(string $email): ?array
     {
         $people = $this->connection->select($this->tableSubscriber,'subscriber')
             ->fields('subscriber')
@@ -37,10 +37,10 @@ class ComptoirDeFamilleController extends NewsletterController
             ->execute()
             ->fetchAssoc();
 
-        return $people;
+        return $people ? $people : null;
     }
 
-    private function insertPeople($arrayData)
+    private function insertPeople(array $arrayData): void
     {
         $date = new DrupalDateTime();
         $this->connection->insert($this->tableSubscriber)
@@ -55,7 +55,7 @@ class ComptoirDeFamilleController extends NewsletterController
     }
 
 
-    private function updatePeople($arrayData)
+    private function updatePeople(array $arrayData): void
     {
         $date = new DrupalDateTime();
         $this->connection->update($this->tableSubscriber)

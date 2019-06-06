@@ -81,7 +81,7 @@ class BlogSitramForm extends FormBase
             'newsletter' => 1
         );
 
-        $insertPeopleInActito = $base->savePeopleInActito($dataForActito);
+        $base->savePeopleInActito($dataForActito);
 
         \Drupal::messenger()->addMessage($return['msg'], $return['type']);
     }

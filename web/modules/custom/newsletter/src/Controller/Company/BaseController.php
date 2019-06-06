@@ -7,7 +7,7 @@ use Drupal\newsletter\Controller\NewsletterController;
 
 class BaseController extends NewsletterController
 {
-    public function setSchemaTableSubscriber()
+    public function setSchemaTableSubscriber(): array
     {
         $array = array(
             'description' => 'Stores email for newsletter.',
@@ -121,7 +121,7 @@ class BaseController extends NewsletterController
         return $array;
     }
 
-    public function setSchemaTableSubscription()
+    public function setSchemaTableSubscription(): array
     {
         $array = array(
             'description' => 'Stores subscription for newsletter subscriber.',

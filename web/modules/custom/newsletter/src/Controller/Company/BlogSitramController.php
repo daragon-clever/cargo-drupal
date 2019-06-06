@@ -9,7 +9,7 @@ use Drupal\newsletter\Controller\NewsletterController;
 class BlogSitramController extends NewsletterController
 {
 
-    public function doAction($arrayData)
+    public function doAction(array $arrayData): array
     {
         $people = $this->getPeople($arrayData['email']);
 
@@ -29,7 +29,7 @@ class BlogSitramController extends NewsletterController
     /************
      * DATABASE
      ************/
-    public function getPeople($email)
+    public function getPeople(string $email): ?array
     {
         $people = $this->connection->select($this->tableSubscriber,'subscriber')
             ->fields('subscriber')
@@ -38,10 +38,10 @@ class BlogSitramController extends NewsletterController
             ->execute()
             ->fetchAssoc();
 
-        return $people;
+        return $people ? $people : null;
     }
 
-    private function insertPeople($arrayData)
+    private function insertPeople(array $arrayData): void
     {
         $date = new DrupalDateTime();
         $this->connection->insert($this->tableSubscriber)
@@ -56,7 +56,7 @@ class BlogSitramController extends NewsletterController
     }
 
 
-    private function updatePeople($arrayData)
+    private function updatePeople(array $arrayData): void
     {
         $date = new DrupalDateTime();
         $this->connection->update($this->tableSubscriber)

@@ -3,6 +3,7 @@
 namespace Drupal\newsletter\Controller;
 
 
+use Drupal\Component\Serialization\Json;
 use Drupal\Core\Controller\ControllerBase;
 
 abstract class AbstractCompanyController extends ControllerBase
@@ -106,7 +107,12 @@ abstract class AbstractCompanyController extends ControllerBase
             $response = $client->post($url, $options);
             $code = $response->getStatusCode();
             if ($code == 200) {
-                $response->getBody()->getContents();
+                $jsonResponseBody = $response->getBody()->getContents();
+                $return = Json::decode($jsonResponseBody);
+                if ($return['successResp'] == "true" || $return['successResp'] === true) {
+                    $dataUser['exported'] = 1;
+                    $this->updatePeople($dataUser);
+                }
                 return;
             }
         }

@@ -53,11 +53,12 @@ class ComptoirDeFamilleController extends AbstractCompanyController
     protected function updatePeople(array $arrayData): void
     {
         $date = new DrupalDateTime();
+        $fields["updated_at"] = $date->format("Y-m-d H:i:s");
+        if (isset($arrayData['active'])) $fields['exported'] = $arrayData['active'];
+        if (isset($arrayData['exported'])) $fields['exported'] = $arrayData['exported'];
+
         $this->connection->update($this->tableSubscriber)
-            ->fields([
-                "updated_at" => $date->format("Y-m-d H:i:s"),
-                "active" => $arrayData['active']
-            ])
+            ->fields($fields)
             ->condition('email', $arrayData['email'], '=')
             ->execute();
     }

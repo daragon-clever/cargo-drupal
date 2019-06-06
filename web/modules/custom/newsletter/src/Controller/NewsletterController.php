@@ -3,10 +3,16 @@ namespace Drupal\newsletter\Controller;
 
 
 use Drupal\Core\Controller\ControllerBase;
-use Drupal\newsletter\Controller\Company;
+use Drupal\newsletter\Form\Company as CompanyForm;
 
 class NewsletterController extends ControllerBase
 {
+    const ACTION_INSERT = 'insert';
+    const ACTION_UPDATE = 'update';
+
+    const TYPE_MSG_STATUS = "status";
+    const TYPE_MSG_ERROR = "error";
+
     protected $company;
 
     public $connection;
@@ -17,10 +23,10 @@ class NewsletterController extends ControllerBase
     private $passApi;
     private $entityActito;
     private $tableActito;
+    private $urlActito;
 
     public function __construct()
     {
-//        $this->company = \Drupal::config('system.site')->get('name');
         $this->company = \Drupal::config('system.site')->getOriginal("name", false);
 
         $this->connection = \Drupal::database();
@@ -29,25 +35,17 @@ class NewsletterController extends ControllerBase
 
         $this->userApi = "poleweb_admin";
         $this->passApi = hash("sha512",hash("sha256","57Hc!a5sQ"));
+        $this->urlActito = "http://dcp.cargo-webproject.com/api/web/api_v2/req";
 
         $cleanCompany = strtolower(str_replace(' ', '', $this->company));
         switch ($cleanCompany) {
-            case "turbocar":
-                $this->entityActito = "";
-                $this->tableActito = "";
-                break;
-            case "yliades":
-                $this->entityActito = "";
-                $this->tableActito = "";
-                break;
             case "blog.sitram.fr":
                 $this->entityActito = "GersEquipement";
                 $this->tableActito = "GersEquipement";
                 break;
-            case "comptoirdefamille":
+            default:
                 $this->entityActito = "";
                 $this->tableActito = "";
-                break;
         }
     }
 
@@ -55,17 +53,14 @@ class NewsletterController extends ControllerBase
     {
         $cleanCompany = strtolower(str_replace(' ', '', $this->company));
         switch ($cleanCompany) {
-            case "turbocar":
-                $myForm = \Drupal::formBuilder()->getForm('Drupal\newsletter\Form\Company\TurbocarForm');
-                break;
             case "yliades":
-                $myForm = \Drupal::formBuilder()->getForm('Drupal\newsletter\Form\Company\YliadesForm');
+                $myForm = \Drupal::formBuilder()->getForm(CompanyForm\YliadesForm::class);
                 break;
             case "blog.sitram.fr":
-                $myForm = \Drupal::formBuilder()->getForm('Drupal\newsletter\Form\Company\BlogSitramForm');
+                $myForm = \Drupal::formBuilder()->getForm(CompanyForm\BlogSitramForm::class);
                 break;
             case "comptoirdefamille":
-                $myForm = \Drupal::formBuilder()->getForm('Drupal\newsletter\Form\Company\ComptoirDeFamilleForm');
+                $myForm = \Drupal::formBuilder()->getForm(CompanyForm\ComptoirDeFamilleForm::class);
                 break;
         }
         if (isset($myForm)) {
@@ -80,18 +75,15 @@ class NewsletterController extends ControllerBase
 
     public function displayMsg($return)
     {
-        if ($return == 'insert') {
+        if ($return == self::ACTION_INSERT) {
             $msg = $this->t("You have just signed up for the newsletter");
-            $type = 'status';
-        } else if ($return == 'update') {
+            $type = self::TYPE_MSG_STATUS;
+        } else if ($return == self::ACTION_UPDATE) {
             $msg = $this->t("You have just updated your newsletter preferences");
-            $type = 'status';
-        } /*else if ($return == 'delete') {
-            $msg = $this->t("You have just unsubscribed for the newsletter");//todo: ajouter la traduction mais pas encore utilisé
-            $type = 'status';
-        } */else {
+            $type = self::TYPE_MSG_STATUS;
+        } else {
             $msg = $this->t("Error");
-            $type = 'error';
+            $type = self::TYPE_MSG_ERROR;
         }
 
         return array(
@@ -102,25 +94,115 @@ class NewsletterController extends ControllerBase
 
     public function savePeopleInActito($dataUser)
     {
-        $url='http://dcp.cargo-webproject.com/api/web/api_v2/req/profile/import.php?&entity='.$this->entityActito.'&table='.$this->tableActito."&allowTest=true";
-        $dataString = json_encode($dataUser);
-
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL,$url);
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-        curl_setopt($ch, CURLOPT_USERPWD, "$this->userApi:$this->passApi");
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $dataString);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+        $client = \Drupal::httpClient();
+        $url=$this->urlActito.'/profile/import.php?&entity='.$this->entityActito.'&table='.$this->tableActito."&allowTest=true";
+        $options = [
+            'auth' => [
+                $this->userApi,
+                $this->passApi,
+            ],
+            'json' => [
+                $dataUser
+            ],
+            'headers' => [
                 'Content-Type: application/json',
-                'Content-Length: ' . strlen($dataString))
+                'Content-Length: ' . strlen(json_encode($dataUser))
+            ]
+        ];
+
+        try {
+            $response = $client->post($url, $options);
+            $code = $response->getStatusCode();
+            if ($code == 200) {
+                $body = $response->getBody()->getContents();
+                return $body;
+            }
+        }
+        catch (RequestException $e) {
+            watchdog_exception('newsletter_module', $e);
+        }
+    }
+
+
+
+
+    /*********
+     * SCHEMA
+     *********/
+    public function setSchemaTableSubscriber()
+    {
+        $array = array(
+            'description' => 'Stores email for newsletter.',
+            'fields' => array(
+                'id' => array(
+                    'type' => 'serial',
+                    'not null' => TRUE,
+                    'description' => 'Primary Key: Unique email ID.',
+                ),
+                'created_at' => array(
+                    'type' => 'varchar',
+                    'length' => 100,
+                    'mysql_type' => 'datetime',
+                    'not null' => TRUE,
+                ),
+                'updated_at' => array(
+                    'type' => 'varchar',
+                    'length' => 100,
+                    'mysql_type' => 'datetime',
+                    'not null' => TRUE,
+                ),
+                'email' => array(
+                    'type' => 'varchar',
+                    'length' => 255,
+                    'not null' => TRUE,
+                    'default' => '',
+                    'description' => 'Email of the person.',
+                ),
+                'active' => array(
+                    'type' => 'int',
+                    'length' => 11,
+                    'not null' => TRUE,
+                    'default' => '0',
+                    'description' => 'Active subscription of the person.',
+                ),
+                'exported' => array(
+                    'type' => 'int',
+                    'size' => 'tiny',
+                    'not null' => TRUE,
+                    'default' => '0',
+                    'description' => '',
+                ),
+            ),
+            'primary key' => array('id'),
+            'indexes' => array(
+                'email' => array('email'),
+                'exported' => array('exported'),
+            ),
         );
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);//to return data resp
 
-        $result = curl_exec ($ch);
-        $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        curl_close ($ch);
-        $obj = json_decode($result);
+        return $array;
+    }
 
-        return $obj;
+    public function setSchemaTableSubscription()
+    {
+        $array = array(
+            'description' => 'Stores subscription for newsletter subscriber.',
+            'fields' => array(
+                'id' => array(
+                    'type' => 'serial',
+                    'not null' => TRUE,
+                    'description' => 'Primary Key: Unique email ID.',
+                ),
+                'id_subscriber' => array(
+                    'type' => 'int',
+                    'length' => 11,
+                    'not null' => TRUE,
+                    'description' => 'Subscriber ID.',
+                )
+            ),
+            'primary key' => array('id')
+        );
+
+        return $array;
     }
 }

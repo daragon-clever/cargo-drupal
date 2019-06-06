@@ -3,7 +3,9 @@
 namespace Drupal\newsletter\Controller\Company;
 
 
-class BaseController
+use Drupal\newsletter\Controller\NewsletterController;
+
+class BaseController extends NewsletterController
 {
     public function setSchemaTableSubscriber()
     {

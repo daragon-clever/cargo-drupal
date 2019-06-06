@@ -8,21 +8,16 @@ use Drupal\newsletter\Controller\NewsletterController;
 
 class YliadesController extends NewsletterController
 {
-    private $lesMarques;
-
-    public function __construct()
-    {
-        NewsletterController::__construct();
-
-        $this->lesMarques = [
-            'toutes_les_marques',
-            'sema_design',
-            'comptoir_de_famille',
-            'cote_table',
-            'genevieve_lethu',
-            'jardin_d_ulysse'
-        ];
-    }
+    const MARQUE_ALL = "toutes_les_marques";
+    const MARQUE_SEMA_DESIGN = "sema_design";
+    const MARQUE_COMPTOIR_DE_FAMILLE = "comptoir_de_famille";
+    const MARQUE_COTE_TABLE = "cote_table";
+    const MARQUE_GENEVIEVE_LETHU = "genevieve_lethu";
+    const MARQUE_JARDIN_D_ULYSSE = "jardin_d_ulysse";
+    const LES_MARQUES = [
+        self::MARQUE_ALL, self::MARQUE_SEMA_DESIGN, self::MARQUE_COMPTOIR_DE_FAMILLE,
+        self::MARQUE_COTE_TABLE, self::MARQUE_GENEVIEVE_LETHU, self::MARQUE_JARDIN_D_ULYSSE
+    ];
 
     public function doAction($arrayData)
     {
@@ -30,7 +25,7 @@ class YliadesController extends NewsletterController
 
         foreach ($arrayData['brands'] as $key => $value) {
             if (is_string($value)) {
-                if ($value == "toutes_les_marques" && $key == "toutes_les_marques") {
+                if ($value == self::MARQUE_ALL && $key == self::MARQUE_ALL) {
                     $marques = $this->setValueAllBrands(1);
                     break;
                 } else {
@@ -42,12 +37,12 @@ class YliadesController extends NewsletterController
 
         $people = $this->getPeople($arrayData['email']);
 
-        if (empty($people) || $people == false) {
+        if (empty($people)) {
             $this->insertPeople($arrayData);
-            $action = 'insert';
+            $action = self::ACTION_INSERT;
         } else {
             $this->updatePeople($arrayData);
-            $action = 'update';
+            $action = self::ACTION_UPDATE;
         }
 
         return $this->displayMsg($action);
@@ -55,9 +50,9 @@ class YliadesController extends NewsletterController
 
     private function setValueAllBrands($val)
     {
-        foreach ($this->lesMarques as $value)
+        foreach (self::LES_MARQUES as $marque)
         {
-            $newArray[$value] = $val;
+            $newArray[$marque] = $val;
         }
         return $newArray;
     }
@@ -65,60 +60,6 @@ class YliadesController extends NewsletterController
     /*********
      * SCHEMA
      *********/
-    public function setSchemaTableSubscriber()
-    {
-        $array = array(
-            'description' => 'Stores email for newsletter.',
-            'fields' => array(
-                'id' => array(
-                    'type' => 'serial',
-                    'not null' => TRUE,
-                    'description' => 'Primary Key: Unique email ID.',
-                ),
-                'created_at' => array(
-                    'type' => 'varchar',
-                    'length' => 100,
-                    'mysql_type' => 'datetime',
-                    'not null' => TRUE,
-                ),
-                'updated_at' => array(
-                    'type' => 'varchar',
-                    'length' => 100,
-                    'mysql_type' => 'datetime',
-                    'not null' => TRUE,
-                ),
-                'email' => array(
-                    'type' => 'varchar',
-                    'length' => 255,
-                    'not null' => TRUE,
-                    'default' => '',
-                    'description' => 'Email of the person.',
-                ),
-                'active' => array(
-                    'type' => 'int',
-                    'length' => 11,
-                    'not null' => TRUE,
-                    'default' => '0',
-                    'description' => 'Active subscription of the person.',
-                ),
-                'exported' => array(
-                    'type' => 'int',
-                    'size' => 'tiny',
-                    'not null' => TRUE,
-                    'default' => '0',
-                    'description' => '',
-                ),
-            ),
-            'primary key' => array('id'),
-            'indexes' => array(
-                'email' => array('email'),
-                'exported' => array('exported'),
-            ),
-        );
-
-        return $array;
-    }
-
     public function setSchemaTableSubscription()
     {
         $array = array(
@@ -212,11 +153,11 @@ class YliadesController extends NewsletterController
         $this->connection->insert($this->tableSubscription)
             ->fields([
                 "id_subscriber" => intval($idPeople),
-                "cote_table" => $arrayData['brands']["cote_table"],
-                "comptoir_de_famille" => $arrayData['brands']["comptoir_de_famille"],
-                "jardin_d_ulysse" => $arrayData['brands']["jardin_d_ulysse"],
-                "genevieve_lethu" => $arrayData['brands']["genevieve_lethu"],
-                "sema_design" => $arrayData['brands']["sema_design"]
+                "cote_table" => $arrayData['brands'][self::MARQUE_COTE_TABLE],
+                "comptoir_de_famille" => $arrayData['brands'][self::MARQUE_COMPTOIR_DE_FAMILLE],
+                "jardin_d_ulysse" => $arrayData['brands'][self::MARQUE_JARDIN_D_ULYSSE],
+                "genevieve_lethu" => $arrayData['brands'][self::MARQUE_GENEVIEVE_LETHU],
+                "sema_design" => $arrayData['brands'][self::MARQUE_SEMA_DESIGN]
             ])
             ->execute();
     }
@@ -225,7 +166,7 @@ class YliadesController extends NewsletterController
     private function updatePeople($arrayData)
     {
         $date = new DrupalDateTime();
-        $updatePeople = $this->connection->update($this->tableSubscriber)
+        $this->connection->update($this->tableSubscriber)
             ->fields([
                 "updated_at" => $date->format("Y-m-d H:i:s"),
                 "active" => $arrayData['active']
@@ -236,13 +177,13 @@ class YliadesController extends NewsletterController
         $people = $this->getPeople($arrayData['email']);
         $idPeople = $people['id'];
 
-        $updatePeople = $this->connection->update($this->tableSubscription)
+        $this->connection->update($this->tableSubscription)
             ->fields([
-                'cote_table' => $arrayData['brands']['cote_table'],
-                'comptoir_de_famille' => $arrayData['brands']['comptoir_de_famille'],
-                'jardin_d_ulysse' => $arrayData['brands']['jardin_d_ulysse'],
-                'genevieve_lethu' => $arrayData['brands']['genevieve_lethu'],
-                'sema_design' => $arrayData['brands']['sema_design']
+                'cote_table' => $arrayData['brands'][self::MARQUE_COTE_TABLE],
+                'comptoir_de_famille' => $arrayData['brands'][self::MARQUE_COMPTOIR_DE_FAMILLE],
+                'jardin_d_ulysse' => $arrayData['brands'][self::MARQUE_JARDIN_D_ULYSSE],
+                'genevieve_lethu' => $arrayData['brands'][self::MARQUE_GENEVIEVE_LETHU],
+                'sema_design' => $arrayData['brands'][self::MARQUE_SEMA_DESIGN]
             ])
             ->condition('id_subscriber', intval($idPeople), '=')
             ->execute();

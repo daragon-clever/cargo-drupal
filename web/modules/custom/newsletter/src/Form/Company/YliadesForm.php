@@ -26,12 +26,12 @@ class YliadesForm extends FormBase
     {
         //Les marques
         $marques = [
-            'toutes_les_marques' => $this->t("All the brands"),
-            'sema_design' => $this->t("Sema Design"),
-            'comptoir_de_famille' => $this->t("Comptoir de Famille"),
-            'cote_table' => $this->t('Côté Table'),
-            'genevieve_lethu' => $this->t("Geneviève Lethu"),
-            'jardin_d_ulysse' => $this->t("Jardin d'Ulysse"),
+            YliadesController::MARQUE_ALL => $this->t("All the brands"),
+            YliadesController::MARQUE_SEMA_DESIGN => $this->t("Sema Design"),
+            YliadesController::MARQUE_COMPTOIR_DE_FAMILLE => $this->t("Comptoir de Famille"),
+            YliadesController::MARQUE_COTE_TABLE => $this->t('Côté Table'),
+            YliadesController::MARQUE_GENEVIEVE_LETHU => $this->t("Geneviève Lethu"),
+            YliadesController::MARQUE_JARDIN_D_ULYSSE => $this->t("Jardin d'Ulysse"),
         ];
 
         //My Form

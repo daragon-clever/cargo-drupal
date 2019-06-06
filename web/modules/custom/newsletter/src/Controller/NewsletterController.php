@@ -94,8 +94,9 @@ class NewsletterController extends ControllerBase
 
     public function savePeopleInActito(array $dataUser): void
     {
+        $allowTest = $qrcodeadm =  \Drupal::config('system.newsletter')->get('allowTest', FALSE);
         $client = \Drupal::httpClient();
-        $url=$this->urlActito.'/profile/import.php?&entity='.$this->entityActito.'&table='.$this->tableActito."&allowTest=true";
+        $url=$this->urlActito.'/profile/import.php?&entity='.$this->entityActito.'&table='.$this->tableActito."&allowTest=".$allowTest;
         $options = [
             'auth' => [
                 $this->userApi,

@@ -5,16 +5,10 @@ use Drupal\newsletter\Form\Company as CompanyForm;
 
 class NewsletterController
 {
-    protected $company;
-
-    public function __construct()
+    public static function displayForm(): array
     {
-        $this->company = \Drupal::config('system.site')->getOriginal("name", false);
-    }
-
-    public function displayForm(): array
-    {
-        $cleanCompany = strtolower(str_replace(' ', '', $this->company));
+        $company = \Drupal::config('system.site')->getOriginal("name", false);
+        $cleanCompany = strtolower(str_replace(' ', '', company));
         switch ($cleanCompany) {
             case "yliades":
                 $myForm = \Drupal::formBuilder()->getForm(CompanyForm\YliadesForm::class);
@@ -28,8 +22,6 @@ class NewsletterController
         }
         if (isset($myForm)) {
             $build['#form'] = $myForm;
-        } else {
-            $build['#msg'] = $this->t("Pas de formulaire newsletter pour ce site");//todo: à traduire
         }
         $build['#theme'] = 'inscription';
 

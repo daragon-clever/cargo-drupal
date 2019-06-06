@@ -4,9 +4,9 @@ namespace Drupal\newsletter\Controller\Company;
 
 
 use Drupal\Core\Datetime\DrupalDateTime;
-use Drupal\newsletter\Controller\NewsletterController;
+use Drupal\newsletter\Controller\AbstractCompanyController;
 
-class YliadesController extends NewsletterController
+class YliadesController extends AbstractCompanyController
 {
     const MARQUE_ALL = "toutes_les_marques";
     const MARQUE_SEMA_DESIGN = "sema_design";
@@ -152,7 +152,7 @@ class YliadesController extends NewsletterController
                 'description' => '',
             )
         );
-        $array['field'] = array_merge($array['field'], $arrayPushData);
+        $array['fields'] = array_merge($array['fields'], $arrayPushData);
 
         return $array;
     }

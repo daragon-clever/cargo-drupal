@@ -4,9 +4,9 @@ namespace Drupal\newsletter\Controller\Company;
 
 
 use Drupal\Core\Datetime\DrupalDateTime;
-use Drupal\newsletter\Controller\NewsletterController;
+use Drupal\newsletter\Controller\AbstractCompanyController;
 
-class ComptoirDeFamilleController extends NewsletterController
+class ComptoirDeFamilleController extends AbstractCompanyController
 {
     public function doAction(array $arrayData): array
     {

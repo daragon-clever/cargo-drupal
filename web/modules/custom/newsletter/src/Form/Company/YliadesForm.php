@@ -6,7 +6,6 @@ namespace Drupal\newsletter\Form\Company;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\newsletter\Controller\Company\YliadesController;
-use Drupal\newsletter\Controller\NewsletterController;
 
 class YliadesForm extends FormBase
 {

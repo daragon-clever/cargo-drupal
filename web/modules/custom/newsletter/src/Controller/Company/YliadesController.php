@@ -35,17 +35,7 @@ class YliadesController extends NewsletterController
         }
         $arrayData['brands'] = $marques;
 
-        $people = $this->getPeople($arrayData['email']);
-
-        if (empty($people)) {
-            $this->insertPeople($arrayData);
-            $action = self::ACTION_INSERT;
-        } else {
-            $this->updatePeople($arrayData);
-            $action = self::ACTION_UPDATE;
-        }
-
-        return $this->displayMsg($action);
+        return parent::doAction($arrayData);
     }
 
     private function setValueAllBrands(int $val): array
@@ -54,9 +44,74 @@ class YliadesController extends NewsletterController
         return $newArray;
     }
 
-    /*********
-     * SCHEMA
-     *********/
+    public function getPeople(string $email): ?array
+    {
+        $people = $this->connection->select($this->tableSubscriber,'subscriber')
+            ->fields('subscriber')
+            ->condition('subscriber.email', $email,'=')
+            ->range(0, 1)
+            ->execute()
+            ->fetchAssoc();
+
+        return $people ? $people : null;
+    }
+
+
+    protected function insertPeople(array $arrayData): void
+    {
+        $date = new DrupalDateTime();
+        $this->connection->insert($this->tableSubscriber)
+            ->fields([
+                "email" => $arrayData['email'],
+                "created_at" => $date->format("Y-m-d H:i:s"),
+                "updated_at" => $date->format("Y-m-d H:i:s"),
+                "active" => $arrayData['active'],
+                "exported" => $arrayData['exported']
+            ])
+            ->execute();
+
+        $people = $this->getPeople($arrayData['email']);
+        $idPeople = $people['id'];
+
+        $this->connection->insert($this->tableSubscription)
+            ->fields([
+                "id_subscriber" => intval($idPeople),
+                "cote_table" => $arrayData['brands'][self::MARQUE_COTE_TABLE],
+                "comptoir_de_famille" => $arrayData['brands'][self::MARQUE_COMPTOIR_DE_FAMILLE],
+                "jardin_d_ulysse" => $arrayData['brands'][self::MARQUE_JARDIN_D_ULYSSE],
+                "genevieve_lethu" => $arrayData['brands'][self::MARQUE_GENEVIEVE_LETHU],
+                "sema_design" => $arrayData['brands'][self::MARQUE_SEMA_DESIGN]
+            ])
+            ->execute();
+    }
+
+
+    protected function updatePeople(array $arrayData): void
+    {
+        $date = new DrupalDateTime();
+        $this->connection->update($this->tableSubscriber)
+            ->fields([
+                "updated_at" => $date->format("Y-m-d H:i:s"),
+                "active" => $arrayData['active']
+            ])
+            ->condition('email', $arrayData['email'], '=')
+            ->execute();
+
+        $people = $this->getPeople($arrayData['email']);
+        $idPeople = $people['id'];
+
+        $this->connection->update($this->tableSubscription)
+            ->fields([
+                'cote_table' => $arrayData['brands'][self::MARQUE_COTE_TABLE],
+                'comptoir_de_famille' => $arrayData['brands'][self::MARQUE_COMPTOIR_DE_FAMILLE],
+                'jardin_d_ulysse' => $arrayData['brands'][self::MARQUE_JARDIN_D_ULYSSE],
+                'genevieve_lethu' => $arrayData['brands'][self::MARQUE_GENEVIEVE_LETHU],
+                'sema_design' => $arrayData['brands'][self::MARQUE_SEMA_DESIGN]
+            ])
+            ->condition('id_subscriber', intval($idPeople), '=')
+            ->execute();
+    }
+
     public function setSchemaTableSubscription(): array
     {
         $array = parent::setSchemaTableSubscription();
@@ -100,76 +155,5 @@ class YliadesController extends NewsletterController
         $array['field'] = array_merge($array['field'], $arrayPushData);
 
         return $array;
-    }
-
-    /************
-     * DATABASE
-     ************/
-    private function getPeople(string $email): ?array
-    {
-        $people = $this->connection->select($this->tableSubscriber,'subscriber')
-            ->fields('subscriber')
-            ->condition('subscriber.email', $email,'=')
-            ->range(0, 1)
-            ->execute()
-            ->fetchAssoc();
-
-        return $people ? $people : null;
-    }
-
-
-    private function insertPeople(array $arrayData): void
-    {
-        $date = new DrupalDateTime();
-        $this->connection->insert($this->tableSubscriber)
-            ->fields([
-                "email" => $arrayData['email'],
-                "created_at" => $date->format("Y-m-d H:i:s"),
-                "updated_at" => $date->format("Y-m-d H:i:s"),
-                "active" => $arrayData['active'],
-                "exported" => $arrayData['exported']
-            ])
-            ->execute();
-
-        $people = $this->getPeople($arrayData['email']);
-        $idPeople = $people['id'];
-
-        $this->connection->insert($this->tableSubscription)
-            ->fields([
-                "id_subscriber" => intval($idPeople),
-                "cote_table" => $arrayData['brands'][self::MARQUE_COTE_TABLE],
-                "comptoir_de_famille" => $arrayData['brands'][self::MARQUE_COMPTOIR_DE_FAMILLE],
-                "jardin_d_ulysse" => $arrayData['brands'][self::MARQUE_JARDIN_D_ULYSSE],
-                "genevieve_lethu" => $arrayData['brands'][self::MARQUE_GENEVIEVE_LETHU],
-                "sema_design" => $arrayData['brands'][self::MARQUE_SEMA_DESIGN]
-            ])
-            ->execute();
-    }
-
-
-    private function updatePeople(array $arrayData): void
-    {
-        $date = new DrupalDateTime();
-        $this->connection->update($this->tableSubscriber)
-            ->fields([
-                "updated_at" => $date->format("Y-m-d H:i:s"),
-                "active" => $arrayData['active']
-            ])
-            ->condition('email', $arrayData['email'], '=')
-            ->execute();
-
-        $people = $this->getPeople($arrayData['email']);
-        $idPeople = $people['id'];
-
-        $this->connection->update($this->tableSubscription)
-            ->fields([
-                'cote_table' => $arrayData['brands'][self::MARQUE_COTE_TABLE],
-                'comptoir_de_famille' => $arrayData['brands'][self::MARQUE_COMPTOIR_DE_FAMILLE],
-                'jardin_d_ulysse' => $arrayData['brands'][self::MARQUE_JARDIN_D_ULYSSE],
-                'genevieve_lethu' => $arrayData['brands'][self::MARQUE_GENEVIEVE_LETHU],
-                'sema_design' => $arrayData['brands'][self::MARQUE_SEMA_DESIGN]
-            ])
-            ->condition('id_subscriber', intval($idPeople), '=')
-            ->execute();
     }
 }

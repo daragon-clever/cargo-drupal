@@ -5,7 +5,7 @@ namespace Drupal\newsletter\Controller;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\newsletter\Form\Company as CompanyForm;
 
-class NewsletterController extends ControllerBase
+abstract class NewsletterController extends ControllerBase
 {
     const ACTION_INSERT = 'insert';
     const ACTION_UPDATE = 'update';
@@ -73,6 +73,21 @@ class NewsletterController extends ControllerBase
         return $build;
     }
 
+    public function doAction(array $arrayData): array
+    {
+        $people = $this->getPeople($arrayData['email']);
+
+        if (empty($people)) {
+            $this->insertPeople($arrayData);
+            $action = self::ACTION_INSERT;
+        } else {
+            $this->updatePeople($arrayData);
+            $action = self::ACTION_UPDATE;
+        }
+
+        return $this->displayMsg($action);
+    }
+
     public function displayMsg(string $return): array
     {
         if ($return == self::ACTION_INSERT) {
@@ -125,12 +140,6 @@ class NewsletterController extends ControllerBase
         }
     }
 
-
-
-
-    /*********
-     * SCHEMA
-     *********/
     public function setSchemaTableSubscriber(): array
     {
         $array = array(
@@ -207,4 +216,8 @@ class NewsletterController extends ControllerBase
 
         return $array;
     }
+
+    abstract public function getPeople(string $email): ?array;
+    abstract protected function insertPeople(array $arrayData): void;
+    abstract protected function updatePeople(array $arrayData): void;
 }

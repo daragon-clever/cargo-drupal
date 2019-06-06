@@ -8,7 +8,7 @@ class NewsletterController
     public static function displayForm(): array
     {
         $company = \Drupal::config('system.site')->getOriginal("name", false);
-        $cleanCompany = strtolower(str_replace(' ', '', company));
+        $cleanCompany = strtolower(str_replace(' ', '', $company));
         switch ($cleanCompany) {
             case "yliades":
                 $myForm = \Drupal::formBuilder()->getForm(CompanyForm\YliadesForm::class);

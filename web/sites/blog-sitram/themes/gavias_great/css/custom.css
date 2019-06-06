@@ -4,3 +4,43 @@
 .node-detail ul li{
    list-style: disc;
 }
+
+
+/**AUDREY - BLOCK NEWSLETTER**/
+#block-inscriptionnewsletter form {
+   position: relative;
+   max-width: 370px;
+   min-height: 60px;/*+10px*/
+   min-width: 80px;
+   float: right;
+}
+
+#block-inscriptionnewsletter form input#edit-mail {
+   background: rgb(205, 205, 205) none repeat scroll 0 0;
+   border: 2px solid;
+   padding: 0 10px;
+   width: 100%;
+   max-width: 370px;
+   line-height: 50px;
+}
+
+#block-inscriptionnewsletter form input#edit-submit {
+   margin-top: 8px;
+   background: none;
+   border: none;
+   text-align: center;
+   font-size: 12px;
+   font-weight: 800;
+   color: #fff;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+   -webkit-transition: all 0.35s;
+   -o-transition: all 0.35s;
+   transition: all 0.35s;
+   -moz-transition: all 0.35s;
+   -ms-transition: all 0.35s;
+   position: absolute;
+   bottom: 17px;
+   right: 22px;
+   z-index: 11;
+}

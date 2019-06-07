@@ -14,25 +14,22 @@ abstract class AbstractCompanyController extends ControllerBase
     const TYPE_MSG_STATUS = "status";
     const TYPE_MSG_ERROR = "error";
 
-    protected $company;
+    const TABLE_SUBSCRIBER = "newsletter_subscriber";
+    const TABLE_SUBSCRIBTION = "newsletter_subscription";
 
     public $connection;
-    public $tableSubscriber;
-    public $tableSubscription;
+    protected $company;
 
     private $userApi;
     private $passApi;
+    private $urlActito;
     private $entityActito;
     private $tableActito;
-    private $urlActito;
 
     public function __construct()
     {
-        $this->company = \Drupal::config('system.site')->getOriginal("name", false);
-
         $this->connection = \Drupal::database();
-        $this->tableSubscriber = "newsletter_subscriber";
-        $this->tableSubscription = "newsletter_subscription";
+        $this->company = \Drupal::config('system.site')->getOriginal("name", false);
 
         $this->userApi = "poleweb_admin";
         $this->passApi = hash("sha512",hash("sha256","57Hc!a5sQ"));
@@ -86,8 +83,8 @@ abstract class AbstractCompanyController extends ControllerBase
 
     public function savePeopleInActito(array $dataUser): void
     {
-        $allowTest = $qrcodeadm =  \Drupal::config('system.newsletter')->get('allowTest', FALSE);
         $client = \Drupal::httpClient();
+        $allowTest = $qrcodeadm =  \Drupal::config('system.newsletter')->get('allowTest', FALSE);
         $url=$this->urlActito.'/profile/import.php?&entity='.$this->entityActito.'&table='.$this->tableActito."&allowTest=".$allowTest;
         $options = [
             'auth' => [

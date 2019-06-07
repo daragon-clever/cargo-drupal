@@ -46,7 +46,7 @@ class YliadesController extends AbstractCompanyController
 
     public function getPeople(string $email): ?array
     {
-        $people = $this->connection->select($this->tableSubscriber,'subscriber')
+        $people = $this->connection->select(self::TABLE_SUBSCRIBER,'subscriber')
             ->fields('subscriber')
             ->condition('subscriber.email', $email,'=')
             ->range(0, 1)
@@ -60,7 +60,7 @@ class YliadesController extends AbstractCompanyController
     protected function insertPeople(array $arrayData): void
     {
         $date = new DrupalDateTime();
-        $this->connection->insert($this->tableSubscriber)
+        $this->connection->insert(self::TABLE_SUBSCRIBER)
             ->fields([
                 "email" => $arrayData['email'],
                 "created_at" => $date->format("Y-m-d H:i:s"),
@@ -73,7 +73,7 @@ class YliadesController extends AbstractCompanyController
         $people = $this->getPeople($arrayData['email']);
         $idPeople = $people['id'];
 
-        $this->connection->insert($this->tableSubscription)
+        $this->connection->insert(self::TABLE_SUBSCRIBTION)
             ->fields([
                 "id_subscriber" => intval($idPeople),
                 "cote_table" => $arrayData['brands'][self::MARQUE_COTE_TABLE],
@@ -89,7 +89,7 @@ class YliadesController extends AbstractCompanyController
     protected function updatePeople(array $arrayData): void
     {
         $date = new DrupalDateTime();
-        $this->connection->update($this->tableSubscriber)
+        $this->connection->update(self::TABLE_SUBSCRIBER)
             ->fields([
                 "updated_at" => $date->format("Y-m-d H:i:s"),
                 "active" => $arrayData['active']
@@ -100,7 +100,7 @@ class YliadesController extends AbstractCompanyController
         $people = $this->getPeople($arrayData['email']);
         $idPeople = $people['id'];
 
-        $this->connection->update($this->tableSubscription)
+        $this->connection->update(self::TABLE_SUBSCRIBTION)
             ->fields([
                 'cote_table' => $arrayData['brands'][self::MARQUE_COTE_TABLE],
                 'comptoir_de_famille' => $arrayData['brands'][self::MARQUE_COMPTOIR_DE_FAMILLE],

@@ -25,7 +25,7 @@ class ComptoirDeFamilleController extends AbstractCompanyController
 
     public function getPeople(string $email): ?array
     {
-        $people = $this->connection->select($this->tableSubscriber,'subscriber')
+        $people = $this->connection->select(self::TABLE_SUBSCRIBER,'subscriber')
             ->fields('subscriber')
             ->condition('subscriber.email', $email,'=')
             ->range(0, 1)
@@ -38,7 +38,7 @@ class ComptoirDeFamilleController extends AbstractCompanyController
     protected function insertPeople(array $arrayData): void
     {
         $date = new DrupalDateTime();
-        $this->connection->insert($this->tableSubscriber)
+        $this->connection->insert(self::TABLE_SUBSCRIBER)
             ->fields([
                 "email" => $arrayData['email'],
                 "created_at" => $date->format("Y-m-d H:i:s"),
@@ -57,7 +57,7 @@ class ComptoirDeFamilleController extends AbstractCompanyController
         if (isset($arrayData['active'])) $fields['exported'] = $arrayData['active'];
         if (isset($arrayData['exported'])) $fields['exported'] = $arrayData['exported'];
 
-        $this->connection->update($this->tableSubscriber)
+        $this->connection->update(self::TABLE_SUBSCRIBER)
             ->fields($fields)
             ->condition('email', $arrayData['email'], '=')
             ->execute();

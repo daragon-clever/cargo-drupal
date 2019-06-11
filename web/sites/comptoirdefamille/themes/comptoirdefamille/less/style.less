@@ -131,8 +131,12 @@ img {
     p {
       color: #919191;
       font-weight: 500;
-      padding: 0 15px;
       margin: 0;
+
+      .readmore {
+        color: @redComptoir;
+        cursor: pointer;
+      }
     }
   }
 }
@@ -141,6 +145,11 @@ img {
   text-align: center;
   max-width: 875px;
   display: block;
+
+  h1 {
+    max-width: 500px;
+    display: inline-block;
+  }
 
   p {
     color: #919191;
@@ -281,7 +290,7 @@ header {
           }
         }
 
-        &:hover {
+        &:hover, &.is-active {
           text-decoration: none;
 
           &:after {
@@ -1174,7 +1183,7 @@ footer {
 
   .txt-wrapper {
     display: flex;
-    padding: 0 40px;
+    padding: 0 37px;
     position: relative;
 
     p {
@@ -1267,7 +1276,7 @@ footer {
     }
 
     .inner-txt {
-      padding: 0 30px;
+      padding: 0 25px;
 
       @media @tablet {
         padding: 0;
@@ -1336,10 +1345,6 @@ footer {
       @media @tablet {
         width: 260px;
       }
-
-      @media @phone {
-        width: calc(100% - 40px);
-      }
     }
 
     &:after {
@@ -1355,6 +1360,10 @@ footer {
   .contact {
     a {
       background: @redComptoir;
+
+      @media @phone {
+        width: calc(100% - 40px);
+      }
     }
 
     &:after {
@@ -1367,8 +1376,21 @@ footer {
   }
 
   .catalogue {
+
+    & > div {
+      display: inline-block;
+
+      @media @phone {
+        width: calc(100% - 40px);
+      }
+    }
+
     a {
       background: #454545;
+
+      @media @phone {
+        width: 100%;
+      }
     }
 
     &:after {
@@ -1844,5 +1866,30 @@ footer {
 
   .modal-dialog {
     max-width: 1140px;
+  }
+}
+
+// MENTIONS LEGALES & COOKIES
+.mentions-legales {
+  padding-top: 30px;
+
+  h1, h2 {
+    text-align: left;
+    text-transform: uppercase;
+
+    &:after {
+      width: 100%;
+      margin: 10px auto 15px;
+    }
+  }
+
+  h2 {
+    font-size: 16px;
+    margin: 30px 0;
+    color: @redComptoir;
+
+    &:after {
+      display: none;
+    }
   }
 }

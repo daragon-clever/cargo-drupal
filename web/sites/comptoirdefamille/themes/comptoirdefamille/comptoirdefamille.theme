@@ -1,9 +1,17 @@
 <?php
 
+// Suppr Meat Drupal
 function comptoirdefamille_page_attachments_alter(array &$attachments) {
     foreach ($attachments['#attached']['html_head'] as $key => $attachment) {
         if ($attachment[1] == 'system_meta_generator') {
             unset($attachments['#attached']['html_head'][$key]);
         }
+    }
+}
+
+// JS call : instafeed only on homepage
+function comptoirdefamille_preprocess_page(&$variables){
+    if ($variables['is_front'] == TRUE) {
+        $variables['#attached']['library'][] = 'comptoirdefamille/instafeed';
     }
 }

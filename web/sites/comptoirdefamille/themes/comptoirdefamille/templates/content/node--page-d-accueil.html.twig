@@ -32,7 +32,7 @@
         </div>
 
         <div id="encarts-cta" class="row">
-            <div class="col-12 col-md-6">
+ {#           <div class="col-12 col-md-6">
                 <div class="inner left">
                     <a href="{{ content.field_hp_encarts_cta_link.0['#url'] }}" title="">
                         {{ content.field_hp_encarts_cta_picto[0] }}
@@ -42,8 +42,8 @@
                         </span>
                     </a>
                 </div>
-            </div>
-            <div class="col-12 col-md-6">
+            </div>#}
+            <div class="col-12">
                 <div class="inner right">
                     <a href="{{ content.field_hp_encarts_cta_link.1['#url'] }}" title="">
                         {{ content.field_hp_encarts_cta_picto[1] }}
@@ -56,8 +56,8 @@
             </div>
         </div>
 
-        <div id="instagram-feed">
-            Instagram feed (à suivre)
+        <div id="insta-wrapper">
+            {{ content.field_hp_instagram }}
         </div>
     </div>
 </div>

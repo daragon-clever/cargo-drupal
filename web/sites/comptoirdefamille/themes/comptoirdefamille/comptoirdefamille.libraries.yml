@@ -28,6 +28,14 @@ slick:
   dependencies:
     - core/jquery
 
+# Instafeed
+instafeed:
+  header: true
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/instafeed.js/1.4.1/instafeed.min.js: { type: external }
+  dependencies:
+    - core/jquery
+
 # Style général
 global-styling:
   css:

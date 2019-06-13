@@ -23,7 +23,7 @@
 
         <div class="row">
             <div class="col-12 col-sm-6">
-                <a class="block-cta left" href="{{ node.field_distri_left_link.0.url }}">
+                <a class="block-cta left" href="javascript:void(0);">
                     <span class="block-header">
                         <span>
                             {{ content.field_distri_left_title.0 }}
@@ -31,14 +31,17 @@
                     </span>
                     <span class="img-wrapper">
                         {{ content.field_distri_imgs[0] }}
-                        <span class="block-label">
+                        <span class="block-label first-txt">
                             <span>{{ node.field_distri_left_link.0.title }}</span>
+                        </span>
+                        <span class="block-label second-txt" style="opacity: 0">
+                            <span>{{ content.field_distri_left_txt.0 }}</span>
                         </span>
                     </span>
                 </a>
             </div>
             <div class="col-12 col-sm-6">
-                <a class="block-cta right" href="{{ node.field_distri_right_link.0.url }}">
+                <a class="block-cta right" href="javascript:void(0);">
                     <span class="block-header">
                         <span>
                             {{ content.field_distri_right_title.0 }}
@@ -46,8 +49,11 @@
                     </span>
                     <span class="img-wrapper">
                         {{ content.field_distri_imgs[1] }}
-                        <span class="block-label">
+                        <span class="block-label first-txt">
                             <span>{{ node.field_distri_right_link.0.title }}</span>
+                        </span>
+                        <span class="block-label second-txt" style="opacity: 0">
+                            <span>{{ content.field_distri_right_txt.0 }}</span>
                         </span>
                     </span>
                 </a>

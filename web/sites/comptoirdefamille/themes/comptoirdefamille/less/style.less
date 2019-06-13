@@ -1568,7 +1568,7 @@ footer {
     text-decoration: none !important;
     margin: 50px 0;
     display: block;
-    .dimOpacityOnHover(0.8);
+    cursor: inherit;
 
     .block-header {
       text-align: center;
@@ -1635,7 +1635,7 @@ footer {
         }
       }
 
-      .img-wrapper > span > span {
+      .img-wrapper .block-label > span {
         background: rgba(197, 118, 99, 0.9);
       }
     }
@@ -1653,7 +1653,7 @@ footer {
         }
       }
 
-      .img-wrapper > span > span {
+      .img-wrapper .block-label > span {
         background: rgba(192, 187, 172, 0.9);
       }
 
@@ -1673,6 +1673,7 @@ footer {
         top: 0;
         left: 0;
         display: flex;
+        transition: opacity 0.5s;
 
         span {
           margin: auto;
@@ -1683,16 +1684,42 @@ footer {
           color: white;
           padding: 20px 70px;
           font-size: 16px;
+          max-width: 75%;
 
           @media @tablet {
             padding: 15px 45px;
+            font-size: 13px;
           }
+        }
+
+        &.second-txt span {
+          text-transform: none;
+          font-weight: 400;
+          padding: 20px 30px;
+          font-size: 14px;
         }
       }
     }
 
     @media @tablet {
       margin: 50px 0;
+    }
+
+    &:hover {
+      .first-txt {
+        opacity: 0;
+      }
+
+      .second-txt {
+        opacity: 1 !important;
+      }
+    }
+  }
+
+  @media @tablet {
+    img {
+      height: 340px;
+      object-fit: cover;
     }
   }
 }

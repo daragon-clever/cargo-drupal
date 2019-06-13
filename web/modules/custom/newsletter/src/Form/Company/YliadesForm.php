@@ -105,6 +105,19 @@ class YliadesForm extends FormBase
         }
         $data['brands'] = $marques;
 
+        $marques = $this->setValueAllBrands(0);//get array with all brands (value -> 0)
+        foreach ($brands as $key => $value) {
+            if (is_string($value)) {
+                if ($value == YliadesController::MARQUE_ALL && $key == YliadesController::MARQUE_ALL) {
+                    $marques = $this->setValueAllBrands(1);
+                    break;
+                } else {
+                    $marques[$value] = 1;
+                }
+            }
+        }
+        $data['brands'] = $marques;
+
         $base = new YliadesController();
         $return = $base->doAction($data);
         //$base->savePeopleInActito($data);//à activer à mon retour une fois les tests refait et fonctionnels

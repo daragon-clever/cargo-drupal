@@ -8,22 +8,10 @@ use Drupal\newsletter\Controller\AbstractCompanyController;
 
 class BlogSitramController extends AbstractCompanyController
 {
-    public function doAction(array $arrayData): array
-    {
-        $people = $this->getPeople($arrayData['email']);
+    const ENTITY_ACTITO = "GersEquipement";
+    const TABLE_ACTITO = "GersEquipement";
 
-        if (empty($people)) {
-            $this->insertPeople($arrayData);
-            $action = self::ACTION_INSERT;
-        } else {
-            $this->updatePeople($arrayData);
-            $action = self::ACTION_UPDATE;
-        }
-
-        return $this->displayMsg($action);
-    }
-
-    public function getPeople(string $email): ?array
+    protected function getPeople(string $email): ?array
     {
         $people = $this->connection->select(self::TABLE_SUBSCRIBER,'subscriber')
             ->fields('subscriber')
@@ -53,12 +41,29 @@ class BlogSitramController extends AbstractCompanyController
     {
         $date = new DrupalDateTime();
         $fields["updated_at"] = $date->format("Y-m-d H:i:s");
-        if (isset($arrayData['active'])) $fields['exported'] = $arrayData['active'];
+        if (isset($arrayData['active'])) $fields['active'] = $arrayData['active'];
         if (isset($arrayData['exported'])) $fields['exported'] = $arrayData['exported'];
 
         $this->connection->update(self::TABLE_SUBSCRIBER)
             ->fields($fields)
             ->condition('email', $arrayData['email'], '=')
             ->execute();
+    }
+
+    public function savePeopleInActito(array $dataUser): void
+    {
+        $email = $dataUser['email'];
+
+        $searchUser = $this->getPeople($email);
+
+        $contactIdToUse = intval($searchUser['id']);
+        $contactId = str_pad($contactIdToUse, 6, "0", STR_PAD_LEFT);
+
+        $dataForActito = array(
+            'email' => $email,
+            'contact_id' => "BLG-SIT_".strval($contactId),
+            'source' => "blog_sitram"
+        );
+        parent::savePeopleInActito($dataForActito);
     }
 }

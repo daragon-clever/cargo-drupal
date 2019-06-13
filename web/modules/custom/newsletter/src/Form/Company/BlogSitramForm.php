@@ -23,22 +23,24 @@ class BlogSitramForm extends FormBase
      */
     public function buildForm(array $form, FormStateInterface $form_state)
     {
+        $form['#action'] = "#blog-sitram-newsletter";
+
         $form['mail'] = [
             '#type' => 'email',
             '#required' => TRUE
         ];
 
-        $form['captcha'] = array (
+        $form['captcha'] = [
             '#type' => 'captcha',
             '#captcha_type' => 'recaptcha/reCAPTCHA'
-        );
+        ];
 
         $form['actions'] = [
             '#type' => 'actions',
-            'submit' => array(
+            'submit' => [
                 '#type' => 'submit',
                 '#value' => $this->t('S\'abonner')
-            )
+            ]
         ];
 
         return $form;
@@ -51,9 +53,9 @@ class BlogSitramForm extends FormBase
     {
         $mail = $form_state->getValue('mail');
         if (is_null($mail) || empty($mail)) {
-            $form['msg'] = $this->t('Email is required');
+            $form_state->setError($form['mail'], $this->t('Email is required'));
         } elseif (!\Drupal::service('email.validator')->isValid($mail)) {
-            $form['msg'] = $this->t('Email is malformed');
+            $form_state->setError($form['mail'], $this->t('Email is malformed'));
         }
     }
 
@@ -63,11 +65,11 @@ class BlogSitramForm extends FormBase
     public function submitForm(array &$form, FormStateInterface $form_state)
     {
         $email = $form_state->getValue('mail');
-        $data = array(
+        $data = [
             'email' => $email,
             'active' => 1,
             'exported' => 0
-        );
+        ];
 
         $base = new BlogSitramController();
         $return = $base->doAction($data);

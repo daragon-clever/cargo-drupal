@@ -68,9 +68,9 @@ class YliadesForm extends FormBase
         $mail = $form_state->getValue('mail');
         $brands = $brands = $form_state->getValue('marques');
         if (is_null($mail) || empty($mail)) {
-            $form['msg'] = $this->t('Email is required');
+            $form_state->setError($form['mail'], $this->t('Email is required'));
         } elseif (!\Drupal::service('email.validator')->isValid($mail)) {
-            $form['msg'] = $this->t('Email is malformed');
+            $form_state->setError($form['mail'], $this->t('Email is malformed'));
         }
 
         if (empty(array_filter($brands))) {
@@ -86,11 +86,11 @@ class YliadesForm extends FormBase
         $email = $form_state->getValue('mail');
         $brands = $form_state->getValue('marques');
 
-        $data = array(
+        $data = [
             'email' => $email,
             'active' => 1,
             'exported' => 0
-        );
+        ];
 
         $marques = $this->setValueAllBrands(0);//get array with all brands (value -> 0)
         foreach ($brands as $key => $value) {

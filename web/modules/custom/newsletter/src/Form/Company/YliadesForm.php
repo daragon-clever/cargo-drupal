@@ -6,7 +6,6 @@ namespace Drupal\newsletter\Form\Company;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\newsletter\Controller\Company\YliadesController;
-use Drupal\newsletter\Controller\NewsletterController;
 
 class YliadesForm extends FormBase
 {
@@ -26,12 +25,12 @@ class YliadesForm extends FormBase
     {
         //Les marques
         $marques = [
-            'toutes_les_marques' => $this->t("All the brands"),
-            'sema_design' => $this->t("Sema Design"),
-            'comptoir_de_famille' => $this->t("Comptoir de Famille"),
-            'cote_table' => $this->t('Côté Table'),
-            'genevieve_lethu' => $this->t("Geneviève Lethu"),
-            'jardin_d_ulysse' => $this->t("Jardin d'Ulysse"),
+            YliadesController::MARQUE_ALL => $this->t("All the brands"),
+            YliadesController::MARQUE_SEMA_DESIGN => $this->t("Sema Design"),
+            YliadesController::MARQUE_COMPTOIR_DE_FAMILLE => $this->t("Comptoir de Famille"),
+            YliadesController::MARQUE_COTE_TABLE => $this->t('Côté Table'),
+            YliadesController::MARQUE_GENEVIEVE_LETHU => $this->t("Geneviève Lethu"),
+            YliadesController::MARQUE_JARDIN_D_ULYSSE => $this->t("Jardin d'Ulysse"),
         ];
 
         //My Form
@@ -89,14 +88,34 @@ class YliadesForm extends FormBase
 
         $data = array(
             'email' => $email,
-            'brands' => $brands,
             'active' => 1,
             'exported' => 0
         );
 
+        $marques = $this->setValueAllBrands(0);//get array with all brands (value -> 0)
+        foreach ($brands as $key => $value) {
+            if (is_string($value)) {
+                if ($value == YliadesController::MARQUE_ALL && $key == YliadesController::MARQUE_ALL) {
+                    $marques = $this->setValueAllBrands(1);
+                    break;
+                } else {
+                    $marques[$value] = 1;
+                }
+            }
+        }
+        $data['brands'] = $marques;
+
         $base = new YliadesController();
         $return = $base->doAction($data);
+        //$base->savePeopleInActito($data);//à activer à mon retour une fois les tests refait et fonctionnels
 
         \Drupal::messenger()->addMessage($return['msg'], $return['type']);
     }
+
+    private function setValueAllBrands(int $val): array
+    {
+        $newArray = array_fill_keys(YliadesController::LES_MARQUES, $val);
+        return $newArray;
+    }
+
 }

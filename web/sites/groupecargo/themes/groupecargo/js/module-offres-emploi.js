@@ -7,7 +7,11 @@ jQuery(document).ready(function($) {
             return "";
         }
         return decodeURI(results[1]) || 0;
-    }
+    };
+
+    var expireCookiesTime = new Date();
+    var minutes = 15;
+    expireCookiesTime.setTime(expireCookiesTime.getTime() + (minutes * 60 * 1000));
 
     //PAGE OFFRE EMPLOI
     if ($('.listing-offres').length) {
@@ -17,8 +21,20 @@ jQuery(document).ready(function($) {
         // Clickable full row
         var clickableRow = function() {
             if (isMobile === false) {
-                $(".clickable-row").click(function() {
-                    window.location = $(this).data("href");
+                $(".clickable-row").click(function(e) {
+                    if (e.ctrlKey) {
+                        //ctrl + Click
+                        window.open($(this).data("href"));
+                    } else {
+                        window.location = $(this).data("href");
+                    }
+                });
+                $(".clickable-row").mousedown(function(e) {
+                    if (e.which === 2) {
+                        //middle Click
+                        window.open($(this).data("href"));
+                    }
+                    return true;
                 });
             }
         };
@@ -40,12 +56,15 @@ jQuery(document).ready(function($) {
                     switch (this[0][0]) {
                         case 1:
                             var selector = '#filtre-contrat .select-option';
+                            var nameCookies = 'typeDeContrat';
                             break;
                         case 2:
                             var selector = '#filtre-poste .select-option';
+                            var nameCookies = 'typeDePoste';
                             break;
                         case 4:
                             var selector = '#filtre-lieu .select-option';
+                            var nameCookies = 'lieuDeTravail';
                             break;
                     }
 
@@ -54,9 +73,15 @@ jQuery(document).ready(function($) {
 
                     //filtering rows on select change
                     select.on( 'change', function () {
-                        var val = $.fn.dataTable.util.escapeRegex(
-                            $(this).val()
-                        );
+                        //get value of select
+                        var val = $.fn.dataTable.util.escapeRegex($(this).val());
+
+                        //get attr value of select
+                        var valForCookie = $('option:selected', this).data('clean');
+                        //save value in cookies
+                        Cookies.set(nameCookies, valForCookie, { expires : expireCookiesTime });
+
+                        //filter data on table
                         column.search( val ? '^'+val+'$' : '', true, false ).draw();
                     } );
 
@@ -70,23 +95,41 @@ jQuery(document).ready(function($) {
 
                 } );
                 this.api().columns([1,2,4]).every( function () {
+                    var priority = "cookies";
                     switch (this[0][0]) {
                         case 1:
                             var selector = '#filtre-contrat .select-option';
                             var filter = $.urlParam('type_contrat');
+                            var cookies = Cookies.get('typeDeContrat');
                             break;
                         case 2:
                             var selector = '#filtre-poste .select-option';
                             var filter = $.urlParam('type_metier');
+                            var cookies = Cookies.get('typeDePoste');
+
+                            var oldParam = Cookies.get('oldParam');
+                            if (oldParam != replaceSpecialChar(filter)) {
+                                var priority = "filtre";
+                            }
+                            Cookies.set('oldParam', replaceSpecialChar(filter), { expires : expireCookiesTime });
                             break;
                         case 4:
                             var selector = '#filtre-lieu .select-option';
                             var filter = $.urlParam('lieu');
+                            var cookies = Cookies.get('lieuDeTravail');
                             break;
                     }
                     var select = $(selector + " select");
 
-                    if (filter != "") {
+
+
+                    //priorité cookies
+                    if (priority == "cookies" && cookies != ""
+                        && $(selector + ' option[data-clean="' + cookies + '"]').length
+                    ){
+                        $(selector + ' option[data-clean="' + cookies + '"]').attr('selected', 'selected');
+                        select.trigger("change");
+                    } else if (filter != "") {
                         var cleanfilter = replaceSpecialChar(filter);
                         if ($(selector + ' option[data-clean="' + cleanfilter + '"]').length) {
                             $(selector + ' option[data-clean="' + cleanfilter + '"]').attr('selected', 'selected');
@@ -95,15 +138,13 @@ jQuery(document).ready(function($) {
                             $('#alerte-offres').html("<div class='error'>Il n'y a pour le moment aucune offre disponible pour ce type de poste</div>");
                         }
                     }
+
                 });
 
                 // Select2 filters
                 $('.select-option select').select2({
                     minimumResultsForSearch: Infinity
                 });
-
-                // Clickable Row
-                clickableRow();
             }
         });
 
@@ -111,7 +152,7 @@ jQuery(document).ready(function($) {
             table.on('draw', function () {
                 table.columns().indexes().each( function ( idx ) {
                     switch (idx) {
-                        case 1://ou -1
+                        case 1:
                             var selector = '#filtre-contrat .select-option';
                             var filter = $.urlParam('type_contrat');//get url param value
                             break;
@@ -153,7 +194,7 @@ jQuery(document).ready(function($) {
         }
 
         $('#toutes-les-offres').on('draw.dt', function () {
-            clickableRow();
+            clickableRow();//Permet d'activer le click sur les lignes de TOUT le tableau et pas que la première page
         } );
 
         // Mobile : gestion btn filtres

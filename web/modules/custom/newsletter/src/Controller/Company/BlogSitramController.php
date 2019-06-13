@@ -4,134 +4,29 @@ namespace Drupal\newsletter\Controller\Company;
 
 
 use Drupal\Core\Datetime\DrupalDateTime;
-use Drupal\newsletter\Controller\NewsletterController;
+use Drupal\newsletter\Controller\AbstractCompanyController;
 
-class BlogSitramController extends NewsletterController
+class BlogSitramController extends AbstractCompanyController
 {
-    public function __construct()
+    const ENTITY_ACTITO = "GersEquipement";
+    const TABLE_ACTITO = "GersEquipement";
+
+    protected function getPeople(string $email): ?array
     {
-        NewsletterController::__construct();
-    }
-
-    public function doAction($arrayData)
-    {
-        $people = $this->getPeople($arrayData['email']);
-
-        if (empty($people) || $people == false) {
-            $this->insertPeople($arrayData);
-            $action = 'insert';
-        } else {
-            $this->updatePeople($arrayData);
-            $action = 'update';
-        }
-
-        return $this->displayMsg($action);
-    }
-
-    /*********
-     * SCHEMA
-     *********/
-    public function setSchemaTableSubscriber()
-    {
-        $array = array(
-            'description' => 'Stores email for newsletter.',
-            'fields' => array(
-                'id' => array(
-                    'type' => 'serial',
-                    'not null' => TRUE,
-                    'description' => 'Primary Key: Unique email ID.',
-                ),
-                'created_at' => array(
-                    'type' => 'varchar',
-                    'length' => 100,
-                    'mysql_type' => 'datetime',
-                    'not null' => TRUE,
-                ),
-                'updated_at' => array(
-                    'type' => 'varchar',
-                    'length' => 100,
-                    'mysql_type' => 'datetime',
-                    'not null' => TRUE,
-                ),
-                'email' => array(
-                    'type' => 'varchar',
-                    'length' => 255,
-                    'not null' => TRUE,
-                    'default' => '',
-                    'description' => 'Email of the person.',
-                ),
-                'active' => array(
-                    'type' => 'int',
-                    'length' => 11,
-                    'not null' => TRUE,
-                    'default' => '0',
-                    'description' => 'Active subscription of the person.',
-                ),
-                'exported' => array(
-                    'type' => 'int',
-                    'size' => 'tiny',
-                    'not null' => TRUE,
-                    'default' => '0',
-                    'description' => '',
-                ),
-            ),
-            'primary key' => array('id'),
-            'indexes' => array(
-                'email' => array('email'),
-                'exported' => array('exported'),
-            ),
-        );
-
-        return $array;
-    }
-
-    public function setSchemaTableSubscription()
-    {
-        $array = array(
-            'description' => 'Stores subscription for newsletter subscriber.',
-            'fields' => array(
-                'id' => array(
-                    'type' => 'serial',
-                    'not null' => TRUE,
-                    'description' => 'Primary Key: Unique email ID.',
-                ),
-                'id_subscriber' => array(
-                    'type' => 'int',
-                    'length' => 11,
-                    'not null' => TRUE,
-                    'description' => 'Subscriber ID.',
-                ),
-                'subscription' => array(
-                    'type' => 'varchar',
-                    'length' => 255,
-                    'not null' => FALSE
-                )
-            ),
-            'primary key' => array('id')
-        );
-
-        return $array;
-    }
-
-    /************
-     * DATABASE
-     ************/
-    private function getPeople($email)
-    {
-        $people = $this->connection->select($this->tableSubscriber,'subscriber')
+        $people = $this->connection->select(self::TABLE_SUBSCRIBER,'subscriber')
             ->fields('subscriber')
             ->condition('subscriber.email', $email,'=')
             ->range(0, 1)
             ->execute()
             ->fetchAssoc();
 
-        return $people;
+        return $people ? $people : null;
     }
 
-    private function insertPeople($arrayData)
+    protected function insertPeople(array $arrayData): void
     {
         $date = new DrupalDateTime();
-        $insertPeople = $this->connection->insert($this->tableSubscriber)
+        $this->connection->insert(self::TABLE_SUBSCRIBER)
             ->fields([
                 "email" => $arrayData['email'],
                 "created_at" => $date->format("Y-m-d H:i:s"),
@@ -142,16 +37,33 @@ class BlogSitramController extends NewsletterController
             ->execute();
     }
 
-
-    private function updatePeople($arrayData)
+    protected function updatePeople(array $arrayData): void
     {
         $date = new DrupalDateTime();
-        $updatePeople = $this->connection->update($this->tableSubscriber)
-            ->fields([
-                "updated_at" => $date->format("Y-m-d H:i:s"),
-                "active" => $arrayData['active']
-            ])
+        $fields["updated_at"] = $date->format("Y-m-d H:i:s");
+        if (isset($arrayData['active'])) $fields['active'] = $arrayData['active'];
+        if (isset($arrayData['exported'])) $fields['exported'] = $arrayData['exported'];
+
+        $this->connection->update(self::TABLE_SUBSCRIBER)
+            ->fields($fields)
             ->condition('email', $arrayData['email'], '=')
             ->execute();
+    }
+
+    public function savePeopleInActito(array $dataUser): void
+    {
+        $email = $dataUser['email'];
+
+        $searchUser = $this->getPeople($email);
+
+        $contactIdToUse = intval($searchUser['id']);
+        $contactId = str_pad($contactIdToUse, 6, "0", STR_PAD_LEFT);
+
+        $dataForActito = array(
+            'email' => $email,
+            'contact_id' => "BLG-SIT_".strval($contactId),
+            'source' => "blog_sitram"
+        );
+        parent::savePeopleInActito($dataForActito);
     }
 }

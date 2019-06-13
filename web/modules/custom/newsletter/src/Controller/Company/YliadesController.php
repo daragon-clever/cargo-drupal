@@ -4,199 +4,40 @@ namespace Drupal\newsletter\Controller\Company;
 
 
 use Drupal\Core\Datetime\DrupalDateTime;
-use Drupal\newsletter\Controller\NewsletterController;
+use Drupal\newsletter\Controller\AbstractCompanyController;
 
-class YliadesController extends NewsletterController
+class YliadesController extends AbstractCompanyController
 {
-    private $lesMarques;
+    const MARQUE_ALL = "toutes_les_marques";
+    const MARQUE_SEMA_DESIGN = "sema_design";
+    const MARQUE_COMPTOIR_DE_FAMILLE = "comptoir_de_famille";
+    const MARQUE_COTE_TABLE = "cote_table";
+    const MARQUE_GENEVIEVE_LETHU = "genevieve_lethu";
+    const MARQUE_JARDIN_D_ULYSSE = "jardin_d_ulysse";
+    const LES_MARQUES = [
+        self::MARQUE_ALL, self::MARQUE_SEMA_DESIGN, self::MARQUE_COMPTOIR_DE_FAMILLE,
+        self::MARQUE_COTE_TABLE, self::MARQUE_GENEVIEVE_LETHU, self::MARQUE_JARDIN_D_ULYSSE
+    ];
+    const ENTITY_ACTITO = "Yliades";
+    const TABLE_ACTITO = "Yliades";
 
-    public function __construct()
+    protected function getPeople(string $email): ?array
     {
-        NewsletterController::__construct();
-
-        $this->lesMarques = [
-            'toutes_les_marques',
-            'sema_design',
-            'comptoir_de_famille',
-            'cote_table',
-            'genevieve_lethu',
-            'jardin_d_ulysse'
-        ];
-    }
-
-    public function doAction($arrayData)
-    {
-        $marques = $this->setValueAllBrands(0);//get array with all brands (value -> 0)
-
-        foreach ($arrayData['brands'] as $key => $value) {
-            if (is_string($value)) {
-                if ($value == "toutes_les_marques" && $key == "toutes_les_marques") {
-                    $marques = $this->setValueAllBrands(1);
-                    break;
-                } else {
-                    $marques[$value] = 1;
-                }
-            }
-        }
-        $arrayData['brands'] = $marques;
-
-        $people = $this->getPeople($arrayData['email']);
-
-        if (empty($people) || $people == false) {
-            $this->insertPeople($arrayData);
-            $action = 'insert';
-        } else {
-            $this->updatePeople($arrayData);
-            $action = 'update';
-        }
-
-        return $this->displayMsg($action);
-    }
-
-    private function setValueAllBrands($val)
-    {
-        foreach ($this->lesMarques as $value)
-        {
-            $newArray[$value] = $val;
-        }
-        return $newArray;
-    }
-
-    /*********
-     * SCHEMA
-     *********/
-    public function setSchemaTableSubscriber()
-    {
-        $array = array(
-            'description' => 'Stores email for newsletter.',
-            'fields' => array(
-                'id' => array(
-                    'type' => 'serial',
-                    'not null' => TRUE,
-                    'description' => 'Primary Key: Unique email ID.',
-                ),
-                'created_at' => array(
-                    'type' => 'varchar',
-                    'length' => 100,
-                    'mysql_type' => 'datetime',
-                    'not null' => TRUE,
-                ),
-                'updated_at' => array(
-                    'type' => 'varchar',
-                    'length' => 100,
-                    'mysql_type' => 'datetime',
-                    'not null' => TRUE,
-                ),
-                'email' => array(
-                    'type' => 'varchar',
-                    'length' => 255,
-                    'not null' => TRUE,
-                    'default' => '',
-                    'description' => 'Email of the person.',
-                ),
-                'active' => array(
-                    'type' => 'int',
-                    'length' => 11,
-                    'not null' => TRUE,
-                    'default' => '0',
-                    'description' => 'Active subscription of the person.',
-                ),
-                'exported' => array(
-                    'type' => 'int',
-                    'size' => 'tiny',
-                    'not null' => TRUE,
-                    'default' => '0',
-                    'description' => '',
-                ),
-            ),
-            'primary key' => array('id'),
-            'indexes' => array(
-                'email' => array('email'),
-                'exported' => array('exported'),
-            ),
-        );
-
-        return $array;
-    }
-
-    public function setSchemaTableSubscription()
-    {
-        $array = array(
-            'description' => 'Stores email for newsletter.',
-            'fields' => array(
-                'id' => array(
-                    'type' => 'serial',
-                    'not null' => TRUE,
-                    'description' => 'Primary Key: Unique email ID.',
-                ),
-                'id_subscriber' => array(
-                    'type' => 'int',
-                    'length' => 11,
-                    'not null' => TRUE,
-                    'description' => 'Subscriber ID.',
-                ),
-                'sema_design' => array(
-                    'type' => 'int',
-                    'size' => 'tiny',
-                    'not null' => TRUE,
-                    'default' => '0',
-                    'description' => '',
-                ),
-                'comptoir_de_famille' => array(
-                    'type' => 'int',
-                    'size' => 'tiny',
-                    'not null' => TRUE,
-                    'default' => '0',
-                    'description' => '',
-                ),
-                'cote_table' => array(
-                    'type' => 'int',
-                    'size' => 'tiny',
-                    'not null' => TRUE,
-                    'default' => '0',
-                    'description' => '',
-                ),
-                'genevieve_lethu' => array(
-                    'type' => 'int',
-                    'size' => 'tiny',
-                    'not null' => TRUE,
-                    'default' => '0',
-                    'description' => '',
-                ),
-                'jardin_d_ulysse' => array(
-                    'type' => 'int',
-                    'size' => 'tiny',
-                    'not null' => TRUE,
-                    'default' => '0',
-                    'description' => '',
-                )
-            ),
-            'primary key' => array('id')
-        );
-
-        return $array;
-    }
-
-    /************
-     * DATABASE
-     ************/
-    private function getPeople($email)
-    {
-        $people = $this->connection->select($this->tableSubscriber,'subscriber')
+        $people = $this->connection->select(self::TABLE_SUBSCRIBER,'subscriber')
             ->fields('subscriber')
             ->condition('subscriber.email', $email,'=')
             ->range(0, 1)
             ->execute()
             ->fetchAssoc();
 
-        return $people;
+        return $people ? $people : null;
     }
 
 
-    private function insertPeople($arrayData)
+    protected function insertPeople(array $arrayData): void
     {
         $date = new DrupalDateTime();
-        $this->connection->insert($this->tableSubscriber)
+        $this->connection->insert(self::TABLE_SUBSCRIBER)
             ->fields([
                 "email" => $arrayData['email'],
                 "created_at" => $date->format("Y-m-d H:i:s"),
@@ -209,42 +50,106 @@ class YliadesController extends NewsletterController
         $people = $this->getPeople($arrayData['email']);
         $idPeople = $people['id'];
 
-        $this->connection->insert($this->tableSubscription)
+        $this->connection->insert(self::TABLE_SUBSCRIBTION)
             ->fields([
                 "id_subscriber" => intval($idPeople),
-                "cote_table" => $arrayData['brands']["cote_table"],
-                "comptoir_de_famille" => $arrayData['brands']["comptoir_de_famille"],
-                "jardin_d_ulysse" => $arrayData['brands']["jardin_d_ulysse"],
-                "genevieve_lethu" => $arrayData['brands']["genevieve_lethu"],
-                "sema_design" => $arrayData['brands']["sema_design"]
+                "cote_table" => $arrayData['brands'][self::MARQUE_COTE_TABLE],
+                "comptoir_de_famille" => $arrayData['brands'][self::MARQUE_COMPTOIR_DE_FAMILLE],
+                "jardin_d_ulysse" => $arrayData['brands'][self::MARQUE_JARDIN_D_ULYSSE],
+                "genevieve_lethu" => $arrayData['brands'][self::MARQUE_GENEVIEVE_LETHU],
+                "sema_design" => $arrayData['brands'][self::MARQUE_SEMA_DESIGN]
             ])
             ->execute();
     }
 
 
-    private function updatePeople($arrayData)
+    protected function updatePeople(array $arrayData): void
     {
         $date = new DrupalDateTime();
-        $updatePeople = $this->connection->update($this->tableSubscriber)
-            ->fields([
-                "updated_at" => $date->format("Y-m-d H:i:s"),
-                "active" => $arrayData['active']
-            ])
+        $fields["updated_at"] = $date->format("Y-m-d H:i:s");
+        if (isset($arrayData['active'])) $fields['active'] = $arrayData['active'];
+        if (isset($arrayData['exported'])) $fields['exported'] = $arrayData['exported'];
+
+        $this->connection->update(self::TABLE_SUBSCRIBER)
+            ->fields($fields)
             ->condition('email', $arrayData['email'], '=')
             ->execute();
 
-        $people = $this->getPeople($arrayData['email']);
-        $idPeople = $people['id'];
+        if (isset($arrayData['brands'])) {
+            $people = $this->getPeople($arrayData['email']);
+            $idPeople = $people['id'];
+            $this->connection->update(self::TABLE_SUBSCRIBTION)
+                ->fields([
+                    'cote_table' => $arrayData['brands'][self::MARQUE_COTE_TABLE],
+                    'comptoir_de_famille' => $arrayData['brands'][self::MARQUE_COMPTOIR_DE_FAMILLE],
+                    'jardin_d_ulysse' => $arrayData['brands'][self::MARQUE_JARDIN_D_ULYSSE],
+                    'genevieve_lethu' => $arrayData['brands'][self::MARQUE_GENEVIEVE_LETHU],
+                    'sema_design' => $arrayData['brands'][self::MARQUE_SEMA_DESIGN]
+                ])
+                ->condition('id_subscriber', intval($idPeople), '=')
+                ->execute();
+        }
+    }
 
-        $updatePeople = $this->connection->update($this->tableSubscription)
-            ->fields([
-                'cote_table' => $arrayData['brands']['cote_table'],
-                'comptoir_de_famille' => $arrayData['brands']['comptoir_de_famille'],
-                'jardin_d_ulysse' => $arrayData['brands']['jardin_d_ulysse'],
-                'genevieve_lethu' => $arrayData['brands']['genevieve_lethu'],
-                'sema_design' => $arrayData['brands']['sema_design']
-            ])
-            ->condition('id_subscriber', intval($idPeople), '=')
-            ->execute();
+    public function savePeopleInActito(array $dataUser): void
+    {
+        $dataForActito = [
+            'email' => $dataUser['email'],
+            'source' => "yliades",
+            'segment' => array_keys(array_diff( $dataUser['brands'], [0] ))
+        ];
+
+        $searchUser = $this->getPeople($dataForActito['email']);
+        $contactIdToUse = intval($searchUser['id']);
+        $contactId = str_pad($contactIdToUse, 6, "0", STR_PAD_LEFT);
+
+        $dataForActito['contact_id'] = "YLI_".strval($contactId);
+
+        parent::savePeopleInActito($dataForActito);
+    }
+
+    public function setSchemaTableSubscription(): array
+    {
+        $array = parent::setSchemaTableSubscription();
+        $arrayPushData = array(
+            'sema_design' => array(
+                'type' => 'int',
+                'size' => 'tiny',
+                'not null' => TRUE,
+                'default' => '0',
+                'description' => '',
+            ),
+            'comptoir_de_famille' => array(
+                'type' => 'int',
+                'size' => 'tiny',
+                'not null' => TRUE,
+                'default' => '0',
+                'description' => '',
+            ),
+            'cote_table' => array(
+                'type' => 'int',
+                'size' => 'tiny',
+                'not null' => TRUE,
+                'default' => '0',
+                'description' => '',
+            ),
+            'genevieve_lethu' => array(
+                'type' => 'int',
+                'size' => 'tiny',
+                'not null' => TRUE,
+                'default' => '0',
+                'description' => '',
+            ),
+            'jardin_d_ulysse' => array(
+                'type' => 'int',
+                'size' => 'tiny',
+                'not null' => TRUE,
+                'default' => '0',
+                'description' => '',
+            )
+        );
+        $array['fields'] = array_merge($array['fields'], $arrayPushData);
+
+        return $array;
     }
 }

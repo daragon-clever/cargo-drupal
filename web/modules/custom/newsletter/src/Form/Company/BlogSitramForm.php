@@ -25,7 +25,6 @@ class BlogSitramForm extends FormBase
     {
         $form['mail'] = [
             '#type' => 'email',
-            '#placeholder' => $this->t("Enter your e-mail address"),
             '#required' => TRUE
         ];
 
@@ -38,7 +37,7 @@ class BlogSitramForm extends FormBase
             '#type' => 'actions',
             'submit' => array(
                 '#type' => 'submit',
-                '#value' => $this->t('Send')
+                '#value' => $this->t('S\'abonner')
             )
         ];
 
@@ -72,6 +71,7 @@ class BlogSitramForm extends FormBase
 
         $base = new BlogSitramController();
         $return = $base->doAction($data);
+        //$base->savePeopleInActito($data);//à activer à mon retour une fois les tests refait et fonctionnels
 
         \Drupal::messenger()->addMessage($return['msg'], $return['type']);
     }

@@ -3,6 +3,7 @@ namespace Drupal\newsletter\Plugin\Block;
 
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\newsletter\Form\Company as CompanyForm;
 
 /**
  * @Block(
@@ -18,7 +19,7 @@ class InscriptionBlock extends BlockBase
     public function __construct(array $configuration, $plugin_id, $plugin_definition)
     {
         parent::__construct($configuration, $plugin_id, $plugin_definition);
-        $this->company = \Drupal::config('system.site')->get('name');
+        $this->company = \Drupal::config('system.site')->getOriginal("name", false);
     }
 
     /**
@@ -28,17 +29,14 @@ class InscriptionBlock extends BlockBase
     {
         $cleanCompany = strtolower(str_replace(' ', '', $this->company));
         switch ($cleanCompany) {
-            case "turbocar":
-                $myForm = \Drupal::formBuilder()->getForm('Drupal\newsletter\Form\Company\TurbocarForm');
-                break;
             case "yliades":
-                $myForm = \Drupal::formBuilder()->getForm('Drupal\newsletter\Form\Company\YliadesForm');
+                $myForm = \Drupal::formBuilder()->getForm(CompanyForm\YliadesForm::class);
                 break;
             case "blog.sitram.fr":
-                $myForm = \Drupal::formBuilder()->getForm('Drupal\newsletter\Form\Company\BlogSitramForm');
+                $myForm = \Drupal::formBuilder()->getForm(CompanyForm\BlogSitramForm::class);
                 break;
             case "comptoirdefamille":
-                $myForm = \Drupal::formBuilder()->getForm('Drupal\newsletter\Form\Company\ComptoirDeFamilleForm');
+                $myForm = \Drupal::formBuilder()->getForm(CompanyForm\ComptoirDeFamilleForm::class);
                 break;
         }
 

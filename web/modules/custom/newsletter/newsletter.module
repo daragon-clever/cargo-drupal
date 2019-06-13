@@ -3,12 +3,9 @@ use Drupal\newsletter\Controller\Company;
 
 function newsletter_schema()
 {
-    $company = \Drupal::config('system.site')->get('name');
+    $company = \Drupal::config('system.site')->getOriginal("name", false);
     $cleanCompany = strtolower(str_replace(' ', '', $company));
     switch ($cleanCompany) {
-        case "turbocar":
-            $base = new Company\TurbocarController();
-            break;
         case "yliades":
             $base = new Company\YliadesController();
             break;
@@ -23,11 +20,11 @@ function newsletter_schema()
     if (isset($base)) {
         //Table : newsletter_subscriber
         if (\Drupal::database()->schema()->tableExists("newsletter_subscriber") == FALSE) {
-            $schema['newsletter_subscriber'] = $base->setSchemaTableSubscriber('newsletter_subscriber');
+            $schema['newsletter_subscriber'] = $base->setSchemaTableSubscriber();
         }
         //Table : newsletter_subscription
         if (\Drupal::database()->schema()->tableExists("newsletter_subscription") == FALSE) {
-            $schema['newsletter_subscription'] = $base->setSchemaTableSubscription('newsletter_subscription');
+            $schema['newsletter_subscription'] = $base->setSchemaTableSubscription();
         }
 
         if (isset($schema) && !empty($schema)) return $schema;
@@ -45,9 +42,4 @@ function newsletter_theme($existing, $type, $theme, $path) {
             'render element' => 'form'
         ]
     ];
-}
-
-function newsletter_cron()
-{
-    //todo: add action cron to exported people which exported value = 0 and set this value to 1
 }

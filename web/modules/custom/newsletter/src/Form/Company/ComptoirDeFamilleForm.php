@@ -23,8 +23,6 @@ class ComptoirDeFamilleForm extends FormBase
      */
     public function buildForm(array $form, FormStateInterface $form_state)
     {
-        $form['#action'] = "comptoir-de-famille-newsletter";
-
         $form['mail'] = [
             '#type' => 'email',
             '#placeholder' => $this->t("Enter your e-mail address"),

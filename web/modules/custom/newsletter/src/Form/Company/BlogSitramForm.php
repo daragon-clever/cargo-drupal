@@ -23,8 +23,6 @@ class BlogSitramForm extends FormBase
      */
     public function buildForm(array $form, FormStateInterface $form_state)
     {
-        $form['#action'] = "#blog-sitram-newsletter";
-
         $form['mail'] = [
             '#type' => 'email',
             '#required' => TRUE

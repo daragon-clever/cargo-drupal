@@ -159,6 +159,7 @@ namespace :deploy do
           info t(:no_old_releases, host: host.to_s, keep_releases: fetch(:keep_releases))
         end
       end
+    end
   end
 
 end

@@ -135,3 +135,30 @@ namespace :drush do
     end
   end
 end
+
+namespace :deploy do
+
+  before :cleanup, :cleanup_permissions
+
+  desc 'Set permissions on old releases before cleanup'
+  task :cleanup_permissions do
+    on release_roles :all do |host|
+      releases = capture(:ls, "-x", releases_path).split
+      valid, invalid = releases.partition { |e| /^\d{14}$/ =~ e }
+
+      warn t(:skip_cleanup, host: host.to_s) if invalid.any?
+
+      if valid.count >= fetch(:keep_releases)
+        info t(:keeping_releases, host: host.to_s, keep_releases: fetch(:keep_releases), releases: valid.count)
+        directories = (valid - valid.last(fetch(:keep_releases))).map do |release|
+          releases_path.join(release).to_s
+        end
+        if directories.any?
+          execute :chmod, '-R', '755', *directories
+        else
+          info t(:no_old_releases, host: host.to_s, keep_releases: fetch(:keep_releases))
+        end
+      end
+  end
+
+end

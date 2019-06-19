@@ -9,7 +9,6 @@ jQuery(document).ready(function($) {
         function() {
             timerNav = setTimeout(function() {
                 $("#header-wrapper").addClass("menu-hover");
-                console.log('test');
             }, 400);
         },
         function() {

@@ -1,0 +1,45 @@
+<div id="page-container">
+    <div id="content-wrap">
+        <div id="header-wrapper" class="navbar-expand-md">
+            <div class="row no-gutters">
+                <div class="col-12">
+                    <!-- Header -->
+                    {% include directory ~ '/partials/header.html.twig' %}
+                </div>
+                <div id="nav-wrapper">
+                    <!-- Navigation -->
+                    {% if page.navigation %}
+                        {% include directory ~ '/partials/entete-nav-mobile.html.twig' %}
+                        {% include directory ~ '/partials/navigation.html.twig' %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            {% if page.highlighted %}
+                <div class="row message-site">
+                    <div class="col">
+                        {{ page.highlighted }}
+                    </div>
+                </div>
+            {% endif %}
+
+            {% if page.content %}
+                <div class="row content">
+                    <div class="col" id="page-newsletter">
+                        {{ page.content }}
+                    </div>
+                </div>
+            {% endif %}
+
+            {% if page.footer %}
+                <div id="footer" class="row">
+                    <footer>
+                        <img class="logo" src="{{ base_path }}sites/comptoirdefamille/themes/comptoirdefamille/images/header/logo.svg" alt="Comptoir de Famille">
+                        {{ page.footer }}
+                    </footer>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

@@ -20,6 +20,7 @@ services:
         MYSQL_PASSWORD: drupal
       volumes:
         - db_data:/var/lib/mysql
+      command: ["--skip-log-bin"]
 
   mail:
       image: mailhog/mailhog

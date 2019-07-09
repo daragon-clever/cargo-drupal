@@ -12,7 +12,7 @@ services:
       volumes:
         - "{{ CHEMIN_LOCAL }}:/var/www/html"
   db:
-      image: mariadb:10.1.2
+      image: mariadb:10.1
       environment:
         MYSQL_ROOT_PASSWORD: root
         MYSQL_DATABASE: drupal
@@ -20,6 +20,7 @@ services:
         MYSQL_PASSWORD: drupal
       volumes:
         - db_data:/var/lib/mysql
+      command: ["--skip-log-bin"]
 
   mail:
       image: mailhog/mailhog
@@ -27,7 +28,7 @@ services:
         - 8025:8025
 
   phpmyadmin:
-      image: phpmyadmin/phpmyadmin:4.7.9-1
+      image: phpmyadmin/phpmyadmin:4.7
       ports:
         - 8080:80
       volumes:

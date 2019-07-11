@@ -74,7 +74,7 @@ jQuery(document).ready(function($) {
         var userFeed = new Instafeed({
             get: 'user',
             userId: '8890621818',
-            accessToken: '8890621818.1677ed0.f6fb95d77ed742099be30b819e62e378',
+            accessToken: '8890621818.1677ed0.a430308c57a0459bbccb19ce095a7d99',
             limit: 8,
             resolution: 'standard_resolution',
             // Slick

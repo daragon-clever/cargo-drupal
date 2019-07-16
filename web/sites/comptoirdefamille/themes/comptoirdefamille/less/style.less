@@ -2127,3 +2127,21 @@ footer {
     }
   }
 }
+
+// MSG ERREUR / SUCCES
+div[role="contentinfo"] {
+  & > div {
+    text-align: center;
+    border: 1px solid;
+    padding: 7px;
+    margin: 15px 0;
+    color: #1a821a;
+    background: #e1ece1;
+    font-weight: 500;
+
+    &[role="alert"] {
+      color: @redComptoir;
+      background: #f4d9d9;
+    }
+  }
+}

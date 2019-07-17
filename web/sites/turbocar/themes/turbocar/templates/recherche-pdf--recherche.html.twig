@@ -1,59 +1,54 @@
 <style>
-    #selection-type-produit select, #selection-type-produit p {
-        display: inline;
-    }
-    #selection-type-produit select {
-        width: 215px;
-        margin-left: 10px;
-    }
-    #chercher-det p span, #chercher-not p span {
-        color: #e40514;
-    }
     .box-chercher {
         display: none;
-        border-left: 2px solid gray;
     }
 </style>
-<div class="row justify-content-center">
-    <div id="selection-type-produit" class="col">
-        <div style="width: max-content; margin: auto;">
-            <p>Veuillez sélectionner votre type de produit : </p>
+<div class="row" id="module-search-pdf">
+    <div id="selection-type-produit" class="col-12 text-center">
+        <div>
+            <p>Sélectionnez le document que vous souhaitez télécharger :</p>
+
             <select class="form-control" id="select-type-produit">
-                <option value="">--Choisir type produit--</option>
-                <option value="chercher-det">Produit d'entretien</option>
-                <option value="chercher-not">Accessoire auto</option>
+                <option value="">- Choisissez -</option>
+                <option value="chercher-det">Fiches de données de sécurité</option>
+                <option value="chercher-not">Notices d'utilisation</option>
             </select>
         </div>
     </div>
-    <br />
-    <div id="chercher-det" class="box-chercher col">
-        <p>Pour télécharger la fiche technique d'un produit, merci de saisir la <span>référence du produit</span> et le <span>numéro de lot</span> :</p>
-        <form class="col" id="recherchepdf-form" name="formSearchDet" action="{{ path('resultSearch.form') }}" onsubmit="return validateFormDet()" type="POST">
-            <div class="row justify-content-center align-items-end">
-                <div class="col-12 col-md-4 col-lg-4">
-                    Référence du produit : <input name="refProduit" class="form-control refProduit" type="text" required>
-                </div>
-                <div class="col-12 col-md-4 col-lg-4">
-                    Lot du produit : <input name="lotProduit" class="form-control lotProduit" type="text" required>
-                </div>
-                <div class="col-auto">
-                    <input name="urlRedirect" class="urlRedirect" value="" type="hidden">
-                    <button type="submit">Télécharger</button>
-                </div>
+
+    <div id="chercher-det" class="box-chercher col-12 text-center">
+        <p>Pour télécharger la fiche de données de sécurité, merci de saisir le <span>numéro de lot</span> et la <span>référence du produit</span> :</p>
+
+        <form class="row justify-content-center align-items-end text-left"
+              id="recherchepdf-form" name="formSearchDet" action="{{ path('resultSearch.form') }}"
+              onsubmit="return validateFormDet()" type="POST">
+            <div class="col-12 col-sm-auto">
+                Référence du produit :
+                <input name="refProduit" class="form-control refProduit" type="text" required>
+            </div>
+            <div class="col-12 col-sm-auto">
+                Lot du produit :
+                <input name="lotProduit" class="form-control lotProduit" type="text" required>
+            </div>
+            <div class="col-12 col-sm-auto">
+                <input name="urlRedirect" class="urlRedirect" value="" type="hidden">
+                <button type="submit">Télécharger</button>
             </div>
         </form>
     </div>
-    <div id="chercher-not" class="box-chercher col">
+
+    <div id="chercher-not" class="box-chercher col-12 text-center">
         <p>Pour télécharger la notice d'un produit, merci de saisir la <span>référence du produit</span> :</p>
-        <form class="col" id="recherchepdf-form" name="formSearchNot" action="{{ path('resultSearch.form') }}" onsubmit="return validateFormNot()" type="POST">
-            <div class="row justify-content-center align-items-end">
-                <div class="col-12 col-md-4 col-lg-4">
-                    Référence du produit : <input name="refProduit" class="form-control refProduit" type="text" required>
-                </div>
-                <div class="col-auto">
-                    <input name="urlRedirect" class="urlRedirect" value="" type="hidden">
-                    <button type="submit">Télécharger</button>
-                </div>
+
+        <form class="row justify-content-center align-items-end text-left"
+              id="recherchepdf-form" name="formSearchNot" action="{{ path('resultSearch.form') }}"
+              onsubmit="return validateFormNot()" type="POST">
+            <div class="col-12 col-sm-auto">
+                Référence du produit : <input name="refProduit" class="form-control refProduit" type="text" required>
+            </div>
+            <div class="col-12 col-sm-auto">
+                <input name="urlRedirect" class="urlRedirect" value="" type="hidden">
+                <button type="submit">Télécharger</button>
             </div>
         </form>
     </div>
@@ -75,6 +70,7 @@
             return true;
         }
     }
+
     function validateFormNot() {
         var refProduit = document.forms["formSearchNot"]["refProduit"].value;
         if (refProduit == "") {

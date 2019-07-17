@@ -37,7 +37,6 @@ jQuery(document).ready(function($) {
     /*** Recherche PDF ***/
     if ($("#recherche-pdf").length) {
         $("#selection-type-produit select").on('change', function() {
-            console.log('test');
             $('.box-chercher').hide();
             if ($(this).val().length != 0) $('#' + $(this).val()).show();
             Cookies.set('choice-usr-typeProd', $(this).val(), { expires : 1 });

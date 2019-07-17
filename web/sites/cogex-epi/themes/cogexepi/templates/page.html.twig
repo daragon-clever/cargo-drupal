@@ -1,0 +1,58 @@
+<div class="header-wrapper">
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col col-md-6 logo-wrapper">
+                    <a href="{{ url('<front>') }}" title="Facom">
+                        facom
+                    </a>
+                    <span class="ss-titre">{{ 'Solutions colles et adhésifs by COGEX'|trans }}</span>
+                </div>
+                <div class="col col-md-6 text-right align-self-end">
+                    <div class="menu">
+                        {% if page.navigation %}
+                            {{ page.navigation }}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+</div>
+
+<div class="container-fluid">
+    {% if page.highlighted %}
+        <div class="row message-site">
+            <div class="col">
+                {{ page.highlighted }}
+            </div>
+        </div>
+    {% endif %}
+    {% if page.content %}
+        <div class="row">
+            <div class="col">
+                {% include directory ~ '/templates/recherche-pdf--recherche.html.twig' %}
+                {{ page.content }}
+            </div>
+        </div>
+    {% endif %}
+</div>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <!-- Footer -->
+                {% if page.footer %}
+                    {{ page.footer }}
+                {% endif %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <!-- Post footer -->
+                {{ page.txtfooter }}
+            </div>
+        </div>
+    </div>
+</footer>

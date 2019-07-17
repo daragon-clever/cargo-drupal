@@ -1,3 +1,7 @@
+# Création d'un nouveau site Drupal dans la ferme
+
+[Voir la procédure ici](./Nouveau-drupal.md)
+
 
 # Installation Drupal avec Docker (multi site)  
 * Créer un dossier sur son ordinateur ( par exemple : `D:/CARGO/WWW/drupal` )  

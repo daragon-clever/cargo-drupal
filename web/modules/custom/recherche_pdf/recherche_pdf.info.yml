@@ -1,0 +1,5 @@
+name: recherche PDF
+description: Effectuer une recherche de PDF sur l'outil CARGO
+core: 8.x
+package: Custom
+type: module

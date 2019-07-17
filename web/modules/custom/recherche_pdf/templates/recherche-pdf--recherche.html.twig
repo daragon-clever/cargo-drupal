@@ -1,0 +1,30 @@
+<form id="recherchepdf-form" name="formSearch" action="{{ path('resultSearch.form') }}" onsubmit="return validateForm()" type="POST">
+    <div>
+        <div>
+            Référence du produit : <input name="refProduit" type="text" required>
+        </div>
+        <div>
+            Lot du produit : <input name="lotProduit" type="text" required>
+        </div>
+        <input name="urlRedirect" id="urlRedirect" value="" type="hidden">
+        <div>
+            <button type="submit">Télécharger</button>
+        </div>
+    </div>
+</form>
+
+<script>
+    var pathname = window.location.pathname;
+    $("#urlRedirect").attr("value",pathname);
+
+    function validateForm() {
+        var refProduit = document.forms["formSearch"]["refProduit"].value;
+        var lotProduit = document.forms["formSearch"]["lotProduit"].value;
+        if (refProduit == "" && lotProduit == "") {
+            alert("Veuillez saisir le reférence du produit ou bien le lot du produit");
+            return false;
+        } else {
+            return true;
+        }
+    }
+</script>

@@ -1,12 +1,7 @@
 <div id="homepage-content">
     <div class="bg" style="background: url('{{ content.field_hp_background[0] }}') no-repeat center #141414">
         <div class="input-wrapper">
-            <form class="col" id="recherchepdf-form" name="formSearch" action="{{ path('resultSearch.form') }}" type="POST">
-                <input name="refProduit" placeholder="{{ 'Saisir la référence produit colle'|trans }}" required>
-                <input name="lang" value="{{ '-F;-NL'|trans }}" type="hidden">
-                <input name="urlRedirect" value="<front>" type="hidden">
-                <button></button>
-            </form>
+            {% include directory ~ '/templates/recherche-pdf--recherche.html.twig' %}
             <a href="#" title="Aide" data-toggle="modal" data-target="#modal-help">{{ 'Aide'|trans }}</a>
         </div>
     </div>

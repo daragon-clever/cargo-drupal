@@ -1,0 +1,61 @@
+<div id="homepage-content">
+    <div class="row">
+        <div class="container">
+            <div class="col-xs-12">
+                <div class="bg" style="background: url('{{ content.field_hp_background[0] }}') no-repeat center #ececec">
+                    <div class="row align-items-center">
+                        <div class="col-xs-12 col-lg-6 text-align-right">
+                            <div class="txt-wrapper">
+                                <p>{{ 'pour télécharger les déclarations de conformité de vos produits E.P.I, veuillez saisir la
+                        référence produit.'|trans }}</p>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-lg-6 text-align-left">
+                            <div class="input-wrapper">
+                                {% include directory ~ '/templates/recherche-pdf--recherche.html.twig' %}
+                                <a href="#" title="Aide" data-toggle="modal" data-target="#modal-help">{{ 'Aide'|trans }}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        jQuery(document).ready(function ($) {
+            setTimeout(function(){
+                $("[role=contentinfo]").slideToggle(1000);
+            }, 3000);
+        });
+    </script>
+
+    <div class="row">
+        <div class="container">
+            <div class="row blocks-imgs">
+                <div class="col-12 col-md-6 bloc-left">
+                    <div class="inner">
+                        {{ content.field_hp_block_bottom_img_1 }}
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 bloc-right">
+                    <div class="inner">
+                        {{ content.field_hp_block_bottom_img_2 }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal-help" tabindex="-1" role="dialog" aria-labelledby="modal-help-label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="modal-body">
+                {{ content.field_hp_help_img }}
+            </div>
+        </div>
+    </div>
+</div>

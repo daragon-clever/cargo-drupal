@@ -3,51 +3,37 @@
 namespace Drupal\newsletter\Controller;
 
 
+use Drupal\Component\Serialization\Json;
 use Drupal\Core\Controller\ControllerBase;
 
 abstract class AbstractCompanyController extends ControllerBase
 {
-    const ACTION_INSERT = 'insert';
-    const ACTION_UPDATE = 'update';
+    private const ACTION_INSERT = 'insert';
+    private const ACTION_UPDATE = 'update';
+    private const TYPE_MSG_STATUS = "status";
+    private const TYPE_MSG_ERROR = "error";
 
-    const TYPE_MSG_STATUS = "status";
-    const TYPE_MSG_ERROR = "error";
+    const TABLE_SUBSCRIBER = "newsletter_subscriber";
+    const TABLE_SUBSCRIBTION = "newsletter_subscription";
 
-    protected $company;
+    protected const USER_API_ACTITO = "poleweb_admin";
+    private const PASS_API_ACTITO = "57Hc!a5sQ";
+    public const ENTITY_ACTITO = "";
+    public const TABLE_ACTITO = "";
+    const URL_API_ACTITO = "http://dcp.cargo-webproject.com/api/web/api_v2/req";
 
     public $connection;
-    public $tableSubscriber;
-    public $tableSubscription;
-
-    private $userApi;
-    private $passApi;
-    private $entityActito;
-    private $tableActito;
-    private $urlActito;
+    protected $passApi;
 
     public function __construct()
     {
-        $this->company = \Drupal::config('system.site')->getOriginal("name", false);
-
         $this->connection = \Drupal::database();
-        $this->tableSubscriber = "newsletter_subscriber";
-        $this->tableSubscription = "newsletter_subscription";
-
-        $this->userApi = "poleweb_admin";
-        $this->passApi = hash("sha512",hash("sha256","57Hc!a5sQ"));
-        $this->urlActito = "http://dcp.cargo-webproject.com/api/web/api_v2/req";
-
-        $cleanCompany = strtolower(str_replace(' ', '', $this->company));
-        switch ($cleanCompany) {
-            case "blog.sitram.fr":
-                $this->entityActito = "GersEquipement";
-                $this->tableActito = "GersEquipement";
-                break;
-            default:
-                $this->entityActito = "";
-                $this->tableActito = "";
-        }
+        $this->passApi = hash("sha512",hash("sha256",self::PASS_API_ACTITO));
     }
+
+    abstract protected function getPeople(string $email): ?array;
+    abstract protected function insertPeople(array $arrayData): void;
+    abstract protected function updatePeople(array $arrayData): void;
 
     public function doAction(array $arrayData): array
     {
@@ -64,7 +50,7 @@ abstract class AbstractCompanyController extends ControllerBase
         return $this->displayMsg($action);
     }
 
-    public function displayMsg(string $return): array
+    private function displayMsg(string $return): array
     {
         if ($return == self::ACTION_INSERT) {
             $msg = $this->t("You have just signed up for the newsletter");
@@ -85,12 +71,12 @@ abstract class AbstractCompanyController extends ControllerBase
 
     public function savePeopleInActito(array $dataUser): void
     {
-        $allowTest = $qrcodeadm =  \Drupal::config('system.newsletter')->get('allowTest', FALSE);
         $client = \Drupal::httpClient();
-        $url=$this->urlActito.'/profile/import.php?&entity='.$this->entityActito.'&table='.$this->tableActito."&allowTest=".$allowTest;
+        $allowTest =  \Drupal::config('system.newsletter')->get('allowTest', FALSE);
+        $url=self::URL_API_ACTITO.'/profile/import.php?&entity='.static::ENTITY_ACTITO.'&table='.static::TABLE_ACTITO."&allowTest=".$allowTest;
         $options = [
             'auth' => [
-                $this->userApi,
+                self::USER_API_ACTITO,
                 $this->passApi,
             ],
             'json' => [
@@ -106,11 +92,16 @@ abstract class AbstractCompanyController extends ControllerBase
             $response = $client->post($url, $options);
             $code = $response->getStatusCode();
             if ($code == 200) {
-                $response->getBody()->getContents();
+                $jsonResponseBody = $response->getBody()->getContents();
+                $return = Json::decode($jsonResponseBody);
+                if ($return['successResp'] == "true" || $return['successResp'] === true) {
+                    $dataUser['exported'] = 1;
+                    $this->updatePeople($dataUser);
+                }
                 return;
             }
         }
-        catch (RequestException $e) {
+        catch (\HttpRequestExceptioneption $e) {
             watchdog_exception('newsletter_module', $e);
             return;
         }
@@ -192,8 +183,4 @@ abstract class AbstractCompanyController extends ControllerBase
 
         return $array;
     }
-
-    abstract public function getPeople(string $email): ?array;
-    abstract protected function insertPeople(array $arrayData): void;
-    abstract protected function updatePeople(array $arrayData): void;
 }

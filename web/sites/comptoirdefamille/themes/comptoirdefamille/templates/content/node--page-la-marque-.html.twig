@@ -1,0 +1,70 @@
+<div id="marque-slider" class="mea-slider">
+    <div class="img-wrapper">
+        <div class="img"
+             style="background: center / cover no-repeat url({{ content.field_marque_banner[0] }})">
+        </div>
+        <div class="container">
+            <div class="row align-items-center justify-content-end">
+                <div class="col-12 col-xl-4 txt-wrapper">
+                    <div class="txt">
+                        {{ content.field_marque_banner_txt }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="container">
+        <div class="row">
+            <div class="col esprit">
+                <!-- Desktop -->
+                <div class="imgs-wrapper d-none d-lg-block">
+                    {{ content.field_marque_esprit_imgs[0] }}
+                    <div class="txt-wrapper">
+                        {{ content.field_marque_esprit_txt }}
+                    </div>
+                </div>
+                <!-- Tab mobile -->
+                <div class="esprit-mobile d-lg-none">
+                    <div class="row">
+                        <div class="col">
+                            <div class="txt-wrapper">
+                                {{ content.field_marque_esprit_txt }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col-12 col-sm-6">
+                            {{ content.field_marque_esprit_imgs[1] }}
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            {{ content.field_marque_esprit_imgs[2] }}
+                        </div>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col-12 col-sm-6">
+                            {{ content.field_marque_esprit_imgs[3] }}
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            {{ content.field_marque_esprit_imgs[4] }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="js-slides-ambiances">
+                    {{ content.field_marque_ambiance_imgs }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+<div id="homepage-slider" class="mea-slider">
+    <div class="js-slides-wrapper">
+        {% for position, field in content.field_hp_slider_img['#items'] %}
+            <div class="img-wrapper">
+                <div class="img"
+                     style="background: center / cover no-repeat url({{ content.field_hp_slider_img[position] }})">
+                </div>
+                <div class="container">
+                    <div class="row align-items-center justify-content-end">
+                        <div class="col-12 col-xl-4">
+                            <div class="txt">
+                                {{ content.field_hp_slider_txt[position] }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="row">
+    <div class="container">
+
+        <div id="hp-txt-intro" class="row">
+            <div class="col-12 col-lg-4 txt-intro order-2 order-lg-1">
+                {{ content.field_hp_content_txt_intro }}
+            </div>
+            <div class="col-12 col-lg-8 order-1 order-lg-2">
+                {{ content.field_hp_content_img }}
+            </div>
+        </div>
+
+        <div id="encarts-cta" class="row">
+ {#           <div class="col-12 col-md-6">
+                <div class="inner left">
+                    <a href="{{ content.field_hp_encarts_cta_link.0['#url'] }}" title="">
+                        {{ content.field_hp_encarts_cta_picto[0] }}
+                        <span class="txt">{{ content.field_hp_encarts_cta_txt[0] }}</span>
+                        <span class="cta">
+                            {{ content.field_hp_encarts_cta_link.0['#title'] }}
+                        </span>
+                    </a>
+                </div>
+            </div>#}
+            <div class="col-12">
+                <div class="inner right">
+                    <a href="{{ content.field_hp_encarts_cta_link.1['#url'] }}" title="">
+                        {{ content.field_hp_encarts_cta_picto[1] }}
+                        <span class="txt">{{ content.field_hp_encarts_cta_txt[1] }}</span>
+                        <span class="cta">
+                            {{ content.field_hp_encarts_cta_link.1['#title'] }}
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="insta-wrapper">
+            {{ content.field_hp_instagram }}
+        </div>
+    </div>
+</div>

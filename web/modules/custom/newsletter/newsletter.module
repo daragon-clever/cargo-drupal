@@ -20,11 +20,11 @@ function newsletter_schema()
     if (isset($base)) {
         //Table : newsletter_subscriber
         if (\Drupal::database()->schema()->tableExists("newsletter_subscriber") == FALSE) {
-            $schema['newsletter_subscriber'] = $base->setSchemaTableSubscriber('newsletter_subscriber');
+            $schema['newsletter_subscriber'] = $base->setSchemaTableSubscriber();
         }
         //Table : newsletter_subscription
         if (\Drupal::database()->schema()->tableExists("newsletter_subscription") == FALSE) {
-            $schema['newsletter_subscription'] = $base->setSchemaTableSubscription('newsletter_subscription');
+            $schema['newsletter_subscription'] = $base->setSchemaTableSubscription();
         }
 
         if (isset($schema) && !empty($schema)) return $schema;

@@ -72,7 +72,8 @@ class ComptoirDeFamilleForm extends FormBase
 
         $base = new ComptoirDeFamilleController();
         $return = $base->doAction($data);
+//        $base->savePeopleInActito($data);//à activer à mon retour une fois les tests refait et fonctionnels
 
-        \Drupal::messenger()->addMessage($return['msg'], $return['type']);//ajouter style class contentinfo for sucess response
+        \Drupal::messenger()->addMessage($return['msg'], $return['type']);
     }
 }

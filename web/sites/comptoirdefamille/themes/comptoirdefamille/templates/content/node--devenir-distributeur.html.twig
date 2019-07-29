@@ -1,0 +1,63 @@
+<div class="row">
+    <div class="container distributeur">
+        <!-- INTRO -->
+        <div class="row justify-content-center">
+            <div class="col-12 intro-entete">
+                {{ content.field_distri_intro[0] }}
+            </div>
+        </div>
+
+        <!-- BLOCKS -->
+        <div class="row cta-wrapper">
+            <div class="col-12 col-sm-6 text-align-center">
+                <span class="contact">
+                    {{ content.field_distri_lien[0] }}
+                </span>
+            </div>
+            <div class="col-12 col-sm-6 text-align-center">
+                <span class="catalogue">
+                    {{ content.field_distri_cta_pdf }}
+                </span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-sm-6">
+                <a class="block-cta left" href="javascript:void(0);">
+                    <span class="block-header">
+                        <span>
+                            {{ content.field_distri_left_title.0 }}
+                        </span>
+                    </span>
+                    <span class="img-wrapper">
+                        {{ content.field_distri_imgs[0] }}
+                        <span class="block-label first-txt">
+                            <span>{{ node.field_distri_left_link.0.title }}</span>
+                        </span>
+                        <span class="block-label second-txt" style="opacity: 0">
+                            <span>{{ content.field_distri_left_txt.0 }}</span>
+                        </span>
+                    </span>
+                </a>
+            </div>
+            <div class="col-12 col-sm-6">
+                <a class="block-cta right" href="javascript:void(0);">
+                    <span class="block-header">
+                        <span>
+                            {{ content.field_distri_right_title.0 }}
+                        </span>
+                    </span>
+                    <span class="img-wrapper">
+                        {{ content.field_distri_imgs[1] }}
+                        <span class="block-label first-txt">
+                            <span>{{ node.field_distri_right_link.0.title }}</span>
+                        </span>
+                        <span class="block-label second-txt" style="opacity: 0">
+                            <span>{{ content.field_distri_right_txt.0 }}</span>
+                        </span>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

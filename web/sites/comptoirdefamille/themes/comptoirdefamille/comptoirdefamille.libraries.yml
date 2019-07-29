@@ -1,0 +1,48 @@
+# Bootstrap 4
+bootstrap:
+  css:
+    theme:
+      bootstrap4/css/bootstrap.min.css: {}
+      bootstrap4/css/bootstrap-reboot.min.css: {}
+  js:
+    bootstrap4/js/bootstrap.min.js: {}
+
+# MMenu
+mmenu:
+  css:
+    theme:
+       https://cdn.jsdelivr.net/npm/jquery.mmenu@7.2.2/dist/jquery.mmenu.all.css: { type: external }
+  js:
+    https://cdn.jsdelivr.net/npm/jquery.mmenu@7.2.2/dist/jquery.mmenu.all.min.js: { type: external }
+    https://cdn.jsdelivr.net/npm/jquery.mmenu@7.2.2/dist/addons/fixedelements/jquery.mmenu.fixedelements.js: { type: external }
+  dependencies:
+    - core/jquery
+
+# Plugin Slick
+slick:
+  css:
+    theme:
+      https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css: { type: external }
+  js:
+    https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js: { type: external }
+  dependencies:
+    - core/jquery
+
+# Instafeed
+instafeed:
+  header: true
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/instafeed.js/1.4.1/instafeed.min.js: { type: external }
+  dependencies:
+    - core/jquery
+
+# Style général
+global-styling:
+  css:
+    theme:
+      css/style.css: {}
+  js:
+    js/custom-js.js: {}
+    js/custom-animation.js: {}
+  dependencies:
+    - core/jquery

@@ -1,0 +1,23 @@
+<div id="newsletter">
+    <div class="motif"></div>
+    <div class="inner">
+        <span class="title">
+            {{ 'Inscrivez-vous à notre newsletter'|trans }}
+        </span>
+        {% if form %}
+            <form {{form.attributes }} method="{{ form['#method'] }}">
+                {{ form.form_build_id }}
+                {{ form.form_token }}
+                {{ form.form_id }}
+
+                <div class="form-content">
+                    {{ form.msg }}
+                    {{ form.mail }}{{ form.actions.submit }}
+                </div>
+                <div class="captcha">
+                    {{ form.captcha }}
+                </div>
+            </form>
+        {% endif %}
+    </div>
+</div>

@@ -1,6 +1,6 @@
 <?php
 
-// Suppr Meat Drupal
+// Suppr Meta Drupal
 function comptoirdefamille_page_attachments_alter(array &$attachments) {
     foreach ($attachments['#attached']['html_head'] as $key => $attachment) {
         if ($attachment[1] == 'system_meta_generator') {

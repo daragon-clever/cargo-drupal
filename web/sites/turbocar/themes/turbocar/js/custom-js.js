@@ -33,4 +33,17 @@ jQuery(document).ready(function($) {
     if (pathname) {
         $('#block-turbocar-main-menu li a.' + pathname).addClass('active');
     }
+
+    /*** Recherche PDF ***/
+    if ($("#recherche-pdf").length) {
+        $("#selection-type-produit select").on('change', function() {
+            $('.box-chercher').hide();
+            if ($(this).val().length != 0) $('#' + $(this).val()).show();
+            Cookies.set('choice-usr-typeProd', $(this).val(), { expires : 1 });
+        });
+        $("#selection-type-produit select").val(Cookies.get('choice-usr-typeProd')).trigger('change');
+    }
+    /*** Fin recherche PDF ***/
+
+
 });

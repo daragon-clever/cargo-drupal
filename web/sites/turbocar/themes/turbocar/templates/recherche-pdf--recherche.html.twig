@@ -1,0 +1,84 @@
+<style>
+    .box-chercher {
+        display: none;
+    }
+</style>
+<div class="row" id="module-search-pdf">
+    <div id="selection-type-produit" class="col-12 text-center">
+        <div>
+            <p>Sélectionnez le document que vous souhaitez télécharger :</p>
+
+            <select class="form-control" id="select-type-produit">
+                <option value="">- Choisissez -</option>
+                <option value="chercher-det">Fiches de données de sécurité</option>
+                <option value="chercher-not">Notices d'utilisation</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="chercher-det" class="box-chercher col-12 text-center">
+        <p>Pour télécharger la fiche de données de sécurité, merci de saisir le <span>numéro de lot</span> et la <span>référence du produit</span> :</p>
+
+        <form class="row justify-content-center align-items-end text-left"
+              id="recherchepdf-form" name="formSearchDet" action="{{ path('resultSearch.form') }}"
+              onsubmit="return validateFormDet()" type="POST">
+            <div class="col-12 col-sm-auto">
+                Référence du produit :
+                <input name="refProduit" class="form-control refProduit" type="text" required>
+            </div>
+            <div class="col-12 col-sm-auto">
+                Lot du produit :
+                <input name="lotProduit" class="form-control lotProduit" type="text" required>
+            </div>
+            <div class="col-12 col-sm-auto">
+                <input name="urlRedirect" class="urlRedirect" value="" type="hidden">
+                <button type="submit">Télécharger</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="chercher-not" class="box-chercher col-12 text-center">
+        <p>Pour télécharger la notice d'un produit, merci de saisir la <span>référence du produit</span> :</p>
+
+        <form class="row justify-content-center align-items-end text-left"
+              id="recherchepdf-form" name="formSearchNot" action="{{ path('resultSearch.form') }}"
+              onsubmit="return validateFormNot()" type="POST">
+            <div class="col-12 col-sm-auto">
+                Référence du produit : <input name="refProduit" class="form-control refProduit" type="text" required>
+            </div>
+            <div class="col-12 col-sm-auto">
+                <input name="urlRedirect" class="urlRedirect" value="" type="hidden">
+                <button type="submit">Télécharger</button>
+            </div>
+        </form>
+    </div>
+
+
+</div>
+
+<script>
+    var pathname = window.location.pathname;
+    $(".urlRedirect").attr("value",pathname);
+
+    function validateFormDet() {
+        var refProduit = document.forms["formSearchDet"]["refProduit"].value;
+        var lotProduit = document.forms["formSearchDet"]["lotProduit"].value;
+        if (refProduit == "" && lotProduit == "") {
+            alert("Veuillez saisir la référence du produit et le lot du produit");
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    function validateFormNot() {
+        var refProduit = document.forms["formSearchNot"]["refProduit"].value;
+        if (refProduit == "") {
+            alert("Veuillez saisir la référence du produit");
+            return false;
+        } else {
+            return true;
+        }
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>

@@ -2049,11 +2049,15 @@ article[data-history-node-id='5'] {
     filter: grayscale(100%);
   }
 
-  .visuel-main {
-    margin:20px 0 40px;
+  .visuels {
+    margin: 30px 0 50px;
 
-    @media @phone {
-      margin-top: 0;
+    & > div:first-child {
+      border-right: 1px solid #bebebe;
+
+      @media @phone {
+        border: none;
+      }
     }
   }
 
@@ -2062,9 +2066,49 @@ article[data-history-node-id='5'] {
   }
 }
 
-form#recherchepdf-form {
-  margin-top:30px;
+#module-search-pdf {
+  margin-bottom: 15px;
 
+  #selection-type-produit {
+    p, select {
+      display: inline-block;
+      width: auto;
+      vertical-align: middle;
+      border-radius: 0;
+    }
+
+    select {
+      margin-left: 10px;
+
+      @media @phone {
+        margin-top: 15px;
+        margin-left: 0;
+        width: 100%;
+      }
+    }
+  }
+
+  .box-chercher {
+    p {
+      color: #aaaaaa;
+      font-style: italic;
+      font-size: 14px;
+      margin: 15px 0;
+
+      span {
+        color:@tbc-red;
+        text-decoration: underline;
+      }
+    }
+
+    input {
+      border-radius: 0;
+      margin-top: 10px;
+    }
+  }
+}
+
+form#recherchepdf-form {
   button {
     background:none;
     border:none;
@@ -2087,10 +2131,11 @@ form#recherchepdf-form {
       margin-right: 10px;
       margin-top: -5px;
     }
-  }
 
-  input {
-    margin-top:5px;
+    @media @phone {
+      display: block;
+      margin: 15px auto 0;
+    }
   }
 
   a#linkPdf {
@@ -2099,11 +2144,5 @@ form#recherchepdf-form {
     padding: 5px 25px;
     margin-top: 30px;
     color:@tbc-red;
-  }
-
-  @media @phone {
-    & > div > div {
-      margin:5px 0;
-    }
   }
 }

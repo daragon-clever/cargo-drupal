@@ -3,6 +3,7 @@
 namespace Drupal\newsletter\Controller\Company;
 
 
+use Drupal\Core\Database\Database;
 use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\newsletter\Controller\AbstractCompanyController;
 
@@ -10,6 +11,15 @@ class BlogSitramController extends AbstractCompanyController
 {
     const ENTITY_ACTITO = "GersEquipement";
     const TABLE_ACTITO = "GersEquipement";
+
+    public function doAction(array $dataPeople): array
+    {
+        $return = parent::doAction($dataPeople);
+
+        $this->savePeopleInActito($dataPeople);
+
+        return $return;
+    }
 
     protected function getPeople(string $email): ?array
     {
@@ -25,12 +35,11 @@ class BlogSitramController extends AbstractCompanyController
 
     protected function insertPeople(array $arrayData): void
     {
-        $date = new DrupalDateTime();
         $this->connection->insert(self::TABLE_SUBSCRIBER)
             ->fields([
                 "email" => $arrayData['email'],
-                "created_at" => $date->format("Y-m-d H:i:s"),
-                "updated_at" => $date->format("Y-m-d H:i:s"),
+                "created_at" => $this->date->format("Y-m-d H:i:s"),
+                "updated_at" => $this->date->format("Y-m-d H:i:s"),
                 "active" => $arrayData['active'],
                 "exported" => $arrayData['exported']
             ])
@@ -39,6 +48,8 @@ class BlogSitramController extends AbstractCompanyController
 
     protected function updatePeople(array $arrayData): void
     {
+        $people = $this->getPeople($arrayData['email']);
+
         $date = new DrupalDateTime();
         $fields["updated_at"] = $date->format("Y-m-d H:i:s");
         if (isset($arrayData['active'])) $fields['active'] = $arrayData['active'];
@@ -52,18 +63,28 @@ class BlogSitramController extends AbstractCompanyController
 
     public function savePeopleInActito(array $dataUser): void
     {
-        $email = $dataUser['email'];
-
-        $searchUser = $this->getPeople($email);
-
-        $contactIdToUse = intval($searchUser['id']);
-        $contactId = str_pad($contactIdToUse, 6, "0", STR_PAD_LEFT);
-
         $dataForActito = array(
-            'email' => $email,
-            'contact_id' => "BLG-SIT_".strval($contactId),
-            'source' => "blog_sitram"
+            'email' => $dataUser['email'],
+            'source' => "blog-sitram",
+            'newsletter' => "1"
         );
         parent::savePeopleInActito($dataForActito);
+    }
+
+    public function setSchemaTableSubscriber(): array
+    {
+        $array = parent::setSchemaTableSubscriber();
+        $arrayPushData = [
+            'exported' => [
+                'type' => 'int',
+                'size' => 'tiny',
+                'not null' => TRUE,
+                'default' => '0',
+                'description' => '',
+            ]
+        ];
+        $array['fields'] = array_merge($array['fields'], $arrayPushData);
+
+        return $array;
     }
 }

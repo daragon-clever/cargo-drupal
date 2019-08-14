@@ -64,16 +64,16 @@ class ComptoirDeFamilleForm extends FormBase
     public function submitForm(array &$form, FormStateInterface $form_state)
     {
         $email = $form_state->getValue('mail');
+
         $data = [
             'email' => $email,
             'active' => 1,
             'exported' => 0
         ];
 
-        $base = new ComptoirDeFamilleController();
-        $return = $base->doAction($data);
-//        $base->savePeopleInActito($data);//à activer à mon retour une fois les tests refait et fonctionnels
+        $controllerBase = new ComptoirDeFamilleController();
+        $returnMsg = $controllerBase->doAction($data);
 
-        \Drupal::messenger()->addMessage($return['msg'], $return['type']);
+        \Drupal::messenger()->addMessage($returnMsg['msg'], $returnMsg['type']);
     }
 }

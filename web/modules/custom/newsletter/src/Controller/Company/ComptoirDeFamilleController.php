@@ -11,6 +11,15 @@ class ComptoirDeFamilleController extends AbstractCompanyController
     const ENTITY_ACTITO = "Yliades";
     const TABLE_ACTITO = "Yliades";
 
+    public function doAction(array $dataPeople): array
+    {
+        $return = parent::doAction($dataPeople);
+
+        $this->savePeopleInActito($dataPeople);
+
+        return $return;
+    }
+
     protected function getPeople(string $email): ?array
     {
         $people = $this->connection->select(self::TABLE_SUBSCRIBER,'subscriber')
@@ -37,7 +46,6 @@ class ComptoirDeFamilleController extends AbstractCompanyController
             ->execute();
     }
 
-
     protected function updatePeople(array $arrayData): void
     {
         $date = new DrupalDateTime();
@@ -59,11 +67,23 @@ class ComptoirDeFamilleController extends AbstractCompanyController
             'segment' => "comptoir_de_famille"
         ];
 
-        $searchUser = $this->getPeople($dataForActito['email']);
-        $contactIdToUse = intval($searchUser['id']);
-        $contactId = str_pad($contactIdToUse, 6, "0", STR_PAD_LEFT);
-
-        $dataForActito['contact_id'] = "CDF_".strval($contactId);
         parent::savePeopleInActito($dataForActito);
+    }
+
+    public function setSchemaTableSubscriber(): array
+    {
+        $array = parent::setSchemaTableSubscriber();
+        $arrayPushData = [
+            'exported' => [
+                'type' => 'int',
+                'size' => 'tiny',
+                'not null' => TRUE,
+                'default' => '0',
+                'description' => '',
+            ]
+        ];
+        $array['fields'] = array_merge($array['fields'], $arrayPushData);
+
+        return $array;
     }
 }

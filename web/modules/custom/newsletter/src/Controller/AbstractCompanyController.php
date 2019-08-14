@@ -5,6 +5,7 @@ namespace Drupal\newsletter\Controller;
 
 use Drupal\Component\Serialization\Json;
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\Core\Datetime\DrupalDateTime;
 
 abstract class AbstractCompanyController extends ControllerBase
 {
@@ -20,15 +21,20 @@ abstract class AbstractCompanyController extends ControllerBase
     private const PASS_API_ACTITO = "57Hc!a5sQ";
     public const ENTITY_ACTITO = "";
     public const TABLE_ACTITO = "";
-    const URL_API_ACTITO = "http://dcp.cargo-webproject.com/api/web/api_v2/req";
+//    const URL_API_ACTITO = "http://dcp.cargo-webproject.com/api/web/api_v2/req";
+    const URL_API_ACTITO = "http://web.api-actito-cargo.svd2pweb-stm.ressinfo.ad/api/req";
 
     public $connection;
     protected $passApi;
+
+    public $date;
 
     public function __construct()
     {
         $this->connection = \Drupal::database();
         $this->passApi = hash("sha512",hash("sha256",self::PASS_API_ACTITO));
+
+        $this->date = new DrupalDateTime();
     }
 
     abstract protected function getPeople(string $email): ?array;
@@ -37,6 +43,7 @@ abstract class AbstractCompanyController extends ControllerBase
 
     public function doAction(array $arrayData): array
     {
+        //Save or update people on database
         $people = $this->getPeople($arrayData['email']);
 
         if (empty($people)) {
@@ -98,12 +105,10 @@ abstract class AbstractCompanyController extends ControllerBase
                     $dataUser['exported'] = 1;
                     $this->updatePeople($dataUser);
                 }
-                return;
             }
         }
         catch (\HttpRequestExceptioneption $e) {
             watchdog_exception('newsletter_module', $e);
-            return;
         }
     }
 
@@ -143,18 +148,10 @@ abstract class AbstractCompanyController extends ControllerBase
                     'default' => '0',
                     'description' => 'Active subscription of the person.',
                 ),
-                'exported' => array(
-                    'type' => 'int',
-                    'size' => 'tiny',
-                    'not null' => TRUE,
-                    'default' => '0',
-                    'description' => '',
-                ),
             ),
             'primary key' => array('id'),
             'indexes' => array(
                 'email' => array('email'),
-                'exported' => array('exported'),
             ),
         );
 

@@ -21,8 +21,7 @@ abstract class AbstractCompanyController extends ControllerBase
     private const PASS_API_ACTITO = "57Hc!a5sQ";
     public const ENTITY_ACTITO = "";
     public const TABLE_ACTITO = "";
-//    const URL_API_ACTITO = "http://dcp.cargo-webproject.com/api/web/api_v2/req";
-    const URL_API_ACTITO = "http://web.api-actito-cargo.svd2pweb-stm.ressinfo.ad/api/req";
+    const URL_API_ACTITO = "http://dcp.cargo-webproject.com/api/web/api_v2/req";
 
     public $connection;
     protected $passApi;
@@ -80,7 +79,7 @@ abstract class AbstractCompanyController extends ControllerBase
     {
         $client = \Drupal::httpClient();
         $allowTest =  \Drupal::config('system.newsletter')->get('allowTest', FALSE);
-        $url=self::URL_API_ACTITO.'/profile/import.php?&entity='.static::ENTITY_ACTITO.'&table='.static::TABLE_ACTITO."&allowTest=".$allowTest;
+        $url=self::URL_API_ACTITO.'/profile/import.php?&entity='.static::ENTITY_ACTITO.'&table='.static::TABLE_ACTITO;
         $options = [
             'auth' => [
                 self::USER_API_ACTITO,

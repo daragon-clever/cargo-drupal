@@ -28,11 +28,6 @@ class BlogSitramForm extends FormBase
             '#required' => TRUE
         ];
 
-        $form['captcha'] = [
-            '#type' => 'captcha',
-            '#captcha_type' => 'recaptcha/reCAPTCHA'
-        ];
-
         $form['actions'] = [
             '#type' => 'actions',
             'submit' => [

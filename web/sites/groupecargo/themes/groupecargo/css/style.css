@@ -175,49 +175,49 @@
   font-family: 'Heebo';
   font-style: normal;
   font-weight: 300;
-  src: local('Heebo Light'), local('Heebo-Light'), url(https://fonts.gstatic.com/s/heebo/v4/NGS3v5_NC0k9P9ldb6RMkKs.ttf) format('truetype');
+  src: local('Heebo Light'), local('Heebo-Light'), url(https://fonts.gstatic.com/s/heebo/v5/NGS3v5_NC0k9P9ldb6RMkKs.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Heebo';
   font-style: normal;
   font-weight: 400;
-  src: local('Heebo'), local('Heebo-Regular'), url(https://fonts.gstatic.com/s/heebo/v4/NGS6v5_NC0k9P9H2TbQ.ttf) format('truetype');
+  src: local('Heebo'), local('Heebo-Regular'), url(https://fonts.gstatic.com/s/heebo/v5/NGS6v5_NC0k9P9H2TbQ.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Heebo';
   font-style: normal;
   font-weight: 500;
-  src: local('Heebo Medium'), local('Heebo-Medium'), url(https://fonts.gstatic.com/s/heebo/v4/NGS3v5_NC0k9P9kFbqRMkKs.ttf) format('truetype');
+  src: local('Heebo Medium'), local('Heebo-Medium'), url(https://fonts.gstatic.com/s/heebo/v5/NGS3v5_NC0k9P9kFbqRMkKs.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Heebo';
   font-style: normal;
   font-weight: 700;
-  src: local('Heebo Bold'), local('Heebo-Bold'), url(https://fonts.gstatic.com/s/heebo/v4/NGS3v5_NC0k9P9lNaKRMkKs.ttf) format('truetype');
+  src: local('Heebo Bold'), local('Heebo-Bold'), url(https://fonts.gstatic.com/s/heebo/v5/NGS3v5_NC0k9P9lNaKRMkKs.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Heebo';
   font-style: normal;
   font-weight: 800;
-  src: local('Heebo ExtraBold'), local('Heebo-ExtraBold'), url(https://fonts.gstatic.com/s/heebo/v4/NGS3v5_NC0k9P9lRa6RMkKs.ttf) format('truetype');
+  src: local('Heebo ExtraBold'), local('Heebo-ExtraBold'), url(https://fonts.gstatic.com/s/heebo/v5/NGS3v5_NC0k9P9lRa6RMkKs.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Spectral';
   font-style: normal;
   font-weight: 400;
-  src: local('Spectral Regular'), local('Spectral-Regular'), url(https://fonts.gstatic.com/s/spectral/v5/rnCr-xNNww_2s0amA9M5kn0.ttf) format('truetype');
+  src: local('Spectral Regular'), local('Spectral-Regular'), url(https://fonts.gstatic.com/s/spectral/v6/rnCr-xNNww_2s0amA9M5kn0.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Spectral';
   font-style: normal;
   font-weight: 600;
-  src: local('Spectral SemiBold'), local('Spectral-SemiBold'), url(https://fonts.gstatic.com/s/spectral/v5/rnCs-xNNww_2s0amA9vmtm3BafM.ttf) format('truetype');
+  src: local('Spectral SemiBold'), local('Spectral-SemiBold'), url(https://fonts.gstatic.com/s/spectral/v6/rnCs-xNNww_2s0amA9vmtm3BafM.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Spectral';
   font-style: normal;
   font-weight: 700;
-  src: local('Spectral Bold'), local('Spectral-Bold'), url(https://fonts.gstatic.com/s/spectral/v5/rnCs-xNNww_2s0amA9uCt23BafM.ttf) format('truetype');
+  src: local('Spectral Bold'), local('Spectral-Bold'), url(https://fonts.gstatic.com/s/spectral/v6/rnCs-xNNww_2s0amA9uCt23BafM.ttf) format('truetype');
 }
 body {
   font-family: 'Heebo', sans-serif;

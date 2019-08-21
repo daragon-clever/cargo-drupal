@@ -3,7 +3,6 @@
 namespace Drupal\newsletter\Controller\Company;
 
 
-use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\newsletter\Controller\AbstractCompanyController;
 
 class ComptoirDeFamilleController extends AbstractCompanyController

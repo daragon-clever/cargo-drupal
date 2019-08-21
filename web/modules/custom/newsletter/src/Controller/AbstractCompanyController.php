@@ -50,12 +50,11 @@ abstract class AbstractCompanyController extends ControllerBase
 
     protected function insertPeople(array $arrayData): void
     {
-        $date = new DrupalDateTime();
         $this->connection->insert(self::TABLE_SUBSCRIBER)
             ->fields([
                 "email" => $arrayData['email'],
-                "created_at" => $date->format("Y-m-d H:i:s"),
-                "updated_at" => $date->format("Y-m-d H:i:s"),
+                "created_at" => $this->date->format("Y-m-d H:i:s"),
+                "updated_at" => $this->date->format("Y-m-d H:i:s"),
                 "active" => $arrayData['active'],
                 "exported" => $arrayData['exported']
             ])

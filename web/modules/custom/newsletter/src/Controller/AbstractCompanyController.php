@@ -5,6 +5,7 @@ namespace Drupal\newsletter\Controller;
 
 use Drupal\Component\Serialization\Json;
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\Core\Datetime\DrupalDateTime;
 
 abstract class AbstractCompanyController extends ControllerBase
 {
@@ -25,18 +26,58 @@ abstract class AbstractCompanyController extends ControllerBase
     public $connection;
     protected $passApi;
 
+    public $date;
+
     public function __construct()
     {
         $this->connection = \Drupal::database();
         $this->passApi = hash("sha512",hash("sha256",self::PASS_API_ACTITO));
+
+        $this->date = new DrupalDateTime();
     }
 
-    abstract protected function getPeople(string $email): ?array;
-    abstract protected function insertPeople(array $arrayData): void;
-    abstract protected function updatePeople(array $arrayData): void;
+    protected function getPeople(string $email): ?array
+    {
+        $people = $this->connection->select(self::TABLE_SUBSCRIBER,'subscriber')
+            ->fields('subscriber')
+            ->condition('subscriber.email', $email,'=')
+            ->range(0, 1)
+            ->execute()
+            ->fetchAssoc();
+
+        return $people ? $people : null;
+    }
+
+    protected function insertPeople(array $arrayData): void
+    {
+        $this->connection->insert(self::TABLE_SUBSCRIBER)
+            ->fields([
+                "email" => $arrayData['email'],
+                "created_at" => $this->date->format("Y-m-d H:i:s"),
+                "updated_at" => $this->date->format("Y-m-d H:i:s"),
+                "active" => $arrayData['active'],
+                "exported" => $arrayData['exported']
+            ])
+            ->execute();
+    }
+
+    protected function updatePeople(array $arrayData): void
+    {
+        //Define the fields for the update
+        $fields["updated_at"] = $this->date->format("Y-m-d H:i:s");
+        if (isset($arrayData['active'])) $fields['active'] = $arrayData['active'];
+        if (isset($arrayData['exported'])) $fields['exported'] = $arrayData['exported'];
+
+        //Update table subscriber
+        $this->connection->update(self::TABLE_SUBSCRIBER)
+            ->fields($fields)
+            ->condition('email', $arrayData['email'], '=')
+            ->execute();
+    }
 
     public function doAction(array $arrayData): array
     {
+        //Save or update people on database
         $people = $this->getPeople($arrayData['email']);
 
         if (empty($people)) {
@@ -46,6 +87,8 @@ abstract class AbstractCompanyController extends ControllerBase
             $this->updatePeople($arrayData);
             $action = self::ACTION_UPDATE;
         }
+
+        $this->savePeopleInActito($arrayData);
 
         return $this->displayMsg($action);
     }
@@ -73,7 +116,13 @@ abstract class AbstractCompanyController extends ControllerBase
     {
         $client = \Drupal::httpClient();
         $allowTest =  \Drupal::config('system.newsletter')->get('allowTest', FALSE);
-        $url=self::URL_API_ACTITO.'/profile/import.php?&entity='.static::ENTITY_ACTITO.'&table='.static::TABLE_ACTITO."&allowTest=".$allowTest;
+        $url= sprintf(
+            '%s/profile/import.php?&entity=%s&table=%s&allowTest=%s',
+            self::URL_API_ACTITO,
+            static::ENTITY_ACTITO,
+            static::TABLE_ACTITO,
+            $allowTest
+        );
         $options = [
             'auth' => [
                 self::USER_API_ACTITO,
@@ -98,12 +147,10 @@ abstract class AbstractCompanyController extends ControllerBase
                     $dataUser['exported'] = 1;
                     $this->updatePeople($dataUser);
                 }
-                return;
             }
         }
         catch (\HttpRequestExceptioneption $e) {
             watchdog_exception('newsletter_module', $e);
-            return;
         }
     }
 
@@ -143,18 +190,10 @@ abstract class AbstractCompanyController extends ControllerBase
                     'default' => '0',
                     'description' => 'Active subscription of the person.',
                 ),
-                'exported' => array(
-                    'type' => 'int',
-                    'size' => 'tiny',
-                    'not null' => TRUE,
-                    'default' => '0',
-                    'description' => '',
-                ),
             ),
             'primary key' => array('id'),
             'indexes' => array(
                 'email' => array('email'),
-                'exported' => array('exported'),
             ),
         );
 

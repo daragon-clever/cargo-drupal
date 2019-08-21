@@ -29,17 +29,17 @@ class ComptoirDeFamilleForm extends FormBase
             '#required' => TRUE
         ];
 
-        $form['captcha'] = array (
+        $form['captcha'] = [
             '#type' => 'captcha',
             '#captcha_type' => 'recaptcha/reCAPTCHA'
-        );
+        ];
 
         $form['actions'] = [
             '#type' => 'actions',
-            'submit' => array(
+            'submit' => [
                 '#type' => 'submit',
                 '#value' => $this->t('Send')
-            )
+            ]
         ];
 
         return $form;
@@ -52,9 +52,9 @@ class ComptoirDeFamilleForm extends FormBase
     {
         $mail = $form_state->getValue('mail');
         if (is_null($mail) || empty($mail)) {
-            $form['msg'] = $this->t('Email is required');
+            $form_state->setError($form['mail'], $this->t('Email is required'));
         } elseif (!\Drupal::service('email.validator')->isValid($mail)) {
-            $form['msg'] = $this->t('Email is malformed');
+            $form_state->setError($form['mail'], $this->t('Email is malformed'));
         }
     }
 
@@ -64,16 +64,16 @@ class ComptoirDeFamilleForm extends FormBase
     public function submitForm(array &$form, FormStateInterface $form_state)
     {
         $email = $form_state->getValue('mail');
-        $data = array(
+
+        $data = [
             'email' => $email,
             'active' => 1,
             'exported' => 0
-        );
+        ];
 
-        $base = new ComptoirDeFamilleController();
-        $return = $base->doAction($data);
-//        $base->savePeopleInActito($data);//à activer à mon retour une fois les tests refait et fonctionnels
+        $controllerBase = new ComptoirDeFamilleController();
+        $returnMsg = $controllerBase->doAction($data);
 
-        \Drupal::messenger()->addMessage($return['msg'], $return['type']);
+        \Drupal::messenger()->addMessage($returnMsg['msg'], $returnMsg['type']);
     }
 }

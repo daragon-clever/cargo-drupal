@@ -36,9 +36,45 @@ abstract class AbstractCompanyController extends ControllerBase
         $this->date = new DrupalDateTime();
     }
 
-    abstract protected function getPeople(string $email): ?array;
-    abstract protected function insertPeople(array $arrayData): void;
-    abstract protected function updatePeople(array $arrayData): void;
+    protected function getPeople(string $email): ?array
+    {
+        $people = $this->connection->select(self::TABLE_SUBSCRIBER,'subscriber')
+            ->fields('subscriber')
+            ->condition('subscriber.email', $email,'=')
+            ->range(0, 1)
+            ->execute()
+            ->fetchAssoc();
+
+        return $people ? $people : null;
+    }
+
+    protected function insertPeople(array $arrayData): void
+    {
+        $date = new DrupalDateTime();
+        $this->connection->insert(self::TABLE_SUBSCRIBER)
+            ->fields([
+                "email" => $arrayData['email'],
+                "created_at" => $date->format("Y-m-d H:i:s"),
+                "updated_at" => $date->format("Y-m-d H:i:s"),
+                "active" => $arrayData['active'],
+                "exported" => $arrayData['exported']
+            ])
+            ->execute();
+    }
+
+    protected function updatePeople(array $arrayData): void
+    {
+        //Define the fields for the update
+        $fields["updated_at"] = $this->date->format("Y-m-d H:i:s");
+        if (isset($arrayData['active'])) $fields['active'] = $arrayData['active'];
+        if (isset($arrayData['exported'])) $fields['exported'] = $arrayData['exported'];
+
+        //Update table subscriber
+        $this->connection->update(self::TABLE_SUBSCRIBER)
+            ->fields($fields)
+            ->condition('email', $arrayData['email'], '=')
+            ->execute();
+    }
 
     public function doAction(array $arrayData): array
     {
@@ -52,6 +88,8 @@ abstract class AbstractCompanyController extends ControllerBase
             $this->updatePeople($arrayData);
             $action = self::ACTION_UPDATE;
         }
+
+        $this->savePeopleInActito($arrayData);
 
         return $this->displayMsg($action);
     }
@@ -79,7 +117,13 @@ abstract class AbstractCompanyController extends ControllerBase
     {
         $client = \Drupal::httpClient();
         $allowTest =  \Drupal::config('system.newsletter')->get('allowTest', FALSE);
-        $url=self::URL_API_ACTITO.'/profile/import.php?&entity='.static::ENTITY_ACTITO.'&table='.static::TABLE_ACTITO;
+        $url= sprintf(
+            '%s/profile/import.php?&entity=%s&table=%s&allowTest=%s',
+            self::URL_API_ACTITO,
+            static::ENTITY_ACTITO,
+            static::TABLE_ACTITO,
+            $allowTest
+        );
         $options = [
             'auth' => [
                 self::USER_API_ACTITO,

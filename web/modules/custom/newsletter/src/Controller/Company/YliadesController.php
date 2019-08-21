@@ -21,39 +21,9 @@ class YliadesController extends AbstractCompanyController
     const ENTITY_ACTITO = "Yliades";
     const TABLE_ACTITO = "Yliades";
 
-    public function doAction(array $dataPeople): array
-    {
-        $return = parent::doAction($dataPeople);
-
-        $this->savePeopleInActito($dataPeople);
-
-        return $return;
-    }
-
-    protected function getPeople(string $email): ?array
-    {
-        $people = $this->connection->select(self::TABLE_SUBSCRIBER,'subscriber')
-            ->fields('subscriber')
-            ->condition('subscriber.email', $email,'=')
-            ->range(0, 1)
-            ->execute()
-            ->fetchAssoc();
-
-        return $people ? $people : null;
-    }
-
     protected function insertPeople(array $arrayData): void
     {
-        $date = new DrupalDateTime();
-        $this->connection->insert(self::TABLE_SUBSCRIBER)
-            ->fields([
-                "email" => $arrayData['email'],
-                "created_at" => $date->format("Y-m-d H:i:s"),
-                "updated_at" => $date->format("Y-m-d H:i:s"),
-                "active" => $arrayData['active'],
-                "exported" => $arrayData['exported']
-            ])
-            ->execute();
+        parent::insertPeople($arrayData);
 
         $people = $this->getPeople($arrayData['email']);
         $idPeople = $people['id'];
@@ -72,19 +42,9 @@ class YliadesController extends AbstractCompanyController
 
     protected function updatePeople(array $arrayData): void
     {
+        parent::updatePeople($arrayData);
+
         $people = $this->getPeople($arrayData['email']);
-
-        $date = new DrupalDateTime();
-        //Define the fields for the update
-        $fields["updated_at"] = $date->format("Y-m-d H:i:s");
-        if (isset($arrayData['active'])) $fields['active'] = $arrayData['active'];
-        if (isset($arrayData['exported'])) $fields['exported'] = $arrayData['exported'];
-
-        //Update table subscriber
-        $this->connection->update(self::TABLE_SUBSCRIBER)
-            ->fields($fields)
-            ->condition('email', $arrayData['email'], '=')
-            ->execute();
 
         //Update table subscription
         if (isset($arrayData['brands'])) {

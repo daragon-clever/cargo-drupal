@@ -1,0 +1,50 @@
+<div id="homepage-content">
+    <div class="row">
+        <div class="col-12">
+            {{ content.field_hp_ban_principale }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-md-6 left">
+            <a href="{{ content.field_hp_links.0['#url'] }}" title="{{ node.field_hp_img_01[0].alt }}">
+                {{ content.field_hp_img_01[0] }}
+            </a>
+        </div>
+        <div class="col-12 col-md-6 right">
+            <a href="{{ content.field_hp_links.1['#url'] }}" title="{{ node.field_hp_img_01[1].alt }}">
+                {{ content.field_hp_img_01[1] }}
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <a href="{{ content.field_hp_links.2['#url'] }}" title="{{ node.field_hp_img_01[2].alt }}">
+                {{ content.field_hp_img_01[2] }}
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-sm-6 texts">
+            {{ content.field_hp_txts }}
+        </div>
+        <div class="col-12 col-sm-6">
+            {% include directory ~ '/partials/homepage_products.html.twig' %}
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal-help" tabindex="-1" role="dialog" aria-labelledby="modal-newsletter" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="modal-body">
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+// Variables custom
+
+// Media queries
+@very-xs: 320px;
+@xs: 767px;
+@sm: 991px;
+
+@smallPhone:     ~"only screen and (max-width: @{very-xs})";
+@phone:          ~"only screen and (max-width: @{xs})";
+@tablet:         ~"only screen and (max-width: @{sm})";
+
+// Colors
+@blue : #159ed4;
+@pink : #e5007f;
+@grey: #636462;
+@green: #c1d236;
+
+  // Functions
+.dimOpacityOnHover (@opacity) {
+  transition: opacity 0.3s;
+  &:hover {
+    opacity: @opacity;
+  }
+}

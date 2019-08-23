@@ -1,0 +1,18 @@
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-auto logo-wrapper">
+                <a href="{{ url('<front>') }}" title="C'est deux euros">
+                    <img class="logo" src="/sites/cestdeuxeuros/themes/cestdeuxeuros/images/logo.png" alt="C'est deux euros" />
+                </a>
+            </div>
+            <div class="col-auto">
+                <div class="menu">
+                    {% if page.navigation %}
+                        {{ page.navigation }}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

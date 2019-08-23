@@ -26,9 +26,11 @@
 
     Cela propose une installation de Drupal. Vous pouvez donc commencer à installer et configurer votre installation.
     
-    Sur la page pour configurer la base de données : cliquez sur **paramètres avancés**.
+    Sur la page pour configurer la base de données : cliquez sur **options avancées**.
     
-    Dans ces paramètres avancés, modifier le nom de l'hôte. Remplacer "localhost" par "db".
+    Dans ces options avancées, modifier le nom de l'hôte. Remplacer "localhost" par "db".
+    
+    Le nom d'utilisateur et le mot de passe sont root / root.
     
     A la fin de l'installation, il faut créer un compte. Renseignez en nom utilisateur "PoleWeb" et utiliser un générateur de mot de passe en ligne.
     

@@ -1,0 +1,25 @@
+<div id="arrivages">
+    <div class="row arrivages-S0-wrapper">
+        <div class="col-12">
+            <div class="title text-center">
+                {{ content.field_arrivages_txts[0] }}
+            </div>
+            {% include directory ~ '/partials/arrivages_S0.html.twig' %}
+        </div>
+    </div>
+
+    <div class="row arrivages-S1-wrapper">
+        <div class="col-12">
+            <div class="title text-center">
+                {{ content.field_arrivages_txts[1] }}
+            </div>
+            {% include directory ~ '/partials/arrivages_S1.html.twig' %}
+        </div>
+    </div>
+
+    <div class="row txt">
+        <div class="col-12 text-center">
+            {{ content.field_arrivages_txts[2] }}
+        </div>
+    </div>
+</div>

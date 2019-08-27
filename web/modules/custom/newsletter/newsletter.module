@@ -43,6 +43,14 @@ function newsletter_theme($existing, $type, $theme, $path) {
                 'msg' => NULL,
             ],
             'render element' => 'form'
-        ]
+        ],
+        'inscription-block' => [
+            'template' => 'newsletter--inscription--block',
+            'variables' => [
+                'form' => NULL,
+                'msg' => NULL,
+            ],
+            'render element' => 'form'
+        ],
     ];
 }

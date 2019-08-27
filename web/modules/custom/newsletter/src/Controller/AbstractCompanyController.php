@@ -1,5 +1,4 @@
 <?php
-
 namespace Drupal\newsletter\Controller;
 
 
@@ -48,25 +47,38 @@ abstract class AbstractCompanyController extends ControllerBase
         return $people ? $people : null;
     }
 
+    protected function setDataToInsertPeople($arrayData): array
+    {
+        return [
+            "email" => $arrayData['email'],
+            "created_at" => $this->date->format("Y-m-d H:i:s"),
+            "updated_at" => $this->date->format("Y-m-d H:i:s"),
+            "active" => $arrayData['active'],
+            "exported" => $arrayData['exported']
+        ];
+    }
+
     protected function insertPeople(array $arrayData): void
     {
+        $fields = $this->setDataToInsertPeople($arrayData);
         $this->connection->insert(self::TABLE_SUBSCRIBER)
-            ->fields([
-                "email" => $arrayData['email'],
-                "created_at" => $this->date->format("Y-m-d H:i:s"),
-                "updated_at" => $this->date->format("Y-m-d H:i:s"),
-                "active" => $arrayData['active'],
-                "exported" => $arrayData['exported']
-            ])
+            ->fields($fields)
             ->execute();
+    }
+
+    protected function setDataToUpdatePeople($arrayData): array
+    {
+        $fields["updated_at"] = $this->date->format("Y-m-d H:i:s");
+        if (isset($arrayData['active'])) $fields['active'] = $arrayData['active'];
+        if (isset($arrayData['exported'])) $fields['exported'] = $arrayData['exported'];
+
+        return $fields;
     }
 
     protected function updatePeople(array $arrayData): void
     {
         //Define the fields for the update
-        $fields["updated_at"] = $this->date->format("Y-m-d H:i:s");
-        if (isset($arrayData['active'])) $fields['active'] = $arrayData['active'];
-        if (isset($arrayData['exported'])) $fields['exported'] = $arrayData['exported'];
+        $fields = $this->setDataToUpdatePeople($arrayData);
 
         //Update table subscriber
         $this->connection->update(self::TABLE_SUBSCRIBER)
@@ -176,13 +188,6 @@ abstract class AbstractCompanyController extends ControllerBase
                     'mysql_type' => 'datetime',
                     'not null' => TRUE,
                 ),
-                'email' => array(
-                    'type' => 'varchar',
-                    'length' => 255,
-                    'not null' => TRUE,
-                    'default' => '',
-                    'description' => 'Email of the person.',
-                ),
                 'active' => array(
                     'type' => 'int',
                     'length' => 11,
@@ -190,6 +195,20 @@ abstract class AbstractCompanyController extends ControllerBase
                     'default' => '0',
                     'description' => 'Active subscription of the person.',
                 ),
+                'exported' => [
+                    'type' => 'int',
+                    'size' => 'tiny',
+                    'not null' => TRUE,
+                    'default' => '0',
+                    'description' => '',
+                ],
+                'email' => array(
+                    'type' => 'varchar',
+                    'length' => 255,
+                    'not null' => TRUE,
+                    'default' => '',
+                    'description' => 'Email of the person.',
+                )
             ),
             'primary key' => array('id'),
             'indexes' => array(

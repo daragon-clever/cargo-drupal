@@ -19,21 +19,4 @@ class BlogSitramController extends AbstractCompanyController
         );
         parent::savePeopleInActito($dataForActito);
     }
-
-    public function setSchemaTableSubscriber(): array
-    {
-        $array = parent::setSchemaTableSubscriber();
-        $arrayPushData = [
-            'exported' => [
-                'type' => 'int',
-                'size' => 'tiny',
-                'not null' => TRUE,
-                'default' => '0',
-                'description' => '',
-            ]
-        ];
-        $array['fields'] = array_merge($array['fields'], $arrayPushData);
-
-        return $array;
-    }
 }

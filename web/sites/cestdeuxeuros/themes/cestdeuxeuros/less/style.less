@@ -80,13 +80,36 @@ img {
 }
 
 .menu {
-  @media @tablet {
+  @media @phone {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     background: white;
     display: none;
+  }
+}
+
+#block-reseauxsociaux {
+  float: right;
+  padding: 5px;
+
+  a {
+    border: none;
+    height: 40px;
+    width: 40px;
+    font-size: 0;
+    vertical-align: middle;
+    display: inline-block;
+    margin: 0 5px;
+
+    &.facebook {
+      background: url("../images/facebook-c2e.png") no-repeat center transparent;
+    }
+
+    &.instagram {
+      background: url("../images/instagram-c2e.png") no-repeat center transparent;
+    }
   }
 }
 
@@ -240,6 +263,14 @@ footer {
       font-size: 24px;
     }
   }
+
+  .img-wrapper .inner {
+    min-height: 268px;
+
+    @media @tablet {
+      min-height: 150px;
+    }
+  }
 }
 
 .arrivages-S0-wrapper {
@@ -287,6 +318,15 @@ footer {
 
   h1 {
     font-size: 60px;
+
+    @media @tablet {
+      font-size: 40px;
+    }
+
+
+    @media @phone {
+      font-size: 30px;
+    }
   }
 
   h2 {

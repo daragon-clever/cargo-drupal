@@ -20,6 +20,26 @@ class YliadesController extends AbstractCompanyController
     const ENTITY_ACTITO = "Yliades";
     const TABLE_ACTITO = "Yliades";
 
+    protected function setDataToInsertPeople($arrayData): array
+    {
+        return [
+            "email" => $arrayData['email'],
+            "created_at" => $this->date->format("Y-m-d H:i:s"),
+            "updated_at" => $this->date->format("Y-m-d H:i:s"),
+            "active" => $arrayData['active'],
+            "exported" => $arrayData['exported']
+        ];
+    }
+
+    protected function setDataToUpdatePeople($arrayData): array
+    {
+        $fields["updated_at"] = $this->date->format("Y-m-d H:i:s");
+        if (isset($arrayData['active'])) $fields['active'] = $arrayData['active'];
+        if (isset($arrayData['exported'])) $fields['exported'] = $arrayData['exported'];
+
+        return $fields;
+    }
+
     protected function insertPeople(array $arrayData): void
     {
         parent::insertPeople($arrayData);
@@ -104,23 +124,6 @@ class YliadesController extends AbstractCompanyController
                 'description' => '',
             ],
             'jardin_d_ulysse' => [
-                'type' => 'int',
-                'size' => 'tiny',
-                'not null' => TRUE,
-                'default' => '0',
-                'description' => '',
-            ]
-        ];
-        $array['fields'] = array_merge($array['fields'], $arrayPushData);
-
-        return $array;
-    }
-
-    public function setSchemaTableSubscriber(): array
-    {
-        $array = parent::setSchemaTableSubscriber();
-        $arrayPushData = [
-            'exported' => [
                 'type' => 'int',
                 'size' => 'tiny',
                 'not null' => TRUE,

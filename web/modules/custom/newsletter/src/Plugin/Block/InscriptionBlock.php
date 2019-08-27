@@ -9,7 +9,7 @@ use Drupal\newsletter\Form\Company as CompanyForm;
  * @Block(
  *   id = "inscription_block",
  *   admin_label = @Translation("Inscription newsletter"),
- *   category = @Translation("Newsletter")
+ *   category = @Translation("Newsletter Cargo")
  * )
  */
 class InscriptionBlock extends BlockBase
@@ -37,6 +37,9 @@ class InscriptionBlock extends BlockBase
                 break;
             case "comptoirdefamille":
                 $myForm = \Drupal::formBuilder()->getForm(CompanyForm\ComptoirDeFamilleForm::class);
+                break;
+            case "c'estdeuxeuros":
+                $myForm = \Drupal::formBuilder()->getForm(CompanyForm\CestDeuxEurosForm::class);
                 break;
         }
 

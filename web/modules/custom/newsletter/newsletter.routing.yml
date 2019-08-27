@@ -1,5 +1,5 @@
 newsletter.content:
-  path: '/newsletter'
+  path: '/newsletter-traitement'
   defaults:
     _controller: '\Drupal\newsletter\Controller\NewsletterController::displayForm'
     _title: 'Newsletter'

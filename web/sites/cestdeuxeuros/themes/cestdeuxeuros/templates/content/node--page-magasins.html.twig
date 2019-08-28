@@ -1,0 +1,40 @@
+<style>
+    {#Je te laisse gérer le style, c'était pour la faire apparaître pour le dev cette config#}
+    #map {
+        width: 100%;
+        height: 500px;
+    }
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+</style>
+
+<div id="page-nous-retrouver">
+    <div id="trouvez-un-magasin">
+        <form id="formMap" onsubmit="searchLocations(); return(false);" method="post" action="#">
+            <input type="text" name="city" id="addressInput" />
+            <select id="locationSelect" style="display: none"></select>
+            <input type="hidden" id="radiusSelect" value="150" />
+        </form>
+        <button type="button" id="searchButton">LOCALISEZ-MOI</button>
+    </div>
+
+    <hr />
+
+    <div id="map-google">
+        <div id="map"></div>
+    </div>
+    <div id="infos-mags">
+        <div id="shopsList">
+            {#ICI, affichage dynamique par le fichier google-maps.js (fonction mapShops()) des infos magasins en fonction de la recherche#}
+        </div>
+    </div>
+    <div>
+        <div id="place-iframe-facebook">
+            <iframe id="iframe-facebook" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fcestdeuxeuros%2F&tabs=timeline&width=260&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"  width="100%" height="500" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+        </div>
+    </div>
+
+</div>

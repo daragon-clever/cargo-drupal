@@ -1,0 +1,6 @@
+shops.content:
+  path: "/all-shops/{lat}/{lng}/{radius}"
+  defaults:
+   _controller: '\Drupal\storelocator\Controller\ShopController::getShops'
+  requirements:
+    _permission: 'access content'

@@ -4,7 +4,9 @@
             <div class="title text-center">
                 {{ content.field_arrivages_txts[0] }}
             </div>
-            {% include directory ~ '/partials/arrivages_S0.html.twig' %}
+            <div id="arrivages_S0">
+                {{ content.field_block_produits[0] }}
+            </div>
         </div>
     </div>
 
@@ -13,7 +15,9 @@
             <div class="title text-center">
                 {{ content.field_arrivages_txts[1] }}
             </div>
-            {% include directory ~ '/partials/arrivages_S1.html.twig' %}
+            <div id="arrivages_S1">
+                {{ content.field_block_produits[1] }}
+            </div>
         </div>
     </div>
 

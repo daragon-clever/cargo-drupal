@@ -1,0 +1,14 @@
+<div class="row products">
+    {% for skuProduct, imgProduct in products %}
+        {% if nbItem == 6 %}
+            <div class="col-6 col-md-4 img-wrapper">
+        {% else %}
+            <div class="col-6 col-md-3 img-wrapper">
+        {% endif %}
+            <div class="inner">
+                <img src="/sites/cestdeuxeuros/files/dataimages/{{ imgProduct }}" alt="{{ skuProduct }}"/>
+                <span>2<small>€</small></span>
+            </div>
+        </div>
+    {% endfor %}
+</div>

@@ -1,7 +1,0 @@
-fluxrss.execute:
-  path: '/flux-rss'
-  defaults:
-    _controller: '\Drupal\c2e_produits\Controller\FluxRssController::generateFlux'
-    _title: 'CSV'
-  requirements:
-    _permission: 'access content'

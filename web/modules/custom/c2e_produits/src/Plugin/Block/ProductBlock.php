@@ -4,6 +4,8 @@ namespace Drupal\c2e_produits\Plugin\Block;
 
 use Drupal\c2e_produits\Controller\ProductController;
 use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Annotation\Translation;
+use Drupal\Core\Block\Annotation\Block;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Session\AccountInterface;

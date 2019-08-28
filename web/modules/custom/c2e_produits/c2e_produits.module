@@ -1,4 +1,5 @@
 <?php
+use \Drupal\c2e_produits\Controller\FluxRssController;
 
 function c2e_produits_theme($existing, $type, $theme, $path) {
     return [
@@ -10,4 +11,16 @@ function c2e_produits_theme($existing, $type, $theme, $path) {
             ]
         ]
     ];
+}
+
+function c2e_produits_cron()
+{
+    \Drupal::logger('c2e_produits')->notice('[C2E PRODUITS] Lancement cron');
+
+    $import = new FluxRssController();
+    $import->generateFlux();
+
+    \Drupal::state()->set('c2e_produits.last_run', REQUEST_TIME);
+
+    \Drupal::logger('c2e_produits')->notice('[C2E PRODUITS] Cron terminé');
 }

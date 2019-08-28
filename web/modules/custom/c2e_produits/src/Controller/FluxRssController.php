@@ -13,13 +13,13 @@ class FluxRssController extends FonctionsController
         $this->urlArrivagesC2E = $this->urlC2E."/arrivages";
     }
 
-    public function doAction()
+    public function generateFlux()
     {
-        $this->generateFlux("S0");
-        $this->generateFlux("S1");
+        $this->generateFileRss("S0");
+        $this->generateFileRss("S1");
     }
 
-    public function generateFlux($week = "S0")
+    public function generateFileRss($week)
     {
         $filePath = $this->filesPath.'/xml-flux-rss/';
         $fileNameXml = strtolower($week).".xml";

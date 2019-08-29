@@ -5,8 +5,12 @@
         {% else %}
             <div class="col-6 col-md-3 img-wrapper">
         {% endif %}
-            <div class="inner">
-                <img src="/sites/cestdeuxeuros/files/dataimages/{{ imgProduct }}" alt="{{ skuProduct }}"/>
+                <div class="inner">
+                {% if not imgProduct %}
+                    <img src="" alt=""/>
+                    {% else %}
+                    <img src="/sites/cestdeuxeuros/files/dataimages/{{ imgProduct }}" alt="{{ skuProduct }}"/>
+                {% endif %}
                 <span>2<small>€</small></span>
             </div>
         </div>

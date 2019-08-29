@@ -12,9 +12,9 @@ use Drupal\Core\Session\AccountInterface;
 
 /**
  * @Block(
- *   id = "products_block",
- *   admin_label = @Translation("Produits"),
- *   category = @Translation("Produits")
+ *   id = "c2e_products_block",
+ *   admin_label = @Translation("Produits C2E"),
+ *   category = @Translation("Produits C2E")
  * )
  */
 class ProductBlock extends BlockBase

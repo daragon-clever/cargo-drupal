@@ -22,8 +22,6 @@ function c2e_produits_cron()
     $products = new Controller\ProductController();
     $products->checkProducts();
 
-    drupal_flush_all_caches();//clean twig cache to refresh product's pictures
-
     \Drupal::state()->set('c2e_produits.last_run', REQUEST_TIME);
 
     \Drupal::logger('c2e_produits')->notice('[C2E PRODUITS] Cron terminé');

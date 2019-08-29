@@ -27,6 +27,8 @@ class ShopController extends ControllerBase
         }
 
         echo ('</markers>');
+
+        exit();
     }
 
     private function haversineGreatCircleDistance($latitudeFrom, $longitudeFrom, $latitudeTo, $longitudeTo, $earthMeanRadius = 6371)

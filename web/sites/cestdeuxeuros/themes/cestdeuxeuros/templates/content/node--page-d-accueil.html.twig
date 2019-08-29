@@ -31,7 +31,12 @@
             {{ content.field_hp_txts }}
         </div>
         <div class="col-12 col-lg-6 order-1 order-lg-2">
-            {% include directory ~ '/partials/homepage_products.html.twig' %}
+            <div id="homepage-products">
+                <div class="title">
+                    Les <b>Offres</b> du moment
+                </div>
+                {{ content.field_block_produits_accueil }}
+            </div>
         </div>
     </div>
 </div>

@@ -9,7 +9,7 @@ use Drupal\newsletter\Form\Company as CompanyForm;
  * @Block(
  *   id = "inscription_block",
  *   admin_label = @Translation("Inscription newsletter"),
- *   category = @Translation("Newsletter Cargo")
+ *   category = @Translation("Newsletter")
  * )
  */
 class InscriptionBlock extends BlockBase

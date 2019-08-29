@@ -67,4 +67,12 @@ class ProductBlock extends BlockBase
         $this->configuration['week'] = $form_state->getValue('week');
         $this->configuration['nbProducts'] = $form_state->getValue('nbProducts');
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getCacheMaxAge()
+    {
+        return 0;
+    }
 }

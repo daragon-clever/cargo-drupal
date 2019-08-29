@@ -52,10 +52,10 @@ class CestDeuxEurosForm extends FormBase
                 '#type' => 'checkbox',
                 '#title' => $this->t("Les offres promotionnelles de nos partenaires susceptibles de vous intéresser") //todo: à traduire
             ],
-//            'captcha' => [
-//                '#type' => 'captcha',
-//                '#captcha_type' => 'recaptcha/reCAPTCHA'
-//            ],
+            'captcha' => [
+                '#type' => 'captcha',
+                '#captcha_type' => 'recaptcha/reCAPTCHA'
+            ],
             'actions' => [
                 '#type' => 'actions',
                 'submit' => [

@@ -1,5 +1,5 @@
 jQuery(document).ready(function($) {
-    // PAGE CANDIDATURE SPONTANEE
+    // FORMULAIRE DE CONTACT
     if ($('.webform-submission-form').length) {
         // Function
         var checkValue = function (e) {
@@ -21,4 +21,10 @@ jQuery(document).ready(function($) {
             checkValue($(this));
         });
     }
+
+    // Bind click HP
+    $("#homepage-content .right a").click(function(e) {
+        e.preventDefault();
+        $("footer a[data-target='#modal-newsletter']").click();
+    });
 });

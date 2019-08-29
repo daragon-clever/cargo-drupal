@@ -8,7 +8,7 @@ regions:
   highlighted: 'Highlighted'
   content: 'Content'
   footer: 'Footer'
-  txtfooter: 'Zone texte sous le footer'
+  popup_newsletter: 'Popup Newsletter'
 
 libraries:
   - cestdeuxeuros/bootstrap

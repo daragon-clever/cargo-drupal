@@ -1,0 +1,29 @@
+<div class="row justify-content-center">
+
+    <div class="col">
+        {% if form %}
+            <form {{form.attributes }} method="{{ form['#method'] }}">
+                {{ form.form_build_id }}
+                {{ form.form_token }}
+                {{ form.form_id }}
+
+                <div class="row">
+                    <div class="col-12">
+                        {{ form.prenom }}
+                        {{ form.nom }}
+                        {{ form.cp }}
+                        {{ form.mail }}
+
+                        <p>tacos</p>
+
+                        {{ form.newsletter }}
+                        {{ form.offres }}
+                        {{ form.captcha }}
+                        {{ form.actions }}
+                    </div>
+                </div>
+            </form>
+        {% endif %}
+    </div>
+
+</div>

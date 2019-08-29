@@ -26,31 +26,31 @@ class CestDeuxEurosForm extends FormBase
         $form = [
             'nom' => [
                 '#type' => 'textfield',
-                '#placeholder' => $this->t("Lastname"),//todo: possible en css d'ajouter une * après le placeholder ?
+                '#placeholder' => 'Nom *',
                 '#required' => TRUE
             ],
             'prenom' => [
                 '#type' => 'textfield',
-                '#placeholder' => $this->t("Firstname"),//todo: possible en css d'ajouter une * après le placeholder ?
+                '#placeholder' => 'Prénom *',
                 '#required' => TRUE
             ],
             'cp' => [
                 '#type' => 'textfield',
-                '#placeholder' => $this->t("Zip code"),//todo: possible en css d'ajouter une * après le placeholder ?
+                '#placeholder' => 'Code postal *',
                 '#required' => TRUE
             ],
             'mail' => [
                 '#type' => 'email',
-                '#placeholder' => $this->t("Email"),//todo: possible en css d'ajouter une * après le placeholder ?
+                '#placeholder' => 'Email *',
                 '#required' => TRUE
             ],
             'newsletter' => [
                 '#type' => 'checkbox',
-                '#title' => $this->t("La newsletter des magasins C’est deux euros") //todo: à traduire
+                '#title' => 'La newsletter des magasins C’est deux euros'
             ],
             'offres' => [
                 '#type' => 'checkbox',
-                '#title' => $this->t("Les offres promotionnelles de nos partenaires susceptibles de vous intéresser") //todo: à traduire
+                '#title' => 'Les offres promotionnelles de nos partenaires susceptibles de vous intéresser'
             ],
             'captcha' => [
                 '#type' => 'captcha',
@@ -60,7 +60,7 @@ class CestDeuxEurosForm extends FormBase
                 '#type' => 'actions',
                 'submit' => [
                     '#type' => 'submit',
-                    '#value' => $this->t('I subscribe') //todo: trad -> Je m'inscris + mettre en uppercase en css
+                    '#value' => "Je m'inscris"
                 ]
             ]
         ];
@@ -76,32 +76,32 @@ class CestDeuxEurosForm extends FormBase
         /*voir si mail et prenom et non et cp vide ça marche*/
         $mail = $form_state->getValue('mail');
         if (is_null($mail) || empty($mail)) {
-            $form_state->setError($form['mail'], $this->t('Email is required'));
+            $form_state->setError($form['mail'], "Votre email est requis");
         } elseif (!\Drupal::service('email.validator')->isValid($mail)) {
-            $form_state->setError($form['mail'], $this->t('Email is malformed'));
+            $form_state->setError($form['mail'], "L'email ne semble pas valide");
         }
 
         $lastName = $form_state->getValue('nom');
         if(is_null($lastName) || empty($lastName)) {
-            $form_state->setError($form['nom'], $this->t('Lastname is required'));
+            $form_state->setError($form['nom'], "Votre nom est requis");
         }
 
         $firstName = $form_state->getValue('prenom');
         if(is_null($firstName) || empty($firstName)) {
-            $form_state->setError($form['prenom'], $this->t('Firstname is required'));
+            $form_state->setError($form['prenom'], "Votre prénom est requis");
         }
 
         $zipCode = $form_state->getValue('cp');
         if(is_null($zipCode) || empty($zipCode)) {
-            $form_state->setError($form['cp'], $this->t('Zip code is required'));
+            $form_state->setError($form['cp'], "Votre code postal est requis");
         } elseif(is_null($this->testZipCode($zipCode))) {
-            $form_state->setError($form['cp'], $this->t('Zip code is malformed'));
+            $form_state->setError($form['cp'], "Votre code postal ne semble pas valide");
         }
 
         $newsletterShop = $form_state->getValue('newsletter');
         $offers = $form_state->getValue('offres');
         if(!($newsletterShop === 1 || $offers === 1)) {
-            $form_state->setError($form['newsletter'], $this->t('Chochez au moins une des deux cases'));//todo: à traduire
+            $form_state->setError($form['newsletter'], 'Cochez au moins une des deux cases');
         }
     }
 

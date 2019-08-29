@@ -433,14 +433,6 @@ footer {
       color: #9e9e9e;
     }
 
-    .g-recaptcha {
-      text-align: center;
-
-      & > div {
-        display: inline-block;
-      }
-    }
-
     .form-submit {
       width: 100%;
       background: #159ed4;
@@ -456,4 +448,93 @@ footer {
       .dimOpacityOnHover(0.8);
     }
   }
+}
+
+.g-recaptcha {
+  text-align: center;
+
+  & > div {
+    display: inline-block;
+  }
+}
+
+#modal-newsletter .close {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-size: 30px;
+  z-index: 100;
+}
+
+#newsletterform-wrapper {
+  form {
+    input {
+      max-width: 100%;
+      margin: 10px 0;
+      padding: 5px 15px;
+      display: block;
+      border-radius: 5px;
+      border: 1px solid #d9d9d9;
+
+      &.form-checkbox {
+        display: inline-block;
+        margin: 5px 5px 0 0;
+        vertical-align: top;
+      }
+    }
+  }
+
+  .intro {
+    color: @blue;
+    text-align: center;
+    font-size: 30px;
+    line-height: 1.2;
+    display: block;
+    margin: 20px 0;
+  }
+
+  p, label {
+    color: black;
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  label {
+    display: inline-block;
+    width: calc(100% - 30px);
+  }
+
+  .form-submit {
+    width: 100%;
+    background: #159ed4;
+    color: white;
+    border: none;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 35px;
+    cursor: pointer;
+  }
+
+  .bottom {
+    color: @grey;
+  }
+}
+
+div[role=contentinfo],
+div[role=alert] {
+  border: 1px solid;
+  margin: 30px 0;
+  padding: 15px;
+  text-align: center;
+
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+div[role=alert] {
+  border-color: #b30000;
+  color: #b30000;
 }

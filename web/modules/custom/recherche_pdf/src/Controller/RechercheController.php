@@ -202,8 +202,7 @@ class RechercheController extends ControllerBase
             true
         );
         if(!empty($urlRedirect)) {
-            $response = new RedirectResponse($urlRedirect);
-            return $response->send();
+            return $response = new RedirectResponse($urlRedirect);
         } else {
             return $this->redirect('<front>');
         }

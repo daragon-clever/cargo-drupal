@@ -14,6 +14,7 @@ libraries:
   - cestdeuxeuros/bootstrap
   - cestdeuxeuros/slick
   - cestdeuxeuros/global-styling
+  - cestdeuxeuros/google-maps-custom
 
 stylesheets-remove:
   - core/themes/stable/css/system/components/ajax-progress.module.css

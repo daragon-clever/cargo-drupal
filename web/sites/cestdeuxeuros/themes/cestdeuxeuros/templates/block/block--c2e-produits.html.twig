@@ -1,0 +1,31 @@
+<style>
+    .title-week {
+        text-align: center;
+        border-bottom: 2px solid #289ed4;
+        padding-bottom: 5px;
+        margin-top: 25px;
+        margin-bottom: 20px;
+        font-size: 18px;
+    }
+</style>
+{#A mettre dans le less#}
+
+{% set url = url('<current>') %}
+{% if 'futurs-arrivages' in url|render|render %}
+    {% if label %}
+        <div class="title-week">{{ label }}</div>
+    {% endif %}
+    {{ content }}
+{% else %}
+    <div{{ attributes }}>
+        {{ title_prefix }}
+        {% if label %}
+            <h2{{ title_attributes }}>{{ label }}</h2>
+        {% endif %}
+        {{ title_suffix }}
+        {% block content %}
+            {{ content }}
+        {% endblock %}
+    </div>
+
+{% endif %}

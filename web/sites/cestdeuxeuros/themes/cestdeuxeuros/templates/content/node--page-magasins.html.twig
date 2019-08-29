@@ -7,13 +7,13 @@
     </div>
 
     <div class="row">
-        <div class="col-12 col-sm-8 col-lg-9">
+        <div class="col-12 col-md-8 col-lg-9 order-2 order-lg-1">
             <div id="map-google">
                 <div id="map"></div>
             </div>
         </div>
 
-        <div class="col-12 col-sm-4 col-lg-3">
+        <div class="col-12 col-md-4 col-lg-3 order-1 order-lg-2">
             <div id="trouvez-un-magasin">
                 <span>Trouver un magasin</span>
                 <form id="formMap" onsubmit="searchLocations(); return(false);" method="post" action="#">
@@ -24,7 +24,7 @@
                 <button type="button" id="searchButton">Recherchez</button>
             </div>
 
-            <div>
+            <div class="d-none d-lg-block">
                 <div id="place-iframe-facebook">
                     <iframe id="iframe-facebook" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fcestdeuxeuros%2F&tabs=timeline&width=270&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"  width="100%" height="500" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
                 </div>

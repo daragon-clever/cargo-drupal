@@ -552,6 +552,10 @@ div[role=alert] {
 
   #map-google, #map {
     height: 100%;
+
+    @media @phone {
+      height: 500px;
+    }
   }
 
   .ban {
@@ -592,15 +596,31 @@ div[role=alert] {
 
   #shopsList {
     margin-top: 30px;
+    font-size: 16px;
 
     h3 {
       color: @blue;
       font-weight: 600;
-      font-size: 17px;
+      font-size: 22px;
+
+      &.horaires {
+        @media @phone {
+          margin-top: 15px;
+        }
+      }
     }
 
     p {
       margin: 0;
+    }
+
+    span {
+      display: block;
+    }
+
+    i {
+      color: @blue;
+      margin-right: 10px;
     }
   }
 }

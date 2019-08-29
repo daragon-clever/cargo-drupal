@@ -186,7 +186,7 @@ $(document).ready(function() {
     function mapShops(id, name, address, city, postal, phone, hours) {
 
         if (phone.length !== 0) {
-            var phoneSet = "<p class='tel'>" + phone + "</p>";
+            var phoneSet = "<p class='tel'><i class='fas fa-mobile-alt'></i>" + phone + "</p>";
         } else {
             var phoneSet = '';
         }
@@ -195,12 +195,12 @@ $(document).ready(function() {
             "<div class='row'>" +
                 "<div class='col-12 col-sm-6'>" +
                     "<h3>C'est deux euros :</h3>" +
-                    "<span class='adresse'><i class='glyphicon glyphicon-map-marker' style='color:#00a1d4'></i>" + address + "</span>" +
-                    "<span class='ville'>" + postal + " " + city + " </span>" +
+                    "<span class='adresse'><i class='fas fa-map-marker-alt'></i>" + address + "</span>" +
+                    "<span class='ville'><i class='far fa-map'></i>" + postal + " " + city + " </span>" +
                     phoneSet +
                 "</div>" +
                 "<div class='col-12 col-sm-6'>" +
-                    "<h3>Horaires :</h3>" +
+                    "<h3 class='horaires'>Horaires :</h3>" +
                     "<p>" + hours.replace("/","<br/>")+"</p>" +
                 "</div>" +
             "</div>" +

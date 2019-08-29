@@ -8,17 +8,10 @@ bootstrap:
   js:
     bootstrap4/js/bootstrap.bundle.min.js: {}
 
-# Style général
-global-styling:
-  header: true
-  css:
-    theme:
-      css/style.css: {}
-      https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css: { type: external }
+# Font Awesome
+fontawesome:
   js:
-    js/custom-js.js: {}
-  dependencies:
-    - core/jquery
+    https://kit.fontawesome.com/1f23e911a7.js : { type: external }
 
 #Google Maps
 google-maps-custom:
@@ -26,5 +19,16 @@ google-maps-custom:
   js:
     js/google-maps.js: {}
     https://maps.googleapis.com/maps/api/js?region=fr&key=AIzaSyA99NbhEy_YrJGgfuEEqYNmIbYbUjVXZP0&callback=initMap: { type: external, attributes: { defer: true, async: true} }
+  dependencies:
+    - core/jquery
+
+# Style général
+global-styling:
+  header: true
+  css:
+    theme:
+      css/style.css: {}
+  js:
+    js/custom-js.js: {}
   dependencies:
     - core/jquery

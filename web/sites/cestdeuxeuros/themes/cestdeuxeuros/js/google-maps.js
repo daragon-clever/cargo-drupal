@@ -184,10 +184,27 @@ $(document).ready(function() {
         markers.push(marker);
     }
     function mapShops(id, name, address, city, postal, phone, hours) {
-        if (phone.length == 0) {
-            $("#shopsList").append("<div class='container'><div class='row'><div class='col-lg-6 col-md-6 col-sm-6'><h3 id='adresse' style='letter-spacing:-0.06em;color:#159ed4;padding;5px;font-size:1.2em;margin-top:5px;margin-bottom:5px;'> <strong>C'est deux euros : </strong></h3>                    <p><i class='glyphicon glyphicon-map-marker' style='color:#00a1d4;'></i> "+address+"</p><p> <i class='icon-map icon' style='color:#00a1d4;'></i> "+postal+" "+city+" </p></div><div class='col-lg-6 col-md-6 col-sm-6 col-xs-12'><h3 id='adresse' style='letter-spacing:-0.06em;color:#159ed4;padding;5px;font-size:1.2em;margin-top:5px;margin-bottom:5px;'> <strong>Horaires : </strong></h3></div><div class='col-lg-6 col-md-6 col-sm-6 col-xs-12'><p>"+hours.replace("/","<br/>")+"</p></div></div></div><div class='container'><div class='row'><div class='col-md-12'><hr></div></div></div>");
+
+        if (phone.length !== 0) {
+            var phoneSet = "<p class='tel'>" + phone + "</p>";
         } else {
-            $("#shopsList").append("<div class='container'><div class='row'><div class='col-lg-6 col-md-6 col-sm-6'><h3 id='adresse' style='letter-spacing:-0.06em;color:#159ed4;padding;5px;font-size:1.2em;margin-top:5px;margin-bottom:5px;'> <strong>C'est deux euros : </strong></h3>                    <p><i class='glyphicon glyphicon-map-marker' style='color:#00a1d4;'></i> "+address+"</p><p> <i class='icon-map icon' style='color:#00a1d4;'></i> "+postal+" "+city+" </p><p> <i class='glyphicon glyphicon-phone' style='color:#00a1d4;'></i> "+phone+"</p></div><div class='col-lg-6 col-md-6 col-sm-6 col-xs-12'><h3 id='adresse' style='letter-spacing:-0.06em;color:#159ed4;padding;5px;font-size:1.2em;margin-top:5px;margin-bottom:5px;'> <strong>Horaires : </strong></h3></div><div class='col-lg-6 col-md-6 col-sm-6 col-xs-12'><p>"+hours.replace("/","<br/>")+"</p></div></div></div><div class='container'><div class='row'><div class='col-md-12'><hr></div></div></div>");
+            var phoneSet = '';
         }
+
+        $("#shopsList").append("" +
+            "<div class='row'>" +
+                "<div class='col-12 col-sm-6'>" +
+                    "<h3>C'est deux euros :</h3>" +
+                    "<span class='adresse'><i class='glyphicon glyphicon-map-marker' style='color:#00a1d4'></i>" + address + "</span>" +
+                    "<span class='ville'>" + postal + " " + city + " </span>" +
+                    phoneSet +
+                "</div>" +
+                "<div class='col-12 col-sm-6'>" +
+                    "<h3>Horaires :</h3>" +
+                    "<p>" + hours.replace("/","<br/>")+"</p>" +
+                "</div>" +
+            "</div>" +
+            "<hr />"
+        );
     }
 });

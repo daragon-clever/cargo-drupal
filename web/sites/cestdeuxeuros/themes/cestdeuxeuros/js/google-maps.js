@@ -41,7 +41,7 @@ $(document).ready(function() {
             if (status == google.maps.GeocoderStatus.OK) {
                 searchLocationsNear(results[0].geometry.location);
             } else {
-                var xmlUrl = "http://web.cestdeuxeuros.svd2pweb-stm.ressinfo.ad/sites/cestdeuxeuros/files/locations/locations.xml";
+                var xmlUrl = "http://"+window.location.hostname+"/sites/cestdeuxeuros/files/locations/locations.xml";
 
                 map.markers = map.markers || []
                 downloadUrl(xmlUrl, function(data) {
@@ -81,7 +81,7 @@ $(document).ready(function() {
         clearLocations();
         var radius = document.getElementById("radiusSelect").value;
 
-        var searchUrl = "http://web.cestdeuxeuros.svd2pweb-stm.ressinfo.ad/all-shops/" + center.lat() + '/' + center.lng() + '/' + radius;
+        var searchUrl = "http://"+window.location.hostname+"/all-shops/" + center.lat() + '/' + center.lng() + '/' + radius;
 
        downloadUrl(searchUrl, testAudrey);
 

@@ -2,7 +2,6 @@
 namespace Drupal\c2e_produits\Controller;
 
 
-
 class FluxRssController extends FonctionsController
 {
     private $urlArrivagesC2E;
@@ -13,13 +12,13 @@ class FluxRssController extends FonctionsController
         $this->urlArrivagesC2E = $this->urlC2E."/arrivages";
     }
 
-    public function generateFlux()
+    public function generateFlux(): void
     {
         $this->generateFileRss("S0");
         $this->generateFileRss("S1");
     }
 
-    public function generateFileRss($week)
+    public function generateFileRss(string $week): void
     {
         $filePath = $this->filesPath.'/xml-flux-rss/';
         $fileNameXml = strtolower($week).".xml";
@@ -59,7 +58,4 @@ class FluxRssController extends FonctionsController
         $resultXml = $mainNode->outputMemory();
         file_put_contents($filePath . $fileNameXml, $resultXml);
     }
-
-
-
 }

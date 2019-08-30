@@ -54,6 +54,8 @@ class FluxRssController extends FonctionsController
             $mainNode->endElement();
             $mainNode->endElement();
         }
+        $mainNode->endElement();
+        $mainNode->endElement();
 
         $resultXml = $mainNode->outputMemory();
         file_put_contents($filePath . $fileNameXml, $resultXml);

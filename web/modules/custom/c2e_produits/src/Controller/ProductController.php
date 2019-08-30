@@ -9,7 +9,7 @@ class ProductController extends FonctionsController
 
     private $error = "";
 
-    public function displayProducts($week, $nbProducts)
+    public function displayProducts(string $week, int $nbProducts): array
     {
         $products = $this->getCsvContent();
         $productsOfTheWeek = $products[$week];
@@ -23,7 +23,7 @@ class ProductController extends FonctionsController
         return $imgsProducts;
     }
 
-    public function checkProducts()
+    public function checkProducts(): void
     {
         $csvContent = $this->getCsvContent();
         $this->setError($csvContent, 'S0');
@@ -32,7 +32,7 @@ class ProductController extends FonctionsController
         $this->alertTeam();
     }
 
-    private function setError($csvContent, $week)
+    private function setError(array $csvContent, string $week): void
     {
         $count = count($csvContent[strtoupper($week)]);
         if ($count < self::NB_REQUIRED_PRODUCTS) {
@@ -51,7 +51,7 @@ class ProductController extends FonctionsController
         }
     }
 
-    private function alertTeam()
+    private function alertTeam(): void
     {
         if (!empty($this->error)) {
             $mailManager = \Drupal::service('plugin.manager.mail');

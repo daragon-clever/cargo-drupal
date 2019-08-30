@@ -41,7 +41,8 @@ class ProductBlock extends BlockBase implements BlockPluginInterface
     /**
      * {@inheritdoc}
      */
-    protected function blockAccess(AccountInterface $account) {
+    protected function blockAccess(AccountInterface $account)
+    {
         return AccessResult::allowedIfHasPermission($account, 'access content');
     }
 

@@ -82,11 +82,46 @@ img {
 .menu {
   @media @phone {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 72px;
+    right: -100%;
     width: 100%;
     background: white;
-    display: none;
+    padding: 0 15px 15px 15px;
+    transition: all 0.3s ease-in-out;
+
+    &.active {
+      right: 0;
+    }
+
+    nav {
+      ul {
+        li {
+          display: block;
+          line-height: 35px;
+
+          a {
+            border-right: 0;
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.btn-menu-mobile {
+  position: fixed;
+  top: 14px;
+  right: 25px;
+  font-size: 29px;
+
+  i {
+    cursor: pointer;
+    color: @blue;
+
+    &.fa-times {
+      color: @grey
+    }
   }
 }
 
@@ -109,6 +144,18 @@ img {
 
     &.instagram {
       background: url("../images/instagram-c2e.png") no-repeat center transparent;
+    }
+  }
+
+  @media @phone {
+    float: none;
+    padding: 0;
+    position: fixed;
+    top: 15px;
+    right: 60px;
+
+    li {
+      display: inline-block;
     }
   }
 }

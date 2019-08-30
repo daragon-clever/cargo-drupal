@@ -7,3 +7,10 @@ function cestdeuxeuros_page_attachments_alter(array &$attachments) {
         }
     }
 }
+
+function cestdeuxeuros_preprocess_node(&$variables) {
+    $node = $variables['node'];
+    if ($node->getType() == 'page_magasins') {
+        $variables['#attached']['library'][] = 'cestdeuxeuros/google-maps-custom';
+    }
+}

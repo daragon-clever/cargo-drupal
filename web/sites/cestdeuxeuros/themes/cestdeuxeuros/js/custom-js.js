@@ -27,4 +27,12 @@ jQuery(document).ready(function($) {
         e.preventDefault();
         $("footer a[data-target='#modal-newsletter']").click();
     });
+
+    // MENU Mobile
+    $('.btn-menu-mobile i').each( function() {
+        $(this).click(function() {
+            $('.btn-menu-mobile i').toggle();
+            $('.menu').toggleClass('active');
+        });
+    })
 });

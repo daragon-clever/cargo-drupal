@@ -13,7 +13,6 @@ regions:
 libraries:
   - cestdeuxeuros/bootstrap
   - cestdeuxeuros/global-styling
-  - cestdeuxeuros/google-maps-custom
   - cestdeuxeuros/fontawesome
 
 stylesheets-remove:

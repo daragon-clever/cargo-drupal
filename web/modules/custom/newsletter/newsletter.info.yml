@@ -3,3 +3,5 @@ description: Ajouter des personnes à une liste de diffusion
 core: 8.x
 package: Custom
 type: module
+'interface translation project': newsletter
+'interface translation server pattern': 'modules/custom/newsletter/translations/%language.po'

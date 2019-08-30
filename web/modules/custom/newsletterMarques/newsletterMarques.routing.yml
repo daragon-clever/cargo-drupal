@@ -1,7 +1,0 @@
-newsletter.content:
-  path: '/newsletter'
-  defaults:
-    _controller: '\Drupal\newsletterMarques\Controller\NewsletterController::content'
-    _title: 'Newsletter'
-  requirements:
-    _permission: 'access content'

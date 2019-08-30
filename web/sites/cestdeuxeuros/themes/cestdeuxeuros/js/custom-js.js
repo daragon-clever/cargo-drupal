@@ -33,6 +33,7 @@ jQuery(document).ready(function($) {
         $(this).click(function() {
             $('.btn-menu-mobile i').toggle();
             $('.menu').toggleClass('active');
+            $('.main-content').toggleClass('blur');
         });
     })
 });

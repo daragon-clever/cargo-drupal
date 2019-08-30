@@ -88,6 +88,7 @@ img {
     background: white;
     padding: 0 15px 15px 15px;
     transition: all 0.3s ease-in-out;
+    border-bottom: 1px solid #eaeaea;
 
     &.active {
       right: 0;
@@ -165,6 +166,15 @@ img.logo {
   height: 52px;
 }
 
+.main-content {
+  transition: all 0.3s ease-in-out;
+
+  &.blur {
+    filter: blur(2px);
+    opacity: 0.3;
+  }
+}
+
 #homepage-content {
   & > div {
     margin-top: 10px;
@@ -176,6 +186,18 @@ img.logo {
 
     .right {
       padding-left: 5px;
+    }
+
+    @media @phone {
+      .left,
+      .right {
+        padding-right: 15px;
+        padding-left: 15px;
+      }
+
+      .right {
+        margin-top: 10px;
+      }
     }
   }
 
@@ -221,6 +243,10 @@ img.logo {
     @media (max-width: 1199px) {
       font-size: 180%;
     }
+  }
+
+  @media @tablet {
+    margin-bottom: 30px;
   }
 }
 
@@ -272,6 +298,20 @@ footer {
     padding: 0;
     margin: 0;
     list-style: none;
+  }
+
+  @media @tablet {
+    .row > div:last-child {
+      margin-top: 30px;
+    }
+  }
+
+  @media @phone {
+    .row > div:last-child {
+      margin-top: 15px;
+      text-align: left !important;
+      font-size: 11px;
+    }
   }
 }
 

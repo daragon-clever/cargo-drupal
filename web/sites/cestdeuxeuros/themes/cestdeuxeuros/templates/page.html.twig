@@ -3,7 +3,7 @@
     {% include directory ~ '/partials/header.html.twig' %}
 </div>
 
-<div class="container">
+<div class="container main-content">
     {% if page.highlighted %}
     <div class="row message-site">
         <div class="col">
@@ -25,3 +25,7 @@
         {% endif %}
     </footer>
 </div>
+
+{% if page.popup_newsletter %}
+{{ page.popup_newsletter }}
+{% endif %}

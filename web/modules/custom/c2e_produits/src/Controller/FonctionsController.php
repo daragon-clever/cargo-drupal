@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: abe
- * Date: 28/08/2019
- * Time: 09:46
- */
-
 namespace Drupal\c2e_produits\Controller;
 
 
@@ -25,7 +18,7 @@ class FonctionsController extends ControllerBase
         $this->urlC2E = \Drupal::request()->getSchemeAndHttpHost();
     }
 
-    public function getCsvContent()
+    public function getCsvContent(): array
     {
         $ficCSV = $this->filesPath.'/datacsv/ARTICLES_WEB.CSV';
         $arr = [];
@@ -42,7 +35,7 @@ class FonctionsController extends ControllerBase
         return $arr;
     }
 
-    public function getPictureFileNameOfSku($sku)
+    public function getPictureFileNameOfSku(string $sku): string
     {
         $picturesPath = $this->filesPath.'/dataimages/';
 

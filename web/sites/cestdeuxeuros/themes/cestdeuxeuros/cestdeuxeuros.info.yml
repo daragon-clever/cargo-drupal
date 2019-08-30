@@ -8,12 +8,12 @@ regions:
   highlighted: 'Highlighted'
   content: 'Content'
   footer: 'Footer'
-  txtfooter: 'Zone texte sous le footer'
+  popup_newsletter: 'Popup Newsletter'
 
 libraries:
   - cestdeuxeuros/bootstrap
-  - cestdeuxeuros/slick
   - cestdeuxeuros/global-styling
+  - cestdeuxeuros/fontawesome
 
 stylesheets-remove:
   - core/themes/stable/css/system/components/ajax-progress.module.css

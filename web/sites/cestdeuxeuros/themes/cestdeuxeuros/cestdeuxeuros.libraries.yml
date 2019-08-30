@@ -8,15 +8,19 @@ bootstrap:
   js:
     bootstrap4/js/bootstrap.bundle.min.js: {}
 
-# Plugin Slick
-slick:
+# Font Awesome
+fontawesome:
   js:
-    https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js: { type: external }
+    https://kit.fontawesome.com/1f23e911a7.js : { type: external }
+
+#Google Maps
+google-maps-custom:
+  header: true
+  js:
+    js/google-maps.js: {}
+    https://maps.googleapis.com/maps/api/js?region=fr&key=AIzaSyA99NbhEy_YrJGgfuEEqYNmIbYbUjVXZP0&callback=initMap: { type: external, attributes: { defer: true, async: true} }
   dependencies:
     - core/jquery
-  css:
-    theme:
-      https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css: { type: external }
 
 # Style général
 global-styling:

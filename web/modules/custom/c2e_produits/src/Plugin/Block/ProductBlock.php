@@ -7,6 +7,7 @@ use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Annotation\Translation;
 use Drupal\Core\Block\Annotation\Block;
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Block\BlockPluginInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Session\AccountInterface;
 
@@ -17,7 +18,7 @@ use Drupal\Core\Session\AccountInterface;
  *   category = @Translation("Produits C2E")
  * )
  */
-class ProductBlock extends BlockBase
+class ProductBlock extends BlockBase implements BlockPluginInterface
 {
     /**
      * {@inheritdoc}
@@ -40,18 +41,32 @@ class ProductBlock extends BlockBase
     /**
      * {@inheritdoc}
      */
+    protected function blockAccess(AccountInterface $account)
+    {
+        return AccessResult::allowedIfHasPermission($account, 'access content');
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function blockForm($form, FormStateInterface $form_state)
     {
+        $form = parent::blockForm($form, $form_state);
+
+        $config = $this->getConfiguration();
+
         $form['week'] = [
             '#type' => 'textfield',
             '#title' => $this->t('Week'),
             '#description' => $this->t('S0, S1, S2, S3'),
+            '#default_value' => isset($config['week']) ? $config['week'] : '',
             '#required' => TRUE
         ];
         $form['nbProducts'] = [
             '#type' => 'textfield',
             '#title' => $this->t('Number of visible products'),
             '#description' => $this->t('6 ou 8'),
+            '#default_value' => isset($config['nbProducts']) ? $config['nbProducts'] : '',
             '#required' => TRUE
         ];
 
@@ -63,7 +78,7 @@ class ProductBlock extends BlockBase
      */
     public function blockSubmit($form, FormStateInterface $form_state)
     {
-//        $this->configuration['my_block_settings'] = $form_state->getValue('my_block_settings');
+        parent::blockSubmit($form, $form_state);
         $this->configuration['week'] = $form_state->getValue('week');
         $this->configuration['nbProducts'] = $form_state->getValue('nbProducts');
     }

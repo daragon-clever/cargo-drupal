@@ -82,11 +82,47 @@ img {
 .menu {
   @media @phone {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 72px;
+    right: -100%;
     width: 100%;
     background: white;
-    display: none;
+    padding: 0 15px 15px 15px;
+    transition: all 0.3s ease-in-out;
+    border-bottom: 1px solid #eaeaea;
+
+    &.active {
+      right: 0;
+    }
+
+    nav {
+      ul {
+        li {
+          display: block;
+          line-height: 35px;
+
+          a {
+            border-right: 0;
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.btn-menu-mobile {
+  position: fixed;
+  top: 14px;
+  right: 25px;
+  font-size: 29px;
+
+  i {
+    cursor: pointer;
+    color: @blue;
+
+    &.fa-times {
+      color: @grey
+    }
   }
 }
 
@@ -111,11 +147,32 @@ img {
       background: url("../images/instagram-c2e.png") no-repeat center transparent;
     }
   }
+
+  @media @phone {
+    float: none;
+    padding: 0;
+    position: fixed;
+    top: 15px;
+    right: 60px;
+
+    li {
+      display: inline-block;
+    }
+  }
 }
 
 img.logo {
   width: 52px;
   height: 52px;
+}
+
+.main-content {
+  transition: all 0.3s ease-in-out;
+
+  &.blur {
+    filter: blur(2px);
+    opacity: 0.3;
+  }
 }
 
 #homepage-content {
@@ -129,6 +186,18 @@ img.logo {
 
     .right {
       padding-left: 5px;
+    }
+
+    @media @phone {
+      .left,
+      .right {
+        padding-right: 15px;
+        padding-left: 15px;
+      }
+
+      .right {
+        margin-top: 10px;
+      }
     }
   }
 
@@ -174,6 +243,10 @@ img.logo {
     @media (max-width: 1199px) {
       font-size: 180%;
     }
+  }
+
+  @media @tablet {
+    margin-bottom: 30px;
   }
 }
 
@@ -225,6 +298,20 @@ footer {
     padding: 0;
     margin: 0;
     list-style: none;
+  }
+
+  @media @tablet {
+    .row > div:last-child {
+      margin-top: 30px;
+    }
+  }
+
+  @media @phone {
+    .row > div:last-child {
+      margin-top: 15px;
+      text-align: left !important;
+      font-size: 11px;
+    }
   }
 }
 
@@ -323,7 +410,6 @@ footer {
       font-size: 40px;
     }
 
-
     @media @phone {
       font-size: 30px;
     }
@@ -348,5 +434,295 @@ footer {
 
   .intro p {
     border-bottom: 0;
+  }
+}
+
+#contact {
+  h1 {
+    background: #159ed4;
+    color: white;
+    padding: 15px 0;
+    font-weight: 700;
+    font-size: 60px;
+    margin: 20px 0;
+
+    @media @tablet {
+      font-size: 35px;
+    }
+  }
+
+  h2 {
+    font-weight: 400;
+
+    @media @phone {
+      font-size: 20px;
+    }
+  }
+
+  form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+
+    .form-item {
+      position: relative;
+      margin: 15px 0;
+
+      input, textarea {
+        width: 100%;
+        box-shadow: none;
+        line-height: 35px;
+        border-radius: 5px;
+        display: inline-block;
+        border: 1px solid #d2d2d2;
+        padding: 0 15px;
+        outline: none;
+        font-size: 14px;
+
+        &.form-text {
+          margin: 0;
+        }
+      }
+
+      textarea {
+        margin-bottom: 0;
+        line-height: 1.6;
+
+        @media @phone {
+          margin-top: 5px;
+        }
+      }
+
+      & > label {
+        position: absolute;
+        left: 10px;
+        top: 11px;
+        background: white;
+        padding: 0 5px;
+        transition: all 0.3s;
+        margin:0;
+        line-height: 1;
+        font-size: 14px;
+      }
+
+      @media @phone {
+        &:not(.form-wrapper) {
+          margin: 10px 0;
+        }
+      }
+    }
+
+    input:focus + label,
+    input.js-not-empty + label,
+    textarea.js-not-empty + label,
+    textarea:focus + label {
+      top: -8px;
+      color: #9e9e9e;
+    }
+
+    .form-submit {
+      width: 100%;
+      background: #159ed4;
+      color: white;
+      line-height: 50px;
+      border: none;
+      margin: 8px 0 30px;
+      border-radius: 5px;
+      font-size: 20px;
+      font-weight: 600;
+      cursor: pointer;
+
+      .dimOpacityOnHover(0.8);
+    }
+  }
+}
+
+.g-recaptcha {
+  text-align: center;
+
+  & > div {
+    display: inline-block;
+  }
+}
+
+#modal-newsletter .close {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-size: 30px;
+  z-index: 100;
+}
+
+#newsletterform-wrapper {
+  form {
+    input {
+      max-width: 100%;
+      margin: 10px 0;
+      padding: 5px 15px;
+      display: block;
+      border-radius: 5px;
+      border: 1px solid #d9d9d9;
+
+      &.form-checkbox {
+        display: inline-block;
+        margin: 5px 5px 0 0;
+        vertical-align: top;
+      }
+    }
+  }
+
+  .intro {
+    color: @blue;
+    text-align: center;
+    font-size: 30px;
+    line-height: 1.2;
+    display: block;
+    margin: 20px 0;
+  }
+
+  p, label {
+    color: black;
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  label {
+    display: inline-block;
+    width: calc(100% - 30px);
+  }
+
+  .form-submit {
+    width: 100%;
+    background: #159ed4;
+    color: white;
+    border: none;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 35px;
+    cursor: pointer;
+  }
+
+  .bottom {
+    color: @grey;
+  }
+}
+
+div[role=contentinfo],
+div[role=alert] {
+  border: 1px solid;
+  margin: 30px 0;
+  padding: 15px;
+  text-align: center;
+
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+div[role=alert] {
+  border-color: #b30000;
+  color: #b30000;
+}
+
+#newsletter-page {
+  form {
+    max-width: 500px;
+    margin: 0 auto 30px;
+    text-align: left;
+  }
+}
+
+#page-magasins {
+  margin-bottom: 30px;
+
+  #map-google, #map {
+    height: 100%;
+
+    @media @phone {
+      height: 500px;
+    }
+  }
+
+  .ban {
+    margin-bottom: 30px;
+  }
+
+  #trouvez-un-magasin {
+    margin-bottom: 30px;
+    background: @blue;
+    color: white;
+    padding: 15px;
+    text-align: center;
+
+    span {
+      text-transform: uppercase;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    input {
+      width: 100%;
+      border-radius: 3px;
+      margin: 10px 0 20px;
+      border: none;
+      padding: 7px 12px;
+    }
+
+    #searchButton {
+      background: @blue;
+      color: white;
+      border: 2px solid white;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 18px;
+      padding: 3px 20px;
+    }
+  }
+
+  #shopsList {
+    margin-top: 30px;
+    font-size: 16px;
+
+    h3 {
+      color: @blue;
+      font-weight: 600;
+      font-size: 22px;
+
+      &.horaires {
+        @media @phone {
+          margin-top: 15px;
+        }
+      }
+    }
+
+    p {
+      margin: 0;
+    }
+
+    span {
+      display: block;
+    }
+
+    i {
+      color: @blue;
+      margin-right: 10px;
+    }
+  }
+}
+
+.cms-page {
+  h1, h2, h3 {
+    color: @blue;
+    padding: 0;
+    margin: 15px 0;
+  }
+}
+
+ul.plandusite {
+  a {
+    color: @blue;
+    font-weight: 600;
   }
 }

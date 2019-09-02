@@ -19,6 +19,9 @@ class NewsletterController
             case "comptoirdefamille":
                 $myForm = \Drupal::formBuilder()->getForm(CompanyForm\ComptoirDeFamilleForm::class);
                 break;
+            case "c'estdeuxeuros":
+                $myForm = \Drupal::formBuilder()->getForm(CompanyForm\CestDeuxEurosForm::class);
+                break;
         }
         if (isset($myForm)) {
             $build['#form'] = $myForm;

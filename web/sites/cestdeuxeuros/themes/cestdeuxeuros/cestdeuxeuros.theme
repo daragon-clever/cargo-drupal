@@ -1,0 +1,16 @@
+<?php
+
+function cestdeuxeuros_page_attachments_alter(array &$attachments) {
+    foreach ($attachments['#attached']['html_head'] as $key => $attachment) {
+        if ($attachment[1] == 'system_meta_generator') {
+            unset($attachments['#attached']['html_head'][$key]);
+        }
+    }
+}
+
+function cestdeuxeuros_preprocess_node(&$variables) {
+    $node = $variables['node'];
+    if ($node->getType() == 'page_magasins') {
+        $variables['#attached']['library'][] = 'cestdeuxeuros/google-maps-custom';
+    }
+}

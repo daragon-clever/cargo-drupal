@@ -1,0 +1,31 @@
+<div class="header-wrapper">
+    <!-- Header -->
+    {% include directory ~ '/partials/header.html.twig' %}
+</div>
+
+<div class="container main-content">
+    {% if page.highlighted %}
+    <div class="row message-site">
+        <div class="col">
+            {{ page.highlighted }}
+        </div>
+    </div>
+    {% endif %}
+    {% if page.content %}
+    <div class="row">
+        <div class="col">
+            {{ page.content }}
+        </div>
+    </div>
+    {% endif %}
+
+    <footer>
+        {% if page.footer %}
+        {{ page.footer }}
+        {% endif %}
+    </footer>
+</div>
+
+{% if page.popup_newsletter %}
+{{ page.popup_newsletter }}
+{% endif %}

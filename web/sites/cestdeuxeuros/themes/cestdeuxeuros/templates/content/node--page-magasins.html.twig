@@ -1,0 +1,46 @@
+<div id="page-magasins">
+
+    <div class="row">
+        <div class="col">
+            <img class="ban" src="/sites/cestdeuxeuros/themes/cestdeuxeuros/images/cestdeuxeuros-nos-boutiques-pres-de-chez-vous.png" alt="C'est deux euros" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-md-8 col-lg-9 order-2 order-lg-1">
+            <div id="map-google">
+                <div id="map"></div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-4 col-lg-3 order-1 order-lg-2">
+            <div id="trouvez-un-magasin">
+                <span>Trouver un magasin</span>
+                <form id="formMap" onsubmit="searchLocations(); return(false);" method="post" action="#">
+                    <input type="text" name="city" id="addressInput" placeholder="Code postal, ville"/>
+                    <select id="locationSelect" style="display: none"></select>
+                    <input type="hidden" id="radiusSelect" value="150" />
+                </form>
+                <button type="button" id="searchButton">Recherchez</button>
+            </div>
+
+            <div class="d-none d-lg-block">
+                <div id="place-iframe-facebook">
+                    <iframe id="iframe-facebook" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fcestdeuxeuros%2F&tabs=timeline&width=270&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"  width="100%" height="500" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div id="infos-mags">
+                <div id="shopsList">
+                    {#ICI, affichage dynamique par le fichier google-maps.js (fonction mapShops()) des infos magasins en
+                    fonction de la recherche#}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

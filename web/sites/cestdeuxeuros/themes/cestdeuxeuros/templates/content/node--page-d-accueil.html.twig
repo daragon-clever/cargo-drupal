@@ -1,0 +1,42 @@
+<div id="homepage-content">
+    <div class="row">
+        <div class="col-12">
+            {{ content.field_hp_ban_principale }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-md-6 left">
+            <a href="{{ content.field_hp_links.0['#url'] }}" title="{{ node.field_hp_img_01[0].alt }}">
+                {{ content.field_hp_img_01[0] }}
+            </a>
+        </div>
+        <div class="col-12 col-md-6 right">
+            <a href="{{ content.field_hp_links.1['#url'] }}" title="{{ node.field_hp_img_01[1].alt }}">
+                {{ content.field_hp_img_01[1] }}
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <a href="{{ content.field_hp_links.2['#url'] }}" title="{{ node.field_hp_img_01[2].alt }}">
+                {{ content.field_hp_img_01[2] }}
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-lg-6 texts order-2 order-lg-1">
+            {{ content.field_hp_txts }}
+        </div>
+        <div class="col-12 col-lg-6 order-1 order-lg-2">
+            <div id="homepage-products">
+                <div class="title">
+                    Les <b>Offres</b> du moment
+                </div>
+                {{ content.field_block_produits_accueil }}
+            </div>
+        </div>
+    </div>
+</div>

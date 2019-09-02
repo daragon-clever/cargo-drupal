@@ -1,0 +1,5 @@
+name: Storelocator
+description: Effectuer un appel à l'API interne pour récupérer les magasins de la société
+core: 8.x
+package: Custom
+type: module

@@ -72,7 +72,7 @@ class YliadesForm extends FormBase
             $form_state->setError($form['mail'], $this->t('Email is malformed'));
         }
 
-        $brands = $brands = $form_state->getValue('marques');
+        $brands = $form_state->getValue('marques');
         if (empty(array_filter($brands))) {
             $form_state->setErrorByName('marques', $this->t('Brands is required'));
         }

@@ -15,6 +15,9 @@ function newsletter_schema()
         case "comptoirdefamille":
             $base = new Company\ComptoirDeFamilleController();
             break;
+        case "c'estdeuxeuros":
+            $base = new Company\CestDeuxEurosController();
+            break;
     }
 
     if (isset($base)) {

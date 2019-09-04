@@ -11,7 +11,7 @@
 {#A mettre dans le less#}
 
 {% set url = url('<current>') %}
-{% if 'futurs-arrivages' in url|render|render %}
+{% if 'arrivages/futur_arrivage ' in url|render|render %}
     {% if label %}
         <div class="title-week">{{ label }}</div>
     {% endif %}

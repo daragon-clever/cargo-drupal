@@ -1,54 +1,37 @@
 {% set url = url('<current>') %}
-        {% if nbItem == 6 %}
-            {% set classSet = "col-6 col-md-4 img-wrapper" %}
-        {% else %}
-            {% set classSet = "col-6 col-md-3 img-wrapper" %}
-        {% endif %}
-{#{% if 'arrivages/futur_arrivage' in url|render|render %}#}
-    {#<div class="row products">#}
-        {#{% for skuProduct, imgProduct in products %}#}
-            {#<div class="{{ classSet }}">#}
-                {#<p>{{ skuProduct }}</p>#}
-                {#<div class="inner">#}
-                    {#{% if not imgProduct %}#}
-                        {#<img src="" alt=""/>#}
-                    {#{% else %}#}
-                        {#<img src="/sites/cestdeuxeuros/files/dataimages/{{ imgProduct }}" alt="{{ skuProduct }}"/>#}
-                    {#{% endif %}#}
-                {#</div>#}
-            {#</div>#}
-        {#{% endfor %}#}
-    {#</div>#}
-{#{% else %}#}
-    <div class="row products">
-        {% set count = 0 %}
-        {% for skuProduct, imgProduct in products %}
-            {% set count = count + 1 %}
+{% if nbItem == 6 %}
+    {% set classSet = "col-6 col-md-4 img-wrapper" %}
+{% else %}
+    {% set classSet = "col-6 col-md-3 img-wrapper" %}
+{% endif %}
+<div class="row products">
+    {% set count = 0 %}
+    {% for skuProduct, imgProduct in products %}
+        {% set count = count + 1 %}
+        <div class="{{ classSet }}">
+            <div class="inner">
+                {% if not imgProduct %}
+                    <img src="" alt=""/>
+                    {% else %}
+                    <img src="/sites/cestdeuxeuros/files/dataimages/{{ imgProduct }}" alt="{{ skuProduct }}"/>
+                {% endif %}
+                {% if 'arrivages/futur_arrivage' not in url|render|render %}
+                <span>2<small>€</small></span>
+                {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+    {% if count < 8 %}
+        {% set nbEmpty = 8 - count %}
+        {% for i in 1..nbEmpty %}
             <div class="{{ classSet }}">
                 <div class="inner">
-                    {% if not imgProduct %}
-                        <img src="" alt=""/>
-                        {% else %}
-                        <img src="/sites/cestdeuxeuros/files/dataimages/{{ imgProduct }}" alt="{{ skuProduct }}"/>
-                    {% endif %}
+                    <img src="" alt=""/>
                     {% if 'arrivages/futur_arrivage' not in url|render|render %}
-                    <span>2<small>€</small></span>
+                        <span>2<small>€</small></span>
                     {% endif %}
                 </div>
             </div>
         {% endfor %}
-        {% if count < 8 %}
-            {% set nbEmpty = 8 - count %}
-            {% for i in 1..nbEmpty %}
-                <div class="{{ classSet }}">
-                    <div class="inner">
-                        <img src="" alt=""/>
-                        {% if 'arrivages/futur_arrivage' not in url|render|render %}
-                            <span>2<small>€</small></span>
-                        {% endif %}
-                    </div>
-                </div>
-            {% endfor %}
-        {% endif %}
-    </div>
-{#{% endif %}#}
+    {% endif %}
+</div>

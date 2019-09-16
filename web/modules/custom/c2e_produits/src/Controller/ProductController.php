@@ -9,7 +9,7 @@ class ProductController extends FonctionsController
 
     private $error = "";
 
-    public function displayProducts(string $week, int $nbProducts): array
+    public function displayProducts(string $week, int $nbProducts): ?array
     {
         $products = $this->getCsvContent();
         $productsOfTheWeek = $products[$week];

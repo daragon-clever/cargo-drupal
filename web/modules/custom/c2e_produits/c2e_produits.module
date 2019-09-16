@@ -1,5 +1,6 @@
 <?php
 use \Drupal\c2e_produits\Controller;
+use \Drupal\Component\Utility\Html;
 
 function c2e_produits_theme($existing, $type, $theme, $path) {
     return [

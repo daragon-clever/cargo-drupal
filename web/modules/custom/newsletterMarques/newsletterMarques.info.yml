@@ -1,5 +1,0 @@
-name: Newsletter Marques
-description: Ajouter des personnes à une liste de diffusion personnalisée
-core: 8.x
-package: Custom
-type: module

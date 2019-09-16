@@ -43,7 +43,9 @@
                 <div class="{{ classSet }}">
                     <div class="inner">
                         <img src="" alt=""/>
-                        <span>2<small>€</small></span>
+                        {% if 'arrivages/futur_arrivage' not in url|render|render %}
+                            <span>2<small>€</small></span>
+                        {% endif %}
                     </div>
                 </div>
             {% endfor %}

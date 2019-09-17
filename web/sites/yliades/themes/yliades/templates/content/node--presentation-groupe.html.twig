@@ -50,16 +50,18 @@
         <div class="row portrait-gallery">
             <div class="col-12">
                 <div class="row big-portrait">
-                    {% for field in content.field_ajout_personne['#items'] %}
-                        {% if (field.entity.field_image_portrait) %}
-                            <div class="portrait col-3">
-                                <img src="{{ file_url(field.entity.field_image_portrait.entity.uri.value) }}" alt="{{ field.entity.field_image_portrait.alt }}" />
-                                <div class="bulle">
-                                    <div class="name">{{ field.entity.field_prenom.value }}</div>
-                                    <div class="job">{{ field.entity.field_metier.value }}</div>
-                                    <button>{{ 'See the interview'|trans }}</button>
+                    {% for key,field in content.field_ajout_personne %}
+                        {% if key is same as(0) or key > 0 %}
+                            {% if (field['#paragraph'].field_image_portrait) %}
+                                <div class="portrait col-3">
+                                    <img src="{{ file_url(field['#paragraph'].field_image_portrait.entity.uri.value) }}" alt="{{ field['#paragraph'].field_image_portrait.alt }}" />
+                                    <div class="bulle">
+                                        <div class="name">{{ field['#paragraph'].field_prenom.value }}</div>
+                                        <div class="job">{{ field['#paragraph'].field_metier.value }}</div>
+                                        <button>{{ 'See the interview'|trans }}</button>
+                                    </div>
                                 </div>
-                            </div>
+                            {% endif %}
                         {% endif %}
                     {% endfor %}
                 </div>

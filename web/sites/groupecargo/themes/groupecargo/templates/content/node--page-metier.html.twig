@@ -5,12 +5,15 @@
                 <div class="inner">
                     <h2>{{ label }}</h2>
                     <ul>
-                        {% for field in content.field_jobs_paragraph['#items'] %}
-                            <li>
-                                <a id="js-link-{{ field.entity.field_job_id.value }}" href="" alt="{{ field.entity.field_job_title.value }}">
-                                    {{ field.entity.field_job_title.value }}
-                                </a>
-                            </li>
+                        {% for key,field in content.field_jobs_paragraph %}
+                            {% if key is same as(0) or key > 0 %}
+                                <li>
+                                    <a id="js-link-{{ field['#paragraph'].field_job_id.value }}" href="" alt="{{ field['#paragraph'].field_job_title.value }}">
+                                        {{ field['#paragraph'].field_job_title.value }}
+                                    </a>
+                                </li>
+                            {% endif %}
+
                         {% endfor %}
                     </ul>
                 </div>

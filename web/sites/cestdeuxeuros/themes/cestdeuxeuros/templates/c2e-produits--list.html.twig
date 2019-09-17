@@ -21,8 +21,8 @@
             </div>
         </div>
     {% endfor %}
-    {% if count < 8 %}
-        {% set nbEmpty = 8 - count %}
+    {% if count < nbItem %}
+        {% set nbEmpty = nbItem - count %}
         {% for i in 1..nbEmpty %}
             <div class="{{ classSet }}">
                 <div class="inner">

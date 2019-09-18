@@ -100,7 +100,7 @@ abstract class AbstractCompanyController extends ControllerBase
             $action = self::ACTION_UPDATE;
         }
 
-//        $this->savePeopleInActito($arrayData);
+        $this->savePeopleInActito($arrayData);
 
         return $this->displayMsg($action);
     }

@@ -1,0 +1,28 @@
+/*
+
+---
+name: c-text
+category: 01-atoms
+---
+ 
+``` types.html
+  <p class="c-text-regular">c-text-regular</p>
+  <p class="c-text-semi-bold">c-text-semi-bold</p>
+  <p class="c-text-bold">c-text-bold</p>
+```
+
+*/
+.c-text-regular {
+  font-family: 'Titillium';
+  color: $black;
+}
+
+.c-text-semi-bold {
+  font-family: 'Titillium-semi-bold';
+  color: $black;
+}
+
+.c-text-bold {
+  font-family: 'Titillium-bold';
+  color: $black;
+}

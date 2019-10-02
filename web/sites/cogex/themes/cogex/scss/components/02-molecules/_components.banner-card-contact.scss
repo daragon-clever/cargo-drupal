@@ -1,0 +1,87 @@
+/*
+
+---
+name: c-banner-card-contact
+category: 02-molecules
+---
+ 
+``` types.html
+<div style="background-color: #D6D6D6; padding: 2rem;">
+  <div class="c-banner-card-contact">
+    <p class="c-banner-card-contact__title">Title</p>
+    <p class="c-banner-card-contact__content">
+      Content
+    </p>
+  </div>
+</div>
+```
+
+*/
+.c-banner-card-contact {
+  position: relative;
+  width: 54rem;
+  padding: 7rem;
+  padding-bottom: 5.7rem;
+  background-color: $grey-darkest;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 77%;
+    transform: translate(-10px, 10px);
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid $grey-darkest;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 4rem;
+    height: 0.1rem;
+    background-color: $white;
+    top: 5.5rem;
+    left: 7rem;
+  }
+
+  &__title {
+    margin: 0;
+    @extend .c-text-bold;
+    color: $white;
+    font-size: 2.1rem;
+    line-height: 1.33;
+    text-transform: uppercase;
+  }
+
+  &__content {
+    margin: 0;
+    margin-top: 1rem;
+    @extend .c-text-semi-bold;
+    color: $white;
+    font-size: 1.4rem;
+    line-height: 1.71;
+  }
+
+  // Tablet/mobile version.
+  @media only screen and (max-width: $bp-tablet) {
+    width: 100%;
+    padding: 0 1.5rem;
+    padding-top: 7rem;
+    padding-bottom: 4rem;
+
+    &::before {
+      display: none;
+    }
+
+    &::after {
+      left: 1.5rem;
+      width: 5rem;
+    }
+  }
+
+}

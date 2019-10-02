@@ -1,0 +1,65 @@
+/*
+
+---
+name: c-page-banner-products
+category: 02-molecules
+---
+ 
+``` types.html
+<div class="c-page-banner-products">
+
+  <div class="c-banner-card-products">
+    <p class="c-banner-card-products__title">Title</p>
+    <p class="c-banner-card-products__content">
+      Content
+    </p>
+    <div class="c-banner-card-products__button-container">
+      <button class="c-button c-button--secondary">Button</button>
+    </div>
+  </div>
+
+</div>
+```
+
+*/
+.c-page-banner-products {
+
+  &__content-wrapper {
+    position: relative;
+    padding-top: 5.9rem;
+    padding-bottom: 5.9rem;
+    padding-left: 13.9rem;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 28.6rem;
+      height: 18.3rem;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: $primary;
+    }
+
+  }
+
+  // Tablet/mobile version.
+  @media only screen and (max-width: $bp-tablet) {
+    box-shadow: 0 26px 25px 10px rgba(0,0,0,0.1);
+
+    &__content-wrapper {
+      padding: 0;
+
+      &::before {
+        display: none;
+      }
+    }
+
+    .c-button {
+      background-color: $grey-darkest;
+      color: $white;
+    }
+
+  }
+
+}

@@ -1,0 +1,85 @@
+{#
+/**
+ * @file
+ * Theme override to display a menu.
+ *
+ * Available variables:
+ * - menu_name: The machine name of the menu.
+ * - items: A nested list of menu items. Each menu item contains:
+ *   - attributes: HTML attributes for the menu item.
+ *   - below: The menu item child items.
+ *   - title: The menu link title.
+ *   - url: The menu link url, instance of \Drupal\Core\Url
+ *   - localized_options: Menu link localized options.
+ *   - is_expanded: TRUE if the link has visible children within the current
+ *     menu tree.
+ *   - is_collapsed: TRUE if the link has children within the current menu tree
+ *     that are not currently visible.
+ *   - in_active_trail: TRUE if the link is in the active trail.
+ */
+#}
+{% import _self as menus %}
+
+{#
+  We call a macro which calls itself to render the full tree.
+  @see https://twig.symfony.com/doc/1.x/tags/macro.html
+#}
+
+{{ menus.menu_links(items, attributes, 0) }}
+
+{% macro menu_links(items, attributes, menu_level) %}
+
+    {% import _self as menus %}
+
+    {% if menu_level == 0 %}
+
+        {% for item in items %}
+
+            <div class="c-footer__info-section">
+
+                {% if item.below %}
+
+                    <button class="c-footer__section-button">
+
+                        {% if item.icon_url is not null %}
+                            <img src="{{ item.icon_url }}" class="c-footer__section-logo"/>
+                        {% endif %}
+
+                        {{ item.title }}
+                    </button>
+
+                    {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+
+                {% else %}
+
+                    <a href="{{ item.url }}" class="c-footer__section-link">
+
+                        {% if item.icon_url is not null %}
+                            <img src="{{ item.icon_url }}" class="c-footer__section-logo"/>
+                        {% endif %}
+
+                        {{ item.title }}
+                    </a>
+
+                {% endif %}
+
+            </div>
+
+            {% if loop.last == false %}
+                <div class="c-footer__info-separator"></div>
+            {% endif %}
+
+        {% endfor %}
+
+    {% else %}
+
+        <ul class="c-footer__info-subsection-list">
+
+            {% for item in items %}
+                <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+            {% endfor %}
+
+        </ul>
+
+    {% endif %}
+{% endmacro %}

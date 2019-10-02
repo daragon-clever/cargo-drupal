@@ -1,0 +1,36 @@
+/* ==========================================================================
+   #LIST
+   ========================================================================== */
+
+.layout-container {
+  ol {
+    padding-left: 1.5rem;
+
+    li {
+      margin-bottom: 1rem;
+    }
+  }
+
+  ul {
+    padding-left: 1.5rem;
+
+    li {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+dl {
+  dt {
+    &::after {
+      margin: 0 0.5rem;
+      content: ':';
+    }
+
+    display: inline-block;
+  }
+
+  dd {
+    margin: 0;
+  }
+}

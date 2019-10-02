@@ -1,0 +1,18 @@
+/* ==========================================================================
+   FOCUS
+   ========================================================================== */
+
+/*
+ * Styling the outline
+ * http://a11yproject.com/posts/never-remove-css-outlines/
+ */
+*:focus {
+  outline: $outline-width $outline-style $grey-darker;
+}
+
+input[type=text]:focus,
+input[type=search]:focus,
+fieldset:focus {
+  border: 0.1rem solid $grey-darker;
+  outline: none;
+}

@@ -1,0 +1,117 @@
+/*
+
+---
+name: c-page-banner-home
+category: 02-molecules
+---
+ 
+``` types.html
+<div class="c-page-banner-home">
+
+  <div class="c-banner-card-home">
+    <p class="c-banner-card-home__title">Title</p>
+    <p class="c-banner-card-home__content">
+      Content
+    </p>
+    <div class="c-banner-card-home__button-container">
+      <button class="c-button c-button--primary">Button</button>
+    </div>
+  </div>
+
+</div>
+```
+
+*/
+.c-page-banner-home {
+  position: relative;
+  width: 100%;
+  min-height: 687px;
+  z-index: 0;
+
+  &__mask {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: url("../images/bg-mask.png") no-repeat center transparent;
+    z-index: 10;
+    background-size: cover;
+  }
+
+  &__picture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/img-header-01.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+  }
+
+  &__picture--active {
+    opacity: 1;
+  }
+
+  .c-page-banner-home__picture--1 {
+    background-image: url("../images/img-header-01.png");
+  }
+
+  .c-page-banner-home__picture--2 {
+    background-image: url("../images/img-header-02.png");
+  }
+
+  .c-page-banner-home__picture--3 {
+    background-image: url("../images/img-nousrejoindre.png");
+  }
+
+  .c-banner-card-home {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 100;
+  }
+
+  // Tablet/mobile version.
+  @media only screen and (max-width: $bp-tablet) {
+    min-height: initial;
+
+    &__mask {
+      background-position: top left;
+      background-size: contain;
+    }
+
+    .c-banner-card-home {
+      position: relative;
+      transform: none;
+    }
+
+    .c-page-banner-home__picture {
+      position: static;
+      width: 100%;
+    }
+
+    .c-page-banner-home__picture--active {
+      min-height: 40rem;
+    }
+    
+  }
+
+  // Mobile version.
+  @media only screen and (max-width: $bp-mobile) {
+    .c-page-banner-home__picture--active {
+      min-height: 20rem;
+    }
+  }
+
+
+}

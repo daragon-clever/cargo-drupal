@@ -1,0 +1,50 @@
+/* ==========================================================================
+   #PAGE
+   ========================================================================== */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ *
+ * @see https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css
+ *
+ * The font size reset is also used.
+ * @see https://blog.goetter.fr/2016/07/05/lastuce-du-font-size-62-5-oui-non-ou-ca-depend/
+ *
+ * 1. Force scrollbars to always be visible to prevent awkward ‘jumps’ when
+ *    navigating between pages that do/do not have enough content to produce
+ *    scrollbars naturally.
+ * 2. Ensure the page always fills at least the entire height of the viewport.
+ * overflow-y: scroll; /* [2]
+ */
+html {
+  min-height: 100%; /* [1] */
+
+  color: $global-font-color;
+  font-family: $font-family-main;
+  /* stylelint-disable unit-whitelist */
+  font-size: 0.625em; /* fallback IE8+ */
+  font-size: calc(1em * 0.625); /* IE9-IE11 math fixing. See http://bit.ly/1g4X0bX */
+  /* stylelint-enable */
+  line-height: $line-height-md;
+}
+
+/*
+ * Set the default font-size to inherit.
+ * @see https://blog.goetter.fr/2016/07/05/lastuce-du-font-size-62-5-oui-non-ou-ca-depend/
+ */
+body {
+  margin: 0;
+  font-size: $font-size-md;
+  overflow-x: hidden;
+
+  &.overflow-hidden {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+  }
+}

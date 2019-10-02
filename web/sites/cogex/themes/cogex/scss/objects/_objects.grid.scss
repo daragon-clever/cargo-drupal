@@ -1,0 +1,97 @@
+/* ==========================================================================
+  GRID
+  ========================================================================== */
+
+$grid-gutter: 2rem;
+
+/**
+ * Basic grid object
+ *
+ * By default the child items are display with the row direction, wrapped,
+ * and positioned with default flex options.
+ */
+.o-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -$grid-gutter / 2;
+
+  > * {
+    padding: $grid-gutter / 2;
+  }
+
+  /* Gutter variants
+   ========================================================================== */
+
+  &--no-gutter {
+    margin: 0;
+
+    > * {
+      padding: 0;
+    }
+  }
+
+  &--gutter-xl {
+    margin: -$grid-gutter;
+
+    > * {
+      padding: $grid-gutter;
+    }
+  }
+
+  /* Position variants
+   ========================================================================== */
+
+  &--center {
+    align-items: center;
+    justify-content: center;
+  }
+
+  &--center-vertically {
+    align-items: center;
+  }
+
+  &--center-horizontally {
+    justify-content: center;
+  }
+
+  &--space-between {
+    justify-content: space-between;
+  }
+
+  &--space-around {
+    justify-content: space-around;
+  }
+
+  /* Order variants
+   ========================================================================== */
+
+  /* Avoid element in th grid to wrap */
+  &--nowrap {
+    flex-wrap: nowrap;
+  }
+
+  /* Reverse the order of the item of the list. */
+  &--reverse {
+    flex-direction: row-reverse;
+  }
+
+  /* Put this on a child itemto set set him in first position */
+  &--item-first {
+    order: -1;
+  }
+
+  /* Put this on a child itemto set set him in last position */
+  &--item-last {
+    order: 1;
+  }
+
+  /* Item height variants
+   ========================================================================== */
+
+  /* Stretch vertically item so it give items equal heights. */
+  &--equal-height {
+    > * {
+      display: flex;
+    }
+  }
+}

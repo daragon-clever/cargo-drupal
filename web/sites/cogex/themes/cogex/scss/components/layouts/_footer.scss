@@ -1,0 +1,251 @@
+footer {
+  
+}
+
+.c-footer {
+  //box-shadow: inset 0 0 4rem 0.1rem rgba(0,0,0,0.1);
+  box-shadow: inset 0px 12px 10px -10px rgba(0,0,0,0.1);
+
+
+  // Tablet/mobile version.
+  @media only screen and (max-width: $bp-tablet) {
+
+    // Kill the bootstrap container.
+    .container {
+      max-width: 100%;
+      width: 100%
+    }
+
+    .c-footer__logos-container {
+      border-bottom: none;
+    }
+
+    .c-footer__logos-wrapper {
+      margin-left: -15px;
+      margin-right: -15px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    .c-footer__company-logo {
+
+      &:first-child {
+        margin-left: 15px;
+      }
+
+      &:last-child {
+        margin-right: 15px;
+      }
+    }
+
+    .c-footer__infos-container {
+      display: block;
+      padding: 0;
+      margin-left: -15px;
+      margin-right: -15px;
+    }
+
+    .c-footer__info-section {
+      border-top: 0.1rem solid $grey-lightest;
+    }
+
+    .c-footer__section-link {
+      display: block;
+      padding: 1.8rem 1.5rem;
+      position: relative;
+      font-size: 1.4rem;
+
+      &::after {
+        font-family: 'Font Awesome 5 Free';
+        content: '\f054';
+        color: $grey-darkest;
+        font-weight: 600;
+        font-size: 1.1rem;
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 1.5rem;
+        transform: translateY(-50%);
+      }
+      
+    }
+
+    .c-footer__section-button {
+      display: block;
+      width: 100%;
+      padding: 1.8rem 1.5rem;
+      text-align: left;
+      position: relative;
+      font-size: 1.4rem;
+
+      &::after {
+        position: absolute;
+        right: 1.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.1rem;
+      }
+    }
+
+    .c-footer__info-separator {
+      display: none;
+    }
+
+    .c-footer__info-subsection-list {
+      margin-left: 2.4rem;
+    }
+
+  }
+  
+  &__logos-container {
+    border-bottom: 0.1rem solid $grey-lightest;
+  }
+
+  &__logos-wrapper {
+    text-align: center;
+    padding: 2.1rem 0;
+  }
+
+  &__logo-1 {
+    width: 8.7rem;
+    height: auto;
+  }
+
+  &__logo-2 {
+    width: 8.3rem;
+    height: auto;
+  }
+
+  &__logo-3 {
+    width: 10.1rem;
+    height: auto;
+  }
+
+  &__logo-4 {
+    width: 6.8rem;
+    height: auto;
+  }
+
+  &__logo-5 {
+    width: 10.4rem;
+    height: auto;
+  }
+
+  &__company-logo {
+   
+    & + .c-footer__company-logo {
+      margin-left: 7rem;
+    }
+    
+  }
+
+  &__infos-container {
+    padding: 2.3rem 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__info-section {
+
+  }
+
+  &__section-button {
+    @extend .c-text-semi-bold;
+    background: none;
+    border: none;
+    outline: 0;
+    font-size: 1.4rem;
+
+    &::after {
+      font-family: 'Font Awesome 5 Free';
+      content: '\f078';
+      color: $grey-darkest;
+      font-weight: 600;
+      font-size: 1rem;
+      margin-left: 1rem;
+      vertical-align: middle;
+    }
+
+    &:hover {
+      color: $primary;
+
+      &::after {
+        color: $primary;
+      }
+    }
+
+    &--active {
+      &::after {
+        content: '\f077';
+      }
+    }
+
+  }
+
+  &__info-subsection-list {
+    display: none;
+    margin-left: 0.9rem;
+
+    // Tablet/mobile version.
+    @media only screen and (max-width: $bp-tablet) {
+      display: block;
+      max-height: 0;
+      transition: max-height 0.3s ease-out;
+      overflow: hidden;
+
+      margin-top: 0;
+      margin-bottom: 0;
+
+      li:last-child {
+        margin-bottom: 1.8rem;
+      }
+    }
+
+    &--visible {
+      display: block;
+      max-height: 100vh;
+      transition: max-height 0.5s ease-in;
+    }
+
+    li {
+      color: black;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $primary;
+      }
+
+      a {
+        color: black;
+        text-decoration: none;
+
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  &__section-link {
+    @extend .c-text-semi-bold;
+    text-decoration: none;
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  &__section-logo {
+    width: 2.1rem;
+    height: auto;
+    display: inline-block;
+    vertical-align: bottom;
+    margin-right: 0.7rem;
+  }
+
+  &__info-separator {
+    height: 1.6rem;
+    width: 0.1rem;
+    background-color: $grey-lightest; 
+  }
+
+}

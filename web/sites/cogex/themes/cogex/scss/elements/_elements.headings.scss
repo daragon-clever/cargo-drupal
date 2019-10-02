@@ -1,0 +1,63 @@
+/* ==========================================================================
+ HEADINGS
+   ========================================================================== */
+
+h1, .h1-like {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
+  color: $primary;
+  font-family: $global-font-family;
+  font-size: $font-size-h1;
+  font-weight: normal;
+  line-height: $line-height-sm;
+  text-transform: uppercase;
+
+  @include mq($until: tablet) {
+    font-size: $font-size-h1-sm;
+  }
+}
+
+h2, .h2-like {
+  margin: 4rem 0 2rem;
+
+  font-family: $global-font-family;
+  font-size: $font-size-h2;
+  font-weight: normal;
+
+  @include mq($until: tablet) {
+    font-size: 2.2rem;
+  }
+}
+
+h3, .h3-like {
+  margin: 4rem 0 2rem;
+
+  font-family: $global-font-family;
+  font-size: $font-size-h3;
+  font-weight: normal;
+}
+
+h4, .h4-like {
+  margin: 4rem 0 2rem;
+
+  font-family: $global-font-family;
+  font-size: $font-size-h4;
+  font-weight: normal;
+}
+
+h5, .h5-like {
+  margin: 2rem 0;
+
+  font-family: $global-font-family;
+  font-size: $font-size-h5;
+  font-weight: normal;
+}
+
+h6, .h6-like {
+  margin: 2rem 0;
+
+  font-family: $global-font-family;
+  font-size: $font-size-h6;
+  font-weight: normal;
+}

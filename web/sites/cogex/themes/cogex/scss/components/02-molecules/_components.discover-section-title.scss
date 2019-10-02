@@ -1,0 +1,89 @@
+/*
+
+---
+name: c-discover-section-title
+category: 02-molecules
+---
+ 
+``` types.html
+<div class="c-discover-section-title">
+  <div class="c-discover-section-title__content">
+    <p class="c-discover-section-title__title">Title</p>
+  </div>
+</div>
+```
+
+*/
+.c-discover-section-title {
+  display: flex;
+  justify-content: flex-end;
+  z-index: 1;
+  margin-bottom: -3rem;
+
+  &__content {
+    width: fit-content;
+    margin-top: 8.4rem;
+    padding-top: 4.1rem;
+    padding-bottom: 2.1rem;
+    padding-left: 4.1rem;
+    padding-right: 4.1rem;
+    background-color: $black;
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 2.5rem;
+      left: 4rem;
+      height: 0.1rem;
+      width: 5rem;
+      background-color: $white;
+    }
+  
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-10px, 10px);
+      width: 0; 
+      height: 0; 
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 10px solid $black;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    @extend .c-text-bold;
+    font-size: 2.1rem;
+    line-height: 1.57;
+    text-transform: uppercase;
+    color: $white;
+  }
+
+  // Tablet/mobile version.
+  @media only screen and (max-width: $bp-tablet) {
+    margin-bottom: 0;
+
+    &__content {
+      margin-top: 5rem;
+      padding-top: 3.7rem;
+      padding-left: 3.6rem;
+      padding-right: 3.6rem;
+
+      &::before {
+        left: 3.6rem;
+      }
+    }
+
+    &__title {
+      font-size: 1.8rem;
+    }
+
+  }
+
+}

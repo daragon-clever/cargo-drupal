@@ -1,0 +1,48 @@
+.c-mobile-slick-slider {
+
+  // Tablet version.
+  @media only screen and (max-width: $bp-tablet) {
+    width: 70%;
+  }
+  // Mobile version.
+  @media only screen and (max-width: $bp-mobile) {
+    width: 100%;
+  }
+  
+  margin: auto;
+  margin-top: 2.5rem;
+
+  &__slide {
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: auto;
+      opacity: 0.25;
+      transition: opacity 0.3s ease-in-out;
+      will-change: opacity;
+    }
+
+  }
+
+  .slick-slide {
+    margin: 0 0.2rem;
+    transform: scale(0.9);
+  }
+
+  .slick-current {
+    transition: all 0.3s ease-in-out;
+    transform: scale(1);
+    will-change: transform;
+
+    img {
+      opacity: 1;
+    }
+  }
+
+  .slick-list {
+    margin: 0 -0.2rem;
+  }
+
+}

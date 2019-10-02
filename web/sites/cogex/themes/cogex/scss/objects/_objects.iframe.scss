@@ -1,0 +1,26 @@
+/* ==========================================================================
+  IFRAME
+  ========================================================================== */
+
+/**
+ * Iframe object
+ *
+ * Used to add responsivity to iframe content with a aspect ratio of 16/9.
+ * Add a wrapper outside the iframe with the class o-iframe.
+ * ex: <div class="o-iframe">
+ *        <iframe src="..." frameborder="0" allowfullscreen></iframe>
+ *     </div>
+ */
+.o-iframe {
+  position: relative;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 */
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

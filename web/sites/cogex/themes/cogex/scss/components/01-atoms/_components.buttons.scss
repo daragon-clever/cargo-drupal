@@ -1,0 +1,90 @@
+/*
+
+---
+name: c-button
+category: 01-atoms
+---
+ 
+``` types.html
+  <button class="c-button c-button--primary">.c-button.c-button--primary</button>
+  <button class="c-button c-button--secondary">.c-button.c-button--secondary</button>
+```
+
+*/
+.c-button {
+  display: inline-block;
+  padding: 0.8rem 7.3rem;
+  @extend .c-text-bold;  
+  font-size: 1.4rem;
+  line-height: 1.85;
+  background-color: $grey-lightest;
+  color: $black;
+  border: none;
+  outline: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: all ease-in-out 0.3s;
+
+  &--primary {
+    background-color: $primary;
+    color: $white;
+    border: 0.1rem solid $primary;
+
+    &:hover, &:active, &:focus {
+      background-color: $white;
+      color: $primary;
+    }
+  }
+
+  &--secondary {
+    background-color: $white;
+    color: $grey-darkest;
+    border: 0.1rem solid $white;
+    padding-left: 3.6rem;
+    padding-right: 3.6rem;
+
+    &:hover, &:active, &:focus {
+      background-color: $primary;
+      color: $white;
+    }
+  }
+
+  &--burger {
+    padding: 0;
+    background: none;
+    border: none;
+    outline: 0;
+    height: 5rem;
+    width: 5rem;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      display: block;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      content: url('../images/icon-burger.svg');
+    }
+  }
+
+  &--close {
+    padding: 0;
+    background: none;
+    border: none;
+    outline: 0;
+    height: 5rem;
+    width: 5rem;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      display: block;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      content: url('../images/icon-close.svg');
+    }
+  }
+
+}

@@ -1,0 +1,23 @@
+name: Cogex
+type: theme
+description: Cogex - Thème
+core: 8.x
+dependencies:
+  - webform
+  - ace_editor
+  - pathauto
+  - simple_menu_icons
+
+libraries:
+  - cogex/global-styling
+  - cogex/bootstrap
+  - cogex/aos
+  - cogex/choicesjs
+  - cogex/font-awesome-free
+  - cogex/slick-carousel
+  - cogex/tiny-slider
+
+regions:
+  header: 'Header'
+  content: 'Main content'
+  footer: 'Footer'

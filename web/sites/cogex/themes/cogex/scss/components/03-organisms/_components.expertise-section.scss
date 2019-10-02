@@ -1,0 +1,212 @@
+.c-expertise-section {
+  padding-top: 6.1rem;
+  padding-bottom: 3.9rem;
+  background-color: $background-grey;
+  position: relative;
+
+  &--opened {
+
+    .c-expertise-section__description-hidden {
+      display: block;
+      max-height: 100vh;
+      transition: max-height 0.5s ease-in;
+    }
+
+    .c-expertise-section__read-more-button {
+      display: none;
+    }
+
+  }
+
+
+  &--opened-responsive {
+
+    .c-expertise-section__responsive-read-more-button {
+      display: none;
+    }
+
+    .c-expertise-section__description {
+      display: block;
+      max-height: 100vh;
+      transition: max-height 0.5s ease-in;
+    }
+
+    .c-expertise-section__description-hidden {
+      display: block;
+      max-height: 100vh;
+      transition: max-height 0.5s ease-in;
+    }
+
+  }
+
+  &:nth-child(odd) {
+    background-color: $white;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5rem;
+    height: 0.1rem;
+    background-color: $grey-darkest;
+  }
+
+  &__pictures-container {
+    margin: 2.6rem 0;
+    display: flex;
+    justify-content: space-between; 
+  }
+
+  &__title {
+    margin: 0;
+    @extend .c-text-bold;
+    color: $grey-darkest;
+    font-size: 2.1rem;
+    line-height: 1.57;
+    text-align: center;
+    text-transform: uppercase;
+    padding-left: 13.9rem;
+    padding-right: 13.9rem;
+  }
+
+  &__description {
+    margin: 0;
+    margin-top: 1.6rem;
+    @extend .c-text-semi-bold;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    color: $text-grey;
+    text-align: center;
+    padding-left: 13.9rem;
+    padding-right: 13.9rem;
+  }
+
+  &__description-hidden {
+    margin: 0;
+    @extend .c-text-semi-bold;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    color: $text-grey;
+    text-align: center;
+    padding-left: 13.9rem;
+    padding-right: 13.9rem;
+    //display: none;
+
+    // Hidden by default.
+    max-height: 0;
+    transition: max-height 0.3s ease-out;
+    overflow: hidden;
+
+  }
+
+  &__read-more-button, &__read-less-button, &__responsive-read-more-button {
+    background: none;
+    border: none;
+    outline: 0;
+    @extend .c-text-semi-bold;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    color: $primary;
+    text-decoration: underline;
+  }
+
+  &__responsive-read-more-button {
+    @extend .c-text-bold;
+    display: block;
+    width: 100%;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    text-align: left;
+    margin-top: 0.6rem;
+    display: none;
+  }
+
+  &__link-container {
+    margin-top: 2.9rem;
+    padding-left: 13.9rem;
+    padding-right: 13.9rem;
+    text-align: center;
+  }
+
+  &__link {
+    @extend .c-text-semi-bold;
+    color: $grey-darkest;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  // Tablet/mobile version.
+  @media only screen and (max-width: $bp-tablet) {
+    position: relative;
+
+    &::after {
+      display: none;
+    }
+
+    &__title {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+      text-align: left;
+      font-size: 1.8rem;
+      line-height: 1.55;
+      position: relative;
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 0.1rem;
+        width: 5rem;
+        background-color: $grey-darkest;
+        top: -2rem;
+        left: 2.5;
+      }
+    }
+
+    &__responsive-read-more-button {
+      display: block;
+    }
+
+    &__read-more-button, &__read-less-button {
+      display: none;
+    }
+
+    &__description, &__description-hidden {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+      text-align: left;
+      //display: none;
+      // Hidden by default.
+      max-height: 0;
+      transition: max-height 0.3s ease-out;
+      overflow: hidden;
+    }
+
+    &__pictures-container {
+      display: block;
+      font-size: 0;
+      text-align: center;
+      margin-top: 1rem;
+
+      img {
+        display: inline-block;
+        width: 50%;
+        padding: 2rem;
+      }
+    }
+
+    &__link-container {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+      line-height: 1.85;
+    }
+
+  }
+
+}

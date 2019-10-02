@@ -1,0 +1,27 @@
+/* ==========================================================================
+   #IMAGES
+   ========================================================================== */
+
+/*
+ * Fluid image
+ *
+ * Scale with the parent element.
+ */
+.u-img--fluid {
+  display: block !important;
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/*
+ * Responsive image
+ *
+ * Take 100% of his parents.
+ */
+.u-img--responsive {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+}
+

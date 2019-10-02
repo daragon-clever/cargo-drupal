@@ -1,0 +1,93 @@
+/*
+
+---
+name: c-banner-card-products
+category: 02-molecules
+---
+ 
+``` types.html
+<div style="background-color: #D6D6D6; padding: 2rem;">
+  <div class="c-banner-card-products">
+    <p class="c-banner-card-products__title">Title</p>
+    <p class="c-banner-card-products__content">
+      Content
+    </p>
+    <div class="c-banner-card-products__button-container">
+      <button class="c-button c-button--secondary">Button</button>
+    </div>
+  </div>
+</div>
+```
+
+*/
+.c-banner-card-products {
+  position: relative;
+  width: 71.7rem;
+  padding: 7rem;
+  padding-bottom: 5.7rem;
+  background-color: $grey-darkest;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 4rem;
+    height: 0.1rem;
+    background-color: $white;
+    top: 5.5rem;
+    left: 7rem;
+  }
+
+  &__title {
+    margin: 0;
+    @extend .c-text-bold;
+    color: $white;
+    font-size: 2.1rem;
+    line-height: 1.33;
+    text-transform: uppercase;
+  }
+
+  &__content {
+    margin: 0;
+    margin-top: 1rem;
+    @extend .c-text-semi-bold;
+    color: $white;
+    font-size: 1.4rem;
+    line-height: 1.71;
+  }
+
+  &__button-container {
+    margin-top: 2.1rem;
+    text-align: center;
+  }
+
+  // Tablet/mobile version.
+  @media only screen and (max-width: $bp-tablet) {
+    width: 100%;
+    background-color: transparent;
+    padding: 0 1.5rem;
+    padding-top: 7rem;
+    padding-bottom: 4rem;
+
+    &::after {
+      background-color: $grey-darkest;
+      width: 5rem;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &__title {
+      color: $grey-darkest;
+      text-align: center;
+      font-size: 2.4rem;
+      line-height: 1.37;
+      padding: 0 1.5rem;
+    }
+
+    &__content {
+      color: $grey-darkest;
+      text-align: center;
+    }
+  }
+
+}

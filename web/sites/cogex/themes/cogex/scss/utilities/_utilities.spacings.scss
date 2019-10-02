@@ -1,0 +1,125 @@
+/* ==========================================================================
+  #SPACINGS
+  ========================================================================== */
+
+/*
+---
+name: Spacings
+category: Utilities
+---
+
+Utility classes to put specific spacing values onto elements. The below loop
+will generate us a suite of classes like:
+
+```css
+   .u-margin-top {}
+   .u-margin-left--xs {}
+   .u-margin-vertical {}
+   .u-margin-vertical--xl {}
+```
+*/
+
+$spacing-directions: (
+  null: null,
+  '-top': '-top',
+  '-bottom': '-bottom',
+  '-right': '-right',
+  '-left': '-left',
+  '-vertical': '-top' '-bottom',
+  '-horizontal': '-left' '-right',
+);
+
+$spacing-properties: (
+  'margin': 'margin',
+  'padding': 'padding',
+);
+
+$spacing-sizes: (
+  null: $global-spacing-unit-sm,
+  '--xs': $global-spacing-unit-xs,
+  '--sm': $global-spacing-unit-sm,
+  '--md': $global-spacing-unit-md,
+  '--lg': $global-spacing-unit-lg,
+  '--xl': $global-spacing-unit-xl,
+  '--auto': auto,
+  '--none': 0
+);
+
+@mixin spacings($spacing-properties, $breakpoint: null) {
+  @each $property-namespace, $property in $spacing-properties {
+    @each $direction-namespace, $direction-rules in $spacing-directions {
+      @each $size-namespace, $size in $spacing-sizes {
+        .u-#{$property-namespace}#{$direction-namespace}#{$size-namespace}#{$breakpoint} {
+          @each $direction in $direction-rules {
+            #{$property}#{$direction}: $size !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include spacings($spacing-properties);
+
+/**
+* Automatically generate spacing classes for each of our
+ * defined breakpoints, and give them a Responsive Suffix, e.g.:
+ *
+ * <div class="u-margin--xs@phablet">
+ */
+@if (variable-exists(mq-breakpoints)) {
+  @each $bp-name, $bp-value in $mq-breakpoints {
+    @include mq($until: $bp-name) {
+      @include spacings($spacing-properties, \@#{$bp-name});
+    }
+  }
+}
+
+/**
+ * Center an element with the site margins.
+ */
+.u-centered {
+  max-width: $global-max-width;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+.u-centered--article {
+  max-width: $global-spacing-article;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+.u-centered--md {
+  margin-right: $global-spacing-site-fixe*3 !important;
+  margin-left: $global-spacing-site-fixe*3 !important;
+
+  @include mq($until: desktop) {
+    margin-right: $global-spacing-site-fixe !important;
+    margin-left: $global-spacing-site-fixe !important;
+  }
+
+  @include mq($until: tablet) {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+}
+
+.u-centered--xl {
+  margin-right: $global-spacing-site-fixe !important;
+  margin-left: $global-spacing-site-fixe !important;
+
+  @include mq($until: desktop) {
+    margin-right: $global-spacing-site-fixe/2 !important;
+    margin-left: $global-spacing-site-fixe/2 !important;
+  }
+
+  @include mq($until: tablet) {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+}

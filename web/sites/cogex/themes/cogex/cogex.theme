@@ -1,0 +1,26 @@
+<?php
+
+use Drupal\field\Entity\FieldStorageConfig;
+use Drupal\field\Entity\FieldConfig;
+use Drupal\file\Entity\File;
+
+function cogex_form_alter(&$form, &$form_state, $form_id) {
+    $form['#attributes']['class'][] = 'c-contact-form';
+}
+
+/**
+ * Implements hook_preprocess_menu().
+ *
+ * @param $variables
+ */
+function cogex_preprocess_menu(&$variables) {
+    if ($variables['menu_name'] === 'footer-menu') {
+        foreach ($variables['items'] as &$item) {
+            $fid = $item['url']->getOption('menu_icon')['fid'];
+            if (!empty($fid)) {
+                $file = File::load($fid);
+                $item['icon_url'] = file_create_url($file->getFileUri());
+            }
+        }
+    }
+}

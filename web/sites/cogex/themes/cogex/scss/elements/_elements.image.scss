@@ -1,0 +1,19 @@
+/* ==========================================================================
+   #IMAGE
+   ========================================================================== */
+
+figure {
+  margin: 3rem 0;
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  figcaption {
+    margin-top: 1rem;
+
+    color: $grey-darker;
+    font-size: $font-size-sm;
+  }
+}

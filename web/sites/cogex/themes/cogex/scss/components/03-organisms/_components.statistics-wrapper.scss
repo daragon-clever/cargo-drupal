@@ -1,0 +1,22 @@
+/*
+
+---
+name: c-statistics-wrapper
+category: 03-organisms
+---
+ 
+``` types.html
+<div class="c-statistics-wrapper">
+
+  <div class="c-statistic-picture">
+    <img src="../../assets/images/infographie-1.svg" alt="statistics" class="c-statistic-picture__picture">
+  </div>
+
+</div>
+```
+
+*/
+.c-statistics-wrapper {
+  max-width: 72rem;
+  margin: auto;
+}

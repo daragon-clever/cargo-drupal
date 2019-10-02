@@ -1,0 +1,16 @@
+/* ==========================================================================
+   #LINKS
+   ========================================================================== */
+
+a {
+  color: $color-main;
+  text-decoration: underline;
+
+  transition: color 0.3s;
+
+  &:hover,
+  &:focus {
+    color: $grey;
+    text-decoration: none;
+  }
+}

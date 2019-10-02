@@ -1,0 +1,19 @@
+/* ==========================================================================
+   #CLEARFIX
+   ========================================================================== */
+/*
+---
+name: Clearfix
+category: Utilities
+---
+
+Attach the clearfix mixin to a utility class.
+
+```html
+<div class=".u-clearfix">
+```
+
+*/
+.u-clearfix {
+  @include clearfix();
+}

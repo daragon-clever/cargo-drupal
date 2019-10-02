@@ -1,0 +1,45 @@
+/*
+
+---
+name: c-statistic-picture
+category: 02-molecules
+---
+ 
+``` types.html
+<div class="c-statistic-picture">
+
+  <img src="../../assets/images/infographie-1.svg" alt="statistics" class="c-statistic-picture__picture">
+
+</div>
+
+
+<div class="c-statistic-picture c-statistic-picture--multiple-pictures">
+
+  <img src="../../assets/images/infographie-2.svg" alt="statistics" class="c-statistic-picture__picture">
+  <img src="../../assets/images/infographie-3.svg" alt="statistics" class="c-statistic-picture__picture">
+  <img src="../../assets/images/infographie-4.svg" alt="statistics" class="c-statistic-picture__picture">
+
+</div>
+```
+
+*/
+.c-statistic-picture {
+  text-align: center;
+  margin-top: 5.4rem;
+  
+  &--multiple-pictures {
+    display: flex;
+    justify-content: space-between;
+
+    .c-statistic-picture__picture {
+      height: 20rem;
+      width: auto;
+    }
+  }
+
+  &__picture {
+    width: 100%;
+    height: auto;
+  }
+
+}

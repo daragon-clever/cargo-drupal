@@ -1,0 +1,43 @@
+/* ==========================================================================
+   #COMPONENTS
+   ========================================================================== */
+
+/**
+ * This is where majority of the work takes place. All components are very encapsulated
+ * and of course try to avoid any dependencies between components.
+ *
+ * Classes in this layer are prefix with `c-`.
+ */
+
+@import "layouts/layouts.index";
+
+@import "01-atoms/components.text";
+@import "01-atoms/components.buttons";
+
+
+@import "02-molecules/components.banner-card-home";
+@import "02-molecules/components.banner-card-company";
+@import "02-molecules/components.banner-card-contact";
+@import "02-molecules/components.banner-card-expertise";
+@import "02-molecules/components.banner-card-products";
+@import "02-molecules/components.banner-card-join-us";
+@import "02-molecules/components.page-banner";
+@import "02-molecules/components.page-banner-home";
+@import "02-molecules/components.page-banner-products";
+@import "02-molecules/components.page-banner-contact";
+@import "02-molecules/components.statistic-section-title";
+@import "02-molecules/components.statistic-section-separator";
+@import "02-molecules/components.statistic-picture";
+@import "02-molecules/components.discover-section-title";
+@import "02-molecules/components.slider";
+@import "02-molecules/components.slick-slider";
+@import "02-molecules/components.mobile-slick-slider";
+@import "02-molecules/components.product-title";
+
+@import "03-organisms/components.page-section";
+@import "03-organisms/components.statistics-wrapper";
+@import "03-organisms/components.discover-section";
+@import "03-organisms/components.product-description";
+@import "03-organisms/components.expertise-section";
+@import "03-organisms/components.contact-form";
+@import "03-organisms/components.main-content";

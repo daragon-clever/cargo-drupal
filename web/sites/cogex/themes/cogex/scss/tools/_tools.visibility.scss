@@ -1,0 +1,76 @@
+/* ==========================================================================
+   VISIBILITY
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ * http://www.456bereastreet.com/archive/200711/screen_readers_sometimes_ignore_displaynone/
+ */
+@mixin hidden() {
+  display: none !important;
+
+  visibility: hidden !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+@mixin hidden-visually() {
+  position: absolute !important;
+  overflow: hidden !important;
+  width: 0.1rem !important;
+  height: 0.1rem !important;
+  padding: 0 !important;
+
+  border: 0 !important;
+  clip: rect(0.1rem, 0.1rem, 0.1rem, 0.1rem) !important;
+  clip-path: inset(50%) !important;
+
+  white-space: nowrap !important; /* [1] */
+
+  /*
+   * Extends the .visually-hidden class to allow the element
+   * to be focusable when navigated to via the keyboard:
+   * https://www.drupal.org/node/897638
+   */
+  &.is-focusable {
+    &:active,
+    &:focus {
+      position: static !important;
+      overflow: visible !important;
+      width: auto !important;
+      height: auto !important;
+      margin: 0 !important;
+
+      clip: auto !important;
+
+      white-space: inherit !important;
+    }
+  }
+}
+
+/*
+ * Hide text
+ * @see http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
+ */
+@mixin hidden-text() {
+  overflow: hidden !important;
+
+  text-indent: 100% !important;
+  white-space: nowrap !important;
+}
+
+/*
+ * Display visually and for screen readers.
+ */
+@mixin visible() {
+  display: block !important;
+
+  visibility: visible !important;
+}
+

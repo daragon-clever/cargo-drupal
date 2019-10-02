@@ -3515,7 +3515,15 @@ Add border radius to elements
       max-height: 100vh;
       transition: max-height 0.5s ease-in; }
     .c-footer__info-subsection-list li {
-      color: #AAAAAA; }
+      color: black;
+      transition: color 0.3s; }
+      .c-footer__info-subsection-list li:hover {
+        color: #E30613; }
+      .c-footer__info-subsection-list li a {
+        color: black;
+        text-decoration: none; }
+        .c-footer__info-subsection-list li a:hover {
+          color: #E30613; }
   .c-footer__section-link {
     text-decoration: none; }
     .c-footer__section-link:hover {
@@ -3675,7 +3683,7 @@ category: 02-molecules
   .c-banner-card-home__title {
     margin: 0;
     color: #303030;
-    font-size: 2.1rem;
+    font-size: 2rem;
     line-height: 1.33;
     text-transform: uppercase; }
   .c-banner-card-home__content {

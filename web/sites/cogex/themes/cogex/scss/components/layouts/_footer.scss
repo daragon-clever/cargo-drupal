@@ -208,7 +208,21 @@ footer {
     }
 
     li {
-      color: $grey;
+      color: black;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $primary;
+      }
+
+      a {
+        color: black;
+        text-decoration: none;
+
+        &:hover {
+          color: $primary;
+        }
+      }
     }
   }
 

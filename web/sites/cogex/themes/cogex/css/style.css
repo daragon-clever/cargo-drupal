@@ -3355,9 +3355,8 @@ Add border radius to elements
       background-color: #D6D6D6; }
   .c-header__nav-sublist {
     margin: 0;
-    padding: 0;
+    padding: 0 !important;
     list-style-type: none;
-    padding-top: 0;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out; }
@@ -3482,7 +3481,8 @@ Add border radius to elements
   .c-footer__section-button {
     background: none;
     border: none;
-    outline: 0; }
+    outline: 0;
+    font-size: 1.4rem; }
     .c-footer__section-button::after {
       font-family: 'Font Awesome 5 Free';
       content: '\f078';

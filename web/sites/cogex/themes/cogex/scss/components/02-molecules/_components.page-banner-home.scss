@@ -98,7 +98,6 @@ category: 02-molecules
     .c-page-banner-home__picture {
       position: static;
       width: 100%;
-      //min-height: 40rem;
     }
 
     .c-page-banner-home__picture--active {
@@ -109,15 +108,9 @@ category: 02-molecules
 
   // Mobile version.
   @media only screen and (max-width: $bp-mobile) {
-
-    .c-page-banner-home__picture {
-      //min-height: 20rem;
-    }
-
     .c-page-banner-home__picture--active {
       min-height: 20rem;
     }
-
   }
 
 

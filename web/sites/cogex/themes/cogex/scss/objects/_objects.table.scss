@@ -1,0 +1,30 @@
+/* ==========================================================================
+   TABLE
+   ========================================================================== */
+
+/**
+ * A simple object for manipulating the structure of HTML `table`s.
+ */
+
+/* Default style
+  ========================================================================== */
+.o-table {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Responsive variante
+   ========================================================================== */
+
+/**
+ * Taken from bootstrap
+ *
+ * @see https://getbootstrap.com/docs/4.0/content/tables/#responsive-tables
+ */
+.o-table--responsive {
+  display: block;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  overflow-x: auto;
+}

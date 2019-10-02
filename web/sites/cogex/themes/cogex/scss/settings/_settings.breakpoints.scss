@@ -1,0 +1,68 @@
+/* ==========================================================================
+   #BREAKPOINTS
+   ========================================================================== */
+/*
+---
+name: Breakpoints declaration
+category: Style
+---
+
+The following breakpoint are available on this project
+ 
+```scss
+  $bp-desktop: 1400px; 
+  $bp-tablet: 1024px; 
+  $bp-phablet: 768px; 
+  $bp-mobile: 480px; 
+```
+You can used it as follow :
+
+```scss
+    @include mq($from: mobile, $until: tablet) {
+        background: red;
+    }
+    @include mq($from: tablet) {
+        background: green;
+    }
+```
+
+@see https://github.com/sass-mq/sass-mq
+*/
+
+/* stylelint-disable unit-whitelist */
+$bp-desktop: 1400px; /* Desktop breakpoints */
+$bp-small-desktop: 1200px; /* Desktop breakpoints */
+$bp-tablet: 992px; /* Tablet breakpoints */
+$bp-phablet: 768px; /* Mobile breakpoints */
+$bp-mobile: 480px; /* Mobile breakpoints */
+
+$mq-breakpoints: (
+  desktop: $bp-desktop,
+  tablet:  $bp-tablet,
+  phablet:  $bp-phablet,
+  mobile: $bp-mobile
+);
+/* stylelint-enable */
+
+
+// Override boostrap container.
+@media (min-width: 576px) {
+  .container {
+    max-width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}

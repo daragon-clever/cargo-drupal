@@ -1,0 +1,55 @@
+/*
+
+---
+name: c-page-banner-contact
+category: 02-molecules
+---
+ 
+``` types.html
+<div class="c-page-banner-contact">
+
+  <div class="c-banner-card-contact">
+    <p class="c-banner-card-contact__title">Title</p>
+    <p class="c-banner-card-contact__content">
+      Content
+    </p>
+
+</div>
+```
+
+*/
+.c-page-banner-contact {
+
+  &__content-wrapper {
+    position: relative;
+    padding-top: 5.9rem;
+    padding-left: 13.9rem;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 31.5rem;
+      height: 14rem;
+      position: absolute;
+      top: 0;
+      right: 16rem;
+      background-color: $primary;
+    }
+  }
+
+  // Tablet/mobile version.
+  @media only screen and (max-width: $bp-tablet) {
+    background-color: $grey-darkest;
+
+    &__content-wrapper {
+      padding: 0;
+
+      &::before {
+        display: none;
+      }
+
+    }
+
+  }
+
+}

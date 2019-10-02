@@ -1,0 +1,50 @@
+.c-contact-form {
+  padding-top: 3.5rem;
+  position: relative;
+
+  &__title {
+    margin: 0;
+    margin-bottom: 3rem;
+    padding-top: 4.5rem;
+    @extend .c-text-bold;
+    font-size: 2.1rem;
+    line-height: 1;
+    text-align: center;
+    color: $black-text;
+    text-transform: uppercase;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 3rem;
+      left: 50%;
+      width: 5rem;
+      height: 0.1rem;
+      transform: translateX(-50%);
+      background-color: $grey-lightest;
+    }
+
+  }
+
+  &__input-row {
+    margin-top: 1.7rem;
+  }
+
+  &__captcha-container {
+    margin-top: 2.4rem;
+  }
+
+  &__submit-container {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  // Tablet/mobile version.
+  @media only screen and (max-width: $bp-tablet) {
+    padding-top: 0;
+  }
+
+}

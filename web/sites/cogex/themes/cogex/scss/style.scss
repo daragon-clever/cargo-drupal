@@ -1,0 +1,26 @@
+/* ==========================================================================
+   Global SCSS
+   ========================================================================== */
+
+@charset "utf-8";
+
+/* Settings layer */
+@import "settings/settings.index";
+
+/* Tools layer */
+@import "tools/tools.index";
+
+/* Generic layer */
+@import "generic/generic.index";
+
+/* Elements layer */
+@import "elements/elements.index";
+
+/* Object index */
+@import "objects/objects.index";
+
+/* Utilities index */
+@import "utilities/utilities.index";
+
+/* Components */
+@import "components/components.index";

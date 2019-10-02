@@ -1,0 +1,39 @@
+# Style général
+global-styling:
+  css:
+    theme:
+      css/style.css: {}
+
+  js:
+    js/main.js: {}
+
+bootstrap:
+  css:
+    component:
+      lib/bootstrap/css/bootstrap-grid.min.css: {}
+
+aos:
+  css:
+    component:
+      lib/aos/aos.css: {}
+
+choicesjs:
+  css:
+    component:
+      lib/choicesjs/choices.css: {}
+
+font-awesome-free:
+  css:
+    component:
+      lib/font-awesome-free/all.css: {}
+
+slick-carousel:
+  css:
+    component:
+      lib/slick-carousel/slick.css: {}
+      lib/slick-carousel/slick-theme.css: {}
+
+tiny-slider:
+  css:
+    component:
+      lib/tiny-slider/tiny-slider.css: {}

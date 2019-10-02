@@ -1,0 +1,74 @@
+/* ==========================================================================
+  TEXT
+  ========================================================================== */
+
+/* Font declaration utilities
+   ========================================================================== */
+
+.u-text--lg {
+  font-size: $font-size-lg !important;
+}
+
+.u-text--xl {
+  font-size: $font-size-xl !important;
+}
+
+.u-text--sm {
+  font-size: $font-size-sm !important;
+}
+
+/* Text decoration utilities
+   ========================================================================== */
+
+.u-text--strike {
+  text-decoration: line-through !important;
+}
+
+.u-text--underline {
+  text-decoration: underline !important;
+}
+
+.u-text--no-underline {
+  text-decoration: none !important;
+}
+
+/* Line-height delcaration utilities
+   ========================================================================== */
+
+.u-line-height--xl {
+  line-height: $line-height-xl !important;
+}
+
+.u-line-height--sm {
+  line-height: $line-height-sm !important;
+}
+
+.u-line-height--xs {
+  line-height: $line-height-xs !important;
+}
+
+/* Text-transform delcaration utilities
+   ========================================================================== */
+
+.u-text--transform-none {
+  text-transform: none !important;
+}
+
+.u-text--transform-uppercase {
+  text-transform: uppercase !important;
+}
+
+/* Font-weight delcaration utilities
+   ========================================================================== */
+
+.u-text--light {
+  font-weight: 300;
+}
+
+.u-text--normal {
+  font-weight: 400;
+}
+
+.u-text--bold {
+  font-weight: 600;
+}

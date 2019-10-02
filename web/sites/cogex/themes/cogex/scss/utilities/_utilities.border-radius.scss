@@ -1,0 +1,19 @@
+/* ==========================================================================
+  BORDER RADIUS
+  ========================================================================== */
+
+/*
+---
+name: Border-radius
+category: Utilities
+---
+
+Add border radius to elements
+
+```html
+<div class=".u-border-radius">
+```
+*/
+.u-border-radius {
+  border-radius: $global-radius;
+}

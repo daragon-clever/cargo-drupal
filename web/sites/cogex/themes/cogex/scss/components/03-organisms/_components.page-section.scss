@@ -1,0 +1,202 @@
+/*
+
+---
+name: c-page-section
+category: 03-organisms
+---
+ 
+``` types.html
+<div style="background-color: #D6D6D6; padding: 2rem; padding-top: 8rem;">
+
+<div class="c-page-section">
+
+    <div class="container">
+
+      <p class="c-page-section__title">Title</p>
+
+      <p class="c-page-section__subtitle">Subtitle</p>
+
+      <p class="c-page-section__description">Description</p>
+
+      <div class="c-page-section__pictures-container">
+
+        <img src="../../assets/images/img-test-1.png" class="c-page-section__picture">
+
+        <img src="../../assets/images/img-test-1.png" class="c-page-section__picture">
+
+        <img src="../../assets/images/img-test-1.png" class="c-page-section__picture">
+
+        <img src="../../assets/images/img-test-1.png" class="c-page-section__picture">
+
+      </div>
+
+      <div class="c-page-section__button-container">
+
+        <button class="c-button c-button--primary">Button</button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+```
+
+*/
+.c-page-section {
+  background-color: $white;
+  padding-top: 4rem;
+  padding-bottom: 12.4rem;
+  position: relative;
+  box-shadow: 0 0 5rem 0.2rem rgba(0,0,0,0.1);
+  z-index: 1;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 11rem;
+    height: 11rem;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $white;
+    border-radius: 50%;
+    z-index: 0;
+    box-shadow: 0 0 5rem 0.2rem rgba(0,0,0,0.1);
+    z-index: -1;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 20rem;
+    height: 11rem;
+    transform: translateX(-50%);
+    background-color: $white;
+    z-index: -1;
+  }
+
+  &__icon {
+    width: 4.6rem;
+    height: auto;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -60%);
+  }
+
+  &__title {
+    position: relative;
+    margin: 0;
+    @extend .c-text-bold;
+    font-size: 2.4rem;
+    line-height: 1.16;
+    text-transform: uppercase;
+    color: $primary;
+    text-align: center;
+  }
+
+  &__subtitle {
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+    @extend .c-text-semi-bold;
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  &__description {
+    position: relative;
+    margin: 0;
+    max-width: 60rem;
+    margin: auto;
+    margin-top: 4.6rem;
+    @extend .c-text-semi-bold;
+    font-size: 1.4rem;
+    line-height: 1.85;
+    text-align: center;
+    color: $grey-lighter;
+    
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: -2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 5rem;
+      height: 0.1rem;
+      background-color: $grey-darker;
+    }
+  }
+
+  &__pictures-container {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__picture {
+    display: block;
+    max-width: 255px;
+    height: auto;
+
+    // Small desktop version.
+    @media only screen and (max-width: $bp-small-desktop) {
+      max-width: 220px;
+      height: auto;
+    }
+  }
+
+  &__mobile-slider {
+    display: none;
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+
+  &__button-container {
+    margin-top: 3rem;
+    text-align: center;
+  }
+
+  // Tablet/mobile version.
+  @media only screen and (max-width: $bp-tablet) {
+    padding-bottom: 8.6rem;    
+
+    .c-page-section__title {
+      font-size: 1.8rem;
+      line-height: 1.5;
+      padding: 0 4rem;
+    }
+
+    .c-page-section__subtitle {
+      margin-top: 0.4rem;
+      line-height: 1.7;
+      padding: 0 8rem;
+    }
+
+    .c-page-section__description {
+      padding: 0 4rem;
+      margin-top: 3rem;
+
+      &::before {
+        top: -1.4rem;
+      }
+    }
+
+    .c-page-section__pictures-container {
+      display: none;
+    }
+
+    .c-page-section__mobile-slider {
+      display: block;
+    }
+  }
+
+}

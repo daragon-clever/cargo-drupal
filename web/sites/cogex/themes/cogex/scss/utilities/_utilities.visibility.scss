@@ -1,0 +1,49 @@
+/* ==========================================================================
+   VISIBILITY
+   ========================================================================== */
+
+@mixin hidden-utils($breakpoint: null) {
+  /**
+  * Attach the hidden mixin to a utility class.
+  */
+  .u-hidden#{$breakpoint} {
+    @include hidden();
+  }
+
+  /**
+  * Attach the hidden-visually mixin to a utility class.
+  */
+  .u-hidden-visually#{$breakpoint} {
+    @include hidden-visually();
+  }
+
+  /**
+  * Attach the hidden-text mixin to a utility class.
+  */
+  .u-hidden-text#{$breakpoint} {
+    @include hidden-text();
+  }
+
+  /**
+  * Attache the visible mixin.
+  */
+  .u-visible#{$breakpoint} {
+    @include visible();
+  }
+}
+
+@include hidden-utils();
+
+/**
+* Automatically generate visibility classes for each of our
+ * defined breakpoints, and give them a Responsive Suffix, e.g.:
+ *
+ * <div class="u-hidden@phablet">
+ */
+@if (variable-exists(mq-breakpoints)) {
+  @each $bp-name, $bp-value in $mq-breakpoints {
+    @include mq($until: $bp-name) {
+      @include hidden-utils(\@#{$bp-name});
+    }
+  }
+}

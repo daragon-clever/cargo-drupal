@@ -1,0 +1,51 @@
+/* ==========================================================================
+   #GLOBAL
+   ========================================================================== */
+
+/* Main variables.
+========================================================================== */
+$color-main:                 $primary !default;
+$color-white: #ffffff;
+/* The font variables.
+========================================================================== */
+$global-font-color:          $primary !default;
+/* stylelint-disable unit-whitelist */
+$global-font-size:           1.4rem !default;
+/* stylelint-enable */
+$global-font-family:         'Titillium' !default;
+$global-line-height:         (20 / 15) !default;
+
+/* Radius box variables.
+========================================================================== */
+$global-radius-xs:          0.3rem !default;
+$global-radius:          0.6rem !default;
+
+/* Transition variables.
+========================================================================== */
+$transition:                      all 300ms ease-in-out;
+
+/* Outline variables.
+========================================================================== */
+$outline-style:                   dotted;
+$outline-width:                   0.1rem;
+$outline-color:                   $color-main;
+
+/* Outline variables.
+========================================================================== */
+$selection-background:            $color-main;
+$selection-color:                 #fff;
+
+/* Spacings variables.
+   ========================================================================== */
+$global-spacing-unit-xs:          1rem;
+$global-spacing-unit-sm:          2rem;
+$global-spacing-unit-md:          4rem;
+$global-spacing-unit-lg:          6rem;
+$global-spacing-unit-xl:          8rem;
+$global-spacing-site-sm:          2rem;
+$global-spacing-site-md:           10%;
+$global-spacing-site-lg:           16%;
+$global-spacing-site-fixe:        9rem;
+$global-spacing-article:        125rem;
+
+$global-max-width:              100rem;

@@ -1,0 +1,152 @@
+/*
+
+---
+name: c-product-description
+category: 03-organisms
+---
+ 
+``` types.html
+<div class="c-product-description">
+
+  <div class="row">
+
+    <div class="col-3">
+
+      <img src="../../assets/images/rhino.png" class="c-product-description__logo"/>
+
+      <p class="c-product-description__description">
+        Description
+      </p>
+
+    </div>
+
+    <div class="col-9">
+
+      <div class="c-product-description__pictures-container">
+
+        <img src="../../assets/images/img-produits-rhino-01.png" class="c-product-description__picture">
+        <img src="../../assets/images/img-produits-rhino-02.png" class="c-product-description__picture">
+        <img src="../../assets/images/img-produits-rhino-03.png" class="c-product-description__picture">
+        <img src="../../assets/images/img-produits-rhino-04.png" class="c-product-description__picture">
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="c-product-description c-product-description--align-right">
+
+  <div class="row">
+
+    <div class="col-9">
+
+      <div class="c-product-description__pictures-container">
+
+        <img src="../../assets/images/img-produits-rhino-01.png" class="c-product-description__picture">
+        <img src="../../assets/images/img-produits-rhino-02.png" class="c-product-description__picture">
+        <img src="../../assets/images/img-produits-rhino-03.png" class="c-product-description__picture">
+        <img src="../../assets/images/img-produits-rhino-04.png" class="c-product-description__picture">
+
+      </div>
+
+    </div>
+
+    <div class="col-3">
+
+      <img src="../../assets/images/rhino.png" class="c-product-description__logo"/>
+
+      <p class="c-product-description__description">
+        Description
+      </p>
+
+    </div>
+
+  </div>
+</div>
+```
+
+*/
+.c-product-description {
+  margin-top: 4.4rem;
+  margin-bottom: 6rem;
+  display: flex;
+  flex-direction: row;
+
+  &--align-right {
+    flex-direction: row-reverse;
+
+    .c-product-description__pictures-container {
+      text-align: left;
+    }
+
+  }
+
+  &__description-column {
+    flex-basis: 30%;
+  }
+
+  &__pictures-column {
+    flex-basis: 70%;
+  }
+
+  &__logo {
+
+  }
+
+  &__description {
+    margin: 0;
+    margin-top: 1.9rem;
+    @extend .c-text-semi-bold;
+    color: $grey-darkest;
+    font-size: 1.4rem;
+    line-height: 1.71;
+  }
+
+  &__pictures-container {
+    margin: -1.75rem;
+    text-align: right;
+  }
+
+  .c-mobile-slick-slider {
+    display: none;
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+
+  &__picture {
+    padding: 1.75rem;
+    width: 45%;
+    height: auto;
+  }
+
+  // Tablet/mobile version.
+  @media only screen and (max-width: $bp-tablet) {
+    margin-top: 2rem;
+    text-align: center;
+    display: block;
+    margin-bottom: 0;
+
+    &:last-child {
+      margin-bottom: 6rem;
+    }
+
+    &__description {
+      text-align: center;
+    }
+
+    &__pictures-container {
+      display: none;
+    }
+
+    .c-mobile-slick-slider {
+      display: block;
+      margin: auto;
+      margin-top: 2.5rem;
+    }
+
+  }
+
+}

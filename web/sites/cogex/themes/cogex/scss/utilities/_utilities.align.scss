@@ -1,0 +1,38 @@
+/* ==========================================================================
+  ALIGN
+  ========================================================================== */
+@mixin align($breakpoint: null) {
+  .u-align--right#{$breakpoint} {
+    text-align: right !important;
+  }
+
+  .u-align--center#{$breakpoint} {
+    text-align: center !important;
+  }
+
+  .u-align--left#{$breakpoint} {
+    text-align: left !important;
+  }
+}
+
+@include align();
+
+/*
+---
+name: Align
+category: Utilities
+---
+
+Automatically generate spacing classes for each of our defined breakpoints, and give them a Responsive Suffix, e.g.:
+
+```html
+<div class="u-align--center@phablet">
+```
+*/
+@if (variable-exists(mq-breakpoints)) {
+  @each $bp-name, $bp-value in $mq-breakpoints {
+    @include mq($until: $bp-name) {
+      @include align(\@#{$bp-name});
+    }
+  }
+}

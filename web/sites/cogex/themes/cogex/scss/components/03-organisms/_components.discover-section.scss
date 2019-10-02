@@ -1,0 +1,79 @@
+/*
+
+---
+name: c-discover-section
+category: 03-organisms
+---
+ 
+``` types.html
+<div class="c-discover-section">
+
+  <div class="container">
+
+    <div class="c-slider">
+
+      <div class="c-slider__slider-element">
+
+        <div class="c-slider__slide">
+          <div class="c-slider__slide-content">
+            <img src="../../assets/images/img-decouvrez-cogex-01.png"/>
+          </div>
+        </div>
+
+        <div class="c-slider__slide">
+          <div class="c-slider__slide-content">
+            <img src="../../assets/images/img-decouvrez-cogex-02.png" />
+          </div>
+        </div>
+
+        <div class="c-slider__slide">
+          <div class="c-slider__slide-content">
+            <img src="../../assets/images/img-decouvrez-cogex-03.png" />
+          </div>
+        </div>
+
+        <div class="c-slider__slide">
+          <div class="c-slider__slide-content">
+            <img src="../../assets/images/img-decouvrez-cogex-01.png" />
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+```
+
+*/
+.c-discover-section {
+  background-color: $grey-light;
+  padding-top: 12rem;
+  padding-bottom: 5.5rem;
+
+  .c-mobile-slick-slider {
+    display: none;
+  }
+
+  // Tablet/mobile version.
+  @media only screen and (max-width: $bp-tablet) {
+    background-color: $white;
+    padding-top: 1rem;
+    padding-bottom: 4rem;
+
+    margin-left: -15px;
+    margin-right: -15px;
+
+    .c-slider {
+      display: none;
+    }
+
+    .c-mobile-slick-slider {
+      display: block;
+    }
+
+  }
+  
+}

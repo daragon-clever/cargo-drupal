@@ -1,0 +1,100 @@
+/*
+
+---
+name: c-slider
+category: 02-molecules
+---
+ 
+``` types.html
+<div class="c-slider">
+
+  <div class="c-slider__slider-element">
+
+    <div class="c-slider__slide">
+      <div class="c-slider__slide-content">
+        <img src="../../assets/images/img-decouvrez-cogex-01.png"/>
+      </div>
+    </div>
+
+    <div class="c-slider__slide">
+      <div class="c-slider__slide-content">
+        <img src="../../assets/images/img-decouvrez-cogex-02.png" />
+      </div>
+    </div>
+
+    <div class="c-slider__slide">
+      <div class="c-slider__slide-content">
+        <img src="../../assets/images/img-decouvrez-cogex-03.png" />
+      </div>
+    </div>
+
+    <div class="c-slider__slide">
+      <div class="c-slider__slide-content">
+        <img src="../../assets/images/img-decouvrez-cogex-01.png" />
+      </div>
+    </div>
+
+  </div>
+
+</div>
+```
+
+*/
+.c-slider {
+  position: relative;
+  width: 100%;
+  padding-left: 3rem;
+  padding-right: 3rem;
+
+  .tns-controls button {
+    background: transparent;
+    color: transparent;
+    border: 0;
+    outline: 0;
+
+    &::before {
+      font-family: 'Font Awesome 5 Free';
+      content: '\f053';
+      color: $black;
+      font-weight: 600;
+      font-size: 1.3rem;
+      vertical-align: middle;
+      color: $grey-darkest;
+    }
+  }
+
+  .tns-controls button:first-child {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+
+  .tns-controls button:last-child {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+
+    &::before {
+      content: '\f054';
+    }
+  }
+
+  &__slider-element {
+  }
+
+  &__slide {
+  }
+
+  &__slide-content {
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+  }
+
+}

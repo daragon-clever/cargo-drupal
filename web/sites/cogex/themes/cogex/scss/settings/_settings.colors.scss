@@ -1,0 +1,51 @@
+/* ==========================================================================
+   COLORS
+   ========================================================================== */
+
+/* blue */
+$blue-darkest:            #070E1D !default;
+$blue:                    #141D29 !default;
+$blue-lighter:            #3B87CC !default;
+$blue-lightest:           #EFF8FF !default;
+
+$green:                   #32D970 !default;
+
+/* 50 Shades of grey */
+$white:                   #ffffff !default;
+
+$grey-lightest:           #D6D6D6 !default;
+$grey-lighter:            #A0A0A0 !default;
+$grey-light:              #EEEEEE !default;
+$grey:                    #AAAAAA !default;
+$grey-darker:             #949494 !default;
+$grey-darkest:            #303030 !default;
+$separator-grey:          #B5B5B5 !default;
+$text-grey:               #4A4A49 !default;
+$background-grey:         #F4F4F4 !default;
+$dot-grey:                #C2C2C2 !default;
+
+$black-text:              #232323 !default; 
+$black:                   #000000 !default;
+
+/* Primary colors */
+$primary:                 #E30613;
+$secondary:               $blue-lighter;
+$accent:                  #ed7771 !default;
+$error:                   #de383a !default;
+
+
+/*Text color*/
+$color-text: $primary;
+
+/* Password strengh */
+
+$contrib-colors: (
+ 'primary':  $primary,
+ 'secondary' : $secondary,
+ 'accent' : $accent,
+ 'error' : $error,
+ 'white' : $white,
+ 'grey': $grey,
+ 'grey-darker': $grey-darker,
+ 'black': $black,
+);

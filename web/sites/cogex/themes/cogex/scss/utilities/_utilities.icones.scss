@@ -1,0 +1,32 @@
+/* ==========================================================================
+   ICONS
+   ========================================================================== */
+
+/**
+* By default the icons with the class "u-icon" occupy 100%
+* of the space of their container.
+*/
+.u-icon {
+  width: 100% !important;
+  height: 100% !important;
+
+  vertical-align: top !important;
+}
+
+/* Size variants
+   ========================================================================== */
+
+.u-icon--fixed-sm {
+  width: 2rem !important;
+  height: 2rem !important;
+}
+
+.u-icon--fixed {
+  width: 4rem !important;
+  height: 4rem !important;
+}
+
+.u-icon--fixed-lg {
+  width: 6rem !important;
+  height: 6rem !important;
+}

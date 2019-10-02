@@ -1,0 +1,24 @@
+
+/* ==========================================================================
+  BACKGROUND
+  ========================================================================== */
+/*
+---
+name: Background
+category: Utilities
+---
+ 
+Automatically generate background-color utilities class for each of our defined contrib colors.  
+ex :
+ 
+```html
+<div class="u-bg--primary">
+```
+*/
+@if (variable-exists(contrib-colors)) {
+  @each $color-name, $color-value in $contrib-colors {
+    .u-bg--#{$color-name} {
+      background-color: $color-value !important;
+    }
+  }
+}

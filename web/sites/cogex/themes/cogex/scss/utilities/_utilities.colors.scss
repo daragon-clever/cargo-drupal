@@ -1,0 +1,25 @@
+/* ==========================================================================
+  #COLORS
+  ========================================================================== */
+
+/*
+---
+name: Color
+category: Utilities
+---
+ 
+Automatically generate text color utilities class for each of our defined contrib colors.
+
+ex :
+ 
+```html
+<div class="u-color--primary">
+```
+*/
+@if (variable-exists(contrib-colors)) {
+  @each $color-name, $color-value in $contrib-colors {
+    .u-color--#{$color-name} {
+      color: $color-value !important;
+    }
+  }
+}

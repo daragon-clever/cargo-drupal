@@ -1,0 +1,170 @@
+/*
+
+---
+name: c-banner-join-us
+category: 02-molecules
+---
+ 
+``` types.html
+<div style="background-color: #D6D6D6; padding: 2rem;">
+  <div class="c-banner-card-join-us">
+    <p class="c-banner-card-join-us__title">Title</p>
+    <p class="c-banner-card-join-us__content">
+      Content
+      <button class="c-banner-card-join-us__read-more-button">Read more</button>
+    </p>
+    <p class="c-banner-card-join-us__hidden-content">
+      Hidden content
+      <button class="c-banner-card-join-us__read-less-button">Read less</button>
+    </p>
+  </div>
+</div>
+```
+
+*/
+.c-banner-card-join-us {
+  position: absolute;
+  top: 5.9rem;
+  left: 13.9rem;
+  width: 54rem;
+  padding: 7.7rem 6.8rem;
+  padding-bottom: 3.4rem;
+  background-color: $white;
+  opacity: 0.9;
+  z-index: 1;
+  transition: all 0.3s ease-in-out;
+
+  &--opened {
+    opacity: 1;
+    box-shadow: 0 0 5rem 0.2rem rgba(0,0,0,0.1);
+
+    .c-banner-card-join-us__read-more-button {
+      display: none;
+    }
+
+    .c-banner-card-join-us__hidden-content {
+      display: block;
+      max-height: 100vh;
+      transition: max-height 0.5s ease-in;
+    }
+
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 4rem;
+    height: 0.1rem;
+    background-color: $grey-darkest;
+    top: 5.6rem;
+    left: 6.8rem;
+  }
+
+  &__title {
+    margin: 0;
+    @extend .c-text-bold;
+    color: $grey-darkest;
+    font-size: 2.1rem;
+    line-height: 1.33;
+    text-transform: uppercase;
+  }
+
+  &__content {
+    margin: 0;
+    margin-top: 1rem;
+
+    p {
+      margin: 0;
+      @extend .c-text-semi-bold;
+      color: $grey-darkest;
+      font-size: 1.4rem;
+      line-height: 1.71;
+    }
+
+  }
+
+  &__read-more-button {
+    padding: 0;
+    @extend .c-text-bold;
+    background: none;
+    border: none;
+    outline: 0;
+    color: $primary;
+    text-decoration: underline;
+  }
+
+  &__read-less-button {
+    padding: 0;
+    @extend .c-text-bold;
+    background: none;
+    border: none;
+    outline: 0;
+    color: $primary;
+    text-decoration: underline;
+  }
+
+  &__hidden-content {
+    margin: 0;
+    //display: none;
+
+    // Hidden by default.
+    max-height: 0;
+    transition: max-height 0.3s ease-out;
+    overflow: hidden;
+
+    p {
+      margin: 0;
+      @extend .c-text-semi-bold;
+      color: $grey-darkest;
+      font-size: 1.4rem;
+      line-height: 1.71;
+    }
+
+  }
+
+  &__button-container {
+    margin-top: 2.1rem;
+    text-align: center;
+  }
+
+  @media only screen and (max-width: $bp-tablet) {
+    position: static;
+    width: 100%;
+    padding: 0 15px;
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+
+    &::after {
+      left: 1.5rem;
+      top: 3rem;
+      width: 5rem;
+    }
+
+    .c-button {
+      width: 100%;
+    }
+
+    &__content {
+      p {
+        margin-top: 2.6rem;
+      }
+    }
+
+    &__hidden-content {
+      display: block;
+      max-height: 100vh;
+      transition: max-height 0.5s ease-in;
+
+      p {
+        margin-top: 2.6rem;
+      }
+    }
+
+    &__read-more-button, &__read-less-button {
+      display: none;
+    }
+
+  }
+
+}

@@ -1,0 +1,9 @@
+.c-main-content {
+  padding-top: 8rem;
+
+  // Tablet/mobile version.
+  @media only screen and (max-width: $bp-tablet) {
+    padding-top: 7rem;
+  }
+
+}

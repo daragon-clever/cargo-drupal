@@ -1,0 +1,35 @@
+/* ==========================================================================
+  #TABLE
+  ========================================================================== */
+
+table {
+  text-align: center;
+
+  th {
+    padding: 0.5rem 1.5rem;
+    border-right: 0.1rem solid $grey-darker;
+    background: $grey-lighter;
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+
+  tr {
+    &:nth-child(odd) {
+      background: $grey-lighter;
+    }
+  }
+
+  td {
+    padding: 0.5rem 1.5rem;
+
+    border-right: 0.1rem solid $grey-darker;
+
+    font-size: $font-size-sm;
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+}

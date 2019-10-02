@@ -4297,7 +4297,19 @@ category: 02-molecules
 .c-page-banner-home {
   position: relative;
   width: 100%;
-  min-height: 687px; }
+  min-height: 687px;
+  z-index: 0; }
+  .c-page-banner-home__mask {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: url("../images/bg-mask.png") no-repeat center transparent;
+    z-index: 10;
+    background-size: cover; }
   .c-page-banner-home__picture {
     position: absolute;
     top: 0;
@@ -4324,10 +4336,14 @@ category: 02-molecules
     position: absolute;
     top: 50%;
     right: 0;
-    transform: translateY(-50%); }
+    transform: translateY(-50%);
+    z-index: 100; }
   @media only screen and (max-width: 992px) {
     .c-page-banner-home {
       min-height: initial; }
+      .c-page-banner-home__mask {
+        background-position: top left;
+        background-size: contain; }
       .c-page-banner-home .c-banner-card-home {
         position: relative;
         transform: none; }

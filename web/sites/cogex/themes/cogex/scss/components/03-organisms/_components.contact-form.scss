@@ -42,6 +42,15 @@
     text-align: center;
   }
 
+  g-recaptcha {
+    text-align: center;
+
+    & > div {
+      display: inline-block;
+      margin-top: 20px;
+    }
+  }
+
   // Tablet/mobile version.
   @media only screen and (max-width: $bp-tablet) {
     padding-top: 0;

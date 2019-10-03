@@ -3538,6 +3538,11 @@ Add border radius to elements
     height: 1.6rem;
     width: 0.1rem;
     background-color: #D6D6D6; }
+  .c-footer__txtbottom {
+    text-align: center;
+    color: #303030; }
+    .c-footer__txtbottom a {
+      color: #303030; }
 
 /*
 
@@ -3563,7 +3568,7 @@ input[type="email"],
 input[type="password"],
 input[type="tel"],
 input[type="number"],
-input[type="search"], .choices .choices__inner, .choices .choices__item.choices__item--choice, .c-header__nav-main-link, .c-header__nav-sublink, .c-footer__section-button, .c-footer__section-link, .c-banner-card-home__content, .c-banner-card-company__content, .c-banner-card-company__hidden-content, .c-banner-card-contact__content, .c-banner-card-expertise__content, .c-banner-card-expertise__hidden-content, .c-banner-card-products__content, .c-banner-card-join-us__content p, .c-banner-card-join-us__hidden-content p, .c-product-title__title, .c-page-section__subtitle, .c-page-section__description, .c-product-description__description, .c-expertise-section__description, .c-expertise-section__description-hidden, .c-expertise-section__read-more-button, .c-expertise-section__read-less-button, .c-expertise-section__responsive-read-more-button, .c-expertise-section__link {
+input[type="search"], .choices .choices__inner, .choices .choices__item.choices__item--choice, .c-header__nav-main-link, .c-header__nav-sublink, .c-footer__section-button, .c-footer__section-link, .c-footer__txtbottom, .c-banner-card-home__content, .c-banner-card-company__content, .c-banner-card-company__hidden-content, .c-banner-card-contact__content, .c-banner-card-expertise__content, .c-banner-card-expertise__hidden-content, .c-banner-card-products__content, .c-banner-card-join-us__content p, .c-banner-card-join-us__hidden-content p, .c-product-title__title, .c-page-section__subtitle, .c-page-section__description, .c-product-description__description, .c-expertise-section__description, .c-expertise-section__description-hidden, .c-expertise-section__read-more-button, .c-expertise-section__read-less-button, .c-expertise-section__responsive-read-more-button, .c-expertise-section__link {
   font-family: 'Titillium-semi-bold';
   color: #000000; }
 
@@ -4594,11 +4599,8 @@ category: 02-molecules
   .c-statistic-picture--multiple-pictures {
     display: flex;
     justify-content: space-between; }
-    .c-statistic-picture--multiple-pictures .c-statistic-picture__picture {
-      height: 20rem;
-      width: auto; }
   .c-statistic-picture__picture {
-    width: 100%;
+    max-width: 100%;
     height: auto; }
 
 /*

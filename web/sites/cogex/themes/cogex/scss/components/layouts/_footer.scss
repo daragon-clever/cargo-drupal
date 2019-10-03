@@ -248,4 +248,14 @@ footer {
     background-color: $grey-lightest; 
   }
 
+  &__txtbottom {
+    @extend .c-text-semi-bold;
+    text-align: center;
+    color: $grey-darkest;
+
+    a {
+      color: $grey-darkest;
+    }
+  }
+
 }

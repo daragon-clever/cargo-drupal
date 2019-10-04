@@ -1,6 +1,8 @@
 .c-contact-form {
-  padding-top: 3.5rem;
   position: relative;
+  max-width: 570px;
+  padding: 3.5rem 15px 0;
+  margin: 0 auto;
 
   &__title {
     margin: 0;
@@ -28,8 +30,12 @@
 
   }
 
-  &__input-row {
+  .form-item {
     margin-top: 1.7rem;
+
+    label {
+      display: none;
+    }
   }
 
   &__captcha-container {
@@ -40,6 +46,26 @@
     margin-top: 2rem;
     margin-bottom: 3rem;
     text-align: center;
+  }
+
+  &__upload-wrapper {
+    color: $grey-darkest;
+
+    label {
+      display: block !important;
+    }
+
+    .button {
+      border: 1px solid;
+      padding: 15px;
+      width: 100%;
+      cursor: pointer;
+      transition: opacity 0.3s ease-in-out;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
   }
 
   .g-recaptcha {

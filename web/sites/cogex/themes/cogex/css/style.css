@@ -5460,9 +5460,9 @@ category: 03-organisms
     margin-top: 2rem;
     margin-bottom: 3rem;
     text-align: center; }
-  .c-contact-form g-recaptcha {
+  .c-contact-form .g-recaptcha {
     text-align: center; }
-    .c-contact-form g-recaptcha > div {
+    .c-contact-form .g-recaptcha > div {
       display: inline-block;
       margin-top: 20px; }
   @media only screen and (max-width: 992px) {

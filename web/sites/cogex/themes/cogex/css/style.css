@@ -5454,8 +5454,10 @@ category: 03-organisms
       height: 0.1rem;
       transform: translateX(-50%);
       background-color: #D6D6D6; }
-  .c-contact-form__input-row {
+  .c-contact-form .form-item {
     margin-top: 1.7rem; }
+    .c-contact-form .form-item label {
+      display: none; }
   .c-contact-form__captcha-container {
     margin-top: 2.4rem; }
   .c-contact-form__submit-container {
@@ -5464,6 +5466,8 @@ category: 03-organisms
     text-align: center; }
   .c-contact-form__upload-wrapper {
     color: #303030; }
+    .c-contact-form__upload-wrapper label {
+      display: block !important; }
     .c-contact-form__upload-wrapper .button {
       border: 1px solid;
       padding: 15px;

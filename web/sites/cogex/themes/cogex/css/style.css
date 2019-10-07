@@ -4320,9 +4320,42 @@ category: 02-molecules
     width: 100%;
     height: 100%;
     display: block;
-    background: url("../images/bg-mask.png") no-repeat center transparent;
-    z-index: 10;
-    background-size: cover; }
+    z-index: 10; }
+    .c-page-banner-home__mask:before, .c-page-banner-home__mask:after {
+      background-size: cover !important;
+      position: absolute;
+      content: "";
+      display: block;
+      height: 100%;
+      width: 100%;
+      transition: all 0.5s ease-in-out;
+      animation-duration: 1.3s; }
+
+@keyframes slideinfromleft {
+  from {
+    left: -500px; }
+  to {
+    left: 0;
+    bottom: 0; } }
+
+@keyframes slideinfromright {
+  from {
+    right: -500px; }
+  to {
+    right: 0;
+    top: 0; } }
+    .c-page-banner-home__mask:before {
+      background: url("../images/mask-left.png") no-repeat center transparent;
+      animation-name: slideinfromleft; }
+    .c-page-banner-home__mask:after {
+      background: url("../images/mask-right.png") no-repeat center transparent;
+      animation-name: slideinfromright; }
+    @media only screen and (max-width: 992px) {
+      .c-page-banner-home__mask {
+        height: 400px; } }
+    @media only screen and (max-width: 480px) {
+      .c-page-banner-home__mask {
+        height: 200px; } }
   .c-page-banner-home__picture {
     position: absolute;
     top: 0;

@@ -36,9 +36,60 @@ category: 02-molecules
     width: 100%;
     height: 100%;
     display: block;
-    background: url("../images/bg-mask.png") no-repeat center transparent;
     z-index: 10;
-    background-size: cover;
+
+    &:before, &:after {
+      background-size: cover !important;
+      position: absolute;
+      content: "";
+      display: block;
+      height: 100%;
+      width: 100%;
+      transition: all 0.5s ease-in-out;
+      animation-duration: 1.3s;
+    }
+
+    $amount: -500px;
+
+    @keyframes slideinfromleft {
+      from {
+        left: $amount;
+      }
+
+      to {
+        left: 0;
+        bottom: 0;
+      }
+    }
+
+    @keyframes slideinfromright {
+      from {
+        right: $amount;
+      }
+
+      to {
+        right: 0;
+        top: 0;
+      }
+    }
+
+    &:before {
+      background: url("../images/mask-left.png") no-repeat center transparent;
+      animation-name: slideinfromleft;
+    }
+
+    &:after {
+      background: url("../images/mask-right.png") no-repeat center transparent;
+      animation-name: slideinfromright;
+    }
+
+    @media only screen and (max-width: $bp-tablet) {
+      height: 400px;
+    }
+
+    @media only screen and (max-width: $bp-mobile) {
+      height: 200px;
+    }
   }
 
   &__picture {

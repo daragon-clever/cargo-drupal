@@ -280,4 +280,15 @@ jQuery(document).ready(function($) {
             $(".js-slide-toggle span").toggle();
         })
     }
+
+    // SWITCH LANGUE
+    $('a.language-link.is-active').on("click", function(e) {
+        e.preventDefault();
+    });
+
+    var listLangWrapper = $('#block-selecteurdelangue .links');
+    listLangWrapper.on("click", function() {
+        $(this).toggleClass("open");
+    });
+    $('#block-selecteurdelangue li.is-active').prependTo(listLangWrapper);
 });

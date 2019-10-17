@@ -432,6 +432,13 @@ body {
   transition: all 0.3s ease-in-out;
   transform-origin: center;
 }
+@media only screen and (max-width: 991px) {
+  #block-selecteurdelangue {
+    position: fixed;
+    top: 27px;
+    left: 20px;
+  }
+}
 #header-wrapper .navbar-toggler {
   position: absolute;
   top: 9px;

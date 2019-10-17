@@ -291,4 +291,8 @@ jQuery(document).ready(function($) {
         $(this).toggleClass("open");
     });
     $('#block-selecteurdelangue li.is-active').prependTo(listLangWrapper);
+
+    if (isTabletOrLess) {
+        $("#block-selecteurdelangue").prependTo("header");
+    }
 });

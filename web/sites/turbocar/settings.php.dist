@@ -796,3 +796,12 @@ $databases['default']['default'] = array (
   'driver' => 'mysql',
 );
 $settings['install_profile'] = 'standard';
+$config_directories['sync'] = "../config/sync";
+
+$settings['rebuild_access'] = TRUE;
+
+$config['system.qrcodeadm'] = [
+    'soc' => 'TBC',
+    'prod' => false,
+    'mailTesterreur' => 'poleweb@cargo-services.fr',
+];

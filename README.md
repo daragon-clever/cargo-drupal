@@ -21,11 +21,16 @@
 	* '**driver**' => 'mysql'
 
 # Mettre à jour les médias et la base de données depuis la prépod
-Depuis la racine du projet, exécuter la commande :
-1. `docker-compose run --rm php bash bin/synchfiles.sh`
-    * Entrez le nom du site en local et en distant
-    * Entrez le nom et le mot de passe de l'utilisateur de la base de données préprod
-2. `docker-compose exec db /bin/bash /var/www/html/bin/synchbd.sh`
+
+* Depuis le dossier /multisites/[site_name], exécuter la commande :
+    * 1/ `docker-compose run --rm php bash bin/synchfiles.sh`
+        * Entrez le nom du site en local et en distant
+        * Entrez le nom et le mot de passe de l'utilisateur de la base de données préprod
+    * 2/ `docker-compose exec db /bin/bash /var/www/html/bin/synchbd.sh` (**dbgc** pour groupecargo)
+        * Entrez le nom de la base pour le site
+        * Entrez les identifiantes de la base (locale) pour le site
+
+* NB : si une erreur se produit "synchfiles non trouvé", c'est que vous n'êtes pas au bon endroit pour exécuter ce script. Il faut bien se placer dans /multisites/[site_name] pour exécuter le docker-compose du projet.
 	
 # Mise à jour de Drupal : 
 * `docker-compose run --rm php composer outdated`

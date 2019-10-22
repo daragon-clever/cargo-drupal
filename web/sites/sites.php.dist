@@ -1,4 +1,4 @@
 <?php
 $sites = array(
-    '192.168.99.100' => 'turbocar',
+    'web.turbocar.svdXpweb-stm.ressinfo.ad' => 'turbocar',
 );

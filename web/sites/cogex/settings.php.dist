@@ -786,7 +786,7 @@ $settings['entity_update_batch_size'] = 50;
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
 $databases['default']['default'] = array (
-  'database' => 'yliades',
+  'database' => 'cogex',
   'username' => 'root',
   'password' => 'root',
   'prefix' => '',
@@ -797,7 +797,3 @@ $databases['default']['default'] = array (
 );
 $settings['install_profile'] = 'standard';
 $config_directories['sync'] = "../config/sync";
-
-$config['system.newsletter'] = [
-    'allowTest' => 'true'//false prod env
-];

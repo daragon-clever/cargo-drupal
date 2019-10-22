@@ -786,7 +786,7 @@ $settings['entity_update_batch_size'] = 50;
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
 $databases['default']['default'] = array (
-  'database' => 'turbocar',
+  'database' => 'comptoirdefamille',
   'username' => 'root',
   'password' => 'root',
   'prefix' => '',
@@ -796,3 +796,8 @@ $databases['default']['default'] = array (
   'driver' => 'mysql',
 );
 $settings['install_profile'] = 'standard';
+$config_directories['sync'] = "../config/sync";
+
+$config['system.newsletter'] = [
+    'allowTest' => 'true' // false si env de prod
+];

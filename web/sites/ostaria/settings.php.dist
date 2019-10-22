@@ -786,7 +786,7 @@ $settings['entity_update_batch_size'] = 50;
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
 $databases['default']['default'] = array (
-  'database' => 'turbocar',
+  'database' => 'ostaria',
   'username' => 'root',
   'password' => 'root',
   'prefix' => '',
@@ -796,3 +796,4 @@ $databases['default']['default'] = array (
   'driver' => 'mysql',
 );
 $settings['install_profile'] = 'standard';
+$config_directories['sync'] = "../config/sync";

@@ -60,6 +60,7 @@ pipeline {
 
                 sh '''
                     sed "s|{{ CHEMIN_LOCAL }}|$WORKSPACE/|" docker-compose.yml.dist > docker-compose.yml
+                    docker-compose pull
                     docker-compose build
                 '''
             }

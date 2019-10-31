@@ -11,7 +11,7 @@ bootstrap:
 # Plugin Slick
 slick:
   js:
-    https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js: { type: external }
+    js/slick-custom.js: {}
   dependencies:
     - core/jquery
   css:

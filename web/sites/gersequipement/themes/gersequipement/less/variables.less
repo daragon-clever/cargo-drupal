@@ -10,11 +10,12 @@
 @tablet:         ~"only screen and (max-width: @{sm})";
 
 // Colors
-@red: #f01a00;
+@grey: #4a4a49;
+@pink: #d40058;
 
 // Functions
 .dimOpacityOnHover (@opacity) {
-  transition: opacity 0.3s;
+  transition: all 0.3s;
   &:hover {
     opacity: @opacity;
   }

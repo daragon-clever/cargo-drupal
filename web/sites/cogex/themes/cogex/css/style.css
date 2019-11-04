@@ -5523,3 +5523,137 @@ category: 03-organisms
   @media only screen and (max-width: 992px) {
     .c-main-content {
       padding-top: 7rem; } }
+
+html {
+  scroll-behavior: smooth; }
+
+.joinus-portraits .txt-intro {
+  font-family: 'Titillium-semi-bold', Arial, Helvetica, sans-serif;
+  text-align: center; }
+  .joinus-portraits .txt-intro h2 {
+    text-transform: uppercase;
+    font-family: 'Titillium-semi-bold', Arial, Helvetica, sans-serif;
+    margin-bottom: 10px; }
+  .joinus-portraits .txt-intro p {
+    color: #303030;
+    max-width: 925px;
+    margin: 0 auto 30px;
+    font-size: 16px; }
+
+.joinus-portraits .thumbs {
+  display: flex;
+  flex-flow: wrap;
+  margin: 0 -15px; }
+  .joinus-portraits .thumbs > div {
+    display: inline-block;
+    width: 25%;
+    padding: 0 12px;
+    margin-bottom: 24px;
+    text-align: center;
+    cursor: pointer; }
+    @media (max-width: 575px) {
+      .joinus-portraits .thumbs > div {
+        width: 50%; }
+        .joinus-portraits .thumbs > div.active img {
+          filter: grayscale(0); } }
+    .joinus-portraits .thumbs > div .inner {
+      position: relative; }
+    .joinus-portraits .thumbs > div img {
+      max-width: 100%;
+      filter: grayscale(100%);
+      transition: filter 0.3s ease-in-out; }
+    .joinus-portraits .thumbs > div .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      color: white;
+      background: rgba(227, 6, 19, 0.75);
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+      font-size: 24px;
+      font-weight: 700; }
+      .joinus-portraits .thumbs > div .overlay span {
+        font-size: 16px;
+        display: block; }
+      .joinus-portraits .thumbs > div .overlay > div {
+        margin: auto; }
+      .joinus-portraits .thumbs > div .overlay .link {
+        font-size: 16px;
+        color: white;
+        position: relative;
+        display: block; }
+        .joinus-portraits .thumbs > div .overlay .link:before {
+          content: "";
+          height: 1px;
+          width: 50px;
+          background: white;
+          display: block;
+          margin: 20px auto; }
+    .joinus-portraits .thumbs > div:hover .overlay {
+      opacity: 1; }
+
+.joinus-portraits .itw-content {
+  padding-bottom: 30px; }
+
+.joinus-portraits .item.txt {
+  font-family: 'Titillium-semi-bold', Arial, Helvetica, sans-serif;
+  display: none; }
+  .joinus-portraits .item.txt .img-wrapper,
+  .joinus-portraits .item.txt .txt-wrapper {
+    display: inline-block;
+    vertical-align: top; }
+  @media (max-width: 768px) {
+    .joinus-portraits .item.txt .img-wrapper img {
+      width: 156px; } }
+  @media (max-width: 575px) {
+    .joinus-portraits .item.txt .img-wrapper {
+      display: none; } }
+  .joinus-portraits .item.txt .txt-wrapper {
+    padding-left: 45px; }
+    @media (max-width: 768px) {
+      .joinus-portraits .item.txt .txt-wrapper {
+        padding-left: 15px; } }
+    @media (max-width: 575px) {
+      .joinus-portraits .item.txt .txt-wrapper {
+        padding: 0; } }
+    .joinus-portraits .item.txt .txt-wrapper strong {
+      text-transform: uppercase;
+      color: #303030;
+      font-size: 24px;
+      display: block; }
+    .joinus-portraits .item.txt .txt-wrapper span {
+      font-size: 18px; }
+      .joinus-portraits .item.txt .txt-wrapper span:after {
+        content: "";
+        height: 1px;
+        width: 50px;
+        margin: 20px 0;
+        display: block;
+        background: #303030; }
+        @media (max-width: 575px) {
+          .joinus-portraits .item.txt .txt-wrapper span:after {
+            margin-left: auto;
+            margin-right: auto; } }
+    .joinus-portraits .item.txt .txt-wrapper p {
+      font-size: 16px;
+      line-height: 1.5;
+      color: #303030;
+      margin: 0 0 20px 0; }
+      @media (max-width: 575px) {
+        .joinus-portraits .item.txt .txt-wrapper p {
+          text-align: left;
+          font-size: 14px; } }
+      .joinus-portraits .item.txt .txt-wrapper p.question {
+        color: #E30613;
+        margin-bottom: 0;
+        font-style: italic; }
+  @media (max-width: 575px) {
+    .joinus-portraits .item.txt {
+      width: 100%;
+      background: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      margin: 0 15px 20px 15px;
+      padding: 15px; } }

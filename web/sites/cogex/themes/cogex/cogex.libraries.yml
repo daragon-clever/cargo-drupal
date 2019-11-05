@@ -6,6 +6,7 @@ global-styling:
 
   js:
     js/main.js: {}
+    js/custom-js.js: {}
 
 bootstrap:
   css:

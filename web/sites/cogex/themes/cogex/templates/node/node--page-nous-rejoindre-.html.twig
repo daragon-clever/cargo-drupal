@@ -77,10 +77,47 @@
         <div class="container">
             <div class="c-page-banner__content-wrapper">
                 <div class="c-banner-card-join-us" {{ attributes }}>
-
                    {{ content.field_banner_text }}
-
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="joinus-portraits">
+        <div class="container portraits">
+            <div class="txt-intro">
+                {{ content.field_join_intro }}
+            </div>
+            <div class="thumbs">
+                {% for i in 0..7 %}
+                    <div class="item {% if i is even %}even{% else %}odd{% endif %}" id="js-job-{{ i }}">
+                        <div class="inner">
+                            <a href="#js-anchor">
+                                <img src="{{ content.field_join_thumbs[i] }}" alt=""/>
+                                <div class="overlay">
+                                    <div>
+                                        {{ content.field_join_jobs[i] }}
+                                        <div class="link">
+                                            Découvrir l'interview
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="itw-content" id="js-anchor">
+                {% for i in 0..7 %}
+                    <div class="item txt" id="text-js-job-{{ i }}">
+                        <div class="img-wrapper">
+                            <img src="{{ content.field_join_full_portrait[i] }}" alt="" />
+                        </div>
+                        <div class="txt-wrapper">
+                            {{ content.field_join_txts[i] }}
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
         </div>
     </div>

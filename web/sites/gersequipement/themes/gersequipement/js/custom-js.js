@@ -16,6 +16,7 @@ jQuery(document).ready(function($) {
     // SLIDER HP
     var sliderHPLeft = $(".js-slick-slider-hp-left > div");
     var sliderHPRight = $(".js-slick-slider-hp-right > div");
+    var sliderHPActu = $(".js-slider-actu");
 
     sliderHPLeft.slick({
         vertical: true,
@@ -39,4 +40,10 @@ jQuery(document).ready(function($) {
         autoplaySpeed: 3000,
         speed: 1200
     });
+
+    sliderHPActu.slick({
+        infinite: true
+    });
+
+
 });

@@ -18,6 +18,10 @@ body {
       top: 80px;
     }
   }
+
+  @media @phone {
+    font-size: 14px;
+  }
 }
 
 a {
@@ -158,9 +162,15 @@ img.logo {
     line-height: 1.4;
     margin: 0;
 
-     @media @smallDesktop {
+    @media @smallDesktop {
        font-size: 25px;
      }
+
+    @media @phone {
+      font-size: 18px;
+      text-align: center;
+      margin: 30px 0;
+    }
 
     &:after {
       content: "";
@@ -169,6 +179,10 @@ img.logo {
       height: 1px;
       background: @pink;
       margin: 40px 0;
+
+      @media @phone {
+        margin: 20px auto;
+      }
     }
 
     span {
@@ -179,6 +193,10 @@ img.logo {
 
   p {
     line-height: 1.6;
+
+    @media @phone {
+      text-align: center;
+    }
   }
 
   .cta {
@@ -192,6 +210,20 @@ img.logo {
        max-width: 100%;
      }
    }
+
+  @media @phone {
+    img {
+      height: 200px;
+    }
+
+    .js-fade-galery {
+      height: 200px;
+    }
+
+    .fade-galery-wrapper {
+      padding: 0;
+    }
+  }
 }
 
 .cta {
@@ -422,71 +454,206 @@ img.logo {
   .info-wrapper {
     position: relative;
 
-    .txts-wrapper {
-      .txt {
-        position: absolute;
-        top: 0;
-        right: 0;
+    .txt {
+      position: absolute;
+      top: 0;
+      right: 0;
 
+      p:first-child {
+        color: white;
+        font-size: 25px;
+        font-weight: lighter;
+        margin-bottom: 20px;
+      }
+
+      p:last-child {
+        line-height: 1.6;
+      }
+
+      &.block-0 {
+        top: 7px;
+        left: 216px;
+        width: 400px;
+      }
+
+      &.block-1 {
+        top: 420px;
+        right: 224px;
+        width: 167px;
+      }
+
+      &.block-2 {
+        top: 520px;
+        left: 20px;
+        width: 280px;
+      }
+
+      &.block-3 {
+        top: 691px;
+        width: 320px;
+        right: 19px;
+      }
+
+      &.block-4 {
+        top: 896px;
+        left: 103px;
+        width: 350px;
+      }
+
+      &.block-5 {
+        top: 1091px;
+        right: 130px;
+        width: 355px;
+      }
+
+      &.block-6 {
+        top: 1375px;
+        left: 208px;
+        width: 230px;
+      }
+
+      &.block-1,
+      &.block-3,
+      &.block-5 {
         p:first-child {
-          color: white;
-          font-size: 25px;
-          font-weight: lighter;
-          margin-bottom: 20px;
+          text-align: right;
+        }
+      }
+    }
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  @media (max-width: 1210px) {
+    img,
+    .info-wrapper {
+      max-width: 690px;
+
+      .txt {
+        p:first-child {
+          font-size: 17px;
+          margin-bottom: 12px;
         }
 
         p:last-child {
-          line-height: 1.6;
+          line-height: 1.3;
+          font-size: 11px;
+        }
+
+        br {
+          display: none;
         }
 
         &.block-0 {
-          top: 37px;
-          left: 224px;
-          width: 380px;
+          top: 2px;
+          left: 122px;
+          width: 236px;
         }
 
         &.block-1 {
-          top: 440px;
-          right: 233px;
-          width: 167px;
+          top: 243px;
+          right: 127px;
+          width: 108px;
         }
 
         &.block-2 {
-          top: 537px;
-          left: 30px;
-          width: 280px;
+          top: 301px;
+          left: 8px;
+          width: 170px;
         }
 
         &.block-3 {
-          top: 702px;
-          width: 320px;
-          right: 30px;
+          top: 400px;
+          width: 201px;
+          right: 9px;
         }
 
         &.block-4 {
-          top: 903px;
-          left: 113px;
-          width: 350px;
+          top: 521px;
+          left: 55px;
+          width: 210px;
         }
 
         &.block-5 {
-          top: 1093px;
-          right: 140px;
-          width: 345px;
+          top: 634px;
+          right: 73px;
+          width: 217px;
         }
 
         &.block-6 {
-          top: 1372px;
-          left: 218px;
-          width: 230px;
+          top: 800px;
+          left: 117px;
+          width: 140px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 991px) {
+    .desktop {
+      display: none;
+    }
+
+    .mobile {
+      display: block;
+    }
+
+    img,
+    .info-wrapper {
+      width: 320px;
+
+      .txt {
+        p:first-child {
+          font-size: 17px;
+          margin-bottom: 16px;
         }
 
-        &.block-1,
-        &.block-3,
+        p:last-child {
+          font-size: 12px;
+          line-height: 1.5;
+        }
+
+        &.block-0 {
+          top: 61px;
+          left: 11px;
+        }
+
+        &.block-1 {
+          top: 341px;
+          right: 12px;
+          width: 121px;
+        }
+
+        &.block-2 {
+          top: 510px;
+          left: 13px;
+          width: 210px;
+        }
+
+        &.block-3 {
+          top: 750px;
+          width: 244px;
+          right: 12px;
+        }
+
+        &.block-4 {
+          top: 1056px;
+          left: 15px;
+          width: 250px;
+        }
+
         &.block-5 {
-          p:first-child {
-            text-align: right;
-          }
+          top: 1346px;
+          right: 10px;
+          width: 267px;
+        }
+
+        &.block-6 {
+          top: 1618px;
+          left: 11px;
+          width: 170px;
         }
       }
     }
@@ -522,6 +689,10 @@ img.logo {
 
   .container-fluid > .row {
     height: 380px;
+
+    @media @tablet {
+      height: auto;
+    }
   }
 
   .row {
@@ -540,6 +711,11 @@ img.logo {
       height: 65px;
       width: auto;
       margin: 20px;
+      max-width: 100%;
+
+      @media @phone {
+        margin: 20px auto;
+      }
     }
   }
 
@@ -550,6 +726,10 @@ img.logo {
     display: inline-block;
     vertical-align: middle;
     text-align: left;
+
+    @media @smallDesktop {
+      text-align: center;
+    }
   }
 
   strong {
@@ -562,10 +742,28 @@ img.logo {
       font-size: 36px;
       text-decoration: underline;
     }
+
+    @media @smallDesktop {
+      &,
+      &.txt {
+        font-size: 30px;
+      }
+    }
+
+    @media @tablet {
+      &,
+      &.txt {
+        font-size: 25px;
+      }
+    }
   }
 
   .va-default * {
     vertical-align: baseline !important;
+  }
+
+  @media @smallDesktop {
+    font-size: 14px;
   }
 }
 
@@ -578,7 +776,15 @@ img.logo {
   }
 
   .blocks-txt {
-    margin: 30px 0 20px;
+    margin: 30px -15px 20px;
+
+    @media @tablet {
+      margin: 0 -15px;
+
+      & > div {
+        margin-bottom: 30px;
+      }
+    }
   }
 
   .inner {
@@ -600,6 +806,11 @@ img.logo {
         height: 1px;
         background: @grey;
       }
+    }
+
+    @media @tablet {
+      padding: 15px;
+      margin: 0;
     }
   }
 }

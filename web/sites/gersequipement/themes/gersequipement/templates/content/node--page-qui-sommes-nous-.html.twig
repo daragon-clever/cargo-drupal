@@ -4,7 +4,7 @@
         <div class="col-12 col-sm-4 top-txt">
             {{ content.field_qsn_banner_txt }}
         </div>
-        <div class="col-12 col-sm-8">
+        <div class="col-12 col-sm-8 fade-galery-wrapper">
             <div class="js-fade-galery">
                 {% for field in content.field_qsn_banner_imgs['#items'] %}
                     <img alt="{{ field.alt }}" src="{{ file_url(field.entity.fileuri) }}"/>
@@ -23,9 +23,14 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-12 info-wrapper">
-                {{ content.field_qsn_svg_desktop }}
-                <div class="txts-wrapper">
+            <div class="col-12">
+                <div class="info-wrapper">
+                    <div class="desktop">
+                        {{ content.field_qsn_svg_desktop }}
+                    </div>
+                    <div class="mobile">
+                        {{ content.field_qsn_svg_mobile }}
+                    </div>
                     {% for i in 0..6 %}
                     <div class="txt block-{{ i }}">
                         {{ content.field_qsn_content1_txts[i] }}
@@ -51,7 +56,7 @@
         <div class="row">
             <div class="col-12 col-sm-6">
                 <div class="row">
-                    <div class="col-12 col-sm-4 bg-lightgrey block">
+                    <div class="col-12 col-md-6 col-lg-4 bg-lightgrey block">
                         <div class="inner">
                             {{ content.field_qsn_content2_svgs[0] }} <br />
                             <span style="margin-top:-30px;">{{ 'commandes'|trans }}</span><br />
@@ -60,7 +65,7 @@
                             <span style="margin-top:-30px;">{{ 'minutes'|trans }}</span>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-8">
+                    <div class="col-12 col-md-6 col-lg-8">
                         <div class="row">
                             <div class="col-12 bg-grey block">
                                 <div class="inner">
@@ -83,13 +88,13 @@
             </div>
             <div class="col-12 col-sm-6">
                 <div class="row">
-                    <div class="col-12 col-sm-8 bg-lightgrey block">
+                    <div class="col-6 col-lg-8 bg-lightgrey block">
                         <div class="inner">
                             {{ content.field_qsn_content2_svgs[3] }}
                             {{ content.field_qsn_content2_txt[3] }}
                         </div>
                     </div>
-                    <div class="col-12 col-sm-4 bg-pink block">
+                    <div class="col-6 col-lg-4 bg-pink block">
                         <div class="inner">
                             {{ content.field_qsn_content2_svgs[4] }}
                             {{ content.field_qsn_content2_txt[4] }}
@@ -102,13 +107,13 @@
         <div class="row">
             <div class="col-12 col-sm-6">
                 <div class="row">
-                    <div class="col-12 col-sm-8 bg-pink block">
+                    <div class="col-6 col-lg-8 bg-pink block">
                         <div class="inner">
                             {{ content.field_qsn_content2_svgs[5] }}
                             {{ content.field_qsn_content2_txt[5] }}
                         </div>
                     </div>
-                    <div class="col-12 col-sm-4 bg-lightgrey block">
+                    <div class="col-6 col-lg-4 bg-lightgrey block">
                         <div class="inner">
                             {{ content.field_qsn_content2_svgs[6] }}
                             {{ content.field_qsn_content2_txt[6] }}
@@ -118,15 +123,15 @@
             </div>
             <div class="col-12 col-sm-6">
                 <div class="row">
-                    <div class="col-12 col-sm-4 bg-grey block">
+                    <div class="col-12 col-lg-4 bg-grey block">
                         <div class="inner">
                             {{ content.field_qsn_content2_svgs[7] }}
                             {{ content.field_qsn_content2_txt[7] }}
                         </div>
                     </div>
-                    <div class="col-12 col-sm-8">
+                    <div class="col-12 col-lg-8">
                         <div class="row">
-                            <div class="col-12 bg-white block">
+                            <div class="col-12 col-md-6 col-lg-12 bg-white block">
                                 <div class="inner">
                                     <span class="inline">
                                         {{ content.field_qsn_content2_svgs[8] }}
@@ -136,7 +141,7 @@
                                     </span>
                                 </div>
                             </div>
-                            <div class="col-12 bg-lightgrey block">
+                            <div class="col-12 col-md-6 col-lg-12 bg-lightgrey block">
                                 <div class="inner">
                                     <span class="inline">
                                         {{ content.field_qsn_content2_svgs[9] }}
@@ -153,25 +158,25 @@
         </div>
         <!-- LIGNE 3 -->
         <div class="row">
-            <div class="col-12 col-sm-2 bg-lightgrey block">
+            <div class="col-12 col-sm-3 col-lg-2 bg-lightgrey block">
                 <div class="inner">
                     {{ content.field_qsn_content2_svgs[10] }}
                     {{ content.field_qsn_content2_txt[10] }}
                 </div>
             </div>
-            <div class="col-12 col-sm-2 bg-grey2 block">
+            <div class="col-12 col-sm-2 col-lg-2 bg-grey2 block">
                 <div class="inner">
                     {{ content.field_qsn_content2_svgs[11] }}
                     {{ content.field_qsn_content2_txt[11] }}
                 </div>
             </div>
-            <div class="col-12 col-sm-4 bg-white block">
+            <div class="col-12 col-sm-3 col-lg-4 bg-white block">
                 <div class="inner">
                     {{ content.field_qsn_content2_svgs[12] }}
                     {{ content.field_qsn_content2_txt[12] }}
                 </div>
             </div>
-            <div class="col-12 col-sm-4 bg-grey block">
+            <div class="col-12 col-sm-4 col-lg-4 bg-grey block">
                 <div class="inner">
                     <span class="inline">
                         {{ content.field_qsn_content2_svgs[13] }}

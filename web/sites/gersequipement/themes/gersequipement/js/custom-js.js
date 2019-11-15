@@ -45,5 +45,21 @@ jQuery(document).ready(function($) {
         infinite: true
     });
 
+    // QSN - FADEGALERY
+    var galery = ".js-fade-galery img";
+    if ($(galery).length) {
+        $(galery + ":first-child").addClass("current");
+        setInterval(elemAnim, 5000);
 
+        function elemAnim() {
+            var current = $(galery + ".current");
+            var next = current.next();
+
+            current.toggleClass("current");
+            if (current.is($(galery + ":last-child"))) {
+                next = $(galery + ":first-child");
+            }
+            next.toggleClass("current");
+        }
+    }
 });

@@ -138,6 +138,10 @@
     }
   }
 
+  .c-mobile-slick-slider {
+    display: none;
+  }
+
   // Tablet/mobile version.
   @media only screen and (max-width: $bp-tablet) {
     position: relative;
@@ -202,6 +206,26 @@
       padding-left: 2.5rem;
       padding-right: 2.5rem;
       line-height: 1.85;
+    }
+
+    &__pictures-container {
+      display: none;
+    }
+
+    .c-mobile-slick-slider,
+    .c-slick-slider {
+      display: block;
+
+      .slick-track {
+        display: flex;
+      }
+
+      .slick-slide {
+        display: flex;
+        height: auto;
+        align-items: center;
+        justify-content: center;
+      }
     }
 
   }

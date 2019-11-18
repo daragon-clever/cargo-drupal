@@ -5327,8 +5327,7 @@ category: 03-organisms
         display: none; }
       .c-product-description .c-mobile-slick-slider {
         display: block;
-        margin: auto;
-        margin-top: 2.5rem; } }
+        margin: 2.5rem auto auto; } }
 
 .c-expertise-section {
   padding-top: 6.1rem;
@@ -5418,6 +5417,8 @@ category: 03-organisms
     transition: all 0.3s ease-in-out; }
     .c-expertise-section__link:hover {
       color: #E30613; }
+  .c-expertise-section .c-mobile-slick-slider {
+    display: none; }
   @media only screen and (max-width: 992px) {
     .c-expertise-section {
       position: relative; }
@@ -5462,7 +5463,21 @@ category: 03-organisms
       .c-expertise-section__link-container {
         padding-left: 2.5rem;
         padding-right: 2.5rem;
-        line-height: 1.85; } }
+        line-height: 1.85; }
+      .c-expertise-section__pictures-container {
+        display: none; }
+      .c-expertise-section .c-mobile-slick-slider,
+      .c-expertise-section .c-slick-slider {
+        display: block; }
+        .c-expertise-section .c-mobile-slick-slider .slick-track,
+        .c-expertise-section .c-slick-slider .slick-track {
+          display: flex; }
+        .c-expertise-section .c-mobile-slick-slider .slick-slide,
+        .c-expertise-section .c-slick-slider .slick-slide {
+          display: flex;
+          height: auto;
+          align-items: center;
+          justify-content: center; } }
 
 .c-contact-form {
   position: relative;

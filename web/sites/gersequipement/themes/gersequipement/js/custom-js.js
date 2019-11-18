@@ -62,4 +62,12 @@ jQuery(document).ready(function($) {
             next.toggleClass("current");
         }
     }
+
+    // BRANDS - SLICK
+    var sliderBrand = $(".brands .js-slick > div")
+    sliderBrand.slick({
+        slidesToShow: 4,
+        arrows: false,
+        infinite: true
+    });
 });

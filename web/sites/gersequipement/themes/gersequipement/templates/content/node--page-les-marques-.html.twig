@@ -1,0 +1,42 @@
+<div class="brands">
+    <!-- SLIDER -->
+    <div class="container top">
+        <div class="row align-items-center">
+            <div class="col-12 col-sm-4 top-txt">
+                {{ content.field_brands_banner_txt }}
+            </div>
+            <div class="col-12 col-sm-8">
+                <div class="svgs-banner">
+                    <div class="row justify-content-center">
+                        {% for field in content.field_brands_banner_svgs['#items'] %}
+                            <div class="col-6 col-sm-4">
+                                <img src="{{ file_url(field.entity.fileuri) }}"/>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENT 1 -->
+    <div class="brand-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-8 offset-sm-2 text-center intro-txt">
+                    <div class="logo">
+                        {{ content.field_brands_p1_logo }}
+                    </div>
+                    {{ content.field_brands_p1_txt }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="brand-img-wrapper js-slick">
+                        {{ content.field_brands_p1_imgs }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

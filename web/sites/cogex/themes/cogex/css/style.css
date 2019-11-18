@@ -5348,28 +5348,25 @@ category: 03-organisms
     transition: max-height 0.5s ease-in; }
   .c-expertise-section:nth-child(odd) {
     background-color: #ffffff; }
-  .c-expertise-section::after {
-    content: '';
-    position: absolute;
-    top: 4rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 5rem;
-    height: 0.1rem;
-    background-color: #303030; }
   .c-expertise-section__pictures-container {
     margin: 2.6rem 0;
     display: flex;
     justify-content: space-between; }
   .c-expertise-section__title {
+    position: relative;
     margin: 0;
-    color: #303030;
-    font-size: 2.1rem;
-    line-height: 1.57;
-    text-align: center;
+    font-size: 2.4rem;
+    line-height: 1.16;
     text-transform: uppercase;
-    padding-left: 13.9rem;
-    padding-right: 13.9rem; }
+    color: #E30613;
+    text-align: center; }
+    .c-expertise-section__title::after {
+      content: '';
+      width: 5rem;
+      height: 0.1rem;
+      background-color: #949494;
+      margin: 20px auto;
+      display: block; }
   .c-expertise-section__description {
     margin: 0;
     margin-top: 1.6rem;

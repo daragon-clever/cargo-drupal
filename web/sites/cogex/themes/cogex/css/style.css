@@ -3396,7 +3396,9 @@ Add border radius to elements
     color: #E30613; }
 
 .c-footer {
-  box-shadow: inset 0px 12px 10px -10px rgba(0, 0, 0, 0.1); }
+  box-shadow: 0 -10px 20px #0000000f;
+  z-index: 10;
+  position: relative; }
   @media only screen and (max-width: 992px) {
     .c-footer .container {
       max-width: 100%;
@@ -5010,6 +5012,8 @@ category: 03-organisms
   position: relative;
   box-shadow: 0 0 5rem 0.2rem rgba(0, 0, 0, 0.1);
   z-index: 1; }
+  .c-page-section:last-child {
+    box-shadow: 0 -50px 5rem 0 rgba(0, 0, 0, 0.03); }
   .c-page-section::before {
     content: '';
     display: block;
@@ -5021,7 +5025,6 @@ category: 03-organisms
     transform: translate(-50%, -50%);
     background-color: #ffffff;
     border-radius: 50%;
-    z-index: 0;
     box-shadow: 0 0 5rem 0.2rem rgba(0, 0, 0, 0.1);
     z-index: -1; }
   .c-page-section::after {

@@ -52,6 +52,10 @@ category: 03-organisms
   box-shadow: 0 0 5rem 0.2rem rgba(0,0,0,0.1);
   z-index: 1;
 
+  &:last-child {
+    box-shadow: 0 -50px 5rem 0 rgba(0, 0, 0, 0.03);
+  }
+
   &::before {
     content: '';
     display: block;
@@ -63,7 +67,6 @@ category: 03-organisms
     transform: translate(-50%, -50%);
     background-color: $white;
     border-radius: 50%;
-    z-index: 0;
     box-shadow: 0 0 5rem 0.2rem rgba(0,0,0,0.1);
     z-index: -1;
   }

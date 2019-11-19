@@ -112,10 +112,22 @@
 
                 {{ content.field_section_1_text }}
 
+                <!-- Desktop version -->
                 <div class="c-expertise-section__pictures-container">
 
                     {% for picture in content.field_section_1_pictures['#items'] %}
                         <img src="{{ file_url(picture.entity.uri.value) }}" data-aos="fade-up">
+                    {% endfor %}
+
+                </div>
+
+                <!-- Mobile version -->
+                <div class="c-mobile-slick-slider">
+
+                    {% for picture in content.field_section_1_pictures['#items'] %}
+                        <div class="c-mobile-slick-slider__slide">
+                            <img src="{{ file_url(picture.entity.uri.value) }}" />
+                        </div>
                     {% endfor %}
 
                 </div>
@@ -132,6 +144,7 @@
 
                 {{ content.field_section_2_text }}
 
+                <!-- Desktop version -->
                 <div class="c-expertise-section__pictures-container">
 
                     {% for picture in content.field_section_2_pictures['#items']|slice(0, 3) %}
@@ -149,6 +162,17 @@
 
                     </div>
                 {% endif %}
+
+                <!-- Mobile version -->
+                <div class="c-mobile-slick-slider">
+
+                    {% for picture in content.field_section_2_pictures['#items'] %}
+                        <div class="c-mobile-slick-slider__slide">
+                            <img src="{{ file_url(picture.entity.uri.value) }}" />
+                        </div>
+                    {% endfor %}
+
+                </div>
 
                 <p class="c-expertise-section__link-container">
                     <a href="{{ content.field_section_2_link[0]['#url'] }}" class="c-expertise-section__link">{{ content.field_section_2_link[0]['#title'] }}</a>

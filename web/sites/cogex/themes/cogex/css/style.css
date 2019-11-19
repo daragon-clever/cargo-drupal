@@ -3396,7 +3396,9 @@ Add border radius to elements
     color: #E30613; }
 
 .c-footer {
-  box-shadow: inset 0px 12px 10px -10px rgba(0, 0, 0, 0.1); }
+  box-shadow: 0 -10px 20px #0000000f;
+  z-index: 10;
+  position: relative; }
   @media only screen and (max-width: 992px) {
     .c-footer .container {
       max-width: 100%;
@@ -3406,12 +3408,9 @@ Add border radius to elements
     .c-footer .c-footer__logos-wrapper {
       margin-left: -15px;
       margin-right: -15px;
-      overflow-x: auto;
-      white-space: nowrap; }
-    .c-footer .c-footer__company-logo:first-child {
-      margin-left: 15px; }
-    .c-footer .c-footer__company-logo:last-child {
-      margin-right: 15px; }
+      overflow: hidden;
+      white-space: nowrap;
+      font-size: 0; }
     .c-footer .c-footer__infos-container {
       display: block;
       padding: 0;
@@ -3457,6 +3456,10 @@ Add border radius to elements
   .c-footer__logos-wrapper {
     text-align: center;
     padding: 2.1rem 0; }
+  .c-footer__logo {
+    display: inline-block; }
+    .c-footer__logo img {
+      margin: 0 35px; }
   .c-footer__logo-1 {
     width: 8.7rem;
     height: auto; }
@@ -4634,7 +4637,9 @@ category: 02-molecules
     justify-content: space-between; }
   .c-statistic-picture__picture {
     max-width: 100%;
-    height: auto; }
+    max-height: 100%;
+    height: auto;
+    width: auto; }
 
 /*
 
@@ -5010,6 +5015,8 @@ category: 03-organisms
   position: relative;
   box-shadow: 0 0 5rem 0.2rem rgba(0, 0, 0, 0.1);
   z-index: 1; }
+  .c-page-section:last-child {
+    box-shadow: 0 -50px 5rem 0 rgba(0, 0, 0, 0.03); }
   .c-page-section::before {
     content: '';
     display: block;
@@ -5021,7 +5028,6 @@ category: 03-organisms
     transform: translate(-50%, -50%);
     background-color: #ffffff;
     border-radius: 50%;
-    z-index: 0;
     box-shadow: 0 0 5rem 0.2rem rgba(0, 0, 0, 0.1);
     z-index: -1; }
   .c-page-section::after {
@@ -5322,8 +5328,7 @@ category: 03-organisms
         display: none; }
       .c-product-description .c-mobile-slick-slider {
         display: block;
-        margin: auto;
-        margin-top: 2.5rem; } }
+        margin: 2.5rem auto auto; } }
 
 .c-expertise-section {
   padding-top: 6.1rem;
@@ -5348,28 +5353,25 @@ category: 03-organisms
     transition: max-height 0.5s ease-in; }
   .c-expertise-section:nth-child(odd) {
     background-color: #ffffff; }
-  .c-expertise-section::after {
-    content: '';
-    position: absolute;
-    top: 4rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 5rem;
-    height: 0.1rem;
-    background-color: #303030; }
   .c-expertise-section__pictures-container {
     margin: 2.6rem 0;
     display: flex;
     justify-content: space-between; }
   .c-expertise-section__title {
+    position: relative;
     margin: 0;
-    color: #303030;
-    font-size: 2.1rem;
-    line-height: 1.57;
-    text-align: center;
+    font-size: 2.4rem;
+    line-height: 1.16;
     text-transform: uppercase;
-    padding-left: 13.9rem;
-    padding-right: 13.9rem; }
+    color: #E30613;
+    text-align: center; }
+    .c-expertise-section__title::after {
+      content: '';
+      width: 5rem;
+      height: 0.1rem;
+      background-color: #949494;
+      margin: 20px auto;
+      display: block; }
   .c-expertise-section__description {
     margin: 0;
     margin-top: 1.6rem;
@@ -5416,6 +5418,8 @@ category: 03-organisms
     transition: all 0.3s ease-in-out; }
     .c-expertise-section__link:hover {
       color: #E30613; }
+  .c-expertise-section .c-mobile-slick-slider {
+    display: none; }
   @media only screen and (max-width: 992px) {
     .c-expertise-section {
       position: relative; }
@@ -5460,7 +5464,21 @@ category: 03-organisms
       .c-expertise-section__link-container {
         padding-left: 2.5rem;
         padding-right: 2.5rem;
-        line-height: 1.85; } }
+        line-height: 1.85; }
+      .c-expertise-section__pictures-container {
+        display: none; }
+      .c-expertise-section .c-mobile-slick-slider,
+      .c-expertise-section .c-slick-slider {
+        display: block; }
+        .c-expertise-section .c-mobile-slick-slider .slick-track,
+        .c-expertise-section .c-slick-slider .slick-track {
+          display: flex; }
+        .c-expertise-section .c-mobile-slick-slider .slick-slide,
+        .c-expertise-section .c-slick-slider .slick-slide {
+          display: flex;
+          height: auto;
+          align-items: center;
+          justify-content: center; } }
 
 .c-contact-form {
   position: relative;

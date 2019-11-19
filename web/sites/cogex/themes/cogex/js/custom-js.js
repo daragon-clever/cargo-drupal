@@ -55,7 +55,7 @@ jQuery(document).ready(function($) {
             }
             $items.scrollLeft( temp );
         }
-        setInterval(move , 1000 / frame);
+        setInterval(move , 2000 / frame);
     }
 
     if (isMobile) {

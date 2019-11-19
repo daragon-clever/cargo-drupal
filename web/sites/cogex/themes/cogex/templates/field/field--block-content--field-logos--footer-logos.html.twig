@@ -42,35 +42,10 @@
   ]
 %}
 
-{% if label_hidden %}
-  {% if multiple %}
-    <div{{ attributes }}>
-      <div class="c-footer__logos-wrapper">
-        {% for item in items %}
-          <img src="{{ file_url(item.content['#item'].entity.uri.value) }}" alt="{{ item.content['#item'].alt }}" class="c-footer__company-logo c-footer__logo-{{ loop.index }}">
-        {% endfor %}
-      </div>
-    </div>
-  {% else %}
-    <div class="c-footer__logos-wrapper">
-      {% for item in items %}
-        <img src="{{ file_url(item.content['#item'].entity.uri.value) }}" alt="{{ item.content['#item'].alt }}" class="c-footer__company-logo c-footer__logo-{{ loop.index }}">
-      {% endfor %}
-    </div>
-  {% endif %}
-{% else %}
-  <div{{ attributes }}>
-    <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
-    {% if multiple %}
-      <div>
-    {% endif %}
-      <div class="c-footer__logos-wrapper">
-        {% for item in items %}
-          <img src="{{ file_url(item.content['#item'].entity.uri.value) }}" alt="{{ item.content['#item'].alt }}" class="c-footer__company-logo c-footer__logo-{{ loop.index }}">
-        {% endfor %}
-      </div>
-    {% if multiple %}
-      </div>
-    {% endif %}
+<div class="c-footer__logos-wrapper">
+{% for item in items %}
+  <div class="c-footer__logo">
+    <img src="{{ file_url(item.content['#item'].entity.uri.value) }}" alt="{{ item.content['#item'].alt }}" class="c-footer__company-logo c-footer__logo-{{ loop.index }}">
   </div>
-{% endif %}
+{% endfor %}
+</div>

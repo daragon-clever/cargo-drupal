@@ -1,7 +1,6 @@
 jQuery(document).ready(function($) {
     // TEST MOBILE
     var isMobile = window.matchMedia("only screen and (max-width: 767px)").matches;
-    var isTabletOrLess = window.matchMedia("only screen and (max-width: 991px)").matches;
 
     // JOIN US
     if ($('.joinus-portraits').length) {

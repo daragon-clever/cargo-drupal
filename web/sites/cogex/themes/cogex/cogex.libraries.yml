@@ -7,6 +7,8 @@ global-styling:
   js:
     js/main.js: {}
     js/custom-js.js: {}
+  dependencies:
+    - core/jquery
 
 bootstrap:
   css:

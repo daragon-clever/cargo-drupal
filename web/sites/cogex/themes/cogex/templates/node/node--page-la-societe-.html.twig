@@ -115,7 +115,7 @@
                 {{ content.field_section_1_subtitle }}
             </div>
 
-            <div class="c-statistic-picture c-statistic-picture--multiple-pictures">
+            <div class="c-statistic-picture">
 
                 {% for picture in content.field_section_1_pictures_2['#items'] %}
                     <img src="{{ file_url(picture.entity.uri.value) }}" alt="statistics" class="c-statistic-picture__picture" data-aos="fade-up">

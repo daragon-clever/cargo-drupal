@@ -136,6 +136,89 @@ img.logo {
   }
 }
 
+// FOOTER
+footer {
+  padding: 40px 0 25px;
+  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.03);
+
+  .container {
+    max-width: 1270px;
+  }
+
+  a {
+    text-transform: uppercase;
+    color: #4a4a49;
+    font-size: 14px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 15px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      color: @pink;
+      text-decoration: none;
+    }
+  }
+
+  ul {
+    padding-left: 15px;
+    margin-bottom: 0;
+
+    a {
+      text-transform: none;
+      font-weight: inherit;
+      margin-bottom: 7px !important;
+    }
+  }
+
+  .col {
+    border-right: 1px solid #c8c8c8;
+    padding: 0 65px 0 90px;
+
+    &:first-child {
+      padding-left: 15px;
+
+      a:first-child {
+        &:before {
+          display: block;
+          height: 1px;
+          background: @grey;
+          width: 50px;
+          margin-bottom: 20px;
+          content: "";
+        }
+      }
+    }
+
+    &:last-child {
+      padding-right: 15px;
+      border-right: none;
+    }
+  }
+
+  span.linkedin-logo {
+    background: url("../images/logo_linkedin.png") no-repeat center transparent;
+    height: 21px;
+    width: 21px;
+    display: inline-block;
+    margin-right: 7px;
+    vertical-align: middle;
+    margin-top: -7px;
+  }
+
+  @media @tablet {
+    padding: 40px 0;
+
+    .col {
+      padding: 0 15px;
+    }
+  }
+}
+
+// CONTENT
 .slider {
   &.left {
     padding-left: 15px;
@@ -155,6 +238,10 @@ img.logo {
     text-align: left;
     max-width: 450px;
     display: inline-block;
+
+    @media @tablet {
+      max-width: 100%;
+    }
   }
 
   h1 {
@@ -888,18 +975,43 @@ img.logo {
   & > div > div {
     display: flex;
     margin: 40px 0;
+
+    @media @tablet {
+      margin: 15px 0;
+    }
   }
 
   img {
     max-width: 195px;
-    height: auto;
+    height: auto !important;
     margin: auto;
+
+    @media @tablet {
+      max-width: 130px !important;
+    }
+  }
+
+  @media @tablet {
+    margin-bottom: 30px;
   }
 }
 
 .brand-content {
   border-top: 1px solid @grey;
   padding: 40px 0;
+
+  &:nth-child(odd),
+  &.forced-grey {
+    background: #f7f7f7;
+  }
+
+  &.forced-white {
+    background: white;
+  }
+
+  .intro-txt h4 {
+    border: none;
+  }
 
   .container {
     max-width: 1560px;
@@ -908,11 +1020,15 @@ img.logo {
   .logo {
     margin-bottom: 30px;
 
-    img {
-      max-width: 165px;
-      max-height: 95px;
-      height: auto;
-      width: auto;
+    & > div > div {
+      display: inline-block;
+      vertical-align: top;
+      margin: 0 15px;
+
+      img {
+        width: 165px;
+        height: auto;
+      }
     }
   }
 
@@ -923,5 +1039,26 @@ img.logo {
       max-width: 100%;
       height: auto;
     }
+  }
+
+  .brand-img-wrapper {
+    .slick-slide {
+      padding: 0 15px;
+
+      @media @phone {
+        transform: scale(0.8);
+        transform-origin: center;
+        transition: all 0.3s ease-in-out;
+        padding: 0;
+      }
+
+      &.slick-active {
+        transform: scale(1);
+      }
+    }
+  }
+
+  .more-txt p {
+    margin: 30px 0;
   }
 }

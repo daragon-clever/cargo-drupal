@@ -64,10 +64,27 @@ jQuery(document).ready(function($) {
     }
 
     // BRANDS - SLICK
-    var sliderBrand = $(".brands .js-slick > div")
+    var sliderBrand = $(".brands .js-slick > div");
     sliderBrand.slick({
         slidesToShow: 4,
         arrows: false,
-        infinite: true
+        infinite: true,
+        responsive: [
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 3,
+                    centerMode: true,
+                    centerPadding: '60px'
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 1,
+                    centerMode: true
+                }
+            }
+        ]
     });
 });

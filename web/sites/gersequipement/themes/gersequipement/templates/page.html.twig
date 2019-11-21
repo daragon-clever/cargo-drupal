@@ -14,21 +14,7 @@
     {% endif %}
 </div>
 
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <!-- Footer -->
-                {% if page.footer %}
-                    {{ page.footer }}
-                {% endif %}
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <!-- Post footer -->
-                {{ page.txtfooter }}
-            </div>
-        </div>
-    </div>
-</footer>
+<!-- Footer -->
+{% if page.footer %}
+    {{ page.footer }}
+{% endif %}

@@ -231,7 +231,7 @@ footer {
   }
 }
 
-.container.top {
+.container-fluid.top {
   text-align: center;
 
   .top-txt > div {
@@ -1060,5 +1060,102 @@ footer {
 
   .more-txt p {
     margin: 30px 0;
+  }
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.no-margin {
+  margin: 0 !important;
+}
+
+.our-jobs {
+  .js-tabs-wrapper {
+    position: relative;
+
+    & > div {
+      position: unset;
+    }
+
+    & > div:last-child .js-tab {
+      border-bottom: 0;
+    }
+  }
+
+  .js-hidden-content {
+    z-index: 0;
+    line-height: 1.6;
+    background: @grey;
+    color: white;
+    padding: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  .js-close {
+    z-index: 10;
+    position: absolute;
+    right: 30px;
+    cursor: pointer;
+    .dimOpacityOnHover(0.8);
+  }
+
+  .js-tab {
+    position: unset;
+    border-bottom: 1px solid @grey;
+    border-left: 1px solid @grey;
+    padding: 45px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      background: #eeffe9;
+    }
+  }
+
+  .our-jobs-line {
+    border-top: 1px solid @pink;
+
+    &:nth-child(odd) {
+      background: #f7f7f7;
+
+      .js-tab {
+        border-left: none;
+        border-right: 1px solid @grey;
+      }
+
+      .abs-nb {
+        color: white;
+        opacity: 1;
+      }
+    }
+  }
+
+  .main-txt {
+    display: flex;
+    padding: 0 7rem;
+    line-height: 1.8;
+    position: relative;
+    overflow: hidden;
+
+    p {
+      margin: auto;
+      z-index: 1;
+    }
+  }
+
+  .abs-nb {
+    position: absolute;
+    top: -50px;
+    left: -26px;
+    font-size: 300px;
+    opacity: 0.1;
+    line-height: 1;
+    z-index: 0;
   }
 }

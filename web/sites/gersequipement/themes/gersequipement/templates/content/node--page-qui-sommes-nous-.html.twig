@@ -1,10 +1,10 @@
 <!-- SLIDER -->
-<div class="container top">
+<div class="container-fluid top">
     <div class="row align-items-center">
         <div class="col-12 col-lg-4 top-txt">
             {{ content.field_qsn_banner_txt }}
         </div>
-        <div class="col-12 col-lg-8 fade-galery-wrapper">
+        <div class="col-12 col-lg-8 fade-galery-wrapper no-padding">
             <div class="js-fade-galery">
                 {% for field in content.field_qsn_banner_imgs['#items'] %}
                     <img alt="{{ field.alt }}" src="{{ file_url(field.entity.fileuri) }}"/>

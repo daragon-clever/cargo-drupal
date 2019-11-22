@@ -87,4 +87,25 @@ jQuery(document).ready(function($) {
             }
         ]
     });
+
+    // OUR JOBS - CUSTOM TABS
+    var tabsWrapper = ".js-tabs-wrapper";
+    var tab = tabsWrapper + " .js-tab";
+    var tabHiddenContent = tab + " .js-hidden-content";
+
+    function hideContents() {
+        $(tabHiddenContent).fadeOut();
+    }
+
+    if ($(tabsWrapper).length) {
+        $(tab).on("click", function() {
+            hideContents();
+            $(this).children(".js-hidden-content").fadeIn();
+        });
+
+        $(".js-close").on("click", function (e) {
+            e.stopPropagation();
+            hideContents();
+        })
+    }
 });

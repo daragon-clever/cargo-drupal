@@ -1,0 +1,111 @@
+<div class="our-jobs">
+    <!-- SLIDER -->
+    <div class="container-fluid top">
+        <div class="row align-items-center">
+            <div class="col-12 col-lg-4 top-txt">
+                {{ content.field_ourjobs_banner_txt }}
+            </div>
+            <div class="col-12 col-lg-8 fade-galery-wrapper no-padding">
+                <div class="js-fade-galery">
+                    {% for field in content.field_ourjobs_banner_imgs['#items'] %}
+                        <img alt="{{ field.alt }}" src="{{ file_url(field.entity.fileuri) }}"/>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENT 1 -->
+    <div class="container-fluid our-jobs-line">
+        <div class="row">
+            <div class="col-12 col-lg-7 main-txt">
+                <span class="abs-nb">01</span>
+                <p>
+                    Linéaires clés en mains, corners, permanent dynamique… Riche de 10000 références, notre catalogue
+                    d’arts de la table et de la cuisine offre tous les ingrédients permettant de construire les rayons
+                    permanents les plus pertinents pour chaque enseigne. La recette de la rentabilité de nos linéaires
+                    tient à l’expertise de notre « brigade » de designers, acheteurs et merchandiseurs – avec l’appui
+                    des équipes marketing, qualité, logistique, et bien évidemment, commerciales.
+                </p>
+            </div>
+            <div class="col-12 col-lg-5 no-padding">
+                <div class="row js-tabs-wrapper no-margin">
+                    <div class="col-12 no-padding">
+                        <div class="js-tab">
+                            Category Management
+                            <div class="js-hidden-content" style="display: none">
+                                <span class="js-close">✖</span>
+                                Contenu caché 1
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 no-padding">
+                        <div class="js-tab">
+                            Merchandising
+                            <div class="js-hidden-content" style="display: none">
+                                <span class="js-close">✖</span>
+                                Contenu caché 2
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 no-padding">
+                        <div class="js-tab">
+                            Category Management
+                            <div class="js-hidden-content" style="display: none">
+                                <span class="js-close">✖</span>
+                                Contenu caché 3
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENT 2 -->
+    <div class="container-fluid our-jobs-line">
+        <div class="row">
+            <div class="col-12 col-lg-5 no-padding">
+                <div class="row js-tabs-wrapper no-margin">
+                    <div class="col-12 no-padding">
+                        <div class="js-tab">
+                            Category Management
+                            <div class="js-hidden-content" style="display: none">
+                                <span class="js-close">✖</span>
+                                Contenu caché 1
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 no-padding">
+                        <div class="js-tab">
+                            Merchandising
+                            <div class="js-hidden-content" style="display: none">
+                                <span class="js-close">✖</span>
+                                Contenu caché 2
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 no-padding">
+                        <div class="js-tab">
+                            Category Management
+                            <div class="js-hidden-content" style="display: none">
+                                <span class="js-close">✖</span>
+                                Contenu caché 3
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-7 main-txt">
+                <span class="abs-nb">02</span>
+                <p>
+                    Linéaires clés en mains, corners, permanent dynamique… Riche de 10000 références, notre catalogue
+                    d’arts de la table et de la cuisine offre tous les ingrédients permettant de construire les rayons
+                    permanents les plus pertinents pour chaque enseigne. La recette de la rentabilité de nos linéaires
+                    tient à l’expertise de notre « brigade » de designers, acheteurs et merchandiseurs – avec l’appui
+                    des équipes marketing, qualité, logistique, et bien évidemment, commerciales.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

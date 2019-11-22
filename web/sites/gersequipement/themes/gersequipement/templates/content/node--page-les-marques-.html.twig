@@ -1,15 +1,15 @@
 <div class="brands">
     <!-- SLIDER -->
-    <div class="container top">
+    <div class="container-fluid top">
         <div class="row align-items-center">
             <div class="col-12 col-lg-4 top-txt">
                 {{ content.field_brands_banner_txt }}
             </div>
-            <div class="col-12 col-lg-8">
+            <div class="col-12 col-lg-8 no-padding">
                 <div class="svgs-banner">
-                    <div class="row justify-content-center">
+                    <div class="row justify-content-center no-margin">
                         {% for field in content.field_brands_banner_svgs['#items'] %}
-                            <div class="col-6 col-sm-4">
+                            <div class="col-6 col-sm-4 no-padding">
                                 <img src="{{ file_url(field.entity.fileuri) }}"/>
                             </div>
                         {% endfor %}

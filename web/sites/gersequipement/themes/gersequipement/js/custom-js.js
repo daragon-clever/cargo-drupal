@@ -92,6 +92,7 @@ jQuery(document).ready(function($) {
     var tabsWrapper = ".js-tabs-wrapper";
     var tab = tabsWrapper + " .js-tab";
     var tabHiddenContent = tab + " .js-hidden-content";
+    var jobsGalery = $('.js-slick-jobs > div');
 
     function hideContents() {
         $(tabHiddenContent).fadeOut();
@@ -108,4 +109,28 @@ jQuery(document).ready(function($) {
             hideContents();
         })
     }
+
+    jobsGalery.slick({
+        slidesToShow: 4,
+        infinite: true,
+        responsive: [
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 3,
+                    arrows: false,
+                    centerMode: true,
+                    centerPadding: '60px'
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    arrows: false,
+                    slidesToShow: 1,
+                    centerMode: true
+                }
+            }
+        ]
+    });
 });

@@ -41,8 +41,7 @@ class ImportController extends ControllerBase
     {
         $path = \Drupal::service('file_system')->realpath(file_default_scheme() . "://");
         $getContents = file_get_contents($path.'/data/V_DemandeRecrutementOuvert.json');
-        $cleanContent = '['.rtrim($getContents,',').']';
-        $data = json_decode($cleanContent,true);
+        $data = json_decode($getContents,true);
 
         $allRefsActive = array();
         foreach ($data as $offre) {

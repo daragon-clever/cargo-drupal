@@ -1,4 +1,8 @@
 jQuery(document).ready(function($) {
+    // TEST MOBILE / TAB
+    var isMobile = window.matchMedia("only screen and (max-width: 767px)").matches;
+    var isTabletOrLess = window.matchMedia("only screen and (max-width: 991px)").matches;
+
     // NAV
     var timerNav;
     $(".header-wrapper nav").hover(
@@ -89,25 +93,40 @@ jQuery(document).ready(function($) {
     });
 
     // OUR JOBS - CUSTOM TABS
+    // TODO : Je pense que je peux le refaire en CSS plutôt, avec juste du js pour toggleClass - Nico
     var tabsWrapper = ".js-tabs-wrapper";
     var tab = tabsWrapper + " .js-tab";
     var tabHiddenContent = tab + " .js-hidden-content";
     var jobsGalery = $('.js-slick-jobs > div');
 
     function hideContents() {
-        $(tabHiddenContent).fadeOut();
+        if (isTabletOrLess) {
+            $(tab).removeClass("active");
+            $(tabHiddenContent).slideUp('fast');
+        } else {
+            $(tabHiddenContent).fadeOut();
+        }
     }
 
     if ($(tabsWrapper).length) {
         $(tab).on("click", function() {
             hideContents();
-            $(this).children(".js-hidden-content").fadeIn();
+            if (isTabletOrLess) {
+                if (!$(this).hasClass("active")) {
+                    $(this).addClass("active");
+                    $(this).children(".js-hidden-content").slideDown('fast');
+                }
+            } else {
+                $(this).removeClass("js-tab");
+                $(this).children(".js-hidden-content").fadeIn();
+            }
         });
 
         $(".js-close").on("click", function (e) {
+            $(".tab").addClass("js-tab");
             e.stopPropagation();
             hideContents();
-        })
+        });
     }
 
     jobsGalery.slick({

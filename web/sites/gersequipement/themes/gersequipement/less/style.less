@@ -1081,7 +1081,7 @@ footer {
       position: unset;
     }
 
-    & > div:last-child .js-tab {
+    & > div:last-child .tab {
       border-bottom: 0;
     }
   }
@@ -1097,6 +1097,18 @@ footer {
     left: 0;
     height: 100%;
     width: 100%;
+
+    @media @tablet {
+      position: relative;
+      padding: 15px;
+      top: inherit;
+      left: inherit;
+      height: auto;
+
+      p {
+        margin-bottom: 0;
+      }
+    }
   }
 
   .js-close {
@@ -1105,18 +1117,33 @@ footer {
     right: 30px;
     cursor: pointer;
     .dimOpacityOnHover(0.8);
+
+    @media @tablet {
+      display: none;
+    }
   }
 
-  .js-tab {
+  .tab {
     position: unset;
     border-bottom: 1px solid @grey;
     border-left: 1px solid @grey;
     padding: 28px 35px;
     transition: all 0.3s ease-in-out;
-    cursor: pointer;
 
     &:hover {
       background: #eeffe9;
+    }
+
+    @media @tablet {
+      padding: 0;
+      border-left: 0;
+
+      &.active {
+        .js-hidden-content {
+          height: auto;
+          padding: 15px;
+        }
+      }
     }
   }
 
@@ -1126,7 +1153,7 @@ footer {
     &:nth-child(odd) {
       background: #f7f7f7;
 
-      .js-tab {
+      .tab {
         border-left: none;
         border-right: 1px solid @grey;
       }
@@ -1151,6 +1178,10 @@ footer {
       max-height: 100%;
       width: auto;
       height: auto;
+    }
+
+    @media @tablet {
+      margin: 15px;
     }
   }
 

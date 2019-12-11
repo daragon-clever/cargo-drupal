@@ -17,6 +17,39 @@ jQuery(document).ready(function($) {
         }
     );
 
+    if ( isTabletOrLess ) {
+        // NAV MOBILE
+        var $menu = $("#block-gersequipement-main-menu").mmenu({
+            "extensions": [
+                "theme-white",
+                "border-full",
+                "position-front",
+                "pagedim-black",
+                "fullscreen",
+                "position-right"
+            ]
+        }, {
+            clone: true
+        });
+
+        var $icon = $(".navbar-toggler");
+        var API = $menu.data("mmenu");
+
+        API.bind( "open:start", function() {
+            setTimeout(function() {
+                $icon.addClass( "is-active" );
+                $icon.on("click",function() {
+                    API.close();
+                })
+            }, 100);
+        });
+        API.bind( "close:start", function() {
+            setTimeout(function() {
+                $icon.removeClass( "is-active" );
+            }, 100);
+        });
+    }
+
     // SLIDER HP
     var sliderHPLeft = $(".js-slick-slider-hp-left > div");
     var sliderHPRight = $(".js-slick-slider-hp-right > div");

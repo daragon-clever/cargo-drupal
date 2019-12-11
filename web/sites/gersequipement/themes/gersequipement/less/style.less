@@ -37,6 +37,12 @@ a {
 // LOGO
 img.logo {
   margin-top: 10px;
+
+  @media @tablet {
+    margin: 15px;
+    max-height: 50px;
+    width: auto;
+  }
 }
 
 // NAV
@@ -55,6 +61,80 @@ img.logo {
   &.menu-hover {
     max-height: 300px;
   }
+
+  @media @tablet {
+    max-height: 100%;
+    border-bottom: 1px solid #ddd;
+
+    .logo-wrapper {
+      text-align: center;
+      border-right: 1px solid #ddd;
+    }
+
+    nav#block-gersequipement-main-menu {
+      display: none;
+    }
+
+    .navbar-toggler {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      outline: none !important;
+      transition: opacity 0.3s;
+      padding: 0;
+      z-index: 100;
+      .dimOpacityOnHover(0.8);
+
+      .navbar-toggler-icon {
+        width: 30px;
+
+        & > span {
+          height: 3px;
+          background: #4a4a49;
+          width: 100%;
+          display: block;
+          margin-top: 5px;
+          transition: all 0.3s;
+
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+      }
+
+      &.is-active {
+        .navbar-toggler-icon {
+          span {
+            background-color: @pink;
+
+            &.top {
+              transform: rotate(45deg);
+              margin-top: 5px;
+            }
+
+            &.middle {
+              opacity: 0;
+            }
+
+            &.bottom {
+              transform: rotate(-45deg);
+              margin-top: -11px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#mm-block-gersequipement-main-menu {
+  top: 81px;
+  z-index: 20;
+  box-shadow: 10px 11px 10px #00000030;
+}
+
+.mm-slideout {
+  background: transparent !important;
 }
 
 .menu {

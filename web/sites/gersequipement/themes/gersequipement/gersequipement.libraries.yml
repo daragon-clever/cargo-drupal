@@ -18,6 +18,17 @@ slick:
     theme:
       https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css: { type: external }
 
+# MMenu
+mmenu:
+  css:
+    theme:
+       https://cdn.jsdelivr.net/npm/jquery.mmenu@7.2.2/dist/jquery.mmenu.all.css: { type: external }
+  js:
+    https://cdn.jsdelivr.net/npm/jquery.mmenu@7.2.2/dist/jquery.mmenu.all.min.js: { type: external }
+    https://cdn.jsdelivr.net/npm/jquery.mmenu@7.2.2/dist/addons/fixedelements/jquery.mmenu.fixedelements.js: { type: external }
+  dependencies:
+    - core/jquery
+
 # Style général
 global-styling:
   header: true

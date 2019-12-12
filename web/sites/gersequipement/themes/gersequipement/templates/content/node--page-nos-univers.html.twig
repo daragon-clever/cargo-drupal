@@ -1,0 +1,58 @@
+<div class="univers">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    {% for i in 0..3 %}
+                        <div class="col">
+                            <div class="label">
+                                {{ content.field_univers_items_svg[i] }}
+                                {{ content.field_univers_items[i] }}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                {% for i in 0..3 %}
+                    <div class="txt" data-content="block_{{ i }}">
+                        {{ content.field_univers_items_txt[i] }}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- TODO: On peut surveiller factoriser ça - Nico -->
+        <div class="row" data-content="block_0">
+            {% for picture in content.field_univers_item1_imgs['#items'] %}
+                <div class="col-12 col-md-6">
+                    <img src="{{ file_url(picture.entity.uri.value) }}" />
+                </div>
+            {% endfor %}
+        </div>
+        <div class="row" data-content="block_1">
+            {% for picture in content.field_univers_item2_imgs['#items'] %}
+                <div class="col-12 col-md-6">
+                    <img src="{{ file_url(picture.entity.uri.value) }}" />
+                </div>
+            {% endfor %}
+        </div>
+        <div class="row" data-content="block_2">
+            {% for picture in content.field_univers_item3_imgs['#items'] %}
+                <div class="col-12 col-md-6">
+                    <img src="{{ file_url(picture.entity.uri.value) }}" />
+                </div>
+            {% endfor %}
+        </div>
+        <div class="row" data-content="block_3">
+            {% for picture in content.field_univers_item4_imgs['#items'] %}
+                <div class="col-12 col-md-6">
+                    <img src="{{ file_url(picture.entity.uri.value) }}" />
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

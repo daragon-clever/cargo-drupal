@@ -50,6 +50,39 @@ jQuery(document).ready(function($) {
         });
     }
 
+    // ANCHORS SMOOTH
+    $(function() {
+        // ON LOAD
+        function smoothScrollTo(target) {
+            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+
+            if (target.length) {
+                $('html,body').animate({
+                    scrollTop: target.offset().top
+                }, 1500);
+            }
+        }
+        if (location.hash) {
+            window.scrollTo(0, 0);
+            target = location.hash.split('#');
+            smoothScrollTo($('#'+target[1]));
+        }
+
+        // ON CLICK
+        $("a[href*='#']:not([href='#'])").click(function() {
+            if (
+                location.hostname == this.hostname
+                && this.pathname.replace(/^\//,"") == location.pathname.replace(/^\//,"")
+            ) {
+                var anchor = $(this.hash);
+                anchor = anchor.length ? anchor : $("[name=" + this.hash.slice(1) +"]");
+                if ( anchor.length ) {
+                    $("html, body").animate( { scrollTop: anchor.offset().top }, 1500);
+                }
+            }
+        });
+    });
+
     // SLIDER HP
     var sliderHPLeft = $(".js-slick-slider-hp-left > div");
     var sliderHPRight = $(".js-slick-slider-hp-right > div");

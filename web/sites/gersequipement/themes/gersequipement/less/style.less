@@ -17,6 +17,10 @@ body {
     .header-wrapper {
       top: 80px;
     }
+
+    .hidden-anchor {
+      top: -180px;
+    }
   }
 
   @media @phone {
@@ -188,7 +192,12 @@ img.logo {
           text-align: left;
 
           li {
-            padding: 0;
+            padding: 4px 0;
+            display: block;
+
+            &:after {
+              display: none;
+            }
 
             a {
               font-weight: 500;
@@ -837,6 +846,7 @@ footer {
 }
 
 .qsn-content-2 {
+  position: relative;
   color: white;
   text-align: center;
   border-bottom: 1px solid @grey;
@@ -1422,4 +1432,9 @@ footer {
       }
     }
   }
+}
+
+.hidden-anchor {
+  position: absolute;
+  top: -100px;
 }

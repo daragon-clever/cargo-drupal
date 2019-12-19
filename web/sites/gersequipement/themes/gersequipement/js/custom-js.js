@@ -218,4 +218,42 @@ jQuery(document).ready(function($) {
             }
         ]
     });
+
+    // NOS UNIVERS
+    var universLabel = ".js-univers-label";
+    if ($(universLabel).length) {
+        var univers = ".js-univers";
+        if (isTabletOrLess) {
+            function hideUnivers() {
+                $(univers).removeClass("active");
+                $(univers + " .js-content").slideUp();
+                $('html, body').animate({scrollTop:0}, 'fast');
+            }
+
+            $(univers).on("click", function() {
+                if ($(this).hasClass("active")) {
+                    hideUnivers();
+                } else {
+                    hideUnivers();
+                    $(this).addClass("active");
+                    $(this).children(".js-content").slideDown({
+                        start: function () {
+                            $(this).css({
+                                display: "flex"
+                            })
+                        }
+                    });
+                }
+            });
+        } else {
+            $(universLabel).on("click", function () {
+                var index = $(this).index();
+                var selectedUnivers = $(univers + ":nth-child(" + ( index + 1 ) + ")");
+                $(universLabel + " .label").removeClass("active");
+                $(this).children(".label").addClass("active");
+                $(univers).hide();
+                $(selectedUnivers).show();
+            });
+        }
+    }
 });

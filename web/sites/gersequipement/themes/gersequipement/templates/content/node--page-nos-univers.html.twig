@@ -1,11 +1,11 @@
 <div class="univers">
-    <div class="container">
+    <div class="container label-wrapper d-none d-lg-block">
         <div class="row">
             <div class="col">
                 <div class="row">
                     {% for i in 0..3 %}
-                        <div class="col">
-                            <div class="label">
+                        <div class="col-12 col-lg-3 js-univers-label">
+                            <div class="label {% if i == 0 %}active{% endif %}">
                                 {{ content.field_univers_items_svg[i] }}
                                 {{ content.field_univers_items[i] }}
                             </div>
@@ -14,45 +14,114 @@
                 </div>
             </div>
         </div>
+    </div>
 
+    <div class="container">
+        <!-- TODO: On peut surement factoriser ça - Nico -->
         <div class="row">
-            <div class="col-12">
-                {% for i in 0..3 %}
-                    <div class="txt" data-content="block_{{ i }}">
-                        {{ content.field_univers_items_txt[i] }}
+            <div class="col-12 js-univers">
+                <div class="row">
+                    <div class="col-12 col-lg-3 js-univers-label d-lg-none d-xl-none">
+                        <div class="label">
+                            {{ content.field_univers_items_svg[0] }}
+                            {{ content.field_univers_items[0] }}
+                        </div>
                     </div>
-                {% endfor %}
+                </div>
+                <div class="row js-content">
+                    <div class="col-12">
+                        <div class="txt">
+                            {{ content.field_univers_items_txt[0] }}
+                        </div>
+                    </div>
+                    {% for picture in content.field_univers_item1_imgs['#items'] %}
+                        <div class="col-12 col-md-6">
+                            <img src="{{ file_url(picture.entity.uri.value) }}" />
+                            <div class="alt-wrapper">
+                                <span>{{ picture.alt }}</span>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
             </div>
-        </div>
 
-        <!-- TODO: On peut surveiller factoriser ça - Nico -->
-        <div class="row" data-content="block_0">
-            {% for picture in content.field_univers_item1_imgs['#items'] %}
-                <div class="col-12 col-md-6">
-                    <img src="{{ file_url(picture.entity.uri.value) }}" />
+            <div class="col-12 js-univers">
+                <div class="row">
+                    <div class="col-12 col-lg-3 js-univers-label d-lg-none d-xl-none">
+                        <div class="label">
+                            {{ content.field_univers_items_svg[1] }}
+                            {{ content.field_univers_items[1] }}
+                        </div>
+                    </div>
                 </div>
-            {% endfor %}
-        </div>
-        <div class="row" data-content="block_1">
-            {% for picture in content.field_univers_item2_imgs['#items'] %}
-                <div class="col-12 col-md-6">
-                    <img src="{{ file_url(picture.entity.uri.value) }}" />
+                <div class="row js-content">
+                    <div class="col-12">
+                        <div class="txt">
+                            {{ content.field_univers_items_txt[1] }}
+                        </div>
+                    </div>
+                    {% for picture in content.field_univers_item2_imgs['#items'] %}
+                        <div class="col-12 col-md-6">
+                            <img src="{{ file_url(picture.entity.uri.value) }}" />
+                            <div class="alt-wrapper">
+                                <span>{{ picture.alt }}</span>
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
-            {% endfor %}
-        </div>
-        <div class="row" data-content="block_2">
-            {% for picture in content.field_univers_item3_imgs['#items'] %}
-                <div class="col-12 col-md-6">
-                    <img src="{{ file_url(picture.entity.uri.value) }}" />
+            </div>
+
+            <div class="col-12 js-univers">
+                <div class="row">
+                    <div class="col-12 col-lg-3 js-univers-label d-lg-none d-xl-none">
+                        <div class="label">
+                            {{ content.field_univers_items_svg[2] }}
+                            {{ content.field_univers_items[2] }}
+                        </div>
+                    </div>
                 </div>
-            {% endfor %}
-        </div>
-        <div class="row" data-content="block_3">
-            {% for picture in content.field_univers_item4_imgs['#items'] %}
-                <div class="col-12 col-md-6">
-                    <img src="{{ file_url(picture.entity.uri.value) }}" />
+                <div class="row js-content">
+                    <div class="col-12">
+                        <div class="txt">
+                            {{ content.field_univers_items_txt[2] }}
+                        </div>
+                    </div>
+                    {% for picture in content.field_univers_item3_imgs['#items'] %}
+                        <div class="col-12 col-md-6">
+                            <img src="{{ file_url(picture.entity.uri.value) }}" />
+                            <div class="alt-wrapper">
+                                <span>{{ picture.alt }}</span>
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
-            {% endfor %}
+            </div>
+
+            <div class="col-12 js-univers">
+                <div class="row">
+                    <div class="col-12 col-lg-3 js-univers-label d-lg-none d-xl-none">
+                        <div class="label">
+                            {{ content.field_univers_items_svg[3] }}
+                            {{ content.field_univers_items[3] }}
+                        </div>
+                    </div>
+                </div>
+                <div class="row js-content">
+                    <div class="col-12">
+                        <div class="txt">
+                            {{ content.field_univers_items_txt[3] }}
+                        </div>
+                    </div>
+                    {% for picture in content.field_univers_item4_imgs['#items'] %}
+                        <div class="col-12 col-md-6">
+                            <img src="{{ file_url(picture.entity.uri.value) }}" />
+                            <div class="alt-wrapper">
+                                <span>{{ picture.alt }}</span>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
         </div>
     </div>
 </div>

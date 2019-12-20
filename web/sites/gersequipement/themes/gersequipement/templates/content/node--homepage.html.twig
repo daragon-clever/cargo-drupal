@@ -1,11 +1,12 @@
 <!-- SLIDER -->
 <div class="container-fluid top">
     <div class="row align-items-center">
-        <div class="col-12 col-sm-4 top-txt">
+        <div class="col-12 col-lg-4 top-txt">
             {{ content.field_hp_txt }}
         </div>
-        <div class="col-12 col-sm-8">
-            <div class="row">
+        <div class="col-12 col-lg-8">
+            <!-- DESKTOP -->
+            <div class="row d-none d-lg-flex">
                 <div class="col-12 col-sm-6 slider left">
                     <div class="js-slick-slider-hp-left">
                         {{ content.field_hp_imgs }}
@@ -15,6 +16,13 @@
                     <div class="js-slick-slider-hp-right">
                         {{ content.field_hp_imgs_2 }}
                     </div>
+                </div>
+            </div>
+            <!-- TAB MOBILE -->
+            <div class="row d-lg-none d-xl-none">
+                <div class="col-12 js-slick-slider-hp-mobile">
+                    {{ content.field_hp_imgs }}
+                    {{ content.field_hp_imgs_2 }}
                 </div>
             </div>
         </div>
@@ -27,7 +35,7 @@
         <div class="container">
             <div class="row homepage-content-1">
                 {% for i in 0..3 %}
-                    <div class="col-12 col-sm-3">
+                    <div class="col-12 col-sm-6 col-lg-3">
                         <div class="inner-wrapper">
                             <div class="inner">
                                 {{ content.field_hp_content1_svg[i] }}
@@ -47,7 +55,7 @@
 <!-- CONTENT 2 -->
 <div class="container homepage-content-2">
     <div class="row">
-        <div class="col-12 col-sm-6 actu">
+        <div class="col-12 col-lg-6 actu">
             <div class="inner">
                 <h2>Actualités</h2>
                 <div class="js-slider-actu">
@@ -59,7 +67,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-12 col-sm-6 follow">
+        <div class="col-12 col-lg-6 follow">
             <div class="inner">
                 <h2>Suivez-nous</h2>
                 <h3>Notre page Linkedin</h3>

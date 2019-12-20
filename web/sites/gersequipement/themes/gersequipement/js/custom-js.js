@@ -84,9 +84,10 @@ jQuery(document).ready(function($) {
     });
 
     // SLIDER HP
-    var sliderHPLeft = $(".js-slick-slider-hp-left > div");
-    var sliderHPRight = $(".js-slick-slider-hp-right > div");
+    var sliderHPLeft = $(".js-slick-slider-hp-left");
+    var sliderHPRight = $(".js-slick-slider-hp-right");
     var sliderHPActu = $(".js-slider-actu");
+    var sliderHPMobile = $(".js-slick-slider-hp-mobile");
 
     sliderHPLeft.slick({
         vertical: true,
@@ -109,6 +110,14 @@ jQuery(document).ready(function($) {
         autoplay: true,
         autoplaySpeed: 3000,
         speed: 1200
+    });
+
+
+    sliderHPMobile.slick({
+        infinite: true,
+        arrows: false,
+        slidesToShow: 1,
+        centerMode: true
     });
 
     sliderHPActu.slick({

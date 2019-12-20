@@ -62,7 +62,7 @@ jQuery(document).ready(function($) {
                 }, 1500);
             }
         }
-        if (location.hash) {
+        if ((location.hash) && (!$(".univers").length)) {
             window.scrollTo(0, 0);
             target = location.hash.split('#');
             smoothScrollTo($('#'+target[1]));
@@ -223,13 +223,26 @@ jQuery(document).ready(function($) {
     var universLabel = ".js-univers-label";
     if ($(universLabel).length) {
         var univers = ".js-univers";
+        var hash = window.location.hash.replace('#', '');
         if (isTabletOrLess) {
             function hideUnivers() {
                 $(univers).removeClass("active");
                 $(univers + " .js-content").slideUp();
                 $('html, body').animate({scrollTop:0}, 'fast');
             }
-
+            // via URL
+            if (hash) {
+                hideUnivers();
+                $(univers + "[data-label='" + hash + "']").addClass("active");
+                $(univers + "[data-label='" + hash + "']").children(".js-content").slideDown({
+                    start: function () {
+                        $(this).css({
+                            display: "flex"
+                        })
+                    }
+                });
+            }
+            // via click
             $(univers).on("click", function() {
                 if ($(this).hasClass("active")) {
                     hideUnivers();
@@ -246,6 +259,14 @@ jQuery(document).ready(function($) {
                 }
             });
         } else {
+            // via URL
+            if (hash) {
+                $(universLabel + " .label").removeClass("active");
+                $(universLabel + "[data-label='" + hash + "'] .label").addClass("active");
+                $(univers).hide();
+                $(univers + "[data-label='" + hash + "']").show();
+            }
+            // via click
             $(universLabel).on("click", function () {
                 var index = $(this).index();
                 var selectedUnivers = $(univers + ":nth-child(" + ( index + 1 ) + ")");

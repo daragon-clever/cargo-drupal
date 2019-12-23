@@ -258,6 +258,41 @@ footer {
       color: @pink;
       text-decoration: none;
     }
+
+    @media @phone {
+      line-height: 50px;
+      border-top: 1px solid #d8d8d8;
+      margin: 0;
+      padding: 0 15px;
+      position: relative;
+
+      & + ul {
+        display: none;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        display: block;
+        padding: 0;
+        margin: 0;
+        background: none;
+        border: none;
+        border-top: 1px solid black;
+        border-right: 1px solid black;
+        outline: none;
+        font-size: 0;
+        height: 8px;
+        width: 8px;
+        z-index: 10;
+        transform-origin: center;
+        top: 23px;
+        right: 15px;
+        cursor: pointer;
+        transition: opacity 0.3s ease-in-out;
+        transform: rotate(45deg);
+      }
+    }
   }
 
   ul {
@@ -286,6 +321,10 @@ footer {
           width: 50px;
           margin-bottom: 20px;
           content: "";
+
+          @media @phone {
+            display: none;
+          }
         }
       }
     }
@@ -311,6 +350,16 @@ footer {
 
     .col {
       padding: 0 15px;
+    }
+  }
+
+  @media @phone {
+    padding: 0;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+
+    .col {
+      padding: 0 !important;
+      border: none;
     }
   }
 }
@@ -452,6 +501,7 @@ footer {
 
 .homepage-content-1 {
   padding: 15px 0;
+  text-align: center;
 
   .inner-wrapper {
     display: flex;
@@ -475,9 +525,14 @@ footer {
     }
   }
 
+  .slick-slide {
+    margin: 7px 15px;
+  }
+
   img {
     height: 75px;
     max-width: 150px;
+    display: inline-block;
   }
 }
 
@@ -498,12 +553,27 @@ footer {
         height: auto;
         width: auto;
         margin-right: 30px;
+
+        @media @phone {
+          display: block;
+          margin: 0 auto 15px;
+          float: none;
+        }
       }
+    }
+
+    @media @tablet {
+      border-right: none;
+      margin-bottom: 30px;
     }
   }
 
   .inner {
     padding: 0 40px;
+
+    @media @tablet {
+      padding: 0;
+    }
   }
 
   h2 {
@@ -542,6 +612,19 @@ footer {
 
   .follow img {
     max-width: 100%;
+  }
+}
+
+.homepage-content-3 {
+  video {
+    height: auto;
+    width: auto;
+    max-width: 1100px;
+    margin-bottom: 50px;
+
+    @media (max-width: 1099px) {
+      max-width: 100%;
+    }
   }
 }
 

@@ -88,6 +88,7 @@ jQuery(document).ready(function($) {
     var sliderHPRight = $(".js-slick-slider-hp-right");
     var sliderHPActu = $(".js-slider-actu");
     var sliderHPMobile = $(".js-slick-slider-hp-mobile");
+    var sliderHpCta = $(".js-slick-hp-cta");
 
     sliderHPLeft.slick({
         vertical: true,
@@ -112,16 +113,52 @@ jQuery(document).ready(function($) {
         speed: 1200
     });
 
-
     sliderHPMobile.slick({
         infinite: true,
         arrows: false,
-        slidesToShow: 1,
-        centerMode: true
+        responsive: [
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 2,
+                    centerMode: true,
+                    centerPadding: '60px'
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 1,
+                    centerMode: true
+                }
+            }
+        ]
     });
 
     sliderHPActu.slick({
         infinite: true
+    });
+
+    sliderHpCta.slick({
+        slidesToShow: 4,
+        arrows: false,
+        responsive: [
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 2,
+                    centerMode: true,
+                    centerPadding: '60px'
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 1,
+                    centerMode: true
+                }
+            }
+        ]
     });
 
     // QSN - FADEGALERY

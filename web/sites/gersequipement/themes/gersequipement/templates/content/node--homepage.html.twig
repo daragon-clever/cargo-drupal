@@ -30,26 +30,20 @@
 </div>
 
 <!-- CONTENT 1 -->
-<div class="container-fluid bg-grey">
-    <div class="row">
-        <div class="container">
-            <div class="row homepage-content-1">
-                {% for i in 0..3 %}
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="inner-wrapper">
-                            <div class="inner">
-                                {{ content.field_hp_content1_svg[i] }}
-                                <p>{{ node.field_hp_content1_svg[i].description }}</p>
-                                <a href="{{ content.field_hp_content1_links[i] }}" class="cta">
-                                    {{ node.field_hp_content1_links[i].title }}
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                {% endfor %}
+<div class="bg-grey js-slick-hp-cta homepage-content-1">
+{% for i in 0..3 %}
+    <div class="item">
+        <div class="inner-wrapper">
+            <div class="inner">
+                {{ content.field_hp_content1_svg[i] }}
+                <p>{{ node.field_hp_content1_svg[i].description }}</p>
+                <a href="{{ content.field_hp_content1_links[i] }}" class="cta">
+                    {{ node.field_hp_content1_links[i].title }}
+                </a>
             </div>
         </div>
     </div>
+{% endfor %}
 </div>
 
 <!-- CONTENT 2 -->
@@ -80,5 +74,5 @@
 <!-- CONTENT 3 -->
 <div class="container homepage-content-3 text-center">
     <h3>{{ node.field_hp_content3_video.description }}</h3>
-    {{ content.field_hp_content3_video.uri }}
+    {{ content.field_hp_content3_video }}
 </div>

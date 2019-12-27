@@ -5,13 +5,14 @@ def notifyChangeViaSlackEmail(buildBranch,String buildStatus) {
     def sendEmail
     if( buildBranch == 'master' ){
         sendSlack = 1
+        sendEmail = 1
     } else if ( buildBranch == 'develop' ) {
         sendSlack = 1
+        sendEmail = 0
     } else {
         sendSlack = 0
+        sendEmail = 0
     }
-
-    echo "notifyChangeViaSlackEmailtest buildBranch [${buildBranch}] [${buildStatus}] [${sendSlack}]"
 
     if( sendSlack == 1 ){
         if( buildStatus == 'success' ){
@@ -24,19 +25,62 @@ def notifyChangeViaSlackEmail(buildBranch,String buildStatus) {
             slackSend (
                 color: '#FF0000',
                 channel: "#deployjenkinsfalse",
-                message: "Erreur déploiements [failure] '${env.JOB_NAME} ${env.GIT_BRANCH} [${env.BUILD_NUMBER}]' (<${env.BUILD_URL}|Open>) "
+                message: "Erreur déploiement [failure] '${env.JOB_NAME} ${env.GIT_BRANCH} [${env.BUILD_NUMBER}]' (<${env.BUILD_URL}|Open>) "
                 )
             emailext (
                 subject: "Jenkins - Erreur déploiements: Job '${env.JOB_NAME} ${env.GIT_BRANCH} [${env.BUILD_NUMBER}]'",
                 to: 'poleweb@cargo-services.fr',
-                body: """<p>Erreur déploiements [unstable] '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
+                body: """<p>Erreur déploiement [unstable] '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
                   <p>Verifier la console  &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>""",
                 recipientProviders: [[$class: 'DevelopersRecipientProvider']]
               )
         }
     }
+    if( sendEmail == 1 ){
+        if( buildStatus == 'success' ){
+            sendChangeLogs()
+        }
+    }
 }
+@NonCPS
+def sendChangeLogs() {
+    def commitMessages = ""
+    def changeLogSets = currentBuild.changeSets
+    for (int i = 0; i < changeLogSets.size(); i++) {
+        def entries = changeLogSets[i].items
+        for (int j = 0; j < entries.length; j++) {
+            def entry = entries[j]
+            commitMessages = commitMessages + "<li style='font-family: Arial;'><b>${entry.msg}</b> - ${entry.author}</li>"
+        }
+    }
+    emailext (
+        subject: "[DEPLOY SUCCESS] ${env.JOB_NAME}",
+        to: 'poleweb@cargo-services.fr',
+        body: """
+            <h1 style='font-family: Arial;'>${env.JOB_NAME}</h1>
 
+            <hr />
+
+            <p style='font-family: Arial;'>
+                <u>Libellés des commits :</u>
+                <ul style='font-family: Arial;'>
+                    ${commitMessages}
+                </ul>
+            </p>
+
+            <hr />
+
+            <p style='font-family: Arial;'>
+                <small>
+                    <a href='${env.BUILD_URL}'>
+                        Voir le déploiement sur Jenkins
+                    </a>
+                </small>
+            </p>
+        """,
+        recipientProviders: [[$class: 'DevelopersRecipientProvider']]
+      )
+}
 pipeline {
     agent any
 

@@ -68,10 +68,5 @@ namespace :deploy do
     after :starting, :set_composer do
         SSHKit.config.command_map[:composer] = "php #{shared_path.join("composer.phar")}"
     end
-
-    # TODO Améliorer et remplacer par les vraies tâches drush site-alias
-    after :updated, :clear_cache do
-        invoke "drupal:updatedb:web"
-        #invoke "drupal:drush, @web cr"
-    end
 end
+after 'deploy:symlink:release', 'servers:cmd:drush:updatebd'

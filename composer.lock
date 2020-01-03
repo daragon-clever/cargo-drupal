@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2551c7115bab6315706cdfb1ae9bf427",
+    "content-hash": "e995d3a416be6be6aaef9dac37f5d4db",
     "packages": [
         {
             "name": "ajaxorg/ace-builds",
@@ -130,6 +130,84 @@
                 "stack"
             ],
             "time": "2017-12-20T14:37:45+00:00"
+        },
+        {
+            "name": "cargo/common-synapse-client",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:PoleWebCargo/WEB_Common_Module_Synapse_Client.git",
+                "reference": "35d5287f8a6d7d261f4af85af117380175ea8738"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PoleWebCargo/WEB_Common_Module_Synapse_Client/zipball/35d5287f8a6d7d261f4af85af117380175ea8738",
+                "reference": "35d5287f8a6d7d261f4af85af117380175ea8738",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "guzzlehttp/guzzle": "~6.4",
+                "php": ">=7.0",
+                "psr/log": "~1.0",
+                "symfony/console": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Cargo\\Common\\Synapse\\Client\\": ""
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "description": "Module Php générique pour interagir avec l'API Synapse",
+            "support": {
+                "email": "poleweb@cargo-services.fr",
+                "source": "https://github.com/PoleWebCargo/WEB_Module_Common_Synapse_Client",
+                "issues": "https://github.com/PoleWebCargo/WEB_Common_Module_Synapse_Client/issues"
+            },
+            "time": "2019-12-12T16:03:30+00:00"
+        },
+        {
+            "name": "cargo/drupal_synapse",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:PoleWebCargo/WEB_Drupal_Module_Synapse.git",
+                "reference": "c89e1fea8d69eaa4739c3220edd640fb4406f3cc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PoleWebCargo/WEB_Drupal_Module_Synapse/zipball/c89e1fea8d69eaa4739c3220edd640fb4406f3cc",
+                "reference": "c89e1fea8d69eaa4739c3220edd640fb4406f3cc",
+                "shasum": ""
+            },
+            "require": {
+                "cargo/common-synapse-client": "^1.0.0",
+                "drupal/twig_extensions": "^2.0.0",
+                "drupal/twig_tweak": "^2.0.0",
+                "ext-json": "*",
+                "php": ">=7.0"
+            },
+            "type": "drupal-module",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Lemarinel Sébastien",
+                    "homepage": "https://github.com/SebCargo",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Module to connect and use the synapse API (Store Locator)",
+            "homepage": "https://github.com/PoleWebCargo/WEB_Drupal_Module_Synapse",
+            "support": {
+                "source": "https://github.com/PoleWebCargo/WEB_Drupal_Module_Synapse/tree/v1.0.0",
+                "issues": "https://github.com/PoleWebCargo/WEB_Drupal_Module_Synapse/issues"
+            },
+            "time": "2019-12-12T16:10:26+00:00"
         },
         {
             "name": "chi-teck/drupal-code-generator",
@@ -12628,7 +12706,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "cargo/drupal_synapse": 20,
         "drupal/acl": 15,
         "drupal/better_exposed_filters": 15,
         "drupal/block_field": 15,

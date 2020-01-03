@@ -1,0 +1,31 @@
+{#
+/**
+* @file
+* Location listing block
+*
+* @see template_preprocess_block()
+*
+* @ingroup themeable
+*/
+#}
+<div class="container full-store-list">
+    <div class="row">
+        <div class="col">
+            <div class="text-center">
+                <h2>Magasins C'est Deux Euros en France</h2>
+{#                <div class="store-locator-status">
+                    <span class="new">Nouveau magasin</span>
+                    <span class="relocation">Déménagement & réouverture</span>
+                    <span class="opening">Ouverture prochaine</span>
+                </div>#}
+            </div>
+            <div>
+                <ul>
+                    {% for location in locations %}
+                        <li><a href="/{{ "%s/%s/%s"|format(routingItemKey, location.externalId, location.name) }}">{{ location.name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

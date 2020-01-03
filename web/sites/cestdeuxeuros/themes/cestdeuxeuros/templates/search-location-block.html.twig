@@ -1,0 +1,64 @@
+{#
+/**
+* @file
+* Search location block
+*
+* @see template_preprocess_block()
+*
+* @ingroup themeable
+*/
+#}
+<div id="js-store-locator" class="storelocator-search">
+    <h1>Nos boutiques près de chez vous</h1>
+    <div class="inputs-wrapper">
+        <div class="search">
+            <span class="picto-map"></span>
+            <input
+                    name="search-string"
+                    placeholder="Indiquez une ville"
+                    class="js-search-input"
+                    id="js-search-input"
+            ><!-- space hack
+            --><input
+                    name="preloaded-search-string"
+                    type="hidden"
+                    id="js-preloaded"
+            ><!-- space hack
+            --><button></button>
+        </div>
+        <div class="locate-me">
+            <div>Me localiser</div><!-- space hack
+            --><button></button>
+        </div>
+        <div style="display: none">
+            <select name="search-radius" id="js-search-radius">
+                <option value="5">5 km</option>
+                <option value="10">10 km</option>
+                <option value="25" >25 km</option>
+                <option value="50" >50 km</option>
+                <option value="100" selected>100 km</option>
+            </select>
+
+            <input name="offset-radius" type="hidden" id="js-offset-radius" value="0">
+        </div>
+        <input name="search-geolocation" id="js-search-geolocation" type="hidden">
+        <input name="store-detail-path" id="js-store-detail-path" type="hidden">
+    </div>
+</div>
+
+<div id="js-ajax-response">
+    <div class="text-center">
+        <div class="store-locator-notice">
+            <svg viewBox="0 0 100.24 88.1" height="90">
+                <path fill="#ee7d0c" d="M50.12,0A22.25,22.25,0,0,0,27.89,22.23c0,15.22,19.89,37.55,20.74,38.5a2,2,0,0,0,3,0c.84-.95,20.74-23.28,20.74-38.5A22.25,22.25,0,0,0,50.12,0Zm0,33.42A11.19,11.19,0,1,1,61.3,22.23,11.2,11.2,0,0,1,50.12,33.42Z"/>
+                <polygon points="98.78 87.1 1.45 87.1 16.45 47.76 83.78 47.76 98.78 87.1" style="fill:none;stroke:#ee7d0c;stroke-miterlimit:10;stroke-width:2px"/>
+                <path d="M70.55,54.76l-38.4,1.78a4.21,4.21,0,0,0-3.93,5.05h0a4.2,4.2,0,0,0,3.9,3.34l36.23,1.88a4.69,4.69,0,0,1,4.33,5.7h0a4.68,4.68,0,0,1-4.47,3.67L22.89,77.43" style="fill:none;stroke:#ee7d0c;stroke-miterlimit:10;stroke-width:2px;stroke-dasharray:5"/>
+            </svg>
+            <p>Localisez-vous ou faites une recherche <br /> pour afficher la liste des magasins</p>
+        </div>
+    </div>
+</div>
+
+<div>
+    <a href="#" id="js-show-more" style="display: none;">Afficher plus de magasins</a>
+</div>

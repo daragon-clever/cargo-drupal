@@ -69,4 +69,5 @@ namespace :deploy do
         SSHKit.config.command_map[:composer] = "php #{shared_path.join("composer.phar")}"
     end
 end
-after 'deploy:symlink:release', 'servers:cmd:drush:updatebd'
+after 'deploy:symlink:release', 'patch:apply'
+after 'patch:apply', 'servers:cmd:drush:updatebd'

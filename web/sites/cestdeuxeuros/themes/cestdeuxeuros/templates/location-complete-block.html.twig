@@ -47,7 +47,7 @@
                 <span class="title">Horaires d'ouverture</span>
                 <ul>
                     {% for day, openingHours in location.getFormattedOpeningHours %}
-                        <li><span>{{ day }}</span> {{ openingHours.range }}</li>
+                        <li class="{{ openingHours.isOpen }}"><span>{{ day }}</span> {{ openingHours.range }}</li>
                     {% endfor %}
                 </ul>
             </div>
@@ -98,5 +98,56 @@
 <div id="js-map-container">
     <div id="map_target" style="display: none" >
 
+    </div>
+</div>
+
+<div>
+    <div>
+        <h3>Votre magasin en images</h3>
+
+        <div id="js-store-details-gallery">
+            {% for image in location.getImages %}
+                <div>
+                    <img src='{{ "%s/%s"|format(staticAssetsUrl, image.path) }}' />
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div>
+        <div>
+            <h3>Présentation</h3>
+
+            <p>{{ location.presentation }}</p>
+        </div>
+    </div>
+</div>
+
+<div>
+    <h3>Restez informés !</h3>
+    <p></p>
+
+    <div>
+        {% for socialNetwork in location.getSocialNetworks %}
+            {% if socialNetwork.type == 'facebook' %}
+                <div class="{{ socialNetwork.type }}"> {# facebook|instagram #}
+                    <div></div>
+                    <div>Suivez nous sur Facebook</div>
+                    <a href="https://www.facebook.com/{{socialNetwork.uri}}/">Notre page Facebook</a>
+                </div>
+            {% elseif socialNetwork.type == 'instagram' %}
+                <div class="{{ socialNetwork.type }}"> {# facebook|instagram #}
+                    <div></div>
+                    <div>Suivez nous sur Intagram</div>
+                    <a href="https://www.instagram.com/{{socialNetwork.uri}}/">Notre page Instagram</a>
+                </div>
+            {% endif %}
+        {% endfor %}
+
+        <div class="newsletter" >
+            <div></div>
+            <div>Ne ratez aucun bon plan</div>
+            <a href="#">Je m'inscris</a>
+        </div>
     </div>
 </div>

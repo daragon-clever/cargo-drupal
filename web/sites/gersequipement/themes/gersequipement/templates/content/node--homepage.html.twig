@@ -51,7 +51,7 @@
     <div class="row">
         <div class="col-12 col-lg-6 actu">
             <div class="inner">
-                <h2>Actualités</h2>
+                <h2>{{ node.field_hp_content2_actu.fieldDefinition.label }}</h2>
                 <div class="js-slider-actu">
                     {% for i in 0..3 %}
                         <div class="actu-item">
@@ -63,9 +63,11 @@
         </div>
         <div class="col-12 col-lg-6 follow">
             <div class="inner">
-                <h2>Suivez-nous</h2>
-                <h3>Notre page Linkedin</h3>
-                <img src="sites/gersequipement/themes/gersequipement/images/img_temp_hp.jpg" />
+                <h2>{{ node.field_hp_content2_social.fieldDefinition.label }}</h2>
+                <h3>{{ node.field_hp_content2_social.alt }}</h3>
+                <a href="{{ content.field_hp_content2_social_link.0['#url'] }}" target="_blank">
+                    {{ content.field_hp_content2_social }}
+                </a>
             </div>
         </div>
     </div>

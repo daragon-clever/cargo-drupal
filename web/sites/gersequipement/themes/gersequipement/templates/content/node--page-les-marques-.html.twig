@@ -136,7 +136,14 @@
                 <div class="col-12 col-sm-8 offset-sm-2 text-center intro-txt">
                     <div class="hidden-anchor" id="part6"></div>
                     <div class="logo">
-                        {{ content.field_brands_p6_logo }}
+                        <div>
+                            <div>
+                                <img src="{{ content.field_brands_p6_logo[0] }}" />
+                            </div>
+                            <div>
+                                <img src="{{ content.field_brands_p6_logo[1] }}" />
+                            </div>
+                        </div>
                     </div>
                     {{ content.field_brands_p6_txt }}
                 </div>

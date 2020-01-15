@@ -31,19 +31,63 @@
 
 <!-- CONTENT 1 -->
 <div class="bg-grey js-slick-hp-cta homepage-content-1">
-{% for i in 0..3 %}
     <div class="item">
         <div class="inner-wrapper">
             <div class="inner">
-                {{ content.field_hp_content1_svg[i] }}
-                <p>{{ node.field_hp_content1_svg[i].description }}</p>
-                <a href="{{ content.field_hp_content1_links[i] }}" class="cta">
-                    {{ node.field_hp_content1_links[i].title }}
+                <a href="{{ content.field_hp_content1_links[0] }}">
+                    {{ content.field_hp_content1_svg[0] }}
+                    <p>{{ node.field_hp_content1_svg[0].description }}</p>
+                    <span class="cta">
+                        {{ node.field_hp_content1_links[0].title }}
+                    </span>
                 </a>
             </div>
         </div>
     </div>
-{% endfor %}
+    <div class="item">
+        <div class="inner-wrapper">
+            <div class="inner">
+                <a href="{{ content.field_hp_content1_links[1] }}">
+                    {{ content.field_hp_content1_svg[1] }}
+                    <p>{{ node.field_hp_content1_svg[1].description }}</p>
+                    <span class="cta">
+                        {{ node.field_hp_content1_links[1].title }}
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="item">
+        <div class="inner-wrapper">
+            <div class="inner">
+                <a href="{{ content.field_hp_content1_links[2] }}">
+                    <span class="js-slideshow-brand">
+                        <span>{{ content.field_hp_content1_svg_brands[0] }}</span>
+                        <span>{{ content.field_hp_content1_svg_brands[1] }}</span>
+                        <span>{{ content.field_hp_content1_svg_brands[2] }}</span>
+                        <span>{{ content.field_hp_content1_svg_brands[3] }}</span>
+                    </span>
+                    <p>{{ node.field_hp_content1_svg[2].description }}</p>
+                    <span class="cta">
+                        {{ node.field_hp_content1_links[2].title }}
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="item">
+        <div class="inner-wrapper">
+            <div class="inner">
+                <a href="{{ content.field_hp_content1_links[3] }}">
+                    {{ content.field_hp_content1_svg[3] }}
+                    <p>{{ node.field_hp_content1_svg[3].description }}</p>
+                    <span class="cta">
+                        {{ node.field_hp_content1_links[3].title }}
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- CONTENT 2 -->
@@ -76,5 +120,7 @@
 <!-- CONTENT 3 -->
 <div class="container homepage-content-3 text-center">
     <h3>{{ node.field_hp_content3_video.description }}</h3>
-    {{ content.field_hp_content3_video }}
+    <video poster="{{ content.field_hp_content3_video[1]|render|striptags|trim|raw }}" controls>
+        <source src="{{ content.field_hp_content3_video[0]|render|striptags|trim|raw }}" type="video/mp4" />
+    </video>
 </div>

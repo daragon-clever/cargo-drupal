@@ -139,6 +139,21 @@ jQuery(document).ready(function($) {
         infinite: true
     });
 
+    // HP - Mini slideshow brands
+    sliderHpCta.on('init', function(event, slick){
+        $(".js-slideshow-brand > span").slice(1).hide();
+
+        setInterval(function() {
+            $('.js-slideshow-brand > span:first-child')
+                .fadeOut(1000)
+                .next()
+                .fadeIn(1000)
+                .end()
+                .appendTo('.js-slideshow-brand');
+        },  3000);
+
+    });
+
     sliderHpCta.slick({
         slidesToShow: 4,
         arrows: false,
@@ -243,12 +258,14 @@ jQuery(document).ready(function($) {
 
     jobsGalery.slick({
         slidesToShow: 4,
+        slidesToScroll: 4,
         infinite: true,
         responsive: [
             {
                 breakpoint: 991,
                 settings: {
                     slidesToShow: 3,
+                    slidesToScroll: 3,
                     arrows: false,
                     centerMode: true,
                     centerPadding: '60px'
@@ -259,6 +276,7 @@ jQuery(document).ready(function($) {
                 settings: {
                     arrows: false,
                     slidesToShow: 1,
+                    slidesToScroll: 1,
                     centerMode: true
                 }
             }

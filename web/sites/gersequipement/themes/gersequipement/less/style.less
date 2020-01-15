@@ -57,7 +57,7 @@ img.logo {
   left: 0;
   width: 100%;
   max-height: 80px;
-  z-index: 10;
+  z-index: 100;
   background: white;
   overflow: hidden;
   transition: max-height 0.3s ease-in-out;
@@ -522,10 +522,25 @@ footer {
     height: 270px;
     text-align: center;
     border: 1px solid @grey;
-    transition: background 0.3s ease-in-out;
+    transition: border-color 0.3s ease-in-out;
+    background: white;
+
+    span.cta {
+      transition: all 0.3s ease-in-out;
+    }
+
+    a {
+      color: #4a4a49;
+      text-decoration: none;
+    }
 
     &:hover {
-      background: white;
+      border-color: @pink;
+      cursor: pointer;
+
+      span.cta {
+        background: @pink;
+      }
     }
 
     .inner {
@@ -546,6 +561,25 @@ footer {
     height: 75px;
     max-width: 150px;
     display: inline-block;
+  }
+
+  .js-slideshow-brand {
+    position: relative;
+    height: 75px;
+    display: block;
+    opacity: 0.8;
+
+    & > span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
+
+      img {
+        width: auto;
+      }
+    }
   }
 }
 
@@ -1237,7 +1271,7 @@ footer {
 
     & > div > div {
       display: inline-block;
-      vertical-align: top;
+      vertical-align: middle;
       margin: 0 15px;
 
       img {
@@ -1305,7 +1339,7 @@ footer {
 
   .js-hidden-content {
     z-index: 0;
-    line-height: 1.6;
+    line-height: 2;
     background: @grey;
     color: white;
     padding: 30px;
@@ -1314,6 +1348,21 @@ footer {
     left: 0;
     height: 100%;
     width: 100%;
+    overflow: auto;
+
+    .title {
+      font-size: 21px;
+      text-transform: uppercase;
+      border-bottom: 1px solid;
+      font-weight: 600;
+      margin-bottom: 15px;
+      display: inline-block;
+    }
+
+    ul {
+      line-height: 2;
+      padding-left: 15px;
+    }
 
     @media @tablet {
       position: relative;
@@ -1331,7 +1380,8 @@ footer {
   .js-close {
     z-index: 10;
     position: absolute;
-    right: 30px;
+    right: 15px;
+    top: 5px;
     cursor: pointer;
     .dimOpacityOnHover(0.8);
 
@@ -1522,13 +1572,19 @@ footer {
 
     .slick-slide {
       overflow: hidden;
-      margin: 30px 10px;
+      margin: 50px 30px;
+      float: none;
+      display: inline-block;
+      vertical-align: middle;
+      text-align: center;
 
       img {
         object-fit: contain;
-        width: 100%;
+        width: auto;
         height: auto;
         max-height: 300px;
+        max-width: 100%;
+        display: inline-block;
       }
 
       @media @phone {

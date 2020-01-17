@@ -166,6 +166,7 @@ class OffresEmploiListController extends ControllerBase {
 
     private function searchInCSV($ref)
     {
+        $found_time = null;
         $arrCSVcontent = $this->getCSV();
         $new_arr = array_reverse($arrCSVcontent);
         foreach ($new_arr as $key => $val) {
@@ -176,7 +177,7 @@ class OffresEmploiListController extends ControllerBase {
         }
 
         $fiveMin = $this->actualTime - (60*5);
-        if (isset($foundTime) && $foundTime > $fiveMin) {
+        if (!empty($found_time) && $found_time > $fiveMin) {
             return true;
         } else {
             return false;
@@ -186,18 +187,16 @@ class OffresEmploiListController extends ControllerBase {
     private function getCSV()
     {
         $csv = explode("\n", file_get_contents($this->fileLogIPAnnonce));
-
         foreach ($csv as $key => $line)
         {
-            $csv[$key] = str_getcsv($line);
+            if (!empty($line)) $newcsv[$key] = str_getcsv($line);
         }
-        $entete = $csv[0];
-        unset($csv[0]);
+        $entete = $newcsv[0];
+        unset($newcsv[0]);
 
-        foreach ($csv as $item) {
+        foreach ($newcsv as $item) {
             $combine[] = array_combine($entete,$item);
         }
-        array_pop($combine);
 
         return $combine;
     }

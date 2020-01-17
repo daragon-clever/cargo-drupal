@@ -1,0 +1,222 @@
+<div class="our-jobs">
+    <!-- SLIDER -->
+    <div class="container-fluid top">
+        <div class="row align-items-center">
+            <div class="col-12 col-lg-4 top-txt">
+                {{ content.field_ourjobs_banner_txt }}
+            </div>
+            <div class="col-12 col-lg-8 fade-galery-wrapper no-padding">
+                <div class="js-fade-galery">
+                    {% for field in content.field_ourjobs_banner_imgs['#items'] %}
+                        <img alt="{{ field.alt }}" src="{{ file_url(field.entity.fileuri) }}"/>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENT 1 -->
+    <div class="container-fluid our-jobs-line">
+        <div class="row">
+            <div class="col-12 col-lg-7 main-txt">
+                <div class="hidden-anchor" id="part1"></div>
+                <span class="abs-nb">01</span>
+                <div class="txt">
+                    {{ content.field_ourjobs_line1_maintxt }}
+                </div>
+            </div>
+            <div class="col-12 col-lg-5 no-padding">
+                <div class="row js-tabs-wrapper no-margin">
+                    {% for i in 0..2 %}
+                    <div class="col-12 no-padding">
+                        <div class="tab js-tab">
+                            <div class="svg">
+                                <div class="inner">
+                                    {{ content.field_ourjobs_line1_tablabel_pic[i] }}
+                                </div>
+                            </div>
+                            <span class="tab-label">
+                                {{ content.field_ourjobs_line1_tablabel[i] }}
+                            </span>
+                            <div class="js-hidden-content" style="display: none">
+                                <span class="js-close">✖</span>
+                                <span class="title">{{ content.field_ourjobs_line1_tablabel[i] }}</span>
+                                {{ content.field_ourjobs_line1_hiddenconten[i] }}
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="row galery-wrapper">
+            <div class="col-12 js-slick-jobs">
+                {{ content.field_ourjobs_line1_galery }}
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENT 2 -->
+    <div class="container-fluid our-jobs-line">
+        <div class="row">
+            <div class="order-2 order-lg-1 col-12 col-lg-5 no-padding">
+                <div class="row js-tabs-wrapper no-margin">
+                    {% for i in 0..2 %}
+                        <div class="col-12 no-padding">
+                            <div class="tab js-tab">
+                                <div class="svg">
+                                    <div class="inner">
+                                        {{ content.field_ourjobs_line2_tablabel_pic[i] }}
+                                    </div>
+                                </div>
+                                <span class="tab-label">
+                                {{ content.field_ourjobs_line2_tablabel[i] }}
+                            </span>
+                                <div class="js-hidden-content" style="display: none">
+                                    <span class="js-close">✖</span>
+                                    <span class="title">{{ content.field_ourjobs_line2_tablabel[i] }}</span>
+                                    {{ content.field_ourjobs_line2_hiddenconten[i] }}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="order-1 order-lg-2 col-12 col-lg-7 main-txt">
+                <div class="hidden-anchor" id="part2"></div>
+                <span class="abs-nb">02</span>
+                <div class="txt">
+                    {{ content.field_ourjobs_line2_maintxt }}
+                </div>
+            </div>
+        </div>
+        <div class="row galery-wrapper">
+            <div class="col-12 js-slick-jobs">
+                {{ content.field_ourjobs_line2_galery }}
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENT 3 -->
+    <div class="container-fluid our-jobs-line">
+        <div class="row">
+            <div class="col-12 col-lg-7 main-txt">
+                <div class="hidden-anchor" id="part3"></div>
+                <span class="abs-nb">03</span>
+                <div class="txt">
+                    {{ content.field_ourjobs_line3_maintxt }}
+                </div>
+            </div>
+            <div class="col-12 col-lg-5 no-padding">
+                <div class="row js-tabs-wrapper no-margin">
+                    {% for i in 0..2 %}
+                        <div class="col-12 no-padding">
+                            <div class="tab js-tab">
+                                <div class="svg">
+                                    <div class="inner">
+                                        {{ content.field_ourjobs_line3_tablabel_pic[i] }}
+                                    </div>
+                                </div>
+                                <span class="tab-label">
+                                {{ content.field_ourjobs_line3_tablabel[i] }}
+                            </span>
+                                <div class="js-hidden-content" style="display: none">
+                                    <span class="js-close">✖</span>
+                                    <span class="title">{{ content.field_ourjobs_line3_tablabel[i] }}</span>
+                                    {{ content.field_ourjobs_line3_hiddenconten[i] }}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="row galery-wrapper">
+            <div class="col-12 js-slick-jobs">
+                {{ content.field_ourjobs_line3_galery }}
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENT 4 -->
+    <div class="container-fluid our-jobs-line">
+        <div class="row">
+            <div class="order-2 order-lg-1 col-12 col-lg-5 no-padding">
+                <div class="row js-tabs-wrapper no-margin">
+                    {% for i in 0..2 %}
+                        <div class="col-12 no-padding">
+                            <div class="tab js-tab">
+                                <div class="svg">
+                                    <div class="inner">
+                                        {{ content.field_ourjobs_line4_tablabel_pic[i] }}
+                                    </div>
+                                </div>
+                                <span class="tab-label">
+                                {{ content.field_ourjobs_line4_tablabel[i] }}
+                            </span>
+                                <div class="js-hidden-content" style="display: none">
+                                    <span class="js-close">✖</span>
+                                    <span class="title">{{ content.field_ourjobs_line4_tablabel[i] }}</span>
+                                    {{ content.field_ourjobs_line4_hiddenconten[i] }}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="order-1 order-lg-2 col-12 col-lg-7 main-txt">
+                <div class="hidden-anchor" id="part4"></div>
+                <span class="abs-nb">04</span>
+                <div class="txt">
+                    {{ content.field_ourjobs_line4_maintxt }}
+                </div>
+            </div>
+        </div>
+        <div class="row galery-wrapper">
+            <div class="col-12 js-slick-jobs">
+                {{ content.field_ourjobs_line4_galery }}
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENT 5 -->
+    <div class="container-fluid our-jobs-line">
+        <div class="row">
+            <div class="col-12 col-lg-7 main-txt">
+                <div class="hidden-anchor" id="part5"></div>
+                <span class="abs-nb">05</span>
+                <div class="txt">
+                    {{ content.field_ourjobs_line5_maintxt }}
+                </div>
+            </div>
+            <div class="col-12 col-lg-5 no-padding">
+                <div class="row js-tabs-wrapper no-margin">
+                    {% for i in 0..2 %}
+                        <div class="col-12 no-padding">
+                            <div class="tab js-tab">
+                                <div class="svg">
+                                    <div class="inner">
+                                        {{ content.field_ourjobs_line5_tablabel_pic[i] }}
+                                    </div>
+                                </div>
+                                <span class="tab-label">
+                                {{ content.field_ourjobs_line5_tablabel[i] }}
+                            </span>
+                                <div class="js-hidden-content" style="display: none">
+                                    <span class="js-close">✖</span>
+                                    <span class="title">{{ content.field_ourjobs_line5_tablabel[i] }}</span>
+                                    {{ content.field_ourjobs_line5_hiddenconten[i] }}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="row galery-wrapper">
+            <div class="col-12 js-slick-jobs">
+                {{ content.field_ourjobs_line5_galery }}
+            </div>
+        </div>
+    </div>
+</div>

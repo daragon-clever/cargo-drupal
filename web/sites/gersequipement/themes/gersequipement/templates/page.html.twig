@@ -1,0 +1,24 @@
+<div class="header-wrapper">
+    <!-- Header -->
+    {% include directory ~ '/partials/header.html.twig' %}
+</div>
+
+<div class="content">
+    {% if page.highlighted %}
+        <div class="message-site">
+            {{ page.highlighted }}
+        </div>
+    {% endif %}
+    {% if page.content %}
+        {{ page.content }}
+    {% endif %}
+</div>
+
+<!-- Footer -->
+{% if page.footer %}
+    {{ page.footer }}
+
+    <div class="copyright text-center">
+        {{ 'Site réalisé par Gers équipement © '|trans }}{{ "now"|date('Y') }}
+    </div>
+{% endif %}

@@ -1,0 +1,41 @@
+######## Plugin & Framework ########
+
+# Bootstrap 4
+bootstrap:
+  css:
+    theme:
+      bootstrap4/css/bootstrap.min.css: {}
+  js:
+    bootstrap4/js/bootstrap.bundle.min.js: {}
+
+# Plugin Slick
+slick:
+  js:
+    js/slick-custom.js: {}
+  dependencies:
+    - core/jquery
+  css:
+    theme:
+      https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css: { type: external }
+
+# MMenu
+mmenu:
+  css:
+    theme:
+       https://cdn.jsdelivr.net/npm/jquery.mmenu@7.2.2/dist/jquery.mmenu.all.css: { type: external }
+  js:
+    https://cdn.jsdelivr.net/npm/jquery.mmenu@7.2.2/dist/jquery.mmenu.all.min.js: { type: external }
+    https://cdn.jsdelivr.net/npm/jquery.mmenu@7.2.2/dist/addons/fixedelements/jquery.mmenu.fixedelements.js: { type: external }
+  dependencies:
+    - core/jquery
+
+# Style général
+global-styling:
+  header: true
+  css:
+    theme:
+      css/style.css: {}
+  js:
+    js/custom-js.js: {}
+  dependencies:
+    - core/jquery

@@ -1,0 +1,268 @@
+<!-- SLIDER -->
+<div class="container-fluid top">
+    <div class="row align-items-center">
+        <div class="col-12 col-lg-4 top-txt">
+            {{ content.field_qsn_banner_txt }}
+        </div>
+        <div class="col-12 col-lg-8 fade-galery-wrapper no-padding">
+            <div class="js-fade-galery">
+                {% for field in content.field_qsn_banner_imgs['#items'] %}
+                    <img alt="{{ field.alt }}" src="{{ file_url(field.entity.fileuri) }}"/>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CONTENT 1 -->
+<div class="qsn-content-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-8 offset-sm-2 text-center intro-txt">
+                <div class="hidden-anchor" id="part1"></div>
+                {{ content.field_qsn_intro }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="info-wrapper">
+                    <div class="desktop">
+                        {{ content.field_qsn_svg_desktop }}
+                    </div>
+                    <div class="mobile">
+                        {{ content.field_qsn_svg_mobile }}
+                    </div>
+                    {% for i in 0..6 %}
+                    <div class="txt block-{{ i }}">
+                        {{ content.field_qsn_content1_txts[i] }}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CONTENT 2 -->
+<!--
+    Le style inline c'est mal !
+    Le style présent sur les balises ci dessous est un choix perso car
+    le style a appliquer est super relatif au contenu textuel à l'intérieur.
+    Si le texte change, tout peut etre supprimer sans crainte.
+    - Nico (11/2019)
+-->
+<div class="qsn-content-2">
+    <div class="hidden-anchor" id="part2"></div>
+    <div class="container-fluid">
+        <!-- LIGNE 1 -->
+        <div class="row">
+            <div class="col-12 col-sm-6">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4 bg-lightgrey block">
+                        <div class="inner">
+                            {{ content.field_qsn_content2_svgs[0] }} <br />
+                            <span style="margin-top:-30px;">{{ 'commande'|trans }}</span><br />
+                            <span style="display:block;margin: 15px 0">{{ content.field_qsn_content2_txt[0] }}</span>
+                            {{ content.field_qsn_content2_svgs[1] }}<br />
+                            <span style="margin-top:-30px;">{{ 'minutes'|trans }}</span>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-8">
+                        <div class="row">
+                            <div class="col-12 bg-grey block">
+                                <div class="inner">
+                                    {{ content.field_qsn_content2_txt[1] }}
+                                </div>
+                            </div>
+                            <div class="col-12 bg-white block">
+                                <div class="inner">
+                                    <span class="inline">
+                                        {{ content.field_qsn_content2_txt[2] }}
+                                    </span>
+                                    <span class="inline" style="margin-top:-20px;">
+                                        {{ content.field_qsn_content2_svgs[2] }}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6">
+                <div class="row">
+                    <div class="col-6 col-lg-8 bg-lightgrey block">
+                        <div class="inner">
+                            {{ content.field_qsn_content2_svgs[3] }}
+                            {{ content.field_qsn_content2_txt[3] }}
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-4 bg-pink block">
+                        <div class="inner">
+                            {{ content.field_qsn_content2_svgs[4] }}
+                            {{ content.field_qsn_content2_txt[4] }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- LIGNE 2 -->
+        <div class="row">
+            <div class="col-12 col-sm-6">
+                <div class="row">
+                    <div class="col-6 col-lg-8 bg-pink block">
+                        <div class="inner">
+                            {{ content.field_qsn_content2_svgs[5] }}
+                            {{ content.field_qsn_content2_txt[5] }}
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-4 bg-lightgrey block">
+                        <div class="inner">
+                            {{ content.field_qsn_content2_svgs[6] }}
+                            {{ content.field_qsn_content2_txt[6] }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6">
+                <div class="row">
+                    <div class="col-12 col-lg-4 bg-grey block">
+                        <div class="inner">
+                            {{ content.field_qsn_content2_svgs[7] }}
+                            {{ content.field_qsn_content2_txt[7] }}
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-8">
+                        <div class="row">
+                            <div class="col-12 col-md-6 col-lg-12 bg-white block">
+                                <div class="inner">
+                                    <span class="inline">
+                                        {{ content.field_qsn_content2_svgs[8] }}
+                                    </span>
+                                    <span class="inline">
+                                        {{ content.field_qsn_content2_txt[8] }}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-12 bg-lightgrey block">
+                                <div class="inner">
+                                    <span class="inline">
+                                        {{ content.field_qsn_content2_svgs[9] }}
+                                    </span>
+                                    <span class="inline">
+                                        {{ content.field_qsn_content2_txt[9] }}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- LIGNE 3 -->
+        <div class="row">
+            <div class="col-12 col-sm-3 col-lg-2 bg-lightgrey block">
+                <div class="inner">
+                    {{ content.field_qsn_content2_svgs[10] }}
+                    {{ content.field_qsn_content2_txt[10] }}
+                </div>
+            </div>
+            <div class="col-12 col-sm-2 col-lg-2 bg-grey2 block">
+                <div class="inner">
+                    {{ content.field_qsn_content2_svgs[11] }}
+                    {{ content.field_qsn_content2_txt[11] }}
+                </div>
+            </div>
+            <div class="col-12 col-sm-3 col-lg-4 bg-white block">
+                <div class="inner">
+                    {{ content.field_qsn_content2_svgs[12] }}
+                    {{ content.field_qsn_content2_txt[12] }}
+                </div>
+            </div>
+            <div class="col-12 col-sm-4 col-lg-4 bg-grey block">
+                <div class="inner">
+                    <span class="inline">
+                        {{ content.field_qsn_content2_svgs[13] }}
+                    </span>
+                    <span class="inline va-default">
+                        {{ content.field_qsn_content2_txt[13] }}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CONTENT 3 -->
+<div class="qsn-content-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-10 offset-sm-1 text-center intro-txt">
+                <div class="hidden-anchor" id="part3"></div>
+                {{ content.field_qsn_content3_intro }}
+            </div>
+        </div>
+        <div class="row blocks-txt">
+            <div class="col-12 col-sm-6">
+                <div class="inner">
+                    {{ content.field_qsn_content3_blocktxt[0] }}
+                </div>
+            </div>
+            <div class="col-12 col-sm-6">
+                <div class="inner">
+                    {{ content.field_qsn_content3_blocktxt[1] }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CONTENT 4 -->
+<div class="qsn-content-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-8 offset-sm-2 text-center intro-txt">
+                <div class="hidden-anchor" id="part4"></div>
+                {{ content.field_qsn_content4_intro }}
+            </div>
+        </div>
+        <div class="row p1">
+            <div class="col-12">
+                <span class="part-title">
+                    {{ content.field_qsn_content4_p1_title }}
+                </span>
+                <div class="container-sub">
+                    <div class="row justify-content-center">
+                    {% for i in 0..7 %}
+                        <div class="col-6 col-sm-3 text-center block">
+                            <div class="svg-wrapper">
+                                {{ content.field_qsn_content4_p1_svg[i] }}
+                            </div>
+                            <strong>{{ i + 1 }}.</strong>
+                            {{ content.field_qsn_content4_p1_txt[i] }}
+                        </div>
+                    {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row p2">
+            <div class="col-12">
+                <span class="part-title">
+                    <div class="hidden-anchor" id="part5"></div>
+                    {{ content.field_qsn_content4_p2_title }}
+                </span>
+                <div class="row justify-content-center">
+                    {% for i in 0..5 %}
+                        <div class="col-auto text-center block">
+                            <div class="svg-wrapper">
+                                {{ content.field_qsn_content4_p2_svg[i] }}
+                            </div>
+                            <span>{{ content.field_qsn_content4_p2_txt[i] }}</span>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

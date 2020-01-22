@@ -828,17 +828,8 @@ h3 {
 }
 
 .csstransforms3d {
-  .books {
-    //-moz-perspective: 100px;
-    //-moz-transform-style: preserve-3d;
-    //-webkit-transform-style: preserve-3d;
-  }
-
   .book {
     position: relative;
-    //-moz-perspective: 100px;
-    //-moz-transform: rotateY(-3deg);
-    //-webkit-transform: perspective(100) rotateY(-3deg);
     outline: 1px solid transparent;
     box-shadow: none;
     margin: 40px;
@@ -855,8 +846,8 @@ h3 {
       content: ' ';
       z-index: -1;
       width: 100%;
-      left: 4%;
-      background-color:#333;
+      left: 8px;
+      background-color:#5e5e5e;
       box-shadow: 5px 5px 20px #777;
     }
 
@@ -876,7 +867,7 @@ h3 {
 
     &.paysage {
       &:before {
-        left:2.5%;
+        left: 10px;
       }
       &:after {
         width: 3%;

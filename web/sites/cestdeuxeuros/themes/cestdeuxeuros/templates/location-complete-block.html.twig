@@ -31,7 +31,10 @@
                 <span>{{ location.getMainPhoneNumber.getNumber }}</span>
             {% endif %}
         </div>
-        <div class="mail">
+{#        Demande de supprimer le mail, conserver le code car
+        c'est sur qu'on va nous demander de le remettre... Nico#}
+
+{#        <div class="mail">
             {%  if location.getEmail is not null %}
                 <svg viewBox="0 0 87.6 65.33" width="21" height="15">
                     <path d="M86.6,65.33H1a1,1,0,0,1-1-1V1H2V63.33H85.6V1h2V64.33A1,1,0,0,1,86.6,65.33Z" style="fill:#ee7d0c"/>
@@ -41,7 +44,7 @@
                 </svg>
                 <a href="mailto:{{ location.getEmail.email }}">Contacter le magasin</a>
             {% endif %}
-        </div>
+        </div>#}
     </div>
 
     <div class="col-12 col-md-7 col-lg">
@@ -107,6 +110,7 @@
 </div>
 
 <div class="row">
+    {% if location.getImages %}
     <div class="col-12 col-md-6">
         <div class="store-detail-gallery">
             <div id="js-store-details-gallery">
@@ -118,8 +122,9 @@
             </div>
         </div>
     </div>
+    {% endif %}
 
-    <div class="col-12 col-md-6 d-flex">
+    <div class="col-12 {% if location.getImages %}col-md-6{% else %}col-md-12{% endif %} d-flex">
         <div class="store-detail-txt">
             <h3>Présentation</h3>
             <p>

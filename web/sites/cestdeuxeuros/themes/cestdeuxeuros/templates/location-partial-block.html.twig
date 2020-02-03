@@ -31,7 +31,9 @@
                         </div>
 
                         <div class="name">
-                            {{ "%s (%s)"|format(location.getName, location.getAddress.getPostcode) }}
+                            <a href="{{ storeUrl }}" title="{{ "%s (%s)"|format(location.getName, location.getAddress.getPostcode) }}">
+                                {{ "%s (%s)"|format(location.getName, location.getAddress.getPostcode) }}
+                            </a>
                         </div>
 
                         <div class="store-locator-opening-state {% if location.isStoreOpen %}open{% else %}closed{% endif %}">

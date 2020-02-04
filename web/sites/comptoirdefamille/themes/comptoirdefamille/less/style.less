@@ -2145,3 +2145,188 @@ div[role="contentinfo"] {
     }
   }
 }
+
+// STORE LOCATOR
+.store-locator {
+  padding: 30px 0;
+
+  .inner {
+    border: 1px solid black;
+    padding: 15px;
+    text-align: center;
+
+    @media @tablet {
+      margin: 15px 0;
+    }
+  }
+
+  .img-intro-wrapper {
+    margin: 10px 0 20px;
+  }
+
+  #js-map-container > div {
+    height: 400px;
+  }
+
+  #js-ajax-response {
+    text-align: left;
+  }
+
+  .search-input-wrapper {
+    input, button {
+      line-height: 40px;
+      display: inline-block;
+      vertical-align: middle;
+      border: 1px solid #232323;
+    }
+
+    button {
+      width: 42px;
+      height: 42px;
+      background: url(../images/storelocator/storelocator-search-picto.png) no-repeat center #232323;
+      border: none;
+      cursor: pointer;
+      .dimOpacityOnHover(0.8);
+    }
+
+    input {
+      width: calc(100% - 100px);
+      padding: 0 15px;
+    }
+  }
+
+  .search-input-wrapper {
+    margin-bottom: 30px;
+  }
+
+  .store-item {
+    padding: 15px 25px;
+
+    @media @phone {
+      padding: 15px 0;
+    }
+  }
+
+  .location-name {
+    font-size: 16px;
+    font-family: @fontLibrebaskerville;
+    font-weight: 700;
+
+    &:before {
+      content: "";
+      background: url("../images/storelocator/storelocator-gps-picto.png") no-repeat center transparent;
+      height: 19px;
+      width: 14px;
+      display: inline-block;
+      vertical-align: middle;
+      margin: -8px 10px 0 0;
+    }
+  }
+
+  .online-shopping {
+    img {
+      margin: 30px 0;
+    }
+
+    p {
+      color: #919191;
+      font-weight: 600;
+    }
+  }
+
+  hr {
+    margin: 10px 0;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+
+    li {
+      display: inline-block;
+      text-align: center;
+      width: 50%;
+      margin: 15px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      a {
+        color: white;
+        text-transform: uppercase;
+        font-weight: 700;
+        line-height: 40px;
+        background: @redComptoir;
+        display: block;
+        .dimOpacityOnHover(0.8);
+      }
+
+
+      &.phone a {
+        background: #a6a090;
+
+        .number {
+          font-size: 17px;
+        }
+      }
+    }
+
+    @media @phone {
+      display: block;
+
+      li {
+        display: block;
+        margin: 15px 0;
+        width: 100%;
+      }
+    }
+  }
+
+  .gm-style {
+    .gm-style-iw {
+      border-radius: 0;
+      box-shadow: none;
+      border: 1px solid #9e9e9e !important;
+      padding: 15px !important;
+      max-width: 320px !important;
+      max-height: inherit !important;
+
+      & > div {
+        max-width: inherit !important;
+        max-height: inherit !important;
+      }
+
+      .title {
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+    }
+
+    .gm-style-iw-t {
+      box-shadow: none !important;
+
+      &:after {
+        box-shadow: none !important;
+        border-bottom: 1px solid #9e9e9e;
+        border-left: 1px solid #9e9e9e;
+        top: -1px;
+      }
+    }
+
+    .gm-ui-hover-effect {
+      top: 0 !important;
+      right: 0 !important;
+    }
+
+    a.to-store,
+    .opening-hours {
+      display: none;
+    }
+  }
+}

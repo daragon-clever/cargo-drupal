@@ -140,4 +140,13 @@ jQuery(document).ready(function($) {
         var link = $(this).attr("data-link");
         $(".js-pdf-embed").attr("src",link);
     });
+
+    // STORE LOCATOR
+    if ($(".store-locator").length) {
+        $(this).on("click", '.phone', function(e) {
+            e.preventDefault();
+            $(".txt").toggle();
+            $(".number").toggle();
+        });
+    }
 });

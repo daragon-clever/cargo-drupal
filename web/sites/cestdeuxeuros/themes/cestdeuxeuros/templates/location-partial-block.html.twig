@@ -8,7 +8,7 @@
 * @ingroup themeable
 */
 #}
-{% set storeUrl = "%s/%s/%s"|format(routingItemKey, location.externalId, location.name|url_encode) %}
+{% set storeUrl = "/%s/%s/%s"|format(routingItemKey, location.externalId, location.name|url_encode) %}
 <div class="store-item">
     <div class="container">
         <div class="row">

@@ -32,9 +32,18 @@
                     "type": "zip"
                 }
             }
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:PoleWebCargo/WEB_Drupal_Module_Synapse.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:PoleWebCargo/WEB_Common_Module_Synapse_Client.git"
         }
     ],
     "require": {
+        "cargo/drupal_synapse": "^1.0",
         "composer/installers": "^1.2",
         "cweagans/composer-patches": "^1.6",
         "drupal-composer/drupal-scaffold": "^2.2",
@@ -102,7 +111,10 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "github-oauth": {
+            "github.com": "199f4c0232861e4dbdd3d146c7099b2c03090cc1"
+        }
     },
     "autoload": {
         "classmap": [

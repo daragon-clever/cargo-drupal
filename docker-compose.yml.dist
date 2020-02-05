@@ -5,12 +5,12 @@ services:
       ports:
         - 80:80
       volumes:
-        - "{{ CHEMIN_LOCAL }}docker/web/etc/default.conf:/etc/nginx/conf.d/default.conf"
-        - "{{ CHEMIN_LOCAL }}:/var/www/html"
+        - "$PWD/docker/web/etc/default.conf:/etc/nginx/conf.d/default.conf"
+        - "$PWD:/var/www/html"
   php:
       build: ./docker/php
       volumes:
-        - "{{ CHEMIN_LOCAL }}:/var/www/html"
+        - "$PWD:/var/www/html"
   db:
       image: mariadb:10.1
       environment:
@@ -38,7 +38,7 @@ services:
     build: ./docker/deployment
     working_dir: /project
     volumes:
-      - "{{ CHEMIN_LOCAL }}:/project"
+      - "$PWD:/project"
 volumes:
   db_data:
     driver: local

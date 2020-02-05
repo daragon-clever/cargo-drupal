@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2551c7115bab6315706cdfb1ae9bf427",
+    "content-hash": "e995d3a416be6be6aaef9dac37f5d4db",
     "packages": [
         {
             "name": "ajaxorg/ace-builds",
@@ -130,6 +130,84 @@
                 "stack"
             ],
             "time": "2017-12-20T14:37:45+00:00"
+        },
+        {
+            "name": "cargo/common-synapse-client",
+            "version": "v1.2.0",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:PoleWebCargo/WEB_Common_Module_Synapse_Client.git",
+                "reference": "7a6529866aad37e09486223fe57a7a8d4370a173"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PoleWebCargo/WEB_Common_Module_Synapse_Client/zipball/7a6529866aad37e09486223fe57a7a8d4370a173",
+                "reference": "7a6529866aad37e09486223fe57a7a8d4370a173",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "guzzlehttp/guzzle": "~6.4",
+                "php": ">=7.0",
+                "psr/log": "~1.0",
+                "symfony/console": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Cargo\\Common\\Synapse\\Client\\": ""
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "description": "Module Php générique pour interagir avec l'API Synapse",
+            "support": {
+                "email": "poleweb@cargo-services.fr",
+                "source": "https://github.com/PoleWebCargo/WEB_Module_Common_Synapse_Client",
+                "issues": "https://github.com/PoleWebCargo/WEB_Common_Module_Synapse_Client/issues"
+            },
+            "time": "2020-01-08T14:12:49+00:00"
+        },
+        {
+            "name": "cargo/drupal_synapse",
+            "version": "v1.2.4",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:PoleWebCargo/WEB_Drupal_Module_Synapse.git",
+                "reference": "4bc51edbb2f6ecc585ab1ebf08a8c55d5ddda7a8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PoleWebCargo/WEB_Drupal_Module_Synapse/zipball/4bc51edbb2f6ecc585ab1ebf08a8c55d5ddda7a8",
+                "reference": "4bc51edbb2f6ecc585ab1ebf08a8c55d5ddda7a8",
+                "shasum": ""
+            },
+            "require": {
+                "cargo/common-synapse-client": "^1.0.0",
+                "drupal/twig_extensions": "^2.0.0",
+                "drupal/twig_tweak": "^2.0.0",
+                "ext-json": "*",
+                "php": ">=7.0"
+            },
+            "type": "drupal-module",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Lemarinel Sébastien",
+                    "homepage": "https://github.com/SebCargo",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Module to connect and use the synapse API (Store Locator)",
+            "homepage": "https://github.com/PoleWebCargo/WEB_Drupal_Module_Synapse",
+            "support": {
+                "source": "https://github.com/PoleWebCargo/WEB_Drupal_Module_Synapse/tree/v1.2.4",
+                "issues": "https://github.com/PoleWebCargo/WEB_Drupal_Module_Synapse/issues"
+            },
+            "time": "2020-02-05T08:11:52+00:00"
         },
         {
             "name": "chi-teck/drupal-code-generator",
@@ -2451,7 +2529,7 @@
                 "shasum": "e861e46740c264b9313e7a52878e789f11af5ec2"
             },
             "require": {
-                "drupal/core": "~8.0"
+                "drupal/core": "^8 || ^9"
             },
             "type": "drupal-module",
             "extra": {
@@ -3821,12 +3899,12 @@
                     "homepage": "https://www.drupal.org/user/591438"
                 },
                 {
-                    "name": "swentel",
-                    "homepage": "https://www.drupal.org/user/107403"
+                    "name": "nils.destoop",
+                    "homepage": "https://www.drupal.org/user/361625"
                 },
                 {
-                    "name": "zuuperman",
-                    "homepage": "https://www.drupal.org/user/361625"
+                    "name": "swentel",
+                    "homepage": "https://www.drupal.org/user/107403"
                 }
             ],
             "description": "Provides the field_group module.",
@@ -5260,7 +5338,7 @@
                 "shasum": "8e93d4dcf483b1558b800570af1d3b231b8fa6f3"
             },
             "require": {
-                "drupal/core": "~8.0",
+                "drupal/core": "^8 || ^9",
                 "ext-xmlwriter": "*"
             },
             "type": "drupal-module",
@@ -5591,6 +5669,113 @@
             "homepage": "https://www.drupal.org/project/translatable_menu_link_uri",
             "support": {
                 "source": "https://git.drupalcode.org/project/translatable_menu_link_uri"
+            }
+        },
+        {
+            "name": "drupal/twig_extensions",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/twig_extensions.git",
+                "reference": "8.x-2.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/twig_extensions-8.x-2.0.zip",
+                "reference": "8.x-2.0",
+                "shasum": "de72fbc372f169669fa1a58a49e679207fe08f8f"
+            },
+            "require": {
+                "drupal/core": "~8.0",
+                "twig/extensions": "^1.3"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-2.0",
+                    "datestamp": "1534459980",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "joelpittet",
+                    "homepage": "https://www.drupal.org/user/160302"
+                }
+            ],
+            "description": "Twig Extensions",
+            "homepage": "http://drupal.org/project/twig_extensions",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/twig_extensions",
+                "issues": "http://drupal.org/project/issues/twig_extensions"
+            }
+        },
+        {
+            "name": "drupal/twig_tweak",
+            "version": "2.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/twig_tweak.git",
+                "reference": "8.x-2.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/twig_tweak-8.x-2.4.zip",
+                "reference": "8.x-2.4",
+                "shasum": "fa175b46d2b69ce0f30344579a5861169c8467a4"
+            },
+            "require": {
+                "drupal/core": "^8.7"
+            },
+            "suggest": {
+                "symfony/var-dumper": "Better dump() function for debugging Twig variables"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-2.4",
+                    "datestamp": "1563099329",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Chi",
+                    "homepage": "https://www.drupal.org/user/556138"
+                }
+            ],
+            "description": "A Twig extension with some useful functions and filters for Drupal development.",
+            "homepage": "https://www.drupal.org/project/twig_tweak",
+            "keywords": [
+                "Drupal",
+                "Twig"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/twig_tweak",
+                "issues": "https://www.drupal.org/project/issues/twig_tweak"
             }
         },
         {
@@ -6388,16 +6573,16 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "6.5.1",
+            "version": "6.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "0274c05370a7bc9bb3a33838858253418bd7d14b"
+                "reference": "43ece0e75098b7ecd8d13918293029e555a50f82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/0274c05370a7bc9bb3a33838858253418bd7d14b",
-                "reference": "0274c05370a7bc9bb3a33838858253418bd7d14b",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/43ece0e75098b7ecd8d13918293029e555a50f82",
+                "reference": "43ece0e75098b7ecd8d13918293029e555a50f82",
                 "shasum": ""
             },
             "require": {
@@ -6451,7 +6636,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2019-12-21T08:51:15+00:00"
+            "time": "2019-12-23T11:57:10+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -7774,16 +7959,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v3.4.36",
+            "version": "v3.4.37",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "1ee23b3b659b06c622f2bd2492a229e416eb4586"
+                "reference": "7c5bdd346f9d90a2d22d4e1fe61e02dc19b98f12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/1ee23b3b659b06c622f2bd2492a229e416eb4586",
-                "reference": "1ee23b3b659b06c622f2bd2492a229e416eb4586",
+                "url": "https://api.github.com/repos/symfony/console/zipball/7c5bdd346f9d90a2d22d4e1fe61e02dc19b98f12",
+                "reference": "7c5bdd346f9d90a2d22d4e1fe61e02dc19b98f12",
                 "shasum": ""
             },
             "require": {
@@ -7842,7 +8027,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2019-12-01T10:04:45+00:00"
+            "time": "2020-01-10T07:52:48+00:00"
         },
         {
             "name": "symfony/css-selector",
@@ -7899,16 +8084,16 @@
         },
         {
             "name": "symfony/debug",
-            "version": "v3.4.36",
+            "version": "v3.4.37",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
-                "reference": "f72e33fdb1170b326e72c3157f0cd456351dd086"
+                "reference": "70dd18e93bb8bdf3c4db7fde832619fef9828cf8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/debug/zipball/f72e33fdb1170b326e72c3157f0cd456351dd086",
-                "reference": "f72e33fdb1170b326e72c3157f0cd456351dd086",
+                "url": "https://api.github.com/repos/symfony/debug/zipball/70dd18e93bb8bdf3c4db7fde832619fef9828cf8",
+                "reference": "70dd18e93bb8bdf3c4db7fde832619fef9828cf8",
                 "shasum": ""
             },
             "require": {
@@ -7951,7 +8136,7 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2019-10-24T15:33:53+00:00"
+            "time": "2020-01-08T16:36:15+00:00"
         },
         {
             "name": "symfony/dependency-injection",
@@ -9346,6 +9531,61 @@
             "time": "2019-10-24T15:33:53+00:00"
         },
         {
+            "name": "twig/extensions",
+            "version": "v1.5.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twigphp/Twig-extensions.git",
+                "reference": "57873c8b0c1be51caa47df2cdb824490beb16202"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twigphp/Twig-extensions/zipball/57873c8b0c1be51caa47df2cdb824490beb16202",
+                "reference": "57873c8b0c1be51caa47df2cdb824490beb16202",
+                "shasum": ""
+            },
+            "require": {
+                "twig/twig": "^1.27|^2.0"
+            },
+            "require-dev": {
+                "symfony/phpunit-bridge": "^3.4",
+                "symfony/translation": "^2.7|^3.4"
+            },
+            "suggest": {
+                "symfony/translation": "Allow the time_diff output to be translated"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.5-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Twig_Extensions_": "lib/"
+                },
+                "psr-4": {
+                    "Twig\\Extensions\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "Common additional features for Twig that do not directly belong in core",
+            "keywords": [
+                "i18n",
+                "text"
+            ],
+            "time": "2018-12-05T18:34:18+00:00"
+        },
+        {
             "name": "twig/twig",
             "version": "v1.42.4",
             "source": {
@@ -9706,6 +9946,7 @@
                 "psr",
                 "psr-7"
             ],
+            "abandoned": "laminas/laminas-diactoros",
             "time": "2019-08-06T17:53:53+00:00"
         },
         {
@@ -9751,6 +9992,7 @@
                 "escaper",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-escaper",
             "time": "2019-09-05T20:03:20+00:00"
         },
         {
@@ -9814,6 +10056,7 @@
                 "feed",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-feed",
             "time": "2019-03-05T20:08:49+00:00"
         },
         {
@@ -9860,6 +10103,7 @@
                 "stdlib",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-stdlib",
             "time": "2018-08-28T21:34:05+00:00"
         }
     ],

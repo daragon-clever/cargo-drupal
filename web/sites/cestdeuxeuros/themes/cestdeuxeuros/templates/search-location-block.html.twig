@@ -18,11 +18,13 @@
                     placeholder="Indiquez une ville"
                     class="js-search-input"
                     id="js-search-input"
+                    value="{{ query }}"
             ><!-- space hack
             --><input
                     name="preloaded-search-string"
                     type="hidden"
-                    id="js-preloaded"
+                    id="js-preloaded",
+                    value="{{ query }}"
             ><!-- space hack
             --><button id="js-search-button"></button>
         </div>

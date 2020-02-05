@@ -33,13 +33,7 @@
             --><button></button>
         </div>
         <div style="display: none">
-            <select name="search-radius" id="js-search-radius">
-                <option value="5">5 km</option>
-                <option value="10">10 km</option>
-                <option value="25" >25 km</option>
-                <option value="50" >50 km</option>
-                <option value="100" selected>100 km</option>
-            </select>
+            <input name="search-radius" id="js-search-radius" type="hidden" value="{{searchFormDefaultRadius}}">
 
             <input name="offset-radius" type="hidden" id="js-offset-radius" value="0">
         </div>

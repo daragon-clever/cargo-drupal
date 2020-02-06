@@ -171,16 +171,16 @@
         },
         {
             "name": "cargo/drupal_synapse",
-            "version": "v1.3.8",
+            "version": "v1.3.9",
             "source": {
                 "type": "git",
                 "url": "git@github.com:PoleWebCargo/WEB_Drupal_Module_Synapse.git",
-                "reference": "0dd9a67bc2580eb51ff77cf3e45c7983fb7f273a"
+                "reference": "95ff932990027397c90d385fdea049513372e9d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PoleWebCargo/WEB_Drupal_Module_Synapse/zipball/0dd9a67bc2580eb51ff77cf3e45c7983fb7f273a",
-                "reference": "0dd9a67bc2580eb51ff77cf3e45c7983fb7f273a",
+                "url": "https://api.github.com/repos/PoleWebCargo/WEB_Drupal_Module_Synapse/zipball/95ff932990027397c90d385fdea049513372e9d5",
+                "reference": "95ff932990027397c90d385fdea049513372e9d5",
                 "shasum": ""
             },
             "require": {
@@ -204,10 +204,10 @@
             "description": "Module to connect and use the synapse API (Store Locator)",
             "homepage": "https://github.com/PoleWebCargo/WEB_Drupal_Module_Synapse",
             "support": {
-                "source": "https://github.com/PoleWebCargo/WEB_Drupal_Module_Synapse/tree/v1.3.8",
+                "source": "https://github.com/PoleWebCargo/WEB_Drupal_Module_Synapse/tree/v1.3.9",
                 "issues": "https://github.com/PoleWebCargo/WEB_Drupal_Module_Synapse/issues"
             },
-            "time": "2020-02-05T14:29:22+00:00"
+            "time": "2020-02-06T09:35:19+00:00"
         },
         {
             "name": "chi-teck/drupal-code-generator",
@@ -3963,7 +3963,7 @@
             "description": "Provides a service to manage file metadata.",
             "homepage": "https://www.drupal.org/project/file_mdm",
             "support": {
-                "source": "http://cgit.drupalcode.org/file_mdm"
+                "source": "https://git.drupalcode.org/project/file_mdm"
             }
         },
         {
@@ -4406,6 +4406,10 @@
                     "homepage": "https://www.drupal.org/user/84263"
                 },
                 {
+                    "name": "Manuel Garcia",
+                    "homepage": "https://www.drupal.org/user/213194"
+                },
+                {
                     "name": "Nafes",
                     "homepage": "https://www.drupal.org/user/2489926"
                 },
@@ -4421,7 +4425,7 @@
             "description": "Mail System",
             "homepage": "https://www.drupal.org/project/mailsystem",
             "support": {
-                "source": "http://cgit.drupalcode.org/mailsystem"
+                "source": "https://git.drupalcode.org/project/mailsystem"
             }
         },
         {
@@ -4936,7 +4940,7 @@
             "description": "PDFPreview lets you show a preview of PDF files.",
             "homepage": "https://www.drupal.org/project/pdfpreview",
             "support": {
-                "source": "http://cgit.drupalcode.org/pdfpreview"
+                "source": "https://git.drupalcode.org/project/pdfpreview"
             }
         },
         {
@@ -5150,7 +5154,7 @@
             "description": "Rename admin path /admin/.. and /user/.. to /something/..",
             "homepage": "https://www.drupal.org/project/rename_admin_paths",
             "support": {
-                "source": "http://cgit.drupalcode.org/rename_admin_paths"
+                "source": "https://git.drupalcode.org/project/rename_admin_paths"
             }
         },
         {
@@ -5253,7 +5257,7 @@
             "description": "Allows searching through the kint dump",
             "homepage": "https://www.drupal.org/project/search_kint",
             "support": {
-                "source": "http://cgit.drupalcode.org/search_kint"
+                "source": "https://git.drupalcode.org/project/search_kint"
             }
         },
         {
@@ -5815,14 +5819,26 @@
             ],
             "authors": [
                 {
+                    "name": "Frans",
+                    "homepage": "https://www.drupal.org/user/514222"
+                },
+                {
+                    "name": "Wietzehiha",
+                    "homepage": "https://www.drupal.org/user/3183901"
+                },
+                {
                     "name": "jeroen.b",
                     "homepage": "https://www.drupal.org/user/1853532"
+                },
+                {
+                    "name": "matglas86",
+                    "homepage": "https://www.drupal.org/user/573464"
                 }
             ],
             "description": "Creates permisisons per node content type to control access to unpublished nodes per content type.",
             "homepage": "https://www.drupal.org/project/unpublished_node_permissions",
             "support": {
-                "source": "http://cgit.drupalcode.org/unpublished_node_permissions"
+                "source": "https://git.drupalcode.org/project/unpublished_node_permissions"
             }
         },
         {
@@ -10284,12 +10300,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/minkphp/MinkSelenium2Driver.git",
-                "reference": "f4efaf52fed6a98bf6037a04f3fdef94dc0c8841"
+                "reference": "3d37a5dd09c044a3d7407d9e85331da7e7b6f8a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/minkphp/MinkSelenium2Driver/zipball/f4efaf52fed6a98bf6037a04f3fdef94dc0c8841",
-                "reference": "f4efaf52fed6a98bf6037a04f3fdef94dc0c8841",
+                "url": "https://api.github.com/repos/minkphp/MinkSelenium2Driver/zipball/3d37a5dd09c044a3d7407d9e85331da7e7b6f8a9",
+                "reference": "3d37a5dd09c044a3d7407d9e85331da7e7b6f8a9",
                 "shasum": ""
             },
             "require": {
@@ -10317,14 +10333,14 @@
             ],
             "authors": [
                 {
-                    "name": "Konstantin Kudryashov",
-                    "email": "ever.zet@gmail.com",
-                    "homepage": "http://everzet.com"
-                },
-                {
                     "name": "Pete Otaqui",
                     "email": "pete@otaqui.com",
                     "homepage": "https://github.com/pete-otaqui"
+                },
+                {
+                    "name": "Konstantin Kudryashov",
+                    "email": "ever.zet@gmail.com",
+                    "homepage": "http://everzet.com"
                 }
             ],
             "description": "Selenium2 (WebDriver) driver for Mink framework",
@@ -10337,7 +10353,7 @@
                 "testing",
                 "webdriver"
             ],
-            "time": "2018-07-23T10:51:47+00:00"
+            "time": "2019-08-29T11:53:53+00:00"
         },
         {
             "name": "composer/ca-bundle",

@@ -49,7 +49,7 @@
         "drupal-composer/drupal-scaffold": "^2.2",
         "drupal/ace_editor": "^1.1",
         "drupal/acl": "^1.0@alpha",
-        "drupal/admin_toolbar": "^1.24",
+        "drupal/admin_toolbar": "^2.0",
         "drupal/adminimal_admin_toolbar": "^1.7",
         "drupal/adminimal_theme": "^1.4",
         "drupal/antibot": "^1.2",
@@ -83,7 +83,7 @@
         "drupal/pdfpreview": "^1.0@RC",
         "drupal/private_content-private_content": "^2.0@alpha",
         "drupal/recaptcha": "^2.3",
-        "drupal/rename_admin_paths": "^1.1",
+        "drupal/rename_admin_paths": "^2.0",
         "drupal/robotstxt": "^1.2",
         "drupal/search_kint": "^1.0",
         "drupal/simple_menu_icons": "^2.1",
@@ -103,7 +103,7 @@
         "webmozart/path-util": "^2.3"
     },
     "require-dev": {
-        "webflo/drupal-core-require-dev": "^8.6.0"
+        "drupal/core-dev": "^8.8"
     },
     "conflict": {
         "drupal/drupal": "*"

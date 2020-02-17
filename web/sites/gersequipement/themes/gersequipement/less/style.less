@@ -1,5 +1,5 @@
-// Variables LESS
 @import 'variables';
+@import 'animation';
 
 // GOOGLE FONT
 @import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700&display=swap');
@@ -1033,6 +1033,11 @@ footer {
   .block {
     display: flex;
     min-height: 190px;
+    transition: opacity 0.3s ease-in-out;
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 
   .inner {
@@ -1198,8 +1203,6 @@ footer {
   .p2 {
     .block {
       font-family: inherit;
-      max-width: 230px;
-      margin: 30px;
 
       .svg-wrapper {
         height: 150px;
@@ -1220,6 +1223,11 @@ footer {
 
 .svgs-banner {
   background: #f7f7f7;
+
+  a {
+    display: flex;
+    width: 100%;
+  }
 
   & > div > div {
     display: flex;

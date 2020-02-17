@@ -37,5 +37,6 @@ global-styling:
       css/style.css: {}
   js:
     js/custom-js.js: {}
+    js/animation.js: {}
   dependencies:
     - core/jquery

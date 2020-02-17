@@ -256,12 +256,16 @@ jQuery(document).ready(function($) {
         slidesToShow: 4,
         slidesToScroll: 4,
         infinite: true,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        speed: 1500,
         responsive: [
             {
                 breakpoint: 991,
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 3,
+                    autoplay: false,
                     arrows: false,
                     centerMode: true,
                     centerPadding: '60px'
@@ -271,6 +275,7 @@ jQuery(document).ready(function($) {
                 breakpoint: 767,
                 settings: {
                     arrows: false,
+                    autoplay: false,
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     centerMode: true

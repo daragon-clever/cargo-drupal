@@ -492,20 +492,20 @@ footer span.linkedin-logo {
   max-width: 150px;
   display: inline-block;
 }
-.homepage-content-1 .js-slideshow-brand {
+.homepage-content-1 .slideshow-multisvg {
   position: relative;
   height: 75px;
   display: block;
   opacity: 0.8;
 }
-.homepage-content-1 .js-slideshow-brand > span {
+.homepage-content-1 .slideshow-multisvg > span {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   text-align: center;
 }
-.homepage-content-1 .js-slideshow-brand > span img {
+.homepage-content-1 .slideshow-multisvg > span img {
   width: auto;
 }
 .homepage-content-2 {

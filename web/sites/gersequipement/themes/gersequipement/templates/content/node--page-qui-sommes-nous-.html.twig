@@ -33,8 +33,7 @@
                         {{ content.field_qsn_svg_mobile }}
                     </div>
                     {% for i in 0..6 %}
-                    <div class="txt block-{{ i }}" nvs-animation-delay="500"
-                         nvs-animation-type="{% if i is odd %}in-right{% else %}in-left{% endif %}">
+                    <div class="txt block-{{ i }}" nvs-animation-delay="500" nvs-animation-type="in-top">
                         {{ content.field_qsn_content1_txts[i] }}
                     </div>
                     {% endfor %}

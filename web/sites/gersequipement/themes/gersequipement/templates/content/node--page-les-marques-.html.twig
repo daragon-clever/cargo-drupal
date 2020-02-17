@@ -8,13 +8,53 @@
             <div class="col-12 col-lg-8 no-padding">
                 <div class="svgs-banner">
                     <div class="row justify-content-center no-margin">
-                        {% for field in content.field_brands_banner_svgs['#items'] %}
-                            <div class="col-6 col-sm-4 no-padding">
-                                {#<a href="#"> Attente décision #}
-                                    <img src="{{ file_url(field.entity.fileuri) }}"/>
-                                {#</a>#}
-                            </div>
-                        {% endfor %}
+                        <div class="col-6 col-sm-4 no-padding">
+                            <a href="#part1">
+                                <img src="{{ file_url(content.field_brands_banner_svgs['#items'].0.entity.uri.value) }}" />
+                            </a>
+                        </div>
+                        <div class="col-6 col-sm-4 no-padding">
+                            <a href="#part2">
+                                <img src="{{ file_url(content.field_brands_banner_svgs['#items'].1.entity.uri.value) }}" />
+                            </a>
+                        </div>
+                        <div class="col-6 col-sm-4 no-padding">
+                            <a href="#part3">
+                                <img src="{{ file_url(content.field_brands_banner_svgs['#items'].2.entity.uri.value) }}" />
+                            </a>
+                        </div>
+
+                        <div class="col-6 col-sm-4 no-padding">
+                            <a href="#part4">
+                                <img src="{{ file_url(content.field_brands_banner_svgs['#items'].3.entity.uri.value) }}" />
+                            </a>
+                        </div>
+                        <div class="col-6 col-sm-4 no-padding">
+                            <a href="#part7">
+                                <img src="{{ file_url(content.field_brands_banner_svgs['#items'].4.entity.uri.value) }}" />
+                            </a>
+                        </div>
+                        <div class="col-6 col-sm-4 no-padding">
+                            <a href="#part7">
+                                <img src="{{ file_url(content.field_brands_banner_svgs['#items'].5.entity.uri.value) }}" />
+                            </a>
+                        </div>
+
+                        <div class="col-6 col-sm-4 no-padding">
+                            <a href="#part6">
+                                <img src="{{ file_url(content.field_brands_banner_svgs['#items'].6.entity.uri.value) }}" />
+                            </a>
+                        </div>
+                        <div class="col-6 col-sm-4 no-padding">
+                            <a href="#part6">
+                                <img src="{{ file_url(content.field_brands_banner_svgs['#items'].7.entity.uri.value) }}" />
+                            </a>
+                        </div>
+                        <div class="col-6 col-sm-4 no-padding">
+                            <a href="#part5">
+                                <img src="{{ file_url(content.field_brands_banner_svgs['#items'].8.entity.uri.value) }}" />
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

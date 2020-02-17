@@ -65,6 +65,16 @@
     transform: translateY(0);
   }
 }
+@keyframes fadeInTop {
+  from {
+    opacity:0;
+    transform: translateY(-25px);
+  }
+  to {
+    opacity:1;
+    transform: translateY(0);
+  }
+}
 @keyframes fadeIn {
   from {
     opacity:0;
@@ -95,6 +105,11 @@
 }
 .in-bottom {
   animation-name: fadeInBottom;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+}
+.in-top {
+  animation-name: fadeInTop;
   animation-fill-mode: both;
   animation-duration: 1s;
 }

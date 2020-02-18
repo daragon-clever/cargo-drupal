@@ -1685,6 +1685,10 @@ footer {
       transform: rotate(45deg);
       z-index: -1;
       transition: all 0.2s ease-in-out;
+
+      @media @tablet {
+        display: none;
+      }
     }
 
     &.active {

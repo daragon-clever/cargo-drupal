@@ -90,28 +90,22 @@ jQuery(document).ready(function($) {
     var sliderHPMobile = $(".js-slick-slider-hp-mobile");
     var sliderHpCta = $(".js-slick-hp-cta");
 
-    sliderHPLeft.slick({
-        vertical: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: true,
-        arrows: false,
-        autoplay: true,
-        autoplaySpeed: 3000,
-        speed: 1200
-    });
+    var sliderHP = function(slider, verticalReverse) {
+        slider.slick({
+            vertical: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            verticalReverse: verticalReverse,
+            infinite: true,
+            arrows: false,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            speed: 1200
+        });
+    };
 
-    sliderHPRight.slick({
-        vertical: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: true,
-        arrows: false,
-        verticalReverse: true,
-        autoplay: true,
-        autoplaySpeed: 3000,
-        speed: 1200
-    });
+    sliderHP(sliderHPLeft, false);
+    sliderHP(sliderHPRight, true);
 
     sliderHPMobile.slick({
         infinite: true,
@@ -141,17 +135,19 @@ jQuery(document).ready(function($) {
 
     // HP - Mini slideshow brands
     sliderHpCta.on('init', function(event, slick){
-        $(".js-slideshow-brand > span").slice(1).hide();
-
-        setInterval(function() {
-            $('.js-slideshow-brand > span:first-child')
-                .fadeOut(1000)
-                .next()
-                .fadeIn(1000)
-                .end()
-                .appendTo('.js-slideshow-brand');
-        },  3000);
-
+        var sliderHPSVG = function(slider) {
+            $(slider + " > span").slice(1).hide();
+            setInterval(function() {
+                $(slider + " > span:first-child")
+                    .fadeOut(1000)
+                    .next()
+                    .fadeIn(1000)
+                    .end()
+                    .appendTo(slider);
+            },  3000);
+        };
+        sliderHPSVG(".js-slideshow-brand");
+        sliderHPSVG(".js-slideshow-concepts");
     });
 
     sliderHpCta.slick({
@@ -260,12 +256,16 @@ jQuery(document).ready(function($) {
         slidesToShow: 4,
         slidesToScroll: 4,
         infinite: true,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        speed: 1500,
         responsive: [
             {
                 breakpoint: 991,
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 3,
+                    autoplay: false,
                     arrows: false,
                     centerMode: true,
                     centerPadding: '60px'
@@ -275,6 +275,7 @@ jQuery(document).ready(function($) {
                 breakpoint: 767,
                 settings: {
                     arrows: false,
+                    autoplay: false,
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     centerMode: true

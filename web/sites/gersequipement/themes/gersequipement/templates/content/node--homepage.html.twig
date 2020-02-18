@@ -35,8 +35,12 @@
         <div class="inner-wrapper">
             <div class="inner">
                 <a href="{{ content.field_hp_content1_links[0] }}">
-                    {{ content.field_hp_content1_svg[0] }}
-                    <p>{{ node.field_hp_content1_svg[0].description }}</p>
+                    <span class="js-slideshow-concepts slideshow-multisvg metiers">
+                        {% for i in 0..node.field_hp_content1_svg_block_1|length - 1 %}
+                            <span>{{ content.field_hp_content1_svg_block_1[i] }}</span>
+                        {% endfor %}
+                    </span>
+                    <p>{{ node.field_hp_content1_svg_block_1[0].description }}</p>
                     <span class="cta">
                         {{ node.field_hp_content1_links[0].title }}
                     </span>
@@ -48,8 +52,8 @@
         <div class="inner-wrapper">
             <div class="inner">
                 <a href="{{ content.field_hp_content1_links[1] }}">
-                    {{ content.field_hp_content1_svg[1] }}
-                    <p>{{ node.field_hp_content1_svg[1].description }}</p>
+                    {{ content.field_hp_content1_svg[0] }}
+                    <p>{{ node.field_hp_content1_svg[0].description }}</p>
                     <span class="cta">
                         {{ node.field_hp_content1_links[1].title }}
                     </span>
@@ -61,13 +65,12 @@
         <div class="inner-wrapper">
             <div class="inner">
                 <a href="{{ content.field_hp_content1_links[2] }}">
-                    <span class="js-slideshow-brand">
-                        <span>{{ content.field_hp_content1_svg_brands[0] }}</span>
-                        <span>{{ content.field_hp_content1_svg_brands[1] }}</span>
-                        <span>{{ content.field_hp_content1_svg_brands[2] }}</span>
-                        <span>{{ content.field_hp_content1_svg_brands[3] }}</span>
+                    <span class="js-slideshow-brand slideshow-multisvg">
+                        {% for i in 0..node.field_hp_content1_svg_brands|length - 1 %}
+                        <span>{{ content.field_hp_content1_svg_brands[i] }}</span>
+                        {% endfor %}
                     </span>
-                    <p>{{ node.field_hp_content1_svg[2].description }}</p>
+                    <p>{{ node.field_hp_content1_svg_brands[0].description }}</p>
                     <span class="cta">
                         {{ node.field_hp_content1_links[2].title }}
                     </span>
@@ -79,8 +82,8 @@
         <div class="inner-wrapper">
             <div class="inner">
                 <a href="{{ content.field_hp_content1_links[3] }}">
-                    {{ content.field_hp_content1_svg[3] }}
-                    <p>{{ node.field_hp_content1_svg[3].description }}</p>
+                    {{ content.field_hp_content1_svg[1] }}
+                    <p>{{ node.field_hp_content1_svg[1].description }}</p>
                     <span class="cta">
                         {{ node.field_hp_content1_links[3].title }}
                     </span>
@@ -91,7 +94,7 @@
 </div>
 
 <!-- CONTENT 2 -->
-<div class="container homepage-content-2">
+<div class="container homepage-content-2" nvs-animation-delay="500" nvs-animation-type="in-left">
     <div class="row">
         <div class="col-12 col-lg-6 actu">
             <div class="inner">
@@ -118,7 +121,7 @@
 </div>
 
 <!-- CONTENT 3 -->
-<div class="container homepage-content-3 text-center">
+<div class="container homepage-content-3 text-center" nvs-animation-delay="500" nvs-animation-type="in-right">
     <h3>{{ node.field_hp_content3_video.description }}</h3>
     <video poster="{{ content.field_hp_content3_video[1]|render|striptags|trim|raw }}" controls>
         <source src="{{ content.field_hp_content3_video[0]|render|striptags|trim|raw }}" type="video/mp4" />

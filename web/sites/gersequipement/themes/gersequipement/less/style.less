@@ -545,6 +545,7 @@ footer {
 
     .inner {
       margin: auto;
+      max-width: 100%;
 
       p {
         margin: 30px auto;
@@ -569,7 +570,11 @@ footer {
     display: block;
     opacity: 0.8;
 
-    & > span {
+    .slick-list {
+      overflow: visible;
+    }
+
+    span {
       position: absolute;
       top: 0;
       left: 0;
@@ -584,7 +589,7 @@ footer {
     &.metiers {
       img {
         height: 95px;
-        margin-top: -10px;
+        margin-top: -20px;
       }
     }
   }

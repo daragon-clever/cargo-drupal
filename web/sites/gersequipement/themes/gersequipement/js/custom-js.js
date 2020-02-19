@@ -89,6 +89,8 @@ jQuery(document).ready(function($) {
     var sliderHPActu = $(".js-slider-actu");
     var sliderHPMobile = $(".js-slick-slider-hp-mobile");
     var sliderHpCta = $(".js-slick-hp-cta");
+    var sliderHpCtaBrands = $(".js-slideshow-brand");
+    var sliderHpCtaConcepts = $(".js-slideshow-concepts");
 
     var sliderHP = function(slider, verticalReverse) {
         slider.slick({
@@ -134,21 +136,20 @@ jQuery(document).ready(function($) {
     });
 
     // HP - Mini slideshow brands
-    sliderHpCta.on('init', function(event, slick){
-        var sliderHPSVG = function(slider) {
-            $(slider + " > span").slice(1).hide();
-            setInterval(function() {
-                $(slider + " > span:first-child")
-                    .fadeOut(1000)
-                    .next()
-                    .fadeIn(1000)
-                    .end()
-                    .appendTo(slider);
-            },  3000);
-        };
-        sliderHPSVG(".js-slideshow-brand");
-        sliderHPSVG(".js-slideshow-concepts");
-    });
+    var sliderHPCtaSVG = function(slider) {
+        slider.slick({
+            arrows: false,
+            infinite: true,
+            speed: 500,
+            fade: true,
+            cssEase: 'linear',
+            autoplay: true,
+            autoplaySpeed: 3000
+        });
+    };
+
+    sliderHPCtaSVG(sliderHpCtaConcepts);
+    sliderHPCtaSVG(sliderHpCtaBrands);
 
     sliderHpCta.slick({
         slidesToShow: 4,
@@ -216,7 +217,6 @@ jQuery(document).ready(function($) {
     });
 
     // OUR JOBS - CUSTOM TABS
-    // TODO : Je pense que je peux le refaire en CSS plutôt, avec juste du js pour toggleClass - Nico
     var tabsWrapper = ".js-tabs-wrapper";
     var tab = tabsWrapper + " .js-tab";
     var tabHiddenContent = tab + " .js-hidden-content";
@@ -224,7 +224,6 @@ jQuery(document).ready(function($) {
 
     function hideContents() {
         if (isTabletOrLess) {
-            $(tab).removeClass("active");
             $(tabHiddenContent).slideUp('fast');
         } else {
             $(tabHiddenContent).fadeOut();
@@ -235,7 +234,10 @@ jQuery(document).ready(function($) {
         $(tab).on("click", function() {
             hideContents();
             if (isTabletOrLess) {
-                if (!$(this).hasClass("active")) {
+                if ($(this).hasClass("active")) {
+                    $(tab).removeClass("active");
+                } else {
+                    $(tab).removeClass("active");
                     $(this).addClass("active");
                     $(this).children(".js-hidden-content").slideDown('fast');
                 }

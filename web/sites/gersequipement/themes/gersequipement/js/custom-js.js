@@ -132,7 +132,9 @@ jQuery(document).ready(function($) {
     });
 
     sliderHPActu.slick({
-        infinite: true
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 5000
     });
 
     // HP - Mini slideshow brands

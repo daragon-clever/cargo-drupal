@@ -89,29 +89,25 @@ jQuery(document).ready(function($) {
     var sliderHPActu = $(".js-slider-actu");
     var sliderHPMobile = $(".js-slick-slider-hp-mobile");
     var sliderHpCta = $(".js-slick-hp-cta");
+    var sliderHpCtaBrands = $(".js-slideshow-brand");
+    var sliderHpCtaConcepts = $(".js-slideshow-concepts");
 
-    sliderHPLeft.slick({
-        vertical: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: true,
-        arrows: false,
-        autoplay: true,
-        autoplaySpeed: 3000,
-        speed: 1200
-    });
+    var sliderHP = function(slider, verticalReverse) {
+        slider.slick({
+            vertical: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            verticalReverse: verticalReverse,
+            infinite: true,
+            arrows: false,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            speed: 1200
+        });
+    };
 
-    sliderHPRight.slick({
-        vertical: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: true,
-        arrows: false,
-        verticalReverse: true,
-        autoplay: true,
-        autoplaySpeed: 3000,
-        speed: 1200
-    });
+    sliderHP(sliderHPLeft, false);
+    sliderHP(sliderHPRight, true);
 
     sliderHPMobile.slick({
         infinite: true,
@@ -140,19 +136,20 @@ jQuery(document).ready(function($) {
     });
 
     // HP - Mini slideshow brands
-    sliderHpCta.on('init', function(event, slick){
-        $(".js-slideshow-brand > span").slice(1).hide();
+    var sliderHPCtaSVG = function(slider) {
+        slider.slick({
+            arrows: false,
+            infinite: true,
+            speed: 500,
+            fade: true,
+            cssEase: 'linear',
+            autoplay: true,
+            autoplaySpeed: 3000
+        });
+    };
 
-        setInterval(function() {
-            $('.js-slideshow-brand > span:first-child')
-                .fadeOut(1000)
-                .next()
-                .fadeIn(1000)
-                .end()
-                .appendTo('.js-slideshow-brand');
-        },  3000);
-
-    });
+    sliderHPCtaSVG(sliderHpCtaConcepts);
+    sliderHPCtaSVG(sliderHpCtaBrands);
 
     sliderHpCta.slick({
         slidesToShow: 4,
@@ -220,7 +217,6 @@ jQuery(document).ready(function($) {
     });
 
     // OUR JOBS - CUSTOM TABS
-    // TODO : Je pense que je peux le refaire en CSS plutôt, avec juste du js pour toggleClass - Nico
     var tabsWrapper = ".js-tabs-wrapper";
     var tab = tabsWrapper + " .js-tab";
     var tabHiddenContent = tab + " .js-hidden-content";
@@ -228,7 +224,6 @@ jQuery(document).ready(function($) {
 
     function hideContents() {
         if (isTabletOrLess) {
-            $(tab).removeClass("active");
             $(tabHiddenContent).slideUp('fast');
         } else {
             $(tabHiddenContent).fadeOut();
@@ -239,7 +234,10 @@ jQuery(document).ready(function($) {
         $(tab).on("click", function() {
             hideContents();
             if (isTabletOrLess) {
-                if (!$(this).hasClass("active")) {
+                if ($(this).hasClass("active")) {
+                    $(tab).removeClass("active");
+                } else {
+                    $(tab).removeClass("active");
                     $(this).addClass("active");
                     $(this).children(".js-hidden-content").slideDown('fast');
                 }
@@ -260,12 +258,16 @@ jQuery(document).ready(function($) {
         slidesToShow: 4,
         slidesToScroll: 4,
         infinite: true,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        speed: 1500,
         responsive: [
             {
                 breakpoint: 991,
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 3,
+                    autoplay: false,
                     arrows: false,
                     centerMode: true,
                     centerPadding: '60px'
@@ -275,6 +277,7 @@ jQuery(document).ready(function($) {
                 breakpoint: 767,
                 settings: {
                     arrows: false,
+                    autoplay: false,
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     centerMode: true

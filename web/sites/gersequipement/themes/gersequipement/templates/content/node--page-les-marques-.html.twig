@@ -8,11 +8,53 @@
             <div class="col-12 col-lg-8 no-padding">
                 <div class="svgs-banner">
                     <div class="row justify-content-center no-margin">
-                        {% for field in content.field_brands_banner_svgs['#items'] %}
-                            <div class="col-6 col-sm-4 no-padding">
-                                <img src="{{ file_url(field.entity.fileuri) }}"/>
-                            </div>
-                        {% endfor %}
+                        <div class="col-6 col-sm-4 no-padding">
+                            <a href="#part1">
+                                <img src="{{ file_url(content.field_brands_banner_svgs['#items'].0.entity.uri.value) }}" />
+                            </a>
+                        </div>
+                        <div class="col-6 col-sm-4 no-padding">
+                            <a href="#part2">
+                                <img src="{{ file_url(content.field_brands_banner_svgs['#items'].1.entity.uri.value) }}" />
+                            </a>
+                        </div>
+                        <div class="col-6 col-sm-4 no-padding">
+                            <a href="#part3">
+                                <img src="{{ file_url(content.field_brands_banner_svgs['#items'].2.entity.uri.value) }}" />
+                            </a>
+                        </div>
+
+                        <div class="col-6 col-sm-4 no-padding">
+                            <a href="#part4">
+                                <img src="{{ file_url(content.field_brands_banner_svgs['#items'].3.entity.uri.value) }}" />
+                            </a>
+                        </div>
+                        <div class="col-6 col-sm-4 no-padding">
+                            <a href="#part7">
+                                <img src="{{ file_url(content.field_brands_banner_svgs['#items'].4.entity.uri.value) }}" />
+                            </a>
+                        </div>
+                        <div class="col-6 col-sm-4 no-padding">
+                            <a href="#part7">
+                                <img src="{{ file_url(content.field_brands_banner_svgs['#items'].5.entity.uri.value) }}" />
+                            </a>
+                        </div>
+
+                        <div class="col-6 col-sm-4 no-padding">
+                            <a href="#part6">
+                                <img src="{{ file_url(content.field_brands_banner_svgs['#items'].6.entity.uri.value) }}" />
+                            </a>
+                        </div>
+                        <div class="col-6 col-sm-4 no-padding">
+                            <a href="#part6">
+                                <img src="{{ file_url(content.field_brands_banner_svgs['#items'].7.entity.uri.value) }}" />
+                            </a>
+                        </div>
+                        <div class="col-6 col-sm-4 no-padding">
+                            <a href="#part5">
+                                <img src="{{ file_url(content.field_brands_banner_svgs['#items'].8.entity.uri.value) }}" />
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -20,7 +62,7 @@
     </div>
 
     <!-- CONTENT 1 -->
-    <div class="brand-content">
+    <div class="brand-content" nvs-animation-delay="500" nvs-animation-type="in-right">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-sm-8 offset-sm-2 text-center intro-txt">
@@ -42,7 +84,7 @@
     </div>
 
     <!-- CONTENT 2 -->
-    <div class="brand-content">
+    <div class="brand-content" nvs-animation-delay="500" nvs-animation-type="in-left">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-sm-8 offset-sm-2 text-center intro-txt">
@@ -64,7 +106,7 @@
     </div>
 
     <!-- CONTENT 3 -->
-    <div class="brand-content">
+    <div class="brand-content" nvs-animation-delay="500" nvs-animation-type="in-right">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-sm-8 offset-sm-2 text-center intro-txt">
@@ -86,7 +128,7 @@
     </div>
 
     <!-- CONTENT 4 -->
-    <div class="brand-content">
+    <div class="brand-content" nvs-animation-delay="500" nvs-animation-type="in-left">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-sm-8 offset-sm-2 text-center intro-txt">
@@ -108,7 +150,7 @@
     </div>
 
     <!-- CONTENT 5 -->
-    <div class="brand-content">
+    <div class="brand-content" nvs-animation-delay="500" nvs-animation-type="in-right">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-sm-8 offset-sm-2 text-center intro-txt">
@@ -130,7 +172,7 @@
     </div>
 
     <!-- CONTENT 6 -->
-    <div class="brand-content">
+    <div class="brand-content" nvs-animation-delay="500" nvs-animation-type="in-left">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-sm-8 offset-sm-2 text-center intro-txt">
@@ -159,7 +201,7 @@
     </div>
 
     <!-- CONTENT 7 -->
-    <div class="brand-content">
+    <div class="brand-content" nvs-animation-delay="500" nvs-animation-type="in-right">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-sm-8 offset-sm-2 text-center intro-txt">
@@ -181,7 +223,7 @@
     </div>
 
     <!-- CONTENT 8 -->
-    <div class="brand-content forced-white">
+    <div class="brand-content forced-white" nvs-animation-delay="500" nvs-animation-type="in-left">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-sm-8 offset-sm-2 text-center intro-txt">
@@ -203,7 +245,7 @@
     </div>
 
     <!-- CONTENT 9 -->
-    <div class="brand-content forced-grey">
+    <div class="brand-content forced-grey" nvs-animation-delay="500" nvs-animation-type="in-right">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-sm-10 offset-sm-1 text-center intro-txt">

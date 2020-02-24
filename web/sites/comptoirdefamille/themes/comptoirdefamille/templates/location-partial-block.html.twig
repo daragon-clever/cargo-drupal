@@ -1,0 +1,54 @@
+{#
+/**
+* @file
+* Location partial block
+*
+* @see template_preprocess_block()
+*
+* @ingroup themeable
+*/
+#}
+{% set storeUrl = "%s/%s/%s"|format(routingItemKey, location.externalId, location.name|url_encode) %}
+
+<div class="store-item">
+    <div>
+        <div>
+            <span class="location-name">{{ location.getName }}</span>
+        </div>
+        <hr />
+        <div>
+            {{ "%s %s %s %s %s"|format(location.address.line1, location.address.line2, location.address.line3, location.address.postCode, location.address.city) }}
+        </div>
+    </div>
+    <div>
+        <ul>
+            {% if location.getPhoneNumbers %}
+            <li class="phone">
+                <a href="#">
+                    <span class="txt">Afficher le numéro</span>
+                    <span class="number" style="display: none">{{ location.getMainPhoneNumber.getNumber }}</span>
+                </a>
+            </li>
+            {% endif %}
+            <li class="map">
+                <a
+                    id='js-action-map'
+                    href='#'
+                    location-id='{{ location.id }}'
+                    location-latitude='{{ location.address.geoLocation.latitude }}'
+                    location-longitude='{{ location.address.geoLocation.longitude }}'
+                    location-path='{{ storeUrl }}'
+                >
+
+                    <span>Afficher la carte</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div id="js-map-container">
+    <div id="map_target_{{ location.id }}" style="display:none;" >
+
+    </div>
+</div>

@@ -1,0 +1,75 @@
+{#
+/**
+* @file
+* Search location block
+*
+* @see template_preprocess_block()
+*
+* @ingroup themeable
+*/
+#}
+
+<div class="container store-locator">
+    <div class="row">
+        <div class="col-12">
+            <div class="inner">
+                <div id="js-store-locator">
+                    <div class="img-intro-wrapper">
+                        <img src="/sites/ostaria/themes/ostaria/images/storelocator/storelocator-left-picto.png" />
+                        <h2>Trouvez un magasin près de chez vous</h2>
+                    </div>
+                    <div>
+                        <div class="search-input-wrapper">
+                            <input
+                                    name="search-string"
+                                    placeholder="Indiquez une ville"
+                                    class="js-search-input"
+                                    id="js-search-input"
+                            ><!-- hack
+                            --><input
+                                    name="preloaded-search-string"
+                                    type="hidden"
+                                    id="js-preloaded"
+                            ><!-- hack
+                            --><button></button>
+                        </div>
+
+                        <div class="d-none">
+                            <select name="search-radius" id="js-search-radius">
+                                <option value="5">5 km</option>
+                                <option value="10">10 km</option>
+                                <option value="25" >25 km</option>
+                                <option value="50" >50 km</option>
+                                <option value="100" selected>100 km</option>
+                            </select>
+
+                            <input name="offset-radius" type="hidden" id="js-offset-radius" value="0">
+                        </div>
+
+                        <input name="search-geolocation" id="js-search-geolocation" type="hidden">
+                        <input name="store-detail-path" id="js-store-detail-path" type="hidden">
+                    </div>
+                </div>
+
+                <div id="js-ajax-response">
+
+                </div>
+
+                <div>
+                    <a href="#" id="js-show-more" style="display: none;">Afficher plus de magasins</a>
+                </div>
+            </div>
+        </div>
+
+        {#Conserver pour quand on ajoutera les revendeurs#}
+        {#<div class="col-12 col-lg-6 no-padding">#}
+            {#<div class="inner online-shopping">#}
+                {#<div class="img-intro-wrapper">#}
+                    {#<img src="/sites/ostaria/themes/ostaria/images/storelocator/storelocator-right-picto.png" />#}
+                    {#<h2>Acheter en ligne</h2>#}
+                {#</div>#}
+                {#<p>Retrouvez les collections Ostaria<br />en ligne chez notre partenaire</p>#}
+            {#</div>#}
+        {#</div>#}
+    </div>
+</div>

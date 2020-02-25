@@ -123,7 +123,14 @@
 <!-- CONTENT 3 -->
 <div class="container homepage-content-3 text-center" nvs-animation-delay="500" nvs-animation-type="in-right">
     <h3>{{ node.field_hp_content3_video.description }}</h3>
-    <video poster="{{ content.field_hp_content3_video[1]|render|striptags|trim|raw }}" controls>
+    <video id="video-hp"
+           poster="{{ content.field_hp_content3_video[1]|render|striptags|trim|raw }}"
+           controls
+           autoplay
+           muted
+           preload="auto"
+           onclick="this.paused?this.play():this.pause();"
+    >
         <source src="{{ content.field_hp_content3_video[0]|render|striptags|trim|raw }}" type="video/mp4" />
     </video>
 </div>

@@ -83,6 +83,12 @@ jQuery(document).ready(function($) {
         });
     });
 
+    // HACK AUTOPLAY VIDEO HP
+    const videoHomepage = $('#video-hp');
+    if (videoHomepage.length) {
+        videoHomepage.get(0).play();
+    }
+
     // SLIDER HP
     var sliderHPLeft = $(".js-slick-slider-hp-left");
     var sliderHPRight = $(".js-slick-slider-hp-right");

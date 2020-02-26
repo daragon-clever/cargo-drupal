@@ -524,9 +524,16 @@ footer {
     border: 1px solid @grey;
     transition: border-color 0.3s ease-in-out;
     background: white;
+    overflow: hidden;
 
     span.cta {
       transition: all 0.3s ease-in-out;
+
+      @media @phone {
+        padding: 12px 0;
+        line-height: 1.6;
+        width: 100%;
+      }
     }
 
     a {
@@ -546,7 +553,6 @@ footer {
     .inner {
       margin: auto;
       max-width: 100%;
-      overflow: hidden;
 
       p {
         margin: 30px auto;

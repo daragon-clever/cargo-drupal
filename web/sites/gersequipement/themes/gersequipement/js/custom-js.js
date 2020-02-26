@@ -68,7 +68,7 @@ jQuery(document).ready(function($) {
         }
 
         // ON CLICK
-        $("a[href*='#']:not([href='#'])").click(function() {
+        $("a[href*='#']:not([href='#']):not('.navbar-toggler')").click(function() {
             if (
                 location.hostname == this.hostname
                 && this.pathname.replace(/^\//,"") == location.pathname.replace(/^\//,"")

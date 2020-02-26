@@ -1,6 +1,5 @@
 jQuery(document).ready(function($) {
     // TEST MOBILE / TAB
-    var isMobile = window.matchMedia("only screen and (max-width: 767px)").matches;
     var isTabletOrLess = window.matchMedia("only screen and (max-width: 991px)").matches;
 
     // NAV
@@ -138,9 +137,7 @@ jQuery(document).ready(function($) {
     });
 
     sliderHPActu.slick({
-        infinite: true,
-        autoplay: true,
-        autoplaySpeed: 5000
+        infinite: true
     });
 
     // HP - Mini slideshow brands

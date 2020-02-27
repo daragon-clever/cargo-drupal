@@ -145,8 +145,8 @@ jQuery(document).ready(function($) {
     if ($(".store-locator").length) {
         $(this).on("click", '.phone', function(e) {
             e.preventDefault();
-            $(".txt").toggle();
-            $(".number").toggle();
+            $(this).find(".txt").toggle();
+            $(this).find(".number").toggle();
         });
     }
 });

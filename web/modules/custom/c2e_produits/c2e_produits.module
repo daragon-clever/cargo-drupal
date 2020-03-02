@@ -1,6 +1,4 @@
 <?php
-use \Drupal\c2e_produits\Controller;
-use \Drupal\Component\Utility\Html;
 
 function c2e_produits_theme($existing, $type, $theme, $path) {
     return [
@@ -14,23 +12,10 @@ function c2e_produits_theme($existing, $type, $theme, $path) {
     ];
 }
 
-function c2e_produits_cron()
-{
-    \Drupal::logger('c2e_produits')->notice('[C2E PRODUITS] Lancement cron');
-
-    $fluxRss = new Controller\FluxRssController();
-    $fluxRss->generateFlux();
-    $products = new Controller\ProductController();
-    $products->checkProducts();
-
-    \Drupal::state()->set('c2e_produits.last_run', REQUEST_TIME);
-
-    \Drupal::logger('c2e_produits')->notice('[C2E PRODUITS] Cron terminé');
-}
-
 function c2e_produits_mail($key, &$message, $params)
 {
+    $message['headers']['Cc'] = $params['cc'];
     $message['from'] = $params['from'];
     $message['subject'] = $params['subject'];
-    $message['body'][] = Html::escape($params['body']);
+    $message['body'][] = $params['message'];
 }

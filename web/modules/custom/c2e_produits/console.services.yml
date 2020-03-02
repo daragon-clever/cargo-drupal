@@ -1,0 +1,11 @@
+services:
+  c2e_produits.check_products:
+    class: Drupal\c2e_produits\Command\CheckCommand
+    arguments: []
+    tags:
+      - { name: drupal.command }
+  c2e_produits.flux_rss:
+      class: Drupal\c2e_produits\Command\FluxRssCommand
+      arguments: []
+      tags:
+        - { name: drupal.command }

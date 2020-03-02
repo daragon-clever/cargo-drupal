@@ -23,7 +23,7 @@ class CheckCommand extends Command
     protected function configure()
     {
         $this->setName(self::COMMAND_NAME)
-            ->setDescription('Check CSV file, products, and pictures');
+            ->setDescription('Check products and pictures');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)

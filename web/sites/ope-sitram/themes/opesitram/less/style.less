@@ -1035,3 +1035,219 @@ a.btn-slide-cta {
     }
   }
 }
+
+#recettes {
+  & > div:nth-child(even) {
+    background: url("../images/recettes/bg-black-recettes.jpg") no-repeat center;
+    background-size: cover;
+    color: white;
+
+    .left ul,
+    .right,
+    h3 {
+      color: white;
+    }
+
+    .nb-faded {
+      opacity: 0.4;
+    }
+  }
+
+  @media @phone {
+    .header img {
+      width: 100%;
+    }
+  }
+
+  .intro {
+    img {
+      margin-top: 60px;
+    }
+
+    .title {
+      font-size: 24px;
+      text-transform: uppercase;
+      margin: 30px 0 15px;
+      display: inline-block;
+
+      span {
+        font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
+      }
+    }
+
+    .recettes-link {
+      a {
+        color: white;
+        text-decoration: none !important;
+        .dimOpacityOnHover(0.7)
+      }
+
+      .nb {
+        font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
+        color: @red;
+        font-size: 30px;
+        vertical-align: middle;
+        margin-right: 20px;
+      }
+    }
+
+    @media @tablet {
+      padding: 30px 0;
+
+      .title {
+        margin-top: 0;
+      }
+    }
+
+    @media @phone {
+      .title br {
+        display: none;
+      }
+
+      .recettes-link {
+        border-bottom: 1px solid #6f6f6f;
+        display: block;
+        padding: 5px 0;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        a {
+          display: block;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+
+  .recette {
+    padding: 60px 0;
+
+    @media @phone {
+      padding: 30px 0;
+    }
+
+    h3 {
+      font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
+      font-size: 34px;
+      color: black;
+      text-transform: uppercase;
+
+      &:after {
+        content: "";
+        display: block;
+        margin: 20px auto 60px;
+        height: 4px;
+        width: 270px;
+        background: @red;
+      }
+
+      @media @phone {
+        font-size: 25px;
+
+        &:after {
+          margin: 20px auto;
+        }
+
+        br {
+          display: none;
+        }
+      }
+    }
+
+    .nb-faded {
+      font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
+      position: absolute;
+      top: 0;
+      left: 0;
+      line-height: 150px;
+      font-size: 245px;
+      color: #6a6a6a;
+      opacity: 0.15;
+
+      @media @phone {
+        display: none;
+      }
+    }
+
+    img {
+      margin-top: 100px;
+      z-index: 1;
+      position: relative;
+
+      @media @phone {
+        margin-top: 0
+      }
+    }
+
+    .left {
+      position: relative;
+
+      ul {
+        list-style: none;
+        font-size: 16px;
+        color: #5f5f60;
+        margin-left: 58px;
+        text-align: left;
+
+        .indication {
+          color: @red;
+          font-size: 18px;
+        }
+
+        li span {
+          font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
+        }
+
+        @media @tablet {
+          margin-left: 0;
+        }
+
+        @media @phone {
+          padding-left: 0;
+          text-align: center;
+          margin-bottom: 25px;
+          border-bottom: 1px solid #eee;
+          display: inline-block;
+          padding-bottom: 25px;
+        }
+      }
+    }
+
+    .right {
+      color: #5f5f60;
+      font-size: 18px;
+
+      @media @phone {
+        font-size: 16px;
+      }
+
+      .title {
+        text-transform: uppercase;
+        margin: 30px 0;
+        display: block;
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .conseil {
+        margin-top: 30px;
+
+        .title {
+          margin: 0;
+          color: @red;
+        }
+      }
+    }
+  }
+}

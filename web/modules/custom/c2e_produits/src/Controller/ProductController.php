@@ -32,7 +32,7 @@ class ProductController extends ControllerBase
 
     private function getCsvTime(): string
     {
-        $lastUpdatedFile = date('Y-m-d', filemtime($this->helperFct->csvFile));
+        $lastUpdatedFile = date('Y-m-d H:i:s', filemtime($this->helperFct->csvFile));
 
         return $lastUpdatedFile;
     }

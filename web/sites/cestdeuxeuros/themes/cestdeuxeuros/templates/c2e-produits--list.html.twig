@@ -6,14 +6,19 @@
 {% endif %}
 <div class="row products">
     {% set count = 0 %}
-    {% for skuProduct, imgProduct in products %}
+    {% for product in products %}
         {% set count = count + 1 %}
         <div class="{{ classSet }}">
             <div class="inner">
-                {% if not imgProduct %}
+                {% if not product.img %}
                     <img src="" alt=""/>
+                {% else %}
+                    {% if not product.desc %}
+                        {% set altSet = product.sku %}
                     {% else %}
-                    <img src="/sites/cestdeuxeuros/files/dataimages/{{ imgProduct }}" alt="{{ skuProduct }}"/>
+                        {% set altSet = product.desc %}
+                    {% endif %}
+                    <img src="/sites/cestdeuxeuros/files/dataimages/{{ product.img }}" alt="{{ altSet }}"/>
                 {% endif %}
                 {% if 'arrivages/futur_arrivage' not in url|render|render %}
                 <span>2<small>€</small></span>

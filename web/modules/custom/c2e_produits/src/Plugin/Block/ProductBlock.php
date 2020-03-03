@@ -29,7 +29,7 @@ class ProductBlock extends BlockBase implements BlockPluginInterface
         $nbProducts = $this->configuration['nbProducts'];
 
         $products = new ProductController();
-        $productList = $products->displayProducts($week, $nbProducts);
+        $productList = $products->getProductsToDisplay($week, $nbProducts);
 
         \Drupal::service('page_cache_kill_switch')->trigger();
 

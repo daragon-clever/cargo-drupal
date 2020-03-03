@@ -1,5 +1,0 @@
-name: C2E Produits
-description: Faire apparaître les images des produits de S0 et S1. Créée un flux RSS.
-core: 8.x
-package: Custom
-type: module

@@ -1,5 +1,8 @@
-{% for skuProduct, imgProduct in products %}
-    sku : {{ skuProduct }}
-    img : {{ imgProduct }}
+nb product : {{ nbItem }}
+
+{% for product in products %}
+    sku : {{ product.sku }}
+    alt : {{ product.desc }}
+    img : {{ product.img }}
     <br />
 {% endfor %}

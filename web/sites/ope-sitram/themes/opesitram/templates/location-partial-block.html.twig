@@ -8,52 +8,40 @@
 * @ingroup themeable
 */
 #}
-<div class="container px1465">
-    <div class="row">
-        {% set storeUrl = "/%s/%s/%s"|format(routingItemKey, location.externalId, location.name|url_encode) %}
-        <div class="js-store-block col-12 col-md-6">
-            <div>
-                <div class="infos-wrapper">
-                    <div class="title">
-                        {{ location.getName }}
-                    </div>
-                    <div class="address">
-                        {{ "%s %s %s %s %s"|format(location.address.line1, location.address.line2, location.address.line3,
-                            location.address.postCode, location.address.city) }}
-                    </div>
-                </div>
 
-                <div class="links">
-                    <ul>
-                        <li style="display: none">
-                            <a
-                                id='js-action-map'
-                                href='#'
-                                location-id='{{ location.id }}'
-                                location-latitude='{{ location.address.geoLocation.latitude }}'
-                                location-longitude='{{ location.address.geoLocation.longitude }}'
-                                location-path='{{ storeUrl }}'
-                            >
-                                <span>Afficher la carte</span>
-                                <span>Carte</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href='https://www.google.com/maps/dir/?api=1&destination={{ "%s,%s"|format(location.address.geoLocation.latitude, location.address.geoLocation.longitude) }}'
-                               target="_blank"
-                                class="go">
-                                <span>J'y vais</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+{% set storeUrl = "/%s/%s/%s"|format(routingItemKey, location.externalId, location.name|url_encode) %}
+<div class="js-store-block">
+    <div>
+        <div class="infos-wrapper">
+            <div class="title">
+                <a
+                    id='js-action-map'
+                    href='#'
+                    location-id='{{ location.id }}'
+                    location-latitude='{{ location.address.geoLocation.latitude }}'
+                    location-longitude='{{ location.address.geoLocation.longitude }}'
+                    location-path='{{ storeUrl }}'
+                    location-map-target='storelocator-map'
+                >
+                    {{ location.getName }}
+                </a>
+            </div>
+            <div class="address">
+                {{ "%s %s %s %s %s"|format(location.address.line1, location.address.line2, location.address.line3,
+                    location.address.postCode, location.address.city) }}
             </div>
         </div>
 
-        <div id="js-map-container" class="col-12 col-md-6">
-            <div id="map_target_{{ location.id }}" style="display:none;" >
-
-            </div>
+        <div class="links">
+            <ul>
+                <li>
+                    <a href='https://www.google.com/maps/dir/?api=1&destination={{ "%s,%s"|format(location.address.geoLocation.latitude, location.address.geoLocation.longitude) }}'
+                       target="_blank"
+                        class="go">
+                        <span>J'y vais</span>
+                    </a>
+                </li>
+            </ul>
         </div>
     </div>
 </div>

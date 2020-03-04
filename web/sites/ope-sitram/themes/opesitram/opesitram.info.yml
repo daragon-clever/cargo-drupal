@@ -9,6 +9,9 @@ regions:
   content: 'Content'
   footer: 'Footer'
   txtfooter: 'Zone texte sous le footer'
+  contenthp1: 'Contenu HP - 1ère partie'
+  contenthp2: 'Contenu HP - 2ème partie'
+  synapse: 'Emplacement Store Locator'
 
 libraries:
   - opesitram/bootstrap

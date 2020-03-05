@@ -171,16 +171,16 @@
         },
         {
             "name": "cargo/drupal_synapse",
-            "version": "v1.3.10",
+            "version": "v1.3.14",
             "source": {
                 "type": "git",
                 "url": "git@github.com:PoleWebCargo/WEB_Drupal_Module_Synapse.git",
-                "reference": "f109e5df7a7a6f2c2433d2a898c83dac2a03c379"
+                "reference": "660d0aa054459875d15617be64822de49b7071de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PoleWebCargo/WEB_Drupal_Module_Synapse/zipball/f109e5df7a7a6f2c2433d2a898c83dac2a03c379",
-                "reference": "f109e5df7a7a6f2c2433d2a898c83dac2a03c379",
+                "url": "https://api.github.com/repos/PoleWebCargo/WEB_Drupal_Module_Synapse/zipball/660d0aa054459875d15617be64822de49b7071de",
+                "reference": "660d0aa054459875d15617be64822de49b7071de",
                 "shasum": ""
             },
             "require": {
@@ -204,10 +204,10 @@
             "description": "Module to connect and use the synapse API (Store Locator)",
             "homepage": "https://github.com/PoleWebCargo/WEB_Drupal_Module_Synapse",
             "support": {
-                "source": "https://github.com/PoleWebCargo/WEB_Drupal_Module_Synapse/tree/v1.3.10",
+                "source": "https://github.com/PoleWebCargo/WEB_Drupal_Module_Synapse/tree/v1.3.14",
                 "issues": "https://github.com/PoleWebCargo/WEB_Drupal_Module_Synapse/issues"
             },
-            "time": "2020-02-21T14:35:56+00:00"
+            "time": "2020-03-04T16:15:21+00:00"
         },
         {
             "name": "chi-teck/drupal-code-generator",
@@ -2533,7 +2533,7 @@
                 "shasum": "e861e46740c264b9313e7a52878e789f11af5ec2"
             },
             "require": {
-                "drupal/core": "^8 || ^9"
+                "drupal/core": "~8.0"
             },
             "type": "drupal-module",
             "extra": {
@@ -5318,7 +5318,7 @@
                 "shasum": "8e93d4dcf483b1558b800570af1d3b231b8fa6f3"
             },
             "require": {
-                "drupal/core": "^8 || ^9",
+                "drupal/core": "~8.0",
                 "ext-xmlwriter": "*"
             },
             "type": "drupal-module",
@@ -8009,16 +8009,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v3.4.37",
+            "version": "v3.4.38",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "7c5bdd346f9d90a2d22d4e1fe61e02dc19b98f12"
+                "reference": "6827023c5872bea44b29d145de693b21981cf4cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/7c5bdd346f9d90a2d22d4e1fe61e02dc19b98f12",
-                "reference": "7c5bdd346f9d90a2d22d4e1fe61e02dc19b98f12",
+                "url": "https://api.github.com/repos/symfony/console/zipball/6827023c5872bea44b29d145de693b21981cf4cd",
+                "reference": "6827023c5872bea44b29d145de693b21981cf4cd",
                 "shasum": ""
             },
             "require": {
@@ -8077,7 +8077,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2020-01-10T07:52:48+00:00"
+            "time": "2020-02-15T13:27:16+00:00"
         },
         {
             "name": "symfony/css-selector",
@@ -8134,16 +8134,16 @@
         },
         {
             "name": "symfony/debug",
-            "version": "v3.4.37",
+            "version": "v3.4.38",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
-                "reference": "70dd18e93bb8bdf3c4db7fde832619fef9828cf8"
+                "reference": "a99278d50af8a9164219da38d61fb161a7f6e0a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/debug/zipball/70dd18e93bb8bdf3c4db7fde832619fef9828cf8",
-                "reference": "70dd18e93bb8bdf3c4db7fde832619fef9828cf8",
+                "url": "https://api.github.com/repos/symfony/debug/zipball/a99278d50af8a9164219da38d61fb161a7f6e0a6",
+                "reference": "a99278d50af8a9164219da38d61fb161a7f6e0a6",
                 "shasum": ""
             },
             "require": {
@@ -8186,7 +8186,7 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2020-01-08T16:36:15+00:00"
+            "time": "2020-02-03T15:10:40+00:00"
         },
         {
             "name": "symfony/dependency-injection",

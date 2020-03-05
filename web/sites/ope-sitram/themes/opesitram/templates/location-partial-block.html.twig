@@ -1,0 +1,61 @@
+{#
+/**
+* @file
+* Location partial block
+*
+* @see template_preprocess_block()
+*
+* @ingroup themeable
+*/
+#}
+
+{% set storeUrl = "/%s/%s/%s"|format(routingItemKey, location.externalId, location.name|url_encode) %}
+<div class="js-store-block">
+    <div>
+        <div class="infos-wrapper">
+            <div class="title">
+                <a  class="d-none d-lg-block"
+                    id='js-action-map'
+                    href='#'
+                    location-id='{{ location.id }}'
+                    location-latitude='{{ location.address.geoLocation.latitude }}'
+                    location-longitude='{{ location.address.geoLocation.longitude }}'
+                    location-path='{{ storeUrl }}'
+                    location-map-target='storelocator-map'
+                >
+                    {{ location.getName }}
+                </a>
+                <a  class="d-lg-none"
+                    id='js-action-map'
+                    href='#'
+                    location-id='{{ location.id }}'
+                    location-latitude='{{ location.address.geoLocation.latitude }}'
+                    location-longitude='{{ location.address.geoLocation.longitude }}'
+                    location-path='{{ storeUrl }}'
+                >
+                    {{ location.getName }}
+                </a>
+            </div>
+            <div class="address">
+                {{ "%s %s %s %s %s"|format(location.address.line1, location.address.line2, location.address.line3,
+                    location.address.postCode, location.address.city) }}
+            </div>
+        </div>
+
+        <div class="links">
+            <ul>
+                <li>
+                    <a href='https://www.google.com/maps/dir/?api=1&destination={{ "%s,%s"|format(location.address.geoLocation.latitude, location.address.geoLocation.longitude) }}'
+                       target="_blank"
+                        class="go">
+                        <span>J'y vais</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Pour mobile -->
+<div id="js-map-container">
+    <div id="map_target_{{ location.id }}" style="display:none;" ></div>
+</div>

@@ -1,0 +1,41 @@
+<div id="menu">
+    {{ page.navigation }}
+</div>
+
+<div class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<div class="container-fluid">
+    {% if page.highlighted %}
+        <div class="row message-site">
+            <div class="col">
+                {{ page.highlighted }}
+            </div>
+        </div>
+    {% endif %}
+
+    {% if page.content %}
+        <div id="homepage">
+            {{ page.contenthp1 }}
+            {{ page.synapse }}
+            {{ page.contenthp2 }}
+        </div>
+    {% endif %}
+
+    {% if page.footer %}
+        <div class="row" id="footer">
+            <div class="col">
+                <div id="">
+                    <div class="row">
+                        <div class="col">
+                            {{ page.footer }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+</div>

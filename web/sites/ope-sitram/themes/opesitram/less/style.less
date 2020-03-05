@@ -425,16 +425,45 @@ img {
       font-size: 28px;
     }
 
+    @media @tablet {
+      padding-top: 30px;
+      min-height: inherit;
+    }
+
     span.title {
       display: block;
       margin: 40px 0;
       text-transform: uppercase;
+
+      @media @phone {
+        font-size: 18px;
+        margin: 15px 0;
+      }
     }
 
     .store-locator-response {
       font-size: 15px;
       line-height: 1.6;
       text-align: left;
+      max-height: 702px;
+      overflow: auto;
+
+      @media @tablet {
+        max-height: 500px;
+
+        & > div {
+          margin: 30px 0;
+        }
+      }
+
+      @media @phone {
+        max-height: 750px;
+        & > div {
+          border-bottom: 1px solid #939393;
+          margin: 0;
+          padding: 30px 0;
+        }
+      }
     }
 
     .results-wrapper {
@@ -474,6 +503,10 @@ img {
         @media @smallScreen {
           font-size: 28px;
         }
+
+        @media @phone {
+          font-size: 20px;
+        }
       }
 
       .btn.submit {
@@ -484,6 +517,13 @@ img {
         box-shadow: 0 0 10px #00000054;
         outline: none;
         vertical-align: middle;
+
+        @media @phone {
+          img {
+            width: 25px;
+            height: auto;
+          }
+        }
       }
     }
 
@@ -496,7 +536,18 @@ img {
       padding: 0 25px 0 70px;
       vertical-align: middle;
       margin-left: 70px;
-      .dimOpacityOnHover(0.7)
+      .dimOpacityOnHover(0.7);
+
+      @media @tablet {
+        margin: 30px auto 0;
+        display: block;
+      }
+
+      @media @phone {
+        font-size: 25px;
+        background-size: 27px;
+        padding: 0 25px 0 50px;
+      }
     }
 
     .js-store-block {
@@ -516,14 +567,23 @@ img {
 
           a {
             color: white;
-            text-decoration: none;
             .dimOpacityOnHover(0.7)
+          }
+
+          @media @tablet {
+            font-size: 25px;
           }
         }
 
         .address {
           font-size: 20px;
         }
+
+        @media @phone {
+          width: 100%;
+          text-align: center;
+        }
+
       }
 
       .links {
@@ -546,8 +606,45 @@ img {
             &:hover {
               text-decoration: none;
             }
+
+            @media @phone {
+              font-size: 18px;
+              background-size: 15px;
+              padding: 7px 50px 7px 25px;
+            }
           }
         }
+
+        @media @phone {
+          float: none;
+          text-align: center;
+          margin-top: 20px;
+        }
+      }
+
+      @media @tablet {
+        margin: 0;
+      }
+    }
+
+    #js-map-container > div {
+      min-height: 400px;
+      margin-top: 30px;
+    }
+
+    .store-locator-map-info-window {
+      padding: 15px;
+      font-family: "Myriad Pro", Arial, Helvetica, sans-serif;
+      font-size: 18px;
+      line-height: 1.6;
+
+      .title {
+        font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
+      }
+
+      .opening-hours,
+      .to-store {
+        display: none;
       }
     }
   }

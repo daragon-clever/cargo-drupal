@@ -14,7 +14,7 @@
     <div>
         <div class="infos-wrapper">
             <div class="title">
-                <a
+                <a  class="d-none d-lg-block"
                     id='js-action-map'
                     href='#'
                     location-id='{{ location.id }}'
@@ -22,6 +22,16 @@
                     location-longitude='{{ location.address.geoLocation.longitude }}'
                     location-path='{{ storeUrl }}'
                     location-map-target='storelocator-map'
+                >
+                    {{ location.getName }}
+                </a>
+                <a  class="d-lg-none"
+                    id='js-action-map'
+                    href='#'
+                    location-id='{{ location.id }}'
+                    location-latitude='{{ location.address.geoLocation.latitude }}'
+                    location-longitude='{{ location.address.geoLocation.longitude }}'
+                    location-path='{{ storeUrl }}'
                 >
                     {{ location.getName }}
                 </a>
@@ -44,4 +54,8 @@
             </ul>
         </div>
     </div>
+</div>
+<!-- Pour mobile -->
+<div id="js-map-container">
+    <div id="map_target_{{ location.id }}" style="display:none;" ></div>
 </div>

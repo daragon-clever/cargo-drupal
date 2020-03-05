@@ -23,7 +23,7 @@ jQuery(document).ready(function($) {
     $(".hamburger").on("click", function () {
         $(this).toggleClass("active");
         $("#menu").fadeToggle();
-    })
+    });
 
     // SMOOTH SCROLL
     $("a").on('click', function(event) {

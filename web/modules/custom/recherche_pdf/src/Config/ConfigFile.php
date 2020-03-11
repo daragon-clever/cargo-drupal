@@ -29,6 +29,13 @@ class ConfigFile
             'EMAIL_FIC_TO' => ['poleweb@cargo-services.fr','a.delpoux@cargo-services.fr'],
             'EMAIL_FIC_FROM' => 'no-reply@cogex-outillage.com',
         ],
-
+        'GE' => [
+            'URL_SITE' => 'http://fiche.gers-equipement.fr/',
+            'ID_SOC' => 1,
+            'DEFAULT_PDF' => 'Lang',
+            'DEFAULT_LG' => 'Fr',
+            'EMAIL_FIC_TO' => ['poleweb@cargo-services.fr','a.delpoux@cargo-services.fr'],
+            'EMAIL_FIC_FROM' => 'no-reply@gers-equipement.fr',
+        ],
     ];
 }

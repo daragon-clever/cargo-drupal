@@ -1,7 +1,8 @@
-<form class="col" id="recherchepdf-form" name="formSearch" action="{{ path('resultSearch.form') }}" onsubmit="return validateForm()" type="POST">
-    <input name="refProduit" placeholder="{{ 'Saisir la référence produit colle'|trans }}" required>
+<form id="recherchepdf-form" name="formSearch" action="{{ path('resultSearch.form') }}" onsubmit="return validateForm()" type="POST">
+    <input name="refProduit" placeholder="{{ 'Référence produit'|trans }}" required>
+    <input name="lotProduit" placeholder="{{ 'Lot produit'|trans }}" required>
     <input name="urlRedirect" id="urlRedirect" value="" type="hidden">
-    <button></button>
+    <button type="submit">Télécharger</button>
 </form>
 
 <script>
@@ -10,8 +11,9 @@
 
     function validateForm() {
         var refProduit = document.forms["formSearch"]["refProduit"].value;
-        if (refProduit == "") {
-            alert("Veuillez saisir la référence du produit");
+        var lotProduit = document.forms["formSearch"]["lotProduit"].value;
+        if (refProduit == "" || lotProduit == "") {
+            alert("Veuillez saisir la référence du produit et le lot du produit");
             return false;
         } else {
             return true;

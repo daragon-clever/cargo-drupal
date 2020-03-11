@@ -1,9 +1,23 @@
-<form id="recherchepdf-form" name="formSearch" action="{{ path('resultSearch.form') }}" onsubmit="return validateForm()" type="POST">
-    <input name="refProduit" placeholder="{{ 'Référence produit'|trans }}" required>
-    <input name="lotProduit" placeholder="{{ 'Lot produit'|trans }}" required>
-    <input name="urlRedirect" id="urlRedirect" value="" type="hidden">
-    <button type="submit">Télécharger</button>
-</form>
+<div id="recherche-pdf">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2>Recherche de déclarations de conformité</h2>
+            </div>
+            <div class="col-12">
+                <form id="recherchepdf-form" name="formSearch" action="{{ path('resultSearch.form') }}" onsubmit="return validateForm()" type="POST">
+                    <label for="refProduit">Saisir la référence produit :</label>
+                    <input name="refProduit" placeholder="{{ 'Référence produit'|trans }}" required>
+                    <br />
+                    <label for="lotProduit">Saisir le lot produit :</label>
+                    <input name="lotProduit" placeholder="{{ 'Lot produit'|trans }}" required>
+                    <input name="urlRedirect" id="urlRedirect" value="" type="hidden">
+                    <button type="submit">Télécharger</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script>
     var pathname = window.location.pathname;

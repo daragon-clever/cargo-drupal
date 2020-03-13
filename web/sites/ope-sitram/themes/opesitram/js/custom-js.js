@@ -26,15 +26,45 @@ jQuery(document).ready(function($) {
     });
 
     // SMOOTH SCROLL
-    $("a").on('click', function(event) {
-        if (this.hash !== "") {
-            event.preventDefault();
-            var hash = this.hash;
-            $('html, body').animate({
-                scrollTop: $(hash).offset().top
-            }, 800, function(){
-                window.location.hash = hash;
-            });
+    $(function() {
+        // ON LOAD
+        function smoothScrollTo(target) {
+            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+
+            if (target.length) {
+                $('html,body').animate({
+                    scrollTop: target.offset().top
+                }, 1500);
+            }
         }
+        if (location.hash) {
+            window.scrollTo(0, 0);
+            target = location.hash.split('#');
+            smoothScrollTo($('#'+target[1]));
+        }
+
+        // ON CLICK
+        $("a[href*='#']:not([href='#']):not('.navbar-toggler')").click(function() {
+            if (
+                location.hostname == this.hostname
+                && this.pathname.replace(/^\//,"") == location.pathname.replace(/^\//,"")
+            ) {
+                var anchor = $(this.hash);
+                anchor = anchor.length ? anchor : $("[name=" + this.hash.slice(1) +"]");
+                if ( anchor.length ) {
+                    $("html, body").animate( { scrollTop: anchor.offset().top }, 1500);
+                }
+            }
+        });
     });
+
+    // GESTION LIEN STORELOCATOR
+    var storeLocatorLink = $("#block-navigationprincipale .storelocator-main-link");
+    if ( window.location.pathname == '/' ){
+        storeLocatorLink
+            .attr("href", "#js-store-locator")
+            .removeClass("is-active");
+    } else {
+        storeLocatorLink.attr("href", "accueil#js-store-locator");
+    }
 });

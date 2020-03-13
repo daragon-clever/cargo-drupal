@@ -13,8 +13,7 @@ class ProductController extends ControllerBase
 
     private const NB_REQUIRED_PRODUCTS = 8;
     private const EMAIL_TEAM = "poleweb@cargo-services.fr";
-//    private const EMAIL_ALERT = "gel@cedif.fr,sgu@cedif.fr,a.champion@cargo-services.fr";
-    private const EMAIL_ALERT = "a.beziat@cargo-services.fr"; //test mode
+    private const EMAIL_ALERT = "gel@cedif.fr,sgu@cedif.fr,a.champion@cargo-services.fr";
 
     private $helperFct;
 

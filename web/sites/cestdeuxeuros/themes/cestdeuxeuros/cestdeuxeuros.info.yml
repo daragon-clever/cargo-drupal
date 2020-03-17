@@ -9,6 +9,7 @@ regions:
   content: 'Content'
   footer: 'Footer'
   popup_newsletter: 'Popup Newsletter'
+  msgevent: 'Message Evenement'
 
 libraries:
   - cestdeuxeuros/bootstrap

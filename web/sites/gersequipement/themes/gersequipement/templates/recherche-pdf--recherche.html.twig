@@ -2,17 +2,18 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h2>Recherche de déclarations de conformité</h2>
+                <h2>Recherche de déclarations de conformité et de fiche de données de sécurité</h2>
             </div>
             <div class="col-12">
-                <form id="recherchepdf-form" name="formSearch" action="{{ path('resultSearch.form') }}" onsubmit="return validateForm()" type="POST">
+                <form id="recherchepdf-form" name="formSearch" method="post" type="POST"
+                      action="{{ path('resultSearch.form', {'action': 'display'}) }}" onsubmit="return validateForm()">
                     <label for="refProduit">Saisir la référence produit :</label>
                     <input name="refProduit" placeholder="{{ 'Référence produit'|trans }}" required>
                     <br />
                     <label for="lotProduit">Saisir le lot produit :</label>
-                    <input name="lotProduit" placeholder="{{ 'Lot produit'|trans }}" required>
+                    <input name="lotProduit" placeholder="{{ 'Lot produit'|trans }}">
                     <input name="urlRedirect" id="urlRedirect" value="" type="hidden">
-                    <button type="submit">Télécharger</button>
+                    <button type="submit">Afficher</button>
                 </form>
             </div>
         </div>
@@ -25,9 +26,8 @@
 
     function validateForm() {
         var refProduit = document.forms["formSearch"]["refProduit"].value;
-        var lotProduit = document.forms["formSearch"]["lotProduit"].value;
-        if (refProduit == "" || lotProduit == "") {
-            alert("Veuillez saisir la référence du produit et le lot du produit");
+        if (refProduit == "") {
+            alert("Veuillez saisir la référence du produit");
             return false;
         } else {
             return true;

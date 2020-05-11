@@ -158,7 +158,7 @@ class ProductController extends ControllerBase
             $reply = false;
             $send = true;
 
-            //$mailManager->mail($module, $key, $to, $langcode, $paramMail, $reply, $send);
+            $mailManager->mail($module, $key, $to, $langcode, $paramMail, $reply, $send);
         }
     }
 }

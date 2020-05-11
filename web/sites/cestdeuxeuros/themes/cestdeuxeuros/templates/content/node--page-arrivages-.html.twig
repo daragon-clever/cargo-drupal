@@ -1,44 +1,29 @@
-<div id="block-messageevenementmagasins" class="c2eproduct">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <div class="msg-event">
-                    <p>Suite aux mesures annoncées par le gouvernement pour la santé et la sécurité de tous, nos magasins seront fermés jusqu'à nouvel ordre.</p>
-                    <p>Nos pensées vont à toutes les équipes soignantes, nos clients et nos collaborateurs.</p>
-                    <p>Nous espérons vous accueillir très vite dans votre magasin C'est Deux Euros.</p>
-                    <p>Prenez soin de vous et de vos proches ❤</p>
-                    <p>L'équipe C'est Deux Euros</p>
-                </div>
+<div id="arrivages">
+    <div class="row arrivages-S0-wrapper">
+        <div class="col-12">
+            <div class="title text-center">
+                {{ content.field_arrivages_txts[0] }}
+            </div>
+            <div id="arrivages_S0">
+                {{ content.field_block_produits[0] }}
             </div>
         </div>
     </div>
+
+    <div class="row arrivages-S1-wrapper">
+        <div class="col-12">
+            <div class="title text-center">
+                {{ content.field_arrivages_txts[1] }}
+            </div>
+            <div id="arrivages_S1">
+                {{ content.field_block_produits[1] }}
+            </div>
+        </div>
+    </div>
+
+    <div class="row txt">
+        <div class="col-12 text-center">
+            {{ content.field_arrivages_txts[2] }}
+        </div>
+    </div>
 </div>
-{#<div id="arrivages">#}
-    {#<div class="row arrivages-S0-wrapper">#}
-        {#<div class="col-12">#}
-            {#<div class="title text-center">#}
-                {#{{ content.field_arrivages_txts[0] }}#}
-            {#</div>#}
-            {#<div id="arrivages_S0">#}
-                {#{{ content.field_block_produits[0] }}#}
-            {#</div>#}
-        {#</div>#}
-    {#</div>#}
-
-    {#<div class="row arrivages-S1-wrapper">#}
-        {#<div class="col-12">#}
-            {#<div class="title text-center">#}
-                {#{{ content.field_arrivages_txts[1] }}#}
-            {#</div>#}
-            {#<div id="arrivages_S1">#}
-                {#{{ content.field_block_produits[1] }}#}
-            {#</div>#}
-        {#</div>#}
-    {#</div>#}
-
-    {#<div class="row txt">#}
-        {#<div class="col-12 text-center">#}
-            {#{{ content.field_arrivages_txts[2] }}#}
-        {#</div>#}
-    {#</div>#}
-{#</div>#}

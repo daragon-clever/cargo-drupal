@@ -10,112 +10,203 @@ use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Drupal\Core\Url;
+use \Drupal\recherche_pdf\Config\ConfigFile;
 
 
 class RechercheController extends ControllerBase
 {
+    private const KEY_ALERT_SHORT_MSG = "shortMsg";
+    private const KEY_ALERT_MSG = "msg";
+    private const KEY_ALERT_ERROR_FOR_USER = "errorForUser";
+
     protected $config;
     protected $qrcodeadmProd;
-    protected $qrcodeadmMail;
     protected $dataSoc;
 
     public function __construct()
     {
-        $this->config = new \Drupal\recherche_pdf\Config\ConfigFile();
+        $this->config = new ConfigFile();
 
         $qrcodeadm =  \Drupal::config('system.qrcodeadm')->get('soc', FALSE);
         $this->qrcodeadmProd =  \Drupal::config('system.qrcodeadm')->get('prod', FALSE);
-        $this->qrcodeadmMail =  \Drupal::config('system.qrcodeadm')->get('mailTesterreur', FALSE);
 
         if ($qrcodeadm != null) {
             $this->dataSoc = $this->config::QRCODEADM[$qrcodeadm];
         }
     }
 
+    /**
+     * Page with search form - load template
+     *
+     * @return array
+     */
     public function displayForm()
     {
-        return array(
+        return [
             '#theme' => 'recherche_pdf--recherche'
-        );
+        ];
     }
 
-    public function getPdf(Request $request)
+    /**
+     * Exec after click on "download" of "display" form button
+     *
+     * @param Request $request
+     * @param $action
+     * @return array|RedirectResponse|Response
+     */
+    public function getPdf(Request $request, $action)
+    {
+        if($this->dataSoc != null) {
+            $pdfArr = $this->getPdfInfos($request);
+            $alert = $this->alertPdfArray($pdfArr);
+
+            if (is_null($alert)) {
+                if ($action == "download") {
+                    return $this->dowloadPdf($pdfArr);
+                } else if ($action == "display") {
+                    return $this->displayListOfPdf($pdfArr);
+                }
+            } else {
+                $this->sendMail($alert);
+            }
+        } else {
+            $obj = "Pas de société configurée";
+            $msg = "Pas de société configurée dans le module recherche_pdf sur Drupal";
+            $errorForUser = "Pas de fiches pour cette société";
+            $alert = $this->setAlertArray($obj, $msg, $errorForUser);
+            $this->sendMail($alert);
+        }
+
+        $urlRedirect = $request->get('urlRedirect');
+        return $this->myRedirection($urlRedirect, $alert[self::KEY_ALERT_ERROR_FOR_USER]);
+    }
+
+    /**
+     * Download only one file after list display
+     *
+     * @param Request $request
+     * @return Response
+     */
+    public function downloadFileOnly(Request $request)
+    {
+        return $this->headersResponse($request->get('urlDl'), $request->get('name'));
+    }
+
+    /**
+     * Get Pdf infos (and format) after call api
+     *
+     * @param Request $request
+     * @return mixed
+     */
+    private function getPdfInfos(Request $request)
     {
         //get value of form request
         $refProduit = $request->get('refProduit');
         $lotProduit = $request->get('lotProduit');
         $lang = strtoupper(\Drupal::languageManager()->getCurrentLanguage()->getId());
-        $urlRedirect = $request->get('urlRedirect');
 
-        //param mail config
-        $paramMail['from'] = $this->dataSoc['EMAIL_FIC_FROM'];
-        $paramMail['to'] = $this->qrcodeadmMail != null ? $this->qrcodeadmMail : implode(', ' , $this->dataSoc['EMAIL_FIC_TO']);
-        $paramMail['fiches'] = $refProduit." ".$lotProduit;
+        $postData = [
+            'RefProd' => $refProduit,
+            'LotProd' => $lotProduit,
+            'LANG' => $lang,
+            'ID_SOC' => $this->dataSoc['ID_SOC'],
+            'DEFAULT_PDF' => $this->dataSoc['DEFAULT_PDF'],
+            'DEFAULT_LG' => $this->dataSoc['DEFAULT_LG'],
+            'PROD' => $this->qrcodeadmProd,
+        ];
+        $rslt = $this->getPdfByRefOrLotCurl($postData); //call api and get response
 
-        $redirectMessage = "";
-
-        if($this->dataSoc != null) {
-            //array data for application
-            $postData = [
-                'RefProd' => $refProduit,
-                'LotProd' => $lotProduit,
-                'LANG' => $lang,
-                'ID_SOC' => $this->dataSoc['ID_SOC'],
-                'DEFAULT_PDF' => $this->dataSoc['DEFAULT_PDF'],
-                'DEFAULT_LG' => $this->dataSoc['DEFAULT_LG'],
-                'PROD' => $this->qrcodeadmProd,
-            ];
-            //call api and get response
-            $rslt = $this->getPdfByRefOrLotCurl($postData);
-
-            if (is_array($rslt)) {
-                $success = false;
-                $arrFiles = array();
-                foreach ($rslt as $file) {
-                    if (!is_null($file) && !empty($file->fileDistant) && !empty($file->fileName)) {
-                        $urlToDownloadFile = $this->dataSoc['URL_SITE'] . "/" . $file->fileDistant;
-                        if ($this->is_url_exist($urlToDownloadFile)) {
-                            $success = true;
-                            $arrFiles[] = array(
-                                'url' =>$urlToDownloadFile,
-                                'name' => $file->fileName
-                            );
-                        }
-                    }
-                }
-                if ($success === false) {
-                    $redirectMessage = "Fichier pdf introuvable";
-                    $paramMail['subject'] = "Fichier pdf introuvable";
-                    $paramMail['body'] = "Le Fichier pour Le produit reference ".$refProduit." lot ".$lotProduit." est introuvable";
-                    $this->sendMailNoFile($paramMail);
-                } elseif (count($arrFiles) > 1) {
-                    return $this->headersResponseZip($arrFiles);
-                } else {
-                    return $this->headersResponse($urlToDownloadFile, $arrFiles[0]['name']);
-                }
-            } elseif (!is_null($rslt) && !empty($rslt->fileDistant) && !empty($rslt->fileName)) {
-                $urlToDownloadFile = $this->dataSoc['URL_SITE'] . "/" . $rslt->fileDistant;//url to get pdf file
-                if ($this->is_url_exist($urlToDownloadFile)) {
-                    return $this->headersResponse($urlToDownloadFile, $rslt->fileName);
-                } else {
-                    $redirectMessage = "Fichier pdf introuvable - ".$paramMail['fiches'];
-                    $paramMail['subject'] = "Fichier pdf introuvable - ".$paramMail['fiches'];
-                    $paramMail['body'] = "Le Fichier ".$rslt->fileName." pour Le produit reference ".$postData['RefProd']." lot ".$postData['LotProd']." est introuvable";
-                    $this->sendMailNoFile($paramMail);
-                }
-            } else {
-                $redirectMessage = "Produit ".$paramMail['fiches']." introuvable";
-                $paramMail['subject'] = "Produit introuvable - ".$paramMail['fiches'];
-                $paramMail['body'] = "Le produit reference ".$postData['RefProd']." lot ".$postData['LotProd']." est introuvable dans la base de données.";
-                $this->sendMailNoFile($paramMail);
-            }
+        if (!is_array($rslt)) {
+            $resultat[] = $rslt;
         } else {
-            $redirectMessage = "Aucune fiche de disponible";
+            $resultat = $rslt;
         }
-        return $this->myRedirection($urlRedirect, $redirectMessage);
+
+        $arrFiles["ref"] = $refProduit;
+        $arrFiles["lot"] = $lotProduit;
+        $arrFiles["rsltApi"] = [];
+        foreach ($resultat as $file) {
+            if (!is_null($file) && !empty($file->fileDistant) && !empty($file->fileName)) {
+                $urlToDownloadFile = $this->dataSoc['URL_SITE'] . "/" . $file->fileDistant;
+                $arrFiles['rsltApi'][] = [
+                    'urlDl' =>$urlToDownloadFile,
+                    'name' => $file->fileName
+                ];
+            }
+        }
+
+        return $arrFiles;
     }
 
-    public function getPdfByRefOrLotCurl($postfields = [])
+    /**
+     * Set alert if file or product not found/exist
+     *
+     * @param $arrPdf
+     * @return array|null
+     */
+    private function alertPdfArray($arrPdf)
+    {
+        if (!empty($arrPdf['rsltApi'])) {
+            $success = false;
+            foreach ($arrPdf['rsltApi'] as $file) {
+                if ($this->isUrlExist($file['urlDl'])) {
+                    $success = true;
+                }
+            }
+            if (!$success) {
+                $shortMsgRedirect = "Fichier pdf introuvable";
+                $msgRedirect = "La fiche pour le produit reference ".$arrPdf['ref']
+                    ." lot ".$arrPdf['lot']." est introuvable";
+            }
+        } else {
+            $shortMsgRedirect = "Produit introuvable";
+            $msgRedirect = "Le produit pour la reference ".$arrPdf['ref']." lot ".$arrPdf['lot']." est introuvable";
+        }
+
+        $return = NULL;
+        if (isset($shortMsgRedirect) && isset($msgRedirect)) {
+            $return = $this->setAlertArray($shortMsgRedirect,$msgRedirect);
+        }
+
+        return $return;
+    }
+
+    /**
+     * Set correct (header - zip or only one file) for download
+     *
+     * @param $arrPdf
+     * @return Response
+     */
+    private function dowloadPdf($arrPdf)
+    {
+        if (count($arrPdf['rsltApi']) > 1) {
+            return $this->headersResponseZip($arrPdf['rsltApi']);
+        } else {
+            return $this->headersResponse($arrPdf['rsltApi'][0]['urlDl'], $arrPdf['rsltApi'][0]['name']);
+        }
+    }
+
+    /**
+     * Load template listing files
+     *
+     * @param $arrPdf
+     * @return array
+     */
+    private function displayListOfPdf($arrPdf)
+    {
+        return [
+            '#theme' => 'recherche_pdf--liste',
+            '#rslt' => $arrPdf['rsltApi']
+        ];
+    }
+
+    /**
+     * Call API admin.url-qcodes and return files array
+     *
+     * @param array $postfields
+     * @return mixed
+     */
+    private function getPdfByRefOrLotCurl($postfields = [])
     {
         $result = null;
         $curl = curl_init();
@@ -130,7 +221,13 @@ class RechercheController extends ControllerBase
         return $return;
     }
 
-    protected function is_url_exist($url)
+    /**
+     * Check download file url
+     *
+     * @param $url
+     * @return bool
+     */
+    private function isUrlExist($url)
     {
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_NOBODY, true);
@@ -146,23 +243,78 @@ class RechercheController extends ControllerBase
         return $status;
     }
 
-    protected function headersResponse($url,$fileName)
+    /**
+     * Format alert
+     *
+     * @param $obj
+     * @param $msg
+     * @param string $errorForUser
+     * @return array
+     */
+    private function setAlertArray($obj, $msg, $errorForUser = "")
+    {
+        return [
+            self::KEY_ALERT_SHORT_MSG => $obj,
+            self::KEY_ALERT_MSG => $msg,
+            self::KEY_ALERT_ERROR_FOR_USER => !empty($errorForUser) ? $errorForUser : $msg
+        ];
+    }
+
+    /**
+     * Alert when sku not found in admin url qrcode
+     *
+     * @param $from
+     * @param $obj
+     * @param $txt
+     */
+    private function sendMail($alertArr): void
+    {
+        if (!empty($obj) && !empty($txt)) {
+            $mailManager = \Drupal::service('plugin.manager.mail');
+
+            $module = 'recherche_pdf';
+            $key = 'product_not_found';
+            $langcode = \Drupal::currentUser()->getPreferredLangcode();
+
+            $paramMail['cc'] = $this->config::EMAIL_TEAM;
+            $paramMail['from'] = $this->dataSoc['EMAIL_FIC_FROM'];
+            $paramMail['subject'] = $alertArr[self::KEY_ALERT_SHORT_MSG];
+            $paramMail['message'] = $alertArr[self::KEY_ALERT_MSG];
+
+            $reply = false;
+            $send = true;
+
+            $mailManager->mail($module, $key, $this->config::API_URL, $langcode, $paramMail, $reply, $send);
+        }
+    }
+
+    /**
+     * Redirect to form page with 1 pdf on header to download in client's computer
+     *
+     * @param $url
+     * @param $fileName
+     * @return Response
+     */
+    private function headersResponse($url,$fileName)
     {
         $response = new Response();
         $response->headers->set('Content-type', 'application/octet-stream');
         $response->headers->set('Content-Disposition', sprintf('attachment; filename="%s"', $fileName));
         $response->setContent(file_get_contents($url));
-        $response->setStatusCode(200);
-        $response->headers->set('Content-Transfer-Encoding', 'binary');
-        $response->headers->set('Pragma', 'no-cache');
-        $response->headers->set('Expires', '0');
+
         return $response;
     }
 
-    protected function headersResponseZip($arrFiles)
+    /**
+     * Redirect to form page with many pdf on header to download in client's computer
+     *
+     * @param $arrFiles
+     * @return Response
+     */
+    private function headersResponseZip($ref,$arrFiles)
     {
         $zip = new \ZipArchive();
-        $zipName = 'Documents_'.date("Ymd-his").'.zip';
+        $zipName = 'Documents_'.$ref.'_'.date("Ymd-his").'.zip';
 
         $zip->open($zipName,  \ZipArchive::CREATE);
         foreach ($arrFiles as $file) {
@@ -179,22 +331,15 @@ class RechercheController extends ControllerBase
         return $response;
     }
 
-    protected  function sendMailNoFile($params)
+    /**
+     * Redirect user with error message - redirect on current page or home page
+     *
+     * @param $urlRedirect
+     * @param $message
+     * @return RedirectResponse
+     */
+    private function myRedirection($urlRedirect, $message)
     {
-        $mailManager = \Drupal::service('plugin.manager.mail');
-        $module = 'recherche_pdf';
-        $key = 'fiche_Pdf';
-        $to = $params['to'];
-        $langcode = \Drupal::currentUser()->getPreferredLangcode();
-
-        $reply = false;
-        $send = true;
-        $result = $mailManager->mail($module, $key, $to, $langcode, $params, $reply, $send);
-    }
-
-    protected function myRedirection($urlRedirect, $message)
-    {
-        //redirect because no config in Config File
         $messenger = \Drupal::messenger();
         $messenger->addMessage(
             $this->t($message),
@@ -207,6 +352,4 @@ class RechercheController extends ControllerBase
             return $this->redirect('<front>');
         }
     }
-
-
 }

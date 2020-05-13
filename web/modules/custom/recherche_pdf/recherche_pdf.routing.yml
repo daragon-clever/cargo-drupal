@@ -1,14 +1,22 @@
-resultSearch.form:
-  path: '/fiche-pdf'
-  defaults:
-    _controller: '\Drupal\recherche_pdf\Controller\RechercheController::getPdf'
-  requirements:
-    _permission: 'access content'
-
 recherchePdf.form:
   path: '/recherche-pdf'
   defaults:
     _title: 'Espace de téléchargement PDF'
     _controller: '\Drupal\recherche_pdf\Controller\RechercheController::displayForm'
+  requirements:
+    _permission: 'access content'
+
+resultSearch.form:
+  path: '/fiche-pdf/{action}'
+  defaults:
+    _controller: '\Drupal\recherche_pdf\Controller\RechercheController::getPdf'
+    action: 'download'
+  requirements:
+    _permission: 'access content'
+
+resultSearch.download:
+  path: '/download-file'
+  defaults:
+    _controller: '\Drupal\recherche_pdf\Controller\RechercheController::downloadFileOnly'
   requirements:
     _permission: 'access content'

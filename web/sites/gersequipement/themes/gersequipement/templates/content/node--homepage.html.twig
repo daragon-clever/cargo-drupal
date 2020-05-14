@@ -98,14 +98,7 @@
     <div class="row">
         <div class="col-12 col-lg-6 actu">
             <div class="inner">
-                <h2>{{ node.field_hp_content2_actu.fieldDefinition.label }}</h2>
-                <div class="js-slider-actu">
-                    {% for i in 0..3 %}
-                        <div class="actu-item">
-                            {{ content.field_hp_content2_actu[i] }}
-                        </div>
-                    {% endfor %}
-                </div>
+                {{ content.field_bloc_actualites }}
             </div>
         </div>
         <div class="col-12 col-lg-6 follow">

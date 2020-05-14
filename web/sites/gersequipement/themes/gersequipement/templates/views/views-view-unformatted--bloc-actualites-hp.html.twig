@@ -1,0 +1,12 @@
+<div class="js-slider-actu">
+    {% for row in rows %}
+        <div class="actu-item">
+            <h3><strong>{{ row.content['#row']._entity.title.value }}</strong></h3>
+            <p>
+                <img src="{{ file_url(row.content['#row']._entity.field_img_actu.entity.uri.value) }}"
+                    alt="{{row.content['#row']._entity.field_img_actu[0].alt}}" class="align-left"/>
+                {{ row.content['#row']._entity.field_txt_actu[0].value|raw }}
+            </p>
+        </div>
+    {% endfor %}
+</div>

@@ -16,9 +16,11 @@
 
 <!-- Footer -->
 {% if page.footer %}
-    {{ page.footer }}
+    <div>
+        {{ page.footer }}
 
-    <div class="copyright text-center">
-        {{ 'Site réalisé par Gers Equipement © '|trans }}{{ "now"|date('Y') }}
+        <div class="copyright text-center">
+            {{ 'Site réalisé par Gers Equipement © '|trans }}{{ "now"|date('Y') }}
+        </div>
     </div>
 {% endif %}

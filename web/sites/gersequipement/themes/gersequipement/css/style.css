@@ -207,6 +207,9 @@ body {
   position: relative;
   margin-top: 80px;
 }
+body .content {
+  min-height: calc(100vh - 300px);
+}
 body.adminimal-admin-toolbar .header-wrapper {
   top: 80px;
 }
@@ -1874,7 +1877,7 @@ footer span.linkedin-logo {
   width: 100%;
   border: 1px solid #303030;
   padding: 0 15px;
-  margin-top: .25rem;
+  margin-top: 0.25rem;
 }
 #liste-pdf h3 {
   color: #d40058;

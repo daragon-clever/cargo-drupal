@@ -12,11 +12,11 @@ class BlogSitramController extends AbstractCompanyController
 
     public function savePeopleInActito(array $dataUser): void
     {
-        $dataForActito = array(
+        $dataForActito = [
             'email' => $dataUser['email'],
             'source' => "blog-sitram",
             'newsletter' => "1"
-        );
+        ];
         parent::savePeopleInActito($dataForActito);
     }
 }

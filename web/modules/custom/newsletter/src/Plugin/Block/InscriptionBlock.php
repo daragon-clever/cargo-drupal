@@ -23,6 +23,8 @@ class InscriptionBlock extends BlockBase
     }
 
     /**
+     * Load template of form according to company
+     *
      * {@inheritdoc}
      */
     public function build()
@@ -43,10 +45,10 @@ class InscriptionBlock extends BlockBase
                 break;
         }
 
-        $array = array(
+        $array = [
             '#theme' => "inscription",
             '#form' => $myForm
-        );
+        ];
 
         return $array;
     }

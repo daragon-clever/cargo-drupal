@@ -74,14 +74,14 @@ class CestDeuxEurosController extends AbstractCompanyController
 
     public function savePeopleInActito(array $dataUser): void
     {
-        $dataForActito = array(
+        $dataForActito = [
             'prenom' => $dataUser['prenom'],
             'nom' => $dataUser['nom'],
             'cp' => $dataUser['cp'],
             'email' => $dataUser['email'],
             'newsletter' => $dataUser['newsletter'],
             'offres' => $dataUser['offres'],
-        );
+        ];
         parent::savePeopleInActito($dataForActito);
     }
 

@@ -20,7 +20,7 @@ abstract class AbstractCompanyController extends ControllerBase
     private const PASS_API_ACTITO = "57Hc!a5sQ";
     public const ENTITY_ACTITO = "";
     public const TABLE_ACTITO = "";
-    const URL_API_ACTITO = "http://dcp.cargo-webproject.com/api/web/api_v2/req";
+    const URL_API_ACTITO = "http://dcp.cargo-webproject.com/actito/api/req";
 
     public $connection;
     protected $passApi;
@@ -118,16 +118,21 @@ abstract class AbstractCompanyController extends ControllerBase
             $type = self::TYPE_MSG_ERROR;
         }
 
-        return array(
+        return [
             'msg' => $msg,
             'type' => $type
-        );
+        ];
     }
 
+    /**
+     * Call api to save people on actito
+     *
+     * @param array $dataUser
+     */
     public function savePeopleInActito(array $dataUser): void
     {
         $client = \Drupal::httpClient();
-        $allowTest =  \Drupal::config('system.newsletter')->get('allowTest', FALSE);
+        $allowTest =  \Drupal::config('system.newsletter')->get('allowTest', FALSE); //get config on setting.php
         $url= sprintf(
             '%s/profile/import.php?&entity=%s&table=%s&allowTest=%s',
             self::URL_API_ACTITO,
@@ -160,41 +165,40 @@ abstract class AbstractCompanyController extends ControllerBase
                     $this->updatePeople($dataUser);
                 }
             }
-        }
-        catch (\HttpRequestExceptioneption $e) {
+        } catch (\HttpRequestExceptioneption $e) {
             watchdog_exception('newsletter_module', $e);
         }
     }
 
     public function setSchemaTableSubscriber(): array
     {
-        $array = array(
+        $array = [
             'description' => 'Stores email for newsletter.',
-            'fields' => array(
-                'id' => array(
+            'fields' => [
+                'id' => [
                     'type' => 'serial',
                     'not null' => TRUE,
                     'description' => 'Primary Key: Unique email ID.',
-                ),
-                'created_at' => array(
+                ],
+                'created_at' => [
                     'type' => 'varchar',
                     'length' => 100,
                     'mysql_type' => 'datetime',
                     'not null' => TRUE,
-                ),
-                'updated_at' => array(
+                ],
+                'updated_at' => [
                     'type' => 'varchar',
                     'length' => 100,
                     'mysql_type' => 'datetime',
                     'not null' => TRUE,
-                ),
-                'active' => array(
+                ],
+                'active' => [
                     'type' => 'int',
                     'length' => 11,
                     'not null' => TRUE,
                     'default' => '0',
                     'description' => 'Active subscription of the person.',
-                ),
+                ],
                 'exported' => [
                     'type' => 'int',
                     'size' => 'tiny',
@@ -202,42 +206,42 @@ abstract class AbstractCompanyController extends ControllerBase
                     'default' => '0',
                     'description' => '',
                 ],
-                'email' => array(
+                'email' => [
                     'type' => 'varchar',
                     'length' => 255,
                     'not null' => TRUE,
                     'default' => '',
                     'description' => 'Email of the person.',
-                )
-            ),
-            'primary key' => array('id'),
-            'indexes' => array(
-                'email' => array('email'),
-            ),
-        );
+                ]
+            ],
+            'primary key' => ['id'],
+            'indexes' => [
+                'email' => ['email'],
+            ],
+        ];
 
         return $array;
     }
 
     public function setSchemaTableSubscription(): array
     {
-        $array = array(
+        $array = [
             'description' => 'Stores subscription for newsletter subscriber.',
-            'fields' => array(
-                'id' => array(
+            'fields' => [
+                'id' => [
                     'type' => 'serial',
                     'not null' => TRUE,
                     'description' => 'Primary Key: Unique email ID.',
-                ),
-                'id_subscriber' => array(
+                ],
+                'id_subscriber' => [
                     'type' => 'int',
                     'length' => 11,
                     'not null' => TRUE,
                     'description' => 'Subscriber ID.',
-                )
-            ),
-            'primary key' => array('id')
-        );
+                ]
+            ],
+            'primary key' => ['id']
+        ];
 
         return $array;
     }

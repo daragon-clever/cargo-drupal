@@ -104,40 +104,22 @@ class YliadesForm extends FormBase
 
     /**
      * Format brands array with key is brand and value is 0 or 1
+     * Received ["a" => "a"] when "a" was checked and ["a" => 0] when "a" wasn't checked
      */
     private function formatAllBrands($brands)
     {
-        $formatBrands = $this->setValueAllBrands(0);//get array with all brands (value -> 0)
-        foreach ($brands as $key => $value) {
-            if (is_string($value)) {
-                if ($value == YliadesController::MARQUE_ALL && $key == YliadesController::MARQUE_ALL) {
-                    $formatBrands = $this->setValueAllBrands(1);
-                    break;
-                } else {
-                    $formatBrands[$value] = 1;
-                }
+        $formatBrands = [];
+        if (!empty($brands)) {
+            foreach ($brands as $brand => $isCheck) {
+                $formatBrands[$brand] = (is_string($isCheck) && !empty($isCheck)) ? 1 : 0;
             }
-        }
 
-        $marques = $this->setValueAllBrands(0);//get array with all brands (value -> 0)
-        foreach ($brands as $key => $value) {
-            if (is_string($value)) {
-                if ($value == YliadesController::MARQUE_ALL && $key == YliadesController::MARQUE_ALL) {
-                    $formatBrands = $this->setValueAllBrands(1);
-                    break;
-                } else {
-                    $formatBrands[$value] = 1;
-                }
+            if (isset($formatBrands[YliadesController::MARQUE_ALL])
+                && $formatBrands[YliadesController::MARQUE_ALL] === 1) {
+                $formatBrands = array_fill_keys(YliadesController::LES_MARQUES, 1);
             }
         }
 
         return $formatBrands;
     }
-
-    private function setValueAllBrands(int $val): array
-    {
-        $newArray = array_fill_keys(YliadesController::LES_MARQUES, $val);
-        return $newArray;
-    }
-
 }

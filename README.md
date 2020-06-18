@@ -57,3 +57,11 @@
 * `docker-compose run --rm bundle exec cap preproduction deploy` pour déployer en `preproduction`
 * `docker-compose run --rm bundle exec cap -T` pour lister toutes les tâches disponibles
 * `docker-compose run --rm bundle exec cap preproduction "symfony:console['cache:clear']"`
+
+# Résolution de problèmes:
+
+En cas d'arrêt forcé de mysql et si ce dernier ne rédémarre pas correctement, ajouter cette commande dans le 
+`docker-compose.yml` du site en question dans le service DB
+```bash
+command: mysqld --tc-heuristic-recover=ROLLBACK
+```

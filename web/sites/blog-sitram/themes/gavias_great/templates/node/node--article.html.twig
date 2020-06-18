@@ -90,7 +90,19 @@
       {% endif %}
 
       <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
-        {{ content|without('field_image', 'field_post_category', 'field_tags', 'field_post_format', 'field_post_type', 'field_post_embed', 'field_post_gallery','field_taxonomy_color' ,'comment', 'links') }}
+        {{ content|without('field_image', 'field_post_category', 'field_tags', 'field_post_format', 'field_post_embed', 'field_post_type', 'field_post_gallery','field_taxonomy_color' ,'comment', 'links') }}
+          {% if content.field_post_embed|render %}
+            <div class="video-responsive">
+              <iframe
+                      width="560"
+                      height="315"
+                      src="https://www.youtube.com/embed/{{ content.field_post_embed|render|striptags|trim }}"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen>
+              </iframe>
+            </div>
+          {% endif %}
       </div>
 
       <div class="post-tags clearfix">

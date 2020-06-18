@@ -80,6 +80,15 @@ class YliadesController extends AbstractCompanyController
         }
     }
 
+    public function doAction(array $arrayData): array
+    {
+        $msg = parent::doAction($arrayData);
+
+        $this->deleteSegmentInActito($arrayData);
+
+        return $msg;
+    }
+
     public function savePeopleInActito(array $dataUser): void
     {
         $dataForActito = [
@@ -89,6 +98,21 @@ class YliadesController extends AbstractCompanyController
         ];
 
         parent::savePeopleInActito($dataForActito);
+    }
+
+    public function deleteSegmentInActito(array $dataUser): void
+    {
+        unset($dataUser['brands'][self::MARQUE_ALL]);
+        $segmentsToDel =  array_keys(array_diff( $dataUser['brands'], [1] ));
+
+        foreach ($segmentsToDel as $segment) {
+            $dataForActito = [
+                "segment" => $segment,
+                "email" => $dataUser['email']
+            ];
+
+            parent::deleteSegmentInActito($dataForActito);
+        }
     }
 
     public function setSchemaTableSubscription(): array

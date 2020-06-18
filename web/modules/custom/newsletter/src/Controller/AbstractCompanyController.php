@@ -145,12 +145,10 @@ abstract class AbstractCompanyController extends ControllerBase
                 self::USER_API_ACTITO,
                 $this->passApi,
             ],
-            'json' => [
-                $dataUser
-            ],
+            'body' => Json::encode($dataUser),
             'headers' => [
                 'Content-Type: application/json',
-                'Content-Length: ' . strlen(json_encode($dataUser))
+                'Content-Length: ' . strlen(Json::encode($dataUser))
             ]
         ];
 
@@ -165,6 +163,41 @@ abstract class AbstractCompanyController extends ControllerBase
                     $this->updatePeople($dataUser);
                 }
             }
+        } catch (\HttpRequestExceptioneption $e) {
+            watchdog_exception('newsletter_module', $e);
+        }
+    }
+
+    /**
+     * Call api to delete segmentation people on actito
+     *
+     * @param array $dataUser
+     */
+    public function deleteSegmentInActito(array $dataUser): void
+    {
+        $client = \Drupal::httpClient();
+        $allowTest =  \Drupal::config('system.newsletter')->get('allowTest', FALSE); //get config on setting.php
+        $url= sprintf(
+            '%s/profile/segmentation/delete.php?&entity=%s&table=%s&allowTest=%s',
+            self::URL_API_ACTITO,
+            static::ENTITY_ACTITO,
+            static::TABLE_ACTITO,
+            $allowTest
+        );
+        $options = [
+            'auth' => [
+                self::USER_API_ACTITO,
+                $this->passApi,
+            ],
+            'body' => Json::encode($dataUser),
+            'headers' => [
+                'Content-Type: application/json',
+                'Content-Length: ' . strlen(Json::encode($dataUser))
+            ]
+        ];
+
+        try {
+            $client->post($url, $options);
         } catch (\HttpRequestExceptioneption $e) {
             watchdog_exception('newsletter_module', $e);
         }

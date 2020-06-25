@@ -1,7 +1,13 @@
 <div id="homepage-content">
     <div class="row">
         <div class="col-12">
-            {{ content.field_hp_ban_principale }}
+            {% if node.field_hp_main_link.isEmpty %}
+                {{ content.field_hp_ban_principale }}
+            {% else %}
+                <a href="{{ content.field_hp_main_link|render|striptags }}">
+                    {{ content.field_hp_ban_principale }}
+                </a>
+            {% endif %}
         </div>
     </div>
 

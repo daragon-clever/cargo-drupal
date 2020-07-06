@@ -1,5 +1,5 @@
 name: Offres emploi
-description: Récupérer les offres d'emploie de la société
+description: Récupérer les offres d'emploie de chaque société
 core: 8.x
 package: Custom
 type: module

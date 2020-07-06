@@ -1,0 +1,6 @@
+services:
+  offres_emploi.repository:
+    class: Drupal\offres_emploi\OffreEmploiRepository
+    arguments: ['@database']
+  offres_emploi.logger:
+    class: Drupal\offres_emploi\Helper\LoggerFileHelper

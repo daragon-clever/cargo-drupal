@@ -43,4 +43,3 @@ class OffresEmploiHandler extends WebformHandlerBase {
         return true;
     }
 }
-?>

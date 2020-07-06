@@ -1,97 +1,73 @@
 <?php
+declare(strict_types=1);
 
 namespace Drupal\offres_emploi\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-use Drupal\Core\Url;
-use \Drupal\Core\Database\Database;
-use Symfony\Component\HttpFoundation\Request;
+use Drupal\offres_emploi\Helper\LoggerFileHelper;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\offres_emploi\Helper\OffreEmploiHelperTrait;
+use Drupal\offres_emploi\OffreEmploiRepository;
 
 /**
  * Defines OffresEmploiListController class.
  */
-class OffresEmploiListController extends ControllerBase {
+class OffresEmploiListController extends ControllerBase
+{
 
-    public $siteName;
-    private $table;
-    protected $actualTime;
+    private $actualTime;
     private $ipAddress;
     private $fileLogIPAnnonce;
 
-    private $conn;
 
-    public function __construct()
-    {
-        $this->siteName = $this->getSiteName();
-        $this->table = "offres_emploi";
-        $this->actualTime = time();
-        $this->ipAddress = $_SERVER['REMOTE_ADDR'];
+    /**
+     * @var OffreEmploiRepository
+     */
+    private $offreRepository;
+    /**
+     * @var LoggerFileHelper
+     */
+    private $loggerFileHelper;
 
-        /* GET FILE WHICH CONTAIN ALL VISITOR'S IP ADDRESS */
-        $this->setLogFile();
-        /* END OF GET FILE */
+    use OffreEmploiHelperTrait;
 
-        $this->setDatabaseConn();
+    /**
+     * {@inheritdoc}
+     */
+    public static function create(ContainerInterface $container) {
+        return new static(
+            $container->get('offres_emploi.repository'),
+            $container->get('offres_emploi.logger')
+        );
     }
 
-    private function getSiteName() {
-        $sitePath = \Drupal::service('site.path');
-        $sitePath = explode('/', $sitePath);
-        $siteName = $sitePath[1];
 
-        return $siteName;
+    public function __construct(OffreEmploiRepository $offreRepository, LoggerFileHelper $loggerFileHelper)
+    {
+        $this->offreRepository = $offreRepository;
+        $this->loggerFileHelper = $loggerFileHelper;
     }
 
-    private function setLogFile()
+
+    public function show($ref)
     {
-        $folderFiles = \Drupal::service('file_system')->realpath(file_default_scheme() . "://");
-        if (!file_exists($folderFiles.'/log')) {
-            mkdir($folderFiles . "/log",0777,true);
-        }
-        $this->fileLogIPAnnonce = $folderFiles . "/log/logip--annonce.csv";
-        if (!file_exists($this->fileLogIPAnnonce)) {
-            file_put_contents($this->fileLogIPAnnonce,"ref,ip,time"."\n");
-        }
-    }
-
-    private function setDatabaseConn()
-    {
-        if ($this->siteName == "groupecargo") {
-            $this->conn = \Drupal::database();
-        } else {
-            Database::setActiveConnection('external');
-            $this->conn = Database::getConnection();
-        }
-
-        return $this->conn;
-    }
-
-    public function content($ref, Request $request)
-    {
-
         if ($ref == "all") {
-            //return une liste d'offre
-            $offres = $this->getOffres();
-
-            //construit le thème
             $build = [
                 '#theme' => 'offres_emploi--list',
-                '#data' => $offres
+                '#data' => $this->offreRepository->findAllActive()
             ];
         } else {
-            //retour une seule offre
-            $offre = $this->getOffre($ref);
-            if ($offre === FALSE) {
-                //si la ref de l'offre passée en parm n'existe pas
+            $offre = $this->offreRepository->findBy(['codeRecrutement' => $ref, 'active' => 1]);
+            if (empty($offre)) {
                 $build = [
                     '#theme' => 'offres_emploi--annonce',
-                    '#data' => ($offre) ? 'true' : 'false'
+                    '#data' => 'false'
                 ];
             } else {
-                $search = $this->searchInCSV($ref);
-                if ($search === false) {
-                    $this->logIpAddressOnFile($ref);
-                    $this->updataNbVue($ref);
+                //if there's no record in log => increment offer view
+                if (!$this->loggerFileHelper->searchInCSV($ref)) {
+                    $this->loggerFileHelper->logIpAddressOnFile($ref);
+                    $this->offreRepository->updateNbVue($ref);
                 }
                 $build = [
                     '#theme' => 'offres_emploi--annonce',
@@ -102,127 +78,4 @@ class OffresEmploiListController extends ControllerBase {
 
         return $build;
     }
-
-    /*
-     * Get all offers
-     */
-    private function getOffres()
-    {
-        if ($this->siteName == "groupecargo") {
-            $all_offres = $this->conn->select($this->table,"cargo")
-                ->fields("cargo")
-                ->condition('active', 1, '=')
-                ->execute()
-                ->fetchAll();
-        } else {
-            $societe = $this->getNameDbSociete();
-            $all_offres = $this->conn->select($this->table,"cargo")
-                ->fields("cargo")
-                ->condition('filialeSociete', $societe, '=')
-                ->condition('active', 1, '=')
-                ->execute()
-                ->fetchAll();
-        }
-
-        return $all_offres;
-    }
-
-    /*
-     * Get 1 offer
-     */
-    private function getOffre($ref)
-    {
-        if ($this->siteName == "groupecargo") {
-            $offre = $this->conn->select($this->table,"codeRecrutement")
-                ->fields("codeRecrutement")
-                ->condition('codeRecrutement', $ref, '=')
-                ->condition('active', 1, '=')
-                ->execute()
-                ->fetchAssoc();
-        } else {
-            $societe = $this->getNameDbSociete();
-            $offre = $this->conn->select($this->table,"codeRecrutement")
-                ->fields("codeRecrutement")
-                ->condition('filialeSociete', $societe, '=')
-                ->condition('codeRecrutement', $ref, '=')
-                ->condition('active', 1, '=')
-                ->execute()
-                ->fetchAssoc();
-        }
-
-        return $offre;
-    }
-
-    private function getNameDbSociete() {
-        $allNameDrupal = array("blog-sitram","ostaria","turbocar","yliades");
-        $allNameJson = array("sitram","ostaria","turbocar","yliades");
-        $arr = array_combine($allNameDrupal, $allNameJson);
-
-        $data = $arr[$this->siteName];
-
-        return $data;
-    }
-
-
-    private function searchInCSV($ref)
-    {
-        $found_time = null;
-        $arrCSVcontent = $this->getCSV();
-        $new_arr = array_reverse($arrCSVcontent);
-        foreach ($new_arr as $key => $val) {
-            if ($val['ip'] == $this->ipAddress && $val['ref'] == $ref) {
-                $found_time = $val['time'];
-                break;
-            }
-        }
-
-        $fiveMin = $this->actualTime - (60*5);
-        if (!empty($found_time) && $found_time > $fiveMin) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    private function getCSV()
-    {
-        $csv = explode("\n", file_get_contents($this->fileLogIPAnnonce));
-        foreach ($csv as $key => $line)
-        {
-            if (!empty($line)) $newcsv[$key] = str_getcsv($line);
-        }
-        $entete = $newcsv[0];
-        unset($newcsv[0]);
-
-        foreach ($newcsv as $item) {
-            $combine[] = array_combine($entete,$item);
-        }
-
-        return $combine;
-    }
-
-    private function logIpAddressOnFile($ref)
-    {
-        file_put_contents($this->fileLogIPAnnonce, $ref.",".$this->ipAddress.",".$this->actualTime."\n", FILE_APPEND | LOCK_EX);
-    }
-
-    /*
-     * Update nbVue +1 in database of an offer
-     */
-    private function updataNbVue($ref)
-    {
-        $nbvue = $this->conn->update($this->table)
-            ->expression('nbVue', 'nbVue + 1')
-            ->condition('codeRecrutement', $ref, '=')
-            ->execute();
-
-        return $nbvue;
-    }
-
-
-    public function __destruct()
-    {
-        $this->conn = null;
-    }
-
 }

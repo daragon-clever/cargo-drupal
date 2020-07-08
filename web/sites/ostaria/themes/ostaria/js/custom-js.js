@@ -70,56 +70,65 @@ jQuery(document).ready(function($) {
     });
 
     //// Instafeed
-    if ($('#instafeed').length) {
-        var userFeed = new Instafeed({
-            get: 'user',
-            userId: '8890621818',
-            accessToken: '8890621818.1677ed0.a430308c57a0459bbccb19ce095a7d99',
-            limit: 8,
-            resolution: 'standard_resolution',
-            // Slick
-            after: function () {
-                $('#instafeed').slick({
-                    infinite: true,
-                    slidesToShow: 4,
-                    slidesToScroll: 4,
-                    responsive: [
-                        {
-                            breakpoint: 1024,
-                            settings: {
-                                slidesToShow: 3,
-                                slidesToScroll: 3
-                            }
-                        },
-                        {
-                            breakpoint: 600,
-                            settings: {
-                                slidesToShow: 2,
-                                slidesToScroll: 2
-                            }
-                        },
-                        {
-                            breakpoint: 480,
-                            settings: {
-                                slidesToShow: 1,
-                                slidesToScroll: 1,
-                                arrows:false,
-                                centerMode: true
-                            }
+    if ($('#instagram-feed').length) {
+        const instagramFeedWrapper = $("#instagram-feed");
+
+        const slickInstagramFeed = function() {
+            instagramFeedWrapper.slick({
+                infinite: false,
+                slidesToShow: 4,
+                slidesToScroll: 4,
+                responsive: [
+                    {
+                        breakpoint: 990,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3
                         }
-                    ]
-                });
-            },
-            template:
-            '<div>' +
-            '<a href="{{link}}" id="{{id}}" target="_blank"><img class="img-fluid" src="{{image}}" />' +
-            '<span class="overlay-wrapper"><span>' +
-            '<span class="likes">{{likes}}</span>' +
-            '<span class="comments">{{comments}}</span>' +
-            '</span></span></a>' +
-            '</div>'
+                    },
+                    {
+                        breakpoint: 767,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            centerMode: true,
+                            centerPadding: '30px'
+                        }
+                    }
+                ]
+            });
+        };
+
+        $.instagramFeed({
+            'username': 'ostariahomedesign',
+            'get_data': true,
+            'callback': function(data){
+                let dataItem = data.edge_owner_to_timeline_media.edges;
+
+                for (let i = 0; i < dataItem.length && i < 8; i++) {
+                    instagramFeedWrapper.append(`
+                        <div>
+                            <a href="${'https://www.instagram.com/p/' + dataItem[i].node.shortcode + '/'}" target="_blank">
+                                <img src="${dataItem[i].node.thumbnail_src}" />
+                                <div class="inner-infos d-flex">
+                                    <div>
+                                        <div class="likes">
+                                            ${dataItem[i].node.edge_liked_by.count}
+                                        </div>
+                                        <div class="comments">
+                                            ${dataItem[i].node.edge_media_to_comment.count}
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    `);
+                }
+
+                $(".loading").hide();
+                slickInstagramFeed();
+            }
         });
-        userFeed.run();
     }
 
     //// Masonry Custom

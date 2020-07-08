@@ -11,10 +11,10 @@ function ostaria_preprocess_html(&$variables) {
     $variables['page']['#attached']['html_head'][] = [$pinterestVerify, 'pinterestVerify'];
 };
 
-// JS call : instafeed only on homepage
+// JS call : instagram-feed only on homepage
 function ostaria_preprocess_page(&$variables){
     if ($variables['is_front'] == TRUE) {
-        $variables['#attached']['library'][] = 'ostaria/instafeed';
+        $variables['#attached']['library'][] = 'ostaria/instagram-feed';
     }
 }
 

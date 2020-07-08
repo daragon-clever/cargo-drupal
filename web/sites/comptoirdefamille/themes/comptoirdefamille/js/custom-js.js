@@ -33,57 +33,66 @@ jQuery(document).ready(function($) {
         cssEase: 'linear'
     });
 
-    // INSTAFEED
-    if ($('#instafeed').length) {
-        var userFeed = new Instafeed({
-            get: 'user',
-            userId: '8714008555',
-            accessToken: '8714008555.1677ed0.6f4f3907ab5947dd810ed5d0fbf58711',
-            limit: 8,
-            resolution: 'standard_resolution',
-            // Slick
-            after: function () {
-                $('#instafeed').slick({
-                    infinite: true,
-                    slidesToShow: 4,
-                    slidesToScroll: 4,
-                    responsive: [
-                        {
-                            breakpoint: 1024,
-                            settings: {
-                                slidesToShow: 3,
-                                slidesToScroll: 3
-                            }
-                        },
-                        {
-                            breakpoint: 600,
-                            settings: {
-                                slidesToShow: 2,
-                                slidesToScroll: 2
-                            }
-                        },
-                        {
-                            breakpoint: 480,
-                            settings: {
-                                slidesToShow: 1,
-                                slidesToScroll: 1,
-                                arrows:false,
-                                centerMode: true
-                            }
+    // INSTAGRAM-FEED
+    if ($('#instagram-feed').length) {
+        const instagramFeedWrapper = $("#instagram-feed");
+
+        const slickInstagramFeed = function() {
+            instagramFeedWrapper.slick({
+                infinite: false,
+                slidesToShow: 4,
+                slidesToScroll: 4,
+                responsive: [
+                    {
+                        breakpoint: 990,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3
                         }
-                    ]
-                });
-            },
-            template:
-            '<div>' +
-            '<a href="{{link}}" id="{{id}}" target="_blank"><img class="img-fluid" src="{{image}}" />' +
-            '<span class="overlay-wrapper"><span>' +
-            '<span class="likes">{{likes}}</span>' +
-            '<span class="comments">{{comments}}</span>' +
-            '</span></span></a>' +
-            '</div>'
+                    },
+                    {
+                        breakpoint: 767,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            centerMode: true,
+                            centerPadding: '30px'
+                        }
+                    }
+                ]
+            });
+        };
+
+        $.instagramFeed({
+            'username': 'comptoirdefamilleofficiel',
+            'get_data': true,
+            'callback': function(data){
+                let dataItem = data.edge_owner_to_timeline_media.edges;
+
+                for (let i = 0; i < dataItem.length && i < 8; i++) {
+                    instagramFeedWrapper.append(`
+                        <div>
+                            <a href="${'https://www.instagram.com/p/' + dataItem[i].node.shortcode + '/'}" target="_blank">
+                                <img src="${dataItem[i].node.thumbnail_src}" />
+                                <div class="inner-infos d-flex">
+                                    <div>
+                                        <div class="likes">
+                                            ${dataItem[i].node.edge_liked_by.count}
+                                        </div>
+                                        <div class="comments">
+                                            ${dataItem[i].node.edge_media_to_comment.count}
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    `);
+                }
+
+                $(".loading").hide();
+                slickInstagramFeed();
+            }
         });
-        userFeed.run();
     }
 
     // LA MARQUE - Slick

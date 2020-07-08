@@ -9,10 +9,10 @@ function comptoirdefamille_page_attachments_alter(array &$attachments) {
     }
 }
 
-// JS call : instafeed only on homepage
+// JS call : instagram-feed only on homepage
 function comptoirdefamille_preprocess_page(&$variables){
     if ($variables['is_front'] == TRUE) {
-        $variables['#attached']['library'][] = 'comptoirdefamille/instafeed';
+        $variables['#attached']['library'][] = 'comptoirdefamille/instagram-feed';
     }
 }
 

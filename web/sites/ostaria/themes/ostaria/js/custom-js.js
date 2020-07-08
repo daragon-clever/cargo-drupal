@@ -69,7 +69,7 @@ jQuery(document).ready(function($) {
         }
     });
 
-    //// Instafeed
+    //// Instagram-feed
     if ($('#instagram-feed').length) {
         const instagramFeedWrapper = $("#instagram-feed");
 

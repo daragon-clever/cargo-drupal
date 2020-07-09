@@ -77,7 +77,27 @@ class OffreEmploiRepository
                 ->execute()
             ;
         } catch(\Exception $e) {
-            \Drupal::logger('offres_emploi')->error('Update Nombre View failed. Message => ' . $e->getMessage());
+            \Drupal::logger('offres_emploi')->error('Update Number View failed. Message => ' . $e->getMessage());
+        }
+
+        return intval($count) ?? 0;
+    }
+
+    /**
+     * Increment the Number of Candidature
+     * @param $ref
+     * @return int
+     */
+    public function updateNbCandidature($ref)
+    {
+        try {
+            $count = $this->queryUpdate()
+                ->expression('nbCandidature', 'nbCandidature + 1')
+                ->condition('codeRecrutement', $ref)
+                ->execute()
+            ;
+        } catch(\Exception $e) {
+            \Drupal::logger('offres_emploi')->error('Update Number Candidature failed. Message => ' . $e->getMessage());
         }
 
         return intval($count) ?? 0;

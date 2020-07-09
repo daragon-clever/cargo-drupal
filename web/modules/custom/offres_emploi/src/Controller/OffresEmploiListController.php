@@ -58,6 +58,7 @@ class OffresEmploiListController extends ControllerBase
             ];
         } else {
             $offre = $this->offreRepository->findBy(['codeRecrutement' => $ref, 'active' => 1]);
+
             if (empty($offre)) {
                 $build = [
                     '#theme' => 'offres_emploi--annonce',
@@ -71,7 +72,7 @@ class OffresEmploiListController extends ControllerBase
                 }
                 $build = [
                     '#theme' => 'offres_emploi--annonce',
-                    '#data' => $offre
+                    '#data' => $offre[0]
                 ];
             }
         }

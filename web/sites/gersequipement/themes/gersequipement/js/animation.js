@@ -3,15 +3,18 @@
     'use strict';
     var animationObject;
 
-    function nvsAddAnimation() {
-        animationObject.each(function (index, element) {
-            var $currentElement = $(element),
-                animationType = $currentElement.attr('nvs-animation-type');
 
-            if (nvsOnScreen($currentElement)) {
-                $currentElement.addClass('animated ' + animationType);
-            }
-        });
+    function nvsAddAnimation() {
+        if (animationObject) {
+            animationObject.each(function (index, element) {
+                var $currentElement = $(element),
+                    animationType = $currentElement.attr('nvs-animation-type');
+
+                if (nvsOnScreen($currentElement)) {
+                    $currentElement.addClass('animated ' + animationType);
+                }
+            });
+        }
     }
 
     // takes jQuery(element) a.k.a. $('element')

@@ -3,7 +3,8 @@
 
 // GOOGLE FONT
 @import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700&display=swap');
-@Librebaskerville : 'Libre Baskerville', serif;
+
+@Librebaskerville: 'Libre Baskerville', serif;
 
 // BODY / GENERAL
 body {
@@ -28,7 +29,7 @@ body {
   }
 
   @media @phone {
-    font-size: 14px;
+    font-size: @fs-14;
   }
 }
 
@@ -150,7 +151,7 @@ img.logo {
     ul {
       padding: 0;
       margin: 30px 0;
-      font-size: 14px;
+      font-size: @fs-14;
 
       & > li {
         display: inline-block;
@@ -249,7 +250,7 @@ footer {
   a {
     text-transform: uppercase;
     color: #4a4a49;
-    font-size: 14px;
+    font-size: @fs-14;
     font-weight: 600;
     display: block;
     margin-bottom: 15px;
@@ -414,11 +415,11 @@ footer {
     margin: 0;
 
     @media @smallDesktop {
-       font-size: 25px;
-     }
+      font-size: 25px;
+    }
 
     @media @phone {
-      font-size: 18px;
+      font-size: @fs-18;
       text-align: center;
       margin: 30px 0;
     }
@@ -454,13 +455,13 @@ footer {
     margin-top: 20px;
   }
 
-   @media @smallDesktop {
-     img {
-       height: 500px;
-       width: auto;
-       max-width: 100%;
-     }
-   }
+  @media @smallDesktop {
+    img {
+      height: 500px;
+      width: auto;
+      max-width: 100%;
+    }
+  }
 
   @media @tablet {
     padding-top: 30px;
@@ -493,7 +494,7 @@ footer {
   text-transform: uppercase;
   color: white !important;
   background: @grey;
-  font-size: 14px;
+  font-size: @fs-14;
   font-weight: 700;
   text-decoration: none !important;
   padding: 0 45px;
@@ -647,7 +648,7 @@ footer {
   }
 
   h2 {
-    font-size: 24px;
+    font-size: @fs-24;
     color: @grey;
 
     &:before {
@@ -668,7 +669,7 @@ footer {
     margin: 15px 0 30px;
 
     @media @smallDesktop {
-      font-size: 24px;
+      font-size: @fs-24;
     }
   }
 
@@ -737,7 +738,7 @@ footer {
 
 .homepage-content-3 {
   h3 {
-    font-size: 24px;
+    font-size: @fs-24;
 
     &:after {
       content: "";
@@ -775,7 +776,7 @@ footer {
 .intro-txt {
   h4 {
     color: @pink;
-    font-size: 24px;
+    font-size: @fs-24;
     display: inline-block;
     border-bottom: 1px solid @pink;
     padding-bottom: 5px;
@@ -783,7 +784,7 @@ footer {
   }
 
   p {
-   line-height: 1.6;
+    line-height: 1.6;
   }
 
   a {
@@ -1122,7 +1123,7 @@ footer {
   }
 
   @media @smallDesktop {
-    font-size: 14px;
+    font-size: @fs-14;
   }
 }
 
@@ -1131,7 +1132,9 @@ footer {
   border-bottom: 1px solid @grey;
 
   .container {
-    max-width: 1260px;
+    @media (min-width: 993px) {
+      max-width: 1260px;
+    }
   }
 
   .blocks-txt {
@@ -1155,7 +1158,7 @@ footer {
     margin: 0 15px;
 
     h4 {
-      font-size:18px;
+      font-size: 18px;
 
       &:after {
         content: "";
@@ -1218,7 +1221,7 @@ footer {
   }
 
   strong {
-    font-size: 24px;
+    font-size: @fs-24;
     display: block;
     margin-bottom: 10px;
   }
@@ -1531,7 +1534,7 @@ footer {
 
   .tab-label {
     text-transform: uppercase;
-    font-size: 18px;
+    font-size: @fs-18;
 
     @media @phone {
       font-size: 13px;
@@ -1685,8 +1688,8 @@ footer {
       margin-right: 10px;
     }
 
-    @media (max-width: 1368px) and (min-width: 992px){
-      font-size: 18px;
+    @media (max-width: 1368px) and (min-width: 992px) {
+      font-size: @fs-18;
     }
 
     &:after {
@@ -1874,7 +1877,7 @@ footer {
 
   button {
     line-height: 40px;
-    font-size: 14px;
+    font-size: @fs-14;
     display: block;
     background: #d40058;
     color: white;
@@ -1914,7 +1917,7 @@ footer {
   form#recherchepdf-form {
     input {
       line-height: 40px;
-      font-size: 14px;
+      font-size: @fs-14;
       display: block;
       width: 100%;
       border: 1px solid #303030;
@@ -1996,7 +1999,7 @@ footer {
       line-height: 40px;
       border: 1px solid #303030;
       padding: 0 15px;
-      font-size: 14px;
+      font-size: @fs-14;
     }
 
     .select2-selection {
@@ -2186,3 +2189,916 @@ footer {
     margin-top: 10px;
   }
 }
+
+/*** General - Offre Emploi ***/
+#listing-offres, #offre {
+  .container {
+    max-width: 1350px;
+  }
+}
+#offre-apply {
+  .container {
+    max-width: 1042px;
+  }
+}
+/*** END General - Offre Emploi ***/
+
+/*** Block Top - Offre Emploi ***/
+#block-top {
+  border-bottom: 1px solid @pink;
+
+  .first-col {
+
+    padding: 0 6rem;
+    @media (max-width: 1440px) {
+      padding: 0 3rem;
+    }
+    @media (max-width: 1024px) {
+      padding: 0 1rem;
+    }
+
+    .content-text {
+      h1 {
+        font-size: 23px;
+        line-height: 1.4;
+        margin: 0;
+        color: @pink;
+
+        &::after {
+          &:extend(.container-fluid.top h1:after);
+        }
+
+        @media (max-width: 768px) {
+          text-align: center;
+        }
+      }
+    }
+
+    .content-btn {
+      margin: 40px 0 0;
+      display: flex;
+      flex-direction: column;
+      @media (max-width: 768px) {
+        margin: 40px 0;
+        flex-direction: row;
+      }
+      @media (max-width: 480px) {
+        flex-direction: column;
+      }
+
+      .cta {
+        width: 60%;
+        @media (max-width: 1550px) {
+          padding: 0 30px;
+        }
+        @media (max-width: 1440px) {
+          width: 100%;
+          padding: 0 45px;
+        }
+      }
+
+      .cta2 {
+        color: #d40058 !important;
+        font-weight: 700;
+        text-decoration: underline;
+        padding: 0 45px;
+        display: inline-block;
+        margin-top: 1rem;
+        width: 60%;
+        @media (max-width: 1550px) {
+          padding: 0 5px;
+        }
+        @media (max-width: 1440px) {
+          width: 100%;
+          padding: 0 45px;
+        }
+        @media (max-width: 768px) {
+          line-height: 40px;
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  .second-col {
+    .content-img {
+      height: 620px;
+      position: relative;
+      overflow: hidden;
+      @media (max-width: 1024px) {
+        height: auto;
+      }
+    }
+  }
+
+
+}
+/*** End Block Top - Offre Emploi ***/
+
+/*** OFFRES D'EMPLOI - LISTE ***/
+#listing-offres {
+  padding: 30px 0 0 0;
+  font-size: @fs-14;
+
+
+  a {
+    color: @pink;
+  }
+
+  h3 {
+    font-family: @Librebaskerville;
+    font-weight: 700;
+    font-size: 23px;
+    border-bottom: 1px solid;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    color: @pink;
+  }
+
+  .filters {
+    @media @phone {
+      margin-bottom: 30px;
+    }
+
+    select, #searchbox {
+      width: 100%;
+      margin: 5px 0;
+      height: 40px;
+      padding: 10px;
+      border: 1px solid #d2d2d2;
+    }
+
+    #searchbox {
+      background: url("../images/offres/picto-search.png") no-repeat center right 10px transparent;
+      padding-right: 35px;
+      padding-left: 15px;
+      font-weight: 600;
+    }
+
+    #groupe-filtres-offres-emploi {
+      @media @phone {
+        display: none;
+
+        .select2-container {
+          width: 100% !important;
+        }
+      }
+
+      .filtres-offres-emploi b {
+        margin-top: 15px;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+        color: #b3b3b3;
+        display: block;
+      }
+    }
+
+    .cta-filter {
+      width: 100%;
+      background-color: #4cbfc6;
+      color: white;
+      border: none;
+      box-shadow: none;
+      padding: 0 25px;
+      line-height: 40px;
+      cursor: pointer;
+      font-weight: 500;
+      position: relative;
+
+      &.top {
+        margin-bottom: 13px;
+      }
+
+      &.bottom {
+        margin-top: 15px;
+      }
+    }
+  }
+
+  .jobs-list {
+    #toutes-les-offres {
+      width: 100% !important;
+
+      thead, tbody {
+        th, td {
+          padding: 15px 0;
+
+          @media @phone {
+            text-align: center;
+            font-size: 13px;
+            min-width: 80px;
+
+            &:first-child {
+              text-align: left;
+            }
+          }
+        }
+      }
+
+      thead {
+        @media @phone {
+          position: absolute;
+          top: -9999px;
+          left: -9999px;
+        }
+
+        tr {
+          color: #b3b3b3;
+        }
+
+        .sorting,
+        .sorting_asc,
+        .sorting_desc,
+        .sorting_asc_disabled,
+        .sorting_desc_disabled {
+          background: none;
+        }
+      }
+
+      tbody {
+        tr {
+          cursor: pointer;
+          transition: color 0.3s;
+
+          &:hover {
+            color: @pink;
+          }
+        }
+
+        td {
+          background-color: white !important;
+          font-weight: 600;
+        }
+
+        td.wrap, th.wrap {
+          white-space: unset !important;
+        }
+
+        tr:focus, td:focus {
+          outline: none;
+        }
+      }
+
+      .dtr-inline.collapsed > tbody > tr[role="row"] > td:first-child:before,
+      .dtr-inline.collapsed > tbody > tr[role="row"] > th:first-child:before {
+        top: 18px;
+        left: 0;
+        height: 15px;
+        width: 15px;
+        background: black;
+        box-shadow: none;
+        border: none;
+        line-height: 16px;
+      }
+
+      table.dataTable > tbody > tr.child ul.dtr-details {
+        display: block;
+        padding: 15px 35px;
+        background: whitesmoke;
+
+        li {
+          border-bottom: 1px solid #d4d4d4;
+
+          span {
+            min-width: unset;
+
+            &.dtr-title:after {
+              content: ":";
+              display: inline-block;
+              margin-left: 3px;
+            }
+          }
+
+          &:last-child {
+            padding-bottom: 0;
+          }
+
+          &:first-child {
+            padding-top: 0;
+          }
+
+          @media @phone {
+            &:last-child {
+              .dtr-title {
+                display: none;
+              }
+
+              a {
+                width: 100%;
+                background-color: @turquoise;
+                color: white;
+                border: none;
+                box-shadow: none;
+                padding: 0 25px;
+                line-height: 40px;
+                cursor: pointer;
+                font-weight: 500;
+                display: block;
+                margin-top: 10px;
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
+
+      table.dataTable thead th,
+      table.dataTable thead td,
+      table.dataTable.no-footer {
+        border-color: #d2d2d2;
+      }
+
+
+      .dataTables_paginate {
+        text-align: center;
+        float: none;
+
+        .paginate_button {
+          color: #80807f !important;
+          background: none !important;
+          border: none !important;
+          border-radius: 0;
+          margin: 15px;
+          padding: 0;
+          min-width: 15px;
+          box-shadow: none !important;
+
+          &.current {
+            border-bottom: 1px solid !important;
+            font-weight: bold;
+          }
+
+          &:hover {
+            color: inherit !important;
+          }
+        }
+      }
+    }
+
+    #toutes-les-offres_paginate {
+      width: 100%;
+      text-align: center;
+      margin: 2rem 0;
+
+      span a.paginate_button {
+        background: white;
+        border: 1px solid rgba(#d40058, 0.5);
+        border-radius: 25%;
+        font-weight: 600;
+
+        &:hover {
+          color: inherit !important;
+        }
+      }
+
+      span a.current {
+        background: @pink;
+        color: white !important;
+      }
+    }
+
+    .no-offers {
+      padding: 2rem 10rem;
+      text-align: center;
+      background-color: #f6f6f6;
+      font-weight: 500;
+      font-size: @fs-18;
+      @media (max-width: 1024px) {
+        padding: 2rem 5rem;
+      }
+      @media (max-width: 768px) {
+        padding: 2rem;
+      }
+      @media (max-width: 480px) {
+        text-align: justify;
+        padding: 1rem;
+      }
+      a {
+        color: @pink;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .select2-selection--single {
+    position: relative;
+    .select2-selection__arrow {
+      overflow: hidden;
+      b {
+        top: -12%;
+      }
+    }
+  }
+
+  .select2-search {
+    display: none !important;
+  }
+}
+/*** END OFFRES D'EMPLOI - LISTE ***/
+
+/*** OFFRE D'EMPLOI - FICHE ***/
+#offre {
+  font-size: @fs-14;
+
+  & > .container {
+    //padding: 0;
+  }
+
+  h1, h2 {
+    font-family: @Librebaskerville;
+    border-bottom: 1px solid @pink;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    font-size: 23px;
+    font-weight: 600;
+    color: @pink;
+  }
+
+  .detail-offre {
+    & > div > div {
+      margin: 15px 0;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .left {
+      .info-title {
+        margin-top: 15px;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+        color: #b3b3b3;
+        display: block;
+        font-weight: bold;
+      }
+
+      .info-content {
+        color: #232323;
+        border: 1px solid #d2d2d2;
+        height: 40px;
+        line-height: 40px;
+        padding-left: 20px;
+        width: 100%;
+        display: block;
+        font-weight: 500;
+      }
+
+      .btn-cta {
+        display: block;
+        margin-top: 20px;
+
+        &:hover {
+          text-decoration: none;
+          .dimOpacityOnHover(0.7);
+        }
+
+        button {
+          width: 100%;
+          background-color: @pink;
+          color: white;
+          border: none;
+          box-shadow: none;
+          line-height: 40px;
+          cursor: pointer;
+          font-weight: 600;
+          position: relative;
+          text-transform: uppercase;
+          overflow: hidden;
+
+          @media @phone {
+            max-width: 260px;
+            display: block;
+            margin: 0 auto;
+          }
+
+          &:before {
+            background: url("../images/offres/picto-checked.png") no-repeat center transparent;
+            height: 13px;
+            width: 17px;
+            position: absolute;
+            left: 30%;
+            display: block;
+            content: "";
+            top: 14px;
+            @media (max-width: 1024px) {
+              left: 22%;
+            }
+            @media (max-width: 768px) {
+              left: 14%;
+            }
+            @media (max-width: 480px) {
+              left: 25%;
+            }
+          }
+        }
+      }
+    }
+
+    .right {
+      b.title {
+        text-transform: uppercase;
+        border-bottom: 1px solid;
+      }
+
+      .txt-grey {
+        color: #b3b3b3;
+        font-weight: 500;
+      }
+
+      br {
+        display: none;
+      }
+    }
+
+    a.back {
+      color: @pink;
+      border-bottom: 1px solid;
+      text-decoration: none;
+      .dimOpacityOnHover(0.8);
+      font-weight: 600;
+    }
+  }
+
+}
+/*** END OFFRE D'EMPLOI - FICHE ***/
+
+/*** OFFRE D'EMPLOI - CANDIDATURE FORM ***/
+#offre-apply {
+  padding: 35px 0 50px;
+
+  .candidature-offre {
+    h1 {
+      font-family: @Librebaskerville;
+      border-bottom: 1px solid;
+      padding-bottom: 20px;
+      margin-bottom: 50px;
+      margin-top: 15px;
+      font-size: @fs-24;
+      color: @pink;
+      font-weight: 600;
+    }
+  }
+
+  #webform-submission-candidature-spontanee-add-form,
+  #webform-submission-contact-node-10-add-form {
+
+    .form-item {
+      position: relative;
+
+      input, textarea {
+        width: 100%;
+        display: inline-block;
+        border: 1px solid #d2d2d2;
+        padding: 7px 5px;
+        outline: none;
+        font-size: @fs-14;
+      }
+
+      textarea {
+        margin-bottom: 0;
+
+        @media @phone {
+          margin-top: 5px;
+        }
+      }
+
+      & > label {
+        position: absolute;
+        left: 10px;
+        top: 13px;
+        background: white;
+        padding: 0 5px;
+        transition: all 0.3s;
+        margin: 0;
+        line-height: 1;
+        font-size: @fs-14;
+      }
+
+      @media @phone {
+        &:not(.form-wrapper) {
+          margin: 10px 0;
+        }
+
+        &#edit-piece-jointe {
+          margin-top: 10px;
+        }
+      }
+    }
+
+    input:focus + label,
+    input.js-not-empty + label,
+    textarea.js-not-empty + label,
+    textarea:focus + label {
+      top: -2px;
+      color: #9e9e9e;
+    }
+
+    .select2-container {
+      margin-top: 5px;
+
+      .select2-selection {
+        border-radius: 0;
+        border-color: #d2d2d2;
+        outline: none;
+        height: 40px;
+      }
+
+      .select2-selection__rendered {
+        line-height: 40px;
+      }
+
+      .select2-selection__arrow {
+        height: 100%;
+        top: 0;
+      }
+    }
+
+    .form-submit {
+      background: @pink;
+      border: none;
+      color: white;
+      width: 100%;
+      padding: 10px 0;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: @fs-14;
+      cursor: pointer;
+      .dimOpacityOnHover(0.8);
+    }
+
+    .webform-element-description,
+    #edit-piece-jointe label {
+      text-transform: uppercase;
+      font-weight: bold;
+      color: #b3b3b3;
+      font-size: @fs-14;
+    }
+
+    legend {
+      font-family: @Librebaskerville;
+      font-size: @fs-18;
+      color: #232323;
+      margin: 0;
+      font-weight: 600;
+      border-bottom: 1px solid #d2d2d2;
+      padding-bottom: 5px;
+
+      @media @phone {
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+      }
+    }
+
+    #edit-piece-jointe {
+      .webform-flex--container {
+        margin: 0;
+      }
+
+      .js-hide {
+        display: none;
+      }
+
+      span.file {
+        width: 100%;
+        border: 1px solid #d2d2d2;
+        display: block;
+        margin-top: 8px;
+        padding: 5px 10px;
+        background: white;
+        position: absolute;
+        height: 36px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      input {
+        z-index: 1;
+        cursor: pointer;
+
+        &.button {
+          margin-top: 50px;
+          border: none;
+          background: none;
+          color: black;
+          text-transform: inherit;
+          font-weight: inherit;
+          text-align: right;
+          padding: 0 10px 0 0;
+        }
+      }
+
+      .fieldset-wrapper > div {
+        margin: 20px 0;
+        min-height: 70px;
+
+        @media @phone {
+          margin: 0;
+        }
+
+        &:last-child {
+          margin-bottom: 25px;
+        }
+      }
+
+      label {
+        position: relative;
+        top: 0;
+        left: 0;
+        padding: 0;
+      }
+
+      input[type=file] {
+        opacity: 0;
+        position: absolute;
+        top: 30px;
+        cursor: pointer;
+      }
+
+      .webform-element-description {
+        border: 1px solid #d2d2d2;
+        padding: 8px 10px 5px;
+        position: absolute;
+        margin-top: 8px;
+        width: 100%;
+        color: black;
+        text-transform: inherit;
+        font-weight: inherit;
+        cursor: pointer;
+
+        &:after {
+          content: "+";
+          display: block;
+          font-size: 20px;
+          position: absolute;
+          right: 10px;
+          top: 2px;
+          font-family: initial;
+          cursor: pointer;
+        }
+      }
+    }
+
+    #edit-right > legend:first-child {
+      display: none;
+    }
+
+    #edit-actions-submit {
+      border: none;
+    }
+
+    input:hover::placeholder {
+      color: white
+    }
+
+    .select2-hidden-accessible {
+      height: 45px !important;
+      width: 100% !important;
+    }
+
+    .messages--error {
+      margin-top: 60px;
+      z-index: -1;
+      color: #d40000;
+      font-size: 13px;
+    }
+
+    @media @phone {
+      margin-top: 15px;
+    }
+  }
+
+  #webform-submission-contact-node-10-add-form {
+    max-width: 600px;
+
+    .webform-flexbox {
+      margin: 0 -0.5em;
+
+      @media @phone {
+        margin: 0;
+      }
+    }
+
+    .form-item {
+      margin-top: 15px;
+    }
+
+    .webform-button--submit {
+      background: @turquoise;
+    }
+
+    .field-prefix {
+      position: absolute;
+      top: 14px;
+      right: 10px;
+      color: @turquoise;
+      z-index: 10;
+    }
+
+    .js-form-type-select .field-prefix {
+      top: 17px;
+      right: 30px;
+    }
+
+    textarea {
+      margin-bottom: 20px !important;
+
+      @media @phone {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    .g-recaptcha {
+      transform: scale(0.9);
+
+      & > div {
+        margin: 0 auto;
+      }
+
+      @media @phone {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .form-item-checkbox-rgpd {
+    input {
+      width: auto !important;
+    }
+
+    .description {
+      text-align: justify;
+    }
+  }
+
+  .btn-back {
+    color: @pink;
+    font-weight: 600;
+    @media (max-width: 480px) {
+      margin-top: 40px;
+    }
+  }
+}
+#candidature {
+  h1 {
+    margin-top: 40px;
+    padding: 0;
+
+    @media @phone {
+      font-size: 28px;
+      margin-top: 20px;
+    }
+  }
+
+  .imgs-bg > div:before {
+    display: none;
+  }
+
+  .block-text {
+    padding: 0 30px 15px 30px;
+    margin: 0 auto;
+
+    .txt {
+      background-color: rgba(35, 35, 35, 0.7);
+      font-family: @Librebaskerville;
+      color: white;
+      font-size: @fs-24;
+      padding: 20px;
+      margin-top: 30px;
+
+      a {
+        color: #f7e2a1;
+        text-decoration: underline;
+      }
+
+      @media @phone {
+        font-size: 21px;
+
+        br {
+          display: none;
+        }
+      }
+    }
+  }
+
+
+}
+/*** END OFFRE D'EMPLOI - CANDIDATURE FORM ***/
+
+/** color scroll bar **/
+body::-webkit-scrollbar {
+  width: 1em;
+}
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px @pink;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: @grey;
+  outline: 1px solid #696969;
+}
+/** END scroll bar **/

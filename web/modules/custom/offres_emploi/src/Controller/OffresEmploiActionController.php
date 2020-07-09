@@ -37,17 +37,12 @@ class OffresEmploiActionController extends ControllerBase
             $webform = \Drupal::entityTypeManager()->getStorage('webform')->load('postuler_annonce');
 
             $dataPoste = $this->offreRepository->findBy(['codeRecrutement' => $ref, 'active' => 1]);
-            $namePoste = $dataPoste["intitulePoste"];
 
-            $build = [
+            return [
                 '#theme' => 'offres_emploi--form-postuler',
-                '#data' => $namePoste,
+                '#data' => $dataPoste[0]->intitulePoste,
                 "#form" => $webform->getSubmissionForm()
             ];
-
-            return $build;
-        } else {
-            die();
         }
     }
 }

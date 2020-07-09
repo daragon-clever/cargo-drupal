@@ -14,13 +14,14 @@ jQuery(document).ready(function($) {
     expireCookiesTime.setTime(expireCookiesTime.getTime() + (minutes * 60 * 1000));
 
     //PAGE OFFRE EMPLOI
-    if ($('.listing-offres').length) {
+    if ($('#listing-offres').length) {
 
         $.fn.dataTable.moment( 'DD/MM/YYYY' );
 
         // Clickable full row
         var clickableRow = function() {
             if (isMobile === false) {
+
                 $(".clickable-row").unbind().click(function(e) {
                     e.preventDefault();
                     if (e.ctrlKey) {

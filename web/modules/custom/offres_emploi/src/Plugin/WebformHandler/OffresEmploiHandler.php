@@ -4,7 +4,7 @@ namespace Drupal\offres_emploi\Plugin\WebformHandler;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\webform\Plugin\WebformHandlerBase;
 use Drupal\webform\webformSubmissionInterface;
-use Drupal\Core\Url;
+use Drupal\offres_emploi\OffreEmploiRepository;
 
 
 /**
@@ -19,7 +19,8 @@ use Drupal\Core\Url;
  *   results = \Drupal\webform\Plugin\WebformHandlerInterface::RESULTS_PROCESSED,
  * )
  */
-class OffresEmploiHandler extends WebformHandlerBase {
+class OffresEmploiHandler extends WebformHandlerBase
+{
 
     /**
      * {@inheritdoc}
@@ -31,14 +32,14 @@ class OffresEmploiHandler extends WebformHandlerBase {
     /**
      * {@inheritdoc}
      */
-    public function confirmForm(array &$form, FormStateInterface $form_state, WebformSubmissionInterface $webform_submission) {
+    public function confirmForm(array &$form, FormStateInterface $form_state, WebformSubmissionInterface $webform_submission)
+    {
         $values = $webform_submission->getData();
 
-        $conn = \Drupal::database();
-        $conn->update("offres_emploi")
-            ->expression('nbCandidature', 'nbCandidature + 1')
-            ->condition('codeRecrutement', $values['offre'], '=')
-            ->execute();
+        $connection = \Drupal::service('database');
+        $offreRepository = new OffreEmploiRepository($connection);
+
+        $offreRepository->updateNbCandidature($values['offre']);
 
         return true;
     }

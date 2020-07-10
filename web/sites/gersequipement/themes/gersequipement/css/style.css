@@ -2220,7 +2220,6 @@ footer span.linkedin-logo {
   color: #d40058;
 }
 #listing-offres h3 {
-  font-family: 'Libre Baskerville', serif;
   font-weight: 700;
   font-size: 23px;
   border-bottom: 1px solid;
@@ -2255,8 +2254,10 @@ footer span.linkedin-logo {
     width: 100% !important;
   }
 }
-#listing-offres .filters #groupe-filtres-offres-emploi .filtres-offres-emploi b {
+#listing-offres .filters #groupe-filtres-offres-emploi .filtres-offres-emploi {
   margin-top: 15px;
+}
+#listing-offres .filters #groupe-filtres-offres-emploi .filtres-offres-emploi b {
   margin-bottom: 5px;
   text-transform: uppercase;
   color: #b3b3b3;
@@ -2464,14 +2465,18 @@ footer span.linkedin-logo {
   color: #d40058;
   text-decoration: underline;
 }
+#listing-offres .select2-container .select2-selection--single,
+#listing-offres .select2-container--default .select2-selection--single .select2-selection__arrow {
+  height: 40px;
+  padding-left: 8px;
+}
 #listing-offres .select2-selection--single {
   position: relative;
+  border: 1px solid #d2d2d2;
+  border-radius: 0;
 }
-#listing-offres .select2-selection--single .select2-selection__arrow {
-  overflow: hidden;
-}
-#listing-offres .select2-selection--single .select2-selection__arrow b {
-  top: -12%;
+#listing-offres .select2-selection--single .select2-selection__rendered {
+  line-height: 40px;
 }
 #listing-offres .select2-search {
   display: none !important;
@@ -2480,14 +2485,12 @@ footer span.linkedin-logo {
 /*** OFFRE D'EMPLOI - FICHE ***/
 #offre {
   font-size: 14px;
+  margin: 20px 0;
 }
 #offre h1,
 #offre h2 {
-  font-family: 'Libre Baskerville', serif;
   border-bottom: 1px solid #d40058;
   padding-bottom: 10px;
-  margin-bottom: 10px;
-  margin-top: 20px;
   font-size: 23px;
   font-weight: 600;
   color: #d40058;
@@ -2602,7 +2605,6 @@ footer span.linkedin-logo {
   padding: 35px 0 50px;
 }
 #offre-apply .candidature-offre h1 {
-  font-family: 'Libre Baskerville', serif;
   border-bottom: 1px solid;
   padding-bottom: 20px;
   margin-bottom: 50px;
@@ -2614,6 +2616,10 @@ footer span.linkedin-logo {
 #offre-apply #webform-submission-candidature-spontanee-add-form .form-item,
 #offre-apply #webform-submission-contact-node-10-add-form .form-item {
   position: relative;
+}
+#offre-apply #webform-submission-candidature-spontanee-add-form .form-item input,
+#offre-apply #webform-submission-contact-node-10-add-form .form-item input {
+  height: 40px;
 }
 #offre-apply #webform-submission-candidature-spontanee-add-form .form-item input,
 #offre-apply #webform-submission-contact-node-10-add-form .form-item input,
@@ -2640,7 +2646,7 @@ footer span.linkedin-logo {
 #offre-apply #webform-submission-contact-node-10-add-form .form-item > label {
   position: absolute;
   left: 10px;
-  top: 13px;
+  top: 16px;
   background: white;
   padding: 0 5px;
   transition: all 0.3s;
@@ -2671,7 +2677,7 @@ footer span.linkedin-logo {
 }
 #offre-apply #webform-submission-candidature-spontanee-add-form .select2-container,
 #offre-apply #webform-submission-contact-node-10-add-form .select2-container {
-  margin-top: 5px;
+  margin-top: 10px;
 }
 #offre-apply #webform-submission-candidature-spontanee-add-form .select2-container .select2-selection,
 #offre-apply #webform-submission-contact-node-10-add-form .select2-container .select2-selection {
@@ -2683,6 +2689,7 @@ footer span.linkedin-logo {
 #offre-apply #webform-submission-candidature-spontanee-add-form .select2-container .select2-selection__rendered,
 #offre-apply #webform-submission-contact-node-10-add-form .select2-container .select2-selection__rendered {
   line-height: 40px;
+  font-size: 14px;
 }
 #offre-apply #webform-submission-candidature-spontanee-add-form .select2-container .select2-selection__arrow,
 #offre-apply #webform-submission-contact-node-10-add-form .select2-container .select2-selection__arrow {
@@ -2717,13 +2724,12 @@ footer span.linkedin-logo {
 }
 #offre-apply #webform-submission-candidature-spontanee-add-form legend,
 #offre-apply #webform-submission-contact-node-10-add-form legend {
-  font-family: 'Libre Baskerville', serif;
   font-size: 18px;
   color: #232323;
   margin: 0;
   font-weight: 600;
   border-bottom: 1px solid #d2d2d2;
-  padding-bottom: 5px;
+  padding-bottom: 1em;
 }
 @media only screen and (max-width: 767px) {
   #offre-apply #webform-submission-candidature-spontanee-add-form legend,
@@ -2801,7 +2807,7 @@ footer span.linkedin-logo {
 #offre-apply #webform-submission-candidature-spontanee-add-form #edit-piece-jointe .webform-element-description,
 #offre-apply #webform-submission-contact-node-10-add-form #edit-piece-jointe .webform-element-description {
   border: 1px solid #d2d2d2;
-  padding: 8px 10px 5px;
+  padding: 12px 20px;
   position: absolute;
   margin-top: 8px;
   width: 100%;
@@ -2817,7 +2823,7 @@ footer span.linkedin-logo {
   font-size: 20px;
   position: absolute;
   right: 10px;
-  top: 2px;
+  top: 8px;
   font-family: initial;
   cursor: pointer;
 }
@@ -2904,9 +2910,14 @@ footer span.linkedin-logo {
 #offre-apply .form-item-checkbox-rgpd .description {
   text-align: justify;
 }
+#offre-apply .form-item-checkbox-rgpd .description #edit-checkbox-rgpd--description {
+  text-transform: inherit !important;
+}
 #offre-apply .btn-back {
   color: #d40058;
   font-weight: 600;
+  margin: 2rem 0 0;
+  text-decoration: underline;
 }
 @media (max-width: 480px) {
   #offre-apply .btn-back {
@@ -2951,15 +2962,3 @@ footer span.linkedin-logo {
   }
 }
 /*** END OFFRE D'EMPLOI - CANDIDATURE FORM ***/
-/** color scroll bar **/
-body::-webkit-scrollbar {
-  width: 1em;
-}
-body::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px #d40058;
-}
-body::-webkit-scrollbar-thumb {
-  background-color: #4a4a49;
-  outline: 1px solid #696969;
-}
-/** END scroll bar **/

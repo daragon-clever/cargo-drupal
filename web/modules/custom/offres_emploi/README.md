@@ -47,3 +47,14 @@ Les filtres disponibles sont : (/offres-emploi?`{{filtre}}`=`{{value}}`)
 ### Commandes  
 * offre_emploi:import (pour importer toutes les offres d'emploi)
 * docker-compose run --rm php vendor/bin/drupal --uri=web.gersequipement.svd1pweb-stm.ressinfo.ad offres_emploi:import
+
+
+### Api Rest
+Pour configurer l'api il faut :
+ - Créer un compte pour l'authentification et ne lui donner que l’accès Get pour l'api;
+ - Vérifier si ces modules sont bien installés et activer : (HAL, Http Basic Authentification, REST UI, RESTful Web Services, Serialization)
+ - Dans la configuration de REST resources (admger/config/services/rest) => Activer la ressource et mettre les params suivants: ['methodes => Get, 'Formats de requêtes acceptés' => json, 'Authentication providers' => basic_auth et cookie]
+
+l'Api est accessible depuis : api/v1/offres-emploi/?_format=json
+Un filtre existe pour filtrer seulement les offres d'une societe en rajoutant un param name, exemple (?name=gersequipement)
+Ne pas activer l'api que dans le site groupe cargo. 

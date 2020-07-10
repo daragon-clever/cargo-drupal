@@ -3,3 +3,7 @@ description: Récupérer les offres d'emploie de chaque société
 core: 8.x
 package: Custom
 type: module
+dependencies:
+  - drupal:rest
+  - drupal:basic_auth
+  - drupal:hal

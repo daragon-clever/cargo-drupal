@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace Drupal\offres_emploi;
 
 use Drupal\Core\Database\Connection;
+use Drupal\Core\Database\StatementInterface;
 
 
 class OffreEmploiRepository
@@ -166,6 +167,17 @@ class OffreEmploiRepository
             ->condition('active', 1, '=')
             ->execute()
             ->fetchAll()
+        ;
+    }
+
+    /**
+     * @return StatementInterface|null
+     */
+    public function queryFindAllRessources(): ?StatementInterface
+    {
+        return $this->querySelect()
+            ->condition('active', 1, '=')
+            ->execute()
         ;
     }
 

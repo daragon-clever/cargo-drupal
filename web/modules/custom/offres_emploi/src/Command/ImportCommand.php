@@ -8,8 +8,6 @@ use Drupal\offres_emploi\OffreEmploiRepository;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Drupal\Console\Core\Command\Command;
-use Symfony\Component\DependencyInjection\ContainerInterface;
-use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Class ImportCommand.
@@ -32,24 +30,6 @@ class ImportCommand extends Command
      */
     private const NAMECARGODIRECTORYPROJECT = 'groupecargo';
 
-    /**
-     * List of all sites that use Drupal
-     * @var array
-     */
-    private const NAMECOMPANY = [
-        'ostaria' => 'C2S',
-        'comptoirdefamille' => 'Comptoir de Famille',
-        'technosource-industrie' => 'TECHNO SOURCE INDUSTRIES',
-        'cestdeuxeuros' => 'CEDIF',
-        'yliades' => 'YLIADES',
-        'roldan' => 'ROLDAN',
-        'merchetcie' => 'MERCH ET CIE',
-        'groupecargo' => 'CARGO',
-        'cogex' => 'COGEX',
-        'ruecab' => 'RUECAB',
-        'gersequipement' => 'GERS EQUIPEMENT',
-        'turbocar' => 'TURBOCAR',
-    ];
 
     /**
      * @var OffreEmploiRepository
@@ -115,7 +95,7 @@ class ImportCommand extends Command
 
             $allRefsActive = [];
             foreach ($data as $offre) {
-                if ($offre['SocieteRecrutement'] === self::NAMECOMPANY[$this->siteName] || $this->siteName === self::NAMECARGODIRECTORYPROJECT) {
+                if ($offre['SocieteRecrutement'] === self::$nameCompany[$this->siteName] || $this->siteName === self::NAMECARGODIRECTORYPROJECT) {
 
                     $dataHydrated = $this->hydrateData($offre);
                     $dataHydrated['active'] = 1;

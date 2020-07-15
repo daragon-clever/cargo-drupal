@@ -1,7 +1,7 @@
 <div id="offre">
     <div class="container">
         {%  if data == 'false' %}
-            <p>L'annonce n'existe pas</p>
+            <p>{{ 'L\'annonce n\'existe pas'|t }}</p>
         {% else %}
             <div class="row detail-offre">
                 <div class="col-12 col-sm-9 right order-1 order-sm-2">
@@ -26,11 +26,11 @@
                             </div>
                         {% endif %}
                     </div>
-                    <a class="back d-none d-sm-inline-block" href="/offres-emploi">< Retour</a>
+                    <a class="back d-none d-sm-inline-block" href="{{ path('offresEmploi.content') }}">{{ '< Retour'|t }}</a>
                 </div>
                 <div class="col-12 col-sm-3 left order-2 order-sm-1">
                     <h2>Contrat / Infos</h2>
-                    <span class="info-title">Référence de l'annonce</span>
+                    <span class="info-title">{{ 'Référence de l\'annonce'|t }}</span>
                     <span class="info-content">#{{ data.codeRecrutement }}</span>
 
                     <span class="info-title">Date de l'annonce</span>
@@ -45,9 +45,9 @@
                     <span class="info-title">Entreprise</span>
                     <span class="info-content">{{ data.filialeSociete }}</span>
 
-                    <a class="btn-cta" href="{{ path('offresEmploi.postuler', {'ref': data.codeRecrutement}) }}"><button>Je postule</button></a>
+                    <a class="btn-cta" href="{{ path('offresEmploi.postuler', {'ref': data.codeRecrutement}) }}"><button>{{ 'Je postule'|t }}</button></a>
                     <div class="text-center">
-                        <a class="back d-sm-none" href="{{ path('offresEmploi.content') }}">< Retour</a>
+                        <a class="back d-sm-none" href="{{ path('offresEmploi.content') }}">{{ '< Retour'|t }}</a>
                     </div>
                 </div>
             </div>

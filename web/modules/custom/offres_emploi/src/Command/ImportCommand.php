@@ -28,7 +28,12 @@ class ImportCommand extends Command
     /**
      * Name of the project cargo where the json is stored
      */
-    private const NAMECARGODIRECTORYPROJECT = 'groupecargo';
+    private const NAME_CARGO_DIRECTORY_PROJECT = 'groupecargo';
+
+    /**
+     * Json Path File
+     */
+    private const JSON_FILE_PATH = '/data/V_DemandeRecrutementOuvert.json';
 
 
     /**
@@ -87,14 +92,14 @@ class ImportCommand extends Command
     {
         $path = $this->getPathFile();
 
-        $fileData = file_get_contents($path . '/data/V_DemandeRecrutementOuvert.json');
+        $fileData = file_get_contents($path . self::JSON_FILE_PATH);
 
         if ($fileData !== false) {
             $data = json_decode($fileData, true);
 
             $allRefsActive = [];
             foreach ($data as $offre) {
-                if ($offre['SocieteRecrutement'] === self::$nameCompany[$this->siteName] || $this->siteName === self::NAMECARGODIRECTORYPROJECT) {
+                if ($offre['SocieteRecrutement'] === self::$nameCompany[$this->siteName] || $this->siteName === self::NAME_CARGO_DIRECTORY_PROJECT) {
 
                     $dataHydrated = $this->hydrateData($offre);
                     $dataHydrated['active'] = 1;
@@ -187,6 +192,6 @@ class ImportCommand extends Command
         $fileSystem = \Drupal::service('file_system');
         $path = $fileSystem->realpath(file_default_scheme() . "://");
 
-        return str_replace($this->siteName, self::NAMECARGODIRECTORYPROJECT, $path);
+        return str_replace($this->siteName, self::NAME_CARGO_DIRECTORY_PROJECT, $path);
     }
 }

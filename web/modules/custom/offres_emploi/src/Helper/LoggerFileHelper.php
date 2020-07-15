@@ -3,11 +3,15 @@ declare(strict_types=1);
 
 namespace Drupal\offres_emploi\Helper;
 
+use Symfony\Component\Serializer\Serializer;
+use Symfony\Component\Serializer\Encoder\CsvEncoder;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+
 class LoggerFileHelper
 {
-    private const NAMELOGFILE = 'logip--annonce.csv';
+    private const NAME_LOG_FILE = 'logip--annonce.csv';
 
-    private const NUMBERDAYSTODELETE = 7;
+    private const NUMBER_DAYS_TO_DELETE = 7;
 
     private $fileLogIPAnnonce;
 
@@ -25,7 +29,7 @@ class LoggerFileHelper
         $this->createLogger();
 
         //Delete the content every week 7 days
-        $this->removeContent(self::NUMBERDAYSTODELETE);
+        $this->removeContent(self::NUMBER_DAYS_TO_DELETE);
     }
 
     /**
@@ -48,10 +52,7 @@ class LoggerFileHelper
             }
 
             $fiveMin = $this->actualTime - (60 * 5);
-            if (!empty($found_time) && $found_time > $fiveMin) {
-                return true;
-            }
-            return false;
+            return (!empty($found_time) && $found_time > $fiveMin);
         }
     }
 
@@ -61,7 +62,7 @@ class LoggerFileHelper
      */
     public function logIpAddressOnFile($ref)
     {
-        file_put_contents($this->fileLogIPAnnonce, $ref.",".$this->ipAddress.",".$this->actualTime."\n", FILE_APPEND | LOCK_EX);
+        file_put_contents($this->fileLogIPAnnonce, $ref . "," . $this->ipAddress . "," . $this->actualTime . "\n", FILE_APPEND | LOCK_EX);
     }
 
     /**
@@ -70,12 +71,12 @@ class LoggerFileHelper
     private function createLogger()
     {
         $folderFiles = \Drupal::service('file_system')->realpath(file_default_scheme() . "://");
-        if (!file_exists($folderFiles.'/log')) {
-            mkdir($folderFiles . "/log",0777,true);
+        if (!file_exists($folderFiles . '/log')) {
+            mkdir($folderFiles . "/log", 0777, true);
         }
-        $this->fileLogIPAnnonce = $folderFiles . "/log/" . self::NAMELOGFILE;
+        $this->fileLogIPAnnonce = $folderFiles . "/log/" . self::NAME_LOG_FILE;
         if (!file_exists($this->fileLogIPAnnonce)) {
-            file_put_contents($this->fileLogIPAnnonce,"ref,ip,time"."\n");
+            file_put_contents($this->fileLogIPAnnonce, "");
         }
     }
 
@@ -84,30 +85,19 @@ class LoggerFileHelper
      */
     private function getCSV(): array
     {
-        $csv = explode("\n", file_get_contents($this->fileLogIPAnnonce));
-        foreach ($csv as $key => $line)
-        {
-            if (!empty($line)) $newcsv[$key] = str_getcsv($line);
-        }
-        $entete = $newcsv[0];
-        unset($newcsv[0]);
-
-        $combine = [];
-        foreach ($newcsv as $item) {
-            $combine[] = array_combine($entete,$item);
-        }
-
-        return $combine;
+        return array_map(function($line) {
+            return (!empty($line)) ? str_getcsv($line) : false;
+        }, file($this->fileLogIPAnnonce));
     }
 
     /**
-     * Clear log content after self::NUMBERDAYSTODELETE
+     * Clear log content after self::NUMBER_DAYS_TO_DELETE
      * @param int $days
      */
     private function removeContent(int $days)
     {
         if ($this->actualTime - filemtime($this->fileLogIPAnnonce) >= 60 * 60 * 24 * $days) {
-            file_put_contents($this->fileLogIPAnnonce,"ref,ip,time"."\n");
+            file_put_contents($this->fileLogIPAnnonce, "");
         }
     }
 }

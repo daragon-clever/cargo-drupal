@@ -3,47 +3,47 @@
         <div class="row">
             {% if data %}
                 <div class="col-12 col-md-3 filters">
-                    <h3 class="d-none d-sm-block">Filtrer</h3>
+                    <h3 class="d-none d-sm-block"> {{ 'Filtrer'|t }}</h3>
 
                     <div class="d-block d-md-none">
                         <button class="cta-filter top js-toggle-filters">
-                            Filtrer
+                            {{ 'Filtrer'|t }}
                         </button>
                     </div>
 
-                    <input type="text" id="searchbox" placeholder="Rechercher une offre ..." />
+                    <input type="text" id="searchbox" placeholder="{{ 'Rechercher une offre ...'|t }}" />
 
                     <div id="groupe-filtres-offres-emploi">
                         <div id="filtre-contrat" class="filtres-offres-emploi">
-                            <b>Type de contrat</b>
+                            <b>{{ 'Type de contrat'|t }}</b>
                             <div class="select-option"></div>
                         </div>
                         <div id="filtre-poste" class="filtres-offres-emploi">
-                            <b>Type de poste</b>
+                            <b>{{ 'Type de poste'|t }}</b>
                             <div class="select-option"></div>
                         </div>
                         <div id="filtre-lieu" class="filtres-offres-emploi">
-                            <b>Lieu de travail</b>
+                            <b>{{ 'Lieu de travail'|t }}</b>
                             <div class="select-option"></div>
                         </div>
                         <div class="d-block d-sm-none">
                             <button class="cta-filter bottom js-toggle-filters" style="display: none">
-                                Valider
+                                {{ 'Valider'|t }}
                             </button>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-md-9 jobs-list">
-                    <h3>Les postes à pourvoir</h3>
+                    <h3>{{ 'Les postes à pourvoir'|t }}</h3>
                     <div id="alerte-offres"></div>
                     <table id="toutes-les-offres" class="display nowrap">
                             <thead>
                             <tr>
-                                <th class="all wrap">Poste</th>
-                                <th class="all">Type de contrat</th>
-                                <th class="js-hide">Type de poste</th>
-                                <th>Date de début</th>
-                                <th class="not-mobile">Lieu</th>
+                                <th class="all wrap">{{ 'Poste'|t }}</th>
+                                <th class="all">{{ 'Type de contrat'|t }}</th>
+                                <th class="js-hide">{{ 'Type de poste'|t }}</th>
+                                <th>{{ 'Date de début'|t }}</th>
+                                <th class="not-mobile">{{ 'Lieu'|t }}</th>
                                 <th class="not-mobile js-only-xs"></th>
                             </tr>
                             </thead>
@@ -55,7 +55,7 @@
                                     <td>{{ offre.metier }}</td>
                                     <td>{{ offre.dateOuverturePoste|date("d/m/Y") }}</td>
                                     <td>{{ offre.lieuRecrutement }}</td>
-                                    <td><a href="{{ path('offresEmploi.content', {'ref': offre.codeRecrutement}) }}">Voir l'annonce</a> </td>
+                                    <td><a href="{{ path('offresEmploi.content', {'ref': offre.codeRecrutement}) }}">{{ 'Voir l\'annonce'|t }}</a> </td>
                                 </tr>
                             {% endfor %}
                             </tbody>
@@ -64,11 +64,11 @@
             {% else %}
                 <div class="col-lg-12">
                     <div class="jobs-list">
-                        <h3>Les postes à pourvoir</h3>
+                        <h3>{{ 'Les postes à pourvoir'|t }}</h3>
                         <div id="alerte-offres"></div>
                         <div class="no-offers mb-3">
-                            <span>Nous n'avons aucune offre pour le moment. Revenez bientôt pour de nouvelles offres ou postulez avec une </span>
-                            <a class="d-inline" href="/candidature-spontanee">candidature spontanée</a>
+                            <span>{{ 'Nous n\'avons aucune offre pour le moment. Revenez bientôt pour de nouvelles offres ou postulez avec une '|t }}</span>
+                            <a class="d-inline" href="/candidature-spontanee">{{ 'candidature spontanée'|t }}</a>
                         </div>
                     </div>
                 </div>

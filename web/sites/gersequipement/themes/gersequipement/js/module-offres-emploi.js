@@ -125,7 +125,6 @@ jQuery(document).ready(function($) {
                     var select = $(selector + " select");
 
 
-
                     //priorité cookies
                     if (priority == "cookies" && cookies != ""
                         && $(selector + ' option[data-clean="' + cookies + '"]').length

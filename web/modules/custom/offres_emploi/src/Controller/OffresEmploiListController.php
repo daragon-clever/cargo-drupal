@@ -9,21 +9,15 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\offres_emploi\Helper\OffreEmploiHelperTrait;
 use Drupal\offres_emploi\OffreEmploiRepository;
 
-/**
- * Defines OffresEmploiListController class.
- */
+
 class OffresEmploiListController extends ControllerBase
 {
-
-    private $actualTime;
-    private $ipAddress;
-    private $fileLogIPAnnonce;
-
 
     /**
      * @var OffreEmploiRepository
      */
     private $offreRepository;
+
     /**
      * @var LoggerFileHelper
      */
@@ -49,7 +43,11 @@ class OffresEmploiListController extends ControllerBase
     }
 
 
-    public function show($ref)
+    /**
+     * @param $ref
+     * @return array|string[]
+     */
+    public function show($ref): array
     {
         if ($ref == "all") {
             $build = [

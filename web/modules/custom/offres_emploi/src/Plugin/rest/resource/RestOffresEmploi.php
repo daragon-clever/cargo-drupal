@@ -81,8 +81,8 @@ class RestOffresEmploi extends ResourceBase
     public function get(): ResourceResponse
     {
         if (!$this->currentUser->hasPermission('use ' . $this->pluginId . ' service')) {
-            $this->logger->error('Access denied for this user to the Api');
-            throw new AccessDeniedHttpException('Access denied.');
+            $this->logger->error( $this->currentUser->getAccountName() . ' : Access denied for this user to the Api');
+            throw new AccessDeniedHttpException('Access denied for this user.');
         }
 
         $nameSite = $this->currentRequest->get('name');

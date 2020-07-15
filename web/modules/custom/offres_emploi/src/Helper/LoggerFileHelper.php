@@ -5,8 +5,9 @@ namespace Drupal\offres_emploi\Helper;
 
 class LoggerFileHelper
 {
-
     private const NAMELOGFILE = 'logip--annonce.csv';
+
+    private const NUMBERDAYSTODELETE = 7;
 
     private $fileLogIPAnnonce;
 
@@ -20,20 +21,18 @@ class LoggerFileHelper
         $this->actualTime = time();
         $this->ipAddress = md5($_SERVER['REMOTE_ADDR']);
 
-        $folderFiles = \Drupal::service('file_system')->realpath(file_default_scheme() . "://");
-        if (!file_exists($folderFiles.'/log')) {
-            mkdir($folderFiles . "/log",0777,true);
-        }
-        $this->fileLogIPAnnonce = $folderFiles . "/log/" . self::NAMELOGFILE;
-        if (!file_exists($this->fileLogIPAnnonce)) {
-            file_put_contents($this->fileLogIPAnnonce,"ref,ip,time"."\n");
-        }
+        //Create Log File
+        $this->createLogger();
 
         //Delete the content every week 7 days
-        $this->removeContent(7);
+        $this->removeContent(self::NUMBERDAYSTODELETE);
     }
 
-    public function searchInCSV($ref)
+    /**
+     * @param $ref
+     * @return bool
+     */
+    public function searchInCSV($ref): bool
     {
         $found_time = null;
         $arrCSVcontent = $this->getCSV();
@@ -48,21 +47,42 @@ class LoggerFileHelper
                 }
             }
 
-            $fiveMin = $this->actualTime - (60*5);
+            $fiveMin = $this->actualTime - (60 * 5);
             if (!empty($found_time) && $found_time > $fiveMin) {
                 return true;
-            } else {
-                return false;
             }
+            return false;
         }
     }
 
+    /**
+     * Log the record of a visitor
+     * @param $ref
+     */
     public function logIpAddressOnFile($ref)
     {
         file_put_contents($this->fileLogIPAnnonce, $ref.",".$this->ipAddress.",".$this->actualTime."\n", FILE_APPEND | LOCK_EX);
     }
 
-    private function getCSV()
+    /**
+     * Init and Create the Log File
+     */
+    private function createLogger()
+    {
+        $folderFiles = \Drupal::service('file_system')->realpath(file_default_scheme() . "://");
+        if (!file_exists($folderFiles.'/log')) {
+            mkdir($folderFiles . "/log",0777,true);
+        }
+        $this->fileLogIPAnnonce = $folderFiles . "/log/" . self::NAMELOGFILE;
+        if (!file_exists($this->fileLogIPAnnonce)) {
+            file_put_contents($this->fileLogIPAnnonce,"ref,ip,time"."\n");
+        }
+    }
+
+    /**
+     * @return array
+     */
+    private function getCSV(): array
     {
         $csv = explode("\n", file_get_contents($this->fileLogIPAnnonce));
         foreach ($csv as $key => $line)
@@ -80,6 +100,10 @@ class LoggerFileHelper
         return $combine;
     }
 
+    /**
+     * Clear log content after self::NUMBERDAYSTODELETE
+     * @param int $days
+     */
     private function removeContent(int $days)
     {
         if ($this->actualTime - filemtime($this->fileLogIPAnnonce) >= 60 * 60 * 24 * $days) {

@@ -66,17 +66,16 @@ class ImportCommand extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        \Drupal::logger('offres_emploi')->notice('[OFFRES EMPLOI] Lancement cron');
-        $this->getIo()->info('[OFFRES EMPLOI] Lancement cron');
-
+        \Drupal::logger('offres_emploi')->notice('[OFFRES EMPLOI] Lancement import');
+        $this->getIo()->info('[OFFRES EMPLOI] Lancement import');
 
         //launch the import
         $this->import();
 
         drupal_flush_all_caches();
 
-        $this->getIo()->info('[OFFRES EMPLOI] Cron terminé');
-        \Drupal::logger('offres_emploi')->notice('[OFFRES EMPLOI] Cron terminé');
+        $this->getIo()->info('[OFFRES EMPLOI] import terminé');
+        \Drupal::logger('offres_emploi')->notice('[OFFRES EMPLOI] import terminé');
     }
 
 

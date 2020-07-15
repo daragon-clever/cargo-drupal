@@ -2238,40 +2238,32 @@ footer {
       margin: 40px 0 0;
       display: flex;
       flex-direction: column;
+      @media (max-width: 1440px) {
+        margin: 20px 0 20px;
+      }
       @media (max-width: 768px) {
         margin: 40px 0;
         flex-direction: row;
+        justify-content: space-around;
       }
       @media (max-width: 480px) {
-        flex-direction: column;
+        justify-content: space-between;
       }
 
       .cta {
-        width: 60%;
-        @media (max-width: 1550px) {
-          padding: 0 30px;
-        }
-        @media (max-width: 1440px) {
-          width: 100%;
-          padding: 0 45px;
-        }
+        width: auto;
+        max-width: 230px;
       }
 
       .cta2 {
         color: #d40058 !important;
         font-weight: 700;
         text-decoration: underline;
-        padding: 0 45px;
+        padding: 0 20px;
         display: inline-block;
         margin-top: 1rem;
-        width: 60%;
-        @media (max-width: 1550px) {
-          padding: 0 5px;
-        }
-        @media (max-width: 1440px) {
-          width: 100%;
-          padding: 0 45px;
-        }
+        width: auto;
+        max-width: 230px;
         @media (max-width: 768px) {
           line-height: 40px;
           margin-top: 0;
@@ -2282,7 +2274,7 @@ footer {
 
   .second-col {
     .content-img {
-      height: 620px;
+      height: auto;
       position: relative;
       overflow: hidden;
       @media (max-width: 1024px) {
@@ -2355,7 +2347,7 @@ footer {
 
     .cta-filter {
       width: 100%;
-      background-color: #4cbfc6;
+      background-color: @pink;
       color: white;
       border: none;
       box-shadow: none;
@@ -2379,17 +2371,23 @@ footer {
     #toutes-les-offres {
       width: 100% !important;
 
-      thead, tbody {
-        th, td {
-          padding: 15px 0;
+      &.dataTable {
+        thead, tbody {
+          th, td {
+            padding: 15px 0;
+            @media @phone {
+              padding: 20px 0;
+              text-align: center;
+              font-size: 13px;
+              min-width: 80px;
 
-          @media @phone {
-            text-align: center;
-            font-size: 13px;
-            min-width: 80px;
+              &:first-child {
+                text-align: left;
+              }
 
-            &:first-child {
-              text-align: left;
+              &:first-letter {
+                margin-left: 2rem;
+              }
             }
           }
         }
@@ -2428,6 +2426,9 @@ footer {
         td {
           background-color: white !important;
           font-weight: 600;
+          @media (max-width: 480px) {
+            font-weight: normal;
+          }
         }
 
         td.wrap, th.wrap {
@@ -2439,8 +2440,8 @@ footer {
         }
       }
 
-      .dtr-inline.collapsed > tbody > tr[role="row"] > td:first-child:before,
-      .dtr-inline.collapsed > tbody > tr[role="row"] > th:first-child:before {
+      tbody > tr[role="row"] > td:first-child:before,
+      tbody > tr[role="row"] > th:first-child:before {
         top: 18px;
         left: 0;
         height: 15px;
@@ -2451,7 +2452,7 @@ footer {
         line-height: 16px;
       }
 
-      table.dataTable > tbody > tr.child ul.dtr-details {
+      & > tbody > tr.child ul.dtr-details {
         display: block;
         padding: 15px 35px;
         background: whitesmoke;
@@ -2502,12 +2503,11 @@ footer {
         }
       }
 
-      table.dataTable thead th,
-      table.dataTable thead td,
-      table.dataTable.no-footer {
+      .dataTable thead th,
+      .dataTable thead td,
+      .dataTable.no-footer {
         border-color: #d2d2d2;
       }
-
 
       .dataTables_paginate {
         text-align: center;
@@ -2533,7 +2533,9 @@ footer {
           }
         }
       }
+
     }
+
 
     #toutes-les-offres_paginate {
       width: 100%;
@@ -2771,7 +2773,6 @@ footer {
       & > label {
         position: absolute;
         left: 10px;
-        //top: 13px;
         top: 16px;
         background: white;
         padding: 0 5px;

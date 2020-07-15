@@ -4,6 +4,8 @@ declare(strict_types=1);
 namespace Drupal\offres_emploi;
 
 use Drupal\Core\Database\Connection;
+use Drupal\Core\Database\Query\SelectInterface;
+use Drupal\Core\Database\Query\Update;
 use Drupal\Core\Database\StatementInterface;
 
 
@@ -89,7 +91,7 @@ class OffreEmploiRepository
      * @param $ref
      * @return int
      */
-    public function updateNbCandidature($ref)
+    public function updateNbCandidature($ref): int
     {
         try {
             $count = $this->queryUpdate()
@@ -108,15 +110,17 @@ class OffreEmploiRepository
      * Delete an entry
      * @param array $entry
      */
-    public function delete(array $entry)
+    public function delete(array $entry): int
     {
         try {
-            $this->connection->delete($this->tableName)
-                ->condition('pid', $entry['pid'])
+            $count = $this->connection->delete($this->tableName)
+                ->condition('codeRecrutement', $entry['codeRecrutement'])
                 ->execute();
         } catch(\Exception $e) {
             \Drupal::logger('offres_emploi')->error('Delete failed. Message => ' . $e->getMessage());
         }
+
+        return intval($count) ?? 0;
     }
 
 
@@ -182,12 +186,18 @@ class OffreEmploiRepository
     }
 
 
-    private function queryUpdate()
+    /**
+     * @return Update
+     */
+    private function queryUpdate(): Update
     {
         return $this->connection->update($this->tableName);
     }
 
-    private function querySelect()
+    /**
+     * @return SelectInterface
+     */
+    private function querySelect(): SelectInterface
     {
         return $this->connection->select($this->tableName)
             ->fields($this->tableName);

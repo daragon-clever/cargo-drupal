@@ -2149,50 +2149,36 @@ footer span.linkedin-logo {
   display: flex;
   flex-direction: column;
 }
+@media (max-width: 1440px) {
+  #block-top .first-col .content-btn {
+    margin: 20px 0 20px;
+  }
+}
 @media (max-width: 768px) {
   #block-top .first-col .content-btn {
     margin: 40px 0;
     flex-direction: row;
+    justify-content: space-around;
   }
 }
 @media (max-width: 480px) {
   #block-top .first-col .content-btn {
-    flex-direction: column;
+    justify-content: space-between;
   }
 }
 #block-top .first-col .content-btn .cta {
-  width: 60%;
-}
-@media (max-width: 1550px) {
-  #block-top .first-col .content-btn .cta {
-    padding: 0 30px;
-  }
-}
-@media (max-width: 1440px) {
-  #block-top .first-col .content-btn .cta {
-    width: 100%;
-    padding: 0 45px;
-  }
+  width: auto;
+  max-width: 230px;
 }
 #block-top .first-col .content-btn .cta2 {
   color: #d40058 !important;
   font-weight: 700;
   text-decoration: underline;
-  padding: 0 45px;
+  padding: 0 20px;
   display: inline-block;
   margin-top: 1rem;
-  width: 60%;
-}
-@media (max-width: 1550px) {
-  #block-top .first-col .content-btn .cta2 {
-    padding: 0 5px;
-  }
-}
-@media (max-width: 1440px) {
-  #block-top .first-col .content-btn .cta2 {
-    width: 100%;
-    padding: 0 45px;
-  }
+  width: auto;
+  max-width: 230px;
 }
 @media (max-width: 768px) {
   #block-top .first-col .content-btn .cta2 {
@@ -2201,7 +2187,7 @@ footer span.linkedin-logo {
   }
 }
 #block-top .second-col .content-img {
-  height: 620px;
+  height: auto;
   position: relative;
   overflow: hidden;
 }
@@ -2265,7 +2251,7 @@ footer span.linkedin-logo {
 }
 #listing-offres .filters .cta-filter {
   width: 100%;
-  background-color: #4cbfc6;
+  background-color: #d40058;
   color: white;
   border: none;
   box-shadow: none;
@@ -2284,26 +2270,33 @@ footer span.linkedin-logo {
 #listing-offres .jobs-list #toutes-les-offres {
   width: 100% !important;
 }
-#listing-offres .jobs-list #toutes-les-offres thead th,
-#listing-offres .jobs-list #toutes-les-offres tbody th,
-#listing-offres .jobs-list #toutes-les-offres thead td,
-#listing-offres .jobs-list #toutes-les-offres tbody td {
+#listing-offres .jobs-list #toutes-les-offres.dataTable thead th,
+#listing-offres .jobs-list #toutes-les-offres.dataTable tbody th,
+#listing-offres .jobs-list #toutes-les-offres.dataTable thead td,
+#listing-offres .jobs-list #toutes-les-offres.dataTable tbody td {
   padding: 15px 0;
 }
 @media only screen and (max-width: 767px) {
-  #listing-offres .jobs-list #toutes-les-offres thead th,
-  #listing-offres .jobs-list #toutes-les-offres tbody th,
-  #listing-offres .jobs-list #toutes-les-offres thead td,
-  #listing-offres .jobs-list #toutes-les-offres tbody td {
+  #listing-offres .jobs-list #toutes-les-offres.dataTable thead th,
+  #listing-offres .jobs-list #toutes-les-offres.dataTable tbody th,
+  #listing-offres .jobs-list #toutes-les-offres.dataTable thead td,
+  #listing-offres .jobs-list #toutes-les-offres.dataTable tbody td {
+    padding: 20px 0;
     text-align: center;
     font-size: 13px;
     min-width: 80px;
   }
-  #listing-offres .jobs-list #toutes-les-offres thead th:first-child,
-  #listing-offres .jobs-list #toutes-les-offres tbody th:first-child,
-  #listing-offres .jobs-list #toutes-les-offres thead td:first-child,
-  #listing-offres .jobs-list #toutes-les-offres tbody td:first-child {
+  #listing-offres .jobs-list #toutes-les-offres.dataTable thead th:first-child,
+  #listing-offres .jobs-list #toutes-les-offres.dataTable tbody th:first-child,
+  #listing-offres .jobs-list #toutes-les-offres.dataTable thead td:first-child,
+  #listing-offres .jobs-list #toutes-les-offres.dataTable tbody td:first-child {
     text-align: left;
+  }
+  #listing-offres .jobs-list #toutes-les-offres.dataTable thead th:first-letter,
+  #listing-offres .jobs-list #toutes-les-offres.dataTable tbody th:first-letter,
+  #listing-offres .jobs-list #toutes-les-offres.dataTable thead td:first-letter,
+  #listing-offres .jobs-list #toutes-les-offres.dataTable tbody td:first-letter {
+    margin-left: 2rem;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -2334,6 +2327,11 @@ footer span.linkedin-logo {
   background-color: white !important;
   font-weight: 600;
 }
+@media (max-width: 480px) {
+  #listing-offres .jobs-list #toutes-les-offres tbody td {
+    font-weight: normal;
+  }
+}
 #listing-offres .jobs-list #toutes-les-offres tbody td.wrap,
 #listing-offres .jobs-list #toutes-les-offres tbody th.wrap {
   white-space: unset !important;
@@ -2342,8 +2340,8 @@ footer span.linkedin-logo {
 #listing-offres .jobs-list #toutes-les-offres tbody td:focus {
   outline: none;
 }
-#listing-offres .jobs-list #toutes-les-offres .dtr-inline.collapsed > tbody > tr[role="row"] > td:first-child:before,
-#listing-offres .jobs-list #toutes-les-offres .dtr-inline.collapsed > tbody > tr[role="row"] > th:first-child:before {
+#listing-offres .jobs-list #toutes-les-offres tbody > tr[role="row"] > td:first-child:before,
+#listing-offres .jobs-list #toutes-les-offres tbody > tr[role="row"] > th:first-child:before {
   top: 18px;
   left: 0;
   height: 15px;
@@ -2353,33 +2351,33 @@ footer span.linkedin-logo {
   border: none;
   line-height: 16px;
 }
-#listing-offres .jobs-list #toutes-les-offres table.dataTable > tbody > tr.child ul.dtr-details {
+#listing-offres .jobs-list #toutes-les-offres > tbody > tr.child ul.dtr-details {
   display: block;
   padding: 15px 35px;
   background: whitesmoke;
 }
-#listing-offres .jobs-list #toutes-les-offres table.dataTable > tbody > tr.child ul.dtr-details li {
+#listing-offres .jobs-list #toutes-les-offres > tbody > tr.child ul.dtr-details li {
   border-bottom: 1px solid #d4d4d4;
 }
-#listing-offres .jobs-list #toutes-les-offres table.dataTable > tbody > tr.child ul.dtr-details li span {
+#listing-offres .jobs-list #toutes-les-offres > tbody > tr.child ul.dtr-details li span {
   min-width: unset;
 }
-#listing-offres .jobs-list #toutes-les-offres table.dataTable > tbody > tr.child ul.dtr-details li span.dtr-title:after {
+#listing-offres .jobs-list #toutes-les-offres > tbody > tr.child ul.dtr-details li span.dtr-title:after {
   content: ":";
   display: inline-block;
   margin-left: 3px;
 }
-#listing-offres .jobs-list #toutes-les-offres table.dataTable > tbody > tr.child ul.dtr-details li:last-child {
+#listing-offres .jobs-list #toutes-les-offres > tbody > tr.child ul.dtr-details li:last-child {
   padding-bottom: 0;
 }
-#listing-offres .jobs-list #toutes-les-offres table.dataTable > tbody > tr.child ul.dtr-details li:first-child {
+#listing-offres .jobs-list #toutes-les-offres > tbody > tr.child ul.dtr-details li:first-child {
   padding-top: 0;
 }
 @media only screen and (max-width: 767px) {
-  #listing-offres .jobs-list #toutes-les-offres table.dataTable > tbody > tr.child ul.dtr-details li:last-child .dtr-title {
+  #listing-offres .jobs-list #toutes-les-offres > tbody > tr.child ul.dtr-details li:last-child .dtr-title {
     display: none;
   }
-  #listing-offres .jobs-list #toutes-les-offres table.dataTable > tbody > tr.child ul.dtr-details li:last-child a {
+  #listing-offres .jobs-list #toutes-les-offres > tbody > tr.child ul.dtr-details li:last-child a {
     width: 100%;
     background-color: #4cbfc6;
     color: white;
@@ -2394,9 +2392,9 @@ footer span.linkedin-logo {
     text-align: center;
   }
 }
-#listing-offres .jobs-list #toutes-les-offres table.dataTable thead th,
-#listing-offres .jobs-list #toutes-les-offres table.dataTable thead td,
-#listing-offres .jobs-list #toutes-les-offres table.dataTable.no-footer {
+#listing-offres .jobs-list #toutes-les-offres .dataTable thead th,
+#listing-offres .jobs-list #toutes-les-offres .dataTable thead td,
+#listing-offres .jobs-list #toutes-les-offres .dataTable.no-footer {
   border-color: #d2d2d2;
 }
 #listing-offres .jobs-list #toutes-les-offres .dataTables_paginate {

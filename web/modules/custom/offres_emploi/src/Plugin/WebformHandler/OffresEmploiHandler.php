@@ -36,9 +36,7 @@ class OffresEmploiHandler extends WebformHandlerBase
     {
         $values = $webform_submission->getData();
 
-        $connection = \Drupal::service('database');
-        $offreRepository = new OffreEmploiRepository($connection);
-
+        $offreRepository = \Drupal::service('offres_emploi.repository');
         $offreRepository->updateNbCandidature($values['offre']);
 
         return true;

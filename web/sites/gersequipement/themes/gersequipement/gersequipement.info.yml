@@ -15,6 +15,9 @@ libraries:
   - gersequipement/slick
   - gersequipement/global-styling
   - gersequipement/mmenu
+  - gersequipement/datatables
+  - gersequipement/select2
+  - gersequipement/cookiesJS
 
 stylesheets-remove:
   - core/themes/stable/css/system/components/ajax-progress.module.css

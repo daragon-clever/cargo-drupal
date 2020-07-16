@@ -1,0 +1,6 @@
+services:
+  offres_emploi.import:
+    class: Drupal\offres_emploi\Command\ImportCommand
+    arguments: ['@offres_emploi.repository']
+    tags:
+      - { name: drupal.command }

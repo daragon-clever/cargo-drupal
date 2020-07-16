@@ -559,7 +559,8 @@ footer span.linkedin-logo {
     margin: 30px 0;
   }
 }
-.container-fluid.top h1:after {
+.container-fluid.top h1:after,
+#block-top .first-col .content-text h1::after {
   content: "";
   display: block;
   width: 60px;
@@ -568,7 +569,8 @@ footer span.linkedin-logo {
   margin: 40px 0;
 }
 @media only screen and (max-width: 991px) {
-  .container-fluid.top h1:after {
+  .container-fluid.top h1:after,
+  #block-top .first-col .content-text h1::after {
     margin: 20px auto;
   }
 }
@@ -1178,8 +1180,10 @@ footer span.linkedin-logo {
   padding: 40px 0;
   border-bottom: 1px solid #4a4a49;
 }
-.qsn-content-3 .container {
-  max-width: 1260px;
+@media (min-width: 993px) {
+  .qsn-content-3 .container {
+    max-width: 1260px;
+  }
 }
 .qsn-content-3 .blocks-txt {
   margin: 30px -15px 20px;
@@ -2103,3 +2107,856 @@ footer span.linkedin-logo {
   display: inline-block;
   margin-top: 10px;
 }
+/*** General - Offre Emploi ***/
+#listing-offres .container,
+#offre .container {
+  max-width: 1350px;
+}
+#offre-apply .container {
+  max-width: 1042px;
+}
+/*** END General - Offre Emploi ***/
+/*** Block Top - Offre Emploi ***/
+#block-top {
+  border-bottom: 1px solid #d40058;
+}
+#block-top .first-col {
+  padding: 0 6rem;
+}
+@media (max-width: 1440px) {
+  #block-top .first-col {
+    padding: 0 3rem;
+  }
+}
+@media (max-width: 1024px) {
+  #block-top .first-col {
+    padding: 0 1rem;
+  }
+}
+#block-top .first-col .content-text h1 {
+  font-size: 23px;
+  line-height: 1.4;
+  margin: 0;
+  color: #d40058;
+}
+@media (max-width: 768px) {
+  #block-top .first-col .content-text h1 {
+    text-align: center;
+  }
+}
+#block-top .first-col .content-btn {
+  margin: 40px 0 0;
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 1440px) {
+  #block-top .first-col .content-btn {
+    margin: 20px 0 20px;
+  }
+}
+@media (max-width: 768px) {
+  #block-top .first-col .content-btn {
+    margin: 40px 0;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+@media (max-width: 480px) {
+  #block-top .first-col .content-btn {
+    justify-content: space-between;
+  }
+}
+#block-top .first-col .content-btn .cta {
+  width: auto;
+  max-width: 230px;
+}
+#block-top .first-col .content-btn .cta2 {
+  color: #d40058 !important;
+  font-weight: 700;
+  text-decoration: underline;
+  padding: 0 20px;
+  display: inline-block;
+  margin-top: 1rem;
+  width: auto;
+  max-width: 230px;
+}
+@media (max-width: 768px) {
+  #block-top .first-col .content-btn .cta2 {
+    line-height: 40px;
+    margin-top: 0;
+  }
+}
+#block-top .second-col .content-img {
+  height: auto;
+  position: relative;
+  overflow: hidden;
+}
+@media (max-width: 1024px) {
+  #block-top .second-col .content-img {
+    height: auto;
+  }
+}
+/*** End Block Top - Offre Emploi ***/
+/*** OFFRES D'EMPLOI - LISTE ***/
+#listing-offres {
+  padding: 30px 0 0 0;
+  font-size: 14px;
+}
+#listing-offres a {
+  color: #d40058;
+}
+#listing-offres h3 {
+  font-weight: 700;
+  font-size: 23px;
+  border-bottom: 1px solid;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  color: #d40058;
+}
+@media only screen and (max-width: 767px) {
+  #listing-offres .filters {
+    margin-bottom: 30px;
+  }
+}
+#listing-offres .filters select,
+#listing-offres .filters #searchbox {
+  width: 100%;
+  margin: 5px 0;
+  height: 40px;
+  padding: 10px;
+  border: 1px solid #d2d2d2;
+}
+#listing-offres .filters #searchbox {
+  background: url("../images/offres/picto-search.png") no-repeat center right 10px transparent;
+  padding-right: 35px;
+  padding-left: 15px;
+  font-weight: 600;
+}
+@media only screen and (max-width: 767px) {
+  #listing-offres .filters #groupe-filtres-offres-emploi {
+    display: none;
+  }
+  #listing-offres .filters #groupe-filtres-offres-emploi .select2-container {
+    width: 100% !important;
+  }
+}
+#listing-offres .filters #groupe-filtres-offres-emploi .filtres-offres-emploi {
+  margin-top: 15px;
+}
+#listing-offres .filters #groupe-filtres-offres-emploi .filtres-offres-emploi b {
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  color: #b3b3b3;
+  display: block;
+}
+#listing-offres .filters .cta-filter {
+  width: 100%;
+  background-color: #d40058;
+  color: white;
+  border: none;
+  box-shadow: none;
+  padding: 0 25px;
+  line-height: 40px;
+  cursor: pointer;
+  font-weight: 500;
+  position: relative;
+}
+#listing-offres .filters .cta-filter.top {
+  margin-bottom: 13px;
+}
+#listing-offres .filters .cta-filter.bottom {
+  margin-top: 15px;
+}
+#listing-offres .jobs-list #toutes-les-offres {
+  width: 100% !important;
+}
+#listing-offres .jobs-list #toutes-les-offres.dataTable thead th,
+#listing-offres .jobs-list #toutes-les-offres.dataTable tbody th,
+#listing-offres .jobs-list #toutes-les-offres.dataTable thead td,
+#listing-offres .jobs-list #toutes-les-offres.dataTable tbody td {
+  padding: 15px 0;
+}
+@media only screen and (max-width: 767px) {
+  #listing-offres .jobs-list #toutes-les-offres.dataTable thead th,
+  #listing-offres .jobs-list #toutes-les-offres.dataTable tbody th,
+  #listing-offres .jobs-list #toutes-les-offres.dataTable thead td,
+  #listing-offres .jobs-list #toutes-les-offres.dataTable tbody td {
+    padding: 20px 0;
+    text-align: center;
+    font-size: 13px;
+    min-width: 80px;
+  }
+  #listing-offres .jobs-list #toutes-les-offres.dataTable thead th:first-child,
+  #listing-offres .jobs-list #toutes-les-offres.dataTable tbody th:first-child,
+  #listing-offres .jobs-list #toutes-les-offres.dataTable thead td:first-child,
+  #listing-offres .jobs-list #toutes-les-offres.dataTable tbody td:first-child {
+    text-align: left;
+  }
+  #listing-offres .jobs-list #toutes-les-offres.dataTable thead th:first-letter,
+  #listing-offres .jobs-list #toutes-les-offres.dataTable tbody th:first-letter,
+  #listing-offres .jobs-list #toutes-les-offres.dataTable thead td:first-letter,
+  #listing-offres .jobs-list #toutes-les-offres.dataTable tbody td:first-letter {
+    margin-left: 2rem;
+  }
+}
+@media only screen and (max-width: 767px) {
+  #listing-offres .jobs-list #toutes-les-offres thead {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+}
+#listing-offres .jobs-list #toutes-les-offres thead tr {
+  color: #b3b3b3;
+}
+#listing-offres .jobs-list #toutes-les-offres thead .sorting,
+#listing-offres .jobs-list #toutes-les-offres thead .sorting_asc,
+#listing-offres .jobs-list #toutes-les-offres thead .sorting_desc,
+#listing-offres .jobs-list #toutes-les-offres thead .sorting_asc_disabled,
+#listing-offres .jobs-list #toutes-les-offres thead .sorting_desc_disabled {
+  background: none;
+}
+#listing-offres .jobs-list #toutes-les-offres tbody tr {
+  cursor: pointer;
+  transition: color 0.3s;
+}
+#listing-offres .jobs-list #toutes-les-offres tbody tr:hover {
+  color: #d40058;
+}
+#listing-offres .jobs-list #toutes-les-offres tbody td {
+  background-color: white !important;
+  font-weight: 600;
+}
+@media (max-width: 480px) {
+  #listing-offres .jobs-list #toutes-les-offres tbody td {
+    font-weight: normal;
+  }
+}
+#listing-offres .jobs-list #toutes-les-offres tbody td.wrap,
+#listing-offres .jobs-list #toutes-les-offres tbody th.wrap {
+  white-space: unset !important;
+}
+#listing-offres .jobs-list #toutes-les-offres tbody tr:focus,
+#listing-offres .jobs-list #toutes-les-offres tbody td:focus {
+  outline: none;
+}
+#listing-offres .jobs-list #toutes-les-offres tbody > tr[role="row"] > td:first-child:before,
+#listing-offres .jobs-list #toutes-les-offres tbody > tr[role="row"] > th:first-child:before {
+  top: 18px;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background: black;
+  box-shadow: none;
+  border: none;
+  line-height: 16px;
+}
+#listing-offres .jobs-list #toutes-les-offres > tbody > tr.child ul.dtr-details {
+  display: block;
+  padding: 15px 35px;
+  background: whitesmoke;
+}
+#listing-offres .jobs-list #toutes-les-offres > tbody > tr.child ul.dtr-details li {
+  border-bottom: 1px solid #d4d4d4;
+}
+#listing-offres .jobs-list #toutes-les-offres > tbody > tr.child ul.dtr-details li span {
+  min-width: unset;
+}
+#listing-offres .jobs-list #toutes-les-offres > tbody > tr.child ul.dtr-details li span.dtr-title:after {
+  content: ":";
+  display: inline-block;
+  margin-left: 3px;
+}
+#listing-offres .jobs-list #toutes-les-offres > tbody > tr.child ul.dtr-details li:last-child {
+  padding-bottom: 0;
+}
+#listing-offres .jobs-list #toutes-les-offres > tbody > tr.child ul.dtr-details li:first-child {
+  padding-top: 0;
+}
+@media only screen and (max-width: 767px) {
+  #listing-offres .jobs-list #toutes-les-offres > tbody > tr.child ul.dtr-details li:last-child .dtr-title {
+    display: none;
+  }
+  #listing-offres .jobs-list #toutes-les-offres > tbody > tr.child ul.dtr-details li:last-child a {
+    width: 100%;
+    background-color: #4cbfc6;
+    color: white;
+    border: none;
+    box-shadow: none;
+    padding: 0 25px;
+    line-height: 40px;
+    cursor: pointer;
+    font-weight: 500;
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+  }
+}
+#listing-offres .jobs-list #toutes-les-offres .dataTable thead th,
+#listing-offres .jobs-list #toutes-les-offres .dataTable thead td,
+#listing-offres .jobs-list #toutes-les-offres .dataTable.no-footer {
+  border-color: #d2d2d2;
+}
+#listing-offres .jobs-list #toutes-les-offres .dataTables_paginate {
+  text-align: center;
+  float: none;
+}
+#listing-offres .jobs-list #toutes-les-offres .dataTables_paginate .paginate_button {
+  color: #80807f !important;
+  background: none !important;
+  border: none !important;
+  border-radius: 0;
+  margin: 15px;
+  padding: 0;
+  min-width: 15px;
+  box-shadow: none !important;
+}
+#listing-offres .jobs-list #toutes-les-offres .dataTables_paginate .paginate_button.current {
+  border-bottom: 1px solid !important;
+  font-weight: bold;
+}
+#listing-offres .jobs-list #toutes-les-offres .dataTables_paginate .paginate_button:hover {
+  color: inherit !important;
+}
+#listing-offres .jobs-list #toutes-les-offres_paginate {
+  width: 100%;
+  text-align: center;
+  margin: 2rem 0;
+}
+#listing-offres .jobs-list #toutes-les-offres_paginate span a.paginate_button {
+  background: white;
+  border: 1px solid rgba(212, 0, 88, 0.5);
+  border-radius: 25%;
+  font-weight: 600;
+}
+#listing-offres .jobs-list #toutes-les-offres_paginate span a.paginate_button:hover {
+  color: inherit !important;
+}
+#listing-offres .jobs-list #toutes-les-offres_paginate span a.current {
+  background: #d40058;
+  color: white !important;
+}
+#listing-offres .jobs-list .no-offers {
+  padding: 2rem 10rem;
+  text-align: center;
+  background-color: #f6f6f6;
+  font-weight: 500;
+  font-size: 18px;
+}
+@media (max-width: 1024px) {
+  #listing-offres .jobs-list .no-offers {
+    padding: 2rem 5rem;
+  }
+}
+@media (max-width: 768px) {
+  #listing-offres .jobs-list .no-offers {
+    padding: 2rem;
+  }
+}
+@media (max-width: 480px) {
+  #listing-offres .jobs-list .no-offers {
+    text-align: justify;
+    padding: 1rem;
+  }
+}
+#listing-offres .jobs-list .no-offers a {
+  color: #d40058;
+  text-decoration: underline;
+}
+#listing-offres .select2-container .select2-selection--single,
+#listing-offres .select2-container--default .select2-selection--single .select2-selection__arrow {
+  height: 40px;
+  padding-left: 8px;
+}
+#listing-offres .select2-selection--single {
+  position: relative;
+  border: 1px solid #d2d2d2;
+  border-radius: 0;
+}
+#listing-offres .select2-selection--single .select2-selection__rendered {
+  line-height: 40px;
+}
+#listing-offres .select2-search {
+  display: none !important;
+}
+/*** END OFFRES D'EMPLOI - LISTE ***/
+/*** OFFRE D'EMPLOI - FICHE ***/
+#offre {
+  font-size: 14px;
+  margin: 20px 0;
+}
+#offre h1,
+#offre h2 {
+  border-bottom: 1px solid #d40058;
+  padding-bottom: 10px;
+  font-size: 23px;
+  font-weight: 600;
+  color: #d40058;
+}
+#offre .detail-offre > div > div {
+  margin: 15px 0;
+}
+#offre .detail-offre > div > div:first-child {
+  margin-top: 0;
+}
+#offre .detail-offre > div > div:last-child {
+  margin-bottom: 0;
+}
+#offre .detail-offre .left .info-title {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  color: #b3b3b3;
+  display: block;
+  font-weight: bold;
+}
+#offre .detail-offre .left .info-content {
+  color: #232323;
+  border: 1px solid #d2d2d2;
+  height: 40px;
+  line-height: 40px;
+  padding-left: 20px;
+  width: 100%;
+  display: block;
+  font-weight: 500;
+}
+#offre .detail-offre .left .btn-cta {
+  display: block;
+  margin-top: 20px;
+}
+#offre .detail-offre .left .btn-cta:hover {
+  text-decoration: none;
+  transition: all 0.3s;
+}
+#offre .detail-offre .left .btn-cta:hover:hover {
+  opacity: 0.7;
+}
+#offre .detail-offre .left .btn-cta button {
+  width: 100%;
+  background-color: #d40058;
+  color: white;
+  border: none;
+  box-shadow: none;
+  line-height: 40px;
+  cursor: pointer;
+  font-weight: 600;
+  position: relative;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+@media only screen and (max-width: 767px) {
+  #offre .detail-offre .left .btn-cta button {
+    max-width: 260px;
+    display: block;
+    margin: 0 auto;
+  }
+}
+#offre .detail-offre .left .btn-cta button:before {
+  background: url("../images/offres/picto-checked.png") no-repeat center transparent;
+  height: 13px;
+  width: 17px;
+  position: absolute;
+  left: 30%;
+  display: block;
+  content: "";
+  top: 14px;
+}
+@media (max-width: 1024px) {
+  #offre .detail-offre .left .btn-cta button:before {
+    left: 22%;
+  }
+}
+@media (max-width: 768px) {
+  #offre .detail-offre .left .btn-cta button:before {
+    left: 14%;
+  }
+}
+@media (max-width: 480px) {
+  #offre .detail-offre .left .btn-cta button:before {
+    left: 25%;
+  }
+}
+#offre .detail-offre .right b.title {
+  text-transform: uppercase;
+  border-bottom: 1px solid;
+}
+#offre .detail-offre .right .txt-grey {
+  color: #b3b3b3;
+  font-weight: 500;
+}
+#offre .detail-offre .right br {
+  display: none;
+}
+#offre .detail-offre a.back {
+  color: #d40058;
+  border-bottom: 1px solid;
+  text-decoration: none;
+  transition: all 0.3s;
+  font-weight: 600;
+}
+#offre .detail-offre a.back:hover {
+  opacity: 0.8;
+}
+/*** END OFFRE D'EMPLOI - FICHE ***/
+/*** OFFRE D'EMPLOI - CANDIDATURE FORM ***/
+#offre-apply {
+  padding: 35px 0 50px;
+}
+#offre-apply .candidature-offre h1 {
+  border-bottom: 1px solid;
+  padding-bottom: 20px;
+  margin-bottom: 50px;
+  margin-top: 15px;
+  font-size: 24px;
+  color: #d40058;
+  font-weight: 600;
+}
+#offre-apply #webform-submission-candidature-spontanee-add-form .form-item,
+#offre-apply #webform-submission-contact-node-10-add-form .form-item {
+  position: relative;
+}
+#offre-apply #webform-submission-candidature-spontanee-add-form .form-item input,
+#offre-apply #webform-submission-contact-node-10-add-form .form-item input {
+  height: 40px;
+}
+#offre-apply #webform-submission-candidature-spontanee-add-form .form-item input,
+#offre-apply #webform-submission-contact-node-10-add-form .form-item input,
+#offre-apply #webform-submission-candidature-spontanee-add-form .form-item textarea,
+#offre-apply #webform-submission-contact-node-10-add-form .form-item textarea {
+  width: 100%;
+  display: inline-block;
+  border: 1px solid #d2d2d2;
+  padding: 7px 5px;
+  outline: none;
+  font-size: 14px;
+}
+#offre-apply #webform-submission-candidature-spontanee-add-form .form-item textarea,
+#offre-apply #webform-submission-contact-node-10-add-form .form-item textarea {
+  margin-bottom: 0;
+}
+@media only screen and (max-width: 767px) {
+  #offre-apply #webform-submission-candidature-spontanee-add-form .form-item textarea,
+  #offre-apply #webform-submission-contact-node-10-add-form .form-item textarea {
+    margin-top: 5px;
+  }
+}
+#offre-apply #webform-submission-candidature-spontanee-add-form .form-item > label,
+#offre-apply #webform-submission-contact-node-10-add-form .form-item > label {
+  position: absolute;
+  left: 10px;
+  top: 16px;
+  background: white;
+  padding: 0 5px;
+  transition: all 0.3s;
+  margin: 0;
+  line-height: 1;
+  font-size: 14px;
+}
+@media only screen and (max-width: 767px) {
+  #offre-apply #webform-submission-candidature-spontanee-add-form .form-item:not(.form-wrapper),
+  #offre-apply #webform-submission-contact-node-10-add-form .form-item:not(.form-wrapper) {
+    margin: 10px 0;
+  }
+  #offre-apply #webform-submission-candidature-spontanee-add-form .form-item#edit-piece-jointe,
+  #offre-apply #webform-submission-contact-node-10-add-form .form-item#edit-piece-jointe {
+    margin-top: 10px;
+  }
+}
+#offre-apply #webform-submission-candidature-spontanee-add-form input:focus + label,
+#offre-apply #webform-submission-contact-node-10-add-form input:focus + label,
+#offre-apply #webform-submission-candidature-spontanee-add-form input.js-not-empty + label,
+#offre-apply #webform-submission-contact-node-10-add-form input.js-not-empty + label,
+#offre-apply #webform-submission-candidature-spontanee-add-form textarea.js-not-empty + label,
+#offre-apply #webform-submission-contact-node-10-add-form textarea.js-not-empty + label,
+#offre-apply #webform-submission-candidature-spontanee-add-form textarea:focus + label,
+#offre-apply #webform-submission-contact-node-10-add-form textarea:focus + label {
+  top: -2px;
+  color: #9e9e9e;
+}
+#offre-apply #webform-submission-candidature-spontanee-add-form .select2-container,
+#offre-apply #webform-submission-contact-node-10-add-form .select2-container {
+  margin-top: 10px;
+}
+#offre-apply #webform-submission-candidature-spontanee-add-form .select2-container .select2-selection,
+#offre-apply #webform-submission-contact-node-10-add-form .select2-container .select2-selection {
+  border-radius: 0;
+  border-color: #d2d2d2;
+  outline: none;
+  height: 40px;
+}
+#offre-apply #webform-submission-candidature-spontanee-add-form .select2-container .select2-selection__rendered,
+#offre-apply #webform-submission-contact-node-10-add-form .select2-container .select2-selection__rendered {
+  line-height: 40px;
+  font-size: 14px;
+}
+#offre-apply #webform-submission-candidature-spontanee-add-form .select2-container .select2-selection__arrow,
+#offre-apply #webform-submission-contact-node-10-add-form .select2-container .select2-selection__arrow {
+  height: 100%;
+  top: 0;
+}
+#offre-apply #webform-submission-candidature-spontanee-add-form .form-submit,
+#offre-apply #webform-submission-contact-node-10-add-form .form-submit {
+  background: #d40058;
+  border: none;
+  color: white;
+  width: 100%;
+  padding: 10px 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+#offre-apply #webform-submission-candidature-spontanee-add-form .form-submit:hover,
+#offre-apply #webform-submission-contact-node-10-add-form .form-submit:hover {
+  opacity: 0.8;
+}
+#offre-apply #webform-submission-candidature-spontanee-add-form .webform-element-description,
+#offre-apply #webform-submission-contact-node-10-add-form .webform-element-description,
+#offre-apply #webform-submission-candidature-spontanee-add-form #edit-piece-jointe label,
+#offre-apply #webform-submission-contact-node-10-add-form #edit-piece-jointe label {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #b3b3b3;
+  font-size: 14px;
+}
+#offre-apply #webform-submission-candidature-spontanee-add-form legend,
+#offre-apply #webform-submission-contact-node-10-add-form legend {
+  font-size: 18px;
+  color: #232323;
+  margin: 0;
+  font-weight: 600;
+  border-bottom: 1px solid #d2d2d2;
+  padding-bottom: 1em;
+}
+@media only screen and (max-width: 767px) {
+  #offre-apply #webform-submission-candidature-spontanee-add-form legend,
+  #offre-apply #webform-submission-contact-node-10-add-form legend {
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+  }
+}
+#offre-apply #webform-submission-candidature-spontanee-add-form #edit-piece-jointe .webform-flex--container,
+#offre-apply #webform-submission-contact-node-10-add-form #edit-piece-jointe .webform-flex--container {
+  margin: 0;
+}
+#offre-apply #webform-submission-candidature-spontanee-add-form #edit-piece-jointe .js-hide,
+#offre-apply #webform-submission-contact-node-10-add-form #edit-piece-jointe .js-hide {
+  display: none;
+}
+#offre-apply #webform-submission-candidature-spontanee-add-form #edit-piece-jointe span.file,
+#offre-apply #webform-submission-contact-node-10-add-form #edit-piece-jointe span.file {
+  width: 100%;
+  border: 1px solid #d2d2d2;
+  display: block;
+  margin-top: 8px;
+  padding: 5px 10px;
+  background: white;
+  position: absolute;
+  height: 36px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#offre-apply #webform-submission-candidature-spontanee-add-form #edit-piece-jointe input,
+#offre-apply #webform-submission-contact-node-10-add-form #edit-piece-jointe input {
+  z-index: 1;
+  cursor: pointer;
+}
+#offre-apply #webform-submission-candidature-spontanee-add-form #edit-piece-jointe input.button,
+#offre-apply #webform-submission-contact-node-10-add-form #edit-piece-jointe input.button {
+  margin-top: 50px;
+  border: none;
+  background: none;
+  color: black;
+  text-transform: inherit;
+  font-weight: inherit;
+  text-align: right;
+  padding: 0 10px 0 0;
+}
+#offre-apply #webform-submission-candidature-spontanee-add-form #edit-piece-jointe .fieldset-wrapper > div,
+#offre-apply #webform-submission-contact-node-10-add-form #edit-piece-jointe .fieldset-wrapper > div {
+  margin: 20px 0;
+  min-height: 70px;
+}
+@media only screen and (max-width: 767px) {
+  #offre-apply #webform-submission-candidature-spontanee-add-form #edit-piece-jointe .fieldset-wrapper > div,
+  #offre-apply #webform-submission-contact-node-10-add-form #edit-piece-jointe .fieldset-wrapper > div {
+    margin: 0;
+  }
+}
+#offre-apply #webform-submission-candidature-spontanee-add-form #edit-piece-jointe .fieldset-wrapper > div:last-child,
+#offre-apply #webform-submission-contact-node-10-add-form #edit-piece-jointe .fieldset-wrapper > div:last-child {
+  margin-bottom: 25px;
+}
+#offre-apply #webform-submission-candidature-spontanee-add-form #edit-piece-jointe label,
+#offre-apply #webform-submission-contact-node-10-add-form #edit-piece-jointe label {
+  position: relative;
+  top: 0;
+  left: 0;
+  padding: 0;
+}
+#offre-apply #webform-submission-candidature-spontanee-add-form #edit-piece-jointe input[type=file],
+#offre-apply #webform-submission-contact-node-10-add-form #edit-piece-jointe input[type=file] {
+  opacity: 0;
+  position: absolute;
+  top: 30px;
+  cursor: pointer;
+}
+#offre-apply #webform-submission-candidature-spontanee-add-form #edit-piece-jointe .webform-element-description,
+#offre-apply #webform-submission-contact-node-10-add-form #edit-piece-jointe .webform-element-description {
+  border: 1px solid #d2d2d2;
+  padding: 12px 20px;
+  position: absolute;
+  margin-top: 8px;
+  width: 100%;
+  color: black;
+  text-transform: inherit;
+  font-weight: inherit;
+  cursor: pointer;
+}
+#offre-apply #webform-submission-candidature-spontanee-add-form #edit-piece-jointe .webform-element-description:after,
+#offre-apply #webform-submission-contact-node-10-add-form #edit-piece-jointe .webform-element-description:after {
+  content: "+";
+  display: block;
+  font-size: 20px;
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  font-family: initial;
+  cursor: pointer;
+}
+#offre-apply #webform-submission-candidature-spontanee-add-form #edit-right > legend:first-child,
+#offre-apply #webform-submission-contact-node-10-add-form #edit-right > legend:first-child {
+  display: none;
+}
+#offre-apply #webform-submission-candidature-spontanee-add-form #edit-actions-submit,
+#offre-apply #webform-submission-contact-node-10-add-form #edit-actions-submit {
+  border: none;
+}
+#offre-apply #webform-submission-candidature-spontanee-add-form input:hover::placeholder,
+#offre-apply #webform-submission-contact-node-10-add-form input:hover::placeholder {
+  color: white;
+}
+#offre-apply #webform-submission-candidature-spontanee-add-form .select2-hidden-accessible,
+#offre-apply #webform-submission-contact-node-10-add-form .select2-hidden-accessible {
+  height: 45px !important;
+  width: 100% !important;
+}
+#offre-apply #webform-submission-candidature-spontanee-add-form .messages--error,
+#offre-apply #webform-submission-contact-node-10-add-form .messages--error {
+  margin-top: 60px;
+  z-index: -1;
+  color: #d40000;
+  font-size: 13px;
+}
+@media only screen and (max-width: 767px) {
+  #offre-apply #webform-submission-candidature-spontanee-add-form,
+  #offre-apply #webform-submission-contact-node-10-add-form {
+    margin-top: 15px;
+  }
+}
+#offre-apply #webform-submission-contact-node-10-add-form {
+  max-width: 600px;
+}
+#offre-apply #webform-submission-contact-node-10-add-form .webform-flexbox {
+  margin: 0 -0.5em;
+}
+@media only screen and (max-width: 767px) {
+  #offre-apply #webform-submission-contact-node-10-add-form .webform-flexbox {
+    margin: 0;
+  }
+}
+#offre-apply #webform-submission-contact-node-10-add-form .form-item {
+  margin-top: 15px;
+}
+#offre-apply #webform-submission-contact-node-10-add-form .webform-button--submit {
+  background: #4cbfc6;
+}
+#offre-apply #webform-submission-contact-node-10-add-form .field-prefix {
+  position: absolute;
+  top: 14px;
+  right: 10px;
+  color: #4cbfc6;
+  z-index: 10;
+}
+#offre-apply #webform-submission-contact-node-10-add-form .js-form-type-select .field-prefix {
+  top: 17px;
+  right: 30px;
+}
+#offre-apply #webform-submission-contact-node-10-add-form textarea {
+  margin-bottom: 20px !important;
+}
+@media only screen and (max-width: 767px) {
+  #offre-apply #webform-submission-contact-node-10-add-form textarea {
+    margin-bottom: 0 !important;
+  }
+}
+#offre-apply #webform-submission-contact-node-10-add-form .g-recaptcha {
+  transform: scale(0.9);
+}
+#offre-apply #webform-submission-contact-node-10-add-form .g-recaptcha > div {
+  margin: 0 auto;
+}
+@media only screen and (max-width: 767px) {
+  #offre-apply #webform-submission-contact-node-10-add-form .g-recaptcha {
+    margin-bottom: 10px;
+  }
+}
+#offre-apply .form-item-checkbox-rgpd input {
+  width: auto !important;
+}
+#offre-apply .form-item-checkbox-rgpd .description {
+  text-align: justify;
+}
+#offre-apply .form-item-checkbox-rgpd .description #edit-checkbox-rgpd--description {
+  text-transform: inherit !important;
+}
+#offre-apply .btn-back {
+  color: #d40058;
+  font-weight: 600;
+  margin: 2rem 0 0;
+  text-decoration: underline;
+}
+@media (max-width: 480px) {
+  #offre-apply .btn-back {
+    margin-top: 40px;
+  }
+}
+#candidature h1 {
+  margin-top: 40px;
+  padding: 0;
+}
+@media only screen and (max-width: 767px) {
+  #candidature h1 {
+    font-size: 28px;
+    margin-top: 20px;
+  }
+}
+#candidature .imgs-bg > div:before {
+  display: none;
+}
+#candidature .block-text {
+  padding: 0 30px 15px 30px;
+  margin: 0 auto;
+}
+#candidature .block-text .txt {
+  background-color: rgba(35, 35, 35, 0.7);
+  font-family: 'Libre Baskerville', serif;
+  color: white;
+  font-size: 24px;
+  padding: 20px;
+  margin-top: 30px;
+}
+#candidature .block-text .txt a {
+  color: #f7e2a1;
+  text-decoration: underline;
+}
+@media only screen and (max-width: 767px) {
+  #candidature .block-text .txt {
+    font-size: 21px;
+  }
+  #candidature .block-text .txt br {
+    display: none;
+  }
+}
+/*** END OFFRE D'EMPLOI - CANDIDATURE FORM ***/

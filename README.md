@@ -65,3 +65,6 @@ En cas d'arrêt forcé de mysql et si ce dernier ne rédémarre pas correctement
 ```bash
 command: mysqld --tc-heuristic-recover=ROLLBACK
 ```
+
+#Lancer une command Drupal
+docker-compose run --rm php vendor/bin/drupal --uri=web.gersequipement.svd1pweb-stm.ressinfo.ad

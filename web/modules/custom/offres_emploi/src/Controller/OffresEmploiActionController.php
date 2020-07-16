@@ -1,98 +1,48 @@
 <?php
+declare(strict_types=1);
 
 namespace Drupal\offres_emploi\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-use Drupal\Core\Url;
-use Symfony\Component\HttpFoundation\Request;
-use \Drupal\Core\Database\Database;
+use Drupal\offres_emploi\Helper\OffreEmploiHelperTrait;
+use Drupal\offres_emploi\OffreEmploiRepository;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class OffresEmploiActionController extends ControllerBase
 {
-    public $siteName;
-    public $table;
+    /**
+     * @var OffreEmploiRepository
+     */
+    private $offreRepository;
 
-    private $conn;
 
-    public function __construct()
+    use OffreEmploiHelperTrait;
+
+    /**
+     * {@inheritdoc}
+     */
+    public static function create(ContainerInterface $container) {
+        return new static($container->get('offres_emploi.repository'));
+    }
+
+    public function __construct(OffreEmploiRepository $offreRepository)
     {
-        $this->siteName = $this->getSiteName();
-        $this->table = "offres_emploi";
-
-        $this->setDatabaseConn();
-    }
-
-    private function getSiteName() {
-        $sitePath = \Drupal::service('site.path');
-        $sitePath = explode('/', $sitePath);
-        $siteName = $sitePath[1];
-
-        return $siteName;
-    }
-
-    private function setDatabaseConn()
-    {
-        if ($this->siteName == "groupecargo") {
-            $this->conn = \Drupal::database();
-        } else {
-            Database::setActiveConnection('external');
-            $this->conn = Database::getConnection();
-        }
-
-        return $this->conn;
+        $this->offreRepository = $offreRepository;
     }
 
 
-    public function postuler($ref)
+    public function apply($ref)
     {
         if (isset($ref)) {
             $webform = \Drupal::entityTypeManager()->getStorage('webform')->load('postuler_annonce');
 
-            $dataPoste = $this->getOffre($ref);
-            $namePoste = $dataPoste["intitulePoste"];
+            $dataPoste = $this->offreRepository->findBy(['codeRecrutement' => $ref, 'active' => 1]);
 
-            $build = [
+            return [
                 '#theme' => 'offres_emploi--form-postuler',
-                '#data' => $namePoste,
+                '#data' => $dataPoste[0]->intitulePoste,
                 "#form" => $webform->getSubmissionForm()
             ];
-
-            return $build;
-        } else {
-            die();
         }
-    }
-
-    public function getOffre($ref)
-    {
-        if ($this->siteName == "groupecargo") {
-            $offre = $this->conn->select($this->table,"codeRecrutement")
-                ->fields("codeRecrutement")
-                ->condition('codeRecrutement', $ref, '=')
-                ->condition('active', 1, '=')
-                ->execute()
-                ->fetchAssoc();
-        } else {
-            $societe = $this->getNameDbSociete();
-            $offre = $this->conn->select($this->table,"codeRecrutement")
-                ->fields("codeRecrutement")
-                ->condition('filialeSociete', $societe, '=')
-                ->condition('codeRecrutement', $ref, '=')
-                ->condition('active', 1, '=')
-                ->execute()
-                ->fetchAssoc();
-        }
-
-        return $offre;
-    }
-
-    private function getNameDbSociete() {
-        $allNameDrupal = array("blog-sitram","ostaria","turbocar","yliades");
-        $allNameJson = array("sitram","ostaria","turbocar","yliades");
-        $arr = array_combine($allNameDrupal, $allNameJson);
-
-        $data = $arr[$this->siteName];
-
-        return $data;
     }
 }

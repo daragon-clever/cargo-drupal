@@ -191,7 +191,6 @@ class ImportCommand extends Command
 
         return str_replace($this->siteName, self::NAME_CARGO_DIRECTORY_PROJECT, $path);
     }
-     * Check if the Json is Valid
 
     /**
      * Check if the Json is Valid

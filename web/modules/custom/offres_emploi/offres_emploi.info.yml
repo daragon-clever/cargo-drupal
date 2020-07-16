@@ -7,3 +7,4 @@ dependencies:
   - drupal:rest
   - drupal:basic_auth
   - drupal:hal
+  - drupal:restui

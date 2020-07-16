@@ -113,12 +113,12 @@ class ImportCommand extends Command
                         }
                     }
                 }
-
                 $this->disableAllOffresNotIn($allRefsActive);
             }
 
             return $this->getIo()->info('[OFFRES EMPLOI] importing offers done with success !');
         }
+        \Drupal::logger('offres_emploi')->error('[OFFRES EMPLOI] Error importing offers ! No Data or Json file is invalid');
         return $this->getIo()->error('[OFFRES EMPLOI] Error importing offers ! No Data or Json file is invalid');
     }
 
@@ -191,9 +191,10 @@ class ImportCommand extends Command
 
         return str_replace($this->siteName, self::NAME_CARGO_DIRECTORY_PROJECT, $path);
     }
+     * Check if the Json is Valid
 
     /**
-     * Check if tje Json is Valid
+     * Check if the Json is Valid
      * @param $data
      * @return bool
      */
@@ -210,9 +211,7 @@ class ImportCommand extends Command
     private function disableAllOffresNotIn(array $refs)
     {
         if (!empty($refs)) {
-            foreach ($refs as $ref) {
-                $this->offreRepository->disable($ref);
-            }
+            $this->offreRepository->disable($refs);
         }
     }
 }

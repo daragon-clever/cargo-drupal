@@ -209,7 +209,7 @@ class ImportCommand extends Command
      */
     private function disableAllOffresNotIn(array $refs)
     {
-        if (!empty($ref)) {
+        if (!empty($refs)) {
             foreach ($refs as $ref) {
                 $this->offreRepository->disable($ref);
             }

@@ -147,6 +147,7 @@ class OffreEmploiRepository
 
 
     /**
+     * Find All by
      * @param array $entry
      * @return array
      */

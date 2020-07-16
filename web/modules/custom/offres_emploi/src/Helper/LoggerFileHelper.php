@@ -3,10 +3,6 @@ declare(strict_types=1);
 
 namespace Drupal\offres_emploi\Helper;
 
-use Symfony\Component\Serializer\Serializer;
-use Symfony\Component\Serializer\Encoder\CsvEncoder;
-use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
-
 class LoggerFileHelper
 {
     private const NAME_LOG_FILE = 'logip--annonce.csv';

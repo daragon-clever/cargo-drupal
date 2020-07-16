@@ -84,6 +84,7 @@
         "drupal/private_content-private_content": "^2.0@alpha",
         "drupal/recaptcha": "^2.3",
         "drupal/rename_admin_paths": "^2.0",
+        "drupal/restui": "^1.18",
         "drupal/robotstxt": "^1.2",
         "drupal/search_kint": "^1.0",
         "drupal/simple_menu_icons": "^2.1",

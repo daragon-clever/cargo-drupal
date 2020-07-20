@@ -10,6 +10,7 @@ use Drupal\rest\Plugin\ResourceBase;
 use Drupal\rest\ResourceResponse;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\Finder\Exception\AccessDeniedException;
 use Symfony\Component\HttpFoundation\Request;
 use Drupal\offres_emploi\Helper\OffreEmploiHelperTrait;
 
@@ -80,9 +81,9 @@ class RestOffresEmploi extends ResourceBase
      */
     public function get(): ResourceResponse
     {
-        if (!$this->currentUser->hasPermission('use ' . $this->pluginId . ' service')) {
-            $this->logger->error( $this->currentUser->getAccountName() . ' : Access denied for this user to the Api');
-            throw new AccessDeniedHttpException('Access denied for this user.');
+        if (!$this->currentUser->isAuthenticated()) {
+            $this->logger->error( $this->currentUser->getAccountName() . ' : Access denied for this user to the Api. You need Authentication');
+            throw new AccessDeniedException('Access denied for this user. You need Authentication');
         }
 
         $nameSite = $this->currentRequest->get('name');

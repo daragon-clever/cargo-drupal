@@ -5,6 +5,6 @@ package: Custom
 type: module
 dependencies:
   - drupal:rest
-  - drupal:basic_auth
+  - drupal:simple_oauth
   - drupal:hal
   - drupal:restui

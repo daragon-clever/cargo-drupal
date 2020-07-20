@@ -9,19 +9,16 @@
             "role": ""
         }
     ],
-    "repositories": [
-        {
+    "repositories": {
+        "0": {
             "type": "composer",
             "url": "https://packagist.org"
         },
-        {
-            "packagist": false
-        },
-        {
+        "2": {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
         },
-        {
+        "3": {
             "type": "package",
             "package": {
                 "name": "ajaxorg/ace-builds",
@@ -33,15 +30,20 @@
                 }
             }
         },
-        {
+        "4": {
             "type": "vcs",
             "url": "git@github.com:PoleWebCargo/WEB_Drupal_Module_Synapse.git"
         },
-        {
+        "5": {
             "type": "vcs",
             "url": "git@github.com:PoleWebCargo/WEB_Common_Module_Synapse_Client.git"
+        },
+        "packagist.org": false,
+        "drupal": {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
         }
-    ],
+    },
     "require": {
         "cargo/drupal_synapse": "^1.0",
         "composer/installers": "^1.2",
@@ -66,6 +68,7 @@
         "drupal/devel": "^2.0",
         "drupal/entity_pager": "^1.0@beta",
         "drupal/entity_reference_revisions": "^1.5",
+        "drupal/entity_update": "^1.2@RC",
         "drupal/features": "^3.8",
         "drupal/field_group": "^3.0",
         "drupal/google_analytics": "^3.0",
@@ -88,8 +91,10 @@
         "drupal/robotstxt": "^1.2",
         "drupal/search_kint": "^1.0",
         "drupal/simple_menu_icons": "^2.1",
+        "drupal/simple_oauth": "^4.5",
         "drupal/simple_sitemap": "^3.1",
         "drupal/simplenews": "^1.0@alpha",
+        "drupal/smtp": "^1.0@RC",
         "drupal/svg_formatter": "^1.8",
         "drupal/svg_image": "^1.9",
         "drupal/translatable_menu_link_uri": "^1.2",
@@ -121,7 +126,9 @@
         "classmap": [
             "scripts/composer/ScriptHandler.php"
         ],
-        "files": ["load.environment.php"]
+        "files": [
+            "load.environment.php"
+        ]
     },
     "scripts": {
         "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
@@ -140,12 +147,24 @@
     },
     "extra": {
         "installer-paths": {
-            "web/core": ["type:drupal-core"],
-            "web/libraries/{$name}": ["type:drupal-library"],
-            "web/modules/contrib/{$name}": ["type:drupal-module"],
-            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
-            "web/themes/contrib/{$name}": ["type:drupal-theme"],
-            "drush/contrib/{$name}": ["type:drupal-drush"]
+            "web/core": [
+                "type:drupal-core"
+            ],
+            "web/libraries/{$name}": [
+                "type:drupal-library"
+            ],
+            "web/modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "web/profiles/contrib/{$name}": [
+                "type:drupal-profile"
+            ],
+            "web/themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ],
+            "drush/contrib/{$name}": [
+                "type:drupal-drush"
+            ]
         }
     }
 }

@@ -40,9 +40,9 @@ class LoggerFileHelper
         if (!is_null($arrCSVcontent)) {
             $new_arr = array_reverse($arrCSVcontent);
 
-            foreach ($new_arr as $key => $val) {
-                if ($val['ip'] == $this->ipAddress && $val['ref'] == $ref) {
-                    $found_time = $val['time'];
+            foreach ($new_arr as $val) {
+                if ($val[1] == $this->ipAddress && $val[0] == $ref) {
+                    $found_time = $val[2];
                     break;
                 }
             }

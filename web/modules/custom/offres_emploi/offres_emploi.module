@@ -61,9 +61,9 @@ function offres_emploi_webform_element_hidden_alter(array &$element, FormStateIn
         $element['#value'] = $param_ref;
     }
     if ($element['#webform_key'] == 'nom_offre') {
-        $element['#value'] = $offerEmploi->intitulePoste;
+        $element['#value'] = $offerEmploi['intitulePoste'];
     }
     if ($element['#webform_key'] == 'filiale_societe') {
-        $element['#value'] = $offerEmploi->filialeSociete;
+        $element['#value'] = $offerEmploi['filialeSociete'];
     }
 }

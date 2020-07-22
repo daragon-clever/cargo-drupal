@@ -11,6 +11,7 @@ trait OffreEmploiHelperTrait
      */
     public static $nameCompany = [
         'ostaria' => 'C2S',
+        'centrakor' => ['CENTRAKOR', 'CENTRAKOR STORES'],
         'comptoirdefamille' => 'Comptoir de Famille',
         'technosource-industrie' => 'TECHNO SOURCE INDUSTRIES',
         'cestdeuxeuros' => 'CEDIF',

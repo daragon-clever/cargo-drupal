@@ -19,7 +19,7 @@ use Drupal\offres_emploi\Helper\OffreEmploiHelperTrait;
  *     id = "offres_emploi_rest_endpoint_get",
  *     label = @Translation("Get List of job offers for CARGO"),
  *     uri_paths= {
- *          "canonical" = "/api/v1/offres-emploi"
+ *          "canonical" = "/api/v1/offres-emploi/{reference}"
  *     }
  * )
  *
@@ -77,22 +77,17 @@ class RestOffresEmploi extends ResourceBase
 
     /**
      * Responds to entity GET requests.
+     * @param null $reference
      * @return ResourceResponse
      */
-    public function get(): ResourceResponse
+    public function get($reference = NULL): ResourceResponse
     {
-        if (!$this->currentUser->isAuthenticated()) {
+        if (!$this->currentUser->isAuthenticated() || !$this->currentUser->hasPermission('access content')) {
             $this->logger->error( $this->currentUser->getAccountName() . ' : Access denied for this user to the Api. You need Authentication');
             throw new AccessDeniedException('Access denied for this user. You need Authentication');
         }
 
-        $nameSite = $this->currentRequest->get('name');
-
-        if ($nameSite) {
-            $result = $this->repository->findByMany(['filialeSociete' => self::$nameCompany[$nameSite]]);
-        } else {
-            $result = $this->repository->queryFindAllRessources()->fetchAll();
-        }
+        $result = ($reference === 'all' ? $this->getAllResults() : $this->getOneResult($reference));
 
         if (empty($result)) {
             $data = ['data' => 'no resources found'];
@@ -106,5 +101,30 @@ class RestOffresEmploi extends ResourceBase
             ];
         }
         return (new ResourceResponse($data))->addCacheableDependency($data);
+    }
+
+    /**
+     * Return all offer result
+     * @return array
+     */
+    private function getAllResults(): array
+    {
+        if ($nameSite = $this->currentRequest->get('name')) {
+            $result = $this->repository->findByMany(['filialeSociete' => self::$nameCompany[$nameSite], 'active' => 1]);
+        } else {
+            $result = $this->repository->queryFindAllRessources()->fetchAll();
+        }
+
+        return $result;
+    }
+
+    /**
+     * Get one offer by reference
+     * @param string $reference
+     * @return array
+     */
+    private function getOneResult(string $reference): array
+    {
+        return $this->repository->findBy(['codeRecrutement' => $reference, 'active' => 1]);
     }
 }

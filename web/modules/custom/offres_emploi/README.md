@@ -52,12 +52,14 @@ Les filtres disponibles sont : (/offres-emploi?`{{filtre}}`=`{{value}}`)
 ### Api Rest
 
 ##Installation
+
 Pour le bon déroulement de l'installation, il faut installer dans l'ordre:
  - Le module Consumer
  - Ximple_oauth
  - Offres_Emploi
 
 ##Configuration
+
 Pour configurer l'api il faut :
  - se rendre ici admger/config/people/simple_oauth et créer les certifs
  - Créer un Consumer admger/config/services/consumer
@@ -74,6 +76,12 @@ Un système d'authentification a était mis en place pour protéger l'api. Donc,
  - password:(son mot de passe)
 Ainsi, il faut envoyer tout ça avec un Header : Content-Type => application/x-www-form-urlencoded
 
-Le token récupéré vous aidera à s'authentifier (via Bearer Token) à l'api qui est accessible depuis : api/v1/offres-emploi/?_format=json
+Le token récupéré vous aidera à s'authentifier (via Bearer Token) à l'api. 
+
+Endpoint de l'api sont : 
+ - api/v1/offres-emploi/all?_format=json (pour récupirer toute la liste des offres actives) 
+ - api/v1/offres-emploi/{CodeRecrutement} pour récupirer une offre
+ 
+ 
 Un filtre existe pour filtrer seulement les offres d'une société en rajoutant un param name, exemple (?name=gersequipement)
 Ne pas activer l'api que dans le site groupe cargo. 

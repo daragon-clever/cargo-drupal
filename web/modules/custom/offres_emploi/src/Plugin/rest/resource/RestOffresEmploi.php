@@ -89,7 +89,7 @@ class RestOffresEmploi extends ResourceBase
         $nameSite = $this->currentRequest->get('name');
 
         if ($nameSite) {
-            $result = $this->repository->findBy(['filialeSociete' => self::$nameCompany[$nameSite]]);
+            $result = $this->repository->findByMany(['filialeSociete' => self::$nameCompany[$nameSite]]);
         } else {
             $result = $this->repository->queryFindAllRessources()->fetchAll();
         }

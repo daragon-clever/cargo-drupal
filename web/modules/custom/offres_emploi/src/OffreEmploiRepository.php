@@ -163,6 +163,22 @@ class OffreEmploiRepository
     }
 
     /**
+     * Find Many Offers by []
+     * @param array $entry
+     * @return array
+     */
+    public function findByMany(array $entry = []): array
+    {
+        $query = $this->querySelect();
+
+        foreach ($entry as $field => $value) {
+            $query->condition($field, $value, 'IN');
+        }
+
+        return $query->execute()->fetchAll();
+    }
+
+    /**
      * Return All Active Offers
      * @return array
      */

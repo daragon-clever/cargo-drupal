@@ -173,4 +173,21 @@ jQuery(document).ready(function($) {
             hoverEffect : true
         });
     }
+
+    // POPUP PANO
+    if ($(".js-popup-pano").length) {
+        if ($.cookie('popupPano') == null) {
+            $.cookie('popupPano', 'open', { expires: 7 });
+
+            // Ouverture
+            var popupEvent = $('.js-popup-pano');
+            popupEvent.fadeIn();
+
+            // Fermeture
+            $('.js-popup-pano-close').on('click', function () {
+                console.log('Close');
+                popupEvent.fadeOut()
+            })
+        }
+    }
 });

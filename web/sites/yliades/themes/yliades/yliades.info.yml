@@ -15,7 +15,6 @@ regions:
 libraries:
   - yliades/bootstrap
   - yliades/slick
-  - yliades/blackandwhite
   - yliades/cookie
   - yliades/global-styling
 

@@ -1,6 +1,7 @@
 // Variables LESS
 @import 'variables';
 @import 'animation';
+@import 'font';
 
 // Google font
 // Open Sans : font-family: 'Open Sans', sans-serif;
@@ -2221,5 +2222,198 @@ h2#title-marques {
     cursor: pointer;
     outline: none;
     .dimOpacityOnHover(0.8);
+  }
+}
+
+// Popup Pano
+.popup-fixed {
+  font-family: 'ITC Avant Garde Pro Demi', Arial, Helvetica, sans-serif;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  z-index: 10000;
+  padding: 15px;
+  background: #00000080;
+
+  @media @phone {
+    padding: 7px;
+  }
+
+  .wrapper {
+    position: relative;
+    background: white;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+
+    @media @phone {
+      border-radius: 5px;
+    }
+
+    .visuel img {
+      max-height: 380px;
+      object-fit: cover;
+      object-position: top center;
+      width: 100%;
+
+      @media @phone {
+        height: 220px;
+      }
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .icon-pano {
+      content: "";
+      background: url("../images/popup-pano/Icone-pano.svg") no-repeat center / cover white;
+      height: 92px;
+      width: 92px;
+      position: absolute;
+      top: 3%;
+      left: 2%;
+      border-radius: 5px;
+      background-size: 75%;
+
+      @media @phone {
+        transform: scale(0.5);
+        top: -10px;
+        left: -10px;
+      }
+    }
+
+    .close {
+      content: "";
+      background: url("../images/popup-pano/Icone-croix.svg") no-repeat center / cover transparent;
+      height: 32px;
+      width: 32px;
+      position: fixed;
+      top: 5%;
+      right: 3%;
+      opacity: 1;
+
+      @media @phone {
+        top: 20px;
+        right: 20px;
+      }
+    }
+
+    .inner {
+      color: #bb9469;
+
+      @media @phone {
+        padding: 0 15px;
+      }
+
+      .title {
+        font-family: 'ITC Avant Garde Pro XLt', Arial, Helvetica, sans-serif;
+        font-size: 45px;
+        display: block;
+        letter-spacing: 10px;
+        margin-top: 35px;
+        line-height: 1;
+
+        @media @phone {
+          font-size: 35px;
+        }
+      }
+
+      .subtitle {
+        font-size: 19px;
+        display: block;
+        line-height: 1;
+
+        @media @phone {
+          font-size: 15px;
+        }
+      }
+
+      a.cta {
+        margin: 30px 0;
+        display: inline-block;
+        padding: 0 30px;
+        background: #bb9469;
+        color: white;
+        line-height: 50px;
+        .dimOpacityOnHover(0.8);
+
+        span:before {
+          content: "";
+          background: url("../images/popup-pano/Icone-oeil.svg") no-repeat center / contain transparent;
+          height: 13px;
+          width: 20px;
+          margin-right: 16px;
+          display: inline-block;
+        }
+
+        @media @phone {
+          display: block;
+          padding: 0;
+          text-align: center;
+          letter-spacing: 3px;
+        }
+      }
+
+      .marques img {
+        max-width: 83px;
+        margin: 0 7px;
+
+        @media @phone {
+          max-width: inherit;
+          width: 28%;
+          margin: 15px 7px;
+        }
+      }
+
+      .collab {
+        margin: 30px 0 20px;
+        font-size: 15px;
+        color: #4b4b4b;
+        display: inline-block;
+      }
+
+      .collabs {
+        & > div {
+          display: inline-block;
+          margin: 0 25px;
+
+          @media @phone {
+            margin: 15px 0;
+            width: 47%;
+          }
+
+          img {
+            display: block;
+            margin: 0 auto;
+          }
+
+          span.link {
+            font-size: 10px;
+            text-transform: lowercase;
+            color: #4b4b4b;
+            letter-spacing: 0;
+            margin-top: 20px;
+            display: inline-block;
+          }
+        }
+      }
+
+      a.back {
+        color: #bb9469;
+        text-decoration: underline;
+        margin: 30px 0;
+        display: inline-block;
+
+        @media @phone {
+          letter-spacing: 1px;
+        }
+      }
+    }
   }
 }

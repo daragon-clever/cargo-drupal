@@ -25,6 +25,13 @@ blackandwhite:
   dependencies:
     - core/jquery
 
+# Jquery Cookie
+cookie:
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js: { type: external }
+  dependencies:
+    - core/jquery
+
 # Style général
 global-styling:
   header: true

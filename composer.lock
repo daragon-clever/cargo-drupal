@@ -133,16 +133,16 @@
         },
         {
             "name": "cargo/common-synapse-client",
-            "version": "v2.0.9",
+            "version": "v2.0.10",
             "source": {
                 "type": "git",
                 "url": "git@github.com:PoleWebCargo/WEB_Common_Module_Synapse_Client.git",
-                "reference": "d1a84eec0edcb48236add301140ae4e1ce30abd0"
+                "reference": "10fd6faf762e919cdc33c8c1fbcdf89398da7aac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PoleWebCargo/WEB_Common_Module_Synapse_Client/zipball/d1a84eec0edcb48236add301140ae4e1ce30abd0",
-                "reference": "d1a84eec0edcb48236add301140ae4e1ce30abd0",
+                "url": "https://api.github.com/repos/PoleWebCargo/WEB_Common_Module_Synapse_Client/zipball/10fd6faf762e919cdc33c8c1fbcdf89398da7aac",
+                "reference": "10fd6faf762e919cdc33c8c1fbcdf89398da7aac",
                 "shasum": ""
             },
             "require": {
@@ -167,7 +167,7 @@
                 "source": "https://github.com/PoleWebCargo/WEB_Module_Common_Synapse_Client",
                 "issues": "https://github.com/PoleWebCargo/WEB_Common_Module_Synapse_Client/issues"
             },
-            "time": "2020-08-10T10:11:46+00:00"
+            "time": "2020-08-10T14:04:27+00:00"
         },
         {
             "name": "cargo/drupal_synapse",

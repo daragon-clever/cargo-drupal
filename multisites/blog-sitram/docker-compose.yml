@@ -18,6 +18,8 @@ services:
       volumes:
         - "$PWD../../../:/var/www/html"
         - "$PWD../../../docker/php/www.conf:/usr/local/etc/php-fpm.d/www.conf"
+      networks:
+        - webgateway
   db:
       image: mariadb:10.1.2
       environment:
@@ -31,6 +33,8 @@ services:
       labels:
         traefik.docker.network: "webgateway"
         traefik.enable: true
+      networks:
+        - webgateway
 
   phpmyadmin:
       image: phpmyadmin/phpmyadmin:4.7.9-1

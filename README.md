@@ -45,11 +45,17 @@
 * changer à nouveau  `$settings['update_free_access'] = TRUE;` à `FALSE` dans settings.php
 
 # Mise à jour de Drupal : 
-* `docker-compose run --rm php composer outdated`
-* `docker-compose run --rm php composer update`
+
+Depuis le dossier /multisites/[site_name]:
+
+* `composer outdated`
+* `composer update`
 
 # Mise à jour d'un module Drupal :
-* `$ docker-compose run --rm php composer require 'NOMDUMODULE'`
+
+Depuis le dossier /multisites/[site_name]:
+
+* `require 'NOMDUMODULE'`
 
 ## Déploiement
 
@@ -60,6 +66,10 @@
 
 # Résolution de problèmes:
 
+## Base de donnée
+
+### Corruption après un arrêt forcé
+
 En cas d'arrêt forcé de mysql et si ce dernier ne rédémarre pas correctement, ajouter cette commande dans le 
 `docker-compose.yml` du site en question dans le service DB
 ```bash
@@ -67,4 +77,7 @@ command: mysqld --tc-heuristic-recover=ROLLBACK
 ```
 
 #Lancer une command Drupal
-docker-compose run --rm php vendor/bin/drupal --uri=web.gersequipement.svd1pweb-stm.ressinfo.ad
+
+Depuis le dossier /multisites/[site_name]:
+
+`php vendor/bin/drupal --uri=web.gersequipement.svd1pweb-stm.ressinfo.ad`

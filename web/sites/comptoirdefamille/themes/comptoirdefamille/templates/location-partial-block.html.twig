@@ -22,11 +22,11 @@
     </div>
     <div>
         <ul>
-            {% if location.getPhoneNumbers %}
+            {%  if location.getWebContact is not null %}
             <li class="phone">
                 <a href="#">
                     <span class="txt">Afficher le numéro</span>
-                    <span class="number" style="display: none">{{ location.getMainPhoneNumber.getNumber }}</span>
+                    <span class="number" style="display: none">{{ location.getWebContact.getPhoneNumber.getNationalNumber }}</span>
                 </a>
             </li>
             {% endif %}

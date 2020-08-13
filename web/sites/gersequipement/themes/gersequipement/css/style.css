@@ -2139,6 +2139,11 @@ footer span.linkedin-logo {
   margin: 0;
   color: #d40058;
 }
+@media (max-width: 1680px) {
+  #block-top .first-col .content-text h1::after {
+    margin: 30px 0;
+  }
+}
 @media (max-width: 768px) {
   #block-top .first-col .content-text h1 {
     text-align: center;
@@ -2148,6 +2153,16 @@ footer span.linkedin-logo {
   margin: 40px 0 0;
   display: flex;
   flex-direction: column;
+}
+@media (max-width: 1680px) {
+  #block-top .first-col .content-btn {
+    margin: 20px 0 0;
+  }
+}
+@media (max-width: 1600px) {
+  #block-top .first-col .content-btn {
+    margin: 20px 0 10px;
+  }
 }
 @media (max-width: 1440px) {
   #block-top .first-col .content-btn {
@@ -2231,6 +2246,9 @@ footer span.linkedin-logo {
   padding-right: 35px;
   padding-left: 15px;
   font-weight: 600;
+}
+#listing-offres .filters #groupe-filtres-offres-emploi {
+  padding-bottom: 3rem;
 }
 @media only screen and (max-width: 767px) {
   #listing-offres .filters #groupe-filtres-offres-emploi {

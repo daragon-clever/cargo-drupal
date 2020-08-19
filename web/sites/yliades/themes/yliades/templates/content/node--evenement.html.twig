@@ -7,7 +7,13 @@
     </div>
     <div class="row">
         <div class="col">
-            {{ content.field_image_evenement }}
+            {% if content.field_lien_image[0]['#url'] %}
+                <a href="{{ content.field_lien_image[0]['#url'] }}" target="_blank">
+                    {{ content.field_image_evenement }}
+                </a>
+            {% else %}
+                {{ content.field_image_evenement }}
+            {% endif %}
         </div>
     </div>
 </div>

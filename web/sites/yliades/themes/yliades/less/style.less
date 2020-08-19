@@ -686,6 +686,7 @@ nav#block-menufooter {
         img {
           width: auto;
           display: inline-block;
+          max-width: 150px;
         }
         @media (max-width: 1024px) {
           img {
@@ -729,6 +730,12 @@ nav#block-menufooter {
             text-decoration: none;
             .dimOpacityOnHover(0.8);
           }
+        }
+        & > div {
+          min-height: 60px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
         }
       }
       .arrow {
@@ -1150,6 +1157,9 @@ h2#title-marques {
         @media @phone{
           border: none;
           padding: 0 0 15px 0;
+        }
+        img {
+          max-width: 160px;
         }
       }
       .text {

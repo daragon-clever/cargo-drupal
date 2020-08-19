@@ -813,6 +813,7 @@ nav#block-menufooter ul li:hover > ul {
 .mea-marques .marque .upper .logo img {
   width: auto;
   display: inline-block;
+  max-width: 150px;
 }
 @media (max-width: 1024px) {
   .mea-marques .marque .upper .logo img {
@@ -866,6 +867,12 @@ nav#block-menufooter ul li:hover > ul {
 }
 .mea-marques .marque .upper .txt .hidden-part .cta:hover {
   opacity: 0.8;
+}
+.mea-marques .marque .upper .txt > div {
+  min-height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .mea-marques .marque .upper .arrow {
   position: absolute;
@@ -1139,10 +1146,10 @@ h2#title-marques {
   height: 36px;
   width: 36px;
   position: relative;
-  -webkit-animation: rotation .8s infinite linear;
-  -moz-animation: rotation .8s infinite linear;
-  -o-animation: rotation .8s infinite linear;
-  animation: rotation .8s infinite linear;
+  -webkit-animation: rotation 0.8s infinite linear;
+  -moz-animation: rotation 0.8s infinite linear;
+  -o-animation: rotation 0.8s infinite linear;
+  animation: rotation 0.8s infinite linear;
   border-left: 3px solid rgba(85, 85, 85, 0.3);
   border-right: 3px solid rgba(85, 85, 85, 0.3);
   border-bottom: 3px solid rgba(85, 85, 85, 0.3);
@@ -1346,6 +1353,9 @@ h2#title-marques {
     border: none;
     padding: 0 0 15px 0;
   }
+}
+.page-marque .header > div .logo img {
+  max-width: 160px;
 }
 .page-marque .header > div .text {
   max-width: 700px;

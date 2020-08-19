@@ -48,14 +48,15 @@
 
 Depuis le dossier /multisites/[site_name]:
 
-* `composer outdated`
-* `composer update`
+* `composer outdated` : liste des modules qui ne sont plus à jours (entre VM et composer.lock)
+* `composer update` : met à jour les dépendances avec les nouvelles versions dispo
+* `composer install` : prend les version qui se trouve sur le composer.lock
 
 # Mise à jour d'un module Drupal :
 
 Depuis le dossier /multisites/[site_name]:
 
-* `require 'NOMDUMODULE'`
+* `composer require 'NOMDUMODULE'`
 
 ## Déploiement
 

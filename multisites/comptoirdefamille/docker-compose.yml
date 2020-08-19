@@ -95,4 +95,4 @@ networks:
   webgateway:
     external: true
   internal:
-    external: true
+    external: false

@@ -26,14 +26,14 @@ jQuery(document).ready(function($) {
     if ($(".mea-marques").length) {
         $(".mea-marques").slick({
             infinite: true,
-            slidesToShow: 5,
-            slidesToScroll: 5,
+            slidesToShow: 6,
+            slidesToScroll: 6,
             responsive: [
                 {
                     breakpoint: 1025,
                     settings: {
-                        slidesToShow: 5,
-                        slidesToScroll: 5
+                        slidesToShow: 6,
+                        slidesToScroll: 6
                     }
                 },
                 {

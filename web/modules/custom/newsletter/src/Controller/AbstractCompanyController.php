@@ -5,6 +5,7 @@ namespace Drupal\newsletter\Controller;
 use Drupal\Component\Serialization\Json;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Datetime\DrupalDateTime;
+use Drupal\newsletter\Model\Subscriber;
 
 abstract class AbstractCompanyController extends ControllerBase
 {
@@ -13,84 +14,45 @@ abstract class AbstractCompanyController extends ControllerBase
     private const TYPE_MSG_STATUS = "status";
     private const TYPE_MSG_ERROR = "error";
 
-    const TABLE_SUBSCRIBER = "newsletter_subscriber";
-    const TABLE_SUBSCRIBTION = "newsletter_subscription";
-
     protected const USER_API_ACTITO = "poleweb_admin";
     private const PASS_API_ACTITO = "57Hc!a5sQ";
     public const ENTITY_ACTITO = "";
     public const TABLE_ACTITO = "";
     const URL_API_ACTITO = "http://dcp.cargo-webproject.com/actito/api/req";
 
-    public $connection;
+    /**
+     * @var Subscriber
+     */
+    protected $subscriberModel;
+
+    /**
+     * @var DrupalDateTime
+     */
+    public $date;
+
+    /**
+     * @var string
+     */
     protected $passApi;
 
-    public $date;
+    /**
+     * @var string
+     */
+    private $allowTestApi;
 
     public function __construct()
     {
-        $this->connection = \Drupal::database();
-        $this->passApi = hash("sha512",hash("sha256",self::PASS_API_ACTITO));
-
+        $this->subscriberModel = new Subscriber();
         $this->date = new DrupalDateTime();
-    }
-
-    protected function getPeople(string $email): ?array
-    {
-        $people = $this->connection->select(self::TABLE_SUBSCRIBER,'subscriber')
-            ->fields('subscriber')
-            ->condition('subscriber.email', $email,'=')
-            ->range(0, 1)
-            ->execute()
-            ->fetchAssoc();
-
-        return $people ? $people : null;
-    }
-
-    protected function setDataToInsertPeople($arrayData): array
-    {
-        return [
-            "email" => $arrayData['email'],
-            "created_at" => $this->date->format("Y-m-d H:i:s"),
-            "updated_at" => $this->date->format("Y-m-d H:i:s"),
-            "active" => $arrayData['active'],
-            "exported" => $arrayData['exported']
-        ];
-    }
-
-    protected function insertPeople(array $arrayData): void
-    {
-        $fields = $this->setDataToInsertPeople($arrayData);
-        $this->connection->insert(self::TABLE_SUBSCRIBER)
-            ->fields($fields)
-            ->execute();
-    }
-
-    protected function setDataToUpdatePeople($arrayData): array
-    {
-        $fields["updated_at"] = $this->date->format("Y-m-d H:i:s");
-        if (isset($arrayData['active'])) $fields['active'] = $arrayData['active'];
-        if (isset($arrayData['exported'])) $fields['exported'] = $arrayData['exported'];
-
-        return $fields;
-    }
-
-    protected function updatePeople(array $arrayData): void
-    {
-        //Define the fields for the update
-        $fields = $this->setDataToUpdatePeople($arrayData);
-
-        //Update table subscriber
-        $this->connection->update(self::TABLE_SUBSCRIBER)
-            ->fields($fields)
-            ->condition('email', $arrayData['email'], '=')
-            ->execute();
+        $this->setPassApi();
+        $this->setAllowTestApi();
     }
 
     public function doAction(array $arrayData): array
     {
+        $email = $arrayData['email'];
         //Save or update people on database
-        $people = $this->getPeople($arrayData['email']);
+        $people = $this->subscriberModel->getSubscriber($email);
 
         if (empty($people)) {
             $this->insertPeople($arrayData);
@@ -100,72 +62,83 @@ abstract class AbstractCompanyController extends ControllerBase
             $action = self::ACTION_UPDATE;
         }
 
-        $this->savePeopleInActito($arrayData);
+        //actito
+        $dataForActito = $this->setDataToSaveOnActito($arrayData);
+        $saveActito = $this->savePeopleInActito($dataForActito);
+
+        if ($saveActito && $action == self::ACTION_INSERT) {
+            $this->subscriberModel->updateSubscriber($email, ['exported' => 1]);
+        }
 
         return $this->displayMsg($action);
     }
 
-    private function displayMsg(string $return): array
+    protected function insertPeople(array $arrayData): void
     {
-        if ($return == self::ACTION_INSERT) {
-            $msg = $this->t("You have just signed up for the newsletter");
-            $type = self::TYPE_MSG_STATUS;
-        } else if ($return == self::ACTION_UPDATE) {
-            $msg = $this->t("You have just updated your newsletter preferences");
-            $type = self::TYPE_MSG_STATUS;
-        } else {
-            $msg = $this->t("Error");
-            $type = self::TYPE_MSG_ERROR;
-        }
+        $dataToInsert = $this->setDataToInsertPeopleOnDb($arrayData);
+        $this->subscriberModel->insertSubscriber($dataToInsert);
+    }
 
+    protected function updatePeople(array $arrayData): void
+    {
+        $dataToUpdate = $this->setDataToUpdatePeopleOnDb($arrayData);
+        $this->subscriberModel->updateSubscriber($arrayData['email'], $dataToUpdate);
+    }
+
+    protected function setDataToInsertPeopleOnDb($arrayData): array
+    {
         return [
-            'msg' => $msg,
-            'type' => $type
+            "email" => $arrayData['email'],
+            "created_at" => $this->date->format("Y-m-d H:i:s"),
+            "updated_at" => $this->date->format("Y-m-d H:i:s"),
+            "active" => 1,
+            "exported" => 0,
         ];
+    }
+
+    protected function setDataToUpdatePeopleOnDb($arrayData): array
+    {
+        $fields["updated_at"] = $this->date->format("Y-m-d H:i:s");
+        if (isset($arrayData['active'])) $fields['active'] = $arrayData['active'];
+        if (isset($arrayData['exported'])) $fields['exported'] = $arrayData['exported'];
+
+        return $fields;
+    }
+
+    public function setDataToSaveOnActito(array $arrayData): array
+    {
+        $dataForActito = [
+            'email' => $arrayData['email'],
+        ];
+        return $dataForActito;
     }
 
     /**
      * Call api to save people on actito
      *
      * @param array $dataUser
+     * @return bool
      */
-    public function savePeopleInActito(array $dataUser): void
+    public function savePeopleInActito(array $dataUser): bool
     {
         $client = \Drupal::httpClient();
-        $allowTest =  \Drupal::config('system.newsletter')->get('allowTest', FALSE); //get config on setting.php
-        $url= sprintf(
-            '%s/profile/import.php?&entity=%s&table=%s&allowTest=%s',
-            self::URL_API_ACTITO,
-            static::ENTITY_ACTITO,
-            static::TABLE_ACTITO,
-            $allowTest
-        );
-        $options = [
-            'auth' => [
-                self::USER_API_ACTITO,
-                $this->passApi,
-            ],
-            'body' => Json::encode($dataUser),
-            'headers' => [
-                'Content-Type: application/json',
-                'Content-Length: ' . strlen(Json::encode($dataUser))
-            ]
-        ];
+        $urlReq = '/profile/import.php';
+        $configApi = $this->configApi($urlReq, $dataUser);
 
         try {
-            $response = $client->post($url, $options);
-            $code = $response->getStatusCode();
-            if ($code == 200) {
-                $jsonResponseBody = $response->getBody()->getContents();
-                $return = Json::decode($jsonResponseBody);
-                if ($return['successResp'] == "true" || $return['successResp'] === true) {
-                    $dataUser['exported'] = 1;
-                    $this->updatePeople($dataUser);
+            $response = $client->post($configApi['url'], $configApi['options']);
+
+            if ($response->getStatusCode() == 200) {
+                $jsonResponseBody = Json::decode($response->getBody()->getContents());
+                if ($jsonResponseBody['successResp'] == "true" || $jsonResponseBody['successResp'] === true) {
+                    return TRUE;
                 }
             }
         } catch (\HttpRequestExceptioneption $e) {
             watchdog_exception('newsletter_module', $e);
         }
+
+        return FALSE;
     }
 
     /**
@@ -176,31 +149,36 @@ abstract class AbstractCompanyController extends ControllerBase
     public function deleteSegmentInActito(array $dataUser): void
     {
         $client = \Drupal::httpClient();
-        $allowTest =  \Drupal::config('system.newsletter')->get('allowTest', FALSE); //get config on setting.php
-        $url= sprintf(
-            '%s/profile/segmentation/delete.php?&entity=%s&table=%s&allowTest=%s',
-            self::URL_API_ACTITO,
-            static::ENTITY_ACTITO,
-            static::TABLE_ACTITO,
-            $allowTest
-        );
-        $options = [
-            'auth' => [
-                self::USER_API_ACTITO,
-                $this->passApi,
-            ],
-            'body' => Json::encode($dataUser),
-            'headers' => [
-                'Content-Type: application/json',
-                'Content-Length: ' . strlen(Json::encode($dataUser))
-            ]
-        ];
+        $urlReq = '/profile/segmentation/delete.php';
+        $configApi = $this->configApi($urlReq, $dataUser);
 
         try {
-            $client->post($url, $options);
+            $client->post($configApi['url'], $configApi['options']);
         } catch (\HttpRequestExceptioneption $e) {
             watchdog_exception('newsletter_module', $e);
         }
+    }
+
+    private function displayMsg(string $return): array
+    {
+        switch ($return) {
+            case self::ACTION_INSERT:
+                $msg = $this->t("You have just signed up for the newsletter");
+                $type = self::TYPE_MSG_STATUS;
+                break;
+            case self::ACTION_UPDATE:
+                $msg = $this->t("You have just updated your newsletter preferences");
+                $type = self::TYPE_MSG_STATUS;
+                break;
+            default:
+                $msg = $this->t("Error");
+                $type = self::TYPE_MSG_ERROR;
+        }
+
+        return [
+            'msg' => $msg,
+            'type' => $type
+        ];
     }
 
     public function setSchemaTableSubscriber(): array
@@ -245,7 +223,7 @@ abstract class AbstractCompanyController extends ControllerBase
                     'not null' => TRUE,
                     'default' => '',
                     'description' => 'Email of the person.',
-                ]
+                ],
             ],
             'primary key' => ['id'],
             'indexes' => [
@@ -256,26 +234,39 @@ abstract class AbstractCompanyController extends ControllerBase
         return $array;
     }
 
-    public function setSchemaTableSubscription(): array
+    private function configApi($urlReq, $data)
     {
-        $array = [
-            'description' => 'Stores subscription for newsletter subscriber.',
-            'fields' => [
-                'id' => [
-                    'type' => 'serial',
-                    'not null' => TRUE,
-                    'description' => 'Primary Key: Unique email ID.',
-                ],
-                'id_subscriber' => [
-                    'type' => 'int',
-                    'length' => 11,
-                    'not null' => TRUE,
-                    'description' => 'Subscriber ID.',
-                ]
+        $return['url'] = sprintf(
+            '%s%s?&entity=%s&table=%s&allowTest=%s',
+            self::URL_API_ACTITO,
+            $urlReq,
+            static::ENTITY_ACTITO,
+            static::TABLE_ACTITO,
+            $this->allowTestApi
+        );
+
+        $return['options'] = [
+            'auth' => [
+                self::USER_API_ACTITO,
+                $this->passApi,
             ],
-            'primary key' => ['id']
+            'body' => Json::encode($data),
+            'headers' => [
+                'Content-Type: application/json',
+                'Content-Length: ' . strlen(Json::encode($data))
+            ]
         ];
 
-        return $array;
+        return $return;
+    }
+
+    private function setPassApi()
+    {
+        $this->passApi = hash("sha512",hash("sha256",self::PASS_API_ACTITO));
+    }
+
+    private function setAllowTestApi()
+    {
+        $this->allowTestApi = \Drupal::config('system.newsletter')->get('allowTest', FALSE); //get config on setting.php
     }
 }

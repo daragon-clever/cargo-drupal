@@ -9,7 +9,6 @@ use Drupal\newsletter\Controller\Company\CestDeuxEurosController;
 
 class CestDeuxEurosForm extends FormBase
 {
-
     /**
      * {@inheritdoc}
      */
@@ -125,8 +124,6 @@ class CestDeuxEurosForm extends FormBase
             'email' => $email,
             'newsletter' => $newsletterShop,
             'offres' => $offers,
-            'active' => 1,
-            'exported' => 0
         ];
 
         //Call controller of Yliades to execute action

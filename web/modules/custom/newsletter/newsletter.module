@@ -1,33 +1,15 @@
 <?php
-use Drupal\newsletter\Controller\Company;
+use Drupal\newsletter\Controller\NewsletterController;
+use Drupal\newsletter\Model\Subscriber;
 
 function newsletter_schema()
 {
-    $company = \Drupal::config('system.site')->getOriginal("name", false);
-    $cleanCompany = strtolower(str_replace(' ', '', $company));
-    switch ($cleanCompany) {
-        case "yliades":
-            $base = new Company\YliadesController();
-            break;
-        case "blog.sitram.fr":
-            $base = new Company\BlogSitramController();
-            break;
-        case "comptoirdefamille":
-            $base = new Company\ComptoirDeFamilleController();
-            break;
-        case "c'estdeuxeuros":
-            $base = new Company\CestDeuxEurosController();
-            break;
-    }
+    $newsletterController = new NewsletterController();
+    $base = $newsletterController->getCompanyController();
 
     if (isset($base)) {
-        //Table : newsletter_subscriber
-        if (\Drupal::database()->schema()->tableExists("newsletter_subscriber") == FALSE) {
-            $schema['newsletter_subscriber'] = $base->setSchemaTableSubscriber();
-        }
-        //Table : newsletter_subscription
-        if (\Drupal::database()->schema()->tableExists("newsletter_subscription") == FALSE) {
-            $schema['newsletter_subscription'] = $base->setSchemaTableSubscription();
+        if (\Drupal::database()->schema()->tableExists(Subscriber::TABLE_SUBSCRIBER) == FALSE) {
+            $schema[Subscriber::TABLE_SUBSCRIBER] = $base->setSchemaTableSubscriber();
         }
 
         if (isset($schema) && !empty($schema)) return $schema;
@@ -45,4 +27,24 @@ function newsletter_theme($existing, $type, $theme, $path) {
             'render element' => 'form'
         ]
     ];
+}
+
+//run update.php to execute this update
+function newsletter_update_8101(&$sandbox)
+{
+    $newsletterController = new NewsletterController();
+    $base = $newsletterController->getCompanyController();
+
+    if (isset($base)) {
+        if (\Drupal::database()->schema()->tableExists("newsletter_subscription")) {
+            if (method_exists($base, 'setUpdate8101')) {
+                \Drupal::logger('newsletter')->notice('[UPDATE] Déplacement des données de la table newsletter_subscription à la colonne dans la table newsletter_susbcriber.subscriptions');
+                $base->setUpdate8101("newsletter_subscription");
+            }
+
+            //delete table subscription
+            \Drupal::database()->schema()->dropTable("newsletter_subscription");
+            \Drupal::logger('newsletter')->notice('[UPDATE] Suppression de l\'ancienne table newsletter_subscription');
+        }
+    }
 }

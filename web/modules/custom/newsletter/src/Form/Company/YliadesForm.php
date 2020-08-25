@@ -9,7 +9,6 @@ use Drupal\newsletter\Controller\Company\YliadesController;
 
 class YliadesForm extends FormBase
 {
-
     /**
      * {@inheritdoc}
      */
@@ -31,6 +30,7 @@ class YliadesForm extends FormBase
             YliadesController::MARQUE_COTE_TABLE => $this->t('Côté Table'),
             YliadesController::MARQUE_GENEVIEVE_LETHU => $this->t("Geneviève Lethu"),
             YliadesController::MARQUE_JARDIN_D_ULYSSE => $this->t("Jardin d'Ulysse"),
+            YliadesController::MARQUE_NATIVES => $this->t("Natives"),
         ];
 
         //My Form
@@ -85,14 +85,13 @@ class YliadesForm extends FormBase
     {
         $email = $form_state->getValue('mail');
         $brands = $form_state->getValue('marques');
+
         $formatBrands = $this->formatAllBrands($brands);
 
         //data for database and actito
         $data = [
             'email' => $email,
             'brands' => $formatBrands,
-            'active' => 1,
-            'exported' => 0
         ];
 
         //Call controller of Yliades to execute action
@@ -105,6 +104,7 @@ class YliadesForm extends FormBase
     /**
      * Format brands array with key is brand and value is 0 or 1
      * Received ["a" => "a"] when "a" was checked and ["a" => 0] when "a" wasn't checked
+     * Return ["a" => 1, "b" => 0, "c" => 0, "d" => 1] - return all brands field
      */
     private function formatAllBrands($brands)
     {

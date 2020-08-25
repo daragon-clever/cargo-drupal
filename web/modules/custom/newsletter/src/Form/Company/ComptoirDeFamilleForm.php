@@ -9,7 +9,6 @@ use Drupal\newsletter\Controller\Company\ComptoirDeFamilleController;
 
 class ComptoirDeFamilleForm extends FormBase
 {
-
     /**
      * {@inheritdoc}
      */
@@ -67,8 +66,6 @@ class ComptoirDeFamilleForm extends FormBase
 
         $data = [
             'email' => $email,
-            'active' => 1,
-            'exported' => 0
         ];
 
         $controllerBase = new ComptoirDeFamilleController();

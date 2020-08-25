@@ -12,26 +12,24 @@ Pour trouver le nom du site, se rendre sur l'admin : **Configuration/Système/Pa
      * *Exemple n°1 :* sur le site de C'est Deux Euros, le nom du site est "C'est deux euros". Je met dans le switch "c'estdeuxeuros".
      * *Exemple n°2 :* Sur le site de Sitram, le nom du site est "Blog.SITRAM.fr". Je met dans le switch "blog.sitram.fr".
 
-    Les switch se trouvent ici :
-    * newsletter/src/Plugin/Block/InscriptionBlock.php
+    Les 2 switch se trouvent ici :
     * newsletter/src/Controller/NewsletterController.php
-    * newsletter/newsletter.module
 * A ajouter dans setting.php du site (**Attention :** fichier non versionné) :
 `$config['system.newsletter'] = [
      'allowTest' => 'true' // false si sur env prod 
  ];`
 
-## Tables créées
+## Table créée
 
-Ce module va créer 2 tables sur la base de données du site :
+Ce module va créer 1 table sur la base de données du site :
 * newsletter_subscriber : une ligne = un abonné = des infos sur l'abonné
-* newsletter_subscribption : une ligne = un ou plusieurs abonnement = un abonné.
-Cette table n'est utilisée/remplie que lorsque le site propose différents abonnements/segments (c2e et yliades, par exemple)
+    - si on a plusieurs types d'abonnement, il faut ajouter une colonne supplémentaire pour
+    la filiale concerné (voir pour exemple : Yliades et C2E)
 
 ## Fonctionnement
 
-Lors de l'ajout d'une personne sur la/les table(s), elle s'importe automatiquement sur Actito en passant par l'API 
-en interne (API_Contact_Actito).
+Lors de l'ajout d'une personne sur la table, elle s'importe automatiquement sur Actito en passant par l'API 
+en interne (WEB_Api_Contact_Actito).
 
 ## Sites utilisant actuellement ce module :
 
@@ -39,5 +37,3 @@ en interne (API_Contact_Actito).
 * C'est Deux Euros
 * Comptoir De Famille
 * Yliades
-
-## Mise en place du module sur un nouveau site :

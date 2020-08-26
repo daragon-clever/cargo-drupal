@@ -10,14 +10,12 @@ class ComptoirDeFamilleController extends AbstractCompanyController
     const ENTITY_ACTITO = "Yliades";
     const TABLE_ACTITO = "Yliades";
 
-    public function savePeopleInActito(array $dataUser): void
+    public function setDataToSaveOnActito(array $dataUser): array
     {
-        $dataForActito = [
-            'email' => $dataUser['email'],
-            'source' => "comptoir-de-famille",
-            'segment' => "comptoir_de_famille"
-        ];
+        $dataForActito = parent::setDataToSaveOnActito($dataUser);
+        $dataForActito['source'] = "comptoir-de-famille";
+        $dataForActito['segment'] = "comptoir_de_famille";
 
-        parent::savePeopleInActito($dataForActito);
+        return $dataForActito;
     }
 }

@@ -9,7 +9,6 @@ use Drupal\newsletter\Controller\Company\YliadesController;
 
 class YliadesForm extends FormBase
 {
-
     /**
      * {@inheritdoc}
      */
@@ -31,6 +30,7 @@ class YliadesForm extends FormBase
             YliadesController::MARQUE_COTE_TABLE => $this->t('Côté Table'),
             YliadesController::MARQUE_GENEVIEVE_LETHU => $this->t("Geneviève Lethu"),
             YliadesController::MARQUE_JARDIN_D_ULYSSE => $this->t("Jardin d'Ulysse"),
+            YliadesController::MARQUE_NATIVES => $this->t("Natives"),
         ];
 
         //My Form
@@ -85,14 +85,13 @@ class YliadesForm extends FormBase
     {
         $email = $form_state->getValue('mail');
         $brands = $form_state->getValue('marques');
+
         $formatBrands = $this->formatAllBrands($brands);
 
         //data for database and actito
         $data = [
             'email' => $email,
             'brands' => $formatBrands,
-            'active' => 1,
-            'exported' => 0
         ];
 
         //Call controller of Yliades to execute action
@@ -104,40 +103,23 @@ class YliadesForm extends FormBase
 
     /**
      * Format brands array with key is brand and value is 0 or 1
+     * Received ["a" => "a"] when "a" was checked and ["a" => 0] when "a" wasn't checked
+     * Return ["a" => 1, "b" => 0, "c" => 0, "d" => 1] - return all brands field
      */
     private function formatAllBrands($brands)
     {
-        $formatBrands = $this->setValueAllBrands(0);//get array with all brands (value -> 0)
-        foreach ($brands as $key => $value) {
-            if (is_string($value)) {
-                if ($value == YliadesController::MARQUE_ALL && $key == YliadesController::MARQUE_ALL) {
-                    $formatBrands = $this->setValueAllBrands(1);
-                    break;
-                } else {
-                    $formatBrands[$value] = 1;
-                }
+        $formatBrands = [];
+        if (!empty($brands)) {
+            foreach ($brands as $brand => $isCheck) {
+                $formatBrands[$brand] = (is_string($isCheck) && !empty($isCheck)) ? 1 : 0;
             }
-        }
 
-        $marques = $this->setValueAllBrands(0);//get array with all brands (value -> 0)
-        foreach ($brands as $key => $value) {
-            if (is_string($value)) {
-                if ($value == YliadesController::MARQUE_ALL && $key == YliadesController::MARQUE_ALL) {
-                    $formatBrands = $this->setValueAllBrands(1);
-                    break;
-                } else {
-                    $formatBrands[$value] = 1;
-                }
+            if (isset($formatBrands[YliadesController::MARQUE_ALL])
+                && $formatBrands[YliadesController::MARQUE_ALL] === 1) {
+                $formatBrands = array_fill_keys(YliadesController::LES_MARQUES, 1);
             }
         }
 
         return $formatBrands;
     }
-
-    private function setValueAllBrands(int $val): array
-    {
-        $newArray = array_fill_keys(YliadesController::LES_MARQUES, $val);
-        return $newArray;
-    }
-
 }

@@ -10,13 +10,12 @@ class BlogSitramController extends AbstractCompanyController
     const ENTITY_ACTITO = "GersEquipement";
     const TABLE_ACTITO = "GersEquipement";
 
-    public function savePeopleInActito(array $dataUser): void
+    public function setDataToSaveOnActito(array $dataUser): array
     {
-        $dataForActito = array(
-            'email' => $dataUser['email'],
-            'source' => "blog-sitram",
-            'newsletter' => "1"
-        );
-        parent::savePeopleInActito($dataForActito);
+        $dataForActito = parent::setDataToSaveOnActito($dataUser);
+        $dataForActito['source'] = "blog-sitram";
+        $dataForActito['newsletter'] = "1";
+
+        return $dataForActito;
     }
 }

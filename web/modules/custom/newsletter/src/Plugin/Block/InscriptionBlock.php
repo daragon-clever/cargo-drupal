@@ -3,7 +3,7 @@ namespace Drupal\newsletter\Plugin\Block;
 
 
 use Drupal\Core\Block\BlockBase;
-use Drupal\newsletter\Form\Company as CompanyForm;
+use Drupal\newsletter\Controller\NewsletterController;
 
 /**
  * @Block(
@@ -14,39 +14,34 @@ use Drupal\newsletter\Form\Company as CompanyForm;
  */
 class InscriptionBlock extends BlockBase
 {
-    protected $company;
+    /**
+     * @var NewsletterController
+     */
+    protected $newsletterController;
 
-    public function __construct(array $configuration, $plugin_id, $plugin_definition)
+    public function __construct(
+        array $configuration,
+        $plugin_id,
+        $plugin_definition
+    )
     {
         parent::__construct($configuration, $plugin_id, $plugin_definition);
-        $this->company = \Drupal::config('system.site')->getOriginal("name", false);
+        $this->newsletterController = new NewsletterController();
     }
 
     /**
+     * Load template of form according to company
+     *
      * {@inheritdoc}
      */
     public function build()
     {
-        $cleanCompany = strtolower(str_replace(' ', '', $this->company));
-        switch ($cleanCompany) {
-            case "yliades":
-                $myForm = \Drupal::formBuilder()->getForm(CompanyForm\YliadesForm::class);
-                break;
-            case "blog.sitram.fr":
-                $myForm = \Drupal::formBuilder()->getForm(CompanyForm\BlogSitramForm::class);
-                break;
-            case "comptoirdefamille":
-                $myForm = \Drupal::formBuilder()->getForm(CompanyForm\ComptoirDeFamilleForm::class);
-                break;
-            case "c'estdeuxeuros":
-                $myForm = \Drupal::formBuilder()->getForm(CompanyForm\CestDeuxEurosForm::class);
-                break;
-        }
+        $myForm = $this->newsletterController->getCompanyForm();
 
-        $array = array(
-            '#theme' => "inscription",
-            '#form' => $myForm
-        );
+        $array['#theme'] = "inscription";
+        if (!is_null($myForm)) {
+            $array['#form'] = $myForm;
+        }
 
         return $array;
     }

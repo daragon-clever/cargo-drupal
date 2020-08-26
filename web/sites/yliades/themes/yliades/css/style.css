@@ -144,6 +144,12 @@ h2#title-catalogue {
 .form-item-marques-jardin-d-ulysse {
   background: #c3aa91 !important;
 }
+.form-item-marques-7,
+.form-item-field-marque-evenement-target-id-7,
+.form-item-field-marque-presse-target-id-7,
+.form-item-marques-natives {
+  background: #b81e2b !important;
+}
 .user-login-form {
   margin: 30px auto 0;
   display: block;

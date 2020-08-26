@@ -9,7 +9,6 @@ use Drupal\newsletter\Controller\Company\BlogSitramController;
 
 class BlogSitramForm extends FormBase
 {
-
     /**
      * {@inheritdoc}
      */
@@ -61,8 +60,6 @@ class BlogSitramForm extends FormBase
 
         $data = [
             'email' => $email,
-            'active' => 1,
-            'exported' => 0
         ];
 
         $controllerBase = new BlogSitramController();

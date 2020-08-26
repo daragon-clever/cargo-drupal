@@ -16,97 +16,46 @@ class CestDeuxEurosController extends AbstractCompanyController
     const ENTITY_ACTITO = "Cest2euros";
     const TABLE_ACTITO = "Cest2euros";
 
-    protected function setDataToInsertPeople($arrayData): array
+    const SUBSCRIPTION_NEWSLETTER = "newsletter_shop";
+    const SUBSCRIPTION_OFFER = "offers";
+
+    protected function setDataToInsertPeopleOnDb($arrayData): array
     {
-        $dataToInsert = parent::setDataToInsertPeople($arrayData);
-
-        $dataToInsert['first_name'] = $arrayData['prenom'];
-        $dataToInsert['last_name'] = $arrayData['nom'];
-        $dataToInsert['zip_code'] = $arrayData['cp'];
-
-        return $dataToInsert;
+        $dataToInsert = parent::setDataToInsertPeopleOnDb($arrayData);
+        $additionalData = $this->setDataToInsertOrUpdatePeopleOnDb($arrayData);
+        return array_merge($dataToInsert, $additionalData);
     }
 
-    protected function insertPeople(array $arrayData): void
+    protected function setDataToUpdatePeopleOnDb($arrayData): array
     {
-        parent::insertPeople($arrayData);
-
-        $people = $this->getPeople($arrayData['email']);
-        $idPeople = $people['id'];
-
-        $this->connection->insert(self::TABLE_SUBSCRIBTION)
-            ->fields([
-                "id_subscriber" => intval($idPeople),
-                "newsletter_shop" => $arrayData['newsletter'],
-                "offers" => $arrayData['offres'],
-            ])
-            ->execute();
+        $dataToUpdate = parent::setDataToUpdatePeopleOnDb($arrayData);
+        $additionalData = $this->setDataToInsertOrUpdatePeopleOnDb($arrayData);
+        return array_merge($dataToUpdate, $additionalData);
     }
 
-    protected function setDataToUpdatePeople($arrayData): array
+    public function setDataToSaveOnActito(array $dataUser): array
     {
-        $dataToUpdate = parent::setDataToUpdatePeople($arrayData);
+        $dataForActito = parent::setDataToSaveOnActito($dataUser);
+        $dataForActito['prenom'] = $dataUser['prenom'];
+        $dataForActito['nom'] = $dataUser['nom'];
+        $dataForActito['cp'] = $dataUser['cp'];
+        $dataForActito['newsletter'] = $dataUser['newsletter'];
+        $dataForActito['offres'] = $dataUser['offres'];
 
+        return $dataForActito;
+    }
+
+    private function setDataToInsertOrUpdatePeopleOnDb($arrayData): array
+    {
         $dataToUpdate['first_name'] = $arrayData['prenom'];
         $dataToUpdate['last_name'] = $arrayData['nom'];
         $dataToUpdate['zip_code'] = $arrayData['cp'];
+        $dataToUpdate['subscriptions'] = serialize([
+            self::SUBSCRIPTION_NEWSLETTER => $arrayData['newsletter'],
+            self::SUBSCRIPTION_OFFER => $arrayData['offres']
+        ]);
 
         return $dataToUpdate;
-    }
-
-    protected function updatePeople(array $arrayData): void
-    {
-        parent::updatePeople($arrayData);
-
-        $people = $this->getPeople($arrayData['email']);
-
-        //Update table subscription
-        if (isset($arrayData['newsletter']) && isset($arrayData['offres'])) {
-            $this->connection->update(self::TABLE_SUBSCRIBTION)
-                ->fields([
-                    "newsletter_shop" => $arrayData['newsletter'],
-                    "offers" => $arrayData['offres'],
-                ])
-                ->condition('id_subscriber', intval($people["id"]), '=')
-                ->execute();
-        }
-    }
-
-    public function savePeopleInActito(array $dataUser): void
-    {
-        $dataForActito = array(
-            'prenom' => $dataUser['prenom'],
-            'nom' => $dataUser['nom'],
-            'cp' => $dataUser['cp'],
-            'email' => $dataUser['email'],
-            'newsletter' => $dataUser['newsletter'],
-            'offres' => $dataUser['offres'],
-        );
-        parent::savePeopleInActito($dataForActito);
-    }
-
-    public function setSchemaTableSubscription(): array
-    {
-        $array = parent::setSchemaTableSubscription();
-        $arrayPushData = [
-            'newsletter_shop' => [
-                'type' => 'int',
-                'size' => 'tiny',
-                'not null' => TRUE,
-                'default' => '0',
-                'description' => '',
-            ],
-            'offers' => [
-                'type' => 'int',
-                'size' => 'tiny',
-                'not null' => TRUE,
-                'default' => '0',
-                'description' => '',
-            ]
-        ];
-        $array['fields'] = array_merge($array['fields'], $arrayPushData);
-
-        return $array;
     }
 
     public function setSchemaTableSubscriber(): array
@@ -133,10 +82,51 @@ class CestDeuxEurosController extends AbstractCompanyController
                 'not null' => TRUE,
                 'default' => '',
                 'description' => 'Postcode of the person.',
+            ],
+            'subscriptions' => [
+                'type' => 'text',
+                'size' => 'big',
+                'description' => 'Subscriptions list of subscriber',
             ]
         ];
         $array['fields'] = array_merge($array['fields'], $arrayPushData);
 
         return $array;
+    }
+
+    public function setUpdate8101($oldTableName)
+    {
+        $newColumn = "subscriptions";
+
+        //add new collumn
+        $spec = [
+            'type' => 'text',
+            'size' => 'big',
+            'description' => 'Subscriptions list of subscriber',
+        ];
+        $schema = \Drupal::database()->schema();
+        $schemaFieldExist = $schema->fieldExists($this->subscriberModel::TABLE_SUBSCRIBER, $newColumn);
+        if (!$schemaFieldExist) $schema->addField($this->subscriberModel::TABLE_SUBSCRIBER, $newColumn, $spec);
+
+        //move data in new collumn
+        $connection = \Drupal::database();
+
+        $dataSubscriptions = $connection->select($oldTableName,'subscriptions')
+            ->fields('subscriptions')
+            ->execute()
+            ->fetchAll();
+
+        foreach ($dataSubscriptions as $val) {
+            $fields[$newColumn] = serialize([
+                self::SUBSCRIPTION_NEWSLETTER => $val->{self::SUBSCRIPTION_NEWSLETTER},
+                self::SUBSCRIPTION_OFFER => $val->{self::SUBSCRIPTION_OFFER},
+            ]);
+            $idSubscriber = $val->id_subscriber;
+
+            $connection->update($this->subscriberModel::TABLE_SUBSCRIBER)
+                ->fields($fields)
+                ->condition('id', $idSubscriber, '=')
+                ->execute();
+        }
     }
 }

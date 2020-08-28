@@ -133,16 +133,16 @@
         },
         {
             "name": "cargo/common-synapse-client",
-            "version": "v2.0.15",
+            "version": "v2.0.16",
             "source": {
                 "type": "git",
                 "url": "git@github.com:PoleWebCargo/WEB_Common_Module_Synapse_Client.git",
-                "reference": "4681ad5a7c03a39e57291244be835b244c9df91d"
+                "reference": "7cf10523d689f7a995ba5c143febae69fcd59504"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PoleWebCargo/WEB_Common_Module_Synapse_Client/zipball/4681ad5a7c03a39e57291244be835b244c9df91d",
-                "reference": "4681ad5a7c03a39e57291244be835b244c9df91d",
+                "url": "https://api.github.com/repos/PoleWebCargo/WEB_Common_Module_Synapse_Client/zipball/7cf10523d689f7a995ba5c143febae69fcd59504",
+                "reference": "7cf10523d689f7a995ba5c143febae69fcd59504",
                 "shasum": ""
             },
             "require": {
@@ -167,7 +167,7 @@
                 "source": "https://github.com/PoleWebCargo/WEB_Module_Common_Synapse_Client",
                 "issues": "https://github.com/PoleWebCargo/WEB_Common_Module_Synapse_Client/issues"
             },
-            "time": "2020-08-27T12:50:23+00:00"
+            "time": "2020-08-28T08:41:27+00:00"
         },
         {
             "name": "cargo/drupal_synapse",
@@ -12481,6 +12481,7 @@
             "keywords": [
                 "tokenizer"
             ],
+            "abandoned": true,
             "time": "2019-09-17T06:23:10+00:00"
         },
         {

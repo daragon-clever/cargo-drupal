@@ -128,13 +128,13 @@
         <div class="store-detail-txt">
             <h3>Présentation</h3>
             <p>
-                {% if location.presentation %}
-                    {{ location.presentation }}
-                {% else %}
+                {% if location.description is empty %}
                     Tous, absolument tous nos articles sont vendus dans nos magasins au prix unique de 2 euros.
                     Pour nous, comme pour vous, 2 euros ce n’est pas cher, mais ce n’est pas une raison pour se montrer
                     moins exigeant, bien au contraire ! Chaque article proposé dans nos magasins a gagné sa place dans
                     nos rayons, en apportant un «plus» pour son prix.
+                {% else %}
+                    {{ location.description }}
                 {% endif %}
             </p>
         </div>

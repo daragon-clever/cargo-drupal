@@ -1,30 +1,31 @@
+@import '../font/itc-avantgarde/font-itc.css';
 @font-face {
   font-family: 'Quicksand';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/quicksand/v20/6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkP8o58a-xw.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/quicksand/v21/6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkP8o58a-xw.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Quicksand';
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/quicksand/v20/6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkM0o58a-xw.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/quicksand/v21/6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkM0o58a-xw.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Quicksand';
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/quicksand/v20/6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkCEv58a-xw.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/quicksand/v21/6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkCEv58a-xw.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Quicksand';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/quicksand/v20/6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkBgv58a-xw.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/quicksand/v21/6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkBgv58a-xw.ttf) format('truetype');
 }
 body {
   font-family: 'Quicksand', sans-serif;
@@ -1355,4 +1356,104 @@ ul.plandusite a {
 }
 .magasins-participants .magasin-item:last-child {
   margin-bottom: 15px;
+}
+#ope-mkt-cms {
+  text-align: center;
+  font-family: 'ITC Avant Garde Pro Md', Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  color: #232323;
+}
+#ope-mkt-cms h1 {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  max-width: 590px;
+  margin: 30px auto;
+}
+#ope-mkt-cms .subtitle {
+  font-size: 18px;
+  text-align: center;
+  font-weight: bold;
+}
+#ope-mkt-cms .main-ban {
+  margin: 30px auto;
+}
+#ope-mkt-cms .info-code b {
+  font-size: 18px;
+}
+#ope-mkt-cms .info-code small {
+  font-size: 14px;
+}
+#ope-mkt-cms form {
+  margin-bottom: 30px;
+}
+#ope-mkt-cms form .webform-elements > div {
+  display: inline-block;
+  vertical-align: middle;
+}
+#ope-mkt-cms form .webform-elements > div.captcha {
+  display: block;
+  margin: 30px auto;
+}
+#ope-mkt-cms form input {
+  line-height: 50px;
+  border-radius: 50px;
+  font-size: 16px;
+}
+#ope-mkt-cms form input[type=email] {
+  border: 2px solid #159ed4;
+  padding: 0 15px 0 70px;
+  max-width: 350px;
+  background: url("../images/picto-email.svg") no-repeat 23px 7px;
+  background-size: 36px;
+  margin-right: 30px;
+}
+@media only screen and (max-width: 991px) {
+  #ope-mkt-cms form input[type=email] {
+    margin: 0 0 15px 0;
+  }
+}
+#ope-mkt-cms form input[type=submit] {
+  background: #3c3c3b;
+  border-color: #3c3c3b;
+  color: white;
+  font-weight: bold;
+  padding: 0 25px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+#ope-mkt-cms form input[type=submit]:hover {
+  opacity: 0.8;
+}
+#ope-mkt-cms .block-grey {
+  background-color: #f6f6f6;
+  padding: 35px;
+}
+@media only screen and (max-width: 991px) {
+  #ope-mkt-cms .block-grey {
+    padding: 30px 15px;
+  }
+}
+#ope-mkt-cms .block-grey p {
+  text-align: left;
+}
+#ope-mkt-cms .block-grey p.conclu {
+  text-align: center;
+  font-weight: bold;
+  margin: 25px 0 0 0;
+}
+#ope-mkt-cms .block-grey img {
+  margin-left: 50px;
+  max-width: 100%;
+}
+@media only screen and (max-width: 991px) {
+  #ope-mkt-cms .block-grey img {
+    margin: 0 0 30px 0;
+  }
+}
+#ope-mkt-cms .block-grey h2 {
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 35px;
 }

@@ -1370,6 +1370,14 @@ ul.plandusite a {
   max-width: 590px;
   margin: 30px auto;
 }
+@media only screen and (max-width: 991px) {
+  #ope-mkt-cms h1 {
+    font-size: 25px;
+  }
+  #ope-mkt-cms h1 br {
+    display: none;
+  }
+}
 #ope-mkt-cms .subtitle {
   font-size: 18px;
   text-align: center;
@@ -1378,8 +1386,16 @@ ul.plandusite a {
 #ope-mkt-cms .main-ban {
   margin: 30px auto;
 }
+#ope-mkt-cms .info-code {
+  margin: 50px 0;
+}
+@media only screen and (max-width: 991px) {
+  #ope-mkt-cms .info-code {
+    margin: 30px 0;
+  }
+}
 #ope-mkt-cms .info-code b {
-  font-size: 18px;
+  font-size: 28px;
 }
 #ope-mkt-cms .info-code small {
   font-size: 14px;

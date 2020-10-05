@@ -1,0 +1,151 @@
+.c-form {
+  position: relative;
+  max-width: 570px;
+  padding: 3.5rem 15px 0;
+  margin: 0 auto;
+
+  &__title {
+    margin: 0;
+    margin-bottom: 3rem;
+    padding-top: 4.5rem;
+    @extend .c-text-bold;
+    font-size: 2.1rem;
+    line-height: 1;
+    text-align: center;
+    color: $black-text;
+    text-transform: uppercase;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 3rem;
+      left: 50%;
+      width: 5rem;
+      height: 0.1rem;
+      transform: translateX(-50%);
+      background-color: $grey-lightest;
+    }
+
+  }
+
+  .form-item {
+    margin-top: 1.7rem;
+
+    label {
+      display: none;
+    }
+  }
+
+  &__captcha-container {
+    margin-top: 2.4rem;
+  }
+
+  &__submit-container {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  &__upload-wrapper {
+    color: $grey-darkest;
+
+    label {
+      display: block !important;
+    }
+
+    .button {
+      border: 1px solid;
+      padding: 15px;
+      width: 100%;
+      cursor: pointer;
+      transition: opacity 0.3s ease-in-out;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .g-recaptcha {
+    text-align: center;
+
+    & > div {
+      display: inline-block;
+      margin-top: 20px;
+    }
+  }
+
+  // Tablet/mobile version.
+  @media only screen and (max-width: $bp-tablet) {
+    padding-top: 0;
+  }
+
+}
+
+form .select2-container--default {
+  &.select2-container--open .select2-selection--single::after {
+    content: '\f077';
+  }
+
+  .select2-selection--single {
+    overflow: hidden;
+    min-height: 44px;
+    padding: 7.5px 7.5px 3.75px;
+    width: 100%;
+    vertical-align: top;
+    display: inline-block;
+    padding-top: 1rem;
+    padding-left: 1.6rem;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    background-color: white;
+    border-radius: 0;
+    border: 0.1rem solid #303030;
+    color: black;
+    font-family: "Titillium-semi-bold";
+    padding-bottom: 7.5px;
+    height: inherit;
+
+    &::after {
+      font-family: 'Font Awesome 5 Free';
+      content: '\f078';
+      font-weight: 600;
+      right: 2rem;
+      top: 1.7rem;
+      border: none;
+      margin-top: 0;
+      font-size: 1rem;
+      color: #303030;
+      height: 0;
+      width: 0;
+      position: absolute;
+    }
+  }
+
+
+
+}
+
+form .select2-container--default .select2-selection--single .select2-selection__arrow {
+  display: none;
+}
+
+
+
+form .select2-container .select2-selection--single .select2-selection__rendered {
+  display: inline-block;
+  padding: 4px 16px 4px 4px;
+  padding-left: 0;
+  width: 100%;
+  list-style: none;
+  color: black;
+  font-family: "Titillium-semi-bold";
+  line-height: 1.4;
+  font-size: 1.4rem;
+}
+
+.select2-search--dropdown {
+  display: none!important;
+}

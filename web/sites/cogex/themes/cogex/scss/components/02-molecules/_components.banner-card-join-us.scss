@@ -128,12 +128,18 @@ category: 02-molecules
     text-align: center;
   }
 
+  &__link {
+    text-align: center;
+    margin-top: 10px;
+  }
+
   @media only screen and (max-width: $bp-tablet) {
     position: static;
     width: 100%;
     padding: 0 15px;
     padding-top: 5rem;
     padding-bottom: 4rem;
+    opacity: 1;
 
     &::after {
       left: 1.5rem;

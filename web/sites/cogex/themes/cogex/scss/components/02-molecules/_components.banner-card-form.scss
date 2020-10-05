@@ -1,15 +1,15 @@
 /*
 
 ---
-name: c-banner-card-contact
+name: c-banner-card-form
 category: 02-molecules
 ---
  
 ``` types.html
 <div style="background-color: #D6D6D6; padding: 2rem;">
-  <div class="c-banner-card-contact">
-    <p class="c-banner-card-contact__title">Title</p>
-    <p class="c-banner-card-contact__content">
+  <div class="c-banner-card-form">
+    <p class="c-banner-card-form__title">Title</p>
+    <p class="c-banner-card-form__content">
       Content
     </p>
   </div>
@@ -17,7 +17,7 @@ category: 02-molecules
 ```
 
 */
-.c-banner-card-contact {
+.c-banner-card-form {
   position: relative;
   width: 54rem;
   padding: 7rem;

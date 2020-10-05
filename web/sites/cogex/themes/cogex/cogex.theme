@@ -5,7 +5,7 @@ use Drupal\field\Entity\FieldConfig;
 use Drupal\file\Entity\File;
 
 function cogex_form_alter(&$form, &$form_state, $form_id) {
-    $form['#attributes']['class'][] = 'c-contact-form';
+    $form['#attributes']['class'][] = 'c-form';
 }
 
 /**

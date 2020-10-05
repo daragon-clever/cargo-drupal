@@ -72,17 +72,6 @@
 #}
 {% block mainContent %}
 
-    <div class="c-page-banner c-page-banner--join-us">
-        <div class="c-page-banner__picture" style="background-image: url('{{ file_url(content.field_banner_picture['#items'].entity.uri.value) }}')"></div>
-        <div class="container">
-            <div class="c-page-banner__content-wrapper">
-                <div class="c-banner-card-join-us" {{ attributes }}>
-                   {{ content.field_banner_text }}
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div class="joinus-portraits">
         <div class="container portraits">
             <div class="txt-intro">

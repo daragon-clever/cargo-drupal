@@ -3570,11 +3570,11 @@ input[type="email"],
 input[type="password"],
 input[type="tel"],
 input[type="number"],
-input[type="search"], .choices .choices__inner, .choices .choices__item.choices__item--choice, .c-header__nav-main-link, .c-header__nav-sublink, .c-footer__section-button, .c-footer__section-link, .c-footer__txtbottom, .c-banner-card-home__content, .c-banner-card-company__content, .c-banner-card-company__hidden-content, .c-banner-card-contact__content, .c-banner-card-expertise__content, .c-banner-card-expertise__hidden-content, .c-banner-card-products__content, .c-banner-card-join-us__content p, .c-banner-card-join-us__hidden-content p, .c-product-title__title, .c-page-section__subtitle, .c-page-section__description, .c-product-description__description, .c-expertise-section__description, .c-expertise-section__description-hidden, .c-expertise-section__read-more-button, .c-expertise-section__read-less-button, .c-expertise-section__responsive-read-more-button, .c-expertise-section__link {
+input[type="search"], .choices .choices__inner, .choices .choices__item.choices__item--choice, .c-header__nav-main-link, .c-header__nav-sublink, .c-footer__section-button, .c-footer__section-link, .c-footer__txtbottom, .c-banner-card-home__content, .c-banner-card-company__content, .c-banner-card-company__hidden-content, .c-banner-card-form__content, .c-banner-card-expertise__content, .c-banner-card-expertise__hidden-content, .c-banner-card-products__content, .c-banner-card-join-us__content p, .c-banner-card-join-us__hidden-content p, .c-product-title__title, .c-page-section__subtitle, .c-page-section__description, .c-product-description__description, .c-expertise-section__description, .c-expertise-section__description-hidden, .c-expertise-section__read-more-button, .c-expertise-section__read-less-button, .c-expertise-section__responsive-read-more-button, .c-expertise-section__link {
   font-family: 'Titillium-semi-bold';
   color: #000000; }
 
-.c-text-bold, .c-button, .c-banner-card-home__title, .c-banner-card-company__title, .c-banner-card-company__read-more-button, .c-banner-card-company__read-less-button, .c-banner-card-contact__title, .c-banner-card-expertise__title, .c-banner-card-expertise__read-more-button, .c-banner-card-expertise__read-less-button, .c-banner-card-products__title, .c-banner-card-join-us__title, .c-banner-card-join-us__read-more-button, .c-banner-card-join-us__read-less-button, .c-statistic-section-title__title, .c-statistic-section-separator__title, .c-discover-section-title__title, .c-page-section__title, .c-expertise-section__title, .c-expertise-section__responsive-read-more-button, .c-contact-form__title {
+.c-text-bold, .c-button, .c-banner-card-home__title, .c-banner-card-company__title, .c-banner-card-company__read-more-button, .c-banner-card-company__read-less-button, .c-banner-card-form__title, .c-banner-card-expertise__title, .c-banner-card-expertise__read-more-button, .c-banner-card-expertise__read-less-button, .c-banner-card-products__title, .c-banner-card-join-us__title, .c-banner-card-join-us__read-more-button, .c-banner-card-join-us__read-less-button, .c-statistic-section-title__title, .c-statistic-section-separator__title, .c-discover-section-title__title, .c-page-section__title, .c-expertise-section__title, .c-expertise-section__responsive-read-more-button, .c-form__title {
   font-family: 'Titillium-bold';
   color: #000000; }
 
@@ -3834,15 +3834,15 @@ category: 02-molecules
 /*
 
 ---
-name: c-banner-card-contact
+name: c-banner-card-form
 category: 02-molecules
 ---
  
 ``` types.html
 <div style="background-color: #D6D6D6; padding: 2rem;">
-  <div class="c-banner-card-contact">
-    <p class="c-banner-card-contact__title">Title</p>
-    <p class="c-banner-card-contact__content">
+  <div class="c-banner-card-form">
+    <p class="c-banner-card-form__title">Title</p>
+    <p class="c-banner-card-form__content">
       Content
     </p>
   </div>
@@ -3850,13 +3850,13 @@ category: 02-molecules
 ```
 
 */
-.c-banner-card-contact {
+.c-banner-card-form {
   position: relative;
   width: 54rem;
   padding: 7rem;
   padding-bottom: 5.7rem;
   background-color: #303030; }
-  .c-banner-card-contact::before {
+  .c-banner-card-form::before {
     content: '';
     display: block;
     position: absolute;
@@ -3868,7 +3868,7 @@ category: 02-molecules
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-top: 10px solid #303030; }
-  .c-banner-card-contact::after {
+  .c-banner-card-form::after {
     content: '';
     display: block;
     position: absolute;
@@ -3877,27 +3877,27 @@ category: 02-molecules
     background-color: #ffffff;
     top: 5.5rem;
     left: 7rem; }
-  .c-banner-card-contact__title {
+  .c-banner-card-form__title {
     margin: 0;
     color: #ffffff;
     font-size: 2.1rem;
     line-height: 1.33;
     text-transform: uppercase; }
-  .c-banner-card-contact__content {
+  .c-banner-card-form__content {
     margin: 0;
     margin-top: 1rem;
     color: #ffffff;
     font-size: 1.4rem;
     line-height: 1.71; }
   @media only screen and (max-width: 992px) {
-    .c-banner-card-contact {
+    .c-banner-card-form {
       width: 100%;
       padding: 0 1.5rem;
       padding-top: 7rem;
       padding-bottom: 4rem; }
-      .c-banner-card-contact::before {
+      .c-banner-card-form::before {
         display: none; }
-      .c-banner-card-contact::after {
+      .c-banner-card-form::after {
         left: 1.5rem;
         width: 5rem; } }
 
@@ -4187,13 +4187,17 @@ category: 02-molecules
   .c-banner-card-join-us__button-container {
     margin-top: 2.1rem;
     text-align: center; }
+  .c-banner-card-join-us__link {
+    text-align: center;
+    margin-top: 10px; }
   @media only screen and (max-width: 992px) {
     .c-banner-card-join-us {
       position: static;
       width: 100%;
       padding: 0 15px;
       padding-top: 5rem;
-      padding-bottom: 4rem; }
+      padding-bottom: 4rem;
+      opacity: 1; }
       .c-banner-card-join-us::after {
         left: 1.5rem;
         top: 3rem;
@@ -4265,7 +4269,7 @@ category: 02-molecules
     .c-page-banner--expertise {
       background-color: #E30613; } }
   .c-page-banner--join-us .c-page-banner__picture {
-    background-image: url("../images/img-nousrejoindre.png"); }
+    background-image: url("../images/img-nousrejoindre.jpg"); }
   .c-page-banner__content-wrapper {
     position: relative;
     padding-top: 5.9rem;
@@ -4379,7 +4383,7 @@ category: 02-molecules
   .c-page-banner-home .c-page-banner-home__picture--2 {
     background-image: url("../images/img-header-02.png"); }
   .c-page-banner-home .c-page-banner-home__picture--3 {
-    background-image: url("../images/img-nousrejoindre.png"); }
+    background-image: url("../images/img-nousrejoindre.jpg"); }
   .c-page-banner-home .c-banner-card-home {
     position: absolute;
     top: 50%;
@@ -4457,16 +4461,16 @@ category: 02-molecules
 /*
 
 ---
-name: c-page-banner-contact
+name: c-page-banner-form
 category: 02-molecules
 ---
  
 ``` types.html
-<div class="c-page-banner-contact">
+<div class="c-page-banner-form">
 
-  <div class="c-banner-card-contact">
-    <p class="c-banner-card-contact__title">Title</p>
-    <p class="c-banner-card-contact__content">
+  <div class="c-banner-card-form">
+    <p class="c-banner-card-form__title">Title</p>
+    <p class="c-banner-card-form__content">
       Content
     </p>
 
@@ -4474,11 +4478,11 @@ category: 02-molecules
 ```
 
 */
-.c-page-banner-contact__content-wrapper {
+.c-page-banner-form__content-wrapper {
   position: relative;
   padding-top: 5.9rem;
   padding-left: 13.9rem; }
-  .c-page-banner-contact__content-wrapper::before {
+  .c-page-banner-form__content-wrapper::before {
     content: '';
     display: block;
     width: 31.5rem;
@@ -4489,11 +4493,11 @@ category: 02-molecules
     background-color: #E30613; }
 
 @media only screen and (max-width: 992px) {
-  .c-page-banner-contact {
+  .c-page-banner-form {
     background-color: #303030; }
-    .c-page-banner-contact__content-wrapper {
+    .c-page-banner-form__content-wrapper {
       padding: 0; }
-      .c-page-banner-contact__content-wrapper::before {
+      .c-page-banner-form__content-wrapper::before {
         display: none; } }
 
 /*
@@ -5479,12 +5483,12 @@ category: 03-organisms
           align-items: center;
           justify-content: center; } }
 
-.c-contact-form {
+.c-form {
   position: relative;
   max-width: 570px;
   padding: 3.5rem 15px 0;
   margin: 0 auto; }
-  .c-contact-form__title {
+  .c-form__title {
     margin: 0;
     margin-bottom: 3rem;
     padding-top: 4.5rem;
@@ -5494,7 +5498,7 @@ category: 03-organisms
     color: #232323;
     text-transform: uppercase;
     position: relative; }
-    .c-contact-form__title::after {
+    .c-form__title::after {
       content: '';
       display: block;
       position: absolute;
@@ -5504,36 +5508,88 @@ category: 03-organisms
       height: 0.1rem;
       transform: translateX(-50%);
       background-color: #D6D6D6; }
-  .c-contact-form .form-item {
+  .c-form .form-item {
     margin-top: 1.7rem; }
-    .c-contact-form .form-item label {
+    .c-form .form-item label {
       display: none; }
-  .c-contact-form__captcha-container {
+  .c-form__captcha-container {
     margin-top: 2.4rem; }
-  .c-contact-form__submit-container {
+  .c-form__submit-container {
     margin-top: 2rem;
     margin-bottom: 3rem;
     text-align: center; }
-  .c-contact-form__upload-wrapper {
+  .c-form__upload-wrapper {
     color: #303030; }
-    .c-contact-form__upload-wrapper label {
+    .c-form__upload-wrapper label {
       display: block !important; }
-    .c-contact-form__upload-wrapper .button {
+    .c-form__upload-wrapper .button {
       border: 1px solid;
       padding: 15px;
       width: 100%;
       cursor: pointer;
       transition: opacity 0.3s ease-in-out; }
-      .c-contact-form__upload-wrapper .button:hover {
+      .c-form__upload-wrapper .button:hover {
         opacity: 0.8; }
-  .c-contact-form .g-recaptcha {
+  .c-form .g-recaptcha {
     text-align: center; }
-    .c-contact-form .g-recaptcha > div {
+    .c-form .g-recaptcha > div {
       display: inline-block;
       margin-top: 20px; }
   @media only screen and (max-width: 992px) {
-    .c-contact-form {
+    .c-form {
       padding-top: 0; } }
+
+form .select2-container--default.select2-container--open .select2-selection--single::after {
+  content: '\f077'; }
+
+form .select2-container--default .select2-selection--single {
+  overflow: hidden;
+  min-height: 44px;
+  padding: 7.5px 7.5px 3.75px;
+  width: 100%;
+  vertical-align: top;
+  display: inline-block;
+  padding-top: 1rem;
+  padding-left: 1.6rem;
+  font-size: 1.4rem;
+  line-height: 1.4;
+  background-color: white;
+  border-radius: 0;
+  border: 0.1rem solid #303030;
+  color: black;
+  font-family: "Titillium-semi-bold";
+  padding-bottom: 7.5px;
+  height: inherit; }
+  form .select2-container--default .select2-selection--single::after {
+    font-family: 'Font Awesome 5 Free';
+    content: '\f078';
+    font-weight: 600;
+    right: 2rem;
+    top: 1.7rem;
+    border: none;
+    margin-top: 0;
+    font-size: 1rem;
+    color: #303030;
+    height: 0;
+    width: 0;
+    position: absolute; }
+
+form .select2-container--default .select2-selection--single .select2-selection__arrow {
+  display: none; }
+
+form .select2-container .select2-selection--single .select2-selection__rendered {
+  display: inline-block;
+  padding: 4px 16px 4px 4px;
+  padding-left: 0;
+  width: 100%;
+  list-style: none;
+  color: black;
+  font-family: "Titillium-semi-bold";
+  line-height: 1.4;
+  font-size: 1.4rem; }
+
+.select2-search--dropdown {
+  display: none !important; }
 
 .c-main-content {
   padding-top: 8rem; }
@@ -5674,3 +5730,309 @@ html {
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
       margin: 0 15px 20px 15px;
       padding: 15px; } }
+
+.select2-results__option {
+  color: #5e5e5e; }
+
+.listing-offres, #offre {
+  font-size: 16px; }
+  .listing-offres #alerte-offres .error, #offre #alerte-offres .error {
+    color: white;
+    background-color: #303030;
+    padding: 50px 20%;
+    text-align: center; }
+    @media (max-width: 767px) {
+      .listing-offres #alerte-offres .error, #offre #alerte-offres .error {
+        padding: 30px 10%; } }
+  .listing-offres h3, .listing-offres .h3-like, #offre h3, #offre .h3-like {
+    text-transform: uppercase;
+    font-size: 23px;
+    border-bottom: 1px solid #949494;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    position: relative;
+    color: #E30613;
+    line-height: 1.4; }
+    .listing-offres h3::before, .listing-offres .h3-like::before, #offre h3::before, #offre .h3-like::before {
+      display: block;
+      content: "";
+      background-color: #949494;
+      border-radius: 8px;
+      width: 8px;
+      height: 8px;
+      position: absolute;
+      bottom: -4px; }
+
+@media (max-width: 767px) {
+  .listing-offres h3 {
+    margin-top: 0; } }
+
+.listing-offres .filters {
+  margin-bottom: 30px; }
+  .listing-offres .filters select, .listing-offres .filters #searchbox {
+    width: 100%;
+    margin: 5px 0;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #cecece; }
+  .listing-offres .filters #searchbox {
+    background: url("../images/picto-search.png") no-repeat center right 10px transparent;
+    padding-left: 0;
+    padding-right: 0;
+    border: 0;
+    border-bottom: 1px solid #cecece;
+    color: #5e5e5e;
+    margin: 30px 0 5px 0;
+    /*&::placeholder{
+        color: $dark-grey-offres-emploi;
+        font-family: "Titillium-semi-bold";
+      }*/ }
+    .listing-offres .filters #searchbox::placeholder {
+      color: #5e5e5e;
+      font-family: "Titillium-semi-bold"; }
+    .listing-offres .filters #searchbox::-webkit-input-placeholder {
+      color: #5e5e5e;
+      font-family: "Titillium-semi-bold"; }
+    .listing-offres .filters #searchbox:-moz-placeholder {
+      color: #5e5e5e;
+      font-family: "Titillium-semi-bold"; }
+    .listing-offres .filters #searchbox::-moz-placeholder {
+      color: #5e5e5e;
+      font-family: "Titillium-semi-bold"; }
+    .listing-offres .filters #searchbox:-ms-input-placeholder {
+      color: #5e5e5e;
+      font-family: "Titillium-semi-bold"; }
+    @media (max-width: 767px) {
+      .listing-offres .filters #searchbox {
+        margin-top: 0; } }
+  .listing-offres .filters #groupe-filtres-offres-emploi .filtres-offres-emploi {
+    color: #5e5e5e; }
+    .listing-offres .filters #groupe-filtres-offres-emploi .filtres-offres-emploi .type {
+      margin-top: 15px;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      color: #cecece;
+      display: block; }
+  .listing-offres .filters #groupe-filtres-offres-emploi .select2-container--default .select2-selection--single, .listing-offres .filters #groupe-filtres-offres-emploi .select2-container--default .select2-selection__arrow {
+    height: 40px; }
+  .listing-offres .filters #groupe-filtres-offres-emploi .select2-container--default .select2-selection--single {
+    padding-left: 8px;
+    border: 1px solid #cecece;
+    border-radius: 0; }
+    .listing-offres .filters #groupe-filtres-offres-emploi .select2-container--default .select2-selection--single .select2-selection__rendered {
+      line-height: 40px; }
+    .listing-offres .filters #groupe-filtres-offres-emploi .select2-container--default .select2-selection--single .select2-selection__arrow b {
+      border-color: #5e5e5e transparent transparent transparent; }
+  @media (max-width: 767px) {
+    .listing-offres .filters #groupe-filtres-offres-emploi {
+      display: none; }
+      .listing-offres .filters #groupe-filtres-offres-emploi .select2-container {
+        width: 100% !important; } }
+  .listing-offres .filters .cta-filter {
+    width: 100%;
+    background-color: #E30613;
+    color: white;
+    border: none;
+    box-shadow: none;
+    padding: 0 25px;
+    line-height: 40px;
+    cursor: pointer;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 14px; }
+    .listing-offres .filters .cta-filter.top {
+      margin-bottom: 13px; }
+    .listing-offres .filters .cta-filter.bottom {
+      margin-top: 15px; }
+
+.listing-offres .jobs-list table#toutes-les-offres {
+  width: 100% !important; }
+  .listing-offres .jobs-list table#toutes-les-offres.dataTable thead th, .listing-offres .jobs-list table#toutes-les-offres.dataTable thead td, .listing-offres .jobs-list table#toutes-les-offres.dataTable tbody th, .listing-offres .jobs-list table#toutes-les-offres.dataTable tbody td, .listing-offres .jobs-list table#toutes-les-offres.dataTable tfoot th, .listing-offres .jobs-list table#toutes-les-offres.dataTable tfoot td {
+    background-color: white !important;
+    padding: 15px 0;
+    text-align: left; }
+    .listing-offres .jobs-list table#toutes-les-offres.dataTable thead th.wrap, .listing-offres .jobs-list table#toutes-les-offres.dataTable thead td.wrap, .listing-offres .jobs-list table#toutes-les-offres.dataTable tbody th.wrap, .listing-offres .jobs-list table#toutes-les-offres.dataTable tbody td.wrap, .listing-offres .jobs-list table#toutes-les-offres.dataTable tfoot th.wrap, .listing-offres .jobs-list table#toutes-les-offres.dataTable tfoot td.wrap {
+      white-space: unset !important; }
+    @media (max-width: 767px) {
+      .listing-offres .jobs-list table#toutes-les-offres.dataTable thead th, .listing-offres .jobs-list table#toutes-les-offres.dataTable thead td, .listing-offres .jobs-list table#toutes-les-offres.dataTable tbody th, .listing-offres .jobs-list table#toutes-les-offres.dataTable tbody td, .listing-offres .jobs-list table#toutes-les-offres.dataTable tfoot th, .listing-offres .jobs-list table#toutes-les-offres.dataTable tfoot td {
+        text-align: center;
+        font-size: 14px;
+        min-width: 80px; } }
+  .listing-offres .jobs-list table#toutes-les-offres.dataTable.no-footer, .listing-offres .jobs-list table#toutes-les-offres.dataTable thead th, .listing-offres .jobs-list table#toutes-les-offres.dataTable thead td {
+    border-color: #cecece;
+    color: #5e5e5e; }
+  .listing-offres .jobs-list table#toutes-les-offres.dataTable thead tr {
+    color: #b3b3b3; }
+    .listing-offres .jobs-list table#toutes-les-offres.dataTable thead tr th {
+      font-weight: normal; }
+  .listing-offres .jobs-list table#toutes-les-offres.dataTable thead .sorting,
+  .listing-offres .jobs-list table#toutes-les-offres.dataTable thead .sorting_asc,
+  .listing-offres .jobs-list table#toutes-les-offres.dataTable thead .sorting_desc,
+  .listing-offres .jobs-list table#toutes-les-offres.dataTable thead .sorting_asc_disabled,
+  .listing-offres .jobs-list table#toutes-les-offres.dataTable thead .sorting_desc_disabled {
+    background: none; }
+  @media (max-width: 767px) {
+    .listing-offres .jobs-list table#toutes-les-offres.dataTable thead {
+      display: none; } }
+  .listing-offres .jobs-list table#toutes-les-offres.dataTable tbody tr {
+    cursor: pointer;
+    transition: color 0.3s;
+    color: #5e5e5e;
+    font-size: 14px; }
+    .listing-offres .jobs-list table#toutes-les-offres.dataTable tbody tr:hover {
+      color: #E30613; }
+  .listing-offres .jobs-list table#toutes-les-offres.dataTable a {
+    color: #232323; }
+  .listing-offres .jobs-list table#toutes-les-offres.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > td:first-child, .listing-offres .jobs-list table#toutes-les-offres.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] th:first-child {
+    text-align: left;
+    padding-left: 20px; }
+    .listing-offres .jobs-list table#toutes-les-offres.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > td:first-child:before, .listing-offres .jobs-list table#toutes-les-offres.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] th:first-child:before {
+      top: 18px;
+      left: 0;
+      height: 15px;
+      width: 15px;
+      background: #E30613;
+      box-shadow: none;
+      border: none;
+      line-height: 16px; }
+  .listing-offres .jobs-list table#toutes-les-offres.dataTable.dtr-inline.collapsed > tbody > tr.child td {
+    border: 0 !important;
+    padding: 0px; }
+  .listing-offres .jobs-list table#toutes-les-offres.dataTable.dtr-inline.collapsed > tbody > tr.child ul.dtr-details {
+    background-color: #f6f6f6 !important;
+    margin-bottom: 15px;
+    display: block;
+    padding: 5px; }
+    .listing-offres .jobs-list table#toutes-les-offres.dataTable.dtr-inline.collapsed > tbody > tr.child ul.dtr-details li {
+      border-bottom: 1px solid #d4d4d4;
+      margin: 0; }
+      .listing-offres .jobs-list table#toutes-les-offres.dataTable.dtr-inline.collapsed > tbody > tr.child ul.dtr-details li span {
+        min-width: unset; }
+        .listing-offres .jobs-list table#toutes-les-offres.dataTable.dtr-inline.collapsed > tbody > tr.child ul.dtr-details li span.dtr-title:after {
+          content: ":";
+          display: inline-block;
+          margin-left: 3px; }
+      .listing-offres .jobs-list table#toutes-les-offres.dataTable.dtr-inline.collapsed > tbody > tr.child ul.dtr-details li:last-child {
+        padding-bottom: 0; }
+        .listing-offres .jobs-list table#toutes-les-offres.dataTable.dtr-inline.collapsed > tbody > tr.child ul.dtr-details li:last-child .dtr-data {
+          width: 100%;
+          display: block;
+          background-color: #E30613; }
+      .listing-offres .jobs-list table#toutes-les-offres.dataTable.dtr-inline.collapsed > tbody > tr.child ul.dtr-details li:first-child {
+        padding-top: 0; }
+      @media (max-width: 767px) {
+        .listing-offres .jobs-list table#toutes-les-offres.dataTable.dtr-inline.collapsed > tbody > tr.child ul.dtr-details li:last-child .dtr-title {
+          display: none; }
+        .listing-offres .jobs-list table#toutes-les-offres.dataTable.dtr-inline.collapsed > tbody > tr.child ul.dtr-details li:last-child a {
+          width: 100%;
+          color: white;
+          border: none;
+          box-shadow: none;
+          padding: 0 25px;
+          line-height: 40px;
+          cursor: pointer;
+          font-weight: 500;
+          margin-top: 10px;
+          text-align: center;
+          text-decoration: none;
+          text-transform: uppercase; } }
+  @media (max-width: 767px) {
+    .listing-offres .jobs-list table#toutes-les-offres.dataTable.dtr-inline.collapsed > tbody thead {
+      position: absolute;
+      top: -9999px;
+      left: -9999px; } }
+
+.listing-offres .jobs-list #toutes-les-offres_paginate.dataTables_paginate {
+  text-align: center;
+  float: none;
+  margin: 20px 0;
+  font-size: 14px; }
+  .listing-offres .jobs-list #toutes-les-offres_paginate.dataTables_paginate .paginate_button {
+    font-family: "Titillium-bold";
+    margin: 5px;
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    color: #333; }
+    .listing-offres .jobs-list #toutes-les-offres_paginate.dataTables_paginate .paginate_button.current {
+      background: #E30613;
+      border: #E30613;
+      color: white !important; }
+    .listing-offres .jobs-list #toutes-les-offres_paginate.dataTables_paginate .paginate_button:hover {
+      background: white;
+      border: 1px solid #e0e0e0;
+      color: #E30613 !important; }
+
+#offre {
+  margin-top: 80px;
+  color: #2d2d2d; }
+  @media (max-width: 767px) {
+    #offre {
+      margin-top: 30px; } }
+  #offre .detail-offre .left .info-title {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: #cecece;
+    display: block; }
+  #offre .detail-offre .left .info-content {
+    color: #5e5e5e;
+    border: 1px solid #cecece;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 20px;
+    width: 100%;
+    display: block;
+    margin-bottom: 25px; }
+  #offre .detail-offre .left .btn-cta:hover {
+    text-decoration: none; }
+  #offre .detail-offre .left .btn-cta #btn-postuler {
+    width: 100%;
+    background-color: #E30613;
+    color: white;
+    border: none;
+    box-shadow: none;
+    padding: 0 25px;
+    line-height: 40px;
+    cursor: pointer;
+    transition: opacity 0.3s; }
+    #offre .detail-offre .left .btn-cta #btn-postuler:hover {
+      opacity: 0.7; }
+    @media (max-width: 767px) {
+      #offre .detail-offre .left .btn-cta #btn-postuler {
+        display: block;
+        margin: 0 auto; } }
+    #offre .detail-offre .left .btn-cta #btn-postuler span {
+      position: relative;
+      text-transform: uppercase;
+      width: auto;
+      color: white; }
+      #offre .detail-offre .left .btn-cta #btn-postuler span:before {
+        position: absolute;
+        background: url("../images/picto-checked.png") no-repeat center transparent;
+        display: block;
+        content: "";
+        width: 17px;
+        height: 13px;
+        left: -20px;
+        top: 4px; }
+  #offre .detail-offre .right {
+    margin-bottom: 80px; }
+    #offre .detail-offre .right b.title {
+      text-transform: uppercase; }
+    #offre .detail-offre .right br {
+      display: none; }
+  #offre .detail-offre a.back {
+    color: #E30613;
+    text-decoration: none;
+    margin-top: 15px;
+    transition: opacity 0.3s; }
+    #offre .detail-offre a.back:hover {
+      opacity: 0.8; }
+    @media (max-width: 767px) {
+      #offre .detail-offre a.back {
+        display: block;
+        text-align: center;
+        margin-top: 40px; } }
+    #offre .detail-offre a.back span {
+      border-bottom: 1px solid; }

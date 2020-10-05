@@ -7,6 +7,7 @@ global-styling:
   js:
     js/main.js: {}
     js/custom-js.js: {}
+    js/module-offres-emploi.js: {}
   dependencies:
     - core/jquery
 
@@ -40,3 +41,31 @@ tiny-slider:
   css:
     component:
       lib/tiny-slider/tiny-slider.css: {}
+
+# Plugin select2
+select2:
+  css:
+    theme:
+      https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css: { type: external }
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js: { type: external }
+  dependencies:
+    - core/jquery
+
+# Plugin DataTables Ajax
+datatables:
+  css:
+    theme:
+      https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css: { type: external }
+      https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css: { type: external }
+  js:
+    https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js: { type: external }
+    https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js: { type: external }
+    https://cdn.datatables.net/plug-ins/1.10.19/sorting/datetime-moment.js: { type: external }
+    https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js: { type: external }
+  dependencies:
+    - core/jquery
+
+cookiesJS:
+  js:
+    https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js: { type: external }

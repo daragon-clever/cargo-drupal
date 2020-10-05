@@ -1,0 +1,482 @@
+// MODULE OFFRE EMPLOI
+
+$phone: "max-width: 767px";
+$light-grey-offres-emploi: #cecece;
+$dark-grey-offres-emploi: #5e5e5e;
+
+@mixin dimOpacityOnHover($opacity) {
+  transition: opacity 0.3s;
+  &:hover {
+    opacity: $opacity;
+  }
+}
+
+@mixin placeholderStyle {
+  color: $dark-grey-offres-emploi;
+  font-family: "Titillium-semi-bold";
+}
+
+@mixin placeholderApply {
+  &::placeholder {
+    @include placeholderStyle;
+  }
+  &::-webkit-input-placeholder {
+    @include placeholderStyle;
+  }
+  &:-moz-placeholder {
+    @include placeholderStyle;
+  }
+  &::-moz-placeholder {
+    @include placeholderStyle;
+  }
+  &:-ms-input-placeholder {
+    @include placeholderStyle;
+  }
+}
+
+// ALL
+.select2-results__option {
+  color: $dark-grey-offres-emploi;
+}
+
+.listing-offres, #offre {
+  font-size: 16px;
+  #alerte-offres {
+    .error {
+      color: white;
+      background-color: $grey-darkest;
+      padding: 50px 20%;
+      text-align: center;
+
+      @media ($phone) {
+        padding: 30px 10%;
+      }
+    }
+  }
+
+  h3, .h3-like {
+    text-transform: uppercase;
+    font-size: 23px;
+    border-bottom: 1px solid $grey-darker;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    position: relative;
+    color: $primary;
+    line-height: 1.4;
+
+    &::before {
+      display: block;
+      content: "";
+      background-color: $grey-darker;
+      border-radius: 8px;
+      width: 8px;
+      height: 8px;
+      position: absolute;
+      bottom: -4px;
+    }
+  }
+}
+
+
+// LISTING
+.listing-offres {
+  h3 {
+    @media ($phone) {
+      margin-top: 0;
+    }
+  }
+
+  .filters {
+    margin-bottom: 30px;
+
+    select, #searchbox {
+      width: 100%;
+      margin: 5px 0;
+      height: 40px;
+      padding: 10px;
+      border: 1px solid $light-grey-offres-emploi;
+    }
+
+    #searchbox {
+      background: url("../images/picto-search.png") no-repeat center right 10px transparent;
+      padding-left: 0;
+      padding-right: 0;
+      border: 0;
+      border-bottom: 1px solid $light-grey-offres-emploi;
+      color: $dark-grey-offres-emploi;
+      margin: 30px 0 5px 0;
+
+      @include placeholderApply;
+
+      /*&::placeholder{
+        color: $dark-grey-offres-emploi;
+        font-family: "Titillium-semi-bold";
+      }*/
+
+      @media ($phone) {
+        margin-top: 0;
+      }
+    }
+
+    #groupe-filtres-offres-emploi {
+      .filtres-offres-emploi {
+        color: $dark-grey-offres-emploi;
+
+        .type {
+          margin-top: 15px;
+          margin-bottom: 5px;
+          text-transform: uppercase;
+          color: $light-grey-offres-emploi;
+          display: block;
+        }
+      }
+
+      .select2-container--default {
+        .select2-selection--single, .select2-selection__arrow {
+          height: 40px;
+        }
+
+        .select2-selection--single {
+          padding-left: 8px;
+          border: 1px solid $light-grey-offres-emploi;
+          border-radius: 0;
+
+          .select2-selection__rendered {
+            line-height: 40px;
+          }
+
+          .select2-selection__arrow b {
+            border-color: $dark-grey-offres-emploi transparent transparent transparent;
+          }
+        }
+      }
+
+      @media ($phone) {
+        display: none;
+
+        .select2-container {
+          width: 100% !important;
+        }
+      }
+    }
+
+    .cta-filter {
+      width: 100%;
+      background-color: $primary;
+      color: white;
+      border: none;
+      box-shadow: none;
+      padding: 0 25px;
+      line-height: 40px;
+      cursor: pointer;
+      position: relative;
+      text-transform: uppercase;
+      font-size: 14px;
+
+      &.top {
+        margin-bottom: 13px;
+      }
+
+      &.bottom {
+        margin-top: 15px;
+      }
+    }
+  }
+
+  .jobs-list {
+    table#toutes-les-offres {
+      width: 100% !important;
+
+      &.dataTable {
+        thead, tbody, tfoot {
+          th, td {
+            background-color: white !important;
+            padding: 15px 0;
+            text-align: left;
+
+            &.wrap {
+              white-space: unset !important;
+            }
+
+            @media ($phone) {
+              text-align: center;
+              font-size: 14px;
+              min-width: 80px;
+            }
+          }
+        }
+
+        &.no-footer, thead th, thead td {
+          border-color: $light-grey-offres-emploi;
+          color: $dark-grey-offres-emploi;
+        }
+
+        thead {
+          tr {
+            color: #b3b3b3;
+
+            th {
+              font-weight: normal;
+            }
+          }
+
+          .sorting,
+          .sorting_asc,
+          .sorting_desc,
+          .sorting_asc_disabled,
+          .sorting_desc_disabled {
+            background: none;
+          }
+
+          @media ($phone) {
+            display: none;
+          }
+        }
+
+        tbody {
+          tr {
+            cursor: pointer;
+            transition: color 0.3s;
+            color: $dark-grey-offres-emploi;
+            font-size: 14px;
+
+            &:hover {
+              color: $primary;
+            }
+          }
+        }
+
+        a {
+          color: #232323
+        }
+
+        //mobile
+        &.dtr-inline.collapsed > tbody {
+          & > tr[role="row"] {
+            & > td:first-child, & th:first-child {
+              text-align: left;
+              padding-left: 20px;
+
+              &:before {
+                top: 18px;
+                left: 0;
+                height: 15px;
+                width: 15px;
+                background: $primary;
+                box-shadow: none;
+                border: none;
+                line-height: 16px;
+              }
+            }
+          }
+
+          & > tr.child {
+            td {
+              border: 0 !important;
+              padding: 0px;
+            }
+
+            ul.dtr-details {
+              background-color: #f6f6f6 !important;
+              margin-bottom: 15px;
+              display: block;
+              padding: 5px;
+
+              li {
+                border-bottom: 1px solid #d4d4d4;
+                margin: 0;
+
+                span {
+                  min-width: unset;
+
+                  &.dtr-title:after {
+                    content: ":";
+                    display: inline-block;
+                    margin-left: 3px;
+                  }
+                }
+
+                &:last-child {
+                  padding-bottom: 0;
+
+                  .dtr-data {
+                    width: 100%;
+                    display: block;
+                    background-color: $primary;
+                  }
+                }
+
+                &:first-child {
+                  padding-top: 0;
+                }
+
+                @media ($phone) {
+                  &:last-child {
+                    .dtr-title {
+                      display: none;
+                    }
+
+                    a {
+                      width: 100%;
+                      color: white;
+                      border: none;
+                      box-shadow: none;
+                      padding: 0 25px;
+                      line-height: 40px;
+                      cursor: pointer;
+                      font-weight: 500;
+                      margin-top: 10px;
+                      text-align: center;
+                      text-decoration: none;
+                      text-transform: uppercase;
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          @media ($phone) {
+            // Hack thead
+            thead {
+              position: absolute;
+              top: -9999px;
+              left: -9999px;
+            }
+          }
+        }
+      }
+    }
+
+    #toutes-les-offres_paginate.dataTables_paginate {
+      text-align: center;
+      float: none;
+      margin: 20px 0;
+      font-size: 14px;
+
+      .paginate_button {
+        font-family: "Titillium-bold";
+        margin: 5px;
+        background-color: white;
+        border: 1px solid #e0e0e0;
+        border-radius: 5px;
+        color: #333;
+
+        &.current {
+          background: $primary;
+          border: $primary;
+          color: white !important;
+        }
+
+        &:hover {
+          background: white;
+          border: 1px solid #e0e0e0;
+          color: $primary !important;
+        }
+      }
+    }
+  }
+}
+
+// ANNONCE
+#offre {
+  margin-top: 80px;
+  color: #2d2d2d;
+
+  @media ($phone) {
+    margin-top: 30px;
+  }
+
+  .detail-offre {
+    .left {
+      .info-title {
+        margin-top: 15px;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        color: $light-grey-offres-emploi;
+        display: block;
+      }
+
+      .info-content {
+        color: $dark-grey-offres-emploi;
+        border: 1px solid $light-grey-offres-emploi;
+        height: 50px;
+        line-height: 50px;
+        padding-left: 20px;
+        width: 100%;
+        display: block;
+        margin-bottom: 25px;
+      }
+
+      .btn-cta {
+        &:hover {
+          text-decoration: none;
+        }
+
+        #btn-postuler {
+          width: 100%;
+          background-color: $primary;
+          color: white;
+          border: none;
+          box-shadow: none;
+          padding: 0 25px;
+          line-height: 40px;
+          cursor: pointer;
+          @include dimOpacityOnHover(0.7);
+
+          @media ($phone) {
+            display: block;
+            margin: 0 auto;
+          }
+
+          span {
+            position: relative;
+            text-transform: uppercase;
+            width: auto;
+            color: white;
+
+            &:before {
+              position: absolute;
+              background: url("../images/picto-checked.png") no-repeat center transparent;
+              display: block;
+              content: "";
+              width: 17px;
+              height: 13px;
+              left: -20px;
+              top: 4px;
+            }
+          }
+        }
+      }
+    }
+
+    .right {
+      margin-bottom: 80px;
+
+      b.title {
+        text-transform: uppercase;
+      }
+
+      br {
+        display: none;
+      }
+    }
+
+    a.back {
+      color: $primary;
+      text-decoration: none;
+      margin-top: 15px;
+      @include dimOpacityOnHover(0.8);
+
+      @media ($phone) {
+        display: block;
+        text-align: center;
+        margin-top: 40px;
+      }
+
+      span {
+        border-bottom: 1px solid;
+      }
+    }
+  }
+}

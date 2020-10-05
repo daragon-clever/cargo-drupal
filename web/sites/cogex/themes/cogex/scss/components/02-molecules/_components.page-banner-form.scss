@@ -1,16 +1,16 @@
 /*
 
 ---
-name: c-page-banner-contact
+name: c-page-banner-form
 category: 02-molecules
 ---
  
 ``` types.html
-<div class="c-page-banner-contact">
+<div class="c-page-banner-form">
 
-  <div class="c-banner-card-contact">
-    <p class="c-banner-card-contact__title">Title</p>
-    <p class="c-banner-card-contact__content">
+  <div class="c-banner-card-form">
+    <p class="c-banner-card-form__title">Title</p>
+    <p class="c-banner-card-form__content">
       Content
     </p>
 
@@ -18,7 +18,7 @@ category: 02-molecules
 ```
 
 */
-.c-page-banner-contact {
+.c-page-banner-form {
 
   &__content-wrapper {
     position: relative;

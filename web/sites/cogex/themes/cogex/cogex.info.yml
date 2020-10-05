@@ -16,6 +16,9 @@ libraries:
   - cogex/font-awesome-free
   - cogex/slick-carousel
   - cogex/tiny-slider
+  - cogex/select2
+  - cogex/datatables
+  - cogex/cookiesJS
 
 regions:
   header: 'Header'

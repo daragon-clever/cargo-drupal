@@ -1,14 +1,15 @@
 #!/bin/bash
-db_preprod="db_preprod"
+dump_file="db_dump"
 db_local_host="localhost"
-echo "Quelle est la nom de la base pour le site en local ? "
-read db_local_preprod
-if [[ "$db_local_preprod" != "" ]]
-then
 db_local_username="root"
 db_local_password="root"
-echo "charger les données dans la base $db_local_preprod"
-mysql -h$db_local_host -u$db_local_username -p$db_local_password $db_local_preprod < /var/www/html/$db_preprod.sql
-rm -R /var/www/html/$db_preprod.sql
-echo "fin"
+
+echo "Quelle est la nom de la base pour le site en local ? "
+read db_local
+if [[ "$db_local" != "" ]]
+then
+    echo "Chargement des données dans la base $db_local (local)"
+    mysql -h$db_local_host -u$db_local_username -p$db_local_password $db_local < /var/www/html/$dump_file.sql
+    rm -R /var/www/html/$dump_file.sql
+    echo "fin"
 fi

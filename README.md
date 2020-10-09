@@ -28,7 +28,7 @@
     * 1/ `docker-compose run --rm php bash bin/synchfiles.sh`
         * Entrez le nom du site en local et en distant
         * Entrez le nom et le mot de passe de l'utilisateur de la base de données préprod
-    * 2/ `docker-compose exec db /bin/bash /var/www/html/bin/synchbd.sh` (**dbgc** pour groupecargo)
+    * 2/ `docker-compose exec db /bin/bash /var/www/html/bin/synchbd.sh`
         * Entrez le nom de la base pour le site
         * Entrez les identifiantes de la base (locale) pour le site
 

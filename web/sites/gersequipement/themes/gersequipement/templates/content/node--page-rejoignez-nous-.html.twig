@@ -1,0 +1,88 @@
+<div class="join-us">
+  <!-- BANNER -->
+  <div class="container-fluid top">
+    <div class="row align-items-center">
+      <div class="col-12 col-lg-4 top-txt">
+        {{ content.field_rn_banner_txt }}
+        <a href="#anchor-spirit"><span class="rn-chevron mt-lg-5"></span></a>
+      </div>
+      <div class="col-12 col-lg-8 js-fade-galery no-padding">
+        {{ content.field_rn_banner_img }}
+      </div>
+    </div>
+  </div>
+  <!-- CONTENT 1 -->
+  <div class="content1">
+    <span class="anchor" id="anchor-spirit"></span>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          {{ content.field_rn_spirit }}
+        </div>
+        <div class="mx-auto mt-lg-5">
+          {{ content.field_rn_spirit_background }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- CONTENT 2 -->
+  <div class="content2 py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <div class="mb-2">
+            {{ content.field_rn_content2_svg }}
+          </div>
+          {{ content.field_rn_content2_txt }}
+          <a href="#anchor-interview"><span class="rn-chevron mt-3"></span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- CONTENT 3 -->
+  <div class="content3 pt-lg-4 pb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 mb-4 mb-lg-0 text-right">
+          <div class="young-text">young<br>pouss</div>
+          <div class="young-photo">
+            {{ content.field_rn_content3_img }}
+          </div>
+          <div class="young-logo">
+            {{ content.field_rn_content3_svg }}
+          </div>
+        </div>
+      </div>
+      <div class="row young-txt">
+        <div class="col-12 col-lg-6">
+          <div class="pt-60">
+            {{ content.field_rn_content3_text_left }}
+          </div>
+        </div>
+        <div class="col-12 col-lg-6">
+          <div class="pt-60">
+            {{ content.field_rn_content3_text_right }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- CONTENT 4 -->
+  <div class="position-relative">
+    <span class="anchor" id="anchor-interview"></span>
+    {% for i in 0..content.field_rn_content4_imgs['#items']|length-1 %}
+      <div class="interview">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-lg-6 column-image text-center align-self-end pt-5 {% if i is odd %}order-lg-2{% endif %}">
+              {{  content.field_rn_content4_imgs[i] }}
+            </div>
+            <div class="col-12 col-lg-6 column-text align-self-center py-5">
+              {{  content.field_rn_content4_txts[i] }}
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>

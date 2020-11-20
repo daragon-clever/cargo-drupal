@@ -1,4 +1,10 @@
 jQuery(document).ready(function($) {
+    // CAROUSEL HOMEPAGE
+    $('.homepage-slider').slick({
+    });
+
+
+
     // FORMULAIRE CONTACT
     if ($('.webform-submission-form').length) {
         // Function

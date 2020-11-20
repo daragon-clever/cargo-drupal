@@ -1,0 +1,241 @@
+@font-face {
+  font-family: 'Cardenio Modern';
+  src: url('../fonts/cardeniomodern-regular-webfont.woff2') format('woff2'), url('../fonts/cardeniomodern-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Cardenio Modern Bold';
+  src: url('../fonts/cardeniomodern-bold-webfont.woff2') format('woff2'), url('../fonts/cardeniomodern-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Myriad Pro Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Myriad Pro Regular'), url('../fonts/MYRIADPRO-REGULAR.woff') format('woff');
+}
+@font-face {
+  font-family: 'Myriad Pro Semibold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Myriad Pro Semibold'), url('../fonts/MYRIADPRO-SEMIBOLD.woff') format('woff');
+}
+@font-face {
+  font-family: 'Myriad Pro Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Myriad Pro Bold'), url('../fonts/MYRIADPRO-BOLD.woff') format('woff');
+}
+h1 {
+  font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
+  color: #003663;
+  text-transform: uppercase;
+  font-size: 56px;
+  text-align: center;
+  line-height: 56px;
+}
+h1 span {
+  font-family: "Cardenio Modern", Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-size: 48px;
+}
+.header-wrapper header {
+  box-shadow: 0 0 10px #0000000B;
+}
+.header-wrapper header .container {
+  max-width: 1400px;
+}
+.header-wrapper header .header-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header-wrapper nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+.header-wrapper nav ul li {
+  margin: 0 24px;
+  line-height: 117px;
+  border-bottom: 3px solid transparent;
+  transition: border-color 0.3s ease;
+}
+.header-wrapper nav ul li:hover {
+  border-color: #003663;
+}
+.header-wrapper nav ul:last-child {
+  margin-right: 0;
+}
+.header-wrapper nav ul li a {
+  color: #434343;
+  text-decoration: none;
+  justify-content: space-evenly;
+  font-size: 16px;
+  font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
+}
+.header-wrapper nav ul li a:hover {
+  color: #003663;
+}
+.header-wrapper nav ul a.ou-acheter {
+  display: inline-block;
+  line-height: 46px;
+  background-color: #741030;
+  border-radius: 23px;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Cardenio Modern Bold", Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  position: relative;
+  padding: 0 40px 0 65px;
+}
+.header-wrapper nav ul a.ou-acheter:before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  background: url("../images/icon-basket.svg") no-repeat center transparent;
+  height: 21px;
+  width: 24px;
+  top: calc(50% - 12px);
+  left: 25px;
+}
+.header-wrapper nav ul a.ou-acheter:hover {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+.homepage-hero img {
+  max-width: 100%;
+}
+.homepage-title {
+  margin-top: 35px;
+}
+.vue-recettes.container {
+  max-width: 1400px;
+}
+.recettes-filters {
+  border: 1px solid #EDEDED;
+  padding: 24px;
+}
+.recettes-filters .recettes-filters-title {
+  font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  color: #003663;
+}
+.recettes-filters .recettes-filters-title:after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: #003663;
+  margin-top: 8px;
+  margin-bottom: 24px;
+}
+.recettes-filters label:first-child {
+  display: none;
+}
+.recettes-filters input {
+  width: 100%;
+}
+.recettes-filters .form-wrapper {
+  margin-bottom: 15px;
+}
+.recettes-filters .form-wrapper .fieldset-legend {
+  color: #434343;
+  font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+.recettes-filters .form-wrapper .fieldset-legend:after {
+  content: "";
+  border-top: 2px solid #434343;
+  border-right: 2px solid #434343;
+  top: 20px;
+  height: 11px;
+  width: 11px;
+  transform: rotate(-45deg);
+  position: relative;
+  float: right;
+}
+.recettes-filters .form-wrapper .fieldset-wrapper .form-item {
+  display: flex;
+  align-items: center;
+  padding-bottom: 5px;
+}
+.recettes-filters .form-wrapper .fieldset-wrapper .form-checkbox {
+  height: 20px;
+  width: 20px;
+}
+.recettes-filters .form-wrapper .fieldset-wrapper .option {
+  padding-left: 8px;
+  margin-bottom: 0;
+  font-family: "Myriad Pro Regular", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+.recette-item {
+  border: 1px solid #EDEDED;
+}
+.recette-item .field-content {
+  overflow: hidden;
+}
+.recette-item img {
+  width: 100%;
+  object-fit: cover;
+  height: 197px;
+  transition: transform 0.3s ease;
+}
+.recette-item img:hover {
+  transform: scale(1.1);
+}
+.recette-item h2 {
+  font-size: 16px;
+  margin: 15px 0;
+  padding: 0 24px;
+  color: #003663;
+  font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
+}
+.recette-item p {
+  font-size: 16px;
+  color: #434343;
+  padding: 0 24px;
+  font-family: "Myriad Pro Regular", Arial, Helvetica, sans-serif;
+}
+.recette-item .views-field-view-node a {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 15px;
+  padding: 0 24px;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
+  color: #003663;
+  text-decoration: none;
+}
+.recette-item .views-field-view-node a:hover:after {
+  margin-left: 50px;
+}
+.recette-item .views-field-view-node a:before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 23px;
+  height: 8px;
+  width: 8px;
+  border-top: 2px solid #003663;
+  border-right: 2px solid #003663;
+  transform: rotate(45deg);
+}
+.recette-item .views-field-view-node a:after {
+  content: "";
+  display: inline-block;
+  height: 2px;
+  width: 37px;
+  margin-left: 40px;
+  background: #003663;
+  vertical-align: middle;
+  transition: margin-left 0.3s ease;
+}

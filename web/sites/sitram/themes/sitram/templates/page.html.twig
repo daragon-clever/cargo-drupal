@@ -1,0 +1,26 @@
+<div class="header-wrapper">
+  <!-- Header -->
+  {% include directory ~ '/templates/partials/header.html.twig' %}
+</div>
+
+<div class="content">
+  {% if page.highlighted %}
+    <div class="message-site">
+      {{ page.highlighted }}
+    </div>
+  {% endif %}
+  {% if page.content %}
+    {{ page.content }}
+  {% endif %}
+</div>
+
+<!-- Footer -->
+{% if page.footer %}
+  <div>
+    {{ page.footer }}
+
+    <div class="copyright text-center">
+      {{ '© ' }}{{ "now"|date('Y') }}{{ ' Tous droits réservés - Mentions légales - Politique de confidentialité'|trans }}
+    </div>
+  </div>
+{% endif %}

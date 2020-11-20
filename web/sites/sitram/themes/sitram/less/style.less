@@ -1,2 +1,265 @@
 // Variables LESS
 @import 'variables';
+@import 'fonts';
+
+h1 {
+  font-family: @MyriadBold;
+
+  color: #003663;
+  text-transform: uppercase;
+  font-size: 56px;
+  text-align: center;
+  line-height: 56px;
+  span {
+    font-family: @Cardenio;
+    text-transform: uppercase;
+    font-size: 48px;
+  }
+}
+
+//HEADER//
+
+.header-wrapper {
+  header {
+    box-shadow: 0 0 10px #0000000B;
+
+    .container {
+      max-width: 1400px;
+    }
+
+    .header-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    margin-bottom: 0;
+    padding-left: 0;
+
+    li {
+      margin: 0 24px;
+      line-height: 117px;
+      border-bottom: 3px solid transparent;
+      transition: border-color 0.3s ease;
+
+      &:hover {
+        border-color: @primaryColor;
+      }
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    li a {
+      color: @grey;
+      text-decoration: none;
+      justify-content: space-evenly;
+      font-size: 16px;
+      font-family: @MyriadSemibold;
+
+      &:hover {
+        color: @primaryColor;
+      }
+    }
+
+    a.ou-acheter {
+      display: inline-block;
+      line-height: 46px;
+      background-color: @secondaryColor;
+      border-radius: 23px;
+      color: white;
+      text-align: center;
+      text-transform: uppercase;
+      font-family: @CardenioBold;
+      font-size: 22px;
+      position: relative;
+      padding: 0 40px 0 65px;
+
+      &:before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        background: url("../images/icon-basket.svg") no-repeat center transparent;
+        height: 21px;
+        width: 24px;
+        top: calc(50% - 12px);
+        left: 25px;
+      }
+
+      &:hover {
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+//HOMEPAGE//
+
+.homepage-hero {
+  img {
+    max-width: 100%;
+  }
+}
+
+.homepage-title {
+  margin-top: 35px;
+}
+
+//RECETTES//
+
+.vue-recettes.container {
+  max-width: 1400px;
+}
+
+.recettes-filters {
+  border: 1px solid #EDEDED;
+  padding: 24px;
+
+  .recettes-filters-title {
+    font-family: @MyriadSemibold;
+    font-size: 24px;
+    color: @primaryColor;
+
+    &:after {
+      content: "";
+      display: block;
+      width: 40px;
+      height: 2px;
+      background: @primaryColor;
+      margin-top: 8px;
+      margin-bottom: 24px;
+    }
+  }
+
+  label:first-child {
+    display: none;
+  }
+
+  input {
+    width: 100%;
+  }
+
+  .form-wrapper {
+    margin-bottom: 15px;
+
+    .fieldset-legend {
+      color: @grey;
+      font-family: @MyriadSemibold;
+      font-size: 20px;
+
+      &:after {
+        content: "";
+        border-top: 2px solid @grey;
+        border-right: 2px solid @grey;
+        top: 20px;
+        height: 11px;
+        width: 11px;
+        transform: rotate(-45deg);
+        position: relative;
+        float: right;
+      }
+    }
+
+    .fieldset-wrapper {
+
+      .form-item {
+        display: flex;
+        align-items: center;
+        padding-bottom: 5px;
+      }
+
+      .form-checkbox {
+        height: 20px;
+        width: 20px;
+      }
+
+      .option {
+        padding-left: 8px;
+        margin-bottom: 0;
+        font-family: @MyriadRegular;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.recette-item {
+  border: 1px solid #EDEDED;
+
+  .field-content {
+    overflow: hidden;
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+    height: 197px;
+    transition: transform .3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  h2 {
+    font-size: 16px;
+    margin: 15px 0;
+    padding: 0 24px;
+    color: @primaryColor;
+    font-family: @MyriadSemibold;
+  }
+
+  p {
+    font-size: 16px;
+    color: @grey;
+    padding: 0 24px;
+    font-family: @MyriadRegular;
+  }
+
+  .views-field-view-node a {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 15px;
+    padding: 0 24px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-family: @MyriadSemibold;
+    color: @primaryColor;
+    text-decoration: none;
+
+    &:hover:after {
+      margin-left: 50px;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      right: 23px;
+      height: 8px;
+      width: 8px;
+      border-top: 2px solid @primaryColor;
+      border-right: 2px solid @primaryColor;
+      transform: rotate(45deg);
+    }
+
+    &:after {
+      content: "";
+      display: inline-block;
+      height: 2px;
+      width: 37px;
+      margin-left: 40px;
+      background: @primaryColor;
+      vertical-align: middle;
+      transition: margin-left 0.3s ease;
+    }
+  }
+}

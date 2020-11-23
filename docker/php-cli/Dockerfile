@@ -1,6 +1,6 @@
 FROM php:7.1-cli
 
-RUN curl -s https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin/ --filename=composer
+RUN curl -s https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin/ --filename=composer --version=2.0.7
 
 RUN apt-get update
 RUN apt-get install -y git zlib1g-dev rsync

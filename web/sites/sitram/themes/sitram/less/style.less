@@ -113,6 +113,283 @@ h1 {
   margin-top: 35px;
 }
 
+.content2 {
+  background: url("../images/background-wood.jpg") no-repeat;
+
+}
+
+.content2-top {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  .image-stove {
+    position: absolute;
+    top: 15px;
+    left: -145px;
+    z-index: 1;
+  }
+
+  .text-collection {
+    width: 473px;
+    height: 350px;
+    background-color: @primaryColor;
+    color: white;
+    padding: 40px 93px 40px 48px;
+
+    h2 {
+      color: white;
+      font-family: @MyriadSemibold;
+      font-size: 48px;
+      line-height: 48px;
+
+      span {
+        font-family: @MyriadBold;
+      }
+
+      &:after {
+        content: "";
+        display: block;
+        width: 40px;
+        height: 2px;
+        background: white;
+        margin-top: 20px;
+        margin-bottom: 15px;
+      }
+    }
+
+    p {
+      font-family: @MyriadRegular;
+      font-size: 16px;
+      line-height: 16px;
+      padding-right: 140px;
+      margin-bottom: 44px;
+    }
+
+    p.voir-tout {
+      font-family: @MyriadBold;
+      text-transform: uppercase;
+      font-size: 16px;
+      padding-right: 0;
+      margin-bottom: 0;
+
+      a {
+        display: inline-block;
+        position: relative;
+        color: white;
+        text-decoration: none;
+
+        &:after {
+          content: "";
+          display: inline-block;
+          height: 2px;
+          width: 37px;
+          margin-left: 40px;
+          background: white;
+          vertical-align: middle;
+          transition: margin-left 0.3s ease;
+        }
+
+        &:hover:after {
+          margin-left: 50px;
+        }
+
+        &:before {
+          content: "";
+          position: absolute;
+          top: 6px;
+          left: 145px;
+          height: 8px;
+          width: 8px;
+          border-top: 2px solid white;
+          border-right: 2px solid white;
+          transform: rotate(45deg);
+          transition: margin-left 0.3s ease;
+        }
+
+        &:hover:before {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+
+
+}
+
+.content2-bottom {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 48px;
+
+  .conseils {
+    background: no-repeat url("../images/background-conseils.jpg");
+    height: 375px;
+    width: 750px;
+    color: white;
+    padding: 40px 93px 40px 48px;
+
+    h2 {
+      color: white;
+      font-family: @MyriadSemibold;
+      font-size: 48px;
+      line-height: 48px;
+
+      span {
+        font-family: @MyriadBold;
+      }
+
+      &:after {
+        content: "";
+        display: block;
+        width: 40px;
+        height: 2px;
+        background: white;
+        margin-top: 20px;
+        margin-bottom: 15px;
+      }
+    }
+
+    p {
+      font-family: @MyriadRegular;
+      font-size: 16px;
+      line-height: 16px;
+      padding-right: 380px;
+      margin-bottom: 44px;
+    }
+
+    p.voir-conseils {
+      font-family: @MyriadBold;
+      text-transform: uppercase;
+      font-size: 16px;
+      padding-right: 0;
+      margin-bottom: 0;
+
+      a {
+        display: inline-block;
+        position: relative;
+        color: white;
+        text-decoration: none;
+
+        &:after {
+          content: "";
+          display: inline-block;
+          height: 2px;
+          width: 37px;
+          margin-left: 40px;
+          background: white;
+          vertical-align: middle;
+          transition: margin-left 0.3s ease;
+        }
+
+        &:hover:after {
+          margin-left: 50px;
+        }
+
+        &:before {
+          content: "";
+          position: absolute;
+          top: 6px;
+          left: 214px;
+          height: 8px;
+          width: 8px;
+          border-top: 2px solid white;
+          border-right: 2px solid white;
+          transform: rotate(45deg);
+          transition: margin-left 0.3s ease;
+        }
+
+        &:hover:before {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+
+  .ou-trouver {
+    background: no-repeat url("../images/background-ou-trouver.jpg");
+    height: 375px;
+    width: 380px;
+    color: white;
+    padding: 40px 40px 40px 48px;
+
+    h2 {
+      color: white;
+      font-family: @MyriadSemibold;
+      font-size: 48px;
+      line-height: 48px;
+
+      span {
+        font-family: @MyriadBold;
+      }
+
+      &:after {
+        content: "";
+        display: block;
+        width: 40px;
+        height: 2px;
+        background: white;
+        margin-top: 20px;
+        margin-bottom: 15px;
+      }
+    }
+
+    p {
+      line-height: 16px;
+      margin-bottom: 44px;
+    }
+
+    p.voir-vente {
+      font-family: @MyriadBold;
+      text-transform: uppercase;
+      font-size: 16px;
+      line-height: 16px;
+      padding-right: 0;
+      margin-bottom: 0;
+
+      a {
+        display: inline-block;
+        position: relative;
+        color: white;
+        text-decoration: none;
+
+        &:after {
+          content: "";
+          display: inline-block;
+          height: 2px;
+          width: 37px;
+          margin-left: 40px;
+          background: white;
+          vertical-align: middle;
+          transition: margin-left 0.3s ease;
+        }
+
+        &:hover:after {
+          margin-left: 50px;
+        }
+
+        &:before {
+          content: "";
+          position: absolute;
+          top: 22px;
+          left: 196px;
+          height: 8px;
+          width: 8px;
+          border-top: 2px solid white;
+          border-right: 2px solid white;
+          transform: rotate(45deg);
+          transition: margin-left 0.3s ease;
+        }
+
+        &:hover:before {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
+
 //RECETTES//
 
 .vue-recettes.container {

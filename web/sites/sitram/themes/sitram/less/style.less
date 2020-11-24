@@ -2,18 +2,170 @@
 @import 'variables';
 @import 'fonts';
 
+//COMMON//
+
 h1 {
   font-family: @MyriadBold;
-
   color: #003663;
   text-transform: uppercase;
   font-size: 56px;
-  text-align: center;
-  line-height: 56px;
+  line-height: 1;
+  margin: 0;
+
   span {
     font-family: @Cardenio;
     text-transform: uppercase;
     font-size: 48px;
+  }
+}
+
+.bg-blue {
+  background-color: @primaryColor;
+}
+
+.text-mea {
+  color: white;
+  padding: 35px;
+
+  a {
+    color: white;
+    display: block;
+
+    &:hover {
+      .dimOpacityOnHover(0.8)
+    }
+  }
+
+  h3 {
+    font-size: 48px;
+    font-family: @MyriadSemibold;
+    line-height: 1;
+
+    span {
+      font-family: @MyriadBold;
+      display: block;
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      margin: 15px 0;
+      width: 40px;
+      height: 2px;
+      background-color: white;
+    }
+
+    @media @tablet {
+      font-size: 30px;
+    }
+  }
+
+  p {
+    margin: 0;
+    max-width: 60%;
+  }
+
+  span.fleche {
+    margin-top: 50px;
+  }
+
+  &.d-flex-absolute {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    height: 100%;
+    width: 100%;
+  }
+
+  &.blue {
+    a {
+      color: @primaryColor
+    }
+
+    h3:after {
+      background-color: @primaryColor;
+    }
+
+    &,
+    .fleche {
+      color: @primaryColor;
+
+      &:before {
+        border-color: @primaryColor
+      }
+
+      &:after {
+        background-color: @primaryColor;
+      }
+    }
+  }
+}
+
+.img-shade {
+  position: relative;
+
+  &:before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg, rgba(0,0,0,0.6) 0%, transparent 100%);
+  }
+}
+
+.recette-item .views-field-view-node a,
+.fleche {
+  display: inline-block;
+  position: relative;
+  text-transform: uppercase;
+  font-family: @MyriadSemibold;
+  color: white;
+  text-decoration: none;
+
+  &:hover:after {
+    margin-left: 50px;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: 0;
+    height: 8px;
+    width: 8px;
+    border-top: 2px solid white;
+    border-right: 2px solid white;
+    transform: rotate(45deg);
+  }
+
+  &:after {
+    content: "";
+    display: inline-block;
+    height: 2px;
+    width: 37px;
+    margin-left: 40px;
+    background: white;
+    vertical-align: middle;
+    transition: margin-left 0.3s ease;
+  }
+}
+
+.container {
+  &.gutter-24 {
+    @gutter:24px;
+    &,
+    .row > div {
+      padding-left: @gutter;
+      padding-right: @gutter;
+    }
+
+    .row {
+      margin-left: -@gutter;
+      margin-right: -@gutter
+    }
   }
 }
 
@@ -42,17 +194,6 @@ h1 {
     margin-bottom: 0;
     padding-left: 0;
 
-    li {
-      margin: 0 24px;
-      line-height: 117px;
-      border-bottom: 3px solid transparent;
-      transition: border-color 0.3s ease;
-
-      &:hover {
-        border-color: @primaryColor;
-      }
-    }
-
     &:last-child {
       margin-right: 0;
     }
@@ -60,11 +201,16 @@ h1 {
     li a {
       color: @grey;
       text-decoration: none;
-      justify-content: space-evenly;
       font-size: 16px;
       font-family: @MyriadSemibold;
+      margin: 0 24px;
+      line-height: 117px;
+      display: inline-block;
+      border-bottom: 3px solid transparent;
+      transition: border-color 0.3s ease;
 
       &:hover {
+        border-color: @primaryColor;
         color: @primaryColor;
       }
     }
@@ -81,6 +227,8 @@ h1 {
       font-size: 22px;
       position: relative;
       padding: 0 40px 0 65px;
+      border: none;
+      .dimOpacityOnHover(0.8);
 
       &:before {
         content: "";
@@ -94,8 +242,8 @@ h1 {
       }
 
       &:hover {
-        padding-bottom: 0;
         border-bottom: none;
+        color: white;
       }
     }
   }
@@ -103,288 +251,48 @@ h1 {
 
 //HOMEPAGE//
 
-.homepage-hero {
-  img {
-    max-width: 100%;
-  }
-}
-
-.homepage-title {
-  margin-top: 35px;
-}
-
-.content2 {
-  background: url("../images/background-wood.jpg") no-repeat;
-
-}
-
-.content2-top {
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-
-  .image-stove {
-    position: absolute;
-    top: 15px;
-    left: -145px;
-    z-index: 1;
-  }
-
-  .text-collection {
-    width: 473px;
-    height: 350px;
-    background-color: @primaryColor;
-    color: white;
-    padding: 40px 93px 40px 48px;
-
-    h2 {
-      color: white;
-      font-family: @MyriadSemibold;
-      font-size: 48px;
-      line-height: 48px;
-
-      span {
-        font-family: @MyriadBold;
-      }
-
-      &:after {
-        content: "";
-        display: block;
-        width: 40px;
-        height: 2px;
-        background: white;
-        margin-top: 20px;
-        margin-bottom: 15px;
-      }
+#homepage {
+  .slider {
+    img {
+      max-width: 100%;
+      height: auto;
     }
 
-    p {
-      font-family: @MyriadRegular;
-      font-size: 16px;
-      line-height: 16px;
-      padding-right: 140px;
-      margin-bottom: 44px;
-    }
-
-    p.voir-tout {
-      font-family: @MyriadBold;
-      text-transform: uppercase;
-      font-size: 16px;
-      padding-right: 0;
-      margin-bottom: 0;
-
-      a {
-        display: inline-block;
-        position: relative;
-        color: white;
-        text-decoration: none;
-
-        &:after {
-          content: "";
-          display: inline-block;
-          height: 2px;
-          width: 37px;
-          margin-left: 40px;
-          background: white;
-          vertical-align: middle;
-          transition: margin-left 0.3s ease;
-        }
-
-        &:hover:after {
-          margin-left: 50px;
-        }
-
-        &:before {
-          content: "";
-          position: absolute;
-          top: 6px;
-          left: 145px;
-          height: 8px;
-          width: 8px;
-          border-top: 2px solid white;
-          border-right: 2px solid white;
-          transform: rotate(45deg);
-          transition: margin-left 0.3s ease;
-        }
-
-        &:hover:before {
-          margin-left: 10px;
-        }
-      }
+    /* temp */
+    .slick-arrow,
+    .slick-dots {
+      position: absolute;
+      top: 0;
     }
   }
 
-
-}
-
-.content2-bottom {
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 48px;
-
-  .conseils {
-    background: no-repeat url("../images/background-conseils.jpg");
-    height: 375px;
-    width: 750px;
-    color: white;
-    padding: 40px 93px 40px 48px;
-
-    h2 {
-      color: white;
-      font-family: @MyriadSemibold;
-      font-size: 48px;
-      line-height: 48px;
-
-      span {
-        font-family: @MyriadBold;
-      }
-
-      &:after {
-        content: "";
-        display: block;
-        width: 40px;
-        height: 2px;
-        background: white;
-        margin-top: 20px;
-        margin-bottom: 15px;
-      }
-    }
-
-    p {
-      font-family: @MyriadRegular;
-      font-size: 16px;
-      line-height: 16px;
-      padding-right: 380px;
-      margin-bottom: 44px;
-    }
-
-    p.voir-conseils {
-      font-family: @MyriadBold;
-      text-transform: uppercase;
-      font-size: 16px;
-      padding-right: 0;
-      margin-bottom: 0;
-
-      a {
-        display: inline-block;
-        position: relative;
-        color: white;
-        text-decoration: none;
-
-        &:after {
-          content: "";
-          display: inline-block;
-          height: 2px;
-          width: 37px;
-          margin-left: 40px;
-          background: white;
-          vertical-align: middle;
-          transition: margin-left 0.3s ease;
-        }
-
-        &:hover:after {
-          margin-left: 50px;
-        }
-
-        &:before {
-          content: "";
-          position: absolute;
-          top: 6px;
-          left: 214px;
-          height: 8px;
-          width: 8px;
-          border-top: 2px solid white;
-          border-right: 2px solid white;
-          transform: rotate(45deg);
-          transition: margin-left 0.3s ease;
-        }
-
-        &:hover:before {
-          margin-left: 10px;
-        }
-      }
-    }
+  & > div > .container {
+    max-width: 1225px;
   }
 
-  .ou-trouver {
-    background: no-repeat url("../images/background-ou-trouver.jpg");
-    height: 375px;
-    width: 380px;
-    color: white;
-    padding: 40px 40px 40px 48px;
+  .content-1 {
+    background: url("../images/background-wood.jpg") repeat-x center transparent;
 
-    h2 {
-      color: white;
-      font-family: @MyriadSemibold;
-      font-size: 48px;
-      line-height: 48px;
-
-      span {
-        font-family: @MyriadBold;
-      }
-
-      &:after {
-        content: "";
-        display: block;
-        width: 40px;
-        height: 2px;
-        background: white;
-        margin-top: 20px;
-        margin-bottom: 15px;
-      }
+    img {
+      width: 100%;
+      height: 375px;
+      display: block;
+      object-fit: cover;
     }
 
-    p {
-      line-height: 16px;
-      margin-bottom: 44px;
-    }
+    .txt-img-under-wrapper {
+      display: block;
+      height: 100%;
+      position: relative;
 
-    p.voir-vente {
-      font-family: @MyriadBold;
-      text-transform: uppercase;
-      font-size: 16px;
-      line-height: 16px;
-      padding-right: 0;
-      margin-bottom: 0;
+      .txt {
+        position: absolute;
+        bottom: 0;
+        max-width: 473px;
+      }
 
-      a {
-        display: inline-block;
-        position: relative;
-        color: white;
-        text-decoration: none;
-
-        &:after {
-          content: "";
-          display: inline-block;
-          height: 2px;
-          width: 37px;
-          margin-left: 40px;
-          background: white;
-          vertical-align: middle;
-          transition: margin-left 0.3s ease;
-        }
-
-        &:hover:after {
-          margin-left: 50px;
-        }
-
-        &:before {
-          content: "";
-          position: absolute;
-          top: 22px;
-          left: 196px;
-          height: 8px;
-          width: 8px;
-          border-top: 2px solid white;
-          border-right: 2px solid white;
-          transform: rotate(45deg);
-          transition: margin-left 0.3s ease;
-        }
-
-        &:hover:before {
-          margin-left: 10px;
-        }
+      .img-under {
+        float: right;
       }
     }
   }
@@ -502,41 +410,16 @@ h1 {
   }
 
   .views-field-view-node a {
-    display: inline-block;
-    position: relative;
-    margin-bottom: 15px;
-    padding: 0 24px;
-    text-transform: uppercase;
-    font-size: 16px;
-    font-family: @MyriadSemibold;
     color: @primaryColor;
-    text-decoration: none;
-
-    &:hover:after {
-      margin-left: 50px;
-    }
+    padding-left: 24px;
+    margin-bottom: 15px;
 
     &:before {
-      content: "";
-      position: absolute;
-      top: 10px;
-      right: 23px;
-      height: 8px;
-      width: 8px;
-      border-top: 2px solid @primaryColor;
-      border-right: 2px solid @primaryColor;
-      transform: rotate(45deg);
+      border-color: @primaryColor
     }
 
     &:after {
-      content: "";
-      display: inline-block;
-      height: 2px;
-      width: 37px;
-      margin-left: 40px;
-      background: @primaryColor;
-      vertical-align: middle;
-      transition: margin-left 0.3s ease;
+      background-color: @primaryColor;
     }
   }
 }

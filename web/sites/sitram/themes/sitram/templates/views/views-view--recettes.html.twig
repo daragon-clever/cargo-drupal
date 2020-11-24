@@ -36,56 +36,55 @@
 ]
 %}
 <div{{ attributes.addClass(classes) }}>
-  <div class="row">
-    <div class="col">
-      <!--header-->
-      <div class="row">
-        <div class="col">
+  <!--header-->
+  {% if header %}
+    <div class="row">
+      <div class="col">
           {{ title_prefix }}
           {{ title }}
           {{ title_suffix }}
-          {% if header %}
-            <header>
-              {{ header }}
-            </header>
-          {% endif %}
-        </div>
+        <header>
+            {{ header }}
+        </header>
       </div>
-      <!--content-->
-      <div class="row">
+    </div>
+  {% endif %}
+
+  <!--content-->
+  <div class="row">
+      {% if exposed %}
         <div class="col-12 col-sm-3">
           <div class="recettes-filters">
             <h2 class="recettes-filters-title">Filtrer les recettes</h2>
-            {{ exposed }}
+              {{ exposed }}
           </div>
         </div>
+      {% endif %}
 
-        {{ attachment_before }}
+      {{ attachment_before }}
 
-        <div class="col-12 col-sm-9">
-          {% if rows -%}
+    <div class="col-12 {% if exposed %}col-sm-9{% endif %}">
+        {% if rows -%}
             {{ rows }}
-          {% elseif empty -%}
+        {% elseif empty -%}
             {{ empty }}
-          {% endif %}
-          {{ pager }}
-        </div>
+        {% endif %}
+        {{ pager }}
+    </div>
 
-        {{ attachment_after }}
-        {{ more }}
-      </div>
-      <!--footer-->
-      <div class="row">
-        <div class="col">
-          {% if footer %}
-            <footer>
+      {{ attachment_after }}
+      {{ more }}
+  </div>
+  <!--footer-->
+  <div class="row">
+    <div class="col">
+        {% if footer %}
+          <footer>
               {{ footer }}
-            </footer>
-          {% endif %}
+          </footer>
+        {% endif %}
 
-          {{ feed_icons }}
-        </div>
-      </div>
+        {{ feed_icons }}
     </div>
   </div>
 </div>

@@ -1,9 +1,8 @@
 jQuery(document).ready(function($) {
     // CAROUSEL HOMEPAGE
-    $('.homepage-slider').slick({
+    $('.js-homepage-slider > div').slick({
+        dots: true
     });
-
-
 
     // FORMULAIRE CONTACT
     if ($('.webform-submission-form').length) {

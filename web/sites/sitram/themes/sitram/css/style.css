@@ -33,13 +33,143 @@ h1 {
   color: #003663;
   text-transform: uppercase;
   font-size: 56px;
-  text-align: center;
-  line-height: 56px;
+  line-height: 1;
+  margin: 0;
 }
 h1 span {
   font-family: "Cardenio Modern", Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   font-size: 48px;
+}
+.bg-blue {
+  background-color: #003663;
+}
+.text-mea {
+  color: white;
+  padding: 35px;
+}
+.text-mea a {
+  color: white;
+  display: block;
+}
+.text-mea a:hover {
+  transition: opacity 0.3s;
+  text-decoration: none;
+}
+.text-mea a:hover:hover {
+  opacity: 0.8;
+}
+.text-mea h3 {
+  font-size: 48px;
+  font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
+  line-height: 1;
+}
+.text-mea h3 span {
+  font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
+  display: block;
+}
+.text-mea h3:after {
+  content: "";
+  display: block;
+  margin: 15px 0;
+  width: 40px;
+  height: 2px;
+  background-color: white;
+}
+@media only screen and (max-width: 991px) {
+  .text-mea h3 {
+    font-size: 30px;
+  }
+}
+.text-mea p {
+  margin: 0;
+  max-width: 60%;
+}
+.text-mea span.fleche {
+  margin-top: 50px;
+}
+.text-mea.d-flex-absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+.text-mea.blue a {
+  color: #003663;
+}
+.text-mea.blue h3:after {
+  background-color: #003663;
+}
+.text-mea.blue,
+.text-mea.blue .fleche {
+  color: #003663;
+}
+.text-mea.blue:before,
+.text-mea.blue .fleche:before {
+  border-color: #003663;
+}
+.text-mea.blue:after,
+.text-mea.blue .fleche:after {
+  background-color: #003663;
+}
+.img-shade {
+  position: relative;
+}
+.img-shade:before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, transparent 100%);
+}
+.recette-item .views-field-view-node a,
+.fleche {
+  display: inline-block;
+  position: relative;
+  text-transform: uppercase;
+  font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
+  color: white;
+  text-decoration: none;
+}
+.recette-item .views-field-view-node a:hover:after,
+.fleche:hover:after {
+  margin-left: 50px;
+}
+.recette-item .views-field-view-node a:before,
+.fleche:before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 0;
+  height: 8px;
+  width: 8px;
+  border-top: 2px solid white;
+  border-right: 2px solid white;
+  transform: rotate(45deg);
+}
+.recette-item .views-field-view-node a:after,
+.fleche:after {
+  content: "";
+  display: inline-block;
+  height: 2px;
+  width: 37px;
+  margin-left: 40px;
+  background: white;
+  vertical-align: middle;
+  transition: margin-left 0.3s ease;
+}
+.container.gutter-24,
+.container.gutter-24 .row > div {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+.container.gutter-24 .row {
+  margin-left: -24px;
+  margin-right: -24px;
 }
 .header-wrapper header {
   box-shadow: 0 0 10px #0000000B;
@@ -60,26 +190,22 @@ h1 span {
   margin-bottom: 0;
   padding-left: 0;
 }
-.header-wrapper nav ul li {
-  margin: 0 24px;
-  line-height: 117px;
-  border-bottom: 3px solid transparent;
-  transition: border-color 0.3s ease;
-}
-.header-wrapper nav ul li:hover {
-  border-color: #003663;
-}
 .header-wrapper nav ul:last-child {
   margin-right: 0;
 }
 .header-wrapper nav ul li a {
   color: #434343;
   text-decoration: none;
-  justify-content: space-evenly;
   font-size: 16px;
   font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
+  margin: 0 24px;
+  line-height: 117px;
+  display: inline-block;
+  border-bottom: 3px solid transparent;
+  transition: border-color 0.3s ease;
 }
 .header-wrapper nav ul li a:hover {
+  border-color: #003663;
   color: #003663;
 }
 .header-wrapper nav ul a.ou-acheter {
@@ -94,6 +220,12 @@ h1 span {
   font-size: 22px;
   position: relative;
   padding: 0 40px 0 65px;
+  border: none;
+  transition: opacity 0.3s;
+  text-decoration: none;
+}
+.header-wrapper nav ul a.ou-acheter:hover {
+  opacity: 0.8;
 }
 .header-wrapper nav ul a.ou-acheter:before {
   content: "";
@@ -106,251 +238,45 @@ h1 span {
   left: 25px;
 }
 .header-wrapper nav ul a.ou-acheter:hover {
-  padding-bottom: 0;
   border-bottom: none;
+  color: white;
 }
-.homepage-hero img {
+#homepage .slider {
+  /* temp */
+}
+#homepage .slider img {
   max-width: 100%;
+  height: auto;
 }
-.homepage-title {
-  margin-top: 35px;
-}
-.content2 {
-  background: url("../images/background-wood.jpg") no-repeat;
-}
-.content2-top {
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-}
-.content2-top .image-stove {
+#homepage .slider .slick-arrow,
+#homepage .slider .slick-dots {
   position: absolute;
-  top: 15px;
-  left: -145px;
-  z-index: 1;
+  top: 0;
 }
-.content2-top .text-collection {
-  width: 473px;
-  height: 350px;
-  background-color: #003663;
-  color: white;
-  padding: 40px 93px 40px 48px;
+#homepage > div > .container {
+  max-width: 1225px;
 }
-.content2-top .text-collection h2 {
-  color: white;
-  font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
-  font-size: 48px;
-  line-height: 48px;
+#homepage .content-1 {
+  background: url("../images/background-wood.jpg") repeat-x center transparent;
 }
-.content2-top .text-collection h2 span {
-  font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
-}
-.content2-top .text-collection h2:after {
-  content: "";
-  display: block;
-  width: 40px;
-  height: 2px;
-  background: white;
-  margin-top: 20px;
-  margin-bottom: 15px;
-}
-.content2-top .text-collection p {
-  font-family: "Myriad Pro Regular", Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  line-height: 16px;
-  padding-right: 140px;
-  margin-bottom: 44px;
-}
-.content2-top .text-collection p.voir-tout {
-  font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
-  text-transform: uppercase;
-  font-size: 16px;
-  padding-right: 0;
-  margin-bottom: 0;
-}
-.content2-top .text-collection p.voir-tout a {
-  display: inline-block;
-  position: relative;
-  color: white;
-  text-decoration: none;
-}
-.content2-top .text-collection p.voir-tout a:after {
-  content: "";
-  display: inline-block;
-  height: 2px;
-  width: 37px;
-  margin-left: 40px;
-  background: white;
-  vertical-align: middle;
-  transition: margin-left 0.3s ease;
-}
-.content2-top .text-collection p.voir-tout a:hover:after {
-  margin-left: 50px;
-}
-.content2-top .text-collection p.voir-tout a:before {
-  content: "";
-  position: absolute;
-  top: 6px;
-  left: 145px;
-  height: 8px;
-  width: 8px;
-  border-top: 2px solid white;
-  border-right: 2px solid white;
-  transform: rotate(45deg);
-  transition: margin-left 0.3s ease;
-}
-.content2-top .text-collection p.voir-tout a:hover:before {
-  margin-left: 10px;
-}
-.content2-bottom {
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 48px;
-}
-.content2-bottom .conseils {
-  background: no-repeat url("../images/background-conseils.jpg");
+#homepage .content-1 img {
+  width: 100%;
   height: 375px;
-  width: 750px;
-  color: white;
-  padding: 40px 93px 40px 48px;
-}
-.content2-bottom .conseils h2 {
-  color: white;
-  font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
-  font-size: 48px;
-  line-height: 48px;
-}
-.content2-bottom .conseils h2 span {
-  font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
-}
-.content2-bottom .conseils h2:after {
-  content: "";
   display: block;
-  width: 40px;
-  height: 2px;
-  background: white;
-  margin-top: 20px;
-  margin-bottom: 15px;
+  object-fit: cover;
 }
-.content2-bottom .conseils p {
-  font-family: "Myriad Pro Regular", Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  line-height: 16px;
-  padding-right: 380px;
-  margin-bottom: 44px;
-}
-.content2-bottom .conseils p.voir-conseils {
-  font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
-  text-transform: uppercase;
-  font-size: 16px;
-  padding-right: 0;
-  margin-bottom: 0;
-}
-.content2-bottom .conseils p.voir-conseils a {
-  display: inline-block;
-  position: relative;
-  color: white;
-  text-decoration: none;
-}
-.content2-bottom .conseils p.voir-conseils a:after {
-  content: "";
-  display: inline-block;
-  height: 2px;
-  width: 37px;
-  margin-left: 40px;
-  background: white;
-  vertical-align: middle;
-  transition: margin-left 0.3s ease;
-}
-.content2-bottom .conseils p.voir-conseils a:hover:after {
-  margin-left: 50px;
-}
-.content2-bottom .conseils p.voir-conseils a:before {
-  content: "";
-  position: absolute;
-  top: 6px;
-  left: 214px;
-  height: 8px;
-  width: 8px;
-  border-top: 2px solid white;
-  border-right: 2px solid white;
-  transform: rotate(45deg);
-  transition: margin-left 0.3s ease;
-}
-.content2-bottom .conseils p.voir-conseils a:hover:before {
-  margin-left: 10px;
-}
-.content2-bottom .ou-trouver {
-  background: no-repeat url("../images/background-ou-trouver.jpg");
-  height: 375px;
-  width: 380px;
-  color: white;
-  padding: 40px 40px 40px 48px;
-}
-.content2-bottom .ou-trouver h2 {
-  color: white;
-  font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
-  font-size: 48px;
-  line-height: 48px;
-}
-.content2-bottom .ou-trouver h2 span {
-  font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
-}
-.content2-bottom .ou-trouver h2:after {
-  content: "";
+#homepage .content-1 .txt-img-under-wrapper {
   display: block;
-  width: 40px;
-  height: 2px;
-  background: white;
-  margin-top: 20px;
-  margin-bottom: 15px;
-}
-.content2-bottom .ou-trouver p {
-  line-height: 16px;
-  margin-bottom: 44px;
-}
-.content2-bottom .ou-trouver p.voir-vente {
-  font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
-  text-transform: uppercase;
-  font-size: 16px;
-  line-height: 16px;
-  padding-right: 0;
-  margin-bottom: 0;
-}
-.content2-bottom .ou-trouver p.voir-vente a {
-  display: inline-block;
+  height: 100%;
   position: relative;
-  color: white;
-  text-decoration: none;
 }
-.content2-bottom .ou-trouver p.voir-vente a:after {
-  content: "";
-  display: inline-block;
-  height: 2px;
-  width: 37px;
-  margin-left: 40px;
-  background: white;
-  vertical-align: middle;
-  transition: margin-left 0.3s ease;
-}
-.content2-bottom .ou-trouver p.voir-vente a:hover:after {
-  margin-left: 50px;
-}
-.content2-bottom .ou-trouver p.voir-vente a:before {
-  content: "";
+#homepage .content-1 .txt-img-under-wrapper .txt {
   position: absolute;
-  top: 22px;
-  left: 196px;
-  height: 8px;
-  width: 8px;
-  border-top: 2px solid white;
-  border-right: 2px solid white;
-  transform: rotate(45deg);
-  transition: margin-left 0.3s ease;
+  bottom: 0;
+  max-width: 473px;
 }
-.content2-bottom .ou-trouver p.voir-vente a:hover:before {
-  margin-left: 10px;
+#homepage .content-1 .txt-img-under-wrapper .img-under {
+  float: right;
 }
 .vue-recettes.container {
   max-width: 1400px;
@@ -423,7 +349,7 @@ h1 span {
   width: 100%;
   object-fit: cover;
   height: 197px;
-  transition: transform 0.3s ease;
+  transition: transform .3s ease;
 }
 .recette-item img:hover {
   transform: scale(1.1);
@@ -442,37 +368,13 @@ h1 span {
   font-family: "Myriad Pro Regular", Arial, Helvetica, sans-serif;
 }
 .recette-item .views-field-view-node a {
-  display: inline-block;
-  position: relative;
-  margin-bottom: 15px;
-  padding: 0 24px;
-  text-transform: uppercase;
-  font-size: 16px;
-  font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
   color: #003663;
-  text-decoration: none;
-}
-.recette-item .views-field-view-node a:hover:after {
-  margin-left: 50px;
+  padding-left: 24px;
+  margin-bottom: 15px;
 }
 .recette-item .views-field-view-node a:before {
-  content: "";
-  position: absolute;
-  top: 10px;
-  right: 23px;
-  height: 8px;
-  width: 8px;
-  border-top: 2px solid #003663;
-  border-right: 2px solid #003663;
-  transform: rotate(45deg);
+  border-color: #003663;
 }
 .recette-item .views-field-view-node a:after {
-  content: "";
-  display: inline-block;
-  height: 2px;
-  width: 37px;
-  margin-left: 40px;
-  background: #003663;
-  vertical-align: middle;
-  transition: margin-left 0.3s ease;
+  background-color: #003663;
 }

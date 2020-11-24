@@ -1,63 +1,69 @@
-<!-- CONTENT 1 -->
-<div class="container-fluid">
-  <div class="row align-items-center justify-content-center">
-    <div class="col-12 px-0">
-      <div class="homepage-hero">
-        {{ content.field_hp_hero }}
-      </div>
-    </div>
-    <div class="homepage-title">
-      {{ content.field_hp_title }}
-    </div>
+<div id="homepage">
+  <!-- SLIDER -->
+  <div class="js-homepage-slider slider">
+    {{ content.field_hp_hero }}
   </div>
-</div>
-<!-- CONTENT 2 -->
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-12 px-0">
-      <div class="content2">
-        <div class="row">
-          <div class="col-12">
-            <div class="content2-top">
-              <div class="image-stove">
-                {{ content.field_hp_content2_image_stove }}
-              </div>
-              <div class="text-collection">
-                {{ content.field_hp_content2_collection }}
-                <p class="voir-tout"><a href="#">Voir tout</a></p>
-              </div>
-              <div class="image-kitchen">
-                {{ content.field_hp_content2_image_kitchen }}
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12">
-            <div class="content2-bottom">
-              <div class="conseils">
-                {{ content.field_hp_content2_text_conseils }}
-                <p class="voir-conseils"><a href="#">Voir nos conseils</a></p>
-              </div>
-              <div class="ou-trouver">
-                {{ content.field_hp_content2_text_ou_trouve }}
-                <p class="voir-vente"><a href="#">Voir nos<br>points de vente</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- CONTENT 3 -->
-<div class="container">
-  <div class="row">
-    <div class="col-12">
-      <div class="content3">
-        {{ content.field_hp_content3_recettes }}
-      </div>
-    </div>
-  </div>
-</div>
 
+  <!-- HEADING -->
+  <div class="heading my-5 text-center">
+    {{ content.field_hp_title }}
+  </div>
+
+  <!-- CONTENT 1 -->
+  <div class="content-1">
+    <div class="container gutter-24">
+      <div class="row mb-5">
+        <div class="col">
+          <div class="txt-img-under-wrapper">
+            <div class="txt bg-blue">
+              <div class="text-mea">
+                {{ content.field_hp_content1_txts[0] }}
+              </div>
+            </div>
+            <div class="img-under">
+              {{ content.field_hp_content1_imgs[0] }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-6 col-lg-auto">
+          <div class="position-relative img-shade">
+            {{ content.field_hp_content1_imgs[1] }}
+            <div class="text-mea d-flex-absolute">
+              <div class="my-auto">
+                {{ content.field_hp_content1_txts[1] }}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg">
+          <div class="position-relative img-shade">
+            {{ content.field_hp_content1_imgs[2] }}
+            <div class="text-mea d-flex-absolute">
+              <div class="my-auto">
+                {{ content.field_hp_content1_txts[2] }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-2 my-5">
+    <div class="container gutter-24">
+      <div class="row">
+        <div class="col-5">
+          <div class="text-mea blue p-0">
+            {{ content.field_hp_content2_txt }}
+          </div>
+        </div>
+        <div class="col">
+          {{ content.field_hp_content2_right }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

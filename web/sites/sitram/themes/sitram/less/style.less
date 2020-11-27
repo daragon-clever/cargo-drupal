@@ -91,14 +91,6 @@ h1 {
     &,
     .fleche {
       color: @primaryColor;
-
-      &:before {
-        border-color: @primaryColor
-      }
-
-      &:after {
-        background-color: @primaryColor;
-      }
     }
   }
 
@@ -143,32 +135,21 @@ h1 {
   font-family: @MyriadSemibold;
   color: white;
   text-decoration: none;
-
-  &:hover:after {
-    margin-left: 50px;
-  }
-
-  &:before {
-    content: "";
-    position: absolute;
-    top: 10px;
-    right: 0;
-    height: 8px;
-    width: 8px;
-    border-top: 2px solid white;
-    border-right: 2px solid white;
-    transform: rotate(45deg);
-  }
+  vertical-align: middle;
 
   &:after {
-    content: "";
+    content: "\0027F6";
     display: inline-block;
-    height: 2px;
-    width: 37px;
-    margin-left: 40px;
-    background: white;
     vertical-align: middle;
-    transition: margin-left 0.3s ease;
+    font-size: 30px;
+    line-height: 1;
+    margin-top: -4px;
+    margin-left: 10px;
+    transition: margin-left 0.3s ease-in-out;
+  }
+
+  &:hover:after {
+    margin-left: 30px;
   }
 }
 
@@ -574,14 +555,6 @@ h1 {
     color: @primaryColor;
     padding-left: 24px;
     margin-bottom: 15px;
-
-    &:before {
-      border-color: @primaryColor
-    }
-
-    &:after {
-      background-color: @primaryColor;
-    }
   }
 }
 

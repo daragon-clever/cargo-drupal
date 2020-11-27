@@ -107,14 +107,6 @@ h1 span {
 .text-mea.blue .fleche {
   color: #003663;
 }
-.text-mea.blue:before,
-.text-mea.blue .fleche:before {
-  border-color: #003663;
-}
-.text-mea.blue:after,
-.text-mea.blue .fleche:after {
-  background-color: #003663;
-}
 .text-mea.center {
   text-align: center;
 }
@@ -149,33 +141,22 @@ h1 span {
   font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
   color: white;
   text-decoration: none;
-}
-.recette-item .views-field-view-node a:hover:after,
-.fleche:hover:after {
-  margin-left: 50px;
-}
-.recette-item .views-field-view-node a:before,
-.fleche:before {
-  content: "";
-  position: absolute;
-  top: 10px;
-  right: 0;
-  height: 8px;
-  width: 8px;
-  border-top: 2px solid white;
-  border-right: 2px solid white;
-  transform: rotate(45deg);
+  vertical-align: middle;
 }
 .recette-item .views-field-view-node a:after,
 .fleche:after {
-  content: "";
+  content: "\0027F6";
   display: inline-block;
-  height: 2px;
-  width: 37px;
-  margin-left: 40px;
-  background: white;
   vertical-align: middle;
-  transition: margin-left 0.3s ease;
+  font-size: 30px;
+  line-height: 1;
+  margin-top: -4px;
+  margin-left: 10px;
+  transition: margin-left 0.3s ease-in-out;
+}
+.recette-item .views-field-view-node a:hover:after,
+.fleche:hover:after {
+  margin-left: 30px;
 }
 .container.gutter-24,
 .container.gutter-24 .row > div {
@@ -501,12 +482,6 @@ h1 span {
   color: #003663;
   padding-left: 24px;
   margin-bottom: 15px;
-}
-.recette-item .views-field-view-node a:before {
-  border-color: #003663;
-}
-.recette-item .views-field-view-node a:after {
-  background-color: #003663;
 }
 .footer-wrapper .container {
   max-width: 1400px;

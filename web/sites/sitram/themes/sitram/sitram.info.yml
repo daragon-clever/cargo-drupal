@@ -13,6 +13,7 @@ regions:
 libraries:
   - sitram/bootstrap
   - sitram/slick
+  - sitram/instagram
   - sitram/global-styling
 
 stylesheets-remove:

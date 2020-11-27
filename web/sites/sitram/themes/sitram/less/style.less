@@ -49,7 +49,7 @@ h1 {
     &:after {
       content: "";
       display: block;
-      margin: 15px 0;
+      margin: 20px 0 10px 0;
       width: 40px;
       height: 2px;
       background-color: white;
@@ -63,10 +63,11 @@ h1 {
   p {
     margin: 0;
     max-width: 60%;
+    line-height: 1;
   }
 
   span.fleche {
-    margin-top: 50px;
+    margin-top: 40px;
   }
 
   &.d-flex-absolute {
@@ -100,6 +101,20 @@ h1 {
       }
     }
   }
+
+  &.center {
+    text-align: center;
+
+    h3:after,
+    p {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    p {
+      max-width: 75%;
+    }
+  }
 }
 
 .img-shade {
@@ -114,6 +129,10 @@ h1 {
     left: 0;
     background: linear-gradient(90deg, rgba(0,0,0,0.6) 0%, transparent 100%);
   }
+}
+
+.box-shadow {
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
 }
 
 .recette-item .views-field-view-node a,
@@ -173,7 +192,7 @@ h1 {
 
 .header-wrapper {
   header {
-    box-shadow: 0 0 10px #0000000B;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.04);
 
     .container {
       max-width: 1400px;
@@ -258,11 +277,71 @@ h1 {
       height: auto;
     }
 
-    /* temp */
-    .slick-arrow,
+    .slick-left-arrow,
+    .slick-right-arrow {
+      display: none;
+    }
+
+    .slick-arrow {
+      position: absolute;
+      padding: 0;
+      margin: 0;
+      background: none;
+      border: none;
+      outline: none;
+      border-top: 4px solid white;
+      border-right: 4px solid white;
+      height: 20px;
+      width: 20px;
+      font-size: 0;
+      cursor: pointer;
+
+      &.slick-prev {
+        left: 260px;
+        margin-top: -14px;
+        top: 50%;
+        transform: rotate(-135deg);
+        z-index: 2;
+      }
+
+      &.slick-next {
+        right: 260px;
+        margin-top: -14px;
+        top: 50%;
+        transform: rotate(45deg);
+      }
+    }
+
     .slick-dots {
       position: absolute;
-      top: 0;
+      bottom: -3px;
+      list-style-type: none;
+      left: 0;
+      right: 0;
+      text-align: center;
+
+      li {
+        display: inline;
+
+        button {
+          font-size: 0;
+          border: 1px solid rgba(255, 255, 255, 0.7);
+          height: 8px;
+          width: 8px;
+          border-radius: 8px;
+          padding: 0;
+          margin-right: 10px;
+          background: @grey;
+          cursor: pointer;
+          outline: none;
+        }
+
+        &.slick-active {
+          button {
+            background: @secondaryColor;
+          }
+        }
+      }
     }
   }
 
@@ -275,7 +354,7 @@ h1 {
 
     img {
       width: 100%;
-      height: 375px;
+      height: 385px;
       display: block;
       object-fit: cover;
     }
@@ -284,6 +363,15 @@ h1 {
       display: block;
       height: 100%;
       position: relative;
+
+      .picto-1 {
+        position: absolute;
+        left: -500px;
+        top: 0;
+        height: 442px;
+        width: 508px;
+        background: url("../images/poele.png") no-repeat center transparent;
+      }
 
       .txt {
         position: absolute;
@@ -296,6 +384,79 @@ h1 {
       }
     }
   }
+
+  .content-2 {
+    margin-top: 82px;
+
+    .picto-2 {
+      position: absolute;
+      right: -87px;
+      top: -91px;
+      height: 250px;
+      width: 250px;
+      background: url("../images/j-aime-cuisiner.svg") no-repeat center transparent;
+    }
+  }
+
+  .content-3 {
+    background: url("../images/background-blue.jpg") repeat-x top center transparent;
+    margin-top: 97px;
+    background-size: auto 521px;
+
+    .content-3-title {
+      position: relative;
+
+      h2 {
+        text-align: center;
+        font-size: 48px;
+        font-family: @MyriadBold;
+        color: white;
+        margin-bottom: 3px;
+
+        span {
+          font-family: @CardenioBold;
+          text-transform: uppercase;
+        }
+      }
+
+      .picto-3 {
+        position: absolute;
+        right: -227px;
+        top: -280px;
+        height: 349px;
+        width: 349px;
+        background: url("../images/poivron.png") no-repeat center transparent;
+      }
+    }
+
+    .text-mea {
+      h3 {
+        font-size: 32px;
+
+        &:after {
+          margin-bottom: 15px;
+        }
+      }
+
+      p {
+        line-height: 1;
+      }
+    }
+
+    .content-3-img {
+      margin: 50px auto 0 auto;
+    }
+
+    .content-3-paragraph {
+      margin-top: 62px;
+      margin-bottom: 72px;
+
+      p {
+        font-family: @MyriadRegular;
+        color: @grey;
+      }
+    }
+  }
 }
 
 //RECETTES//
@@ -305,7 +466,7 @@ h1 {
 }
 
 .recettes-filters {
-  border: 1px solid #EDEDED;
+  border: 1px solid @lightGrey;
   padding: 24px;
 
   .recettes-filters-title {
@@ -377,7 +538,7 @@ h1 {
 }
 
 .recette-item {
-  border: 1px solid #EDEDED;
+  border: 1px solid @lightGrey;
 
   .field-content {
     overflow: hidden;
@@ -422,4 +583,190 @@ h1 {
       background-color: @primaryColor;
     }
   }
+}
+
+//FOOTER//
+
+.footer-wrapper {
+  .container {
+    max-width: 1400px;
+  }
+
+  .newsletter-wrapper {
+    background-color: @secondaryColor;
+    padding: 70px 126px 72px 102px;
+
+    .text-mea {
+
+      h3 {
+        font-size: 32px;
+      }
+
+      span {
+        display: inline;
+      }
+    }
+
+    .form-newsletter {
+      font-family: @MyriadRegular;
+      font-size: 20px;
+
+      label {
+        display: block;
+        color: white;
+      }
+
+      input {
+        line-height: 63px;
+        padding-left: 20px;
+        width: 100%;
+      }
+
+      ::placeholder {
+        color: #b9b9b9;
+      }
+
+      .form-email {
+        margin-bottom: 16px;
+      }
+
+      .form-submit input {
+        margin-top: 32px;
+        background-color: #FDC2A1;
+        color: @secondaryColor;
+        text-transform: uppercase;
+        font-family: @MyriadBold;
+        border-style: none;
+      }
+    }
+  }
+
+  .logos-wrapper {
+    background-color: @lightGrey;
+    margin-top: -240px;
+    padding-top: 288px;
+    padding-bottom: 48px;
+
+    .logos-list > div {
+      display: inline-block;
+
+      &.logo1 {
+        height: 51px;
+        width: 163px;
+        background: url("../images/footer/logo-footer-sitram-marque.svg") no-repeat center transparent;
+      }
+
+      &.logo2 {
+        height: 97px;
+        width: 95px;
+        background: url("../images/footer/logo-footer-1963.svg") no-repeat center transparent;
+      }
+
+      &.logo3 {
+        height: 122px;
+        width: 124px;
+        background: url("../images/footer/logo-footer-service-client.svg") no-repeat center transparent;
+      }
+
+      &.logo4 {
+        height: 94px;
+        width: 86px;
+        background: url("../images/footer/logo-footer-cuisiner.svg") no-repeat center transparent;
+      }
+    }
+  }
+
+  .links {
+    padding: 30px 0 35px 15px;
+    font-family: @MyriadSemibold;
+
+    & > div {
+      border-right: 1px solid @lightGrey;
+    }
+
+    & > div:last-child {
+      border: none;
+    }
+
+    h4 {
+      color: @primaryColor;
+      font-size: 18px;
+
+      &:before {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 1px;
+        background-color: @primaryColor;
+        margin-bottom: 3px;
+      }
+    }
+
+    ul {
+      margin-top: 15px;
+      margin-bottom: 0;
+      padding: 0;
+
+      li {
+        list-style-type: none;
+
+        :before {
+          content: "";
+          height: 4px;
+          width: 4px;
+          background-color: @grey;
+          display: inline-block;
+          border-radius: 4px;
+          margin-bottom: 2px;
+          margin-right: 8px;
+        }
+
+        a {
+          text-decoration: none;
+          color: @grey;
+          font-size: 16px;
+        }
+      }
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 1;
+      color: @grey;
+      margin-top: 10px;
+      margin-bottom: 0;
+
+      a {
+        text-decoration: underline;
+        color: @grey;
+      }
+    }
+
+    div.social1 {
+      margin-bottom: 15px;
+      height: 25px;
+      width: 25px;
+      background: url("../images/footer/facebook.svg") no-repeat center transparent;
+    }
+
+    div.social2 {
+      margin-bottom: 15px;
+      height: 25px;
+      width: 25px;
+      background: url("../images/footer/instagram.svg") no-repeat center transparent;
+    }
+
+    div.social3 {
+      height: 25px;
+      width: 25px;
+      background: url("../images/footer/pinterest.svg") no-repeat center transparent;
+    }
+  }
+}
+
+.copyright {
+  font-size: 12px;
+  color: white;
+  line-height: 30px;
+  font-family: @MyriadRegular;
 }

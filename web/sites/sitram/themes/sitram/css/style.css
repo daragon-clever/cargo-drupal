@@ -71,7 +71,7 @@ h1 span {
 .text-mea h3:after {
   content: "";
   display: block;
-  margin: 15px 0;
+  margin: 20px 0 10px 0;
   width: 40px;
   height: 2px;
   background-color: white;
@@ -84,9 +84,10 @@ h1 span {
 .text-mea p {
   margin: 0;
   max-width: 60%;
+  line-height: 1;
 }
 .text-mea span.fleche {
-  margin-top: 50px;
+  margin-top: 40px;
 }
 .text-mea.d-flex-absolute {
   position: absolute;
@@ -114,6 +115,17 @@ h1 span {
 .text-mea.blue .fleche:after {
   background-color: #003663;
 }
+.text-mea.center {
+  text-align: center;
+}
+.text-mea.center h3:after,
+.text-mea.center p {
+  margin-left: auto;
+  margin-right: auto;
+}
+.text-mea.center p {
+  max-width: 75%;
+}
 .img-shade {
   position: relative;
 }
@@ -125,6 +137,9 @@ h1 span {
   top: 0;
   left: 0;
   background: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, transparent 100%);
+}
+.box-shadow {
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
 }
 .recette-item .views-field-view-node a,
 .fleche {
@@ -172,7 +187,7 @@ h1 span {
   margin-right: -24px;
 }
 .header-wrapper header {
-  box-shadow: 0 0 10px #0000000B;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.04);
 }
 .header-wrapper header .container {
   max-width: 1400px;
@@ -241,17 +256,66 @@ h1 span {
   border-bottom: none;
   color: white;
 }
-#homepage .slider {
-  /* temp */
-}
 #homepage .slider img {
   max-width: 100%;
   height: auto;
 }
-#homepage .slider .slick-arrow,
+#homepage .slider .slick-left-arrow,
+#homepage .slider .slick-right-arrow {
+  display: none;
+}
+#homepage .slider .slick-arrow {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+  outline: none;
+  border-top: 4px solid white;
+  border-right: 4px solid white;
+  height: 20px;
+  width: 20px;
+  font-size: 0;
+  cursor: pointer;
+}
+#homepage .slider .slick-arrow.slick-prev {
+  left: 260px;
+  margin-top: -14px;
+  top: 50%;
+  transform: rotate(-135deg);
+  z-index: 2;
+}
+#homepage .slider .slick-arrow.slick-next {
+  right: 260px;
+  margin-top: -14px;
+  top: 50%;
+  transform: rotate(45deg);
+}
 #homepage .slider .slick-dots {
   position: absolute;
-  top: 0;
+  bottom: -3px;
+  list-style-type: none;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+#homepage .slider .slick-dots li {
+  display: inline;
+}
+#homepage .slider .slick-dots li button {
+  font-size: 0;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  height: 8px;
+  width: 8px;
+  border-radius: 8px;
+  padding: 0;
+  margin-right: 10px;
+  background: #434343;
+  cursor: pointer;
+  outline: none;
+}
+#homepage .slider .slick-dots li.slick-active button {
+  background: #741030;
 }
 #homepage > div > .container {
   max-width: 1225px;
@@ -261,7 +325,7 @@ h1 span {
 }
 #homepage .content-1 img {
   width: 100%;
-  height: 375px;
+  height: 385px;
   display: block;
   object-fit: cover;
 }
@@ -270,6 +334,14 @@ h1 span {
   height: 100%;
   position: relative;
 }
+#homepage .content-1 .txt-img-under-wrapper .picto-1 {
+  position: absolute;
+  left: -500px;
+  top: 0;
+  height: 442px;
+  width: 508px;
+  background: url("../images/poele.png") no-repeat center transparent;
+}
 #homepage .content-1 .txt-img-under-wrapper .txt {
   position: absolute;
   bottom: 0;
@@ -277,6 +349,64 @@ h1 span {
 }
 #homepage .content-1 .txt-img-under-wrapper .img-under {
   float: right;
+}
+#homepage .content-2 {
+  margin-top: 82px;
+}
+#homepage .content-2 .picto-2 {
+  position: absolute;
+  right: -87px;
+  top: -91px;
+  height: 250px;
+  width: 250px;
+  background: url("../images/j-aime-cuisiner.svg") no-repeat center transparent;
+}
+#homepage .content-3 {
+  background: url("../images/background-blue.jpg") repeat-x top center transparent;
+  margin-top: 97px;
+  background-size: auto 521px;
+}
+#homepage .content-3 .content-3-title {
+  position: relative;
+}
+#homepage .content-3 .content-3-title h2 {
+  text-align: center;
+  font-size: 48px;
+  font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
+  color: white;
+  margin-bottom: 3px;
+}
+#homepage .content-3 .content-3-title h2 span {
+  font-family: "Cardenio Modern Bold", Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+}
+#homepage .content-3 .content-3-title .picto-3 {
+  position: absolute;
+  right: -227px;
+  top: -280px;
+  height: 349px;
+  width: 349px;
+  background: url("../images/poivron.png") no-repeat center transparent;
+}
+#homepage .content-3 .text-mea h3 {
+  font-size: 32px;
+}
+#homepage .content-3 .text-mea h3:after {
+  margin-bottom: 15px;
+}
+#homepage .content-3 .text-mea p {
+  line-height: 1;
+}
+#homepage .content-3 .content-3-img {
+  margin: 50px auto 0 auto;
+}
+#homepage .content-3 .content-3-paragraph {
+  margin-top: 62px;
+  margin-bottom: 72px;
+}
+#homepage .content-3 .content-3-paragraph p {
+  font-family: "Myriad Pro Regular", Arial, Helvetica, sans-serif;
+  color: #434343;
 }
 .vue-recettes.container {
   max-width: 1400px;
@@ -349,7 +479,7 @@ h1 span {
   width: 100%;
   object-fit: cover;
   height: 197px;
-  transition: transform .3s ease;
+  transition: transform 0.3s ease;
 }
 .recette-item img:hover {
   transform: scale(1.1);
@@ -377,4 +507,152 @@ h1 span {
 }
 .recette-item .views-field-view-node a:after {
   background-color: #003663;
+}
+.footer-wrapper .container {
+  max-width: 1400px;
+}
+.footer-wrapper .newsletter-wrapper {
+  background-color: #741030;
+  padding: 70px 126px 72px 102px;
+}
+.footer-wrapper .newsletter-wrapper .text-mea h3 {
+  font-size: 32px;
+}
+.footer-wrapper .newsletter-wrapper .text-mea span {
+  display: inline;
+}
+.footer-wrapper .newsletter-wrapper .form-newsletter {
+  font-family: "Myriad Pro Regular", Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+.footer-wrapper .newsletter-wrapper .form-newsletter label {
+  display: block;
+  color: white;
+}
+.footer-wrapper .newsletter-wrapper .form-newsletter input {
+  line-height: 63px;
+  padding-left: 20px;
+  width: 100%;
+}
+.footer-wrapper .newsletter-wrapper .form-newsletter ::placeholder {
+  color: #b9b9b9;
+}
+.footer-wrapper .newsletter-wrapper .form-newsletter .form-email {
+  margin-bottom: 16px;
+}
+.footer-wrapper .newsletter-wrapper .form-newsletter .form-submit input {
+  margin-top: 32px;
+  background-color: #FDC2A1;
+  color: #741030;
+  text-transform: uppercase;
+  font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
+  border-style: none;
+}
+.footer-wrapper .logos-wrapper {
+  background-color: #EDEDED;
+  margin-top: -240px;
+  padding-top: 288px;
+  padding-bottom: 48px;
+}
+.footer-wrapper .logos-wrapper .logos-list > div {
+  display: inline-block;
+}
+.footer-wrapper .logos-wrapper .logos-list > div.logo1 {
+  height: 51px;
+  width: 163px;
+  background: url("../images/footer/logo-footer-sitram-marque.svg") no-repeat center transparent;
+}
+.footer-wrapper .logos-wrapper .logos-list > div.logo2 {
+  height: 97px;
+  width: 95px;
+  background: url("../images/footer/logo-footer-1963.svg") no-repeat center transparent;
+}
+.footer-wrapper .logos-wrapper .logos-list > div.logo3 {
+  height: 122px;
+  width: 124px;
+  background: url("../images/footer/logo-footer-service-client.svg") no-repeat center transparent;
+}
+.footer-wrapper .logos-wrapper .logos-list > div.logo4 {
+  height: 94px;
+  width: 86px;
+  background: url("../images/footer/logo-footer-cuisiner.svg") no-repeat center transparent;
+}
+.footer-wrapper .links {
+  padding: 30px 0 35px 15px;
+  font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
+}
+.footer-wrapper .links > div {
+  border-right: 1px solid #EDEDED;
+}
+.footer-wrapper .links > div:last-child {
+  border: none;
+}
+.footer-wrapper .links h4 {
+  color: #003663;
+  font-size: 18px;
+}
+.footer-wrapper .links h4:before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 1px;
+  background-color: #003663;
+  margin-bottom: 3px;
+}
+.footer-wrapper .links ul {
+  margin-top: 15px;
+  margin-bottom: 0;
+  padding: 0;
+}
+.footer-wrapper .links ul li {
+  list-style-type: none;
+}
+.footer-wrapper .links ul li :before {
+  content: "";
+  height: 4px;
+  width: 4px;
+  background-color: #434343;
+  display: inline-block;
+  border-radius: 4px;
+  margin-bottom: 2px;
+  margin-right: 8px;
+}
+.footer-wrapper .links ul li a {
+  text-decoration: none;
+  color: #434343;
+  font-size: 16px;
+}
+.footer-wrapper .links p {
+  font-size: 14px;
+  line-height: 1;
+  color: #434343;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+.footer-wrapper .links p a {
+  text-decoration: underline;
+  color: #434343;
+}
+.footer-wrapper .links div.social1 {
+  margin-bottom: 15px;
+  height: 25px;
+  width: 25px;
+  background: url("../images/footer/facebook.svg") no-repeat center transparent;
+}
+.footer-wrapper .links div.social2 {
+  margin-bottom: 15px;
+  height: 25px;
+  width: 25px;
+  background: url("../images/footer/instagram.svg") no-repeat center transparent;
+}
+.footer-wrapper .links div.social3 {
+  height: 25px;
+  width: 25px;
+  background: url("../images/footer/pinterest.svg") no-repeat center transparent;
+}
+.copyright {
+  font-size: 12px;
+  color: white;
+  line-height: 30px;
+  font-family: "Myriad Pro Regular", Arial, Helvetica, sans-serif;
 }

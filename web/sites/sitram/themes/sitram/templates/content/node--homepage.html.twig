@@ -1,106 +1,102 @@
 <div id="homepage">
-  <!-- SLIDER -->
-  <div class="js-homepage-slider slider">
-    {{ content.field_hp_hero }}
-  </div>
-
-  <!-- HEADING -->
-  <div class="heading my-5 text-center">
-    {{ content.field_hp_title }}
-  </div>
-
-  <!-- CONTENT 1 : WOOD-->
-  <div class="content-1">
-    <div class="container gutter-24">
-      <div class="row mb-5">
-        <div class="col">
-          <div class="txt-img-under-wrapper">
-            <div class="picto-1">
-            </div>
-            <div class="txt bg-blue">
-              <div class="text-mea">
-                {{ content.field_hp_content1_txts[0] }}
-              </div>
-            </div>
-            <div class="img-under">
-              {{ content.field_hp_content1_imgs[0] }}
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12 col-md-6 col-lg-auto">
-          <div class="position-relative img-shade box-shadow">
-            {{ content.field_hp_content1_imgs[1] }}
-            <div class="text-mea d-flex-absolute">
-              <div class="my-auto">
-                {{ content.field_hp_content1_txts[1] }}
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg">
-          <div class="position-relative img-shade box-shadow">
-            {{ content.field_hp_content1_imgs[2] }}
-            <div class="text-mea d-flex-absolute">
-              <div class="my-auto">
-                {{ content.field_hp_content1_txts[2] }}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <!-- SLIDER -->
+    <div class="js-homepage-slider slider">
+        {{ content.field_hp_hero }}
     </div>
-  </div>
 
-  <!-- CONTENT 2 : RECETTES -->
-  <div class="content-2">
-    <div class="container gutter-24">
-      <div class="row">
-        <div class="col-5">
-          <div class="text-mea blue p-0">
-            {{ content.field_hp_content2_txt }}
-          </div>
-        </div>
-        <div class="col position-relative">
-          {{ content.field_hp_content2_right }}
-          <div class="picto-2"></div>
-        </div>
-      </div>
+    <!-- HEADING -->
+    <div class="heading my-5 text-center">
+        {{ content.field_hp_title }}
     </div>
-  </div>
 
-  <!-- CONTENT 3 : BLUE-->
-  <div class="content-3 pt-5">
-    <div class="container gutter-24">
-      <div class="row">
-        <div class="col">
-          <div class="content-3-title">
-            {{ content.field_hp_content3_title }}
-            <div class="picto-3"></div>
-          </div>
+    <!-- CONTENT 1 -->
+    <div class="content-1 bg-img-wood-liseret">
+        <div class="container gutter-24">
+            <div class="row mb-5">
+                <div class="col">
+                    <div class="txt-img-under-wrapper">
+                        <div class="picto-1">
+                        </div>
+                        <div class="txt bg-blue">
+                            <div class="text-mea gutter-30">
+                                {{ content.field_hp_content1_txts[0] }}
+                            </div>
+                        </div>
+                        <div class="img-under">
+                            {{ content.field_hp_content1_imgs[0] }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-auto">
+                    <div class="position-relative img-shade box-shadow">
+                        {{ content.field_hp_content1_imgs[1] }}
+                        <div class="text-mea d-flex-absolute gutter-30">
+                            {{ content.field_hp_content1_txts[1] }}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg">
+                    <div class="position-relative img-shade box-shadow">
+                        {{ content.field_hp_content1_imgs[2] }}
+                        <div class="text-mea d-flex-absolute gutter-30">
+                            {{ content.field_hp_content1_txts[2] }}
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="row mt-4">
-        <div class="col">
-          <div id="js-instagram">
-          </div>
-        </div>
-        <div class="col d-flex flex-column">
-          <div class="text-mea center p-3">
-            {{ content.field_hp_content3_txt }}
-          </div>
-          <div class="content-3-img">
-            {{ content.field_hp_content3_img }}
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="content-3-paragraph">
-          {{ content.field_hp_content3_paragraph }}
-        </div>
-      </div>
     </div>
-  </div>
+
+    <!-- CONTENT 2 -->
+    <div class="content-2">
+        <div class="container gutter-24">
+            <div class="row">
+                <div class="col-5">
+                    <div class="text-mea blue p-0">
+                        {{ content.field_hp_content2_txt }}
+                    </div>
+                </div>
+                <div class="col position-relative">
+                    {{ content.field_hp_content2_right }}
+                    <div class="picto-2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENT 3 -->
+    <div class="content-3 pt-5 bg-img-blue">
+        <div class="container gutter-24">
+            <div class="row">
+                <div class="col">
+                    <div class="content-3-title text-center text-white">
+                        {{ content.field_hp_content3_title }}
+                        <div class="picto-3"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col">
+                    <div id="js-instagram">
+                    </div>
+                </div>
+                <div class="col d-flex flex-column">
+                    <div class="text-mea center p-3">
+                        {{ content.field_hp_content3_txt }}
+                    </div>
+                    <div class="content-3-img">
+                        {{ content.field_hp_content3_img }}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="content-3-paragraph">
+                    {{ content.field_hp_content3_paragraph }}
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>

@@ -1,32 +1,7 @@
-@font-face {
-  font-family: 'Cardenio Modern';
-  src: url('../fonts/cardeniomodern-regular-webfont.woff2') format('woff2'), url('../fonts/cardeniomodern-regular-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Cardenio Modern Bold';
-  src: url('../fonts/cardeniomodern-bold-webfont.woff2') format('woff2'), url('../fonts/cardeniomodern-bold-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Myriad Pro Regular';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Myriad Pro Regular'), url('../fonts/MYRIADPRO-REGULAR.woff') format('woff');
-}
-@font-face {
-  font-family: 'Myriad Pro Semibold';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Myriad Pro Semibold'), url('../fonts/MYRIADPRO-SEMIBOLD.woff') format('woff');
-}
-@font-face {
-  font-family: 'Myriad Pro Bold';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Myriad Pro Bold'), url('../fonts/MYRIADPRO-BOLD.woff') format('woff');
+body {
+  font-family: "Myriad Pro Regular", Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  color: #434343;
 }
 h1 {
   font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
@@ -41,16 +16,29 @@ h1 span {
   text-transform: uppercase;
   font-size: 48px;
 }
+h2 {
+  font-size: 48px;
+  font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
+  margin-bottom: 3px;
+}
+h2 span {
+  font-family: "Cardenio Modern Bold", Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+}
 .bg-blue {
   background-color: #003663;
 }
 .text-mea {
   color: white;
-  padding: 35px;
 }
 .text-mea a {
   color: white;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  padding: 50px;
 }
 .text-mea a:hover {
   transition: opacity 0.3s;
@@ -59,6 +47,11 @@ h1 span {
 .text-mea a:hover:hover {
   opacity: 0.8;
 }
+@media only screen and (max-width: 991px) {
+  .text-mea a {
+    padding: 15px;
+  }
+}
 .text-mea h3 {
   font-size: 48px;
   font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
@@ -66,12 +59,11 @@ h1 span {
 }
 .text-mea h3 span {
   font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
-  display: block;
 }
 .text-mea h3:after {
   content: "";
   display: block;
-  margin: 20px 0 10px 0;
+  margin: 20px 0;
   width: 40px;
   height: 2px;
   background-color: white;
@@ -86,8 +78,18 @@ h1 span {
   max-width: 60%;
   line-height: 1;
 }
+@media only screen and (max-width: 991px) {
+  .text-mea p {
+    max-width: 100%;
+  }
+}
 .text-mea span.fleche {
   margin-top: 40px;
+}
+@media only screen and (max-width: 991px) {
+  .text-mea span.fleche {
+    margin-top: 15px;
+  }
 }
 .text-mea.d-flex-absolute {
   position: absolute;
@@ -118,8 +120,13 @@ h1 span {
 .text-mea.center p {
   max-width: 75%;
 }
+.text-mea.gutter-30 a {
+  padding: 30px;
+}
 .img-shade {
   position: relative;
+  height: 100%;
+  width: 100%;
 }
 .img-shade:before {
   content: "";
@@ -158,6 +165,28 @@ h1 span {
 .fleche:hover:after {
   margin-left: 30px;
 }
+.bg-img-blue {
+  background: url("../images/background-blue.jpg") repeat-x top center transparent;
+  background-size: auto 521px;
+}
+.bg-img-wood-liseret {
+  background: url("../images/background-wood-liseret.jpg") repeat-x center transparent;
+}
+.bg-img-wood {
+  background: url("../images/background-wood.jpg") repeat-x center transparent;
+}
+.container {
+  max-width: 1416px;
+}
+.container,
+.container .row > div {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.container .row {
+  margin-left: -8px;
+  margin-right: -8px;
+}
 .container.gutter-24,
 .container.gutter-24 .row > div {
   padding-left: 24px;
@@ -167,11 +196,76 @@ h1 span {
   margin-left: -24px;
   margin-right: -24px;
 }
+.seo-txt .container {
+  max-width: 1065px;
+}
+.seo-txt .bg-white,
+.seo-txt .bg-grey {
+  padding: 30px 0;
+}
+.seo-txt .bg-grey {
+  background: #FAFBFC;
+}
+.seo-txt h1,
+.seo-txt h2,
+.seo-txt h3 {
+  color: #003663;
+}
+.seo-txt h2,
+.seo-txt h3 {
+  font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
+}
+.seo-txt h1,
+.seo-txt p,
+.seo-txt h3 {
+  margin: 25px 0;
+}
+.seo-txt h2 {
+  margin-bottom: 35px;
+}
+.seo-txt h3 {
+  font-size: 32px;
+}
+.seo-txt a {
+  color: #003663;
+  text-decoration: underline;
+  transition: opacity 0.3s ease-in-out;
+}
+.seo-txt a:hover {
+  opacity: 0.8;
+}
+@font-face {
+  font-family: 'Cardenio Modern';
+  src: url('../fonts/cardeniomodern-regular-webfont.woff2') format('woff2'), url('../fonts/cardeniomodern-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Cardenio Modern Bold';
+  src: url('../fonts/cardeniomodern-bold-webfont.woff2') format('woff2'), url('../fonts/cardeniomodern-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Myriad Pro Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Myriad Pro Regular'), url('../fonts/MYRIADPRO-REGULAR.woff') format('woff');
+}
+@font-face {
+  font-family: 'Myriad Pro Semibold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Myriad Pro Semibold'), url('../fonts/MYRIADPRO-SEMIBOLD.woff') format('woff');
+}
+@font-face {
+  font-family: 'Myriad Pro Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Myriad Pro Bold'), url('../fonts/MYRIADPRO-BOLD.woff') format('woff');
+}
 .header-wrapper header {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.04);
-}
-.header-wrapper header .container {
-  max-width: 1400px;
 }
 .header-wrapper header .header-section {
   display: flex;
@@ -301,9 +395,6 @@ h1 span {
 #homepage > div > .container {
   max-width: 1225px;
 }
-#homepage .content-1 {
-  background: url("../images/background-wood.jpg") repeat-x center transparent;
-}
 #homepage .content-1 img {
   width: 100%;
   height: 385px;
@@ -342,24 +433,14 @@ h1 span {
   width: 250px;
   background: url("../images/j-aime-cuisiner.svg") no-repeat center transparent;
 }
+#homepage .content-2 .text-mea a {
+  padding: 0;
+}
 #homepage .content-3 {
-  background: url("../images/background-blue.jpg") repeat-x top center transparent;
   margin-top: 97px;
-  background-size: auto 521px;
 }
 #homepage .content-3 .content-3-title {
   position: relative;
-}
-#homepage .content-3 .content-3-title h2 {
-  text-align: center;
-  font-size: 48px;
-  font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
-  color: white;
-  margin-bottom: 3px;
-}
-#homepage .content-3 .content-3-title h2 span {
-  font-family: "Cardenio Modern Bold", Arial, Helvetica, sans-serif;
-  text-transform: uppercase;
 }
 #homepage .content-3 .content-3-title .picto-3 {
   position: absolute;
@@ -483,8 +564,70 @@ h1 span {
   padding-left: 24px;
   margin-bottom: 15px;
 }
-.footer-wrapper .container {
-  max-width: 1400px;
+#produits {
+  position: relative;
+  padding: 45px 0;
+}
+#produits:before {
+  content: "";
+  height: 285px;
+  width: 100%;
+  background-color: #ededed;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#produits #ban-intro .ban img {
+  max-width: 100%;
+  height: auto;
+}
+#produits #ban-intro h1 {
+  margin: 50px 0;
+  line-height: 1.3;
+}
+#produits #ban-intro h1 span {
+  display: block;
+}
+#produits #ban-intro .text-wrapper {
+  max-width: 1055px;
+  margin: 0 auto;
+  color: #434343;
+}
+#produits #content-1 img,
+#produits #content-2 img {
+  max-width: 100%;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+#produits #content-1 {
+  background-position: top center;
+  padding-top: 95px;
+}
+#produits #content-1 .container {
+  position: relative;
+}
+#produits #content-1 .container:before {
+  content: "";
+  position: absolute;
+  top: -280px;
+  left: -230px;
+  background: url("../images/poivronrouge.png");
+  height: 355px;
+  width: 367px;
+}
+#produits #content-2 .container {
+  position: relative;
+}
+#produits #content-2 .container:before {
+  content: "";
+  position: absolute;
+  top: -275px;
+  right: -300px;
+  background: url("../images/pdt.png");
+  height: 451px;
+  width: 451px;
 }
 .footer-wrapper .newsletter-wrapper {
   background-color: #741030;

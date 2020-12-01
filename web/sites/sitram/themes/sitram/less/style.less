@@ -3,7 +3,7 @@
 @import 'common';
 @import 'fonts';
 
-//HEADER//
+// HEADER //
 
 .header-wrapper {
   header {
@@ -79,7 +79,7 @@
   }
 }
 
-//HOMEPAGE//
+// HOMEPAGE //
 
 #homepage {
   .slider {
@@ -257,7 +257,7 @@
   }
 }
 
-//RECETTES//
+// RECETTES //
 
 .vue-recettes.container {
   max-width: 1400px;
@@ -375,45 +375,10 @@
   }
 }
 
-//PRODUITS//
+// PRODUITS - CONSEILS //
 
-#produits {
-  position: relative;
-  padding: 45px 0;
-
-  &:before {
-    content: "";
-    height: 285px;
-    width: 100%;
-    background-color: #ededed;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-
-  #ban-intro {
-    .ban img {
-      max-width: 100%;
-      height: auto;
-    }
-
-    h1 {
-      margin: 50px 0;
-      line-height: 1.3;
-
-      span {
-        display: block;
-      }
-    }
-
-    .text-wrapper {
-      max-width: 1055px;
-      margin: 0 auto;
-      color: @grey;
-    }
-  }
-
+#produits,
+#conseils {
   #content-1,
   #content-2 {
     img {
@@ -461,7 +426,36 @@
   }
 }
 
-//FOOTER//
+// CONSEILS //
+#conseils {
+  #content-1 {
+    padding-top: 0;
+  }
+
+  #content-1,
+  #content-2 {
+    .container:before {
+      display: none;
+    }
+  }
+}
+
+// MARQUE //
+#marque {
+  h1 span {
+    display: block;
+  }
+
+  #content-1 {
+    position: relative;
+
+    &:before {
+
+    }
+  }
+}
+
+// FOOTER //
 
 .footer-wrapper {
   .newsletter-wrapper {

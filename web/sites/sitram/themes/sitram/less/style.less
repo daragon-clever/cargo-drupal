@@ -39,6 +39,7 @@
       border-bottom: 3px solid transparent;
       transition: border-color 0.3s ease;
 
+      &.is-active,
       &:hover {
         border-color: @primaryColor;
         color: @primaryColor;
@@ -451,6 +452,55 @@
 
     &:before {
 
+    }
+  }
+}
+
+// SITRAM ET MOI //
+#sitram-et-moi {
+  position: relative;
+
+  &:before {
+    content: "";
+    height: 960px;
+    width: 100%;
+    background-color: #ededed;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  h1 {
+    margin: 70px 0 30px;
+  }
+
+  .grid {
+    margin-left: -8px;
+    margin-right: -8px;
+
+    .grid-item {
+      overflow: hidden;
+      padding: 0 8px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        padding: 8px 0;
+      }
+    }
+  }
+
+  #txt {
+    .txt-wrapper {
+      background: #FAFBFC;
+
+      .inner {
+        max-width: 1065px;
+        margin: 0 auto;
+      }
     }
   }
 }

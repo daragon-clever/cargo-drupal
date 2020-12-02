@@ -1,11 +1,11 @@
-jQuery(document).ready(function($) {
+jQuery(document).ready(function ($) {
     // CAROUSEL HOMEPAGE
     $('.js-homepage-slider > div').slick({
         dots: true
     });
 
     // INSTAGRAM
-    (function(){
+    (function () {
         new InstagramFeed({
             'username': 'sitram_fr',
             'container': document.getElementById("js-instagram"),
@@ -22,6 +22,20 @@ jQuery(document).ready(function($) {
             'on_error': console.error
         });
     })();
+
+    // MASONRY GALLERY
+    if ($("#sitram-et-moi").length) {
+        const $grid = $('.grid').masonry({
+            itemSelector: '.grid-item',
+            columnWidth: '.grid-sizer',
+            percentPosition: true,
+
+        });
+
+        $grid.imagesLoaded().progress(function () {
+            $grid.masonry();
+        });
+    }
 
     // FORMULAIRE CONTACT
     if ($('.webform-submission-form').length) {

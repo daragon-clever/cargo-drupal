@@ -697,7 +697,7 @@ h2 span {
 }
 .footer-wrapper .newsletter-wrapper {
   background-color: #741030;
-  padding: 70px 126px 72px 102px;
+  padding: 70px 100px;
 }
 .footer-wrapper .newsletter-wrapper .text-mea h3 {
   font-size: 32px;
@@ -714,7 +714,7 @@ h2 span {
   color: white;
 }
 .footer-wrapper .newsletter-wrapper .form-newsletter input {
-  line-height: 63px;
+  line-height: 59px;
   padding-left: 20px;
   width: 100%;
 }
@@ -722,15 +722,31 @@ h2 span {
   color: #b9b9b9;
 }
 .footer-wrapper .newsletter-wrapper .form-newsletter .form-email {
-  margin-bottom: 16px;
+  margin-bottom: 5px;
+}
+.footer-wrapper .newsletter-wrapper .form-newsletter .name-wrapper {
+  margin-bottom: 40px;
 }
 .footer-wrapper .newsletter-wrapper .form-newsletter .form-submit input {
-  margin-top: 32px;
   background-color: #FDC2A1;
   color: #741030;
   text-transform: uppercase;
   font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
   border-style: none;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  text-decoration: none;
+}
+.footer-wrapper .newsletter-wrapper .form-newsletter .form-submit input:hover {
+  opacity: 0.8;
+}
+.footer-wrapper .newsletter-wrapper .js-hidden-part {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+.footer-wrapper .newsletter-wrapper .js-hidden-part.show {
+  max-height: 300px;
 }
 .footer-wrapper .logos-wrapper {
   background-color: #EDEDED;

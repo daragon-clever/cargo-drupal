@@ -37,6 +37,15 @@ jQuery(document).ready(function ($) {
         });
     }
 
+    // FOOTER
+    $(".js-show-hidden-part").click(function(e) {
+        if (!$(this).hasClass('opened')) {
+            e.preventDefault();
+            $(".js-hidden-part").addClass('show');
+            $(this).addClass('opened');
+        }
+    });
+
     // FORMULAIRE CONTACT
     if ($('.webform-submission-form').length) {
         // Function

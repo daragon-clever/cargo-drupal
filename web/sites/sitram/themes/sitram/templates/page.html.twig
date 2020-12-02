@@ -21,37 +21,41 @@
       <div class="row">
         <div class="col">
           <div class="container">
-            <div class="row align-items-center newsletter-wrapper">
-              <div class="col">
-                <div class="text-mea p-0">
-                  <h3>Recevez en avant-première<br> les <span>nouvelles recettes</span><br> et les <span>informations<br> sur nos produits</span></h3>
-                  <p>Inscrivez-vous à la newsletter !</p>
+            <div class="newsletter-wrapper">
+              <div class="row align-items-center">
+                <div class="col">
+                  <div class="text-mea p-0">
+                    <h3>Recevez en avant-première<br> les <span>nouvelles recettes</span><br> et les <span>informations<br> sur nos produits</span></h3>
+                    <p>Inscrivez-vous à la newsletter !</p>
+                  </div>
                 </div>
-              </div>
-              <div class="col">
-                <form action="" method="post" class="form-newsletter">
-                  <div class="form-email">
-                    <label for="email">Votre adresse email *</label>
-                    <input type="email" name="email" id="email" placeholder="Saisir votre adresse e-mail" required>
-                  </div>
-                  <div class="row">
-                    <div class="col">
-                      <div class="form-firstname">
-                        <label for="firstname">Votre Nom *</label>
-                        <input type="text" name="firstname" id="firstname" placeholder="Saisir votre nom" required>
+                <div class="col">
+                  <form action="" method="post" class="form-newsletter">
+                    <div class="js-hidden-part">
+                      <div class="form-email">
+                        <label for="email">Votre adresse email *</label>
+                        <input type="email" name="email" id="email" placeholder="Saisir votre adresse e-mail" required>
+                      </div>
+                      <div class="row name-wrapper">
+                        <div class="col">
+                          <div class="form-firstname">
+                            <label for="firstname">Votre Nom *</label>
+                            <input type="text" name="firstname" id="firstname" placeholder="Saisir votre nom" required>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="form-lastname">
+                            <label for="lastname">Votre Prénom *</label>
+                            <input type="text" name="lastname" id="lastname" placeholder="Saisir votre prénom" required>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                    <div class="col">
-                      <div class="form-lastname">
-                        <label for="lastname">Votre Prénom *</label>
-                        <input type="text" name="lastname" id="lastname" placeholder="Saisir votre prénom" required>
-                      </div>
+                    <div class="form-submit">
+                      <input class="js-show-hidden-part" type="submit" value="S'inscrire">
                     </div>
-                  </div>
-                  <div class="form-submit">
-                    <input type="submit" value="S'inscrire">
-                  </div>
-                </form>
+                  </form>
+                </div>
               </div>
             </div>
           </div>

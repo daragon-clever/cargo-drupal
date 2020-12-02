@@ -510,7 +510,7 @@
 .footer-wrapper {
   .newsletter-wrapper {
     background-color: @secondaryColor;
-    padding: 70px 126px 72px 102px;
+    padding: 70px 100px;
 
     .text-mea {
 
@@ -533,7 +533,7 @@
       }
 
       input {
-        line-height: 63px;
+        line-height: 59px;
         padding-left: 20px;
         width: 100%;
       }
@@ -543,16 +543,31 @@
       }
 
       .form-email {
-        margin-bottom: 16px;
+        margin-bottom: 5px;
+      }
+
+      .name-wrapper {
+        margin-bottom: 40px;
       }
 
       .form-submit input {
-        margin-top: 32px;
         background-color: #FDC2A1;
         color: @secondaryColor;
         text-transform: uppercase;
         font-family: @MyriadBold;
         border-style: none;
+        cursor: pointer;
+        .dimOpacityOnHover(0.8)
+      }
+    }
+
+    .js-hidden-part {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-in-out;
+
+      &.show {
+        max-height: 300px;
       }
     }
   }

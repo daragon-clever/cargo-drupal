@@ -23,6 +23,13 @@ instagram:
   js:
     js/instagram-feed.min.js: {}
 
+# Masonry
+masonry:
+  js:
+    https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js: { type: external }
+  dependencies:
+    - core/jquery
+
 # Style général
 global-styling:
   header: true

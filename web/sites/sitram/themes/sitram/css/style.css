@@ -856,3 +856,26 @@ h2 span {
   line-height: 30px;
   font-family: "Myriad Pro Regular", Arial, Helvetica, sans-serif;
 }
+.breadcrumb-sitram ul {
+  margin: 0;
+  padding: 0;
+}
+.breadcrumb-sitram ul li {
+  line-height: 70px;
+  display: inline-block;
+  color: #9FB2C9;
+}
+.breadcrumb-sitram ul li a {
+  color: #434343;
+}
+.breadcrumb-sitram ul li a:after {
+  content: "";
+  border-top: 1px solid;
+  border-right: 1px solid;
+  transform: rotate(45deg);
+  height: 5px;
+  width: 5px;
+  margin: 0 10px;
+  display: inline-block;
+  vertical-align: middle;
+}

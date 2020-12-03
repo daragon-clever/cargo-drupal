@@ -528,12 +528,41 @@ h2 span {
   font-family: "Myriad Pro Regular", Arial, Helvetica, sans-serif;
   color: #434343;
 }
-.vue-recettes.container {
-  max-width: 1400px;
+.vue-recettes.page {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.vue-recettes.page,
+.entete-recettes,
+.footer-recettes {
+  background-color: #FBFBFB;
+}
+.entete-recettes.bg-img-wood {
+  background-position: top center;
+  background-size: auto 280px;
+}
+.entete-recettes p {
+  max-width: 525px;
+  margin: 30px auto 0;
+}
+.footer-recettes .block-txt {
+  background: white;
+  border: 1px solid #EDEDED;
+  padding: 30px;
+  margin: 16px 0;
+}
+.footer-recettes .block-txt a {
+  color: #003663;
+  text-decoration: underline;
+  transition: opacity 0.3s ease-in-out;
+}
+.footer-recettes .block-txt a:hover {
+  opacity: 0.8;
 }
 .recettes-filters {
   border: 1px solid #EDEDED;
   padding: 24px;
+  background-color: white;
 }
 .recettes-filters .recettes-filters-title {
   font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
@@ -552,8 +581,9 @@ h2 span {
 .recettes-filters label:first-child {
   display: none;
 }
-.recettes-filters input {
+.recettes-filters input.form-text {
   width: 100%;
+  margin-bottom: 15px;
 }
 .recettes-filters .form-wrapper {
   margin-bottom: 15px;
@@ -589,8 +619,12 @@ h2 span {
   font-family: "Myriad Pro Regular", Arial, Helvetica, sans-serif;
   font-size: 16px;
 }
+.recettes-filters .form-actions {
+  display: none;
+}
 .recette-item {
   border: 1px solid #EDEDED;
+  background-color: white;
 }
 .recette-item .field-content {
   overflow: hidden;

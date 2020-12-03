@@ -4,7 +4,6 @@
 @import 'fonts';
 
 // HEADER //
-
 .header-wrapper {
   header {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.04);
@@ -81,7 +80,6 @@
 }
 
 // HOMEPAGE //
-
 #homepage {
   .slider {
     img {
@@ -252,14 +250,54 @@
 }
 
 // RECETTES //
+.vue-recettes {
+  &.page {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
 
-.vue-recettes.container {
-  max-width: 1400px;
+.vue-recettes.page,
+.entete-recettes,
+.footer-recettes {
+  background-color: #FBFBFB;
+}
+
+.entete-recettes {
+  &.bg-img-wood {
+    background-position: top center;
+    background-size: auto 280px;
+  }
+
+  p {
+    max-width: 525px;
+    margin: 30px auto 0;
+  }
+}
+
+.footer-recettes {
+  .block-txt {
+    background: white;
+    border: 1px solid #EDEDED;
+    padding: 30px;
+    margin: 16px 0;
+
+    a {
+      color: @primaryColor;
+      text-decoration: underline;
+      transition: opacity 0.3s ease-in-out;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
 }
 
 .recettes-filters {
   border: 1px solid @lightGrey;
   padding: 24px;
+  background-color: white;
 
   .recettes-filters-title {
     font-family: @MyriadSemibold;
@@ -281,8 +319,9 @@
     display: none;
   }
 
-  input {
+  input.form-text {
     width: 100%;
+    margin-bottom: 15px;
   }
 
   .form-wrapper {
@@ -327,10 +366,15 @@
       }
     }
   }
+
+  .form-actions {
+    display: none;
+  }
 }
 
 .recette-item {
   border: 1px solid @lightGrey;
+  background-color: white;
 
   .field-content {
     overflow: hidden;
@@ -370,7 +414,6 @@
 }
 
 // PRODUITS - CONSEILS //
-
 #produits,
 #conseils {
   #content-1 {

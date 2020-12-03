@@ -25,15 +25,10 @@ jQuery(document).ready(function ($) {
 
     // MASONRY GALLERY
     if ($("#sitram-et-moi").length) {
-        const $grid = $('.grid').masonry({
+        $('.grid').masonry({
             itemSelector: '.grid-item',
             columnWidth: '.grid-sizer',
-            percentPosition: true,
-
-        });
-
-        $grid.imagesLoaded().progress(function () {
-            $grid.masonry();
+            percentPosition: true
         });
     }
 

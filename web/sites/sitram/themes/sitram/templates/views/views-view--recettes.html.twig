@@ -31,61 +31,68 @@
  */
 #}
 {%
-  set classes = [
-  dom_id ? 'js-view-dom-id-' ~ dom_id,
+    set classes = [
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
 ]
 %}
 <div{{ attributes.addClass(classes) }}>
-  <!--header-->
-  {% if header %}
-    <div class="row">
-      <div class="col">
-          {{ title_prefix }}
-          {{ title }}
-          {{ title_suffix }}
-        <header>
-            {{ header }}
-        </header>
-      </div>
-    </div>
-  {% endif %}
-
-  <!--content-->
-  <div class="row">
-      {% if exposed %}
-        <div class="col-12 col-sm-3">
-          <div class="recettes-filters">
-            <h2 class="recettes-filters-title">Filtrer les recettes</h2>
-              {{ exposed }}
-          </div>
+    <!--header-->
+    {% if header %}
+        <div class="row">
+            <div class="col">
+                {{ title_prefix }}
+                {{ title }}
+                {{ title_suffix }}
+                <header>
+                    {{ header }}
+                </header>
+            </div>
         </div>
-      {% endif %}
+    {% endif %}
 
-      {{ attachment_before }}
+    <!--content-->
+    <div class="row">
+        <div class="col">
+            <div class="container">
+                <div class="row">
+                    {% if exposed %}
+                        <div class="col-12 col-lg-3">
+                            <div class="recettes-filters">
+                                <h2 class="recettes-filters-title">Filtrer les recettes</h2>
+                                {{ exposed }}
+                            </div>
+                        </div>
+                    {% endif %}
 
-    <div class="col-12 {% if exposed %}col-sm-9{% endif %}">
-        {% if rows -%}
-            {{ rows }}
-        {% elseif empty -%}
-            {{ empty }}
-        {% endif %}
-        {{ pager }}
+                    {{ attachment_before }}
+
+                    <div class="col-12 {% if exposed %}col-lg-9{% endif %}">
+                        {% if rows -%}
+                            {{ rows }}
+                        {% elseif empty -%}
+                            {{ empty }}
+                        {% endif %}
+                        {{ pager }}
+                    </div>
+
+                    {{ attachment_after }}
+                    {{ more }}
+                </div>
+            </div>
+        </div>
     </div>
 
-      {{ attachment_after }}
-      {{ more }}
-  </div>
-  <!--footer-->
-  <div class="row">
-    <div class="col">
-        {% if footer %}
-          <footer>
-              {{ footer }}
-          </footer>
-        {% endif %}
+    <!--footer-->
+    <div class="row">
+        <div class="col">
+            {% if footer %}
+                <footer>
+                    {{ footer }}
+                </footer>
+            {% endif %}
 
-        {{ feed_icons }}
+            {{ feed_icons }}
+        </div>
     </div>
-  </div>
 </div>
 

@@ -40,8 +40,26 @@ h2 span {
 .bg-lightgrey {
   background-color: #EDEDED;
 }
+.bg-verylightgrey {
+  background: #FAFBFC;
+}
+.pt-grey {
+  position: relative;
+}
+.pt-grey:before {
+  content: "";
+  width: 100%;
+  height: 80px;
+  background-color: #FAFBFC;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 .txt-bordeaux {
   color: #741030;
+}
+.txt-blue {
+  color: #003663;
 }
 .text-mea {
   color: white;
@@ -228,6 +246,12 @@ h2 span {
   margin-left: -24px;
   margin-right: -24px;
 }
+.container.max-1065 {
+  max-width: 1065px;
+}
+.container.max-1350 {
+  max-width: 1350px;
+}
 .seo-txt.container,
 .seo-txt .container {
   max-width: 1065px;
@@ -259,6 +283,11 @@ h2 span {
 .seo-txt h3 {
   font-size: 32px;
 }
+.seo-txt h4 {
+  font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
 .seo-txt a {
   color: #003663;
   text-decoration: underline;
@@ -266,6 +295,77 @@ h2 span {
 }
 .seo-txt a:hover {
   opacity: 0.8;
+}
+.seo-txt .inner-block {
+  height: 100%;
+}
+.seo-txt .inner-block p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+.seo-txt .inner-block p:last-child {
+  margin-bottom: 0;
+}
+.block-frise-verticale .inner {
+  max-width: 340px;
+  margin: 0 auto;
+}
+.block-frise-verticale h3 {
+  font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
+  color: #003663;
+  font-size: 32px;
+}
+.block-frise-verticale h3 + p {
+  font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
+  margin-bottom: 60px;
+}
+.block-frise-verticale .frise {
+  position: relative;
+  margin: 0;
+}
+.block-frise-verticale .frise:after {
+  content: "";
+  height: calc(100% - 10px);
+  width: 1px;
+  background-color: #741030;
+  position: absolute;
+  left: -53px;
+  top: 5px;
+}
+.block-white {
+  background-color: white;
+  padding: 32px;
+}
+.block-white i {
+  font-style: italic;
+  color: #003663;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+.block-white i a {
+  color: #003663;
+  text-decoration: underline;
+}
+.js-grid-masonry {
+  margin-left: -8px;
+  margin-right: -8px;
+}
+.js-grid-masonry .grid-item {
+  overflow: hidden;
+  padding: 0 8px;
+  position: relative;
+}
+.js-grid-masonry .grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  padding: 8px 0;
+}
+@media only screen and (max-width: 991px) {
+  .js-grid-masonry .grid-item .pt-5 {
+    padding-top: 0;
+  }
 }
 #ban-intro {
   position: relative;
@@ -718,21 +818,6 @@ h2 span {
 #sitram-et-moi h1 {
   margin: 70px 0 30px;
 }
-#sitram-et-moi .grid {
-  margin-left: -8px;
-  margin-right: -8px;
-}
-#sitram-et-moi .grid .grid-item {
-  overflow: hidden;
-  padding: 0 8px;
-}
-#sitram-et-moi .grid .grid-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  padding: 8px 0;
-}
 #sitram-et-moi #txt .txt-wrapper {
   background: #FAFBFC;
 }
@@ -758,6 +843,28 @@ h2 span {
   #service-client .fake-height {
     min-height: 300px;
   }
+}
+#produit .js-grid-masonry .grid-item .txt {
+  background: white;
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  padding: 12px;
+  max-width: 75%;
+  overflow: hidden;
+}
+#produit .js-grid-masonry .grid-item .txt h3 {
+  color: #003663;
+  font-size: 24px;
+  font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
+  line-height: 1.1;
+}
+#produit .js-grid-masonry .grid-item .txt h3 span {
+  text-transform: uppercase;
+  font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
+}
+#produit .js-grid-masonry .grid-item .txt p {
+  margin-bottom: 0;
 }
 .footer-wrapper .newsletter-wrapper {
   background-color: #741030;

@@ -24,11 +24,13 @@ jQuery(document).ready(function ($) {
     })();
 
     // MASONRY GALLERY
-    if ($("#sitram-et-moi").length) {
-        $('.grid').masonry({
-            itemSelector: '.grid-item',
-            columnWidth: '.grid-sizer',
-            percentPosition: true
+    if ($(".js-grid-masonry").length) {
+        const $grid = $('.js-grid-masonry').imagesLoaded( function() {
+            $grid.masonry({
+                itemSelector: '.grid-item',
+                columnWidth: '.grid-sizer',
+                percentPosition: true
+            });
         });
     }
 

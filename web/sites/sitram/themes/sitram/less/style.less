@@ -501,24 +501,6 @@
     margin: 70px 0 30px;
   }
 
-  .grid {
-    margin-left: -8px;
-    margin-right: -8px;
-
-    .grid-item {
-      overflow: hidden;
-      padding: 0 8px;
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-        padding: 8px 0;
-      }
-    }
-  }
-
   #txt {
     .txt-wrapper {
       background: #FAFBFC;
@@ -555,6 +537,41 @@
     @media (max-width: 1100px) {
       min-height: 300px;
     }
+  }
+}
+
+// PRODUIT //
+#produit {
+  .js-grid-masonry {
+    .grid-item .txt {
+      background: white;
+      position: absolute;
+      bottom: 8px;
+      left: 8px;
+      padding: 12px;
+      max-width: 75%;
+      overflow: hidden;
+
+      h3 {
+        color: @primaryColor;
+        font-size: 24px;
+        font-family: @MyriadSemibold;
+        line-height: 1.1;
+
+        span {
+          text-transform: uppercase;
+          font-family: @MyriadBold;
+        }
+      }
+
+      p {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &.poele {
+
   }
 }
 

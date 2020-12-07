@@ -34,6 +34,14 @@ jQuery(document).ready(function ($) {
         });
     }
 
+    // PRODUITS POELES
+    if ($('.js-colored-slideshow').length) {
+        $('.js-colored-slideshow').slick({
+            fade: true,
+            arrows: true
+        })
+    }
+
     // FOOTER
     $(".js-show-hidden-part").click(function(e) {
         if (!$(this).hasClass('opened')) {

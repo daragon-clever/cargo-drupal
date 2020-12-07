@@ -76,6 +76,7 @@ h2 span {
 .text-mea a:hover {
   transition: opacity 0.3s;
   text-decoration: none;
+  cursor: pointer;
 }
 .text-mea a:hover:hover {
   opacity: 0.8;
@@ -397,6 +398,105 @@ h2 span {
   margin: 0 auto;
   color: #434343;
 }
+.inner.behind-img-left {
+  position: relative;
+  z-index: -1;
+  padding: 64px;
+  margin-left: -50px;
+}
+.inner.behind-img-left p:last-child {
+  margin-bottom: 0;
+}
+.inner.behind-img-left h3 {
+  font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
+  color: #003663;
+  font-size: 32px;
+}
+.inner.behind-img-left a {
+  color: #003663;
+  text-decoration: underline;
+  transition: opacity 0.3s ease-in-out;
+}
+.inner.behind-img-left a:hover {
+  opacity: 0.8;
+}
+.inner.box-shadow {
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.05);
+}
+.colored-slideshow .item {
+  padding: 60px 165px;
+  margin-bottom: 90px;
+}
+.colored-slideshow .item.blue {
+  background: transparent linear-gradient(32deg, #618D9F 0%, #88B0C1 100%) 0% 0% no-repeat padding-box;
+}
+.colored-slideshow .item.pink {
+  background: transparent linear-gradient(25deg, #E84E82 0%, #FF7CA8 100%) 0% 0% no-repeat padding-box;
+}
+.colored-slideshow img {
+  display: inline-block;
+  margin-top: 210px;
+  margin-bottom: -130px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.16);
+}
+.colored-slideshow h3 {
+  font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  margin-bottom: 48px;
+}
+.colored-slideshow h4 {
+  font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+.colored-slideshow a {
+  text-decoration: underline;
+  color: white;
+}
+.colored-slideshow p {
+  margin-bottom: 2rem;
+}
+.colored-slideshow .slick-prev,
+.colored-slideshow .slick-next {
+  position: absolute;
+  top: 100px;
+  right: 257px;
+  z-index: 10;
+  font-size: 0;
+  height: 84px;
+  width: 84px;
+  border: 4px solid white;
+  background: transparent;
+  transition: opacity 0.3s;
+  text-decoration: none;
+  cursor: pointer;
+}
+.colored-slideshow .slick-prev:hover,
+.colored-slideshow .slick-next:hover {
+  opacity: 0.8;
+}
+.colored-slideshow .slick-prev:after,
+.colored-slideshow .slick-next:after {
+  position: absolute;
+  content: "";
+  height: 30px;
+  width: 30px;
+  border-top: 6px solid white;
+  border-right: 6px solid white;
+  transform-origin: center;
+  transform: rotate(-135deg);
+  top: 24px;
+  left: 30px;
+  border-radius: 2px;
+}
+.colored-slideshow .slick-next {
+  right: 165px;
+}
+.colored-slideshow .slick-next:after {
+  transform: rotate(45deg);
+  top: 24px;
+  left: 15px;
+}
 @font-face {
   font-family: 'Cardenio Modern';
   src: url('../fonts/cardeniomodern-regular-webfont.woff2') format('woff2'), url('../fonts/cardeniomodern-regular-webfont.woff') format('woff');
@@ -477,6 +577,7 @@ h2 span {
   border: none;
   transition: opacity 0.3s;
   text-decoration: none;
+  cursor: pointer;
 }
 .header-wrapper nav ul a.ou-acheter:hover {
   opacity: 0.8;
@@ -904,9 +1005,9 @@ h2 span {
   text-transform: uppercase;
   font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
   border-style: none;
-  cursor: pointer;
   transition: opacity 0.3s;
   text-decoration: none;
+  cursor: pointer;
 }
 .footer-wrapper .newsletter-wrapper .form-newsletter .form-submit input:hover {
   opacity: 0.8;

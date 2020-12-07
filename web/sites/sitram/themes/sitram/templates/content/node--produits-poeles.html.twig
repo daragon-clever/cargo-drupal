@@ -2,8 +2,8 @@
 {% set cheminImage = 'sites/sitram/themes/sitram/images/TEMP/produits-poeles/' %}
 
 <div id="produit" class="poele">
-    <div id="ban-intro" class="container-fluid">
-        <div class="row mb-5">
+    <div class="container-fluid">
+        <div id="ban-intro" class="row mb-5">
             <div class="col">
                 <div class="container">
                     <div class="row">
@@ -353,19 +353,122 @@
                         {# Faire une boucle ici #}
                         <div class="col-12 col-sm-6 col-md-3">
                             {# DEBUT {{ content.field_prod_poeles_c4_imgs[0} }} #}
-                            <img src="{{ cheminImage }}produits-poele-gammes-01.jpg" />
+                            <img src="{{ cheminImage }}produits-poele-gammes-01.jpg"/>
                         </div>
                         <div class="col-12 col-sm-6 col-md-3">
                             {# DEBUT {{ content.field_prod_poeles_c4_imgs[1} }} #}
-                            <img src="{{ cheminImage }}produits-poele-gammes-02.jpg" />
+                            <img src="{{ cheminImage }}produits-poele-gammes-02.jpg"/>
                         </div>
                         <div class="col-12 col-sm-6 col-md-3">
                             {# DEBUT {{ content.field_prod_poeles_c4_imgs[2} }} #}
-                            <img src="{{ cheminImage }}produits-poele-gammes-03.jpg" />
+                            <img src="{{ cheminImage }}produits-poele-gammes-03.jpg"/>
                         </div>
                         <div class="col-12 col-sm-6 col-md-3">
                             {# DEBUT {{ content.field_prod_poeles_c4_imgs[3} }} #}
-                            <img src="{{ cheminImage }}produits-poele-gammes-04.jpg" />
+                            <img src="{{ cheminImage }}produits-poele-gammes-04.jpg"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container max-1065 content-5 mb-5">
+        <div class="row align-items-center">
+            <div class="col">
+                {# DEBUT {{ content.field_prod_poeles_c5_img }} #}
+                <img src="{{ cheminImage }}diametre.jpg" alt="">
+            </div>
+            <div class="col">
+                <div class="inner box-shadow behind-img-left">
+                    {# DEBUT {{ content.field_prod_poeles_c5_txt }} #}
+                    <h3>Quel diamètre ?</h3>
+                    <p>
+                        Pour le choix du diamètre de votre poêle, vous devez prendre en compte deux facteurs : le nombre
+                        de personnes qui composent votre foyer ; le diamètre de vos plaques de cuisson.
+                    </p>
+                    <p>
+                        Choisissez toujours des poêles dont le diamètre correspond parfaitement à celui de vos plaques.
+                        Cela
+                        vous permet de garantir une performance de cuisson optimale, et de ne pas détériorer votre
+                        ustensile
+                        de cuisson.
+                    </p>
+                    <p>
+                        Pour répondre à tous les besoins en cuisine, tant en termes de capacité de cuisson
+                        que de type de préparations, il est utile (voire indispensable) de disposer de différents types
+                        de poêles (plusieurs diamètres et plusieurs matériaux).
+                    </p>
+                    <p>
+                        <a href="#">Plus d’informations sur le choix du diamètre</a>
+                    </p>
+                    {# FIN {{ content.field_prod_poeles_c5_txt }} #}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-5">
+        <div class="row">
+            <div class="col">
+                <div class="colored-slideshow js-colored-slideshow">
+                    <div class="item pink text-white">
+                        <div class="row">
+                            <div class="col">
+                                {# DEBUT {{ content.field_prod_poeles_slide_txt[0] }} #}
+                                <h3>Quelle poêle pour quelle recette ?</h3>
+
+                                <h4>Pour la cuisson de ...</h4>
+
+                                <p>Viandes rouges : steak, entrecôte, magret de canard, …</p>
+
+                                <h4>Préférez une poêle de type…</h4>
+
+                                <p>
+                                    Inox sans revêtement, pour pouvoir monter en température et saisir la viande afin
+                                    qu’elle soit dorée à l’extérieur et reste saignante à cœur. </p>
+                                <p>
+                                    Pour un effet “grillade” avec de belles marques façon barbecue, la poêle gril est
+                                    parfaite avec ses reliefs qui évitent aussi que la pièce de viande ne cuise dans son
+                                    gras ou son jus. Huilez vos aliments avant de les déposer sur la surface bien
+                                    chaude.
+                                </p>
+                                <p>
+                                    <b>Nos recettes de viandes poêlées</b>
+                                    <br><a href="#">Filet mignon caramélisé</a>
+                                    <br><a href="#">Bavette à l’échalotte</a>
+                                </p>
+                                {# FIN {{ content.field_prod_poeles_slide_txt[0] }} #}
+                            </div>
+                            <div class="col text-right">
+                                {# DEBUT {{ content.field_prod_poeles_slide_imgs[0] }} #}
+                                <img src="{{ cheminImage }}produit-poele-slide-01.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item blue text-white">
+                        <div class="row">
+                            <div class="col">
+                                {# DEBUT {{ content.field_prod_poeles_slide_txt[1] }} #}
+                                <h3>Quelle poêle pour quelle recette ?</h3>
+
+                                <h4>Pour la cuisson de ...</h4>
+
+                                <p>Pavés de poisson, tataki de thon</p>
+
+                                <h4>Préférez une poêle de type…</h4>
+
+                                <p>
+                                    Que ce soit pour faire cuire un pavé de saumon à l’unilatérale ou pour réaliser un
+                                    délicieux tataki de thon mariné, une poêle en inox fera là aussi des merveilles,
+                                    pour saisir la couche extérieure à forte température. </p>
+                                <p>
+                                {# FIN {{ content.field_prod_poeles_slide_txt[1] }} #}
+                            </div>
+                            <div class="col text-right">
+                                {# DEBUT {{ content.field_prod_poeles_slide_txt[1] }} #}
+                                <img src="{{ cheminImage }}produit-poele-slide-02.jpg" alt="">
+                            </div>
                         </div>
                     </div>
                 </div>

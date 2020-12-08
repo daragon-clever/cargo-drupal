@@ -25,6 +25,10 @@ h2 span {
   font-family: "Cardenio Modern Bold", Arial, Helvetica, sans-serif;
   text-transform: uppercase;
 }
+h3 {
+  font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
+  font-size: 32px;
+}
 .bg-blue {
   background-color: #003663;
 }
@@ -43,6 +47,9 @@ h2 span {
 .bg-verylightgrey {
   background: #FAFBFC;
 }
+.bg-white {
+  background: white;
+}
 .pt-grey {
   position: relative;
 }
@@ -53,6 +60,18 @@ h2 span {
   background-color: #FAFBFC;
   position: absolute;
   top: 0;
+  left: 0;
+}
+.pb-white {
+  position: relative;
+}
+.pb-white:before {
+  content: "";
+  width: 100%;
+  height: 150px;
+  background-color: white;
+  position: absolute;
+  bottom: 0;
   left: 0;
 }
 .txt-bordeaux {
@@ -88,7 +107,6 @@ h2 span {
 }
 .text-mea h3 {
   font-size: 48px;
-  font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
   line-height: 1;
 }
 .text-mea h3 span {
@@ -247,6 +265,18 @@ h2 span {
   margin-left: -24px;
   margin-right: -24px;
 }
+.container.gutter-27,
+.container-fluid.gutter-27,
+.container.gutter-27 .row > div,
+.container-fluid.gutter-27 .row > div {
+  padding-left: 27px;
+  padding-right: 27px;
+}
+.container.gutter-27 .row,
+.container-fluid.gutter-27 .row {
+  margin-left: -27px;
+  margin-right: -27px;
+}
 .container.max-1065 {
   max-width: 1065px;
 }
@@ -269,8 +299,7 @@ h2 span {
 .seo-txt h3 {
   color: #003663;
 }
-.seo-txt h2,
-.seo-txt h3 {
+.seo-txt h2 {
   font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
 }
 .seo-txt h1,
@@ -280,9 +309,6 @@ h2 span {
 }
 .seo-txt h2 {
   margin-bottom: 35px;
-}
-.seo-txt h3 {
-  font-size: 32px;
 }
 .seo-txt h4 {
   font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
@@ -312,9 +338,7 @@ h2 span {
   margin: 0 auto;
 }
 .block-frise-verticale h3 {
-  font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
   color: #003663;
-  font-size: 32px;
 }
 .block-frise-verticale h3 + p {
   font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
@@ -408,9 +432,7 @@ h2 span {
   margin-bottom: 0;
 }
 .inner.behind-img-left h3 {
-  font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
   color: #003663;
-  font-size: 32px;
 }
 .inner.behind-img-left a {
   color: #003663;
@@ -433,6 +455,9 @@ h2 span {
 .colored-slideshow .item.pink {
   background: transparent linear-gradient(25deg, #E84E82 0%, #FF7CA8 100%) 0% 0% no-repeat padding-box;
 }
+.colored-slideshow .item.flat-blue {
+  background: #718CB3 0 0 no-repeat padding-box;
+}
 .colored-slideshow img {
   display: inline-block;
   margin-top: 210px;
@@ -440,8 +465,6 @@ h2 span {
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.16);
 }
 .colored-slideshow h3 {
-  font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
-  font-size: 32px;
   margin-bottom: 48px;
 }
 .colored-slideshow h4 {
@@ -966,6 +989,23 @@ h2 span {
 }
 #produit .js-grid-masonry .grid-item .txt p {
   margin-bottom: 0;
+}
+#produit.cocotte .content-1 img {
+  max-width: 100%;
+}
+#produit.cocotte .content-1 p {
+  margin-bottom: 30px;
+}
+#produit.cocotte .content-1 p:last-child {
+  margin-bottom: 0;
+}
+#produit.cocotte .block-frise-verticale .inner {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+  max-width: 520px;
+  margin: 0 0 0 55px;
 }
 .footer-wrapper .newsletter-wrapper {
   background-color: #741030;

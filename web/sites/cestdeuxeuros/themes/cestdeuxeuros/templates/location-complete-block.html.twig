@@ -124,6 +124,14 @@
     </div>
     {% endif %}
 
+    <div class="store-detail-event">
+        {% for message in location.getCurrentEventMessages %}
+            <div>
+                <span>{{ message.getMessage }}</span>
+            </div>
+        {% endfor %}
+    </div>
+
     <div class="col-12 {% if location.getImages %}col-md-6{% else %}col-md-12{% endif %} d-flex">
         <div class="store-detail-txt">
             <h3>Présentation</h3>

@@ -587,12 +587,19 @@
 
     .block-frise-verticale {
       .inner {
-        display: flex;
-        height: 100%;
-        flex-direction: column;
-        justify-content: space-around;
         max-width: 520px;
-        margin: 0 0 0 55px;
+      }
+    }
+  }
+
+  &.casseroles
+    .block-frise-verticale {
+      img {
+        margin: 8px auto;
+        display: block;
+
+        &:first-child {
+          margin-top: 3rem;
       }
     }
   }

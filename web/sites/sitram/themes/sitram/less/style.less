@@ -570,8 +570,31 @@
     }
   }
 
-  &.poele {
+  &.cocotte {
+    .content-1 {
+      img {
+        max-width: 100%;
+      }
 
+      p {
+        margin-bottom: 30px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .block-frise-verticale {
+      .inner {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        justify-content: space-around;
+        max-width: 520px;
+        margin: 0 0 0 55px;
+      }
+    }
   }
 }
 

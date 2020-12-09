@@ -1,0 +1,394 @@
+{% set cheminImage = 'sites/sitram/themes/sitram/images/TEMP/produits-autocuiseurs/' %}
+
+<div id="produit" class="autocuiseurs">
+
+    <div class="container-fluid mb-5">
+        <div class="row">
+            <div class="col text-center">
+                <h2 class="txt-blue">Tout savoir sur l'autocuiseur <span>en 10 questions</span></h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="container max-1350 bg-verylightgrey-right">
+                    <div class="row">
+                        <div class="col">
+                            <div class="js-slick-txt">
+                                {% for i in 0 .. 9 %}
+                                    <div class="question">
+                                        <span class="nb">{{ i + 1 }}</span>
+                                        <h4>Autocuiseur ou cocotte-minute ?</h4>
+                                        <p>C’est la même chose : le premier terme désigne le principe de la marmite sous
+                                            pression, appelée aussi autoclave; le second est une marque déposée
+                                            d’autocuiseurs.</p>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container max-1065 mb-5">
+        <div class="row align-items-center">
+            <div class="col seo-txt">
+                <h3>Les systèmes de fermeture <br>sécurisés Sitram</h3>
+                <p>
+                    Pour garantir la montée en pression et un fonctionnement optimal, la fermeture des autocuiseurs
+                    Sitram est parfaitement étanche.
+                </p>
+                <p>
+                    Quel que soit le système choisi pour la fermeture / ouverture du
+                    couvercle, Sitram vous garantit une utilisation en toute sécurité.
+                </p>
+                <p>
+                    Nos systèmes de sécurité vous
+                    protègent des accidents, en cas de mauvaise utilisation ou de défaut de l’ustensile. Ils permettent
+                    l’échappement de la vapeur et empêchent l’ouverture de l’autocuiseur en cas de surpression.
+                </p>
+
+                <ul class="check-list">
+                    <li>La fiabilité de tous nos autocuiseurs est garantie, avec 4 points de sécurité minimum sur chaque
+                        modèle : sécurité à la fermeture, sécurité à l’ouverture, extrusion du joint et soupape de
+                        sécurité.
+                    </li>
+                    <li>Nos autocuiseurs sont homologués par le LNE (Laboratoire National de Métrologie et d’Essais),
+                        laboratoire Français de référence.
+                    </li>
+                    <li>Nos produits sont contrôlés sur 14 points de sécurité de la norme NF EN 12778.</li>
+                    <li>Ils sont également rigoureusement contrôlés dans notre laboratoire interne, profitant de
+                        méthodes de tests et d’équipements validés par le laboratoire SGS.
+                    </li>
+                </ul>
+            </div>
+            <div class="col text-right">
+                <img src="{{ cheminImage }}produit-autocuiseurs-004.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="container max-1065 mb-5">
+        <div class="row mb-3">
+            <div class="col">
+                <b class="txt-blue">Chez SITRAM, nous proposons 3 systèmes de fermeture pour les autocuiseurs :</b>
+            </div>
+        </div>
+        <div class="row justify-content-center text-center">
+            <div class="col-12 col-sm-auto">
+                <img class="mx-4" src="{{ cheminImage }}produit-autocuiseurs-012.jpg" alt="">
+                <div class="txt-blue mt-2">Fermeture à étrier</div>
+            </div>
+            <div class="col-12 col-sm-auto">
+                <img class="mx-4" src="{{ cheminImage }}produit-autocuiseurs-013.jpg" alt="">
+                <div class="txt-blue mt-2">Fermeture à étrier</div>
+            </div>
+            <div class="col-12 col-sm-auto">
+                <img class="mx-4" src="{{ cheminImage }}produit-autocuiseurs-014.jpg" alt="">
+                <div class="txt-blue mt-2">Fermeture à étrier</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid pt-grey mb-5 py-5">
+        <div class="row">
+            <div class="col">
+                <div class="container max-1065">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <img src="{{ cheminImage }}produit-autocuiseurs-007.png" alt="">
+                        </div>
+                        <div class="col seo-txt">
+                            <div class="pl-lg-5">
+                                <h2 class="semibold"><b>Quelles recettes</b> avec un autocuiseur ?</h2>
+                                <p>
+                                    Beaucoup l’ignorent, mais de nombreuses recettes peuvent être réalisées avec un
+                                    autocuiseur. Certaines sont bien connues, comme les soupes, les artichauts ou les
+                                    pommes
+                                    de terre vapeur. Mais nos autocuiseurs vous permettent également de réaliser des
+                                    recettes surprenantes. Des légumes vapeur aux desserts gourmands, en passant par de
+                                    bons
+                                    petits plats en sauce, il y en a vraiment pour tous les goûts !
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="my-5"/>
+
+                    <div class="row">
+                        <div class="col">
+                            <ul class="nav mb-3 custom-tabs" id="pills-tab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="pills-1-tab" data-toggle="pill" href="#pills-1"
+                                       role="tab" aria-controls="pills-home" aria-selected="true">Légumes</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="pills-2-tab" data-toggle="pill" href="#pills-2"
+                                       role="tab" aria-controls="pills-2" aria-selected="false">Légumes secs</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="pills-3-tab" data-toggle="pill" href="#pills-3"
+                                       role="tab" aria-controls="pills-3" aria-selected="false">Viandes</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content seo-txt" id="pills-tabContent">
+                                <!-- TAB 1 -->
+                                <div class="tab-pane fade show active" id="pills-1" role="tabpanel"
+                                     aria-labelledby="pills-1-tab">
+                                    <div class="row align-items-center">
+                                        <div class="col-12 col-sm">
+                                            <div class="pr-lg-4">
+                                                <h3>
+                                                    Faites cuire vos légumes frais à la vapeur, en toute simplicité :
+                                                    brocolis, haricots verts, asperges, chou-fleur, artichauts, endives,
+                                                    betterave crue, pommes de terre…
+                                                </h3>
+                                                <p>
+                                                    Grâce à son panier cuisson vapeur, l’autocuiseur vous permet de
+                                                    faire
+                                                    cuire tous vos légumes à la vapeur. Pour les légumes qui cuisent
+                                                    rapidement (brocolis, asperges, courgettes…), vous pouvez l’utiliser
+                                                    comme une simple casserole. Pour les légumes plus longs à cuire
+                                                    (pomme
+                                                    de terre, betterave, artichaut, chou-fleur), vous pouvez également
+                                                    fermer le couvercle et mettre le récipient sous pression. Cela vous
+                                                    garantit une cuisson plus rapide et vous fait gagner un temps
+                                                    précieux.
+                                                </p>
+                                                <div class="text-right txt-blue mb-3">
+                                                    <b>
+                                                        Temps de cuisson indicatifs des légumes frais
+                                                    </b>
+                                                </div>
+                                                <table class="table table-sm table-striped text-center">
+                                                    <thead>
+                                                    <tr>
+                                                        <th scope="col">
+                                                            <small>Temps en immersion / <br>Temps à la vapeur</small>
+                                                        </th>
+                                                        <th scope="col" class="darkblue">
+                                                            à la casseroles
+                                                        </th>
+                                                        <th scope="col" class="lightblue">
+                                                            à l'autocuiseur <br>
+                                                            <small>(à partir du chuchotement de <br>la soupape)</small>
+                                                        </th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <th scope="row">Artichaud</th>
+                                                        <td>25/30 minutes</td>
+                                                        <td>15/18 minutes</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Haricots verts</th>
+                                                        <td>15 minutes</td>
+                                                        <td>7 minutes</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Chou-fleur</th>
+                                                        <td>12/18 minutes</td>
+                                                        <td>3/9 minutes</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Pommes de terre <br>
+                                                            <small>(selon taille)</small>
+                                                        </th>
+                                                        <td>20/25 minutes</td>
+                                                        <td>7/10 minutes</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-auto">
+                                            <img src="{{ cheminImage }}produit-autocuiseurs-008.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- TAB 2 -->
+                                <div class="tab-pane fade" id="pills-2" role="tabpanel"
+                                     aria-labelledby="pills-2-tab">
+
+                                    <div class="mb-4">
+                                        <img src="{{ cheminImage }}produit-autocuiseurs-015.jpg" alt="">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 col-sm">
+                                            <div class="pr-4">
+                                                <h3>
+                                                    Cuisez rapidement les légumes secs : pois chiches, haricots secs,
+                                                    lentilles,
+                                                    pois cassés…
+                                                </h3>
+                                                <p>
+                                                    L’autocuiseur vous fait gagner un temps fou sur la cuisson des
+                                                    légumineuses
+                                                    qui, sans lui, peut être particulièrement longue. En divisant par 3,
+                                                    4
+                                                    ou 5
+                                                    leur temps de cuisson, vous profitez de tous les bienfaits
+                                                    nutritionnels
+                                                    de
+                                                    cette famille d’aliments riches en vitamines et en nutriments ! À
+                                                    vous
+                                                    les
+                                                    délicieux houmous, chili con carne et autres petits salés aux
+                                                    lentilles
+                                                    maison !
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm">
+                                            <div class="text-right txt-blue mb-3">
+                                                <b>
+                                                    Temps de cuisson indicatifs des légumes secs en immersion
+                                                </b>
+                                            </div>
+                                            <table class="table table-sm table-striped text-center">
+                                                <thead>
+                                                <tr>
+                                                    <th scope="col">
+
+                                                    </th>
+                                                    <th scope="col" class="darkblue">
+                                                        à la casseroles
+                                                    </th>
+                                                    <th scope="col" class="lightblue">
+                                                        à l'autocuiseur <br>
+                                                        <small>(à partir du chuchotement de <br>la soupape)</small>
+                                                    </th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <th scope="row">haricots rouges secs</th>
+                                                    <td>(trempage obligatoire)</td>
+                                                    <td>15/18 minutes</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Haricots rouges <br>
+                                                        <small>(préalablement trempés 8 heures)</small>
+                                                    </th>
+                                                    <td>15 minutes</td>
+                                                    <td>7 minutes</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">pois chiches secs</th>
+                                                    <td>12/18 minutes</td>
+                                                    <td>3/9 minutes</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">pois chiches <br>
+                                                        <small>(préalablement trempés 8 heures)</small>
+                                                        <br>
+                                                        <small>(selon taille)</small>
+                                                    </th>
+                                                    <td>20/25 minutes</td>
+                                                    <td>7/10 minutes</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                        lentilles vertes
+                                                    </th>
+                                                    <td>20/25 minutes</td>
+                                                    <td>7/10 minutes</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- TAB 3 -->
+                                <div class="tab-pane fade" id="pills-3" role="tabpanel"
+                                     aria-labelledby="pills-3-tab">
+                                    <div class="row align-items-center">
+                                        <div class="col-12 col-sm">
+                                            <div class="pr-lg-4">
+                                                <h3>
+                                                    Régalez-vous avec des plats mijotés ou braisés : bœuf bourguignon,
+                                                    osso bucco, jarret de porc, poulet entier ou en sauce, rôti de porc…
+                                                </h3>
+                                                <p>
+                                                    Tous les bons petits plats en sauce qui se préparent en cocotte sont
+                                                    également parfaitement adaptés à une cuisson en autocuiseur. Cela
+                                                    vous permet de gagner du temps, en particulier pour la cuisson des
+                                                    viandes gélatineuses (paleron, tendrons, jarrets…), qui deviendront
+                                                    à la fois tendres et goûteuses.
+                                                    <br> La cuisson en milieu fermé a en
+                                                    effet tendance à rehausser les saveurs de vos préparations : les jus
+                                                    se concentrent en cours de cuisson, sans s’évaporer.
+                                                </p>
+                                                <div class="text-right txt-blue mb-3">
+                                                    <b>
+                                                        Temps de cuisson indicatifs des plats de viande
+                                                    </b>
+                                                </div>
+                                                <table class="table table-sm table-striped text-center mb-4">
+                                                    <thead>
+                                                    <tr>
+                                                        <th scope="col">
+
+                                                        </th>
+                                                        <th scope="col" class="darkblue">
+                                                            à la cocotte <br> / au four
+                                                        </th>
+                                                        <th scope="col" class="lightblue">
+                                                            à l'autocuiseur <br>
+                                                            <small>(à partir du chuchotement de <br>la soupape)</small>
+                                                        </th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <th scope="row">Artichaud</th>
+                                                        <td>25/30 minutes</td>
+                                                        <td>15/18 minutes</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Haricots verts</th>
+                                                        <td>15 minutes</td>
+                                                        <td>7 minutes</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Chou-fleur</th>
+                                                        <td>12/18 minutes</td>
+                                                        <td>3/9 minutes</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Pommes de terre <br>
+                                                            <small>(selon taille)</small>
+                                                        </th>
+                                                        <td>20/25 minutes</td>
+                                                        <td>7/10 minutes</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                                <p>
+                                                    Retrouvez toutes nos recettes de plats de viande à l’autocuiseur
+                                                    <a href="">Jarret de veau mijoté au potimarron</a> /
+                                                    <a href="">Ratatouille estivale</a> /
+                                                    <a href="">Bœuf aux carottes</a> /
+                                                    <a href="">Recette Boeuf Bourguignon</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-auto">
+                                            <img src="{{ cheminImage }}produit-autocuiseurs-016.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

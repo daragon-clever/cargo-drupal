@@ -25,10 +25,19 @@ h2 {
   font-size: 48px;
   font-family: @MyriadBold;
   margin-bottom: 3px;
+  line-height: 1;
 
   span {
     font-family: @CardenioBold;
     text-transform: uppercase;
+  }
+
+  &.semibold {
+    font-family: @MyriadSemibold;
+
+    b {
+      font-family: @MyriadBold;
+    }
   }
 }
 
@@ -277,6 +286,21 @@ h3 {
   background: url("../images/background-wood.jpg") repeat-x center transparent;
 }
 
+.bg-verylightgrey-right {
+  position: relative;
+
+  &:after {
+    content: "";
+    height: 100%;
+    width: 3000px;
+    background: @veryLightGrey;
+    position: absolute;
+    top: 0;
+    left: 150px;
+    z-index: -1;
+  }
+}
+
 .container {
   max-width: 1416px;
 }
@@ -336,6 +360,10 @@ h3 {
   &.max-1350 {
     max-width: 1350px;
   }
+
+  &.max-1270 {
+    max-width: 1270px;
+  }
 }
 
 .seo-txt {
@@ -391,10 +419,34 @@ h3 {
     p {
       margin-top: 0;
       margin-bottom: 10px;
+    }
+  }
 
-      &:last-child {
-        margin-bottom: 0;
-      }
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+ul.check-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    margin: 16px 0;
+    padding-left: 50px;
+    position: relative;
+
+    &:before {
+      content: "";
+      height: 30px;
+      width: 30px;
+      display: inline-block;
+      background: url("../images/pico-check-list.svg") no-repeat center transparent;
+      background-size: 100%;
+      position: absolute;
+      top: 5px;
+      left: 0;
     }
   }
 }
@@ -626,6 +678,139 @@ h3 {
       transform: rotate(45deg);
       top: 24px;
       left: 15px;
+    }
+  }
+}
+
+.js-slick-txt {
+  padding: 100px 0;
+
+  .question {
+    padding: 0 15px;
+
+    .nb {
+      background: @primaryColor;
+      color: white;
+      display: inline-block;
+      font-size: 24px;
+      text-align: center;
+      font-family: @MyriadBold;
+      line-height: 50px;
+      height: 50px;
+      width: 50px;
+      float: left;
+      margin-right: 10px;
+    }
+
+    h4 {
+      font-size: 24px;
+      font-family: @MyriadBold;
+      color: @primaryColor;
+      line-height: 1;
+      margin-left: 8px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      display: block;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .slick-prev,
+  .slick-next {
+    position: absolute;
+    top: 40px;
+    left: 15px;
+    font-size: 0;
+    height: 40px;
+    width: 40px;
+    border:2px solid @primaryColor;
+    text-align: center;
+    background: transparent;
+
+    &:after {
+      content: "";
+      height: 10px;
+      width: 10px;
+      display: inline-block;
+      border-top: 3px solid @primaryColor;
+      border-right: 3px solid @primaryColor;
+      transform: rotate(-135deg);
+      transform-origin: center;
+      margin-right: -2px;
+    }
+  }
+
+  .slick-next {
+    left: 63px;
+
+    &:after {
+      transform: rotate(45deg);
+      margin-left: -2px;
+    }
+  }
+}
+
+.custom-tabs {
+  .nav-link {
+    padding: 0 24px 0 0;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-family: @MyriadSemibold;
+    color: @primaryColor;
+    opacity: 0.2;
+    transition: opacity 0.3s ease-in-out;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  & + .tab-content {
+    table {
+      font-size: 13px;
+      font-family: @MyriadSemibold;
+      text-transform: uppercase;
+      margin-bottom: 0;
+
+      small {
+        font-size: 11px;
+        text-transform: none;
+      }
+
+      th, td {
+        vertical-align: middle;
+        line-height: 1;
+        padding: 15px 0;
+        border: none;
+      }
+
+      .darkblue {
+        background-color: @primaryColor;
+        color: white;
+      }
+
+      .lightblue {
+        background-color: #9FB2C9;
+        color: white;
+      }
+
+      thead th {
+        font-size: 16px;
+        font-weight: normal;
+      }
+
+      &.table-striped tbody tr:nth-of-type(2n+1) {
+        background-color: #FAFBFC;
+      }
     }
   }
 }

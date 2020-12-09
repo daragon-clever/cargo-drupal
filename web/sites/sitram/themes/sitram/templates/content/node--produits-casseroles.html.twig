@@ -1,5 +1,3 @@
-{% set cheminImage = 'sites/sitram/themes/sitram/images/TEMP/produits-casseroles/' %}
-
 <div id="produit" class="casseroles">
     <div class="container-fluid">
         <div id="ban-intro" class="row mb-5">
@@ -19,15 +17,14 @@
 
         <div class="row bg-verylightgrey mb-5">
             <div class="col">
-                <div class="container">
+                <div class="container max-1065">
                     <div class="row">
                         <div class="col py-3">
                             <div class="js-grid-masonry">
-                                <div class="grid-sizer col-md-3"></div>
+                                <div class="grid-sizer col-md-3 col-lg-4"></div>
                                 {% for i in 0..5 %}
-                                    <div class="grid-item col-12 col-sm-6 col-lg-3">
-                                        <img class="{% if i == 1 %}pt-lg-5{% endif %}"
-                                             src="{{ content.field_prod_casseroles_masonry_im[i] }}"/>
+                                    <div class="grid-item col-12 col-sm-6 col-lg-4">
+                                        <img class="{% if i == 1 %}pt-lg-5{% endif %}" src="{{ content.field_prod_casseroles_masonry_im[i] }}"/>
                                         {{ content.field_prod_casseroles_masonry_tx[i] }}
                                     </div>
                                 {% endfor %}
@@ -72,39 +69,12 @@
                         <div class="row">
                             <div class="col-12 col-sm">
                                 <div class="inner">
-                                    <div>
-                                        <h3>Pour combien de <br> personnes ?</h3>
-                                    </div>
-                                    <p class="frise">
-                                        <b>Pour une famille de 2 personnes, ou un étudiant,</b>
-                                        <br>
-                                        Une casserole de 18 cm de
-                                        diamètre permettra en général de répondre à la plupart des besoins d’une famille
-                                        de 2 personnes, ou d’un étudiant seul. Investir dans un faitout sera également
-                                        une bonne option : cela permettra de cuisiner de temps en temps en plus grandes
-                                        quantités (pour une pasta party à la maison par exemple !).
-                                    </p>
-                                    <p class="frise">
-                                        <b>Pour une famille de 4 personnes</b>
-                                        <br>
-                                        Prévoyez au moins 2 casseroles de 16 cm et 20 cm
-                                        de diamètre, et un faitout pour les pâtes (qui ont besoin de cuire dans une
-                                        grande quantité d’eau). Une casserole plus petite peut aussi être utile pour
-                                        faire chauffer du lait, fondre du beurre ou réaliser une béchamel par exemple.
-                                    </p>
-                                    <p class="frise">
-                                        <b>Pour les cordons bleus qui adorent cuisiner,</b>
-                                        <br>
-                                        Tester de nouveaux plats, et pour
-                                        ceux qui reçoivent souvent à dîner, une batterie complète de 3 voire 4
-                                        casseroles sera toute indiquée. De la simple saucière à la casserole taille XL,
-                                        elle pourra être complétée par un grand faitout et plusieurs couvercles adaptés.
-                                    </p>
+                                    {{ content.field_prod_casseroles_c3_txt[0] }}
                                 </div>
                             </div>
                             <div class="col-12 col-sm-auto text-center mt-5">
-                                <img src="{{ cheminImage }}produit-casseroles-008.jpg" alt="">
-                                <img src="{{ cheminImage }}produit-casseroles-007.jpg" alt="">
+                                {{ content.field_prod_casseroles_c3_imgs[0] }}
+                                {{ content.field_prod_casseroles_c3_imgs[1] }}
                             </div>
                         </div>
                     </div>
@@ -118,26 +88,7 @@
                     <div class="row">
                         <div class="col">
                             <div class="block-white">
-                                <p>
-                                    Nos casseroles et faitouts sont proposés en plusieurs tailles et contenances. Pour
-                                    choisir la batterie de cuisine idéale, vous devez d’abord savoir pour combien de
-                                    personnes vous souhaitez cuisiner au quotidien. En effet, la capacité de votre
-                                    casserole dépend - entre autres - de la composition de votre foyer. Plus votre
-                                    famille est nombreuse, plus la capacité de votre ustensile de cuisson devra être
-                                    importante.
-                                </p>
-                                <p>
-                                    Pour un foyer de 2 à 3 personnes, on conseille en général d’investir dans une
-                                    casserole de 1,5 à
-                                    2 litres, qui permet de préparer des quantités moyennes. Pour les plus gourmets
-                                    d’entre nous, et pour ceux qui aiment recevoir et cuisiner en plus grandes
-                                    quantités, il est préférable d’opter pour des casseroles 2,5 litres ou 3 litres.
-                                </p>
-                                <p>
-                                    <a href="">Retrouvez tous nos conseils sur le choix du diamètre, du matériau et les
-                                        conseils
-                                        d’entretien ici.</a>
-                                </p>
+                                {{ content.field_prod_casseroles_c3_outro }}
                             </div>
                         </div>
                     </div>
@@ -145,38 +96,24 @@
                 <div class="container max-1165">
                     <div class="row">
                         <div class="col-12">
-                            <h3 class="txt-blue mb-5 ml-5">De quel espace de rangement disposez-vous ?</h3>
+                            {{ content.field_prod_casseroles_c4_title }}
                         </div>
                         <div class="col-12 col-sm-6">
-                            <img src="{{ cheminImage }}produit-casseroles-011.jpg" alt="">
+                            {{ content.field_prod_casseroles_c4_imgs[0] }}
                         </div>
                         <div class="col-12 col-sm-6">
-                            <img src="{{ cheminImage }}produit-casseroles-012.jpg" alt="">
+                            {{ content.field_prod_casseroles_c4_imgs[1] }}
                         </div>
                     </div>
                     <div class="row seo-txt">
                         <div class="col-12 col-sm">
                             <div class="inner-block p-5 bg-verylightgrey">
-                                <h4>Si vous avez une mini-cuisine</h4>
-                                <p>
-                                    Vous aurez tout intérêt à optimiser la place dans vos
-                                    placards. Choisir une série de casseroles à poignée amovible vous permettra alors de
-                                    faciliter le rangement de vos ustensiles de cuisson. En les emboîtant les unes dans
-                                    les autres, vous gagnerez rapidement un espace considérable. Nos modèles de
-                                    casseroles à poignée amovible passent aussi au four lorsque leur poignée n’est pas
-                                    utilisée. Et leur nettoyage est également facilité !
-                                </p>
+                                {{ content.field_prod_casseroles_c4_txts[0] }}
                             </div>
                         </div>
                         <div class="col-12 col-sm">
                             <div class="inner-block p-5 bg-white">
-                                <h4>Si vous avez une cuisine spacieuse </h4>
-                                <p>
-                                    Si vous avez la chance de disposer d’une cuisine
-                                    plus spacieuse, vous aurez le choix entre une grande variété de modèles de
-                                    casseroles et faitouts. Modèles colorés aux finitions soignées, au design galbé ou
-                                    métallisé… Nos casseroles méritent d’être exposées à tous les regards !
-                                </p>
+                                {{ content.field_prod_casseroles_c4_txts[1] }}
                             </div>
                         </div>
                     </div>
@@ -189,62 +126,32 @@
         <div class="row mb-4">
             <div class="col-12 col-sm-7">
                 <div class="ml-5 mb-4">
-                    <h3 class="txt-blue">
-                        Quelles sont vos habitudes de cuisine ?
-                    </h3>
-                    <p>
-                        Pour savoir vers quel modèle de casserole vous tourner, réfléchissez également à ce
-                        que vous préférez cuisiner :
-                    </p>
+                    {{ content.field_prod_casseroles_c5_intro }}
                 </div>
             </div>
             <div class="col-12">
-                <img src="{{ cheminImage }}produit-casseroles-004.jpg" alt="">
+                {{ content.field_prod_casseroles_c5_img }}
             </div>
         </div>
         <div class="row seo-txt">
             <div class="col-12 col-sm-6">
                 <div class="inner-block p-5 bg-verylightgrey">
-                    <h4>Une cuisson mijotée</h4>
-                    <p>
-                        Les aliments cuisent dans un liquide à feu doux, pendant au moins
-                        une heure. Ils s’imprègnent ainsi du bouquet garni, du vin, de la sauce ou des
-                        épices
-                        incorporés dans la préparation
-                    </p>
+                    {{ content.field_prod_casseroles_c5_txts[0] }}
                 </div>
             </div>
             <div class="col-12 col-sm-6">
                 <div class="inner-block p-5 bg-white">
-                    <h4>Une cuisson mijotée</h4>
-                    <p>
-                        Les aliments cuisent dans un liquide à feu doux, pendant au moins
-                        une heure. Ils s’imprègnent ainsi du bouquet garni, du vin, de la sauce ou des
-                        épices
-                        incorporés dans la préparation
-                    </p>
+                    {{ content.field_prod_casseroles_c5_txts[1] }}
                 </div>
             </div>
             <div class="col-12 col-sm-6">
                 <div class="inner-block p-5 bg-whitE">
-                    <h4>Une cuisson mijotée</h4>
-                    <p>
-                        Les aliments cuisent dans un liquide à feu doux, pendant au moins
-                        une heure. Ils s’imprègnent ainsi du bouquet garni, du vin, de la sauce ou des
-                        épices
-                        incorporés dans la préparation
-                    </p>
+                    {{ content.field_prod_casseroles_c5_txts[2] }}
                 </div>
             </div>
             <div class="col-12 col-sm-6">
                 <div class="inner-block p-5 bg-verylightgrey">
-                    <h4>Une cuisson mijotée</h4>
-                    <p>
-                        Les aliments cuisent dans un liquide à feu doux, pendant au moins
-                        une heure. Ils s’imprègnent ainsi du bouquet garni, du vin, de la sauce ou des
-                        épices
-                        incorporés dans la préparation
-                    </p>
+                    {{ content.field_prod_casseroles_c5_txts[3] }}
                 </div>
             </div>
         </div>
@@ -257,26 +164,10 @@
                     <div class="item orange text-white">
                         <div class="row">
                             <div class="col">
-                                <h3>
-                                    Recettes gourmandes à réaliser avec une casserole ou un faitout
-                                </h3>
-
-                                <h4>
-                                    Bouillon de poulet citronné
-                                </h4>
-
-                                <p>
-                                    Un bouillon léger et parfumé aux saveurs d’été
-                                </p>
-
-                                <p>
-                                    Vous souhaitez découvrir encore plus de recettes savoureuses à réaliser avec votre
-                                    casserole ou votre faitout Sitram ? Rendez-vous sur notre page
-                                    <a href="">Recettes</a>.
-                                </p>
+                                {{ content.field_prod_casseroles_c6_txts[0] }}
                             </div>
                             <div class="col text-right">
-                                <img src="{{ cheminImage }}produit-casseroles-002.jpg" alt="">
+                                {{ content.field_prod_casseroles_c6_imgs[0] }}
                             </div>
                         </div>
                     </div>

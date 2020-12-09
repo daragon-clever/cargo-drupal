@@ -1023,7 +1023,7 @@ ul.check-list li:before {
   width: 100%;
   object-fit: cover;
   height: 197px;
-  transition: transform .3s ease;
+  transition: transform 0.3s ease;
 }
 .recette-item img:hover {
   transform: scale(1.1);
@@ -1237,28 +1237,31 @@ ul.check-list li:before {
   padding-top: 260px;
   padding-bottom: 50px;
 }
-.footer-wrapper .logos-wrapper .logos-list > div {
-  display: inline-block;
+.footer-wrapper .logos-wrapper .logo {
+  height: 118px;
+  display: block;
+  margin: 0 auto;
 }
-.footer-wrapper .logos-wrapper .logos-list > div.logo1 {
-  height: 51px;
-  width: 163px;
+.footer-wrapper .logos-wrapper .logo1 {
+  width: 127px;
   background: url("../images/footer/logo-footer-sitram-marque.svg") no-repeat center transparent;
 }
-.footer-wrapper .logos-wrapper .logos-list > div.logo2 {
-  height: 97px;
-  width: 95px;
+.footer-wrapper .logos-wrapper .logo2 {
+  width: 105px;
   background: url("../images/footer/logo-footer-1963.svg") no-repeat center transparent;
 }
-.footer-wrapper .logos-wrapper .logos-list > div.logo3 {
-  height: 122px;
-  width: 124px;
+.footer-wrapper .logos-wrapper .logo3 {
+  width: 116px;
   background: url("../images/footer/logo-footer-service-client.svg") no-repeat center transparent;
 }
-.footer-wrapper .logos-wrapper .logos-list > div.logo4 {
-  height: 94px;
-  width: 86px;
+.footer-wrapper .logos-wrapper .logo4 {
+  width: 85px;
   background: url("../images/footer/logo-footer-cuisiner.svg") no-repeat center transparent;
+}
+.footer-wrapper .logos-wrapper span {
+  text-transform: uppercase;
+  font-size: 10px;
+  text-align: center;
 }
 .footer-wrapper .links {
   padding: 30px 0 35px 15px;

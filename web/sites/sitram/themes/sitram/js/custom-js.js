@@ -34,13 +34,41 @@ jQuery(document).ready(function ($) {
         });
     }
 
-    // PRODUITS POELES
+    // PRODUITS
     if ($('.js-colored-slideshow').length) {
         $('.js-colored-slideshow').slick({
             fade: true,
             arrows: true
         })
     }
+
+    if ($('.js-slick-txt').length) {
+        $('.js-slick-txt').slick({
+            slidesToShow: 4,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2
+                    }
+                },
+                {
+                    breakpoint: 567,
+                    settings: {
+                        slidesToShow: 1,
+                        adaptiveHeight: true
+                    }
+                }
+            ]
+        })
+    }
+
 
     // FOOTER
     $(".js-show-hidden-part").click(function(e) {

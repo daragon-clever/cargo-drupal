@@ -1221,6 +1221,16 @@ ul.plandusite a {
     margin: 0 -15px;
   }
 }
+.store-detail-event {
+  padding: 15px 30px;
+  border: 1px solid #159ed4;
+  color: #159ed4;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.store-detail-event p:last-child {
+  margin-bottom: 0;
+}
 .store-detail-txt {
   padding: 0 30px;
   margin: auto;

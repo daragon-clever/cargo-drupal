@@ -133,16 +133,16 @@
         },
         {
             "name": "cargo/common-synapse-client",
-            "version": "v2.0.16",
+            "version": "v2.0.18",
             "source": {
                 "type": "git",
                 "url": "git@github.com:PoleWebCargo/WEB_Common_Module_Synapse_Client.git",
-                "reference": "7cf10523d689f7a995ba5c143febae69fcd59504"
+                "reference": "c23e5998b9175e9345d1cc40267a008e44d3d920"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PoleWebCargo/WEB_Common_Module_Synapse_Client/zipball/7cf10523d689f7a995ba5c143febae69fcd59504",
-                "reference": "7cf10523d689f7a995ba5c143febae69fcd59504",
+                "url": "https://api.github.com/repos/PoleWebCargo/WEB_Common_Module_Synapse_Client/zipball/c23e5998b9175e9345d1cc40267a008e44d3d920",
+                "reference": "c23e5998b9175e9345d1cc40267a008e44d3d920",
                 "shasum": ""
             },
             "require": {
@@ -167,7 +167,7 @@
                 "source": "https://github.com/PoleWebCargo/WEB_Module_Common_Synapse_Client",
                 "issues": "https://github.com/PoleWebCargo/WEB_Common_Module_Synapse_Client/issues"
             },
-            "time": "2020-08-28T08:41:27+00:00"
+            "time": "2020-11-19T08:22:21+00:00"
         },
         {
             "name": "cargo/drupal_synapse",
@@ -2179,6 +2179,7 @@
                 "reflection",
                 "static"
             ],
+            "abandoned": "roave/better-reflection",
             "time": "2020-03-27T11:06:43+00:00"
         },
         {
@@ -2223,6 +2224,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Composer Plugin for updating the Drupal scaffold files when using drupal/core",
+            "abandoned": "drupal/core-composer-scaffold",
             "time": "2019-03-30T10:41:38+00:00"
         },
         {
@@ -10600,6 +10602,7 @@
                 "i18n",
                 "text"
             ],
+            "abandoned": true,
             "time": "2018-12-05T18:34:18+00:00"
         },
         {

@@ -1,0 +1,119 @@
+<div id="recette-individuelle">
+  <div class="bg-img-wood">
+    <div class="container">
+      <div class="row">
+        <div class="col ban">
+          <img src="{{ content.field_recipe_imgs[0] }}" class="img-fluid my-4" alt=""/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h1>{{ content.field_recipe_title }}</h1>
+
+          <div class="mt-4">
+            <button type="button" class="btn btn-outline-secondary button--filter">{{ content.field_filtre_salees_sucrees }}</button>
+            <button type="button" class="btn btn-outline-secondary button--filter">{{ content.field_filtre_saison }}</button>
+            <button type="button" class="btn btn-outline-secondary button--filter">{{ content.field_filtre_duree }}</button>
+            {% if content.field_filtre_type|length > 2 %}
+              <button type="button" class="btn btn-outline-secondary button--filter">{{ content.field_filtre_type }}</button>
+            {% endif %}
+            <button type="button" class="btn btn-outline-secondary button--filter">{{ content.field_filtre_difficulte }}</button>
+            <button type="button" class="btn btn-outline-secondary button--filter">{{ content.field_filtre_ustensile }}</button>
+          </div>
+
+          <div class="container mt-4">
+            <div class="row justify-content-start">
+              <div class="col-lg-2">
+                <div class="row align-items-center">
+                  <div class="col-3">
+                    <div class="picto-prepa"></div>
+                  </div>
+                  <div class="col">
+                    <b>{{ content.field_recipe_tps_prepa['#title'] }}</b>
+                    {{ content.field_recipe_tps_prepa }}
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-2">
+                <div class="row align-items-center">
+                  <div class="col-3">
+                    <div class="picto-cuisson"></div>
+                  </div>
+                  <div class="col">
+                    <b>{{ content.field_recipe_tps_cuisson['#title'] }}</b>
+                    {{ content.field_recipe_tps_cuisson }}
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-2">
+                <div class="row align-items-center">
+                  <div class="col-3">
+                    <div class="picto-quantite"></div>
+                  </div>
+                  <div class="col">
+                    <b>{{ content.field_recipe_quantite['#title'] }}</b>
+                    {{ content.field_recipe_quantite }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container mt-5">
+            <div class="row">
+              <div class="col pr-5">
+                <div class="text-mea blue">
+                  <h3><span>{{ content.field_recipe_summary['#title'] }}</span></h3>
+                  <p>
+                    {{ content.field_recipe_summary }}
+                  </p>
+                </div>
+                <div class="row mt-3">
+                  <div class="col">
+                    <img src="{{ content.field_recipe_imgs[1] }}" class="img-recette" alt=""/>
+                  </div>
+                  <div class="col">
+                    <img src="{{ content.field_recipe_imgs[2] }}" class="img-recette" alt=""/>
+                  </div>
+                </div>
+              </div>
+              <div class="col pl-5">
+                <div class="text-mea blue">
+                  <h3><span>{{ content.field_recipe_ingredients['#title'] }}</span></h3>
+                  <p>
+                    {{ content.field_recipe_ingredients }}
+                  </p>
+                </div>
+                <div class="text-mea blue mt-5">
+                  <h3><span>{{ content.field_recipe_ustensile_img['#title'] }}</span></h3>
+                  <p>
+                    {{ content.field_recipe_ustensile_img }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BLOC RECETTES -->
+    <div class="container gutter-24 my-5">
+      <div class="row align-items-center">
+        <div class="col-5">
+          <div class="text-mea blue p-0">
+            <h3><span>{{ 'D’autres recettes pour vous'|trans }}</span></h3>
+            <p>
+              {{ 'Découvrez d’autres recettes qui pourraient vous plaire'|trans }}
+            </p>
+          </div>
+        </div>
+        <div class="col position-relative">
+          {{ content.field_recipe_bloc_recettes }}
+          <div class="picto-2"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

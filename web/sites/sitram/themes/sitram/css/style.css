@@ -1028,23 +1028,65 @@ ul.check-list li:before {
 .recette-item img:hover {
   transform: scale(1.1);
 }
-.recette-item h2 {
+.recette-item .views-field-field-recipe-title .field-content {
   font-size: 16px;
+  line-height: 1;
   margin: 15px 0;
   padding: 0 24px;
   color: #003663;
   font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
 }
-.recette-item p {
+.recette-item .views-field-field-recipe-intro .field-content {
   font-size: 16px;
+  line-height: 1;
   color: #434343;
-  padding: 0 24px;
+  padding: 0 24px 20px 24px;
   font-family: "Myriad Pro Regular", Arial, Helvetica, sans-serif;
 }
 .recette-item .views-field-view-node a {
   color: #003663;
   padding-left: 24px;
   margin-bottom: 15px;
+}
+#recette-individuelle .bg-img-wood {
+  background-position: top center;
+  background-size: 100% 400px;
+}
+#recette-individuelle .button--filter {
+  font-size: 12px;
+}
+#recette-individuelle .button--filter:hover {
+  background-color: #003663;
+}
+#recette-individuelle .picto-prepa {
+  height: 30px;
+  background: url("../images/picto-prepa.svg") no-repeat center transparent;
+}
+#recette-individuelle .picto-cuisson {
+  height: 30px;
+  background: url("../images/picto-cuisson.svg") no-repeat center transparent;
+}
+#recette-individuelle .picto-quantite {
+  height: 30px;
+  background: url("../images/picto-quantite.svg") no-repeat center transparent;
+}
+#recette-individuelle .text-mea h3 {
+  font-size: 32px;
+}
+#recette-individuelle .text-mea p {
+  color: #434343;
+}
+#recette-individuelle ol {
+  counter-reset: item;
+  list-style-type: none;
+  padding-left: 15px;
+}
+#recette-individuelle ol li:before {
+  content: counter(item) " ";
+  counter-increment: item;
+}
+#recette-individuelle .img-recette {
+  width: 100%;
 }
 #produits #content-1,
 #conseils #content-1 {

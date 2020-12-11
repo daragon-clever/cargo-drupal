@@ -385,24 +385,25 @@
     object-fit: cover;
     height: 197px;
     transition: transform .3s ease;
-
     &:hover {
       transform: scale(1.1);
     }
   }
 
-  h2 {
+  .views-field-field-recipe-title .field-content {
     font-size: 16px;
+    line-height: 1;
     margin: 15px 0;
     padding: 0 24px;
     color: @primaryColor;
     font-family: @MyriadSemibold;
   }
 
-  p {
+  .views-field-field-recipe-intro .field-content {
     font-size: 16px;
+    line-height: 1;
     color: @grey;
-    padding: 0 24px;
+    padding: 0 24px 20px 24px;
     font-family: @MyriadRegular;
   }
 
@@ -410,6 +411,63 @@
     color: @primaryColor;
     padding-left: 24px;
     margin-bottom: 15px;
+  }
+}
+
+// RECETTE INDIVIDUELLE //
+
+#recette-individuelle {
+  .bg-img-wood {
+    background-position: top center;
+    background-size: 100% 400px;
+  }
+
+  .button--filter {
+    font-size: 12px;
+
+    &:hover {
+      background-color: @primaryColor;
+    }
+  }
+
+  .picto-prepa {
+    height: 30px;
+    background: url("../images/picto-prepa.svg") no-repeat center transparent;
+  }
+
+  .picto-cuisson {
+    height: 30px;
+    background: url("../images/picto-cuisson.svg") no-repeat center transparent;
+  }
+
+  .picto-quantite {
+    height: 30px;
+    background: url("../images/picto-quantite.svg") no-repeat center transparent;
+  }
+
+  .text-mea {
+    h3 {
+      font-size: 32px;
+    }
+
+    p {
+      color: @grey;
+    }
+  }
+  
+  ol {
+    counter-reset: item;
+    list-style-type: none;
+    padding-left: 15px;
+
+    li:before {
+      content: counter(item) " ";
+      counter-increment: item;
+    }
+  }
+
+  .img-recette {
+    width: 100%;
   }
 }
 

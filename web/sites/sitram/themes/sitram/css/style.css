@@ -325,6 +325,11 @@ h3 {
 .seo-txt h3 {
   color: #003663;
 }
+.seo-txt h1:first-child,
+.seo-txt h2:first-child,
+.seo-txt h3:first-child {
+  margin-top: 0;
+}
 .seo-txt h2 {
   font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
 }
@@ -650,6 +655,9 @@ ul.check-list li:before {
 }
 .custom-tabs .nav-link.active {
   opacity: 1;
+}
+.custom-tabs .nav-item:last-child .nav-link {
+  padding-right: 0;
 }
 .custom-tabs img {
   max-width: 100%;
@@ -1023,7 +1031,7 @@ ul.check-list li:before {
   width: 100%;
   object-fit: cover;
   height: 197px;
-  transition: transform 0.3s ease;
+  transition: transform .3s ease;
 }
 .recette-item img:hover {
   transform: scale(1.1);
@@ -1175,6 +1183,10 @@ ul.check-list li:before {
   #service-client .fake-height {
     min-height: 300px;
   }
+}
+#produit img {
+  max-width: 100%;
+  height: auto;
 }
 #produit .js-grid-masonry .grid-item .txt {
   background: white;

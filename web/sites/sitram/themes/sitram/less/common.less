@@ -382,7 +382,11 @@ h3 {
   }
 
   h1, h2, h3 {
-    color: @primaryColor
+    color: @primaryColor;
+
+    &:first-child {
+      margin-top: 0;
+    }
   }
 
   h2 {
@@ -768,6 +772,10 @@ ul.check-list {
     &.active {
       opacity: 1;
     }
+  }
+
+  .nav-item:last-child .nav-link {
+    padding-right: 0;
   }
 
   img {

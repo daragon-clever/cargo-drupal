@@ -1060,11 +1060,22 @@ ul.check-list li:before {
   background-position: top center;
   background-size: 100% 400px;
 }
-#recette-individuelle .button--filter {
+#recette-individuelle .pills span {
   font-size: 12px;
+  display: inline-block;
+  border: 1px solid #EDEDED;
+  padding: 5px 15px;
+  border-radius: 5px;
+  margin-left: 10px;
+  transition: all 0.3s ease-in-out;
 }
-#recette-individuelle .button--filter:hover {
-  background-color: #003663;
+#recette-individuelle .pills span:first-child {
+  margin-left: 0;
+}
+#recette-individuelle .pills span:hover {
+  border-color: #003663;
+  background: #003663;
+  color: white;
 }
 #recette-individuelle .picto-prepa {
   height: 30px;
@@ -1078,23 +1089,36 @@ ul.check-list li:before {
   height: 30px;
   background: url("../images/picto-quantite.svg") no-repeat center transparent;
 }
-#recette-individuelle .text-mea h3 {
-  font-size: 32px;
-}
-#recette-individuelle .text-mea p {
-  color: #434343;
-}
 #recette-individuelle ol {
+  font-size: 20px;
   counter-reset: item;
   list-style-type: none;
-  padding-left: 15px;
+}
+#recette-individuelle ol li {
+  position: relative;
+  display: block;
+  padding-left: 60px;
+  margin: 15px 0;
 }
 #recette-individuelle ol li:before {
-  content: counter(item) " ";
+  content: counter(item);
   counter-increment: item;
+  background: #003663;
+  color: white;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  font-size: 24px;
+  font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
+  display: inline-block;
+  border-radius: 100%;
+  position: absolute;
+  top: calc(50% - 20px);
+  left: 0;
 }
 #recette-individuelle .img-recette {
-  width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 #produits #content-1,
 #conseils #content-1 {

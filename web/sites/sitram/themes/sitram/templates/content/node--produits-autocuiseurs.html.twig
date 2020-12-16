@@ -44,11 +44,11 @@
         </div>
     </div>
 
-    <div class="row bg-img-blue mb-5">
+    <div class="row bg-img-blue">
         <div class="col">
             <div class="container">
                 <div class="row">
-                    <div class="col text-center text-white mb-5 pt-5">
+                    <div class="col text-center text-white my-5">
                         {{ content.field_prod_autocuiseurs_c2_title }}
                     </div>
                 </div>
@@ -57,8 +57,8 @@
                         {{ content.field_prod_autocuiseurs_c2_img }}
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col seo-txt text-center">
+                <div class="row my-5">
+                    <div class="col text-center">
                         {{ content.field_prod_autocuiseurs_c2_txt }}
                     </div>
                 </div>
@@ -69,7 +69,7 @@
     <div class="container max-1065 gutter-27 mb-4">
         {% for i in 0..2 %}
             <div class="row align-items-center">
-                <div class="col seo-txt {% if i is odd %}order-lg-2{% endif %}">
+                <div class="col {% if i is odd %}order-lg-2{% endif %}">
                     {{ content.field_prod_autocuiseurs_c3_txts[i] }}
                 </div>
                 <div class="col text-right">
@@ -107,7 +107,7 @@
                         <div class="col">
                             {{ content.field_prod_autocuiseurs_c5_img }}
                         </div>
-                        <div class="col seo-txt">
+                        <div class="col">
                             <div class="pl-lg-5">
                                 {{ content.field_prod_autocuiseurs_c5_txt }}
                             </div>
@@ -125,7 +125,7 @@
                                     </li>
                                 {% endfor %}
                             </ul>
-                            <div class="tab-content seo-txt" id="pills-tabContent">
+                            <div class="tab-content" id="pills-tabContent">
 
                                 <!-- TAB 1 -->
                                 <div class="tab-pane fade show active" id="pills-1" role="tabpanel"
@@ -180,7 +180,7 @@
     <div class="container max-1065 gutter-27">
         {% for i in 0..3 %}
             <div class="row align-items-center mb-5">
-                <div class="col seo-txt {% if i is even %}order-lg-2{% endif %}">
+                <div class="col {% if i is even %}order-lg-2{% endif %}">
                     {{ content.field_prod_autocuiseurs_c6_txts[i] }}
                 </div>
                 <div class="col text-right">

@@ -42,7 +42,7 @@
     <div class="container max-1065 gutter-27 content-1">
         {% for i in 0..5 %}
             <div class="row align-items-center my-4">
-                <div class="col-12 col-sm-6 seo-txt {% if i is odd %}order-lg-2{% endif %}">
+                <div class="col-12 col-sm-6 {% if i is odd %}order-lg-2{% endif %}">
                     {{ content.field_prod_cocottes_c2_txts[i] }}
                 </div>
                 <div class="col-12 col-sm-6">
@@ -77,12 +77,12 @@
 
     <div class="container max-1065">
         <div class="row">
-            <div class="col seo-txt">
+            <div class="col">
                 {{ content.field_prod_cocottes_c3_txt }}
             </div>
         </div>
         <div class="row align-items-center">
-            <div class="col-12 col-sm-6 seo-txt">
+            <div class="col-12 col-sm-6">
                 {{ content.field_prod_cocottes_c3_forme_txt }}
             </div>
             <div class="col-12 col-sm-6 text-right">
@@ -128,7 +128,7 @@
 
     <div class="container max-1065">
         <div class="row align-items-center">
-            <div class="col-12 col-sm-6 seo-txt">
+            <div class="col-12 col-sm-6">
                 {{ content.field_prod_cocottes_c3_color_txt }}
             </div>
             <div class="col-12 col-sm-6 text-right">
@@ -151,12 +151,12 @@
                             </h2>
                         </div>
                     </div>
-                    <div class="row seo-txt">
+                    <div class="row">
                         <div class="col">
                             {{ content.field_prod_cocottes_c4_title }}
                         </div>
                     </div>
-                    <div class="row seo-txt">
+                    <div class="row">
                         <div class="col-12 col-sm-6">
                             <div class="inner-block p-5 bg-white">
                                 {{ content.field_prod_cocottes_c4_txts[0] }}

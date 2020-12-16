@@ -9,7 +9,6 @@ h1 {
   text-transform: uppercase;
   font-size: 56px;
   line-height: 1;
-  margin: 0;
 }
 h1 span {
   font-family: "Cardenio Modern", Arial, Helvetica, sans-serif;
@@ -18,8 +17,7 @@ h1 span {
 }
 h2 {
   font-size: 48px;
-  font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
-  margin-bottom: 3px;
+  font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
   line-height: 1;
 }
 h2 span {
@@ -35,6 +33,51 @@ h2.semibold b {
 h3 {
   font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
   font-size: 32px;
+}
+h4 {
+  font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
+  font-size: 24px;
+}
+h5 {
+  font-size: 16px;
+  font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+}
+p {
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+p:last-child {
+  margin-bottom: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 25px 0;
+}
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child {
+  margin-top: 0;
+}
+h1:last-child,
+h2:last-child,
+h3:last-child,
+h4:last-child,
+h5:last-child {
+  margin-bottom: 0;
+}
+a {
+  color: #003663;
+  text-decoration: underline;
+  transition: opacity 0.3s ease-in-out;
+}
+a:hover {
+  opacity: 0.8;
 }
 .bg-blue {
   background-color: #003663;
@@ -87,6 +130,9 @@ h3 {
 .txt-blue {
   color: #003663;
 }
+.txt-yellow {
+  color: #F9AB00;
+}
 .text-mea {
   color: white;
 }
@@ -98,6 +144,7 @@ h3 {
   height: 100%;
   width: 100%;
   padding: 50px;
+  text-decoration: none;
 }
 .text-mea a:hover {
   transition: opacity 0.3s;
@@ -325,76 +372,20 @@ h3 {
 .seo-txt .container {
   max-width: 1065px;
 }
-.seo-txt .bg-white,
-.seo-txt .bg-grey {
-  padding: 30px 0;
-}
-.seo-txt .bg-grey {
-  background: #FAFBFC;
-}
 .seo-txt h1,
 .seo-txt h2,
 .seo-txt h3 {
   color: #003663;
 }
-.seo-txt h1:first-child,
-.seo-txt h2:first-child,
-.seo-txt h3:first-child {
-  margin-top: 0;
-}
-.seo-txt h1.yellow,
-.seo-txt h2.yellow,
-.seo-txt h3.yellow {
-  color: #F9AB00;
-}
-.seo-txt h2 {
-  font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
-}
-.seo-txt h1,
-.seo-txt p,
-.seo-txt h3 {
-  margin: 25px 0;
-}
-.seo-txt h2 {
-  margin-bottom: 35px;
-}
-.seo-txt a {
-  color: #003663;
-  text-decoration: underline;
-  transition: opacity 0.3s ease-in-out;
-}
-.seo-txt a:hover {
-  opacity: 0.8;
+.seo-txt .bg-white,
+.seo-txt .bg-grey {
+  padding: 30px 0;
 }
 .seo-txt .inner-block {
   height: 100%;
 }
-.seo-txt .inner-block p {
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-.seo-txt p:last-child {
-  margin-bottom: 0;
-}
-h4 {
-  font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
-  font-size: 24px;
-  margin-bottom: 1.5rem;
-}
-h4:last-child {
-  margin-bottom: 0;
-}
-h5 {
-  font-size: 16px;
-  font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
-  text-transform: uppercase;
-  margin: 20px 0;
-}
-h5:first-child {
-  margin-top: 0;
-}
-h5:last-child {
-  margin-bottom: 0;
+.bg-grey {
+  background: #FAFBFC;
 }
 ul.check-list {
   list-style: none;
@@ -431,6 +422,7 @@ ul.check-list li:before {
 .block-frise-verticale h3 + p {
   font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
   margin-bottom: 60px;
+  margin-top: 0;
 }
 .block-frise-verticale .frise {
   position: relative;
@@ -636,8 +628,7 @@ ul.check-list li:before {
   font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
   color: #003663;
   line-height: 1;
-  margin-left: 8px;
-  margin-bottom: 15px;
+  margin: 0 0 15px 8px;
 }
 .js-slick-txt .question p {
   display: block;
@@ -684,6 +675,7 @@ ul.check-list li:before {
   color: #003663;
   opacity: 0.2;
   transition: opacity 0.3s ease-in-out;
+  text-decoration: none;
 }
 .custom-tabs .nav-link.active {
   opacity: 1;
@@ -1396,6 +1388,12 @@ ul.check-list li:before {
   max-width: 100%;
   height: auto;
 }
+#produit h3 {
+  color: #003663;
+}
+#produit .colored-slideshow h3 {
+  color: white;
+}
 #produit .js-grid-masonry .grid-item .txt {
   background: white;
   position: absolute;
@@ -1410,13 +1408,14 @@ ul.check-list li:before {
   font-size: 24px;
   font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
   line-height: 1.1;
+  margin: 0 0 5px 0;
 }
 #produit .js-grid-masonry .grid-item .txt h3 span {
   text-transform: uppercase;
   font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
 }
 #produit .js-grid-masonry .grid-item .txt p {
-  margin-bottom: 0;
+  margin: 0;
 }
 #produit.cocotte .content-1 img {
   max-width: 100%;

@@ -11,10 +11,16 @@
           <h1>{{ content.field_recipe_title }}</h1>
 
           <div class="mt-4 pills">
-            <span>{{ content.field_filter_salees_sucrees }}</span>
-            <span>{{ content.field_filter_saison }}</span>
+            {% for i in 0..node.field_filter_salees_sucrees|length - 1 %}
+              <span>{{ content.field_filter_salees_sucrees[i] }}</span>
+            {% endfor %}
+            {% for i in 0..node.field_filter_saison|length - 1 %}
+              <span>{{ content.field_filter_saison[i] }}</span>
+            {% endfor %}
             <span>{{ content.field_filter_duree }}</span>
-            <span>{{ content.field_filtre_type }}</span>
+            {% for i in 0..node.field_filtre_type|length - 1 %}
+              <span>{{ content.field_filtre_type[i] }}</span>
+            {% endfor %}
             <span>{{ content.field_filter_difficulte }}</span>
             {% for i in 0..node.field_filtre_ustensile|length - 1 %}
               <span>{{ content.field_filtre_ustensile['#items'][i].entity.label }}</span>

@@ -545,6 +545,33 @@
       height: 227px;
     }
   }
+
+  &.cocottes,
+  &.casseroles {
+    .yellow-table {
+      td {
+        background: white;
+        color: @grey;
+        text-align: center;
+        width: 50%;
+        min-width: unset;
+        font-family: @MyriadRegular;
+      }
+
+      tr.head > td {
+        background: @yellow;
+        color: white;
+      }
+    }
+  }
+
+  &.casseroles {
+    .yellow-table {
+      td {
+        width: 25%;
+      }
+    }
+  }
 }
 
 // MARQUE //
@@ -919,6 +946,7 @@
 
       a {
         color: @grey;
+        text-decoration: none;
 
         &:after {
           content: "";

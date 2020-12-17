@@ -11,14 +11,14 @@
           <h1>{{ content.field_recipe_title }}</h1>
 
           <div class="mt-4 pills">
-            <span>{{ content.field_filtre_salees_sucrees }}</span>
-            <span>{{ content.field_filtre_saison }}</span>
-            <span>{{ content.field_filtre_duree }}</span>
-            {% if content.field_filtre_type|length > 2 %}
-              <span>{{ content.field_filtre_type }}</span>
-            {% endif %}
-            <span>{{ content.field_filtre_difficulte }}</span>
-            <span>{{ content.field_filtre_ustensile }}</span>
+            <span>{{ content.field_filter_salees_sucrees }}</span>
+            <span>{{ content.field_filter_saison }}</span>
+            <span>{{ content.field_filter_duree }}</span>
+            <span>{{ content.field_filtre_type }}</span>
+            <span>{{ content.field_filter_difficulte }}</span>
+            {% for i in 0..node.field_filtre_ustensile|length - 1 %}
+              <span>{{ content.field_filtre_ustensile['#items'][i].entity.label }}</span>
+            {% endfor %}
           </div>
 
           <div class="mt-4">
@@ -61,12 +61,12 @@
 
           <div class="mt-5">
             <div class="row">
-              <div class="col pr-5">
+              <div class="col-12 col-sm-6 pr-5">
                 <div>
                   <h3 class="txt-blue"><span>{{ content.field_recipe_summary['#title'] }}</span></h3>
                   {{ content.field_recipe_summary }}
                 </div>
-                <div class="row mt-3">
+                <div class="row mt-5">
                   <div class="col">
                     <img src="{{ content.field_recipe_imgs[1] }}" class="img-recette" alt=""/>
                   </div>
@@ -75,36 +75,22 @@
                   </div>
                 </div>
               </div>
-              <div class="col pl-5">
-                <h3 class="txt-blue"><span>{{ content.field_recipe_ingredients['#title'] }}</span></h3>
-                <p>
-                  {{ content.field_recipe_ingredients }}
-                </p>
-                <div class="txt-blue mt-5">
-                  <h3><span>{{ content.field_recipe_ustensile_img['#title'] }}</span></h3>
+              <div class="col-12 col-sm-6 pl-5">
+                <div>
+                  <h3 class="txt-blue"><span>{{ content.field_recipe_ingredients['#title'] }}</span></h3>
                   <p>
-                    {{ content.field_recipe_ustensile_img }}
+                    {{ content.field_recipe_ingredients }}
                   </p>
+                </div>
+                <div class="mt-5">
+                  <h3><span>{{ (node.field_filtre_ustensile.getvalue|length > 1) ? 'Ustensiles'|trans : 'Ustensile'|trans }}</span></h3>
+                  <div class="js-ustensiles-slider slider">
+                    {{ content.field_filtre_ustensile }}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- BLOC RECETTES -->
-    <div class="container gutter-24 my-5">
-      <div class="row align-items-center">
-        <div class="col-5">
-          <h3 class="txt-blue"><span>{{ 'D’autres recettes pour vous'|trans }}</span></h3>
-          <p>
-            {{ 'Découvrez d’autres recettes qui pourraient vous plaire'|trans }}
-          </p>
-        </div>
-        <div class="col position-relative">
-          {{ content.field_recipe_bloc_recettes }}
-          <div class="picto-2"></div>
         </div>
       </div>
     </div>

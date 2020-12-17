@@ -859,6 +859,67 @@ ul.check-list li:before {
   font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
   font-style: italic;
 }
+.slider img {
+  max-width: 100%;
+  height: auto;
+}
+.slider .slick-left-arrow,
+.slider .slick-right-arrow {
+  display: none;
+}
+.slider .slick-arrow {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+  outline: none;
+  border-top: 4px solid white;
+  border-right: 4px solid white;
+  height: 20px;
+  width: 20px;
+  font-size: 0;
+  cursor: pointer;
+}
+.slider .slick-arrow.slick-prev {
+  left: 260px;
+  margin-top: -14px;
+  top: 50%;
+  transform: rotate(-135deg);
+  z-index: 2;
+}
+.slider .slick-arrow.slick-next {
+  right: 260px;
+  margin-top: -14px;
+  top: 50%;
+  transform: rotate(45deg);
+}
+.slider .slick-dots {
+  position: absolute;
+  bottom: -3px;
+  list-style-type: none;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+.slider .slick-dots li {
+  display: inline;
+}
+.slider .slick-dots li button {
+  font-size: 0;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  height: 8px;
+  width: 8px;
+  border-radius: 8px;
+  padding: 0;
+  margin-right: 10px;
+  background: #434343;
+  cursor: pointer;
+  outline: none;
+}
+.slider .slick-dots li.slick-active button {
+  background: #741030;
+}
 @font-face {
   font-family: 'Cardenio Modern';
   src: url('../fonts/cardeniomodern-regular-webfont.woff2') format('woff2'), url('../fonts/cardeniomodern-regular-webfont.woff') format('woff');
@@ -957,67 +1018,6 @@ ul.check-list li:before {
 .header-wrapper nav ul a.ou-acheter:hover {
   border-bottom: none;
   color: white;
-}
-#homepage .slider img {
-  max-width: 100%;
-  height: auto;
-}
-#homepage .slider .slick-left-arrow,
-#homepage .slider .slick-right-arrow {
-  display: none;
-}
-#homepage .slider .slick-arrow {
-  position: absolute;
-  padding: 0;
-  margin: 0;
-  background: none;
-  border: none;
-  outline: none;
-  border-top: 4px solid white;
-  border-right: 4px solid white;
-  height: 20px;
-  width: 20px;
-  font-size: 0;
-  cursor: pointer;
-}
-#homepage .slider .slick-arrow.slick-prev {
-  left: 260px;
-  margin-top: -14px;
-  top: 50%;
-  transform: rotate(-135deg);
-  z-index: 2;
-}
-#homepage .slider .slick-arrow.slick-next {
-  right: 260px;
-  margin-top: -14px;
-  top: 50%;
-  transform: rotate(45deg);
-}
-#homepage .slider .slick-dots {
-  position: absolute;
-  bottom: -3px;
-  list-style-type: none;
-  left: 0;
-  right: 0;
-  text-align: center;
-}
-#homepage .slider .slick-dots li {
-  display: inline;
-}
-#homepage .slider .slick-dots li button {
-  font-size: 0;
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  height: 8px;
-  width: 8px;
-  border-radius: 8px;
-  padding: 0;
-  margin-right: 10px;
-  background: #434343;
-  cursor: pointer;
-  outline: none;
-}
-#homepage .slider .slick-dots li.slick-active button {
-  background: #741030;
 }
 #homepage > div > .container {
   max-width: 1225px;
@@ -1196,7 +1196,7 @@ ul.check-list li:before {
   width: 100%;
   object-fit: cover;
   height: 197px;
-  transition: transform .3s ease;
+  transition: transform 0.3s ease;
 }
 .recette-item img:hover {
   transform: scale(1.1);
@@ -1212,6 +1212,7 @@ ul.check-list li:before {
 .recette-item .views-field-field-recipe-intro .field-content {
   font-size: 16px;
   line-height: 1;
+  min-height: 52px;
   color: #434343;
   padding: 0 24px 20px 24px;
   font-family: "Myriad Pro Regular", Arial, Helvetica, sans-serif;
@@ -1254,10 +1255,20 @@ ul.check-list li:before {
   height: 30px;
   background: url("../images/picto-quantite.svg") no-repeat center transparent;
 }
+#recette-individuelle h3 {
+  color: #003663;
+}
+#recette-individuelle h3:after {
+  content: "";
+  display: block;
+  margin: 15px 0;
+  width: 40px;
+  height: 2px;
+  background-color: #003663;
+}
 #recette-individuelle ol {
   font-size: 20px;
   counter-reset: item;
-  list-style-type: none;
 }
 #recette-individuelle ol li {
   position: relative;
@@ -1281,9 +1292,35 @@ ul.check-list li:before {
   top: calc(50% - 20px);
   left: 0;
 }
+#recette-individuelle ol,
+#recette-individuelle ul {
+  list-style-type: none;
+  padding-left: 0;
+}
 #recette-individuelle .img-recette {
   max-width: 100%;
   height: auto;
+}
+#recette-individuelle .slider h2 {
+  display: none;
+}
+#recette-individuelle .slider img {
+  max-width: 325px;
+}
+#recette-individuelle .slider .slick-arrow {
+  border-color: #003663;
+}
+.titre-bloc-recettes {
+  color: #003663;
+  font-size: 48px;
+}
+.titre-bloc-recettes:after {
+  content: "";
+  display: block;
+  margin: 15px 0;
+  width: 40px;
+  height: 2px;
+  background-color: #003663;
 }
 #produits #content-1,
 #conseils #content-1 {

@@ -1,0 +1,27 @@
+<div class="container gutter-24 my-5">
+    <div class="row align-items-center">
+        <div class="col-5">
+            <h3 class="txt-blue titre-bloc-recettes"><span>{{ 'D’autres recettes pour vous'|trans }}</span></h3>
+            <p>
+                {{ 'Découvrez d’autres recettes qui pourraient vous plaire'|trans }}
+            </p>
+        </div>
+        <div class="col position-relative">
+            <div class="row">
+                {% for row in rows %}
+                    {%
+                        set row_classes = [
+                        default_row_class ? 'col-12 col-sm-6',
+                    ]
+                    %}
+                    <div{{ row.attributes.addClass(row_classes) }}>
+                        <div class="recette-item">
+                            {{- row.content -}}
+                            <div class="picto-2"></div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

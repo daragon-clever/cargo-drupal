@@ -1196,7 +1196,7 @@ ul.check-list li:before {
   width: 100%;
   object-fit: cover;
   height: 197px;
-  transition: transform 0.3s ease;
+  transition: transform .3s ease;
 }
 .recette-item img:hover {
   transform: scale(1.1);
@@ -1372,6 +1372,18 @@ ul.check-list li:before {
   width: 100%;
   object-fit: cover;
   height: 227px;
+}
+#conseils-indiv.cocottes .yellow-table td {
+  background: white;
+  color: #434343;
+  text-align: center;
+  width: 50%;
+  min-width: unset;
+  font-family: "Myriad Pro Regular", Arial, Helvetica, sans-serif;
+}
+#conseils-indiv.cocottes .yellow-table tr.head > td {
+  background: #F9AB00;
+  color: white;
 }
 #marque h1 span {
   display: block;

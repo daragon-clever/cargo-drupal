@@ -368,6 +368,9 @@ a:hover {
 .container.max-1270 {
   max-width: 1270px;
 }
+.container.max-1256 {
+  max-width: 1256px;
+}
 .seo-txt.container,
 .seo-txt .container {
   max-width: 1065px;
@@ -1379,7 +1382,8 @@ ul.check-list li:before {
   object-fit: cover;
   height: 227px;
 }
-#conseils-indiv.cocottes .yellow-table td {
+#conseils-indiv.cocottes .yellow-table td,
+#conseils-indiv.casseroles .yellow-table td {
   background: white;
   color: #434343;
   text-align: center;
@@ -1387,9 +1391,13 @@ ul.check-list li:before {
   min-width: unset;
   font-family: "Myriad Pro Regular", Arial, Helvetica, sans-serif;
 }
-#conseils-indiv.cocottes .yellow-table tr.head > td {
+#conseils-indiv.cocottes .yellow-table tr.head > td,
+#conseils-indiv.casseroles .yellow-table tr.head > td {
   background: #F9AB00;
   color: white;
+}
+#conseils-indiv.casseroles .yellow-table td {
+  width: 25%;
 }
 #marque h1 span {
   display: block;

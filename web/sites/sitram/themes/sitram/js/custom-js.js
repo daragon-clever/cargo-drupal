@@ -4,6 +4,11 @@ jQuery(document).ready(function ($) {
         dots: true
     });
 
+    // CAROUSEL USTENSILES (page recettes)
+    $('.js-ustensiles-slider > div').slick({
+        dots: true
+    });
+
     // INSTAGRAM
     (function () {
         new InstagramFeed({

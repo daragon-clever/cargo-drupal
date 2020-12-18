@@ -74,6 +74,20 @@ h1, h2, h3, h4, h5 {
   &:last-child {
     margin-bottom: 0;
   }
+
+  @media @phone {
+    &,
+    span {
+      font-size: 30px;
+    }
+  }
+}
+
+@media @tablet {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 a {
@@ -368,31 +382,33 @@ a {
     margin-right: -@gutter
   }
 
-  &.gutter-24 {
-    @gutter: 24px;
-    &,
-    .row > div {
-      padding-left: @gutter;
-      padding-right: @gutter;
+  @media (min-width: 1200px) {
+    &.gutter-24 {
+      @gutter: 24px;
+      &,
+      .row > div {
+        padding-left: @gutter;
+        padding-right: @gutter;
+      }
+
+      .row {
+        margin-left: -@gutter;
+        margin-right: -@gutter
+      }
     }
 
-    .row {
-      margin-left: -@gutter;
-      margin-right: -@gutter
-    }
-  }
+    &.gutter-27 {
+      @gutter: 27px;
+      &,
+      .row > div {
+        padding-left: @gutter;
+        padding-right: @gutter;
+      }
 
-  &.gutter-27 {
-    @gutter: 27px;
-    &,
-    .row > div {
-      padding-left: @gutter;
-      padding-right: @gutter;
-    }
-
-    .row {
-      margin-left: -@gutter;
-      margin-right: -@gutter
+      .row {
+        margin-left: -@gutter;
+        margin-right: -@gutter
+      }
     }
   }
 
@@ -1047,6 +1063,10 @@ ul.check-list {
       top: 50%;
       transform: rotate(-135deg);
       z-index: 2;
+
+      @media @tablet {
+        left: 30px;
+      }
     }
 
     &.slick-next {
@@ -1054,6 +1074,10 @@ ul.check-list {
       margin-top: -14px;
       top: 50%;
       transform: rotate(45deg);
+
+      @media @tablet {
+        right: 30px;
+      }
     }
   }
 

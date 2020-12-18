@@ -1383,6 +1383,9 @@ ul.check-list li:before {
   object-fit: cover;
   height: 227px;
 }
+#conseils-indiv.cocottes ul {
+  padding-left: 15px;
+}
 #conseils-indiv.cocottes .yellow-table td,
 #conseils-indiv.casseroles .yellow-table td {
   background: white;

@@ -1,235 +1,115 @@
-{% set cheminImage = 'sites/sitram/themes/sitram/images/TEMP/conseils-poeles/' %}
-
 <div id="conseils-indiv" class="poeles mb-5">
     <div id="ban-intro" class="container-fluid">
         <div class="row">
             <div class="col">
+                <!-- BANNER -->
                 <div class="container">
                     <div class="row">
                         <div class="col ban">
-                            <img src="{{ cheminImage }}conseils-poeles-011.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            {{ content.field_prod_autocuiseurs_intro }}
+                            {{ content.field_cons_poele_banniere }}
                         </div>
                     </div>
                 </div>
 
+                <!-- INTRO -->
                 <div class="container max-1065">
                     <div class="row">
                         <div class="col text-center">
-                            <h1>Bien choisir Votre poêle</h1>
+                            <h1>{{ content.field_cons_poele_main_title }}</h1>
                         </div>
                     </div>
 
                     <div class="row">
+                        {% for i in 0..1 %}
                         <div class="col-12 col-sm-6">
                             <p>
-                                Chez Sitram, nous proposons une large gamme d’ustensiles, pour répondre à toutes les
-                                préférences et à tous les besoins en matière de cuisson.
+                                {{ content.field_cons_poele_intro[i] }}
                             </p>
                         </div>
-                        <div class="col-12 col-sm-6">
-                            <p>
-                                Matériaux, revêtements, tailles et formes… Pour choisir votre poêle, vous devez prendre
-                                en compte plusieurs critères.
-                            </p>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="container max-1350">
+        <!-- CONTENT 1 -->
         <div class="row align-items-end my-5">
             <div class="col-12 col-md-5 text-right">
                 <span class="number">1</span>
                 <div class="max-455 pt-115">
-                    <h2 class="txt-blue">Quelle forme de poêle choisir ?</h2>
-                    <p>
-                        La poêle la plus classique, celle dont tout le monde possède au moins un exemplaire dans sa
-                        cuisine, est ronde. Elle permet de cuire la grande majorité des aliments. Mais il existe
-                        également d’autres formes plus spécifiques : • la poêle à poissons est ovale ; • la poêle à
-                        blinis présente un plus petit diamètre ; • la poêle grill est généralement carrée ou
-                        rectangulaire : équipée d’un fond en relief, elle permet de recréer un effet de grillade ; •
-                        la
-                        crêpière est large et peu profonde : elle permet d’être certain de réussir ses crêpes à la
-                        chandeleur, et tout au long de l’année ; • la sauteuse (et le sautoir) est plus profonde :
-                        elle
-                        permet d’augmenter la capacité de cuisson et de réaliser certains gestes techniques pour
-                        faire
-                        “sauter” les aliments, d’un coup de poignet élégant. C’est la poêle la plus souvent utilisée
-                        par
-                        les professionnels et les passionnés de cuisine ; • le wok est encore plus profond : il est
-                        destiné à la préparation de recettes asiatiques.
-                    </p>
+                    {{ content.field_cons_poele_c1_txt }}
                 </div>
             </div>
             <div class="col-12 col-md-7">
                 <div class="row no-gutters tableau-presentation pl-5">
-                    <div class="col-6 col-md-3">
-                        <div class="inner">
+                    {% for i in 0..3 %}
+                        <div class="col-6 col-md-3">
+                            <div class="inner">
                             <span class="heading">
-                                Poêle
+                                {{ content.field_cons_poele_c1_titles1[i] }}
                             </span>
-                            <img src="{{ cheminImage }}groupe_330.svg"/>
+                                {{ content.field_cons_poele_c1_imgs1[i] }}
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-6 col-md-3">
-                        <div class="inner">
-                            <span class="heading">
-                                Poêle
-                            </span>
-                            <img src="{{ cheminImage }}groupe_546.svg"/>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-3">
-                        <div class="inner">
-                            <span class="heading">
-                                Poêle
-                            </span>
-                            <img src="{{ cheminImage }}groupe_548.svg"/>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-3">
-                        <div class="inner">
-                            <span class="heading">
-                                Poêle
-                            </span>
-                            <img src="{{ cheminImage }}groupe_550.svg"/>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
                 <div class="row no-gutters tableau-presentation mt-4 pl-5">
-                    <div class="col-6 col-md-4">
-                        <div class="inner">
+                    {% for i in 0..2 %}
+                        <div class="col-6 col-md-4">
+                            <div class="inner">
                             <span class="heading">
-                                Poêle
+                                {{ content.field_cons_poele_c1_titles2[i] }}
                             </span>
-                            <img src="{{ cheminImage }}groupe_330.svg"/>
+                                {{ content.field_cons_poele_c1_imgs2[i] }}
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-6 col-md-4">
-                        <div class="inner">
-                            <span class="heading">
-                                Poêle
-                            </span>
-                            <img src="{{ cheminImage }}groupe_546.svg"/>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-4">
-                        <div class="inner">
-                            <span class="heading">
-                                Poêle
-                            </span>
-                            <img src="{{ cheminImage }}groupe_548.svg"/>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
 
+        <!-- CONTENT 2 -->
         <div class="row align-items-center my-5">
             <div class="col-12 col-md-6">
                 <span class="number yellow">2</span>
-                <img class="mt-5 ml-5" src="{{ cheminImage }}conseils-poeles-008.jpg" alt="">
+                {{ content.field_cons_poele_c2_img }}
                 <span class="svg-ail"></span>
             </div>
             <div class="col-12 col-md-6 text-center">
-                <div class="max-455">
-                    <h2 class="txt-yellow">Quelle capacité ?</h2>
-                    <p>
-                        La poêle est probablement l’ustensile de cuisson le plus utilisé au quotidien. Il faut donc
-                        veiller à choisir une poêle à la taille adaptée. Elle doit vous permettre de faire cuire la
-                        quantité d’aliments correspondant au nombre de convives habituels autour de votre table. Pensez
-                        également à investir dans une deuxième poêle plus petite, pour compléter votre capacité de
-                        cuisson lorsque vous avez des invités, ou pour réchauffer une petite quantité de restes par
-                        exemple. Voici quelques indications de diamètre, qui peuvent varier en fonction de la profondeur
-                        de la poêle :
-                    </p>
-                    <table class="yellow-table mb-4">
-                        <tr>
-                            <td>Pour 1 à 2 personnes</td>
-                            <td>diamètre 20 cm</td>
-                        </tr>
-                        <tr>
-                            <td>Pour 1 à 2 personnes</td>
-                            <td>diamètre 26/28 cm</td>
-                        </tr>
-                        <tr>
-                            <td>Pour 1 à 2 personnes</td>
-                            <td>diamètre 34/36 cm</td>
-                        </tr>
-                        <tr>
-                            <td>Pour 1 à 2 personnes</td>
-                            <td>diamètre 30/32 cm</td>
-                        </tr>
-                    </table>
-                    <p>
-                        • Pour un foyer de 2 adultes ou 2 adultes et 1 enfant, vous pouvez par exemple choisir 1 poêle
-                        de 20 cm et 1 poêle de 24 cm. • Pour un foyer de 2 adultes et 2 enfants, vous pouvez opter pour
-                        1 poêle de 20 cm et 1 poêle de 28 cm. • Pour un foyer de 2 adultes et 3 enfants ou 4 adultes,
-                        vous pouvez investir dans 1 poêle de 20 cm, 1 poêle de 26 cm et 1 poêle de 32 cm SITRAM propose
-                        des solutions astucieuses pour optimiser la place dans vos placards. Équipées d’une poignée
-                        amovible, nos gammes Sitramovible ou Sitramulti permettent d’emboîter les poêles les unes dans
-                        les autres. Si le choix du diamètre de votre poêle varie en fonction du nombre de personnes qui
-                        composent votre foyer, il dépend également de votre équipement de cuisson.
-                    </p>
+                <div class="max-455 mt-5">
+                    {{ content.field_cons_poele_c2_txt }}
                 </div>
             </div>
         </div>
 
+        <!-- CONTENT 3 -->
         <div class="row align-items-center my-5">
             <div class="col-12 col-md-5 text-right">
                 <span class="number">3</span>
                 <div class="max-455 pt-115">
-                    <h2 class="txt-blue text-left">Choisir le bon diamètre</h2>
-                    <p>
-                        Le diamètre de votre poêle doit être adapté au diamètre de vos plaques de cuisson ou de vos
-                        brûleurs : • Si la poêle est trop petite, vous risquez d’en abîmer l’extérieur et de créer une
-                        surchauffe. • Si la poêle est trop grande, vous risquez de rencontrer des problèmes de mauvaise
-                        répartition de chauffe sur la surface de cuisson. C’est également pour cette raison qu’il est
-                        conseillé de disposer de plusieurs tailles de poêles. Cela vous permet de profiter au maximum de
-                        tous vos équipements de cuisson !
-                    </p>
+                    {{ content.field_cons_poele_c3_txt }}
                 </div>
             </div>
             <div class="col-12 col-md-7 text-center">
-                <img src="{{ cheminImage }}conseils-poeles-006.jpg" alt="">
+                {{ content.field_cons_poele_c3_img }}
             </div>
         </div>
 
+        <!-- CONTENT 4 -->
         <div class="row my-5">
             <div class="col-12 col-md-5 text-right">
                 <span class="number yellow">4</span>
                 <div class="max-455 pt-115">
-                    <h2 class="txt-yellow">Vérifier la compatibilité de la poêle</h2>
-                    <p>
-                        Toutes les poêles ne sont pas compatibles avec tous types de feux. Cela dépend de leur matériau
-                        principal de fabrication et de leur composition. Même si aujourd’hui la majorité de nos produits
-                        sont compatibles avec toutes les sources de chaleur, pensez toujours à contrôler les
-                        pictogrammes apposés sur chacun des ustensiles.
-                    </p>
+                    {{ content.field_cons_poele_c4_txt_left }}
                     <div class="svg-infos mt-4">
                         <div class="row text-center">
-                            <div class="col-6 col-md-3">
-                                <img src="{{ cheminImage }}gaz.svg" alt="">
-                                <small>Gaz</small>
-                            </div>
-                            <div class="col-6 col-md-3">
-                                <img src="{{ cheminImage }}electrique.svg" alt="">
-                                <small>Plaque éléctrique</small>
-                            </div>
-                            <div class="col-6 col-md-3">
-                                <img src="{{ cheminImage }}vitro.svg" alt="">
-                                <small>Plaque vitrocéramique et halogène</small>
-                            </div>
-                            <div class="col-6 col-md-3">
-                                <img src="{{ cheminImage }}induction.svg" alt="">
-                                <small>Induction</small>
-                            </div>
+                            {% for i in 0..3 %}
+                                <div class="col-6 col-md-3">
+                                    {{ content.field_cons_poele_c4_picto_g_imgs[i] }}
+                                    <small>{{ content.field_cons_poele_c4_picto_g_txts[i] }}</small>
+                                </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
@@ -237,27 +117,15 @@
             <div class="col-12 col-md-7">
                 <div class="bg-green d-flex h-100 mx-4">
                     <div class="m-auto text-white max-455">
-                        <p>
-                            Pour plus de polyvalence et moins de nettoyage, pourquoi ne pas investir dans une poêle qui
-                            passe au four ? Cela vous permet en effet de réaliser des recettes qui commencent sur le feu
-                            et qui terminent au four. Nos gammes à poignée amovible sont toutes compatibles avec une
-                            cuisson au four. Vous pouvez vérifier leur compatibilité grâce aux pictogrammes suivants,
-                            apposés sur les emballages de nos produits :
-                        </p>
+                        {{ content.field_cons_poele_c4_txt_right }}
                         <div class="svg-infos small mt-5">
                             <div class="row text-center text-white">
-                                <div class="col-6 col-md-4">
-                                    <img src="{{ cheminImage }}four-interdit.svg" alt="">
-                                    <small>Four interdit</small>
-                                </div>
-                                <div class="col-6 col-md-4">
-                                    <img src="{{ cheminImage }}max_180.svg" alt="">
-                                    <small>Passe au four, maximum 180°</small>
-                                </div>
-                                <div class="col-6 col-md-4">
-                                    <img src="{{ cheminImage }}max_250.svg" alt="">
-                                    <small>Passe au four, maximum 250°</small>
-                                </div>
+                                {% for i in 0..3 %}
+                                    <div class="col-6 col-md-4">
+                                        {{ content.field_cons_poele_c4_picto_d_imgs[i] }}
+                                        <small>{{ content.field_cons_poele_c4_picto_d_txts[i] }}</small>
+                                    </div>
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
@@ -266,24 +134,17 @@
             </div>
         </div>
 
+        <!-- CONTENT 5 / TEXT START -->
         <div class="row my-5">
             <div class="col-12">
                 <span class="number">5</span>
                 <div class="pt-115 pl-85">
-                    <h2 class="txt-blue">La bonne poêle pour la bonne utilisation : <br>à chaque matière ses avantages</h2>
-                    <div class="max-455">
-                        <p>
-                            Sachez-le, la poêle parfaite qui permet de réussir à coup sûr toutes les recettes n’existe
-                            pas !
-                            En effet, chaque matériau et chaque revêtement possèdent leurs points forts et leurs
-                            avantages.
-                            Zoom sur les caractéristiques de chacun.
-                        </p>
-                    </div>
+                    {{ content.field_cons_poele_c5_txt_start }}
                 </div>
             </div>
         </div>
 
+        <!-- CONTENT 5 / TABS -->
         <div class="row my-5">
             <div class="col">
                 <div class="pl-85">
@@ -297,7 +158,7 @@
                                    role="tab"
                                    aria-controls="pills-home"
                                    aria-selected="true">
-                                    Légumes {{ i }}
+                                    {{ content.field_cons_poele_c5_tab_menus[i] }}
                                 </a>
                             </li>
                         {% endfor %}
@@ -311,20 +172,20 @@
                                 <div class="col-12 col-lg-6">
                                     <div class="row">
                                         <div class="col-7">
-                                            <img src="{{ cheminImage }}conseils-poeles-007.jpg" alt="">
+                                            {{ content.field_cons_poele_c5_tab1_imgs[0] }}
                                         </div>
                                         <div class="col-5">
-                                            <img src="{{ cheminImage }}conseils-poeles-005.jpg" alt="">
+                                            {{ content.field_cons_poele_c5_tab1_imgs[1] }}
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <div class="row">
                                         <div class="col-8">
-                                            <img src="{{ cheminImage }}conseils-poeles-004.jpg" alt="">
+                                            {{ content.field_cons_poele_c5_tab1_imgs[2] }}
                                         </div>
                                         <div class="col-4">
-                                            <img src="{{ cheminImage }}conseils-poeles-003.jpg" alt="">
+                                            {{ content.field_cons_poele_c5_tab1_imgs[3] }}
                                         </div>
                                     </div>
                                 </div>
@@ -333,31 +194,13 @@
                                 <div class="col-12 col-lg-6">
                                     <div class="inner bg-blue text-white text-center">
                                         <div class="max-455 py-5">
-                                            <p>
-                                                Les poêles en aluminium sont les plus répandues. Elles combinent en
-                                                effet de
-                                                nombreux avantages pour la cuisine quotidienne. Elles sont toujours
-                                                recouvertes d’un revêtement, les aliments ne devant jamais être mis en
-                                                contact direct avec l’aluminium.
-                                            </p>
-                                            <p>
-                                                Ces poêles peuvent être équipées d’un manche fixe ou amovible. Le manche
-                                                amovible permet de les utiliser au four (pensez toujours à vérifier les
-                                                instructions sur l’emballage) et de gagner de la place dans vos
-                                                placards.
-                                            </p>
+                                            {{ content.field_cons_poele_c5_tab1_txts[0] }}
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-12 col-lg-6 text-center">
                                     <div class="max-455">
-                                        <h4 class="txt-blue">Particulièrement recommandées pour</h4>
-                                        <p>
-                                            Les recettes à base d’œufs : œufs au plat,
-                                            œufs brouillés, omelettes, frittatas et tortillas. • Les recettes avec peu,
-                                            ou
-                                            pas, de matière grasse. • Les cuissons douces.
-                                        </p>
+                                        {{ content.field_cons_poele_c5_tab1_txts[1] }}
                                     </div>
                                 </div>
                             </div>
@@ -365,33 +208,13 @@
                                 <div class="col-12 col-lg-6 text-center">
                                     <div class="max-455 mt-5">
                                         <span class="picto-plus"></span>
-                                        <h4 class="txt-blue">Points forts</h4>
-                                        <ul>
-                                            <li><b>Légèreté :</b> facile à soulever, à manipuler et à nettoyer</li>
-                                            <li>Conductivité : diffusion rapide et homogène de la chaleur</li>
-                                            <li>Cuisine : le revêtement anti-adhésif permet une cuisson sans matière
-                                                grasse, ou presque
-                                            </li>
-                                            <li> Entretien : le revêtement anti-adhésif facilite le lavage.</li>
-                                            <li>Budget : les poêles en aluminium sont généralement proposées dans une
-                                                gamme de prix abordable
-                                            </li>
-                                        </ul>
+                                        {{ content.field_cons_poele_c5_tab1_txts[2] }}
                                     </div>
                                 </div>
                                 <div class="col-12 col-lg-6 text-center">
                                     <div class="max-455 mt-5">
                                         <span class="picto-moins"></span>
-                                        <h4 class="txt-blue">Points faibles</h4>
-                                        <p>
-                                            Légèreté : facile à soulever, à manipuler et à nettoyer. •
-                                            Conductivité : diffusion rapide et homogène de la chaleur. • Cuisine : le
-                                            revêtement anti-adhésif permet une cuisson sans matière grasse, ou presque.
-                                            •
-                                            Entretien : le revêtement anti-adhésif facilite le lavage. • Budget : les
-                                            poêles
-                                            en aluminium sont généralement proposées dans une gamme de prix abordable.
-                                        </p>
+                                        {{ content.field_cons_poele_c5_tab1_txts[3] }}
                                     </div>
                                 </div>
                             </div>
@@ -404,17 +227,17 @@
                                 <div class="col-12 col-lg-6">
                                     <div class="row">
                                         <div class="col">
-                                            <img src="{{ cheminImage }}conseils-poeles-013.jpg" alt="">
+                                            {{ content.field_cons_poele_c5_tab2_imgs[0] }}
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <div class="row">
                                         <div class="col-7">
-                                            <img src="{{ cheminImage }}conseils-poeles-014.jpg" alt="">
+                                            {{ content.field_cons_poele_c5_tab2_imgs[1] }}
                                         </div>
                                         <div class="col-5">
-                                            <img src="{{ cheminImage }}conseils-poeles-012.jpg" alt="">
+                                            {{ content.field_cons_poele_c5_tab2_imgs[2] }}
                                         </div>
                                     </div>
                                 </div>
@@ -423,32 +246,13 @@
                                 <div class="col-12 col-lg-6">
                                     <div class="inner bg-yellow text-white text-center">
                                         <div class="max-455 py-5">
-                                            <p>
-                                                Les poêles en aluminium sont les plus répandues. Elles combinent en
-                                                effet de
-                                                nombreux avantages pour la cuisine quotidienne. Elles sont toujours
-                                                recouvertes d’un revêtement, les aliments ne devant jamais être mis en
-                                                contact direct avec l’aluminium.
-                                            </p>
-                                            <p>
-                                                Ces poêles peuvent être équipées d’un manche fixe ou amovible. Le manche
-                                                amovible permet de les utiliser au four (pensez toujours à vérifier les
-                                                instructions sur l’emballage) et de gagner de la place dans vos
-                                                placards.
-                                            </p>
+                                            {{ content.field_cons_poele_c5_tab2_txts[0] }}
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-12 col-lg-6 text-center">
                                     <div class="max-455">
-                                        <h4 class="txt-blue">Particulièrement recommandées pour</h4>
-                                        <h5>POÊLES INOX SANS REVÊTEMENT</h5>
-                                        <p>
-                                            Les recettes à base d’œufs : œufs au plat,
-                                            œufs brouillés, omelettes, frittatas et tortillas. • Les recettes avec peu,
-                                            ou
-                                            pas, de matière grasse. • Les cuissons douces.
-                                        </p>
+                                        {{ content.field_cons_poele_c5_tab2_txts[1] }}
                                     </div>
                                 </div>
                             </div>
@@ -456,39 +260,13 @@
                                 <div class="col-12 col-lg-6 text-center">
                                     <div class="max-455 mt-5">
                                         <span class="picto-plus"></span>
-                                        <h4 class="txt-blue">Points forts</h4>
-                                        <p>
-                                            Légèreté : facile à soulever, à manipuler et à nettoyer. •
-                                            Conductivité : diffusion rapide et homogène de la chaleur. • Cuisine : le
-                                            revêtement anti-adhésif permet une cuisson sans matière grasse, ou presque.
-                                            •
-                                            Entretien : le revêtement anti-adhésif facilite le lavage. • Budget : les
-                                            poêles
-                                            en aluminium sont généralement proposées dans une gamme de prix abordable.
-                                        </p>
-                                        <h5>Tacos poulet</h5>
-                                        <p>
-                                            Durabilité : résiste aux chauffes élevées et
-                                            aux nettoyages énergiques. Une poêle en inox non revêtu est pratiquement
-                                            inusable ! • Santé : matériau parfaitement sain car inerte. • Cuisine :
-                                            permet de saisir viandes, volailles, poissons et légumes à feu vif sans
-                                            risque, et de recueillir des sucs de cuisson par déglaçage.
-                                        </p>
+                                        {{ content.field_cons_poele_c5_tab2_txts[2] }}
                                     </div>
                                 </div>
                                 <div class="col-12 col-lg-6 text-center">
                                     <div class="max-455 mt-5">
                                         <span class="picto-moins"></span>
-                                        <h4 class="txt-blue">Points faibles</h4>
-                                        <p>
-                                            Légèreté : facile à soulever, à manipuler et à nettoyer. •
-                                            Conductivité : diffusion rapide et homogène de la chaleur. • Cuisine : le
-                                            revêtement anti-adhésif permet une cuisson sans matière grasse, ou presque.
-                                            •
-                                            Entretien : le revêtement anti-adhésif facilite le lavage. • Budget : les
-                                            poêles
-                                            en aluminium sont généralement proposées dans une gamme de prix abordable.
-                                        </p>
+                                        {{ content.field_cons_poele_c5_tab2_txts[3] }}
                                     </div>
                                 </div>
                             </div>
@@ -501,20 +279,17 @@
                                 <div class="col-12 col-lg-6">
                                     <div class="row">
                                         <div class="col">
-                                            <img class="img-contain border-lightgrey"
-                                                 src="{{ cheminImage }}conseils-poeles-015.jpg" alt="">
+                                            <img src="{{ content.field_cons_poele_c5_tab3_imgs[0] }}" class="img-contain border-lightgrey" alt="">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <div class="row">
                                         <div class="col-7">
-                                            <img class="img-contain border-lightgrey"
-                                                 src="{{ cheminImage }}conseils-poeles-016.jpg" alt="">
+                                            <img src="{{ content.field_cons_poele_c5_tab3_imgs[1] }}" class="img-contain border-lightgrey" alt="">
                                         </div>
                                         <div class="col-5">
-                                            <img class="img-contain border-lightgrey"
-                                                 src="{{ cheminImage }}conseils-poeles-017.jpg" alt="">
+                                            <img src="{{ content.field_cons_poele_c5_tab3_imgs[2] }}" class="img-contain border-lightgrey" alt="">
                                         </div>
                                     </div>
                                 </div>
@@ -523,27 +298,13 @@
                                 <div class="col-12 col-lg-6">
                                     <div class="inner bg-green text-white text-center">
                                         <div class="max-455 py-5">
-                                            <p>
-                                                Peu répandue en-dehors des cuisines de restaurants, cette matière
-                                                possède des qualités indéniables mais demande un entretien particulier.
-                                                Chez Sitram, nous la réservons à certaines gammes très spécifiques :
-                                                pour les poêles de type grill, pour lesquelles elle est parfaitement
-                                                adaptée et, bien entendu, pour les cocottes dont elle est le matériau
-                                                emblématique.
-                                            </p>
+                                            {{ content.field_cons_poele_c5_tab3_txts[0] }}
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-12 col-lg-6 text-center">
                                     <div class="max-455">
-                                        <h4 class="txt-blue">Particulièrement recommandées pour</h4>
-                                        <h5>POÊLES INOX SANS REVÊTEMENT</h5>
-                                        <p>
-                                            Les recettes à base d’œufs : œufs au plat,
-                                            œufs brouillés, omelettes, frittatas et tortillas. • Les recettes avec peu,
-                                            ou
-                                            pas, de matière grasse. • Les cuissons douces.
-                                        </p>
+                                        {{ content.field_cons_poele_c5_tab3_txts[1] }}
                                     </div>
                                 </div>
                             </div>
@@ -551,39 +312,13 @@
                                 <div class="col-12 col-lg-6 text-center">
                                     <div class="max-455 mt-5">
                                         <span class="picto-plus"></span>
-                                        <h4 class="txt-blue">Points forts</h4>
-                                        <p>
-                                            Légèreté : facile à soulever, à manipuler et à nettoyer. •
-                                            Conductivité : diffusion rapide et homogène de la chaleur. • Cuisine : le
-                                            revêtement anti-adhésif permet une cuisson sans matière grasse, ou presque.
-                                            •
-                                            Entretien : le revêtement anti-adhésif facilite le lavage. • Budget : les
-                                            poêles
-                                            en aluminium sont généralement proposées dans une gamme de prix abordable.
-                                        </p>
-                                        <h5>Tacos poulet</h5>
-                                        <p>
-                                            Durabilité : résiste aux chauffes élevées et
-                                            aux nettoyages énergiques. Une poêle en inox non revêtu est pratiquement
-                                            inusable ! • Santé : matériau parfaitement sain car inerte. • Cuisine :
-                                            permet de saisir viandes, volailles, poissons et légumes à feu vif sans
-                                            risque, et de recueillir des sucs de cuisson par déglaçage.
-                                        </p>
+                                        {{ content.field_cons_poele_c5_tab3_txts[2] }}
                                     </div>
                                 </div>
                                 <div class="col-12 col-lg-6 text-center">
                                     <div class="max-455 mt-5">
                                         <span class="picto-moins"></span>
-                                        <h4 class="txt-blue">Points faibles</h4>
-                                        <p>
-                                            Légèreté : facile à soulever, à manipuler et à nettoyer. •
-                                            Conductivité : diffusion rapide et homogène de la chaleur. • Cuisine : le
-                                            revêtement anti-adhésif permet une cuisson sans matière grasse, ou presque.
-                                            •
-                                            Entretien : le revêtement anti-adhésif facilite le lavage. • Budget : les
-                                            poêles
-                                            en aluminium sont généralement proposées dans une gamme de prix abordable.
-                                        </p>
+                                        {{ content.field_cons_poele_c5_tab3_txts[3] }}
                                     </div>
                                 </div>
                             </div>
@@ -593,112 +328,57 @@
             </div>
         </div>
 
+        <!-- CONTENT 5 / TEXT END -->
         <div class="row my-5">
             <div class="col">
                 <div class="pl-85">
-                    <p>
-                        <i>
-                            <b>
-                                Si vous souhaitez pouvoir réaliser plusieurs types de recettes, avec des
-                                techniques de cuisson variées, équipez-vous de plusieurs types de
-                                poêles.
-                                Vous pourrez ainsi faire cuire toutes sortes d’aliments à feu doux et à
-                                haute température. Viandes, poissons, œufs, aliments délicats ou
-                                préparations sans matière grasse… Devenez un véritable chef d’orchestre
-                                dans
-                                votre cuisine, et assurez-vous de disposer de tous les instruments
-                                nécessaires !
-                            </b>
-                        </i>
-                    </p>
+                    {{ content.field_cons_poele_c5_txt_end }}
                 </div>
             </div>
         </div>
 
+        <!-- CONTENT 6 -->
         <div class="row my-5">
             <div class="col-12">
                 <span class="number yellow">6</span>
                 <div class="pt-115 pl-85">
-                    <h2 class="txt-yellow">
-                        Utilisation, nettoyage et entretien : <br>comment prolonger la durée de vie de votre
-                        poêle ?
-                    </h2>
-                    <div class="max-455">
-                        <p>
-                            L’entretien de votre poêle va dépendre de sa composition (matière + revêtement). Néanmoins,
-                            certaines précautions s’appliquent à tout ustensile, quelle que soit sa composition.
-                        </p>
-                    </div>
+                    {{ content.field_cons_poele_c6_intro }}
                 </div>
             </div>
         </div>
-
         <div class="pl-85">
             <div class="row img-max-wrapper">
                 <div class="col-12 col-lg-6">
                     <div class="row">
                         <div class="col-7">
-                            <img src="{{ cheminImage }}conseils-poeles-018.jpg" alt="">
+                            {{ content.field_cons_poele_c6_imgs[0] }}
                         </div>
                         <div class="col-5">
-                            <img src="{{ cheminImage }}conseils-poeles-019.jpg" alt="">
+                            {{ content.field_cons_poele_c6_imgs[1] }}
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-lg-6">
                     <div class="row">
                         <div class="col-8">
-                            <img src="{{ cheminImage }}conseils-poeles-020.jpg" alt="">
+                            {{ content.field_cons_poele_c6_imgs[2] }}
                         </div>
                         <div class="col-4">
-                            <img src="{{ cheminImage }}conseils-poeles-021.jpg" alt="">
+                            {{ content.field_cons_poele_c6_imgs[3] }}
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row my-3">
                 <div class="col-12 col-lg-6">
-                    <div class="max-455">
-                        <h4 class="txt-blue">Particulièrement recommandées pour vos ustensibles de cuisson</h4>
-                        <p>
-                            <b>1. Ne pas faire chauffer à vide : </b>cela
-                            peut déformer le corps de la poêle, endommager gravement le revêtement et rendre votre
-                            ustensile inutilisable.
-                        </p>
-                        <p>
-                            2. Ne pas passer sous l’eau froide votre poêle encore chaude
-                            immédiatement après usage : le choc thermique pourrait également abîmer ou déformer votre
-                            matériel. Il est recommandé d’attendre une dizaine de minutes avant de procéder au nettoyage
-                            ou au trempage.
-                        </p>
-                        <p>
-                            3. Eviter de couper un aliment directement dans la poêle avec un couteau,
-                            surtout si elle est revêtue d’une couche anti adhésive. Éviter de façon générale
-                            l’utilisation d’ustensiles métalliques (même si l’inox les supporte bien).
-                        </p>
+                    <div class="max-455 mt-3">
+                        {{ content.field_cons_poele_c6_txts[0] }}
                     </div>
                 </div>
                 <div class="col-12 col-lg-6">
                     <div class="inner bg-green text-white h-100 d-flex">
-                        <div class="max-455 m-auto">
-                            <p>
-                                <b>1. Ne pas faire chauffer à vide : </b>
-                                cela peut déformer le corps de la poêle, endommager gravement le revêtement et rendre
-                                votre ustensile inutilisable.
-                            </p>
-                            <p>
-                                2. Ne pas passer sous l’eau froide votre poêle encore chaude
-                                immédiatement après usage : le choc thermique pourrait également abîmer ou déformer
-                                votre
-                                matériel. Il est recommandé d’attendre une dizaine de minutes avant de procéder au
-                                nettoyage
-                                ou au trempage.
-                            </p>
-                            <p>
-                                3. Eviter de couper un aliment directement dans la poêle avec un couteau,
-                                surtout si elle est revêtue d’une couche anti adhésive. Éviter de façon générale
-                                l’utilisation d’ustensiles métalliques (même si l’inox les supporte bien).
-                            </p>
+                        <div class="max-455 m-auto py-5">
+                            {{ content.field_cons_poele_c6_txts[1] }}
                         </div>
                     </div>
                 </div>
@@ -706,10 +386,7 @@
             <div class="row my-4">
                 <div class="col">
                     <div class="bottom-highlight bg-green">
-                        <p>
-                            Retrouvez toutes nos poêles, sauteuses, woks et crêpières dans la plupart des enseignes de
-                            distribution, ainsi que dans les boutiques en ligne généralistes ou spécialisées !
-                        </p>
+                        {{ content.field_cons_poele_c6_txts[2] }}
                     </div>
                 </div>
             </div>

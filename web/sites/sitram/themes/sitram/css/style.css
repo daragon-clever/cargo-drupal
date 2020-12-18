@@ -765,6 +765,7 @@ ul.check-list li:before {
 .tableau-presentation img {
   display: block;
   height: 100%;
+  min-height: 170px;
   max-height: 170px;
   width: 100%;
   object-fit: contain;
@@ -1202,7 +1203,7 @@ ul.check-list li:before {
   width: 100%;
   object-fit: cover;
   height: 197px;
-  transition: transform .3s ease;
+  transition: transform 0.3s ease;
 }
 .recette-item img:hover {
   transform: scale(1.1);
@@ -1210,6 +1211,7 @@ ul.check-list li:before {
 .recette-item .views-field-field-recipe-title .field-content {
   font-size: 16px;
   line-height: 1;
+  min-height: 32px;
   margin: 15px 0;
   padding: 0 24px;
   color: #003663;
@@ -1231,6 +1233,11 @@ ul.check-list li:before {
 #recette-individuelle .bg-img-wood {
   background-position: top center;
   background-size: 100% 400px;
+}
+#recette-individuelle .bg-img-wood img {
+  width: 100%;
+  object-fit: cover;
+  max-height: 627px;
 }
 #recette-individuelle .pills span {
   font-size: 12px;
@@ -1378,6 +1385,9 @@ ul.check-list li:before {
   width: 100%;
   object-fit: cover;
   height: 227px;
+}
+#conseils-indiv.cocottes ul {
+  padding-left: 15px;
 }
 #conseils-indiv.cocottes .yellow-table td,
 #conseils-indiv.casseroles .yellow-table td {

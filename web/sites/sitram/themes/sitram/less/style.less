@@ -319,6 +319,7 @@
   .views-field-field-recipe-title .field-content {
     font-size: 16px;
     line-height: 1;
+    min-height: 32px;
     margin: 15px 0;
     padding: 0 24px;
     color: @primaryColor;
@@ -346,6 +347,12 @@
   .bg-img-wood {
     background-position: top center;
     background-size: 100% 400px;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+      max-height: 627px;
+    }
   }
 
   .pills {
@@ -536,6 +543,12 @@
       width: 100%;
       object-fit: cover;
       height: 227px;
+    }
+  }
+
+  &.cocottes {
+    ul {
+      padding-left: 15px;
     }
   }
 

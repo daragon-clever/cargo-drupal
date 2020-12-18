@@ -90,6 +90,10 @@ h5:last-child {
     max-width: 100%;
     height: auto;
   }
+  .col > .container,
+  [class*="col-"] > .container {
+    padding: 0;
+  }
 }
 a {
   color: #003663;
@@ -504,6 +508,11 @@ ul.check-list li:before {
   position: relative;
   padding-top: 45px;
 }
+@media only screen and (max-width: 991px) {
+  #ban-intro {
+    padding-top: 8px;
+  }
+}
 #ban-intro:before {
   content: "";
   height: 285px;
@@ -513,6 +522,11 @@ ul.check-list li:before {
   position: absolute;
   top: 0;
   left: 0;
+}
+@media only screen and (max-width: 991px) {
+  #ban-intro:before {
+    height: 70px;
+  }
 }
 #ban-intro .ban img {
   max-width: 100%;
@@ -524,6 +538,11 @@ ul.check-list li:before {
 }
 #ban-intro h1 span {
   display: block;
+}
+@media only screen and (max-width: 991px) {
+  #ban-intro h1 {
+    margin: 15px 0;
+  }
 }
 #ban-intro .text-wrapper {
   max-width: 1055px;
@@ -1418,6 +1437,12 @@ ul.check-list li:before {
   background-position: top center;
   padding-top: 95px;
 }
+@media only screen and (max-width: 991px) {
+  #produits #content-1,
+  #conseils #content-1 {
+    padding-top: 30px;
+  }
+}
 #produits #content-1 .container,
 #conseils #content-1 .container {
   position: relative;
@@ -1432,6 +1457,12 @@ ul.check-list li:before {
   height: 355px;
   width: 367px;
 }
+@media only screen and (max-width: 991px) {
+  #produits #content-1 .container:before,
+  #conseils #content-1 .container:before {
+    display: none;
+  }
+}
 #produits #content-2 .container,
 #conseils #content-2 .container {
   position: relative;
@@ -1445,6 +1476,12 @@ ul.check-list li:before {
   background: url("../images/pdt.png");
   height: 451px;
   width: 451px;
+}
+@media only screen and (max-width: 991px) {
+  #produits #content-2 .container:before,
+  #conseils #content-2 .container:before {
+    display: none;
+  }
 }
 #conseils #content-1 {
   padding-top: 0;

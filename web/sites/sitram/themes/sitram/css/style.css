@@ -71,6 +71,26 @@ h4:last-child,
 h5:last-child {
   margin-bottom: 0;
 }
+@media only screen and (max-width: 767px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h1 span,
+  h2 span,
+  h3 span,
+  h4 span,
+  h5 span {
+    font-size: 30px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
 a {
   color: #003663;
   text-decoration: underline;
@@ -323,29 +343,31 @@ a:hover {
   margin-left: -8px;
   margin-right: -8px;
 }
-.container.gutter-24,
-.container-fluid.gutter-24,
-.container.gutter-24 .row > div,
-.container-fluid.gutter-24 .row > div {
-  padding-left: 24px;
-  padding-right: 24px;
-}
-.container.gutter-24 .row,
-.container-fluid.gutter-24 .row {
-  margin-left: -24px;
-  margin-right: -24px;
-}
-.container.gutter-27,
-.container-fluid.gutter-27,
-.container.gutter-27 .row > div,
-.container-fluid.gutter-27 .row > div {
-  padding-left: 27px;
-  padding-right: 27px;
-}
-.container.gutter-27 .row,
-.container-fluid.gutter-27 .row {
-  margin-left: -27px;
-  margin-right: -27px;
+@media (min-width: 1200px) {
+  .container.gutter-24,
+  .container-fluid.gutter-24,
+  .container.gutter-24 .row > div,
+  .container-fluid.gutter-24 .row > div {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .container.gutter-24 .row,
+  .container-fluid.gutter-24 .row {
+    margin-left: -24px;
+    margin-right: -24px;
+  }
+  .container.gutter-27,
+  .container-fluid.gutter-27,
+  .container.gutter-27 .row > div,
+  .container-fluid.gutter-27 .row > div {
+    padding-left: 27px;
+    padding-right: 27px;
+  }
+  .container.gutter-27 .row,
+  .container-fluid.gutter-27 .row {
+    margin-left: -27px;
+    margin-right: -27px;
+  }
 }
 .container .no-gutters,
 .container-fluid .no-gutters {
@@ -895,11 +917,21 @@ ul.check-list li:before {
   transform: rotate(-135deg);
   z-index: 2;
 }
+@media only screen and (max-width: 991px) {
+  .slider .slick-arrow.slick-prev {
+    left: 30px;
+  }
+}
 .slider .slick-arrow.slick-next {
   right: 260px;
   margin-top: -14px;
   top: 50%;
   transform: rotate(45deg);
+}
+@media only screen and (max-width: 991px) {
+  .slider .slick-arrow.slick-next {
+    right: 30px;
+  }
 }
 .slider .slick-dots {
   position: absolute;
@@ -1029,6 +1061,12 @@ ul.check-list li:before {
 #homepage > div > .container {
   max-width: 1225px;
 }
+@media only screen and (max-width: 991px) {
+  #homepage .slider img {
+    height: 300px;
+    object-fit: cover;
+  }
+}
 #homepage .content-1 .txt-img-under-wrapper {
   display: block;
   height: 100%;
@@ -1047,11 +1085,34 @@ ul.check-list li:before {
   bottom: 0;
   max-width: 473px;
 }
+@media only screen and (max-width: 991px) {
+  #homepage .content-1 .txt-img-under-wrapper .txt {
+    position: relative;
+    bottom: unset;
+    max-width: 75%;
+    margin-bottom: -100px;
+  }
+}
 #homepage .content-1 .txt-img-under-wrapper .img-under {
   float: right;
 }
+@media only screen and (max-width: 991px) {
+  #homepage .content-1 .txt-img-under-wrapper .img-under {
+    float: none;
+  }
+  #homepage .content-1 .txt-img-under-wrapper .img-under img {
+    height: 288px;
+    width: 100%;
+    object-fit: cover;
+  }
+}
 #homepage .content-2 {
   margin-top: 82px;
+}
+@media only screen and (max-width: 991px) {
+  #homepage .content-2 {
+    margin-top: 30px;
+  }
 }
 #homepage .content-2 .picto-2 {
   position: absolute;
@@ -1067,6 +1128,11 @@ ul.check-list li:before {
 #homepage .content-3 {
   margin-top: 97px;
 }
+@media only screen and (max-width: 991px) {
+  #homepage .content-3 {
+    margin-top: 30px;
+  }
+}
 #homepage .content-3 .content-3-title {
   position: relative;
 }
@@ -1080,6 +1146,11 @@ ul.check-list li:before {
 }
 #homepage .content-3 .text-mea h3 {
   font-size: 32px;
+}
+@media only screen and (max-width: 991px) {
+  #homepage .content-3 .text-mea h3 {
+    font-size: 25px;
+  }
 }
 #homepage .content-3 .text-mea h3:after {
   margin-bottom: 15px;
@@ -1097,6 +1168,13 @@ ul.check-list li:before {
 #homepage .content-3 .content-3-paragraph p {
   font-family: "Myriad Pro Regular", Arial, Helvetica, sans-serif;
   color: #434343;
+}
+@media only screen and (max-width: 991px) {
+  #homepage .picto-1,
+  #homepage .picto-2,
+  #homepage .picto-3 {
+    display: none;
+  }
 }
 .vue-recettes.page {
   padding-top: 50px;
@@ -1203,7 +1281,7 @@ ul.check-list li:before {
   width: 100%;
   object-fit: cover;
   height: 197px;
-  transition: transform 0.3s ease;
+  transition: transform .3s ease;
 }
 .recette-item img:hover {
   transform: scale(1.1);
@@ -1512,6 +1590,11 @@ ul.check-list li:before {
 .footer-wrapper .newsletter-wrapper {
   background-color: #741030;
   padding: 70px 100px;
+}
+@media only screen and (max-width: 991px) {
+  .footer-wrapper .newsletter-wrapper {
+    padding: 30px;
+  }
 }
 .footer-wrapper .newsletter-wrapper .text-mea h3 {
   font-size: 32px;

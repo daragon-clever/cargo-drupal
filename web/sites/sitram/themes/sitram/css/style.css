@@ -100,6 +100,9 @@ a:hover {
 .bg-white {
   background: white;
 }
+.bg-salmon {
+  background-color: #FDC2A1;
+}
 .pt-grey {
   position: relative;
 }
@@ -1683,4 +1686,281 @@ ul.check-list li:before {
   margin: 0 10px;
   display: inline-block;
   vertical-align: middle;
+}
+#storelocator-wrapper h1 {
+  line-height: 1;
+  margin: 0 0 30px 0;
+}
+#storelocator-wrapper .storelocator-ban {
+  text-align: center;
+}
+@media only screen and (max-width: 991px) {
+  #storelocator-wrapper .storelocator-ban {
+    padding-top: 30px;
+    min-height: inherit;
+  }
+}
+#storelocator-wrapper .storelocator-ban span.title {
+  font-size: 32px;
+  font-family: "Myriad Pro Regular", Arial, Helvetica, sans-serif;
+  display: block;
+  margin: 40px 0;
+}
+@media only screen and (max-width: 767px) {
+  #storelocator-wrapper .storelocator-ban span.title {
+    font-size: 18px;
+    margin: 15px 0;
+  }
+}
+#storelocator-wrapper .storelocator-ban .store-locator-response {
+  font-size: 15px;
+  line-height: 1.6;
+  text-align: left;
+  max-height: 702px;
+  overflow: auto;
+}
+@media only screen and (max-width: 991px) {
+  #storelocator-wrapper .storelocator-ban .store-locator-response {
+    max-height: 500px;
+  }
+  #storelocator-wrapper .storelocator-ban .store-locator-response > div {
+    margin: 30px 0;
+  }
+}
+@media only screen and (max-width: 767px) {
+  #storelocator-wrapper .storelocator-ban .store-locator-response {
+    max-height: 750px;
+  }
+  #storelocator-wrapper .storelocator-ban .store-locator-response > div {
+    border-bottom: 1px solid #939393;
+    margin: 0;
+    padding: 30px 0;
+  }
+}
+#storelocator-wrapper .storelocator-ban #storelocator-map {
+  min-height: 702px;
+}
+#storelocator-wrapper .storelocator-ban .store-locator-map-info-window {
+  color: black;
+}
+#storelocator-wrapper .storelocator-ban .offset-margin-bottom {
+  display: inline-block;
+  margin-bottom: -50px;
+}
+#storelocator-wrapper .storelocator-ban #js-search-around {
+  line-height: 97px;
+  display: inline-block;
+  vertical-align: middle;
+  background: #741030;
+  border-radius: 0 5px 5px 0;
+  margin-left: -10px;
+  z-index: 10;
+  position: relative;
+  padding: 0 30px;
+}
+#storelocator-wrapper .storelocator-ban .store-locator-field-wrapper {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+#storelocator-wrapper .storelocator-ban .store-locator-field-wrapper input {
+  border: none;
+  background: white;
+  display: inline-block;
+  text-align: left;
+  font-size: 32px;
+  line-height: 95px;
+  font-family: "Myriad Pro Regular", Arial, Helvetica, sans-serif;
+  color: #C7C7C7;
+  vertical-align: middle;
+  border-radius: 5px;
+  padding-left: 30px;
+  padding-right: 110px;
+  width: 700px;
+}
+#storelocator-wrapper .storelocator-ban .store-locator-field-wrapper input::placeholder {
+  opacity: 1;
+}
+@media only screen and (max-width: 767px) {
+  #storelocator-wrapper .storelocator-ban .store-locator-field-wrapper input {
+    font-size: 20px;
+  }
+}
+#storelocator-wrapper .storelocator-ban .store-locator-field-wrapper .btn.submit {
+  transition: opacity 0.3s;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  vertical-align: middle;
+  background-color: transparent;
+  position: absolute;
+  top: calc(50% - 26px);
+  right: 30px;
+  padding: 0;
+}
+#storelocator-wrapper .storelocator-ban .store-locator-field-wrapper .btn.submit:hover {
+  opacity: 0.7;
+}
+@media only screen and (max-width: 767px) {
+  #storelocator-wrapper .storelocator-ban .store-locator-field-wrapper .btn.submit img {
+    width: 25px;
+    height: auto;
+  }
+}
+#storelocator-wrapper .storelocator-ban .distance {
+  font-size: 32px;
+  font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
+  white-space: nowrap;
+  min-width: 218px;
+  text-align: center;
+}
+#storelocator-wrapper .storelocator-ban .distance span:before {
+  content: "";
+  background: url("../images/storelocator/storelocator-gps.svg") no-repeat center;
+  background-size: contain;
+  display: inline-block;
+  vertical-align: middle;
+  height: 45px;
+  width: 30px;
+  margin-right: 15px;
+}
+#storelocator-wrapper .storelocator-ban .info-mag {
+  border-left: 2px solid #434343;
+  padding-left: 30px;
+}
+#storelocator-wrapper .storelocator-ban .phone {
+  line-height: 1;
+}
+#storelocator-wrapper .storelocator-ban .phone span {
+  font-size: 24px;
+  font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
+  vertical-align: middle;
+}
+#storelocator-wrapper .storelocator-ban .phone span:before {
+  content: "";
+  background: url("../images/storelocator/storelocator-phone.svg") no-repeat center;
+  background-size: contain;
+  display: inline-block;
+  vertical-align: middle;
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+}
+#storelocator-wrapper .storelocator-ban .locate-me {
+  background: url('../images/storelocator/storelocator-location.svg') no-repeat center transparent;
+  color: #003663;
+  border: none;
+  vertical-align: middle;
+  transition: opacity 0.3s;
+  text-decoration: none;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  border-radius: 0;
+  font-size: 0;
+}
+#storelocator-wrapper .storelocator-ban .locate-me:hover {
+  opacity: 0.7;
+}
+#storelocator-wrapper .storelocator-ban .js-store-block {
+  padding: 20px 0;
+  border-bottom: 1px solid lightgrey;
+}
+#storelocator-wrapper .storelocator-ban .js-store-block .infos-wrapper {
+  display: flex;
+  align-items: center;
+}
+#storelocator-wrapper .storelocator-ban .js-store-block .infos-wrapper .title {
+  font-size: 27px;
+  text-transform: uppercase;
+  line-height: 1;
+  font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
+}
+#storelocator-wrapper .storelocator-ban .js-store-block .infos-wrapper .title a {
+  transition: opacity 0.3s;
+  text-decoration: none;
+  cursor: pointer;
+  color: #434343;
+}
+#storelocator-wrapper .storelocator-ban .js-store-block .infos-wrapper .title a:hover {
+  opacity: 0.7;
+}
+@media only screen and (max-width: 991px) {
+  #storelocator-wrapper .storelocator-ban .js-store-block .infos-wrapper .title {
+    font-size: 25px;
+  }
+}
+#storelocator-wrapper .storelocator-ban .js-store-block .infos-wrapper .address {
+  font-size: 16px;
+  font-family: "Myriad Pro Regular", Arial, Helvetica, sans-serif;
+}
+@media only screen and (max-width: 767px) {
+  #storelocator-wrapper .storelocator-ban .js-store-block .infos-wrapper {
+    width: 100%;
+    text-align: center;
+  }
+}
+#storelocator-wrapper .storelocator-ban .js-store-block .links {
+  float: right;
+}
+#storelocator-wrapper .storelocator-ban .js-store-block .links ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+#storelocator-wrapper .storelocator-ban .js-store-block .links ul a.go {
+  background: url('../images/storelocator/picto-go.png') no-repeat right 13px center #003663;
+  border-radius: 50px;
+  color: white;
+  font-size: 24px;
+  padding: 10px 60px 10px 20px;
+  display: inline-block;
+  transition: opacity 0.3s;
+  text-decoration: none;
+  cursor: pointer;
+}
+#storelocator-wrapper .storelocator-ban .js-store-block .links ul a.go:hover {
+  opacity: 0.7;
+}
+#storelocator-wrapper .storelocator-ban .js-store-block .links ul a.go:hover {
+  text-decoration: none;
+}
+@media only screen and (max-width: 767px) {
+  #storelocator-wrapper .storelocator-ban .js-store-block .links ul a.go {
+    font-size: 18px;
+    background-size: 15px;
+    padding: 7px 50px 7px 25px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  #storelocator-wrapper .storelocator-ban .js-store-block .links {
+    float: none;
+    text-align: center;
+    margin-top: 20px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  #storelocator-wrapper .storelocator-ban .js-store-block {
+    margin: 0;
+  }
+}
+#storelocator-wrapper .storelocator-ban #js-map-container > div {
+  min-height: 400px;
+  margin-top: 30px;
+}
+#storelocator-wrapper .storelocator-ban .store-locator-map-info-window {
+  padding: 15px;
+  font-family: "Myriad Pro", Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+#storelocator-wrapper .storelocator-ban .store-locator-map-info-window .title {
+  font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
+}
+#storelocator-wrapper .storelocator-ban .store-locator-map-info-window .opening-hours,
+#storelocator-wrapper .storelocator-ban .store-locator-map-info-window .to-store {
+  display: none;
 }

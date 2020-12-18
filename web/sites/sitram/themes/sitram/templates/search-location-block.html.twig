@@ -1,0 +1,105 @@
+{#
+/**
+* @file
+* Search location block
+*
+* @see template_preprocess_block()
+*
+* @ingroup themeable
+*/
+#}
+
+<div id="storelocator-wrapper">
+    <div id="ban-intro" class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-sm-6">
+                            <img class="img-fluid" src="/sites/sitram/themes/sitram/images/storelocator/ban.jpg"
+                                 alt=""/>
+                        </div>
+                        <div class="col col-sm-6 pl-5">
+                            <h1>{{ "Où acheter les produits Sitram ?"|trans }}</h1>
+                            <p>
+                                {{ "Pour vous aider à acheter vos produits Sitram, nous mettons à votre disposition cette page
+                                interactive qui vous permettra de trouver facilement le revendeur Sitram le plus proche de chez vous.
+                                Cependant, si vous cherchez un produit en particulier nous vous conseillons d’appeler votre magasin
+                                revendeur avant de vous déplacer afin de vous assurer de la disponibilité de votre produit. En effet, tous nos
+                                produits ne sont pas forcément disponibles en permanence dans tous les magasins revendeurs."|trans }}
+                            </p>
+                            <p>
+                                {{ "Si vous cherchez des pièces détachées ou de rechange, merci de consulter notre"|trans }}
+                                <a href="#">
+                                    {{ "page dédiée"|trans }}
+                                </a>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row storelocator-ban mt-5" id="js-store-locator">
+            <div class="col-12 no-padding bg-salmon">
+                <div>
+                    <span class="title">{{ "Entrez votre ville ou code postal"|trans }}</span>
+                    <div class="offset-margin-bottom box-shadow">
+                        <span class="store-locator-field-wrapper">
+                            <input
+                                    name="search-string"
+                                    placeholder="Indiquer une ville"
+                                    class="js-search-input"
+                                    id="js-search-input"
+                                    value="{{ query }}"
+                            />
+                            <input
+                                    name="preloaded-search-string"
+                                    type="hidden"
+                                    id="js-preloaded"
+                            />
+                            <button class="btn submit">
+                                <img src="/sites/sitram/themes/sitram/images/storelocator/storelocator-search.svg"
+                                     alt=""/>
+                            </button>
+                        </span>
+                        <span id="js-search-around">
+                            <button id="js-search-button" class="locate-me">Me localiser</button>
+                            <input name="search-radius" id="js-search-radius" type="hidden"
+                                   value="{{ searchFormDefaultRadius }}">
+                            <input name="offset-radius" type="hidden" id="js-offset-radius" value="0">
+                            <input name="search-geolocation" id="js-search-geolocation" type="hidden">
+                            <input name="store-detail-path" id="js-store-detail-path" type="hidden">
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="container my-5 pt-5">
+                    <div class="row">
+                        <div id="js-ajax-response" class="store-locator-response col-12 col-lg-6"></div>
+                        <div class="col-12 col-lg-6 d-none d-lg-block">
+                            <div id="storelocator-map" style="display: none"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-sm-8 offset-sm-2">
+                            <p class="my-5">
+                                {{ "Présente sur le marché depuis plus de 50 ans, la marque Sitram propose ses gammes
+                                grand public et professionnelles dans les principales enseignes de distribution
+                                françaises à travers plus de 7500 points de vente. Il est possible d’acheter les
+                                produits Sitram chez des revendeurs tels que des hypermarchés, supermarchés, et des
+                                magasins d’équipement de la maison. Par ailleurs, des opérations promotionnelles sont
+                                régulièrement mises en place entre Sitram et les grandes enseignes de distribution.
+                                Afin d’en être informé avant tout le monde, n’hésitez pas à vous inscrire à notre
+                                newsletter et à nous suivre sur les réseaux sociaux !" |trans }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

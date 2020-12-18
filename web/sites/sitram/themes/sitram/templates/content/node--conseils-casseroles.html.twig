@@ -1,5 +1,3 @@
-{% set cheminImage = 'sites/sitram/themes/sitram/images/TEMP/conseils-casseroles/' %}
-
 <div id="conseils-indiv" class="casseroles mb-5">
     <div id="ban-intro" class="container-fluid">
         <div class="row">
@@ -7,168 +5,70 @@
                 <div class="container">
                     <div class="row">
                         <div class="col ban">
-                            <img src="{{ cheminImage }}conseils-casseroles-004.jpg" alt="">
+                            {{ content.field_cons_casserole_banniere }}
                         </div>
                     </div>
                 </div>
 
+                <!-- INTRO -->
                 <div class="container">
                     <div class="row">
                         <div class="col text-center">
-                            <h1>COMMENT BIEN CHOISIR VOTRE CASSEROLE ?</h1>
+                            <h1>{{ content.field_cons_casserole_intro }}</h1>
                         </div>
                     </div>
                 </div>
 
                 <div class="container max-1065">
                     <div class="row">
-                        <div class="col-12 col-sm-6">
-                            <p>
-                                Permettant de réaliser une grande variété de recettes, la casserole fait partie des
-                                premiers ustensiles de cuisson que l’on choisit pour équiper sa cuisine. Chez Sitram,
-                                nous proposons différents modèles de casseroles et faitouts, pour répondre à tous les
-                                besoins et à toutes les préférences.
-                            </p>
-                        </div>
-                        <div class="col-12 col-sm-6">
-                            <p>
-                                Matériaux, tailles, revêtements et couleurs… Comment choisir la casserole idéale ? Quel
-                                matériau privilégier ? Et comment entretenir votre ustensile au quotidien ?
-                            </p>
-                        </div>
+                        {% for i in 0..1 %}
+                            <div class="col-12 col-sm-6">
+                                {{ content.field_cons_casserole_intro_txt[i] }}
+                            </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="container max-1350">
+        <!-- CONTENT 1 -->
         <div class="row my-5">
             <div class="col-12 col-md-5 text-right">
                 <span class="number">1</span>
                 <div class="max-455 pt-115">
-                    <h2 class="txt-blue">Quel type de casserole choisir ?</h2>
-                    <p>
-                        Équipée de bords droits et hauts, la casserole est un ustensile indispensable à toute batterie
-                        de cuisine. Pour être certain de choisir un modèle parfaitement adapté à vos besoins, commencez
-                        par réfléchir à son usage. Vous pourrez ainsi opter pour : • une casserole à bords droits : pour
-                        faire cuire des aliments dans un liquide (de l’eau ou un bouillon), ou réaliser des préparations
-                        au bain-marie ; • une casserole à bords verseurs : pour réaliser des sauces, des caramels et des
-                        coulis ; • un faitout (une casserole de grande capacité, équipée de deux anses) : pour faire
-                        cuire des grandes quantités (de pâtes notamment).
-                    </p>
+                    {{ content.field_cons_casserole_c1_txt }}
                 </div>
             </div>
             <div class="col-12 col-md-7 text-right">
-                <img src="{{ cheminImage }}conseils-casseroles-001.jpg" alt="">
+                {{ content.field_cons_casserole_c1_img }}
             </div>
         </div>
 
+        <!-- CONTENT 2 -->
         <div class="row align-items-center my-5">
             <div class="col">
                 <span class="number yellow">2</span>
                 <div class="pt-115 pl-85">
-                    <h2 class="txt-yellow">Quelle capacité ?</h2>
-                    <p>
-                        La casserole fait partie des ustensiles de cuisson les plus utilisés au quotidien. Sa taille
-                        doit être parfaitement adaptée à la composition de votre foyer. Elle doit en effet vous
-                        permettre de cuisiner facilement pour toute votre famille, et parfois pour vos amis, le temps
-                        d’une soirée ! Pour répondre à tous les besoins, la batterie de cuisine idéale comporte
-                        évidemment plusieurs casseroles et faitouts, de différentes tailles et capacités.
-                    </p>
-                    <p>
-                        Voici quelques
-                        informations indicatives, qui peuvent varier en fonction de la profondeur (hauteur) de la
-                        casserole :
-                    </p>
-
-                    <table class="yellow-table mb-4">
-                        <tr class="head">
-                            <td>Diamètre (cm)</td>
-                            <td>Convient pour</td>
-                            <td>Capacité indicative (litres)</td>
-                            <td>Ustensile</td>
-                        </tr>
-                        <tr>
-                            <td>14 cm</td>
-                            <td>1 personne</td>
-                            <td>1 L</td>
-                            <td>Casserole</td>
-                        </tr>
-                        <tr>
-                            <td>14 cm</td>
-                            <td>1 personne</td>
-                            <td>1 L</td>
-                            <td>Casserole</td>
-                        </tr>
-                        <tr>
-                            <td>14 cm</td>
-                            <td>1 personne</td>
-                            <td>1 L</td>
-                            <td>Casserole</td>
-                        </tr>
-                        <tr>
-                            <td>14 cm</td>
-                            <td>1 personne</td>
-                            <td>1 L</td>
-                            <td>Casserole</td>
-                        </tr>
-                        <tr>
-                            <td>14 cm</td>
-                            <td>1 personne</td>
-                            <td>1 L</td>
-                            <td>Casserole</td>
-                        </tr>
-                        <tr>
-                            <td>14 cm</td>
-                            <td>1 personne</td>
-                            <td>1 L</td>
-                            <td>Casserole</td>
-                        </tr>
-                    </table>
-
-                    <p>
-                        • Pour un foyer de 2 adultes ou 2 adultes et 1 enfant, vous pouvez par exemple choisir 1 poêle
-                        de 20 cm et 1 poêle de 24 cm. • Pour un foyer de 2 adultes et 2 enfants, vous pouvez opter pour
-                        1 poêle de 20 cm et 1 poêle de 28 cm. • Pour un foyer de 2 adultes et 3 enfants ou 4 adultes,
-                        vous pouvez investir dans 1 poêle de 20 cm, 1 poêle de 26 cm et 1 poêle de 32 cm SITRAM propose
-                        des solutions astucieuses pour optimiser la place dans vos placards. Équipées d’une poignée
-                        amovible, nos gammes Sitramovible ou Sitramulti permettent d’emboîter les poêles les unes dans
-                        les autres. Si le choix du diamètre de votre poêle varie en fonction du nombre de personnes qui
-                        composent votre foyer, il dépend également de votre équipement de cuisson.
-                    </p>
+                    {{ content.field_cons_casserole_c2_txt }}
                 </div>
             </div>
         </div>
 
+        <!-- CONTENT 3 -->
         <div class="row my-5">
             <div class="col-12 col-md-5 text-right">
                 <span class="number">3</span>
                 <div class="max-455 pt-115">
-                    <h2 class="txt-blue">Vérifier la compatibilité de la poêle</h2>
-                    <p>
-                        Toutes les poêles ne sont pas compatibles avec tous types de feux. Cela dépend de leur matériau
-                        principal de fabrication et de leur composition. Même si aujourd’hui la majorité de nos produits
-                        sont compatibles avec toutes les sources de chaleur, pensez toujours à contrôler les
-                        pictogrammes apposés sur chacun des ustensiles.
-                    </p>
+                    {{ content.field_cons_casserole_c3_txts[0] }}
                     <div class="svg-infos mt-4">
-                        <div class="row text-center">
-                            <div class="col-6 col-md-3">
-                                <img src="{{ cheminImage }}gaz.svg" alt="">
-                                <small>Gaz</small>
-                            </div>
-                            <div class="col-6 col-md-3">
-                                <img src="{{ cheminImage }}electrique.svg" alt="">
-                                <small>Plaque éléctrique</small>
-                            </div>
-                            <div class="col-6 col-md-3">
-                                <img src="{{ cheminImage }}vitro.svg" alt="">
-                                <small>Plaque vitrocéramique et halogène</small>
-                            </div>
-                            <div class="col-6 col-md-3">
-                                <img src="{{ cheminImage }}induction.svg" alt="">
-                                <small>Induction</small>
-                            </div>
+                        <div class="row text-center mt-5">
+                            {% for i in 0..3 %}
+                                <div class="col-6 col-md-3">
+                                    {{ content.field_cons_cas_c3_pictos_imgs[i] }}
+                                    <small>{{ content.field_cons_cas_c3_pictos_txts[i] }}</small>
+                                </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
@@ -176,27 +76,15 @@
             <div class="col-12 col-md-7">
                 <div class="bg-green d-flex h-100 mx-4">
                     <div class="m-auto text-white max-455">
-                        <p>
-                            Pour plus de polyvalence et moins de nettoyage, pourquoi ne pas investir dans une poêle qui
-                            passe au four ? Cela vous permet en effet de réaliser des recettes qui commencent sur le feu
-                            et qui terminent au four. Nos gammes à poignée amovible sont toutes compatibles avec une
-                            cuisson au four. Vous pouvez vérifier leur compatibilité grâce aux pictogrammes suivants,
-                            apposés sur les emballages de nos produits :
-                        </p>
+                        {{ content.field_cons_casserole_c3_txts[1] }}
                         <div class="svg-infos small mt-5">
                             <div class="row text-center text-white">
-                                <div class="col-6 col-md-4">
-                                    <img src="{{ cheminImage }}four-interdit.svg" alt="">
-                                    <small>Four interdit</small>
-                                </div>
-                                <div class="col-6 col-md-4">
-                                    <img src="{{ cheminImage }}max_180.svg" alt="">
-                                    <small>Passe au four, maximum 180°</small>
-                                </div>
-                                <div class="col-6 col-md-4">
-                                    <img src="{{ cheminImage }}max_250.svg" alt="">
-                                    <small>Passe au four, maximum 250°</small>
-                                </div>
+                                {% for i in 4..6 %}
+                                    <div class="col-6 col-md-4">
+                                        {{ content.field_cons_cas_c3_pictos_imgs[i] }}
+                                        <small>{{ content.field_cons_cas_c3_pictos_txts[i] }}</small>
+                                    </div>
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
@@ -204,16 +92,12 @@
             </div>
         </div>
 
+        <!-- CONTENT 4 -->
         <div class="row my-5">
             <div class="col-12">
                 <span class="number yellow">4</span>
                 <div class="pt-115 pl-85">
-                    <h2 class="txt-yellow">
-                        Quelles options ?
-                    </h2>
-                    <p>
-                        Chez Sitram, nous vous proposons plusieurs options pour vos casseroles :
-                    </p>
+                    {{ content.field_cons_casserole_c4_intro }}
                 </div>
             </div>
         </div>
@@ -222,31 +106,125 @@
     <div class="container max-1256">
         <div class="row my-5 no-gutters">
             <div class="col-12 col-sm bg-verylightgrey">
-                <img src="{{ cheminImage }}conseils-casseroles-003.jpg" alt="">
+                {{ content.field_cons_casserole_c4_imgs[0]}}
                 <div class="p-5">
-                    <p class="mb-5">
-                        Des manches amovibles : les casseroles peuvent être emboîtées les unes dans les autres, pour
-                        optimiser la place dans vos placards de cuisine ;
-                    </p>
-                    <p>
-                        Des couvercles en verre : cela vous permet de surveiller plus facilement le contenu intérieur de
-                        votre ustensile ;
-                    </p>
+                    {{ content.field_cons_casserole_c4_txts[0]}}
                 </div>
             </div>
             <div class="col-12 col-sm">
-                <img src="{{ cheminImage }}conseils-casseroles-002.jpg" alt="">
+                {{ content.field_cons_casserole_c4_imgs[1]}}
                 <div class="p-5">
-                    <p class="mb-5">
-                        Des manches amovibles : les casseroles peuvent être emboîtées les unes dans les autres, pour
-                        optimiser la place dans vos placards de cuisine ;
-                    </p>
-                    <p>
-                        Des couvercles en verre : cela vous permet de surveiller plus facilement le contenu intérieur de
-                        votre ustensile ;
-                    </p>
+                    {{ content.field_cons_casserole_c4_txts[1]}}
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="container max-1350">
+        <!-- CONTENT 5 / INTRO -->
+        <div class="row my-5">
+            <div class="col-12">
+                <span class="number">5</span>
+                <div class="pt-115 pl-85">
+                    {{ content.field_cons_casserole_c5_intro }}
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENT 5 / TABS -->
+        <div class="row my-5">
+            <div class="col">
+                <div class="pl-85">
+                    <ul class="nav mb-4 custom-tabs pl-0" id="pills-tab" role="tablist">
+                        {% for i in 0..1 %}
+                            <li class="nav-item">
+                                <a class="nav-link {% if i == 0 %}active{% endif %}"
+                                   id="pills-{{ i }}-tab"
+                                   data-toggle="pill"
+                                   href="#pills-{{ i }}"
+                                   role="tab"
+                                   aria-controls="pills-home"
+                                   aria-selected="true">
+                                    {{ content.field_cons_casserole_c5_tab_menu[i] }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    <div class="tab-content" id="pills-tabContent">
+
+                        <!-- TAB 1 -->
+                        <div class="tab-pane fade show active" id="pills-0" role="tabpanel"
+                             aria-labelledby="pills-1-tab">
+                            <div class="row my-5">
+                                {{ content.field_cons_casserole_c5_tab_tops[0] }}
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-lg-6 text-center">
+                                    <div class="max-455 mt-5">
+                                        <span class="picto-plus"></span>
+                                        {{ content.field_cons_casserole_c5_tab_txts[0] }}
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6 text-center">
+                                    <div class="max-455 mt-5">
+                                        <span class="picto-moins"></span>
+                                        {{ content.field_cons_casserole_c5_tab_txts[1] }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- TAB 2 -->
+                        <div class="tab-pane fade" id="pills-1" role="tabpanel"
+                             aria-labelledby="pills-2-tab">
+                            <div class="row my-5">
+                                {{ content.field_cons_casserole_c5_tab_tops[1] }}
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-lg-6 text-center">
+                                    <div class="max-455 mt-5">
+                                        <span class="picto-plus"></span>
+                                        {{ content.field_cons_casserole_c5_tab_txts[2] }}
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6 text-center">
+                                    <div class="max-455 mt-5">
+                                        <span class="picto-moins"></span>
+                                        {{ content.field_cons_casserole_c5_tab_txts[3] }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENT 5 / TEXT END -->
+        <div class="row my-5">
+            <div class="col">
+                <div class="pl-85">
+                    {{ content.field_cons_casserole_c5_outro }}
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENT 6 -->
+        <div class="row my-5">
+            <div class="col-12">
+                <span class="number yellow">6</span>
+                <div class="pt-115 pl-85">
+                    {{ content.field_cons_casserole_c6_txt }}
+                </div>
+                <div class="row my-5">
+                    <div class="col">
+                        <div class="bottom-highlight bg-green">
+                            {{ content.field_cons_casserole_c6_outro }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>

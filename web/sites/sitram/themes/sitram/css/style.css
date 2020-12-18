@@ -1386,7 +1386,8 @@ ul.check-list li:before {
   object-fit: cover;
   height: 227px;
 }
-#conseils-indiv.cocottes ul {
+#conseils-indiv.cocottes ul,
+#conseils-indiv.casseroles ul {
   padding-left: 15px;
 }
 #conseils-indiv.cocottes .yellow-table td,

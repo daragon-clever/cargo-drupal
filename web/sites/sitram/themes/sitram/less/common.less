@@ -88,6 +88,13 @@ h1, h2, h3, h4, h5 {
     max-width: 100%;
     height: auto;
   }
+
+  .col,
+  [class*="col-"] {
+    & > .container {
+      padding: 0;
+    }
+  }
 }
 
 a {
@@ -576,6 +583,10 @@ ul.check-list {
   position: relative;
   padding-top: 45px;
 
+  @media @tablet {
+    padding-top: 8px;
+  }
+
   &:before {
     content: "";
     height: 285px;
@@ -585,6 +596,10 @@ ul.check-list {
     position: absolute;
     top: 0;
     left: 0;
+
+    @media @tablet {
+      height: 70px;
+    }
   }
 
   .ban img {
@@ -598,6 +613,10 @@ ul.check-list {
 
     span {
       display: block;
+    }
+
+    @media @tablet {
+      margin: 15px 0;
     }
   }
 

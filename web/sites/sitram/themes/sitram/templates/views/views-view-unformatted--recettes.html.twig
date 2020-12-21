@@ -21,7 +21,7 @@
         {% for row in rows %}
             {%
                 set row_classes = [
-                default_row_class ? 'col-12 col-sm-6 col-lg-4',
+                default_row_class ? 'col-12 col-sm-6 col-lg-4 my-3 my-lg-0 mb-lg-3',
             ]
             %}
             <div{{ row.attributes.addClass(row_classes) }}>

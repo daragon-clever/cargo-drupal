@@ -1059,11 +1059,6 @@ ul.check-list {
     height: auto;
   }
 
-  .slick-left-arrow,
-  .slick-right-arrow {
-    display: none;
-  }
-
   .slick-arrow {
     position: absolute;
     padding: 0;
@@ -1079,8 +1074,8 @@ ul.check-list {
     cursor: pointer;
 
     &.slick-prev {
-      left: 260px;
       margin-top: -14px;
+      left: 0;
       top: 50%;
       transform: rotate(-135deg);
       z-index: 2;
@@ -1091,9 +1086,9 @@ ul.check-list {
     }
 
     &.slick-next {
-      right: 260px;
       margin-top: -14px;
       top: 50%;
+      right: 0;
       transform: rotate(45deg);
 
       @media @tablet {
@@ -1103,11 +1098,7 @@ ul.check-list {
   }
 
   .slick-dots {
-    position: absolute;
-    bottom: -3px;
     list-style-type: none;
-    left: 0;
-    right: 0;
     text-align: center;
 
     li {

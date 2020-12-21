@@ -89,6 +89,29 @@
   .slider {
     max-width: 1920px;
     margin: 0 auto;
+
+    .slick-next {
+      right: 260px;
+
+      @media @tablet {
+        right: 30px;
+      }
+    }
+
+    .slick-prev {
+      left: 260px;
+
+      @media @tablet {
+        left: 30px;
+      }
+    }
+
+    .slick-dots {
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      right: 0;
+    }
   }
 
   @media @tablet {
@@ -404,6 +427,18 @@
       width: 100%;
       object-fit: cover;
       max-height: 627px;
+
+      @media @tablet {
+        max-height: 400px;
+      }
+
+      @media @phone {
+        max-height: 160px;
+      }
+    }
+
+    @media @tablet {
+      background-size: 100% 60px;
     }
   }
 
@@ -426,21 +461,28 @@
         background: @primaryColor;
         color: white;
       }
+
+      @media @tablet {
+        margin: 8px;
+      }
     }
   }
 
   .picto-prepa {
     height: 30px;
+    width: 30px;
     background: url("../images/picto-prepa.svg") no-repeat center transparent;
   }
 
   .picto-cuisson {
     height: 30px;
+    width: 30px;
     background: url("../images/picto-cuisson.svg") no-repeat center transparent;
   }
 
   .picto-quantite {
     height: 30px;
+    width: 38px;
     background: url("../images/picto-quantite.svg") no-repeat center transparent;
   }
 
@@ -504,10 +546,19 @@
 
     img {
       max-width: 325px;
+      margin: 0 auto;
     }
 
     .slick-arrow {
       border-color: @primaryColor;
+    }
+
+    .slick-slide {
+      padding: 0 30px;
+
+      @media @tablet {
+        padding: 0;
+      }
     }
   }
 }

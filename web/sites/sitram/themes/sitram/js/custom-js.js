@@ -5,9 +5,7 @@ jQuery(document).ready(function ($) {
     });
 
     // CAROUSEL USTENSILES (page recettes)
-    $('.js-ustensiles-slider > div').slick({
-        dots: true
-    });
+    $('.js-ustensiles-slider > div').slick();
 
     // INSTAGRAM
     (function () {

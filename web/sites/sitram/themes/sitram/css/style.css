@@ -913,10 +913,6 @@ ul.check-list li:before {
   max-width: 100%;
   height: auto;
 }
-.slider .slick-left-arrow,
-.slider .slick-right-arrow {
-  display: none;
-}
 .slider .slick-arrow {
   position: absolute;
   padding: 0;
@@ -932,8 +928,8 @@ ul.check-list li:before {
   cursor: pointer;
 }
 .slider .slick-arrow.slick-prev {
-  left: 260px;
   margin-top: -14px;
+  left: 0;
   top: 50%;
   transform: rotate(-135deg);
   z-index: 2;
@@ -944,9 +940,9 @@ ul.check-list li:before {
   }
 }
 .slider .slick-arrow.slick-next {
-  right: 260px;
   margin-top: -14px;
   top: 50%;
+  right: 0;
   transform: rotate(45deg);
 }
 @media only screen and (max-width: 991px) {
@@ -955,11 +951,7 @@ ul.check-list li:before {
   }
 }
 .slider .slick-dots {
-  position: absolute;
-  bottom: -3px;
   list-style-type: none;
-  left: 0;
-  right: 0;
   text-align: center;
 }
 .slider .slick-dots li {
@@ -1085,6 +1077,28 @@ ul.check-list li:before {
 #homepage .slider {
   max-width: 1920px;
   margin: 0 auto;
+}
+#homepage .slider .slick-next {
+  right: 260px;
+}
+@media only screen and (max-width: 991px) {
+  #homepage .slider .slick-next {
+    right: 30px;
+  }
+}
+#homepage .slider .slick-prev {
+  left: 260px;
+}
+@media only screen and (max-width: 991px) {
+  #homepage .slider .slick-prev {
+    left: 30px;
+  }
+}
+#homepage .slider .slick-dots {
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  right: 0;
 }
 @media only screen and (max-width: 991px) {
   #homepage .slider img {
@@ -1342,6 +1356,21 @@ ul.check-list li:before {
   object-fit: cover;
   max-height: 627px;
 }
+@media only screen and (max-width: 991px) {
+  #recette-individuelle .bg-img-wood .ban img {
+    max-height: 400px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  #recette-individuelle .bg-img-wood .ban img {
+    max-height: 160px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  #recette-individuelle .bg-img-wood {
+    background-size: 100% 60px;
+  }
+}
 #recette-individuelle .pills span {
   font-size: 12px;
   display: inline-block;
@@ -1359,16 +1388,24 @@ ul.check-list li:before {
   background: #003663;
   color: white;
 }
+@media only screen and (max-width: 991px) {
+  #recette-individuelle .pills span {
+    margin: 8px;
+  }
+}
 #recette-individuelle .picto-prepa {
   height: 30px;
+  width: 30px;
   background: url("../images/picto-prepa.svg") no-repeat center transparent;
 }
 #recette-individuelle .picto-cuisson {
   height: 30px;
+  width: 30px;
   background: url("../images/picto-cuisson.svg") no-repeat center transparent;
 }
 #recette-individuelle .picto-quantite {
   height: 30px;
+  width: 38px;
   background: url("../images/picto-quantite.svg") no-repeat center transparent;
 }
 #recette-individuelle h3 {
@@ -1422,9 +1459,18 @@ ul.check-list li:before {
 }
 #recette-individuelle .slider img {
   max-width: 325px;
+  margin: 0 auto;
 }
 #recette-individuelle .slider .slick-arrow {
   border-color: #003663;
+}
+#recette-individuelle .slider .slick-slide {
+  padding: 0 30px;
+}
+@media only screen and (max-width: 991px) {
+  #recette-individuelle .slider .slick-slide {
+    padding: 0;
+  }
 }
 .titre-bloc-recettes {
   color: #003663;

@@ -346,6 +346,10 @@ a {
 .bg-img-blue {
   background: url("../images/background-blue.jpg") repeat-x top center transparent;
   background-size: auto 521px;
+
+  @media @tablet {
+    background-size: auto 250px;
+  }
 }
 
 .bg-img-wood-liseret {
@@ -509,6 +513,11 @@ ul.check-list {
     height: 100%;
     flex-direction: column;
     justify-content: space-around;
+
+    @media @tablet {
+      max-width: 100%;
+      margin: 0;
+    }
   }
 
   h3 {
@@ -518,6 +527,10 @@ ul.check-list {
       font-family: @MyriadSemibold;
       margin-bottom: 60px;
       margin-top: 0;
+
+      @media @tablet {
+        margin-bottom: 15px;
+      }
     }
   }
 
@@ -533,6 +546,13 @@ ul.check-list {
       position: absolute;
       left: -53px;
       top: 5px;
+    }
+  }
+
+  @media @tablet {
+    img {
+      margin: 15px auto;
+      display: block;
     }
   }
 }
@@ -651,6 +671,11 @@ ul.check-list {
         opacity: 0.8;
       }
     }
+
+    @media @tablet {
+      padding: 30px;
+      margin-left: 0;
+    }
   }
 
   &.box-shadow {
@@ -678,6 +703,10 @@ ul.check-list {
     &.orange {
       background: transparent linear-gradient(34deg, #E37F03 0%, #FAA501 100%) 0% 0% no-repeat padding-box;
     }
+
+    @media @tablet {
+      padding: 90px 30px 30px;
+    }
   }
 
   img {
@@ -685,6 +714,10 @@ ul.check-list {
     margin-top: 210px;
     margin-bottom: -130px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.16);
+
+    @media @tablet {
+      margin-top: 0;
+    }
   }
 
   h3 {
@@ -733,14 +766,25 @@ ul.check-list {
       left: 30px;
       border-radius: 2px;
     }
+
+    @media @tablet {
+      top: 0;
+      left: 0;
+      transform: scale(0.6);
+    }
   }
 
   .slick-next {
     right: 165px;
+
     &:after {
       transform: rotate(45deg);
       top: 24px;
       left: 15px;
+    }
+
+    @media @tablet {
+      left: 65px;
     }
   }
 }

@@ -1092,20 +1092,7 @@
       overflow: auto;
 
       @media @tablet {
-        max-height: 500px;
-
-        & > div {
-          margin: 30px 0;
-        }
-      }
-
-      @media @phone {
-        max-height: 750px;
-        & > div {
-          border-bottom: 1px solid #939393;
-          margin: 0;
-          padding: 30px 0;
-        }
+        max-height: unset;
       }
     }
 
@@ -1120,18 +1107,6 @@
     .offset-margin-bottom {
       display: inline-block;
       margin-bottom: -50px;
-    }
-
-    #js-search-around {
-      line-height: 97px;
-      display: inline-block;
-      vertical-align: middle;
-      background: @secondaryColor;
-      border-radius: 0 5px 5px 0;
-      margin-left: -10px;
-      z-index: 10;
-      position: relative;
-      padding: 0 30px;
     }
 
     .store-locator-field-wrapper {
@@ -1158,8 +1133,12 @@
           opacity: 1;
         }
 
-        @media @phone {
+        @media @tablet {
+          width: 100%;
+          line-height: 50px;
           font-size: 20px;
+          padding-right: 50px;
+          padding-left: 15px;
         }
       }
 
@@ -1174,12 +1153,32 @@
         right: 30px;
         padding: 0;
 
-        @media @phone {
+        @media @tablet {
+          top: calc(50% - 13px);
+          right: 15px;
+
           img {
             width: 25px;
             height: auto;
           }
         }
+      }
+    }
+
+    #js-search-around {
+      line-height: 97px;
+      display: inline-block;
+      vertical-align: middle;
+      background: @secondaryColor;
+      border-radius: 0 5px 5px 0;
+      margin-left: -10px;
+      z-index: 10;
+      position: relative;
+      padding: 0 30px;
+
+      @media @tablet {
+        line-height: 50px;
+        padding: 0 15px;
       }
     }
 
@@ -1199,6 +1198,18 @@
         height: 45px;
         width: 30px;
         margin-right: 15px;
+
+        @media @tablet {
+          height: 35px;
+          width: 20px;
+          display: block;
+          margin: 0 auto;
+        }
+      }
+
+      @media @tablet {
+        min-width: inherit;
+        font-size: 20px;
       }
     }
 
@@ -1241,6 +1252,10 @@
       display: inline-block;
       border-radius: 0;
       font-size: 0;
+
+      @media @tablet {
+        background-size: 30px;
+      }
     }
 
     .js-store-block {
@@ -1323,6 +1338,10 @@
     #js-map-container > div {
       min-height: 400px;
       margin-top: 30px;
+
+      @media @tablet {
+        margin: 15px 0;
+      }
     }
 
     .store-locator-map-info-window {

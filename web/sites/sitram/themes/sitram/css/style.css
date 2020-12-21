@@ -71,7 +71,7 @@ h4:last-child,
 h5:last-child {
   margin-bottom: 0;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
   h1,
   h2,
   h3,
@@ -1567,6 +1567,11 @@ ul.check-list li:before {
 #service-client .intro h1 {
   margin: 60px 0 25px;
   display: inline-block;
+}
+@media only screen and (max-width: 991px) {
+  #service-client .intro h1 {
+    margin: 30px 0;
+  }
 }
 #service-client .intro p {
   max-width: 525px;

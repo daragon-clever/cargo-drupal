@@ -908,6 +908,8 @@ ul.check-list li:before {
   font-style: italic;
 }
 .slider img {
+  width: 100%;
+  object-fit: cover;
   max-width: 100%;
   height: auto;
 }
@@ -1079,6 +1081,10 @@ ul.check-list li:before {
 }
 #homepage > div > .container {
   max-width: 1225px;
+}
+#homepage .slider {
+  max-width: 1920px;
+  margin: 0 auto;
 }
 @media only screen and (max-width: 991px) {
   #homepage .slider img {
@@ -1331,7 +1337,7 @@ ul.check-list li:before {
   background-position: top center;
   background-size: 100% 400px;
 }
-#recette-individuelle .bg-img-wood img {
+#recette-individuelle .bg-img-wood .ban img {
   width: 100%;
   object-fit: cover;
   max-height: 627px;

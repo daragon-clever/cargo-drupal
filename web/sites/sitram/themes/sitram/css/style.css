@@ -1880,20 +1880,7 @@ ul.check-list li:before {
 }
 @media only screen and (max-width: 991px) {
   #storelocator-wrapper .storelocator-ban .store-locator-response {
-    max-height: 500px;
-  }
-  #storelocator-wrapper .storelocator-ban .store-locator-response > div {
-    margin: 30px 0;
-  }
-}
-@media only screen and (max-width: 767px) {
-  #storelocator-wrapper .storelocator-ban .store-locator-response {
-    max-height: 750px;
-  }
-  #storelocator-wrapper .storelocator-ban .store-locator-response > div {
-    border-bottom: 1px solid #939393;
-    margin: 0;
-    padding: 30px 0;
+    max-height: unset;
   }
 }
 #storelocator-wrapper .storelocator-ban #storelocator-map {
@@ -1905,17 +1892,6 @@ ul.check-list li:before {
 #storelocator-wrapper .storelocator-ban .offset-margin-bottom {
   display: inline-block;
   margin-bottom: -50px;
-}
-#storelocator-wrapper .storelocator-ban #js-search-around {
-  line-height: 97px;
-  display: inline-block;
-  vertical-align: middle;
-  background: #741030;
-  border-radius: 0 5px 5px 0;
-  margin-left: -10px;
-  z-index: 10;
-  position: relative;
-  padding: 0 30px;
 }
 #storelocator-wrapper .storelocator-ban .store-locator-field-wrapper {
   display: inline-block;
@@ -1940,9 +1916,13 @@ ul.check-list li:before {
 #storelocator-wrapper .storelocator-ban .store-locator-field-wrapper input::placeholder {
   opacity: 1;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
   #storelocator-wrapper .storelocator-ban .store-locator-field-wrapper input {
+    width: 100%;
+    line-height: 50px;
     font-size: 20px;
+    padding-right: 50px;
+    padding-left: 15px;
   }
 }
 #storelocator-wrapper .storelocator-ban .store-locator-field-wrapper .btn.submit {
@@ -1960,10 +1940,31 @@ ul.check-list li:before {
 #storelocator-wrapper .storelocator-ban .store-locator-field-wrapper .btn.submit:hover {
   opacity: 0.7;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
+  #storelocator-wrapper .storelocator-ban .store-locator-field-wrapper .btn.submit {
+    top: calc(50% - 13px);
+    right: 15px;
+  }
   #storelocator-wrapper .storelocator-ban .store-locator-field-wrapper .btn.submit img {
     width: 25px;
     height: auto;
+  }
+}
+#storelocator-wrapper .storelocator-ban #js-search-around {
+  line-height: 97px;
+  display: inline-block;
+  vertical-align: middle;
+  background: #741030;
+  border-radius: 0 5px 5px 0;
+  margin-left: -10px;
+  z-index: 10;
+  position: relative;
+  padding: 0 30px;
+}
+@media only screen and (max-width: 991px) {
+  #storelocator-wrapper .storelocator-ban #js-search-around {
+    line-height: 50px;
+    padding: 0 15px;
   }
 }
 #storelocator-wrapper .storelocator-ban .distance {
@@ -1982,6 +1983,20 @@ ul.check-list li:before {
   height: 45px;
   width: 30px;
   margin-right: 15px;
+}
+@media only screen and (max-width: 991px) {
+  #storelocator-wrapper .storelocator-ban .distance span:before {
+    height: 35px;
+    width: 20px;
+    display: block;
+    margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 991px) {
+  #storelocator-wrapper .storelocator-ban .distance {
+    min-width: inherit;
+    font-size: 20px;
+  }
 }
 #storelocator-wrapper .storelocator-ban .info-mag {
   border-left: 2px solid #434343;
@@ -2023,6 +2038,11 @@ ul.check-list li:before {
 }
 #storelocator-wrapper .storelocator-ban .locate-me:hover {
   opacity: 0.7;
+}
+@media only screen and (max-width: 991px) {
+  #storelocator-wrapper .storelocator-ban .locate-me {
+    background-size: 30px;
+  }
 }
 #storelocator-wrapper .storelocator-ban .js-store-block {
   padding: 20px 0;
@@ -2109,6 +2129,11 @@ ul.check-list li:before {
 #storelocator-wrapper .storelocator-ban #js-map-container > div {
   min-height: 400px;
   margin-top: 30px;
+}
+@media only screen and (max-width: 991px) {
+  #storelocator-wrapper .storelocator-ban #js-map-container > div {
+    margin: 15px 0;
+  }
 }
 #storelocator-wrapper .storelocator-ban .store-locator-map-info-window {
   padding: 15px;

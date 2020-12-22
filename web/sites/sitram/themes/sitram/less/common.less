@@ -79,16 +79,16 @@ h1, h2, h3, h4, h5 {
   &:last-child {
     margin-bottom: 0;
   }
+}
 
-  @media @tablet {
+@media @tablet {
+  h1, h2, h3 {
     &,
     span {
       font-size: 30px;
     }
   }
-}
 
-@media @tablet {
   img {
     max-width: 100%;
     height: auto;
@@ -537,6 +537,12 @@ ul.check-list {
         margin-bottom: 15px;
       }
     }
+
+    @media @tablet {
+      br {
+        display: none;
+      }
+    }
   }
 
   .frise {
@@ -551,6 +557,10 @@ ul.check-list {
       position: absolute;
       left: -53px;
       top: 5px;
+    }
+
+    @media @tablet {
+      margin: 15px 0;
     }
   }
 

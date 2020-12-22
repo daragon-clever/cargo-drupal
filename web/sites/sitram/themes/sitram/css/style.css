@@ -80,17 +80,11 @@ h5:last-child {
   h1,
   h2,
   h3,
-  h4,
-  h5,
   h1 span,
   h2 span,
-  h3 span,
-  h4 span,
-  h5 span {
+  h3 span {
     font-size: 30px;
   }
-}
-@media only screen and (max-width: 991px) {
   img {
     max-width: 100%;
     height: auto;
@@ -477,6 +471,11 @@ ul.check-list li:before {
     margin-bottom: 15px;
   }
 }
+@media only screen and (max-width: 991px) {
+  .block-frise-verticale h3 br {
+    display: none;
+  }
+}
 .block-frise-verticale .frise {
   position: relative;
   margin: 0;
@@ -489,6 +488,11 @@ ul.check-list li:before {
   position: absolute;
   left: -53px;
   top: 5px;
+}
+@media only screen and (max-width: 991px) {
+  .block-frise-verticale .frise {
+    margin: 15px 0;
+  }
 }
 @media only screen and (max-width: 991px) {
   .block-frise-verticale img {

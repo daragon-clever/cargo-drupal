@@ -74,6 +74,27 @@ h1, h2, h3, h4, h5 {
   &:last-child {
     margin-bottom: 0;
   }
+
+  @media @tablet {
+    &,
+    span {
+      font-size: 30px;
+    }
+  }
+}
+
+@media @tablet {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .col,
+  [class*="col-"] {
+    & > .container {
+      padding: 0;
+    }
+  }
 }
 
 a {
@@ -325,6 +346,10 @@ a {
 .bg-img-blue {
   background: url("../images/background-blue.jpg") repeat-x top center transparent;
   background-size: auto 521px;
+
+  @media @tablet {
+    background-size: auto 250px;
+  }
 }
 
 .bg-img-wood-liseret {
@@ -368,31 +393,33 @@ a {
     margin-right: -@gutter
   }
 
-  &.gutter-24 {
-    @gutter: 24px;
-    &,
-    .row > div {
-      padding-left: @gutter;
-      padding-right: @gutter;
+  @media (min-width: 1200px) {
+    &.gutter-24 {
+      @gutter: 24px;
+      &,
+      .row > div {
+        padding-left: @gutter;
+        padding-right: @gutter;
+      }
+
+      .row {
+        margin-left: -@gutter;
+        margin-right: -@gutter
+      }
     }
 
-    .row {
-      margin-left: -@gutter;
-      margin-right: -@gutter
-    }
-  }
+    &.gutter-27 {
+      @gutter: 27px;
+      &,
+      .row > div {
+        padding-left: @gutter;
+        padding-right: @gutter;
+      }
 
-  &.gutter-27 {
-    @gutter: 27px;
-    &,
-    .row > div {
-      padding-left: @gutter;
-      padding-right: @gutter;
-    }
-
-    .row {
-      margin-left: -@gutter;
-      margin-right: -@gutter
+      .row {
+        margin-left: -@gutter;
+        margin-right: -@gutter
+      }
     }
   }
 
@@ -486,6 +513,11 @@ ul.check-list {
     height: 100%;
     flex-direction: column;
     justify-content: space-around;
+
+    @media @tablet {
+      max-width: 100%;
+      margin: 0;
+    }
   }
 
   h3 {
@@ -495,6 +527,10 @@ ul.check-list {
       font-family: @MyriadSemibold;
       margin-bottom: 60px;
       margin-top: 0;
+
+      @media @tablet {
+        margin-bottom: 15px;
+      }
     }
   }
 
@@ -510,6 +546,13 @@ ul.check-list {
       position: absolute;
       left: -53px;
       top: 5px;
+    }
+  }
+
+  @media @tablet {
+    img {
+      margin: 15px auto;
+      display: block;
     }
   }
 }
@@ -560,6 +603,10 @@ ul.check-list {
   position: relative;
   padding-top: 45px;
 
+  @media @tablet {
+    padding-top: 8px;
+  }
+
   &:before {
     content: "";
     height: 285px;
@@ -569,6 +616,10 @@ ul.check-list {
     position: absolute;
     top: 0;
     left: 0;
+
+    @media @tablet {
+      height: 70px;
+    }
   }
 
   .ban img {
@@ -582,6 +633,10 @@ ul.check-list {
 
     span {
       display: block;
+    }
+
+    @media @tablet {
+      margin: 15px 0;
     }
   }
 
@@ -616,6 +671,11 @@ ul.check-list {
         opacity: 0.8;
       }
     }
+
+    @media @tablet {
+      padding: 30px;
+      margin-left: 0;
+    }
   }
 
   &.box-shadow {
@@ -643,6 +703,10 @@ ul.check-list {
     &.orange {
       background: transparent linear-gradient(34deg, #E37F03 0%, #FAA501 100%) 0% 0% no-repeat padding-box;
     }
+
+    @media @tablet {
+      padding: 90px 30px 30px;
+    }
   }
 
   img {
@@ -650,6 +714,10 @@ ul.check-list {
     margin-top: 210px;
     margin-bottom: -130px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.16);
+
+    @media @tablet {
+      margin-top: 0;
+    }
   }
 
   h3 {
@@ -698,14 +766,25 @@ ul.check-list {
       left: 30px;
       border-radius: 2px;
     }
+
+    @media @tablet {
+      top: 0;
+      left: 0;
+      transform: scale(0.6);
+    }
   }
 
   .slick-next {
     right: 165px;
+
     &:after {
       transform: rotate(45deg);
       top: 24px;
       left: 15px;
+    }
+
+    @media @tablet {
+      left: 65px;
     }
   }
 }
@@ -1018,13 +1097,10 @@ ul.check-list {
 
 .slider {
   img {
+    width: 100%;
+    object-fit: cover;
     max-width: 100%;
     height: auto;
-  }
-
-  .slick-left-arrow,
-  .slick-right-arrow {
-    display: none;
   }
 
   .slick-arrow {
@@ -1042,27 +1118,31 @@ ul.check-list {
     cursor: pointer;
 
     &.slick-prev {
-      left: 260px;
       margin-top: -14px;
+      left: 0;
       top: 50%;
       transform: rotate(-135deg);
       z-index: 2;
+
+      @media @tablet {
+        left: 30px;
+      }
     }
 
     &.slick-next {
-      right: 260px;
       margin-top: -14px;
       top: 50%;
+      right: 0;
       transform: rotate(45deg);
+
+      @media @tablet {
+        right: 30px;
+      }
     }
   }
 
   .slick-dots {
-    position: absolute;
-    bottom: -3px;
     list-style-type: none;
-    left: 0;
-    right: 0;
     text-align: center;
 
     li {

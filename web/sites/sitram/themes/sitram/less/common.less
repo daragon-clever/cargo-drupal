@@ -59,9 +59,14 @@ p {
   margin-top: 0;
   margin-bottom: 30px;
 
+  @media @tablet {
+    margin-bottom: 20px;
+  }
+
   &:last-child {
     margin-bottom: 0;
   }
+
 }
 
 h1, h2, h3, h4, h5 {
@@ -625,6 +630,10 @@ ul.check-list {
   .ban img {
     max-width: 100%;
     height: auto;
+
+    @media @tablet {
+      margin: 0;
+    }
   }
 
   h1 {
@@ -689,11 +698,11 @@ ul.check-list {
     margin-bottom: 90px;
 
     &.blue {
-      background: transparent linear-gradient(32deg, #618D9F 0%, #88B0C1 100%) 0% 0% no-repeat padding-box;
+      background: transparent linear-gradient(32deg, #618D9F 0%, #88B0C1 100%) 0 0 no-repeat padding-box;
     }
 
     &.pink {
-      background: transparent linear-gradient(25deg, #E84E82 0%, #FF7CA8 100%) 0% 0% no-repeat padding-box;
+      background: transparent linear-gradient(25deg, #E84E82 0%, #FF7CA8 100%) 0 0 no-repeat padding-box;
     }
 
     &.flat-blue {
@@ -701,7 +710,7 @@ ul.check-list {
     }
 
     &.orange {
-      background: transparent linear-gradient(34deg, #E37F03 0%, #FAA501 100%) 0% 0% no-repeat padding-box;
+      background: transparent linear-gradient(34deg, #E37F03 0%, #FAA501 100%) 0 0 no-repeat padding-box;
     }
 
     @media @tablet {

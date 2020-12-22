@@ -82,11 +82,15 @@ h1, h2, h3, h4, h5 {
 }
 
 @media @tablet {
-  h1, h2, h3 {
+  h1, h2 {
     &,
     span {
       font-size: 30px;
     }
+  }
+
+  h3 {
+    font-size: 25px;
   }
 
   img {
@@ -377,6 +381,10 @@ a {
     top: 0;
     left: 150px;
     z-index: -1;
+
+    @media @tablet {
+      display: none;
+    }
   }
 }
 
@@ -891,9 +899,19 @@ ul.check-list {
     transition: opacity 0.3s ease-in-out;
     text-decoration: none;
 
+    @media @tablet {
+      font-size: 17px;
+      padding: 0;
+    }
+
     &.active {
       opacity: 1;
     }
+  }
+
+  @media @tablet {
+    display: flex;
+    justify-content: space-around;
   }
 
   .nav-item:last-child .nav-link {

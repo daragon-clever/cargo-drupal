@@ -79,11 +79,12 @@ h5:last-child {
 @media only screen and (max-width: 991px) {
   h1,
   h2,
-  h3,
   h1 span,
-  h2 span,
-  h3 span {
+  h2 span {
     font-size: 30px;
+  }
+  h3 {
+    font-size: 25px;
   }
   img {
     max-width: 100%;
@@ -335,6 +336,11 @@ a:hover {
   top: 0;
   left: 150px;
   z-index: -1;
+}
+@media only screen and (max-width: 991px) {
+  .bg-verylightgrey-right:after {
+    display: none;
+  }
 }
 .container {
   max-width: 1416px;
@@ -789,8 +795,20 @@ ul.check-list li:before {
   transition: opacity 0.3s ease-in-out;
   text-decoration: none;
 }
+@media only screen and (max-width: 991px) {
+  .custom-tabs .nav-link {
+    font-size: 17px;
+    padding: 0;
+  }
+}
 .custom-tabs .nav-link.active {
   opacity: 1;
+}
+@media only screen and (max-width: 991px) {
+  .custom-tabs {
+    display: flex;
+    justify-content: space-around;
+  }
 }
 .custom-tabs .nav-item:last-child .nav-link {
   padding-right: 0;

@@ -797,8 +797,9 @@
   }
 }
 
-// SERVICE CLIENT //
-#service-client {
+// SERVICE CLIENT + GARANTIES //
+#service-client,
+#garanties {
   .intro {
     h1 {
       margin: 60px 0 25px;
@@ -809,13 +810,17 @@
       }
     }
 
+    .bg-lightgrey {
+      margin: 0 -8px;
+    }
+  }
+}
+
+#service-client {
+  .intro {
     p {
       max-width: 525px;
       margin: 30px auto;
-    }
-
-    .bg-lightgrey {
-      margin: 0 -8px;
     }
   }
 
@@ -825,6 +830,34 @@
     @media (max-width: 1100px) {
       min-height: 300px;
     }
+  }
+}
+
+#garanties {
+  .intro h1 {
+    margin-top: 115px;
+
+    @media @tablet {
+      margin-top: 30px;
+    }
+  }
+
+  ul,
+  ol {
+    padding-left: 15px;
+  }
+
+  .content-3-exclus,
+  .content-4 p {
+    margin-bottom: 0;
+  }
+
+  .content-3-articles {
+    margin-top: 40px;
+  }
+
+  .bg-img-blue {
+    background-size: auto 297px;
   }
 }
 

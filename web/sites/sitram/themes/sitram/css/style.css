@@ -1076,6 +1076,7 @@ ul.check-list li:before {
     vertical-align: middle;
     top: 0;
     left: 0;
+    margin-bottom: 15px;
   }
   .picto-plus + h4,
   .picto-moins + h4 {
@@ -1807,6 +1808,13 @@ ul.check-list li:before {
 }
 #conseils-indiv.casseroles .yellow-table td {
   width: 25%;
+}
+@media only screen and (max-width: 991px) {
+  #conseils-indiv.casseroles .yellow-table td {
+    display: table-cell;
+    width: auto;
+    white-space: nowrap;
+  }
 }
 #marque h1 span {
   display: block;

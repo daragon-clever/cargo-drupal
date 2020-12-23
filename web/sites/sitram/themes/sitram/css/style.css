@@ -1403,7 +1403,7 @@ ul.check-list li:before {
   width: 100%;
   object-fit: cover;
   height: 197px;
-  transition: transform .3s ease;
+  transition: transform 0.3s ease;
 }
 .recette-item img:hover {
   transform: scale(1.1);
@@ -1637,11 +1637,13 @@ ul.check-list li:before {
   height: 227px;
 }
 #conseils-indiv.cocottes ul,
-#conseils-indiv.casseroles ul {
+#conseils-indiv.casseroles ul,
+#conseils-indiv.autocuiseurs ul {
   padding-left: 15px;
 }
 #conseils-indiv.cocottes .yellow-table td,
-#conseils-indiv.casseroles .yellow-table td {
+#conseils-indiv.casseroles .yellow-table td,
+#conseils-indiv.autocuiseurs .yellow-table td {
   background: white;
   color: #434343;
   text-align: center;
@@ -1650,9 +1652,39 @@ ul.check-list li:before {
   font-family: "Myriad Pro Regular", Arial, Helvetica, sans-serif;
 }
 #conseils-indiv.cocottes .yellow-table tr.head > td,
-#conseils-indiv.casseroles .yellow-table tr.head > td {
+#conseils-indiv.casseroles .yellow-table tr.head > td,
+#conseils-indiv.autocuiseurs .yellow-table tr.head > td {
   background: #F9AB00;
   color: white;
+}
+#conseils-indiv.autocuiseurs .yellow-table td {
+  width: initial;
+}
+#conseils-indiv.autocuiseurs .svg-infos img {
+  width: 95px;
+  height: 95px;
+}
+#conseils-indiv.autocuiseurs .slick-slider {
+  padding-bottom: 0;
+}
+#conseils-indiv.autocuiseurs .slick-slider .slick-arrow,
+#conseils-indiv.autocuiseurs .slick-slider .slick-arrow:after {
+  border-color: #F9AB00;
+}
+#conseils-indiv.autocuiseurs .slick-slider .nb {
+  float: none;
+  background: #F9AB00;
+}
+#conseils-indiv.autocuiseurs .slick-slider img {
+  max-width: 100%;
+  height: auto;
+}
+#conseils-indiv.autocuiseurs .content4-images img {
+  max-width: 100%;
+  height: auto;
+}
+#conseils-indiv.autocuiseurs .c4-intro {
+  margin: 20px 0;
 }
 #conseils-indiv.casseroles .yellow-table td {
   width: 25%;

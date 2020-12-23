@@ -55,6 +55,11 @@ p {
 p:last-child {
   margin-bottom: 0;
 }
+@media only screen and (max-width: 991px) {
+  ul {
+    padding-left: 15px;
+  }
+}
 h1,
 h2,
 h3,
@@ -851,8 +856,11 @@ ul.check-list li:before {
 }
 @media only screen and (max-width: 991px) {
   .custom-tabs {
-    display: flex;
-    justify-content: space-around;
+    display: block;
+  }
+  .custom-tabs .nav-item {
+    display: block;
+    margin: 15px 0;
   }
 }
 .custom-tabs .nav-item:last-child .nav-link {
@@ -899,6 +907,11 @@ ul.check-list li:before {
   display: inline-block;
   position: relative;
 }
+@media only screen and (max-width: 991px) {
+  .max-455 {
+    max-width: 100%;
+  }
+}
 .number {
   height: 100px;
   width: 100px;
@@ -916,11 +929,33 @@ ul.check-list li:before {
 .number.yellow {
   background: #F9AB00;
 }
+@media only screen and (max-width: 991px) {
+  .number {
+    position: relative;
+    height: 60px;
+    width: 60px;
+    line-height: 60px;
+    font-size: 27px;
+    left: 0;
+    margin-bottom: 15px;
+    margin-top: 30px;
+  }
+}
 .pt-115 {
   padding-top: 115px;
 }
+@media only screen and (max-width: 991px) {
+  .pt-115 {
+    padding-top: 0;
+  }
+}
 .pl-85 {
   padding-left: 85px;
+}
+@media only screen and (max-width: 991px) {
+  .pl-85 {
+    padding-left: 0;
+  }
 }
 .tableau-presentation {
   overflow: hidden;
@@ -939,6 +974,13 @@ ul.check-list li:before {
   width: 100%;
   object-fit: contain;
   padding: 15px;
+}
+@media only screen and (max-width: 991px) {
+  .tableau-presentation img {
+    height: auto;
+    max-width: 160px;
+    margin: auto;
+  }
 }
 .tableau-presentation .heading {
   background: #F9AB00;
@@ -983,6 +1025,11 @@ ul.check-list li:before {
   bottom: -35px;
   left: 0;
 }
+@media only screen and (max-width: 991px) {
+  .svg-ail {
+    display: none;
+  }
+}
 .svg-fleur {
   background: url("../images/img-feuille.svg") no-repeat center transparent;
   height: 175px;
@@ -991,6 +1038,11 @@ ul.check-list li:before {
   position: absolute;
   bottom: -115px;
   right: 30px;
+}
+@media only screen and (max-width: 991px) {
+  .svg-fleur {
+    display: none;
+  }
 }
 .svg-infos small {
   font-size: 10px;
@@ -1015,6 +1067,22 @@ ul.check-list li:before {
   position: absolute;
   top: -16px;
   left: -60px;
+}
+@media only screen and (max-width: 991px) {
+  .picto-plus,
+  .picto-moins {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    top: 0;
+    left: 0;
+  }
+  .picto-plus + h4,
+  .picto-moins + h4 {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 0 15px;
+  }
 }
 .picto-moins {
   background: url("../images/icon_feather-minus-circle.svg") no-repeat center / cover transparent;
@@ -1448,7 +1516,7 @@ ul.check-list li:before {
   width: 100%;
   object-fit: cover;
   height: 197px;
-  transition: transform 0.3s ease;
+  transition: transform .3s ease;
 }
 .recette-item img:hover {
   transform: scale(1.1);
@@ -1680,6 +1748,12 @@ ul.check-list li:before {
   width: 100%;
   object-fit: cover;
   height: 227px;
+}
+@media only screen and (max-width: 991px) {
+  #conseils-indiv .img-max-wrapper img {
+    height: 125px;
+    margin: 8px 0;
+  }
 }
 #conseils-indiv.cocottes ul,
 #conseils-indiv.casseroles ul,

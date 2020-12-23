@@ -625,22 +625,22 @@ ul.check-list li:before {
   margin-bottom: 90px;
 }
 .colored-slideshow .item.flat-blue {
-  background: #718CB3 0 0 no-repeat padding-box;
+  background-color: #718CB3;
 }
 .colored-slideshow .item.flat-sepia {
-  background: #E19740 0 0 no-repeat padding-box;
+  background-color: #E19740;
 }
 .colored-slideshow .item.flat-red {
-  background: #C23C43 0 0 no-repeat padding-box;
+  background-color: #C23C43;
 }
 .colored-slideshow .item.flat-orange {
-  background: #E67A20 0 0 no-repeat padding-box;
+  background-color: #E67A20;
 }
 .colored-slideshow .item.flat-yellow {
-  background: #E6A225 0 0 no-repeat padding-box;
+  background-color: #E6A225;
 }
 .colored-slideshow .item.flat-cyan {
-  background: #7BAEBA 0 0 no-repeat padding-box;
+  background-color: #7BAEBA;
 }
 .colored-slideshow .item.blue {
   background: transparent linear-gradient(32deg, #618D9F 0%, #88B0C1 100%) 0 0 no-repeat padding-box;

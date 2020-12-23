@@ -1806,11 +1806,13 @@ ul.check-list li:before {
 #conseils-indiv.autocuiseurs .c4-intro {
   margin: 20px 0;
 }
-#conseils-indiv.casseroles .yellow-table td {
+#conseils-indiv.casseroles .yellow-table td,
+#conseils-indiv.cocottes .yellow-table td {
   width: 25%;
 }
 @media only screen and (max-width: 991px) {
-  #conseils-indiv.casseroles .yellow-table td {
+  #conseils-indiv.casseroles .yellow-table td,
+  #conseils-indiv.cocottes .yellow-table td {
     display: table-cell;
     width: auto;
     white-space: nowrap;

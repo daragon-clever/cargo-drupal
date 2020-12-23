@@ -69,6 +69,12 @@ p {
 
 }
 
+ul {
+  @media @tablet {
+    padding-left: 15px;
+  }
+}
+
 h1, h2, h3, h4, h5 {
   margin: 25px 0;
 
@@ -970,8 +976,12 @@ ul.check-list {
   }
 
   @media @tablet {
-    display: flex;
-    justify-content: space-around;
+    display: block;
+
+    .nav-item {
+      display: block;
+      margin: 15px 0;
+    }
   }
 
   .nav-item:last-child .nav-link {
@@ -1028,6 +1038,10 @@ ul.check-list {
   text-align: left;
   display: inline-block;
   position: relative;
+
+  @media @tablet {
+    max-width: 100%;
+  }
 }
 
 .number {
@@ -1047,14 +1061,33 @@ ul.check-list {
   &.yellow {
     background: @yellow;
   }
+
+  @media @tablet {
+    position: relative;
+    height: 60px;
+    width: 60px;
+    line-height: 60px;
+    font-size: 27px;
+    left: 0;
+    margin-bottom: 15px;
+    margin-top: 30px;
+  }
 }
 
 .pt-115 {
   padding-top: 115px;
+
+  @media @tablet {
+    padding-top: 0;
+  }
 }
 
 .pl-85 {
   padding-left: 85px;
+
+  @media @tablet {
+    padding-left: 0;
+  }
 }
 
 .tableau-presentation {
@@ -1075,6 +1108,12 @@ ul.check-list {
     width: 100%;
     object-fit: contain;
     padding: 15px;
+
+    @media @tablet {
+      height: auto;
+      max-width: 160px;
+      margin: auto;
+    }
   }
 
   .heading {
@@ -1124,6 +1163,10 @@ ul.check-list {
   position: absolute;
   bottom: -35px;
   left: 0;
+
+  @media @tablet {
+    display: none;
+  }
 }
 
 .svg-fleur {
@@ -1134,6 +1177,10 @@ ul.check-list {
   position: absolute;
   bottom: -115px;
   right: 30px;
+
+  @media @tablet {
+    display: none;
+  }
 }
 
 .svg-infos {
@@ -1166,6 +1213,20 @@ ul.check-list {
   position: absolute;
   top: -16px;
   left: -60px;
+
+  @media @tablet {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    top: 0;
+    left: 0;
+
+    & + h4 {
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 0 0 15px;
+    }
+  }
 }
 
 .picto-moins {

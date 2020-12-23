@@ -739,6 +739,12 @@
     .yellow-table {
       td {
         width: 25%;
+
+        @media @tablet {
+          display: table-cell;
+          width: auto;
+          white-space: nowrap;
+        }
       }
     }
   }

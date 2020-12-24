@@ -1,0 +1,150 @@
+<div id="consignes-utilisation">
+    <!-- BANNER -->
+    <div id="ban-intro" class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            {{ content.field_consignes_banner }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- INTRO -->
+    <div class="container max-850 my-5">
+        <div class="row">
+            <div class="col">
+                <h1 class="text-center">{{ content.field_consignes_intro_title }}</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container max-550">
+        <div class="row">
+            <div class="col">
+                 {{ content.field_consignes_intro_txt }}
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- CONTENT 1 -->
+        <div class="row mt-5 mb-4">
+            <div class="col">
+                 {{ content.field_consignes_c1_intro }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-6 bg-verylightgrey">
+                <div class="p-3 p-lg-5">
+                     {{ content.field_consignes_c1_txts[0] }}
+                </div>
+            </div>
+            <div class="col-12 col-sm-6">
+                <div class="p-3 p-lg-5">
+                     {{ content.field_consignes_c1_txts[1] }}
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5 mb-3">
+            <div class="col text-center">
+                 {{ content.field_consignes_c1_outro }}
+            </div>
+        </div>
+
+        <!-- CONTENT 2 -->
+        <div class="row">
+            <div class="col">
+                {% for i in 0..7 %}
+                    <a href="{{ content.field_consignes_notices[0]}}" onclick="return confirm('Voulez-vous télécharger cette notice?');" download>
+                        {{ content.field_consignes_c2_imgs[i] }}
+                    </a>
+                    {# @todo CHAMPS FICHIERS #}
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- CONTENT 3-->
+        <div class="row mt-5">
+            <div class="col">
+                 {{ content.field_consignes_c3_txt }}
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENT 4 -->
+    <div class="container-fluid bg-img-blue mt-5 pt-5">
+        <div class="row">
+            <div class="col">
+                <div class="container max-1350 bg-white">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="p-3 pt-lg-5 pl-lg-5 pr-lg-5">
+                                <h2 class="txt-blue">{{ content.field_consignes_c4_title }}</h2>
+                                <div class="row mt-5">
+                                    <div class="col-12 col-md-6">
+                                        <div class="pr-4">
+                                             {{ content.field_consignes_c4_txts[0] }}
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                         {{ content.field_consignes_c4_txts[1] }}
+                                    </div>
+                                </div>
+                                <div class="row mt-4">
+                                    <div class="col-12">
+                                         {{ content.field_consignes_c4_txts[2] }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENT 5 -->
+    <div class="container-fluid bg-verylightgrey content-5">
+        <div class="row">
+            <div class="col">
+                <div class="container max-1350">
+                    <div class="row">
+                        <div class="col">
+                            <div class="p-3 pt-lg-4 pl-lg-5 pr-lg-5">
+                                 {{ content.field_consignes_c5_txt }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENT 6 -->
+    <div class="container max-1350 mt-3 mb-5 content-6">
+        <div class="row">
+            <div class="col">
+                <div class="pl-3 pl-lg-5">
+                    <h3 class="txt-blue">{{ content.field_consignes_c6_title }}</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-6">
+                <div class="pl-3 pl-lg-5">
+                     {{ content.field_consignes_c6_txts[0] }}
+                </div>
+            </div>
+            <div class="col-12 col-sm-6">
+                <div class="pl-3 pl-lg-5">
+                 {{ content.field_consignes_c6_txts[1] }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

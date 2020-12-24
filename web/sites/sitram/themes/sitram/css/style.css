@@ -1577,7 +1577,7 @@ ul.check-list li:before {
   width: 100%;
   object-fit: cover;
   height: 197px;
-  transition: transform .3s ease;
+  transition: transform 0.3s ease;
 }
 .recette-item img:hover {
   transform: scale(1.1);
@@ -1971,6 +1971,38 @@ ul.check-list li:before {
 }
 #garanties .bg-img-blue {
   background-size: auto 297px;
+}
+#consignes-utilisation h1 {
+  line-height: 1;
+}
+#consignes-utilisation .max-850 {
+  max-width: 850px;
+}
+#consignes-utilisation .max-550 {
+  max-width: 550px;
+}
+#consignes-utilisation p.mt-85px {
+  margin-top: 85px;
+}
+#consignes-utilisation ul {
+  padding-left: 15px;
+}
+#consignes-utilisation .bg-img-blue {
+  background-size: auto 297px;
+}
+@media only screen and (max-width: 991px) {
+  #consignes-utilisation .bg-img-blue {
+    background-size: auto 150px;
+  }
+}
+#consignes-utilisation .content-5 p,
+#consignes-utilisation .content-6 p {
+  margin-top: 30px;
+  margin-bottom: 0;
+}
+#consignes-utilisation .content-5 ul,
+#consignes-utilisation .content-6 ul {
+  margin-top: 0;
 }
 #produit img {
   max-width: 100%;

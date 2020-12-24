@@ -1781,8 +1781,9 @@ ul.check-list li:before {
   width: initial;
 }
 #conseils-indiv.autocuiseurs .svg-infos img {
-  width: 95px;
-  height: 95px;
+  width: 100%;
+  max-width: 95px;
+  height: auto;
 }
 #conseils-indiv.autocuiseurs .slick-slider {
   padding-bottom: 0;
@@ -1807,12 +1808,14 @@ ul.check-list li:before {
   margin: 20px 0;
 }
 #conseils-indiv.casseroles .yellow-table td,
-#conseils-indiv.cocottes .yellow-table td {
+#conseils-indiv.cocottes .yellow-table td,
+#conseils-indiv.autocuiseurs .yellow-table td {
   width: 25%;
 }
 @media only screen and (max-width: 991px) {
   #conseils-indiv.casseroles .yellow-table td,
-  #conseils-indiv.cocottes .yellow-table td {
+  #conseils-indiv.cocottes .yellow-table td,
+  #conseils-indiv.autocuiseurs .yellow-table td {
     display: table-cell;
     width: auto;
     white-space: nowrap;

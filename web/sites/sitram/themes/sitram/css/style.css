@@ -1076,6 +1076,7 @@ ul.check-list li:before {
     vertical-align: middle;
     top: 0;
     left: 0;
+    margin-bottom: 15px;
   }
   .picto-plus + h4,
   .picto-moins + h4 {
@@ -1414,6 +1415,66 @@ ul.check-list li:before {
 .vue-recettes.page {
   padding-top: 50px;
   padding-bottom: 50px;
+}
+.vue-recettes .pager__items {
+  padding: 0;
+  margin: 15px 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  list-style: none;
+}
+.vue-recettes .pager__item {
+  margin: 0 8px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.5;
+  transition: opacity 0.3s ease-in-out;
+}
+.vue-recettes .pager__item a {
+  text-decoration: none;
+  font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  color: #434343;
+}
+.vue-recettes .pager__item a:before {
+  content: "";
+  display: block;
+  margin: 0 auto 5px;
+  height: 8px;
+  width: 8px;
+  background: #434343;
+  border-radius: 100%;
+}
+.vue-recettes .pager__item:hover {
+  opacity: 1;
+}
+.vue-recettes .pager__item.is-active {
+  opacity: 1;
+}
+.vue-recettes .pager__item--next a,
+.vue-recettes .pager__item--previous a {
+  font-size: 0;
+}
+.vue-recettes .pager__item--next a:before,
+.vue-recettes .pager__item--previous a:before {
+  content: "";
+  border-radius: 0;
+  background: transparent;
+  margin: 0;
+  display: block;
+  border-top: 3px solid;
+  border-right: 3px solid;
+  transform: rotate(45deg);
+}
+.vue-recettes .pager__item--previous a:before {
+  transform: rotate(-135deg);
+}
+.vue-recettes .pager__item--last,
+.vue-recettes .pager__item--first {
+  display: none;
 }
 .vue-recettes.page,
 .entete-recettes,
@@ -1780,8 +1841,9 @@ ul.check-list li:before {
   width: initial;
 }
 #conseils-indiv.autocuiseurs .svg-infos img {
-  width: 95px;
-  height: 95px;
+  width: 100%;
+  max-width: 95px;
+  height: auto;
 }
 #conseils-indiv.autocuiseurs .slick-slider {
   padding-bottom: 0;
@@ -1805,8 +1867,19 @@ ul.check-list li:before {
 #conseils-indiv.autocuiseurs .c4-intro {
   margin: 20px 0;
 }
-#conseils-indiv.casseroles .yellow-table td {
+#conseils-indiv.casseroles .yellow-table td,
+#conseils-indiv.cocottes .yellow-table td,
+#conseils-indiv.autocuiseurs .yellow-table td {
   width: 25%;
+}
+@media only screen and (max-width: 991px) {
+  #conseils-indiv.casseroles .yellow-table td,
+  #conseils-indiv.cocottes .yellow-table td,
+  #conseils-indiv.autocuiseurs .yellow-table td {
+    display: table-cell;
+    width: auto;
+    white-space: nowrap;
+  }
 }
 #marque h1 span {
   display: block;

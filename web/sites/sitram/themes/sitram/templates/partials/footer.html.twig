@@ -1,0 +1,8 @@
+{% if page.footer %}
+    {{ page.footer }}
+    <div class="copyright text-center bg-blue">
+        {{ '© ' }}{{ "now"|date('Y') }}{{ ' Tous droits réservés '|trans }}<a
+                href="/service-client/mentions-legales">{{ ' - Mentions légales '|trans }}</a><a
+                href="/service-client/confidentialite">{{ ' - Politique de confidentialité '|trans }}</a>
+    </div>
+{% endif %}

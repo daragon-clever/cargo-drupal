@@ -1,23 +1,18 @@
 <div class="header-wrapper">
-  <!-- Header -->
-  {% include directory ~ '/templates/partials/header.html.twig' %}
+    <!-- Header -->
+    {% include directory ~ '/templates/partials/header.html.twig' %}
 </div>
 
 <div class="content">
-  {% if page.highlighted %}
-    <div class="message-site">
-      {{ page.highlighted }}
-    </div>
-  {% endif %}
-  {% if page.content %}
-    {{ page.content }}
-  {% endif %}
+    {% if page.highlighted %}
+        <div class="message-site">
+            {{ page.highlighted }}
+        </div>
+    {% endif %}
+    {% if page.content %}
+        {{ page.content }}
+    {% endif %}
 </div>
 
 <!-- Footer -->
-{% if page.footer %}
-  {{ page.footer }}
-  <div class="copyright text-center bg-blue">
-    {{ '© ' }}{{ "now"|date('Y') }}{{ ' Tous droits réservés - Mentions légales - Politique de confidentialité'|trans }}
-  </div>
-{% endif %}
+{% include directory ~ '/templates/partials/footer.html.twig' %}

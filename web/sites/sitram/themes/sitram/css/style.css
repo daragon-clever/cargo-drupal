@@ -2272,6 +2272,10 @@ ul.check-list li:before {
   line-height: 30px;
   font-family: "Myriad Pro Regular", Arial, Helvetica, sans-serif;
 }
+.copyright a {
+  color: white;
+  text-decoration: none;
+}
 .breadcrumb-sitram ul {
   margin: 0;
   padding: 0;

@@ -6,7 +6,7 @@
 // HEADER //
 .header-wrapper {
   header {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
 
     .header-section {
       display: flex;
@@ -75,6 +75,107 @@
       &:hover {
         border-bottom: none;
         color: white;
+      }
+    }
+  }
+
+  // RESPONSIVE //
+  @media @tablet {
+    header {
+      padding: 15px 0;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+      z-index: 100;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: white;
+    }
+
+    .js-resp-menu {
+      display: block;
+      height: 40px;
+      width: 40px;
+      position: absolute;
+      top: calc(50% - 20px);
+      right: 15px;
+      z-index: 10;
+      border-radius: 100%;
+      text-align: center;
+      cursor: pointer;
+      .dimOpacityOnHover(0.8);
+
+      span {
+        position: absolute;
+        height: 3px;
+        background: @primaryColor;
+        width: 25px;
+        display: block;
+        transform-origin: center;
+        transition: all 0.3s ease-in-out;
+        left: 10px;
+        opacity: 1;
+        top: 10px;
+
+        &:nth-child(2) {
+          top: 18px;
+        }
+
+        &:nth-child(3) {
+          top: 26px;
+        }
+      }
+
+      &.active {
+        span {
+          &:first-child {
+            top: 30px;
+            opacity: 0;
+          }
+
+          &:nth-child(2) {
+            transform: rotate(45deg);
+          }
+
+          &:nth-child(3) {
+            top: 18px;
+            transform: rotate(-45deg);
+          }
+        }
+      }
+    }
+
+    .header-section > a {
+      margin: auto;
+      height: 30px;
+
+      img {
+        height: 100%;
+        width: auto;
+      }
+    }
+
+    .nav-wrapper {
+      position: fixed;
+      top: 60px;
+      right: -300px;
+      box-shadow: 0 20px 15px rgba(0, 0, 0, 0.05);
+      transition: right 0.3s ease-in-out;
+
+      &.active {
+        right: 0;
+      }
+
+      nav ul {
+        flex-direction: column;
+        background: white;
+        padding: 15px 30px;
+        align-items: inherit;
+
+        a {
+          line-height: 1.6;
+          margin: 8px 0;
+        }
       }
     }
   }

@@ -327,6 +327,35 @@
       }
     }
   }
+
+  @media @tablet {
+    fieldset {
+      position: relative;
+    }
+
+    legend {
+      cursor: pointer;
+    }
+
+    .fieldset-wrapper {
+      display: none;
+    }
+
+    .js-filter-count {
+      position: absolute;
+      top: -34px;
+      right: 20px;
+      background: @primaryColor;
+      color: white;
+      border-radius: 100%;
+      font-size: 13px;
+      height: 25px;
+      width: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 }
 
 .vue-recettes.page,
@@ -339,6 +368,10 @@
   &.bg-img-wood {
     background-position: top center;
     background-size: auto 280px;
+
+    @media @tablet {
+      background-size: auto 100px;
+    }
   }
 
   p {
@@ -398,6 +431,10 @@
 
   .form-wrapper {
     margin-bottom: 15px;
+
+    @media @tablet {
+      margin-bottom: 0;
+    }
 
     .fieldset-legend {
       color: @grey;

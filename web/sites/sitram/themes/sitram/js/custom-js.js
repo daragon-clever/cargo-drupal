@@ -8,27 +8,29 @@ jQuery(document).ready(function ($) {
     $('.js-ustensiles-slider > div').slick();
 
     // INSTAGRAM
-    (function () {
-        new InstagramFeed({
-            'username': 'sitram_fr',
-            'container': document.getElementById("js-instagram"),
-            'display_profile': false,
-            'display_biography': false,
-            'display_gallery': true,
-            'display_captions': false,
-            'callback': null,
-            'styling': true,
-            'items': 8,
-            'items_per_row': 4,
-            'margin': 1,
-            'lazy_load': true,
-            'on_error': console.error
-        });
-    })();
+    if ($('#homepage').length) {
+        (function () {
+            new InstagramFeed({
+                'username': 'sitram_fr',
+                'container': document.getElementById("js-instagram"),
+                'display_profile': false,
+                'display_biography': false,
+                'display_gallery': true,
+                'display_captions': false,
+                'callback': null,
+                'styling': true,
+                'items': 6,
+                'items_per_row': 3,
+                'margin': 1,
+                'lazy_load': true,
+                'on_error': console.error
+            });
+        })();
+    }
 
     // MASONRY GALLERY
     if ($(".js-grid-masonry").length) {
-        const $grid = $('.js-grid-masonry').imagesLoaded( function() {
+        const $grid = $('.js-grid-masonry').imagesLoaded(function () {
             $grid.masonry({
                 itemSelector: '.grid-item',
                 columnWidth: '.grid-sizer',
@@ -72,9 +74,32 @@ jQuery(document).ready(function ($) {
         })
     }
 
+    // RECETTES
+
+    // Ne pas suppr, peut servir pour afficher un badge avec le nombre de filtres selectionnés
+    // Ne fonctionne pas a cause d'AJAX, à creuser
+    if ($(".recettes-filters").length) {
+        /*let updateFilterCount = function (inputsWrapper) {
+            let filtersCount = inputsWrapper.find('input:checked').length;
+            let legend = inputsWrapper.prev();
+            let counter = legend.find('.js-filter-count');
+
+            if (counter.length) {
+                counter.html(filtersCount)
+            } else {
+                legend.append('<span class="js-filter-count">' + filtersCount + '</span>')
+            }
+        };*/
+
+        $(document).on('click', 'fieldset legend', function () {
+            $(this).next().slideToggle();
+            /*updateFilterCount($(this).next());*/
+        })
+    }
+
 
     // FOOTER
-    $(".js-show-hidden-part").click(function(e) {
+    $(".js-show-hidden-part").click(function (e) {
         if (!$(this).hasClass('opened')) {
             e.preventDefault();
             $(".js-hidden-part").addClass('show');

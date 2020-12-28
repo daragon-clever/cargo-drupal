@@ -1987,6 +1987,46 @@ ul.check-list li:before {
 #consignes-utilisation ul {
   padding-left: 15px;
 }
+#consignes-utilisation .item {
+  display: inline-block;
+  position: relative;
+}
+#consignes-utilisation .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media only screen and (max-width: 767px) {
+  #consignes-utilisation .item img {
+    max-width: 275px;
+  }
+}
+#consignes-utilisation .item .overlay {
+  opacity: 0;
+  position: absolute;
+  display: flex;
+  background: #00000080;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transition: opacity 0.3s;
+}
+#consignes-utilisation .item .overlay:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+#consignes-utilisation .item .overlay .inner {
+  margin: auto;
+  color: white;
+}
+#consignes-utilisation .item .overlay .inner:before {
+  content: "";
+  background: url("../images/download.svg") no-repeat top center transparent;
+  display: block;
+  height: 50px;
+  width: 125px;
+}
 #consignes-utilisation .bg-img-blue {
   background-size: auto 297px;
 }

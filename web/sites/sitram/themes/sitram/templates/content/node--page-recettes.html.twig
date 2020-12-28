@@ -11,26 +11,32 @@
           <h1>{{ content.field_recipe_title }}</h1>
 
           <div class="mt-4 pills">
+            <!-- Salee sucree -->
             {% for field in content.field_filter_salees_sucrees['#items'] %}
               <span>{{ field.value }}</span>
             {% endfor %}
 
+            <!-- Saison -->
             {% for field in content.field_filter_saison['#items'] %}
               <span>{{ field.value }}</span>
             {% endfor %}
 
+            <!-- Durée -->
             {% for field in content.field_filter_duree['#items'] %}
               <span>{{ field.value }}</span>
             {% endfor %}
 
-            {% for field in content.field_filtre_type['#items'] %}
-              <span>{{ field.value }}</span>
+            <!-- Type -->
+            {% for field in node.field_filtre_type %}
+              <span>{{ field.entity.label }}</span>
             {% endfor %}
 
+            <!-- Difficulté -->
             {% for field in content.field_filter_difficulte['#items'] %}
               <span>{{ field.value }}</span>
             {% endfor %}
 
+            <!-- Ustensiles -->
             {% for field in node.field_filtre_ustensile %}
               <span>{{ field.entity.label }}</span>
             {% endfor %}

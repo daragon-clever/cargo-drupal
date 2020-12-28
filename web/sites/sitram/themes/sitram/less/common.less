@@ -4,6 +4,10 @@ body {
   font-family: @MyriadRegular;
   overflow-x: hidden;
   color: @grey;
+
+  @media @tablet {
+    padding-top: 60px;
+  }
 }
 
 h1 {
@@ -119,6 +123,24 @@ a {
 
   &:hover {
     opacity: 0.8;
+  }
+}
+
+.header-wrapper + .content {
+  transition: all 0.3s ease-in-out;
+
+  &.active {
+    &:before {
+      content: "";
+      background: rgba(0, 0, 0, 0.4);
+      height: 100%;
+      width: 100%;
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+    }
   }
 }
 

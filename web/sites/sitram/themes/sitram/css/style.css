@@ -3,6 +3,11 @@ body {
   overflow-x: hidden;
   color: #434343;
 }
+@media only screen and (max-width: 991px) {
+  body {
+    padding-top: 60px;
+  }
+}
 h1 {
   font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
   color: #003663;
@@ -107,6 +112,20 @@ a {
 }
 a:hover {
   opacity: 0.8;
+}
+.header-wrapper + .content {
+  transition: all 0.3s ease-in-out;
+}
+.header-wrapper + .content.active:before {
+  content: "";
+  background: rgba(0, 0, 0, 0.4);
+  height: 100%;
+  width: 100%;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
 }
 .bg-blue {
   background-color: #003663;
@@ -1200,7 +1219,7 @@ ul.check-list li:before {
   src: local('Myriad Pro Bold'), url('../fonts/MYRIADPRO-BOLD.woff') format('woff');
 }
 .header-wrapper header {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
 }
 .header-wrapper header .header-section {
   display: flex;
@@ -1267,6 +1286,92 @@ ul.check-list li:before {
 .header-wrapper nav ul a.ou-acheter:hover {
   border-bottom: none;
   color: white;
+}
+@media only screen and (max-width: 991px) {
+  .header-wrapper header {
+    padding: 15px 0;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    z-index: 100;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: white;
+  }
+  .header-wrapper .js-resp-menu {
+    display: block;
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: calc(50% - 20px);
+    right: 15px;
+    z-index: 10;
+    border-radius: 100%;
+    text-align: center;
+    transition: opacity 0.3s;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .header-wrapper .js-resp-menu:hover {
+    opacity: 0.8;
+  }
+  .header-wrapper .js-resp-menu span {
+    position: absolute;
+    height: 3px;
+    background: #003663;
+    width: 25px;
+    display: block;
+    transform-origin: center;
+    transition: all 0.3s ease-in-out;
+    left: 10px;
+    opacity: 1;
+    top: 10px;
+  }
+  .header-wrapper .js-resp-menu span:nth-child(2) {
+    top: 18px;
+  }
+  .header-wrapper .js-resp-menu span:nth-child(3) {
+    top: 26px;
+  }
+  .header-wrapper .js-resp-menu.active span:first-child {
+    top: 30px;
+    opacity: 0;
+  }
+  .header-wrapper .js-resp-menu.active span:nth-child(2) {
+    transform: rotate(45deg);
+  }
+  .header-wrapper .js-resp-menu.active span:nth-child(3) {
+    top: 18px;
+    transform: rotate(-45deg);
+  }
+  .header-wrapper .header-section > a {
+    margin: auto;
+    height: 30px;
+  }
+  .header-wrapper .header-section > a img {
+    height: 100%;
+    width: auto;
+  }
+  .header-wrapper .nav-wrapper {
+    position: fixed;
+    top: 60px;
+    right: -300px;
+    box-shadow: 0 20px 15px rgba(0, 0, 0, 0.05);
+    transition: right 0.3s ease-in-out;
+  }
+  .header-wrapper .nav-wrapper.active {
+    right: 0;
+  }
+  .header-wrapper .nav-wrapper nav ul {
+    flex-direction: column;
+    background: white;
+    padding: 15px 30px;
+    align-items: inherit;
+  }
+  .header-wrapper .nav-wrapper nav ul a {
+    line-height: 1.6;
+    margin: 8px 0;
+  }
 }
 #homepage > div > .container {
   max-width: 1225px;

@@ -1,4 +1,9 @@
 jQuery(document).ready(function ($) {
+    // NAV REPONSIVE
+    $('.js-resp-menu').click(function () {
+        $("header .nav-wrapper, .js-resp-menu, .header-wrapper + .content").toggleClass('active')
+    });
+
     // CAROUSEL HOMEPAGE
     $('.js-homepage-slider > div').slick({
         dots: true

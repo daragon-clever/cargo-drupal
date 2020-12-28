@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="125" height="85" viewBox="0 0 125 85.059">
+    <defs>
+        <style>
+            .a{fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:4px;}.b{fill:#fff;font-size:16px;font-family:MyriadPro-Regular,
+            Myriad Pro;}
+        </style>
+    </defs>
+    <g transform="translate(-71 -252.941)">
+        <g transform="translate(106.897 250.467)">
+            <path class="a" d="M12,25.5l9.131,9.131L30.263,25.5" transform="translate(5.487 10.969)"/>
+            <path class="a" d="M18,18V38.546" transform="translate(8.619 7.055)"/>
+            <path class="a" d="M46.89,38.958a11.414,11.414,0,0,0-6.575-20.751H37.439A18.263,18.263,0,1,0,6.073,34.848"
+                  transform="translate(0)"/>
+        </g>
+    </g>
+</svg>

@@ -25,7 +25,7 @@
     <div class="container max-550">
         <div class="row">
             <div class="col">
-                 {{ content.field_consignes_intro_txt }}
+                {{ content.field_consignes_intro_txt }}
             </div>
         </div>
     </div>
@@ -34,43 +34,47 @@
         <!-- CONTENT 1 -->
         <div class="row mt-5 mb-4">
             <div class="col">
-                 {{ content.field_consignes_c1_intro }}
+                {{ content.field_consignes_c1_intro }}
             </div>
         </div>
         <div class="row">
             <div class="col-12 col-sm-6 bg-verylightgrey">
                 <div class="p-3 p-lg-5">
-                     {{ content.field_consignes_c1_txts[0] }}
+                    {{ content.field_consignes_c1_txts[0] }}
                 </div>
             </div>
             <div class="col-12 col-sm-6">
                 <div class="p-3 p-lg-5">
-                     {{ content.field_consignes_c1_txts[1] }}
+                    {{ content.field_consignes_c1_txts[1] }}
                 </div>
             </div>
         </div>
         <div class="row mt-5 mb-3">
             <div class="col text-center">
-                 {{ content.field_consignes_c1_outro }}
+                {{ content.field_consignes_c1_outro }}
             </div>
         </div>
 
         <!-- CONTENT 2 -->
-        <div class="row">
-            <div class="col">
-                {% for i in 0..7 %}
-                    <a href="{{ content.field_consignes_notices[0]}}" onclick="return confirm('Voulez-vous télécharger cette notice?');" download>
-                        {{ content.field_consignes_c2_imgs[i] }}
+        <div class="row justify-content-center no-gutters">
+            {% for i in 0..7 %}
+                <div class="col-12 col-sm-auto text-center item">
+                    {{ content.field_consignes_c2_notices_imgs[i] }}
+                    <a href="{{ content.field_consignes_c2_notices_files[i] }}" target="_blank">
+                        <span class="overlay">
+                            <span class="inner">
+                                {{ "Télécharger le .pdf"|trans }}
+                            </span>
+                        </span>
                     </a>
-                    {# @todo CHAMPS FICHIERS #}
-                {% endfor %}
-            </div>
+                </div>
+            {% endfor %}
         </div>
 
         <!-- CONTENT 3-->
         <div class="row mt-5">
             <div class="col">
-                 {{ content.field_consignes_c3_txt }}
+                {{ content.field_consignes_c3_txt }}
             </div>
         </div>
     </div>
@@ -87,16 +91,16 @@
                                 <div class="row mt-5">
                                     <div class="col-12 col-md-6">
                                         <div class="pr-4">
-                                             {{ content.field_consignes_c4_txts[0] }}
+                                            {{ content.field_consignes_c4_txts[0] }}
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6">
-                                         {{ content.field_consignes_c4_txts[1] }}
+                                        {{ content.field_consignes_c4_txts[1] }}
                                     </div>
                                 </div>
                                 <div class="row mt-4">
                                     <div class="col-12">
-                                         {{ content.field_consignes_c4_txts[2] }}
+                                        {{ content.field_consignes_c4_txts[2] }}
                                     </div>
                                 </div>
                             </div>
@@ -115,7 +119,7 @@
                     <div class="row">
                         <div class="col">
                             <div class="p-3 pt-lg-4 pl-lg-5 pr-lg-5">
-                                 {{ content.field_consignes_c5_txt }}
+                                {{ content.field_consignes_c5_txt }}
                             </div>
                         </div>
                     </div>
@@ -136,12 +140,12 @@
         <div class="row">
             <div class="col-12 col-sm-6">
                 <div class="pl-3 pl-lg-5">
-                     {{ content.field_consignes_c6_txts[0] }}
+                    {{ content.field_consignes_c6_txts[0] }}
                 </div>
             </div>
             <div class="col-12 col-sm-6">
                 <div class="pl-3 pl-lg-5">
-                 {{ content.field_consignes_c6_txts[1] }}
+                    {{ content.field_consignes_c6_txts[1] }}
                 </div>
             </div>
         </div>

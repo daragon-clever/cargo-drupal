@@ -967,6 +967,51 @@
     padding-left: 15px;
   }
 
+  .item {
+    display: inline-block;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      @media @phone {
+        max-width: 275px;
+      }
+    }
+
+    .overlay {
+      opacity: 0;
+      position: absolute;
+      display: flex;
+      background: #00000080;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      transition: opacity 0.3s;
+
+      &:hover {
+        opacity: 1;
+        cursor: pointer;
+      }
+
+      .inner {
+        margin: auto;
+        color: white;
+
+        &:before {
+          content: "";
+          background: url("../images/download.svg") no-repeat top center transparent;
+          display: block;
+          height: 50px;
+          width: 125px;
+        }
+      }
+    }
+  }
+
   .bg-img-blue {
     background-size: auto 297px;
 

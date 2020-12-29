@@ -640,6 +640,7 @@
     object-fit: cover;
     height: 197px;
     transition: transform .3s ease;
+
     &:hover {
       transform: scale(1.1);
     }
@@ -1067,7 +1068,8 @@
 
 // SERVICE CLIENT + GARANTIES + CONSIGNES UTILISATION //
 #service-client,
-#garanties {
+#garanties,
+#contact {
   .intro {
     h1 {
       margin: 60px 0 25px;
@@ -1101,7 +1103,8 @@
   }
 }
 
-#garanties {
+#garanties,
+#contact {
   .intro h1 {
     margin-top: 115px;
 
@@ -1109,7 +1112,9 @@
       margin-top: 30px;
     }
   }
+}
 
+#garanties {
   ul,
   ol {
     padding-left: 15px;
@@ -1132,14 +1137,6 @@
 #consignes-utilisation {
   h1 {
     line-height: 1;
-  }
-
-  .max-850 {
-    max-width: 850px;
-  }
-
-  .max-550 {
-    max-width: 550px;
   }
 
   p.mt-85px {
@@ -1212,6 +1209,126 @@
 
     ul {
       margin-top: 0;
+    }
+  }
+}
+
+#consignes-utilisation,
+#contact {
+  .max-850 {
+    max-width: 850px;
+  }
+
+  .max-550 {
+    max-width: 550px;
+  }
+}
+
+#contact {
+  font-family: @MyriadSemibold;
+
+  .webform-element-description {
+    font-size: 20px;
+    line-height: 1;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    max-width: 70%;
+
+    em {
+      font-size: 12px;
+      color: lightgrey;
+    }
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    font-size: 20px;
+    padding: 20px;
+    border: 1px solid lightgrey;
+    border-radius: 7px;
+    font-family: @MyriadRegular;
+    color: @grey;
+
+    &::placeholder {
+      color: lightgrey;
+    }
+  }
+
+  .form-item-fichier {
+    position: relative;
+
+    .form-managed-file {
+      input {
+        display: none;
+      }
+
+      input[name="fichier_remove_button"] {
+        display: initial;
+      }
+    }
+
+    label {
+      position: absolute;
+      top: 30px;
+      width: 100%;
+      font-size: 20px;
+      padding: 20px;
+      border: 1px solid lightgrey;
+      border-radius: 7px;
+      font-family: @MyriadRegular;
+      color: @grey;
+
+      &:after {
+        content: "";
+        position: absolute;
+        right: 15px;
+        top: 27px;
+        width: 20px;
+        height: 20px;
+        background: url("../images/upload.svg") no-repeat center transparent;
+      }
+    }
+  }
+
+  .form-item-cgu {
+    margin-top: 95px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+
+    input {
+      height: 29px;
+      width: 29px;
+      opacity: 0.7;
+      cursor: pointer;
+    }
+
+    #edit-cgu--description {
+      margin-top: 15px;
+      margin-bottom: 15px;
+      font-size: 12px;
+      line-height: 1.2;
+      padding-left: 20px;
+      font-family: @MyriadRegular;
+    }
+  }
+
+  .form-actions {
+    margin-top: 20px;
+    margin-bottom: 70px;
+    text-align: center;
+
+    .webform-button--submit {
+      font-size: 20px;
+      font-family: @MyriadBold;
+      color: white;
+      background-color: @primaryColor;
+      padding: 15px 115px;
+      text-transform: uppercase;
+      width: fit-content;
     }
   }
 }

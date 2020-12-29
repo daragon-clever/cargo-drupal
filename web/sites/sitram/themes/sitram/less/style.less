@@ -16,7 +16,7 @@
   }
 
   // NAVIGATION //
-  nav ul {
+  nav > ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -28,7 +28,7 @@
       margin-right: 0;
     }
 
-    li a {
+    & > li a {
       color: @grey;
       text-decoration: none;
       font-size: 16px;
@@ -37,12 +37,13 @@
       line-height: 117px;
       display: inline-block;
       border-bottom: 3px solid transparent;
-      transition: border-color 0.3s ease;
+      transition: border-color 0.3s ease, color 0.3s ease-in-out;
 
       &.is-active,
       &:hover {
         border-color: @primaryColor;
         color: @primaryColor;
+        opacity: 1;
       }
     }
 
@@ -75,6 +76,47 @@
       &:hover {
         border-bottom: none;
         color: white;
+      }
+    }
+
+    // N2
+    & > li {
+      position: relative;
+      max-height: 120px;
+      overflow: hidden;
+      transition: max-height 0.3s ease-in-out;
+
+      &:hover {
+        max-height: 200px;
+        overflow: visible;
+
+        & > a {
+          border-color: @primaryColor;
+          color: @primaryColor;
+        }
+
+        & > ul {
+          opacity: 1;
+        }
+      }
+
+      & > ul {
+        position: absolute;
+        z-index: 10;
+        background: white;
+        display: block;
+        list-style: disc;
+        transition: opacity 0.3s ease-in-out;
+        padding: 20px 35px;
+        opacity: 0;
+
+        & > li {
+          & > a {
+            line-height: 1.6;
+            margin: 8px 0;
+            border: none;
+          }
+        }
       }
     }
   }

@@ -1226,7 +1226,7 @@ ul.check-list li:before {
   align-items: center;
   justify-content: space-between;
 }
-.header-wrapper nav ul {
+.header-wrapper nav > ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1234,10 +1234,10 @@ ul.check-list li:before {
   margin-bottom: 0;
   padding-left: 0;
 }
-.header-wrapper nav ul:last-child {
+.header-wrapper nav > ul:last-child {
   margin-right: 0;
 }
-.header-wrapper nav ul li a {
+.header-wrapper nav > ul > li a {
   color: #434343;
   text-decoration: none;
   font-size: 16px;
@@ -1246,14 +1246,15 @@ ul.check-list li:before {
   line-height: 117px;
   display: inline-block;
   border-bottom: 3px solid transparent;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease, color 0.3s ease-in-out;
 }
-.header-wrapper nav ul li a.is-active,
-.header-wrapper nav ul li a:hover {
+.header-wrapper nav > ul > li a.is-active,
+.header-wrapper nav > ul > li a:hover {
   border-color: #003663;
   color: #003663;
+  opacity: 1;
 }
-.header-wrapper nav ul a.ou-acheter {
+.header-wrapper nav > ul a.ou-acheter {
   display: inline-block;
   line-height: 46px;
   background-color: #741030;
@@ -1270,10 +1271,10 @@ ul.check-list li:before {
   text-decoration: none;
   cursor: pointer;
 }
-.header-wrapper nav ul a.ou-acheter:hover {
+.header-wrapper nav > ul a.ou-acheter:hover {
   opacity: 0.8;
 }
-.header-wrapper nav ul a.ou-acheter:before {
+.header-wrapper nav > ul a.ou-acheter:before {
   content: "";
   display: inline-block;
   position: absolute;
@@ -1283,9 +1284,41 @@ ul.check-list li:before {
   top: calc(50% - 12px);
   left: 25px;
 }
-.header-wrapper nav ul a.ou-acheter:hover {
+.header-wrapper nav > ul a.ou-acheter:hover {
   border-bottom: none;
   color: white;
+}
+.header-wrapper nav > ul > li {
+  position: relative;
+  max-height: 120px;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+.header-wrapper nav > ul > li:hover {
+  max-height: 200px;
+  overflow: visible;
+}
+.header-wrapper nav > ul > li:hover > a {
+  border-color: #003663;
+  color: #003663;
+}
+.header-wrapper nav > ul > li:hover > ul {
+  opacity: 1;
+}
+.header-wrapper nav > ul > li > ul {
+  position: absolute;
+  z-index: 10;
+  background: white;
+  display: block;
+  list-style: disc;
+  transition: opacity 0.3s ease-in-out;
+  padding: 20px 35px;
+  opacity: 0;
+}
+.header-wrapper nav > ul > li > ul > li > a {
+  line-height: 1.6;
+  margin: 8px 0;
+  border: none;
 }
 @media only screen and (max-width: 991px) {
   .header-wrapper header {

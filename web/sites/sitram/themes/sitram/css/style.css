@@ -1415,7 +1415,7 @@ ul.check-list li:before {
   margin: 0 auto;
 }
 #homepage .slider .slick-next {
-  right: 260px;
+  right: 50px;
 }
 @media only screen and (max-width: 991px) {
   #homepage .slider .slick-next {
@@ -1423,7 +1423,7 @@ ul.check-list li:before {
   }
 }
 #homepage .slider .slick-prev {
-  left: 260px;
+  left: 50px;
 }
 @media only screen and (max-width: 991px) {
   #homepage .slider .slick-prev {

@@ -2,10 +2,19 @@ body {
   font-family: "Myriad Pro Regular", Arial, Helvetica, sans-serif;
   overflow-x: hidden;
   color: #434343;
+  padding-top: 120px;
 }
 @media only screen and (max-width: 991px) {
   body {
     padding-top: 60px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  body.adminimal-admin-toolbar:not(.path-admin) {
+    padding-top: 189px !important;
+  }
+  body.adminimal-admin-toolbar:not(.path-admin) .header-wrapper header {
+    margin-top: 79px;
   }
 }
 h1 {
@@ -1220,6 +1229,12 @@ ul.check-list li:before {
 }
 .header-wrapper header {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: white;
 }
 .header-wrapper header .header-section {
   display: flex;
@@ -1324,13 +1339,6 @@ ul.check-list li:before {
 @media only screen and (max-width: 991px) {
   .header-wrapper header {
     padding: 15px 0;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
-    z-index: 100;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background: white;
   }
   .header-wrapper .js-resp-menu {
     display: block;
@@ -1754,7 +1762,7 @@ ul.check-list li:before {
   width: 100%;
   object-fit: cover;
   height: 197px;
-  transition: transform 0.3s ease;
+  transition: transform .3s ease;
 }
 .recette-item img:hover {
   transform: scale(1.1);

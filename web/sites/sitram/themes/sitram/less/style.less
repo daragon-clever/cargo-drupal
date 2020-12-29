@@ -7,6 +7,12 @@
 .header-wrapper {
   header {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    z-index: 100;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: white;
 
     .header-section {
       display: flex;
@@ -126,13 +132,6 @@
   @media @tablet {
     header {
       padding: 15px 0;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
-      z-index: 100;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      left: 0;
-      background: white;
     }
 
     .js-resp-menu {

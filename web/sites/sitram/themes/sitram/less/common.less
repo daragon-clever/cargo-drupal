@@ -4,9 +4,20 @@ body {
   font-family: @MyriadRegular;
   overflow-x: hidden;
   color: @grey;
+  padding-top: 120px;
 
   @media @tablet {
     padding-top: 60px;
+  }
+
+  @media @moreThanTablet {
+    &.adminimal-admin-toolbar:not(.path-admin) {
+      padding-top: 189px !important;
+
+      .header-wrapper header {
+        margin-top: 79px;
+      }
+    }
   }
 }
 

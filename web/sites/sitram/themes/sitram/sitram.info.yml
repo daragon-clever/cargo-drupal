@@ -16,6 +16,7 @@ libraries:
   - sitram/instagram
   - sitram/imageloaded
   - sitram/masonry
+  - sitram/lozad
   - sitram/global-styling
 
 stylesheets-remove:

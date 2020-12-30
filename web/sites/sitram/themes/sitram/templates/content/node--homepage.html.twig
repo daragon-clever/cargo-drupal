@@ -1,7 +1,26 @@
 <div id="homepage">
-    <!-- SLIDER -->
-    <div class="js-homepage-slider slider">
-        {{ content.field_hp_hero }}
+    <!-- SLIDER DESKTOP -->
+    <div class="js-homepage-slider slider d-none d-sm-block">
+        <div>
+            {% set imgCount = node.field_hp_hero|length - 1 %}
+            {% for i in 0..imgCount %}
+            <a href="{{ content.field_hp_hero_link[i] }}">
+                <img src="" class="lozad" data-src="{{ file_url(node.field_hp_hero[i].entity.fileuri) }}" alt="{{ node.field_hp_hero[i].alt }}"/>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- SLIDER MOBILE -->
+    <div class="js-homepage-slider slider d-sm-none">
+        <div>
+            {% set imgCount = node.field_hp_hero_mobile|length - 1 %}
+            {% for i in 0..imgCount %}
+                <a href="{{ content.field_hp_hero_link[i] }}">
+                    <img src="" class="lozad" data-src="{{ file_url(node.field_hp_hero_mobile[i].entity.fileuri) }}" alt="{{ node.field_hp_hero[i].alt }}"/>
+                </a>
+            {% endfor %}
+        </div>
     </div>
 
     <!-- HEADING -->

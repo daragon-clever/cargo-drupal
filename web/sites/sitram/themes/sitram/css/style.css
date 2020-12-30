@@ -2379,6 +2379,23 @@ ul.check-list li:before {
 #produit.autocuiseurs .pt-grey:before {
   height: 820px;
 }
+#produit.specifique .content-specif img {
+  max-width: 100%;
+}
+#produit.specifique h3 {
+  line-height: 1;
+}
+#produit.specifique h2 {
+  font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
+}
+#produit.specifique .bg-img-blue {
+  background-size: auto 488px;
+}
+@media only screen and (max-width: 991px) {
+  #produit.specifique .bg-img-blue {
+    background-size: auto 190px;
+  }
+}
 .footer-wrapper .newsletter-wrapper {
   background-color: #741030;
   padding: 70px 100px;

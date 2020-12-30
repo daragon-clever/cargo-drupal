@@ -1,24 +1,24 @@
 <div id="homepage">
-    <!-- SLIDER DESKTOP -->
-    <div class="js-homepage-slider slider d-none d-sm-block">
+    <!-- SLIDER -->
+    <div class="js-homepage-slider slider">
         <div>
             {% set imgCount = node.field_hp_hero|length - 1 %}
             {% for i in 0..imgCount %}
-            <a href="{{ content.field_hp_hero_link[i] }}">
-                <img src="" class="lozad" data-src="{{ file_url(node.field_hp_hero[i].entity.fileuri) }}" alt="{{ node.field_hp_hero[i].alt }}"/>
-            </a>
-            {% endfor %}
-        </div>
-    </div>
-
-    <!-- SLIDER MOBILE -->
-    <div class="js-homepage-slider slider d-sm-none">
-        <div>
-            {% set imgCount = node.field_hp_hero_mobile|length - 1 %}
-            {% for i in 0..imgCount %}
-                <a href="{{ content.field_hp_hero_link[i] }}">
-                    <img src="" class="lozad" data-src="{{ file_url(node.field_hp_hero_mobile[i].entity.fileuri) }}" alt="{{ node.field_hp_hero[i].alt }}"/>
-                </a>
+                <div>
+                    {% if content.field_hp_hero_link[i]|length > 0 and content.field_hp_hero_link[i]|render|striptags|trim|raw is not empty %}
+                        <a href="{{ content.field_hp_hero_link[i] }}">
+                            <img src="" class="lozad d-none d-sm-block" data-src="{{ file_url(node.field_hp_hero[i].entity.fileuri) }}"
+                                 alt="{{ node.field_hp_hero[i].alt }}"/>
+                            <img src="" class="lozad d-sm-none" data-src="{{ file_url(node.field_hp_hero_mobile[i].entity.fileuri) }}"
+                                 alt="{{ node.field_hp_hero[i].alt }}"/>
+                        </a>
+                    {% else %}
+                        <img src="" class="lozad d-none d-sm-block" data-src="{{ file_url(node.field_hp_hero[i].entity.fileuri) }}"
+                             alt="{{ node.field_hp_hero[i].alt }}"/>
+                        <img src="" class="lozad d-sm-none" data-src="{{ file_url(node.field_hp_hero_mobile[i].entity.fileuri) }}"
+                             alt="{{ node.field_hp_hero[i].alt }}"/>
+                    {% endif %}
+                </div>
             {% endfor %}
         </div>
     </div>

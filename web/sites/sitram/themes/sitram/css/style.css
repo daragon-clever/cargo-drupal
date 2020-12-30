@@ -2348,6 +2348,12 @@ ul.check-list li:before {
 #contact .form-item-fichier input.button[name="fichier_remove_button"]:hover {
   opacity: 0.7;
 }
+#contact .form-item-fichier .g-recaptcha {
+  text-align: center;
+}
+#contact .form-item-fichier .g-recaptcha > div {
+  display: inline-block;
+}
 #contact .form-item-cgu {
   margin-top: 95px;
   margin-bottom: 20px;

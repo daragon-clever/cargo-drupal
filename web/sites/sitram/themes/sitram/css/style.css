@@ -2239,6 +2239,11 @@ ul.check-list li:before {
 #contact {
   font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
 }
+@media only screen and (max-width: 991px) {
+  #contact form {
+    padding: 0 15px;
+  }
+}
 #contact .webform-element-description {
   font-size: 20px;
   line-height: 1;
@@ -2250,12 +2255,18 @@ ul.check-list li:before {
   font-size: 12px;
   color: lightgrey;
 }
+@media only screen and (max-width: 991px) {
+  #contact .webform-element-description {
+    max-width: 100%;
+  }
+}
 #contact input,
 #contact select,
-#contact textarea {
+#contact textarea,
+#contact .select2-selection {
   width: 100%;
   font-size: 20px;
-  padding: 20px;
+  padding: 15px 20px;
   border: 1px solid lightgrey;
   border-radius: 7px;
   font-family: "Myriad Pro Regular", Arial, Helvetica, sans-serif;
@@ -2263,8 +2274,16 @@ ul.check-list li:before {
 }
 #contact input::placeholder,
 #contact select::placeholder,
-#contact textarea::placeholder {
+#contact textarea::placeholder,
+#contact .select2-selection::placeholder {
   color: lightgrey;
+}
+#contact .select2-selection {
+  height: 62px;
+}
+#contact .select2-selection__arrow {
+  top: calc(50% - 13px);
+  right: 15px;
 }
 #contact .form-item-fichier {
   position: relative;
@@ -2275,7 +2294,8 @@ ul.check-list li:before {
 #contact .form-item-fichier .form-managed-file input[name="fichier_remove_button"] {
   display: initial;
 }
-#contact .form-item-fichier label {
+#contact .form-item-fichier label,
+#contact .form-item-fichier .file {
   position: absolute;
   top: 30px;
   width: 100%;
@@ -2283,10 +2303,13 @@ ul.check-list li:before {
   padding: 20px;
   border: 1px solid lightgrey;
   border-radius: 7px;
+  background: white;
   font-family: "Myriad Pro Regular", Arial, Helvetica, sans-serif;
   color: #434343;
+  cursor: pointer;
 }
-#contact .form-item-fichier label:after {
+#contact .form-item-fichier label:after,
+#contact .form-item-fichier .file:after {
   content: "";
   position: absolute;
   right: 15px;
@@ -2294,6 +2317,36 @@ ul.check-list li:before {
   width: 20px;
   height: 20px;
   background: url("../images/upload.svg") no-repeat center transparent;
+}
+#contact .form-item-fichier .file {
+  position: absolute;
+}
+#contact .form-item-fichier .file:after {
+  display: none;
+}
+@media only screen and (max-width: 767px) {
+  #contact .form-item-fichier .file a {
+    max-width: 175px;
+    overflow: hidden;
+    display: inline-block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+#contact .form-item-fichier input.button[name="fichier_remove_button"] {
+  position: absolute;
+  width: auto;
+  top: 45px;
+  right: 20px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 25px;
+  transition: opacity 0.3s;
+  text-decoration: none;
+  cursor: pointer;
+}
+#contact .form-item-fichier input.button[name="fichier_remove_button"]:hover {
+  opacity: 0.7;
 }
 #contact .form-item-cgu {
   margin-top: 95px;
@@ -2329,6 +2382,9 @@ ul.check-list li:before {
   padding: 15px 115px;
   text-transform: uppercase;
   width: fit-content;
+}
+.select2-search {
+  display: none;
 }
 #produit img {
   max-width: 100%;

@@ -1227,6 +1227,12 @@
 #contact {
   font-family: @MyriadSemibold;
 
+  @media @tablet {
+    form {
+      padding: 0 15px;
+    }
+  }
+
   .webform-element-description {
     font-size: 20px;
     line-height: 1;
@@ -1238,14 +1244,19 @@
       font-size: 12px;
       color: lightgrey;
     }
+
+    @media @tablet {
+      max-width: 100%;
+    }
   }
 
   input,
   select,
-  textarea {
+  textarea,
+  .select2-selection {
     width: 100%;
     font-size: 20px;
-    padding: 20px;
+    padding: 15px 20px;
     border: 1px solid lightgrey;
     border-radius: 7px;
     font-family: @MyriadRegular;
@@ -1254,6 +1265,15 @@
     &::placeholder {
       color: lightgrey;
     }
+  }
+
+  .select2-selection {
+    height: 62px;
+  }
+
+  .select2-selection__arrow {
+    top: calc(50% - 13px);
+    right: 15px;
   }
 
   .form-item-fichier {
@@ -1269,7 +1289,8 @@
       }
     }
 
-    label {
+    label,
+    .file {
       position: absolute;
       top: 30px;
       width: 100%;
@@ -1277,8 +1298,10 @@
       padding: 20px;
       border: 1px solid lightgrey;
       border-radius: 7px;
+      background: white;
       font-family: @MyriadRegular;
       color: @grey;
+      cursor: pointer;
 
       &:after {
         content: "";
@@ -1289,6 +1312,36 @@
         height: 20px;
         background: url("../images/upload.svg") no-repeat center transparent;
       }
+    }
+
+    .file {
+      position: absolute;
+
+      &:after{
+        display: none;
+      }
+
+      @media @phone {
+        a {
+          max-width: 175px;
+          overflow: hidden;
+          display: inline-block;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+
+    input.button[name="fichier_remove_button"] {
+      position: absolute;
+      width: auto;
+      top: 45px;
+      right: 20px;
+      height: 40px;
+      line-height: 40px;
+      padding: 0 25px;
+      cursor: pointer;
+      .dimOpacityOnHover(0.7);
     }
   }
 
@@ -1331,6 +1384,10 @@
       width: fit-content;
     }
   }
+}
+
+.select2-search {
+  display: none;
 }
 
 // PRODUIT //

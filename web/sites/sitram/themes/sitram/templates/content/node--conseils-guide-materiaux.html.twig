@@ -1,0 +1,236 @@
+<div id="conseils-indiv" class="materiaux">
+    <div id="ban-intro" class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <!-- BANNER -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col ban">
+                            {{ content.field_cons_materiaux_banner }}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- INTRO -->
+                <div class="container max-1065">
+                    <div class="row">
+                        <div class="col text-center">
+                            <h1>{{ content.field_cons_materiaux_title }}</h1>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 col-lg-6">
+                            {{ content.field_cons_materiaux_intro[0] }}
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            {{ content.field_cons_materiaux_intro[1] }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container max-1350">
+        <!-- CONTENT 1 / INTRO -->
+        <div class="row my-3 my-lg-5">
+            <div class="col-12">
+                <span class="number">1</span>
+                <div class="pt-115 pl-85">
+                    {# {{ content.field_cons_materiaux_c1_intro }} #}
+                    <h2 class="txt-blue">Les différents matériaux proposés</h2>
+                    <p>
+                        De l’inox à l’aluminium, en passant par la fonte et l’acier… Zoom sur les principales matières
+                        de fabrication des ustensiles de cuisson. </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENT 1 / TABS -->
+        <div class="row my-3 my-lg-5">
+            <div class="col">
+                <div class="pl-85">
+                    <ul class="nav mb-4 custom-tabs" id="pills-tab" role="tablist">
+                        {% for i in 0..3 %}
+                            <li class="nav-item">
+                                <a class="nav-link {% if i == 0 %}active{% endif %}"
+                                   id="pills-{{ i }}-tab"
+                                   data-toggle="pill"
+                                   href="#pills-{{ i }}"
+                                   role="tab"
+                                   aria-controls="pills-home"
+                                   aria-selected="true">
+                                    {{ content.field_cons_mater_c1_tab_menus[i] }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+
+                    <div class="tab-content" id="pills-tabContent">
+                        <!-- TAB 1 -->
+                        <div class="tab-pane fade show active" id="pills-0" role="tabpanel"
+                             aria-labelledby="pills-1-tab">
+                            <div class="row img-max-wrapper">
+                                <div class="col-12">
+                                    {{ content.field_cons_mater_c1_tab_imgs[0] }}
+                                </div>
+                            </div>
+                            <div class="row mt-5">
+                                <div class="col-12">
+                                    <h3 class="txt-blue">{{ content.field_cons_mater_c1_tab_menus[0] }}</h3>
+                                </div>
+                            </div>
+                            <div class="row mt-4">
+                                {{ content.field_cons_mater_c1_tab_txts[0] }}
+                            </div>
+                            <div class="row mt-4">
+                                <div class="col-12 col-lg-6 text-center">
+                                    <div class="max-455 mt-lg-5">
+                                        <span class="picto-plus"></span>
+                                        {{ content.field_cons_mater_c1_tab_txts[1] }}
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <div class="max-455 mt-lg-5 ml-lg-5">
+                                        <span class="picto-moins"></span>
+                                        {{ content.field_cons_mater_c1_tab_txts[2] }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-5">
+                                <div class="col bg-verylightgrey">
+                                    <div class="p-4">
+                                        {{ content.field_cons_mater_c1_tab_txts[3] }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- TAB 2 -->
+                        <div class="tab-pane fade" id="pills-1" role="tabpanel"
+                             aria-labelledby="pills-2-tab">
+                            <div class="row img-max-wrapper">
+                                <div class="col-12">
+                                    {{ content.field_cons_mater_c1_tab_imgs[1] }}
+                                </div>
+                            </div>
+                            <div class="row mt-5">
+                                <div class="col-12">
+                                    <h3 class="txt-blue">{{ content.field_cons_mater_c1_tab_menus[1] }}</h3>
+                                </div>
+                            </div>
+                            <div class="row mt-4">
+                                {{ content.field_cons_mater_c1_tab_txts[4] }}
+                            </div>
+                            <div class="row mt-4">
+                                <div class="col-12 col-lg-6 text-center">
+                                    <div class="max-455 mt-lg-5">
+                                        <span class="picto-plus"></span>
+                                        {{ content.field_cons_mater_c1_tab_txts[5] }}
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6 text-center">
+                                    <div class="max-455 mt-lg-5">
+                                        <span class="picto-moins"></span>
+                                        {{ content.field_cons_mater_c1_tab_txts[6] }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-5">
+                                <div class="col bg-verylightgrey">
+                                    <div class="p-4">
+                                        {{ content.field_cons_mater_c1_tab_txts[7] }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- TAB 3 -->
+                        <div class="tab-pane fade" id="pills-2" role="tabpanel"
+                             aria-labelledby="pills-3-tab">
+                            <div class="row img-max-wrapper">
+                                <div class="col-12">
+                                    {{ content.field_cons_mater_c1_tab_imgs[2] }}
+                                </div>
+                            </div>
+                            <div class="row mt-5">
+                                <div class="col-12">
+                                    <h3 class="txt-blue">{{ content.field_cons_mater_c1_tab_menus[2] }}</h3>
+                                </div>
+                            </div>
+                            <div class="row mt-4">
+                                {{ content.field_cons_mater_c1_tab_txts[8] }}
+                            </div>
+                            <div class="row mt-4">
+                                <div class="col-12 col-lg-6 text-center">
+                                    <div class="max-455 mt-lg-5">
+                                        <span class="picto-plus"></span>
+                                        {{ content.field_cons_mater_c1_tab_txts[9] }}
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6 text-center">
+                                    <div class="max-455 mt-lg-5">
+                                        <span class="picto-moins"></span>
+                                        {{ content.field_cons_mater_c1_tab_txts[10] }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- TAB 4 -->
+                        <div class="tab-pane fade" id="pills-3" role="tabpanel"
+                             aria-labelledby="pills-4-tab">
+                            <div class="row mt-5">
+                                <div class="col-12">
+                                    <h3 class="txt-blue">{{ content.field_cons_mater_c1_tab_menus[3] }}</h3>
+                                </div>
+                            </div>
+                            <div class="row mt-4">
+                                {{ content.field_cons_mater_c1_tab_txts[11] }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENT 2 -->
+        <div class="row mt-lg-5 mb-lg-4 content-2">
+            <div class="col-12">
+                <span class="number yellow">2</span>
+                <div class="pt-115 pl-85">
+                    {{ content.field_cons_mater_c2_intro }}
+                </div>
+            </div>
+        </div>
+        <div class="pl-85">
+            <div class="row my-3">
+                <div class="col-12 col-lg-6 bg-verylightgrey">
+                    <div class="p-5">
+                        {{ content.field_cons_mater_c2_txts[0] }}
+                        {{ content.field_cons_mater_c2_imgs[0] }}
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="p-5">
+                        {{ content.field_cons_mater_c2_txts[1] }}
+                        {{ content.field_cons_mater_c2_imgs[1] }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5 max-1165">
+        <div class="row">
+            <div class="col">
+                <div class="bottom-highlight bg-green">
+                    <div class="pl-3 pr-3">
+                        {{ content.field_cons_mater_c2_outro }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

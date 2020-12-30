@@ -1762,7 +1762,7 @@ ul.check-list li:before {
   width: 100%;
   object-fit: cover;
   height: 197px;
-  transition: transform .3s ease;
+  transition: transform 0.3s ease;
 }
 .recette-item img:hover {
   transform: scale(1.1);
@@ -1984,6 +1984,9 @@ ul.check-list li:before {
 #conseils #content-2 .container:before {
   display: none;
 }
+#conseils-indiv h1 {
+  line-height: 1;
+}
 #conseils-indiv h2 {
   font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
 }
@@ -2065,6 +2068,19 @@ ul.check-list li:before {
     width: auto;
     white-space: nowrap;
   }
+}
+#conseils-indiv.materiaux h3 {
+  font-size: 32px;
+}
+#conseils-indiv.materiaux h3 + p {
+  margin-bottom: 20px;
+}
+#conseils-indiv.materiaux h4 {
+  font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
+  margin-bottom: 10px;
+}
+#conseils-indiv.materiaux ul {
+  padding-left: 20px;
 }
 #marque h1 span {
   display: block;

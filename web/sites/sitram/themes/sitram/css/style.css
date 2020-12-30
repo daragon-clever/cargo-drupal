@@ -1449,8 +1449,8 @@ ul.check-list li:before {
 }
 @media only screen and (max-width: 991px) {
   #homepage .slider img {
-    height: 300px;
-    object-fit: cover;
+    width: auto;
+    margin: 0 auto;
   }
 }
 #homepage .content-1 .txt-img-under-wrapper {

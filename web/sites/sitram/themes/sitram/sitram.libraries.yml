@@ -37,6 +37,11 @@ imageloaded:
   dependencies:
     - core/jquery
 
+# Lozad
+lozad:
+  js:
+    https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js: { type: external }
+
 # Style général
 global-styling:
   header: true

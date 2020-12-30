@@ -4,16 +4,22 @@ jQuery(document).ready(function ($) {
         $("header .nav-wrapper, .js-resp-menu, .header-wrapper + .content").toggleClass('active')
     });
 
-    // CAROUSEL HOMEPAGE
-    $('.js-homepage-slider > div').slick({
-        dots: true
-    });
-
     // CAROUSEL USTENSILES (page recettes)
-    $('.js-ustensiles-slider > div').slick();
+    if ($('#recette-individuelle').length) {
+        $('.js-ustensiles-slider > div').slick();
+    }
 
-    // INSTAGRAM
+    // HOMEPAGE
     if ($('#homepage').length) {
+        // CAROUSEL HOMEPAGE
+        const observer = lozad();
+        observer.observe();
+
+        $('.js-homepage-slider > div').slick({
+            dots: true
+        });
+
+        // INSTAGRAM
         (function () {
             new InstagramFeed({
                 'username': 'sitram_fr',
@@ -101,7 +107,6 @@ jQuery(document).ready(function ($) {
             /*updateFilterCount($(this).next());*/
         })
     }
-
 
     // FOOTER
     $(".js-show-hidden-part").click(function (e) {

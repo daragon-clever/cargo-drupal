@@ -2458,49 +2458,63 @@ ul.check-list li:before {
     background-size: auto 190px;
   }
 }
-.footer-wrapper .newsletter-wrapper {
+.newsletter-wrapper {
+  background: #EDEDED;
+  position: relative;
+}
+.newsletter-wrapper:before {
+  content: "";
+  height: 50%;
+  width: 100%;
+  background-color: white;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.newsletter-wrapper .newsletter-inner {
   background-color: #741030;
   padding: 70px 100px;
 }
 @media only screen and (max-width: 991px) {
-  .footer-wrapper .newsletter-wrapper {
+  .newsletter-wrapper .newsletter-inner {
     padding: 30px;
   }
 }
-.footer-wrapper .newsletter-wrapper .text-mea h3 {
+.newsletter-wrapper .newsletter-inner .text-mea h3 {
   font-size: 32px;
 }
-.footer-wrapper .newsletter-wrapper .text-mea span {
+.newsletter-wrapper .newsletter-inner .text-mea span {
   display: inline;
 }
-.footer-wrapper .newsletter-wrapper .form-newsletter {
+.newsletter-wrapper .newsletter-inner .form-newsletter {
   font-family: "Myriad Pro Regular", Arial, Helvetica, sans-serif;
   font-size: 20px;
 }
-.footer-wrapper .newsletter-wrapper .form-newsletter label {
+.newsletter-wrapper .newsletter-inner .form-newsletter label {
   display: block;
   color: white;
 }
-.footer-wrapper .newsletter-wrapper .form-newsletter input {
+.newsletter-wrapper .newsletter-inner .form-newsletter input {
   line-height: 59px;
   padding-left: 20px;
   width: 100%;
 }
-.footer-wrapper .newsletter-wrapper .form-newsletter ::placeholder {
+.newsletter-wrapper .newsletter-inner .form-newsletter ::placeholder {
   color: #b9b9b9;
 }
-.footer-wrapper .newsletter-wrapper .form-newsletter .form-email {
+.newsletter-wrapper .newsletter-inner .form-newsletter .form-email {
   margin-bottom: 5px;
 }
-.footer-wrapper .newsletter-wrapper .form-newsletter .name-wrapper {
+.newsletter-wrapper .newsletter-inner .form-newsletter .name-wrapper {
   margin-bottom: 40px;
 }
 @media only screen and (max-width: 991px) {
-  .footer-wrapper .newsletter-wrapper .form-newsletter .name-wrapper {
+  .newsletter-wrapper .newsletter-inner .form-newsletter .name-wrapper {
     margin-bottom: 0;
   }
 }
-.footer-wrapper .newsletter-wrapper .form-newsletter .form-submit input {
+.newsletter-wrapper .newsletter-inner .form-newsletter .form-submit input {
   background-color: #FDC2A1;
   color: #741030;
   text-transform: uppercase;
@@ -2510,27 +2524,25 @@ ul.check-list li:before {
   text-decoration: none;
   cursor: pointer;
 }
-.footer-wrapper .newsletter-wrapper .form-newsletter .form-submit input:hover {
+.newsletter-wrapper .newsletter-inner .form-newsletter .form-submit input:hover {
   opacity: 0.8;
 }
 @media only screen and (max-width: 991px) {
-  .footer-wrapper .newsletter-wrapper .form-newsletter .form-submit input {
+  .newsletter-wrapper .newsletter-inner .form-newsletter .form-submit input {
     margin-top: 30px;
   }
 }
-.footer-wrapper .newsletter-wrapper .js-hidden-part {
+.newsletter-wrapper .newsletter-inner .js-hidden-part {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease-in-out;
 }
-.footer-wrapper .newsletter-wrapper .js-hidden-part.show {
+.newsletter-wrapper .newsletter-inner .js-hidden-part.show {
   max-height: 300px;
 }
 .footer-wrapper .logos-wrapper {
   background-color: #EDEDED;
-  margin-top: -210px;
-  padding-top: 260px;
-  padding-bottom: 50px;
+  padding: 50px 0;
 }
 .footer-wrapper .logos-wrapper .logo {
   height: 118px;

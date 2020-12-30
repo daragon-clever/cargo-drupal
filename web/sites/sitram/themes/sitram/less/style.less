@@ -1501,8 +1501,22 @@
 }
 
 // FOOTER //
-.footer-wrapper {
-  .newsletter-wrapper {
+.newsletter-wrapper {
+  background: @lightGrey;
+  position: relative;
+
+  &:before {
+    content: "";
+    height: 50%;
+    width: 100%;
+    background-color: white;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .newsletter-inner {
     background-color: @secondaryColor;
     padding: 70px 100px;
 
@@ -1577,12 +1591,12 @@
       }
     }
   }
+}
 
+.footer-wrapper {
   .logos-wrapper {
     background-color: @lightGrey;
-    margin-top: -210px;
-    padding-top: 260px;
-    padding-bottom: 50px;
+    padding: 50px 0;
 
     .logo {
       height: 118px;

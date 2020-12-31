@@ -1762,7 +1762,7 @@ ul.check-list li:before {
   width: 100%;
   object-fit: cover;
   height: 197px;
-  transition: transform 0.3s ease;
+  transition: transform .3s ease;
 }
 .recette-item img:hover {
   transform: scale(1.1);
@@ -2587,7 +2587,6 @@ ul.check-list li:before {
   text-align: center;
 }
 .footer-wrapper .links {
-  padding: 30px 0 35px 15px;
   font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
 }
 .footer-wrapper .links > div {
@@ -2642,21 +2641,30 @@ ul.check-list li:before {
   text-decoration: underline;
   color: #434343;
 }
-.footer-wrapper .links div.social1 {
-  margin-bottom: 15px;
+.footer-wrapper .links div.social1,
+.footer-wrapper .links div.social2,
+.footer-wrapper .links div.social3 {
+  margin: 15px 0;
   height: 25px;
   width: 25px;
+}
+@media only screen and (max-width: 991px) {
+  .footer-wrapper .links div.social1,
+  .footer-wrapper .links div.social2,
+  .footer-wrapper .links div.social3 {
+    margin: 0 15px;
+    height: 50px;
+    width: 50px;
+    background-size: cover !important;
+  }
+}
+.footer-wrapper .links div.social1 {
   background: url("../images/footer/facebook.svg") no-repeat center transparent;
 }
 .footer-wrapper .links div.social2 {
-  margin-bottom: 15px;
-  height: 25px;
-  width: 25px;
   background: url("../images/footer/instagram.svg") no-repeat center transparent;
 }
 .footer-wrapper .links div.social3 {
-  height: 25px;
-  width: 25px;
   background: url("../images/footer/pinterest.svg") no-repeat center transparent;
 }
 .copyright {
@@ -2668,6 +2676,12 @@ ul.check-list li:before {
 .copyright a {
   color: white;
   text-decoration: none;
+}
+@media only screen and (max-width: 991px) {
+  .copyright {
+    padding: 5px 15px;
+    line-height: 1.6;
+  }
 }
 .breadcrumb-sitram ul {
   margin: 0;

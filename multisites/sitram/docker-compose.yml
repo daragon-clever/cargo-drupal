@@ -39,7 +39,7 @@ services:
       volumes:
         - "$PWD../../../:/var/www/html"
         - db_data:/var/lib/mysql
-      command: ['--innodb_log_file_size=50M']
+      command: ['--innodb_log_file_size=500M']
       networks:
         webgateway:
           aliases:

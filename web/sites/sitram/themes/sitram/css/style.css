@@ -1762,7 +1762,7 @@ ul.check-list li:before {
   width: 100%;
   object-fit: cover;
   height: 197px;
-  transition: transform .3s ease;
+  transition: transform 0.3s ease;
 }
 .recette-item img:hover {
   transform: scale(1.1);
@@ -2081,6 +2081,17 @@ ul.check-list li:before {
 }
 #conseils-indiv.materiaux ul {
   padding-left: 20px;
+}
+#conseils-indiv.entretien h3 {
+  line-height: 1;
+}
+#conseils-indiv.entretien img {
+  max-width: 100%;
+  height: auto;
+}
+#conseils-indiv.entretien .content-1 p {
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 .rate-info-wrapper .item {
   display: flex;

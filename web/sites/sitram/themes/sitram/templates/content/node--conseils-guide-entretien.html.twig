@@ -1,0 +1,254 @@
+<div id="conseils-indiv" class="entretien">
+    <div id="ban-intro" class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <!-- BANNER -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col ban">
+                            {{ content.field_cons_entretien_banner }}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- INTRO -->
+                <div class="container max-1065">
+                    <div class="row">
+                        <div class="col text-center">
+                            <h1>{{ content.    field_cons_entretien_title }}</h1>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 col-lg-6">
+                            {{ content.field_cons_entretien_intro[0] }}
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            {{ content.field_cons_entretien_intro[1] }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container max-1350">
+        <!-- CONTENT 1 -->
+        <div class="row my-3 my-lg-5">
+            <div class="col-12">
+                <span class="number">1</span>
+                <div class="pt-115 pl-85">
+                    <div class="row">
+                        <div class="col">
+                            {{ content.field_cons_entretien_c1_intro }}
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-12 col-lg-6 align-self-center">
+                            <div class="pr-5">
+                                {{ content.field_cons_entretien_c1_txts[0] }}
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 mt-4 mt-lg-0">
+                            {{ content.field_cons_entretien_c1_imgs[0] }}
+                        </div>
+                    </div>
+                    <div class="row mt-5">
+                        <div class="col-12 col-lg-6">
+                            <div class="pr-5">
+                                {{ content.field_cons_entretien_c1_txts[1] }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col">
+                            {{ content.field_cons_entretien_c1_imgs[1] }}
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col px-3">
+                            <div class="row">
+                                <div class="col-12 col-lg-6 p-5 bg-verylightgrey">
+                                    {{ content.field_cons_entretien_c1_sections[0] }}
+                                </div>
+                                <div class="col-12 col-lg-6 p-5">
+                                    {{ content.field_cons_entretien_c1_sections[1] }}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-lg-6 p-5 bg-verylightgrey">
+                                    {{ content.field_cons_entretien_c1_sections[2] }}
+                                </div>
+                                <div class="col-12 col-lg-6 p-5">
+                                    {{ content.field_cons_entretien_c1_sections[3] }}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-lg-6 p-5 bg-verylightgrey">
+                                    {{ content.field_cons_entretien_c1_sections[4] }}
+                                </div>
+                                <div class="col-12 col-lg-6 p-5">
+                                    {{ content.field_cons_entretien_c1_sections[5] }}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-lg-6 p-5 bg-verylightgrey">
+                                    {{ content.field_cons_entretien_c1_sections[6] }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENT 2 -->
+        <div class="row my-3 my-lg-5">
+            <div class="col-12">
+                <span class="number yellow">2</span>
+                <div class="pt-115 pl-85">
+                    <div class="row">
+                        <div class="col">
+                            {{ content.field_cons_entretien_c2_intro }}
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col px-3">
+                            <div class="row">
+                                <div class="col-12 col-md-6 p-5 bg-verylightgrey">
+                                    {{ content.field_cons_entretien_c2_txts[0] }}
+                                </div>
+                                <div class="col-12 col-md-6 p-5">
+                                    {{ content.field_cons_entretien_c2_txts[1] }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENT 3 / INTRO -->
+        <div class="row my-3 my-lg-5">
+            <div class="col-12">
+                <span class="number">3</span>
+                <div class="pt-115 pl-85">
+                    {{ content.field_cons_entretien_c3_intro }}
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENT 3 / TABS -->
+        <div class="row my-3 my-lg-5">
+            <div class="col">
+                <div class="pl-85">
+                    <ul class="nav mb-4 custom-tabs" id="pills-tab" role="tablist">
+                        {% for i in 0..2 %}
+                            <li class="nav-item">
+                                <a class="nav-link {% if i == 0 %}active{% endif %}"
+                                   id="pills-{{ i }}-tab"
+                                   data-toggle="pill"
+                                   href="#pills-{{ i }}"
+                                   role="tab"
+                                   aria-controls="pills-home"
+                                   aria-selected="true">
+                                    {{ content.field_cons_entretien_c3_menus[i] }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+
+                    <div class="tab-content" id="pills-tabContent">
+                        <!-- TAB 1 -->
+                        <div class="tab-pane fade show active" id="pills-0" role="tabpanel"
+                             aria-labelledby="pills-1-tab">
+                            <div class="row img-max-wrapper">
+                                <div class="col-12">
+                                    {{ content.field_cons_entretien_c3_img }}
+                                </div>
+                            </div>
+                            <div class="row mt-5">
+                                <div class="col-12">
+                                    {{ content.field_cons_entret_c3_tabs_intros[0] }}
+                                </div>
+                            </div>
+                            <div class="row mt-4">
+                                {{ content.field_cons_entret_c3_tabs_txts[0] }}
+                            </div>
+                        </div>
+
+                        <!-- TAB 2 -->
+                        <div class="tab-pane fade" id="pills-1" role="tabpanel"
+                             aria-labelledby="pills-2-tab">
+                            <div class="row mt-5">
+                                <div class="col-12">
+                                    {{ content.field_cons_entret_c3_tabs_intros[1] }}
+                                </div>
+                            </div>
+                            <div class="row mt-4">
+                                <div class="col px-3">
+                                    <div class="row">
+                                        {{ content.field_cons_entret_c3_tabs_txts[1] }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- TAB 3 -->
+                        <div class="tab-pane fade" id="pills-2" role="tabpanel"
+                             aria-labelledby="pills-3-tab">
+                            <div class="row mt-5">
+                                <div class="col-12">
+                                    {{ content.field_cons_entret_c3_tabs_intros[2] }}
+                                </div>
+                            </div>
+                            <div class="row mt-4">
+                                <div class="col px-3">
+                                    <div class="row">
+                                        {{ content.field_cons_entret_c3_tabs_txts[2] }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENT 4 -->
+        <div class="row my-3 my-lg-5">
+            <div class="col-12">
+                <span class="number yellow">4</span>
+                <div class="pt-115 pl-85">
+                    <div class="row">
+                        <div class="col">
+                            {{ content.field_cons_entretien_c4_intro }}
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col">
+                            {{ content.field_cons_entretien_c4_img }}
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col px-3">
+                            <div class="row">
+                                <div class="col-12 col-md-6 p-5 bg-verylightgrey">
+                                    {{ content.field_cons_entretien_c4_txts[0] }}
+                                </div>
+                                <div class="col-12 col-md-6 p-5">
+                                    {{ content.field_cons_entretien_c4_txts[1] }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row my-5">
+                        <div class="col">
+                            {{ content.field_cons_entretien_c4_outro }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

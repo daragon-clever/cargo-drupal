@@ -2082,6 +2082,59 @@ ul.check-list li:before {
 #conseils-indiv.materiaux ul {
   padding-left: 20px;
 }
+.rate-info-wrapper .item {
+  display: flex;
+}
+.rate-info-wrapper .item > div {
+  padding: 10px 0;
+}
+.rate-info-wrapper .item div:nth-child(1) {
+  color: white;
+  width: 57%;
+  text-align: center;
+  padding: 10px;
+}
+.rate-info-wrapper .item div:nth-child(2) {
+  width: 43%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 1px solid #EDEDED;
+}
+.rate-info-wrapper .item div:nth-child(2) span {
+  border: 1px solid #EDEDED;
+  border-radius: 100%;
+  height: 14px;
+  width: 14px;
+}
+.rate-info-wrapper.row4 .item div:nth-child(1) {
+  padding: 15px 10px 16px;
+}
+@media only screen and (max-width: 767px) {
+  .rate-info-wrapper.row4 .item div:nth-child(1) {
+    padding: 10px;
+  }
+}
+.rate-info-wrapper.yellow .item div:nth-child(1),
+.rate-info-wrapper.yellow .item div:nth-child(2) span.filled {
+  background: #F9AB00;
+  border-color: #F9AB00;
+}
+.rate-info-wrapper.green .item div:nth-child(1),
+.rate-info-wrapper.green .item div:nth-child(2) span.filled {
+  background: #005259;
+  border-color: #005259;
+}
+.rate-info-wrapper.red .item div:nth-child(1),
+.rate-info-wrapper.red .item div:nth-child(2) span.filled {
+  background: #741030;
+  border-color: #741030;
+}
+.rate-info-wrapper.blue .item div:nth-child(1),
+.rate-info-wrapper.blue .item div:nth-child(2) span.filled {
+  background: #003663;
+  border-color: #003663;
+}
 #marque h1 span {
   display: block;
 }

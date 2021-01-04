@@ -1,209 +1,169 @@
-<div id="conseils-indiv" class="entretien">
+<div id="conseils-indiv" class="revetements">
+    <div id="ban-intro" class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <!-- BANNER -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col ban">
+                            {{ content.field_cons_revet_banner }}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- INTRO -->
+                <div class="container max-1065">
+                    <div class="row">
+                        <div class="col text-center">
+                            <h1>{{ content.field_cons_revet_title }}</h1>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 col-lg-6">
+                            {{ content.field_cons_revet_intro[0] }}
+                        </div>
+                        <div class="col-12 col-lg-6 mt-3 mt-lg-0">
+                            {{ content.field_cons_revet_intro[1] }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="container max-1350">
+        <!-- CONTENT 1 -->
+        <div class="row my-3 my-lg-5">
+            <div class="col-12">
+                <span class="number">1</span>
+                <div class="pt-115 pl-85">
+                    {{ content.field_cons_revet_c1_intro }}
+
+                    <div class="row mt-4">
+                        <div class="col-12 col-lg-6 text-center">
+                            <div class="max-455 mt-lg-5">
+                                <span class="picto-plus"></span>
+                                {{ content.field_cons_revet_c1_txts[0] }}
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <div class="max-455 mt-lg-5 ml-lg-5">
+                                <span class="picto-moins"></span>
+                                {{ content.field_cons_revet_c1_txts[1] }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- CONTENT 2 -->
-        <div class="row mt-lg-5 mb-lg-4 content-2">
+        <div class="row mt-lg-5 mb-lg-4">
             <div class="col-12">
                 <span class="number yellow">2</span>
                 <div class="pt-115 pl-85">
-                    <h2 class="txt-yellow">
-                        Les différents type de revêtements intérieurs
-                    </h2>
-                    <p>
-                        Proposés dans différents matériaux, certains de nos ustensiles de cuisson peuvent être équipés
-                        d’un revêtement extérieur : un revêtement anti-adhésif pour un entretien facilité, un revêtement
-                        en émail pour plus de brillance et d’éclat, ou encore un revêtement en peinture, à l’aspect
-                        brillant ou mat. Mais lorsque l’on évoque les caractéristiques particulières d’un ustensile
-                        revêtu, on s’intéresse plutôt à son revêtement intérieur.
-                    </p>
+                    {{ content.field_cons_revet_c2_intro }}
 
-                    <div class="row">
+                    <div class="row mt-4">
                         <div class="col-12 col-sm-6 col-lg-3 my-3 my-lg-0">
-                            <h4 class="txt-blue">Revêtements Anti-adhésif</h4>
-                            <div class="rate-info-wrapper yellow">
-                                <div class="item">
-                                    <div>Anti-adhérant</div>
-                                    <div>
-                                        <span class="filled"></span>
-                                        <span class="filled"></span>
-                                        <span class="filled"></span>
-                                        <span class="filled"></span>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div>Résistance aux rayures</div>
-                                    <div>
-                                        <span class="filled"></span>
-                                        <span class="filled"></span>
-                                        <span></span>
-                                        <span></span>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div>Nettoyage</div>
-                                    <div>
-                                        <span class="filled"></span>
-                                        <span class="filled"></span>
-                                        <span class="filled"></span>
-                                        <span class="filled"></span>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div>Saisie des aliments</div>
-                                    <div>
-                                        <span class="filled"></span>
-                                        <span class="filled"></span>
-                                        <span></span>
-                                        <span></span>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div>Utilisation <br class="d-none d-lg-block"/> matière grasse</div>
-                                    <div>
-                                        <span class="filled"></span>
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                    </div>
-                                </div>
-                            </div>
+                             {{ content.field_cons_revet_c2_board[0] }}
                         </div>
                         <div class="col-12 col-sm-6 col-lg-3 my-3 my-lg-0">
-                            <h4 class="txt-blue">Céramique</h4>
-                            <div class="rate-info-wrapper green">
-                                <div class="item">
-                                    <div>Anti-adhérant</div>
-                                    <div>
-                                        <span class="filled"></span>
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div>Résistance aux rayures</div>
-                                    <div>
-                                        <span class="filled"></span>
-                                        <span class="filled"></span>
-                                        <span class="filled"></span>
-                                        <span class="filled"></span>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div>Nettoyage</div>
-                                    <div>
-                                        <span class="filled"></span>
-                                        <span class="filled"></span>
-                                        <span></span>
-                                        <span></span>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div>Saisie des aliments</div>
-                                    <div>
-                                        <span class="filled"></span>
-                                        <span class="filled"></span>
-                                        <span class="filled"></span>
-                                        <span></span>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div>Utilisation <br class="d-none d-lg-block"/> matière grasse</div>
-                                    <div>
-                                        <span class="filled"></span>
-                                        <span class="filled"></span>
-                                        <span class="filled"></span>
-                                        <span></span>
-                                    </div>
-                                </div>
-                            </div>
+                            {{ content.field_cons_revet_c2_board[1] }}
                         </div>
                         <div class="col-12 col-sm-6 col-lg-3 my-3 my-lg-0">
-                            <h4 class="txt-blue">Inoxydable</h4>
-                            <div class="rate-info-wrapper red row4">
-                                <div class="item">
-                                    <div>Résistance aux rayures</div>
-                                    <div>
-                                        <span class="filled"></span>
-                                        <span class="filled"></span>
-                                        <span class="filled"></span>
-                                        <span class="filled"></span>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div>Nettoyage</div>
-                                    <div>
-                                        <span class="filled"></span>
-                                        <span class="filled"></span>
-                                        <span></span>
-                                        <span></span>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div>Saisie des aliments</div>
-                                    <div>
-                                        <span class="filled"></span>
-                                        <span class="filled"></span>
-                                        <span class="filled"></span>
-                                        <span class="filled"></span>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div>Utilisation <br class="d-none d-lg-block"/> matière grasse</div>
-                                    <div>
-                                        <span class="filled"></span>
-                                        <span class="filled"></span>
-                                        <span class="filled"></span>
-                                        <span class="filled"></span>
-                                    </div>
-                                </div>
-                            </div>
+                            {{ content.field_cons_revet_c2_board[2] }}
                         </div>
                         <div class="col-12 col-sm-6 col-lg-3 my-3 my-lg-0">
-                            <h4 class="txt-blue">Émail</h4>
-                            <div class="rate-info-wrapper blue">
-                                <div class="item">
-                                    <div>Anti-adhérant</div>
-                                    <div>
-                                        <span class="filled"></span>
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
+                            {{ content.field_cons_revet_c2_board[3] }}
+                        </div>
+                    </div>
+
+                    <!-- CONTENT 2 / TABS -->
+                    <div class="row my-3 my-lg-5 content2-tabs">
+                        <div class="col my-2">
+                            <ul class="nav mb-4 custom-tabs" id="pills-tab" role="tablist">
+                                {% for i in 0..3 %}
+                                    <li class="nav-item">
+                                        <a class="nav-link {% if i == 0 %}active{% endif %}"
+                                           id="pills-{{ i }}-tab"
+                                           data-toggle="pill"
+                                           href="#pills-{{ i }}"
+                                           role="tab"
+                                           aria-controls="pills-home"
+                                           aria-selected="true">
+                                            {{ content.field_cons_revet_c2_tabs_menus[i] }}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+
+                            <div class="tab-content" id="pills-tabContent">
+                                <!-- TAB 1 -->
+                                <div class="tab-pane fade show active" id="pills-0" role="tabpanel"
+                                     aria-labelledby="pills-1-tab">
+                                    <div class="row img-max-wrapper">
+                                        <div class="col-12">
+                                            {{ content.field_cons_revet_c2_tabs_imgs[0] }}
+                                        </div>
+                                    </div>
+                                    <div class="row mt-5">
+                                        <div class="col-12">
+                                            {{ content.field_cons_revet_c2_tabs_intros[0] }}
+                                        </div>
+                                    </div>
+                                    <div class="row mt-4">
+                                        {{ content.field_cons_revet_c2_tabs_txts[0] }}
                                     </div>
                                 </div>
-                                <div class="item">
-                                    <div>Résistance aux rayures</div>
-                                    <div>
-                                        <span class="filled"></span>
-                                        <span class="filled"></span>
-                                        <span class="filled"></span>
-                                        <span class="filled"></span>
+
+                                <!-- TAB 2 -->
+                                <div class="tab-pane fade" id="pills-1" role="tabpanel"
+                                     aria-labelledby="pills-2-tab">
+                                    <div class="row img-max-wrapper">
+                                        <div class="col-12">
+                                            {{ content.field_cons_revet_c2_tabs_imgs[1] }}
+                                        </div>
+                                    </div>
+                                    <div class="row mt-5">
+                                        <div class="col-12">
+                                            {{ content.field_cons_revet_c2_tabs_intros[1] }}
+                                        </div>
+                                    </div>
+                                    <div class="row mt-4">
+                                        {{ content.field_cons_revet_c2_tabs_txts[1] }}
                                     </div>
                                 </div>
-                                <div class="item">
-                                    <div>Nettoyage</div>
-                                    <div>
-                                        <span class="filled"></span>
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
+
+                                <!-- TAB 3 -->
+                                <div class="tab-pane fade" id="pills-2" role="tabpanel"
+                                     aria-labelledby="pills-3-tab">
+                                    <div class="row img-max-wrapper">
+                                        <div class="col-12">
+                                            {{ content.field_cons_revet_c2_tabs_imgs[2] }}
+                                        </div>
+                                    </div>
+                                    <div class="row mt-5">
+                                        <div class="col-12">
+                                            {{ content.field_cons_revet_c2_tabs_intros[2] }}
+                                        </div>
+                                    </div>
+                                    <div class="row mt-4">
+                                        {{ content.field_cons_revet_c2_tabs_txts[2] }}
                                     </div>
                                 </div>
-                                <div class="item">
-                                    <div>Saisie des aliments</div>
-                                    <div>
-                                        <span class="filled"></span>
-                                        <span class="filled"></span>
-                                        <span class="filled"></span>
-                                        <span></span>
+
+                                <!-- TAB 4 -->
+                                <div class="tab-pane fade" id="pills-3" role="tabpanel"
+                                     aria-labelledby="pills-4-tab">
+                                    <div class="row mt-5">
+                                        <div class="col-12">
+                                            {{ content.field_cons_revet_c2_tabs_intros[3] }}
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="item">
-                                    <div>Utilisation <br class="d-none d-lg-block"/> matière grasse</div>
-                                    <div>
-                                        <span class="filled"></span>
-                                        <span class="filled"></span>
-                                        <span class="filled"></span>
-                                        <span class="filled"></span>
+                                    <div class="row mt-4">
+                                        {{ content.field_cons_revet_c2_tabs_txts[3] }}
                                     </div>
                                 </div>
                             </div>
@@ -213,5 +173,34 @@
             </div>
         </div>
 
+        <!-- CONTENT 3 -->
+        <div class="row my-3 my-lg-5 content-3">
+            <div class="col-12">
+                <span class="number">3</span>
+                <div class="pt-115 pl-85">
+                    {{ content.field_cons_revet_c3_intro }}
+                    <div class="row mt-5">
+                        <div class="col-12 col-lg-6">
+                            {{ content.field_cons_revet_c3_txts[0] }}
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            {{ content.field_cons_revet_c3_txts[1] }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-md-5 mb-5 max-1165">
+        <div class="row">
+            <div class="col">
+                <div class="bottom-highlight bg-green">
+                    <div class="pl-3 pr-3">
+                        {{ content.field_cons_mater_c3_outro }}
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

@@ -1777,7 +1777,7 @@ ul.check-list li:before {
   width: 100%;
   object-fit: cover;
   height: 197px;
-  transition: transform .3s ease;
+  transition: transform 0.3s ease;
 }
 .recette-item img:hover {
   transform: scale(1.1);
@@ -2179,6 +2179,17 @@ ul.check-list li:before {
 }
 #marque #content-1 {
   position: relative;
+}
+#marque.qui-sommes-nous .gallery img {
+  width: 100%;
+  object-fit: cover;
+}
+#marque.qui-sommes-nous .gallery .bg-lightgrey img {
+  width: auto;
+}
+#marque.qui-sommes-nous .gallery .gutter-4 {
+  padding-left: 4px;
+  padding-right: 4px;
 }
 #sitram-et-moi {
   position: relative;

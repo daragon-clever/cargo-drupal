@@ -122,6 +122,15 @@ a {
 a:hover {
   opacity: 0.8;
 }
+.slick-prev,
+.slick-next {
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
+}
+.slick-disabled {
+  opacity: 0.2;
+  cursor: inherit;
+}
 .header-wrapper + .content {
   transition: all 0.3s ease-in-out;
 }

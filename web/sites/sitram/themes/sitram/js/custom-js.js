@@ -61,6 +61,7 @@ jQuery(document).ready(function ($) {
     if ($('.js-slick-txt').length) {
         $('.js-slick-txt').slick({
             slidesToShow: 4,
+            infinite: false,
             responsive: [
                 {
                     breakpoint: 1024,

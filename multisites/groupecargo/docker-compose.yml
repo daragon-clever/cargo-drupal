@@ -52,7 +52,7 @@ services:
             - db_internal
 
   phpmyadmin:
-      image: phpmyadmin/phpmyadmin:4.7.9-1
+      build: ../../docker/phpmyadmin
       environment:
         PMA_HOST: db_internal
       volumes:

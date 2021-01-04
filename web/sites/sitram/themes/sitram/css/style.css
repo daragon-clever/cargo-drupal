@@ -1747,7 +1747,9 @@ ul.check-list li:before {
   margin-bottom: 0;
   font-family: "Myriad Pro Regular", Arial, Helvetica, sans-serif;
   font-size: 16px;
-  text-transform: capitalize;
+}
+.recettes-filters .form-wrapper .fieldset-wrapper .option:first-letter {
+  text-transform: uppercase;
 }
 .recettes-filters .form-actions {
   display: none;

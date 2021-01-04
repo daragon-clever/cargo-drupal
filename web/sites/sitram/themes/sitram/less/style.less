@@ -617,7 +617,10 @@
         margin-bottom: 0;
         font-family: @MyriadRegular;
         font-size: 16px;
-        text-transform: capitalize;
+
+        &:first-letter {
+          text-transform: uppercase;
+        }
       }
     }
   }

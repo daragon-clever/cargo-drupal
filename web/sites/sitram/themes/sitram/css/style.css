@@ -148,6 +148,9 @@ a:hover {
 .bg-green {
   background-color: #005259;
 }
+.bg-green a {
+  color: white;
+}
 .bg-lightgrey {
   background-color: #EDEDED;
 }

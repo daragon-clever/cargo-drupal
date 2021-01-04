@@ -1666,7 +1666,7 @@ ul.check-list li:before {
   }
 }
 .entete-recettes p {
-  max-width: 525px;
+  max-width: 530px;
   margin: 30px auto 0;
 }
 .footer-recettes .block-txt {
@@ -1747,6 +1747,7 @@ ul.check-list li:before {
   margin-bottom: 0;
   font-family: "Myriad Pro Regular", Arial, Helvetica, sans-serif;
   font-size: 16px;
+  text-transform: capitalize;
 }
 .recettes-filters .form-actions {
   display: none;
@@ -1762,7 +1763,7 @@ ul.check-list li:before {
   width: 100%;
   object-fit: cover;
   height: 197px;
-  transition: transform 0.3s ease;
+  transition: transform .3s ease;
 }
 .recette-item img:hover {
   transform: scale(1.1);

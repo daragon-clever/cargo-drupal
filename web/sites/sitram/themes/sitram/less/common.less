@@ -1376,3 +1376,68 @@ ul.check-list {
     }
   }
 }
+
+.js-hidden-video {
+  display: none;
+  z-index: 100;
+  position: relative;
+
+  .inner {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    transition: opacity 0.5s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & > div {
+      position: relative;
+    }
+  }
+
+  @media @tablet {
+    iframe {
+      max-width:90vw;
+      max-height: 90vw;
+    }
+  }
+}
+
+.js-close-hidden-video {
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  height: 45px;
+  width: 45px;
+  cursor: pointer;
+  .dimOpacityOnHover(0.8);
+
+  @media @tablet {
+    right: 0;
+  }
+
+  &:after,
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 45%;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: white;
+    transform-origin: center;
+  }
+
+  &:before {
+    transform: rotate(45deg);
+  }
+
+  &:after {
+    transform: rotate(-45deg);
+  }
+}

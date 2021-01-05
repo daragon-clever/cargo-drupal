@@ -109,6 +109,20 @@ jQuery(document).ready(function ($) {
         })
     }
 
+    // POPUP VIDEO
+    $('.js-open-video').click(function (e) {
+        e.preventDefault();
+        $(this).next('.js-hidden-video').fadeIn();
+    });
+
+    $('.js-close-hidden-video').click(function () {
+        const iframe = $(this).prev();
+        const src = iframe.attr('src');
+        $(this).parents('.js-hidden-video').fadeOut();
+        iframe.attr('src','');
+        iframe.attr('src',src)
+    });
+
     // FOOTER
     $(".js-show-hidden-part").click(function (e) {
         if (!$(this).hasClass('opened')) {

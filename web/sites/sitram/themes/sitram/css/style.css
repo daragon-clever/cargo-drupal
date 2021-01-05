@@ -2191,6 +2191,36 @@ ul.check-list li:before {
   padding-left: 4px;
   padding-right: 4px;
 }
+#marque.les-engagements .bg-grey-custom {
+  background: url("../images/background-grey.jpg") repeat-x top center transparent;
+  background-size: auto 270px;
+}
+@media only screen and (max-width: 991px) {
+  #marque.les-engagements .bg-grey-custom {
+    background-size: auto 53px;
+  }
+}
+#marque.les-engagements img {
+  width: 100%;
+  height: auto;
+}
+#marque.les-engagements .max-525 {
+  max-width: 525px;
+}
+@media only screen and (max-width: 991px) {
+  #marque.les-engagements .max-525 {
+    max-width: 100%;
+  }
+}
+#marque.les-engagements .h2-rse {
+  font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
+}
+#marque.les-engagements h3 {
+  line-height: 1;
+}
+#marque.les-engagements ul {
+  padding-left: 20px;
+}
 #sitram-et-moi {
   position: relative;
 }

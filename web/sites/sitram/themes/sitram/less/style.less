@@ -2282,3 +2282,95 @@
     }
   }
 }
+
+// REPARATEURS
+.table-resp-wrapper {
+  max-width: 100%;
+  overflow: auto;
+}
+
+table.reparateurs {
+  width: 100%;
+
+  thead {
+    background: @primaryColor;
+    color: white;
+    height: 60px;
+
+    .mail-site {
+      max-width: 400px;
+
+      @media @tablet {
+        max-width: 250px;
+      }
+    }
+
+    td {
+      padding: 0 30px;
+
+      @media @tablet {
+        padding: 0 15px;
+      }
+    }
+  }
+
+  td {
+    border:2px solid @lightGrey;
+
+    @media @tablet {
+      border-width: 1px;
+    }
+  }
+
+  tbody {
+    .departement,
+    .tel {
+      text-align: center;
+    }
+
+    .mail-site {
+      max-width: 400px;
+
+      @media @tablet {
+        max-width: 250px;
+      }
+
+      br {
+        display: none;
+      }
+
+      a {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-width: 100%;
+        display: block;
+      }
+    }
+
+    td {
+      padding: 30px;
+
+      @media @tablet {
+        padding: 15px;
+      }
+    }
+
+    .departement {
+      font-size: 32px;
+      color: @primaryColor
+    }
+
+    .infos b {
+      font-size: 24px;
+      color: @secondaryColor;
+      text-transform: uppercase;
+    }
+
+    .tel {
+      font-size: 24px;
+      color: @primaryColor;
+      font-family: @MyriadSemibold;
+    }
+  }
+}

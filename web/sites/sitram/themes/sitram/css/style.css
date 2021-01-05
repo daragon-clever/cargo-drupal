@@ -1209,6 +1209,68 @@ ul.check-list li:before {
 .slider .slick-dots li.slick-active button {
   background: #741030;
 }
+.js-hidden-video {
+  display: none;
+  z-index: 100;
+  position: relative;
+}
+.js-hidden-video .inner {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  transition: opacity 0.5s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.js-hidden-video .inner > div {
+  position: relative;
+}
+@media only screen and (max-width: 991px) {
+  .js-hidden-video iframe {
+    max-width: 90vw;
+    max-height: 90vw;
+  }
+}
+.js-close-hidden-video {
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  height: 45px;
+  width: 45px;
+  transition: opacity 0.3s;
+  text-decoration: none;
+  cursor: pointer;
+}
+.js-close-hidden-video:hover {
+  opacity: 0.8;
+}
+@media only screen and (max-width: 991px) {
+  .js-close-hidden-video {
+    right: 0;
+  }
+}
+.js-close-hidden-video:after,
+.js-close-hidden-video:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 45%;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: white;
+  transform-origin: center;
+}
+.js-close-hidden-video:before {
+  transform: rotate(45deg);
+}
+.js-close-hidden-video:after {
+  transform: rotate(-45deg);
+}
 @font-face {
   font-family: 'Cardenio Modern';
   src: url('../fonts/cardeniomodern-regular-webfont.woff2') format('woff2'), url('../fonts/cardeniomodern-regular-webfont.woff') format('woff');
@@ -1777,7 +1839,7 @@ ul.check-list li:before {
   width: 100%;
   object-fit: cover;
   height: 197px;
-  transition: transform 0.3s ease;
+  transition: transform .3s ease;
 }
 .recette-item img:hover {
   transform: scale(1.1);

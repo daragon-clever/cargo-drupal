@@ -2840,30 +2840,31 @@ ul.check-list li:before {
   text-decoration: underline;
   color: #434343;
 }
-.footer-wrapper .links div.social1,
-.footer-wrapper .links div.social2,
-.footer-wrapper .links div.social3 {
+.footer-wrapper .links .social1,
+.footer-wrapper .links .social2,
+.footer-wrapper .links .social3 {
+  display: block;
   margin: 15px 0;
   height: 25px;
   width: 25px;
 }
 @media only screen and (max-width: 991px) {
-  .footer-wrapper .links div.social1,
-  .footer-wrapper .links div.social2,
-  .footer-wrapper .links div.social3 {
+  .footer-wrapper .links .social1,
+  .footer-wrapper .links .social2,
+  .footer-wrapper .links .social3 {
     margin: 0 15px;
     height: 50px;
     width: 50px;
     background-size: cover !important;
   }
 }
-.footer-wrapper .links div.social1 {
+.footer-wrapper .links .social1 {
   background: url("../images/footer/facebook.svg") no-repeat center transparent;
 }
-.footer-wrapper .links div.social2 {
+.footer-wrapper .links .social2 {
   background: url("../images/footer/instagram.svg") no-repeat center transparent;
 }
-.footer-wrapper .links div.social3 {
+.footer-wrapper .links .social3 {
   background: url("../images/footer/pinterest.svg") no-repeat center transparent;
 }
 .copyright {

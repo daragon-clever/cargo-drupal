@@ -111,6 +111,7 @@ namespace :drupal do
           execute :drush, '-l ostaria -y updatedb'
           execute :drush, '-l turbocar -y updatedb'
           execute :drush, '-l yliades -y updatedb'
+          execute :drush, '-l sitram -y updatedb'
         end
       end
     end

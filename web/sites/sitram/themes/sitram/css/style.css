@@ -1343,6 +1343,10 @@ ul.check-list li:before {
   color: #003663;
   opacity: 1;
 }
+.header-wrapper nav > ul > li a.is-active.ou-acheter,
+.header-wrapper nav > ul > li a:hover.ou-acheter {
+  color: white;
+}
 .header-wrapper nav > ul a.ou-acheter {
   display: inline-block;
   line-height: 46px;

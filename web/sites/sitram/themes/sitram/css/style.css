@@ -1843,7 +1843,7 @@ ul.check-list li:before {
   width: 100%;
   object-fit: cover;
   height: 197px;
-  transition: transform 0.3s ease;
+  transition: transform .3s ease;
 }
 .recette-item img:hover {
   transform: scale(1.1);
@@ -3404,4 +3404,44 @@ table.reparateurs tbody .tel {
   font-size: 24px;
   color: #003663;
   font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
+}
+#user-login-form {
+  max-width: 100%;
+  width: 500px;
+  margin: 70px auto;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+}
+#user-login-form input {
+  width: 100%;
+}
+#user-login-form label {
+  font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
+  margin-bottom: 0;
+}
+#user-login-form .description {
+  font-size: 10px;
+  color: grey;
+}
+#user-login-form > div {
+  margin-top: 15px;
+}
+#user-login-form > div:first-child {
+  margin-top: 0;
+}
+#user-login-form input.button {
+  width: 250px;
+  line-height: 40px;
+  margin: 30px auto 0;
+  display: block;
+  border: none;
+  background: #003663;
+  color: white;
+  transition: opacity 0.3s;
+  text-decoration: none;
+  cursor: pointer;
+}
+#user-login-form input.button:hover {
+  opacity: 0.8;
 }

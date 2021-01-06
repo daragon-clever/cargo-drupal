@@ -1843,7 +1843,7 @@ ul.check-list li:before {
   width: 100%;
   object-fit: cover;
   height: 197px;
-  transition: transform .3s ease;
+  transition: transform 0.3s ease;
 }
 .recette-item img:hover {
   transform: scale(1.1);
@@ -2257,6 +2257,21 @@ ul.check-list li:before {
   padding-left: 4px;
   padding-right: 4px;
 }
+#marque.les-engagements img,
+#marque.cuisinons-vrai img {
+  width: 100%;
+  height: auto;
+}
+#marque.les-engagements .max-525,
+#marque.cuisinons-vrai .max-525 {
+  max-width: 525px;
+}
+@media only screen and (max-width: 991px) {
+  #marque.les-engagements .max-525,
+  #marque.cuisinons-vrai .max-525 {
+    max-width: 100%;
+  }
+}
 #marque.les-engagements .bg-grey-custom {
   background: url("../images/background-grey.jpg") repeat-x top center transparent;
   background-size: auto 270px;
@@ -2264,18 +2279,6 @@ ul.check-list li:before {
 @media only screen and (max-width: 991px) {
   #marque.les-engagements .bg-grey-custom {
     background-size: auto 53px;
-  }
-}
-#marque.les-engagements img {
-  width: 100%;
-  height: auto;
-}
-#marque.les-engagements .max-525 {
-  max-width: 525px;
-}
-@media only screen and (max-width: 991px) {
-  #marque.les-engagements .max-525 {
-    max-width: 100%;
   }
 }
 #marque.les-engagements .h2-rse {
@@ -2286,6 +2289,119 @@ ul.check-list li:before {
 }
 #marque.les-engagements ul {
   padding-left: 20px;
+}
+#marque.cuisinons-vrai .intro {
+  background-position: top center;
+  background-size: auto 234px;
+}
+@media only screen and (max-width: 991px) {
+  #marque.cuisinons-vrai .intro {
+    background-size: auto 52px;
+  }
+}
+#marque.cuisinons-vrai .intro h1 {
+  line-height: 1.3;
+}
+#marque.cuisinons-vrai .intro p {
+  margin-top: 25px;
+}
+@media only screen and (max-width: 991px) {
+  #marque.cuisinons-vrai .intro p {
+    margin-top: 0;
+  }
+}
+#marque.cuisinons-vrai .mt-5-80lg {
+  margin-top: 80px;
+}
+@media only screen and (max-width: 991px) {
+  #marque.cuisinons-vrai .mt-5-80lg {
+    margin-top: 48px;
+  }
+}
+#marque.cuisinons-vrai .mt-3-80lg {
+  margin-top: 80px;
+}
+@media only screen and (max-width: 991px) {
+  #marque.cuisinons-vrai .mt-3-80lg {
+    margin-top: 16px;
+  }
+}
+#marque.cuisinons-vrai .pr-6rem {
+  padding-right: 6rem;
+}
+@media only screen and (max-width: 991px) {
+  #marque.cuisinons-vrai .pr-6rem {
+    padding-right: 0;
+  }
+}
+#marque.cuisinons-vrai .pr-10rem {
+  padding-right: 10rem;
+}
+@media only screen and (max-width: 991px) {
+  #marque.cuisinons-vrai .pr-10rem {
+    padding-right: 0;
+  }
+}
+#marque.cuisinons-vrai .pr-13rem {
+  padding-right: 13rem;
+}
+@media only screen and (max-width: 991px) {
+  #marque.cuisinons-vrai .pr-13rem {
+    padding-right: 0;
+  }
+}
+#marque.cuisinons-vrai .gutter-18 {
+  padding-left: 18px;
+  padding-right: 18px;
+}
+#marque.cuisinons-vrai h2 {
+  margin-bottom: 25px;
+}
+#marque.cuisinons-vrai h2 span {
+  font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
+  text-transform: initial;
+}
+#marque.cuisinons-vrai h3 {
+  line-height: 1;
+}
+#marque.cuisinons-vrai .text-mea a {
+  padding-left: 0;
+}
+@media only screen and (max-width: 991px) {
+  #marque.cuisinons-vrai .text-mea a {
+    padding-left: 15px;
+  }
+}
+#marque.cuisinons-vrai .text-mea .ambassadeurs {
+  padding-left: 50px;
+  padding-right: 0;
+}
+@media only screen and (max-width: 991px) {
+  #marque.cuisinons-vrai .text-mea .ambassadeurs {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+#marque.cuisinons-vrai .text-mea .communaute-title {
+  font-size: 48px;
+}
+#marque.cuisinons-vrai .text-mea h3:after {
+  background-color: #003663;
+}
+#marque.cuisinons-vrai .text-mea span,
+#marque.cuisinons-vrai .text-mea span:after {
+  color: #003663;
+}
+#marque.cuisinons-vrai .text-mea p {
+  color: #434343;
+  max-width: initial;
+  line-height: initial;
+}
+#marque.cuisinons-vrai .text-mea .h3-custom {
+  font-size: 32px;
+}
+#marque.cuisinons-vrai .text-mea .h3-custom:after {
+  display: none;
 }
 #sitram-et-moi {
   position: relative;

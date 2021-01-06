@@ -1195,16 +1195,8 @@
     }
   }
 
-  &.les-engagements {
-    .bg-grey-custom {
-      background: url("../images/background-grey.jpg") repeat-x top center transparent;
-      background-size: auto 270px;
-
-      @media @tablet {
-        background-size: auto 53px;
-      }
-    }
-
+  &.les-engagements,
+  &.cuisinons-vrai {
     img {
       width: 100%;
       height: auto;
@@ -1215,6 +1207,17 @@
 
       @media @tablet {
         max-width: 100%;
+      }
+    }
+  }
+
+  &.les-engagements {
+    .bg-grey-custom {
+      background: url("../images/background-grey.jpg") repeat-x top center transparent;
+      background-size: auto 270px;
+
+      @media @tablet {
+        background-size: auto 53px;
       }
     }
 
@@ -1228,6 +1231,134 @@
 
     ul {
       padding-left: 20px;
+    }
+  }
+
+  &.cuisinons-vrai {
+    .intro {
+      background-position: top center;
+      background-size: auto 234px;
+
+      @media @tablet {
+        background-size: auto 52px;
+      }
+
+      h1 {
+        line-height: 1.3;
+      }
+
+      p {
+        margin-top: 25px;
+
+        @media @tablet {
+          margin-top: 0;
+        }
+      }
+    }
+
+    .mt-5-80lg {
+      margin-top: 80px;
+
+      @media @tablet {
+        margin-top: 48px;
+      }
+    }
+
+    .mt-3-80lg {
+      margin-top: 80px;
+
+      @media @tablet {
+        margin-top: 16px;
+      }
+    }
+
+    .pr-6rem {
+      padding-right: 6rem;
+
+      @media @tablet {
+        padding-right: 0;
+      }
+    }
+
+    .pr-10rem {
+      padding-right: 10rem;
+
+      @media @tablet {
+        padding-right: 0;
+      }
+    }
+
+    .pr-13rem {
+      padding-right: 13rem;
+
+      @media @tablet {
+        padding-right: 0;
+      }
+    }
+
+    .gutter-18 {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+
+    h2 {
+      span {
+        font-family: @MyriadBold;
+        text-transform: initial;
+      }
+
+      margin-bottom: 25px;
+    }
+
+    h3 {
+      line-height: 1;
+    }
+
+    .text-mea {
+      a {
+        padding-left: 0;
+
+        @media @tablet {
+          padding-left: 15px;
+        }
+      }
+
+      .ambassadeurs {
+        padding-left: 50px;
+        padding-right: 0;
+
+        @media @tablet {
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+      }
+
+      .communaute-title {
+        font-size: 48px;
+      }
+
+      h3:after {
+        background-color: @primaryColor;
+      }
+
+      span,
+      span:after {
+        color: @primaryColor;
+      }
+
+      p {
+        color: @grey;
+        max-width: initial;
+        line-height: initial;
+      }
+
+      .h3-custom {
+        font-size: 32px;
+
+        &:after {
+          display: none;
+        }
+      }
     }
   }
 }
@@ -2320,7 +2451,7 @@ table.reparateurs {
   }
 
   td {
-    border:2px solid @lightGrey;
+    border: 2px solid @lightGrey;
 
     @media @tablet {
       border-width: 1px;

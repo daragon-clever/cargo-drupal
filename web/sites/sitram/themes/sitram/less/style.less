@@ -2510,3 +2510,46 @@ table.reparateurs {
     }
   }
 }
+
+// LOGIN FORM
+#user-login-form {
+  max-width: 100%;
+  width: 500px;
+  margin: 70px auto;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+
+  input {
+    width: 100%;
+  }
+
+  label {
+    font-family: @MyriadSemibold;
+    margin-bottom: 0;
+  }
+
+  .description {
+    font-size: 10px;
+    color: grey
+  }
+
+  & > div {
+    margin-top: 15px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  input.button {
+    width: 250px;
+    line-height: 40px;
+    margin: 30px auto 0;
+    display: block;
+    border: none;
+    background: @primaryColor;
+    color: white;
+    .dimOpacityOnHover(0.8)
+  }
+}

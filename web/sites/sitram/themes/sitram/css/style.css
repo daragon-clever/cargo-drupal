@@ -205,6 +205,13 @@ a:hover {
 .txt-yellow {
   color: #F9AB00;
 }
+@media only screen and (max-width: 991px) {
+  .txt-blue-resp,
+  .txt-blue-resp h3,
+  .txt-blue-resp p {
+    color: #003663;
+  }
+}
 .text-mea {
   color: white;
 }

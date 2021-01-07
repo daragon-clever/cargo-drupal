@@ -1870,7 +1870,7 @@ ul.check-list li:before {
   width: 100%;
   object-fit: cover;
   height: 197px;
-  transition: transform 0.3s ease;
+  transition: transform .3s ease;
 }
 .recette-item img:hover {
   transform: scale(1.1);
@@ -2906,6 +2906,11 @@ div[role="contentinfo"] {
 .newsletter-wrapper .newsletter-inner .text-mea h3 {
   font-size: 32px;
 }
+@media only screen and (max-width: 991px) {
+  .newsletter-wrapper .newsletter-inner .text-mea h3 br {
+    display: none;
+  }
+}
 .newsletter-wrapper .newsletter-inner .text-mea span {
   display: inline;
 }
@@ -2964,6 +2969,12 @@ div[role="contentinfo"] {
 }
 .newsletter-wrapper .newsletter-inner .js-hidden-part .g-recaptcha {
   margin-bottom: 30px;
+}
+@media only screen and (max-width: 991px) {
+  .newsletter-wrapper .newsletter-inner .js-hidden-part .g-recaptcha {
+    margin-top: 30px;
+    margin-bottom: 0;
+  }
 }
 .footer-wrapper .logos-wrapper {
   background-color: #EDEDED;

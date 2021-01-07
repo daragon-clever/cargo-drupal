@@ -1964,6 +1964,12 @@ div[role="contentinfo"] {
     .text-mea {
       h3 {
         font-size: 32px;
+
+        @media @tablet {
+          br {
+            display: none;
+          }
+        }
       }
 
       span {
@@ -2028,6 +2034,11 @@ div[role="contentinfo"] {
 
       .g-recaptcha {
         margin-bottom: 30px;
+
+        @media @tablet {
+          margin-top: 30px;
+          margin-bottom: 0;
+        }
       }
     }
   }

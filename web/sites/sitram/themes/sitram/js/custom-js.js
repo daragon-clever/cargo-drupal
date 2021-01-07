@@ -131,5 +131,27 @@ jQuery(document).ready(function ($) {
             $(this).addClass('opened');
         }
     });
+
+    // COMMUNAUTE
+    if ($('#js-instagram-commu').length) {
+        // INSTAGRAM
+        (function () {
+            new InstagramFeed({
+                'username': 'sitram_fr',
+                'container': document.getElementById("js-instagram-commu"),
+                'display_profile': false,
+                'display_biography': false,
+                'display_gallery': true,
+                'display_captions': false,
+                'callback': null,
+                'styling': true,
+                'items': 12,
+                'items_per_row': 3,
+                'margin': 1,
+                'lazy_load': true,
+                'on_error': console.error
+            });
+        })();
+    }
 });
 

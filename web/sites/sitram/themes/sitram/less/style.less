@@ -1553,17 +1553,6 @@
   }
 }
 
-#consignes-utilisation,
-#contact {
-  .max-850 {
-    max-width: 850px;
-  }
-
-  .max-550 {
-    max-width: 550px;
-  }
-}
-
 #contact {
   font-family: @MyriadSemibold;
 
@@ -2051,19 +2040,22 @@
         background-size: cover !important;
       }
     }
-
-    .social1 {
-      background: url("../images/footer/facebook.svg") no-repeat center transparent;
-    }
-
-    .social2 {
-      background: url("../images/footer/instagram.svg") no-repeat center transparent;
-    }
-
-    .social3 {
-      background: url("../images/footer/pinterest.svg") no-repeat center transparent;
-    }
   }
+}
+
+.social1,
+.picto-rs.fb {
+  background: url("../images/footer/facebook.svg") no-repeat center transparent;
+}
+
+.social2,
+.picto-rs.instagram {
+  background: url("../images/footer/instagram.svg") no-repeat center transparent;
+}
+
+.social3,
+.picto-rs.pinterest {
+  background: url("../images/footer/pinterest.svg") no-repeat center transparent;
 }
 
 .copyright {
@@ -2551,5 +2543,29 @@ table.reparateurs {
     background: @primaryColor;
     color: white;
     .dimOpacityOnHover(0.8)
+  }
+}
+
+// COMMUNAUTE
+#communaute {
+  .top-offset {
+    margin-top: 180px;
+  }
+
+  h2 {
+    font-family: @MyriadBold;
+    font-size: 56px;
+
+    @media @tablet {
+      font-size: 31px;
+    }
+  }
+
+  .picto-rs {
+    display: inline-block;
+    height: 80px;
+    width: 80px;
+    background-size: cover !important;
+    margin-right: 18px;
   }
 }

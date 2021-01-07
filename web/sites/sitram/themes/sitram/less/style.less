@@ -1,0 +1,2571 @@
+// Variables LESS
+@import 'variables';
+@import 'common';
+@import 'fonts';
+
+// HEADER //
+.header-wrapper {
+  header {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    z-index: 100;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: white;
+
+    .header-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  // NAVIGATION //
+  nav > ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    margin-bottom: 0;
+    padding-left: 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    & > li a {
+      color: @grey;
+      text-decoration: none;
+      font-size: 16px;
+      font-family: @MyriadSemibold;
+      margin: 0 24px;
+      line-height: 117px;
+      display: inline-block;
+      border-bottom: 3px solid transparent;
+      transition: border-color 0.3s ease, color 0.3s ease-in-out;
+
+      &.is-active,
+      &:hover {
+        border-color: @primaryColor;
+        color: @primaryColor;
+        opacity: 1;
+
+        &.ou-acheter {
+          color: white;
+        }
+      }
+    }
+
+    a.ou-acheter {
+      display: inline-block;
+      line-height: 46px;
+      background-color: @secondaryColor;
+      border-radius: 23px;
+      color: white;
+      text-align: center;
+      text-transform: uppercase;
+      font-family: @CardenioBold;
+      font-size: 22px;
+      position: relative;
+      padding: 0 40px 0 65px;
+      border: none;
+      .dimOpacityOnHover(0.8);
+
+      &:before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        background: url("../images/icon-basket.svg") no-repeat center transparent;
+        height: 21px;
+        width: 24px;
+        top: calc(50% - 12px);
+        left: 25px;
+      }
+
+      &:hover {
+        border-bottom: none;
+        color: white;
+      }
+    }
+
+    // N2
+    & > li {
+      position: relative;
+      max-height: 120px;
+      overflow: hidden;
+      transition: max-height 0.3s ease-in-out;
+
+      &:hover {
+        max-height: 200px;
+        overflow: visible;
+
+        & > a {
+          border-color: @primaryColor;
+          color: @primaryColor;
+        }
+
+        & > ul {
+          opacity: 1;
+        }
+      }
+
+      & > ul {
+        position: absolute;
+        z-index: 10;
+        background: white;
+        display: block;
+        list-style: disc;
+        transition: opacity 0.3s ease-in-out;
+        padding: 20px 35px;
+        opacity: 0;
+
+        & > li {
+          & > a {
+            line-height: 1.6;
+            margin: 8px 0;
+            border: none;
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+  }
+
+  // RESPONSIVE //
+  @media @tablet {
+    header {
+      padding: 15px 0;
+    }
+
+    .js-resp-menu {
+      display: block;
+      height: 40px;
+      width: 40px;
+      position: absolute;
+      top: calc(50% - 20px);
+      right: 15px;
+      z-index: 10;
+      border-radius: 100%;
+      text-align: center;
+      cursor: pointer;
+      .dimOpacityOnHover(0.8);
+
+      span {
+        position: absolute;
+        height: 3px;
+        background: @primaryColor;
+        width: 25px;
+        display: block;
+        transform-origin: center;
+        transition: all 0.3s ease-in-out;
+        left: 10px;
+        opacity: 1;
+        top: 10px;
+
+        &:nth-child(2) {
+          top: 18px;
+        }
+
+        &:nth-child(3) {
+          top: 26px;
+        }
+      }
+
+      &.active {
+        span {
+          &:first-child {
+            top: 30px;
+            opacity: 0;
+          }
+
+          &:nth-child(2) {
+            transform: rotate(45deg);
+          }
+
+          &:nth-child(3) {
+            top: 18px;
+            transform: rotate(-45deg);
+          }
+        }
+      }
+    }
+
+    .header-section > a {
+      margin: auto;
+      height: 30px;
+
+      img {
+        height: 100%;
+        width: auto;
+      }
+    }
+
+    .nav-wrapper {
+      position: fixed;
+      top: 60px;
+      right: -300px;
+      box-shadow: 0 20px 15px rgba(0, 0, 0, 0.05);
+      transition: right 0.3s ease-in-out;
+
+      &.active {
+        right: 0;
+      }
+
+      nav ul {
+        flex-direction: column;
+        background: white;
+        padding: 15px 30px;
+        align-items: inherit;
+
+        a {
+          line-height: 1.6;
+          margin: 8px 0;
+        }
+      }
+    }
+  }
+}
+
+// HOMEPAGE //
+#homepage {
+  & > div > .container {
+    max-width: 1225px;
+  }
+
+  .slider {
+    max-width: 1920px;
+    margin: 0 auto;
+
+    .slick-next {
+      right: 50px;
+
+      @media @tablet {
+        right: 30px;
+      }
+    }
+
+    .slick-prev {
+      left: 50px;
+
+      @media @tablet {
+        left: 30px;
+      }
+    }
+
+    .slick-dots {
+      position: absolute;
+      bottom: 15px;
+      left: 0;
+      right: 0;
+      padding: 0;
+      margin: 0;
+      font-size: 0;
+    }
+  }
+
+  @media @tablet {
+    .slider {
+      img {
+        width: auto;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .content-1 {
+    .txt-img-under-wrapper {
+      display: block;
+      height: 100%;
+      position: relative;
+
+      .picto-1 {
+        position: absolute;
+        left: -500px;
+        top: 0;
+        height: 442px;
+        width: 508px;
+        background: url("../images/poele.png") no-repeat center transparent;
+      }
+
+      .txt {
+        position: absolute;
+        bottom: 0;
+        max-width: 473px;
+
+        @media @tablet {
+          position: relative;
+          bottom: unset;
+          max-width: 75%;
+          margin-bottom: -100px;
+        }
+      }
+
+      .img-under {
+        float: right;
+
+        @media @tablet {
+          float: none;
+
+          img {
+            height: 288px;
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+
+  .content-2 {
+    margin-top: 82px;
+
+    @media @tablet {
+      margin-top: 30px;
+    }
+
+    .picto-2 {
+      position: absolute;
+      right: -87px;
+      top: -91px;
+      height: 250px;
+      width: 250px;
+      background: url("../images/j-aime-cuisiner.svg") no-repeat center transparent;
+    }
+
+    .text-mea a {
+      padding: 0;
+    }
+  }
+
+  .content-3 {
+    margin-top: 97px;
+
+    @media @tablet {
+      margin-top: 30px;
+    }
+
+    .content-3-title {
+      position: relative;
+
+      .picto-3 {
+        position: absolute;
+        right: -227px;
+        top: -280px;
+        height: 349px;
+        width: 349px;
+        background: url("../images/poivron.png") no-repeat center transparent;
+      }
+    }
+
+    .text-mea {
+      h3 {
+        font-size: 32px;
+
+        @media @tablet {
+          font-size: 25px;
+        }
+
+        &:after {
+          margin-bottom: 15px;
+        }
+      }
+
+      p {
+        line-height: 1;
+      }
+    }
+
+    .content-3-img {
+      margin: 50px auto 0 auto;
+    }
+
+    .content-3-paragraph {
+      margin-top: 62px;
+      margin-bottom: 72px;
+
+      p {
+        font-family: @MyriadRegular;
+        color: @grey;
+      }
+    }
+  }
+
+  @media @tablet {
+    .picto-1,
+    .picto-2,
+    .picto-3 {
+      display: none;
+    }
+  }
+}
+
+// RECETTES //
+.vue-recettes {
+  &.page {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .pager {
+    &__items {
+      padding: 0;
+      margin: 15px 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      list-style: none;
+    }
+
+    &__item {
+      margin: 0 8px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      opacity: 0.5;
+      transition: opacity 0.3s ease-in-out;
+
+      a {
+        text-decoration: none;
+        font-family: @MyriadBold;
+        font-size: 13px;
+        color: @grey;
+
+        &:before {
+          content: "";
+          display: block;
+          margin: 0 auto 5px;
+          height: 8px;
+          width: 8px;
+          background: @grey;
+          border-radius: 100%;
+        }
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &.is-active {
+        opacity: 1;
+      }
+
+      &--next a,
+      &--previous a {
+        font-size: 0;
+
+        &:before {
+          content: "";
+          border-radius: 0;
+          background: transparent;
+          margin: 0;
+          display: block;
+          border-top: 3px solid;
+          border-right: 3px solid;
+          transform: rotate(45deg);
+        }
+      }
+
+      &--previous a:before {
+        transform: rotate(-135deg);
+      }
+
+      &--last,
+      &--first {
+        display: none;
+      }
+    }
+  }
+
+  @media @tablet {
+    fieldset {
+      position: relative;
+    }
+
+    legend {
+      cursor: pointer;
+    }
+
+    .fieldset-wrapper {
+      display: none;
+    }
+
+    .js-filter-count {
+      position: absolute;
+      top: -34px;
+      right: 20px;
+      background: @primaryColor;
+      color: white;
+      border-radius: 100%;
+      font-size: 13px;
+      height: 25px;
+      width: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.vue-recettes.page,
+.entete-recettes,
+.footer-recettes {
+  background-color: #FBFBFB;
+}
+
+.entete-recettes {
+  &.bg-img-wood {
+    background-position: top center;
+    background-size: auto 280px;
+
+    @media @tablet {
+      background-size: auto 100px;
+    }
+  }
+
+  p {
+    max-width: 530px;
+    margin: 30px auto 0;
+  }
+}
+
+.footer-recettes {
+  .block-txt {
+    background: white;
+    border: 1px solid #EDEDED;
+    padding: 30px;
+    margin: 16px 0;
+
+    a {
+      color: @primaryColor;
+      text-decoration: underline;
+      transition: opacity 0.3s ease-in-out;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+.recettes-filters {
+  border: 1px solid @lightGrey;
+  padding: 24px;
+  background-color: white;
+
+  .recettes-filters-title {
+    font-family: @MyriadSemibold;
+    font-size: 24px;
+    color: @primaryColor;
+
+    &:after {
+      content: "";
+      display: block;
+      width: 40px;
+      height: 2px;
+      background: @primaryColor;
+      margin-top: 8px;
+      margin-bottom: 24px;
+    }
+  }
+
+  label:first-child {
+    display: none;
+  }
+
+  input.form-text {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .form-wrapper {
+    margin-bottom: 15px;
+
+    @media @tablet {
+      margin-bottom: 0;
+    }
+
+    .fieldset-legend {
+      color: @grey;
+      font-family: @MyriadSemibold;
+      font-size: 20px;
+
+      &:after {
+        content: "";
+        border-top: 2px solid @grey;
+        border-right: 2px solid @grey;
+        top: 20px;
+        height: 11px;
+        width: 11px;
+        transform: rotate(-45deg);
+        position: relative;
+        float: right;
+      }
+    }
+
+    .fieldset-wrapper {
+      .form-item {
+        display: flex;
+        align-items: center;
+        padding-bottom: 5px;
+      }
+
+      .form-checkbox {
+        height: 20px;
+        width: 20px;
+      }
+
+      .option {
+        padding-left: 8px;
+        margin-bottom: 0;
+        font-family: @MyriadRegular;
+        font-size: 16px;
+
+        &:first-letter {
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+
+  .form-actions {
+    display: none;
+  }
+}
+
+.recette-item {
+  border: 1px solid @lightGrey;
+  background-color: white;
+
+  .field-content {
+    overflow: hidden;
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+    height: 197px;
+    transition: transform .3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  .views-field-field-recipe-title .field-content {
+    font-size: 16px;
+    line-height: 1;
+    min-height: 32px;
+    margin: 15px 0;
+    padding: 0 24px;
+    color: @primaryColor;
+    font-family: @MyriadSemibold;
+  }
+
+  .views-field-field-recipe-intro .field-content {
+    font-size: 16px;
+    line-height: 1;
+    min-height: 52px;
+    color: @grey;
+    padding: 0 24px 20px 24px;
+    font-family: @MyriadRegular;
+  }
+
+  .views-field-view-node a {
+    color: @primaryColor;
+    padding-left: 24px;
+    margin-bottom: 15px;
+  }
+}
+
+// RECETTE INDIVIDUELLE //
+#recette-individuelle {
+  .bg-img-wood {
+    background-position: top center;
+    background-size: 100% 400px;
+
+    .ban img {
+      width: 100%;
+      object-fit: cover;
+      max-height: 627px;
+
+      @media @tablet {
+        max-height: 400px;
+      }
+
+      @media @phone {
+        max-height: 160px;
+      }
+    }
+
+    @media @tablet {
+      background-size: 100% 60px;
+    }
+  }
+
+  .pills {
+    span {
+      font-size: 12px;
+      display: inline-block;
+      border: 1px solid @lightGrey;
+      padding: 5px 15px;
+      border-radius: 5px;
+      margin-left: 10px;
+      transition: all 0.3s ease-in-out;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:hover {
+        border-color: @primaryColor;
+        background: @primaryColor;
+        color: white;
+      }
+
+      @media @tablet {
+        margin: 8px;
+      }
+    }
+  }
+
+  .picto-prepa {
+    height: 30px;
+    width: 30px;
+    background: url("../images/picto-prepa.svg") no-repeat center transparent;
+  }
+
+  .picto-cuisson {
+    height: 30px;
+    width: 30px;
+    background: url("../images/picto-cuisson.svg") no-repeat center transparent;
+  }
+
+  .picto-quantite {
+    height: 30px;
+    width: 38px;
+    background: url("../images/picto-quantite.svg") no-repeat center transparent;
+  }
+
+  h3 {
+    color: @primaryColor;
+
+    &:after {
+      content: "";
+      display: block;
+      margin: 15px 0;
+      width: 40px;
+      height: 2px;
+      background-color: @primaryColor;
+    }
+  }
+
+  ol {
+    font-size: 20px;
+    counter-reset: item;
+
+    li {
+      position: relative;
+      display: block;
+      padding-left: 60px;
+      margin: 15px 0;
+
+      &:before {
+        content: counter(item);
+        counter-increment: item;
+        background: @primaryColor;
+        color: white;
+        height: 40px;
+        width: 40px;
+        text-align: center;
+        font-size: 24px;
+        font-family: @MyriadBold;
+        display: inline-block;
+        border-radius: 100%;
+        position: absolute;
+        top: calc(~"50% - 20px");
+        left: 0;
+      }
+    }
+  }
+
+  ol,
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  .img-recette {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .slider {
+    h2 {
+      display: none;
+    }
+
+    img {
+      max-width: 325px;
+      margin: 0 auto;
+    }
+
+    .slick-arrow {
+      border-color: @primaryColor;
+    }
+
+    .slick-slide {
+      padding: 0 30px;
+
+      @media @tablet {
+        padding: 0;
+      }
+    }
+  }
+}
+
+.titre-bloc-recettes {
+  color: @primaryColor;
+  font-size: 48px;
+
+  &:after {
+    content: "";
+    display: block;
+    margin: 15px 0;
+    width: 40px;
+    height: 2px;
+    background-color: @primaryColor;
+  }
+}
+
+// PRODUITS - CONSEILS //
+#produits,
+#conseils {
+  #content-1 {
+    background-position: top center;
+    padding-top: 95px;
+
+    @media @tablet {
+      padding-top: 30px;
+    }
+
+    .container {
+      position: relative;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: -280px;
+        left: -230px;
+        background: url("../images/poivronrouge.png");
+        height: 355px;
+        width: 367px;
+
+        @media @tablet {
+          display: none;
+        }
+      }
+    }
+  }
+
+  #content-2 {
+    .container {
+      position: relative;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: -275px;
+        right: -300px;
+        background: url("../images/pdt.png");
+        height: 451px;
+        width: 451px;
+
+        @media @tablet {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+// CONSEILS //
+#conseils {
+  #content-1 {
+    padding-top: 0;
+  }
+
+  #content-1,
+  #content-2 {
+    .container:before {
+      display: none;
+    }
+  }
+}
+
+#conseils-indiv {
+  h1 {
+    line-height: 1;
+  }
+
+  h2 {
+    font-family: @MyriadBold;
+  }
+
+  .tab-pane {
+    ul {
+      padding-left: 15px;
+    }
+  }
+
+  .img-max-wrapper {
+    img {
+      width: 100%;
+      object-fit: cover;
+      height: 227px;
+
+      @media @tablet {
+        height: 125px;
+        margin: 8px 0;
+      }
+    }
+  }
+
+  &.cocottes,
+  &.casseroles,
+  &.autocuiseurs {
+    ul {
+      padding-left: 15px;
+    }
+
+    .yellow-table {
+      td {
+        background: white;
+        color: @grey;
+        text-align: center;
+        width: 50%;
+        min-width: unset;
+        font-family: @MyriadRegular;
+      }
+
+      tr.head > td {
+        background: @yellow;
+        color: white;
+      }
+    }
+  }
+
+  &.autocuiseurs {
+    .yellow-table {
+      td {
+        width: initial;
+      }
+    }
+
+    .svg-infos {
+      img {
+        width: 100%;
+        max-width: 95px;
+        height: auto;
+      }
+    }
+
+    .slick-slider {
+      padding-bottom: 0;
+
+      .slick-arrow,
+      .slick-arrow:after {
+        border-color: @yellow;
+      }
+
+      .nb {
+        float: none;
+        background: @yellow;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+
+    .content4-images {
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+
+    .c4-intro {
+      margin: 20px 0;
+    }
+  }
+
+  &.casseroles,
+  &.cocottes,
+  &.autocuiseurs {
+    .yellow-table {
+      td {
+        width: 25%;
+
+        @media @tablet {
+          display: table-cell;
+          width: auto;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+
+  &.materiaux {
+    h3 {
+      font-size: 32px;;
+    }
+
+    h3 + p {
+      margin-bottom: 20px;
+    }
+
+    h4 {
+      font-family: @MyriadSemibold;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+  }
+
+  &.entretien {
+    h3 {
+      line-height: 1;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .content-1 {
+      p {
+        margin-top: 50px;
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &.revetements {
+    ul {
+      padding-left: 20px;
+    }
+
+    .content2-tabs {
+      ul {
+        padding-left: 0;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+
+    .content-3 {
+      ul {
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
+
+.rate-info-wrapper {
+  .item {
+    display: flex;
+
+    & > div {
+      padding: 10px 0;
+    }
+
+    div:nth-child(1) {
+      color: white;
+      width: 57%;
+      text-align: center;
+      padding: 10px;
+    }
+
+    div:nth-child(2) {
+      width: 43%;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      border: 1px solid #EDEDED;
+
+      span {
+        border: 1px solid #EDEDED;
+        border-radius: 100%;
+        height: 14px;
+        width: 14px;
+      }
+    }
+  }
+
+  &.row4 {
+    .item div:nth-child(1) {
+      padding: 15px 10px 16px;
+
+      @media @phone {
+        padding: 10px;
+      }
+    }
+  }
+
+  &.yellow {
+    .item {
+      div:nth-child(1),
+      div:nth-child(2) span.filled {
+        background: @yellow;
+        border-color: @yellow;
+      }
+    }
+  }
+
+  &.green {
+    .item {
+      div:nth-child(1),
+      div:nth-child(2) span.filled {
+        background: @green;
+        border-color: @green;
+      }
+    }
+  }
+
+  &.red {
+    .item {
+      div:nth-child(1),
+      div:nth-child(2) span.filled {
+        background: @secondaryColor;
+        border-color: @secondaryColor;
+      }
+    }
+  }
+
+  &.blue {
+    .item {
+      div:nth-child(1),
+      div:nth-child(2) span.filled {
+        background: @primaryColor;
+        border-color: @primaryColor;
+      }
+    }
+  }
+}
+
+// MARQUE //
+#marque {
+  h1 span {
+    display: block;
+  }
+
+  #content-1 {
+    position: relative;
+
+    &:before {
+
+    }
+  }
+
+  &.qui-sommes-nous {
+    .gallery {
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+
+      .bg-lightgrey {
+        img {
+          width: auto;
+        }
+      }
+
+      .gutter-4 {
+        padding-left: 4px;
+        padding-right: 4px;
+      }
+    }
+  }
+
+  &.les-engagements,
+  &.cuisinons-vrai {
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    .max-525 {
+      max-width: 525px;
+
+      @media @tablet {
+        max-width: 100%;
+      }
+    }
+  }
+
+  &.les-engagements {
+    .bg-grey-custom {
+      background: url("../images/background-grey.jpg") repeat-x top center transparent;
+      background-size: auto 270px;
+
+      @media @tablet {
+        background-size: auto 53px;
+      }
+    }
+
+    .h2-rse {
+      font-family: @MyriadBold;
+    }
+
+    h3 {
+      line-height: 1;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+  }
+
+  &.cuisinons-vrai {
+    .intro {
+      background-position: top center;
+      background-size: auto 234px;
+
+      @media @tablet {
+        background-size: auto 52px;
+      }
+
+      h1 {
+        line-height: 1.3;
+      }
+
+      p {
+        margin-top: 25px;
+
+        @media @tablet {
+          margin-top: 0;
+        }
+      }
+    }
+
+    .mt-5-80lg {
+      margin-top: 80px;
+
+      @media @tablet {
+        margin-top: 48px;
+      }
+    }
+
+    .mt-3-80lg {
+      margin-top: 80px;
+
+      @media @tablet {
+        margin-top: 16px;
+      }
+    }
+
+    .pr-6rem {
+      padding-right: 6rem;
+
+      @media @tablet {
+        padding-right: 0;
+      }
+    }
+
+    .pr-10rem {
+      padding-right: 10rem;
+
+      @media @tablet {
+        padding-right: 0;
+      }
+    }
+
+    .pr-13rem {
+      padding-right: 13rem;
+
+      @media @tablet {
+        padding-right: 0;
+      }
+    }
+
+    .gutter-18 {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+
+    h2 {
+      span {
+        font-family: @MyriadBold;
+        text-transform: initial;
+      }
+
+      margin-bottom: 25px;
+    }
+
+    h3 {
+      line-height: 1;
+    }
+
+    .text-mea {
+      a {
+        padding-left: 0;
+
+        @media @tablet {
+          padding-left: 15px;
+        }
+      }
+
+      .ambassadeurs {
+        padding-left: 50px;
+        padding-right: 0;
+
+        @media @tablet {
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+      }
+
+      .communaute-title {
+        font-size: 48px;
+      }
+
+      h3:after {
+        background-color: @primaryColor;
+      }
+
+      span,
+      span:after {
+        color: @primaryColor;
+      }
+
+      p {
+        color: @grey;
+        max-width: initial;
+        line-height: initial;
+      }
+
+      .h3-custom {
+        font-size: 32px;
+
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+// SITRAM ET MOI //
+#sitram-et-moi {
+  position: relative;
+
+  &:before {
+    content: "";
+    height: 960px;
+    width: 100%;
+    background-color: #ededed;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  h1 {
+    margin: 70px 0 30px;
+
+    @media @tablet {
+      margin: 30px 0;
+
+      br {
+        display: none;
+      }
+    }
+  }
+
+  #txt {
+    .txt-wrapper {
+      background: #FAFBFC;
+
+      .inner {
+        max-width: 1065px;
+        margin: 0 auto;
+
+        @media @tablet {
+          padding: 0 20px;
+        }
+      }
+    }
+  }
+}
+
+// SERVICE CLIENT + GARANTIES + CONSIGNES UTILISATION //
+#service-client,
+#garanties,
+#contact {
+  .intro {
+    h1 {
+      margin: 60px 0 25px;
+      display: inline-block;
+
+      @media @tablet {
+        margin: 30px 0;
+      }
+    }
+
+    .bg-lightgrey {
+      margin: 0 -8px;
+    }
+  }
+}
+
+#service-client {
+  .intro {
+    p {
+      max-width: 525px;
+      margin: 30px auto;
+    }
+  }
+
+  .fake-height {
+    min-height: 400px;
+
+    @media (max-width: 1100px) {
+      min-height: 300px;
+    }
+  }
+}
+
+#garanties,
+#contact {
+  .intro h1 {
+    margin-top: 115px;
+
+    @media @tablet {
+      margin-top: 30px;
+    }
+  }
+}
+
+#garanties {
+  ul,
+  ol {
+    padding-left: 15px;
+  }
+
+  .content-3-exclus,
+  .content-4 p {
+    margin-bottom: 0;
+  }
+
+  .content-3-articles {
+    margin-top: 40px;
+  }
+
+  .bg-img-blue {
+    background-size: auto 297px;
+  }
+}
+
+#consignes-utilisation {
+  h1 {
+    line-height: 1;
+  }
+
+  p.mt-85px {
+    margin-top: 85px;
+  }
+
+  ul {
+    padding-left: 15px;
+  }
+
+  .item {
+    display: inline-block;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      @media @phone {
+        max-width: 275px;
+      }
+    }
+
+    .overlay {
+      opacity: 0;
+      position: absolute;
+      display: flex;
+      background: #00000080;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      transition: opacity 0.3s;
+
+      &:hover {
+        opacity: 1;
+        cursor: pointer;
+      }
+
+      .inner {
+        margin: auto;
+        color: white;
+
+        &:before {
+          content: "";
+          background: url("../images/download.svg") no-repeat top center transparent;
+          display: block;
+          height: 50px;
+          width: 125px;
+        }
+      }
+    }
+  }
+
+  .bg-img-blue {
+    background-size: auto 297px;
+
+    @media @tablet {
+      background-size: auto 150px;
+    }
+  }
+
+  .content-5,
+  .content-6 {
+    p {
+      margin-top: 30px;
+      margin-bottom: 0;
+    }
+
+    ul {
+      margin-top: 0;
+    }
+  }
+}
+
+#contact {
+  font-family: @MyriadSemibold;
+
+  @media @tablet {
+    form {
+      padding: 0 15px;
+    }
+  }
+
+  .webform-element-description {
+    font-size: 20px;
+    line-height: 1;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    max-width: 70%;
+
+    em {
+      font-size: 12px;
+      color: lightgrey;
+    }
+
+    @media @tablet {
+      max-width: 100%;
+    }
+  }
+
+  input,
+  select,
+  textarea,
+  .select2-selection {
+    width: 100%;
+    font-size: 20px;
+    padding: 15px 20px;
+    border: 1px solid lightgrey;
+    border-radius: 7px;
+    font-family: @MyriadRegular;
+    color: @grey;
+
+    &::placeholder {
+      color: lightgrey;
+    }
+  }
+
+  .select2-selection {
+    height: 62px;
+  }
+
+  .select2-selection__arrow {
+    top: calc(50% - 13px);
+    right: 15px;
+  }
+
+  .form-item-fichier {
+    position: relative;
+
+    .form-managed-file {
+      input {
+        display: none;
+      }
+
+      input[name="fichier_remove_button"] {
+        display: initial;
+      }
+    }
+
+    label,
+    .file {
+      position: absolute;
+      top: 30px;
+      width: 100%;
+      font-size: 20px;
+      padding: 20px;
+      border: 1px solid lightgrey;
+      border-radius: 7px;
+      background: white;
+      font-family: @MyriadRegular;
+      color: @grey;
+      cursor: pointer;
+
+      &:after {
+        content: "";
+        position: absolute;
+        right: 15px;
+        top: 27px;
+        width: 20px;
+        height: 20px;
+        background: url("../images/upload.svg") no-repeat center transparent;
+      }
+    }
+
+    .file {
+      position: absolute;
+
+      &:after {
+        display: none;
+      }
+
+      @media @phone {
+        a {
+          max-width: 175px;
+          overflow: hidden;
+          display: inline-block;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+
+    input.button[name="fichier_remove_button"] {
+      position: absolute;
+      width: auto;
+      top: 45px;
+      right: 20px;
+      height: 40px;
+      line-height: 40px;
+      padding: 0 25px;
+      cursor: pointer;
+      .dimOpacityOnHover(0.7);
+    }
+
+    .g-recaptcha {
+      text-align: center;
+
+      & > div {
+        display: inline-block;
+      }
+    }
+  }
+
+  .form-item-cgu {
+    margin-top: 95px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+
+    input {
+      height: 29px;
+      width: 29px;
+      opacity: 0.7;
+      cursor: pointer;
+    }
+
+    #edit-cgu--description {
+      margin-top: 15px;
+      margin-bottom: 15px;
+      font-size: 12px;
+      line-height: 1.2;
+      padding-left: 20px;
+      font-family: @MyriadRegular;
+    }
+  }
+
+  .form-actions {
+    margin-top: 20px;
+    margin-bottom: 70px;
+    text-align: center;
+
+    .webform-button--submit {
+      font-size: 20px;
+      font-family: @MyriadBold;
+      color: white;
+      background-color: @primaryColor;
+      padding: 15px 115px;
+      text-transform: uppercase;
+      width: fit-content;
+    }
+  }
+}
+
+.select2-search {
+  display: none;
+}
+
+// PRODUIT //
+#produit {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  h3 {
+    color: @primaryColor;
+  }
+
+  .colored-slideshow h3 {
+    color: white;
+  }
+
+  .js-grid-masonry {
+    .grid-item .txt {
+      background: white;
+      position: absolute;
+      bottom: 8px;
+      left: 8px;
+      padding: 12px;
+      max-width: 75%;
+      overflow: hidden;
+
+      h3 {
+        color: @primaryColor;
+        font-size: 24px;
+        font-family: @MyriadSemibold;
+        line-height: 1.1;
+        margin: 0 0 5px 0;
+
+        span {
+          text-transform: uppercase;
+          font-family: @MyriadBold;
+        }
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+
+  &.cocotte {
+    .content-1 {
+      img {
+        max-width: 100%;
+      }
+    }
+
+    .block-frise-verticale {
+      .inner {
+        max-width: 520px;
+      }
+    }
+  }
+
+  &.casseroles {
+    .block-frise-verticale {
+      img {
+        margin: 8px auto;
+        display: block;
+
+        &:first-child {
+          margin-top: 3rem;
+        }
+      }
+    }
+  }
+
+  &.autocuiseurs {
+    .pt-grey:before {
+      height: 820px;
+    }
+  }
+
+  &.specifique {
+    .content-specif {
+      img {
+        max-width: 100%;
+      }
+    }
+
+    h3 {
+      line-height: 1;
+    }
+
+    h2 {
+      font-family: @MyriadBold;
+    }
+
+    .bg-img-blue {
+      background-size: auto 488px;
+
+      @media @tablet {
+        background-size: auto 190px;
+      }
+    }
+  }
+}
+
+// FOOTER //
+.newsletter-wrapper {
+  background: @lightGrey;
+  position: relative;
+
+  &:before {
+    content: "";
+    height: 50%;
+    width: 100%;
+    background-color: white;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .newsletter-inner {
+    background-color: @secondaryColor;
+    padding: 70px 100px;
+
+    @media @tablet {
+      padding: 30px;
+    }
+
+    .text-mea {
+
+      h3 {
+        font-size: 32px;
+      }
+
+      span {
+        display: inline;
+      }
+    }
+
+    .form-newsletter {
+      font-family: @MyriadRegular;
+      font-size: 20px;
+
+      label {
+        display: block;
+        color: white;
+      }
+
+      input {
+        line-height: 59px;
+        padding-left: 20px;
+        width: 100%;
+      }
+
+      ::placeholder {
+        color: #b9b9b9;
+      }
+
+      .form-email {
+        margin-bottom: 5px;
+      }
+
+      .name-wrapper {
+        margin-bottom: 40px;
+
+        @media @tablet {
+          margin-bottom: 0;
+        }
+      }
+
+      .form-submit input {
+        background-color: #FDC2A1;
+        color: @secondaryColor;
+        text-transform: uppercase;
+        font-family: @MyriadBold;
+        border-style: none;
+        cursor: pointer;
+        .dimOpacityOnHover(0.8);
+
+        @media @tablet {
+          margin-top: 30px;
+        }
+      }
+    }
+
+    .js-hidden-part {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-in-out;
+
+      &.show {
+        max-height: 300px;
+      }
+    }
+  }
+}
+
+.footer-wrapper {
+  .logos-wrapper {
+    background-color: @lightGrey;
+    padding: 50px 0;
+
+    .logo {
+      height: 118px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .logo1 {
+      width: 127px;
+      background: url("../images/footer/logo-footer-sitram-marque.svg") no-repeat center transparent;
+    }
+
+    .logo2 {
+      width: 105px;
+      background: url("../images/footer/logo-footer-1963.svg") no-repeat center transparent;
+    }
+
+    .logo3 {
+      width: 116px;
+      background: url("../images/footer/logo-footer-service-client.svg") no-repeat center transparent;
+    }
+
+    .logo4 {
+      width: 85px;
+      background: url("../images/footer/logo-footer-cuisiner.svg") no-repeat center transparent;
+    }
+
+    span {
+      text-transform: uppercase;
+      font-size: 10px;
+      text-align: center;
+    }
+  }
+
+  .links {
+    font-family: @MyriadSemibold;
+
+    & > div {
+      border-right: 1px solid @lightGrey;
+    }
+
+    & > div:last-child {
+      border: none;
+    }
+
+    h4 {
+      color: @primaryColor;
+      font-size: 18px;
+
+      &:before {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 1px;
+        background-color: @primaryColor;
+        margin-bottom: 3px;
+      }
+    }
+
+    ul {
+      margin-top: 15px;
+      margin-bottom: 0;
+      padding: 0;
+
+      li {
+        list-style-type: none;
+
+        :before {
+          content: "";
+          height: 4px;
+          width: 4px;
+          background-color: @grey;
+          display: inline-block;
+          border-radius: 4px;
+          margin-bottom: 2px;
+          margin-right: 8px;
+        }
+
+        a {
+          text-decoration: none;
+          color: @grey;
+          font-size: 16px;
+        }
+      }
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 1;
+      color: @grey;
+      margin-top: 10px;
+      margin-bottom: 0;
+
+      a {
+        text-decoration: underline;
+        color: @grey;
+      }
+    }
+
+    .social1,
+    .social2,
+    .social3 {
+      display: block;
+      margin: 15px 0;
+      height: 25px;
+      width: 25px;
+
+      @media @tablet {
+        margin: 0 15px;
+        height: 50px;
+        width: 50px;
+        background-size: cover !important;
+      }
+    }
+  }
+}
+
+.social1,
+.picto-rs.fb {
+  background: url("../images/footer/facebook.svg") no-repeat center transparent;
+}
+
+.social2,
+.picto-rs.instagram {
+  background: url("../images/footer/instagram.svg") no-repeat center transparent;
+}
+
+.social3,
+.picto-rs.pinterest {
+  background: url("../images/footer/pinterest.svg") no-repeat center transparent;
+}
+
+.copyright {
+  font-size: 12px;
+  color: white;
+  line-height: 30px;
+  font-family: @MyriadRegular;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  @media @tablet {
+    padding: 5px 15px;
+    line-height: 1.6;
+  }
+}
+
+// BREADCRUMB //
+.breadcrumb-sitram {
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      line-height: 70px;
+      display: inline-block;
+      color: #9FB2C9;
+
+      a {
+        color: @grey;
+        text-decoration: none;
+
+        &:after {
+          content: "";
+          border-top: 1px solid;
+          border-right: 1px solid;
+          transform: rotate(45deg);
+          height: 5px;
+          width: 5px;
+          margin: 0 10px;
+          display: inline-block;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}
+
+// STORE LOCATOR //
+#storelocator-wrapper {
+  h1 {
+    line-height: 1;
+    margin: 0 0 30px 0;
+  }
+
+  .storelocator-ban {
+    text-align: center;
+
+    @media @tablet {
+      padding-top: 30px;
+      min-height: inherit;
+    }
+
+    span.title {
+      font-size: 32px;
+      font-family: @MyriadRegular;
+      display: block;
+      margin: 40px 0;
+
+      @media @phone {
+        font-size: 18px;
+        margin: 15px 0;
+      }
+    }
+
+    .store-locator-response {
+      font-size: 15px;
+      line-height: 1.6;
+      text-align: left;
+      max-height: 702px;
+      overflow: auto;
+
+      @media @tablet {
+        max-height: unset;
+      }
+    }
+
+    #storelocator-map {
+      min-height: 702px;
+    }
+
+    .store-locator-map-info-window {
+      color: black
+    }
+
+    .offset-margin-bottom {
+      display: inline-block;
+      margin-bottom: -50px;
+    }
+
+    .store-locator-field-wrapper {
+      display: inline-block;
+      vertical-align: middle;
+      position: relative;
+
+      input {
+        border: none;
+        background: white;
+        display: inline-block;
+        text-align: left;
+        font-size: 32px;
+        line-height: 95px;
+        font-family: @MyriadRegular;
+        color: #C7C7C7;
+        vertical-align: middle;
+        border-radius: 5px;
+        padding-left: 30px;
+        padding-right: 110px;
+        width: 700px;
+
+        &::placeholder {
+          opacity: 1;
+        }
+
+        @media @tablet {
+          width: 100%;
+          line-height: 50px;
+          font-size: 20px;
+          padding-right: 50px;
+          padding-left: 15px;
+        }
+      }
+
+      .btn.submit {
+        cursor: pointer;
+        .dimOpacityOnHover(0.7);
+        outline: none;
+        vertical-align: middle;
+        background-color: transparent;
+        position: absolute;
+        top: calc(50% - 26px);
+        right: 30px;
+        padding: 0;
+
+        @media @tablet {
+          top: calc(50% - 13px);
+          right: 15px;
+
+          img {
+            width: 25px;
+            height: auto;
+          }
+        }
+      }
+    }
+
+    #js-search-around {
+      line-height: 97px;
+      display: inline-block;
+      vertical-align: middle;
+      background: @secondaryColor;
+      border-radius: 0 5px 5px 0;
+      margin-left: -10px;
+      z-index: 10;
+      position: relative;
+      padding: 0 30px;
+
+      @media @tablet {
+        line-height: 50px;
+        padding: 0 15px;
+      }
+    }
+
+    .distance {
+      font-size: 32px;
+      font-family: @MyriadSemibold;
+      white-space: nowrap;
+      min-width: 218px;
+      text-align: center;
+
+      span:before {
+        content: "";
+        background: url("../images/storelocator/storelocator-gps.svg") no-repeat center;
+        background-size: contain;
+        display: inline-block;
+        vertical-align: middle;
+        height: 45px;
+        width: 30px;
+        margin-right: 15px;
+
+        @media @tablet {
+          height: 35px;
+          width: 20px;
+          display: block;
+          margin: 0 auto;
+        }
+      }
+
+      @media @tablet {
+        min-width: inherit;
+        font-size: 20px;
+      }
+    }
+
+    .info-mag {
+      border-left: 2px solid @grey;
+      padding-left: 30px;
+    }
+
+    .phone {
+      line-height: 1;
+
+      span {
+        font-size: 24px;
+        font-family: @MyriadSemibold;
+        vertical-align: middle;
+
+        &:before {
+          content: "";
+          background: url("../images/storelocator/storelocator-phone.svg") no-repeat center;
+          background-size: contain;
+          display: inline-block;
+          vertical-align: middle;
+          height: 20px;
+          width: 20px;
+          margin-right: 10px;
+        }
+      }
+    }
+
+    .locate-me {
+      background: url('../images/storelocator/storelocator-location.svg') no-repeat center transparent;
+      color: @primaryColor;
+      border: none;
+      vertical-align: middle;
+      .dimOpacityOnHover(0.7);
+      width: 50px;
+      height: 50px;
+      margin: 0;
+      padding: 0;
+      display: inline-block;
+      border-radius: 0;
+      font-size: 0;
+
+      @media @tablet {
+        background-size: 30px;
+      }
+    }
+
+    .js-store-block {
+      padding: 20px 0;
+      border-bottom: 1px solid lightgrey;
+
+      .infos-wrapper {
+        display: flex;
+        align-items: center;
+
+        .title {
+          font-size: 27px;
+          text-transform: uppercase;
+          line-height: 1;
+          font-family: @MyriadSemibold;
+
+          a {
+            .dimOpacityOnHover(0.7);
+            color: @grey;
+          }
+
+          @media @tablet {
+            font-size: 25px;
+          }
+        }
+
+        .address {
+          font-size: 16px;
+          font-family: @MyriadRegular;
+        }
+
+        @media @phone {
+          width: 100%;
+          text-align: center;
+        }
+
+      }
+
+      .links {
+        float: right;
+
+        ul {
+          padding: 0;
+          margin: 0;
+          list-style: none;
+
+          a.go {
+            background: url('../images/storelocator/picto-go.png') no-repeat right 13px center @primaryColor;
+            border-radius: 50px;
+            color: white;
+            font-size: 24px;
+            padding: 10px 60px 10px 20px;
+            display: inline-block;
+            .dimOpacityOnHover(0.7);
+
+            &:hover {
+              text-decoration: none;
+            }
+
+            @media @phone {
+              font-size: 18px;
+              background-size: 15px;
+              padding: 7px 50px 7px 25px;
+            }
+          }
+        }
+
+        @media @phone {
+          float: none;
+          text-align: center;
+          margin-top: 20px;
+        }
+      }
+
+      @media @tablet {
+        margin: 0;
+      }
+    }
+
+    #js-map-container > div {
+      min-height: 400px;
+      margin-top: 30px;
+
+      @media @tablet {
+        margin: 15px 0;
+      }
+    }
+
+    .store-locator-map-info-window {
+      padding: 15px;
+      font-family: "Myriad Pro", Arial, Helvetica, sans-serif;
+      font-size: 18px;
+      line-height: 1.6;
+
+      .title {
+        font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
+      }
+
+      .opening-hours,
+      .to-store {
+        display: none;
+      }
+    }
+  }
+}
+
+// REPARATEURS
+.table-resp-wrapper {
+  max-width: 100%;
+  overflow: auto;
+}
+
+table.reparateurs {
+  width: 100%;
+
+  thead {
+    background: @primaryColor;
+    color: white;
+    height: 60px;
+
+    .mail-site {
+      max-width: 400px;
+
+      @media @tablet {
+        max-width: 250px;
+      }
+    }
+
+    td {
+      padding: 0 30px;
+
+      @media @tablet {
+        padding: 0 15px;
+      }
+    }
+  }
+
+  td {
+    border: 2px solid @lightGrey;
+
+    @media @tablet {
+      border-width: 1px;
+    }
+  }
+
+  tbody {
+    .departement,
+    .tel {
+      text-align: center;
+    }
+
+    .mail-site {
+      max-width: 400px;
+
+      @media @tablet {
+        max-width: 250px;
+      }
+
+      br {
+        display: none;
+      }
+
+      a {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-width: 100%;
+        display: block;
+      }
+    }
+
+    td {
+      padding: 30px;
+
+      @media @tablet {
+        padding: 15px;
+      }
+    }
+
+    .departement {
+      font-size: 32px;
+      color: @primaryColor
+    }
+
+    .infos b {
+      font-size: 24px;
+      color: @secondaryColor;
+      text-transform: uppercase;
+    }
+
+    .tel {
+      font-size: 24px;
+      color: @primaryColor;
+      font-family: @MyriadSemibold;
+    }
+  }
+}
+
+// LOGIN FORM
+#user-login-form {
+  max-width: 100%;
+  width: 500px;
+  margin: 70px auto;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+
+  input {
+    width: 100%;
+  }
+
+  label {
+    font-family: @MyriadSemibold;
+    margin-bottom: 0;
+  }
+
+  .description {
+    font-size: 10px;
+    color: grey
+  }
+
+  & > div {
+    margin-top: 15px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  input.button {
+    width: 250px;
+    line-height: 40px;
+    margin: 30px auto 0;
+    display: block;
+    border: none;
+    background: @primaryColor;
+    color: white;
+    .dimOpacityOnHover(0.8)
+  }
+}
+
+// COMMUNAUTE
+#communaute {
+  .top-offset {
+    margin-top: 180px;
+  }
+
+  h2 {
+    font-family: @MyriadBold;
+    font-size: 56px;
+
+    @media @tablet {
+      font-size: 31px;
+    }
+  }
+
+  .picto-rs {
+    display: inline-block;
+    height: 80px;
+    width: 80px;
+    background-size: cover !important;
+    margin-right: 18px;
+  }
+}

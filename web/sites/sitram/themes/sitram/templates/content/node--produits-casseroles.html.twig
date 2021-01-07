@@ -1,0 +1,220 @@
+<div id="produit" class="casseroles">
+    <div class="container-fluid">
+        <div id="ban-intro" class="row mb-2 mb-lg-5">
+            <div class="col">
+                <div class="container">
+                    <div class="row">
+                        <div class="col ban">
+                            {{ content.field_prod_casseroles_ban }}
+                        </div>
+                    </div>
+                </div>
+                <div class="container max-1065">
+                    {{ content.field_prod_casseroles_intro }}
+                </div>
+            </div>
+        </div>
+
+        <div class="row bg-verylightgrey mb-2 mb-lg-5">
+            <div class="col">
+                <div class="container max-1065">
+                    <div class="row">
+                        <div class="col py-3">
+                            <div class="js-grid-masonry">
+                                <div class="grid-sizer col-md-3 col-lg-4"></div>
+                                {% for i in 0..5 %}
+                                    <div class="grid-item col-12 col-sm-6 col-lg-4">
+                                        <img class="{% if i == 1 %}pt-lg-5{% endif %}" src="{{ content.field_prod_casseroles_masonry_im[i] }}"/>
+                                        {{ content.field_prod_casseroles_masonry_tx[i] }}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row bg-img-blue">
+            <div class="col">
+                <div class="container">
+                    <div class="row">
+                        <div class="col text-center text-white my-5">
+                            {{ content.field_prod_casseroles_c1_intro }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        {% for i in 0..1 %}
+                            <div class="col-12 col-sm-6">
+                                {{ content.field_prod_casseroles_c1_imgs[i] }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="container max-1065">
+                    <div class="row my-5">
+                        <div class="col-12">
+                            {{ content.field_prod_casseroles_c2_txt }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row bg-verylightgrey py-2 py-lg-5">
+            <div class="container max-1065 block-frise-verticale">
+                <div class="row">
+                    <div class="col-12 col-lg">
+                        <div class="inner">
+                            {{ content.field_prod_casseroles_c3_txt[0] }}
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-auto text-center mt-lg-5">
+                        {{ content.field_prod_casseroles_c3_imgs[0] }}
+                        {{ content.field_prod_casseroles_c3_imgs[1] }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-2 mb-lg-5 pt-grey">
+            <div class="col">
+                <div class="container max-1065">
+                    <div class="row">
+                        <div class="col">
+                            <div class="block-white">
+                                {{ content.field_prod_casseroles_c3_outro }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container max-1165 my-5">
+                    <div class="row">
+                        <div class="col-12">
+                            {{ content.field_prod_casseroles_c4_title }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-sm">
+                            {{ content.field_prod_casseroles_c4_imgs[0] }}
+                            <div class="inner-block p-3 p-lg-5 bg-verylightgrey">
+                                {{ content.field_prod_casseroles_c4_txts[0] }}
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm">
+                            {{ content.field_prod_casseroles_c4_imgs[1] }}
+                            <div class="inner-block p-3 p-lg-5 bg-white">
+                                {{ content.field_prod_casseroles_c4_txts[1] }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container max-1165 mb-5">
+        <div class="row mb-4">
+            <div class="col-12 col-sm-7">
+                <div class="ml-0 ml-lg-5 mb-4">
+                    {{ content.field_prod_casseroles_c5_intro }}
+                </div>
+            </div>
+            <div class="col-12">
+                {{ content.field_prod_casseroles_c5_img }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-6">
+                <div class="inner-block p-3 p-lg-5 bg-verylightgrey">
+                    {{ content.field_prod_casseroles_c5_txts[0] }}
+                </div>
+            </div>
+            <div class="col-12 col-sm-6">
+                <div class="inner-block p-3 p-lg-5 bg-white">
+                    {{ content.field_prod_casseroles_c5_txts[1] }}
+                </div>
+            </div>
+            <div class="col-12 col-sm-6">
+                <div class="inner-block p-3 p-lg-5 bg-whitE">
+                    {{ content.field_prod_casseroles_c5_txts[2] }}
+                </div>
+            </div>
+            <div class="col-12 col-sm-6">
+                <div class="inner-block p-3 p-lg-5 bg-verylightgrey">
+                    {{ content.field_prod_casseroles_c5_txts[3] }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-5">
+        <div class="row">
+            <div class="col">
+                <div class="colored-slideshow js-colored-slideshow">
+                    <div class="item orange text-white">
+                        <div class="row">
+                            <div class="col-12 col-lg">
+                                {{ content.field_prod_casseroles_c6_txts[0] }}
+                            </div>
+                            <div class="col-12 col-lg text-right">
+                                {{ content.field_prod_casseroles_c6_imgs[0] }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item red text-white">
+                        <div class="row">
+                            <div class="col-12 col-lg">
+                                {{ content.field_prod_casseroles_c6_txts[1] }}
+                            </div>
+                            <div class="col-12 col-lg text-right">
+                                {{ content.field_prod_casseroles_c6_imgs[1] }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item gold text-white">
+                        <div class="row">
+                            <div class="col-12 col-lg">
+                                {{ content.field_prod_casseroles_c6_txts[2] }}
+                            </div>
+                            <div class="col-12 col-lg text-right">
+                                {{ content.field_prod_casseroles_c6_imgs[2] }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item sunburst text-white">
+                        <div class="row">
+                            <div class="col-12 col-lg">
+                                {{ content.field_prod_casseroles_c6_txts[3] }}
+                            </div>
+                            <div class="col-12 col-lg text-right">
+                                {{ content.field_prod_casseroles_c6_imgs[3] }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item pink-34deg text-white">
+                        <div class="row">
+                            <div class="col-12 col-lg">
+                                {{ content.field_prod_casseroles_c6_txts[4] }}
+                            </div>
+                            <div class="col-12 col-lg text-right">
+                                {{ content.field_prod_casseroles_c6_imgs[4] }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item grey-34deg text-white">
+                        <div class="row">
+                            <div class="col-12 col-lg">
+                                {{ content.field_prod_casseroles_c6_txts[5] }}
+                            </div>
+                            <div class="col-12 col-lg text-right">
+                                {{ content.field_prod_casseroles_c6_imgs[5] }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

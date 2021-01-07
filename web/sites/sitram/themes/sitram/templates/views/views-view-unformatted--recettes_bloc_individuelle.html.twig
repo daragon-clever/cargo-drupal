@@ -1,0 +1,29 @@
+<div class="my-5">
+    <div class="row align-items-center">
+        <div class="col-12 col-lg-4">
+            <div class="pr-lg-5">
+                <h3 class="txt-blue titre-bloc-recettes"><span>{{ 'D’autres recettes pour vous'|trans }}</span></h3>
+                <p>
+                    {{ 'Découvrez d’autres recettes qui pourraient vous plaire'|trans }}
+                </p>
+            </div>
+        </div>
+        <div class="col-12 col-lg position-relative">
+            <div class="row">
+                {% for row in rows %}
+                    {%
+                        set row_classes = [
+                        default_row_class ? 'col-12 col-sm-6 col-lg-4 my-2 my-lg-0',
+                    ]
+                    %}
+                    <div{{ row.attributes.addClass(row_classes) }}>
+                        <div class="recette-item">
+                            {{- row.content -}}
+                            <div class="picto-2"></div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

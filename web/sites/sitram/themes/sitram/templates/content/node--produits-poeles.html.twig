@@ -1,0 +1,219 @@
+<div id="produit" class="poele">
+    <div class="container-fluid">
+        <div id="ban-intro" class="row mb-3 mb-lg-5">
+            <div class="col">
+                <div class="container">
+                    <div class="row">
+                        <div class="col ban">
+                            {{ content.field_produits_poeles_ban }}
+                        </div>
+                    </div>
+                </div>
+                <div class="container max-1065">
+                    {{ content.field_produits_poeles_intro }}
+                </div>
+            </div>
+        </div>
+
+        <div class="row bg-verylightgrey mb-0 mb-lg-5">
+            <div class="col">
+                <div class="container">
+                    <div class="row">
+                        <div class="col py-3">
+                            <div class="js-grid-masonry">
+                                <div class="grid-sizer col-md-3"></div>
+                                {% for i in 0..7 %}
+                                    <div class="grid-item col-12 col-sm-6 col-lg-3">
+                                        <img class="{% if i == 1 or i == 3 %}pt-lg-5{% endif %}" src="{{ content.field_produits_poeles_masonry_im[i] }}"/>
+                                        {{ content.field_produits_poeles_masonry_tx[i] }}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row bg-img-blue">
+            <div class="col">
+                <div class="container">
+                    <div class="row">
+                        <div class="col text-center text-white my-3 my-lg-5">
+                            {{ content.field_produits_poeles_c1_intro }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        {% for i in 0..1 %}
+                            <div class="col-12 col-sm-6">
+                                <div class="my-2 my-sm-0">
+                                    {{ content.field_produits_poeles_c1_imgs[i] }}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="container max-1065">
+                    <div class="row my-2 my-lg-5">
+                        <div class="col-12">
+                            {{ content.field_produits_poeles_c2_txt }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row bg-verylightgrey py-lg-5 block-frise-verticale">
+            <div class="col">
+                <div class="container max-1065">
+                    <div class="row py-lg-4">
+                        <div class="col">
+                            <div class="inner p-3 p-lg-0">
+                                {{ content.field_produits_poeles_c3_txts[0] }}
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 d-flex align-items-end">
+                            {{ content.field_produits_poeles_c3_imgs[0] }}
+                        </div>
+                    </div>
+                    <div class="row align-items-center py-lg-4">
+                        <div class="col">
+                            <div class="inner">
+                                {{ content.field_produits_poeles_c3_txts[1] }}
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            {{ content.field_produits_poeles_c3_imgs[1] }}
+                        </div>
+                    </div>
+                    <div class="row align-items-center py-lg-4 align-items-center">
+                        <div class="col">
+                            <div class="inner">
+                                {{ content.field_produits_poeles_c3_txts[2] }}
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            {{ content.field_produits_poeles_c3_imgs[2] }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-3 mb-lg-5 pt-grey">
+            <div class="col">
+                <div class="container max-1065">
+                    <div class="row">
+                        <div class="col">
+                            <div class="block-white">
+                                {{ content.field_produits_poeles_c4_intro }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container max-1350">
+                    <div class="row text-center">
+                        {% for i in 0..3 %}
+                            <div class="col-6 col-md-3 my-2 my-md-0">
+                                {{ content.field_produits_poeles_c4_imgs[i] }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container max-1065 content-5 mb-3 mb-lg-5">
+        <div class="row align-items-center">
+            <div class="col-12 col-lg">
+                {{ content.field_produits_poeles_c5_img }}
+            </div>
+            <div class="col-12 col-lg">
+                <div class="inner box-shadow behind-img-left">
+                    {{ content.field_produits_poeles_c5_txt }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-3 mb-lg-5">
+        <div class="row">
+            <div class="col">
+                <div class="colored-slideshow js-colored-slideshow">
+                    <div class="item pink text-white">
+                        <div class="row">
+                            <div class="col-12 col-lg">
+                                {{ content.field_produits_poeles_sl_txts[0] }}
+                            </div>
+                            <div class="col-12 col-lg text-right">
+                                {{ content.field_produits_poeles_sl_imgs[0] }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item blue text-white">
+                        <div class="row">
+                            <div class="col-12 col-lg">
+                                {{ content.field_produits_poeles_sl_txts[1] }}
+                            </div>
+                            <div class="col-12 col-lg text-right">
+                                {{ content.field_produits_poeles_sl_imgs[1] }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item brown text-white">
+                        <div class="row">
+                            <div class="col-12 col-lg">
+                                {{ content.field_produits_poeles_sl_txts[2] }}
+                            </div>
+                            <div class="col-12 col-lg text-right">
+                                {{ content.field_produits_poeles_sl_imgs[2] }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item orange-25deg text-white">
+                        <div class="row">
+                            <div class="col-12 col-lg">
+                                {{ content.field_produits_poeles_sl_txts[3] }}
+                            </div>
+                            <div class="col-12 col-lg text-right">
+                                {{ content.field_produits_poeles_sl_imgs[3] }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item red-25deg text-white">
+                        <div class="row">
+                            <div class="col-12 col-lg">
+                                {{ content.field_produits_poeles_sl_txts[4] }}
+                            </div>
+                            <div class="col-12 col-lg text-right">
+                                {{ content.field_produits_poeles_sl_imgs[4] }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item green text-white">
+                        <div class="row">
+                            <div class="col-12 col-lg">
+                                {{ content.field_produits_poeles_sl_txts[5] }}
+                            </div>
+                            <div class="col-12 col-lg text-right">
+                                {{ content.field_produits_poeles_sl_imgs[5] }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item grey text-white">
+                        <div class="row">
+                            <div class="col-12 col-lg">
+                                {{ content.field_produits_poeles_sl_txts[6] }}
+                            </div>
+                            <div class="col-12 col-lg text-right">
+                                {{ content.field_produits_poeles_sl_imgs[6] }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

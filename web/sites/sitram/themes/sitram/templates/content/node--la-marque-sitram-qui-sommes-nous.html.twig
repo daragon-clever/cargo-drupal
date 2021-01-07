@@ -1,0 +1,75 @@
+<div id="marque" class="qui-sommes-nous">
+    <div id="ban-intro" class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <!-- BANNER -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col ban">
+                            {{ content.field_marque_qui_banner }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container max-1065">
+        <!-- TITLE / INTRO -->
+        <div class="row my-5">
+            <div class="col text-center">
+                <h1>{{ content.field_marque_qui_title }}</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                {{ content.field_marque_qui_intro }}
+            </div>
+        </div>
+
+        <hr class="my-5"/>
+
+        <!-- CONTENT 1 -->
+        <div class="row">
+            <div class="col">
+                <div class="position-relative img-shade box-shadow">
+                    <img src="{{ content.field_marque_qui_c1_img[0] }}">
+                    <div class="text-mea d-flex-absolute gutter-30">
+                         {{ content.field_marque_qui_c1_txt }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENT 2 -->
+        <div class="row mt-5">
+            <div class="col">
+                 {{ content.field_marque_qui_c2_txt }}
+            </div>
+        </div>
+
+        <!-- GALLERY -->
+        <div class="gallery">
+            <div class="row mt-4 mb-2">
+                <div class="col-12 col-lg-7 gutter-4">
+                    <div class="bg-lightgrey h-100 d-flex align-items-center justify-content-center">
+                        {{ content.field_marque_qui_gallery_imgs[0] }}
+                    </div>
+                </div>
+                <div class="col-12 col-lg-5 gutter-4 mt-2 mt-lg-0">
+                    {{ content.field_marque_qui_gallery_imgs[1] }}
+                </div>
+            </div>
+            <div class="row mb-5">
+                <div class="col-12 col-lg-5 gutter-4">
+                    {{ content.field_marque_qui_gallery_imgs[2] }}
+                </div>
+                <div class="col-12 col-lg-7 gutter-4 mt-2 mt-lg-0">
+                    {{ content.field_marque_qui_gallery_imgs[3] }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

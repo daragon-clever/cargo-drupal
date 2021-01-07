@@ -1,0 +1,262 @@
+<div id="conseils-indiv" class="autocuiseurs mb-5">
+    <div id="ban-intro" class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <div class="container">
+                    <div class="row">
+                        <div class="col ban">
+                            {{ content.field_cons_autocuis_banniere }}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- INTRO -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col text-center">
+                            <h1>{{ content.field_cons_autocuis_intro_title }}</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container max-1065">
+                    <div class="row">
+                        {% for i in 0..1 %}
+                            <div class="col-12 col-sm-6">
+                                {{ content.field_cons_autocuis_intro_txts[i] }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container max-1350">
+        <!-- CONTENT 1 -->
+        <div class="row align-items-center my-3 my-lg-5">
+            <div class="col">
+                <span class="number">1</span>
+                <div class="pt-115 pl-85">
+                    {{ content.field_cons_autocuis_c1_intro_ }}
+                    <div class="row mt-4 no-gutters">
+                        <div class="col-12 col-sm">
+                            {{ content.field_cons_autocuis_c1_img }}
+                            <div class="row my-4">
+                                <div class="col-12 col-md-6">
+                                    <div class="pr-5">
+                                        {{ content.field_cons_autocuis_c1_tab_area[0] }}
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="pr-5">
+                                        {{ content.field_cons_autocuis_c1_tab_area[1] }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-center">
+                        <div class="col">
+                            {{ content.field_cons_autocuis_c1_tab_area[2] }}
+                        </div>
+                    </div>
+                    <div class="row my-3 my-lg-5">
+                        <div class="col-12 col-md-6">
+                            {{ content.field_cons_autocuis_c1_compat }}
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="d-flex h-100 mx-lg-4 bg-verylightgrey">
+                                <div class="m-auto max-455">
+                                    <div class="svg-infos small">
+                                        <div class="row text-center">
+                                            {% for i in 0..3 %}
+                                                <div class="col-6 col-lg-3 my-3 my-lg-0">
+                                                    {{ content.field_cons_autocuis_c1_pictos[i] }}
+                                                    <small>{{ content.field_cons_autocuis_c1_pict_txts[i] }}</small>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-3 mt-lg-5">
+                        <div class="col">
+                            {{ content.field_cons_autocuis_c1_fermeture[0] }}
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        {{ content.field_cons_autocuis_c1_fermeture[1] }}
+                    </div>
+                    <div class="row my-4">
+                        {{ content.field_cons_autocuis_c1_fermeture[2] }}
+                    </div>
+
+                    <div class="row mt-3 mt-lg-5">
+                        <div class="col">
+                            {{ content.field_cons_autocuis_c1_options[0] }}
+                        </div>
+                    </div>
+                    <div class="row my-3 my-lg-5">
+                        {{ content.field_cons_autocuis_c1_options[1] }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENT 2 -->
+        <div class="row align-items-center">
+            <div class="col">
+                <span class="number yellow">2</span>
+                <div class="pt-115 pl-85">
+                    {{ content.field_cons_autocuis_c2_intro }}
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="js-slick-txt">
+                                {% for i in 0..4 %}
+                                    <div class="question">
+                                        <div class="nb">{{ i + 1 }}</div>
+                                        {% if i is odd %}
+                                            <div class="mt-3">
+                                                {{ content.field_cons_autocuis_c2_imgs[i] }}
+                                            </div>
+                                        {% endif %}
+                                        <div class="mt-3">
+                                            {{ content.field_cons_autocuis_c2_slick_txt[i] }}
+                                        </div>
+                                        {% if i is even %}
+                                            <div class="mt-3">
+                                                {{ content.field_cons_autocuis_c2_imgs[i] }}
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        {{ content.field_cons_autocuis_c2_outro }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENT 3 -->
+        <div class="row align-items-center my-3 my-lg-5">
+            <div class="col">
+                <span class="number">3</span>
+                <div class="pt-115 pl-85">
+                    <h2 class="txt-blue">{{ content.field_cons_autocuis_c3_title }}</h2>
+                    <img class="my-4" src="{{ content.field_cons_autocuis_c3_img[0] }}" alt="">
+                    {{ content.field_cons_autocuis_c3_intro }}
+                    <div class="row mt-4">
+                        <div class="col-12 col-md-6 bg-verylightgrey">
+                            <div class="p-5">
+                                {{ content.field_cons_autocuis_c3_txts[0] }}
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="p-5">
+                                {{ content.field_cons_autocuis_c3_txts[1] }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-5">
+                        <div class="col-12 col-md-6 bg-verylightgrey">
+                            <div class="p-5">
+                                {{ content.field_cons_autocuis_c3_txts[2] }}
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="p-5">
+                                {{ content.field_cons_autocuis_c3_txts[3] }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row my-4">
+                        <div class="col">
+                            <div class="bottom-highlight bg-green">
+                                {{ content.field_cons_autocuis_c3_outro }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENT 4 -->
+        <div class="row align-items-center my-3 my-lg-5">
+            <div class="col">
+                <span class="number yellow">4</span>
+                <div class="pt-115 pl-85">
+                    <h2 class="txt-yellow">{{ content.field_cons_autocuis_c4_title }}</h2>
+                    <div class="row content4-images">
+                        <div class="col-12 col-sm-6 my-3 my-lg-0">
+                            {{ content.field_cons_autocuis_c4_imgs[0] }}
+                        </div>
+                        <div class="col-12 col-sm-6 my-3 my-lg-0">
+                            {{ content.field_cons_autocuis_c4_imgs[1] }}
+                        </div>
+                    </div>
+                    {{ content.field_cons_autocuis_c4_intro }}
+                    <div class="row mt-4">
+                        <div class="col-12 col-md-6 bg-verylightgrey">
+                            <div class="p-5">
+                                {{ content.field_cons_autocuis_c4_txts[0] }}
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="p-5">
+                                {{ content.field_cons_autocuis_c4_txts[1] }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-6 bg-verylightgrey">
+                            <div class="p-5">
+                                {{ content.field_cons_autocuis_c4_txts[2] }}
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="p-5">
+                                {{ content.field_cons_autocuis_c4_txts[3] }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-6 bg-verylightgrey">
+                            <div class="p-5">
+                                {{ content.field_cons_autocuis_c4_txts[4] }}
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="p-5">
+                                {{ content.field_cons_autocuis_c4_txts[5] }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-5">
+                        <div class="col-12 col-md-6 bg-verylightgrey">
+                            <div class="p-5">
+                                {{ content.field_cons_autocuis_c4_txts[6] }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row my-4">
+                        <div class="col">
+                            {{ content.field_cons_autocuis_c4_outro }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

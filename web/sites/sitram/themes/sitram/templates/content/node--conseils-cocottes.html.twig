@@ -1,0 +1,149 @@
+<div id="conseils-indiv" class="cocottes mb-5">
+    <!-- INTRO -->
+    <div id="ban-intro" class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <div class="container">
+                    <div class="row">
+                        <div class="col ban">
+                            {{ content.field_cons_cocot_banniere }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col text-center">
+                            <h1>{{ content.field_cons_cocot_intro_title }}</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container max-1065">
+                    <div class="row">
+                        {% for i in 0..1 %}
+                        <div class="col-12 col-sm-6">
+                            {{ content.field_cons_cocot_intro_txts[i] }}
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container max-1350">
+        <!-- CONTENT 1 -->
+        <div class="row my-3 my-lg-5">
+            <div class="col-12 col-md-5 text-right">
+                <span class="number">1</span>
+                <div class="max-455 pt-115">
+                    {{ content.field_cons_cocot_c1_txt }}
+                </div>
+            </div>
+            <div class="col-12 col-md-7 text-right">
+                {{ content.field_cons_cocot_c1_img }}
+            </div>
+        </div>
+
+        <!-- CONTENT 2 -->
+        <div class="row align-items-center my-3 my-lg-5">
+            <div class="col">
+                <span class="number yellow">2</span>
+                <div class="pt-115 pl-85">
+                    <h2 class="txt-yellow">{{ content.field_cons_cocot_c2_title }}</h2>
+                    <img class="mb-4" src="{{ content.field_cons_cocot_c2_img[0] }}" alt="">
+                    {{ content.field_cons_cocot_c2_txt }}
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENT 3 -->
+        <div class="row my-3 my-lg-5">
+            <div class="col-12 col-md-5 text-right">
+                <span class="number">3</span>
+                <div class="max-455 pt-115">
+                    {{ content.	field_cons_cocot_c3_txts[0] }}
+                </div>
+            </div>
+            <div class="col-12 col-md-7 mt-4 mt-lg-0">
+                <div class="bg-green d-flex h-100 p-4 mx-lg-4 py-lg-5 px-lg-0">
+                    <div class="m-auto text-white max-455">
+                        {{ content.	field_cons_cocot_c3_txts[1] }}
+                        <div class="svg-infos my-5 my-lg-0 mt-lg-4">
+                            <div class="row text-center">
+                                {% for i in 0..3 %}
+                                    <div class="col-6 col-lg-3 my-3 my-lg-0">
+                                        {{ content.field_cons_cocot_c3_pictos_imgs[i] }}
+                                        <small>{{ content.field_cons_cocot_pictos_titles[i] }}</small>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        {{ content.	field_cons_cocot_c3_txts[2] }}
+                        <div class="svg-infos small mt-5">
+                            <div class="row text-center text-white justify-content-center">
+                                {% for i in 4..6 %}
+                                    <div class="col-6 col-lg-4 my-2 my-lg-0">
+                                        {{ content.field_cons_cocot_c3_pictos_imgs[i] }}
+                                        <small>{{ content.field_cons_cocot_pictos_titles[i] }}</small>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENT 4 -->
+        <div class="row my-3 my-lg-5">
+            <div class="col-12">
+                <span class="number yellow">4</span>
+                <div class="pt-115 pl-85">
+                    {{ content.field_cons_cocot_c4_txt }}
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENT 5 -->
+        <div class="row align-items-center my-3 my-lg-5">
+            <div class="col">
+                <span class="number">5</span>
+                <div class="pt-115 pl-85">
+                    <h2 class="txt-blue">{{ content.field_cons_cocot_c5_title }}</h2>
+                    <img class="mb-4" src="{{ content.field_cons_cocot_c5_img[0] }}" alt="">
+                    {{ content.field_cons_cocot_c5_txt }}
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENT 6 -->
+        <div class="row my-3 my-lg-5">
+            <div class="col-12">
+                <span class="number yellow">6</span>
+                <div class="pt-115 pl-85">
+                    {{ content.field_cons_cocot_c6_txt }}
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENT 7 -->
+        <div class="row my-3 my-lg-5">
+            <div class="col-12">
+                <span class="number">7</span>
+                <div class="pt-115 pl-85">
+                    {{ content.field_cons_cocot_c7_txt }}
+                </div>
+                <div class="row my-4">
+                    <div class="col">
+                        <div class="bottom-highlight bg-green">
+                            {{ content.field_cons_cocot_c7_outro }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+

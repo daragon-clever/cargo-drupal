@@ -1,0 +1,254 @@
+<div id="produit" class="cocotte">
+    <div class="container-fluid">
+        <div id="ban-intro" class="row">
+            <div class="col">
+                <div class="container">
+                    <div class="row">
+                        <div class="col ban">
+                            {{ content.field_prod_cocottes_ban }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-center">
+                            {{ content.field_prod_cocottes_c1_intro }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container max-1065">
+        <div class="row">
+            <div class="col-12 col-sm-6">
+                {{ content.field_prod_cocottes_c1_txts[0] }}
+            </div>
+            <div class="col-12 col-sm-6">
+                {{ content.field_prod_cocottes_c1_txts[1] }}
+            </div>
+        </div>
+
+        <hr class="my-4 my-xl-5"/>
+
+        <div class="row">
+            <div class="col">
+                <h2 class="text-center txt-blue mb-lg-5">
+                    {{ content.field_prod_cocottes_c2_intro }}
+                </h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="container max-1065 gutter-27 content-1">
+        {% for i in 0..5 %}
+            <div class="row align-items-center my-3 my-sm-5">
+                <div class="col-12 col-sm-6 {% if i is odd %}order-lg-2{% endif %}">
+                    {{ content.field_prod_cocottes_c2_txts[i] }}
+                </div>
+                <div class="col-12 col-sm-6 mt-3 mt-sm-0">
+                    {{ content.field_prod_cocottes_c2_imgs[i] }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="container-fluid bg-img-blue mb-sm-4">
+        <div class="row">
+            <div class="col">
+                <div class="container">
+                    <div class="row">
+                        <div class="col text-center">
+                            <h2 class="my-3 my-sm-5 text-white">
+                                {{ content.field_prod_cocottes_c3_intro }}
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        {% for i in 0..2 %}
+                            <div class="col-12 col-sm-4 my-2 my-sm-0">
+                                {{ content.field_prod_cocottes_c3_imgs[i] }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container max-1065">
+        <div class="row my-2 my-sm-5">
+            <div class="col">
+                {{ content.field_prod_cocottes_c3_txt }}
+            </div>
+        </div>
+        <div class="row align-items-center mb-3 mb-sm-5">
+            <div class="col-12 col-sm-6">
+                {{ content.field_prod_cocottes_c3_forme_txt }}
+            </div>
+            <div class="col-12 col-sm-6 mt-4 mt-sm-0 text-right">
+                {{ content.field_prod_cocottes_c3_forme_img }}
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-verylightgrey block-frise-verticale py-3 py-sm-5">
+        <div class="row">
+            <div class="col">
+                <div class="container max-1065">
+                    <div class="row">
+                        <div class="col-12 col-sm-auto">
+                            <div class="inner">
+                                {{ content.field_prod_cocottes_c3_capa_txt[0] }}
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm text-center">
+                            {{ content.field_prod_cocottes_c3_capa_svg }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row pt-grey">
+            <div class="col">
+                <div class="container max-1065">
+                    <div class="row my-2 my-sm-5">
+                        <div class="col">
+                            <div class="block-white">
+                                {{ content.field_prod_cocottes_c3_capa_end }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container max-1065">
+        <div class="row align-items-center">
+            <div class="col-12 col-sm-6">
+                {{ content.field_prod_cocottes_c3_color_txt }}
+            </div>
+            <div class="col-12 col-sm-6 text-right mt-4 mt-sm-0">
+                {{ content.field_prod_cocottes_c3_color_img }}
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-verylightgrey pb-white">
+        <div class="row my-4">
+            <div class="col">
+                <div class="container max-1065 py-2 py-lg-5">
+                    <div class="row align-items-center mb-4 mb-lg-0">
+                        <div class="col-12 col-sm my-2 my-sm-0">
+                            {{ content.field_prod_cocottes_c4_img }}
+                        </div>
+                        <div class="col-12 col-sm my-2 my-sm-0">
+                            <h2 class="text-center txt-blue">
+                                {{ content.field_prod_cocottes_c4_intro }}
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="row mt-0 mt-lg-5">
+                        <div class="col">
+                            {{ content.field_prod_cocottes_c4_title }}
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-12 col-sm-6">
+                            <div class="inner-block p-5 bg-white">
+                                {{ content.field_prod_cocottes_c4_txts[0] }}
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <div class="inner-block p-5 bg-verylightgrey">
+                                {{ content.field_prod_cocottes_c4_txts[1] }}
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <div class="inner-block p-5 bg-verylightgrey">
+                                {{ content.field_prod_cocottes_c4_txts[2] }}
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <div class="inner-block p-5 bg-white">
+                                {{ content.field_prod_cocottes_c4_txts[3] }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-5">
+        <div class="row">
+            <div class="col">
+                <div class="colored-slideshow js-colored-slideshow">
+                    <div class="item flat-blue text-white">
+                        <div class="row">
+                            <div class="col-12 col-lg">
+                                {{ content.field_prod_cocottes_c5_txt[0] }}
+                            </div>
+                            <div class="col-12 col-lg text-right">
+                                {{ content.field_prod_cocottes_c5_img[0] }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item flat-sepia text-white">
+                        <div class="row">
+                            <div class="col-12 col-lg">
+                                {{ content.field_prod_cocottes_c5_txt[1] }}
+                            </div>
+                            <div class="col-12 col-lg text-right">
+                                {{ content.field_prod_cocottes_c5_img[1] }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item flat-red text-white">
+                        <div class="row">
+                            <div class="col-12 col-lg">
+                                {{ content.field_prod_cocottes_c5_txt[2] }}
+                            </div>
+                            <div class="col-12 col-lg text-right">
+                                {{ content.field_prod_cocottes_c5_img[2] }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item flat-orange text-white">
+                        <div class="row">
+                            <div class="col-12 col-lg">
+                                {{ content.field_prod_cocottes_c5_txt[3] }}
+                            </div>
+                            <div class="col-12 col-lg text-right">
+                                {{ content.field_prod_cocottes_c5_img[3] }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item flat-yellow text-white">
+                        <div class="row">
+                            <div class="col-12 col-lg">
+                                {{ content.field_prod_cocottes_c5_txt[4] }}
+                            </div>
+                            <div class="col-12 col-lg text-right">
+                                {{ content.field_prod_cocottes_c5_img[4] }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item flat-cyan text-white">
+                        <div class="row">
+                            <div class="col-12 col-lg">
+                                {{ content.field_prod_cocottes_c5_txt[5] }}
+                            </div>
+                            <div class="col-12 col-lg text-right">
+                                {{ content.field_prod_cocottes_c5_img[5] }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

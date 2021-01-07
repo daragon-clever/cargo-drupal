@@ -1,0 +1,395 @@
+<div id="conseils-indiv" class="poeles mb-5">
+    <div id="ban-intro" class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <!-- BANNER -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col ban">
+                            {{ content.field_cons_poele_banniere }}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- INTRO -->
+                <div class="container max-1065">
+                    <div class="row">
+                        <div class="col text-center">
+                            <h1>{{ content.field_cons_poele_main_title }}</h1>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        {% for i in 0..1 %}
+                        <div class="col-12 col-lg-6">
+                            <p>
+                                {{ content.field_cons_poele_intro[i] }}
+                            </p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container max-1350">
+        <!-- CONTENT 1 -->
+        <div class="row align-items-end my-3 my-lg-5">
+            <div class="col-12 col-lg-5 text-right">
+                <span class="number">1</span>
+                <div class="max-455 pt-115">
+                    {{ content.field_cons_poele_c1_txt }}
+                </div>
+            </div>
+            <div class="col-12 col-lg-7">
+                <div class="row no-gutters tableau-presentation pl-lg-5">
+                    {% for i in 0..3 %}
+                        <div class="col-6 col-lg-3">
+                            <div class="inner">
+                            <span class="heading">
+                                {{ content.field_cons_poele_c1_titles1[i] }}
+                            </span>
+                                {{ content.field_cons_poele_c1_imgs1[i] }}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="row no-gutters tableau-presentation mt-4 pl-lg-5">
+                    {% for i in 0..2 %}
+                        <div class="{{ i == 2 ? 'col-12' : 'col-6' }} col-lg-4">
+                            <div class="inner">
+                            <span class="heading">
+                                {{ content.field_cons_poele_c1_titles2[i] }}
+                            </span>
+                                {{ content.field_cons_poele_c1_imgs2[i] }}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENT 2 -->
+        <div class="row align-items-center my-3 my-lg-5">
+            <div class="col-12 col-lg-6">
+                <span class="number yellow">2</span>
+                {{ content.field_cons_poele_c2_img }}
+                <span class="svg-ail"></span>
+            </div>
+            <div class="col-12 col-lg-6 text-center">
+                <div class="max-455 mt-3 mt-lg-5">
+                    {{ content.field_cons_poele_c2_txt }}
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENT 3 -->
+        <div class="row align-items-center my-3 my-lg-5">
+            <div class="col-12 col-lg-5 text-right">
+                <span class="number">3</span>
+                <div class="max-455 pt-115">
+                    {{ content.field_cons_poele_c3_txt }}
+                </div>
+            </div>
+            <div class="col-12 col-lg-7 text-center mt-3 mt-lg-0">
+                {{ content.field_cons_poele_c3_img }}
+            </div>
+        </div>
+
+        <!-- CONTENT 4 -->
+        <div class="row my-3 my-lg-5">
+            <div class="col-12 col-lg-5 text-right">
+                <span class="number yellow">4</span>
+                <div class="max-455 pt-115">
+                    {{ content.field_cons_poele_c4_txt_left }}
+                    <div class="svg-infos my-5 my-lg-0 mt-lg-4">
+                        <div class="row text-center">
+                            {% for i in 0..3 %}
+                                <div class="col-6 col-lg-3 my-3 my-lg-0">
+                                    {{ content.field_cons_poele_c4_picto_g_imgs[i] }}
+                                    <small>{{ content.field_cons_poele_c4_picto_g_txts[i] }}</small>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-7">
+                <div class="bg-green d-flex h-100 mx-lg-4 p-4 p-lg-0">
+                    <div class="m-auto text-white max-455">
+                        {{ content.field_cons_poele_c4_txt_right }}
+                        <div class="svg-infos small mt-5">
+                            <div class="row text-center text-white justify-content-center">
+                                {% for i in 0..2 %}
+                                    <div class="col-6 col-lg-4 my-2 my-lg-0">
+                                        {{ content.field_cons_poele_c4_picto_d_imgs[i] }}
+                                        <small>{{ content.field_cons_poele_c4_picto_d_txts[i] }}</small>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <span class="svg-fleur"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENT 5 / TEXT START -->
+        <div class="row my-3 my-lg-5">
+            <div class="col-12">
+                <span class="number">5</span>
+                <div class="pt-115 pl-85">
+                    {{ content.field_cons_poele_c5_txt_start }}
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENT 5 / TABS -->
+        <div class="row my-3 my-lg-5">
+            <div class="col">
+                <div class="pl-85">
+                    <ul class="nav mb-4 custom-tabs" id="pills-tab" role="tablist">
+                        {% for i in 0..2 %}
+                            <li class="nav-item">
+                                <a class="nav-link {% if i == 0 %}active{% endif %}"
+                                   id="pills-{{ i }}-tab"
+                                   data-toggle="pill"
+                                   href="#pills-{{ i }}"
+                                   role="tab"
+                                   aria-controls="pills-home"
+                                   aria-selected="true">
+                                    {{ content.field_cons_poele_c5_tab_menus[i] }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    <div class="tab-content" id="pills-tabContent">
+
+                        <!-- TAB 1 -->
+                        <div class="tab-pane fade show active" id="pills-0" role="tabpanel"
+                             aria-labelledby="pills-1-tab">
+                            <div class="row img-max-wrapper">
+                                <div class="col-12 col-lg-6">
+                                    <div class="row">
+                                        <div class="col-7">
+                                            {{ content.field_cons_poele_c5_tab1_imgs[0] }}
+                                        </div>
+                                        <div class="col-5">
+                                            {{ content.field_cons_poele_c5_tab1_imgs[1] }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            {{ content.field_cons_poele_c5_tab1_imgs[2] }}
+                                        </div>
+                                        <div class="col-4">
+                                            {{ content.field_cons_poele_c5_tab1_imgs[3] }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row my-3 align-items-center">
+                                <div class="col-12 col-lg-6">
+                                    <div class="inner bg-blue text-white text-center mb-3 mb-lg-0">
+                                        <div class="max-455 p-3 p-lg-0 py-lg-5">
+                                            {{ content.field_cons_poele_c5_tab1_txts[0] }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6 text-center">
+                                    <div class="max-455">
+                                        {{ content.field_cons_poele_c5_tab1_txts[1] }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-lg-6 text-center">
+                                    <div class="max-455 mt-lg-5">
+                                        <span class="picto-plus"></span>
+                                        {{ content.field_cons_poele_c5_tab1_txts[2] }}
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6 text-center">
+                                    <div class="max-455 mt-lg-5">
+                                        <span class="picto-moins"></span>
+                                        {{ content.field_cons_poele_c5_tab1_txts[3] }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- TAB 2 -->
+                        <div class="tab-pane fade" id="pills-1" role="tabpanel"
+                             aria-labelledby="pills-2-tab">
+                            <div class="row img-max-wrapper">
+                                <div class="col-12 col-lg-6">
+                                    <div class="row">
+                                        <div class="col">
+                                            {{ content.field_cons_poele_c5_tab2_imgs[0] }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <div class="row">
+                                        <div class="col-7">
+                                            {{ content.field_cons_poele_c5_tab2_imgs[1] }}
+                                        </div>
+                                        <div class="col-5">
+                                            {{ content.field_cons_poele_c5_tab2_imgs[2] }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row my-3 align-items-center">
+                                <div class="col-12 col-lg-6">
+                                    <div class="inner bg-yellow text-white text-center mb-3 mb-lg-0">
+                                        <div class="max-455 p-3 p-lg-0 py-lg-5">
+                                            {{ content.field_cons_poele_c5_tab2_txts[0] }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6 text-center">
+                                    <div class="max-455">
+                                        {{ content.field_cons_poele_c5_tab2_txts[1] }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-lg-6 text-center">
+                                    <div class="max-455 mt-lg-5">
+                                        <span class="picto-plus"></span>
+                                        {{ content.field_cons_poele_c5_tab2_txts[2] }}
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6 text-center">
+                                    <div class="max-455 mt-lg-5">
+                                        <span class="picto-moins"></span>
+                                        {{ content.field_cons_poele_c5_tab2_txts[3] }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- TAB 3 -->
+                        <div class="tab-pane fade" id="pills-2" role="tabpanel"
+                             aria-labelledby="pills-3-tab">
+                            <div class="row img-max-wrapper">
+                                <div class="col-12 col-lg-6">
+                                    <div class="row">
+                                        <div class="col">
+                                            <img src="{{ content.field_cons_poele_c5_tab3_imgs[0] }}" class="img-contain border-lightgrey" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <div class="row">
+                                        <div class="col-7">
+                                            <img src="{{ content.field_cons_poele_c5_tab3_imgs[1] }}" class="img-contain border-lightgrey" alt="">
+                                        </div>
+                                        <div class="col-5">
+                                            <img src="{{ content.field_cons_poele_c5_tab3_imgs[2] }}" class="img-contain border-lightgrey" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row my-3 align-items-center">
+                                <div class="col-12 col-lg-6">
+                                    <div class="inner bg-green text-white text-center mb-3 mb-lg-0">
+                                        <div class="max-455 p-3 p-lg-0 py-lg-5">
+                                            {{ content.field_cons_poele_c5_tab3_txts[0] }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6 text-center">
+                                    <div class="max-455">
+                                        {{ content.field_cons_poele_c5_tab3_txts[1] }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-lg-6 text-center">
+                                    <div class="max-455 mt-lg-5">
+                                        <span class="picto-plus"></span>
+                                        {{ content.field_cons_poele_c5_tab3_txts[2] }}
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6 text-center">
+                                    <div class="max-455 mt-lg-5">
+                                        <span class="picto-moins"></span>
+                                        {{ content.field_cons_poele_c5_tab3_txts[3] }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENT 5 / TEXT END -->
+        <div class="row my-lg-5">
+            <div class="col">
+                <div class="pl-85">
+                    {{ content.field_cons_poele_c5_txt_end }}
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENT 6 -->
+        <div class="row my-lg-5">
+            <div class="col-12">
+                <span class="number yellow">6</span>
+                <div class="pt-115 pl-85">
+                    {{ content.field_cons_poele_c6_intro }}
+                </div>
+            </div>
+        </div>
+        <div class="pl-85">
+            <div class="row img-max-wrapper">
+                <div class="col-12 col-lg-6">
+                    <div class="row">
+                        <div class="col-7">
+                            {{ content.field_cons_poele_c6_imgs[0] }}
+                        </div>
+                        <div class="col-5">
+                            {{ content.field_cons_poele_c6_imgs[1] }}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="row">
+                        <div class="col-8">
+                            {{ content.field_cons_poele_c6_imgs[2] }}
+                        </div>
+                        <div class="col-4">
+                            {{ content.field_cons_poele_c6_imgs[3] }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="col-12 col-lg-6">
+                    <div class="max-455 mt-3">
+                        {{ content.field_cons_poele_c6_txts[0] }}
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="inner bg-green text-white h-100 d-flex mt-4 mt-lg-0">
+                        <div class="max-455 m-auto p-3 p-lg-0 py-lg-5">
+                            {{ content.field_cons_poele_c6_txts[1] }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-4">
+                <div class="col">
+                    <div class="bottom-highlight bg-green">
+                        {{ content.field_cons_poele_c6_txts[2] }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

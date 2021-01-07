@@ -108,9 +108,7 @@
                         {% for i in 0..5 %}
                             <div class="col-6 col-md-4 col-lg-2 mb-3 mb-lg-0 d-flex flex-column flex-lg-row align-items-center justify-content-center">
                                 {{ content.field_produit_cumin_c2_pict_imgs[i] }}
-                                {% if i <= 3 %}
-                                    <small class="txt-blue">{{ content.field_produit_cumin_c2_pict_txts[i] }}</small>
-                                {% endif %}
+                                <small class="txt-blue">{{ content.field_produit_cumin_c2_pict_txts[i] }}</small>
                             </div>
                         {% endfor %}
                     </div>

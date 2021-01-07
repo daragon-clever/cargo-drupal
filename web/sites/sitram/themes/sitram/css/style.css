@@ -2698,12 +2698,6 @@ ul.check-list li:before {
 #contact .form-item-fichier input.button[name="fichier_remove_button"]:hover {
   opacity: 0.7;
 }
-#contact .form-item-fichier .g-recaptcha {
-  text-align: center;
-}
-#contact .form-item-fichier .g-recaptcha > div {
-  display: inline-block;
-}
 #contact .form-item-cgu {
   margin-top: 95px;
   margin-bottom: 20px;
@@ -2738,6 +2732,12 @@ ul.check-list li:before {
   padding: 15px 115px;
   text-transform: uppercase;
   width: fit-content;
+}
+.g-recaptcha {
+  text-align: center;
+}
+.g-recaptcha > div {
+  display: inline-block;
 }
 .select2-search {
   display: none;
@@ -2888,7 +2888,10 @@ ul.check-list li:before {
   transition: max-height 0.3s ease-in-out;
 }
 .newsletter-wrapper .newsletter-inner .js-hidden-part.show {
-  max-height: 300px;
+  max-height: 500px;
+}
+.newsletter-wrapper .newsletter-inner .js-hidden-part .g-recaptcha {
+  margin-bottom: 30px;
 }
 .footer-wrapper .logos-wrapper {
   background-color: #EDEDED;

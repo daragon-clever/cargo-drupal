@@ -212,15 +212,28 @@
         right: 0;
       }
 
-      nav ul {
-        flex-direction: column;
+      nav > ul {
+        display: block;
         background: white;
         padding: 15px 30px;
         align-items: inherit;
+        max-height: 90vh;
+        overflow: auto;
 
         a {
           line-height: 1.6;
           margin: 8px 0;
+        }
+
+        & > li {
+          max-height: inherit;
+
+          & > ul {
+            display: none;
+            position: relative;
+            opacity: 1;
+            padding: 0 0 0 30px;
+          }
         }
       }
     }

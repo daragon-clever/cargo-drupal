@@ -1498,15 +1498,26 @@ ul.check-list li:before {
   .header-wrapper .nav-wrapper.active {
     right: 0;
   }
-  .header-wrapper .nav-wrapper nav ul {
-    flex-direction: column;
+  .header-wrapper .nav-wrapper nav > ul {
+    display: block;
     background: white;
     padding: 15px 30px;
     align-items: inherit;
+    max-height: 90vh;
+    overflow: auto;
   }
-  .header-wrapper .nav-wrapper nav ul a {
+  .header-wrapper .nav-wrapper nav > ul a {
     line-height: 1.6;
     margin: 8px 0;
+  }
+  .header-wrapper .nav-wrapper nav > ul > li {
+    max-height: inherit;
+  }
+  .header-wrapper .nav-wrapper nav > ul > li > ul {
+    display: none;
+    position: relative;
+    opacity: 1;
+    padding: 0 0 0 30px;
   }
 }
 #homepage > div > .container {

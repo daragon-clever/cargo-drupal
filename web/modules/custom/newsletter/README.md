@@ -37,3 +37,4 @@ en interne (WEB_Api_Contact_Actito).
 * C'est Deux Euros
 * Comptoir De Famille
 * Yliades
+* Sitram

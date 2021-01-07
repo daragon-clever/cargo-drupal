@@ -952,6 +952,15 @@ ul.check-list li:before {
     max-width: 100%;
   }
 }
+.max-665 {
+  max-width: 665px;
+}
+.max-850 {
+  max-width: 850px;
+}
+.max-550 {
+  max-width: 550px;
+}
 .number {
   height: 100px;
   width: 100px;
@@ -2559,14 +2568,6 @@ ul.check-list li:before {
 #consignes-utilisation .content-6 ul {
   margin-top: 0;
 }
-#consignes-utilisation .max-850,
-#contact .max-850 {
-  max-width: 850px;
-}
-#consignes-utilisation .max-550,
-#contact .max-550 {
-  max-width: 550px;
-}
 #contact {
   font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
 }
@@ -2974,13 +2975,16 @@ ul.check-list li:before {
     background-size: cover !important;
   }
 }
-.footer-wrapper .links .social1 {
+.social1,
+.picto-rs.fb {
   background: url("../images/footer/facebook.svg") no-repeat center transparent;
 }
-.footer-wrapper .links .social2 {
+.social2,
+.picto-rs.instagram {
   background: url("../images/footer/instagram.svg") no-repeat center transparent;
 }
-.footer-wrapper .links .social3 {
+.social3,
+.picto-rs.pinterest {
   background: url("../images/footer/pinterest.svg") no-repeat center transparent;
 }
 .copyright {
@@ -3444,4 +3448,23 @@ table.reparateurs tbody .tel {
 }
 #user-login-form input.button:hover {
   opacity: 0.8;
+}
+#communaute .top-offset {
+  margin-top: 180px;
+}
+#communaute h2 {
+  font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
+  font-size: 56px;
+}
+@media only screen and (max-width: 991px) {
+  #communaute h2 {
+    font-size: 31px;
+  }
+}
+#communaute .picto-rs {
+  display: inline-block;
+  height: 80px;
+  width: 80px;
+  background-size: cover !important;
+  margin-right: 18px;
 }

@@ -1,0 +1,119 @@
+<div id="produits" class="rapsody">
+
+    <!-- BANNER/INTRO -->
+    <div id="ban-intro" class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <div class="container">
+                    <div class="row">
+                        <div class="col ban">
+                            {{ content.field_prod_rapsody_banner }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container max-1065">
+                    <div class="row">
+                        <div class="col text-center">
+                            {{ content.field_prod_rapsody_title }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-lg-6">
+                            {{ content.field_prod_rapsody_intro[0] }}
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            {{ content.field_prod_rapsody_intro[1] }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENT 1 -->
+    <div class="container-fluid bg-img-wood my-5">
+        <div class="row">
+            <div class="col">
+                <div class="container mt-2 mt-lg-5">
+                    <div class="row">
+                        <div class="col-12 col-lg-4 p-right-4 mb-2 mb-lg-0">
+                            {{ content.field_prod_rapsody_c1_imgs[0] }}
+                        </div>
+                        <div class="col-12 col-lg-8 p-left-4">
+                            {{ content.field_prod_rapsody_c1_imgs[1] }}
+                        </div>
+                    </div>
+                </div>
+                <div class="container max-1065 mt-5">
+                    <div class="row align-items-center">
+                        <div class="col-12 col-lg-6">
+                            {{ content.field_prod_rapsody_c1_txt }}
+                        </div>
+                        <div class="col-12 col-lg-6 mt-5 mt-lg-0">
+                            {{ content.field_prod_rapsody_c1_imgs[2] }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENT 2 -->
+    <div class="container content-2">
+        <div class="row mt-5">
+            <div class="col text-center">
+                {{ content.field_prod_rapsody_c2_title }}
+                <!-- CASSEROLES -->
+                {{ content.field_prod_rapsody_c2_txts[0] }}
+            </div>
+        </div>
+        <div class="row mt-3">
+            {% for i in 0..3 %}
+                <div class="col-12 col-md-6 col-lg-3">
+                    {{ content.field_prod_rapsody_c2_imgs[i] }}
+                </div>
+            {% endfor %}
+        </div>
+        <!-- FAITOUT/SAUTEUSE -->
+        <div class="row mt-5 faitout-row">
+            {% for i in 0..1 %}
+                <div class="col-12 col-md-6 align-items-center d-flex flex-column justify-content-between">
+                    {{ content.field_prod_rapsody_c2_txts[i + 1] }}
+                    {{ content.field_prod_rapsody_c2_imgs[i + 4] }}
+                </div>
+            {% endfor %}
+        </div>
+        <!-- POELES -->
+        <div class="row mt-5 ">
+            <div class="col text-center">
+                {{ content.field_prod_rapsody_c2_txts[3] }}
+            </div>
+        </div>
+        <div class="row">
+            {% for i in 0..3 %}
+                <div class="col-12 col-md-6 col-lg-3">
+                    {{ content.field_prod_rapsody_c2_imgs[i + 6] }}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- PICTOS -->
+    <div class="container max-1400 my-5 ">
+        <div class="row pictos border-lightgrey">
+            <div class="col">
+                <div class="container max-930">
+                    <div class="row py-4">
+                        {% for i in 0..5 %}
+                            <div class="col-6 col-md-4 col-lg-2 mb-3 mb-lg-0 d-flex flex-column flex-lg-row align-items-center justify-content-center">
+                                {{ content.field_prod_rapsody_c2_pict_imgs[i] }}
+                                <small class="txt-blue">{{ content.field_prod_rapsody_c2_pict_txts[i] }}</small>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

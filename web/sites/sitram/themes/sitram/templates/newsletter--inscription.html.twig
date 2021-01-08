@@ -1,37 +1,10 @@
-
-{#Form de Comptoir de famille :#}
-
-{#<div id="newsletter">
-    <div class="motif"></div>
-    <div class="inner">
-        <span class="title">
-            {{ 'Inscrivez-vous à notre newsletter'|trans }}
-        </span>
-        {% if form %}
-            <form {{ form.attributes }} method="{{ form['#method'] }}">
-                {{ form.form_build_id }}
-                {{ form.form_token }}
-                {{ form.form_id }}
-
-                <div class="form-content">
-                    {{ form.msg }}
-                    {{ form.mail }}{{ form.actions.submit }}
-                </div>
-                <div class="captcha">
-                    {{ form.captcha }}
-                </div>
-            </form>
-        {% endif %}
-    </div>
-</div>#}
-
 <div class="container-fluid newsletter-wrapper">
     <div class="row">
         <div class="col">
             <div class="container">
                 <div class="newsletter-inner">
                     <div class="row align-items-center">
-                        <div class="col">
+                        <div class="col-12 col-lg">
                             <div class="text-mea p-0">
                                 <h3>
                                     {{ "Recevez en avant-première<br> les <span>nouvelles recettes</span><br> et les
@@ -42,35 +15,43 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="col">
-                            <form action="" method="post" class="form-newsletter">
-                                <div class="js-hidden-part">
-                                    <div class="form-email">
-                                        <label for="email">{{ "Votre adresse email"|trans }} *</label>
-                                        <input type="email" name="email" id="email"
-                                               placeholder="{{ "Saisir votre adresse e-mail"|trans }}" required>
-                                    </div>
-                                    <div class="row name-wrapper">
-                                        <div class="col">
-                                            <div class="form-firstname">
-                                                <label for="firstname">{{ "Votre Nom"|trans }} *</label>
-                                                <input type="text" name="firstname" id="firstname"
-                                                       placeholder="{{ "Saisir votre nom"|trans }}" required>
+                        <div class="col-12 col-lg mt-4 mt-lg-0">
+                            {#todo: voir s'il faut mettre un id newsletter quelque part#}
+                            {% if form %}
+                                <form {{ form.attributes }} method="{{ form['#method'] }}" class="form-newsletter">
+                                    {{ form.form_build_id }}
+                                    {{ form.form_token }}
+                                    {{ form.form_id }}
+                                    <div class="js-hidden-part">
+                                        <div class="form-msg">
+                                            {{ form.msg }}
+                                        </div>
+                                        <div class="form-content">
+                                            <div class="form-email">
+                                                {{ form.mail }}
+                                            </div>
+                                            <div class="row name-wrapper">
+                                                <div class="col-12 col-sm-6">
+                                                    <div class="form-lastname">
+                                                        {{ form.nom }}
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-sm-6">
+                                                    <div class="form-firstname">
+                                                        {{ form.prenom }}
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="col">
-                                            <div class="form-lastname">
-                                                <label for="lastname">{{ "Votre Prénom"|trans }} *</label>
-                                                <input type="text" name="lastname" id="lastname"
-                                                       placeholder="{{ "Saisir votre prénom"|trans }}" required>
-                                            </div>
+                                        <div class="captcha">
+                                            {{ form.captcha }}
                                         </div>
                                     </div>
-                                </div>
-                                <div class="form-submit">
-                                    <input class="js-show-hidden-part" type="submit" value="{{ "S'inscrire"|trans }}">
-                                </div>
-                            </form>
+                                    <div class="form-submit">
+                                        {{ form.actions.submit }}
+                                    </div>
+                                </form>
+                            {% endif %}
                         </div>
                     </div>
                 </div>

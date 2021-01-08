@@ -205,6 +205,13 @@ a:hover {
 .txt-yellow {
   color: #F9AB00;
 }
+@media only screen and (max-width: 991px) {
+  .txt-blue-resp,
+  .txt-blue-resp h3,
+  .txt-blue-resp p {
+    color: #003663;
+  }
+}
 .text-mea {
   color: white;
 }
@@ -1491,15 +1498,26 @@ ul.check-list li:before {
   .header-wrapper .nav-wrapper.active {
     right: 0;
   }
-  .header-wrapper .nav-wrapper nav ul {
-    flex-direction: column;
+  .header-wrapper .nav-wrapper nav > ul {
+    display: block;
     background: white;
     padding: 15px 30px;
     align-items: inherit;
+    max-height: 90vh;
+    overflow: auto;
   }
-  .header-wrapper .nav-wrapper nav ul a {
+  .header-wrapper .nav-wrapper nav > ul a {
     line-height: 1.6;
     margin: 8px 0;
+  }
+  .header-wrapper .nav-wrapper nav > ul > li {
+    max-height: inherit;
+  }
+  .header-wrapper .nav-wrapper nav > ul > li > ul {
+    display: none;
+    position: relative;
+    opacity: 1;
+    padding: 0 0 0 30px;
   }
 }
 #homepage > div > .container {
@@ -2065,6 +2083,71 @@ ul.check-list li:before {
   #produits #content-2 .container:before,
   #conseils #content-2 .container:before {
     display: none;
+  }
+}
+#produits.cumin h1 {
+  line-height: 1;
+}
+#produits.cumin .bg-img-wood {
+  background-position: top center;
+  background-size: auto 526px;
+}
+@media only screen and (max-width: 991px) {
+  #produits.cumin .bg-img-wood {
+    background-size: auto 75px;
+  }
+}
+#produits.cumin .bg-img-wood img {
+  width: 100%;
+  height: 100%;
+}
+#produits.cumin .p-left-4 {
+  padding-left: 4px;
+}
+@media only screen and (max-width: 991px) {
+  #produits.cumin .p-left-4 {
+    padding-left: 8px;
+  }
+}
+#produits.cumin .p-right-4 {
+  padding-right: 4px;
+}
+@media only screen and (max-width: 991px) {
+  #produits.cumin .p-right-4 {
+    padding-right: 8px;
+  }
+}
+#produits.cumin h2 span {
+  font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
+  text-transform: none;
+}
+#produits.cumin ul {
+  padding-left: 20px;
+  margin-bottom: 0;
+}
+#produits.cumin .content-2 img {
+  width: 100%;
+  height: auto;
+}
+#produits.cumin .content-2 .faitout-row h3 {
+  margin-bottom: 0;
+}
+#produits.cumin .max-1400 {
+  max-width: 1400px;
+}
+#produits.cumin .pictos .max-930 {
+  max-width: 930px;
+}
+#produits.cumin .pictos img {
+  width: 55px;
+  height: 55px;
+}
+#produits.cumin .pictos small {
+  padding-left: 15px;
+}
+@media only screen and (max-width: 991px) {
+  #produits.cumin .pictos small {
+    padding-left: 0;
   }
 }
 #conseils #content-1 {
@@ -2680,12 +2763,6 @@ ul.check-list li:before {
 #contact .form-item-fichier input.button[name="fichier_remove_button"]:hover {
   opacity: 0.7;
 }
-#contact .form-item-fichier .g-recaptcha {
-  text-align: center;
-}
-#contact .form-item-fichier .g-recaptcha > div {
-  display: inline-block;
-}
 #contact .form-item-cgu {
   margin-top: 95px;
   margin-bottom: 20px;
@@ -2720,6 +2797,12 @@ ul.check-list li:before {
   padding: 15px 115px;
   text-transform: uppercase;
   width: fit-content;
+}
+.g-recaptcha {
+  text-align: center;
+}
+.g-recaptcha > div {
+  display: inline-block;
 }
 .select2-search {
   display: none;
@@ -2790,6 +2873,13 @@ ul.check-list li:before {
     background-size: auto 190px;
   }
 }
+div[role="contentinfo"] {
+  background: #003663;
+  color: white;
+  margin: 15px;
+  padding: 15px;
+  text-align: center;
+}
 .newsletter-wrapper {
   background: #EDEDED;
   position: relative;
@@ -2815,6 +2905,11 @@ ul.check-list li:before {
 }
 .newsletter-wrapper .newsletter-inner .text-mea h3 {
   font-size: 32px;
+}
+@media only screen and (max-width: 991px) {
+  .newsletter-wrapper .newsletter-inner .text-mea h3 br {
+    display: none;
+  }
 }
 .newsletter-wrapper .newsletter-inner .text-mea span {
   display: inline;
@@ -2870,7 +2965,16 @@ ul.check-list li:before {
   transition: max-height 0.3s ease-in-out;
 }
 .newsletter-wrapper .newsletter-inner .js-hidden-part.show {
-  max-height: 300px;
+  max-height: 500px;
+}
+.newsletter-wrapper .newsletter-inner .js-hidden-part .g-recaptcha {
+  margin-bottom: 30px;
+}
+@media only screen and (max-width: 991px) {
+  .newsletter-wrapper .newsletter-inner .js-hidden-part .g-recaptcha {
+    margin-top: 30px;
+    margin-bottom: 0;
+  }
 }
 .footer-wrapper .logos-wrapper {
   background-color: #EDEDED;

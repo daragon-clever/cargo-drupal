@@ -37,19 +37,19 @@
                 {{ content.field_prod_specif_c1_intro }}
             </div>
         </div>
+    </div>
 
-        <div class="container max-1065 gutter-27 content-specif">
-            {% for i in 0..3 %}
-                <div class="row align-items-center my-3 my-sm-5">
-                    <div class="col-sm-6 {% if i is even %}col-12 order-lg-2{% endif %}">
-                        {{ content.field_prod_specif_c1_txts[i] }}
-                    </div>
-                    <div class="col-12 col-sm-6 mt-3 mt-sm-0">
-                        {{ content.field_prod_specif_c1_imgs[i] }}
-                    </div>
+    <div class="container max-1065 gutter-27 content-specif">
+        {% for i in 0..3 %}
+            <div class="row align-items-center my-3 my-sm-5">
+                <div class="col-sm-6 {% if i is even %}col-12 order-lg-2{% endif %}">
+                    {{ content.field_prod_specif_c1_txts[i] }}
                 </div>
-            {% endfor %}
-        </div>
+                <div class="col-12 col-sm-6 mt-3 mt-sm-0">
+                    {{ content.field_prod_specif_c1_imgs[i] }}
+                </div>
+            </div>
+        {% endfor %}
     </div>
 
     <!-- CONTENT 2-->

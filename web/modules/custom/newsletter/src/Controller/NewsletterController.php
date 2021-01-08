@@ -9,6 +9,7 @@ class NewsletterController
     private const SITENAME_BLOG_SITRAM = "blog.sitram.fr";
     private const SITENAME_CDF = "comptoirdefamille";
     private const SITENAME_C2E = "c'estdeuxeuros";
+    private const SITENAME_SITRAM = "sitram";
 
     public $currentCompany;
 
@@ -33,6 +34,9 @@ class NewsletterController
             case self::SITENAME_C2E:
                 $base = new Company\CestDeuxEurosController();
                 break;
+            case self::SITENAME_SITRAM:
+                $base = new Company\SitramController();
+                break;
         }
         return $base;
     }
@@ -52,6 +56,9 @@ class NewsletterController
                 break;
             case self::SITENAME_C2E:
                 $myForm = \Drupal::formBuilder()->getForm(CompanyForm\CestDeuxEurosForm::class);
+                break;
+            case self::SITENAME_SITRAM:
+                $myForm = \Drupal::formBuilder()->getForm(CompanyForm\SitramForm::class);
                 break;
         }
         return $myForm;

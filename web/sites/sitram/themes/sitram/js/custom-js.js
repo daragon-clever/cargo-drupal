@@ -1,4 +1,9 @@
 jQuery(document).ready(function ($) {
+    // OBJECT FIT SUPPORT FOR IE11
+    $(function () {
+        objectFitImages()
+    })
+
     // NAV REPONSIVE
     $('.js-resp-menu').click(function () {
         $("header .nav-wrapper, .js-resp-menu, .header-wrapper + .content").toggleClass('active');

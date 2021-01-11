@@ -42,6 +42,16 @@ lozad:
   js:
     https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js: { type: external }
 
+# Polyfill - IE11
+polyfill:
+  js:
+    js/intersection-observer.js: {}
+
+# Object fit support for IE
+objectfit-ie:
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/object-fit-images/3.2.4/ofi.min.js: { type: external }
+
 # Style général
 global-styling:
   header: true

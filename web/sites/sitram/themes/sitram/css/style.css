@@ -327,6 +327,7 @@ a:hover {
   height: 100%;
   width: 100%;
   object-fit: cover;
+  font-family: 'object-fit: cover;';
 }
 @media only screen and (max-width: 991px) {
   .img-shade {
@@ -585,6 +586,7 @@ ul.check-list li:before {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  font-family: 'object-fit: cover;';
   display: block;
   padding: 8px 0;
 }
@@ -1110,6 +1112,7 @@ ul.check-list li:before {
   width: 97px;
   height: 97px;
   object-fit: cover;
+  font-family: 'object-fit: cover;';
 }
 .svg-infos.small img {
   width: 75px;
@@ -1163,6 +1166,7 @@ ul.check-list li:before {
 .slider img {
   width: 100%;
   object-fit: cover;
+  font-family: 'object-fit: cover;';
   max-width: 100%;
   height: auto;
 }
@@ -1598,6 +1602,7 @@ ul.check-list li:before {
     height: 288px;
     width: 100%;
     object-fit: cover;
+    font-family: 'object-fit: cover;';
   }
 }
 #homepage .content-2 {
@@ -1872,6 +1877,7 @@ ul.check-list li:before {
 .recette-item img {
   width: 100%;
   object-fit: cover;
+  font-family: 'object-fit: cover;';
   height: 197px;
   transition: transform .3s ease;
 }
@@ -1907,6 +1913,7 @@ ul.check-list li:before {
 #recette-individuelle .bg-img-wood .ban img {
   width: 100%;
   object-fit: cover;
+  font-family: 'object-fit: cover;';
   max-height: 627px;
 }
 @media only screen and (max-width: 991px) {
@@ -2172,6 +2179,7 @@ ul.check-list li:before {
 #conseils-indiv .img-max-wrapper img {
   width: 100%;
   object-fit: cover;
+  font-family: 'object-fit: cover;';
   height: 227px;
 }
 @media only screen and (max-width: 991px) {
@@ -2344,6 +2352,7 @@ ul.check-list li:before {
 #marque.qui-sommes-nous .gallery img {
   width: 100%;
   object-fit: cover;
+  font-family: 'object-fit: cover;';
 }
 #marque.qui-sommes-nous .gallery .bg-lightgrey img {
   width: auto;
@@ -2605,6 +2614,7 @@ ul.check-list li:before {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  font-family: 'object-fit: cover;';
 }
 @media only screen and (max-width: 767px) {
   #consignes-utilisation .item img {

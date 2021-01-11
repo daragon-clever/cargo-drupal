@@ -21,6 +21,12 @@ msgstr "Email obligatoire"
 msgid "Email is malformed"
 msgstr "Email incorrect"
 
+msgid "Lastname is required"
+msgstr "Nom obligatoire"
+
+msgid "Firstname is required"
+msgstr "Prénom obligatoire"
+
 msgid "Enter your e-mail address"
 msgstr "Entrez votre adresse e-mail"
 
@@ -37,7 +43,7 @@ msgid "Brands is required"
 msgstr "Selectionnez au minimum une marque"
 
 msgid "Your Name"
-msgstr "Votre nom"
+msgstr "Votre Nom"
 
 msgid "Enter your name"
 msgstr "Saisir votre nom"

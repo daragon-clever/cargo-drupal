@@ -17,7 +17,6 @@ jQuery(document).ready(function ($) {
     });
 
 
-
     // CAROUSEL USTENSILES (page recettes)
     if ($('#recette-individuelle').length) {
         $('.js-ustensiles-slider > div').slick();
@@ -48,7 +47,9 @@ jQuery(document).ready(function ($) {
                 'items_per_row': 3,
                 'margin': 1,
                 'lazy_load': true,
-                'on_error': console.error
+                'on_error': function () {
+                    $('#js-instagram').html('<img class="mw-100" src="/sites/sitram/themes/sitram/images/fake-insta-hp.png" />')
+                }
             });
         })();
     }
@@ -133,8 +134,8 @@ jQuery(document).ready(function ($) {
         const iframe = $(this).prev();
         const src = iframe.attr('src');
         $(this).parents('.js-hidden-video').fadeOut();
-        iframe.attr('src','');
-        iframe.attr('src',src)
+        iframe.attr('src', '');
+        iframe.attr('src', src)
     });
 
     // FOOTER
@@ -163,7 +164,9 @@ jQuery(document).ready(function ($) {
                 'items_per_row': 3,
                 'margin': 1,
                 'lazy_load': true,
-                'on_error': console.error
+                'on_error': function () {
+                    $('#js-instagram-commu').html('<img class="mw-100" src="/sites/sitram/themes/sitram/images/fake-insta-commu.png" />')
+                }
             });
         })();
     }

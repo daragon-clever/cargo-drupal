@@ -1342,6 +1342,26 @@ ul.check-list li:before {
 .header-wrapper nav > ul:last-child {
   margin-right: 0;
 }
+.header-wrapper nav > ul > li {
+  position: relative;
+  max-height: 120px;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+.header-wrapper nav > ul > li:hover {
+  max-height: 200px;
+  overflow: visible;
+}
+.header-wrapper nav > ul > li:hover > a {
+  border-color: #003663;
+  color: #003663;
+}
+.header-wrapper nav > ul > li:hover > a.ou-acheter {
+  color: white;
+}
+.header-wrapper nav > ul > li:hover > ul {
+  opacity: 1;
+}
 .header-wrapper nav > ul > li a {
   color: #434343;
   text-decoration: none;
@@ -1362,6 +1382,22 @@ ul.check-list li:before {
 .header-wrapper nav > ul > li a.is-active.ou-acheter,
 .header-wrapper nav > ul > li a:hover.ou-acheter {
   color: white;
+}
+.header-wrapper nav > ul > li > ul {
+  position: absolute;
+  z-index: 10;
+  background: white;
+  display: block;
+  list-style: disc;
+  transition: opacity 0.3s ease-in-out;
+  padding: 20px 35px;
+  opacity: 0;
+}
+.header-wrapper nav > ul > li > ul > li > a {
+  line-height: 1.6;
+  margin: 8px 0;
+  border: none;
+  white-space: nowrap;
 }
 .header-wrapper nav > ul a.ou-acheter {
   display: inline-block;
@@ -1396,39 +1432,6 @@ ul.check-list li:before {
 .header-wrapper nav > ul a.ou-acheter:hover {
   border-bottom: none;
   color: white;
-}
-.header-wrapper nav > ul > li {
-  position: relative;
-  max-height: 120px;
-  overflow: hidden;
-  transition: max-height 0.3s ease-in-out;
-}
-.header-wrapper nav > ul > li:hover {
-  max-height: 200px;
-  overflow: visible;
-}
-.header-wrapper nav > ul > li:hover > a {
-  border-color: #003663;
-  color: #003663;
-}
-.header-wrapper nav > ul > li:hover > ul {
-  opacity: 1;
-}
-.header-wrapper nav > ul > li > ul {
-  position: absolute;
-  z-index: 10;
-  background: white;
-  display: block;
-  list-style: disc;
-  transition: opacity 0.3s ease-in-out;
-  padding: 20px 35px;
-  opacity: 0;
-}
-.header-wrapper nav > ul > li > ul > li > a {
-  line-height: 1.6;
-  margin: 8px 0;
-  border: none;
-  white-space: nowrap;
 }
 @media only screen and (max-width: 991px) {
   .header-wrapper header {

@@ -15,40 +15,41 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="col-12 col-lg mt-4 mt-lg-0">
-                            {#todo: voir s'il faut mettre un id newsletter quelque part#}
+                        <div class="col-12 col-lg mt-4 mt-lg-0 form-newsletter">
+                            <button class="js-show-hidden-part">
+                                {{ "S'inscrire" | trans }}
+                            </button>
+
                             {% if form %}
                                 <form {{ form.attributes }} method="{{ form['#method'] }}" class="form-newsletter">
                                     {{ form.form_build_id }}
                                     {{ form.form_token }}
                                     {{ form.form_id }}
+
+                                    <div class="result-message"></div>
+
                                     <div class="js-hidden-part">
-                                        <div class="form-msg">
-                                            {{ form.msg }}
+                                        <div class="form-email">
+                                            {{ form.mail }}
                                         </div>
-                                        <div class="form-content">
-                                            <div class="form-email">
-                                                {{ form.mail }}
-                                            </div>
-                                            <div class="row name-wrapper">
-                                                <div class="col-12 col-sm-6">
-                                                    <div class="form-lastname">
-                                                        {{ form.nom }}
-                                                    </div>
+                                        <div class="row name-wrapper">
+                                            <div class="col-12 col-sm-6">
+                                                <div class="form-lastname">
+                                                    {{ form.nom }}
                                                 </div>
-                                                <div class="col-12 col-sm-6">
-                                                    <div class="form-firstname">
-                                                        {{ form.prenom }}
-                                                    </div>
+                                            </div>
+                                            <div class="col-12 col-sm-6">
+                                                <div class="form-firstname">
+                                                    {{ form.prenom }}
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="captcha">
                                             {{ form.captcha }}
                                         </div>
-                                    </div>
-                                    <div class="form-submit">
-                                        {{ form.actions.submit }}
+                                        <div class="form-submit">
+                                            {{ form.submit }}
+                                        </div>
                                     </div>
                                 </form>
                             {% endif %}

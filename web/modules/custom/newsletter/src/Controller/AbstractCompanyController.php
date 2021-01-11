@@ -11,8 +11,8 @@ abstract class AbstractCompanyController extends ControllerBase
 {
     private const ACTION_INSERT = 'insert';
     private const ACTION_UPDATE = 'update';
-    private const TYPE_MSG_STATUS = "status";
-    private const TYPE_MSG_ERROR = "error";
+    public const TYPE_MSG_STATUS = "status";
+    public const TYPE_MSG_ERROR = "error";
 
     protected const USER_API_ACTITO = "poleweb_admin";
     private const PASS_API_ACTITO = "57Hc!a5sQ";

@@ -138,13 +138,18 @@ jQuery(document).ready(function ($) {
     });
 
     // FOOTER
-    $(".js-show-hidden-part").click(function (e) {
+    $(".js-show-hidden-part").click(function () {
         if (!$(this).hasClass('opened')) {
-            e.preventDefault();
             $(".js-hidden-part").addClass('show');
             $(this).addClass('opened');
         }
     });
+    (function($) {
+        $.fn.myCustomReloadReCatpcha = function() {
+            console.log('on a submit');
+            grecaptcha.reset();
+        };
+    })(jQuery);
 
     // COMMUNAUTE
     if ($('#js-instagram-commu').length) {

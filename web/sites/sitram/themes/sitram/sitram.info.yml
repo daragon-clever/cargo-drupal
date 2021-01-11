@@ -11,6 +11,8 @@ regions:
   txtfooter: 'Zone texte sous le footer'
 
 libraries:
+  - sitram/polyfill
+  - sitram/objectfit-ie
   - sitram/bootstrap
   - sitram/slick
   - sitram/instagram

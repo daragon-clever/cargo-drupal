@@ -34,25 +34,71 @@
       margin-right: 0;
     }
 
-    & > li a {
-      color: @grey;
-      text-decoration: none;
-      font-size: 16px;
-      font-family: @MyriadSemibold;
-      margin: 0 24px;
-      line-height: 117px;
-      display: inline-block;
-      border-bottom: 3px solid transparent;
-      transition: border-color 0.3s ease, color 0.3s ease-in-out;
+    & > li {
+      position: relative;
+      max-height: 120px;
+      overflow: hidden;
+      transition: max-height 0.3s ease-in-out;
 
-      &.is-active,
       &:hover {
-        border-color: @primaryColor;
-        color: @primaryColor;
-        opacity: 1;
+        max-height: 200px;
+        overflow: visible;
 
-        &.ou-acheter {
-          color: white;
+        & > a {
+          border-color: @primaryColor;
+          color: @primaryColor;
+
+          &.ou-acheter {
+            color: white;
+          }
+        }
+
+        & > ul {
+          opacity: 1;
+        }
+      }
+
+      a {
+        color: @grey;
+        text-decoration: none;
+        font-size: 16px;
+        font-family: @MyriadSemibold;
+        margin: 0 24px;
+        line-height: 117px;
+        display: inline-block;
+        border-bottom: 3px solid transparent;
+        transition: border-color 0.3s ease, color 0.3s ease-in-out;
+
+        &.is-active,
+        &:hover {
+          border-color: @primaryColor;
+          color: @primaryColor;
+          opacity: 1;
+
+          &.ou-acheter {
+            color: white;
+          }
+        }
+      }
+
+      // N2
+      & > ul {
+        position: absolute;
+        z-index: 10;
+        background: white;
+        display: block;
+        list-style: disc;
+        transition: opacity 0.3s ease-in-out;
+        padding: 20px 35px;
+        opacity: 0;
+
+        & > li {
+          & > a {
+            line-height: 1.6;
+            margin: 8px 0;
+            border: none;
+            white-space: nowrap;
+          }
         }
       }
     }
@@ -86,48 +132,6 @@
       &:hover {
         border-bottom: none;
         color: white;
-      }
-    }
-
-    // N2
-    & > li {
-      position: relative;
-      max-height: 120px;
-      overflow: hidden;
-      transition: max-height 0.3s ease-in-out;
-
-      &:hover {
-        max-height: 200px;
-        overflow: visible;
-
-        & > a {
-          border-color: @primaryColor;
-          color: @primaryColor;
-        }
-
-        & > ul {
-          opacity: 1;
-        }
-      }
-
-      & > ul {
-        position: absolute;
-        z-index: 10;
-        background: white;
-        display: block;
-        list-style: disc;
-        transition: opacity 0.3s ease-in-out;
-        padding: 20px 35px;
-        opacity: 0;
-
-        & > li {
-          & > a {
-            line-height: 1.6;
-            margin: 8px 0;
-            border: none;
-            white-space: nowrap;
-          }
-        }
       }
     }
   }
@@ -324,6 +328,7 @@
             height: 288px;
             width: 100%;
             object-fit: cover;
+            font-family: 'object-fit: cover;'; // hack IE11
           }
         }
       }
@@ -387,10 +392,23 @@
       p {
         line-height: 1;
       }
+
+      .fleche {
+        transition: padding-left 0.3s ease-in-out;
+        margin-top: 25px;
+
+        &:hover {
+          padding-left: 20px;
+        }
+
+        @media @tablet {
+          color: @primaryColor;
+        }
+      }
     }
 
     .content-3-img {
-      margin: 50px auto 0 auto;
+      margin: 20px auto 0 auto;
     }
 
     .content-3-paragraph {
@@ -658,6 +676,7 @@
   img {
     width: 100%;
     object-fit: cover;
+    font-family: 'object-fit: cover;'; // hack IE11
     height: 197px;
     transition: transform .3s ease;
 
@@ -701,6 +720,7 @@
     .ban img {
       width: 100%;
       object-fit: cover;
+      font-family: 'object-fit: cover;'; // hack IE11
       max-height: 627px;
 
       @media @tablet {
@@ -1024,6 +1044,7 @@
     img {
       width: 100%;
       object-fit: cover;
+      font-family: 'object-fit: cover;'; // hack IE11
       height: 227px;
 
       @media @tablet {
@@ -1281,6 +1302,7 @@
       img {
         width: 100%;
         object-fit: cover;
+        font-family: 'object-fit: cover;'; // hack IE11
       }
 
       .bg-lightgrey {
@@ -1596,6 +1618,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      font-family: 'object-fit: cover;'; // hack IE11
 
       @media @phone {
         max-width: 275px;
@@ -2643,7 +2666,7 @@ table.reparateurs {
     }
 
     td {
-      padding: 30px;
+      padding: 15px 20px;
 
       @media @tablet {
         padding: 15px;
@@ -2659,6 +2682,11 @@ table.reparateurs {
       font-size: 24px;
       color: @secondaryColor;
       text-transform: uppercase;
+
+      &:last-child {
+        color: inherit;
+        font-size: 1rem;
+      }
     }
 
     .tel {
@@ -2737,5 +2765,11 @@ table.reparateurs {
     width: 80px;
     background-size: cover !important;
     margin-right: 18px;
+  }
+
+  .instagram_gallery {
+    background: white;
+    padding: 3px;
+    border-radius: 3px;
   }
 }

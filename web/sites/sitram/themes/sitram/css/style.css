@@ -327,6 +327,7 @@ a:hover {
   height: 100%;
   width: 100%;
   object-fit: cover;
+  font-family: 'object-fit: cover;';
 }
 @media only screen and (max-width: 991px) {
   .img-shade {
@@ -585,6 +586,7 @@ ul.check-list li:before {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  font-family: 'object-fit: cover;';
   display: block;
   padding: 8px 0;
 }
@@ -1110,6 +1112,7 @@ ul.check-list li:before {
   width: 97px;
   height: 97px;
   object-fit: cover;
+  font-family: 'object-fit: cover;';
 }
 .svg-infos.small img {
   width: 75px;
@@ -1163,6 +1166,7 @@ ul.check-list li:before {
 .slider img {
   width: 100%;
   object-fit: cover;
+  font-family: 'object-fit: cover;';
   max-width: 100%;
   height: auto;
 }
@@ -1342,6 +1346,26 @@ ul.check-list li:before {
 .header-wrapper nav > ul:last-child {
   margin-right: 0;
 }
+.header-wrapper nav > ul > li {
+  position: relative;
+  max-height: 120px;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+.header-wrapper nav > ul > li:hover {
+  max-height: 200px;
+  overflow: visible;
+}
+.header-wrapper nav > ul > li:hover > a {
+  border-color: #003663;
+  color: #003663;
+}
+.header-wrapper nav > ul > li:hover > a.ou-acheter {
+  color: white;
+}
+.header-wrapper nav > ul > li:hover > ul {
+  opacity: 1;
+}
 .header-wrapper nav > ul > li a {
   color: #434343;
   text-decoration: none;
@@ -1362,6 +1386,22 @@ ul.check-list li:before {
 .header-wrapper nav > ul > li a.is-active.ou-acheter,
 .header-wrapper nav > ul > li a:hover.ou-acheter {
   color: white;
+}
+.header-wrapper nav > ul > li > ul {
+  position: absolute;
+  z-index: 10;
+  background: white;
+  display: block;
+  list-style: disc;
+  transition: opacity 0.3s ease-in-out;
+  padding: 20px 35px;
+  opacity: 0;
+}
+.header-wrapper nav > ul > li > ul > li > a {
+  line-height: 1.6;
+  margin: 8px 0;
+  border: none;
+  white-space: nowrap;
 }
 .header-wrapper nav > ul a.ou-acheter {
   display: inline-block;
@@ -1396,39 +1436,6 @@ ul.check-list li:before {
 .header-wrapper nav > ul a.ou-acheter:hover {
   border-bottom: none;
   color: white;
-}
-.header-wrapper nav > ul > li {
-  position: relative;
-  max-height: 120px;
-  overflow: hidden;
-  transition: max-height 0.3s ease-in-out;
-}
-.header-wrapper nav > ul > li:hover {
-  max-height: 200px;
-  overflow: visible;
-}
-.header-wrapper nav > ul > li:hover > a {
-  border-color: #003663;
-  color: #003663;
-}
-.header-wrapper nav > ul > li:hover > ul {
-  opacity: 1;
-}
-.header-wrapper nav > ul > li > ul {
-  position: absolute;
-  z-index: 10;
-  background: white;
-  display: block;
-  list-style: disc;
-  transition: opacity 0.3s ease-in-out;
-  padding: 20px 35px;
-  opacity: 0;
-}
-.header-wrapper nav > ul > li > ul > li > a {
-  line-height: 1.6;
-  margin: 8px 0;
-  border: none;
-  white-space: nowrap;
 }
 @media only screen and (max-width: 991px) {
   .header-wrapper header {
@@ -1595,6 +1602,7 @@ ul.check-list li:before {
     height: 288px;
     width: 100%;
     object-fit: cover;
+    font-family: 'object-fit: cover;';
   }
 }
 #homepage .content-2 {
@@ -1649,8 +1657,20 @@ ul.check-list li:before {
 #homepage .content-3 .text-mea p {
   line-height: 1;
 }
+#homepage .content-3 .text-mea .fleche {
+  transition: padding-left 0.3s ease-in-out;
+  margin-top: 25px;
+}
+#homepage .content-3 .text-mea .fleche:hover {
+  padding-left: 20px;
+}
+@media only screen and (max-width: 991px) {
+  #homepage .content-3 .text-mea .fleche {
+    color: #003663;
+  }
+}
 #homepage .content-3 .content-3-img {
-  margin: 50px auto 0 auto;
+  margin: 20px auto 0 auto;
 }
 #homepage .content-3 .content-3-paragraph {
   margin-top: 62px;
@@ -1869,6 +1889,7 @@ ul.check-list li:before {
 .recette-item img {
   width: 100%;
   object-fit: cover;
+  font-family: 'object-fit: cover;';
   height: 197px;
   transition: transform 0.3s ease;
 }
@@ -1904,6 +1925,7 @@ ul.check-list li:before {
 #recette-individuelle .bg-img-wood .ban img {
   width: 100%;
   object-fit: cover;
+  font-family: 'object-fit: cover;';
   max-height: 627px;
 }
 @media only screen and (max-width: 991px) {
@@ -2187,6 +2209,7 @@ ul.check-list li:before {
 #conseils-indiv .img-max-wrapper img {
   width: 100%;
   object-fit: cover;
+  font-family: 'object-fit: cover;';
   height: 227px;
 }
 @media only screen and (max-width: 991px) {
@@ -2359,6 +2382,7 @@ ul.check-list li:before {
 #marque.qui-sommes-nous .gallery img {
   width: 100%;
   object-fit: cover;
+  font-family: 'object-fit: cover;';
 }
 #marque.qui-sommes-nous .gallery .bg-lightgrey img {
   width: auto;
@@ -2620,6 +2644,7 @@ ul.check-list li:before {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  font-family: 'object-fit: cover;';
 }
 @media only screen and (max-width: 767px) {
   #consignes-utilisation .item img {
@@ -3552,7 +3577,7 @@ table.reparateurs tbody .mail-site a {
   display: block;
 }
 table.reparateurs tbody td {
-  padding: 30px;
+  padding: 15px 20px;
 }
 @media only screen and (max-width: 991px) {
   table.reparateurs tbody td {
@@ -3567,6 +3592,10 @@ table.reparateurs tbody .infos b {
   font-size: 24px;
   color: #741030;
   text-transform: uppercase;
+}
+table.reparateurs tbody .infos b:last-child {
+  color: inherit;
+  font-size: 1rem;
 }
 table.reparateurs tbody .tel {
   font-size: 24px;
@@ -3636,4 +3665,9 @@ table.reparateurs tbody .tel {
   width: 80px;
   background-size: cover !important;
   margin-right: 18px;
+}
+#communaute .instagram_gallery {
+  background: white;
+  padding: 3px;
+  border-radius: 3px;
 }

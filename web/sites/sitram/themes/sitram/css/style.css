@@ -1657,8 +1657,20 @@ ul.check-list li:before {
 #homepage .content-3 .text-mea p {
   line-height: 1;
 }
+#homepage .content-3 .text-mea .fleche {
+  transition: padding-left 0.3s ease-in-out;
+  margin-top: 25px;
+}
+#homepage .content-3 .text-mea .fleche:hover {
+  padding-left: 20px;
+}
+@media only screen and (max-width: 991px) {
+  #homepage .content-3 .text-mea .fleche {
+    color: #003663;
+  }
+}
 #homepage .content-3 .content-3-img {
-  margin: 50px auto 0 auto;
+  margin: 20px auto 0 auto;
 }
 #homepage .content-3 .content-3-paragraph {
   margin-top: 62px;

@@ -3642,8 +3642,12 @@ table.reparateurs tbody .tel {
   background-size: cover !important;
   margin-right: 18px;
 }
-#communaute .instagram_gallery {
+#communaute .instagram_gallery,
+#communaute .fake-img {
   background: white;
   padding: 3px;
   border-radius: 3px;
+}
+#communaute .fake-img {
+  padding: 8px;
 }

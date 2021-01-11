@@ -174,7 +174,7 @@ jQuery(document).ready(function ($) {
                 'margin': 1,
                 'lazy_load': true,
                 'on_error': function () {
-                    $('#js-instagram-commu').html('<img class="mw-100" src="/sites/sitram/themes/sitram/images/fake-insta-commu.png" />')
+                    $('#js-instagram-commu').html('<img class="mw-100 fake-img" src="/sites/sitram/themes/sitram/images/fake-insta-commu.jpg" />')
                 }
             });
         })();

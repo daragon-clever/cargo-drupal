@@ -2,18 +2,20 @@
     <div class="container">
         <div class="header-section">
             <a href="{{ url('<front>') }}" title="Accueil">
-                <img width="150" src="/sites/sitram/themes/sitram/images/logo-sitram.png" alt="Sitram" />
+                <img width="150" src="/sites/sitram/themes/sitram/images/logo-sitram.png" alt="Sitram"/>
             </a>
             {% if page.navigation %}
-            <div class="nav-wrapper">
-                {{ page.navigation }}
-            </div>
+                <div class="nav-wrapper">
+                    {{ page.navigation }}
+                </div>
             {% endif %}
-            <span class="js-resp-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </span>
+            <a href="#block-sitram-main-menu">
+                <span class="js-resp-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </a>
         </div>
     </div>
 </header>

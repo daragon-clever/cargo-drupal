@@ -1,26 +1,25 @@
+let isTabletOrLess = window.matchMedia("only screen and (max-width: 991px)").matches;
+if (isTabletOrLess) {
+    document.addEventListener(
+        "DOMContentLoaded", () => {
+            new Mmenu("#block-sitram-main-menu", {
+                "extensions": [
+                    "theme-white",
+                    "border-full",
+                    "position-front",
+                    "pagedim-black",
+                    "position-right"
+                ]
+            });
+        }
+    );
+}
+
 jQuery(document).ready(function ($) {
     // OBJECT FIT SUPPORT FOR IE11
     $(function () {
         objectFitImages()
-    })
-
-    // NAV REPONSIVE
-    $('.js-resp-menu').click(function () {
-        $("header .nav-wrapper, .js-resp-menu, .header-wrapper + .content").toggleClass('active');
-        const n1_Link = $('#block-sitram-main-menu > ul > li > a');
-
-        n1_Link.click(function (e) {
-            const allSubMenu = $(n1_Link).next('ul');
-            const subMenu = $(this).next('ul');
-
-            if (subMenu.length > 0) {
-                e.preventDefault();
-                allSubMenu.slideUp();
-                subMenu.slideToggle();
-            }
-        })
     });
-
 
     // CAROUSEL USTENSILES (page recettes)
     if ($('#recette-individuelle').length) {

@@ -1441,6 +1441,14 @@ ul.check-list li:before {
   .header-wrapper header {
     padding: 15px 0;
   }
+  .header-wrapper .header-section > a {
+    margin-left: 15px;
+    height: 30px;
+  }
+  .header-wrapper .header-section > a img {
+    height: 100%;
+    width: auto;
+  }
   .header-wrapper .js-resp-menu {
     display: block;
     height: 40px;
@@ -1487,44 +1495,12 @@ ul.check-list li:before {
     top: 18px;
     transform: rotate(-45deg);
   }
-  .header-wrapper .header-section > a {
-    margin: auto;
-    height: 30px;
-  }
-  .header-wrapper .header-section > a img {
-    height: 100%;
-    width: auto;
-  }
-  .header-wrapper .nav-wrapper {
-    position: fixed;
-    top: 60px;
-    right: -300px;
-    box-shadow: 0 20px 15px rgba(0, 0, 0, 0.05);
-    transition: right 0.3s ease-in-out;
-  }
-  .header-wrapper .nav-wrapper.active {
-    right: 0;
-  }
-  .header-wrapper .nav-wrapper nav > ul {
-    display: block;
-    background: white;
-    padding: 15px 30px;
-    align-items: inherit;
-    max-height: 90vh;
-    overflow: auto;
-  }
-  .header-wrapper .nav-wrapper nav > ul a {
-    line-height: 1.6;
-    margin: 8px 0;
-  }
-  .header-wrapper .nav-wrapper nav > ul > li {
-    max-height: inherit;
-  }
-  .header-wrapper .nav-wrapper nav > ul > li > ul {
-    display: none;
-    position: relative;
-    opacity: 1;
-    padding: 0 0 0 30px;
+}
+@media only screen and (max-width: 991px) {
+  a.ou-acheter {
+    background: #741030;
+    color: white !important;
+    font-weight: bold;
   }
 }
 #homepage > div > .container {

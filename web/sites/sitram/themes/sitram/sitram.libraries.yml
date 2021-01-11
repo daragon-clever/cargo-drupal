@@ -52,6 +52,14 @@ objectfit-ie:
   js:
     https://cdnjs.cloudflare.com/ajax/libs/object-fit-images/3.2.4/ofi.min.js: { type: external }
 
+# MMenu
+mmenu:
+  css:
+    theme:
+       css/mmenu.css: {}
+  js:
+    js/mmenu.js: {}
+
 # Style général
 global-styling:
   header: true

@@ -2609,7 +2609,7 @@ table.reparateurs {
     }
 
     td {
-      padding: 30px;
+      padding: 15px 20px;
 
       @media @tablet {
         padding: 15px;
@@ -2625,6 +2625,11 @@ table.reparateurs {
       font-size: 24px;
       color: @secondaryColor;
       text-transform: uppercase;
+
+      &:last-child {
+        color: inherit;
+        font-size: 1rem;
+      }
     }
 
     .tel {

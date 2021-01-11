@@ -3505,7 +3505,7 @@ table.reparateurs tbody .mail-site a {
   display: block;
 }
 table.reparateurs tbody td {
-  padding: 30px;
+  padding: 15px 20px;
 }
 @media only screen and (max-width: 991px) {
   table.reparateurs tbody td {
@@ -3520,6 +3520,10 @@ table.reparateurs tbody .infos b {
   font-size: 24px;
   color: #741030;
   text-transform: uppercase;
+}
+table.reparateurs tbody .infos b:last-child {
+  color: inherit;
+  font-size: 1rem;
 }
 table.reparateurs tbody .tel {
   font-size: 24px;

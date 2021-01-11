@@ -14,6 +14,7 @@ libraries:
   - sitram/polyfill
   - sitram/objectfit-ie
   - sitram/bootstrap
+  - sitram/mmenu
   - sitram/slick
   - sitram/instagram
   - sitram/imageloaded

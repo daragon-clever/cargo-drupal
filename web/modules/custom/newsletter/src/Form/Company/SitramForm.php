@@ -3,8 +3,12 @@
 namespace Drupal\newsletter\Form\Company;
 
 
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\HtmlCommand;
+use Drupal\Core\Ajax\InvokeCommand;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\newsletter\Controller\AbstractCompanyController;
 use Drupal\newsletter\Controller\Company\SitramController;
 
 class SitramForm extends FormBase
@@ -25,32 +29,31 @@ class SitramForm extends FormBase
         $form = [
             'nom' => [
                 '#type' => 'textfield',
-                '#title' => 'Votre Nom *',
-                '#placeholder' => 'Saisir votre nom',
+                '#title' => $this->t('Your Name').' *',
+                '#placeholder' => $this->t('Enter your name'),
                 '#required' => TRUE
             ],
             'prenom' => [
                 '#type' => 'textfield',
-                '#title' => 'Votre Prénom *',
-                '#placeholder' => 'Saisir votre prénom',
+                '#title' => $this->t('Your Firstname').' *',
+                '#placeholder' => $this->t('Enter your firstname'),
                 '#required' => TRUE
             ],
             'mail' => [
                 '#type' => 'email',
-                '#title' => 'Votre adresse email *',
-                '#placeholder' => 'Saisir votre adresse e-mail',
+                '#title' => $this->t('Your e-mail address').' *',
+                '#placeholder' => $this->t('Enter your e-mail address'),
                 '#required' => TRUE
             ],
             'captcha' => [
                 '#type' => 'captcha',
                 '#captcha_type' => 'recaptcha/reCAPTCHA'
             ],
-            'actions' => [
-                '#type' => 'actions',
-                'submit' => [
-                    '#type' => 'submit',
-                    '#value' => "S'inscrire",
-                    '#attributes' => ['class' => ['js-show-hidden-part']]
+            'submit' => [
+                '#type' => 'button',
+                '#value' => $this->t('Sign up'),
+                '#ajax' => [
+                    'callback' => '::myAjaxResult',
                 ],
             ]
         ];
@@ -86,19 +89,43 @@ class SitramForm extends FormBase
      */
     public function submitForm(array &$form, FormStateInterface $form_state)
     {
-        $email = $form_state->getValue('mail');
-        $lastName = $form_state->getValue('nom');
-        $firstName = $form_state->getValue('prenom');
+        //do nothing bc it's an ajax form
+    }
 
-        $data = [
-            'email' => $email,
-            'nom' => $lastName,
-            'prenom' => $firstName,
-        ];
+    public function myAjaxResult(array &$form, FormStateInterface $form_state)
+    {
+        $response = new AjaxResponse();
 
-        $controllerBase = new SitramController();
-        $returnMsg = $controllerBase->doAction($data);
+        $errors = $form_state->getErrors();
+        if (empty($errors)) {
+            //success form content
+            $email = $form_state->getValue('mail');
+            $lastName = $form_state->getValue('nom');
+            $firstName = $form_state->getValue('prenom');
 
-        \Drupal::messenger()->addMessage($returnMsg['msg'], $returnMsg['type']);
+            $data = [
+                'email' => $email,
+                'nom' => $lastName,
+                'prenom' => $firstName,
+            ];
+
+            $controllerBase = new SitramController();
+            $returnMsg = $controllerBase->doAction($data);
+
+            if (isset($returnMsg['type']) && $returnMsg['type'] != AbstractCompanyController::TYPE_MSG_ERROR) {
+                $response->addCommand(new InvokeCommand('.js-hidden-part', 'removeClass', ['show']));
+                $response->addCommand(new InvokeCommand('.result-message', 'addClass', ['success']));
+            }
+        } else {
+            $returnMsg['msg'] = implode($errors, ', ');
+        }
+
+        $response->addCommand(
+            new HtmlCommand('.result-message', $returnMsg['msg'])
+        );
+
+        $response->addCommand(new InvokeCommand(NULL, 'myCustomReloadReCatpcha'));
+
+        return $response;
     }
 }

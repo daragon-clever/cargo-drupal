@@ -27,8 +27,30 @@ msgstr "Entrez votre adresse e-mail"
 msgid "Send"
 msgstr "Envoyer"
 
+msgid "Sign up"
+msgstr "S'inscrire"
+
 msgid "All the brands"
 msgstr "Toutes les marques"
 
 msgid "Brands is required"
 msgstr "Selectionnez au minimum une marque"
+
+msgid "Your Name"
+msgstr "Votre nom"
+
+msgid "Enter your name"
+msgstr "Saisir votre nom"
+
+msgid "Your Firstname"
+msgstr "Votre Prénom"
+
+msgid "Enter your firstname"
+msgstr "Saisir votre prénom"
+
+msgid "Your e-mail address"
+msgstr "Votre adresse e-mail"
+
+msgid "Enter your e-mail address"
+msgstr "Saisir votre adresse e-mail"
+

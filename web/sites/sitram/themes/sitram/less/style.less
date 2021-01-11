@@ -1977,6 +1977,23 @@ div[role="contentinfo"] {
       }
     }
 
+    .js-show-hidden-part {
+      width: 100%;
+      line-height: 59px;
+      padding-left: 20px;
+      background-color: #FDC2A1;
+      color: @secondaryColor;
+      text-transform: uppercase;
+      font-family: @MyriadBold;
+      border-style: none;
+      cursor: pointer;
+      .dimOpacityOnHover(0.8);
+
+      &.opened {
+        display: none;
+      }
+    }
+
     .form-newsletter {
       font-family: @MyriadRegular;
       font-size: 20px;
@@ -1994,6 +2011,31 @@ div[role="contentinfo"] {
 
       ::placeholder {
         color: #b9b9b9;
+      }
+
+      .ajax-progress {
+        display: none;
+      }
+
+      .result-message {
+        color: #FDC2A1;
+        &.success {
+          color: white;
+          text-align: center;
+          max-width: 300px;
+          margin: auto;
+          text-transform: uppercase;
+          font-weight: bold;
+          &::before {
+            content: "";
+            background: url("../images/footer/newsletter-check-circle.svg") no-repeat center transparent;
+            width: 70px;
+            height: 70px;
+            display: block;
+            margin: auto;
+            margin-bottom: 15px;
+          }
+        }
       }
 
       .form-email {

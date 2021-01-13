@@ -2738,6 +2738,11 @@ table.reparateurs {
     font-size: 24px;
     color: @grey;
     border-bottom: 1px solid #ddd;
+    padding-right: 60px;
+
+    @media @tablet {
+      font-size: 20px;
+    }
 
     &:after {
       content: "";
@@ -2760,5 +2765,9 @@ table.reparateurs {
         transform: rotate(180deg);
       }
     }
+  }
+
+  .inner-content > div {
+    padding-top: 15px;
   }
 }

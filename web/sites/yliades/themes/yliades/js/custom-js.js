@@ -169,8 +169,8 @@ jQuery(document).ready(function($) {
 
     // POPUP PANO
     if ($(".js-popup-pano").length) {
-        if ($.cookie('popupPano') == null) {
-            $.cookie('popupPano', 'open', { expires: 7 });
+        if ($.cookie('popupPano2') == null) {
+            $.cookie('popupPano2', 'open', { expires: 7 });
 
             // Ouverture
             var popupEvent = $('.js-popup-pano');

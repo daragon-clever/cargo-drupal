@@ -65,6 +65,15 @@ Depuis le dossier /multisites/[site_name]:
 * `docker-compose run --rm bundle exec cap -T` pour lister toutes les tâches disponibles
 * `docker-compose run --rm bundle exec cap preproduction "symfony:console['cache:clear']"`
 
+# Actions sur la base de données en local
+
+Depuis le dossier /multisites/[site_name] :
+
+Commande disponible :
+    * `docker-compose exec db /bin/bash /var/www/html/bin/local-dump.sh`
+        * Entrez le nom du site en local
+        * Entrez l'action souhaitée (1, 2, etc)
+
 # Résolution de problèmes:
 
 ## Base de donnée

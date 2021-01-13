@@ -6,4 +6,18 @@
 </h3>
 <div class="collapse inner-content" id="collapse-sub-{{ randID }}">
     {{ content.body }}
+
+    {% for i in content.field_faq_yt_link['#items']|keys %}
+        <div class="mt-3">
+            <h4 class="txt-blue mb-3">{{ node.field_faq_yt_link[i].title }}</h4>
+
+            <div class="youtube-iframe-responsive">
+                <iframe width="700" height="394"
+                        src="https://www.youtube.com/embed/{{ node.field_faq_yt_link[i].url|render|striptags|replace({'https://youtu.be/' : ''}) }}"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+    {% endfor %}
 </div>

@@ -13,7 +13,21 @@
 <div class="container">
     <div class="row">
         <div class="col-12 seo-txt">
-            {{ content.field_faq_txt }}
+            <div class="mb-4 mb-lg-5">
+                <div class="collapsible-faq">
+                    <div class="accordion" id="accordion-parent">
+                        {% for i in content.field_faq_question_list['#items']|keys %}
+                            <h2 data-toggle="collapse" href="#collapse-{{ i }}" aria-expanded="false"
+                                aria-controls="collapse-{{ i }}">
+                                {{ content.field_faq_question_list[i] }}
+                            </h2>
+                            <div class="collapse" id="collapse-{{ i }}" data-parent="#accordion-parent">
+                                {{ attribute(content, "field_faq_questions_" ~ ( i + 1 )) }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

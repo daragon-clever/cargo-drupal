@@ -1,0 +1,9 @@
+{% set randID = random() %}
+<h3 data-toggle="collapse" href="#collapse-sub-{{ randID }}"
+    aria-expanded="false"
+    aria-controls="collapse-sub-{{ randID }}">
+    {{ node.label }}
+</h3>
+<div class="collapse" id="collapse-sub-{{ randID }}">
+    {{ content.body }}
+</div>

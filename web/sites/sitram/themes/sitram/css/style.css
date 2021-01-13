@@ -1291,6 +1291,21 @@ ul.check-list li:before {
 .js-close-hidden-video:after {
   transform: rotate(-45deg);
 }
+@media only screen and (max-width: 767px) {
+  .youtube-iframe-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+  }
+  .youtube-iframe-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+}
 @font-face {
   font-family: 'Cardenio Modern';
   src: url('../fonts/cardeniomodern-regular-webfont.woff2') format('woff2'), url('../fonts/cardeniomodern-regular-webfont.woff') format('woff');

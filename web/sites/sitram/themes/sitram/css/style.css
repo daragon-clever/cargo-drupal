@@ -3681,6 +3681,12 @@ table.reparateurs tbody .tel {
   font-size: 24px;
   color: #434343;
   border-bottom: 1px solid #ddd;
+  padding-right: 60px;
+}
+@media only screen and (max-width: 991px) {
+  .collapsible-faq h3 {
+    font-size: 20px;
+  }
 }
 .collapsible-faq h3:after {
   content: "";
@@ -3699,4 +3705,7 @@ table.reparateurs tbody .tel {
 }
 .collapsible-faq h3[aria-expanded="true"]:after {
   transform: rotate(180deg);
+}
+.collapsible-faq .inner-content > div {
+  padding-top: 15px;
 }

@@ -1,4 +1,4 @@
-<div id="produits" class="sitrabella">
+<div id="produit" class="sitrabella">
 
     <!-- BANNER/INTRO -->
     <div id="ban-intro" class="container-fluid">
@@ -102,9 +102,9 @@
             </div>
         </div>
         <div class="row">
-            {% for i in 0..7 %}
+            {% for i in 9..16 %}
                 <div class="col-12 col-md-6 col-lg-3">
-                    {{ content.field_prod_sitrabel_c2_imgs[i + 9] }}
+                    {{ content.field_prod_sitrabel_c2_imgs[i] }}
                 </div>
             {% endfor %}
         </div>
@@ -112,19 +112,15 @@
 
     <!-- PICTOS -->
     <div class="container max-1400 my-5 ">
-        <div class="row pictos border-lightgrey">
-            <div class="col">
-                <div class="container max-1165">
-                    <div class="row py-4 seven-cols">
-                        {% for i in 0..6 %}
-                            <div class="col-6 col-md-4 col-lg-1 mb-3 mb-lg-0 d-flex flex-column flex-lg-row align-items-center justify-content-center">
-                                {{ content.field_prod_sitrabel_c2_pict_imgs[i] }}
-                                <small class="txt-blue">{{ content.field_prod_sitrabel_c2_pict_txts[i] }}</small>
-                            </div>
-                        {% endfor %}
-                    </div>
+        <div class="row pictos border-lightgrey py-4 align-items-center justify-content-around justify-content-lg-center">
+            {% for i in 0..6 %}
+                <div class="col-4 col-sm-auto mb-3 mb-sm-0 d-flex flex-column flex-lg-row align-items-center justify-content-center">
+                    {{ content.field_prod_sitrabel_c2_pict_imgs[i] }}
+                    {% if node.field_prod_sitrabel_c2_pict_imgs[i].alt|length %}
+                        <small class="txt-blue">{{ node.field_prod_sitrabel_c2_pict_imgs[i].alt }}</small>
+                    {% endif %}
                 </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </div>

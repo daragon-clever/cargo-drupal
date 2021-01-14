@@ -1882,7 +1882,7 @@ ul.check-list li:before {
   object-fit: cover;
   font-family: 'object-fit: cover;';
   height: 197px;
-  transition: transform 0.3s ease;
+  transition: transform .3s ease;
 }
 .recette-item img:hover {
   transform: scale(1.1);
@@ -2099,85 +2099,102 @@ ul.check-list li:before {
   }
 }
 #produits.cumin h1,
-#produits.rapsody h1 {
+#produits.rapsody h1,
+#produits.sitrabella h1 {
   line-height: 1;
 }
 #produits.cumin .bg-img-wood,
-#produits.rapsody .bg-img-wood {
+#produits.rapsody .bg-img-wood,
+#produits.sitrabella .bg-img-wood {
   background-position: top center;
   background-size: auto 526px;
 }
 @media only screen and (max-width: 991px) {
   #produits.cumin .bg-img-wood,
-  #produits.rapsody .bg-img-wood {
+  #produits.rapsody .bg-img-wood,
+  #produits.sitrabella .bg-img-wood {
     background-size: auto 75px;
   }
 }
 #produits.cumin .bg-img-wood img,
-#produits.rapsody .bg-img-wood img {
+#produits.rapsody .bg-img-wood img,
+#produits.sitrabella .bg-img-wood img {
   width: 100%;
   height: 100%;
 }
 #produits.cumin .p-left-4,
-#produits.rapsody .p-left-4 {
+#produits.rapsody .p-left-4,
+#produits.sitrabella .p-left-4 {
   padding-left: 4px;
 }
 @media only screen and (max-width: 991px) {
   #produits.cumin .p-left-4,
-  #produits.rapsody .p-left-4 {
+  #produits.rapsody .p-left-4,
+  #produits.sitrabella .p-left-4 {
     padding-left: 8px;
   }
 }
 #produits.cumin .p-right-4,
-#produits.rapsody .p-right-4 {
+#produits.rapsody .p-right-4,
+#produits.sitrabella .p-right-4 {
   padding-right: 4px;
 }
 @media only screen and (max-width: 991px) {
   #produits.cumin .p-right-4,
-  #produits.rapsody .p-right-4 {
+  #produits.rapsody .p-right-4,
+  #produits.sitrabella .p-right-4 {
     padding-right: 8px;
   }
 }
 #produits.cumin h2 span,
-#produits.rapsody h2 span {
+#produits.rapsody h2 span,
+#produits.sitrabella h2 span {
   font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
   text-transform: none;
 }
 #produits.cumin ul,
-#produits.rapsody ul {
+#produits.rapsody ul,
+#produits.sitrabella ul {
   padding-left: 20px;
   margin-bottom: 0;
 }
 #produits.cumin .content-2 img,
-#produits.rapsody .content-2 img {
+#produits.rapsody .content-2 img,
+#produits.sitrabella .content-2 img {
   width: 100%;
   height: auto;
 }
 #produits.cumin .content-2 .faitout-row h3,
-#produits.rapsody .content-2 .faitout-row h3 {
+#produits.rapsody .content-2 .faitout-row h3,
+#produits.sitrabella .content-2 .faitout-row h3 {
   margin-bottom: 0;
   text-align: center;
 }
 #produits.cumin .max-1400,
-#produits.rapsody .max-1400 {
+#produits.rapsody .max-1400,
+#produits.sitrabella .max-1400 {
   max-width: 1400px;
 }
 #produits.cumin .pictos .max-930,
-#produits.rapsody .pictos .max-930 {
+#produits.rapsody .pictos .max-930,
+#produits.sitrabella .pictos .max-930 {
   max-width: 930px;
 }
 #produits.cumin .pictos img,
-#produits.rapsody .pictos img {
+#produits.rapsody .pictos img,
+#produits.sitrabella .pictos img {
   width: 55px;
   height: 55px;
 }
 #produits.cumin .pictos small,
-#produits.rapsody .pictos small {
+#produits.rapsody .pictos small,
+#produits.sitrabella .pictos small {
   padding-left: 15px;
 }
 @media only screen and (max-width: 991px) {
   #produits.cumin .pictos small,
-  #produits.rapsody .pictos small {
+  #produits.rapsody .pictos small,
+  #produits.sitrabella .pictos small {
     padding-left: 0;
   }
 }

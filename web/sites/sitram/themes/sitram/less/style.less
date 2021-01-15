@@ -997,7 +997,8 @@
 
   &.cumin,
   &.rapsody,
-  &.sitrabella {
+  &.sitrabella,
+  &.sitramovible {
     h1 {
       line-height: 1;
     }
@@ -1134,9 +1135,15 @@
         background: white;
         color: @grey;
         text-align: center;
-        width: 50%;
+        width: 25%;
         min-width: unset;
         font-family: @MyriadRegular;
+
+        @media @tablet {
+          display: table-cell;
+          width: auto;
+          white-space: nowrap;
+        }
       }
 
       tr.head > td {
@@ -1147,12 +1154,6 @@
   }
 
   &.autocuiseurs {
-    .yellow-table {
-      td {
-        width: initial;
-      }
-    }
-
     .svg-infos {
       img {
         width: 100%;
@@ -1189,22 +1190,6 @@
 
     .c4-intro {
       margin: 20px 0;
-    }
-  }
-
-  &.casseroles,
-  &.cocottes,
-  &.autocuiseurs {
-    .yellow-table {
-      td {
-        width: 25%;
-
-        @media @tablet {
-          display: table-cell;
-          width: auto;
-          white-space: nowrap;
-        }
-      }
     }
   }
 

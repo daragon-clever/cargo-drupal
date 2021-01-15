@@ -894,9 +894,110 @@
   }
 }
 
-#produits {
+// PRODUIT //
+#produit {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  h3 {
+    color: @primaryColor;
+  }
+
+  .colored-slideshow h3 {
+    color: white;
+  }
+
+  .js-grid-masonry {
+    .grid-item .txt {
+      background: white;
+      position: absolute;
+      bottom: 8px;
+      left: 8px;
+      padding: 12px;
+      max-width: 75%;
+      overflow: hidden;
+
+      h3 {
+        color: @primaryColor;
+        font-size: 24px;
+        font-family: @MyriadSemibold;
+        line-height: 1.1;
+        margin: 0 0 5px 0;
+
+        span {
+          text-transform: uppercase;
+          font-family: @MyriadBold;
+        }
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+
+  &.cocotte {
+    .content-1 {
+      img {
+        max-width: 100%;
+      }
+    }
+
+    .block-frise-verticale {
+      .inner {
+        max-width: 520px;
+      }
+    }
+  }
+
+  &.casseroles {
+    .block-frise-verticale {
+      img {
+        margin: 8px auto;
+        display: block;
+
+        &:first-child {
+          margin-top: 3rem;
+        }
+      }
+    }
+  }
+
+  &.autocuiseurs {
+    .pt-grey:before {
+      height: 820px;
+    }
+  }
+
+  &.specifique {
+    .content-specif {
+      img {
+        max-width: 100%;
+      }
+    }
+
+    h3 {
+      line-height: 1;
+    }
+
+    h2 {
+      font-family: @MyriadBold;
+    }
+
+    .bg-img-blue {
+      background-size: auto 488px;
+
+      @media @tablet {
+        background-size: auto 190px;
+      }
+    }
+  }
+
   &.cumin,
-  &.rapsody {
+  &.rapsody,
+  &.sitrabella {
     h1 {
       line-height: 1;
     }
@@ -967,15 +1068,11 @@
       }
 
       img {
-        width: 55px;
-        height: 55px;
-      }
-
-      small {
-        padding-left: 15px;
+        max-height: 55px;
+        padding: 0 15px;
 
         @media @tablet {
-          padding-left: 0;
+          padding: 0;
         }
       }
     }
@@ -1820,108 +1917,6 @@
 
 .select2-search {
   display: none;
-}
-
-// PRODUIT //
-#produit {
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  h3 {
-    color: @primaryColor;
-  }
-
-  .colored-slideshow h3 {
-    color: white;
-  }
-
-  .js-grid-masonry {
-    .grid-item .txt {
-      background: white;
-      position: absolute;
-      bottom: 8px;
-      left: 8px;
-      padding: 12px;
-      max-width: 75%;
-      overflow: hidden;
-
-      h3 {
-        color: @primaryColor;
-        font-size: 24px;
-        font-family: @MyriadSemibold;
-        line-height: 1.1;
-        margin: 0 0 5px 0;
-
-        span {
-          text-transform: uppercase;
-          font-family: @MyriadBold;
-        }
-      }
-
-      p {
-        margin: 0;
-      }
-    }
-  }
-
-  &.cocotte {
-    .content-1 {
-      img {
-        max-width: 100%;
-      }
-    }
-
-    .block-frise-verticale {
-      .inner {
-        max-width: 520px;
-      }
-    }
-  }
-
-  &.casseroles {
-    .block-frise-verticale {
-      img {
-        margin: 8px auto;
-        display: block;
-
-        &:first-child {
-          margin-top: 3rem;
-        }
-      }
-    }
-  }
-
-  &.autocuiseurs {
-    .pt-grey:before {
-      height: 820px;
-    }
-  }
-
-  &.specifique {
-    .content-specif {
-      img {
-        max-width: 100%;
-      }
-    }
-
-    h3 {
-      line-height: 1;
-    }
-
-    h2 {
-      font-family: @MyriadBold;
-    }
-
-    .bg-img-blue {
-      background-size: auto 488px;
-
-      @media @tablet {
-        background-size: auto 190px;
-      }
-    }
-  }
 }
 
 // MSG INFO
@@ -2790,12 +2785,12 @@ table.reparateurs {
 
     &:after {
       content: "";
-      display : inline-block;
-      height : 0;
-      width : 0;
-      border-right : 4px solid transparent;
-      border-bottom : 7px solid @grey;
-      border-left : 4px solid transparent;
+      display: inline-block;
+      height: 0;
+      width: 0;
+      border-right: 4px solid transparent;
+      border-bottom: 7px solid @grey;
+      border-left: 4px solid transparent;
       position: absolute;
       top: 50%;
       right: 30px;

@@ -1882,7 +1882,7 @@ ul.check-list li:before {
   object-fit: cover;
   font-family: 'object-fit: cover;';
   height: 197px;
-  transition: transform 0.3s ease;
+  transition: transform .3s ease;
 }
 .recette-item img:hover {
   transform: scale(1.1);
@@ -2098,87 +2098,165 @@ ul.check-list li:before {
     display: none;
   }
 }
-#produits.cumin h1,
-#produits.rapsody h1 {
+#produit img {
+  max-width: 100%;
+  height: auto;
+}
+#produit h3 {
+  color: #003663;
+}
+#produit .colored-slideshow h3 {
+  color: white;
+}
+#produit .js-grid-masonry .grid-item .txt {
+  background: white;
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  padding: 12px;
+  max-width: 75%;
+  overflow: hidden;
+}
+#produit .js-grid-masonry .grid-item .txt h3 {
+  color: #003663;
+  font-size: 24px;
+  font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
+  line-height: 1.1;
+  margin: 0 0 5px 0;
+}
+#produit .js-grid-masonry .grid-item .txt h3 span {
+  text-transform: uppercase;
+  font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
+}
+#produit .js-grid-masonry .grid-item .txt p {
+  margin: 0;
+}
+#produit.cocotte .content-1 img {
+  max-width: 100%;
+}
+#produit.cocotte .block-frise-verticale .inner {
+  max-width: 520px;
+}
+#produit.casseroles .block-frise-verticale img {
+  margin: 8px auto;
+  display: block;
+}
+#produit.casseroles .block-frise-verticale img:first-child {
+  margin-top: 3rem;
+}
+#produit.autocuiseurs .pt-grey:before {
+  height: 820px;
+}
+#produit.specifique .content-specif img {
+  max-width: 100%;
+}
+#produit.specifique h3 {
   line-height: 1;
 }
-#produits.cumin .bg-img-wood,
-#produits.rapsody .bg-img-wood {
+#produit.specifique h2 {
+  font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
+}
+#produit.specifique .bg-img-blue {
+  background-size: auto 488px;
+}
+@media only screen and (max-width: 991px) {
+  #produit.specifique .bg-img-blue {
+    background-size: auto 190px;
+  }
+}
+#produit.cumin h1,
+#produit.rapsody h1,
+#produit.sitrabella h1 {
+  line-height: 1;
+}
+#produit.cumin .bg-img-wood,
+#produit.rapsody .bg-img-wood,
+#produit.sitrabella .bg-img-wood {
   background-position: top center;
   background-size: auto 526px;
 }
 @media only screen and (max-width: 991px) {
-  #produits.cumin .bg-img-wood,
-  #produits.rapsody .bg-img-wood {
+  #produit.cumin .bg-img-wood,
+  #produit.rapsody .bg-img-wood,
+  #produit.sitrabella .bg-img-wood {
     background-size: auto 75px;
   }
 }
-#produits.cumin .bg-img-wood img,
-#produits.rapsody .bg-img-wood img {
+#produit.cumin .bg-img-wood img,
+#produit.rapsody .bg-img-wood img,
+#produit.sitrabella .bg-img-wood img {
   width: 100%;
   height: 100%;
 }
-#produits.cumin .p-left-4,
-#produits.rapsody .p-left-4 {
+#produit.cumin .p-left-4,
+#produit.rapsody .p-left-4,
+#produit.sitrabella .p-left-4 {
   padding-left: 4px;
 }
 @media only screen and (max-width: 991px) {
-  #produits.cumin .p-left-4,
-  #produits.rapsody .p-left-4 {
+  #produit.cumin .p-left-4,
+  #produit.rapsody .p-left-4,
+  #produit.sitrabella .p-left-4 {
     padding-left: 8px;
   }
 }
-#produits.cumin .p-right-4,
-#produits.rapsody .p-right-4 {
+#produit.cumin .p-right-4,
+#produit.rapsody .p-right-4,
+#produit.sitrabella .p-right-4 {
   padding-right: 4px;
 }
 @media only screen and (max-width: 991px) {
-  #produits.cumin .p-right-4,
-  #produits.rapsody .p-right-4 {
+  #produit.cumin .p-right-4,
+  #produit.rapsody .p-right-4,
+  #produit.sitrabella .p-right-4 {
     padding-right: 8px;
   }
 }
-#produits.cumin h2 span,
-#produits.rapsody h2 span {
+#produit.cumin h2 span,
+#produit.rapsody h2 span,
+#produit.sitrabella h2 span {
   font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
   text-transform: none;
 }
-#produits.cumin ul,
-#produits.rapsody ul {
+#produit.cumin ul,
+#produit.rapsody ul,
+#produit.sitrabella ul {
   padding-left: 20px;
   margin-bottom: 0;
 }
-#produits.cumin .content-2 img,
-#produits.rapsody .content-2 img {
+#produit.cumin .content-2 img,
+#produit.rapsody .content-2 img,
+#produit.sitrabella .content-2 img {
   width: 100%;
   height: auto;
 }
-#produits.cumin .content-2 .faitout-row h3,
-#produits.rapsody .content-2 .faitout-row h3 {
+#produit.cumin .content-2 .faitout-row h3,
+#produit.rapsody .content-2 .faitout-row h3,
+#produit.sitrabella .content-2 .faitout-row h3 {
   margin-bottom: 0;
   text-align: center;
 }
-#produits.cumin .max-1400,
-#produits.rapsody .max-1400 {
+#produit.cumin .max-1400,
+#produit.rapsody .max-1400,
+#produit.sitrabella .max-1400 {
   max-width: 1400px;
 }
-#produits.cumin .pictos .max-930,
-#produits.rapsody .pictos .max-930 {
+#produit.cumin .pictos .max-930,
+#produit.rapsody .pictos .max-930,
+#produit.sitrabella .pictos .max-930 {
   max-width: 930px;
 }
-#produits.cumin .pictos img,
-#produits.rapsody .pictos img {
-  width: 55px;
-  height: 55px;
-}
-#produits.cumin .pictos small,
-#produits.rapsody .pictos small {
-  padding-left: 15px;
+#produit.cumin .pictos img,
+#produit.rapsody .pictos img,
+#produit.sitrabella .pictos img {
+  max-height: 55px;
+  padding: 0 15px;
 }
 @media only screen and (max-width: 991px) {
-  #produits.cumin .pictos small,
-  #produits.rapsody .pictos small {
-    padding-left: 0;
+  #produit.cumin .pictos img,
+  #produit.rapsody .pictos img,
+  #produit.sitrabella .pictos img {
+    padding: 0;
   }
 }
 #conseils #content-1 {
@@ -2840,72 +2918,6 @@ ul.check-list li:before {
 }
 .select2-search {
   display: none;
-}
-#produit img {
-  max-width: 100%;
-  height: auto;
-}
-#produit h3 {
-  color: #003663;
-}
-#produit .colored-slideshow h3 {
-  color: white;
-}
-#produit .js-grid-masonry .grid-item .txt {
-  background: white;
-  position: absolute;
-  bottom: 8px;
-  left: 8px;
-  padding: 12px;
-  max-width: 75%;
-  overflow: hidden;
-}
-#produit .js-grid-masonry .grid-item .txt h3 {
-  color: #003663;
-  font-size: 24px;
-  font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
-  line-height: 1.1;
-  margin: 0 0 5px 0;
-}
-#produit .js-grid-masonry .grid-item .txt h3 span {
-  text-transform: uppercase;
-  font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
-}
-#produit .js-grid-masonry .grid-item .txt p {
-  margin: 0;
-}
-#produit.cocotte .content-1 img {
-  max-width: 100%;
-}
-#produit.cocotte .block-frise-verticale .inner {
-  max-width: 520px;
-}
-#produit.casseroles .block-frise-verticale img {
-  margin: 8px auto;
-  display: block;
-}
-#produit.casseroles .block-frise-verticale img:first-child {
-  margin-top: 3rem;
-}
-#produit.autocuiseurs .pt-grey:before {
-  height: 820px;
-}
-#produit.specifique .content-specif img {
-  max-width: 100%;
-}
-#produit.specifique h3 {
-  line-height: 1;
-}
-#produit.specifique h2 {
-  font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
-}
-#produit.specifique .bg-img-blue {
-  background-size: auto 488px;
-}
-@media only screen and (max-width: 991px) {
-  #produit.specifique .bg-img-blue {
-    background-size: auto 190px;
-  }
 }
 div[role="contentinfo"] {
   background: #003663;

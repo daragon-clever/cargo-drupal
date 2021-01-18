@@ -1,3 +1,7 @@
+{{ attach_library('sitram/polyfill') }}
+{{ attach_library('sitram/lozad') }}
+{{ attach_library('sitram/instagram') }}
+
 <div id="homepage">
     <!-- SLIDER -->
     <div class="js-homepage-slider slider">
@@ -7,16 +11,24 @@
                 <div>
                     {% if content.field_hp_hero_link[i]|length > 0 and content.field_hp_hero_link[i]|render|striptags|trim|raw is not empty %}
                         <a href="{{ content.field_hp_hero_link[i] }}">
-                            <img src="" class="lozad d-none d-sm-block" data-src="{{ file_url(node.field_hp_hero[i].entity.fileuri) }}"
-                                 alt="{{ node.field_hp_hero[i].alt }}"/>
-                            <img src="" class="lozad d-sm-none" data-src="{{ file_url(node.field_hp_hero_mobile[i].entity.fileuri) }}"
-                                 alt="{{ node.field_hp_hero[i].alt }}"/>
+                            <picture class="lozad"
+                                     data-iesrc="{{ file_url(node.field_hp_hero[i].entity.fileuri) }}"
+                                     data-alt="{{ node.field_hp_hero[i].alt }}">
+                                <source srcset="{{ file_url(node.field_hp_hero[i].entity.fileuri) }}"
+                                        media="(min-width: 768px)">
+                                <source srcset="{{ file_url(node.field_hp_hero_mobile[i].entity.fileuri) }}"
+                                        media="(min-width: 320px)">
+                            </picture>
                         </a>
                     {% else %}
-                        <img src="" class="lozad d-none d-sm-block" data-src="{{ file_url(node.field_hp_hero[i].entity.fileuri) }}"
-                             alt="{{ node.field_hp_hero[i].alt }}"/>
-                        <img src="" class="lozad d-sm-none" data-src="{{ file_url(node.field_hp_hero_mobile[i].entity.fileuri) }}"
-                             alt="{{ node.field_hp_hero[i].alt }}"/>
+                        <picture class="lozad"
+                                 data-iesrc="{{ file_url(node.field_hp_hero[i].entity.fileuri) }}"
+                                 data-alt="{{ node.field_hp_hero[i].alt }}">
+                            <source srcset="{{ file_url(node.field_hp_hero[i].entity.fileuri) }}"
+                                    media="(min-width: 768px)">
+                            <source srcset="{{ file_url(node.field_hp_hero_mobile[i].entity.fileuri) }}"
+                                    media="(min-width: 320px)">
+                        </picture>
                     {% endif %}
                 </div>
             {% endfor %}
@@ -116,5 +128,4 @@
             </div>
         </div>
     </div>
-
 </div>

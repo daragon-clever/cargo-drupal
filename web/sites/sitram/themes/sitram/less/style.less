@@ -1416,23 +1416,20 @@
       width: 100%;
       height: auto;
     }
-
-    .max-525 {
-      max-width: 525px;
-
-      @media @tablet {
-        max-width: 100%;
-      }
-    }
   }
 
   &.les-engagements {
-    .bg-grey-custom {
-      background: url("../images/background-grey.jpg") repeat-x top center transparent;
-      background-size: auto 270px;
+    #ban-intro {
+      &:before {
+        height: 315px;
 
-      @media @tablet {
-        background-size: auto 53px;
+        @media @tablet {
+          height: 53px;
+        }
+      }
+
+      h1 {
+        line-height: 1;
       }
     }
 

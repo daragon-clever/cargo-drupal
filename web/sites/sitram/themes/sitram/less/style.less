@@ -1078,6 +1078,34 @@
       }
     }
   }
+
+  &.sitramovible {
+    .yellow-table {
+      td {
+        background: white;
+        color: @grey;
+        text-align: center;
+        min-width: unset;
+        font-family: @MyriadRegular;
+
+        @media @tablet {
+          display: table-cell;
+          width: auto;
+          white-space: nowrap;
+        }
+      }
+
+      tr.head > td {
+        background: @primaryColor;
+        color: white;
+
+        &:first-child{
+          background: #EDEDED;
+          font-size: 0;
+        }
+      }
+    }
+  }
 }
 
 // CONSEILS //
@@ -1123,6 +1151,18 @@
     }
   }
 
+  &.poeles {
+    .yellow-table {
+      tr td:first-child {
+        font-family: @MyriadSemibold;
+        background: @yellow;
+        color: white;
+        text-align: left;
+        min-width: 60%;
+      }
+    }
+  }
+
   &.cocottes,
   &.casseroles,
   &.autocuiseurs {
@@ -1135,7 +1175,6 @@
         background: white;
         color: @grey;
         text-align: center;
-        width: 25%;
         min-width: unset;
         font-family: @MyriadRegular;
 

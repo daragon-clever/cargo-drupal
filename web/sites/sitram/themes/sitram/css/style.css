@@ -1050,6 +1050,10 @@ ul.check-list li:before {
   margin-left: -2px;
   padding-left: 2px;
 }
+.table-wrapper {
+  max-width: 100%;
+  overflow: auto;
+}
 .yellow-table {
   width: 100%;
 }
@@ -1066,7 +1070,6 @@ ul.check-list li:before {
   background: #F9AB00;
   color: white;
   text-align: left;
-  min-width: 60%;
 }
 @media only screen and (max-width: 767px) {
   .yellow-table tr td {
@@ -2275,6 +2278,28 @@ ul.check-list li:before {
     padding: 0;
   }
 }
+#produit.sitramovible .yellow-table td {
+  background: white;
+  color: #434343;
+  text-align: center;
+  min-width: unset;
+  font-family: "Myriad Pro Regular", Arial, Helvetica, sans-serif;
+}
+@media only screen and (max-width: 991px) {
+  #produit.sitramovible .yellow-table td {
+    display: table-cell;
+    width: auto;
+    white-space: nowrap;
+  }
+}
+#produit.sitramovible .yellow-table tr.head > td {
+  background: #003663;
+  color: white;
+}
+#produit.sitramovible .yellow-table tr.head > td:first-child {
+  background: #EDEDED;
+  font-size: 0;
+}
 #conseils #content-1 {
   padding-top: 0;
 }
@@ -2303,6 +2328,13 @@ ul.check-list li:before {
     margin: 8px 0;
   }
 }
+#conseils-indiv.poeles .yellow-table tr td:first-child {
+  font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
+  background: #F9AB00;
+  color: white;
+  text-align: left;
+  min-width: 60%;
+}
 #conseils-indiv.cocottes ul,
 #conseils-indiv.casseroles ul,
 #conseils-indiv.autocuiseurs ul {
@@ -2314,7 +2346,6 @@ ul.check-list li:before {
   background: white;
   color: #434343;
   text-align: center;
-  width: 25%;
   min-width: unset;
   font-family: "Myriad Pro Regular", Arial, Helvetica, sans-serif;
 }

@@ -997,7 +997,8 @@
 
   &.cumin,
   &.rapsody,
-  &.sitrabella {
+  &.sitrabella,
+  &.sitramovible {
     h1 {
       line-height: 1;
     }
@@ -1077,6 +1078,34 @@
       }
     }
   }
+
+  &.sitramovible {
+    .yellow-table {
+      td {
+        background: white;
+        color: @grey;
+        text-align: center;
+        min-width: unset;
+        font-family: @MyriadRegular;
+
+        @media @tablet {
+          display: table-cell;
+          width: auto;
+          white-space: nowrap;
+        }
+      }
+
+      tr.head > td {
+        background: @primaryColor;
+        color: white;
+
+        &:first-child{
+          background: #EDEDED;
+          font-size: 0;
+        }
+      }
+    }
+  }
 }
 
 // CONSEILS //
@@ -1122,6 +1151,18 @@
     }
   }
 
+  &.poeles {
+    .yellow-table {
+      tr td:first-child {
+        font-family: @MyriadSemibold;
+        background: @yellow;
+        color: white;
+        text-align: left;
+        min-width: 60%;
+      }
+    }
+  }
+
   &.cocottes,
   &.casseroles,
   &.autocuiseurs {
@@ -1134,9 +1175,14 @@
         background: white;
         color: @grey;
         text-align: center;
-        width: 50%;
         min-width: unset;
         font-family: @MyriadRegular;
+
+        @media @tablet {
+          display: table-cell;
+          width: auto;
+          white-space: nowrap;
+        }
       }
 
       tr.head > td {
@@ -1147,12 +1193,6 @@
   }
 
   &.autocuiseurs {
-    .yellow-table {
-      td {
-        width: initial;
-      }
-    }
-
     .svg-infos {
       img {
         width: 100%;
@@ -1189,22 +1229,6 @@
 
     .c4-intro {
       margin: 20px 0;
-    }
-  }
-
-  &.casseroles,
-  &.cocottes,
-  &.autocuiseurs {
-    .yellow-table {
-      td {
-        width: 25%;
-
-        @media @tablet {
-          display: table-cell;
-          width: auto;
-          white-space: nowrap;
-        }
-      }
     }
   }
 

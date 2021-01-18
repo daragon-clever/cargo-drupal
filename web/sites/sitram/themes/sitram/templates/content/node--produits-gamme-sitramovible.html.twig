@@ -1,0 +1,155 @@
+<div id="produit" class="sitramovible">
+
+    <!-- BANNER/INTRO -->
+    <div id="ban-intro" class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <div class="container">
+                    <div class="row">
+                        <div class="col ban">
+                            {{ content.field_prod_sitramov_banner }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container max-1065">
+                    <div class="row">
+                        <div class="col text-center">
+                            {{ content.field_prod_sitramov_title }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-lg-6">
+                            {{ content.field_prod_sitramov_intro_img }}
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            {{ content.field_prod_sitramov_intro_txt }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENT 1 -->
+    <div class="container-fluid bg-img-wood my-5">
+        <div class="row pt-2 pt-lg-5">
+            <div class="col">
+                <div class="container">
+                    <div class="row">
+                        {% for i in 0..5 %}
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="my-2">
+                                    {{ content.field_prod_sitramov_c1_imgs[i] }}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TABLEAU -->
+    <div class="container my-5">
+        <div class="row">
+            <div class="col">
+                <div class="text-center txt-blue mb-3 mb-lg-5">
+                    {{ content.field_prod_sitramov_tab_title }}
+                </div>
+                <div class="table-wrapper">
+                    {{ content.field_prod_sitramov_tab_content }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- PICTOS -->
+    <div class="container my-5">
+        <div class="row">
+            <div class="col">
+                <div class="border-lightgrey p-4">
+                    <div class="row pictos align-items-center justify-content-around justify-content-lg-start">
+                        <div class="col-12 col-sm-3">
+                            <h4 class="txt-blue text-uppercase pl-0 pl-lg-5 mb-4 mb-lg-0">{{ content.field_prod_sitramov_picto_titles[0] }}</h4>
+                        </div>
+                        {% for i in 0..4 %}
+                            <div class="{{ (i == 3) ? 'd-none' : 'd-flex' }} col-4 col-sm-auto mb-3 mb-sm-0 flex-column flex-lg-row align-items-center justify-content-center">
+                                {{ content.field_prod_sitramov_picto_imgs[i] }}
+                                {% if node.field_prod_sitramov_picto_imgs[i].alt|length %}
+                                    <small class="txt-blue">{{ node.field_prod_sitramov_picto_imgs[i].alt }}</small>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container my-5">
+        <div class="row">
+            <div class="col">
+                <div class="border-lightgrey p-4">
+                    <div class="row pictos align-items-center justify-content-around justify-content-lg-start">
+                        <div class="col-12 col-sm-3">
+                            <h4 class="txt-blue text-uppercase pl-0 pl-lg-5 mb-4 mb-lg-0">{{ content.field_prod_sitramov_picto_titles[1] }}</h4>
+                        </div>
+                        {% for i in 0..4 %}
+                            <div class="col-4 col-sm-auto mb-3 mb-sm-0 d-flex flex-column flex-lg-row align-items-center justify-content-center">
+                                {{ content.field_prod_sitramov_picto_imgs[i] }}
+                                {% if node.field_prod_sitramov_picto_imgs[i].alt|length %}
+                                    <small class="txt-blue">{{ node.field_prod_sitramov_picto_imgs[i].alt }}</small>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENT 2 -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <div class="mb-2 mb-sm-0">
+                    {{ content.field_prod_sitramov_c2_imgs[0] }}
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="mb-2 mb-sm-3">
+                    {{ content.field_prod_sitramov_c2_imgs[1] }}
+                </div>
+                <div class="mb-2 mb-sm-0">
+                    {{ content.field_prod_sitramov_c2_imgs[2] }}
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="mb-2 mb-sm-0">
+                    {{ content.field_prod_sitramov_c2_imgs[3] }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENT 3 -->
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-12 col-sm-6 offset-sm-3 text-center mb-5">
+                {{ content.field_prod_sitramov_c3_intro }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-4">
+                {{ content.field_prod_sitramov_c3_imgs[0] }}
+            </div>
+            <div class="col-12 col-sm-4">
+                {{ content.field_prod_sitramov_c3_imgs[1] }}
+            </div>
+            <div class="col-12 col-sm-4">
+                {{ content.field_prod_sitramov_c3_imgs[2] }}
+            </div>
+        </div>
+    </div>
+</div>

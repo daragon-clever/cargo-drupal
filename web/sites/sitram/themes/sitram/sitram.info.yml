@@ -15,7 +15,6 @@ libraries:
   - sitram/bootstrap
   - sitram/mmenu
   - sitram/slick
-  - sitram/instagram
   - sitram/imageloaded
   - sitram/global-styling
 

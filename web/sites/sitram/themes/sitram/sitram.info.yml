@@ -11,15 +11,12 @@ regions:
   txtfooter: 'Zone texte sous le footer'
 
 libraries:
-  - sitram/polyfill
   - sitram/objectfit-ie
   - sitram/bootstrap
   - sitram/mmenu
   - sitram/slick
   - sitram/instagram
   - sitram/imageloaded
-  - sitram/masonry
-  - sitram/lozad
   - sitram/global-styling
 
 stylesheets-remove:

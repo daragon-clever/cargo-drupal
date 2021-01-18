@@ -1,7 +1,7 @@
 let isTabletOrLess = window.matchMedia("only screen and (max-width: 991px)").matches;
 if (isTabletOrLess) {
     document.addEventListener(
-        "DOMContentLoaded", () => {
+        "DOMContentLoaded", function() {
             new Mmenu("#block-sitram-main-menu", {
                 "extensions": [
                     "theme-white",
@@ -31,6 +31,13 @@ jQuery(document).ready(function ($) {
         // CAROUSEL HOMEPAGE
         const observer = lozad();
         observer.observe();
+
+        if (!isTabletOrLess) {
+            const windowWidth = window.innerWidth;
+            const ratio = 4.8;
+            const minHeightValue = windowWidth <= 1920 ? (windowWidth / ratio) : 400;
+            $('.js-homepage-slider').css('min-height', minHeightValue);
+        }
 
         $('.js-homepage-slider > div').slick({
             dots: true

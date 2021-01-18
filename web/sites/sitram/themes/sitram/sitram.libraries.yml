@@ -46,6 +46,7 @@ lozad:
 polyfill:
   js:
     js/intersection-observer.js: {}
+    js/polyfill-element-append.js: {}
 
 # Object fit support for IE
 objectfit-ie:

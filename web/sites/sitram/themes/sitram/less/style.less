@@ -1099,7 +1099,7 @@
         background: @primaryColor;
         color: white;
 
-        &:first-child{
+        &:first-child {
           background: #EDEDED;
           font-size: 0;
         }
@@ -2034,6 +2034,7 @@ div[role="contentinfo"] {
 
       .result-message {
         color: #FDC2A1;
+
         &.success {
           color: white;
           text-align: center;
@@ -2041,6 +2042,7 @@ div[role="contentinfo"] {
           margin: auto;
           text-transform: uppercase;
           font-weight: bold;
+
           &::before {
             content: "";
             background: url("../images/footer/newsletter-check-circle.svg") no-repeat center transparent;
@@ -2766,6 +2768,42 @@ table.reparateurs {
 
   .fake-img {
     padding: 8px;
+  }
+}
+
+// RENCONTRES
+#rencontres {
+  h1 {
+    @media @moreThanTablet {
+      line-height: 1.3;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  #ban-intro:before {
+    height: 315px;
+
+    @media @tablet {
+      height: 55px;
+    }
+  }
+
+  @media @moreThanTablet {
+    .text-to-right {
+      padding-left: 180px;
+    }
+  }
+
+  .mt-5-70lg {
+    margin-top: 70px;
+
+    @media @tablet {
+      margin-top: 48px;
+    }
   }
 }
 

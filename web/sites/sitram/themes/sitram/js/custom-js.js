@@ -52,7 +52,7 @@ jQuery(document).ready(function ($) {
                 'margin': 1,
                 'lazy_load': true,
                 'on_error': function () {
-                    $('#js-instagram').html('<img class="mw-100" src="/sites/sitram/themes/sitram/images/fake-insta-hp.png" />')
+                    $('#js-instagram').html('<a href="https://www.instagram.com/sitram_fr" target="_blank"><img class="mw-100" src="/sites/sitram/themes/sitram/images/fake-insta-hp.png" /></a>')
                 }
             });
         })();

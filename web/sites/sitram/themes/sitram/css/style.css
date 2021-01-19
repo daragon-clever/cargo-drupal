@@ -2247,13 +2247,6 @@ ul.check-list li:before {
   width: 100%;
   height: auto;
 }
-#produit.cumin .content-2 .faitout-row h3,
-#produit.rapsody .content-2 .faitout-row h3,
-#produit.sitrabella .content-2 .faitout-row h3,
-#produit.sitramovible .content-2 .faitout-row h3 {
-  margin-bottom: 0;
-  text-align: center;
-}
 #produit.cumin .max-1400,
 #produit.rapsody .max-1400,
 #produit.sitrabella .max-1400,

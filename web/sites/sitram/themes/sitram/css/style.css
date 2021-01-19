@@ -1637,6 +1637,9 @@ ul.check-list li:before {
   width: 349px;
   background: url("../images/poivron.png") no-repeat center transparent;
 }
+#homepage .content-3 #js-instagram a:hover {
+  opacity: 1;
+}
 #homepage .content-3 .text-mea h3 {
   font-size: 32px;
 }
@@ -3696,6 +3699,9 @@ table.reparateurs tbody .tel {
 }
 #user-login-form input.button:hover {
   opacity: 0.8;
+}
+#communaute #js-instagram-commu a:hover {
+  opacity: 1;
 }
 #communaute .top-offset {
   margin-top: 180px;

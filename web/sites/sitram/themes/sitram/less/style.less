@@ -1383,10 +1383,6 @@
 
   #content-1 {
     position: relative;
-
-    &:before {
-
-    }
   }
 
   &.qui-sommes-nous {
@@ -1569,6 +1565,33 @@
 
         &:after {
           display: none;
+        }
+      }
+    }
+  }
+
+  &.histoire {
+    h1 {
+      line-height: 1;
+    }
+
+    .max-550 {
+      @media @tablet {
+        max-width: 100%;
+      }
+    }
+
+    .content2-images {
+      img {
+        margin: auto;
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        max-width: 100%;
+
+        @media @tablet {
+          object-fit: contain;
         }
       }
     }

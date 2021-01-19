@@ -1637,6 +1637,9 @@ ul.check-list li:before {
   width: 349px;
   background: url("../images/poivron.png") no-repeat center transparent;
 }
+#homepage .content-3 #js-instagram a:hover {
+  opacity: 1;
+}
 #homepage .content-3 .text-mea h3 {
   font-size: 32px;
 }
@@ -2244,13 +2247,6 @@ ul.check-list li:before {
   width: 100%;
   height: auto;
 }
-#produit.cumin .content-2 .faitout-row h3,
-#produit.rapsody .content-2 .faitout-row h3,
-#produit.sitrabella .content-2 .faitout-row h3,
-#produit.sitramovible .content-2 .faitout-row h3 {
-  margin-bottom: 0;
-  text-align: center;
-}
 #produit.cumin .max-1400,
 #produit.rapsody .max-1400,
 #produit.sitrabella .max-1400,
@@ -2636,6 +2632,27 @@ ul.check-list li:before {
 }
 #marque.cuisinons-vrai .text-mea .h3-custom:after {
   display: none;
+}
+#marque.histoire h1 {
+  line-height: 1;
+}
+@media only screen and (max-width: 991px) {
+  #marque.histoire .max-550 {
+    max-width: 100%;
+  }
+}
+#marque.histoire .content2-images img {
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  max-width: 100%;
+}
+@media only screen and (max-width: 991px) {
+  #marque.histoire .content2-images img {
+    object-fit: contain;
+  }
 }
 #sitram-et-moi {
   position: relative;
@@ -3676,6 +3693,9 @@ table.reparateurs tbody .tel {
 #user-login-form input.button:hover {
   opacity: 0.8;
 }
+#communaute #js-instagram-commu a:hover {
+  opacity: 1;
+}
 #communaute .top-offset {
   margin-top: 180px;
 }
@@ -3724,11 +3744,6 @@ table.reparateurs tbody .tel {
 @media only screen and (max-width: 991px) {
   #rencontres #ban-intro:before {
     height: 55px;
-  }
-}
-@media only screen and (min-width: 992px) {
-  #rencontres .text-to-right {
-    padding-left: 180px;
   }
 }
 #rencontres .mt-5-70lg {

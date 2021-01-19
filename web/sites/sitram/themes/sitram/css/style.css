@@ -3746,11 +3746,6 @@ table.reparateurs tbody .tel {
     height: 55px;
   }
 }
-@media only screen and (min-width: 992px) {
-  #rencontres .text-to-right {
-    padding-left: 180px;
-  }
-}
 #rencontres .mt-5-70lg {
   margin-top: 70px;
 }

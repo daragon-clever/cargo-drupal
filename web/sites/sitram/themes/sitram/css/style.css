@@ -1854,6 +1854,11 @@ ul.check-list li:before {
   transform: rotate(-45deg);
   position: relative;
   float: right;
+  transition: all 0.3s ease-in-out;
+}
+.recettes-filters .form-wrapper legend.active .fieldset-legend:after {
+  transform: rotate(135deg);
+  top: 13px;
 }
 .recettes-filters .form-wrapper .fieldset-wrapper .form-item {
   display: flex;

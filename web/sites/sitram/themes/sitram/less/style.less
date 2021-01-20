@@ -607,6 +607,14 @@
         transform: rotate(-45deg);
         position: relative;
         float: right;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+
+    legend.active {
+      .fieldset-legend:after {
+        transform: rotate(135deg);
+        top: 13px;
       }
     }
 

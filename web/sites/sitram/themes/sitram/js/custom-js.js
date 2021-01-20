@@ -15,6 +15,16 @@ if (isTabletOrLess) {
     );
 }
 
+hash = document.location.hash;
+if (hash !="") {
+    setTimeout(function() {
+        if (location.hash) {
+            window.scrollTo(0, 0);
+            window.location.href = hash;
+        }
+    }, 1);
+}
+
 jQuery(document).ready(function ($) {
     // OBJECT FIT SUPPORT FOR IE11
     $(function () {

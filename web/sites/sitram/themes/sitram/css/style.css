@@ -1805,6 +1805,11 @@ ul.check-list li:before {
 .footer-recettes .block-txt a:hover {
   opacity: 0.8;
 }
+.footer-recettes img {
+  margin: 5px auto;
+  display: block;
+  max-width: 100%;
+}
 .recettes-filters {
   border: 1px solid #EDEDED;
   padding: 24px;
@@ -2141,6 +2146,9 @@ ul.check-list li:before {
 }
 #produit .js-grid-masonry .grid-item .txt p {
   margin: 0;
+}
+#produit.poele .inner.behind-img-left {
+  z-index: initial;
 }
 #produit.cocotte .content-1 img {
   max-width: 100%;
@@ -3765,12 +3773,12 @@ table.reparateurs tbody .tel {
 }
 @media only screen and (max-width: 991px) {
   #rencontres .offset-anchor {
-    top: -650px;
+    top: -100px;
   }
 }
 @media only screen and (max-width: 767px) {
   #rencontres .offset-anchor {
-    top: -350px;
+    top: -70px;
   }
 }
 .collapsible-faq h2,

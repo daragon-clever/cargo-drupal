@@ -553,6 +553,12 @@
       }
     }
   }
+
+  img {
+    margin: 5px auto;
+    display: block;
+    max-width: 100%;
+  }
 }
 
 .recettes-filters {
@@ -946,6 +952,14 @@
 
       p {
         margin: 0;
+      }
+    }
+  }
+
+  &.poele {
+    .inner {
+      &.behind-img-left {
+        z-index: initial;
       }
     }
   }
@@ -2834,11 +2848,11 @@ table.reparateurs {
     top: -125px;
 
     @media @tablet {
-      top: -650px;
+      top: -100px;
     }
 
     @media @phone {
-      top: -350px;
+      top: -70px;
     }
   }
 }

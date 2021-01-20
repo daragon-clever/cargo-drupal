@@ -3754,6 +3754,10 @@ table.reparateurs tbody .tel {
     margin-top: 48px;
   }
 }
+#rencontres .offset-anchor {
+  position: absolute;
+  top: -125px;
+}
 .collapsible-faq h2,
 .collapsible-faq h3 {
   margin: 0;

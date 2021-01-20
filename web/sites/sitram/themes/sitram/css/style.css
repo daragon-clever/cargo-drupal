@@ -3763,6 +3763,16 @@ table.reparateurs tbody .tel {
   position: absolute;
   top: -125px;
 }
+@media only screen and (max-width: 991px) {
+  #rencontres .offset-anchor {
+    top: -650px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  #rencontres .offset-anchor {
+    top: -350px;
+  }
+}
 .collapsible-faq h2,
 .collapsible-faq h3 {
   margin: 0;

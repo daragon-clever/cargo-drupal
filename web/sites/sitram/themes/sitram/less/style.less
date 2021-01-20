@@ -553,6 +553,12 @@
       }
     }
   }
+
+  img {
+    margin: 5px auto;
+    display: block;
+    max-width: 100%;
+  }
 }
 
 .recettes-filters {
@@ -607,6 +613,14 @@
         transform: rotate(-45deg);
         position: relative;
         float: right;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+
+    legend.active {
+      .fieldset-legend:after {
+        transform: rotate(135deg);
+        top: 13px;
       }
     }
 
@@ -938,6 +952,14 @@
 
       p {
         margin: 0;
+      }
+    }
+  }
+
+  &.poele {
+    .inner {
+      &.behind-img-left {
+        z-index: initial;
       }
     }
   }
@@ -2818,6 +2840,19 @@ table.reparateurs {
 
     @media @tablet {
       margin-top: 48px;
+    }
+  }
+
+  .offset-anchor {
+    position: absolute;
+    top: -125px;
+
+    @media @tablet {
+      top: -100px;
+    }
+
+    @media @phone {
+      top: -70px;
     }
   }
 }

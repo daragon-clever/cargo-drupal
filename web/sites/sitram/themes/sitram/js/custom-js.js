@@ -1,7 +1,7 @@
 let isTabletOrLess = window.matchMedia("only screen and (max-width: 991px)").matches;
 if (isTabletOrLess) {
     document.addEventListener(
-        "DOMContentLoaded", function() {
+        "DOMContentLoaded", function () {
             new Mmenu("#block-sitram-main-menu", {
                 "extensions": [
                     "theme-white",
@@ -13,6 +13,16 @@ if (isTabletOrLess) {
             });
         }
     );
+}
+
+hash = document.location.hash;
+if (hash !="") {
+    setTimeout(function() {
+        if (location.hash) {
+            window.scrollTo(0, 0);
+            window.location.href = hash;
+        }
+    }, 1);
 }
 
 jQuery(document).ready(function ($) {
@@ -131,6 +141,7 @@ jQuery(document).ready(function ($) {
 
         $(document).on('click', 'fieldset legend', function () {
             $(this).next().slideToggle();
+            $(this).toggleClass("active");
             /*updateFilterCount($(this).next());*/
         })
     }
@@ -156,8 +167,8 @@ jQuery(document).ready(function ($) {
             $(this).addClass('opened');
         }
     });
-    (function($) {
-        $.fn.myCustomReloadReCatpcha = function() {
+    (function ($) {
+        $.fn.myCustomReloadReCatpcha = function () {
             console.log('on a submit');
             grecaptcha.reset();
         };

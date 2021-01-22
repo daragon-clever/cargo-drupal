@@ -11,7 +11,7 @@ bootstrap:
 # Font Awesome
 fontawesome:
   js:
-    https://kit.fontawesome.com/1f23e911a7.js : { type: external }
+    https://kit.fontawesome.com/2c0953961c.js : { type: external }
 
 #Google Maps
 google-maps-custom:

@@ -1,0 +1,101 @@
+<div id="prestations">
+    <div id="marches">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    {{ content.field_presta_intro }}
+                </div>
+            </div>
+            <div class="row bordered-blocks-svg">
+                {% for i in 0..3 %}
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <div class="inner text-center d-flex">
+                            <div class="m-auto">
+                                <div class="svg">{{ content.field_presta_svgs[i] }}</div>
+                                <p>{{ content.field_presta_txts_marches[i] }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div id="savoir-faire" class="wrapper-full c-white" style="background: url('{{ content.field_presta_sf_bg|render|striptags|trim|raw }}') no-repeat center / cover transparent">
+        <h2 class="main-title text-center my-4">
+            <span>
+                {{ node.field_presta_sf.fieldDefinition.label }}
+            </span>
+        </h2>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    {{ content.field_presta_sf}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="services">
+        <h2 class="main-title text-center my-4">
+            <span>
+                {{ node.field_presta_services.fieldDefinition.label }}
+            </span>
+        </h2>
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    {{ content.field_presta_services}}
+                </div>
+            </div>
+
+            <div class="row">
+                {% for i in 0..7 %}
+                    <div class="service-block col-6 col-md-3">
+                        <div class="domaine-block {% if i is even %}even{% else %}odd{% endif %}" data-content="content-{{ i }}">
+                            <a href="#js-service-id-{{ i }}">
+                                {{ content.field_presta_services_imgs[i] }}
+                                <div class="title d-flex">
+                                    <div class="m-auto">
+                                        <span>{{ node.field_presta_services_imgs[i].alt }}</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    {% if i == 3 %}
+                        <div class="col-12 txts-wrapper">
+                            {% for i in 0..7 %}
+                                <div class="text-center txt" data-content="content-{{ i }}">
+                                    <div class="inner">
+                                        {{ content.field_presta_services_txts[i] }}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+            <div class="js-presta-gallery" data-content="content-0">
+                <div class="gallery-wrapper">
+                    <span class="js-close-gallery"></span>
+                    <div class="js-slick-main">
+                        {% for i in 0..3 %}
+                            <div>
+                                {{ content.field_presta_gallery_1[i] }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="js-slick-main-nav">
+                        {% for i in 0..3 %}
+                            <div>
+                                {{ content.field_presta_gallery_1[i] }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

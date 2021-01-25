@@ -1,0 +1,14 @@
+<header class="text-center">
+    <div>
+        {% if page.navigation %}
+            {{ page.navigation }}
+        {% endif %}
+        <span class="d-lg-none close-menu">✖</span>
+    </div>
+    <div>
+        <a href="{{ url('<front>') }}" title="Techno Source Industries">
+            <img class="logo" src="/sites/tsi/themes/tsi/images/logo.svg" width="170" height="215" alt="Techno Source Industries" />
+        </a>
+    </div>
+    <a id="burger" class="d-lg-none" href="#main-nav"></a>
+</header>

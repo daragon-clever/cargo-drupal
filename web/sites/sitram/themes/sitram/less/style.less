@@ -1808,8 +1808,26 @@
   }
 }
 
+// CONTACT
 #contact {
   font-family: @MyriadSemibold;
+
+  div[role='contentinfo'] {
+    background: transparent;
+    margin: 0;
+    padding: 0;
+
+    div[role='alert'] {
+      color: red;
+      border: 1px solid red;
+      margin: 15px 0;
+      padding: 15px;
+
+      ul {
+        margin-bottom: 0;
+      }
+    }
+  }
 
   @media @tablet {
     form {
@@ -1886,6 +1904,7 @@
       font-family: @MyriadRegular;
       color: @grey;
       cursor: pointer;
+      margin: 0 !important;
 
       &:after {
         content: "";

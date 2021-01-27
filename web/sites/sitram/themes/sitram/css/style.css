@@ -1898,7 +1898,7 @@ ul.check-list li:before {
   object-fit: cover;
   font-family: 'object-fit: cover;';
   height: 197px;
-  transition: transform 0.3s ease;
+  transition: transform .3s ease;
 }
 .recette-item img:hover {
   transform: scale(1.1);
@@ -2827,6 +2827,20 @@ ul.check-list li:before {
 #contact {
   font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
 }
+#contact div[role='contentinfo'] {
+  background: transparent;
+  margin: 0;
+  padding: 0;
+}
+#contact div[role='contentinfo'] div[role='alert'] {
+  color: red;
+  border: 1px solid red;
+  margin: 15px 0;
+  padding: 15px;
+}
+#contact div[role='contentinfo'] div[role='alert'] ul {
+  margin-bottom: 0;
+}
 @media only screen and (max-width: 991px) {
   #contact form {
     padding: 0 15px;
@@ -2895,6 +2909,7 @@ ul.check-list li:before {
   font-family: "Myriad Pro Regular", Arial, Helvetica, sans-serif;
   color: #434343;
   cursor: pointer;
+  margin: 0 !important;
 }
 #contact .form-item-fichier label:after,
 #contact .form-item-fichier .file:after {

@@ -1,3 +1,22 @@
+//MMENU
+let isTabletOrLess = window.matchMedia("only screen and (max-width: 991px)").matches;
+if (isTabletOrLess) {
+    document.addEventListener(
+        "DOMContentLoaded", function () {
+            new Mmenu("#block-cestdeuxeuros-main-menu", {
+                "extensions": [
+                    "theme-white",
+                    "border-full",
+                    "position-front",
+                    "pagedim-black",
+                    "position-right"
+                ]
+            });
+        }
+    );
+}
+
+
 jQuery(document).ready(function($) {
     // FORMULAIRE DE CONTACT
     if ($('.webform-submission-form').length) {
@@ -29,11 +48,11 @@ jQuery(document).ready(function($) {
     });
 
     // MENU Mobile
-    $('.btn-menu-mobile i').each( function() {
-        $(this).click(function() {
-            $('.btn-menu-mobile i').toggle();
-            $('.menu').toggleClass('active');
-            $('.main-content').toggleClass('blur');
-        });
-    })
+    // $('.btn-menu-mobile i').each( function() {
+    //     $(this).click(function() {
+    //         $('.btn-menu-mobile i').toggle();
+    //         $('.menu').toggleClass('active');
+    //         $('.main-content').toggleClass('blur');
+    //     });
+    // })
 });

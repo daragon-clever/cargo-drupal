@@ -1,12 +1,14 @@
 <header>
     <div class="container">
         <div class="row">
-            <div class="col-auto logo-wrapper">
+            <div class="col text-center">
                 <a href="{{ url('<front>') }}" title="C'est deux euros">
                     <img class="logo" src="/sites/cestdeuxeuros/themes/cestdeuxeuros/images/logo.png" alt="C'est deux euros" />
                 </a>
             </div>
-            <div class="col">
+        </div>
+        <div class="row">
+            <div class="col text-center">
                 <div class="menu">
                     {% if page.navigation %}
                         {{ page.navigation }}
@@ -14,8 +16,9 @@
                 </div>
             </div>
             <div class="btn-menu-mobile d-xs-block d-md-none">
-                <i class="fas fa-bars"></i>
-                <i style="display: none" class="fas fa-times"></i>
+                <a href="#block-cestdeuxeuros-main-menu">
+                    <i class="fas fa-bars"></i>
+                </a>
             </div>
         </div>
     </div>

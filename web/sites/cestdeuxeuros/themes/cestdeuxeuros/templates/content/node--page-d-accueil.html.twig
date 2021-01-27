@@ -1,47 +1,94 @@
-<div id="homepage-content">
-    <div class="row">
-        <div class="col-12">
-            {% if node.field_hp_main_link.isEmpty %}
-                {{ content.field_hp_ban_principale }}
-            {% else %}
-                <a href="{{ content.field_hp_main_link|render|striptags }}">
-                    {{ content.field_hp_ban_principale }}
-                </a>
-            {% endif %}
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-12 col-md-6 left">
-            <a href="{{ content.field_hp_links.0['#url'] }}" title="{{ node.field_hp_img_01[0].alt }}">
-                {{ content.field_hp_img_01[0] }}
-            </a>
-        </div>
-        <div class="col-12 col-md-6 right">
-            <a href="{{ content.field_hp_links.1['#url'] }}" title="{{ node.field_hp_img_01[1].alt }}">
-                {{ content.field_hp_img_01[1] }}
-            </a>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-12">
-            <a href="{{ content.field_hp_links.2['#url'] }}" title="{{ node.field_hp_img_01[2].alt }}">
-                {{ content.field_hp_img_01[2] }}
-            </a>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-12 col-lg-6 texts order-2 order-lg-1">
-            {{ content.field_hp_txts }}
-        </div>
-        <div class="col-12 col-lg-6 order-1 order-lg-2">
-            <div id="homepage-products">
-                <div class="title">
-                    Les <b>Offres</b> du moment
+<div id="homepage">
+    <div class="container">
+        <!-- BANNIÈRE -->
+        <div class="row">
+            <div class="col">
+                <div class="relative-hp-banner">
+                    {{ content.field_hp_banner_img }}
+                    <div class="absolute-hp-banner">
+                        <div class="content-hp-banner">
+                            {{ content.field_hp_banner_txt }}
+                        </div>
+                    </div>
                 </div>
-                {{ content.field_block_produits_accueil }}
+            </div>
+        </div>
+
+        <!-- CONTENT 1 -->
+        <div class="row mt-5">
+            <div class="col-12 col-lg-6 offset-lg-3 text-center">
+                {{ content.field_hp_c1_txt }}
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-12 col-lg-8 offset-lg-2">
+                <div class="row">
+                    {% for i in 0..7 %}
+                        <div class="col-6 col-lg-3">
+                            <div class="content-1-card">
+                                <img {% if i == 1 or i == 2 or i == 6 or i == 7 %}class="offset-30"
+                                        {% endif %} src="{{ content.field_hp_c1_imgs[i] }}">
+                                <span>{{ node.field_hp_c1_imgs[i].alt }}</span>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENT 2 -->
+    <div class="container-fluid content-2 mt-5-80lg">
+        <div class="row">
+            <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+                <div class="row align-items-end">
+                    <div class="col-12 col-md-6 content-2-left order-last order-md-first">
+                        {{ content.field_hp_c2_left_txt }}
+                        {{ content.field_hp_c2_left_img }}
+                    </div>
+                    <div class="col-12 col-md-6 content-2-right">
+                        <div class="row">
+                            <div class="col-12 col-lg-10 offset-lg-1">
+                                {{ content.field_hp_c2_right_imgs[0] }}
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-12 col-lg-10 offset-lg-1 d-flex justify-content-center reseaux-pictos">
+                                {{ content.field_hp_c2_right_imgs[1] }}
+                                {% for i in 0..1 %}
+                                    <a href="{{ content.field_hp_c2_right_socials_links[i] }}" target="_blank"><img
+                                                class="grayscale" src="{{ content.field_hp_c2_right_socials[i] }}"></a>
+                                {% endfor %}
+                                {{ content.field_hp_c2_right_txts[0] }}
+                            </div>
+                        </div>
+                        <div class="row mt-4 pb-5">
+                            <div class="col-12 col-lg-10 offset-lg-1">
+                                <div class="abonnement">
+                                    {{ content.field_hp_c2_right_imgs[2] }}
+                                    {{ content.field_hp_c2_right_txts[1] }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENT 3 -->
+    <div class="container content-3 mt-5-80lg mb-5">
+        <div class="row">
+            <div class="col-10 offset-1 col-lg-8 offset-lg-2">
+                <div class="row align-items-end">
+                    <div class="col-12 col-md-6">
+                        {{ content.field_hp_c3_title }}
+                        {{ content.field_hp_c3_img }}
+                    </div>
+                    <div class="col-12 col-md-6 mt-3 mt-md-0">
+                        {{ content.field_hp_c3_txt }}
+                    </div>
+                </div>
             </div>
         </div>
     </div>

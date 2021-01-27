@@ -4,25 +4,19 @@
 // Font
 @import (css) '../font/itc-avantgarde/font-itc.css';
 
-// Google Font
-@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap');
-
+// COMMON
 body {
-  font-family: 'Quicksand', sans-serif;
-  font-size: 15px;
+  font-family: "ITC Avant Garde Pro Md", Arial, Helvetica, sans-serif;
+  font-size: 16px;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1310px) {
   .container {
-    max-width: 1200px;
+    max-width: 1310px;
   }
 }
 
-.adminimal-admin-toolbar:not(.path-admin) .header-wrapper {
-  margin-top: 79px;
-}
-
-a {
+a:not(.cta) {
   .dimOpacityOnHover(0.8);
 }
 
@@ -33,24 +27,129 @@ img {
 
 .dialog-off-canvas-main-canvas {
   position: relative;
-  padding-top: 71px;
+  padding-top: 190px;
+
+  @media @tablet {
+    padding-top: 208px;
+  }
+
+  @media @phone {
+    padding-top: 136px;
+  }
 }
 
+.adminimal-admin-toolbar:not(.path-admin) .header-wrapper {
+  margin-top: 79px;
+}
+
+.cta {
+  text-decoration: none;
+  border: 2px solid @primary;
+  color: white;
+  font-size: 1rem;
+  line-height: 1;
+  border-radius: 30px;
+  background-color: @primary;
+  transition: all 0.3s ease-in-out;
+
+  &.p-xs {
+    padding: 12px;
+  }
+
+  &.p-xl {
+    padding: 12px 35px;
+  }
+
+  &.b-pink {
+    border-color: @pink;
+  }
+
+  &.b-white {
+    border-color: white;
+  }
+
+  &.b-orange {
+    border-color: @orange;
+  }
+
+  &.text-grey {
+    color: @grey
+  }
+
+  &.text-primary {
+    color: @primary;
+  }
+
+  &.text-pink {
+    color: @pink;
+  }
+
+  &.text-orange {
+    color: @orange;
+  }
+
+  &.bg-transparent {
+    background-color: transparent;
+  }
+
+  &.bg-white {
+    background-color: white;
+  }
+
+  &:hover {
+    background-color: @primary !important;
+    border-color: @primary !important;
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.grayscale {
+  filter: grayscale();
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    filter: none;
+  }
+}
+
+.main-content {
+  transition: all 0.3s ease-in-out;
+
+  &.blur {
+    filter: blur(2px);
+    opacity: 0.3;
+  }
+}
+
+// HEADER
 .header-wrapper {
+  font-weight: bold;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   background: white;
   z-index: 10;
-  padding: 10px 0;
+  padding: 20px 0;
+
+  .logo {
+    width: 95px;
+    height: auto;
+  }
+
+  #block-reseauxsociaux {
+    display: none;
+  }
 
   nav {
     display: inline-block;
-    padding-top: 13px;
+    padding-top: 25px;
 
     ul {
-      display: inline-block;
+      display: flex;
+      align-items: center;
       padding: 0;
       margin: 0;
 
@@ -58,14 +157,12 @@ img {
         display: inline-block;
 
         a {
-          color: #6d6f70;
-          padding: 0 10px;
-          border-right: 1px solid #6d6f70;
-          font-weight: 500;
+          color: rgb(99, 99, 98);
+          padding: 0 20px;
 
           &:hover,
           &.is-active {
-            color: @blue;
+            color: @primary;
             text-decoration: none;
           }
 
@@ -73,9 +170,22 @@ img {
             font-weight: 700;
           }
         }
+      }
 
-        &:last-child a {
-          border-right: none;
+      li:last-child {
+        a {
+          color: @primary;
+          display: flex;
+          align-items: center;
+
+          &:before {
+            margin-right: 10px;
+            content: "";
+            display: inline-block;
+            background: url("../images/store-locator/logo-header.svg") no-repeat center transparent;
+            height: 30px;
+            width: 25px;
+          }
         }
       }
     }
@@ -117,11 +227,11 @@ img {
   position: fixed;
   top: 14px;
   right: 25px;
-  font-size: 29px;
+  font-size: 1.8rem;
 
   i {
     cursor: pointer;
-    color: @blue;
+    color: @primary;
 
     &.fa-times {
       color: @grey
@@ -169,114 +279,237 @@ img.logo {
   height: 52px;
 }
 
-.main-content {
-  transition: all 0.3s ease-in-out;
+// HOMEPAGE
+#homepage {
+  h1 {
+    font-size: 2.25rem;
+    color: @darkGrey;
+    font-weight: bold;
+    line-height: 1.1;
 
-  &.blur {
-    filter: blur(2px);
-    opacity: 0.3;
-  }
-}
-
-#homepage-content {
-  & > div {
-    margin-top: 10px;
-    margin-bottom: 10px;
-
-    .left {
-      padding-right: 5px;
+    @media @phone {
+      font-size: 1.25rem;
     }
+  }
 
-    .right {
-      padding-left: 5px;
+  h2 {
+    text-align: right;
+    font-weight: bold;
+    font-size: 2.25rem;
+    line-height: 1.3;
+
+    @media @tablet {
+      text-align: center;
     }
 
     @media @phone {
-      .left,
-      .right {
-        padding-right: 15px;
-        padding-left: 15px;
-      }
-
-      .right {
-        margin-top: 10px;
-      }
+      font-size: 1.5rem;
     }
   }
 
-  .texts {
-    h1, h2 {
-      color: @blue;
-    }
-
-    h1 {
-      font-size: 28px;
-    }
-
-    h2 {
-      font-size: 22px;
-    }
-
-    & > div > div {
-      border-bottom: 1px solid black;
-      margin-bottom: 15px;
-
-      &:last-child {
-        border-bottom: 0;
-      }
-    }
-
-    b, h2 {
-      font-weight: 700;
-    }
+  h3 {
+    font-size: 1.5rem;
+    color: @darkGrey;
+    font-weight: bold;
+    line-height: 1.2;
   }
-}
 
-#homepage-products {
-  border-bottom: 15px solid @pink;
+  h4 {
+    font-size: 1rem;
+    color: @grey;
+    font-weight: bold;
+    line-height: 1.25;
+  }
 
-  .title {
-    text-align: center;
-    background: #e5007f;
-    color: white;
-    margin-bottom: 30px;
-    padding: 20px 0;
-    font-size: 40px;
+  p {
+    font-size: 1rem;
+    color: @grey;
+    line-height: 1.25;
+  }
 
-    @media (max-width: 1199px) {
-      font-size: 180%;
+  .mt-5-80lg {
+    margin-top: 80px;
+
+    @media @tablet {
+      margin-top: 48px;
     }
   }
 
-  @media @tablet {
-    margin-bottom: 30px;
-  }
-}
-
-.products {
-  .img-wrapper .inner {
-    border: 1px solid black;
-    margin-bottom: 30px;
+  .relative-hp-banner {
     position: relative;
-    overflow: hidden;
-    min-height: 170px;
+
+    img {
+      min-width: 100%;
+      max-height: 380px;
+      object-fit: contain;
+
+      @media @phone {
+        height: 100%;
+        object-fit: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        max-width: inherit;
+      }
+    }
+
+    @media @phone {
+      margin: 0 -15px;
+      height: 240px;
+      overflow: hidden;
+    }
+  }
+
+  .absolute-hp-banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    .content-hp-banner {
+      font-size: 2.25rem;
+      font-weight: bold;
+      text-align: right;
+      color: white;
+      line-height: 1.2;
+      display: flex;
+      height: 100%;
+      width: 50%;
+      justify-content: center;
+      align-items: flex-end;
+      flex-direction: column;
+
+      @media @tablet {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+      }
+    }
+  }
+
+  .content-1-card {
+    margin-top: 35px;
+    width: 100%;
+    height: 184px;
+    padding: 15px;
+    background-color: @veryLightGrey;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-color: @primary;
+      color: white;
+      cursor: pointer;
+    }
+
+    .offset-30 {
+      margin-top: -30px;
+      margin-bottom: 30px;
+    }
 
     span {
-      position: absolute;
-      bottom: 12px;
-      right: -12px;
-      background: @grey;
-      color: white;
-      font-size: 30px;
-      font-weight: 700;
-      padding: 3px 15px;
-      border-radius: 5px;
-      transform: rotate(-10deg);
+      font-weight: bold;
+      margin-top: 5px;
+    }
 
-      small {
-        vertical-align: super;
-        font-size: 60%;
+    img {
+      height: 125px;
+      object-fit: contain;
+    }
+  }
+
+  .content-2 {
+    & > div {
+      background: @veryLightGrey;
+      padding-top: 45px;
+
+      @media @phone {
+        margin: 0;
       }
+    }
+
+    .content-2-left {
+      .cta-arrivages {
+        margin-top: 35px;
+        margin-bottom: 16px;
+
+        @media @phone {
+          margin-top: 25px;
+        }
+      }
+
+      img {
+        margin-left: -50px;
+
+        @media @phone {
+          margin-left: 0;
+        }
+      }
+
+      @media @phone {
+        text-align: center;
+      }
+    }
+
+    .content-2-right {
+      .reseaux-pictos {
+        img {
+          width: 40px;
+          height: 40px;
+          margin-right: 15px;
+        }
+
+        span {
+          font-size: 1.5rem;
+          font-weight: bold;
+          color: @grey;
+
+          @media @tablet {
+            font-size: 1rem;
+            line-height: 40px;
+          }
+        }
+      }
+
+      .abonnement {
+        background-color: @grey;
+        padding: 25px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        img {
+          width: 60px;
+          height: 50px;
+          transform: rotate(5deg);
+        }
+
+        p {
+          margin-top: 10px;
+          font-size: 1.13rem;
+          color: white;
+          line-height: 1.2;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  .content-3 {
+    @media @phone {
+      text-align: center;
+    }
+
+    h3 {
+      margin-bottom: 15px;
+    }
+
+    p {
+      margin-bottom: 0;
     }
   }
 }
@@ -400,7 +633,7 @@ footer {
 
 #qsn {
   h1, h3 {
-    background: @blue;
+    background: @primary;
     text-align: center;
     color: white;
     padding: 15px 0;
@@ -419,7 +652,7 @@ footer {
   }
 
   h2 {
-    color: @blue;
+    color: @primary;
     text-align: center;
     font-weight: 600;
     font-size: 20px;
@@ -431,7 +664,7 @@ footer {
   }
 
   p {
-    border-bottom: 7px solid @blue;
+    border-bottom: 7px solid @primary;
     padding-bottom: 15px;
   }
 
@@ -503,7 +736,7 @@ footer {
         background: white;
         padding: 0 5px;
         transition: all 0.3s;
-        margin:0;
+        margin: 0;
         line-height: 1;
         font-size: 14px;
       }
@@ -575,7 +808,7 @@ footer {
   }
 
   .intro {
-    color: @blue;
+    color: @primary;
     text-align: center;
     font-size: 30px;
     line-height: 1.2;
@@ -654,7 +887,7 @@ div[role=alert] {
 
   #trouvez-un-magasin {
     margin-bottom: 30px;
-    background: @blue;
+    background: @primary;
     color: white;
     padding: 15px;
     text-align: center;
@@ -674,7 +907,7 @@ div[role=alert] {
     }
 
     #searchButton {
-      background: @blue;
+      background: @primary;
       color: white;
       border: 2px solid white;
       text-transform: uppercase;
@@ -689,7 +922,7 @@ div[role=alert] {
     font-size: 16px;
 
     h3 {
-      color: @blue;
+      color: @primary;
       font-weight: 600;
       font-size: 22px;
 
@@ -709,7 +942,7 @@ div[role=alert] {
     }
 
     i {
-      color: @blue;
+      color: @primary;
       margin-right: 10px;
     }
   }
@@ -717,7 +950,7 @@ div[role=alert] {
 
 .cms-page {
   h1, h2, h3 {
-    color: @blue;
+    color: @primary;
     padding: 0;
     margin: 15px 0;
   }
@@ -725,7 +958,7 @@ div[role=alert] {
 
 ul.plandusite {
   a {
-    color: @blue;
+    color: @primary;
     font-weight: 600;
   }
 }
@@ -1394,8 +1627,8 @@ ul.plandusite {
 
 .store-detail-event {
   padding: 15px 30px;
-  border: 1px solid @blue;
-  color: @blue;
+  border: 1px solid @primary;
+  color: @primary;
   font-weight: bold;
   margin-bottom: 30px;
 
@@ -1534,8 +1767,8 @@ ul.plandusite {
 }
 
 .msg-event {
-  border: 1px solid @blue;
-  color: @blue;
+  border: 1px solid @primary;
+  color: @primary;
   text-align: center;
   padding: 15px;
   margin: 15px 0;
@@ -1551,7 +1784,7 @@ ul.plandusite {
 .magasins-participants {
   h1 {
     margin: 30px 0;
-    color: @blue
+    color: @primary
   }
 
   .magasin-item {
@@ -1567,7 +1800,7 @@ ul.plandusite {
     }
 
     a {
-      color: @blue;
+      color: @primary;
       text-decoration: underline;
     }
 
@@ -1648,7 +1881,7 @@ ul.plandusite {
     }
 
     input[type=email] {
-      border: 2px solid @blue;
+      border: 2px solid @primary;
       padding: 0 15px 0 70px;
       max-width: 350px;
       background: url("../images/picto-email.svg") no-repeat 23px 7px;

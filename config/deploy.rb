@@ -20,10 +20,11 @@ set :format_options, command_output: true, log_file: "var/logs/capistrano.log", 
 # set :pty, true
 
 # Default value for :linked_files is []
-append :linked_files, "web/sites/sites.php", "web/sites/default/default.settings.php", "web/sites/turbocar/settings.php", "web/sites/ostaria/settings.php", "web/sites/yliades/settings.php", "web/sites/groupecargo/settings.php", "web/sites/blog-sitram/settings.php", "web/sites/facom/settings.php", "web/sites/comptoirdefamille/settings.php", "web/sites/cogex-epi/settings.php", "web/sites/cestdeuxeuros/settings.php", "web/sites/cogex/settings.php", "web/sites/gersequipement/settings.php", "web/sites/ope-sitram/settings.php", "drush/sites/web.site.yml", "web/sites/sitram/settings.php"
+append :linked_files, "web/sites/sites.php", "web/sites/default/default.settings.php", "web/sites/turbocar/settings.php", "web/sites/ostaria/settings.php", "web/sites/yliades/settings.php", "web/sites/groupecargo/settings.php", "web/sites/blog-sitram/settings.php", "web/sites/facom/settings.php", "web/sites/comptoirdefamille/settings.php", "web/sites/cogex-epi/settings.php", "web/sites/cestdeuxeuros/settings.php", "web/sites/cogex/settings.php", "web/sites/gersequipement/settings.php", "web/sites/ope-sitram/settings.php", "drush/sites/web.site.yml", "web/sites/sitram/settings.php", "web/sites/tsi/settings.php"
 
 # Default value for linked_dirs is []
-append :linked_dirs, "web/sites/turbocar/private","web/sites/turbocar/media", "web/sites/ostaria/private", "web/sites/ostaria/files", "web/sites/yliades/private", "web/sites/yliades/files", "web/sites/groupecargo/private", "web/sites/groupecargo/files", "web/sites/blog-sitram/private", "web/sites/blog-sitram/files", "web/sites/facom/private", "web/sites/facom/files", "web/sites/comptoirdefamille/private", "web/sites/comptoirdefamille/files", "web/sites/cogex-epi/private", "web/sites/cogex-epi/files", "web/sites/cestdeuxeuros/private", "web/sites/cestdeuxeuros/files", "web/sites/cogex/private", "web/sites/cogex/files", "web/sites/gersequipement/private", "web/sites/gersequipement/files", "web/sites/ope-sitram/private", "web/sites/ope-sitram/files", "web/sites/sitram/private", "web/sites/sitram/files"
+append :linked_dirs, "web/sites/turbocar/private","web/sites/turbocar/media", "web/sites/ostaria/private", "web/sites/ostaria/files", "web/sites/yliades/private", "web/sites/yliades/files", "web/sites/groupecargo/private", "web/sites/groupecargo/files", "web/sites/blog-sitram/private", "web/sites/blog-sitram/files", "web/sites/facom/private", "web/sites/facom/files", "web/sites/comptoirdefamille/private", "web/sites/comptoirdefamille/files", "web/sites/cogex-epi/private", "web/sites/cogex-epi/files", "web/sites/cestdeuxeuros/private", "web/sites/cestdeuxeuros/files", "web/sites/cogex/private", "web/sites/cogex/files", "web/sites/gersequipement/private", "web/sites/gersequipement/files", "web/sites/ope-sitram/private", "web/sites/ope-sitram/files", "web/sites/sitram/private", "web/sites/sitram/files", "web/sites/tsi/private", "web/sites/tsi/files"
+
 # Configure file permissions
 set :file_permissions_paths, [
     "web/sites/turbocar/media",
@@ -52,6 +53,8 @@ set :file_permissions_paths, [
     "web/sites/ope-sitram/files",
     "web/sites/sitram/private",
     "web/sites/sitram/files",
+    "web/sites/tsi/private",
+    "web/sites/tsi/files"
     ]
 
 # Default value for default_env is {}

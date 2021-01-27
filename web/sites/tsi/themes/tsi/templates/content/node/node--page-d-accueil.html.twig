@@ -1,0 +1,108 @@
+<div id="homepage">
+    <div id="domaines">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h2 class="main-title text-center my-4">
+                        <span>{{ node.field_hp_domaines.fieldDefinition.label }}</span>
+                    </h2>
+                </div>
+            </div>
+            <div class="row">
+                {% for i in 0..7 %}
+                    <div class="domaine-block col-6 col-md-3">
+                        <a href="{{ node.field_hp_domaines_links[i].url }}" title="{{ node.field_hp_domaines_links[i].title }}">
+                            {{ content.field_hp_domaines[i] }}
+                            <div class="title d-flex">
+                                <div class="m-auto">
+                                    <span>{{ node.field_hp_domaines_links[i].title }}</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <hr class="mini my-5">
+
+    <div id="offres">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-sm-6">
+                    <h2 class="main-title">
+                        <span>{{ node.field_hp_offre.fieldDefinition.label }}</span>
+                    </h2>
+                    {{ content.field_hp_offre }}
+                </div>
+                <div class="col-12 col-sm-6">
+                    {{ content.field_hp_offre_img }}
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col">
+                    <a class="cta red round" href="{{ node.field_hp_link_devis[0].url }}" title="{{ node.field_hp_link_devis[0].title }}">
+                        {{ node.field_hp_link_devis[0].title }}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="metier-clients" class="wrapper-full c-white" style="background: url('{{ content.field_hp_metier_bg|render|striptags|trim|raw }}') no-repeat center / cover transparent">
+        {{ content.field_hp_metier_txt }}
+    </div>
+
+    <div id="tsi">
+        <div class="intro my-5">
+            {{ content.field_hp_tsi }}
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-lg-7 big block">
+                    <div class="inner svg-pouce">
+                        {{ content.field_hp_tsi_blocks[0] }}
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-5">
+                    <div class="row">
+                        <div class="col-12 block">
+                            <div class="inner svg-prix">
+                                {{ content.field_hp_tsi_blocks[1] }}
+                            </div>
+                        </div>
+                        <div class="col-12 block">
+                            <div class="inner svg-bateau">
+                                {{ content.field_hp_tsi_blocks[2] }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-sm-6 col-lg-5">
+                    <div class="row">
+                        <div class="col-12 block">
+                            <div class="inner svg-usine">
+                                {{ content.field_hp_tsi_blocks[3] }}
+                            </div>
+                        </div>
+                        <div class="col-12 block">
+                            <div class="inner svg-france">
+                                {{ content.field_hp_tsi_blocks[4] }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-7 big block">
+                    <div class="inner svg-pouce">
+                        {{ content.field_hp_tsi_blocks[5] }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

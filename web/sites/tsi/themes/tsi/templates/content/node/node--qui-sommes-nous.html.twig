@@ -1,0 +1,61 @@
+<div id="qsn">
+    <div id="entreprise">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    {{ content.field_qsn_intro }}
+                </div>
+            </div>
+            <div class="row bordered-blocks-svg">
+                {% for i in 0..3 %}
+                    <div class="col-12 col-md-6">
+                        <div class="inner text-center d-flex">
+                            <div class="m-auto">
+                                <div class="svg">{{ content.field_qsn_svgs[i] }}</div>
+                                <h4>{{ node.field_qsn_svgs[i].alt }}</h4>
+                                {{ content.field_qsn_txts_entreprise[i] }}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div id="experiences" class="wrapper-full c-white" style="background: url('{{ content.field_qsn_experience_bg|render|striptags|trim|raw }}') no-repeat center / cover transparent">
+        <h2 class="main-title text-center my-4">
+            <span>
+                {{ node.field_qsn_experience.fieldDefinition.label }}
+            </span>
+        </h2>
+        {{ content.field_qsn_experience }}
+    </div>
+
+    <div id="domaines-comp">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h2 class="main-title text-center my-4">
+                        <span>{{ node.field_qsn_domaines_txt.fieldDefinition.label }}</span>
+                    </h2>
+                    <div class="text-center txt-intro">
+                        {{ content.field_qsn_domaines_txt }}
+                    </div>
+                </div>
+            </div>
+            <div class="row domaine-items">
+                {% for i in 0..4 %}
+                <div class="col text-center">
+                    <div class="domaine-item">
+                        {{ content.field_qsn_domaines_svg[i] }}
+                        <span class="title">
+                            {{ node.field_qsn_domaines_svg[i].alt }}
+                        </span>
+                        <p>{{ content.field_qsn_domaines_svg_txt[i] }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

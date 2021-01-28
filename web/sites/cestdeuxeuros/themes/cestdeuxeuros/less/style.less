@@ -5,6 +5,12 @@
 @import (css) '../font/itc-avantgarde/font-itc.css';
 
 // COMMON
+html {
+  @media @phone {
+    font-size: 13px;
+  }
+}
+
 body {
   font-family: "ITC Avant Garde Pro Md", Arial, Helvetica, sans-serif;
   font-size: 16px;
@@ -12,7 +18,7 @@ body {
 
 @media (min-width: 1310px) {
   .container {
-    max-width: 1310px;
+    max-width: 915px;
   }
 }
 
@@ -27,14 +33,14 @@ img {
 
 .dialog-off-canvas-main-canvas {
   position: relative;
-  padding-top: 190px;
+  padding-top: 205px;
 
   @media @tablet {
-    padding-top: 208px;
+    padding-top: 223px;
   }
 
   @media @phone {
-    padding-top: 136px;
+    padding-top: 151px;
   }
 }
 
@@ -132,7 +138,7 @@ img {
   width: 100%;
   background: white;
   z-index: 10;
-  padding: 20px 0;
+  padding: 35px 0;
 
   .logo {
     width: 95px;
@@ -145,7 +151,7 @@ img {
 
   nav {
     display: inline-block;
-    padding-top: 25px;
+    padding-top: 20px;
 
     ul {
       display: flex;
@@ -154,10 +160,11 @@ img {
       margin: 0;
 
       li {
-        display: inline-block;
+        display: flex;
+        align-items: center;
 
         a {
-          color: rgb(99, 99, 98);
+          color: @grey;
           padding: 0 20px;
 
           &:hover,
@@ -179,7 +186,7 @@ img {
           align-items: center;
 
           &:before {
-            margin-right: 10px;
+            margin-right: 5px;
             content: "";
             display: inline-block;
             background: url("../images/store-locator/logo-header.svg") no-repeat center transparent;
@@ -335,13 +342,10 @@ img.logo {
     }
   }
 
-  .relative-hp-banner {
-    position: relative;
-
+  .slider-hp {
     img {
-      min-width: 100%;
-      max-height: 380px;
-      object-fit: contain;
+      display: block;
+      margin: 0 auto;
 
       @media @phone {
         height: 100%;
@@ -388,40 +392,6 @@ img.logo {
     }
   }
 
-  .content-1-card {
-    margin-top: 35px;
-    width: 100%;
-    height: 184px;
-    padding: 15px;
-    background-color: @veryLightGrey;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.3s ease-in-out;
-
-    &:hover {
-      background-color: @primary;
-      color: white;
-      cursor: pointer;
-    }
-
-    .offset-30 {
-      margin-top: -30px;
-      margin-bottom: 30px;
-    }
-
-    span {
-      font-weight: bold;
-      margin-top: 5px;
-    }
-
-    img {
-      height: 125px;
-      object-fit: contain;
-    }
-  }
-
   .content-2 {
     & > div {
       background: @veryLightGrey;
@@ -432,7 +402,7 @@ img.logo {
       }
     }
 
-    .content-2-left {
+    .left {
       .cta-arrivages {
         margin-top: 35px;
         margin-bottom: 16px;
@@ -455,7 +425,7 @@ img.logo {
       }
     }
 
-    .content-2-right {
+    .right {
       .reseaux-pictos {
         img {
           width: 40px;
@@ -481,6 +451,7 @@ img.logo {
         display: flex;
         align-items: center;
         flex-direction: column;
+        margin-bottom: 50px;
 
         img {
           width: 60px;
@@ -510,6 +481,53 @@ img.logo {
 
     p {
       margin-bottom: 0;
+    }
+  }
+}
+
+.cards-wrapper {
+  .intro {
+    @media @phone {
+      br {
+        display: none;
+      }
+    }
+  }
+  .card-item {
+    margin: 40px auto 0;
+    max-width: 165px;
+    height: 165px;
+    padding: 15px;
+    background-color: @veryLightGrey;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+
+    &:hover {
+      background-color: @primary;
+      color: white;
+      cursor: pointer;
+    }
+
+    .offset-30 {
+      margin-top: -30px;
+      margin-bottom: 30px;
+    }
+
+    span {
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+      bottom: 14px;
+      width: 100%;
+      text-align: center;
+    }
+
+    img {
+      object-fit: contain;
+      height: 110px;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
     }
   }
 }

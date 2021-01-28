@@ -1,0 +1,46 @@
+<div class="lp-page">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="lp-banner">
+                <img src="{{ file_url(content.field_banniere_image['#items'].0.entity.uri.value) }}" />
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="lp-title">
+                <h1>{{ content.field_titre_campagne }}</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="lp-description">
+                {{ content.field_description_campagne }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <div class="lp-visu">
+                    {% if content.field_visuel_campagne['#items'].0.entity.uri.value %}
+                        <img src="{{ file_url(content.field_visuel_campagne['#items'].0.entity.uri.value) }}" />
+                    {% elseif content.field_video_campagne %}
+                        {{ content.field_video_campagne }}
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="lp-form">
+                    <p>{{ content.field_explication_formulaire }}</p>
+                    {{ content.field_formulaire_campagne }}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            {{ content.field_lien_mentions_legales }}
+        </div>
+    </div>
+</div>

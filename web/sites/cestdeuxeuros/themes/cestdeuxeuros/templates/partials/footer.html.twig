@@ -1,0 +1,66 @@
+{# {% if page.footer %} #}
+{# {{ page.footer }} #}
+{# </div> #}
+{# {% endif %} #}
+
+{% set path = 'sites/cestdeuxeuros/themes/cestdeuxeuros/images/TEMP/footer/' %}
+
+<div class="frise"></div>
+<div class="container-fluid my-3">
+    <div class="row">
+        <div class="col-12 col-md-5 col-lg-4">
+            <div class="part1 h-100 d-flex align-items-center flex-column flex-lg-row justify-content-center justify-content-lg-start">
+                <a href="/"><img class="mr-lg-3" src="{{ path }}logo.png" alt="logo C2E"></a>
+                <span>
+                    <a href="/">Contactez-nous</a>
+                    <a href="/">Plan du site</a>
+                    <a href="/">Newsletter</a>
+                    <a href="/">Mentions légales</a>
+                </span>
+            </div>
+        </div>
+        <div class="col-12 col-md-7 col-lg-4">
+            <div class="part2 h-100 d-flex align-items-center flex-column flex-lg-row justify-content-center justify-content-lg-start mt-4 mt-lg-0">
+                <img class="mr-lg-3" src="{{ path }}univers-arrow.svg" alt="Nos univers">
+                <h4>Nos univers</h4>
+                <ul>
+                    <li><a href="/">Entretien</a></li>
+                    <li><a href="/">Bien-être</a></li>
+                    <li><a href="/">Cuisine</a></li>
+                    <li><a href="/">Table </a></li>
+                    <li><a href="/">Bricolage</a></li>
+                    <li><a href="/">Loisirs</a></li>
+                    <li><a href="/">Déco</a></li>
+                    <li><a href="/">Textile</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-12 col-lg-4">
+            <div class="part3 h-100 d-flex align-items-center flex-column flex-lg-row justify-content-center justify-content-lg-end mt-4 mt-lg-0">
+                <img src="{{ path }}rejoignez-nous.svg" alt="Rejoignez les C2Eaddict">
+                <h4>Rejoignez les<br> #cdeuxeurosaddict</h4>
+                <div class="reseaux">
+                    <div>
+                        <a href="/" target="_blank"><img src="{{ path }}facebook.svg" alt="Facebook"></a>
+                        <a class="cta text-primary bg-transparent" href="/">J'aime</a>
+                    </div>
+                    <div>
+                        <a href="/" target="_blank"><img src="{{ path }}instagram.svg" alt="Instagram"></a>
+                        <a class="cta text-pink b-pink bg-transparent" href="/">Je m'abonne</a>
+                    </div>
+                    <div>
+                        <a href="/" target="_blank"><img src="{{ path }}mail-orange.svg" alt="Mail"></a>
+                        <a class="cta text-orange b-orange bg-transparent" href="/">Je m'inscris</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="copyright">
+    {{ '© C2€ ' }}{{ "now"|date('Y') }}{{ ' - ' }}{{ 'Tous droits réservés '|trans }}
+</div>
+
+
+
+

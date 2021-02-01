@@ -1,6 +1,6 @@
 <div class="header-wrapper">
     <!-- Header -->
-    {% include directory ~ '/partials/header.html.twig' %}
+    {% include directory ~ '/templates/partials/header.html.twig' %}
 </div>
 
 <div class="main-content">
@@ -13,12 +13,11 @@
     {% if page.content %}
         {{ page.content }}
     {% endif %}
+</div>
 
-    <footer>
-        {% if page.footer %}
-            {{ page.footer }}
-        {% endif %}
-    </footer>
+<div class="footer-wrapper max-1280 mx-auto">
+    <!-- Footer -->
+    {% include directory ~ '/templates/partials/footer.html.twig' %}
 </div>
 
 {% if page.popup_newsletter %}

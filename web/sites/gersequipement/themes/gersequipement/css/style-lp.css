@@ -1,0 +1,207 @@
+#lp-page {
+  font-size: 16px;
+  color: #4A4A49;
+}
+#lp-page .banner img {
+  max-width: 100%;
+}
+#lp-page .intro {
+  max-width: 850px;
+  margin: 0 auto;
+  display: block;
+}
+#lp-page .intro h1 {
+  font-size: 1.625em;
+  color: #d40058;
+  position: relative;
+}
+#lp-page .intro h1:after {
+  content: '';
+  width: 60px;
+  height: 1px;
+  background: #d40058;
+  margin: 25px auto;
+  display: block;
+}
+#lp-page .intro p {
+  line-height: 1.6rem;
+  margin-bottom: 0;
+}
+#lp-page .bg-grey {
+  padding: 3.4em 0;
+}
+#lp-page .container.mw1470 {
+  max-width: 1470px;
+}
+#lp-page .visu img {
+  max-width: 100%;
+}
+#lp-page .form {
+  color: #232323;
+}
+#lp-page .form > p:first-child {
+  display: none;
+}
+#lp-page .form h2 {
+  font-size: 1.625em;
+  font-weight: 600;
+  margin-bottom: 0.8em;
+}
+#lp-page .form .required-wrapper {
+  position: relative;
+}
+#lp-page .form .required-wrapper:after {
+  content: '*';
+  color: #d40058;
+  position: absolute;
+  top: 31px;
+  right: 15px;
+  line-height: 0;
+}
+#lp-page .form #edit-societe-txt,
+#lp-page .form #edit-coordonnees-txt,
+#lp-page .form #edit-infos-complementaires-txt {
+  text-transform: uppercase;
+  font-size: 1.3em;
+  margin: 1.3em 0;
+  font-weight: 600;
+}
+#lp-page .form #edit-societe-txt p,
+#lp-page .form #edit-coordonnees-txt p,
+#lp-page .form #edit-infos-complementaires-txt p {
+  margin-bottom: 0;
+}
+#lp-page .form #edit-societe-txt {
+  margin-top: 2em;
+}
+#lp-page .form input[type='text'],
+#lp-page .form input[type='email'],
+#lp-page .form input[type='tel'],
+#lp-page .form .select2-selection {
+  line-height: 40px;
+  height: 40px;
+  width: 100%;
+  vertical-align: middle;
+  display: inline-block;
+  margin: 8px 0;
+  padding: 0 35px 0 15px;
+  border: 1px solid #303030;
+  border-radius: 0;
+}
+#lp-page .form #edit-departements-pdv {
+  display: none;
+}
+#lp-page .form .select2 > .selection {
+  height: 100%;
+  display: block;
+}
+#lp-page .form .select2-selection {
+  height: auto;
+  min-height: 40px;
+  line-height: 0;
+}
+#lp-page .form .select2-selection__rendered {
+  height: 100%;
+  line-height: 40px;
+}
+#lp-page .form .select2-selection__rendered li > input {
+  margin-top: 0;
+}
+#lp-page .form .select2-selection__choice {
+  margin: 4px 5px 0 0;
+  height: 30px;
+  line-height: 30px;
+}
+#lp-page .form #edit-civilite {
+  display: block;
+}
+#lp-page .form #edit-civilite thead {
+  display: none;
+}
+#lp-page .form #edit-civilite tr {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+#lp-page .form #edit-civilite tr input[type='radio'] {
+  margin-right: 10px;
+}
+#lp-page .form #edit-methode-de-reponse-souhaitee--wrapper {
+  font-weight: 600;
+  color: #4A4A49;
+}
+#lp-page .form #edit-methode-de-reponse-souhaitee--wrapper .description {
+  margin-bottom: 15px;
+}
+#lp-page .form #edit-methode-de-reponse-souhaitee--wrapper #edit-methode-de-reponse-souhaitee input[type='checkbox'] {
+  margin-right: 10px;
+}
+#lp-page .form .g-recaptcha {
+  margin-top: 1.8rem;
+}
+#lp-page .form #edit-actions-submit {
+  display: block;
+  width: 100%;
+  background: #d40058;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: none;
+  line-height: 50px;
+  margin-top: 30px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+#lp-page .form #edit-actions-submit:hover {
+  opacity: 0.8;
+}
+#lp-page .form #edit-rgpd-txt p {
+  font-size: 0.8em;
+  text-align: center;
+  color: gray;
+  margin: 1.8rem 0 0;
+}
+#lp-page .form #edit-rgpd-txt a {
+  color: #d40058;
+  text-decoration: underline;
+  transition: all 0.3s;
+}
+#lp-page .form #edit-rgpd-txt a:hover {
+  opacity: 0.8;
+}
+.message-site {
+  padding-top: 1px;
+}
+div[role="contentinfo"] {
+  text-align: center;
+  padding: 2rem 15px;
+  margin: 2rem auto;
+  border: 2px solid #d40058;
+  max-width: 850px;
+}
+div[role="contentinfo"] h2 {
+  color: #d40058;
+  margin-bottom: 20px;
+}
+@media only screen and (max-width: 991px) {
+  div[role="contentinfo"] h2 {
+    font-size: 1.625em;
+  }
+}
+div[role="contentinfo"] a {
+  color: #d40058;
+  text-decoration: underline;
+  transition: all 0.3s;
+}
+div[role="contentinfo"] a:hover {
+  opacity: 0.8;
+}
+@media only screen and (max-width: 991px) {
+  div[role="contentinfo"] {
+    margin: 2rem 15px;
+    padding: 20px;
+  }
+  div[role="contentinfo"] br {
+    display: none;
+  }
+}

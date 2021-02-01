@@ -1,46 +1,49 @@
-<div class="lp-page">
+{{ attach_library('gersequipement/style-lp') }}
+<div id="lp-page">
     <div class="container-fluid">
-        <div class="row">
-            <div class="lp-banner">
-                <img src="{{ file_url(content.field_banniere_image['#items'].0.entity.uri.value) }}" />
+        <div class="row mb-4">
+            <div class="col">
+                <div class="banner text-center">
+                    <img src="{{ file_url(content.field_banniere_image['#items'].0.entity.uri.value) }}"/>
+                </div>
             </div>
         </div>
     </div>
 
     <div class="container">
-        <div class="row">
-            <div class="lp-title">
-                <h1>{{ content.field_titre_campagne }}</h1>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="lp-description">
-                {{ content.field_description_campagne }}
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-6">
-                <div class="lp-visu">
-                    {% if content.field_visuel_campagne['#items'].0.entity.uri.value %}
-                        <img src="{{ file_url(content.field_visuel_campagne['#items'].0.entity.uri.value) }}" />
-                    {% elseif content.field_video_campagne %}
-                        {{ content.field_video_campagne }}
-                    {% endif %}
-                </div>
-            </div>
-
-            <div class="col-6">
-                <div class="lp-form">
-                    <p>{{ content.field_explication_formulaire }}</p>
-                    {{ content.field_formulaire_campagne }}
+        <!-- INTRO -->
+        <div class="row mb-4">
+            <div class="col">
+                <div class="text-center intro">
+                    <h1>{{ content.field_titre_campagne }}</h1>
+                    {{ content.field_description_campagne }}
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="row">
-            {{ content.field_lien_mentions_legales }}
+    <div class="bg-grey">
+        <div class="container mw1470">
+            <!-- CONTENT -->
+            <div class="row mb-4">
+                <div class="col-12 col-lg-6">
+                    <div class="visu text-center mb-5 mb-lg-0">
+                        {% if content.field_visuel_campagne['#items'].0.entity.uri.value %}
+                            {{ content.field_visuel_campagne }}
+                        {% endif %}
+                        {% if content.field_video_campagne['#items'].0.entity.uri.value %}
+                            <div class="embed-responsive embed-responsive-1by1">
+                                {{ content.field_video_campagne }}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="form">
+                        {{ content.field_formulaire_campagne }}
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -191,14 +191,14 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local('Libre Baskerville'), local('LibreBaskerville-Regular'), url(https://fonts.gstatic.com/s/librebaskerville/v9/kmKnZrc3Hgbbcjq75U4uslyuy4kn0qNZaxY.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/librebaskerville/v9/kmKnZrc3Hgbbcjq75U4uslyuy4kn0qNZaxY.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Libre Baskerville';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: local('Libre Baskerville Bold'), local('LibreBaskerville-Bold'), url(https://fonts.gstatic.com/s/librebaskerville/v9/kmKiZrc3Hgbbcjq75U4uslyuy4kn0qviTgY3KcU.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/librebaskerville/v9/kmKiZrc3Hgbbcjq75U4uslyuy4kn0qviTgY3KcU.ttf) format('truetype');
 }
 body {
   font: 16px "Helvetica Neue", Arial, Helvetica, sans-serif;
@@ -2383,7 +2383,6 @@ footer span.linkedin-logo {
 #offre-apply .container {
   max-width: 1042px;
 }
-/*** END General - Offre Emploi ***/
 /*** Block Top - Offre Emploi ***/
 #block-top {
   border-bottom: 1px solid #d40058;
@@ -2479,7 +2478,6 @@ footer span.linkedin-logo {
     height: auto;
   }
 }
-/*** End Block Top - Offre Emploi ***/
 /*** OFFRES D'EMPLOI - LISTE ***/
 #listing-offres {
   padding: 30px 0 0 0;
@@ -2765,7 +2763,6 @@ footer span.linkedin-logo {
 #listing-offres .select2-search {
   display: none !important;
 }
-/*** END OFFRES D'EMPLOI - LISTE ***/
 /*** OFFRE D'EMPLOI - FICHE ***/
 #offre {
   font-size: 14px;
@@ -2883,7 +2880,6 @@ footer span.linkedin-logo {
 #offre .detail-offre a.back:hover {
   opacity: 0.8;
 }
-/*** END OFFRE D'EMPLOI - FICHE ***/
 /*** OFFRE D'EMPLOI - CANDIDATURE FORM ***/
 #offre-apply {
   padding: 35px 0 50px;
@@ -3245,4 +3241,3 @@ footer span.linkedin-logo {
     display: none;
   }
 }
-/*** END OFFRE D'EMPLOI - CANDIDATURE FORM ***/

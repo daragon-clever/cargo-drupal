@@ -352,7 +352,7 @@ jQuery(document).ready(function($) {
     }
 
 
-    // PAGE CANDIDATURE SPONTANEE
+    // FORMS
     if ($('.webform-submission-form').length) {
         // Function
         var checkValue = function (e) {
@@ -373,5 +373,7 @@ jQuery(document).ready(function($) {
         formElts.blur(function () {
             checkValue($(this));
         });
+        // Required
+        $(".required").parent().addClass("required-wrapper");
     }
 });

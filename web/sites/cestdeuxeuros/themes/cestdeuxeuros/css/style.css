@@ -633,24 +633,6 @@ p {
   padding: 5px 0;
   text-align: center;
 }
-#concept h1,
-#block-basdepagecustom h1 {
-  color: white;
-  line-height: 1.3;
-}
-@media only screen and (max-width: 991px) {
-  #concept h1,
-  #block-basdepagecustom h1 {
-    font-size: 2rem;
-  }
-}
-@media only screen and (max-width: 767px) {
-  #concept h1,
-  #block-basdepagecustom h1 {
-    padding: 0 45px;
-  }
-}
-#concept h2,
 #block-basdepagecustom h2 {
   font-size: 1.5rem;
   text-align: left;
@@ -658,36 +640,63 @@ p {
   margin-bottom: 1rem;
 }
 @media only screen and (max-width: 767px) {
-  #concept h2,
   #block-basdepagecustom h2 {
     text-align: center;
   }
 }
-#concept p,
 #block-basdepagecustom p {
   margin-top: 1rem;
 }
 @media only screen and (max-width: 767px) {
-  #concept br,
   #block-basdepagecustom br {
     display: none;
   }
 }
-#concept .bas-de-page-custom,
 #block-basdepagecustom .bas-de-page-custom {
   background: #F6F6F6;
   padding-top: 80px;
   padding-bottom: 125px;
   margin-bottom: -90px;
 }
-#concept .bas-de-page-custom .cta-block,
 #block-basdepagecustom .bas-de-page-custom .cta-block {
   margin-top: 45px;
 }
 @media only screen and (max-width: 767px) {
-  #concept .bas-de-page-custom .cta-block,
   #block-basdepagecustom .bas-de-page-custom .cta-block {
     text-align: center;
+  }
+}
+#concept h1 {
+  color: white;
+  line-height: 1.3;
+}
+@media only screen and (max-width: 991px) {
+  #concept h1 {
+    font-size: 2rem;
+  }
+}
+@media only screen and (max-width: 767px) {
+  #concept h1 {
+    padding: 0 45px;
+  }
+}
+#concept h2 {
+  font-size: 1.5rem;
+  text-align: left;
+  color: #3C3C3B;
+  margin-bottom: 1rem;
+}
+@media only screen and (max-width: 767px) {
+  #concept h2 {
+    text-align: center;
+  }
+}
+#concept p {
+  margin-top: 1rem;
+}
+@media only screen and (max-width: 767px) {
+  #concept br {
+    display: none;
   }
 }
 .arrivages-S0-wrapper .title,

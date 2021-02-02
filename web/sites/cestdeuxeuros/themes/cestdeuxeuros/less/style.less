@@ -746,22 +746,8 @@ p {
   }
 }
 
-//CONCEPT
-#concept,
+//BAS-DE-PAGE CUSTOM
 #block-basdepagecustom {
-  h1 {
-    color: white;
-    line-height: 1.3;
-
-    @media @tablet {
-      font-size: 2rem;
-    }
-
-    @media @phone {
-      padding: 0 45px;
-    }
-  }
-
   h2 {
     font-size: 1.5rem;
     text-align: left;
@@ -799,6 +785,42 @@ p {
   }
 }
 
+//CONCEPT
+#concept {
+  h1 {
+    color: white;
+    line-height: 1.3;
+
+    @media @tablet {
+      font-size: 2rem;
+    }
+
+    @media @phone {
+      padding: 0 45px;
+    }
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    text-align: left;
+    color: @darkGrey;
+    margin-bottom: 1rem;
+
+    @media @phone {
+      text-align: center;
+    }
+  }
+
+  p {
+    margin-top: 1rem;
+  }
+
+  br {
+    @media @phone {
+      display: none;
+    }
+  }
+}
 
 .arrivages-S0-wrapper,
 .arrivages-S1-wrapper {

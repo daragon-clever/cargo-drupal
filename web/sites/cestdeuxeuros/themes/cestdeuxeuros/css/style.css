@@ -699,6 +699,9 @@ p {
     display: none;
   }
 }
+#produits p:last-child {
+  margin-bottom: 0;
+}
 .arrivages-S0-wrapper .title,
 .arrivages-S1-wrapper .title {
   color: white;

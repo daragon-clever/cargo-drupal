@@ -1,0 +1,36 @@
+{% set path = 'sites/cestdeuxeuros/themes/cestdeuxeuros/images/TEMP/concept/' %}
+<div id="concept">
+    <!-- BANNIÈRE -->
+    <div class="relative-slider">
+        {{ content.field_concept_ban_img }}
+        <div class="absolute-banner">
+            <div class="content-banner">
+                {{ content.field_concept_ban_txt }}
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENT 1 -->
+    <div class="container content-1 mt-5-80lg">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div class="px-md-3">
+                    {{ content.field_concept_c1_txts[0] }}
+                    {{ content.field_concept_c1_imgs[0] }}
+                    {{ content.field_concept_c1_txts[1] }}
+                    {{ content.field_concept_c1_imgs[1] }}
+                    {{ content.field_concept_c1_txts[2] }}
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="px-md-3 mt-5 mt-md-0">
+                    {{ content.field_concept_c1_txts[3] }}
+                    {{ content.field_concept_c1_imgs[2] }}
+                    {{ content.field_concept_c1_txts[4] }}
+                    {{ content.field_concept_c1_imgs[3] }}
+                    {{ content.field_concept_c1_txts[5] }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

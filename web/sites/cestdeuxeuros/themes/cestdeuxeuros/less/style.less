@@ -26,6 +26,14 @@ body {
   }
 }
 
+.mt-5-80lg {
+  margin-top: 80px;
+
+  @media @tablet {
+    margin-top: 48px;
+  }
+}
+
 a:not(.cta) {
   .dimOpacityOnHover(0.8);
 }
@@ -111,6 +119,32 @@ img {
     border-color: @primary !important;
     text-decoration: none;
     color: white;
+  }
+
+  &.bf {
+    &:before {
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      margin-top: -6px;
+      margin-right: 10px;
+    }
+  }
+
+  &.bf-map {
+    &:before {
+      background: url("../images/cta_localstore_white.svg") no-repeat center transparent;
+      height: 30px;
+      width: 30px;
+    }
+  }
+
+  &.bf-mail {
+    &:before {
+      background: url("../images/cta_mail_white.svg") no-repeat center transparent;
+      height: 25px;
+      width: 25px;
+    }
   }
 }
 
@@ -225,6 +259,72 @@ p {
   font-size: 1rem;
   color: @grey;
   line-height: 1.25;
+}
+
+.relative-slider {
+  position: relative;
+
+  img {
+    display: block;
+    margin: 0 auto;
+
+    @media @phone {
+      height: 100%;
+      object-fit: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      max-width: inherit;
+    }
+  }
+
+  @media @phone {
+    height: 240px;
+    overflow: hidden;
+  }
+
+  .absolute-banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    .content-banner {
+      font-size: 2.25rem;
+      font-weight: bold;
+      text-align: right;
+      color: white;
+      line-height: 1.2;
+      display: flex;
+      height: 100%;
+      width: 50%;
+      justify-content: center;
+      align-items: flex-end;
+      flex-direction: column;
+
+      @media @tablet {
+        width: 100%;
+        text-align: right;
+        align-items: flex-start;
+        margin-left: 50px;
+
+        h2 {
+          text-align: right;
+        }
+      }
+
+      @media @phone {
+        align-items: center;
+        margin-left: 0;
+        text-align: center;
+
+        h2 {
+          text-align: center;
+        }
+      }
+    }
+  }
 }
 
 // HEADER
@@ -382,79 +482,6 @@ p {
 
 // HOMEPAGE
 #homepage {
-  .mt-5-80lg {
-    margin-top: 80px;
-
-    @media @tablet {
-      margin-top: 48px;
-    }
-  }
-
-  .slider-hp {
-    img {
-      display: block;
-      margin: 0 auto;
-
-      @media @phone {
-        height: 100%;
-        object-fit: none;
-        position: absolute;
-        top: 0;
-        left: 0;
-        max-width: inherit;
-      }
-    }
-
-    @media @phone {
-      margin: 0 -15px;
-      height: 240px;
-      overflow: hidden;
-    }
-  }
-
-  .absolute-hp-banner {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-
-    .content-hp-banner {
-      font-size: 2.25rem;
-      font-weight: bold;
-      text-align: right;
-      color: white;
-      line-height: 1.2;
-      display: flex;
-      height: 100%;
-      width: 50%;
-      justify-content: center;
-      align-items: flex-end;
-      flex-direction: column;
-
-      @media @tablet {
-        width: 100%;
-        text-align: right;
-        align-items: flex-start;
-        margin-left: 50px;
-
-        h2 {
-          text-align: right;
-        }
-      }
-
-      @media @phone {
-        align-items: center;
-        margin-left: 0;
-        text-align: center;
-
-        h2 {
-          text-align: center;
-        }
-      }
-    }
-  }
-
   .content-2 {
     & > div {
       background: @veryLightGrey;
@@ -550,14 +577,14 @@ p {
 
 // FOOTER
 .footer-wrapper {
-
   .frise {
     height: 90px;
-    background: url('../images/TEMP/footer/frise_uncut.svg') repeat top center transparent;
-    background-size: 100%;
+    background: url('../images/footer/frise_cut.svg') repeat top center transparent;
+    background-size: 65%;
 
-    @media @phone {
+    @media @tablet {
       background-repeat: no-repeat;
+      background-size: cover;
     }
   }
 
@@ -581,8 +608,11 @@ p {
   }
 
   .part1 {
-    img {
+    .logo-part1 {
+      height: 72px;
       width: 72px;
+      background: url("../images/footer/logo.png") no-repeat center transparent;
+      background-size: contain;
     }
 
     span {
@@ -601,9 +631,10 @@ p {
   .part2 {
     line-height: 1.2;
 
-    img {
+    .logo-part2 {
       height: 70px;
       width: 160px;
+      background: url("../images/footer/univers-arrow.svg") no-repeat center transparent;
 
       @media @phone {
         display: none;
@@ -631,8 +662,10 @@ p {
   }
 
   .part3 {
-    img {
+    .logo-part3 {
+      height: 70px;
       width: 220px;
+      background: url("../images/footer/rejoignez-nous.svg") no-repeat center transparent;
 
       @media @phone {
         display: none;
@@ -653,16 +686,32 @@ p {
       & > div {
         margin-bottom: 5px;
 
-        img {
+        .social1,
+        .social2,
+        .social3 {
+          display: inline-block;
           width: 35px;
+          height: 35px;
+          background-size: contain;
 
           @media @phone {
             display: initial;
           }
         }
 
+        .social1 {
+          background: url("../images/footer/facebook.svg") no-repeat center transparent;
+        }
+
+        .social2 {
+          background: url("../images/footer/instagram.svg") no-repeat center transparent;
+        }
+
+        .social3 {
+          background: url("../images/footer/mail-orange.svg") no-repeat center transparent;
+        }
+
         a.cta {
-          margin-top: 9px;
           margin-left: 10px;
           font-size: 0.8rem;
           width: 100px;
@@ -696,6 +745,60 @@ p {
     text-align: center;
   }
 }
+
+//CONCEPT
+#concept,
+#block-basdepagecustom {
+  h1 {
+    color: white;
+    line-height: 1.3;
+
+    @media @tablet {
+      font-size: 2rem;
+    }
+
+    @media @phone {
+      padding: 0 45px;
+    }
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    text-align: left;
+    color: @darkGrey;
+    margin-bottom: 1rem;
+
+    @media @phone {
+      text-align: center;
+    }
+  }
+
+  p {
+    margin-top: 1rem;
+  }
+
+  br {
+    @media @phone {
+      display: none;
+    }
+  }
+
+  .bas-de-page-custom {
+    background: @veryLightGrey;
+    padding-top: 80px;
+    padding-bottom: 125px;
+    margin-bottom: -90px;
+
+    .cta-block {
+      margin-top: 45px;
+
+      @media @phone {
+        text-align: center;
+      }
+    }
+  }
+}
+
 
 .arrivages-S0-wrapper,
 .arrivages-S1-wrapper {

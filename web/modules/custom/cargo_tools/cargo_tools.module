@@ -1,0 +1,5 @@
+<?php
+
+function cargo_tools_preprocess_html(array &$variables){
+    $variables['#attached']['library'][] = 'cargo_tools/imgsizes';
+}

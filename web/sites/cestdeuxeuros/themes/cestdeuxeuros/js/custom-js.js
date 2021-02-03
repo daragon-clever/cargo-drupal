@@ -1,5 +1,7 @@
-//MMENU
+let isMobile = window.matchMedia("only screen and (max-width: 767px)").matches;
 let isTabletOrLess = window.matchMedia("only screen and (max-width: 991px)").matches;
+
+//MMENU
 if (isTabletOrLess) {
     document.addEventListener(
         "DOMContentLoaded", function () {
@@ -56,6 +58,33 @@ jQuery(document).ready(function ($) {
             } else {
                 $('.header-wrapper').removeClass('header-scroll')
             }
+        });
+    }
+
+    // ASTUCES
+    if ($(".astuce-block").length) {
+        const block = $(".astuce-block");
+
+        block.on("click", function (e) {
+            const dataContent = $(this).attr("data-content");
+            const currentText = $(".content-wrapper[data-content=" + dataContent + "]");
+            const textes = $(".content-wrapper");
+
+            e.preventDefault();
+            block.children("a").removeClass("current");
+            $(this).children("a").addClass("current");
+            textes.hide();
+
+            if (isTabletOrLess) {
+                currentText.addClass("col-12");
+                if ($(this).hasClass('odd')) {
+                    $(currentText).insertAfter($(this).parent());
+                } else {
+                    $(currentText).insertAfter($(this).parent().next());
+                }
+            }
+
+            currentText.show();
         });
     }
 });

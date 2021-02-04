@@ -70,6 +70,11 @@ img {
   background-color: @primary;
   transition: all 0.3s ease-in-out;
 
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+
   &.p-xs {
     padding: 12px;
   }
@@ -94,7 +99,7 @@ img {
     color: @grey
   }
 
-  &.text-primary {
+  &.text-main {
     color: @primary;
   }
 
@@ -106,18 +111,17 @@ img {
     color: @orange;
   }
 
-  &.bg-transparent {
+  &.backg-transp {
     background-color: transparent;
   }
 
-  &.bg-white {
+  &.backg-white {
     background-color: white;
   }
 
-  &:hover {
-    background-color: @primary !important;
-    border-color: @primary !important;
-    text-decoration: none;
+  &.backg-h-blue:hover {
+    background-color: @primary;
+    border-color: @primary;
     color: white;
   }
 
@@ -664,10 +668,6 @@ p {
         margin-left: 0;
       }
 
-      a {
-        vertical-align: middle;
-      }
-
       & > div {
         margin-bottom: 5px;
 
@@ -705,17 +705,17 @@ p {
           text-align: center;
 
           &:hover {
-            color: white !important;
+            color: white;
           }
 
           &.text-pink:hover {
-            background-color: @pink !important;
-            border-color: @pink !important;
+            background-color: @pink;
+            border-color: @pink;
           }
 
           &.text-orange:hover {
-            background-color: @orange !important;
-            border-color: @orange !important;
+            background-color: @orange;
+            border-color: @orange;
           }
         }
       }

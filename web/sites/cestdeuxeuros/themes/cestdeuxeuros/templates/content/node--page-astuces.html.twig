@@ -27,9 +27,9 @@
                     <div class="astuce-block {% if i is even %}even{% else %}odd{% endif %}"
                          data-content="content-{{ i }}">
                         <a href="#js-service-id-{{ i }}" class="d-block position-relative">
-                            {{ content.field_content_imgs_block[i] }}
+                            {{ content.field_astuces_content_imgs_block[i] }}
                             <div class="title">
-                                <span>{{ node.field_content_imgs_block[i].alt }}</span>
+                                <span>{{ node.field_astuces_content_imgs_block[i].alt }}</span>
                             </div>
                         </a>
                     </div>
@@ -42,13 +42,13 @@
                                     <div class="row align-items-center">
                                         <div class="col-12 col-lg-6">
                                             <div class="mb-4 mb-lg-0">
-                                                {{ content.field_content_imgs_inner[i] }}
+                                                {{ content.field_astuces_content_imgs_inner[i] }}
                                             </div>
                                         </div>
                                         <div class="col-12 col-lg-6 txt">
-                                            <h3 class="mb-4">{{ node.field_content_imgs_inner[i].alt }}</h3>
+                                            <h3 class="mb-4">{{ node.field_astuces_content_imgs_inner[i].alt }}</h3>
                                             <ul class="p-0">
-                                                {{ content.field_content_txts[i] }}
+                                                {{ content.field_astuces_content_txts[i] }}
                                             </ul>
                                         </div>
                                     </div>

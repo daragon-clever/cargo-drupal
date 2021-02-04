@@ -1,0 +1,35 @@
+<div id="astuce">
+    <!-- BANNIÈRE -->
+    <div class="relative-slider">
+        {{ content.field_astuce_ban_img }}
+        <div class="absolute-banner">
+            <div class="content-banner">
+                <h1>{{ content.field_astuce_ban_title }}</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- INTRO -->
+        <div class="row mt-5">
+            <div class="col-12 text-center">
+                <h2 class="mb-3">{{ content.field_astuce_intro_title }}</h2>
+            </div>
+            <div class="col-12 col-lg-10 offset-lg-1 text-center">
+                {{ content.field_astuce_intro_txt }}
+            </div>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="row mt-4 align-items-center">
+            <div class="col-12 col-lg-6">
+                {{ content.field_astuce_content_img }}
+            </div>
+            <div class="col-12 col-lg-6">
+                <div class="px-2 mt-5 mt-lg-0">
+                    {{ content.field_astuce_content_txt }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

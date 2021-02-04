@@ -16,6 +16,11 @@ body {
     max-width: 915px;
   }
 }
+@media only screen and (max-width: 767px) {
+  br {
+    display: none;
+  }
+}
 .mt-5-80lg {
   margin-top: 80px;
 }
@@ -137,11 +142,6 @@ img {
 }
 .cards-wrapper .cards-row {
   justify-content: center;
-}
-@media only screen and (max-width: 767px) {
-  .cards-wrapper .intro br {
-    display: none;
-  }
 }
 .cards-wrapper .card-item {
   margin: 40px auto 0;
@@ -634,11 +634,6 @@ p {
 #block-basdepagecustom p {
   margin-top: 1rem;
 }
-@media only screen and (max-width: 767px) {
-  #block-basdepagecustom br {
-    display: none;
-  }
-}
 #block-basdepagecustom .bas-de-page-custom {
   background: #F6F6F6;
   padding-top: 110px;
@@ -685,11 +680,6 @@ p {
 }
 #concept p {
   margin-top: 1rem;
-}
-@media only screen and (max-width: 767px) {
-  #concept br {
-    display: none;
-  }
 }
 #produits p:last-child {
   margin-bottom: 0;
@@ -810,7 +800,7 @@ p {
   color: white;
 }
 #astuces .astuce-block {
-  margin: 15px;
+  margin: 15px 0;
 }
 #astuces .astuce-block img {
   width: 100%;
@@ -853,6 +843,9 @@ p {
 }
 #astuces .content-wrapper .txt {
   overflow: hidden;
+}
+#astuce li {
+  color: #636462;
 }
 .arrivages-S0-wrapper .title,
 .arrivages-S1-wrapper .title {

@@ -26,6 +26,12 @@ body {
   }
 }
 
+@media @phone {
+  br {
+    display: none;
+  }
+}
+
 .mt-5-80lg {
   margin-top: 80px;
 
@@ -174,14 +180,6 @@ img {
 .cards-wrapper {
   .cards-row {
     justify-content: center;
-  }
-
-  .intro {
-    @media @phone {
-      br {
-        display: none;
-      }
-    }
   }
 
   .card-item {
@@ -748,12 +746,6 @@ p {
     margin-top: 1rem;
   }
 
-  br {
-    @media @phone {
-      display: none;
-    }
-  }
-
   .bas-de-page-custom {
     background: @veryLightGrey;
     padding-top: 110px;
@@ -802,12 +794,6 @@ p {
 
   p {
     margin-top: 1rem;
-  }
-
-  br {
-    @media @phone {
-      display: none;
-    }
   }
 }
 
@@ -924,7 +910,7 @@ p {
   }
 }
 
-//ASTUCES
+//ASTUCES + INDIVIDUELLE
 #astuces {
   .title {
     display: flex;
@@ -955,7 +941,7 @@ p {
   }
 
   .astuce-block {
-    margin: 15px;
+    margin: 15px 0;
 
     img {
       width: 100%;
@@ -1009,6 +995,11 @@ p {
   }
 }
 
+#astuce {
+  li {
+    color: @grey;
+  }
+}
 
 //ARRIVAGES
 .arrivages-S0-wrapper,

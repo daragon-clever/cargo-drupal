@@ -1,0 +1,50 @@
+{% set path = '/sites/cestdeuxeuros/themes/cestdeuxeuros/images/TEMP/produits/cuisine/' %}
+<div id="produit" class="cuisine">
+    <!-- BANNIÈRE -->
+    <div class="relative-slider">
+        <img src="{{ path }}ban.jpg" alt="">
+    </div>
+
+    <div class="container">
+        <div class="row my-5">
+            <div class="col text-center">
+                <h2>
+                    Tous les ustensiles de cuisine <br>et la vaisselle à 2 euros
+                </h2>
+            </div>
+        </div>
+
+        <div class="row my-5">
+            <div class="col">
+                <div class="collapse-boxes-wrapper">
+                    <!-- Doit etre illimité -->
+                    {% for i in 0..7 %}
+                        <div class="my-3">
+                            <a data-toggle="collapse" href="#collapse-{{ i }}" role="button" aria-expanded="false"
+                               aria-controls="collapse-{{ i }}">
+                                {% if i is even %} <!-- Juste pour simuler l'alternance -->
+                                    <img src="{{ path }}visuel01.jpg" alt="">
+                                {% else %}
+                                    <img src="{{ path }}visuel02.jpg" alt="">
+                                {% endif %}
+                                <span class="title {{ i is even ? 'even' : 'odd' }}">
+                                    <span>
+                                        Alt de l'image {{ i }}<span class="picto"></span>
+                                    </span>
+                                </span>
+                            </a>
+                            <div class="collapse" id="collapse-{{ i }}">
+                                <div>
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                    richardson ad
+                                    squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+                                    sapiente ea proident.
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

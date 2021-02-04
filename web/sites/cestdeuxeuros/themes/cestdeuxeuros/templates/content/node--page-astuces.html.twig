@@ -1,41 +1,35 @@
-{% set path = 'sites/cestdeuxeuros/themes/cestdeuxeuros/images/TEMP/astuces/' %}
 <div id="astuces">
     <!-- BANNIÈRE -->
     <div class="relative-slider">
-        <img src="{{ path }}ban.jpg" alt="">
+        {{ content.field_astuces_ban_img }}
         <div class="absolute-banner">
             <div class="content-banner">
-                <h1>Tous nos conseils malins<br>au quotidien</h1>
+                {{ content.field_astuces_ban_title }}
             </div>
         </div>
     </div>
 
     <div class="container">
+        <!-- INTRO -->
         <div class="row my-5">
             <div class="col-12 text-center">
-                <h2 class="mb-3">
-                    Vous allez adorer nos astuces <br>
-                    pour un quotidien plus pratique et plus malin !
-                </h2>
+                {{ content.field_astuces_intro[0] }}
             </div>
             <div class="col-12 col-lg-10 offset-lg-1 text-center">
-                <p>
-                    Découvrez vite tous nos conseils pour l’entretien de la maison, les petits bricolages, la table et
-                    la cuisine, mais aussi pour votre déco et votre bien-être. Une vraie mine d’informations très utiles
-                    pour vous faciliter la vie de tous les jours !
-                </p>
+                {{ content.field_astuces_intro[1] }}
             </div>
         </div>
 
+        <!-- CONTENT -->
         <div class="row my-5">
             {% for i in 0..7 %}
                 <div class="astuces-block col-6 col-lg-3">
                     <div class="astuce-block {% if i is even %}even{% else %}odd{% endif %}"
                          data-content="content-{{ i }}">
                         <a href="#js-service-id-{{ i }}" class="d-block position-relative">
-                            <img class="thumb" src="{{ path }}block.jpg" alt="">
+                            {{ content.field_content_imgs_block[i] }}
                             <div class="title">
-                                <span>Alt de l'image {{ i }}</span>
+                                <span>{{ node.field_content_imgs_block[i].alt }}</span>
                             </div>
                         </a>
                     </div>
@@ -48,27 +42,13 @@
                                     <div class="row align-items-center">
                                         <div class="col-12 col-lg-6">
                                             <div class="mb-4 mb-lg-0">
-                                                <img src="{{ path }}inner.jpg" alt="">
+                                                {{ content.field_content_imgs_inner[i] }}
                                             </div>
                                         </div>
                                         <div class="col-12 col-lg-6 txt">
-                                            <h3 class="mb-4">{{ i }} - Alt de l'image de gauche :</h3>
+                                            <h3 class="mb-4">{{ node.field_content_imgs_inner[i].alt }}</h3>
                                             <ul class="p-0">
-                                                <li>
-                                                    <a href="/">
-                                                        Comment entretenir sa maison au quotidien ?
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="/">
-                                                        Comment organiser le rangement de sa maison ?
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="/">
-                                                        Astuce pour nettoyer son lave vaisselle et son lave linge.
-                                                    </a>
-                                                </li>
+                                                {{ content.field_content_txts[i] }}
                                             </ul>
                                         </div>
                                     </div>
@@ -80,13 +60,10 @@
             {% endfor %}
         </div>
 
+        <!-- OUTRO -->
         <div class="row my-5">
             <div class="col-12 col-lg-10 offset-lg-1 text-center">
-                <p>
-                    Découvrez vite tous nos conseils pour l’entretien de la maison, les petits bricolages,
-                    la table et la cuisine, mais aussi pour votre déco et votre bien-être.
-                    Une vraie mine d’informations très utiles pour vous faciliter la vie de tous les jours !
-                </p>
+                {{ content.field_astuces_outro }}
             </div>
         </div>
     </div>

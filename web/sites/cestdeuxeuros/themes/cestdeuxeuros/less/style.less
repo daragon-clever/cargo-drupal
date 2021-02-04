@@ -756,9 +756,13 @@ p {
 
   .bas-de-page-custom {
     background: @veryLightGrey;
-    padding-top: 80px;
+    padding-top: 110px;
     padding-bottom: 125px;
     margin-bottom: -90px;
+
+    @media @phone {
+      padding-bottom: 60px;
+    }
 
     .cta-block {
       margin-top: 45px;
@@ -845,7 +849,7 @@ p {
   }
 
   .astuce-block {
-    margin-bottom: 15px;
+    margin: 15px;
 
     img {
       width: 100%;
@@ -2269,7 +2273,7 @@ ul.plandusite {
         margin: 25px 0 0 0;
       }
     }
-    
+
     img {
       margin-left: 50px;
       max-width: 100%;

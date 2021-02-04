@@ -641,9 +641,14 @@ p {
 }
 #block-basdepagecustom .bas-de-page-custom {
   background: #F6F6F6;
-  padding-top: 80px;
+  padding-top: 110px;
   padding-bottom: 125px;
   margin-bottom: -90px;
+}
+@media only screen and (max-width: 767px) {
+  #block-basdepagecustom .bas-de-page-custom {
+    padding-bottom: 60px;
+  }
 }
 #block-basdepagecustom .bas-de-page-custom .cta-block {
   margin-top: 45px;
@@ -715,7 +720,7 @@ p {
   color: white;
 }
 #astuces .astuce-block {
-  margin-bottom: 15px;
+  margin: 15px;
 }
 #astuces .astuce-block img {
   width: 100%;

@@ -48,11 +48,11 @@ img {
   padding-top: 205px;
 
   @media @tablet {
-    padding-top: 223px;
+    padding-top: 90px;
   }
 
   @media @phone {
-    padding-top: 111px;
+    padding-top: 70px;
   }
 }
 
@@ -327,23 +327,30 @@ p {
   z-index: 10;
   padding: 35px 0;
 
-  @media @phone {
-    padding-top: 35px;
-    padding-bottom: 10px;
+  @media @tablet {
+    padding: 15px 0;
   }
 
   .header-content {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 
     @media @tablet {
-      text-align: initial;
-      padding-left: 20px;
+      flex-direction: row;
       position: relative;
     }
 
     .logo {
       width: 95px;
       height: auto;
+      margin-bottom: 20px;
+
+      @media @tablet {
+        width: 60px;
+        margin-bottom: 0;
+      }
 
       @media @phone {
         width: 40px;
@@ -385,7 +392,12 @@ p {
       font-size: 1.8rem;
       right: 50px;
       position: absolute;
-      top: 0;
+      top: 10px;
+
+      @media @phone {
+        top: 0;
+        right: 30px;
+      }
 
       i {
         cursor: pointer;
@@ -395,10 +407,6 @@ p {
           color: @grey
         }
       }
-
-      @media @tablet {
-        display: initial !important;
-      }
     }
 
     #block-reseauxsociaux {
@@ -406,9 +414,6 @@ p {
     }
 
     nav {
-      display: inline-block;
-      padding-top: 20px;
-
       ul {
         display: flex;
         align-items: center;
@@ -458,13 +463,15 @@ p {
 
 .header-scroll {
   padding: 15px 0;
-  transition: all 0.6s ease-in-out;
+  transition: padding 0.2s ease-in-out;
 
-  header > div {
-    display: inline-block;
+  .header-content {
+    flex-direction: row;
 
     img.logo {
-      width: 40px !important;
+      margin-right: 30px;
+      margin-bottom: 0;
+      width: 50px;
     }
   }
 }

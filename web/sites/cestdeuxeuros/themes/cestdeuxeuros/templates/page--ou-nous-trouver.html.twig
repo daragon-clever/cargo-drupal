@@ -22,12 +22,9 @@
     {% endif %}
 </div>
 
-<div class="container">
-    <footer>
-        {% if page.footer %}
-            {{ page.footer }}
-        {% endif %}
-    </footer>
+<div class="footer-wrapper">
+    <!-- Footer -->
+    {% include directory ~ '/partials/footer.html.twig' %}
 </div>
 
 {% if page.popup_newsletter %}

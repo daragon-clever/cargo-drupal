@@ -161,10 +161,12 @@ img {
   margin-top: -25px;
   margin-bottom: 25px;
 }
-.cards-wrapper .card-item span {
+.cards-wrapper .card-item a {
   font-weight: bold;
   width: 100%;
   text-align: center;
+  text-decoration: none;
+  color: #3C3C3B;
 }
 .cards-wrapper .card-item img {
   object-fit: contain;

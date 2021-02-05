@@ -475,7 +475,7 @@ p {
 }
 .footer-wrapper .frise {
   height: 90px;
-  background: url('../images/footer/frise_cut.svg') repeat top center transparent;
+  background: url('../images/footer/frise_cut.svg') repeat-x bottom center transparent;
   background-size: 65%;
 }
 @media only screen and (max-width: 991px) {
@@ -620,37 +620,66 @@ p {
   padding: 5px 0;
   text-align: center;
 }
-#block-basdepagecustom h2 {
+#block-basdepagecustom h2,
+#block-basdepagecustomcuisine h2 {
   font-size: 1.5rem;
   text-align: left;
   color: #3C3C3B;
   margin-bottom: 1rem;
 }
 @media only screen and (max-width: 767px) {
-  #block-basdepagecustom h2 {
+  #block-basdepagecustom h2,
+  #block-basdepagecustomcuisine h2 {
     text-align: center;
   }
 }
-#block-basdepagecustom p {
+#block-basdepagecustom p,
+#block-basdepagecustomcuisine p {
   margin-top: 1rem;
 }
-#block-basdepagecustom .bas-de-page-custom {
+#block-basdepagecustom .bas-de-page-custom,
+#block-basdepagecustomcuisine .bas-de-page-custom {
   background: #F6F6F6;
-  padding-top: 110px;
-  padding-bottom: 125px;
+  padding-top: 90px;
+  padding-bottom: 90px;
   margin-bottom: -90px;
 }
 @media only screen and (max-width: 767px) {
-  #block-basdepagecustom .bas-de-page-custom {
+  #block-basdepagecustom .bas-de-page-custom,
+  #block-basdepagecustomcuisine .bas-de-page-custom {
+    padding-top: 70px;
     padding-bottom: 60px;
   }
 }
-#block-basdepagecustom .bas-de-page-custom .cta-block {
+#block-basdepagecustom .bas-de-page-custom .cta-block,
+#block-basdepagecustomcuisine .bas-de-page-custom .cta-block {
   margin-top: 45px;
 }
 @media only screen and (max-width: 767px) {
-  #block-basdepagecustom .bas-de-page-custom .cta-block {
+  #block-basdepagecustom .bas-de-page-custom .cta-block,
+  #block-basdepagecustomcuisine .bas-de-page-custom .cta-block {
     text-align: center;
+  }
+}
+#block-basdepagecustomcuisine ul {
+  padding-left: 15px;
+}
+#block-basdepagecustomcuisine ul li,
+#block-basdepagecustomcuisine ul a {
+  color: #636462;
+}
+#block-basdepagecustomcuisine .basdepage-image {
+  height: 125px;
+  width: 200px;
+  background: url("../images/basdepage/basdepage-cuisine.png") no-repeat center transparent;
+  background-size: contain;
+  margin: 0;
+}
+@media only screen and (max-width: 767px) {
+  #block-basdepagecustomcuisine .basdepage-image {
+    height: 170px;
+    width: 280px;
+    margin: 0 auto;
   }
 }
 #concept h1 {
@@ -683,6 +712,12 @@ p {
 }
 #produits p:last-child {
   margin-bottom: 0;
+}
+@media only screen and (max-width: 767px) {
+  #produit.cuisine .relative-slider img {
+    object-fit: cover;
+    max-width: 100%;
+  }
 }
 #produit .collapse-boxes-wrapper a {
   position: relative;

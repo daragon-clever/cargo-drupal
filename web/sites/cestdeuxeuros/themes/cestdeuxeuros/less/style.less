@@ -566,7 +566,7 @@ p {
 .footer-wrapper {
   .frise {
     height: 90px;
-    background: url('../images/footer/frise_cut.svg') repeat top center transparent;
+    background: url('../images/footer/frise_cut.svg') repeat-x bottom center transparent;
     background-size: 65%;
 
     @media @tablet {
@@ -730,7 +730,8 @@ p {
 }
 
 //BAS-DE-PAGE CUSTOM
-#block-basdepagecustom {
+#block-basdepagecustom,
+#block-basdepagecustomcuisine {
   h2 {
     font-size: 1.5rem;
     text-align: left;
@@ -748,11 +749,12 @@ p {
 
   .bas-de-page-custom {
     background: @veryLightGrey;
-    padding-top: 110px;
-    padding-bottom: 125px;
+    padding-top: 90px;
+    padding-bottom: 90px;
     margin-bottom: -90px;
 
     @media @phone {
+      padding-top: 70px;
       padding-bottom: 60px;
     }
 
@@ -762,6 +764,31 @@ p {
       @media @phone {
         text-align: center;
       }
+    }
+  }
+}
+
+#block-basdepagecustomcuisine {
+  ul {
+    padding-left: 15px;
+
+    li,
+    a {
+      color: @grey;
+    }
+  }
+
+  .basdepage-image {
+    height: 125px;
+    width: 200px;
+    background: url("../images/basdepage/basdepage-cuisine.png") no-repeat center transparent;
+    background-size: contain;
+    margin: 0;
+
+    @media @phone {
+      height: 170px;
+      width: 280px;
+      margin: 0 auto;
     }
   }
 }
@@ -806,6 +833,17 @@ p {
 
 //PRODUITS N2
 #produit {
+  &.cuisine {
+    .relative-slider {
+      img {
+        @media @phone {
+          object-fit: cover;
+          max-width: 100%;
+        }
+      }
+    }
+  }
+
   .collapse-boxes-wrapper {
     a {
       position: relative;

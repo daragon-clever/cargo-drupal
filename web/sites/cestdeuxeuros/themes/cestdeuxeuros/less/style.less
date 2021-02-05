@@ -1437,14 +1437,6 @@ div[role=alert] {
   }
 }
 
-.cms-page {
-  h1, h2, h3 {
-    color: @primary;
-    padding: 0;
-    margin: 15px 0;
-  }
-}
-
 ul.plandusite {
   a {
     color: @primary;
@@ -2426,5 +2418,31 @@ ul.plandusite {
       font-weight: bold;
       margin-bottom: 35px;
     }
+  }
+}
+
+//CMS (MENTIONS LEGALES - PLAN DU SITE)
+#cms {
+  .relative-slider {
+    img {
+      @media @phone {
+        object-fit: cover;
+        max-width: 100%;
+      }
+    }
+  }
+
+  h1 {
+    text-align: center;
+    margin: 30px 0;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  ul,
+  a {
+    color: @grey
   }
 }

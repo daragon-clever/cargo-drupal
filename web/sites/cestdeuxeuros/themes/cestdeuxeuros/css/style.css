@@ -11,7 +11,7 @@ body {
 .max-1280 {
   max-width: 1280px;
 }
-@media (min-width: 1310px) {
+@media (min-width: 916px) {
   .container {
     max-width: 915px;
   }
@@ -30,6 +30,7 @@ body {
   }
 }
 a:not(.cta) {
+  cursor: pointer;
   transition: all 0.3s;
 }
 a:not(.cta):hover {
@@ -1242,103 +1243,116 @@ ul.plandusite a {
 }
 .storelocator-search {
   text-align: center;
-  padding: 20px 15px;
-  background: #ee7d0c;
-  color: white;
-}
-.storelocator-search .picto-map {
-  background: url("../images/store-locator/picto_map.png") no-repeat center transparent;
-  height: 102px;
-  width: 100px;
-  margin-right: 40px;
-  margin-top: -30px;
-}
-@media only screen and (max-width: 991px) {
-  .storelocator-search .picto-map {
-    display: none !important;
-  }
+  position: relative;
 }
 .storelocator-search h1 {
-  font-size: 21px;
-  text-transform: uppercase;
-  font-weight: 600;
+  color: white;
+  margin-bottom: 20px;
+}
+.storelocator-search .wrapper {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  text-align: right;
 }
 @media only screen and (max-width: 991px) {
-  .storelocator-search h1 {
-    margin-bottom: 20px;
+  .storelocator-search .wrapper {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
 }
 @media only screen and (max-width: 767px) {
-  .storelocator-search h1 {
-    font-size: 17px;
-  }
-}
-.storelocator-search .inputs-wrapper * {
-  display: inline-block;
-  vertical-align: middle;
-}
-.storelocator-search .inputs-wrapper > div {
-  margin: 0 15px;
-}
-@media only screen and (max-width: 767px) {
-  .storelocator-search .inputs-wrapper > div {
-    margin: 7px 0;
+  .storelocator-search .wrapper {
     width: 100%;
   }
 }
-.storelocator-search .inputs-wrapper input,
-.storelocator-search .inputs-wrapper button {
-  height: 40px;
-  line-height: 40px;
-  padding: 5px 15px;
-  border: none;
-}
-.storelocator-search .inputs-wrapper input[name="search-string"] {
-  width: 435px;
-  font-size: 14px;
-  font-weight: 600;
+.storelocator-search .wrapper .inputs-wrapper > div {
+  margin: 0 15px;
 }
 @media only screen and (max-width: 991px) {
-  .storelocator-search .inputs-wrapper input[name="search-string"] {
-    width: 350px;
+  .storelocator-search .wrapper .inputs-wrapper {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+  }
+  .storelocator-search .wrapper .inputs-wrapper > div {
+    margin: 7px 0;
   }
 }
-@media only screen and (max-width: 767px) {
-  .storelocator-search .inputs-wrapper input[name="search-string"] {
-    width: calc(100% - 40px);
-  }
+.storelocator-search .wrapper .search,
+.storelocator-search .wrapper .locate-me button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #159ed4;
+  color: white;
+  border-radius: 50px;
+  height: 50px;
+  padding: 0 25px;
+  border: none;
 }
-.storelocator-search .inputs-wrapper button {
-  width: 40px;
+.storelocator-search .wrapper .search input {
+  background: transparent;
+  border: none;
+  color: white;
+  padding: 0;
+  width: 140px;
 }
-.storelocator-search .inputs-wrapper .search button {
-  background: url("../images/store-locator/picto_loupe.png") no-repeat center #636362;
-  cursor: pointer;
-  transition: all 0.3s;
+.storelocator-search .wrapper .search input::placeholder {
+  opacity: 1;
 }
-.storelocator-search .inputs-wrapper .search button:hover {
-  opacity: 0.8;
+.storelocator-search .wrapper .search button:after {
+  content: "";
+  background: url("../images/store-locator/magnifying-glass.svg") no-repeat center / 100% transparent;
+  height: 20px;
+  width: 20px;
 }
-.storelocator-search .inputs-wrapper .locate-me {
-  font-size: 14px;
-  cursor: pointer;
-  font-weight: 600;
+.storelocator-search .wrapper .locate-me button:before {
+  content: "";
+  background: url("../images/store-locator/focus.svg") no-repeat center / 100% transparent;
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  right: 17px;
 }
-.storelocator-search .inputs-wrapper .locate-me div {
-  color: #7d7d7d;
+.storelocator-search .wrapper .search button,
+.storelocator-search .wrapper .locate-me button:after {
+  content: "";
+  height: 35px;
+  width: 35px;
   background: white;
-  text-align: center;
-  line-height: 40px;
-  padding: 0 15px;
-  text-transform: uppercase;
+  border: none;
+  border-radius: 100%;
+  margin-right: -13px;
+  margin-left: 25px;
 }
-.storelocator-search .inputs-wrapper .locate-me button {
-  background: url("../images/store-locator/picto_gps.png") no-repeat center #9c4e00;
+.storelocator-search .wrapper .search button,
+.storelocator-search .wrapper .locate-me button {
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
   cursor: pointer;
-  transition: all 0.3s;
 }
-.storelocator-search .inputs-wrapper .locate-me button:hover {
-  opacity: 0.8;
+.storelocator-search .wrapper .search button:hover,
+.storelocator-search .wrapper .locate-me button:hover {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+@media only screen and (max-width: 991px) {
+  .storelocator-search img {
+    height: 270px;
+    object-fit: cover;
+    object-position: left;
+  }
 }
 .store-item {
   line-height: 1.6;
@@ -1383,37 +1397,30 @@ ul.plandusite a {
   }
 }
 .ul-cta {
-  margin: auto;
-  padding-left: 0;
-  text-align: right;
-  align-self: center;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 .ul-cta li {
-  display: inline-block;
-  height: 160px;
-  width: 160px;
-  margin: 0 15px;
+  height: 155px;
+  width: 155px;
   text-align: center;
   text-transform: uppercase;
-  vertical-align: top;
+  list-style: none;
 }
 @media only screen and (max-width: 991px) {
   .ul-cta li {
     width: 100px;
     height: 115px;
-    margin: 0 4px;
   }
 }
 @media (max-width: 320px) {
   .ul-cta li {
     width: 85px;
   }
-}
-.ul-cta li:first-child {
-  margin-left: 0;
-}
-.ul-cta li:last-child {
-  margin-right: 0;
 }
 .ul-cta li a {
   position: relative;
@@ -1599,15 +1606,26 @@ ul.plandusite a {
   display: none;
 }
 .store-locator-notice {
-  font-size: 18px;
-  font-weight: 600;
-  color: #ee7d0c;
-  margin: 50px 0;
-  padding-bottom: 40px;
-  min-height: 500px;
+  margin-top: 80px;
 }
-.store-locator-notice svg {
-  margin-bottom: 30px;
+@media only screen and (max-width: 991px) {
+  .store-locator-notice {
+    margin-top: 30px;
+  }
+}
+.store-locator-notice > .container {
+  max-width: 960px;
+}
+.store-locator-notice h2 {
+  font-size: 1.5rem;
+  text-align: left;
+  color: #3C3C3B;
+  margin-bottom: 1rem;
+}
+@media only screen and (max-width: 767px) {
+  .store-locator-notice h2 {
+    text-align: center;
+  }
 }
 .full-store-list {
   margin-top: 30px;
@@ -1692,7 +1710,6 @@ ul.plandusite a {
 }
 .store-info {
   font-weight: 600;
-  margin: 30px 0;
   line-height: 1.6;
 }
 .store-info .name {
@@ -1735,6 +1752,12 @@ ul.plandusite a {
   .store-info .opening-hours {
     margin: 30px 0 0;
   }
+}
+.store-info .ul-cta {
+  justify-content: flex-end;
+}
+.store-info .ul-cta li {
+  margin: 0 7px;
 }
 .store-detail-gallery {
   padding: 0 30px;

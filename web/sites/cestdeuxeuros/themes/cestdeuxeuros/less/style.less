@@ -20,7 +20,7 @@ body {
   max-width: 1280px;
 }
 
-@media (min-width: 1310px) {
+@media (min-width: 916px) {
   .container {
     max-width: 915px;
   }
@@ -1453,104 +1453,127 @@ ul.plandusite {
 
 .storelocator-search {
   text-align: center;
-  padding: 20px 15px;
-  background: #ee7d0c;
-  color: white;
-
-  .picto-map {
-    background: url("../images/store-locator/picto_map.png") no-repeat center transparent;
-    height: 102px;
-    width: 100px;
-    margin-right: 40px;
-    margin-top: -30px;
-
-    @media @tablet {
-      display: none !important;
-    }
-  }
+  position: relative;
 
   h1 {
-    font-size: 21px;
-    text-transform: uppercase;
-    font-weight: 600;
+    color: white;
+    margin-bottom: 20px;
+  }
+
+  .wrapper {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    text-align: right;
 
     @media @tablet {
-      margin-bottom: 20px;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
     }
 
     @media @phone {
-      font-size: 17px;
-    }
-  }
-
-  .inputs-wrapper {
-    * {
-      display: inline-block;
-      vertical-align: middle;
+      width: 100%;
     }
 
-    & > div {
-      margin: 0 15px;
+    .inputs-wrapper {
+      & > div {
+        margin: 0 15px;
+      }
 
-      @media @phone {
-        margin: 7px 0;
+      @media @tablet {
+        flex-direction: column;
+        align-items: center;
         width: 100%;
+        justify-content: center;
+
+        & > div {
+          margin: 7px 0;
+        }
       }
     }
 
-    input,
-    button {
-      height: 40px;
-      line-height: 40px;
-      padding: 5px 15px;
+    .search,
+    .locate-me button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: @primary;
+      color: white;
+      border-radius: 50px;
+      height: 50px;
+      padding: 0 25px;
       border: none;
     }
 
-    input[name="search-string"] {
-      width: 435px;
-      font-size: 14px;
-      font-weight: 600;
-
-      @media @tablet {
-        width: 350px;
-      }
-
-      @media @phone {
-        width: ~"calc(100% - 40px)";
-      }
-    }
-
-    button {
-      width: 40px;
-    }
-
     .search {
-      button {
-        background: url("../images/store-locator/picto_loupe.png") no-repeat center #636362;
-        cursor: pointer;
-        .dimOpacityOnHover(0.8);
+      input {
+        background: transparent;
+        border: none;
+        color: white;
+        padding: 0;
+        width: 140px;
+
+        &::placeholder {
+          opacity: 1;
+        }
+      }
+
+      button:after {
+        content: "";
+        background: url("../images/store-locator/magnifying-glass.svg") no-repeat center / 100% transparent;
+        height: 20px;
+        width: 20px;
       }
     }
 
-    .locate-me {
-      font-size: 14px;
+    .locate-me button:before {
+      content: "";
+      background: url("../images/store-locator/focus.svg") no-repeat center / 100% transparent;
+      height: 25px;
+      width: 25px;
+      position: absolute;
+      right: 17px;
+    }
+
+    .search button,
+    .locate-me button:after {
+      content: "";
+      height: 35px;
+      width: 35px;
+      background: white;
+      border: none;
+      border-radius: 100%;
+      margin-right: -13px;
+      margin-left: 25px;
+    }
+
+    .search button,
+    .locate-me button {
+      transition: 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
       cursor: pointer;
-      font-weight: 600;
 
-      div {
-        color: #7d7d7d;
-        background: white;
-        text-align: center;
-        line-height: 40px;
-        padding: 0 15px;
-        text-transform: uppercase;
+      &:hover {
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
       }
+    }
+  }
 
-      button {
-        background: url("../images/store-locator/picto_gps.png") no-repeat center #9c4e00;
-        cursor: pointer;
-        .dimOpacityOnHover(0.8);
-      }
+  @media @tablet {
+    img {
+      height: 270px;
+      object-fit: cover;
+      object-position: left;
     }
   }
 }
@@ -1604,36 +1627,27 @@ ul.plandusite {
 }
 
 .ul-cta {
-  margin: auto;
-  padding-left: 0;
-  text-align: right;
-  align-self: center;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 
   li {
-    display: inline-block;
-    height: 160px;
-    width: 160px;
-    margin: 0 15px;
+    height: 155px;
+    width: 155px;
     text-align: center;
     text-transform: uppercase;
-    vertical-align: top;
+    list-style: none;
 
     @media @tablet {
       width: 100px;
       height: 115px;
-      margin: 0 4px;
     }
 
     @media (max-width: 320px) {
       width: 85px;
-    }
-
-    &:first-child {
-      margin-left: 0;
-    }
-
-    &:last-child {
-      margin-right: 0;
     }
 
     a {
@@ -1858,15 +1872,25 @@ ul.plandusite {
 }
 
 .store-locator-notice {
-  font-size: 18px;
-  font-weight: 600;
-  color: #ee7d0c;
-  margin: 50px 0;
-  padding-bottom: 40px;
-  min-height: 500px;
+  margin-top: 80px;
 
-  svg {
-    margin-bottom: 30px;
+  @media @tablet {
+    margin-top: 30px;
+  }
+
+  & > .container {
+    max-width: 960px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    text-align: left;
+    color: @darkGrey;
+    margin-bottom: 1rem;
+
+    @media @phone {
+      text-align: center;
+    }
   }
 }
 
@@ -1962,7 +1986,6 @@ ul.plandusite {
 
 .store-info {
   font-weight: 600;
-  margin: 30px 0;
   line-height: 1.6;
 
   .name {
@@ -2018,6 +2041,14 @@ ul.plandusite {
 
     @media @phone {
       margin: 30px 0 0;
+    }
+  }
+
+  .ul-cta {
+    justify-content: flex-end;
+
+    li {
+      margin: 0 7px;
     }
   }
 }

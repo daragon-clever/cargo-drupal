@@ -510,7 +510,7 @@ p {
   background: url("../images/footer/logo.png") no-repeat center transparent;
   background-size: contain;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
   .footer-wrapper .part1 span {
     margin-top: 10px;
     text-align: center;
@@ -528,7 +528,7 @@ p {
   width: 160px;
   background: url("../images/footer/univers-arrow.svg") no-repeat center transparent;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
   .footer-wrapper .part2 .logo-part2 {
     display: none;
   }
@@ -536,7 +536,7 @@ p {
 .footer-wrapper .part2 h4 {
   display: none;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
   .footer-wrapper .part2 h4 {
     display: initial;
     font-size: 1.25rem;
@@ -547,7 +547,7 @@ p {
   column-count: 2;
   margin-bottom: 0;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
   .footer-wrapper .part2 ul {
     margin-right: 0;
   }
@@ -557,7 +557,7 @@ p {
   width: 220px;
   background: url("../images/footer/rejoignez-nous.svg") no-repeat center transparent;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
   .footer-wrapper .part3 .logo-part3 {
     display: none;
   }
@@ -580,13 +580,6 @@ p {
   width: 35px;
   height: 35px;
   background-size: contain;
-}
-@media only screen and (max-width: 767px) {
-  .footer-wrapper .part3 .reseaux > div .social1,
-  .footer-wrapper .part3 .reseaux > div .social2,
-  .footer-wrapper .part3 .reseaux > div .social3 {
-    display: initial;
-  }
 }
 .footer-wrapper .part3 .reseaux > div .social1 {
   background: url("../images/footer/facebook.svg") no-repeat center transparent;

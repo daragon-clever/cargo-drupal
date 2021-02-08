@@ -1,13 +1,13 @@
 <div id="produit" class="cuisine">
     <!-- BANNIÈRE -->
     <div class="relative-slider">
-        {{ content.field_prod_cuisine_ban }}
+        {{ content.field_prod_ban }}
     </div>
 
     <div class="container">
         <div class="row my-5">
-            <div class="col text-center">
-                <h2>{{ content.field_prod_cuisine_title }}</h2>
+            <div class="col-12 col-lg-8 offset-lg-2 text-center text-center">
+                <h2>{{ content.field_prod_title }}</h2>
             </div>
         </div>
 
@@ -15,25 +15,25 @@
         <div class="row my-5">
             <div class="col">
                 <div class="collapse-boxes-wrapper">
-                    {% set imgCount = node.field_prod_cuisine_collapse_imgs |length - 1 %}
+                    {% set imgCount = node.field_prod_collapse_imgs |length - 1 %}
                     {% for i in 0..imgCount %}
                         <div class="my-3">
                             <a data-toggle="collapse" href="#collapse-{{ i }}" role="button" aria-expanded="false"
                                aria-controls="collapse-{{ i }}">
                                 {% if i is even %}
-                                    {{ content.field_prod_cuisine_collapse_imgs[i] }}
+                                    {{ content.field_prod_collapse_imgs[i] }}
                                 {% else %}
-                                    {{ content.field_prod_cuisine_collapse_imgs[i] }}
+                                    {{ content.field_prod_collapse_imgs[i] }}
                                 {% endif %}
                                 <span class="title {{ i is even ? 'even' : 'odd' }}">
                                     <span>
-                                        {{ node.field_prod_cuisine_collapse_imgs[i].alt }}<span class="picto"></span>
+                                        {{ node.field_prod_collapse_imgs[i].alt }}<span class="picto"></span>
                                     </span>
                                 </span>
                             </a>
                             <div class="collapse" id="collapse-{{ i }}">
                                 <div>
-                                    {{ content.field_prod_cuisine_collapse_txts[i] }}
+                                    {{ content.field_prod_collapse_txts[i] }}
                                 </div>
                             </div>
                         </div>
@@ -45,7 +45,7 @@
         <!-- OUTRO -->
         <div class="row my-5">
             <div class="col-12 col-lg-8 offset-lg-2 text-center">
-                {{ content.field_prod_cuisine_outro }}
+                {{ content.field_prod_outro }}
             </div>
         </div>
     </div>

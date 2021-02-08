@@ -893,11 +893,8 @@ p {
           display: flex;
           justify-content: center;
           align-items: center;
-
-          @media @phone {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 0 10px;
-          }
+          background: rgba(255, 255, 255, 0.9);
+          padding: 0 10px;
 
           .picto {
             display: inline-block;
@@ -907,6 +904,7 @@ p {
             background: @darkGrey;
             border-radius: 100%;
             margin-left: 15px;
+            flex-shrink: 0;
 
             &:before,
             &:after {
@@ -945,6 +943,11 @@ p {
 
       @media @tablet {
         padding: 20px;
+      }
+
+      p {
+        color: white;
+        margin-bottom: 0;
       }
     }
   }

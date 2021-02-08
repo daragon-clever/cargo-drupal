@@ -766,12 +766,8 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-@media only screen and (max-width: 767px) {
-  #produit .collapse-boxes-wrapper a .title > span {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 0 10px;
-  }
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0 10px;
 }
 #produit .collapse-boxes-wrapper a .title > span .picto {
   display: inline-block;
@@ -781,6 +777,7 @@ p {
   background: #3C3C3B;
   border-radius: 100%;
   margin-left: 15px;
+  flex-shrink: 0;
 }
 #produit .collapse-boxes-wrapper a .title > span .picto:before,
 #produit .collapse-boxes-wrapper a .title > span .picto:after {
@@ -811,6 +808,10 @@ p {
   #produit .collapse-boxes-wrapper a + div > div {
     padding: 20px;
   }
+}
+#produit .collapse-boxes-wrapper a + div > div p {
+  color: white;
+  margin-bottom: 0;
 }
 #astuces .title {
   display: flex;

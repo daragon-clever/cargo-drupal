@@ -15,16 +15,12 @@
         <div class="row my-5">
             <div class="col">
                 <div class="collapse-boxes-wrapper">
-                    {% set imgCount = node.field_prod_collapse_imgs |length - 1 %}
+                    {% set imgCount = node.field_prod_collapse_imgs | length - 1 %}
                     {% for i in 0..imgCount %}
                         <div class="my-3">
                             <a data-toggle="collapse" href="#collapse-{{ i }}" role="button" aria-expanded="false"
                                aria-controls="collapse-{{ i }}">
-                                {% if i is even %}
-                                    {{ content.field_prod_collapse_imgs[i] }}
-                                {% else %}
-                                    {{ content.field_prod_collapse_imgs[i] }}
-                                {% endif %}
+                                {{ content.field_prod_collapse_imgs[i] }}
                                 <span class="title {{ i is even ? 'even' : 'odd' }}">
                                     <span>
                                         {{ node.field_prod_collapse_imgs[i].alt }}<span class="picto"></span>
@@ -46,6 +42,34 @@
         <div class="row my-5">
             <div class="col-12 col-lg-8 offset-lg-2 text-center">
                 {{ content.field_prod_outro }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page-produit-footer">
+    <div class="container-fluid bas-de-page-custom mt-5-80lg">
+        <div class="row">
+            <div class="col">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            {{ drupal_entity('block_content', '11') }}
+                        </div>
+                        <div class="col-12 col-md-6 mt-5 mt-md-0 ">
+                            <div class="px-3 mb-5 mb-md-0">
+                                <h2>{{ content.field_prod_footer_title }}</h2>
+                                <ul>
+                                    {% set links = content.field_prod_footer_links['#items'] | length - 1 %}
+                                    {% for i in 0..links %}
+                                        <li>{{ content.field_prod_footer_links[i] }}</li>
+                                    {% endfor %}
+                                </ul>
+                                {{ content.field_prod_footer_img }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

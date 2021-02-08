@@ -623,66 +623,50 @@ p {
   padding: 5px 0;
   text-align: center;
 }
-#block-basdepagecustom h2,
-#block-basdepagecustomcuisine h2 {
+@media (min-width: 951px) {
+  .page-produit-footer .container {
+    max-width: 950px;
+  }
+}
+.page-produit-footer h2 {
   font-size: 1.5rem;
   text-align: left;
   color: #3C3C3B;
   margin-bottom: 1rem;
 }
 @media only screen and (max-width: 767px) {
-  #block-basdepagecustom h2,
-  #block-basdepagecustomcuisine h2 {
+  .page-produit-footer h2 {
     text-align: center;
   }
 }
-#block-basdepagecustom p,
-#block-basdepagecustomcuisine p {
+.page-produit-footer p {
   margin-top: 1rem;
 }
-#block-basdepagecustom .bas-de-page-custom,
-#block-basdepagecustomcuisine .bas-de-page-custom {
+.page-produit-footer ul {
+  padding-left: 15px;
+}
+.page-produit-footer ul li,
+.page-produit-footer ul a {
+  color: #636462;
+}
+.page-produit-footer .bas-de-page-custom {
   background: #F6F6F6;
   padding-top: 90px;
   padding-bottom: 90px;
   margin-bottom: -90px;
 }
 @media only screen and (max-width: 767px) {
-  #block-basdepagecustom .bas-de-page-custom,
-  #block-basdepagecustomcuisine .bas-de-page-custom {
+  .page-produit-footer .bas-de-page-custom {
     padding-top: 70px;
     padding-bottom: 60px;
   }
 }
-#block-basdepagecustom .bas-de-page-custom .cta-block,
-#block-basdepagecustomcuisine .bas-de-page-custom .cta-block {
+.page-produit-footer .bas-de-page-custom .cta-block {
   margin-top: 45px;
 }
 @media only screen and (max-width: 767px) {
-  #block-basdepagecustom .bas-de-page-custom .cta-block,
-  #block-basdepagecustomcuisine .bas-de-page-custom .cta-block {
+  .page-produit-footer .bas-de-page-custom .cta-block {
     text-align: center;
-  }
-}
-#block-basdepagecustomcuisine ul {
-  padding-left: 15px;
-}
-#block-basdepagecustomcuisine ul li,
-#block-basdepagecustomcuisine ul a {
-  color: #636462;
-}
-#block-basdepagecustomcuisine .basdepage-image {
-  height: 125px;
-  width: 200px;
-  background: url("../images/basdepage/basdepage-cuisine.png") no-repeat center transparent;
-  background-size: contain;
-  margin: 0;
-}
-@media only screen and (max-width: 767px) {
-  #block-basdepagecustomcuisine .basdepage-image {
-    height: 170px;
-    width: 280px;
-    margin: 0 auto;
   }
 }
 #concept h1 {

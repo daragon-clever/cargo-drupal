@@ -731,9 +731,14 @@ p {
   }
 }
 
-//BAS-DE-PAGE CUSTOM
-#block-basdepagecustom,
-#block-basdepagecustomcuisine {
+// BAS-DE-PAGE
+.page-produit-footer {
+  @media (min-width: 951px) {
+    .container {
+      max-width: 950px;
+    }
+  }
+
   h2 {
     font-size: 1.5rem;
     text-align: left;
@@ -747,6 +752,15 @@ p {
 
   p {
     margin-top: 1rem;
+  }
+
+  ul {
+    padding-left: 15px;
+
+    li,
+    a {
+      color: @grey;
+    }
   }
 
   .bas-de-page-custom {
@@ -769,32 +783,6 @@ p {
     }
   }
 }
-
-#block-basdepagecustomcuisine {
-  ul {
-    padding-left: 15px;
-
-    li,
-    a {
-      color: @grey;
-    }
-  }
-
-  .basdepage-image {
-    height: 125px;
-    width: 200px;
-    background: url("../images/basdepage/basdepage-cuisine.png") no-repeat center transparent;
-    background-size: contain;
-    margin: 0;
-
-    @media @phone {
-      height: 170px;
-      width: 280px;
-      margin: 0 auto;
-    }
-  }
-}
-
 //CONCEPT
 #concept {
   h1 {

@@ -40,5 +40,12 @@
                 </div>
             {% endfor %}
         {% endif %}
+        {% if week is defined and week == "S0" %}
+            <div class="{{ classSet }}">
+                <div class="inner">
+                    MON BLOC TEXTE
+                </div>
+            </div>
+        {% endif %}
     </div>
 </div>

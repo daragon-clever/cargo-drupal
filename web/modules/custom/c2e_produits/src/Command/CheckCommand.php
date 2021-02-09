@@ -20,6 +20,9 @@ class CheckCommand extends Command
 {
     const COMMAND_NAME = 'c2e_produits:check';
 
+    private const NB_REQUIRED_PRODUCTS_S0 = 11;
+    private const NB_REQUIRED_PRODUCTS_S1 = 8;
+
     protected function configure()
     {
         $this->setName(self::COMMAND_NAME)
@@ -30,8 +33,8 @@ class CheckCommand extends Command
     {
         $controllerProduct = new ProductController();
 
-        $controllerProduct->check("S0");
-        $controllerProduct->check("S1");
+        $controllerProduct->check("S0", self::NB_REQUIRED_PRODUCTS_S0);
+        $controllerProduct->check("S1", self::NB_REQUIRED_PRODUCTS_S1);
 
         $controllerProduct->alertTeam();
     }

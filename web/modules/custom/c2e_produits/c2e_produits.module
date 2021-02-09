@@ -6,7 +6,8 @@ function c2e_produits_theme($existing, $type, $theme, $path) {
             'template' => 'c2e-produits--list',
             'variables' => [
                 'products' => NULL,
-                'nbItem' => NULL
+                'nbItem' => NULL,
+                'week' => NULL
             ]
         ]
     ];

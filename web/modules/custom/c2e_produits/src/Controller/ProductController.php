@@ -11,7 +11,6 @@ class ProductController extends ControllerBase
     private const KEY_ALERT_OBJ = "obj";
     private const KEY_ALERT_TXT = "txt";
 
-    private const NB_REQUIRED_PRODUCTS = 8;
     private const EMAIL_TEAM = "poleweb@cargo-services.fr";
     private const EMAIL_ALERT = "gel@cedif.fr,sgu@cedif.fr,a.champion@cargo-services.fr";
 
@@ -36,13 +35,13 @@ class ProductController extends ControllerBase
         return $lastUpdatedFile;
     }
 
-    public function check(string $week): bool
+    public function check(string $week, int $nbReqProducts): bool
     {
         $week = strtoupper($week);
 
-        $checkNbProducts = $this->checkNbProduct($week);
+        $checkNbProducts = $this->checkNbProduct($week, $nbReqProducts);
         if ($checkNbProducts === TRUE) { //check nb product
-            $checkPicturesOfProducts = $this->checkPictures($week);
+            $checkPicturesOfProducts = $this->checkPictures($week, $nbReqProducts);
             if ($checkPicturesOfProducts === TRUE) { //check picture file exist
                 return TRUE;
             } else {
@@ -55,18 +54,18 @@ class ProductController extends ControllerBase
         return FALSE;
     }
 
-    private function checkNbProduct($week)
+    private function checkNbProduct($week, $nbReqProducts)
     {
         $countNbProductInCsvContent = count($this->csvContent[$week]);
-        if ($countNbProductInCsvContent < self::NB_REQUIRED_PRODUCTS) { //Missing selected products on Navision
-            $nbMissingProduct = self::NB_REQUIRED_PRODUCTS - (int)$countNbProductInCsvContent;
+        if ($countNbProductInCsvContent < $nbReqProducts) { //Missing selected products on Navision
+            $nbMissingProduct = $nbReqProducts - (int)$countNbProductInCsvContent;
 
             $strTxt = "Il manque %d produit(s) pour la semaine %s.\n "
                 ."Il faut sélectionner au moins %d produits par semaine sur Navision.\n "
                 ."Seulement %d produits ont été sélectionnés pour la semaine.\n";
 
             $obj = "Manque produit(s)";
-            $txt = sprintf($strTxt, $nbMissingProduct, $week, self::NB_REQUIRED_PRODUCTS, $countNbProductInCsvContent);
+            $txt = sprintf($strTxt, $nbMissingProduct, $week, $nbReqProducts, $countNbProductInCsvContent);
 
             return $this->returnAlertParam($obj, $txt);
         }
@@ -74,9 +73,9 @@ class ProductController extends ControllerBase
         return TRUE;
     }
 
-    private function checkPictures($week)
+    private function checkPictures($week, $nbReqProducts)
     {
-        $productsOfTheWeek = $this->getProductsToDisplay($week, self::NB_REQUIRED_PRODUCTS);
+        $productsOfTheWeek = $this->getProductsToDisplay($week, $nbReqProducts);
         $missing = null;
 
         foreach ($productsOfTheWeek as $product) {

@@ -67,11 +67,13 @@ img {
 }
 
 .cta {
+  display: inline-block;
   text-decoration: none;
   border: 2px solid @primary;
   color: white;
   font-size: 1rem;
-  line-height: 1;
+  line-height: 3rem;
+  padding: 0 35px;
   border-radius: 30px;
   background-color: @primary;
   transition: all 0.3s ease-in-out;
@@ -82,11 +84,12 @@ img {
   }
 
   &.p-xs {
-    padding: 12px;
+    line-height: 2.5rem;
+    padding: 0 15px;
   }
 
   &.p-xl {
-    padding: 12px 35px;
+    line-height: 3rem;
   }
 
   &.b-pink {
@@ -697,6 +700,7 @@ p {
           font-size: 0.8rem;
           width: 100px;
           display: inline-block;
+          line-height: 1rem;
           padding: 8px 0;
           text-align: center;
 
@@ -779,6 +783,7 @@ p {
     }
   }
 }
+
 //CONCEPT
 #concept {
   h1 {
@@ -1029,83 +1034,83 @@ p {
 }
 
 //ARRIVAGES
-.arrivages-S0-wrapper,
-.arrivages-S1-wrapper {
-
+#arrivages {
   .title {
-    color: white;
-    font-size: 50px;
-    line-height: 1;
-    padding: 40px 0;
-    margin-bottom: 30px;
-
-    small {
-      font-size: 80%;
-    }
+    color: @darkGrey;
+    text-align: center;
+    font-size: 1.6rem;
 
     .big {
-      font-size: 170%;
-    }
+      font-size: 1.8rem;
+      display: block;
 
-    span {
-      display: inline-block;
-      text-align: left;
-
-      b {
-        font-size: 120%;
+      @media @phone {
+        font-size: 1.5rem;
       }
     }
 
-    @media (max-width: 1199px) {
-      font-size: 30px;
+    .cta {
+      margin-top: 30px;
     }
 
     @media @phone {
-      font-size: 24px;
+      font-size: 1.2rem;
     }
   }
 
-  .img-wrapper .inner {
-    min-height: 268px;
+  hr {
+    border-top: 7px solid #f6f6f6;
+    margin: 0;
+  }
 
-    @media @tablet {
-      min-height: 150px;
+  .products {
+    .img-wrapper .inner {
+      border: 1px solid #ddd;
+      margin-bottom: 30px;
+      position: relative;
+      overflow: hidden;
+      height: 190px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @media @phone {
+        height: 142px;
+      }
+
+      &.txt-block {
+        background-color: @primary;
+        border-color: @primary;
+        text-align: center;
+        color: white;
+        padding: 15px;
+        font-weight: 500;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      span {
+        position: absolute;
+        bottom: 12px;
+        right: -12px;
+        background: @grey;
+        color: white;
+        font-size: 30px;
+        font-weight: 700;
+        padding: 3px 15px;
+        border-radius: 5px;
+        transform: rotate(-10deg);
+
+        small {
+          vertical-align: super;
+          font-size: 60%;
+        }
+      }
     }
-  }
-}
-
-.arrivages-S0-wrapper {
-  #arrivages_S0 {
-    border-bottom: 10px solid @pink;
-    margin-bottom: 30px;
-  }
-
-  .title {
-    background: @pink;
-  }
-}
-
-.arrivages-S1-wrapper {
-  #arrivages_S1 {
-    border-bottom: 10px solid @green;
-    margin-bottom: 30px;
-  }
-
-  .title {
-    background: @green;
-  }
-
-  p {
-    color: @grey;
-  }
-}
-
-#arrivages .txt {
-  color: @grey;
-  margin-bottom: 30px;
-
-  ul {
-    text-align: left;
   }
 }
 

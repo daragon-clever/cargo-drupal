@@ -3,7 +3,7 @@
     {% if nbItem == 6 %}
         {% set classSet = "col-6 col-md-4 img-wrapper" %}
     {% else %}
-        {% set classSet = "col-6 col-md-3 img-wrapper" %}
+        {% set classSet = "col-6 col-md-4 col-lg-3 img-wrapper" %}
     {% endif %}
     <div class="row products">
         {% set count = 0 %}
@@ -42,8 +42,8 @@
         {% endif %}
         {% if week is defined and week == "S0" %}
             <div class="{{ classSet }}">
-                <div class="inner">
-                    MON BLOC TEXTE
+                <div class="inner txt-block">
+                    {{ 'Retrouvez tous nos produits à 2 euros dans votre magasin'|trans }}
                 </div>
             </div>
         {% endif %}

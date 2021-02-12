@@ -1,7 +1,11 @@
-@import 'variables';
+// VARS
+@xs: 767px;
+@sm: 991px;
+@phone: ~"only screen and (max-width: @{xs})";
+@tablet: ~"only screen and (max-width: @{sm})";
+@mainColor : #E30613;
 
-@mainColor : @pink;
-
+// STYLE
 #lp-page {
   font-size: 16px;
   color: #4A4A49;
@@ -55,8 +59,10 @@
     }
   }
 
-  .form {
+  .c-form {
     color: #232323;
+    padding: 0;
+    margin: 0;
 
     & > p:first-child {
       display: none;
@@ -81,21 +87,26 @@
       }
     }
 
-    #edit-societe-txt,
-    #edit-coordonnees-txt,
-    #edit-infos-complementaires-txt {
+    #edit-container-societe p + p,
+    #edit-container-coordonnees > p,
+    #edit-container-infos-complementaires > p {
       text-transform: uppercase;
       font-size: 1.3em;
       margin: 1.3em 0;
       font-weight: 600;
-
-      p {
-        margin-bottom: 0;
-      }
     }
 
     #edit-societe-txt {
       margin-top: 2em
+    }
+
+    input[type="radio"],
+    .form-checkbox + label {
+      display: inline-block;
+    }
+
+    .form-item-civilite {
+      margin-top: 0;
     }
 
     input[type='text'],
@@ -122,6 +133,10 @@
     .select2 > .selection {
       height: 100%;
       display: block;
+    }
+
+    .select2-search {
+      margin-bottom: 0;
     }
 
     .select2-selection {
@@ -193,7 +208,6 @@
       line-height: 50px;
       margin-top: 30px;
       cursor: pointer;
-      .dimOpacityOnHover(0.8);
     }
 
     #edit-rgpd-txt {
@@ -207,8 +221,14 @@
       a {
         color: @mainColor;
         text-decoration: underline;
-        .dimOpacityOnHover(0.8);
       }
+    }
+
+    .rgpd-txt {
+      font-size: 0.7em;
+      text-align: center;
+      color: gray;
+      margin: 1.8rem 0 0;
     }
   }
 }
@@ -227,16 +247,30 @@ div[role="contentinfo"] {
   h2 {
     color: @mainColor;
     margin-bottom: 20px;
+    margin-top: 0;
 
     @media @tablet {
       font-size: 1.625em;
+    }
+
+    &.visually-hidden {
+      display: none;
     }
   }
 
   a {
     color: @mainColor;
     text-decoration: underline;
-    .dimOpacityOnHover(0.8);
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    list-style: none;
+    margin: 0;
   }
 
   @media @tablet {

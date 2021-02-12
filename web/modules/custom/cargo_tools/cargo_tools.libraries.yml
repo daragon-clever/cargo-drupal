@@ -1,0 +1,13 @@
+# Imageloaded
+imageloaded:
+  js:
+    https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js: { type: external}
+  dependencies:
+    - core/jquery
+
+imgsizes:
+  js:
+    js/imgsizes.js: {}
+  dependencies:
+    - core/jquery
+    - cargo_tools/imageloaded

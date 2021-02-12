@@ -34,6 +34,12 @@ jQuery(document).ready(function($) {
         })
     }
 
+    // FORMS
+    if ($('.webform-submission-form').length) {
+        // Required
+        $(".required").parent().addClass("required-wrapper");
+    }
+
     // SCROLL FOOTER LOGO
     function scrollMove( ele ,frame ,step ) {
         var step = step || 1;

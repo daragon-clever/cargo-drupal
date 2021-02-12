@@ -69,3 +69,10 @@ datatables:
 cookiesJS:
   js:
     https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js: { type: external }
+
+# Style landing page
+style-lp:
+  header: true
+  css:
+    theme:
+      css/style-lp.css: {}

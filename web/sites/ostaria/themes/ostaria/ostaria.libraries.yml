@@ -46,3 +46,10 @@ global-styling:
     js/custom-js.js: {}
   dependencies:
     - core/jquery
+
+# Style landing page
+style-lp:
+  header: true
+  css:
+    theme:
+      css/style-lp.css: {}

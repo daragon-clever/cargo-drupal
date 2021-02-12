@@ -1,0 +1,5 @@
+name: Outils divers Cargo
+description: Plusieurs outils utiles à Drupal
+core: 8.x
+package: Custom
+type: module

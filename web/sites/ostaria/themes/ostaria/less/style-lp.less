@@ -1,0 +1,268 @@
+@import 'variables';
+
+@mainColor : @mint;
+
+#lp-page {
+  font-size: 16px;
+  color: #4A4A49;
+
+  .banner {
+    img {
+      max-width: 100%;
+      margin: 0 auto;
+      display: block;
+    }
+  }
+
+  .intro {
+    max-width: 850px;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+
+    h1 {
+      font-size: 1.625em;
+      color: @mainColor;
+      position: relative;
+
+      &:after {
+        content: '';
+        width: 60px;
+        height: 1px;
+        background: @mainColor;
+        margin: 25px auto;
+        display: block;
+      }
+    }
+
+    p {
+      line-height: 1.6rem;
+      margin-bottom: 0;
+    }
+  }
+
+  .bg-grey {
+    padding: 3.4em 0;
+  }
+
+  .container.mw1470 {
+    max-width: 1470px;
+  }
+
+  .visu {
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .form {
+    color: #232323;
+
+    & > p:first-child {
+      display: none;
+    }
+
+    h2 {
+      font-size: 1.625em;
+      font-weight: 600;
+      margin-bottom: 0.8em;
+    }
+
+    .required-wrapper {
+      position: relative;
+
+      &:after {
+        content: '*';
+        color: @mainColor;
+        position: absolute;
+        top: 31px;
+        right: 15px;
+        line-height: 0;
+      }
+    }
+
+    #edit-societe-txt,
+    #edit-coordonnees-txt,
+    #edit-infos-complementaires-txt {
+      text-transform: uppercase;
+      font-size: 1.3em;
+      margin: 1.3em 0;
+      font-weight: 600;
+
+      p {
+        margin-bottom: 0;
+      }
+    }
+
+    #edit-societe-txt {
+      margin-top: 2em
+    }
+
+    input[type='text'],
+    input[type='email'],
+    input[type='tel'],
+    .select2-selection {
+      line-height: 40px;
+      height: 40px;
+      width: 100%;
+      vertical-align: middle;
+      display: inline-block;
+      margin: 8px 0;
+      padding: 0 35px 0 15px;
+      border: 1px solid #303030;
+      border-radius: 0;
+    }
+
+    #edit-departements-pdv {
+      // Hide non-select2 options
+      // Avoid initial display issue
+      display: none;
+    }
+
+    .select2 > .selection {
+      height: 100%;
+      display: block;
+    }
+
+    .select2-selection {
+      height: auto;
+      min-height: 40px;
+      line-height: 0;
+
+      &__rendered {
+        height: 100%;
+        line-height: 40px;
+
+        li > input {
+          margin-top: 0;
+        }
+      }
+
+      &__choice {
+        margin: 4px 5px 0 0;
+        height: 30px;
+        line-height: 30px;
+      }
+    }
+
+    #edit-civilite {
+      display: block;
+
+      thead {
+        display: none;
+      }
+
+      tr {
+        display: inline-block;
+        margin-right: 10px;
+        margin-bottom: 10px;
+
+        input[type='radio'] {
+          margin-right: 10px;
+        }
+      }
+    }
+
+    #edit-methode-de-reponse-souhaitee--wrapper {
+      font-weight: 600;
+      color: #4A4A49;
+
+      .description {
+        margin-bottom: 15px;
+      }
+
+      #edit-methode-de-reponse-souhaitee {
+        input[type='checkbox'] {
+          margin-right: 10px;
+        }
+      }
+    }
+
+    .g-recaptcha {
+      margin-top: 1.8rem;
+    }
+
+    #edit-actions-submit {
+      display: block;
+      width: 100%;
+      background: @mainColor;
+      color: white;
+      font-weight: 600;
+      text-transform: uppercase;
+      border: none;
+      line-height: 50px;
+      margin-top: 30px;
+      cursor: pointer;
+      .dimOpacityOnHover(0.8);
+    }
+
+    #edit-rgpd-txt {
+      p {
+        font-size: 0.8em;
+        text-align: center;
+        color: gray;
+        margin: 1.8rem 0 0;
+      }
+
+      a {
+        color: @mainColor;
+        text-decoration: underline;
+        .dimOpacityOnHover(0.8);
+      }
+    }
+  }
+}
+
+.message-site {
+  padding-top: 1px;
+}
+
+div[role="contentinfo"] {
+  text-align: center;
+  padding: 2rem 15px;
+  margin: 2rem auto;
+  border: 2px solid @mainColor;
+  max-width: 850px;
+
+  h2 {
+    color: @mainColor;
+    margin-bottom: 20px;
+    margin-top: 0;
+
+    &:before {
+      display: none;
+    }
+
+    @media @tablet {
+      font-size: 1.625em;
+    }
+
+    &.visually-hidden {
+      display: none;
+    }
+  }
+
+  a {
+    color: @mainColor;
+    text-decoration: underline;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    list-style: none;
+    margin: 0;
+  }
+
+  @media @tablet {
+    margin: 2rem 15px;
+    padding: 20px;
+
+    br {
+      display: none;
+    }
+  }
+}

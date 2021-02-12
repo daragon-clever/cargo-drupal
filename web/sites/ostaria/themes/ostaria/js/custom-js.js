@@ -213,6 +213,12 @@ jQuery(document).ready(function($) {
         });
     }
 
+    // FORMS LP MKT
+    if ($('.webform-submission-form').length) {
+        // Required
+        $(".required").parent().addClass("required-wrapper");
+    }
+
     /// Page QSN
     if ($('.qsn').length) {
         $('.js-date').on('click', function () {

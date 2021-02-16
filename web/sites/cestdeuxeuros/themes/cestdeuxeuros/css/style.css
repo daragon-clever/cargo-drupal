@@ -1081,8 +1081,16 @@ p {
   font-size: 30px;
   z-index: 100;
 }
+#newsletterform-wrapper form {
+  max-width: 610px;
+  margin: 0 auto;
+}
+#newsletterform-wrapper form .main-content {
+  max-width: 550px;
+  margin: 0 auto;
+}
 #newsletterform-wrapper form input {
-  max-width: 100%;
+  width: 100%;
   margin: 10px 0;
   padding: 5px 15px;
   display: block;
@@ -1094,19 +1102,17 @@ p {
   margin: 5px 5px 0 0;
   vertical-align: top;
 }
-#newsletterform-wrapper .intro {
-  color: #159ed4;
-  text-align: center;
-  font-size: 30px;
-  line-height: 1.2;
-  display: block;
-  margin: 20px 0;
+#newsletterform-wrapper p.conditions {
+  font-size: 0.8rem;
+  color: #818181;
+  text-align: left;
 }
-#newsletterform-wrapper p,
-#newsletterform-wrapper label {
-  color: black;
-  font-weight: 600;
-  font-size: 14px;
+#newsletterform-wrapper small {
+  display: block;
+  font-size: 0.7rem;
+  text-align: left;
+  margin-left: 5px;
+  line-height: 1.3;
 }
 #newsletterform-wrapper label {
   display: inline-block;
@@ -1123,9 +1129,6 @@ p {
   line-height: 35px;
   cursor: pointer;
 }
-#newsletterform-wrapper .bottom {
-  color: #636462;
-}
 div[role=contentinfo],
 div[role=alert] {
   border: 1px solid;
@@ -1141,11 +1144,6 @@ div[role=alert] ul {
 div[role=alert] {
   border-color: #b30000;
   color: #b30000;
-}
-#newsletter-page form {
-  max-width: 500px;
-  margin: 0 auto 30px;
-  text-align: left;
 }
 #page-magasins {
   margin-bottom: 30px;

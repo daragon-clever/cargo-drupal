@@ -1,52 +1,43 @@
 <div id="newsletterform-wrapper" class="row justify-content-center">
     <div class="col">
         {% if form %}
-            <form {{form.attributes }} method="{{ form['#method'] }}">
+            <form {{ form.attributes }} method="{{ form['#method'] }}">
                 {{ form.form_build_id }}
                 {{ form.form_token }}
                 {{ form.form_id }}
-
                 <div class="row">
                     <div class="col-12 intro">
-                        Abonnement à la newsletter de <b>C'est deux euros</b>
+                        <h1 class="mt-4 mb-3">{{ "Je m'abonne à la Newsletter<br />C'est deux euros !"|trans }}</h1>
+                        <p class="mb-4">
+                            {{ "Pour ne plus manquer <b>les bonnes affaires</b> en cours ou à venir, soyez futé,
+                            <b>inscrivez-vous à la newsletter</b>. C’est deux euros pour être <b>informé en
+                            avant-première</b> des prochains arrivages !"|trans }}
+                        </p>
                     </div>
-
+                </div>
+                <div class="row main-content">
                     <div class="col-12">
                         {{ form.nom }}
                         {{ form.prenom }}
                         {{ form.cp }}
+                        <small>pour vous envoyer des offres spéciales réservées aux abonnés, au maximum 1 fois par mois</small>
                         {{ form.mail }}
+                        <small class="text-left">*information obligatoire - le défaut de renseignement de ces informations ne vous permettra pas de finaliser la souscription à notre newsletter.</small>
                     </div>
-
-                    <div class="col-12 txt">
-                        <small>
-                            *information obligatoire - le défaut de renseignement de ces informations ne vous permettra
-                            pas de finaliser la souscription à notre newsletter.
-                        </small>
-
-                        <hr />
-
-                        <p>
-                            En remplissant ce formulaire, vous acceptez de recevoir
-                            <small>(merci de cocher les cases appropriées)</small>
-                        </p>
-                    </div>
-
                     <div class="col-12">
                         {{ form.newsletter }}
                         {{ form.offres }}
+
+                        <p class="conditions">
+                            {{ "En remplissant ce formulaire, vous acceptez que CEDIF collecte et utilise les données
+                            personnelles que vous venez de renseigner dans ce formulaire dans le but de vous envoyer des
+                            offres marketing personnalisées que vous avez accepté de recevoir, en accord avec notre
+                            <a href='/mentions-legales'>politique de protection des données</a>. Vous pourrez vous désinscrire
+                            à tout moment."|trans }}
+                        </p>
+
                         {{ form.captcha }}
                         {{ form.actions }}
-                    </div>
-
-                    <div class="col-12 bottom">
-                        <small>
-                            Vous acceptez que CEDIF collecte et utilise les données personnelles que vous venez de
-                            renseigner dans ce formulaire dans le but de vous envoyer des offres marketing personnalisées
-                            que vous avez accepté de recevoir, en accord avec notre
-                            <a href="/mentions-legales" title="Mentions Légales">politique de protection des données.</a>
-                            Vous pourrez vous désinscrire à tout moment.
-                        </small>
                     </div>
                 </div>
             </form>

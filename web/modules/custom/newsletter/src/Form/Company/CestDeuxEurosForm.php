@@ -33,9 +33,9 @@ class CestDeuxEurosForm extends FormBase
                 '#placeholder' => 'Prénom *',
                 '#required' => TRUE
             ],
-            'cp' => [
+            'mobile' => [
                 '#type' => 'textfield',
-                '#placeholder' => 'Code postal *',
+                '#placeholder' => 'N° de mobile *',
                 '#required' => TRUE
             ],
             'mail' => [
@@ -43,13 +43,9 @@ class CestDeuxEurosForm extends FormBase
                 '#placeholder' => 'Email *',
                 '#required' => TRUE
             ],
-            'newsletter' => [
+            'rgpd_allow' => [
                 '#type' => 'checkbox',
-                '#title' => 'La newsletter des magasins C’est deux euros'
-            ],
-            'offres' => [
-                '#type' => 'checkbox',
-                '#title' => 'Les offres promotionnelles de nos partenaires susceptibles de vous intéresser'
+                '#title' => ''
             ],
             'captcha' => [
                 '#type' => 'captcha',
@@ -72,7 +68,6 @@ class CestDeuxEurosForm extends FormBase
      */
     public function validateForm(array &$form, FormStateInterface $form_state)
     {
-        /*voir si mail et prenom et non et cp vide ça marche*/
         $mail = $form_state->getValue('mail');
         if (is_null($mail) || empty($mail)) {
             $form_state->setError($form['mail'], "Votre email est requis");
@@ -90,17 +85,16 @@ class CestDeuxEurosForm extends FormBase
             $form_state->setError($form['prenom'], "Votre prénom est requis");
         }
 
-        $zipCode = $form_state->getValue('cp');
-        if(is_null($zipCode) || empty($zipCode)) {
-            $form_state->setError($form['cp'], "Votre code postal est requis");
-        } elseif(is_null($this->testZipCode($zipCode))) {
-            $form_state->setError($form['cp'], "Votre code postal ne semble pas valide");
+        $mobilePhone = $form_state->getValue('mobile');
+        if(is_null($mobilePhone) || empty($mobilePhone)) {
+            $form_state->setError($form['mobile'], "Votre n° de mobile est requis");
+        } elseif(!$this->isMobilePhone($mobilePhone)) {
+            $form_state->setError($form['mobile'], "Votre n° de mobile ne semble pas valide");
         }
 
-        $newsletterShop = $form_state->getValue('newsletter');
-        $offers = $form_state->getValue('offres');
-        if(!($newsletterShop === 1 || $offers === 1)) {
-            $form_state->setError($form['newsletter'], 'Cochez au moins une des deux cases');
+        $rgpdAllow = $form_state->getValue('rgpd_allow');
+        if($rgpdAllow !== 1) {
+            $form_state->setError($form['rgpd_allow'], 'Veuillez cochez la case');
         }
     }
 
@@ -109,18 +103,18 @@ class CestDeuxEurosForm extends FormBase
      */
     public function submitForm(array &$form, FormStateInterface $form_state)
     {
+        $rgpdAllow = $form_state->getValue('rgpd_allow');
         $lastName = $form_state->getValue('nom');
         $firstName = $form_state->getValue('prenom');
-        $postCode = $form_state->getValue('cp');
+        $mobile = $form_state->getValue('mobile');
         $email = $form_state->getValue('mail');
-        $newsletterShop = $form_state->getValue('newsletter');
-        $offers = $form_state->getValue('offres');
+        $newsletterShop = $offers = ($rgpdAllow === 1) ? 1 : 0;
 
         //data for database and actito
         $data = [
             'nom' => $lastName,
             'prenom' => $firstName,
-            'cp' => $postCode,
+            'mobile' => $mobile,
             'email' => $email,
             'newsletter' => $newsletterShop,
             'offres' => $offers,
@@ -134,23 +128,20 @@ class CestDeuxEurosForm extends FormBase
     }
 
 
-    private function testZipCode($zipCode)
+    private function isMobilePhone($mobilePhone)
     {
-        $cleanZipCode = str_replace(' ', '', trim($zipCode));
-        $firstCharacter = substr($cleanZipCode, 0, 1);
+        $cleanMobilePhone = str_replace(' ', '', trim($mobilePhone));
+        $mobilePhoneLength = strlen((string)$mobilePhone);
+        $firstCharacters = substr($cleanMobilePhone, 0, 2);
+        $firstCharacters2 = substr($cleanMobilePhone, 0, 4);
+        $firstCharacters3 = substr($cleanMobilePhone, 0, 5);
 
-        $zipCode = (int)$cleanZipCode;
-        $numLength = strlen((string)$zipCode);
-        if ($numLength === 4 && $firstCharacter == "0") {
-            $returnZipCode = "0".$zipCode;
-        } elseif ($numLength === 5) {
-            $returnZipCode = $zipCode;
-        } elseif ($numLength === 2) {
-            $returnZipCode = $zipCode."000";
-        } else {
-            $returnZipCode = null;
+        if (in_array($firstCharacters, ['06', '07']) && $mobilePhoneLength === 10
+            || in_array($firstCharacters2, ['+336', '+337']) && $mobilePhoneLength === 12
+            || in_array($firstCharacters3, ['+3306', '+3307']) && $mobilePhoneLength === 13) {
+            return true;
         }
 
-        return $returnZipCode;
+        return false;
     }
 }

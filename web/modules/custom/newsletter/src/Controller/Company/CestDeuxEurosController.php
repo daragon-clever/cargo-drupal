@@ -38,7 +38,7 @@ class CestDeuxEurosController extends AbstractCompanyController
         $dataForActito = parent::setDataToSaveOnActito($dataUser);
         $dataForActito['prenom'] = $dataUser['prenom'];
         $dataForActito['nom'] = $dataUser['nom'];
-        $dataForActito['cp'] = $dataUser['cp'];
+        $dataForActito['mobile'] = $dataUser['mobile'];
         $dataForActito['newsletter'] = $dataUser['newsletter'];
         $dataForActito['offres'] = $dataUser['offres'];
 
@@ -49,7 +49,7 @@ class CestDeuxEurosController extends AbstractCompanyController
     {
         $dataToUpdate['first_name'] = $arrayData['prenom'];
         $dataToUpdate['last_name'] = $arrayData['nom'];
-        $dataToUpdate['zip_code'] = $arrayData['cp'];
+        $dataToUpdate['mobile'] = $arrayData['mobile'];
         $dataToUpdate['subscriptions'] = serialize([
             self::SUBSCRIPTION_NEWSLETTER => $arrayData['newsletter'],
             self::SUBSCRIPTION_OFFER => $arrayData['offres']
@@ -76,12 +76,12 @@ class CestDeuxEurosController extends AbstractCompanyController
                 'default' => '',
                 'description' => 'Lastname of the person.',
             ],
-            'zip_code' => [
+            'mobile' => [
                 'type' => 'varchar',
-                'length' => 10,
+                'length' => 50,
                 'not null' => TRUE,
                 'default' => '',
-                'description' => 'Postcode of the person.',
+                'description' => 'Mobile phone of the person.',
             ],
             'subscriptions' => [
                 'type' => 'text',
@@ -128,5 +128,22 @@ class CestDeuxEurosController extends AbstractCompanyController
                 ->condition('id', $idSubscriber, '=')
                 ->execute();
         }
+    }
+
+    public function setUpdate8102()
+    {
+        $newColumn = "mobile";
+
+        //add new collumn
+        $spec = [
+            'type' => 'varchar',
+            'length' => 50,
+            'not null' => TRUE,
+            'default' => '',
+            'description' => 'Mobile phone of the person.',
+        ];
+        $schema = \Drupal::database()->schema();
+        $schemaFieldExist = $schema->fieldExists($this->subscriberModel::TABLE_SUBSCRIBER, $newColumn);
+        if (!$schemaFieldExist) $schema->addField($this->subscriberModel::TABLE_SUBSCRIBER, $newColumn, $spec);
     }
 }

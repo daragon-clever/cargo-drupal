@@ -25,16 +25,16 @@
                         <small class="text-left">*information obligatoire - le défaut de renseignement de ces informations ne vous permettra pas de finaliser la souscription à notre newsletter.</small>
                     </div>
                     <div class="col-12">
-                        {{ form.rgpd_allow }}
-
-                        <p class="conditions">
-                            {{ "En remplissant ce formulaire, vous acceptez que CEDIF collecte et utilise les données
-                            personnelles que vous venez de renseigner dans ce formulaire dans le but de vous envoyer des
-                            offres marketing personnalisées que vous avez accepté de recevoir, en accord avec notre
-                            <a href='/mentions-legales'>politique de protection des données</a>. Vous pourrez vous désinscrire
-                            à tout moment."|trans }}
-                        </p>
-
+                        <div class="d-flex mt-4">
+                            {{ form.rgpd_allow }}
+                            <p class="conditions pl-3">
+                                {{ "En remplissant ce formulaire, vous acceptez que CEDIF collecte et utilise les données
+                                personnelles que vous venez de renseigner dans ce formulaire dans le but de vous envoyer des
+                                offres marketing personnalisées que vous avez accepté de recevoir, en accord avec notre
+                                <a href='/mentions-legales'>politique de protection des données</a>. Vous pourrez vous désinscrire
+                                à tout moment."|trans }}
+                            </p>
+                        </div>
                         {{ form.captcha }}
                         {{ form.actions }}
                     </div>

@@ -204,10 +204,7 @@ jQuery(document).ready(function ($) {
     });
 
     // PARTAGE RESEAUX
-    $('.js-partager').click(function () {
-        $('.popup').toggleClass('open');
-    })
-    $('.js-close').click(function () {
+    $('.js-partager, .js-close').click(function () {
         $('.popup').toggleClass('open');
     })
 

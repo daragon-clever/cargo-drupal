@@ -991,13 +991,6 @@
         }
       }
 
-      .messenger,
-      .sms {
-        @media @moreThanTablet {
-          display: none;
-        }
-      }
-
       .whatsapp {
         background: url("../images/whatsapp.svg") no-repeat center transparent;
         width: 45px;
@@ -1028,19 +1021,17 @@
         }
       }
 
-      .confirm {
-        &.show {
-          display: block !important;
-          position: absolute;
-          right: 50px;
-          bottom: 10px;
-          color: @primaryColor;
+      .confirm.show {
+        display: block !important;
+        position: absolute;
+        right: 50px;
+        bottom: 10px;
+        color: @primaryColor;
 
-          @media @phone {
-            text-align: center;
-            right: unset;
-            width: 100%;
-          }
+        @media @phone {
+          text-align: center;
+          right: unset;
+          width: 100%;
         }
       }
     }

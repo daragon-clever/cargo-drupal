@@ -2194,12 +2194,6 @@ ul.check-list li:before {
 #recette-individuelle .popup .social-buttons > div:hover:hover {
   opacity: 0.8;
 }
-@media only screen and (min-width: 992px) {
-  #recette-individuelle .popup .social-buttons .messenger,
-  #recette-individuelle .popup .social-buttons .sms {
-    display: none;
-  }
-}
 #recette-individuelle .popup .social-buttons .whatsapp {
   background: url("../images/whatsapp.svg") no-repeat center transparent;
   width: 45px;

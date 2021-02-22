@@ -1,10 +1,5 @@
 <div class="row store-info mt-5">
-    <div class="col-auto d-none d-lg-block">
-        <img src="/sites/cestdeuxeuros/themes/cestdeuxeuros/images/store-locator/picto_map_store_detail.png"
-             alt="Adresse magasin C'est Deux euros"/>
-    </div>
-
-    <div class="col-12 col-md-7 col-lg-auto">
+    <div class="col-12 col-md-7 pr-0">
         <div class="name">{{ location.name }}</div>
         <div class="store-locator-opening-state {% if location.isStoreOpen %}open{% else %}closed{% endif %}">
             {% if location.isStoreOpen %}
@@ -36,7 +31,7 @@
             {% endif %}
         </div>
 
-        <div>
+        <div class="horaires">
             Horaires : <br>
             {% if location.getOpeningHours|length >0 %}
                 {{ location.friendlyOpeningHours }}
@@ -46,7 +41,7 @@
         </div>
     </div>
 
-    <div class="col-12 col-sm no-padding">
+    <div class="col-12 col-sm">
         <div class="cta-wrapper">
             <ul class="ul-cta">
                 <li class="map">
@@ -105,33 +100,44 @@
 </div>
 
 {% for message in location.getCurrentEventMessages %}
-<div class="row">
-    <div class="col-12">
-        <div class="store-detail-event">
-            {{ message.getMessage }}
-        </div>
-    </div>
-</div>
-{% endfor %}
-
-<div class="row">
-    {% if location.getImages %}
-        <div class="col-12 col-md-6">
-            <div class="store-detail-gallery">
-                <div id="js-store-details-gallery">
-                    {% for image in location.getImages %}
-                        <div>
-                            <img src='{{ "%s/%s"|format(staticAssetsUrl, image.path) }}'/>
-                        </div>
-                    {% endfor %}
-                </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="store-detail-event">
+                {{ message.getMessage }}
             </div>
         </div>
-    {% endif %}
+    </div>
+{% endfor %}
 
-    <div class="mt-4 col-12 {% if location.getImages %}col-md-6{% else %}col-md-12{% endif %} d-flex">
+<div class="row mt-5">
+    <div class="col-12 col-md-6">
+        <h2 class="title-txt mb-3">Des magasins pas chers conçus pour faire de bonnes affaires !</h2>
+        <p>
+            Cela ne se racconte pas, ça se vit ! <br>
+            Venez nous voir dans notre magasin du centre ville.
+        </p>
+        <div class="store-detail-gallery">
+            <div id="js-store-details-gallery">
+                {% if location.getImages is empty %}
+                    <img src="/sites/cestdeuxeuros/themes/cestdeuxeuros/images/store-locator/c2e-storelo-img01.jpg"
+                         alt="">
+                    <img src="/sites/cestdeuxeuros/themes/cestdeuxeuros/images/store-locator/c2e-storelo-img02.jpg"
+                         alt="">
+                {% else %}
+                    <div>
+                        <img src='{{ "%s/%s"|format(staticAssetsUrl, image.path) }}'/>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-md-6 d-flex">
         <div class="store-detail-txt">
-            <h3>Présentation</h3>
+            <h2 class="title-txt mb-3">
+                Le mot de l'équipe <br/>
+                {{ location.name }}
+            </h2>
             <p>
                 {% if location.description is empty %}
                     Tous, absolument tous nos articles sont vendus dans nos magasins au prix unique de 2 euros.
@@ -146,6 +152,18 @@
     </div>
 </div>
 
+<div class="row mt-5">
+    <div class="col">
+        <p>
+            <!-- Suppr le contenu ici et récup actilités -->
+            Toutes les bonnes affaires à petits prix sont dans notre magasin C’est deux euros, et à deux pas de la Place
+            du capitole. Articles de décoration, vaisselle, beauté, jouets… Tous, absolument tous nos articles sont à
+            deux euros !
+            Ne manquez pas nos prochains arrivages pas chers, il n’y en aura peut-être pas pour tout le monde !
+        </p>
+    </div>
+</div>
+
 <div class="row">
     <div class="col text-center">
         <h3 class="store-locator-detail-socials-title">Restez informés !</h3>
@@ -155,7 +173,7 @@
 <div class="row text-center store-locator-detail-socials">
     {% for socialNetwork in location.getSocialNetworks %}
         {% if socialNetwork.type == 'facebook' %}
-            <div class="col {{ socialNetwork.type }}"> {# facebook|instagram #}
+            <div class="col {{ socialNetwork.type }}">
                 <div>
                     <img src="/sites/cestdeuxeuros/themes/cestdeuxeuros/images/store-locator/svg_fb.svg"/>
                 </div>
@@ -163,7 +181,7 @@
                 <a href="https://www.facebook.com/{{ socialNetwork.uri }}/" target="_blank">J'aime</a>
             </div>
         {% elseif socialNetwork.type == 'instagram' %}
-            <div class="col {{ socialNetwork.type }}"> {# facebook|instagram #}
+            <div class="col {{ socialNetwork.type }}">
                 <div>
                     <img src="/sites/cestdeuxeuros/themes/cestdeuxeuros/images/store-locator/svg_insta.svg"/>
                 </div>

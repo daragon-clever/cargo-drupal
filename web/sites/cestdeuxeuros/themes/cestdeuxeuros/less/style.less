@@ -1601,7 +1601,6 @@ ul.plandusite {
 
 .store-item {
   line-height: 1.6;
-  font-weight: 600;
   border-bottom: 1px solid #d7d7d7;
   padding: 30px 0;
 
@@ -1638,6 +1637,10 @@ ul.plandusite {
   }
 }
 
+h2.title-txt {
+  font-size: 1.5rem;
+}
+
 .cta-wrapper {
   display: flex;
   height: 100%;
@@ -1659,7 +1662,6 @@ ul.plandusite {
     height: 155px;
     width: 155px;
     text-align: center;
-    text-transform: uppercase;
     list-style: none;
 
     @media @tablet {
@@ -1774,29 +1776,44 @@ ul.plandusite {
         }
       }
     }
+
+    svg + span {
+      line-height: 1.2;
+    }
   }
+}
+
+.horaires {
+  font-weight: 600;
+  color: #666666;
 }
 
 .store-item .status,
 .store-locator-opening-state {
   text-transform: uppercase;
 
-  span:before {
-    content: "";
-    height: 6px;
-    width: 6px;
-    border-radius: 50px;
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 5px;
-    margin-top: -2px;
+  span {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+
+    &:before {
+      content: "";
+      height: 6px;
+      width: 6px;
+      border-radius: 50px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 5px;
+      margin-top: -2px;
+    }
   }
 
   &.open {
-    color: #2cc49e;
+    color: @primary;
 
     span:before {
-      background: #2cc49e;
+      background: @primary;
     }
   }
 
@@ -2006,11 +2023,11 @@ ul.plandusite {
 }
 
 .store-info {
-  font-weight: 600;
   line-height: 1.6;
 
   .name {
-    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.5rem;
   }
 
   .address {
@@ -2033,6 +2050,8 @@ ul.plandusite {
   }
 
   .opening-hours {
+    font-weight: 600;
+
     .title {
       color: #a0a0a0;
     }
@@ -2066,7 +2085,7 @@ ul.plandusite {
   }
 
   .ul-cta {
-    justify-content: flex-end;
+    justify-content: space-evenly;
 
     li {
       margin: 0 7px;
@@ -2177,9 +2196,6 @@ ul.plandusite {
 }
 
 .store-detail-txt {
-  padding: 0 30px;
-  margin: auto;
-
   h3 {
     font-size: 16px;
     color: #ee7d0c;
@@ -2191,7 +2207,6 @@ ul.plandusite {
 
   p {
     margin-bottom: 0;
-    font-weight: 600;
   }
 
   @media @phone {
@@ -2274,10 +2289,10 @@ ul.plandusite {
 }
 
 .storelocator-back {
-  color: #353535;
+  color: @primary;
   margin-top: 15px;
-  display: inline-block;
   font-weight: 500;
+  display: inline-block;
 }
 
 .show-more-wrapper {

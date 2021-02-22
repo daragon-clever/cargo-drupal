@@ -46,12 +46,12 @@
             <ul class="ul-cta">
                 <li class="map">
                     <a
-                            id='js-action-map'
-                            href='#'
-                            location-id='{{ location.id }}'
-                            location-latitude='{{ location.address.geoLocation.latitude }}'
-                            location-longitude='{{ location.address.geoLocation.longitude }}'
-                            location-path='{{ storeUrl }}'
+                        id='js-action-map'
+                        href='#'
+                        location-id='{{ location.id }}'
+                        location-latitude='{{ location.address.geoLocation.latitude }}'
+                        location-longitude='{{ location.address.geoLocation.longitude }}'
+                        location-path='{{ storeUrl }}'
                     >
                         <span>
                             <svg viewBox="0 0 121.07 129.93">
@@ -99,16 +99,6 @@
     </div>
 </div>
 
-{% for message in location.getCurrentEventMessages %}
-    <div class="row">
-        <div class="col-12">
-            <div class="store-detail-event">
-                {{ message.getMessage }}
-            </div>
-        </div>
-    </div>
-{% endfor %}
-
 <div class="row mt-5">
     <div class="col-12 col-md-6">
         <h2 class="title-txt mb-3">Des magasins pas chers conçus pour faire de bonnes affaires !</h2>
@@ -124,9 +114,7 @@
                     <img src="/sites/cestdeuxeuros/themes/cestdeuxeuros/images/store-locator/c2e-storelo-img02.jpg"
                          alt="">
                 {% else %}
-                    <div>
-                        <img src='{{ "%s/%s"|format(staticAssetsUrl, image.path) }}'/>
-                    </div>
+                    <img src='{{ "%s/%s"|format(staticAssetsUrl, image.path) }}'/>
                 {% endif %}
             </div>
         </div>
@@ -154,13 +142,11 @@
 
 <div class="row mt-5">
     <div class="col">
-        <p>
-            <!-- Suppr le contenu ici et récup actilités -->
-            Toutes les bonnes affaires à petits prix sont dans notre magasin C’est deux euros, et à deux pas de la Place
-            du capitole. Articles de décoration, vaisselle, beauté, jouets… Tous, absolument tous nos articles sont à
-            deux euros !
-            Ne manquez pas nos prochains arrivages pas chers, il n’y en aura peut-être pas pour tout le monde !
-        </p>
+        {% for message in location.getCurrentEventMessages %}
+            <p>
+                {{ message.getMessage }}
+            </p>
+        {% endfor %}
     </div>
 </div>
 

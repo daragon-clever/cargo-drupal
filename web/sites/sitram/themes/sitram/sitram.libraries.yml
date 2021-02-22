@@ -23,6 +23,25 @@ instagram:
   js:
     js/instagram-feed.min.js: {}
 
+# Print This
+printthis:
+  js:
+    js/print-this.js: {}
+  dependencies:
+    - core/jquery
+
+# Goodshare
+goodshare:
+  js:
+    https://cdn.jsdelivr.net/npm/goodshare.js@6/goodshare.min.js: { type: external }
+  dependencies:
+    - core/jquery
+
+# Font Awesome
+fontawesome:
+  js:
+    https://kit.fontawesome.com/2c0953961c.js : { type: external }
+
 # Masonry
 masonry:
   js:

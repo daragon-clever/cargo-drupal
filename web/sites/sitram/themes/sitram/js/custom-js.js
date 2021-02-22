@@ -16,8 +16,8 @@ if (isTabletOrLess) {
 }
 
 hash = document.location.hash;
-if (hash !="") {
-    setTimeout(function() {
+if (hash != "") {
+    setTimeout(function () {
         if (location.hash) {
             window.scrollTo(0, 0);
             window.location.href = hash;
@@ -197,5 +197,40 @@ jQuery(document).ready(function ($) {
             });
         })();
     }
+
+    // IMPRESSION
+    $('.js-print').click(function () {
+        $('.header-section img, h1, .js-prepa, .js-recette, .js-ingredients').printThis();
+    });
+
+    // PARTAGE RESEAUX
+    $('.js-partager').click(function () {
+        $('.popup').toggleClass('open');
+    })
+    $('.js-close').click(function () {
+        $('.popup').toggleClass('open');
+    })
+
+    // URL PAGE RECETTE
+    if ($('#recette-individuelle').length) {
+        let input = $('#js-copy-input');
+        input.val(window.location.href);
+        $('#js-copy-button').click(function () {
+            input.select();
+            input[0].setSelectionRange(0, 99999); /* For mobile devices */
+            document.execCommand("copy");
+            $('.js-copy-confirm').toggleClass('show');
+            setTimeout(function () {
+                $('.js-copy-confirm').removeClass('show')
+            }, 3000);
+        });
+    }
+
+    // FACEBOOK-MESSENGER
+    $('.js-messenger').click(function () {
+        let link = window.location.href;
+        let app_id = 123456789;
+        window.open('fb-messenger://share?link=' + encodeURIComponent(link) + '&app_id=' + encodeURIComponent(app_id));
+    })
 });
 

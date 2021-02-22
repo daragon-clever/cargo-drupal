@@ -1898,7 +1898,7 @@ ul.check-list li:before {
   object-fit: cover;
   font-family: 'object-fit: cover;';
   height: 197px;
-  transition: transform .3s ease;
+  transition: transform 0.3s ease;
 }
 .recette-item img:hover {
   transform: scale(1.1);
@@ -2049,6 +2049,193 @@ ul.check-list li:before {
 @media only screen and (max-width: 991px) {
   #recette-individuelle .slider .slick-slide {
     padding: 0;
+  }
+}
+#recette-individuelle .button-cta {
+  height: 60px;
+  line-height: 60px;
+  width: 200px;
+  text-align: center;
+  color: white;
+  border-radius: 5px;
+  background-color: #003663;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 0 10px;
+}
+@media only screen and (max-width: 767px) {
+  #recette-individuelle .button-cta {
+    margin-top: 15px;
+  }
+}
+#recette-individuelle .button-cta span {
+  vertical-align: middle;
+  position: relative;
+  margin-left: -25px;
+}
+#recette-individuelle .button-cta span:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  top: calc(50% - 8px);
+}
+#recette-individuelle .button-cta span.share:after {
+  background: url("../images/icon-share.svg") no-repeat center transparent;
+  left: 70px;
+}
+#recette-individuelle .button-cta span.print:after {
+  background: url("../images/icon-print.svg") no-repeat center transparent;
+  left: 72px;
+}
+#recette-individuelle .button-cta.url {
+  height: 45px;
+  line-height: 45px;
+  margin: 0;
+  width: 185px;
+  border-radius: 0 5px 5px 0;
+}
+@media only screen and (max-width: 767px) {
+  #recette-individuelle .button-cta.url {
+    border-radius: 5px;
+    margin-top: 15px;
+  }
+}
+#recette-individuelle .button-cta:hover {
+  transition: opacity 0.3s;
+  text-decoration: none;
+  cursor: pointer;
+}
+#recette-individuelle .button-cta:hover:hover {
+  opacity: 0.8;
+}
+#recette-individuelle .popup {
+  position: absolute;
+  bottom: 102px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 650px;
+  background-color: white;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.16);
+  z-index: 10;
+}
+#recette-individuelle .popup.open {
+  display: block !important;
+}
+#recette-individuelle .popup:after {
+  content: "";
+  position: absolute;
+  bottom: -42px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-top: 42px solid white;
+  border-right: 24px solid transparent;
+  border-left: 24px solid transparent;
+}
+@media only screen and (max-width: 991px) {
+  #recette-individuelle .popup {
+    width: 500px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  #recette-individuelle .popup {
+    width: 300px;
+  }
+}
+#recette-individuelle .popup .cross {
+  position: absolute;
+  cursor: pointer;
+  right: 15px;
+  top: 10px;
+  width: 20px;
+  height: 20px;
+  opacity: 0.3;
+}
+#recette-individuelle .popup .cross:hover {
+  opacity: 1;
+}
+#recette-individuelle .popup .cross:before,
+#recette-individuelle .popup .cross:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 20px;
+  width: 1px;
+  background-color: #333;
+}
+#recette-individuelle .popup .cross:before {
+  transform: rotate(45deg);
+}
+#recette-individuelle .popup .cross:after {
+  transform: rotate(-45deg);
+}
+#recette-individuelle .popup h4 {
+  font-size: 18px;
+  color: #003663;
+}
+#recette-individuelle .popup .social-buttons {
+  display: flex;
+  justify-content: center;
+}
+#recette-individuelle .popup .social-buttons > div {
+  margin: 0 15px;
+}
+@media only screen and (max-width: 767px) {
+  #recette-individuelle .popup .social-buttons > div {
+    margin: 0 10px;
+  }
+}
+#recette-individuelle .popup .social-buttons > div:hover {
+  transition: opacity 0.3s;
+  text-decoration: none;
+  cursor: pointer;
+}
+#recette-individuelle .popup .social-buttons > div:hover:hover {
+  opacity: 0.8;
+}
+@media only screen and (min-width: 992px) {
+  #recette-individuelle .popup .social-buttons .messenger,
+  #recette-individuelle .popup .social-buttons .sms {
+    display: none;
+  }
+}
+#recette-individuelle .popup .social-buttons .whatsapp {
+  background: url("../images/whatsapp.svg") no-repeat center transparent;
+  width: 45px;
+}
+#recette-individuelle .popup .social-buttons .fa-facebook-messenger {
+  color: #0078ff;
+}
+#recette-individuelle .popup .social-buttons .fa-facebook {
+  color: #3B5999;
+}
+#recette-individuelle .popup .social-buttons .fa-sms {
+  color: #F3BB1B;
+}
+#recette-individuelle .popup .copy-link input {
+  border-color: #DEDEDE;
+  color: #DEDEDE;
+  border-radius: 5px 0 0 5px;
+  height: 45px;
+}
+@media only screen and (max-width: 767px) {
+  #recette-individuelle .popup .copy-link input {
+    border-radius: 5px;
+  }
+}
+#recette-individuelle .popup .copy-link .confirm.show {
+  display: block !important;
+  position: absolute;
+  right: 50px;
+  bottom: 10px;
+  color: #003663;
+}
+@media only screen and (max-width: 767px) {
+  #recette-individuelle .popup .copy-link .confirm.show {
+    text-align: center;
+    right: unset;
+    width: 100%;
   }
 }
 .titre-bloc-recettes {

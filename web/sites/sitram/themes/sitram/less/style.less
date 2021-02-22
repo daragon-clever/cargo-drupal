@@ -845,6 +845,206 @@
       }
     }
   }
+
+  .button-cta {
+    height: 60px;
+    line-height: 60px;
+    width: 200px;
+    text-align: center;
+    color: white;
+    border-radius: 5px;
+    background-color: @primaryColor;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 10px;
+
+    @media @phone {
+      margin-top: 15px;
+    }
+
+    span {
+      vertical-align: middle;
+      position: relative;
+      margin-left: -25px;
+
+      &:after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        height: 16px;
+        width: 16px;
+        top: calc(50% - 8px);
+      }
+
+      &.share:after {
+        background: url("../images/icon-share.svg") no-repeat center transparent;
+        left: 70px;
+      }
+
+      &.print:after {
+        background: url("../images/icon-print.svg") no-repeat center transparent;
+        left: 72px;
+      }
+    }
+
+    &.url {
+      height: 45px;
+      line-height: 45px;
+      margin: 0;
+      width: 185px;
+      border-radius: 0 5px 5px 0;
+
+      @media @phone {
+        border-radius: 5px;
+        margin-top: 15px;
+      }
+    }
+
+    &:hover {
+      .dimOpacityOnHover(0.8)
+    }
+  }
+
+  .popup {
+    position: absolute;
+    bottom: 102px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 650px;
+    background-color: white;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.16);
+    z-index: 10;
+
+    &.open {
+      display: block !important;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -42px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-top: 42px solid white;
+      border-right: 24px solid transparent;
+      border-left: 24px solid transparent;
+    }
+
+    @media @tablet {
+      width: 500px;
+    }
+
+    @media @phone {
+      width: 300px;
+    }
+
+    .cross {
+      position: absolute;
+      cursor: pointer;
+      right: 15px;
+      top: 10px;
+      width: 20px;
+      height: 20px;
+      opacity: 0.3;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &:before,
+      &:after {
+        position: absolute;
+        left: 15px;
+        content: ' ';
+        height: 20px;
+        width: 1px;
+        background-color: #333;
+      }
+
+      &:before {
+        transform: rotate(45deg);
+      }
+
+      &:after {
+        transform: rotate(-45deg);
+      }
+    }
+
+    h4 {
+      font-size: 18px;
+      color: @primaryColor;
+    }
+
+    .social-buttons {
+      display: flex;
+      justify-content: center;
+
+      > div {
+        margin: 0 15px;
+
+        @media @phone {
+          margin: 0 10px;
+        }
+
+        &:hover {
+          .dimOpacityOnHover(0.8)
+        }
+      }
+
+      .messenger,
+      .sms {
+        @media @moreThanTablet {
+          display: none;
+        }
+      }
+
+      .whatsapp {
+        background: url("../images/whatsapp.svg") no-repeat center transparent;
+        width: 45px;
+      }
+
+      .fa-facebook-messenger {
+        color: #0078ff;
+      }
+
+      .fa-facebook {
+        color: #3B5999;
+      }
+
+      .fa-sms {
+        color: #F3BB1B;
+      }
+    }
+
+    .copy-link {
+      input {
+        border-color: #DEDEDE;
+        color: #DEDEDE;
+        border-radius: 5px 0 0 5px;
+        height: 45px;
+
+        @media @phone {
+          border-radius: 5px;
+        }
+      }
+
+      .confirm {
+        &.show {
+          display: block !important;
+          position: absolute;
+          right: 50px;
+          bottom: 10px;
+          color: @primaryColor;
+
+          @media @phone {
+            text-align: center;
+            right: unset;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
 }
 
 .titre-bloc-recettes {

@@ -226,8 +226,7 @@ jQuery(document).ready(function ($) {
     // FACEBOOK-MESSENGER
     $('.js-messenger').click(function () {
         let link = window.location.href;
-        let app_id = 123456789;
-        window.open('fb-messenger://share?link=' + encodeURIComponent(link) + '&app_id=' + encodeURIComponent(app_id));
+        window.open('fb-messenger://share?link=' + encodeURIComponent(link));
     })
 });
 

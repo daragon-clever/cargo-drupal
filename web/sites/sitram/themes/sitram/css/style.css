@@ -2060,8 +2060,13 @@ ul.check-list li:before {
   border-radius: 5px;
   background-color: #003663;
   font-size: 16px;
-  cursor: pointer;
   margin: 0 10px;
+  transition: opacity 0.3s;
+  text-decoration: none;
+  cursor: pointer;
+}
+#recette-individuelle .button-cta:hover {
+  opacity: 0.8;
 }
 @media only screen and (max-width: 767px) {
   #recette-individuelle .button-cta {
@@ -2101,14 +2106,6 @@ ul.check-list li:before {
     border-radius: 5px;
     margin-top: 15px;
   }
-}
-#recette-individuelle .button-cta:hover {
-  transition: opacity 0.3s;
-  text-decoration: none;
-  cursor: pointer;
-}
-#recette-individuelle .button-cta:hover:hover {
-  opacity: 0.8;
 }
 #recette-individuelle .popup {
   position: absolute;
@@ -2177,6 +2174,12 @@ ul.check-list li:before {
 #recette-individuelle .popup .social-buttons {
   display: flex;
   justify-content: center;
+  transition: opacity 0.3s;
+  text-decoration: none;
+  cursor: pointer;
+}
+#recette-individuelle .popup .social-buttons:hover {
+  opacity: 0.8;
 }
 #recette-individuelle .popup .social-buttons > div {
   margin: 0 15px;
@@ -2185,14 +2188,6 @@ ul.check-list li:before {
   #recette-individuelle .popup .social-buttons > div {
     margin: 0 10px;
   }
-}
-#recette-individuelle .popup .social-buttons > div:hover {
-  transition: opacity 0.3s;
-  text-decoration: none;
-  cursor: pointer;
-}
-#recette-individuelle .popup .social-buttons > div:hover:hover {
-  opacity: 0.8;
 }
 #recette-individuelle .popup .social-buttons .whatsapp {
   background: url("../images/whatsapp.svg") no-repeat center transparent;

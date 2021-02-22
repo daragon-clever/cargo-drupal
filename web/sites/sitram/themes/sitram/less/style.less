@@ -857,6 +857,7 @@
     font-size: 16px;
     cursor: pointer;
     margin: 0 10px;
+    .dimOpacityOnHover(0.8);
 
     @media @phone {
       margin-top: 15px;
@@ -898,10 +899,6 @@
         border-radius: 5px;
         margin-top: 15px;
       }
-    }
-
-    &:hover {
-      .dimOpacityOnHover(0.8)
     }
   }
 
@@ -978,16 +975,13 @@
     .social-buttons {
       display: flex;
       justify-content: center;
+      .dimOpacityOnHover(0.8);
 
       > div {
         margin: 0 15px;
 
         @media @phone {
           margin: 0 10px;
-        }
-
-        &:hover {
-          .dimOpacityOnHover(0.8)
         }
       }
 

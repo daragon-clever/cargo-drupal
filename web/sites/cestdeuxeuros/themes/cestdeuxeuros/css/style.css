@@ -1305,22 +1305,6 @@ ul.plandusite a {
   padding: 0 25px;
   border: none;
 }
-.storelocator-search .wrapper .search input {
-  background: transparent;
-  border: none;
-  color: white;
-  padding: 0;
-  width: 140px;
-}
-.storelocator-search .wrapper .search input::placeholder {
-  opacity: 1;
-}
-.storelocator-search .wrapper .search button:after {
-  content: "";
-  background: url("../images/store-locator/magnifying-glass.svg") no-repeat center / 100% transparent;
-  height: 20px;
-  width: 20px;
-}
 .storelocator-search .wrapper .locate-me button:before {
   content: "";
   background: url("../images/store-locator/focus.svg") no-repeat center / 100% transparent;
@@ -1352,6 +1336,26 @@ ul.plandusite a {
 .storelocator-search .wrapper .search button:hover,
 .storelocator-search .wrapper .locate-me button:hover {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.storelocator-search .wrapper .search input {
+  background: transparent;
+  border: none;
+  color: white;
+  padding: 0;
+  width: 180px;
+}
+.storelocator-search .wrapper .search input::placeholder {
+  color: white;
+  opacity: 1;
+}
+.storelocator-search .wrapper .search button {
+  margin-left: 10px;
+}
+.storelocator-search .wrapper .search button:after {
+  content: "";
+  background: url("../images/store-locator/magnifying-glass.svg") no-repeat center / 100% transparent;
+  height: 20px;
+  width: 20px;
 }
 @media only screen and (max-width: 991px) {
   .storelocator-search img {

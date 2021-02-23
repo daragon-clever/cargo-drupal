@@ -1,6 +1,5 @@
 // Variables LESS
 @import 'variables';
-
 // Font
 @import (css) '../font/itc-avantgarde/font-itc.css';
 
@@ -1533,27 +1532,6 @@ ul.plandusite {
       border: none;
     }
 
-    .search {
-      input {
-        background: transparent;
-        border: none;
-        color: white;
-        padding: 0;
-        width: 140px;
-
-        &::placeholder {
-          opacity: 1;
-        }
-      }
-
-      button:after {
-        content: "";
-        background: url("../images/store-locator/magnifying-glass.svg") no-repeat center / 100% transparent;
-        height: 20px;
-        width: 20px;
-      }
-    }
-
     .locate-me button:before {
       content: "";
       background: url("../images/store-locator/focus.svg") no-repeat center / 100% transparent;
@@ -1586,6 +1564,32 @@ ul.plandusite {
 
       &:hover {
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    .search {
+      input {
+        background: transparent;
+        border: none;
+        color: white;
+        padding: 0;
+        width: 180px;
+
+        &::placeholder {
+          color: white;
+          opacity: 1;
+        }
+      }
+
+      button {
+        margin-left: 10px;
+
+        &:after {
+          content: "";
+          background: url("../images/store-locator/magnifying-glass.svg") no-repeat center / 100% transparent;
+          height: 20px;
+          width: 20px;
+        }
       }
     }
   }

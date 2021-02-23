@@ -96,6 +96,7 @@
         "drupal/svg_image": "^1.9",
         "drupal/translatable_menu_link_uri": "^1.2",
         "drupal/unpublished_node_permissions": "^1.0",
+        "drupal/upgrade_status": "^3.4",
         "drupal/user_default_page": "^1.0",
         "drupal/views_infinite_scroll": "^1.5",
         "drupal/webform": "^5.1",

@@ -9,16 +9,20 @@
             "role": ""
         }
     ],
-    "repositories": [
-        {
+    "repositories": {
+        "assets": {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        },
+        "0": {
             "type": "composer",
             "url": "https://packagist.org"
         },
-        {
+        "1": {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
         },
-        {
+        "2": {
             "type": "package",
             "package": {
                 "name": "ajaxorg/ace-builds",
@@ -30,20 +34,20 @@
                 }
             }
         },
-        {
+        "3": {
             "type": "vcs",
             "url": "git@github.com:PoleWebCargo/WEB_Drupal_Module_Synapse.git"
         },
-        {
+        "4": {
             "type": "vcs",
             "url": "git@github.com:PoleWebCargo/WEB_Common_Module_Synapse_Client.git"
         }
-    ],
+    },
     "require": {
         "cargo/drupal_synapse": "^2.0.0",
         "composer/installers": "^1.2",
         "cweagans/composer-patches": "^1.7",
-        "drupal/ace_editor": "^1.1",
+        "drupal/ace_editor": "^1.3",
         "drupal/acl": "^1.0@alpha",
         "drupal/admin_toolbar": "^2.0",
         "drupal/adminimal_admin_toolbar": "^1.7",

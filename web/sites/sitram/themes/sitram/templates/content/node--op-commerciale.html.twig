@@ -1,0 +1,167 @@
+<div id="op-commerciale">
+    <!-- INTRODUCTION -->
+    <div class="intro">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    {{ content.field_op_com_banner }}
+                </div>
+            </div>
+        </div>
+        <div class="container my-5">
+            <div class="row">
+                <div class="col">
+                    <div class="text-center">
+                        {{ content.field_op_com_intro }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENT 1 -->
+    {% if content.field_op_com_c1_img[0] is not empty %}
+        <div class="container content-1 max-1165">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    {{ content.field_op_com_c1_img }}
+                </div>
+                <div class="col-12 col-md-6 my-auto">
+                    <div class="pl-85 mt-3 mt-md-0">
+                        {{ content.field_op_com_c1_txt }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+    <!-- CONTENT 2 -->
+    <div class="content-2 bg-img-wood mt-5-70lg">
+        <div class="container">
+            <div class="row">
+                <div class="col my-5">
+                    <h2>{{ content.field_op_com_c2_title }}</h2>
+                </div>
+            </div>
+            <div class="row">
+                {% set imgsCount = node.field_op_com_c2_imgs|length - 1 %}
+                {% for i in 0..imgsCount %}
+                    <div class="col-12 col-md-6 col-lg-3">
+                        {{ content.field_op_com_c2_imgs[i] }}
+                        <h4 class="txt-blue">{{ content.field_op_com_c2_txts_title[i] }}</h4>
+                        <div class="collapse" id="collapse-{{ i }}">
+                            {{ content.field_op_com_c2_txts_content[i] }}
+                        </div>
+                        {% if content.field_op_com_c2_txts_content[i] is not empty %}
+                            <div class="mt-1">
+                                <span class="more" data-toggle="collapse" href="#collapse-{{ i }}" aria-expanded="false"
+                                      aria-controls="collapse-{{ i }}">
+                                    {{ "Voir plus"|trans }}...
+                                </span>
+                                <span class="less" data-toggle="collapse" href="#collapse-{{ i }}" aria-expanded="false"
+                                      aria-controls="collapse-{{ i }}">
+                                    {{ "Voir moins"|trans }}...
+                                </span>
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENT 3 -->
+    <div class="content-3 mt-5-150lg bg-verylightgrey">
+        <div class="container">
+            <div class="row pt-5">
+                <div class="col">
+                    {{ content.field_op_com_c3_intro }}
+                </div>
+            </div>
+            <div class="row py-5">
+                <div class="col">
+                    <div class="box-pictos py-4 px">
+                        <div class="row pictos align-items-center justify-content-around">
+                            {% set pictosCount = node.field_op_com_c3_pictos|length - 1 %}
+                            {% for i in 0..pictosCount %}
+                                <div class="col-4 col-sm-auto mb-3 mb-sm-0 d-flex flex-column flex-lg-row align-items-center justify-content-center">
+                                    {{ content.field_op_com_c3_pictos[i] }}
+                                    {% if node.field_op_com_c3_pictos[i].alt|length %}
+                                        <small class="txt-blue">{{ node.field_op_com_c3_pictos[i].alt }}</small>
+                                    {% endif %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENT 4 -->
+    {% if content.field_op_com_c4_img[0] is not empty %}
+        <div class="content-4 mt-5">
+            <div class="container max-1165">
+                <div class="row">
+                    <div class="col-12 col-md-6 my-auto">
+                        <div class="text-content">
+                            {{ content.field_op_com_c4_txt }}
+                        </div>
+                        {{ content.field_op_com_c4_lien }}
+                    </div>
+                    <div class="col-12 col-md-6 my-auto">
+                        {{ content.field_op_com_c4_img }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+    <!-- MAGASINS PARTICIPANTS-->
+    <div class="magasins-participants my-5">
+        <div class="container bg-img-blue">
+            <div class="row">
+                <div class="col">
+                    <div class="blue-banner py- text-center">
+                        <h2>{{ "Magasins participants"|trans }}</h2>
+                        <h4 class="js-see-stores see-stores" data-toggle="collapse" href="#collapse-stores"
+                            aria-expanded="false"
+                            aria-controls="collapse-stores">
+                            {{ "Voir les magasins participants"|trans }}
+                        </h4>
+                        <h4 class="js-hide-stores hide-stores" data-toggle="collapse" href="#collapse-stores"
+                            aria-expanded="false"
+                            aria-controls="collapse-stores">
+                            {{ "Masquer la liste des magasins"|trans }}
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container departments">
+            <div class="collapse" id="collapse-stores">
+                <div class="p-5">
+                    <div class="row">
+                        <div class="col text-center">
+                            <h4>{{ 'Entrez votre numéro de département'|trans }}</h4>
+                            <span class="search-input-wrapper">
+                                <input type="number" id="userInput" name="search"
+                                   oninput="this.value=this.value.slice(0,2)"
+                                   placeholder="{{ 'Mon numéro de département '|trans }}..">
+                            </span>
+                        </div>
+                    </div>
+                    <div class="js-departments" style="display: none">
+                        {{ content.field_op_om_departements }}
+                    </div>
+                    <div class="row mt-5">
+                        <div class="col-12 departments-list">
+                            <ul class="js-departments-result">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

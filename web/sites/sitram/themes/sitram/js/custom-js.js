@@ -228,5 +228,55 @@ jQuery(document).ready(function ($) {
         let link = window.location.href;
         window.open('fb-messenger://share?link=' + encodeURIComponent(link));
     })
+
+    // LISTE MAGASINS - OP
+    $('.js-see-stores').click(function () {
+        $(this).addClass('is-not-visible');
+        $('.js-hide-stores').addClass('is-visible');
+    })
+    $('.js-hide-stores').click(function () {
+        $(this).removeClass('is-visible');
+        $('.js-see-stores').removeClass('is-not-visible');
+    })
+
+    // SEARCHBAR - OP
+    if ($('#op-commerciale').length) {
+
+        // Afficher les départements triés sous la forme de <li>
+        let lines = $('.js-departments').text().split('\n');
+        let departments = [];
+        $.each(lines, function (key, value) {
+            let cleanValue = value.trim();
+            if (cleanValue.length > 0) {
+                departments.push(cleanValue);
+            }
+        })
+        departments.sort();
+        $.each(departments, function (key, value) {
+            $('.js-departments-result').append('<li>' + value + '</li>');
+        })
+
+        // Autoriser seulement la saisie de chiffres
+        $('#userInput').keypress(function (event) {
+            let char = String.fromCharCode(event.which);
+            if (!(/[0-9]/.test(char))) {
+                event.preventDefault();
+            }
+        });
+
+        // Filtrer les résultats
+        $('#userInput').keyup(function () {
+            let input = $(this).val();
+            let li = $(".js-departments-result>li");
+            for (let i = 0; i < li.length; i++) {
+                let value = li[i].textContent.slice(0,2);
+                if (value.indexOf(input) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        })
+    }
 });
 

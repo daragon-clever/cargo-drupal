@@ -16,6 +16,7 @@ regions:
 libraries:
   - opesitram/bootstrap
   - opesitram/slick
+  - opesitram/instagram
   - opesitram/global-styling
 
 stylesheets-remove:

@@ -2,8 +2,10 @@ jQuery(document).ready(function($) {
     // TEST MOBILE / TAB
     var isTabletOrLess = window.matchMedia("only screen and (max-width: 991px)").matches;
 
+    // SLICK
     var gammesSlider = $(".js-gammes-slick");
     var productsSlider = $(".js-slick-products");
+    var instagramSlider = $(".js-insta-slick");
 
     gammesSlider.slick({
         infinite: true,
@@ -16,6 +18,14 @@ jQuery(document).ready(function($) {
             infinite: true,
             dots: true,
             adaptiveHeight: true
+        });
+
+        instagramSlider.slick({
+            infinite: true,
+            dots: false,
+            adaptiveHeight: true,
+            prevArrow: $('.js-prev-slick'),
+            nextArrow: $('.js-next-slick')
         });
     }
 
@@ -67,4 +77,25 @@ jQuery(document).ready(function($) {
     } else {
         storeLocatorLink.attr("href", "accueil#js-store-locator");
     }
+
+    // INSTAGRAM
+    (function () {
+        new InstagramFeed({
+            'username': 'sitram_fr',
+            'container': document.getElementById("js-instagram"),
+            'display_profile': false,
+            'display_biography': false,
+            'display_gallery': true,
+            'display_captions': false,
+            'callback': null,
+            'styling': true,
+            'items': 4,
+            'items_per_row': 4,
+            'margin': 1,
+            'lazy_load': true,
+            'on_error': function () {
+                $('#js-instagram').html('<a href="https://www.instagram.com/sitram_fr" target="_blank"><img class="mw-100" src="/sites/ope-sitram/themes/opesitram/images/footer/fake-insta.png" /></a>')
+            }
+        });
+    })();
 });

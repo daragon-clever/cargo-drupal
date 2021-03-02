@@ -3386,8 +3386,7 @@ table.reparateurs {
         cursor: pointer;
 
         @media @phone {
-          padding-left: 20px;
-          padding-right: 20px;
+          padding: 0 10px;
         }
       }
 
@@ -3481,6 +3480,46 @@ table.reparateurs {
         ul {
           list-style-type: none;
         }
+      }
+    }
+  }
+
+  .reseaux {
+    h2 {
+      font-family: @MyriadBold;
+      margin-bottom: 0;
+
+      @media @tablet {
+        font-size: 48px;
+      }
+
+      @media @phone {
+        font-size: 32px;
+      }
+    }
+
+    h3 {
+      text-transform: uppercase;
+      font-family: @CardenioBold;
+      font-size: 48px;
+      margin-top: 0;
+
+      @media @tablet {
+        margin-top: 15px;
+      }
+
+      @media @phone {
+        font-size: 32px;
+      }
+    }
+
+    img {
+      height: auto;
+      width: 75px;
+      margin: 0 25px;
+
+      @media @phone {
+        margin: 10px 25px;
       }
     }
   }

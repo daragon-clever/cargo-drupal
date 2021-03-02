@@ -4255,8 +4255,7 @@ table.reparateurs tbody .tel {
 }
 @media only screen and (max-width: 767px) {
   #op-commerciale .magasins-participants .blue-banner h4 {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 0 10px;
   }
 }
 #op-commerciale .magasins-participants .blue-banner .hide-stores {
@@ -4347,4 +4346,44 @@ table.reparateurs tbody .tel {
 }
 #op-commerciale .magasins-participants .departments .departments-list ul {
   list-style-type: none;
+}
+#op-commerciale .reseaux h2 {
+  font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
+  margin-bottom: 0;
+}
+@media only screen and (max-width: 991px) {
+  #op-commerciale .reseaux h2 {
+    font-size: 48px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  #op-commerciale .reseaux h2 {
+    font-size: 32px;
+  }
+}
+#op-commerciale .reseaux h3 {
+  text-transform: uppercase;
+  font-family: "Cardenio Modern Bold", Arial, Helvetica, sans-serif;
+  font-size: 48px;
+  margin-top: 0;
+}
+@media only screen and (max-width: 991px) {
+  #op-commerciale .reseaux h3 {
+    margin-top: 15px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  #op-commerciale .reseaux h3 {
+    font-size: 32px;
+  }
+}
+#op-commerciale .reseaux img {
+  height: auto;
+  width: 75px;
+  margin: 0 25px;
+}
+@media only screen and (max-width: 767px) {
+  #op-commerciale .reseaux img {
+    margin: 10px 25px;
+  }
 }

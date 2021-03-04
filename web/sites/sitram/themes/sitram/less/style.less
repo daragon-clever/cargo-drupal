@@ -534,6 +534,13 @@
     max-width: 530px;
     margin: 30px auto 0;
   }
+
+  h4 {
+    max-width: 530px;
+    font-family: @MyriadSemibold;
+    line-height: 1;
+    margin: 45px auto 0;
+  }
 }
 
 .footer-recettes {
@@ -2196,6 +2203,22 @@ div[role="contentinfo"] {
 }
 
 // FOOTER //
+footer .recettes-cta {
+  display: inline-block;
+  line-height: 46px;
+  background-color: @primaryColor;
+  border-radius: 23px;
+  color: white;
+  text-transform: uppercase;
+  font-family: "Cardenio Modern Bold", Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  padding: 0 40px;
+  border: none;
+  transition: opacity 0.3s;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .newsletter-wrapper {
   background: @lightGrey;
   position: relative;
@@ -3124,5 +3147,387 @@ table.reparateurs {
 
   .inner-content > div {
     padding-top: 15px;
+  }
+}
+
+// OP - COMMERCIALE
+#op-commerciale {
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  .intro {
+    p {
+      font-size: 32px;
+      line-height: 1;
+
+      @media @phone {
+        font-size: 25px;
+      }
+
+      span {
+        font-weight: bold;
+        font-size: 48px;
+      }
+    }
+
+    h3 {
+      text-transform: uppercase;
+      font-family: @Cardenio;
+      font-size: 48px;
+      color: @primaryColor;
+    }
+  }
+
+  .content-1 {
+    h2 {
+      @media @tablet {
+        text-align: center;
+      }
+
+      span {
+        font-family: @MyriadBold;
+        text-transform: unset;
+      }
+    }
+  }
+
+  .content-2 {
+    background-position: top center;
+    background-size: auto 290px;
+
+    &.mt-5-70lg {
+      margin-top: 70px;
+
+      @media @tablet {
+        margin-top: 48px;
+      }
+    }
+
+    .container {
+      position: relative;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: -93px;
+        left: -161px;
+        height: 190px;
+        width: 230px;
+        background: url("../images/poivronrouge.png") no-repeat center transparent;
+
+        @media @tablet {
+          display: none;
+        }
+      }
+
+      h2 {
+        color: white;
+        text-transform: uppercase;
+        text-align: center;
+      }
+
+      h4 {
+        font-family: @MyriadRegular;
+        margin-top: 0;
+        margin-bottom: 10px;
+      }
+
+      .collapse,
+      .collapsing {
+        line-height: 1;
+        display: block;
+        height: 2rem;
+        overflow: hidden;
+
+        & + div .less {
+          display: none;
+        }
+
+        &.show {
+          height: auto;
+
+          & + div {
+            .less {
+              display: block;
+            }
+
+            .more {
+              display: none;
+            }
+          }
+        }
+      }
+
+      .more,
+      .less {
+        cursor: pointer;
+        color: @primaryColor;
+        text-decoration: underline;
+        font-family: @MyriadSemibold;
+      }
+    }
+  }
+
+  .content-3 {
+    &.mt-5-150lg {
+      margin-top: 150px;
+
+      @media @tablet {
+        margin-top: 48px;
+      }
+    }
+
+    .container {
+      position: relative;
+
+      &:before {
+        position: absolute;
+        content: "";
+        top: -285px;
+        right: -307px;
+        height: 451px;
+        width: 451px;
+        background: url("../images/pdt.png") no-repeat center transparent;
+
+        @media @tablet {
+          display: none;
+        }
+      }
+    }
+
+    h3 {
+      font-family: @MyriadBold;
+      font-size: 48px;
+    }
+
+    .box-pictos {
+      border: 1px solid lightgrey;
+      background-color: white;
+
+      .pictos {
+        img {
+          height: 55px;
+          width: auto;
+          padding: 0 15px;
+
+          @media @tablet {
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .content-4 {
+    .text-content {
+      padding-right: 200px;
+
+      @media @tablet {
+        padding-right: 0;
+      }
+
+      h4 {
+        font-size: 32px;
+        font-family: @MyriadSemibold;
+        line-height: 1;
+        color: @primaryColor;
+      }
+
+      p {
+        line-height: 1;
+      }
+    }
+
+    a {
+      display: inline-block;
+      position: relative;
+      text-transform: uppercase;
+      font-family: @MyriadSemibold;
+      color: @primaryColor;
+      text-decoration: none;
+      margin-top: 40px;
+
+      &:after {
+        content: "\0027F6";
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 30px;
+        line-height: 1;
+        margin-top: -4px;
+        margin-left: 10px;
+        transition: margin-left 0.3s ease-in-out;
+      }
+
+      &:hover:after {
+        margin-left: 30px;
+      }
+
+      @media @phone {
+        margin-bottom: 25px;
+      }
+    }
+  }
+
+  .magasins-participants {
+    .blue-banner {
+      color: white;
+      font-family: @MyriadBold;
+      padding: 80px 0;
+
+      .stores {
+        .see,
+        .hide {
+          padding: 20px 70px;
+          text-transform: uppercase;
+          border: 3px solid white;
+          width: max-content;
+          margin: 0 auto;
+          font-size: 20px;
+          cursor: pointer;
+
+          @media @phone {
+            padding: 0 10px;
+          }
+        }
+
+        &[aria-expanded="true"] {
+          .see {
+            display: none;
+          }
+          .hide {
+            display: block;
+          }
+        }
+
+        &[aria-expanded="false"] {
+          .see {
+            display: block;
+          }
+          .hide {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .departments {
+      h4 {
+        font-size: 32px;
+        font-family: @MyriadRegular;
+      }
+
+      .search-input-wrapper {
+        position: relative;
+
+        &:after {
+          content: "";
+          position: absolute;
+          top: -23px;
+          right: 35px;
+          height: 55px;
+          width: 55px;
+          background: url("../images/search.svg") no-repeat center transparent;
+
+          @media @phone {
+            display: none;
+          }
+        }
+
+        input,
+        select,
+        textarea {
+          background-color: @lightGrey;
+          border: none;
+          width: 692px;
+          padding: 35px 0 35px 35px;
+
+          &::placeholder {
+            color: #c7c7c7;
+            font-family: @MyriadRegular;
+            font-size: 32px;
+
+            @media @phone {
+              font-size: 20px;
+            }
+          }
+
+          @media @phone {
+            width: 325px;
+          }
+        }
+
+        input {
+          font-size: 32px;
+          font-family: @MyriadBold;
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button,
+        input[type=number] {
+          -webkit-appearance: none;
+          margin: 0;
+          -moz-appearance: textfield;
+        }
+      }
+
+      .departments-list {
+        columns: 4;
+
+        @media @tablet {
+          columns: 2;
+          padding-left: 50px;
+        }
+
+        @media @phone {
+          columns: 1
+        }
+
+        ul {
+          list-style-type: none;
+        }
+      }
+    }
+  }
+
+  .reseaux {
+    h2 {
+      font-family: @MyriadBold;
+      margin-bottom: 0;
+
+      @media @tablet {
+        font-size: 48px;
+      }
+
+      @media @phone {
+        font-size: 32px;
+      }
+    }
+
+    h3 {
+      text-transform: uppercase;
+      font-family: @CardenioBold;
+      font-size: 48px;
+      margin-top: 0;
+
+      @media @tablet {
+        margin-top: 15px;
+      }
+
+      @media @phone {
+        font-size: 32px;
+      }
+    }
+
+    img {
+      height: auto;
+      width: 75px;
+      margin: 0 25px;
+
+      @media @phone {
+        margin: 10px 25px;
+      }
+    }
   }
 }

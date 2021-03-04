@@ -1791,6 +1791,12 @@ ul.check-list li:before {
   max-width: 530px;
   margin: 30px auto 0;
 }
+.entete-recettes h4 {
+  max-width: 530px;
+  font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
+  line-height: 1;
+  margin: 45px auto 0;
+}
 .footer-recettes .block-txt {
   background: white;
   border: 1px solid #EDEDED;
@@ -3178,6 +3184,21 @@ div[role="contentinfo"] {
   padding: 15px;
   text-align: center;
 }
+footer .recettes-cta {
+  display: inline-block;
+  line-height: 46px;
+  background-color: #003663;
+  border-radius: 23px;
+  color: white;
+  text-transform: uppercase;
+  font-family: "Cardenio Modern Bold", Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  padding: 0 40px;
+  border: none;
+  transition: opacity 0.3s;
+  text-decoration: none;
+  cursor: pointer;
+}
 .newsletter-wrapper {
   background: #EDEDED;
   position: relative;
@@ -4029,4 +4050,343 @@ table.reparateurs tbody .tel {
 }
 .collapsible-faq .inner-content > div {
   padding-top: 15px;
+}
+#op-commerciale img {
+  width: 100%;
+  height: auto;
+}
+#op-commerciale .intro p {
+  font-size: 32px;
+  line-height: 1;
+}
+@media only screen and (max-width: 767px) {
+  #op-commerciale .intro p {
+    font-size: 25px;
+  }
+}
+#op-commerciale .intro p span {
+  font-weight: bold;
+  font-size: 48px;
+}
+#op-commerciale .intro h3 {
+  text-transform: uppercase;
+  font-family: "Cardenio Modern", Arial, Helvetica, sans-serif;
+  font-size: 48px;
+  color: #003663;
+}
+@media only screen and (max-width: 991px) {
+  #op-commerciale .content-1 h2 {
+    text-align: center;
+  }
+}
+#op-commerciale .content-1 h2 span {
+  font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
+  text-transform: unset;
+}
+#op-commerciale .content-2 {
+  background-position: top center;
+  background-size: auto 290px;
+}
+#op-commerciale .content-2.mt-5-70lg {
+  margin-top: 70px;
+}
+@media only screen and (max-width: 991px) {
+  #op-commerciale .content-2.mt-5-70lg {
+    margin-top: 48px;
+  }
+}
+#op-commerciale .content-2 .container {
+  position: relative;
+}
+#op-commerciale .content-2 .container:before {
+  content: "";
+  position: absolute;
+  top: -93px;
+  left: -161px;
+  height: 190px;
+  width: 230px;
+  background: url("../images/poivronrouge.png") no-repeat center transparent;
+}
+@media only screen and (max-width: 991px) {
+  #op-commerciale .content-2 .container:before {
+    display: none;
+  }
+}
+#op-commerciale .content-2 .container h2 {
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+}
+#op-commerciale .content-2 .container h4 {
+  font-family: "Myriad Pro Regular", Arial, Helvetica, sans-serif;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+#op-commerciale .content-2 .container .collapse,
+#op-commerciale .content-2 .container .collapsing {
+  line-height: 1;
+  display: block;
+  height: 2rem;
+  overflow: hidden;
+}
+#op-commerciale .content-2 .container .collapse + div .less,
+#op-commerciale .content-2 .container .collapsing + div .less {
+  display: none;
+}
+#op-commerciale .content-2 .container .collapse.show,
+#op-commerciale .content-2 .container .collapsing.show {
+  height: auto;
+}
+#op-commerciale .content-2 .container .collapse.show + div .less,
+#op-commerciale .content-2 .container .collapsing.show + div .less {
+  display: block;
+}
+#op-commerciale .content-2 .container .collapse.show + div .more,
+#op-commerciale .content-2 .container .collapsing.show + div .more {
+  display: none;
+}
+#op-commerciale .content-2 .container .more,
+#op-commerciale .content-2 .container .less {
+  cursor: pointer;
+  color: #003663;
+  text-decoration: underline;
+  font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
+}
+#op-commerciale .content-3.mt-5-150lg {
+  margin-top: 150px;
+}
+@media only screen and (max-width: 991px) {
+  #op-commerciale .content-3.mt-5-150lg {
+    margin-top: 48px;
+  }
+}
+#op-commerciale .content-3 .container {
+  position: relative;
+}
+#op-commerciale .content-3 .container:before {
+  position: absolute;
+  content: "";
+  top: -285px;
+  right: -307px;
+  height: 451px;
+  width: 451px;
+  background: url("../images/pdt.png") no-repeat center transparent;
+}
+@media only screen and (max-width: 991px) {
+  #op-commerciale .content-3 .container:before {
+    display: none;
+  }
+}
+#op-commerciale .content-3 h3 {
+  font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
+  font-size: 48px;
+}
+#op-commerciale .content-3 .box-pictos {
+  border: 1px solid lightgrey;
+  background-color: white;
+}
+#op-commerciale .content-3 .box-pictos .pictos img {
+  height: 55px;
+  width: auto;
+  padding: 0 15px;
+}
+@media only screen and (max-width: 991px) {
+  #op-commerciale .content-3 .box-pictos .pictos img {
+    padding: 0;
+  }
+}
+#op-commerciale .content-4 .text-content {
+  padding-right: 200px;
+}
+@media only screen and (max-width: 991px) {
+  #op-commerciale .content-4 .text-content {
+    padding-right: 0;
+  }
+}
+#op-commerciale .content-4 .text-content h4 {
+  font-size: 32px;
+  font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
+  line-height: 1;
+  color: #003663;
+}
+#op-commerciale .content-4 .text-content p {
+  line-height: 1;
+}
+#op-commerciale .content-4 a {
+  display: inline-block;
+  position: relative;
+  text-transform: uppercase;
+  font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
+  color: #003663;
+  text-decoration: none;
+  margin-top: 40px;
+}
+#op-commerciale .content-4 a:after {
+  content: "\0027F6";
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 30px;
+  line-height: 1;
+  margin-top: -4px;
+  margin-left: 10px;
+  transition: margin-left 0.3s ease-in-out;
+}
+#op-commerciale .content-4 a:hover:after {
+  margin-left: 30px;
+}
+@media only screen and (max-width: 767px) {
+  #op-commerciale .content-4 a {
+    margin-bottom: 25px;
+  }
+}
+#op-commerciale .magasins-participants .blue-banner {
+  color: white;
+  font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
+  padding: 80px 0;
+}
+#op-commerciale .magasins-participants .blue-banner .stores .see,
+#op-commerciale .magasins-participants .blue-banner .stores .hide {
+  padding: 20px 70px;
+  text-transform: uppercase;
+  border: 3px solid white;
+  width: max-content;
+  margin: 0 auto;
+  font-size: 20px;
+  cursor: pointer;
+}
+@media only screen and (max-width: 767px) {
+  #op-commerciale .magasins-participants .blue-banner .stores .see,
+  #op-commerciale .magasins-participants .blue-banner .stores .hide {
+    padding: 0 10px;
+  }
+}
+#op-commerciale .magasins-participants .blue-banner .stores[aria-expanded="true"] .see {
+  display: none;
+}
+#op-commerciale .magasins-participants .blue-banner .stores[aria-expanded="true"] .hide {
+  display: block;
+}
+#op-commerciale .magasins-participants .blue-banner .stores[aria-expanded="false"] .see {
+  display: block;
+}
+#op-commerciale .magasins-participants .blue-banner .stores[aria-expanded="false"] .hide {
+  display: none;
+}
+#op-commerciale .magasins-participants .departments h4 {
+  font-size: 32px;
+  font-family: "Myriad Pro Regular", Arial, Helvetica, sans-serif;
+}
+#op-commerciale .magasins-participants .departments .search-input-wrapper {
+  position: relative;
+}
+#op-commerciale .magasins-participants .departments .search-input-wrapper:after {
+  content: "";
+  position: absolute;
+  top: -23px;
+  right: 35px;
+  height: 55px;
+  width: 55px;
+  background: url("../images/search.svg") no-repeat center transparent;
+}
+@media only screen and (max-width: 767px) {
+  #op-commerciale .magasins-participants .departments .search-input-wrapper:after {
+    display: none;
+  }
+}
+#op-commerciale .magasins-participants .departments .search-input-wrapper input,
+#op-commerciale .magasins-participants .departments .search-input-wrapper select,
+#op-commerciale .magasins-participants .departments .search-input-wrapper textarea {
+  background-color: #EDEDED;
+  border: none;
+  width: 692px;
+  padding: 35px 0 35px 35px;
+}
+#op-commerciale .magasins-participants .departments .search-input-wrapper input::placeholder,
+#op-commerciale .magasins-participants .departments .search-input-wrapper select::placeholder,
+#op-commerciale .magasins-participants .departments .search-input-wrapper textarea::placeholder {
+  color: #c7c7c7;
+  font-family: "Myriad Pro Regular", Arial, Helvetica, sans-serif;
+  font-size: 32px;
+}
+@media only screen and (max-width: 767px) {
+  #op-commerciale .magasins-participants .departments .search-input-wrapper input::placeholder,
+  #op-commerciale .magasins-participants .departments .search-input-wrapper select::placeholder,
+  #op-commerciale .magasins-participants .departments .search-input-wrapper textarea::placeholder {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  #op-commerciale .magasins-participants .departments .search-input-wrapper input,
+  #op-commerciale .magasins-participants .departments .search-input-wrapper select,
+  #op-commerciale .magasins-participants .departments .search-input-wrapper textarea {
+    width: 325px;
+  }
+}
+#op-commerciale .magasins-participants .departments .search-input-wrapper input {
+  font-size: 32px;
+  font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
+}
+#op-commerciale .magasins-participants .departments .search-input-wrapper input::-webkit-outer-spin-button,
+#op-commerciale .magasins-participants .departments .search-input-wrapper input::-webkit-inner-spin-button,
+#op-commerciale .magasins-participants .departments .search-input-wrapper input[type=number] {
+  -webkit-appearance: none;
+  margin: 0;
+  -moz-appearance: textfield;
+}
+#op-commerciale .magasins-participants .departments .departments-list {
+  columns: 4;
+}
+@media only screen and (max-width: 991px) {
+  #op-commerciale .magasins-participants .departments .departments-list {
+    columns: 2;
+    padding-left: 50px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  #op-commerciale .magasins-participants .departments .departments-list {
+    columns: 1;
+  }
+}
+#op-commerciale .magasins-participants .departments .departments-list ul {
+  list-style-type: none;
+}
+#op-commerciale .reseaux h2 {
+  font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
+  margin-bottom: 0;
+}
+@media only screen and (max-width: 991px) {
+  #op-commerciale .reseaux h2 {
+    font-size: 48px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  #op-commerciale .reseaux h2 {
+    font-size: 32px;
+  }
+}
+#op-commerciale .reseaux h3 {
+  text-transform: uppercase;
+  font-family: "Cardenio Modern Bold", Arial, Helvetica, sans-serif;
+  font-size: 48px;
+  margin-top: 0;
+}
+@media only screen and (max-width: 991px) {
+  #op-commerciale .reseaux h3 {
+    margin-top: 15px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  #op-commerciale .reseaux h3 {
+    font-size: 32px;
+  }
+}
+#op-commerciale .reseaux img {
+  height: auto;
+  width: 75px;
+  margin: 0 25px;
+}
+@media only screen and (max-width: 767px) {
+  #op-commerciale .reseaux img {
+    margin: 10px 25px;
+  }
 }

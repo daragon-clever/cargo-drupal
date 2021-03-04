@@ -876,8 +876,8 @@ a.btn-slide-cta {
   display: block;
   margin: 40px 0;
   height: 4px;
-  width: 270px;
-  background: #ad182c;
+  width: 264px;
+  background: #219b8c;
 }
 #collections h3 {
   font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
@@ -899,7 +899,7 @@ a.btn-slide-cta {
 #collections .mea-collection {
   padding: 50px 0;
   color: white;
-  background: url("../images/collections/bg_mea_collections.jpg") no-repeat center transparent;
+  background: url("../images/collection/collection-bg-ardoise.jpg") no-repeat center transparent;
   background-size: cover;
 }
 #collections .mea-collection p,
@@ -909,6 +909,11 @@ a.btn-slide-cta {
 }
 #collections .mea-collection .container > .row {
   min-height: 550px;
+}
+@media only screen and (max-width: 991px) {
+  #collections .mea-collection .container > .row {
+    min-height: unset;
+  }
 }
 @media only screen and (max-width: 991px) {
   #collections .mea-collection p,
@@ -941,20 +946,21 @@ a.btn-slide-cta {
     margin: 15px auto;
   }
 }
-#collections .collection01 {
-  background: url("../images/collections/bg_collection_01.jpg") no-repeat center transparent;
-  background-size: cover;
-}
-#collections .collection02 {
-  background: url("../images/collections/bg_collection_02.jpg") no-repeat center transparent;
-  background-size: cover;
-}
 #collections .collection02 img {
   margin: 20px 0 30px;
 }
-#collections .collection03 {
-  background: url("../images/collections/bg_collection_03.jpg") no-repeat center transparent;
-  background-size: cover;
+#collections .fsc {
+  background-color: #255C50;
+}
+#collections .fsc p {
+  color: white;
+  margin-bottom: 0;
+  font-size: 18px;
+}
+@media only screen and (max-width: 991px) {
+  #collections .fsc p br {
+    display: none;
+  }
 }
 #collections .products {
   padding: 50px 0;
@@ -965,9 +971,12 @@ a.btn-slide-cta {
 #collections .products > div {
   margin: 30px 0;
 }
+#collections .products p {
+  line-height: 1.4;
+}
 #collections .products p span {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 }
 #collections .products p span.subtitle {
   text-transform: uppercase;
@@ -986,15 +995,26 @@ a.btn-slide-cta {
 #collections .products p.conseil {
   font-size: 14px;
   margin-top: 30px;
+  line-height: 1.6;
 }
 #collections .products p.conseil span {
   font-family: "Myriad Pro Semibold Italic", Arial, Helvetica, sans-serif;
-  color: #ad182c;
+  color: #219b8c;
   font-size: 18px;
 }
 @media only screen and (max-width: 991px) {
   #collections .products p.conseil br {
     display: none;
+  }
+}
+@media only screen and (max-width: 767px) {
+  #collections .products .slick-prev {
+    left: 15px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  #collections .products .slick-next {
+    right: 15px;
   }
 }
 @media only screen and (max-width: 991px) {
@@ -1019,12 +1039,12 @@ a.btn-slide-cta {
   color: black;
   text-transform: uppercase;
 }
-#collections .products .spec .red {
-  color: #ad182c;
+#collections .products .spec .avec-vignettes {
+  color: #219b8c;
 }
 #collections .products .spec .price {
   display: inline-block;
-  background: #ad182c;
+  background: #219b8c;
   color: white;
   border-radius: 50px;
   font-size: 35px;
@@ -1036,6 +1056,7 @@ a.btn-slide-cta {
   font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
   font-size: 22px;
   line-height: 1;
+  color: #5B5B5C;
 }
 #collections .products .multi-spec .spec {
   margin-top: 30px;
@@ -1136,12 +1157,12 @@ a.btn-slide-cta {
     font-size: 24px;
   }
 }
-#footer .instagram-footer .insta-fake img {
+#footer .instagram-footer .insta-imgs img {
   display: block;
   margin: 0 auto;
 }
 @media only screen and (max-width: 991px) {
-  #footer .instagram-footer .insta-fake {
+  #footer .instagram-footer .insta-imgs img {
     display: none;
   }
 }
@@ -1159,35 +1180,6 @@ a.btn-slide-cta {
   #footer .instagram-footer .js-prev-slick,
   #footer .instagram-footer .js-next-slick {
     display: inline-block;
-  }
-}
-#footer .instagram-footer .js-prev-slick {
-  transform: rotate(135deg);
-  left: 40px;
-}
-@media only screen and (max-width: 767px) {
-  #footer .instagram-footer .js-prev-slick {
-    left: 25px;
-  }
-}
-#footer .instagram-footer .js-next-slick {
-  transform: rotate(-45deg);
-  right: 40px;
-}
-@media only screen and (max-width: 767px) {
-  #footer .instagram-footer .js-next-slick {
-    right: 25px;
-  }
-}
-#footer .instagram-footer .insta-fake-slick {
-  display: none;
-}
-@media only screen and (max-width: 991px) {
-  #footer .instagram-footer .insta-fake-slick {
-    display: block;
-  }
-  #footer .instagram-footer .insta-fake-slick img {
-    margin: 0 auto;
   }
 }
 #footer .navigation-footer {
@@ -1250,7 +1242,7 @@ a.btn-slide-cta {
   margin: 0 15px;
 }
 #menu ul li a {
-  color: #219b8c;
+  color: white;
   text-transform: uppercase;
   font-size: 24px;
   font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
@@ -1344,55 +1336,55 @@ a.btn-slide-cta {
     right: 20px;
   }
 }
-.cms-page {
+#mentions-legales {
   padding-top: 120px;
   font-size: 20px;
 }
-.cms-page h1 {
+#mentions-legales h1 {
   font-size: 34px;
   position: relative;
 }
-.cms-page h1:after {
+#mentions-legales h1:after {
   content: "";
   height: 4px;
   width: 260px;
-  background: #ad182c;
+  background: #219b8c;
   display: block;
   margin: 30px 0;
 }
 @media only screen and (max-width: 767px) {
-  .cms-page h1:after {
+  #mentions-legales h1:after {
     margin: 15px auto;
   }
 }
 @media only screen and (max-width: 991px) {
-  .cms-page h1 {
+  #mentions-legales h1 {
     font-size: 28px;
   }
 }
 @media only screen and (max-width: 767px) {
-  .cms-page h1 {
+  #mentions-legales h1 {
     text-align: center;
   }
 }
-.cms-page h2 {
+#mentions-legales h2 {
   font-size: 20px;
   font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
 }
-.cms-page a {
+#mentions-legales a {
   color: black;
   text-decoration: underline;
 }
 @media only screen and (max-width: 767px) {
-  .cms-page {
+  #mentions-legales {
     font-size: 16px;
   }
-  .cms-page.px1560 {
+  #mentions-legales.px1560 {
     padding-top: 60px;
   }
 }
 #recettes > div:nth-child(even) {
-  background: url("../images/recettes/bg-black-recettes.jpg") no-repeat center;
+  background: url("../images/recettes/bg-recettes.jpg") no-repeat center;
   background-size: cover;
   color: white;
 }
@@ -1407,6 +1399,44 @@ a.btn-slide-cta {
 @media only screen and (max-width: 767px) {
   #recettes .header img {
     width: 100%;
+  }
+}
+#recettes .header .header-title {
+  text-transform: uppercase;
+  position: absolute;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 25px;
+  bottom: 25%;
+  left: 110px;
+  font-size: 24px;
+  line-height: 1.4;
+}
+#recettes .header .header-title .br-yves {
+  display: none;
+}
+@media only screen and (max-width: 767px) {
+  #recettes .header .header-title .br-yves {
+    display: initial;
+  }
+}
+@media only screen and (max-width: 767px) {
+  #recettes .header .header-title .br-camdeborde {
+    display: none;
+  }
+}
+@media only screen and (max-width: 991px) {
+  #recettes .header .header-title {
+    bottom: 5%;
+  }
+}
+@media only screen and (max-width: 767px) {
+  #recettes .header .header-title {
+    padding: 15px;
+    bottom: 20%;
+    left: 8%;
+    right: 8%;
+    font-size: 18px;
   }
 }
 #recettes .intro img {
@@ -1427,7 +1457,7 @@ a.btn-slide-cta {
 }
 #recettes .intro .recettes-link .nb {
   font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
-  color: #ad182c;
+  color: #219b8c;
   font-size: 30px;
   vertical-align: middle;
   margin-right: 20px;
@@ -1479,7 +1509,7 @@ a.btn-slide-cta {
   margin: 20px auto 60px;
   height: 4px;
   width: 270px;
-  background: #ad182c;
+  background: #219b8c;
 }
 @media only screen and (max-width: 767px) {
   #recettes .recette h3 {
@@ -1494,9 +1524,7 @@ a.btn-slide-cta {
 }
 #recettes .recette .nb-faded {
   font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
-  position: absolute;
-  top: 0;
-  left: 0;
+  text-align: left;
   line-height: 150px;
   font-size: 245px;
   color: #6a6a6a;
@@ -1508,31 +1536,80 @@ a.btn-slide-cta {
   }
 }
 #recettes .recette img {
-  margin-top: 100px;
-  z-index: 1;
+  margin-top: 60px;
+}
+#recettes .recette .left .js-hidden-video {
+  display: none;
+  z-index: 100;
   position: relative;
 }
-@media only screen and (max-width: 767px) {
-  #recettes .recette img {
-    margin-top: 0;
+#recettes .recette .left .js-hidden-video .inner {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  transition: opacity 0.5s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#recettes .recette .left .js-hidden-video .inner > div {
+  position: relative;
+}
+@media only screen and (max-width: 991px) {
+  #recettes .recette .left .js-hidden-video iframe {
+    max-width: 90vw;
+    max-height: 90vw;
   }
 }
-#recettes .recette .left {
-  position: relative;
+#recettes .recette .left .js-close-hidden-video {
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  height: 45px;
+  width: 45px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+#recettes .recette .left .js-close-hidden-video:hover {
+  opacity: 0.8;
+}
+@media only screen and (max-width: 991px) {
+  #recettes .recette .left .js-close-hidden-video {
+    right: 0;
+  }
+}
+#recettes .recette .left .js-close-hidden-video:after,
+#recettes .recette .left .js-close-hidden-video:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 45%;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: white;
+  transform-origin: center;
+}
+#recettes .recette .left .js-close-hidden-video:before {
+  transform: rotate(45deg);
+}
+#recettes .recette .left .js-close-hidden-video:after {
+  transform: rotate(-45deg);
 }
 #recettes .recette .left ul {
   list-style: none;
   font-size: 16px;
   color: #5f5f60;
-  margin-left: 58px;
   text-align: left;
+  margin-top: 90px;
+  margin-left: 130px;
 }
 #recettes .recette .left ul .indication {
-  color: #ad182c;
+  color: #219b8c;
   font-size: 18px;
-}
-#recettes .recette .left ul li span {
-  font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
 }
 @media only screen and (max-width: 991px) {
   #recettes .recette .left ul {
@@ -1575,7 +1652,7 @@ a.btn-slide-cta {
 }
 #recettes .recette .right .conseil .title {
   margin: 0;
-  color: #ad182c;
+  color: #219b8c;
 }
 .full-black-fixed {
   position: fixed;

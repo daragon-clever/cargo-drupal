@@ -845,7 +845,6 @@ a.btn-slide-cta {
 }
 
 #collections {
-
   @media @phone {
     .header img {
       width: 100%;
@@ -865,8 +864,8 @@ a.btn-slide-cta {
       display: block;
       margin: 40px 0;
       height: 4px;
-      width: 270px;
-      background: @red;
+      width: 264px;
+      background: @primaryColor;
     }
   }
 
@@ -892,7 +891,7 @@ a.btn-slide-cta {
   .mea-collection {
     padding: 50px 0;
     color: white;
-    background: url("../images/collections/bg_mea_collections.jpg") no-repeat center transparent;
+    background: url("../images/collection/collection-bg-ardoise.jpg") no-repeat center transparent;
     background-size: cover;
 
     p, ul {
@@ -902,6 +901,10 @@ a.btn-slide-cta {
 
     .container > .row {
       min-height: 550px;
+
+      @media @tablet {
+        min-height: unset;
+      }
     }
 
     @media @tablet {
@@ -940,23 +943,24 @@ a.btn-slide-cta {
     }
   }
 
-  .collection01 {
-    background: url("../images/collections/bg_collection_01.jpg") no-repeat center transparent;
-    background-size: cover;
+  .collection02 img {
+    margin: 20px 0 30px;
   }
 
-  .collection02 {
-    background: url("../images/collections/bg_collection_02.jpg") no-repeat center transparent;
-    background-size: cover;
+  .fsc {
+    background-color: #255C50;
 
-    img {
-      margin: 20px 0 30px;
+    p {
+      color: white;
+      margin-bottom: 0;
+      font-size: 18px;
+
+      br {
+        @media @tablet {
+          display: none;
+        }
+      }
     }
-  }
-
-  .collection03 {
-    background: url("../images/collections/bg_collection_03.jpg") no-repeat center transparent;
-    background-size: cover;
   }
 
   .products {
@@ -970,9 +974,11 @@ a.btn-slide-cta {
     }
 
     p {
+      line-height: 1.4;
+
       span {
         display: block;
-        margin-bottom: 5px;
+        margin-bottom: 15px;
 
         &.subtitle {
           text-transform: uppercase;
@@ -992,10 +998,11 @@ a.btn-slide-cta {
       &.conseil {
         font-size: 14px;
         margin-top: 30px;
+        line-height: 1.6;
 
         span {
           font-family: "Myriad Pro Semibold Italic", Arial, Helvetica, sans-serif;
-          color: @red;
+          color: @primaryColor;
           font-size: 18px;
         }
 
@@ -1004,6 +1011,18 @@ a.btn-slide-cta {
             display: none;
           }
         }
+      }
+    }
+
+    .slick-prev {
+      @media @phone {
+        left: 15px;
+      }
+    }
+
+    .slick-next {
+      @media @phone {
+        right: 15px;
       }
     }
 
@@ -1031,13 +1050,13 @@ a.btn-slide-cta {
         text-transform: uppercase;
       }
 
-      .red {
-        color: @red;
+      .avec-vignettes {
+        color: @primaryColor;
       }
 
       .price {
         display: inline-block;
-        background: @red;
+        background: @primaryColor;
         color: white;
         border-radius: 50px;
         font-size: 35px;
@@ -1050,6 +1069,7 @@ a.btn-slide-cta {
         font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
         font-size: 22px;
         line-height: 1;
+        color: #5B5B5C;
       }
     }
 
@@ -1163,11 +1183,9 @@ a.btn-slide-cta {
       }
     }
 
-    .insta-fake {
-      img {
-        display: block;
-        margin: 0 auto;
-      }
+    .insta-imgs img {
+      display: block;
+      margin: 0 auto;
 
       @media @tablet {
         display: none;
@@ -1186,36 +1204,6 @@ a.btn-slide-cta {
 
       @media @tablet {
         display: inline-block;
-      }
-    }
-
-    .js-prev-slick {
-      transform: rotate(135deg);
-      left: 40px;
-
-      @media @phone {
-        left: 25px;
-      }
-    }
-
-    .js-next-slick {
-      transform: rotate(-45deg);
-      right: 40px;
-
-      @media @phone {
-        right: 25px;
-      }
-    }
-
-    .insta-fake-slick {
-      display: none;
-
-      @media @tablet {
-        display: block;
-
-        img {
-          margin: 0 auto;
-        }
       }
     }
   }
@@ -1284,7 +1272,7 @@ a.btn-slide-cta {
       margin: 0 15px;
 
       a {
-        color: @primaryColor;
+        color: white;
         text-transform: uppercase;
         font-size: 24px;
         font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
@@ -1392,7 +1380,7 @@ a.btn-slide-cta {
   }
 }
 
-.cms-page {
+#mentions-legales {
   padding-top: 120px;
   font-size: 20px;
 
@@ -1404,7 +1392,7 @@ a.btn-slide-cta {
       content: "";
       height: 4px;
       width: 260px;
-      background: @red;
+      background: @primaryColor;
       display: block;
       margin: 30px 0;
 
@@ -1443,7 +1431,7 @@ a.btn-slide-cta {
 
 #recettes {
   & > div:nth-child(even) {
-    background: url("../images/recettes/bg-black-recettes.jpg") no-repeat center;
+    background: url("../images/recettes/bg-recettes.jpg") no-repeat center;
     background-size: cover;
     color: white;
 
@@ -1458,9 +1446,49 @@ a.btn-slide-cta {
     }
   }
 
-  @media @phone {
-    .header img {
-      width: 100%;
+  .header {
+    img {
+      @media @phone {
+        width: 100%;
+      }
+    }
+
+    .header-title {
+      text-transform: uppercase;
+      position: absolute;
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 25px;
+      bottom: 25%;
+      left: 110px;
+      font-size: 24px;
+      line-height: 1.4;
+
+      .br-yves {
+        display: none;
+
+        @media @phone {
+          display: initial;
+        }
+      }
+
+      .br-camdeborde {
+        @media @phone {
+          display: none;
+        }
+      }
+
+      @media @tablet {
+        bottom: 5%;
+      }
+
+      @media @phone {
+        padding: 15px;
+        bottom: 20%;
+        left: 8%;
+        right: 8%;
+        font-size: 18px;
+      }
     }
   }
 
@@ -1488,7 +1516,7 @@ a.btn-slide-cta {
 
       .nb {
         font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
-        color: @red;
+        color: @primaryColor;
         font-size: 30px;
         vertical-align: middle;
         margin-right: 20px;
@@ -1546,7 +1574,7 @@ a.btn-slide-cta {
         margin: 20px auto 60px;
         height: 4px;
         width: 270px;
-        background: @red;
+        background: @primaryColor;
       }
 
       @media @phone {
@@ -1564,9 +1592,7 @@ a.btn-slide-cta {
 
     .nb-faded {
       font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
-      position: absolute;
-      top: 0;
-      left: 0;
+      text-align: left;
       line-height: 150px;
       font-size: 245px;
       color: #6a6a6a;
@@ -1578,32 +1604,86 @@ a.btn-slide-cta {
     }
 
     img {
-      margin-top: 100px;
-      z-index: 1;
-      position: relative;
-
-      @media @phone {
-        margin-top: 0
-      }
+      margin-top: 60px;
     }
 
     .left {
-      position: relative;
+      .js-hidden-video {
+        display: none;
+        z-index: 100;
+        position: relative;
+
+        .inner {
+          height: 100vh;
+          width: 100vw;
+          position: fixed;
+          top: 0;
+          left: 0;
+          background: rgba(0, 0, 0, 0.8);
+          transition: opacity 0.5s ease-in-out;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          & > div {
+            position: relative;
+          }
+        }
+
+        @media @tablet {
+          iframe {
+            max-width:90vw;
+            max-height: 90vw;
+          }
+        }
+      }
+
+      .js-close-hidden-video {
+        position: absolute;
+        top: -50px;
+        right: -50px;
+        height: 45px;
+        width: 45px;
+        cursor: pointer;
+        .dimOpacityOnHover(0.8);
+
+        @media @tablet {
+          right: 0;
+        }
+
+        &:after,
+        &:before {
+          content: "";
+          display: block;
+          position: absolute;
+          left: 45%;
+          top: 0;
+          height: 100%;
+          width: 4px;
+          background: white;
+          transform-origin: center;
+        }
+
+        &:before {
+          transform: rotate(45deg);
+        }
+
+        &:after {
+          transform: rotate(-45deg);
+        }
+      }
 
       ul {
         list-style: none;
         font-size: 16px;
         color: #5f5f60;
-        margin-left: 58px;
         text-align: left;
+        margin-top: 90px;
+        margin-left: 130px;
 
         .indication {
-          color: @red;
+          color: @primaryColor;
           font-size: 18px;
-        }
-
-        li span {
-          font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
         }
 
         @media @tablet {
@@ -1649,7 +1729,7 @@ a.btn-slide-cta {
 
         .title {
           margin: 0;
-          color: @red;
+          color: @primaryColor;
         }
       }
     }

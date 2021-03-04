@@ -124,16 +124,11 @@
                 <div class="col">
                     <div class="blue-banner py- text-center">
                         <h2>{{ "Magasins participants"|trans }}</h2>
-                        <h4 class="js-see-stores see-stores" data-toggle="collapse" href="#collapse-stores"
-                            aria-expanded="false"
-                            aria-controls="collapse-stores">
-                            {{ "Voir les magasins participants"|trans }}
-                        </h4>
-                        <h4 class="js-hide-stores hide-stores" data-toggle="collapse" href="#collapse-stores"
-                            aria-expanded="false"
-                            aria-controls="collapse-stores">
-                            {{ "Masquer la liste des magasins"|trans }}
-                        </h4>
+                        <div class="stores" data-toggle='collapse' href="#collapse-stores" aria-expanded="false"
+                             aria-controls="collapse-stores">
+                            <span class="see">{{ "Voir les magasins participants"|trans }}</span>
+                            <span class="hide">{{ "Masquer la liste des magasins"|trans }}</span>
+                        </div>
                     </div>
                 </div>
             </div>

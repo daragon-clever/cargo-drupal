@@ -3376,32 +3376,39 @@ table.reparateurs {
       font-family: @MyriadBold;
       padding: 80px 0;
 
-      h4 {
-        padding: 20px 70px;
-        text-transform: uppercase;
-        border: 3px solid white;
-        width: max-content;
-        margin: 0 auto;
-        font-size: 20px;
-        cursor: pointer;
+      .stores {
+        .see,
+        .hide {
+          padding: 20px 70px;
+          text-transform: uppercase;
+          border: 3px solid white;
+          width: max-content;
+          margin: 0 auto;
+          font-size: 20px;
+          cursor: pointer;
 
-        @media @phone {
-          padding: 0 10px;
+          @media @phone {
+            padding: 0 10px;
+          }
         }
-      }
 
-      .hide-stores {
-        display: none;
-        transition: opacity 0.3s ease-in-out;
-
-        &.is-visible {
-          display: block;
-          transition: opacity 0.3s ease-in-out;
+        &[aria-expanded="true"] {
+          .see {
+            display: none;
+          }
+          .hide {
+            display: block;
+          }
         }
-      }
 
-      .see-stores.is-not-visible {
-        display: none;
+        &[aria-expanded="false"] {
+          .see {
+            display: block;
+          }
+          .hide {
+            display: none;
+          }
+        }
       }
     }
 

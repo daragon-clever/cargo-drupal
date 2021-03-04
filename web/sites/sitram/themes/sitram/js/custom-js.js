@@ -229,16 +229,6 @@ jQuery(document).ready(function ($) {
         window.open('fb-messenger://share?link=' + encodeURIComponent(link));
     })
 
-    // LISTE MAGASINS - OP
-    $('.js-see-stores').click(function () {
-        $(this).addClass('is-not-visible');
-        $('.js-hide-stores').addClass('is-visible');
-    })
-    $('.js-hide-stores').click(function () {
-        $(this).removeClass('is-visible');
-        $('.js-see-stores').removeClass('is-not-visible');
-    })
-
     // SEARCHBAR - OP
     if ($('#op-commerciale').length) {
 

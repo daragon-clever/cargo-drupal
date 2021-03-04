@@ -4244,7 +4244,8 @@ table.reparateurs tbody .tel {
   font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
   padding: 80px 0;
 }
-#op-commerciale .magasins-participants .blue-banner h4 {
+#op-commerciale .magasins-participants .blue-banner .stores .see,
+#op-commerciale .magasins-participants .blue-banner .stores .hide {
   padding: 20px 70px;
   text-transform: uppercase;
   border: 3px solid white;
@@ -4254,19 +4255,21 @@ table.reparateurs tbody .tel {
   cursor: pointer;
 }
 @media only screen and (max-width: 767px) {
-  #op-commerciale .magasins-participants .blue-banner h4 {
+  #op-commerciale .magasins-participants .blue-banner .stores .see,
+  #op-commerciale .magasins-participants .blue-banner .stores .hide {
     padding: 0 10px;
   }
 }
-#op-commerciale .magasins-participants .blue-banner .hide-stores {
+#op-commerciale .magasins-participants .blue-banner .stores[aria-expanded="true"] .see {
   display: none;
-  transition: opacity 0.3s ease-in-out;
 }
-#op-commerciale .magasins-participants .blue-banner .hide-stores.is-visible {
+#op-commerciale .magasins-participants .blue-banner .stores[aria-expanded="true"] .hide {
   display: block;
-  transition: opacity 0.3s ease-in-out;
 }
-#op-commerciale .magasins-participants .blue-banner .see-stores.is-not-visible {
+#op-commerciale .magasins-participants .blue-banner .stores[aria-expanded="false"] .see {
+  display: block;
+}
+#op-commerciale .magasins-participants .blue-banner .stores[aria-expanded="false"] .hide {
   display: none;
 }
 #op-commerciale .magasins-participants .departments h4 {

@@ -212,6 +212,10 @@ img {
       color: @darkGrey;
     }
 
+    h2 {
+      font-size: 1rem;
+    }
+
     img {
       object-fit: contain;
       height: 130px;
@@ -738,7 +742,7 @@ p {
     }
   }
 
-  h2 {
+  h3 {
     font-size: 1.5rem;
     text-align: left;
     color: @darkGrey;
@@ -878,6 +882,7 @@ p {
         }
 
         & > span {
+          line-height: 1.5;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -1022,6 +1027,11 @@ p {
 
     .txt {
       overflow: hidden;
+
+      h2 {
+        font-size: 1.5rem;
+        line-height: 1.2;
+      }
     }
   }
 }
@@ -1030,30 +1040,43 @@ p {
   li {
     color: @grey;
   }
+
+  .astuce-content {
+    h1, h2, h3 {
+      color: @grey;
+      font-size: 1rem;
+      line-height: 1.5;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+  }
 }
 
 //ARRIVAGES
 #arrivages {
   .title {
-    color: @darkGrey;
-    text-align: center;
-    font-size: 1.6rem;
+    &, h1, h2, h3 {
+      color: @darkGrey;
+      text-align: center;
+      font-size: 1.6rem;
+      font-weight: normal;
 
-    .big {
-      font-size: 1.8rem;
-      display: block;
+      .big {
+        font-size: 1.8rem;
+        display: block;
+
+        @media @phone {
+          font-size: 1.5rem;
+        }
+      }
+
+      .cta {
+        margin-top: 30px;
+      }
 
       @media @phone {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
       }
-    }
-
-    .cta {
-      margin-top: 30px;
-    }
-
-    @media @phone {
-      font-size: 1.2rem;
     }
   }
 

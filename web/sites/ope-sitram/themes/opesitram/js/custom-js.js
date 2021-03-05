@@ -5,7 +5,6 @@ jQuery(document).ready(function ($) {
     // SLICK
     var gammesSlider = $(".js-gammes-slick");
     var productsSlider = $(".js-slick-products");
-    var instagramSlider = $("#js-instagram");
 
     gammesSlider.slick({
         infinite: true,
@@ -17,12 +16,6 @@ jQuery(document).ready(function ($) {
         productsSlider.slick({
             infinite: true,
             dots: true,
-            adaptiveHeight: true
-        });
-
-        instagramSlider.slick({
-            infinite: true,
-            dots: false,
             adaptiveHeight: true
         });
     }
@@ -77,21 +70,57 @@ jQuery(document).ready(function ($) {
         storeLocatorLink.attr("href", "accueil#js-store-locator");
     }
 
-    // INSTAGRAM
+    // INSTAGRAM + SLICK
     if ($('#js-instagram').length) {
-        (function () {
+        const instaSlick = function () {
+            $("#js-instagram").slick({
+                infinite: true,
+                slidesToShow: 4,
+                slidesToScroll: 4,
+                dots: false,
+                mobileFirst:true,
+                responsive: [
+                    {
+                        breakpoint: 990,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 2
+                        }
+                    },
+                    {
+                        breakpoint: 767,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            centerMode: true,
+                            centerPadding: '30px'
+                        }
+                    }
+                ]
+            });
+        }
+
+        $(function () {
             new InstagramFeed({
                 'username': 'sitram_fr',
-                'container': document.getElementById("js-instagram"),
                 'display_profile': false,
                 'display_biography': false,
                 'display_gallery': true,
                 'display_captions': false,
-                'callback': null,
+                'callback': function (data) {
+                    let dataItem = data.edge_owner_to_timeline_media.edges;
+                    for (let i = 0; i < dataItem.length && i < 8; i++) {
+                        $("#js-instagram").append(`
+                            <div>
+                                <a href="${'https://www.instagram.com/p/' + dataItem[i].node.shortcode + '/'}" target="_blank">
+                                    <img src="${dataItem[i].node.thumbnail_src}" />
+                                </a>
+                            </div>
+                        `);
+                    }
+                    instaSlick();
+                },
                 'styling': true,
-                'items': 4,
-                'items_per_row': 4,
-                'margin': 1,
                 'lazy_load': true,
                 'on_error': function () {
                     $('#js-instagram').html('<a href="https://www.instagram.com/sitram_fr" target="_blank"><img class="mw-100" src="/sites/ope-sitram/themes/opesitram/images/footer/fake-insta.png" /></a>')

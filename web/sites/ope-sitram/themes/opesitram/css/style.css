@@ -1160,6 +1160,7 @@ a.btn-slide-cta {
 #footer .instagram-footer .insta-imgs img {
   display: block;
   margin: 0 auto;
+  padding: 15px;
 }
 @media only screen and (max-width: 991px) {
   #footer .instagram-footer .insta-imgs img {
@@ -1268,7 +1269,7 @@ a.btn-slide-cta {
     left: 0;
     height: 100%;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
+    background: #219b8c;
     overflow: hidden;
   }
   #menu ul {
@@ -1684,12 +1685,12 @@ a.btn-slide-cta {
   margin-bottom: 77px;
 }
 .full-black-fixed .txt a {
-  color: #ad182c;
+  color: #219b8c;
   font-weight: 600;
   text-decoration: underline;
 }
 .full-black-fixed .txt .sep {
-  background-color: #ad182c;
+  background-color: #219b8c;
   height: 2px;
   width: 68px;
   margin: 15px auto 20px;

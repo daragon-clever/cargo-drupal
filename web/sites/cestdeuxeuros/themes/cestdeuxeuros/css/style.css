@@ -7,6 +7,7 @@
 body {
   font-family: "ITC Avant Garde Pro Md", Arial, Helvetica, sans-serif;
   font-size: 16px;
+  overflow-x: hidden;
 }
 .max-1280 {
   max-width: 1280px;
@@ -1927,59 +1928,55 @@ h2.title-txt {
     margin-top: 30px;
   }
 }
-.store-locator-detail-socials-title {
-  color: #636362;
-  text-transform: uppercase;
-  font-size: 21px;
-  margin: 30px 0;
-  display: inline-block;
-  background: white;
-  padding: 0 15px;
-}
-.store-locator-detail-socials-title:after {
-  content: "";
-  height: 1px;
-  width: 100%;
-  background: #636363;
-  position: absolute;
-  top: 42px;
-  left: 0;
-  z-index: -1;
+.store-locator-details-socials-intro p {
+  max-width: 395px;
+  margin: 0 auto;
 }
 .store-locator-detail-socials img {
-  height: 240px;
-  margin: 30px 0;
+  width: 70px;
+  height: 70px;
+  margin: 20px 0;
 }
 .store-locator-detail-socials > div a {
-  color: white;
-  text-transform: uppercase;
   font-weight: 600;
   line-height: 30px;
-  width: 180px;
+  width: auto;
   display: inline-block;
-  margin: 15px 0 30px;
+  margin-bottom: 30px;
   font-size: 14px;
+  border: 2px solid;
+  border-radius: 50px;
+  padding: 0 15px;
 }
 .store-locator-detail-socials > div a:hover {
   text-decoration: none;
 }
-.store-locator-detail-socials > div.instagram img {
-  margin-right: -60px;
-}
 .store-locator-detail-socials > div.instagram a {
-  background: #c5385c;
+  border-color: #c5385c;
+  color: #c5385c;
 }
 .store-locator-detail-socials > div.facebook a {
-  background: #3c5a99;
+  border-color: #3c5a99;
+  color: #3c5a99;
 }
 .store-locator-detail-socials > div.newsletter a {
-  background: #e56a0e;
+  border-color: #e56a0e;
+  color: #e56a0e;
 }
 .store-locator-detail-socials > div p {
   margin-bottom: 0;
   font-size: 14px;
   color: #a0a0a0;
   font-weight: 600;
+}
+.fake-fullwidth {
+  width: 100vw;
+  position: relative;
+  margin-left: -50vw;
+  left: 50%;
+}
+.fake-fullwidth.bg-lightgrey {
+  background: #f6f6f6;
 }
 .storelocator-back {
   color: #159ed4;

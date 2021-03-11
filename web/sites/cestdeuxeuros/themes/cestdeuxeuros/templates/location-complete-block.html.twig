@@ -99,6 +99,46 @@
     </div>
 </div>
 
+
+<div class="fake-fullwidth bg-lightgrey py-5 mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center store-locator-details-socials-intro">
+                <h3 class="store-locator-detail-socials-title">Restez informés !</h3>
+                <p class="my-3">
+                    {{ "Rejoignez vite les C'est deux euros addicts sur Facebook & Instagram, une communauté de fans de déco, brico, diy ..."|trans }}
+                </p>
+            </div>
+        </div>
+        <div class="row text-center store-locator-detail-socials">
+            {% for socialNetwork in location.getSocialNetworks %}
+                {% if socialNetwork.type == 'facebook' %}
+                    <div class="col-12 col-sm {{ socialNetwork.type }}">
+                        <div>
+                            <img src="/sites/cestdeuxeuros/themes/cestdeuxeuros/images/footer/facebook.svg"/>
+                        </div>
+                        <a href="https://www.facebook.com/{{ socialNetwork.uri }}/" target="_blank">Je suis mon magasin</a>
+                    </div>
+                {% elseif socialNetwork.type == 'instagram' %}
+                    <div class="col-12 col-sm {{ socialNetwork.type }}">
+                        <div>
+                            <img src="/sites/cestdeuxeuros/themes/cestdeuxeuros/images/footer/instagram.svg"/>
+                        </div>
+                        <a href="https://www.instagram.com/{{ socialNetwork.uri }}/" target="_blank">Je m'abonne</a>
+                    </div>
+                {% endif %}
+            {% endfor %}
+
+            <div class="col-12 col-sm newsletter">
+                <div>
+                    <img src="/sites/cestdeuxeuros/themes/cestdeuxeuros/images/footer/mail-orange.svg"/>
+                </div>
+                <a href="#" data-toggle="modal" data-target="#modal-newsletter">Je m'inscris</a>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="row mt-5">
     <div class="col-12 col-md-6">
         <h2 class="title-txt mb-3">Des magasins pas chers conçus pour faire de bonnes affaires !</h2>
@@ -147,41 +187,5 @@
                 {{ message.getMessage }}
             </p>
         {% endfor %}
-    </div>
-</div>
-
-<div class="row">
-    <div class="col text-center">
-        <h3 class="store-locator-detail-socials-title">Restez informés !</h3>
-    </div>
-</div>
-
-<div class="row text-center store-locator-detail-socials">
-    {% for socialNetwork in location.getSocialNetworks %}
-        {% if socialNetwork.type == 'facebook' %}
-            <div class="col {{ socialNetwork.type }}">
-                <div>
-                    <img src="/sites/cestdeuxeuros/themes/cestdeuxeuros/images/store-locator/svg_fb.svg"/>
-                </div>
-                <p>Suivez-nous sur Facebook</p>
-                <a href="https://www.facebook.com/{{ socialNetwork.uri }}/" target="_blank">J'aime</a>
-            </div>
-        {% elseif socialNetwork.type == 'instagram' %}
-            <div class="col {{ socialNetwork.type }}">
-                <div>
-                    <img src="/sites/cestdeuxeuros/themes/cestdeuxeuros/images/store-locator/svg_insta.svg"/>
-                </div>
-                <p>Suivez-nous sur Instagram</p>
-                <a href="https://www.instagram.com/{{ socialNetwork.uri }}/" target="_blank">Je m'abonne</a>
-            </div>
-        {% endif %}
-    {% endfor %}
-
-    <div class="col newsletter">
-        <div>
-            <img src="/sites/cestdeuxeuros/themes/cestdeuxeuros/images/store-locator/svg_newsletter.svg"/>
-        </div>
-        <p>Ne ratez aucun bon plan !</p>
-        <a href="#" data-toggle="modal" data-target="#modal-newsletter">Je m'inscris</a>
     </div>
 </div>

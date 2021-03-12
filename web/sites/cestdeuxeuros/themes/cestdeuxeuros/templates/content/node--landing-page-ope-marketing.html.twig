@@ -22,7 +22,9 @@
                 {{ content.field_ope_c1_txts[1] }}
             </div>
             <div class="col-12 col-md-6 col-lg-5 text-center">
-                {{ content.field_ope_c1_img }}
+                <a href="{{ node.field_ope_c1_img_link.0.url }}" target="_blank">
+                    {{ content.field_ope_c1_img }}
+                </a>
             </div>
         </div>
     </div>
@@ -77,6 +79,11 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col conditions">
+                {{ content.field_ope_conditions }}
             </div>
         </div>
     </div>

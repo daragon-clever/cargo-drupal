@@ -2054,6 +2054,9 @@ h2.title-txt {
 #ope-mkt .content-1 strong.blue {
   color: #159ed4;
 }
+#ope-mkt .content-1 a {
+  color: #159ed4;
+}
 #ope-mkt .product-wrapper {
   color: #666;
   font-size: 0.875rem;
@@ -2103,6 +2106,14 @@ h2.title-txt {
   #ope-mkt .storelocator-ban h2 {
     font-size: 1.5rem;
   }
+}
+#ope-mkt .conditions {
+  margin-top: 50px;
+}
+#ope-mkt .conditions p {
+  max-width: 810px;
+  font-size: 12px;
+  margin: 0 auto;
 }
 @media only screen and (max-width: 767px) {
   #cms .relative-slider img {

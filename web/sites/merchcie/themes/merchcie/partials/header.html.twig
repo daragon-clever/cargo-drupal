@@ -1,0 +1,25 @@
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-9 col-lg-auto align-self-start logo-wrapper">
+                <a href="{{ url('<front>') }}" title="Gers Equipement">
+                    <img class="logo" width="160" src="/sites/gersequipement/themes/gersequipement/images/logo.svg" alt="Gers Equipement" />
+                </a>
+            </div>
+            <div class="col-3 col-lg text-right">
+                <a class="d-lg-none d-xl-none navbar-toggler" href="#block-gersequipement-main-menu">
+                <span class="navbar-toggler-icon">
+                    <span class="top"></span>
+                    <span class="middle"></span>
+                    <span class="bottom"></span>
+                </span>
+                </a>
+                <div class="menu">
+                    {% if page.navigation %}
+                        {{ page.navigation }}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

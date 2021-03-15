@@ -79,30 +79,27 @@
                 {% endfor %}
             </div>
 
-
-            {# {% for i in 0..7 %} #}
-            {# <div class="js-presta-gallery" data-content="content-{{ i }}"> #}
-            <div class="js-presta-gallery" data-content="content-1">
-                <div class="gallery-wrapper">
-                    <span class="js-close-gallery"></span>
-                    <div class="js-slick-main">
-                        {% for i in 0..3 %}
-                            <div>
-                                {{ content.field_presta_gallery_1[i] }}
-{#                                {{ content['field_presta_gallery_' ~ i + 1 ][i] }}#}
-                            </div>
-                        {% endfor %}
-                    </div>
-                    <div class="js-slick-main-nav">
-                        {% for i in 0..3 %}
-                            <div>
-                                {{ content.field_presta_gallery_1[i] }}
-                            </div>
-                        {% endfor %}
+            {% for i in 0..7 %}
+                <div class="js-presta-gallery" data-content="content-{{ i }}">
+                    <div class="gallery-wrapper">
+                        <span class="js-close-gallery"></span>
+                        <div class="js-slick-main">
+                            {% for j in 0..content['field_presta_gallery_' ~ (i + 1)]['#items']|length-1 %}
+                                <div>
+                                    {{ content['field_presta_gallery_' ~ (i + 1)][j] }}
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <div class="js-slick-main-nav">
+                            {% for j in 0..content['field_presta_gallery_' ~ (i + 1)]['#items']|length-1 %}
+                                <div>
+                                    {{ content['field_presta_gallery_' ~ (i + 1)][j] }}
+                                </div>
+                            {% endfor %}
+                        </div>
                     </div>
                 </div>
-            </div>
-            {# {% endfor %} #}
+            {% endfor %}
         </div>
     </div>
 </div>

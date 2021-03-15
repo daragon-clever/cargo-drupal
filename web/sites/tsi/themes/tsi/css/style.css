@@ -1028,6 +1028,47 @@ footer li:before {
 .js-presta-gallery .js-slick-main-nav .slick-current img {
   opacity: 1;
 }
+.js-presta-gallery .slick-slider {
+  padding: 0 40px;
+}
+.js-presta-gallery .slick-slider .slick-prev,
+.js-presta-gallery .slick-slider .slick-next {
+  font-size: 0;
+  background-size: 12px;
+  background-color: white;
+  height: 38px;
+  width: 38px;
+  border: none;
+  border-radius: 100%;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  position: absolute;
+  top: calc(50% - 15px);
+  z-index: 10;
+}
+.js-presta-gallery .slick-slider .slick-prev:hover,
+.js-presta-gallery .slick-slider .slick-next:hover {
+  text-decoration: none;
+  opacity: 0.5;
+}
+.js-presta-gallery .slick-slider .slick-prev:after,
+.js-presta-gallery .slick-slider .slick-next:after {
+  content: "";
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  transform: rotate(-135deg);
+  border-top: 3px solid #d72416;
+  border-right: 3px solid #d72416;
+  margin-left: 4px;
+}
+.js-presta-gallery .slick-slider .slick-prev {
+  left: 0;
+}
+.js-presta-gallery .slick-slider .slick-next {
+  transform: rotate(180deg);
+  right: 0;
+}
 .js-presta-gallery .js-close-gallery {
   height: 40px;
   width: 40px;

@@ -783,26 +783,37 @@ a:hover {
 .slick-slider .slick-prev,
 .slick-slider .slick-next {
   font-size: 0;
-  background: url("../images/slick/arrow-slider.png") no-repeat center transparent;
-  height: 31px;
-  width: 19px;
+  background-size: 12px;
+  background-color: white;
+  height: 38px;
+  width: 38px;
   border: none;
+  border-radius: 100%;
   cursor: pointer;
   transition: opacity 0.3s;
   position: absolute;
   top: calc(50% - 15px);
-  z-index: 100;
 }
 .slick-slider .slick-prev:hover,
 .slick-slider .slick-next:hover {
   opacity: 0.5;
+}
+.slick-slider .slick-prev:after,
+.slick-slider .slick-next:after {
+  content: "";
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  transform: rotate(-135deg);
+  border-top: 3px solid #219b8c;
+  border-right: 3px solid #219b8c;
+  margin-left: 4px;
 }
 .slick-slider .slick-prev {
   left: 0;
 }
 .slick-slider .slick-next {
   transform: rotate(180deg);
-  transform-origin: center;
   right: 0;
 }
 .slick-slider ul.slick-dots {

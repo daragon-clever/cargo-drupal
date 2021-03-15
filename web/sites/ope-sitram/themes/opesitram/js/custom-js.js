@@ -74,17 +74,16 @@ jQuery(document).ready(function ($) {
     if ($('#js-instagram').length) {
         const instaSlick = function () {
             $("#js-instagram").slick({
-                infinite: true,
+                infinite: false,
+                dots: false,
                 slidesToShow: 4,
                 slidesToScroll: 4,
-                dots: false,
-                mobileFirst:true,
                 responsive: [
                     {
                         breakpoint: 990,
                         settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 2
+                            slidesToShow: 3,
+                            slidesToScroll: 3
                         }
                     },
                     {
@@ -100,33 +99,33 @@ jQuery(document).ready(function ($) {
             });
         }
 
-        $(function () {
-            new InstagramFeed({
-                'username': 'sitram_fr',
-                'display_profile': false,
-                'display_biography': false,
-                'display_gallery': true,
-                'display_captions': false,
-                'callback': function (data) {
-                    let dataItem = data.edge_owner_to_timeline_media.edges;
-                    for (let i = 0; i < dataItem.length && i < 8; i++) {
-                        $("#js-instagram").append(`
+        new InstagramFeed({
+            'username': 'sitram_fr',
+            'display_profile': false,
+            'display_biography': false,
+            'display_gallery': true,
+            'display_captions': false,
+            'callback': function (data) {
+                let dataItem = data.edge_owner_to_timeline_media.edges;
+                for (let i = 0; i < dataItem.length; i++) {
+                    $("#js-instagram").append(`
                             <div>
                                 <a href="${'https://www.instagram.com/p/' + dataItem[i].node.shortcode + '/'}" target="_blank">
                                     <img src="${dataItem[i].node.thumbnail_src}" />
                                 </a>
                             </div>
                         `);
-                    }
-                    instaSlick();
-                },
-                'styling': true,
-                'lazy_load': true,
-                'on_error': function () {
-                    $('#js-instagram').html('<a href="https://www.instagram.com/sitram_fr" target="_blank"><img class="mw-100" src="/sites/ope-sitram/themes/opesitram/images/footer/fake-insta.png" /></a>')
                 }
-            });
-        })();
+
+                $(".loading").hide();
+                instaSlick();
+            },
+            'styling': true,
+            'lazy_load': true,
+            'on_error': function () {
+                $('#js-instagram').html('<a href="https://www.instagram.com/sitram_fr" target="_blank"><img class="mw-100" src="/sites/ope-sitram/themes/opesitram/images/footer/fake-insta.png" /></a>')
+            }
+        });
     }
 
     // POPUP VIDEO

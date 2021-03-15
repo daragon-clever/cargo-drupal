@@ -77,11 +77,28 @@ jQuery(document).ready(function($) {
 
         // Gallery thumbs
         $('.js-slick-main-nav').slick({
-            slidesToShow: 4,
+            slidesToShow: 1,
             slidesToScroll: 1,
             asNavFor: '.js-slick-main',
             focusOnSelect: true,
-            arrows: true
+            arrows: true,
+            mobileFirst: true,
+            responsive: [
+                {
+                    breakpoint: 990,
+                    settings: {
+                        slidesToShow: 4,
+                        slidesToScroll: 1,
+                    }
+                },
+                {
+                    breakpoint: 767,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1,
+                    }
+                }
+            ]
         });
 
         // Click btn gallery

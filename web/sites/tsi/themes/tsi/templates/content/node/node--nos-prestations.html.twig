@@ -21,7 +21,8 @@
         </div>
     </div>
 
-    <div id="savoir-faire" class="wrapper-full c-white" style="background: url('{{ content.field_presta_sf_bg|render|striptags|trim|raw }}') no-repeat center / cover transparent">
+    <div id="savoir-faire" class="wrapper-full c-white"
+         style="background: url('{{ content.field_presta_sf_bg|render|striptags|trim|raw }}') no-repeat center / cover transparent">
         <h2 class="main-title text-center my-4">
             <span>
                 {{ node.field_presta_sf.fieldDefinition.label }}
@@ -30,7 +31,7 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    {{ content.field_presta_sf}}
+                    {{ content.field_presta_sf }}
                 </div>
             </div>
         </div>
@@ -45,14 +46,15 @@
         <div class="container">
             <div class="row">
                 <div class="col text-center">
-                    {{ content.field_presta_services}}
+                    {{ content.field_presta_services }}
                 </div>
             </div>
 
             <div class="row">
                 {% for i in 0..7 %}
                     <div class="service-block col-6 col-md-3">
-                        <div class="domaine-block {% if i is even %}even{% else %}odd{% endif %}" data-content="content-{{ i }}">
+                        <div class="domaine-block {% if i is even %}even{% else %}odd{% endif %}"
+                             data-content="content-{{ i }}">
                             <a href="#js-service-id-{{ i }}">
                                 {{ content.field_presta_services_imgs[i] }}
                                 <div class="title d-flex">
@@ -77,25 +79,27 @@
                 {% endfor %}
             </div>
 
-            <div class="js-presta-gallery" data-content="content-0">
-                <div class="gallery-wrapper">
-                    <span class="js-close-gallery"></span>
-                    <div class="js-slick-main">
-                        {% for i in 0..3 %}
-                            <div>
-                                {{ content.field_presta_gallery_1[i] }}
-                            </div>
-                        {% endfor %}
-                    </div>
-                    <div class="js-slick-main-nav">
-                        {% for i in 0..3 %}
-                            <div>
-                                {{ content.field_presta_gallery_1[i] }}
-                            </div>
-                        {% endfor %}
+            {% for i in 0..7 %}
+                <div class="js-presta-gallery" data-content="content-{{ i }}">
+                    <div class="gallery-wrapper">
+                        <span class="js-close-gallery"></span>
+                        <div class="js-slick-main">
+                            {% for j in 0..content['field_presta_gallery_' ~ (i + 1)]['#items']|length-1 %}
+                                <div>
+                                    {{ content['field_presta_gallery_' ~ (i + 1)][j] }}
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <div class="js-slick-main-nav">
+                            {% for j in 0..content['field_presta_gallery_' ~ (i + 1)]['#items']|length-1 %}
+                                <div>
+                                    {{ content['field_presta_gallery_' ~ (i + 1)][j] }}
+                                </div>
+                            {% endfor %}
+                        </div>
                     </div>
                 </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </div>

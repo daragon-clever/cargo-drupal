@@ -970,17 +970,29 @@ footer {
 
       @media @tablet {
         height: 80px;
-        padding: 0 7px;
+        padding: 0 25px;
+      }
+
+      @media @phone {
+        padding: 0 5px;
       }
     }
 
     .slick-current img {
       opacity: 1;
     }
+
+    .slick-track {
+      margin: 0;
+    }
   }
 
   .slick-slider {
     padding:0 40px;
+
+    @media @phone {
+      padding: 0;
+    }
 
     .slick-prev,
     .slick-next {
@@ -1010,12 +1022,12 @@ footer {
     }
 
     .slick-prev {
-      left: 0;
+      left: 30px;
     }
 
     .slick-next {
       transform: rotate(180deg);
-      right: 0;
+      right: 30px;
     }
   }
 

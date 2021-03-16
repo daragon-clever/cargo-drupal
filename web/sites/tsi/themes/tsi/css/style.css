@@ -1022,14 +1022,27 @@ footer li:before {
 @media only screen and (max-width: 991px) {
   .js-presta-gallery .js-slick-main-nav img {
     height: 80px;
-    padding: 0 7px;
+    padding: 0 25px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .js-presta-gallery .js-slick-main-nav img {
+    padding: 0 5px;
   }
 }
 .js-presta-gallery .js-slick-main-nav .slick-current img {
   opacity: 1;
 }
+.js-presta-gallery .js-slick-main-nav .slick-track {
+  margin: 0;
+}
 .js-presta-gallery .slick-slider {
   padding: 0 40px;
+}
+@media only screen and (max-width: 767px) {
+  .js-presta-gallery .slick-slider {
+    padding: 0;
+  }
 }
 .js-presta-gallery .slick-slider .slick-prev,
 .js-presta-gallery .slick-slider .slick-next {
@@ -1063,11 +1076,11 @@ footer li:before {
   margin-left: 4px;
 }
 .js-presta-gallery .slick-slider .slick-prev {
-  left: 0;
+  left: 30px;
 }
 .js-presta-gallery .slick-slider .slick-next {
   transform: rotate(180deg);
-  right: 0;
+  right: 30px;
 }
 .js-presta-gallery .js-close-gallery {
   height: 40px;

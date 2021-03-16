@@ -72,29 +72,24 @@ jQuery(document).ready(function($) {
             slidesToScroll: 1,
             arrows: false,
             fade: true,
-            asNavFor: '.js-slick-main-nav'
+            asNavFor: '.js-slick-main-nav',
         });
 
         // Gallery thumbs
         $('.js-slick-main-nav').slick({
-            slidesToShow: 1,
+            slidesToShow: 3,
             slidesToScroll: 1,
             asNavFor: '.js-slick-main',
             focusOnSelect: true,
             arrows: true,
             mobileFirst: true,
+            centerMode: true,
+            centerPadding: 0,
             responsive: [
-                {
-                    breakpoint: 990,
-                    settings: {
-                        slidesToShow: 4,
-                        slidesToScroll: 1,
-                    }
-                },
                 {
                     breakpoint: 767,
                     settings: {
-                        slidesToShow: 3,
+                        slidesToShow: 4,
                         slidesToScroll: 1,
                     }
                 }

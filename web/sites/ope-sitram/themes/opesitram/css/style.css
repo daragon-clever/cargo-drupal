@@ -554,6 +554,7 @@ a:hover {
 #homepage .storelocator-ban .store-locator-field-wrapper input::placeholder {
   color: white;
   opacity: 1;
+  text-transform: uppercase;
 }
 @media only screen and (max-width: 1368px) {
   #homepage .storelocator-ban .store-locator-field-wrapper input {
@@ -563,20 +564,6 @@ a:hover {
 @media only screen and (max-width: 767px) {
   #homepage .storelocator-ban .store-locator-field-wrapper input {
     font-size: 20px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  #homepage .storelocator-ban .store-locator-field-wrapper input.search-large-screen {
-    display: none;
-  }
-}
-#homepage .storelocator-ban .store-locator-field-wrapper input.search-small-screen {
-  display: none;
-  text-transform: uppercase;
-}
-@media only screen and (max-width: 767px) {
-  #homepage .storelocator-ban .store-locator-field-wrapper input.search-small-screen {
-    display: inline-block;
   }
 }
 #homepage .storelocator-ban .store-locator-field-wrapper .btn.submit {

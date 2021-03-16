@@ -522,6 +522,7 @@ a {
         &::placeholder {
           color: white;
           opacity: 1;
+          text-transform: uppercase;
         }
 
         @media @smallScreen {
@@ -530,21 +531,6 @@ a {
 
         @media @phone {
           font-size: 20px;
-        }
-      }
-
-      input.search-large-screen {
-        @media @phone {
-          display: none;
-        }
-      }
-
-      input.search-small-screen {
-        display: none;
-        text-transform: uppercase;
-
-        @media @phone {
-          display: inline-block;
         }
       }
 

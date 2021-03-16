@@ -170,16 +170,16 @@
         },
         {
             "name": "cargo/drupal_synapse",
-            "version": "v2.1.0",
+            "version": "v2.2.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:PoleWebCargo/WEB_Drupal_Module_Synapse.git",
-                "reference": "22ee7b09eca8f21557db7e5e266dfe34896b1311"
+                "reference": "f991d5e4a538f18b35bd08560f07b59e901569fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PoleWebCargo/WEB_Drupal_Module_Synapse/zipball/22ee7b09eca8f21557db7e5e266dfe34896b1311",
-                "reference": "22ee7b09eca8f21557db7e5e266dfe34896b1311",
+                "url": "https://api.github.com/repos/PoleWebCargo/WEB_Drupal_Module_Synapse/zipball/f991d5e4a538f18b35bd08560f07b59e901569fd",
+                "reference": "f991d5e4a538f18b35bd08560f07b59e901569fd",
                 "shasum": ""
             },
             "require": {
@@ -203,10 +203,10 @@
             "description": "Module to connect and use the synapse API (Store Locator)",
             "homepage": "https://github.com/PoleWebCargo/WEB_Drupal_Module_Synapse",
             "support": {
-                "source": "https://github.com/PoleWebCargo/WEB_Drupal_Module_Synapse/tree/v2.1.0",
+                "source": "https://github.com/PoleWebCargo/WEB_Drupal_Module_Synapse/tree/v2.2.0",
                 "issues": "https://github.com/PoleWebCargo/WEB_Drupal_Module_Synapse/issues"
             },
-            "time": "2021-03-09T14:14:46+00:00"
+            "time": "2021-03-16T16:25:35+00:00"
         },
         {
             "name": "chi-teck/drupal-code-generator",

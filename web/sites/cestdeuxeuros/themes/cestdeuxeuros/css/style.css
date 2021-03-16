@@ -8,6 +8,7 @@ body {
   font-family: "ITC Avant Garde Pro Md", Arial, Helvetica, sans-serif;
   font-size: 16px;
   overflow-x: hidden;
+  color: #636462;
 }
 .max-1280 {
   max-width: 1280px;
@@ -43,7 +44,7 @@ img {
 }
 .dialog-off-canvas-main-canvas {
   position: relative;
-  padding-top: 205px;
+  padding-top: 215px;
 }
 @media only screen and (max-width: 991px) {
   .dialog-off-canvas-main-canvas {
@@ -623,6 +624,9 @@ p {
   font-size: 0.75rem;
   padding: 5px 0;
   text-align: center;
+}
+.footer-wrapper .copyright a {
+  color: white;
 }
 @media (min-width: 951px) {
   .page-produit-footer .container {

@@ -5,7 +5,7 @@ let isTablet = window.matchMedia("only screen and (max-width: 990px)").matches;
 if (isTablet) {
     document.addEventListener(
         "DOMContentLoaded", () => {
-            new Mmenu( "#main-nav", {
+            new Mmenu("#main-nav", {
                 "extensions": [
                     "border-full",
                     "position-front"
@@ -15,7 +15,7 @@ if (isTablet) {
     );
 }
 
-jQuery(document).ready(function($) {
+jQuery(document).ready(function ($) {
     // FORMULAIRE CONTACT
     if ($('.webform-submission-form').length) {
         // Function
@@ -44,7 +44,7 @@ jQuery(document).ready(function($) {
     if ($(".service-block").length) {
         const block = $(".domaine-block");
 
-        block.on("click", function(e) {
+        block.on("click", function (e) {
             const dataContent = $(this).attr("data-content");
             const currentText = $(".txt[data-content=" + dataContent + "]");
             const textes = $(".txt");
@@ -70,9 +70,8 @@ jQuery(document).ready(function($) {
         $('.js-slick-main').slick({
             slidesToShow: 1,
             slidesToScroll: 1,
-            arrows: false,
-            fade: true,
-            asNavFor: '.js-slick-main-nav',
+            arrows: true,
+            fade: true
         });
 
         // Gallery thumbs
@@ -99,14 +98,14 @@ jQuery(document).ready(function($) {
         // Click btn gallery
         var btnGallery = $(".txts-wrapper > div .cta");
 
-        btnGallery.on("click", function() {
+        btnGallery.on("click", function () {
             var dataContent = $(this).parents(".txt").attr("data-content");
             var gallery = $(".js-presta-gallery[data-content=" + dataContent + "]");
             var closeBtn = $(".js-close-gallery");
 
             gallery.addClass("active");
 
-            closeBtn.on("click", function() {
+            closeBtn.on("click", function () {
                 gallery.removeClass("active")
             })
         })

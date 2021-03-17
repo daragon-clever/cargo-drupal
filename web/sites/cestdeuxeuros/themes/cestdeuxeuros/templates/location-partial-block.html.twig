@@ -8,13 +8,13 @@
 * @ingroup themeable
 */
 #}
-{% set storeUrl = "/%s/%s/%s"|format(routingItemKey, location.externalId, location.name|url_encode) %}
+{% set storeUrl = "/%s/%s/%s"|format(routingItemKey, location.externalId, location.name|slugify('C\'est deux euros')) %}
 <div class="store-item js-store-block">
     <div class="container">
         <div class="row">
             <div class="col">
                 <div class="row">
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 col-md-5">
                         <div class="distance">
                             <span>{{ "à %s km"|format(location.getDistance|round) }}</span>
                         </div>
@@ -58,7 +58,7 @@
                         </div>
                     </div>
 
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 col-md-7">
                         <div class="cta-wrapper">
                             <ul class="ul-cta">
                                 <li class="map">

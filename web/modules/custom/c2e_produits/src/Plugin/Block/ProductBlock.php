@@ -36,7 +36,8 @@ class ProductBlock extends BlockBase implements BlockPluginInterface
         return [
             '#theme' => "liste",
             '#products' => $productList,
-            '#nbItem' => $nbProducts
+            '#nbItem' => $nbProducts,
+            '#week' => $week
         ];
     }
 
@@ -67,7 +68,7 @@ class ProductBlock extends BlockBase implements BlockPluginInterface
         $form['nbProducts'] = [
             '#type' => 'textfield',
             '#title' => $this->t('Number of visible products'),
-            '#description' => $this->t('6 ou 8'),
+            '#description' => $this->t('8 ou 11'),
             '#default_value' => isset($config['nbProducts']) ? $config['nbProducts'] : '',
             '#required' => TRUE
         ];

@@ -48,3 +48,19 @@ function newsletter_update_8101(&$sandbox)
         }
     }
 }
+
+//run update.php to execute this update
+function newsletter_update_8102(&$sandbox)
+{
+    $newsletterController = new NewsletterController();
+    $base = $newsletterController->getCompanyController();
+
+    if (isset($base)) {
+        if (\Drupal::database()->schema()->tableExists(Subscriber::TABLE_SUBSCRIBER)) {
+            if (method_exists($base, 'setUpdate8102')) {
+                \Drupal::logger('newsletter')->notice('[UPDATE] Ajout colonne pour le n° de mobile - C2E');
+                $base->setUpdate8102();
+            }
+        }
+    }
+}

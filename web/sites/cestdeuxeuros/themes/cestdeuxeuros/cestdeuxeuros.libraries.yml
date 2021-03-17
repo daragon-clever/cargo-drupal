@@ -13,6 +13,15 @@ fontawesome:
   js:
     https://kit.fontawesome.com/2c0953961c.js : { type: external }
 
+# Mmenu
+mmenu:
+  css:
+    theme:
+      css/mmenu.css: {}
+  js:
+    js/mmenu.js: {}
+
+
 #Google Maps
 google-maps-custom:
   header: true

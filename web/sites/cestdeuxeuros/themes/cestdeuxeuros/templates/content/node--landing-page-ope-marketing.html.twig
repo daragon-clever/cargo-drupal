@@ -1,0 +1,90 @@
+<div id="ope-mkt">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <span class="d-none d-md-block">
+                    {{ content.field_ope_ban[0] }}
+                </span>
+                <span class="d-md-none">
+                    {{ content.field_ope_ban[1] }}
+                </span>
+            </div>
+        </div>
+
+        <div class="row text-center my-5">
+            <div class="col">
+                {{ content.field_ope_c1_txts[0] }}
+            </div>
+        </div>
+
+        <div class="row align-items-center content-1">
+            <div class="col-12 col-md-6 col-lg-5 offset-lg-1">
+                {{ content.field_ope_c1_txts[1] }}
+            </div>
+            <div class="col-12 col-md-6 col-lg-5 text-center">
+                <a href="{{ node.field_ope_c1_img_link.0.url }}" target="_blank">
+                    {{ content.field_ope_c1_img }}
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid py-5 my-5 bg-grey">
+        <div class="container no-padding">
+            <div class="row text-center">
+                <div class="col-12 mb-4">
+                    <h3>{{ content.field_ope_c2_title }}</h3>
+                </div>
+                <div class="col-12 mb-4">
+                    {{ content.field_ope_c2_img }}
+                </div>
+                <div class="col-12 col-lg-10 offset-lg-1">
+                    {{ content.field_ope_c2_txt }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-12 mb-5">
+                <h3>{{ content.field_ope_c3_title }}</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-lg-10 offset-lg-1 mb-5">
+                <div class="row">
+                    {% for field in content.field_ope_c3_imgs['#items'] %}
+                        <div class="col-12 col-md-3 product-wrapper mb-3 mb-lg-0">
+                            <div>
+                                <img class="mb-0 mb-lg-3" src="{{ file_url(field.entity.uri.value) }}" />
+                                <div class="text-center text-lg-left my-3 my-lg-0">{{ field.alt }}</div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3 storelocator-ban">
+            <div class="col">
+                <div class="relative-slider">
+                    <img src="/sites/cestdeuxeuros/themes/cestdeuxeuros/images/store-locator/ban-storelocator.jpg" alt="">
+                    <div class="absolute-banner">
+                        <div class="content-banner pl-0 pl-lg-5">
+                            <div class="text-center text-lg-left">
+                                <h2>{{ "Trouvez un magasin <br />près de chez vous :" }}</h2>
+                                <p>{{ "Pour la chasse aux bonnes affaires,<br /> rien ne vaut un petit tour en magasin..." }}</p>
+                                <a class="mt-0 mt-lg-4" href="/ou-nous-trouver">Je trouve mon magasin</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col conditions">
+                {{ content.field_ope_conditions }}
+            </div>
+        </div>
+    </div>
+</div>

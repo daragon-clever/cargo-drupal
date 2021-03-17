@@ -1,0 +1,39 @@
+<div id="produits">
+    <!-- BANNIÈRE -->
+    <div class="relative-slider">
+        {{ content.field_produits_ban }}
+    </div>
+
+    <!-- CONTENT 1 -->
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-12 col-lg-10 offset-lg-1 text-center">
+                {{ content.field_produits_c1_txts[0] }}
+            </div>
+        </div>
+        <div class="row mt-4 cards-wrapper">
+            <div class="col">
+                <div class="px-lg-5">
+                    <div class="row cards-row">
+                        {% for i in 0..7 %}
+                            <div class="col-6 col-md-3">
+                                <div class="card-item">
+                                    <a href="{{ content.field_produits_c1_links[i] }}">
+                                        <img {% if i == 1 or i == 2 or i == 3 or i == 7 %}class="offset-25"
+                                                {% endif %} src="{{ content.field_produits_c1_imgs[i] }}">
+                                        <h2>{{ node.field_produits_c1_imgs[i].alt }}</h2>
+                                    </a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-12 col-lg-10 offset-lg-1 text-center">
+                {{ content.field_produits_c1_txts[1] }}
+            </div>
+        </div>
+    </div>
+</div>

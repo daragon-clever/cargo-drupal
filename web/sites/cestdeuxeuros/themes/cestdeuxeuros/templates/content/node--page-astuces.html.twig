@@ -1,0 +1,70 @@
+<div id="astuces">
+    <!-- BANNIÈRE -->
+    <div class="relative-slider">
+        {{ content.field_astuces_ban_img }}
+        <div class="absolute-banner">
+            <div class="content-banner">
+                {{ content.field_astuces_ban_title }}
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- INTRO -->
+        <div class="row my-5">
+            <div class="col-12 text-center">
+                {{ content.field_astuces_intro[0] }}
+            </div>
+            <div class="col-12 col-lg-10 offset-lg-1 text-center">
+                {{ content.field_astuces_intro[1] }}
+            </div>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="row my-5">
+            {% for i in 0..7 %}
+                <div class="astuces-block col-6 col-lg-3">
+                    <div class="astuce-block {% if i is even %}even{% else %}odd{% endif %}"
+                         data-content="content-{{ i }}">
+                        <a href="#js-service-id-{{ i }}" class="d-block position-relative">
+                            {{ content.field_astuces_content_imgs_block[i] }}
+                            <div class="title">
+                                <span>{{ node.field_astuces_content_imgs_block[i].alt }}</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                {% if i == 3 %}
+                    <div class="col-12 txts-wrapper">
+                        {% for i in 0..7 %}
+                            <div class="content-wrapper py-3" data-content="content-{{ i }}">
+                                <div class="inner">
+                                    <div class="row align-items-center">
+                                        <div class="col-12 col-lg-6">
+                                            <div class="mb-4 mb-lg-0">
+                                                {{ content.field_astuces_content_imgs_inner[i] }}
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-lg-6 txt">
+                                            <h2 class="mb-4">{{ node.field_astuces_content_imgs_inner[i].alt }}</h2>
+                                            <ul class="p-0">
+                                                {{ content.field_astuces_content_txts[i] }}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <!-- OUTRO -->
+        <div class="row my-5">
+            <div class="col-12 col-lg-10 offset-lg-1 text-center">
+                {{ content.field_astuces_outro }}
+            </div>
+        </div>
+    </div>
+</div>

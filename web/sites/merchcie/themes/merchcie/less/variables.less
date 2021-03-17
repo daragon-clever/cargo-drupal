@@ -1,5 +1,3 @@
-// Variables custom
-
 // Media queries
 @very-xs: 320px;
 @xs: 767px;
@@ -12,10 +10,10 @@
 @smallDesktop:   ~"only screen and (max-width: @{md})";
 
 // Colors
-@grey: #4a4a49;
-@pink: #d40058;
-@grey-light: #5e5e5e;
-@turquoise : #4cbfc6;
+@color1: #202041;
+@color2: #E5530F;
+@color3: #2863AD;
+@color4: #F8F3ED;
 
 // Functions
 .dimOpacityOnHover (@opacity) {
@@ -24,3 +22,13 @@
     opacity: @opacity;
   }
 }
+
+// Convert tool : https://polewebcargo.github.io/hex-to-css-filter-generator/
+@svgColor1 : invert(13%) sepia(10%) saturate(3652%) hue-rotate(202deg) brightness(91%) contrast(96%);
+@svgColor2 : invert(36%) sepia(44%) saturate(5241%) hue-rotate(4deg) brightness(99%) contrast(88%);
+@svgColor3 : invert(27%) sepia(70%) saturate(1561%) hue-rotate(194deg) brightness(93%) contrast(80%);
+@svgColorWhite : invert(100%) sepia(0%) saturate(0%) hue-rotate(99deg) brightness(102%) contrast(105%);
+
+// Filter generator tool : https://cssgenerator.org/filter-css-generator.html
+@imgFilterColor1 : grayscale(100%) sepia(100%) hue-rotate(167deg) saturate(200%);
+@imgFilterColor2 : grayscale(100%) sepia(100%) hue-rotate(331deg) saturate(200%);

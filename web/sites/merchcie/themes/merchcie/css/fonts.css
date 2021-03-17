@@ -1,0 +1,49 @@
+@font-face {
+  font-family: 'Avenir';
+  src: url('../fonts/Avenir-Roman.woff2') format('woff2'), url('../fonts/Avenir-Roman.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'AvenirLight';
+  src: url('../fonts/Avenir-Light.woff2') format('woff2'), url('../fonts/Avenir-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'AvenirMedium';
+  src: url('../fonts/Avenir-Medium.woff2') format('woff2'), url('../fonts/Avenir-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'AvenirBook';
+  src: url('../fonts/Avenir-Book.woff2') format('woff2'), url('../fonts/Avenir-Book.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'AvenirBlack';
+  src: url('../fonts/Avenir-Black.woff2') format('woff2'), url('../fonts/Avenir-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'MerchCieNums';
+  src: url('../fonts/MerchCieNums.woff2') format('woff2'), url('../fonts/MerchCieNums.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'autheniatextured';
+  src: url('../fonts/authenia-textured-webfont.woff2') format('woff2'), url('../fonts/authenia-textured-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImZvbnRzLmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxhQUFhLFFBQWI7RUFDQSxTQUFTLCtCQUErQixPQUFPLGNBQzNDLDhCQUE4QixPQUFPLE9BRHpDO0VBRUEsbUJBQUE7RUFDQSxrQkFBQTtFQUNBLGtCQUFBOztBQUdGO0VBQ0UsYUFBYSxhQUFiO0VBQ0EsU0FBUywrQkFBK0IsT0FBTyxjQUMzQyw4QkFBOEIsT0FBTyxPQUR6QztFQUVBLGdCQUFBO0VBQ0Esa0JBQUE7RUFDQSxrQkFBQTs7QUFHRjtFQUNFLGFBQWEsY0FBYjtFQUNBLFNBQVMsZ0NBQWdDLE9BQU8sY0FDNUMsK0JBQStCLE9BQU8sT0FEMUM7RUFFQSxnQkFBQTtFQUNBLGtCQUFBO0VBQ0Esa0JBQUE7O0FBR0Y7RUFDRSxhQUFhLFlBQWI7RUFDQSxTQUFTLDhCQUE4QixPQUFPLGNBQzFDLDZCQUE2QixPQUFPLE9BRHhDO0VBRUEsbUJBQUE7RUFDQSxrQkFBQTtFQUNBLGtCQUFBOztBQUdGO0VBQ0UsYUFBYSxhQUFiO0VBQ0EsU0FBUywrQkFBK0IsT0FBTyxjQUMzQyw4QkFBOEIsT0FBTyxPQUR6QztFQUVBLGdCQUFBO0VBQ0Esa0JBQUE7RUFDQSxrQkFBQTs7QUFHRjtFQUNFLGFBQWEsY0FBYjtFQUNBLFNBQVMsK0JBQStCLE9BQU8sY0FDM0MsOEJBQThCLE9BQU8sT0FEekM7RUFFQSxtQkFBQTtFQUNBLGtCQUFBO0VBQ0Esa0JBQUE7O0FBR0Y7RUFDRSxhQUFhLGtCQUFiO0VBQ0EsU0FBUyw0Q0FBNEMsT0FBTyxjQUN4RCwyQ0FBMkMsT0FBTyxPQUR0RDtFQUVBLG1CQUFBO0VBQ0Esa0JBQUEifQ== */

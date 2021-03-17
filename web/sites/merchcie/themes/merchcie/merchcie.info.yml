@@ -13,8 +13,8 @@ regions:
 libraries:
   - merchcie/bootstrap
   - merchcie/slick
-  - merchcie/global-styling
   - merchcie/mmenu
+  - merchcie/global-styling
 
 stylesheets-remove:
   - core/themes/stable/css/system/components/ajax-progress.module.css

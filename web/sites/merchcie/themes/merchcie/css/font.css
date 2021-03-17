@@ -1,0 +1,92 @@
+@font-face {
+  font-family: 'Avenir Black Oblique';
+  src: url('../fonts/Avenir-BlackOblique.woff2') format('woff2'), url('../fonts/Avenir-BlackOblique.woff') format('woff');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Avenir';
+  src: url('../fonts/Avenir-Black.woff2') format('woff2'), url('../fonts/Avenir-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Avenir Book';
+  src: url('../fonts/Avenir-Book.woff2') format('woff2'), url('../fonts/Avenir-Book.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Avenir';
+  src: url('../fonts/Avenir-Heavy.woff2') format('woff2'), url('../fonts/Avenir-Heavy.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Avenir';
+  src: url('../fonts/Avenir-HeavyOblique.woff2') format('woff2'), url('../fonts/Avenir-HeavyOblique.woff') format('woff');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Avenir Book';
+  src: url('../fonts/Avenir-BookOblique.woff2') format('woff2'), url('../fonts/Avenir-BookOblique.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Avenir';
+  src: url('../fonts/Avenir-Light.woff2') format('woff2'), url('../fonts/Avenir-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Avenir';
+  src: url('../fonts/Avenir-Oblique.woff2') format('woff2'), url('../fonts/Avenir-Oblique.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Avenir';
+  src: url('../fonts/Avenir-Roman.woff2') format('woff2'), url('../fonts/Avenir-Roman.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Avenir';
+  src: url('../fonts/Avenir-MediumOblique.woff2') format('woff2'), url('../fonts/Avenir-MediumOblique.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Avenir';
+  src: url('../fonts/Avenir-LightOblique.woff2') format('woff2'), url('../fonts/Avenir-LightOblique.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Avenir';
+  src: url('../fonts/Avenir-Medium.woff2') format('woff2'), url('../fonts/Avenir-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'MerchCieNums';
+  src: url('../fonts/MerchCieNums.woff2') format('woff2'), url('../fonts/MerchCieNums.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImZvbnQubGVzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGFBQWEsc0JBQWI7RUFDQSxTQUFTLHNDQUFzQyxPQUFPLGNBQzlDLHFDQUFxQyxPQUFPLE9BRHBEO0VBRUEsZ0JBQUE7RUFDQSxrQkFBQTtFQUNBLGtCQUFBOztBQUdKO0VBQ0ksYUFBYSxRQUFiO0VBQ0EsU0FBUywrQkFBK0IsT0FBTyxjQUN2Qyw4QkFBOEIsT0FBTyxPQUQ3QztFQUVBLGdCQUFBO0VBQ0Esa0JBQUE7RUFDQSxrQkFBQTs7QUFHSjtFQUNJLGFBQWEsYUFBYjtFQUNBLFNBQVMsOEJBQThCLE9BQU8sY0FDdEMsNkJBQTZCLE9BQU8sT0FENUM7RUFFQSxtQkFBQTtFQUNBLGtCQUFBO0VBQ0Esa0JBQUE7O0FBR0o7RUFDSSxhQUFhLFFBQWI7RUFDQSxTQUFTLCtCQUErQixPQUFPLGNBQ3ZDLDhCQUE4QixPQUFPLE9BRDdDO0VBRUEsZ0JBQUE7RUFDQSxrQkFBQTtFQUNBLGtCQUFBOztBQUdKO0VBQ0ksYUFBYSxRQUFiO0VBQ0EsU0FBUyxzQ0FBc0MsT0FBTyxjQUM5QyxxQ0FBcUMsT0FBTyxPQURwRDtFQUVBLGdCQUFBO0VBQ0Esa0JBQUE7RUFDQSxrQkFBQTs7QUFHSjtFQUNJLGFBQWEsYUFBYjtFQUNBLFNBQVMscUNBQXFDLE9BQU8sY0FDN0Msb0NBQW9DLE9BQU8sT0FEbkQ7RUFFQSxtQkFBQTtFQUNBLGtCQUFBO0VBQ0Esa0JBQUE7O0FBR0o7RUFDSSxhQUFhLFFBQWI7RUFDQSxTQUFTLCtCQUErQixPQUFPLGNBQ3ZDLDhCQUE4QixPQUFPLE9BRDdDO0VBRUEsZ0JBQUE7RUFDQSxrQkFBQTtFQUNBLGtCQUFBOztBQUdKO0VBQ0ksYUFBYSxRQUFiO0VBQ0EsU0FBUyxpQ0FBaUMsT0FBTyxjQUN6QyxnQ0FBZ0MsT0FBTyxPQUQvQztFQUVBLG1CQUFBO0VBQ0Esa0JBQUE7RUFDQSxrQkFBQTs7QUFHSjtFQUNJLGFBQWEsUUFBYjtFQUNBLFNBQVMsK0JBQStCLE9BQU8sY0FDdkMsOEJBQThCLE9BQU8sT0FEN0M7RUFFQSxtQkFBQTtFQUNBLGtCQUFBO0VBQ0Esa0JBQUE7O0FBR0o7RUFDSSxhQUFhLFFBQWI7RUFDQSxTQUFTLHVDQUF1QyxPQUFPLGNBQy9DLHNDQUFzQyxPQUFPLE9BRHJEO0VBRUEsZ0JBQUE7RUFDQSxrQkFBQTtFQUNBLGtCQUFBOztBQUdKO0VBQ0ksYUFBYSxRQUFiO0VBQ0EsU0FBUyxzQ0FBc0MsT0FBTyxjQUM5QyxxQ0FBcUMsT0FBTyxPQURwRDtFQUVBLGdCQUFBO0VBQ0Esa0JBQUE7RUFDQSxrQkFBQTs7QUFHSjtFQUNJLGFBQWEsUUFBYjtFQUNBLFNBQVMsZ0NBQWdDLE9BQU8sY0FDeEMsK0JBQStCLE9BQU8sT0FEOUM7RUFFQSxnQkFBQTtFQUNBLGtCQUFBO0VBQ0Esa0JBQUE7O0FBR0o7RUFDSSxhQUFhLGNBQWI7RUFDQSxTQUFTLCtCQUErQixPQUFPLGNBQ3ZDLDhCQUE4QixPQUFPLE9BRDdDO0VBRUEsbUJBQUE7RUFDQSxrQkFBQTtFQUNBLGtCQUFBIn0= */

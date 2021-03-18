@@ -15,14 +15,6 @@
 @color3: #2863AD;
 @color4: #F8F3ED;
 
-// Functions
-.dimOpacityOnHover (@opacity) {
-  transition: all 0.3s;
-  &:hover {
-    opacity: @opacity;
-  }
-}
-
 // Convert tool : https://polewebcargo.github.io/hex-to-css-filter-generator/
 @svgColor1 : invert(13%) sepia(10%) saturate(3652%) hue-rotate(202deg) brightness(91%) contrast(96%);
 @svgColor2 : invert(36%) sepia(44%) saturate(5241%) hue-rotate(4deg) brightness(99%) contrast(88%);
@@ -32,3 +24,11 @@
 // Filter generator tool : https://cssgenerator.org/filter-css-generator.html
 @imgFilterColor1 : grayscale(100%) sepia(100%) hue-rotate(167deg) saturate(200%);
 @imgFilterColor2 : grayscale(100%) sepia(100%) hue-rotate(331deg) saturate(200%);
+
+// Functions
+.dimOpacityOnHover (@opacity) {
+  transition: all 0.3s;
+  &:hover {
+    opacity: @opacity;
+  }
+}

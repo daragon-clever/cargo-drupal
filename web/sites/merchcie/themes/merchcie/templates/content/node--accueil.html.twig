@@ -1,0 +1,88 @@
+<!-- TMP -->
+{% set imagePath = '/sites/merchcie/themes/merchcie/images/TEMP/hp/' %}
+
+<div id="homepage">
+    <div class="bg-color1 main-ban">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-5 left-part">
+                    <h3 class="text-color2">
+                        Merch & Cie
+                    </h3>
+                    <h1 class="text-white">
+                        Mettez votre merchandising entre de bonnes mains
+                    </h1>
+                    <p class="text-white pt-4 pb-5">
+                        Nous optimisons vos espace de vente <br> en Grande Distribution
+                    </p>
+                    <a href="/contact" class="cta bg-color2 text-white">Contactez-nous</a>
+                    <div class="dot-bottom dot-pattern-color3"></div>
+                </div>
+                <div class="col-12 col-lg-7 text">
+                    <div class="right-part">
+                        <div class="video-wrapper">
+                            <div class="img-wrapper">
+                                <div class="bg-color2 text-white button-video" id="js-video-btn">
+                                    <span class="picto-play"></span>
+                                    <div>
+                                        <small>
+                                            <b>{{ "Lire la vidéo"|trans }}</b><span id="js-video-time"></span>
+                                        </small>
+                                        <span class="video title">Découvrez Merch & Cie</span>
+                                    </div>
+                                </div>
+                                <img class="img-fluid" src="{{ imagePath }}visuel-video.jpg" alt="">
+                                <video id="js-video" loop>
+                                    <source src="{{ imagePath }}big_buck_bunny_720p_2mb.mp4" type="video/mp4">
+                                    <p>{{ "Votre navigateur ne prend pas en charge les vidéos HTML5."|trans }}</p>
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container intro">
+        <div class="row">
+            <div class="col">
+                <h2 class="text-color2 before-line line-color2">
+                    L’expérience terrain et le savoir-faire <br>de Merch & Cie, à votre service !
+                </h2>
+                <h3 class="text-color1">
+                    3 Chiffres pour en savoir plus
+                </h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-11">
+                <div class="c2">
+                    <div class="offset-bg"></div>
+                    <div>
+                        <div class="row text-center">
+                            <div class="col-12 col-lg-3">
+                                <img src="" alt="">
+                                <h4 class="text-num text-color2">7700</h4>
+                                <p class="text-color1">m linéaires implantés /an</p>
+                            </div>
+                            <div class="col-12 col-lg-3">
+                                <img src="" alt="">
+                                <h4 class="text-num text-color2">450000</h4>
+                                <p class="text-color1">m² de remodeling magasin</p>
+                            </div>
+                            <div class="col-12 col-lg-3">
+                                <img src="" alt="">
+                                <h4 class="text-num text-color2">7200</h4>
+                                <p class="text-color1">Points de ventes visités /an</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

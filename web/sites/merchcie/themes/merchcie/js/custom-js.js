@@ -12,7 +12,7 @@ jQuery(document).ready(function ($) {
         }
     });
 
-    /** UI KIT **/
+    // UI KIT
     if ($("#ui-kit").length) {
         document.querySelectorAll("code").forEach(function (element) {
             element.innerHTML = element.innerHTML
@@ -23,5 +23,22 @@ jQuery(document).ready(function ($) {
                 .replace(/'/g, "&#039;");
         });
         hljs.highlightAll();
+    }
+
+    // HOMEPAGE
+    if ($("#homepage").length) {
+        // Main ban video
+        var video = $("#js-video"),
+            videoDuration = video.get(0).duration,
+            minutes = parseInt(videoDuration / 60, 10),
+            seconds = (videoDuration % 60).toFixed(0);
+
+        $("#js-video-time").html(" | " + minutes + ":" + seconds);
+
+        $('#js-video-btn').click(function () {
+            video.fadeToggle();
+            $(this).hasClass("playing") ? video.get(0).pause() : video.get(0).play();
+            $(this).toggleClass("playing");
+        })
     }
 });

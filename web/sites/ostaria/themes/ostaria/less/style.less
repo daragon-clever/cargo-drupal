@@ -479,7 +479,9 @@ header {
     position: fixed;
     bottom: 50px;
     right: 13%;
-    background: url("../images/home/scroll_arrow.png") no-repeat center bottom transparent;
+    background: url("../images/home/scroll_arrow.svg") no-repeat center bottom;
+    background-size: 15%;
+    filter: @filterColor;
     -webkit-animation: mover 1s infinite  alternate;
     animation: mover 1s infinite  alternate;
     @media (min-width: 2000px) {
@@ -487,6 +489,10 @@ header {
     }
     @media (max-width: 1024px) {
       display: none;
+    }
+
+    &:first-line {
+      font-size: 50px;
     }
   }
   .txt-wrapper {
@@ -520,9 +526,12 @@ header {
   }
 }
 .hp-insta {
-  .title img {
-    display: block;
+  .logo-insta {
     margin: 0 auto;
+    width: 45px;
+    height: 70px;
+    background: url('../images/home/mea-instagram.svg') no-repeat center;
+    filter: @filterColor;
   }
   h3 {
     color:@mainColor;
@@ -630,12 +639,15 @@ footer {
       .dimOpacityOnHover(0.8);
       &.fb {
         background: url("../images/footer/facebook.svg");
+        filter: @filterColor;
       }
       &.inst {
         background: url("../images/footer/instagram.svg");
+        filter: @filterColor;
       }
       &.pint {
         background: url("../images/footer/pinterest.svg");
+        filter: @filterColor;
       }
     }
     @media @tablet {
@@ -742,27 +754,15 @@ footer {
     }
     &.style-1 {
       background-color: #3a7972;
-      li:first-child {
-        font-weight: 600
-      }
     }
     &.style-2 {
       background-color: #3d5a67;
-      li:nth-child(2) {
-        font-weight: 600
-      }
     }
     &.style-3 {
       background-color: #9a7363;
-      li:nth-child(3) {
-        font-weight: 600
-      }
     }
     &.style-4 {
       background-color: #393939;
-      li:nth-child(4) {
-        font-weight: 600
-      }
     }
   }
 }
@@ -1160,7 +1160,7 @@ footer {
       }
     }
     &:hover .presse-overlay {
-      opacity: 1;
+      opacity: 0.9;
     }
   }
 }
@@ -1789,7 +1789,7 @@ div[role=contentinfo] {
   & > div {
     a:hover {
       .inner-infos {
-        opacity: 1;
+        opacity: 0.9;
 
         & > div {
           opacity: 1;

@@ -15,14 +15,14 @@
 }
 #lp-page .intro h1 {
   font-size: 1.625em;
-  color: #a8483d;
+  color: #718472;
   position: relative;
 }
 #lp-page .intro h1:after {
   content: '';
   width: 60px;
   height: 1px;
-  background: #a8483d;
+  background: #718472;
   margin: 25px auto;
   display: block;
 }
@@ -55,7 +55,7 @@
 }
 #lp-page .form .required-wrapper:after {
   content: '*';
-  color: #a8483d;
+  color: #718472;
   position: absolute;
   top: 31px;
   right: 15px;
@@ -145,7 +145,7 @@
 #lp-page .form #edit-actions-submit {
   display: block;
   width: 100%;
-  background: #a8483d;
+  background: #718472;
   color: white;
   font-weight: 600;
   text-transform: uppercase;
@@ -165,7 +165,7 @@
   margin: 1.8rem 0 0;
 }
 #lp-page .form #edit-rgpd-txt a {
-  color: #a8483d;
+  color: #718472;
   text-decoration: underline;
   transition: opacity 0.3s;
 }
@@ -179,11 +179,11 @@ div[role="contentinfo"] {
   text-align: center;
   padding: 2rem 15px;
   margin: 2rem auto;
-  border: 2px solid #a8483d;
+  border: 2px solid #718472;
   max-width: 850px;
 }
 div[role="contentinfo"] h2 {
-  color: #a8483d;
+  color: #718472;
   margin-bottom: 20px;
   margin-top: 0;
 }
@@ -199,7 +199,7 @@ div[role="contentinfo"] h2.visually-hidden {
   display: none;
 }
 div[role="contentinfo"] a {
-  color: #a8483d;
+  color: #718472;
   text-decoration: underline;
 }
 div[role="contentinfo"] ul {

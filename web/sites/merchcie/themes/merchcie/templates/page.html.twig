@@ -1,0 +1,18 @@
+<div class="header-wrapper">
+    <!-- Header -->
+    {% include directory ~ '/templates/partials/header.html.twig' %}
+</div>
+
+<div class="content">
+    {% if page.highlighted %}
+        <div class="message-site">
+            {{ page.highlighted }}
+        </div>
+    {% endif %}
+    {% if page.content %}
+        {{ page.content }}
+    {% endif %}
+</div>
+
+<!-- Footer -->
+{% include directory ~ '/templates/partials/footer.html.twig' %}

@@ -1,0 +1,18 @@
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="inner">
+                    <a href="{{ url('<front>') }}" title="Accueil">
+                        <span class="logo-placeholder"></span>
+                    </a>
+                    {% if page.navigation %}
+                        <div class="nav-wrapper">
+                            {{ page.navigation }}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

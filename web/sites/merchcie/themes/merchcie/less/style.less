@@ -2,7 +2,7 @@
 @import 'ui-kit';
 @import 'fonts';
 
-/** HEADER **/
+// HEADER
 header {
   padding: 30px 0;
   position: fixed;
@@ -91,6 +91,177 @@ body.adminimal-admin-toolbar {
 
     header {
       top: 79px;
+    }
+  }
+}
+
+// HOMEPAGE
+#homepage {
+  position: relative;
+
+  .main-ban {
+    padding: 254px 0;
+    //border-top: 2px solid #373754;
+    overflow: hidden;
+    position: relative;
+
+    .left-part {
+      position: relative;
+      z-index: 1;
+
+      .dot-bottom {
+        position: absolute;
+        height: 100vh;
+        width: 100%;
+        top: 110%;
+        left: 0;
+        z-index: 0;
+      }
+
+      &:after {
+        content: "";
+        background: url("../images/picto/deco-arrow.svg") no-repeat center / 100% transparent;
+        width: 118px;
+        height: 118px;
+        filter: @svgColorWhite;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transform-origin: center;
+        transform: rotate(180deg);
+      }
+    }
+
+    .right-part {
+      position: relative;
+      z-index: 1;
+      text-align: right;
+    }
+
+    .video-wrapper {
+      .img-wrapper {
+        background: black;
+        border-radius: 10px;
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+
+        img {
+          width: 840px;
+          height: 472px;
+          object-fit: cover;
+          opacity: 0.5;
+          transition: 0.5s ease-in-out;
+        }
+      }
+
+      video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+      }
+
+      .button-video {
+        width: 300px;
+        height: 75px;
+        position: absolute;
+        bottom: 30px;
+        left: 30px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        text-align: left;
+        padding: 0 30px;
+        cursor: pointer;
+        z-index: 1;
+        transition: 0.5s ease-in-out;
+
+        .picto-play {
+          background: url("../images/picto/play.svg") no-repeat center transparent;
+          height: 38px;
+          width: 34px;
+          display: block;
+          margin-right: 30px;
+
+          &:before,
+          &:after {
+            content: "";
+            height: 100%;
+            width: 13px;
+            background: white;
+            border-radius: 3px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+          }
+
+          &:after {
+            left: inherit;
+            right: 0;
+          }
+        }
+
+        &.playing {
+          opacity: 0.3;
+
+          .picto-play {
+            background: none;
+            position: relative;
+
+            &:before,
+            &:after {
+              display: block;
+            }
+          }
+        }
+
+        small {
+          display: block;
+        }
+
+        &:hover {
+          opacity: 0.9;
+
+          & + img {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    &:after {
+      content: "";
+      height: 100%;
+      width: 43%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      border-radius: 333px 0px 0px 0px;
+      background-color: @color2;
+      z-index: 0;
+    }
+  }
+
+  .intro {
+    padding: 80px 0;
+  }
+
+  .c2 {
+    padding: 150px 0;
+    position: relative;
+
+    .offset-bg {
+      background: @color4;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100vw;
+      height: 100%;
+      z-index: -1;
     }
   }
 }

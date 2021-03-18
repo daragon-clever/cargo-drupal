@@ -1,3 +1,96 @@
 @import 'variables';
 @import 'ui-kit';
 @import 'fonts';
+
+/** HEADER **/
+header {
+  padding: 30px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background: @color1;
+  transition: 0.3s ease-in-out;
+
+  .logo-placeholder {
+    background: url("../images/logo/logo-merchcie.svg") no-repeat center transparent;
+    width: 200px;
+    height: 55px;
+    display: block;
+    .dimOpacityOnHover(0.8);
+  }
+
+  &.fixed {
+    background: white;
+    padding: 15px 0;
+
+    .logo-placeholder {
+      background-image: url("../images/logo/logo-merchcie_fixed.svg");
+    }
+
+    nav {
+      a {
+        color: @color1
+      }
+    }
+  }
+
+  .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav {
+    & > ul {
+      display: flex;
+      list-style: none;
+      align-items: center;
+      padding: 0;
+      margin: 0;
+
+      li {
+        padding: 0 24px;
+
+        &:last-child {
+          padding-right: 0;
+        }
+
+        &:first-child {
+          padding-left: 0;
+        }
+      }
+
+      ul {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    a {
+      color: white;
+      transition: color 0.3s ease-in-out;
+
+      &:hover {
+        color: @color2;
+        text-decoration: none;
+      }
+
+      &.presta {
+        color: @color2;
+        font-family: 'AvenirBlack', Arial, Helvetica, sans-serif;
+      }
+    }
+  }
+}
+
+body.adminimal-admin-toolbar {
+  .dialog-off-canvas-main-canvas {
+    padding-top: 115px;
+
+    header {
+      top: 79px;
+    }
+  }
+}

@@ -570,6 +570,9 @@ p {
     display: none;
   }
 }
+.footer-wrapper .part3 br {
+  display: initial;
+}
 .footer-wrapper .part3 .reseaux {
   margin-left: 15px;
 }
@@ -701,6 +704,10 @@ p {
 }
 #concept p {
   margin-top: 1rem;
+}
+#produits .relative-slider img {
+  object-fit: cover;
+  width: 100%;
 }
 #produits p:last-child {
   margin-bottom: 0;

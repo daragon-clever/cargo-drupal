@@ -45,7 +45,7 @@ a.text-color3:hover { color: @color3 }
 a.text-color4:hover { color: @color4 }
 
 /** <hx> **/
-h1, h2 {
+h1, h2, h4 {
   font-family: 'AvenirBlack', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
 }
@@ -61,6 +61,10 @@ h2 {
 h3 {
   font-family: 'AvenirBook', Arial, Helvetica, sans-serif;
   font-size: 3.2rem;
+}
+
+h4 {
+  font-size: 2.4rem;
 }
 
 /** Lined title **/
@@ -102,6 +106,7 @@ h3 {
 
 .text-hand {
   font-family: 'autheniatextured', Arial, Helvetica, sans-serif;
+  text-transform: none;
   font-size: 6.4rem;
 }
 
@@ -175,6 +180,12 @@ a.link {
       &:after {
         margin-left: 20px;
       }
+    }
+  }
+
+  &.text-color2 {
+    &.after-arrow:after {
+      filter: @svgColor2;
     }
   }
 }

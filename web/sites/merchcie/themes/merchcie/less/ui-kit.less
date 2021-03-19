@@ -156,6 +156,7 @@ p:last-of-type {
 }
 
 .line {
+  width: 50px;
   height: 3px;
   display: inline-block;
   transform-origin: center;
@@ -163,6 +164,8 @@ p:last-of-type {
 }
 
 .line-vertical {
+  height: 50px;
+  margin: 15px 0;
   width: 3px;
   display: inline-block;
   transform-origin: center;
@@ -278,6 +281,44 @@ a.link {
       display: flex;
       align-items: center;
     }
+  }
+}
+
+.js-testimonials-slick {
+  margin-top: 50px;
+
+  .slick-list {
+    margin: 0 -15px;
+
+    .slick-slide {
+      padding: 0 15px;
+    }
+  }
+
+  .slick-prev,
+  .slick-next {
+    background: url("../images/picto/arrow-slick.svg") no-repeat center transparent;
+    font-size: 0;
+    height: 52px;
+    width: 44px;
+    border: none;
+    outline: none;
+    position: absolute;
+    top: -100px;
+    right: 0;
+    filter: @svgColor1;
+    opacity: 0.1;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .slick-prev {
+    right: 70px;
+    transform-origin: center;
+    transform: rotate(180deg);
   }
 }
 

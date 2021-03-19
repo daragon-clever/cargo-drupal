@@ -114,9 +114,11 @@ body.adminimal-admin-toolbar {
         position: absolute;
         height: 100vh;
         width: 100%;
-        top: 110%;
+        bottom: -50px;
         left: 0;
         z-index: 0;
+        transform: translateY(100%);
+        transform-origin: bottom;
       }
 
       &:after {
@@ -304,8 +306,8 @@ body.adminimal-admin-toolbar {
         background: url("../images/pattern/dot-pattern.svg") repeat top left transparent;
         filter: @svgColor2;
         position: absolute;
-        top: -59px;
-        left: 455px;
+        top: -60px;
+        left: 30%;
         transform: translateX(-100%);
         z-index: -1;
       }
@@ -323,4 +325,30 @@ body.adminimal-admin-toolbar {
       z-index: -1;
     }
   }
+
+  .c4 {
+    margin-top: 90px;
+    margin-bottom: 90px;
+    position: relative;
+
+    .js-testimonials-slick {
+      &:after {
+        content: "";
+        width: 100vw;
+        height: 300px;
+        background: url("../images/pattern/dot-pattern.svg") repeat top left transparent;
+        filter: @svgColor3;
+        position: absolute;
+        bottom: -175px;
+        right: 19.6%;
+        z-index: -1;
+        transition: right;
+        transform: translate(100%);
+      }
+    }
+  }
+}
+
+.white-book-wrapper {
+  padding: 95px 0;
 }

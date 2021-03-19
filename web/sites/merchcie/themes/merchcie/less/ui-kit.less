@@ -12,7 +12,13 @@ body {
 
 /** Container **/
 .container {
-  max-width: 1630px;
+  max-width: 100%;
+}
+
+@media (min-width: 1660px) {
+  .container {
+    max-width: 1630px;
+  }
 }
 
 /** UI KIT page **/
@@ -77,6 +83,14 @@ p:last-of-type {
   margin: 0;
 }
 
+/** Zindex **/
+.z0 { z-index: 0; }
+.z1 { z-index: 1; }
+.z2 { z-index: 2; }
+.z3 { z-index: 3; }
+.z4 { z-index: 4; }
+.z5 { z-index: 5; }
+
 /** Lined title **/
 .before-line {
   position: relative;
@@ -134,6 +148,11 @@ p:last-of-type {
 .dot-pattern-color3 {
   background: url("../images/pattern/dot-pattern.svg") repeat top left transparent;
   filter: @svgColor3;
+}
+
+.dot-pattern-color-white {
+  background: url("../images/pattern/dot-pattern.svg") repeat top left transparent;
+  filter: @svgColorWhite;
 }
 
 .line {

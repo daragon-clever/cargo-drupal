@@ -98,6 +98,7 @@ body.adminimal-admin-toolbar {
 // HOMEPAGE
 #homepage {
   position: relative;
+  overflow: hidden;
 
   .main-ban {
     padding: 254px 0;
@@ -261,6 +262,64 @@ body.adminimal-admin-toolbar {
       right: 0;
       width: 100vw;
       height: 100%;
+      z-index: -1;
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: -166px;
+        right: -164px;
+        background: url("../images/picto/deco-bubble.svg") no-repeat center transparent;
+        width: 333px;
+        height: 338px;
+        filter: @svgColor1;
+      }
+    }
+
+    img {
+      height: 100px;
+      width: 110px;
+      object-fit: contain;
+      margin-bottom: 24px;
+    }
+  }
+
+  .c3 {
+    padding-top: 240px;
+    position: relative;
+    margin-top: -130px;
+
+    h3 + .line-vertical {
+      height: 50px;
+      margin: 15px 0;
+    }
+
+    .cats-row {
+      position: relative;
+
+      &:before {
+        content: "";
+        width: 100vw;
+        height: 200px;
+        background: url("../images/pattern/dot-pattern.svg") repeat top left transparent;
+        filter: @svgColor2;
+        position: absolute;
+        top: -59px;
+        left: 455px;
+        transform: translateX(-100%);
+        z-index: -1;
+      }
+    }
+
+    &:after {
+      content: "";
+      background: white;
+      height: 230px;
+      width: 100%;
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
       z-index: -1;
     }
   }

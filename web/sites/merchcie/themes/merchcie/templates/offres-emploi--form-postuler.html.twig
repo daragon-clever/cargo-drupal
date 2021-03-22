@@ -1,0 +1,42 @@
+{% if data and form %}
+    <div class="c-page-banner-form">
+        <div class="container">
+            <div class="c-page-banner-form__content-wrapper">
+                <div class="c-banner-card-form">
+                    <div>
+                        <p class="c-banner-card-form__title">{{ data }}</p>
+                        <p class="c-banner-card-form__content">
+                            Vous avez envie de mettre vos talents au service de COGEX ? Déposez ici vos coordonnées, CV et
+                            lettre de motivation. Nous vous recontacterons dans les meilleurs délais.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div id="candidature">
+                        <div class="candidature-offre" id="webform-submission-candidature-spontanee-add-form">
+                            {{ form }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% else %}
+    <div id="offre">
+        <div class="container">
+            <div id="alerte-offres" class="c-text-bold">
+                <p class="error">
+                    L'annonce n'existe pas.
+                    <a href="/offres-emploi">Retournez sur la page des offres d'emploi.</a>
+                </p>
+            </div>
+        </div>
+    </div>
+{% endif %}

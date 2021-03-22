@@ -1,0 +1,72 @@
+<div class="container listing-offres">
+    <div class="row">
+        <div class="col-12 col-md-3 filters">
+            <h3 class="d-none d-sm-block c-text-bold">Filtrer</h3>
+
+            <div class="d-block d-md-none">
+                <button class="cta-filter top js-toggle-filters c-text-bold">
+                    Filtrer
+                </button>
+            </div>
+
+            <input type="text" id="searchbox" class="c-text-semi-bold" placeholder="Rechercher une offre" />
+
+            {% if data %}
+                <div id="groupe-filtres-offres-emploi">
+                    <div id="filtre-contrat" class="filtres-offres-emploi">
+                        <span class="type c-text-bold">Type de contrat</span>
+                        <div class="select-option"></div>
+                    </div>
+                    <div id="filtre-poste" class="filtres-offres-emploi">
+                        <span class="type c-text-bold">Type de poste</span>
+                        <div class="select-option"></div>
+                    </div>
+                    <div id="filtre-lieu" class="filtres-offres-emploi">
+                        <span class="type c-text-bold">Lieu de travail</span>
+                        <div class="select-option"></div>
+                    </div>
+                    <div class="d-block d-sm-none">
+                        <button class="cta-filter bottom js-toggle-filters c-text-bold" style="display: none">
+                            Valider
+                        </button>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+        <div class="col-12 col-md-9 jobs-list">
+            <h3 class="c-text-bold">Les postes à pourvoir</h3>
+            {% if data %}
+                <div id="alerte-offres"></div>
+                <table id="toutes-les-offres" class="display">
+                    <thead>
+                        <tr>
+                            <th class="all wrap">Poste</th>
+                            <th class="all">Type de contrat</th>
+                            <th class="js-hide">Type de poste</th>
+                            <th class="not-mobile">Date de début</th>
+                            <th class="not-mobile">Lieu</th>
+                            <th class="not-mobile js-only-xs"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for offre in data %}
+                            <tr class="clickable-row c-text-bold" data-href="/offres-emploi/{{ offre.codeRecrutement }}">
+                                <td class="wrap">{{ offre.intitulePoste }}</td>
+                                <td class="">{{ offre.typeContrat }}</td>
+                                <td>{{ offre.metier }}</td>
+                                <td>{{ offre.dateOuverturePoste|date("d/m/Y") }}</td>
+                                <td>{{ offre.lieuRecrutement }}</td>
+                                <td><a href="/offres-emploi/{{ offre.codeRecrutement }}">Voir l'annonce</a></td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <div id="alerte-offres" class="c-text-bold">
+                    <p class="error">Nous n'avons aucune offre pour le moment. Revenez bientôt pour de nouvelles offres ou postulez
+                        avec une <a href="/candidature">candidature spontanée</a>.</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

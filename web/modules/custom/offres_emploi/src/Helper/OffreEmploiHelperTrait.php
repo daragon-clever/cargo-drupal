@@ -17,7 +17,7 @@ trait OffreEmploiHelperTrait
         'cestdeuxeuros' => 'CEDIF',
         'yliades' => 'YLIADES',
         'roldan' => 'ROLDAN',
-        'merchetcie' => 'MERCH ET CIE',
+        'merchcie' => 'MERCH ET CIE',
         'groupecargo' => 'CARGO',
         'cogex' => 'COGEX',
         'ruecab' => 'RUECAB',

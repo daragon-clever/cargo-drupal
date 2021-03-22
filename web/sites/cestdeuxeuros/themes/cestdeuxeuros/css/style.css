@@ -131,6 +131,16 @@ img {
   height: 25px;
   width: 25px;
 }
+@media only screen and (max-width: 767px) {
+  .cta {
+    padding: 0 20px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .cta {
+    padding: 0 10px;
+  }
+}
 .grayscale {
   filter: grayscale();
   cursor: pointer;
@@ -705,9 +715,11 @@ p {
 #concept p {
   margin-top: 1rem;
 }
-#produits .relative-slider img {
-  object-fit: cover;
-  width: 100%;
+@media only screen and (max-width: 767px) {
+  #produits .relative-slider img {
+    object-fit: cover;
+    width: 100%;
+  }
 }
 #produits p:last-child {
   margin-bottom: 0;

@@ -160,6 +160,14 @@ img {
       width: 25px;
     }
   }
+
+  @media @phone {
+    padding: 0 20px;
+  }
+
+  @media @smallPhone {
+    padding: 0 10px;
+  }
 }
 
 .grayscale {
@@ -831,8 +839,10 @@ p {
 //PRODUITS
 #produits {
   .relative-slider img {
-    object-fit: cover;
-    width: 100%;
+    @media @phone {
+      object-fit: cover;
+      width: 100%;
+    }
   }
 
   p:last-child {

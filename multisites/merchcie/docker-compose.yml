@@ -9,7 +9,7 @@ services:
       networks:
         webgateway:
           aliases:
-            - web_fcm
+            - web_merch
         internal:
           aliases:
             - web_internal
@@ -25,7 +25,7 @@ services:
       networks:
         webgateway:
           aliases:
-            - php_fcm
+            - php_merch
         internal:
           aliases:
             - php_internal
@@ -43,7 +43,7 @@ services:
       networks:
         webgateway:
           aliases:
-            - db_fcm
+            - db_merch
         internal:
           aliases:
             - db_internal
@@ -60,7 +60,7 @@ services:
       networks:
         webgateway:
           aliases:
-            - phpmyadmin_fcm
+            - phpmyadmin_merch
         internal:
           aliases:
             - phpmyadmin_internal
@@ -73,7 +73,7 @@ services:
       networks:
         webgateway:
           aliases:
-            - mail_fcm
+            - mail_merch
         internal:
           aliases:
             - mail_internal

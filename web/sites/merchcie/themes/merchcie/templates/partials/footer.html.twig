@@ -1,9 +1,33 @@
-{% if page.footer %}
-    {{ page.footer }}
-    <div class="copyright text-center">
-        Merch & Cie {{ '© ' }}{{ "now"|date('Y') }}
-        <br class="d-lg-none" />
-        <a href="/mentions-legales">{{ 'Mentions légales '|trans }}</a> -
-        <a href="/confidentialite">{{ 'Politique de confidentialité '|trans }}</a>
+<div class="footer-wrapper bg-color1 text-white">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12 col-lg-3">
+                <a href="{{ url('<front>') }}" title="Merch & Cie">
+                    <span class="logo-placeholder"></span>
+                </a>
+            </div>
+            <div class="col-12 col-lg-6">
+                {{ page.footer }}
+                <ul>
+                    <li><a href="#">Pourquoi Merch & Cie ?</a></li>
+                    <li><a href="#">Nos expertises</a></li>
+                    <li><a href="#">Nos challenges</a></li>
+                    <li><a href="#">Rejoignez-nous</a></li>
+                    <li><a href="#">Espace prestataires</a></li>
+                    <li><a href="#">Contactez-nous</a></li>
+                </ul>
+            </div>
+            <div class="col-12 col-lg-3">
+                {{ "Suivez Merch & Cie <br /> sur Linkedin"|trans }}
+                <a href="#">
+                    <span class="logo-linkedin"></span>
+                </a>
+            </div>
+        </div>
     </div>
-{% endif %}
+</div>
+<div class="copyright text-center">
+    Merch & Cie {{ '© ' }}2011-{{ "now"|date('Y') }} -
+    <a href="/mentions-legales">{{ 'Mentions légales '|trans }}</a> -
+    <a href="/confidentialite">{{ 'Politique de confidentialité '|trans }}</a>
+</div>

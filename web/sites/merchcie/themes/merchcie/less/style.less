@@ -95,6 +95,55 @@ body.adminimal-admin-toolbar {
   }
 }
 
+// FOOTER
+.footer-wrapper {
+  padding: 60px;
+  font-size: 1.8rem;
+
+  .logo-placeholder {
+    background: url("../images/logo/logo-merchcie.svg") no-repeat center / 100% transparent;
+    width: 253px;
+    height: 70px;
+    display: block;
+  }
+
+  .logo-linkedin {
+    background: url("../images/logo/linkedin.svg") no-repeat center transparent;
+    width: 188px;
+    height: 46px;
+    display: block;
+    margin-top: 20px;
+    .dimOpacityOnHover(0.8)
+  }
+
+  ul {
+    column-count: 2;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    a {
+      color: white;
+      margin: 10px 0;
+      display: block;
+      .dimOpacityOnHover(0.8);
+      text-decoration: none;
+    }
+  }
+}
+
+.copyright {
+  background: #2E2E57;
+  line-height: 44px;
+  color: #9696AF;
+
+  a {
+    color: #9696AF;
+    .dimOpacityOnHover(0.8);
+    text-decoration: none;
+  }
+}
+
 // HOMEPAGE
 #homepage {
   position: relative;
@@ -349,6 +398,7 @@ body.adminimal-admin-toolbar {
   }
 }
 
+// BLOCK LIVRE BLANC
 .white-book-block-wrapper {
   background: @color1;
   padding: 95px 0;
@@ -387,6 +437,7 @@ body.adminimal-admin-toolbar {
   }
 }
 
+// BLOCK NEWSLETTER
 .newsletter-block-wrapper {
   .inner {
     max-width: 520px;

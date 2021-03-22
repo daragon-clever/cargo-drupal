@@ -349,7 +349,7 @@ body.adminimal-admin-toolbar {
   }
 }
 
-.white-book-wrapper {
+.white-book-block-wrapper {
   background: @color1;
   padding: 95px 0;
   color: white;
@@ -383,6 +383,41 @@ body.adminimal-admin-toolbar {
 
     .link-more {
       color: @color1;
+    }
+  }
+}
+
+.newsletter-block-wrapper {
+  .inner {
+    max-width: 520px;
+
+    .picto-mail {
+      background: url("../images/picto/mail.svg") no-repeat center transparent;
+      display: inline-block;
+      vertical-align: middle;
+      width: 62px;
+      height: 38px;
+      filter: @svgColor2;
+      margin-top: -11px;
+      margin-right: 15px;
+    }
+
+    input {
+      margin: 10px 0;
+      background: none;
+      border: none;
+      border-bottom: 1px solid @color2;
+      outline: none;
+    }
+
+    .choice-notice {
+      font-size: 1.4rem;
+      line-height: 1;
+
+      a {
+        color: @color1;
+        text-decoration: underline;
+      }
     }
   }
 }

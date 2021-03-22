@@ -10,9 +10,10 @@
 @tablet:         ~"only screen and (max-width: @{sm})";
 
 // Colors
-@lightMint: #47bfa8;
-@mint: #5fafa7;
-@darkMint: #256a63;
+@mainColor: #718472;
+
+// Convert tool : https://polewebcargo.github.io/hex-to-css-filter-generator/
+@filterColor: invert(51%) sepia(14%) saturate(359%) hue-rotate(73deg) brightness(95%) contrast(95%);
 
 // Functions
 .dimOpacityOnHover (@opacity) {

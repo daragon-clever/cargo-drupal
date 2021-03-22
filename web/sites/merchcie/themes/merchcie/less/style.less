@@ -350,5 +350,39 @@ body.adminimal-admin-toolbar {
 }
 
 .white-book-wrapper {
+  background: @color1;
   padding: 95px 0;
+  color: white;
+
+  .inner {
+    max-width: 715px;
+    margin: 0 auto;
+  }
+
+  .line-vertical {
+    filter: @svgColorWhite;
+  }
+
+  .link-more {
+    text-decoration: underline;
+    color: white;
+    .dimOpacityOnHover(0.8)
+  }
+
+  &.bgwhite-version {
+    background: white;
+    color: @color1;
+
+    h2 {
+      color: @color2;
+    }
+
+    .line-vertical {
+      filter: @svgColor2;
+    }
+
+    .link-more {
+      color: @color1;
+    }
+  }
 }

@@ -44,7 +44,7 @@ jQuery(document).ready(function ($) {
         // JS number animation
         Number.prototype.format = function(n) {
             var r = new RegExp('\\d(?=(\\d{3})+' + (n > 0 ? '\\.' : '$') + ')', 'g');
-            return this.toFixed(Math.max(0, Math.floor(n)));
+            return this.toFixed(Math.max(0, Math.floor(n))).replace(r, '$&,');
         };
 
         $('.text-num').each(function () {

@@ -98,12 +98,12 @@ p:last-of-type {
 }
 
 /** Zindex **/
-.z0 { z-index: 0; }
-.z1 { z-index: 1; }
-.z2 { z-index: 2; }
-.z3 { z-index: 3; }
-.z4 { z-index: 4; }
-.z5 { z-index: 5; }
+.z0 { position: relative; z-index: 0; }
+.z1 { position: relative; z-index: 1; }
+.z2 { position: relative; z-index: 2; }
+.z3 { position: relative; z-index: 3; }
+.z4 { position: relative; z-index: 4; }
+.z5 { position: relative; z-index: 5; }
 
 /** Lined title **/
 .before-line {
@@ -131,6 +131,13 @@ p:last-of-type {
     &:before {
       background: url("../images/pattern/dot-pattern.svg") repeat-x top center transparent;
       filter: @svgColor2;
+    }
+  }
+
+  &.line-color-white {
+    &:before {
+      background: url("../images/pattern/dot-pattern.svg") repeat-x top center transparent;
+      filter: @svgColorWhite;
     }
   }
 }

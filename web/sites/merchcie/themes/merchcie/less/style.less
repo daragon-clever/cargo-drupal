@@ -144,6 +144,53 @@ body.adminimal-admin-toolbar {
   }
 }
 
+// BREADCRUMBS
+#block-merchcie-breadcrumbs {
+  background: @color1;
+
+  nav {
+    max-width: 1630px;
+    margin: 0 auto;
+
+    ol, li {
+      margin: 0;
+      padding: 0;
+    }
+
+    ol {
+      display: flex;
+      list-style: none;
+    }
+
+    li {
+      margin: 0 5px;
+      color:@color2;
+      line-height: 20px;
+
+      a {
+        color: white;
+        display: flex;
+        align-items: center;
+        font-size: 1.4rem;
+        text-decoration: none;
+        .dimOpacityOnHover(0.8);
+
+        &:after {
+          content: "";
+          height: 5px;
+          width: 5px;
+          display: inline-block;
+          border-top: 1px solid;
+          border-right: 1px solid;
+          margin-left: 10px;
+          transform-origin: center;
+          transform: rotate(45deg);
+        }
+      }
+    }
+  }
+}
+
 // HOMEPAGE
 #homepage {
   position: relative;

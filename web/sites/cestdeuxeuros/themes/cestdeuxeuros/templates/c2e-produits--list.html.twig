@@ -6,14 +6,10 @@
         {% set classSet = "col-6 col-md-4 col-lg-3 img-wrapper" %}
     {% endif %}
     <div class="row products">
-        {% set count = 0 %}
         {% for product in products %}
-            {% set count = count + 1 %}
             <div class="{{ classSet }}">
                 <div class="inner">
-                    {% if not product.img %}
-                        <img src="" alt=""/>
-                    {% else %}
+                    {% if product.img %}
                         {% if not product.desc %}
                             {% set altSet = product.sku %}
                         {% else %}
@@ -27,19 +23,7 @@
                 </div>
             </div>
         {% endfor %}
-        {% if count < nbItem %}
-            {% set nbEmpty = nbItem - count %}
-            {% for i in 1..nbEmpty %}
-                <div class="{{ classSet }}">
-                    <div class="inner">
-                        <img src="" alt=""/>
-                        {% if 'arrivages/futur_arrivage' not in url|render|render %}
-                            <span>2<small>€</small></span>
-                        {% endif %}
-                    </div>
-                </div>
-            {% endfor %}
-        {% endif %}
+
         {% if week is defined and week == "S0" %}
             <div class="{{ classSet }}">
                 <div class="inner txt-block">

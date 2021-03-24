@@ -1,21 +1,10 @@
-<!-- TMP -->
-{% set imagePath = '/sites/merchcie/themes/merchcie/images/TEMP/hp/' %}
-
 <div id="homepage">
+    <!-- CONTENT 1-->
     <div class="bg-color1 main-ban">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-12 col-lg-5 left-part">
-                    <h3 class="text-color2">
-                        Merch & Cie
-                    </h3>
-                    <h1 class="text-white">
-                        Mettez votre merchandising entre de bonnes mains
-                    </h1>
-                    <p class="text-white pt-4 pb-5">
-                        Nous optimisons vos espace de vente <br> en Grande Distribution
-                    </p>
-                    <a href="/contact" class="cta bg-color2 text-white">Contactez-nous</a>
+                    {{ content.field_hp_c1_intro }}
                     <div class="dot-bottom dot-pattern-color3"></div>
                 </div>
                 <div class="col-12 col-lg-7 text">
@@ -28,12 +17,13 @@
                                         <small>
                                             <b>{{ "Lire la vidéo"|trans }}</b><span id="js-video-time"></span>
                                         </small>
-                                        <span class="video title">Découvrez Merch & Cie</span>
+                                        <span class="video title">{{ node.field_hp_c1_video_file[0].description }}</span>
                                     </div>
                                 </div>
-                                <img class="img-fluid" src="{{ imagePath }}visuel-video.jpg" alt="">
+                                <img class="img-fluid" src="{{ content.field_hp_c1_video_thumb[0] }}" alt="">
                                 <video id="js-video" loop controls>
-                                    <source src="{{ imagePath }}big_buck_bunny_720p_2mb.mp4" type="video/mp4">
+                                    <source src="{{ content.field_hp_c1_video_file[0]|render|striptags|trim|raw }}"
+                                            type="video/mp4">
                                     <p>{{ "Votre navigateur ne prend pas en charge les vidéos HTML5."|trans }}</p>
                                 </video>
                             </div>
@@ -44,15 +34,11 @@
         </div>
     </div>
 
+    <!-- CONTENT 2-->
     <div class="container intro">
         <div class="row">
             <div class="col">
-                <h2 class="text-color2 before-line line-color2">
-                    L’expérience terrain et le savoir-faire <br>de Merch & Cie, à votre service !
-                </h2>
-                <h3 class="text-color1">
-                    3 Chiffres pour en savoir plus
-                </h3>
+                {{ content.field_hp_c2_intro }}
             </div>
         </div>
     </div>
@@ -63,95 +49,56 @@
                 <div class="c2">
                     <div class="offset-bg"></div>
                     <div class="row text-center">
-                        <div class="col-12 col-lg-3">
-                            <img src="{{ imagePath }}icon_lineaire.svg" alt="">
-                            <h4 class="text-num text-color2">7700</h4>
-                            <p class="text-color1">m linéaires implantés /an</p>
-                        </div>
-                        <div class="col-12 col-lg-3">
-                            <img src="{{ imagePath }}icon_mcarr.svg" alt="">
-                            <h4 class="text-num text-color2">450000</h4>
-                            <p class="text-color1">m² de remodeling magasin</p>
-                        </div>
-                        <div class="col-12 col-lg-3">
-                            <img src="{{ imagePath }}icon_pdv.svg" alt="">
-                            <h4 class="text-num text-color2">7200</h4>
-                            <p class="text-color1">Points de ventes visités /an</p>
-                        </div>
+                        {% for i in 0..2 %}
+                            <div class="col-12 col-lg-3">
+                                <img src="{{ file_url(content.field_hp_c2_data_img['#items'][i].entity.uri.value) }}"
+                                     alt="">
+                                <h4 class="text-num text-color2">{{ content.field_hp_c2_data_numb[i] }}</h4>
+                                <p class="text-color1">{{ node.field_hp_c2_data_img[i].description }}</p>
+                            </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- CONTENT 3-->
     <div class="bg-color1 c3 z0">
         <div class="container">
             <div class="row">
                 <div class="col text-center text-white">
-                    <h2>Allez plus loin</h2>
-                    <h3>Avec Merch & Cie</h3>
+                    {{ content.field_hp_c3_intro }}
                     <span class="line-vertical dot-pattern-color-white"></span>
                 </div>
             </div>
             <div class="row cats-row">
-                <div class="col-12 col-lg-4">
-                    <a href="#" class="hover-picto-eye">
-                        <img class="img-fluid filter-hover-color1" src="{{ imagePath }}Pourquoi-Merch-et-Cie.jpg"
-                             alt="">
-                    </a>
-                    <h4 class="text-color1 mt-4">Pourquoi Merch & Cie ?</h4>
-                    <a href="#" class="link text-color3 after-arrow">En savoir plus</a>
-                </div>
-                <div class="col-12 col-lg-4">
-                    <a href="#" class="hover-picto-eye">
-                        <img class="img-fluid filter-hover-color1" src="{{ imagePath }}expertises.jpg"
-                             alt="">
-                    </a>
-                    <h4 class="text-color1 mt-4">Nos expertises</h4>
-                    <a href="#" class="link text-color3 after-arrow">Découvrir nos métiers</a>
-                </div>
-                <div class="col-12 col-lg-4">
-                    <a href="#" class="hover-picto-eye">
-                        <img class="img-fluid filter-hover-color1" src="{{ imagePath }}Offres-de-presta.jpg"
-                             alt="">
-                    </a>
-                    <h4 class="text-color1 mt-4">Devenez prestataire merch & cie</h4>
-                    <a href="#" class="link text-color3 after-arrow">Rejoignez notre réseau de prestataires</a>
-                </div>
+                {% for i in 0..2 %}
+                    <div class="col-12 col-lg-4">
+                        <a href="{{ content.field_hp_c3_links[i]['#url'] }}" class="hover-picto-eye">
+                            <img class="img-fluid filter-hover-color1"
+                                 src="{{ file_url(content.field_hp_c3_imgs['#items'][i].entity.uri.value) }}"
+                                 alt="">
+                        </a>
+                        <h4 class="text-color1 mt-4">{{ node.field_hp_c3_imgs[i].title }}</h4>
+                        <a href="{{ content.field_hp_c3_links[i]['#url'] }}"
+                           class="link text-color3 after-arrow">{{ content.field_hp_c3_links[i]['#title'] }}</a>
+                    </div>
+                {% endfor %}
             </div>
         </div>
     </div>
 
+    <!-- CONTENT 4 // TEMOIGNAGES -->
     <div class="container c4 z1">
         <div class="row">
             <div class="col">
-                <h2 class="text-color2 before-line line-color2">
-                    Paroles de clients
-                </h2>
-                <h3 class="text-color1">
-                    Ils nous ont fait confiance
-                </h3>
+                {{ content.field_hp_c4_intro }}
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <div class="js-testimonials-slick">
-                    {% for i in 0 .. 5 %}
-                        <div>
-                            <div class="testimonial-item bg-color4 text-color1">
-                                <blockquote>
-                                    « Très bon suivi de la part des équipes, réactivité, travail de qualité. A
-                                    recommander sans
-                                    hésiter. »
-                                </blockquote>
-                                <div>
-                                    <span class="text-hand">Chloé D.</span>
-                                    <small>Responsable communication Egger</small>
-                                </div>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
+                {{ content.field_temoignage_block }}
             </div>
         </div>
     </div>

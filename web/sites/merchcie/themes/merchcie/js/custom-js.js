@@ -25,6 +25,11 @@ jQuery(document).ready(function ($) {
         hljs.highlightAll();
     }
 
+    // POPUP BOOK
+    $('.js-open-book, #js-popup-book .js-close').click(function () {
+       $('#js-popup-book-wrapper').fadeToggle();
+    });
+
     // HOMEPAGE
     if ($("#homepage").length) {
         // Main ban video

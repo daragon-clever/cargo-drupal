@@ -790,16 +790,10 @@ $databases['default']['default'] = array (
   'username' => 'root',
   'password' => 'root',
   'prefix' => '',
-  'host' => 'db_grs',
+  'host' => 'db_merch',
   'port' => '3306',
   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
   'driver' => 'mysql',
 );
 $settings['install_profile'] = 'standard';
 $config_directories['sync'] = "../config/sync";
-
-$config['system.qrcodeadm'] = [
-    'soc' => 'FCA',
-    'prod' => false,
-    'mailTesterreur' => 'poleweb@cargo-services.fr',
-];

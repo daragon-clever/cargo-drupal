@@ -65,7 +65,7 @@ jQuery(document).ready(function ($) {
         infinite: true,
         slidesToShow: 3,
         slidesToScroll: 1,
-        autoplay: true,
+        // autoplay: true,
         autoplaySpeed: 5000,
         responsive: [
             {

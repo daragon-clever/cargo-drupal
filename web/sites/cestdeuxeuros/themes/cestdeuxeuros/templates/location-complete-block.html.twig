@@ -99,6 +99,17 @@
     </div>
 </div>
 
+<div class="row mt-5">
+    <div class="col">
+        {% for message in location.getCurrentEventMessages %}
+            <div class="msg-event">
+                <p>
+                    {{ message.getMessage }}
+                </p>
+            </div>
+        {% endfor %}
+    </div>
+</div>
 
 <div class="fake-fullwidth bg-lightgrey py-5 mt-5">
     <div class="container">
@@ -177,15 +188,5 @@
                 {% endif %}
             </p>
         </div>
-    </div>
-</div>
-
-<div class="row mt-5">
-    <div class="col">
-        {% for message in location.getCurrentEventMessages %}
-            <p>
-                {{ message.getMessage }}
-            </p>
-        {% endfor %}
     </div>
 </div>

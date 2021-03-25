@@ -2,7 +2,7 @@
 @import 'variables';
 
 body {
-  font-family: "Myriad Pro Regular" , Arial, Helvetica, sans-serif;
+  font-family: "Myriad Pro Regular", Arial, Helvetica, sans-serif;
 }
 
 .no-padding {
@@ -11,6 +11,10 @@ body {
 
 img {
   max-width: 100%;
+}
+
+a {
+  .dimOpacityOnHover(0.8)
 }
 
 .flex-absolute-wrapper {
@@ -82,7 +86,7 @@ img {
           width: 70px;
           display: inline-block;
           vertical-align: middle;
-          background: @red;
+          background: @primaryColor;
           color: white;
           text-align: center;
           border-radius: 100%;
@@ -146,7 +150,7 @@ img {
         display: block;
         height: 20px;
         width: 100%;
-        background: @red;
+        background: @primaryColor;
         z-index: -1;
         position: absolute;
         bottom: 5px;
@@ -192,7 +196,7 @@ img {
     }
 
     .inner {
-      padding: 90px 0;
+      padding: 55px 0;
 
       @media @phone {
         padding: 30px 0;
@@ -234,8 +238,8 @@ img {
     }
   }
 
-  .gammes {
-    padding: 120px 0;
+  .gamme {
+    padding: 75px 0;
     background: url("../images/hp/homepage_bg_gammes.jpg") no-repeat center transparent;
     background-size: cover;
 
@@ -261,11 +265,19 @@ img {
         font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
       }
 
+      br {
+        display: none;
+
+        @media @phone {
+          display: initial;
+        }
+      }
+
       &:after {
         content: "";
         height: 4px;
-        width: 260px;
-        background: @red;
+        width: 200px;
+        background: @primaryColor;
         display: block;
         margin: 30px 0 70px;
 
@@ -288,6 +300,7 @@ img {
             font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
             text-transform: uppercase;
             font-size: 34px;
+            line-height: 1;
 
             @media @smallScreen {
               font-size: 28px;
@@ -303,6 +316,7 @@ img {
             color: #5f5f60;
             text-transform: uppercase;
             line-height: 1.2;
+            margin-top: 5px;
             margin-bottom: 70px;
 
             @media @tablet {
@@ -315,12 +329,12 @@ img {
           }
 
           &.price-with {
-            color: @red;
+            color: @primaryColor;
           }
 
           &.price {
             font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
-            background: @red;
+            background: @primaryColor;
             color: white;
             font-size: 46px;
             display: inline-block;
@@ -389,7 +403,7 @@ img {
       &.conseil {
         span.title {
           font-family: "Myriad Pro Semibold Italic", Arial, Helvetica, sans-serif;
-          color: @red;
+          color: @primaryColor;
           margin-bottom: 20px;
           display: block;
         }
@@ -430,14 +444,24 @@ img {
       min-height: inherit;
     }
 
-    span.title {
-      display: block;
+    .title-large-screen {
       margin: 40px 0;
+      font-size: 36px;
       text-transform: uppercase;
 
       @media @phone {
-        font-size: 18px;
-        margin: 15px 0;
+        display: none;
+      }
+    }
+
+    .title-small-screen {
+      margin: 15px 0;
+      font-size: 30px;
+      display: none;
+      text-transform: uppercase;
+
+      @media @phone {
+        display: block;
       }
     }
 
@@ -472,7 +496,6 @@ img {
 
     #storelocator-map {
       min-height: 702px;
-      border: 10px solid @red;
     }
 
     .store-locator-map-info-window {
@@ -480,11 +503,12 @@ img {
     }
 
     .store-locator-field-wrapper {
-      background: @red;
+      background: @primaryColor;
       border-radius: 50px;
       display: inline-block;
       vertical-align: middle;
-      padding: 10px 15px 10px 10px;
+      padding: 10px;
+      line-height: 1;
 
       input {
         border: none;
@@ -498,6 +522,7 @@ img {
         &::placeholder {
           color: white;
           opacity: 1;
+          text-transform: uppercase;
         }
 
         @media @smallScreen {
@@ -518,19 +543,21 @@ img {
         outline: none;
         vertical-align: middle;
 
-        @media @phone {
-          img {
+        img {
+          width: 50px;
+          height: auto;
+
+          @media @phone {
             width: 25px;
-            height: auto;
           }
         }
       }
     }
 
     .locate-me {
-      background: url('../images/hp/picto-target.png') no-repeat 10px center white;
+      background: url('../images/hp/picto-target.svg') no-repeat 10px center white;
       border-radius: 50px;
-      color: @red;
+      color: @primaryColor;
       font-size: 36px;
       border: none;
       padding: 0 25px 0 70px;
@@ -547,6 +574,7 @@ img {
         font-size: 25px;
         background-size: 27px;
         padding: 0 25px 0 50px;
+        display: none;
       }
     }
 
@@ -567,7 +595,6 @@ img {
 
           a {
             color: white;
-            .dimOpacityOnHover(0.7)
           }
 
           @media @tablet {
@@ -595,13 +622,12 @@ img {
           list-style: none;
 
           a.go {
-            background: url('../images/hp/picto-go.png') no-repeat right 13px center @red;
+            background: url('../images/hp/picto-go.png') no-repeat right 13px center @primaryColor;
             border-radius: 50px;
             color: white;
             font-size: 24px;
             padding: 10px 60px 10px 20px;
             display: inline-block;
-            .dimOpacityOnHover(0.7);
 
             &:hover {
               text-decoration: none;
@@ -655,33 +681,31 @@ img {
       top: 60px;
       left: 14%;
       width: 670px;
-      font-size: 18px;
+      font-size: 20px;
       background: rgba(255, 255, 255, 0.8);
-      padding: 30px;
+      padding: 30px 30px 10px 30px;
 
       img {
-        margin-bottom: 30px;
+        margin-bottom: 25px;
       }
 
       p.intro {
         text-transform: uppercase;
-        font-size: 22px;
-
-        @media @phone {
-          font-size: 14px;
-        }
+        font-size: 24px;
+        line-height: 1;
+        margin-bottom: 20px;
       }
 
       hr {
         width: 260px;
         height: 3px;
-        background: @red;
-        margin: 0 auto 30px;
+        background: @primaryColor;
+        margin: 0 auto 15px;
         display: block;
       }
 
       @media @smallScreen {
-        font-size: 15px;
+        font-size: 16px;
         left: 30px;
       }
 
@@ -693,8 +717,19 @@ img {
       }
 
       @media @phone {
-        padding: 15px;
-        font-size: 12px;
+        padding: 30px;
+      }
+    }
+
+    @media only screen and (max-width: 1533px) {
+      img.sign {
+        display: none;
+      }
+    }
+
+    @media @tablet {
+      img.sign {
+        display: initial;
       }
     }
 
@@ -717,15 +752,27 @@ img {
   .slick-prev,
   .slick-next {
     font-size: 0;
-    background: url("../images/slick/arrow-slider.png") no-repeat center transparent;
-    height: 31px;
-    width: 19px;
+    background-size: 12px;
+    background-color: white;
+    height: 38px;
+    width: 38px;
     border: none;
+    border-radius: 100%;
     cursor: pointer;
     .dimOpacityOnHover(0.5);
     position: absolute;
     top: calc(50% - 15px);
-    z-index: 100;
+
+    &:after {
+      content: "";
+      display: inline-block;
+      height: 15px;
+      width: 15px;
+      transform: rotate(-135deg);
+      border-top: 3px solid @primaryColor;
+      border-right: 3px solid @primaryColor;
+      margin-left: 4px;
+    }
   }
 
   .slick-prev {
@@ -734,7 +781,6 @@ img {
 
   .slick-next {
     transform: rotate(180deg);
-    transform-origin: center;
     right: 0;
   }
 
@@ -751,7 +797,7 @@ img {
 
       button {
         font-size: 0;
-        border: 2px solid @red;
+        border: 2px solid @primaryColor;
         height: 25px;
         width: 25px;
         padding: 0;
@@ -759,11 +805,16 @@ img {
         border-radius: 100%;
         background: white;
         transition: background 0.3s ease-in-out;
+
+        @media @phone {
+          height: 10px;
+          width: 10px;
+        }
       }
 
       &.slick-active {
         button {
-          background: @red;
+          background: @primaryColor;
         }
       }
     }
@@ -779,7 +830,6 @@ a.btn-slide-cta {
   padding: 10px 25px;
   display: inline-block;
   text-decoration: none !important;
-  .dimOpacityOnHover(0.8);
 
   @media @smallScreen {
     font-size: 23px;
@@ -792,7 +842,6 @@ a.btn-slide-cta {
 }
 
 #collections {
-
   @media @phone {
     .header img {
       width: 100%;
@@ -812,8 +861,8 @@ a.btn-slide-cta {
       display: block;
       margin: 40px 0;
       height: 4px;
-      width: 270px;
-      background: @red;
+      width: 264px;
+      background: @primaryColor;
     }
   }
 
@@ -839,7 +888,7 @@ a.btn-slide-cta {
   .mea-collection {
     padding: 50px 0;
     color: white;
-    background: url("../images/collections/bg_mea_collections.jpg") no-repeat center transparent;
+    background: url("../images/collection/collection-bg-ardoise.jpg") no-repeat center transparent;
     background-size: cover;
 
     p, ul {
@@ -849,6 +898,10 @@ a.btn-slide-cta {
 
     .container > .row {
       min-height: 550px;
+
+      @media @tablet {
+        min-height: unset;
+      }
     }
 
     @media @tablet {
@@ -887,23 +940,24 @@ a.btn-slide-cta {
     }
   }
 
-  .collection01 {
-    background: url("../images/collections/bg_collection_01.jpg") no-repeat center transparent;
-    background-size: cover;
+  .collection02 img {
+    margin: 20px 0 30px;
   }
 
-  .collection02 {
-    background: url("../images/collections/bg_collection_02.jpg") no-repeat center transparent;
-    background-size: cover;
+  .fsc {
+    background-color: #255C50;
 
-    img {
-      margin: 20px 0 30px;
+    p {
+      color: white;
+      margin-bottom: 0;
+      font-size: 18px;
+
+      br {
+        @media @tablet {
+          display: none;
+        }
+      }
     }
-  }
-
-  .collection03 {
-    background: url("../images/collections/bg_collection_03.jpg") no-repeat center transparent;
-    background-size: cover;
   }
 
   .products {
@@ -917,9 +971,11 @@ a.btn-slide-cta {
     }
 
     p {
+      line-height: 1.4;
+
       span {
         display: block;
-        margin-bottom: 5px;
+        margin-bottom: 15px;
 
         &.subtitle {
           text-transform: uppercase;
@@ -939,10 +995,11 @@ a.btn-slide-cta {
       &.conseil {
         font-size: 14px;
         margin-top: 30px;
+        line-height: 1.6;
 
         span {
           font-family: "Myriad Pro Semibold Italic", Arial, Helvetica, sans-serif;
-          color: @red;
+          color: @primaryColor;
           font-size: 18px;
         }
 
@@ -951,6 +1008,18 @@ a.btn-slide-cta {
             display: none;
           }
         }
+      }
+    }
+
+    .slick-prev {
+      @media @phone {
+        left: 15px;
+      }
+    }
+
+    .slick-next {
+      @media @phone {
+        right: 15px;
       }
     }
 
@@ -978,13 +1047,13 @@ a.btn-slide-cta {
         text-transform: uppercase;
       }
 
-      .red {
-        color: @red;
+      .avec-vignettes {
+        color: @primaryColor;
       }
 
       .price {
         display: inline-block;
-        background: @red;
+        background: @primaryColor;
         color: white;
         border-radius: 50px;
         font-size: 35px;
@@ -997,6 +1066,7 @@ a.btn-slide-cta {
         font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
         font-size: 22px;
         line-height: 1;
+        color: #5B5B5C;
       }
     }
 
@@ -1027,36 +1097,157 @@ a.btn-slide-cta {
   }
 }
 
+
 #footer {
-  background: @red;
-  padding: 40px 0;
-  text-align: center;
+  .reseaux-footer {
+    background-color: #26AE9D;
+    color: white;
+    font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
 
-  ul {
-    padding: 0;
-    list-style: none;
-    font-size: 14px;
-    margin-top: 30px;
-    margin-bottom: 0;
+    .content-reseaux {
+      padding: 30px 0;
 
-    li {
-      display: inline-block;
-      margin: 0 15px;
+      > div,
+      h4,
+      .pictos-reseaux > a,
+      > a {
+        margin: 0 15px;
+
+        @media @tablet {
+          margin: 10px 15px;
+        }
+      }
+
+      h4 {
+        font-size: 20px;
+        line-height: 1;
+      }
 
       a {
-        color: black;
-        text-transform: uppercase;
+        text-decoration: none;
+      }
+
+      .vertical-line {
+        width: 1px;
+        height: 35px;
+        background-color: white;
+
+        @media @tablet {
+          display: none;
+        }
+      }
+
+      .inscription {
+        border: 1px solid transparent;
+        background-color: white;
+        color: @primaryColor;
+        padding: 8px 50px;
+        border-radius: 18px;
+        font-size: 20px;
+        line-height: 1;
       }
 
       @media @phone {
-        display: block;
-        margin: 15px 0;
+        padding-bottom: 50px;
       }
     }
   }
 
-  @media @phone {
-    padding: 20px 0;
+  .instagram-footer {
+    background-color: #26B5A4;
+
+    .insta-intro {
+      color: white;
+      font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
+      padding: 45px 0;
+
+      img {
+        width: 65px;
+      }
+
+      h3 {
+        line-height: 1;
+        margin: 0 20px;
+        font-size: 32px;
+
+        @media @tablet {
+          margin: 20px;
+        }
+
+        @media @phone {
+          font-size: 24px;
+        }
+      }
+    }
+
+    .insta-imgs img {
+      display: block;
+      margin: 0 auto;
+      padding: 15px;
+    }
+
+    .js-prev-slick,
+    .js-next-slick {
+      border: solid white;
+      border-width: 0 4px 4px 0;
+      display: none;
+      padding: 10px;
+      position: absolute;
+      top: 105px;
+      cursor: pointer;
+
+      @media @tablet {
+        display: inline-block;
+      }
+    }
+  }
+
+  .navigation-footer {
+    background: @primaryColor;
+    padding: 30px 0 40px 0;
+    text-align: center;
+
+    img {
+      max-width: 100%;
+
+      @media @phone {
+        width: 260px;
+      }
+    }
+
+    .sitram-link {
+      font-size: 16px;
+      text-decoration: underline;
+      color: white;
+      margin-top: 15px;
+    }
+
+    ul {
+      padding: 0;
+      list-style: none;
+      font-size: 14px;
+      margin-top: 65px;
+      margin-bottom: 0;
+
+      li {
+        display: inline-block;
+        margin: 0 15px;
+
+        a {
+          color: white;
+          text-transform: uppercase;
+        }
+
+        @media @phone {
+          display: block;
+          margin: 15px 0;
+        }
+      }
+    }
+
+    @media @phone {
+      padding-top: 60px;
+    }
   }
 }
 
@@ -1075,21 +1266,20 @@ a.btn-slide-cta {
       margin: 0 15px;
 
       a {
-        color: @red;
+        color: white;
         text-transform: uppercase;
-        font-size: 22px;
+        font-size: 24px;
         font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
         position: relative;
         z-index: 1;
         text-decoration: none !important;
-        .dimOpacityOnHover(0.8);
 
         &.is-active {
           &:before {
             content: "";
             height: 10px;
             width: 100%;
-            background: white;
+            background: @primaryColor;
             position: absolute;
             bottom: 3px;
             left: 0;
@@ -1107,7 +1297,7 @@ a.btn-slide-cta {
     left: 0;
     height: 100%;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
+    background: @primaryColor;
     overflow: hidden;
 
     ul {
@@ -1126,7 +1316,7 @@ a.btn-slide-cta {
 
   @media @tablet {
     display: block;
-    background: @red;
+    background: @primaryColor;
     height: 40px;
     width: 40px;
     position: fixed;
@@ -1184,7 +1374,7 @@ a.btn-slide-cta {
   }
 }
 
-.cms-page {
+#mentions-legales {
   padding-top: 120px;
   font-size: 20px;
 
@@ -1196,7 +1386,7 @@ a.btn-slide-cta {
       content: "";
       height: 4px;
       width: 260px;
-      background: @red;
+      background: @primaryColor;
       display: block;
       margin: 30px 0;
 
@@ -1222,12 +1412,11 @@ a.btn-slide-cta {
   a {
     color: black;
     text-decoration: underline;
-    .dimOpacityOnHover(0.8)
   }
 
   @media @phone {
     font-size: 16px;
-    
+
     &.px1560 {
       padding-top: 60px;
     }
@@ -1236,7 +1425,7 @@ a.btn-slide-cta {
 
 #recettes {
   & > div:nth-child(even) {
-    background: url("../images/recettes/bg-black-recettes.jpg") no-repeat center;
+    background: url("../images/recettes/bg-recettes.jpg") no-repeat center;
     background-size: cover;
     color: white;
 
@@ -1251,9 +1440,49 @@ a.btn-slide-cta {
     }
   }
 
-  @media @phone {
-    .header img {
-      width: 100%;
+  .header {
+    img {
+      @media @phone {
+        width: 100%;
+      }
+    }
+
+    .header-title {
+      text-transform: uppercase;
+      position: absolute;
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 25px;
+      bottom: 25%;
+      left: 110px;
+      font-size: 24px;
+      line-height: 1.4;
+
+      .br-yves {
+        display: none;
+
+        @media @phone {
+          display: initial;
+        }
+      }
+
+      .br-camdeborde {
+        @media @phone {
+          display: none;
+        }
+      }
+
+      @media @tablet {
+        bottom: 5%;
+      }
+
+      @media @phone {
+        padding: 15px;
+        bottom: 20%;
+        left: 8%;
+        right: 8%;
+        font-size: 18px;
+      }
     }
   }
 
@@ -1277,12 +1506,11 @@ a.btn-slide-cta {
       a {
         color: white;
         text-decoration: none !important;
-        .dimOpacityOnHover(0.7)
       }
 
       .nb {
         font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
-        color: @red;
+        color: @primaryColor;
         font-size: 30px;
         vertical-align: middle;
         margin-right: 20px;
@@ -1340,7 +1568,7 @@ a.btn-slide-cta {
         margin: 20px auto 60px;
         height: 4px;
         width: 270px;
-        background: @red;
+        background: @primaryColor;
       }
 
       @media @phone {
@@ -1358,9 +1586,7 @@ a.btn-slide-cta {
 
     .nb-faded {
       font-family: "Myriad Pro Bold", Arial, Helvetica, sans-serif;
-      position: absolute;
-      top: 0;
-      left: 0;
+      text-align: left;
       line-height: 150px;
       font-size: 245px;
       color: #6a6a6a;
@@ -1372,32 +1598,86 @@ a.btn-slide-cta {
     }
 
     img {
-      margin-top: 100px;
-      z-index: 1;
-      position: relative;
-
-      @media @phone {
-        margin-top: 0
-      }
+      margin-top: 60px;
     }
 
     .left {
-      position: relative;
+      .js-hidden-video {
+        display: none;
+        z-index: 100;
+        position: relative;
+
+        .inner {
+          height: 100vh;
+          width: 100vw;
+          position: fixed;
+          top: 0;
+          left: 0;
+          background: rgba(0, 0, 0, 0.8);
+          transition: opacity 0.5s ease-in-out;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          & > div {
+            position: relative;
+          }
+        }
+
+        @media @tablet {
+          iframe {
+            max-width:90vw;
+            max-height: 90vw;
+          }
+        }
+      }
+
+      .js-close-hidden-video {
+        position: absolute;
+        top: -50px;
+        right: -50px;
+        height: 45px;
+        width: 45px;
+        cursor: pointer;
+        .dimOpacityOnHover(0.8);
+
+        @media @tablet {
+          right: 0;
+        }
+
+        &:after,
+        &:before {
+          content: "";
+          display: block;
+          position: absolute;
+          left: 45%;
+          top: 0;
+          height: 100%;
+          width: 4px;
+          background: white;
+          transform-origin: center;
+        }
+
+        &:before {
+          transform: rotate(45deg);
+        }
+
+        &:after {
+          transform: rotate(-45deg);
+        }
+      }
 
       ul {
         list-style: none;
         font-size: 16px;
         color: #5f5f60;
-        margin-left: 58px;
         text-align: left;
+        margin-top: 90px;
+        margin-left: 130px;
 
         .indication {
-          color: @red;
+          color: @primaryColor;
           font-size: 18px;
-        }
-
-        li span {
-          font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
         }
 
         @media @tablet {
@@ -1443,7 +1723,7 @@ a.btn-slide-cta {
 
         .title {
           margin: 0;
-          color: @red;
+          color: @primaryColor;
         }
       }
     }
@@ -1482,13 +1762,13 @@ a.btn-slide-cta {
     }
 
     a {
-      color: @red;
+      color: @primaryColor;
       font-weight: 600;
       text-decoration: underline;
     }
 
     .sep {
-      background-color: @red;
+      background-color: @primaryColor;
       height: 2px;
       width: 68px;
       margin: 15px auto 20px;

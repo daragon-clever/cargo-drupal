@@ -164,7 +164,7 @@ body.adminimal-admin-toolbar {
 
     li {
       margin: 0 5px;
-      color:@color2;
+      color: @color2;
       line-height: 20px;
 
       a {
@@ -856,6 +856,199 @@ body.adminimal-admin-toolbar {
     .testimonials-outro {
       text-transform: none;
       margin: 70px 0 0;
+    }
+  }
+}
+
+// LISTING INTERVIEWS
+.listing-interviews {
+  padding: 50px 0;
+
+  @padding: 8px;
+
+  & > .container {
+    padding-left: @padding;
+    padding-right: @padding;
+    max-width: 1610px;
+
+    .row {
+      margin-left: -@padding;
+      margin-right: -@padding;
+
+      & > div {
+        padding-left: @padding;
+        padding-right: @padding;
+
+        .content-wrapper {
+          margin-top: @padding * 2;
+          margin-bottom: @padding;
+        }
+
+        @media (min-width: 992px) {
+          // 2eme
+          &:nth-child(4n+2) .content-wrapper {
+            margin-left: calc(-100% - (calc(@padding * 2)))
+          }
+          // 3eme
+          &:nth-child(4n+3) .content-wrapper {
+            margin-left: calc(-200% - (calc(@padding * 4)))
+          }
+          // 4eme
+          &:nth-child(4n) .content-wrapper {
+            margin-left: calc(-300% - (calc(@padding * 6)))
+          }
+        }
+
+        @media @tablet {
+          // 2eme
+          &:nth-child(3n+2) .content-wrapper {
+            margin-left: calc(-100% - (calc(@padding * 2)))
+          }
+          // 3eme
+          &:nth-child(3n+3) .content-wrapper {
+            margin-left: calc(-200% - (calc(@padding * 4)))
+          }
+        }
+
+        @media @phone {
+          .content-wrapper {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .js-interview.current + div {
+    display: block !important;
+  }
+
+  .inner {
+    text-align: center;
+
+    .img-wrapper {
+      display: block;
+      margin: @padding auto;
+      text-align: center;
+      cursor: pointer;
+      position: relative;
+      background: @color2;
+      overflow: hidden;
+
+      img {
+        transition: 0.5s;
+
+        &.hover {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+
+      &:hover {
+        img.main {
+          opacity: 0;
+        }
+
+        img.hover {
+          opacity: 0.5 !important;
+        }
+
+        .infos {
+          bottom: 0;
+          opacity: 1;
+        }
+      }
+
+      .infos {
+        display: flex;
+        flex-direction: column;
+        z-index: 100;
+        position: absolute;
+        bottom: -20px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        color: white;
+        padding: 15px;
+        opacity: 0;
+        transition: 0.5s;
+
+        .line {
+          margin: 10px auto;
+        }
+
+        .name {
+          font-size: 3.2rem;
+          line-height: 10px;
+        }
+
+        .link {
+          color: white;
+          text-decoration: underline;
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+
+  .content-wrapper {
+    max-width: 1594px;
+    width: calc(100vw - 16px);
+    margin: 0 auto;
+    z-index: 1;
+    position: relative;
+
+    @media @tablet {
+      img {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .text-wrapper {
+      border-radius: 0 333px 0 0;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 70px;
+
+      @media @tablet {
+        border-radius: 0;
+        padding: 30px;
+      }
+
+      h2 {
+        font-size: 4.8rem;
+        line-height: 3rem;
+      }
+
+      .job {
+        font-size: 2.4rem;
+      }
+
+      .line {
+        margin: 30px 0;
+      }
+
+      .location {
+        margin-bottom: 30px;
+      }
+
+      h5 {
+        font-size: 2.4rem;
+        font-family: 'AvenirBlack', Arial, Helvetica, sans-serif;
+        margin-bottom: 15px;
+      }
+
+      p {
+        margin-bottom: 15px;
+      }
     }
   }
 }

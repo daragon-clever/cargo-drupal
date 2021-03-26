@@ -3,7 +3,7 @@ jQuery(document).ready(function ($) {
     var isTabletOrLess = window.matchMedia("only screen and (max-width: 991px)").matches;
 
     // STICKY HEADER
-    $(window).scroll(function(){
+    $(window).scroll(function () {
         var header = $('header');
         if ($(window).scrollTop() >= 1) {
             header.addClass('fixed');
@@ -27,7 +27,7 @@ jQuery(document).ready(function ($) {
 
     // POPUP BOOK
     $('.js-open-book, #js-popup-book .js-close').click(function () {
-       $('#js-popup-book-wrapper').fadeToggle();
+        $('#js-popup-book-wrapper').fadeToggle();
     });
 
     // HOMEPAGE
@@ -47,7 +47,7 @@ jQuery(document).ready(function ($) {
         });
 
         // JS number animation
-        Number.prototype.format = function(n) {
+        Number.prototype.format = function (n) {
             var r = new RegExp('\\d(?=(\\d{3})+' + (n > 0 ? '\\.' : '$') + ')', 'g');
             return this.toFixed(Math.max(0, Math.floor(n))).replace(r, '$&,');
         };
@@ -86,5 +86,15 @@ jQuery(document).ready(function ($) {
                 }
             }
         ]
+    });
+
+    // INTERVIEWS CONTENT DISPLAY
+    $(".js-interview").click(function () {
+        if ($(this).hasClass("current")) {
+            $(this).removeClass("current");
+        } else {
+            $(".js-interview").removeClass("current");
+            $(this).addClass("current");
+        }
     });
 });

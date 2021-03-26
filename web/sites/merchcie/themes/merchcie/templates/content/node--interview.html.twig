@@ -39,7 +39,7 @@
                 </span>
                 <div class="line dot-pattern-color1"></div>
                 <div class="text">
-                    {% if content.field_interview_location.value %}
+                    {% if content.field_interview_location|render %}
                     <div class="location">
                         {{ content.field_interview_location }}
                     </div>

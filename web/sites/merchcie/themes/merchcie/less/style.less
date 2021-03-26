@@ -522,3 +522,599 @@ body.adminimal-admin-toolbar {
     margin: 50px 0;
   }
 }
+
+//OFFRES D'EMPLOI MODULE
+.value-caracteristic-fct() {
+  border: 1px solid @color5;
+  border-radius: 0;
+  height: 50px;
+  line-height: 50px;
+  padding-left: 20px;
+  color: @color6;
+  display: block;
+}
+
+.offres-emploi-module {
+  margin-top: 70px;
+  margin-bottom: 20px;
+
+  h4 {
+    margin-bottom: 15px;
+  }
+
+  .line {
+    display: block;
+    margin-bottom: 25px;
+  }
+
+  input, textarea, select {
+    outline: none;
+  }
+
+  .offer-caracteristic {
+    margin-top: 25px;
+
+    .title-caracteristic {
+      display: block;
+      font-weight: bold;
+      color: @color5;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+      font-size: 16px;
+    }
+
+    .value-caracteristic {
+      .value-caracteristic-fct();
+    }
+  }
+
+  .select2-search {
+    display: none !important;
+  }
+
+  #alerte-offres {
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .back {
+    margin-top: 40px;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  //LISTE
+  #listing-offres {
+    font-size: 14px;
+
+    .filters {
+      #searchbox {
+        border-top-width: 0;
+        border-left-width: 0;
+        border-right-width: 0;
+        border-bottom: 1px solid @color5;
+        padding: 10px 0;
+        font-weight: 900;
+        margin-top: 10px;
+
+        &:focus {
+          border-color: @color2;
+        }
+      }
+
+      #groupe-filtres-offres-emploi {
+        padding-bottom: 3rem;
+
+        @media @phone {
+          display: none;
+        }
+
+        .offer-caracteristic {
+          .select2-container {
+            width: 100% !important;
+
+            .select2-selection--single {
+              outline: none;
+              .value-caracteristic-fct();
+
+              &:focus {
+                border-color: @color2;
+              }
+            }
+
+            .select2-selection--single .select2-selection__arrow {
+              height: 50px;
+              padding-left: 20px;
+            }
+
+            .select2-selection__rendered {
+              line-height: 50px;
+            }
+          }
+        }
+      }
+
+      .cta-filter { //todo: check on mobile device + add btn merch style
+        color: white;
+        border: none;
+        box-shadow: none;
+        padding: 0 25px;
+        line-height: 40px;
+        cursor: pointer;
+        font-weight: 500;
+        position: relative;
+
+        &.top {
+          margin-bottom: 13px;
+        }
+
+        &.bottom {
+          margin-top: 15px;
+        }
+      }
+    }
+
+    .jobs-list {
+      #toutes-les-offres {
+        &.dataTable {
+          thead, tbody {
+            th, td {
+              padding: 15px 0;
+
+              @media @phone { //todo: check on mobile device
+                padding: 20px 0;
+                text-align: center;
+                font-size: 13px;
+                min-width: 80px;
+
+                &:first-child {
+                  text-align: left;
+                }
+
+                &:first-letter {
+                  margin-left: 2rem;
+                }
+              }
+            }
+          }
+        }
+
+        thead {
+          @media @phone { //todo: check on mobile device
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+          }
+
+          tr {
+            color: @color6;
+          }
+
+          .sorting,
+          .sorting_asc,
+          .sorting_desc,
+          .sorting_asc_disabled,
+          .sorting_desc_disabled {
+            background: none;
+          }
+        }
+
+        tbody {
+          tr {
+            cursor: pointer;
+            transition: color 0.3s;
+
+            &:hover {
+              color: @color2;
+            }
+          }
+
+          td {
+            background-color: white !important;
+            font-weight: 900;
+
+            @media (max-width: 480px) { //todo: check on mobile device
+              font-weight: normal;
+            }
+          }
+
+          td.wrap, th.wrap {
+            white-space: unset !important;
+          }
+
+          tr:focus, td:focus {
+            outline: none;
+          }
+        }
+
+        & > tbody > tr.child ul.dtr-details { //todo: check on mobile device
+          display: block;
+          padding: 15px 35px;
+          background: whitesmoke;
+
+          li {
+            border-bottom: 1px solid #d4d4d4;
+
+            span {
+              min-width: unset;
+
+              &.dtr-title:after {
+                content: ":";
+                display: inline-block;
+                margin-left: 3px;
+              }
+            }
+
+            &:last-child {
+              padding-bottom: 0;
+            }
+
+            &:first-child {
+              padding-top: 0;
+            }
+
+            @media @phone {
+              &:last-child {
+                .dtr-title {
+                  display: none;
+                }
+
+                a {
+                  width: 100%;
+                  background-color: blue;
+                  color: white;
+                  border: none;
+                  box-shadow: none;
+                  padding: 0 25px;
+                  line-height: 40px;
+                  cursor: pointer;
+                  font-weight: 500;
+                  display: block;
+                  margin-top: 10px;
+                  text-align: center;
+                }
+              }
+            }
+          }
+        }
+
+        &.dataTable thead th,
+        &.dataTable tbody td,
+        &.dataTable.no-footer {
+          border-color: @color5;
+        }
+      }
+
+      #toutes-les-offres_paginate {
+        text-align: center;
+        float: none;
+        width: 100%;
+        margin: 2rem 0;
+
+        a.paginate_button {
+          color: @color1 !important;
+          background: white !important;
+          border: 1px solid @color1 !important;
+          border-radius: 3px;
+          font-weight: bold;
+          min-width: 15px;
+          box-shadow: none !important;
+
+          &:hover {
+            color: inherit !important;
+          }
+
+          &.current {
+            color: white !important;
+            background: @color1 !important;
+          }
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+  }
+
+  //ANNONCE
+  #offre {
+    font-size: 16px;
+
+    .detail-offre {
+      .left, .right {
+        margin-top: 15px;
+      }
+
+      .left {
+        .offer-caracteristic:first-of-type {
+          margin-top: 0;
+        }
+
+        .cta {
+          display: block;
+          position: relative;
+          text-transform: uppercase;
+          margin-top: 30px;
+
+          &:before { //todo: nico à revoir pour faire quelque chose de propre
+            background: url("../images/offres/picto-checked.png") no-repeat center transparent;
+            height: 13px;
+            width: 17px;
+            position: absolute;
+            left: 30%;
+            display: block;
+            content: "";
+            top: 20px;
+
+            @media (max-width: 1024px) {
+              left: 22%;
+            }
+            @media (max-width: 768px) {
+              left: 14%;
+            }
+            @media (max-width: 480px) {
+              left: 25%;
+            }
+          }
+
+          @media @phone {
+                max-width: 260px;
+                display: block;
+                margin: 0 auto;
+          }
+        }
+      }
+
+      .right {
+        b.title {
+          text-transform: uppercase;
+          border-bottom: 1px solid;
+        }
+
+        .txt-grey {
+          color: @color5;
+          font-weight: normal;
+        }
+
+        br {
+          display: none;
+        }
+      }
+    }
+  }
+
+  //FORM POSTULER
+  #candidature-offre {
+    font-size: 16px;
+
+    h4 .pre-title {
+      text-transform: none;
+    }
+
+    form#webform-submission-postuler-annonce-add-form {
+      legend {
+        font-size: 22px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: @color1;
+        border-bottom: 1px solid @color5;
+        font-family: 'AvenirBlack', Arial, Helvetica, sans-serif;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+      }
+
+      .webform-flexbox {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      .webform-element-description,
+      #edit-piece-jointe label {
+        color: @color1;
+        margin-bottom: 15px;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      .form-item:not(fieldset) {
+        position: relative;
+        padding-bottom: 15px;
+
+        input:not(.form-submit) {
+          height: 50px;
+        }
+
+        input:not(.form-submit), textarea {
+          width: 100%;
+          display: inline-block;
+          border: 1px solid @color5;
+          padding: 7px 5px;
+
+          &:focus {
+            border: 1px solid @color2;
+          }
+        }
+
+        textarea {
+          margin-bottom: 20px;
+        }
+
+        & > label {
+          position: absolute;
+          left: 10px;
+          top: 20px;
+          background: white;
+          padding: 0 5px;
+          transition: all 0.3s;
+          margin: 0;
+          line-height: 1;
+        }
+
+        &:focus-within > label,
+        &:focus-within + label {
+          color: @color2;
+          top: -2px;
+        }
+
+        label,
+        .select2-selection__rendered {
+          color: @color6;
+        }
+
+        .select2-container {
+          .select2-selection {
+            border-radius: 0;
+            border-color: @color5;
+            outline: none;
+            height: 50px;
+          }
+
+          .select2-selection__rendered {
+            line-height: 50px;
+            font-size: 16px;
+          }
+
+          .select2-selection__arrow {
+            height: 100%;
+            top: 0;
+          }
+        }
+      }
+
+      #edit-right > legend:first-of-type {
+        display: none;
+      }
+
+      #edit-piece-jointe {
+        .webform-flex--container {
+          margin: 0;
+        }
+
+        .webform-flexbox > .webform-flex > .webform-flex--container {
+            margin: 0 0.5em;
+          //todo: nico si tu arrives à faire un margin 0 à tout sauf à ce selecteur c'est encore mieux
+          //tu peux faire un simulation en ajoutant des PJ et en supprimant les 2 margin du dessus tu comprendras
+        }
+
+        label {
+          padding: 0;
+          display: block;
+          position: initial;
+        }
+
+        .js-hide {
+          display: none;
+        }
+
+        input[type=file] {
+          opacity: 0;
+          position: absolute;
+          top: 31px;
+          cursor: pointer;
+        }
+
+        .webform-element-description {
+          width: 100%;
+          display: inline-block;
+          border: 1px solid @color5;
+          padding: 13px 20px;
+          height: 50px;
+          margin-bottom: 0;
+          color: @color6;
+          text-transform: initial;
+          font-weight: normal;
+          cursor: pointer;
+          position: relative;
+
+          &:after {
+            content: "+";
+            position: absolute;
+            display: block;
+            cursor: pointer;
+            font-size: 20px;
+            right: 10px;
+            top: 8px;
+          }
+        }
+
+        span.file {
+          width: 100%;
+          border: 1px solid gray;
+          display: block;
+          padding: 5px 10px;
+          background: white;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          position: absolute;
+          top: 31px;
+          height: 50px;
+        }
+
+        input[type=submit] {
+          width: 100%;
+          text-align: right;
+          text-decoration: underline;
+          color: @color6;
+          outline: none;
+          border: 0;
+          background: transparent;
+        }
+      }
+
+      #edit-actions-submit {
+        display: block;
+        background-color: @color2;
+        color: white;
+        font-family: 'AvenirBlack', Arial, Helvetica, sans-serif;
+        font-size: 1.6rem;
+        line-height: 54px;
+        padding: 0 65px;
+        border: none;
+        border-radius: 25px;
+        text-decoration: none;
+        transition: box-shadow 0.3s ease-in-out;
+        text-align: center;
+        margin-top: 15px;
+        width: 100%;
+
+        &:hover {
+          box-shadow: 0 0 30px #E5530F80;
+        }
+      }
+    }
+
+    .messages--error {
+      margin: 5px 0;
+      z-index: -1;
+      color: #d40000;
+      font-size: 13px;
+    }
+
+    .g-recaptcha { //todo: à vérifier
+      transform: scale(0.9);
+
+      & > div {
+        margin: 0 auto;
+      }
+
+      @media @phone {
+        margin-bottom: 10px;
+      }
+    }
+
+    .form-item-checkbox-rgpd {
+      input {
+        width: auto !important;
+      }
+
+      .description {
+        text-align: justify;
+
+        #edit-checkbox-rgpd--description {
+          text-transform: inherit !important;
+        }
+      }
+    }
+  }
+}

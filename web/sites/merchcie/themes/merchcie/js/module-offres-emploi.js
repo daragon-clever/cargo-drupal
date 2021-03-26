@@ -14,7 +14,7 @@ jQuery(document).ready(function($) {
     expireCookiesTime.setTime(expireCookiesTime.getTime() + (minutes * 60 * 1000));
 
     //PAGE OFFRE EMPLOI
-    if ($('.listing-offres').length) {
+    if ($('#listing-offres').length) {
 
         $.fn.dataTable.moment( 'DD/MM/YYYY' );
 

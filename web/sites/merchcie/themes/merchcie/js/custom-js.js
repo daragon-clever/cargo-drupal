@@ -97,4 +97,22 @@ jQuery(document).ready(function ($) {
             $(this).addClass("current");
         }
     });
+
+    // Move hidden text block 1
+    $('.js-interviews-1 .listing-interviews > .container > .row').append($(".js-hidden-listing-text-1 > div"));
+    $('.js-interviews-2 .listing-interviews > .container > .row > div:nth-child(2)').after($(".js-hidden-listing-text-2 > div"));
+
+    // Ajust height based on previous block
+    var heightPrevBlock = 0;
+    function calcHeight() {
+        $(".listing-interviews").imagesLoaded(function () {
+            $(".moved-block").each(function () {
+                heightPrevBlock = $(this).prev()[0].children[0].clientHeight;
+                $(this).children('.inner').css("height", heightPrevBlock);
+            });
+        });
+    }
+
+    calcHeight();
+    $(window).resize( calcHeight );
 });

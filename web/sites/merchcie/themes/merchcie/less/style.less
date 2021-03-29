@@ -876,12 +876,13 @@ body.adminimal-admin-toolbar {
       margin-right: -@padding;
 
       & > div {
-        padding-left: @padding;
-        padding-right: @padding;
+        padding: @padding;
 
         .content-wrapper {
-          margin-top: @padding * 2;
-          margin-bottom: @padding;
+          .row > div {
+            padding-top: @padding * 2;
+            padding-bottom: 0;
+          }
         }
 
         @media (min-width: 992px) {
@@ -930,7 +931,6 @@ body.adminimal-admin-toolbar {
 
     .img-wrapper {
       display: block;
-      margin: @padding auto;
       text-align: center;
       cursor: pointer;
       position: relative;
@@ -1050,5 +1050,38 @@ body.adminimal-admin-toolbar {
         margin-bottom: 15px;
       }
     }
+  }
+}
+
+// NOTRE EQUIPE
+#notre-equipe {
+  .c1 {
+    padding: 70px 0 80px;
+
+    .block-txt {
+      padding: 70px;
+      max-width: 790px;
+      margin: -45px auto 0;
+    }
+  }
+}
+
+.moved-block {
+  .inner {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  small {
+    font-size: 2.4rem;
+  }
+
+  .main {
+    font-size: 5.6rem;
+    line-height: 1;
+    margin-top: 20px;
   }
 }

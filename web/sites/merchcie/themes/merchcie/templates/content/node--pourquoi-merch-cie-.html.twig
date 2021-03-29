@@ -1,13 +1,11 @@
-{% set imagePath = '/sites/merchcie/themes/merchcie/images/TEMP/pourquoi/' %}
-
 <div id="pourquoi">
+    <!--INTRO-->
     <div class="bg-color1 z1">
         <div class="container">
             <div class="row">
                 <div class="col main-big-title">
                     <h1 class="text-white">
-                        Un spécialiste du Merchandising à votre écoute et sur le terrain :
-                        <span class="text-color2">Merch & cie</span>
+                        {{ content.field_pourquoi_intro }}
                     </h1>
                     <span class="line-vertical dot-pattern-color2"></span>
                 </div>
@@ -15,36 +13,24 @@
         </div>
     </div>
 
+    <!--CONTENT 1-->
     <div class="c1 text-center">
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <h4 class="text-hand text-color2">Le saviez-vous ?</h4>
+                    <h4 class="text-hand text-color2">
+                        {{ content.field_pourquoi_c1_intro }}
+                    </h4>
                 </div>
             </div>
             <div class="row numbers-infos">
                 <div class="col-12 col-lg-8 offset-lg-2">
                     <div class="row bg-color4">
-                        <div class="col-12 col-lg-6 nb-wrapper">
-                            <h4 class="text-num">64%</h4>
-                            <p>
-                                des consommateurs considèrent désormais l’expérience en magasin comme étant plus
-                                importante que
-                                le prix lors du choix d’une enseigne
-                            </p>
-                            <small>
-                                (Source : étude Gartner 2018)
-                            </small>
-                        </div>
-                        <div class="col-12 col-lg-6 nb-wrapper">
-                            <h4 class="text-num">83%</h4>
-                            <p>
-                                des Français décident directement de leurs achats en magasin
-                            </p>
-                            <small>
-                                (Source : Baromètre Ipsos pour in-Store Media 2020)
-                            </small>
-                        </div>
+                        {% for i in 0..1 %}
+                            <div class="col-12 col-lg-6 nb-wrapper">
+                                {{ content.field_pourquoi_c1_txts[i] }}
+                            </div>
+                        {% endfor %}
                         <span class="line-vertical dot-pattern-color2"></span>
                     </div>
                 </div>
@@ -52,106 +38,56 @@
         </div>
     </div>
 
+    <!--CONTENT 2-->
     <div class="c2">
         <div class="container">
             <div class="row text-center">
                 <div class="col">
-                    <h3 class="text-color2 bold">
-                        Alors comment capitaliser sur ces attentes ?
-                    </h3>
-                    <p>
-                        <b>Grâce au merchandising : un levier clé</b> que vous devez actionner pour <b>améliorer vos
-                            résultats.</b>
-                    </p>
-                    <p class="text-color2">
-                        <b>
-                            <i>
-                                Découvrez comment Merch & Cie peut vous y aider.
-                            </i>
-                        </b>
-                    </p>
+                    {{ content.field_pourquoi_c2 }}
                 </div>
             </div>
         </div>
     </div>
 
+    <!--CONTENT 3-->
     <div class="c3">
         <div class="container">
             <div class="row cats-row">
-                <div class="col-12 col-lg-6">
-                    <a href="#" class="hover-picto-eye">
-                        <img class="img-fluid filter-hover-color1" src="{{ imagePath }}QSN_thumbnail.jpg"
-                             alt="">
-                    </a>
-                    <h4 class="text-color1 mt-4">Qui sommes-nous ?</h4>
-                    <a href="#" class="link text-color3 after-arrow">En savoir plus</a>
-                </div>
-                <div class="col-12 col-lg-6">
-                    <a href="#" class="hover-picto-eye">
-                        <img class="img-fluid filter-hover-color1" src="{{ imagePath }}Equipe_thumbnail.jpg"
-                             alt="">
-                    </a>
-                    <h4 class="text-color1 mt-4">Notre équipe</h4>
-                    <a href="#" class="link text-color3 after-arrow">Faites connaissance</a>
-                </div>
-                <div class="col-12 col-lg-12">
-                    <a href="#" class="hover-picto-eye">
-                        <img class="img-fluid filter-hover-color1" src="{{ imagePath }}Orga_thumbnail.jpg"
-                             alt="">
-                    </a>
-                    <h4 class="text-color1 mt-4">Notre organisation</h4>
-                    <a href="#" class="link text-color3 after-arrow">En savoir plus</a>
-                </div>
+                {% for i in 0..2 %}
+                    <div class="col-12 {% if i == 2 %}col-lg-12{% else %}col-lg-6{% endif %}">
+                        <a href="{{ content.field_pourquoi_c3_links[i]['#url'] }}" class="hover-picto-eye">
+                            <img class="img-fluid filter-hover-color1"
+                                 src="{{ file_url(content.field_pourquoi_c3_imgs['#items'][i].entity.uri.value) }}"
+                                 alt="">
+                        </a>
+                        <h4 class="text-color1 mt-4">{{ node.field_pourquoi_c3_imgs[i].title }}</h4>
+                        <a href="{{ content.field_pourquoi_c3_links[i]['#url'] }}"
+                           class="link text-color3 after-arrow">{{ content.field_pourquoi_c3_links[i]['#title'] }}</a>
+                    </div>
+                {% endfor %}
             </div>
         </div>
     </div>
 
+    <!--CONTENT 4-->
     <div class="c4 bg-color1 text-white">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-lg-8">
                     <h2 class="before-line line-color-white">
-                        Externaliser votre merchandising va vous faire gagner de l’argent, mais pas seulement...
+                        {{ content.field_pourquoi_c4_intro }}
                     </h2>
                 </div>
             </div>
             <div class="row mt-5 z-1">
                 <div class="col-12 col-lg-5">
                     <div class="inner-txt">
-                        <p>
-                            <b>Rentabilisez vos investissements</b>, gagnez en souplesse d’organisation et en temps avec Merch &
-                            Cie : libérez-vous des tâches chronophages, et transformez le merchandising en un véritable
-                            <b>levier de développement de chiffre d’affaires</b>.
-                        </p>
-                        <ul>
-                            <li>
-                                Face à une hausse d’activité ou au déploiement massif et rapide d’une nouvelle offre, vous
-                                avez besoin de bras supplémentaires ?
-                            </li>
-                            <li>
-                                Vous aimeriez avoir le temps de rendre votre surface de vente plus attractive tout au long
-                                de l’année et pas seulement pour Noël ou la saison estivale ?
-                            </li>
-                            <li>
-                                Vous avez besoin de prendre soin de vos linéaires sans négliger vos ventes et
-                                l’accompagnement de vos clients ?
-                            </li>
-                            <li>
-                                Vous avez besoin d’harmoniser vos concepts et rayons dans votre magasin ou dans tout votre
-                                réseau en un temps record ?
-                            </li>
-                        </ul>
-                        <p>
-                            <b>
-                                Ne perdez plus de temps et soyez gagnants sur tous les points en externalisant votre
-                                merchandising !
-                            </b>
-                        </p>
+                        {{ content.field_pourquoi_c4_txt }}
                     </div>
                 </div>
                 <div class="col-12 col-lg-7 text-center">
                     <div class="img-wrapper">
-                        <img src="{{ imagePath }}Externaliser_img.jpg" alt="">
+                        {{ content.field_pourquoi_c4_img }}
                     </div>
                 </div>
             </div>

@@ -1064,6 +1064,60 @@ body.adminimal-admin-toolbar {
       margin: -45px auto 0;
     }
   }
+
+  .c4 {
+    position: relative;
+
+    &:before {
+      z-index: 0;
+      content: "";
+      background: @color1;
+      height: 240px;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+
+    .txt {
+      text-align: center;
+      display: inline-block;
+
+      h2 {
+        margin-top: 60px;
+      }
+
+      a {
+        margin-top: 38px;
+      }
+    }
+
+    .img-wrapper {
+      position: relative;
+
+      .dot {
+        position: absolute;
+        top: 72px;
+        left: 95px;
+        height: 205px;
+        width: 335px;
+        z-index: 0;
+      }
+
+      img {
+        position: relative;
+      }
+    }
+
+    & > .dot {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      height: 200px;
+      width: 275px;
+      transform: translateY(-50%);
+    }
+  }
 }
 
 .moved-block {

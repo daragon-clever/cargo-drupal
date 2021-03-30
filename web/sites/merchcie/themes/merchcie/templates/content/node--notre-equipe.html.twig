@@ -1,15 +1,13 @@
-{% set imagePath = '/sites/merchcie/themes/merchcie/images/TEMP/notreequipe/' %}
-<!-- LIB -->
 {{ attach_library('merchcie/imageloaded') }}
 
 <div id="notre-equipe">
+    <!--INTRO-->
     <div class="bg-color1 z1">
         <div class="container">
             <div class="row">
                 <div class="col main-big-title">
                     <h1 class="text-white">
-                        <span class="text-color2">Merch & cie</span> : une équipe efficace, soudée et experte à votre
-                        service
+                        {{ content.field_equipe_intro }}
                     </h1>
                     <span class="line-vertical dot-pattern-color2"></span>
                 </div>
@@ -17,33 +15,24 @@
         </div>
     </div>
 
+    <!--CONTENT 1-->
     <div class="c1 text-center">
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <h4 class="text-hand text-color2">Une équipe d'experts</h4>
-                    <div class="bg-color4 block-txt">
-                        <p>
-                            Unis par un même amour du travail bien fait et le même <b>objectif de satisfaction
-                                client</b>, tous
-                            nos salariés sont formés régulièrement. Nous sommes fiers d’avoir créé un <b>parcours
-                                certifiant</b> sur mesure pour le métier de <b>merchandiseur</b>. Parce que votre projet
-                            est important
-                            et qu’il nécessite des équipes qualifiées, nos collaborateurs intègrent ce parcours dès leur
-                            entrée dans l’entreprise.
-                        </p>
-                    </div>
+                    {{ content.field_equipe_c1 }}
                 </div>
             </div>
         </div>
     </div>
 
+    <!--CONTENT 2 // équipe-->
     <div class="c2">
         <div class="container">
             <div class="row">
                 <div class="col">
                     <h2 class="text-color2 before-line line-color2">
-                        Notre équipe Projet
+                        {{ content.field_equipe_c2_intro }}
                     </h2>
                 </div>
             </div>
@@ -67,12 +56,13 @@
         </div>
     </div>
 
+    <!--CONTENT 3 // experts-->
     <div class="c3">
         <div class="container">
             <div class="row">
                 <div class="col">
                     <h2 class="text-color2 before-line line-color2">
-                        Nos experts sur le terrain
+                        {{ content.field_equipe_c3_intro }}
                     </h2>
                 </div>
             </div>
@@ -96,21 +86,23 @@
         </div>
     </div>
 
+    <!--CONTENT 4-->
     <div class="c4">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-lg-6 text-center">
                     <div class="img-wrapper">
                         <div class="dot dot-pattern-color2"></div>
-                        <img class="img-fluid" src="{{ imagePath }}PHOTO-EQUIPE-DTR.png" alt="">
+                        <img class="img-fluid" src="{{ content.field_equipe_c4_img[0] }}" alt="">
                     </div>
                 </div>
                 <div class="col-12 col-lg-6">
                     <div class="txt">
                         <h2 class="text-color2">
-                            Rejoignez l'équipe <br>de Merch & Cie
+                            {{ content.field_equipe_c4_title }}
                         </h2>
-                        <a href="#" class="cta bg-color2 text-white">Voir nos offres</a>
+                        <a href="{{ content.field_equipe_c4_link[0]['#url'] }}"
+                           class="cta bg-color2 text-white">{{ content.field_equipe_c4_link[0]['#title'] }}</a>
                     </div>
                 </div>
             </div>

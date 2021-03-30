@@ -104,6 +104,7 @@ jQuery(document).ready(function ($) {
 
     // Ajust height based on previous block
     var heightPrevBlock = 0;
+
     function calcHeight() {
         $(".listing-interviews").imagesLoaded(function () {
             $(".moved-block").each(function () {
@@ -114,5 +115,16 @@ jQuery(document).ready(function ($) {
     }
 
     calcHeight();
-    $(window).resize( calcHeight );
+    $(window).resize(calcHeight);
+
+    // NOS EXPERTISES - MASONRY
+    if ($("#nos-expertises").length) {
+        const $grid = $('.js-grid-masonry').imagesLoaded(function () {
+            $grid.masonry({
+                itemSelector: '.grid-item',
+                columnWidth: '.grid-sizer',
+                percentPosition: true
+            });
+        });
+    }
 });

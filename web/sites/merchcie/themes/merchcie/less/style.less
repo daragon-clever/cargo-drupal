@@ -1281,30 +1281,62 @@ body.adminimal-admin-toolbar {
       }
     }
   }
+}
 
-  .c3 {
-    position: relative;
+.know-what {
+  position: relative;
 
-    h3 {
-      font-family: 'AvenirBlack', Arial, Helvetica, sans-serif;
-      text-transform: uppercase;
-      margin-bottom: 30px;
+  h3 {
+    font-family: 'AvenirBlack', Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
+
+  .dot-left {
+    width: 430px;
+    height: 200px;
+    position: absolute;
+    bottom: -70px;
+    left: 0;
+  }
+
+  .dot-right {
+    width: 430px;
+    height: 160px;
+    position: absolute;
+    top: -80px;
+    right: 0;
+  }
+}
+
+// NOS EXPERTISES
+#nos-expertises {
+  .c1,
+  .c2 {
+    padding: 95px 0;
+  }
+  .c1 {
+    @padding : 8px;
+
+    .container,
+    .grid-item {
+      padding-left: @padding;
+      padding-right: @padding;
     }
 
-    .dot-left {
-      width: 430px;
-      height: 200px;
-      position: absolute;
-      bottom: -70px;
-      left: 0;
-    }
+    .grid-item {
+      padding-top: @padding;
+      padding-bottom: @padding;
 
-    .dot-right {
-      width: 430px;
-      height: 160px;
-      position: absolute;
-      top: -80px;
-      right: 0;
+      a {
+        color: white;
+        text-decoration: none;
+      }
+
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
     }
   }
 }

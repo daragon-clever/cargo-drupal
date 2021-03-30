@@ -1139,3 +1139,172 @@ body.adminimal-admin-toolbar {
     margin-top: 20px;
   }
 }
+
+// NOTRE ORGANISATION
+#notre-organisation {
+  .c1,
+  .c2,
+  .c3 {
+    padding: 95px 0;
+  }
+
+  .c1 {
+    h2 {
+      margin-bottom: 70px;
+    }
+
+    .txt {
+      max-width: 650px;
+
+      p {
+        margin-bottom: 30px;
+
+        span {
+          font-weight: bold;
+        }
+      }
+    }
+
+    .img-wrapper {
+      position: relative;
+
+      img {
+        position: relative;
+        z-index: 1;
+      }
+
+      .dot {
+        z-index: 0;
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        top: 0;
+        right: 30px;
+      }
+    }
+  }
+
+  .c2 {
+    .nb {
+      font-size: 9.6rem;
+      color: @color3;
+      font-family: 'AvenirHeavy', Arial, Helvetica, sans-serif;
+      position: relative;
+      z-index: 1;
+      display: inline-block;
+
+      small {
+        font-family: 'AvenirBook', Arial, Helvetica, sans-serif;
+        font-size: 6.4rem;
+      }
+    }
+
+    h3 {
+      font-family: 'AvenirHeavy', Arial, Helvetica, sans-serif;
+      font-size: 3.2rem;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+
+    h4 {
+      font-family: 'AvenirHeavy', Arial, Helvetica, sans-serif;
+      margin-bottom: 8px;
+    }
+
+    p {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .item {
+      &:nth-child(1) {
+        .nb:before {
+          content: "";
+          background: url("../images/picto/orga/Besoin.svg") no-repeat center transparent;
+          position: absolute;
+          top: 35px;
+          left: -88px;
+          z-index: -1;
+          width: 134px;
+          height: 92px;
+        }
+      }
+
+      &:nth-child(2) {
+        .nb:before {
+          content: "";
+          background: url("../images/picto/orga/Devis_personnalisé.svg") no-repeat center transparent;
+          position: absolute;
+          bottom: 19px;
+          left: -55px;
+          z-index: -1;
+          width: 92px;
+          height: 92px;
+        }
+
+        .nb:after {
+          content: "";
+          background: url("../images/picto/orga/Retro_planning.svg") no-repeat center transparent;
+          position: absolute;
+          bottom: 19px;
+          right: -65px;
+          z-index: -1;
+          width: 94px;
+          height: 123px;
+        }
+      }
+
+      &:nth-child(3) {
+        .nb:before {
+          content: "";
+          background: url("../images/picto/orga/Deploiement.svg") no-repeat center transparent;
+          position: absolute;
+          top: 35px;
+          left: -108px;
+          z-index: -1;
+          width: 148px;
+          height: 101px;
+        }
+      }
+
+      &:nth-child(4) {
+        .nb:before {
+          content: "";
+          background: url("../images/picto/orga/Bilan.svg") no-repeat center transparent;
+          position: absolute;
+          top: 28px;
+          right: -65px;
+          z-index: -1;
+          width: 92px;
+          height: 92px;
+        }
+      }
+    }
+  }
+
+  .c3 {
+    position: relative;
+
+    h3 {
+      font-family: 'AvenirBlack', Arial, Helvetica, sans-serif;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+    }
+
+    .dot-left {
+      width: 430px;
+      height: 200px;
+      position: absolute;
+      bottom: -70px;
+      left: 0;
+    }
+
+    .dot-right {
+      width: 430px;
+      height: 160px;
+      position: absolute;
+      top: -80px;
+      right: 0;
+    }
+  }
+}

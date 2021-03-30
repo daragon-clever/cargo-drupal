@@ -1,13 +1,11 @@
-{% set imagePath = '/sites/merchcie/themes/merchcie/images/TEMP/qsn/' %}
-
 <div id="qsn">
+    <!--INTRO-->
     <div class="bg-color1 z1">
         <div class="container">
             <div class="row">
                 <div class="col main-big-title">
                     <h1 class="text-white">
-                        <span class="text-color2">Merch & cie</span> : des hommes et des femmes expérimentés
-                        pour relever vos challenges
+                        {{ content.field_qsn_intro }}
                     </h1>
                     <span class="line-vertical dot-pattern-color2"></span>
                 </div>
@@ -15,238 +13,99 @@
         </div>
     </div>
 
+    <!--CONTENT 1-->
     <div class="container c1">
         <div class="row align-items-center">
             <div class="col-12 col-lg-6 order-lg-2">
-                <img class="img-fluid" src="{{ imagePath }}AMB_Merch-2442_PAO.jpg" alt="">
+                <img class="img-fluid" src="{{ content.field_qsn_c1_imgs[0] }}" alt="">
             </div>
             <div class="col-12 col-lg-6">
                 <div class="inner">
-                    <h2 class="text-color2 before-line line-color2">Qui sommes-nous ?</h2>
-                    <h4 class="text-hand text-color2">
-                        Merch, pour merchandising
-                    </h4>
-                    <p>
-                        <b>Le Merchandising</b>, couramment abrégé en “Merch’”, c’est <b>notre cœur de métier</b> et
-                        notre raison d’être.
-                        Cette compétence, née de la nécessité d’<b>améliorer les performances commerciales</b> des
-                        points de vente
-                        physiques en <b>optimisant la présentation et l’accessibilité des produits</b> pour les clients
-                        des
-                        magasins, est plus que jamais stratégique pour le commerce de détail.
-                    </p>
-                    <p>
-                        Basée sur des <b>observations scientifiques</b> et des <b>données statistiques</b>, renforcée
-                        par des analyses de
-                        rentabilité (merchandising de gestion) et des mesures d’impact sur l’image de marque, la
-                        satisfaction client et l’indice de fidélisation, cette discipline ne vaut que par sa bonne mise
-                        en
-                        application sur le terrain. Et chez <b>Merch & Cie</b>, nous sommes tous, avant tout, <b>des
-                            hommes et des
-                            femmes de terrain</b>, connaisseurs des principes théoriques mais surtout rompus à leur <b>mise
-                            en œuvre
-                            concrète</b>.
-                    </p>
+                    {{ content.field_qsn_c1_txts[0] }}
                 </div>
             </div>
         </div>
         <div class="row align-items-center my-5">
             <div class="col-12 col-lg-6">
-                <img class="img-fluid" src="{{ imagePath }}Equipe+BG.png" alt="">
+                <img class="img-fluid" src="{{ content.field_qsn_c1_imgs[1] }}" alt="">
             </div>
             <div class="col-12 col-lg-6 text-center">
                 <div class="inner">
-                    <h4 class="text-hand text-color2">
-                        & Cie, pour "et compagnie"
-                    </h4>
-                    <p>
-                        La compagnie, c’est évidemment <b>notre équipe de choc composée d’opérationnels</b> prêts à
-                        déployer vos opérations <b>sur tout le territoire</b> et à relever vos challenges avec
-                        enthousiasme, mais aussi <b>notre équipe administrative</b> qui coordonne et gère de main de
-                        maître plannings et contraintes logistiques, suivi d’opérations et reporting.
-                        <br/>
-                        Quand <b>chaque jour, chaque heure compte</b> pour assurer la réussite d’un projet
-                        d’implantation, de remodeling ou d’ouverture, c’est la précision de l’organisation et la rigueur
-                        de l’exécution par nos équipes qu’il vous faut.
-                    </p>
-                    <p>
-                        <b class="text-color2">
-                            Avec nous, vous serez toujours en bonne compagnie.
-                        </b>
-                    </p>
+                    {{ content.field_qsn_c1_txts[1] }}
                 </div>
             </div>
         </div>
         <div class="row align-items-center">
             <div class="col-12 col-lg-6 text-center">
-                <img class="img-fluid" src="{{ imagePath }}Carte.svg" alt="">
+                <img class="img-fluid" src="{{ content.field_qsn_c1_imgs[2] }}" alt="">
             </div>
             <div class="col-12 col-lg-6">
                 <div class="inner">
-                    <h3 class="text-color2 mb-4 bold">
-                        10 ans d’expérience au service de vos projets et 8 grands pôles d’expertise
-                    </h3>
-                    <p>
-                        Expert en merchandising opérationnel, Merch & Cie, c’est une équipe <b>composée d’hommes et de
-                            femmes prêts à relever vos challenges</b>, déployable <u>partout en France en quelques
-                            heures ou quelques jours.</u>
-                    </p>
-                    <p>
-                        Notre efficacité, nous la devons à l’humain et à nos valeurs :
-                    </p>
-                    <ul>
-                        <li>
-                            Nous formons régulièrement nos salariés et nous entourons des meilleurs spécialistes du
-                            merchandising.
-                        </li>
-                        <li>
-                            L’écoute, la proximité avec nos clients, l’exigence et le respect des engagements sont
-                            profondément ancrés dans notre ADN et jouent un rôle fondamental dans la réussite de vos
-                            projets.
-                        </li>
-                    </ul>
-                    <p>
-                        <b class="text-color2">
-                            Gagnez du temps sur le terrain et améliorez vos résultats en bénéficiant de nos 10 années
-                            d’expériences en merchandising opérationnel
-                        </b>
-                    </p>
+                    {{ content.field_qsn_c1_txts[2] }}
                 </div>
             </div>
         </div>
     </div>
 
+    <!--CONTENT 2-->
     <div class="c2">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-lg-8">
                     <h2 class="text-color2 before-line line-color2">
-                        Une entreprise à taille humaine qui s’engage dans une démarche RSE basée sur 4 piliers
+                        {{ content.field_qsn_c2_intro }}
                     </h2>
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 col-lg-3">
-                    <div class="inner text-center">
-                        <img src="{{ imagePath }}Service.svg" alt="">
-                        <h3 class="bold">Service</h3>
-                        <h4>Objectif: Expérience client positive</h4>
-                        <p>
-                            Notre priorité: une remise en question permanente au travers de notre démarche qualité pour
-                            une
-                            satisfaction client performante.
-                        </p>
+                {% for i in 0..3 %}
+                    <div class="col-12 col-lg-3">
+                        <div class="inner text-center">
+                            {{ content.field_qsn_c2_imgs[i] }}
+                            {{ content.field_qsn_c2_txts[i] }}
+                        </div>
                     </div>
-                </div>
-                <div class="col-12 col-lg-3">
-                    <div class="inner text-center">
-                        <img src="{{ imagePath }}Environnement.svg" alt="">
-                        <h3 class="bold">Environnement</h3>
-                        <h4>Objectif: Développement durable</h4>
-                        <p>
-                            Nous adhérons aux engagements de nos clients, priorisons le covoiturage et
-                            dématérialisations nos documents de travail sur l’ensemble de nos activités.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-3">
-                    <div class="inner text-center">
-                        <img src="{{ imagePath }}Collaborateurs.svg" alt="">
-                        <h3 class="bold">Collaborateurs</h3>
-                        <h4>Objectif: Développement humain</h4>
-                        <p>
-                            Intégrer chaque collaborateur dans un cursus de formation certifiant, intégrer des pratiques
-                            en matière de santé, sécurité, diversité et promotion sociale.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-3">
-                    <div class="inner text-center">
-                        <img src="{{ imagePath }}Prestataires.svg" alt="">
-                        <h3 class="bold">Prestaires</h3>
-                        <h4>Objectif: Intégrer un réseau éthique</h4>
-                        <p>
-                            Le référencement de nos prestataires se fait d’après des critères définis dans notre process
-                            interne, dans le respect de notre charte éthique.
-                        </p>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
 
+    <!--CONTENT 3-->
     <div class="c3 bg-color4 text-center">
         <div class="container">
             <div class="row">
                 <div class="col">
                     <h2 class="text-color3">
-                        Merch & cie s’engage sur <br>des valeurs fortes
+                        {{ content.field_qsn_c3_intro }}
                     </h2>
                     <span class="dot-pattern line-vertical"></span>
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 col-lg-3">
-                    <div class="inner">
-                        <img src="{{ imagePath }}c3-svg (2).svg" alt="">
-                        <h3 class="text-color3 bold">Humain & <br> solidarité</h3>
+                {% for i in 0..3 %}
+                    <div class="col-12 col-lg-3">
+                        <div class="inner">
+                            {{ content.field_qsn_c3_imgs[i] }}
+                            <h3 class="text-color3 bold">{{ content.field_qsn_c3_txts[i] }}</h3>
+                        </div>
                     </div>
-                </div>
-                <div class="col-12 col-lg-3">
-                    <div class="inner">
-                        <img src="{{ imagePath }}c3-svg (3).svg" alt="">
-                        <h3 class="text-color3 bold">Proximité <br/> & écoute</h3>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-3">
-                    <div class="inner">
-                        <img src="{{ imagePath }}c3-svg (1).svg" alt="">
-                        <h3 class="text-color3 bold">Fiabilité & Respect <br/> des engagements</h3>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-3">
-                    <div class="inner">
-                        <img src="{{ imagePath }}c3-svg (4).svg" alt="">
-                        <h3 class="text-color3 bold">Réactivité <br/> & Rapidité</h3>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
 
+    <!--CONTENT 4 // TEMOIGNAGES-->
     <div class="container c4">
         <div class="row">
             <div class="col">
-                <h2 class="text-color1 before-line line-color1">
-                    Paroles de clients
-                </h2>
-                <h3 class="text-color1">
-                    Ce sont eux qui en parlent le mieux
-                </h3>
+                {{ content.field_qsn_c4_intro }}
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <div class="js-testimonials-slick">
-                    {% for i in 0 .. 5 %}
-                        <div>
-                            <div class="testimonial-item bg-color1 text-white">
-                                <blockquote>
-                                    « Très bon suivi de la part des équipes, réactivité, travail de qualité. A
-                                    recommander sans
-                                    hésiter. »
-                                </blockquote>
-                                <div>
-                                    <span class="text-hand">Chloé D.</span>
-                                    <small>Responsable communication Egger</small>
-                                </div>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
+                {{ content.field_qsn_c4_temoignages }}
                 <h3 class="bold text-color2 text-center testimonials-outro">
-                    Gagnez du temps sur le terrain et améliorez vos résultats en bénéficiant de <br>nos 10 années
-                    d’expérience en merchandising opérationnel !
+                    {{ content.field_qsn_c4_outro }}
                 </h3>
             </div>
         </div>

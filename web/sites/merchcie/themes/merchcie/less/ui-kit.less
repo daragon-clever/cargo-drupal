@@ -217,7 +217,8 @@ a.cta {
   text-decoration: none;
 }
 
-a.link {
+a.link,
+span.link {
   position: relative;
   text-decoration: none;
   font-family: 'AvenirBook', Arial, Helvetica, sans-serif;
@@ -246,6 +247,12 @@ a.link {
   &.text-color2 {
     &.after-arrow:after {
       filter: @svgColor2;
+    }
+  }
+
+  &.text-color4 {
+    &.after-arrow:after {
+      filter: @svgColorWhite;
     }
   }
 }

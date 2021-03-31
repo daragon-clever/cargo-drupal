@@ -216,74 +216,12 @@ h3 {
 .header-wrapper {
   position: relative;
   overflow: hidden;
+  margin-left: -15px;
+  margin-right: -15px;
   padding: 372px 0 30px;
 
   @media @tablet {
     padding: 200px 0 30px;
-  }
-
-  header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 100;
-    display: flex;
-    flex-direction: column;
-
-    &.fixed {
-      background: white;
-      flex-direction: row-reverse;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-
-      @media @phone {
-        justify-content: end;
-      }
-
-      .logo {
-        display: none;
-      }
-
-      .logo-fixed {
-        display: block !important;
-        height: 84px;
-        width: 262px;
-        object-fit: contain;
-        position: fixed;
-        top: 0;
-        left: 5%;
-        transition: 0.3s;
-
-        @media (max-width: 1368px) {
-          position: relative;
-          top: inherit;
-          left: inherit;
-          margin-right: 50px;
-        }
-
-        @media @tablet {
-          margin: 15px 0;
-          height: 50px;
-        }
-      }
-
-      #burger {
-        top: unset;
-
-        &,
-        &:after {
-          border-color: black;
-        }
-      }
-
-      #main-nav {
-        a {
-          color: black;
-        }
-      }
-    }
   }
 
   .txt {
@@ -312,30 +250,103 @@ h3 {
       }
     }
   }
+}
 
-  #burger {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    border-top: 3px solid white;
-    border-bottom: 3px solid white;
-    width: 30px;
-    height: 21px;
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
 
-    &:after {
-      content: "";
-      border-bottom: 3px solid white;
-      position: absolute;
-      width: 100%;
-      left: 0;
-      top: 6px;
+  @media @tablet {
+    img.logo {
+      height: 150px;
+      width: auto;
+      margin-top: 50px;
     }
+  }
+
+  &.fixed {
+    background: white;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+
+    @media @phone {
+      justify-content: end;
+    }
+
+    .logo {
+      display: none;
+    }
+
+    .logo-fixed {
+      display: block !important;
+      height: 84px;
+      width: 262px;
+      object-fit: contain;
+      position: fixed;
+      top: 0;
+      left: 5%;
+      transition: 0.3s;
+
+      @media (max-width: 1368px) {
+        position: relative;
+        top: inherit;
+        left: inherit;
+        margin-right: 50px;
+      }
+
+      @media @tablet {
+        margin: 15px 0;
+        height: 50px;
+      }
+    }
+
+    #burger {
+      top: unset;
+
+      &,
+      &:after {
+        border-color: black;
+      }
+    }
+
+    #main-nav {
+      height: 95px;
+      a {
+        color: black;
+      }
+    }
+  }
+}
+
+#burger {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  border-top: 3px solid white;
+  border-bottom: 3px solid white;
+  width: 30px;
+  height: 21px;
+
+  &:after {
+    content: "";
+    border-bottom: 3px solid white;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 6px;
   }
 }
 
 // NAV
 #main-nav {
-  height: 95px;
+  height: 155px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -352,7 +363,7 @@ h3 {
     text-align: center;
 
     & > li {
-      margin: 0 15px;
+      margin: 0 30px;
       display: inline-block;
       text-align: center;
       vertical-align: top;
@@ -1109,7 +1120,7 @@ footer {
 }
 
 // CONTACT FORM
-#webform-submission-contact-add-form {
+.webform-submission-form {
   max-width: 1215px;
   margin: 0 auto;
 

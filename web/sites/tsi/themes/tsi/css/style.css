@@ -300,70 +300,14 @@ h3 {
 .header-wrapper {
   position: relative;
   overflow: hidden;
+  margin-left: -15px;
+  margin-right: -15px;
   padding: 372px 0 30px;
 }
 @media only screen and (max-width: 991px) {
   .header-wrapper {
     padding: 200px 0 30px;
   }
-}
-.header-wrapper header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 100;
-  display: flex;
-  flex-direction: column;
-}
-.header-wrapper header.fixed {
-  background: white;
-  flex-direction: row-reverse;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-}
-@media only screen and (max-width: 767px) {
-  .header-wrapper header.fixed {
-    justify-content: end;
-  }
-}
-.header-wrapper header.fixed .logo {
-  display: none;
-}
-.header-wrapper header.fixed .logo-fixed {
-  display: block !important;
-  height: 84px;
-  width: 262px;
-  object-fit: contain;
-  position: fixed;
-  top: 0;
-  left: 5%;
-  transition: 0.3s;
-}
-@media (max-width: 1368px) {
-  .header-wrapper header.fixed .logo-fixed {
-    position: relative;
-    top: inherit;
-    left: inherit;
-    margin-right: 50px;
-  }
-}
-@media only screen and (max-width: 991px) {
-  .header-wrapper header.fixed .logo-fixed {
-    margin: 15px 0;
-    height: 50px;
-  }
-}
-.header-wrapper header.fixed #burger {
-  top: unset;
-}
-.header-wrapper header.fixed #burger,
-.header-wrapper header.fixed #burger:after {
-  border-color: black;
-}
-.header-wrapper header.fixed #main-nav a {
-  color: black;
 }
 .header-wrapper .txt {
   margin: 20px auto;
@@ -411,7 +355,75 @@ h3 {
     font-size: 16px;
   }
 }
-.header-wrapper #burger {
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+}
+@media only screen and (max-width: 991px) {
+  header img.logo {
+    height: 150px;
+    width: auto;
+    margin-top: 50px;
+  }
+}
+header.fixed {
+  background: white;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+@media only screen and (max-width: 767px) {
+  header.fixed {
+    justify-content: end;
+  }
+}
+header.fixed .logo {
+  display: none;
+}
+header.fixed .logo-fixed {
+  display: block !important;
+  height: 84px;
+  width: 262px;
+  object-fit: contain;
+  position: fixed;
+  top: 0;
+  left: 5%;
+  transition: 0.3s;
+}
+@media (max-width: 1368px) {
+  header.fixed .logo-fixed {
+    position: relative;
+    top: inherit;
+    left: inherit;
+    margin-right: 50px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  header.fixed .logo-fixed {
+    margin: 15px 0;
+    height: 50px;
+  }
+}
+header.fixed #burger {
+  top: unset;
+}
+header.fixed #burger,
+header.fixed #burger:after {
+  border-color: black;
+}
+header.fixed #main-nav {
+  height: 95px;
+}
+header.fixed #main-nav a {
+  color: black;
+}
+#burger {
   position: absolute;
   top: 20px;
   left: 20px;
@@ -420,7 +432,7 @@ h3 {
   width: 30px;
   height: 21px;
 }
-.header-wrapper #burger:after {
+#burger:after {
   content: "";
   border-bottom: 3px solid white;
   position: absolute;
@@ -429,7 +441,7 @@ h3 {
   top: 6px;
 }
 #main-nav {
-  height: 95px;
+  height: 155px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -447,7 +459,7 @@ h3 {
   text-align: center;
 }
 #main-nav > ul > li {
-  margin: 0 15px;
+  margin: 0 30px;
   display: inline-block;
   text-align: center;
   vertical-align: top;
@@ -1170,21 +1182,21 @@ footer li:before {
     left: 10px;
   }
 }
-#webform-submission-contact-add-form {
+.webform-submission-form {
   max-width: 1215px;
   margin: 0 auto;
 }
-#webform-submission-contact-add-form small {
+.webform-submission-form small {
   display: block;
 }
-#webform-submission-contact-add-form small.red {
+.webform-submission-form small.red {
   color: #b2271b;
 }
-#webform-submission-contact-add-form .form-item {
+.webform-submission-form .form-item {
   position: relative;
 }
-#webform-submission-contact-add-form .form-item input,
-#webform-submission-contact-add-form .form-item textarea {
+.webform-submission-form .form-item input,
+.webform-submission-form .form-item textarea {
   width: 100%;
   display: inline-block;
   margin: 12px 0;
@@ -1195,26 +1207,26 @@ footer li:before {
   position: relative;
   font-size: 16px;
 }
-#webform-submission-contact-add-form .form-item .required-star {
+.webform-submission-form .form-item .required-star {
   font-weight: 600;
   position: absolute;
   top: 15px;
   right: 10px;
   font-size: 20px;
 }
-#webform-submission-contact-add-form .form-item select.required + .required-star {
+.webform-submission-form .form-item select.required + .required-star {
   top: 38px;
   right: 30px;
 }
-#webform-submission-contact-add-form .form-item select {
+.webform-submission-form .form-item select {
   height: 40px;
   border: 1px solid black;
 }
-#webform-submission-contact-add-form .form-item textarea {
+.webform-submission-form .form-item textarea {
   margin-bottom: 0;
   padding: 15px;
 }
-#webform-submission-contact-add-form .form-item > label {
+.webform-submission-form .form-item > label {
   position: absolute;
   left: 5px;
   top: 23px;
@@ -1227,28 +1239,28 @@ footer li:before {
   font-size: 20px;
 }
 @media (min-width: 768px) {
-  #webform-submission-contact-add-form .webform-flexbox {
+  .webform-submission-form .webform-flexbox {
     margin: 0 -0.5em;
   }
 }
-#webform-submission-contact-add-form input:focus + label,
-#webform-submission-contact-add-form input.js-not-empty + label,
-#webform-submission-contact-add-form textarea.js-not-empty + label,
-#webform-submission-contact-add-form textarea:focus + label {
+.webform-submission-form input:focus + label,
+.webform-submission-form input.js-not-empty + label,
+.webform-submission-form textarea.js-not-empty + label,
+.webform-submission-form textarea:focus + label {
   top: 4px;
   font-size: 14px;
 }
-#webform-submission-contact-add-form .captcha {
+.webform-submission-form .captcha {
   margin: 15px 0;
   text-align: center;
 }
-#webform-submission-contact-add-form .g-recaptcha {
+.webform-submission-form .g-recaptcha {
   display: inline-block;
 }
-#webform-submission-contact-add-form .form-actions {
+.webform-submission-form .form-actions {
   text-align: center;
 }
-#webform-submission-contact-add-form input.webform-button--submit {
+.webform-submission-form input.webform-button--submit {
   background: #d72416;
   color: white;
   border: 0;
@@ -1264,11 +1276,11 @@ footer li:before {
   cursor: pointer;
   border-radius: 100px;
 }
-#webform-submission-contact-add-form input.webform-button--submit:hover {
+.webform-submission-form input.webform-button--submit:hover {
   text-decoration: none;
   opacity: 0.8;
 }
-#webform-submission-contact-add-form .subject-select-wrapper .field-prefix {
+.webform-submission-form .subject-select-wrapper .field-prefix {
   display: block;
   width: auto;
   vertical-align: middle;
@@ -1277,24 +1289,24 @@ footer li:before {
   font-weight: 700;
   color: #232323;
 }
-#webform-submission-contact-add-form .subject-select-wrapper select {
+.webform-submission-form .subject-select-wrapper select {
   width: 100%;
   margin-bottom: 8px;
   padding-left: 15px;
 }
-#webform-submission-contact-add-form input.webform-file-button-input {
+.webform-submission-form input.webform-file-button-input {
   position: fixed;
 }
-#webform-submission-contact-add-form .webform-document-file {
+.webform-submission-form .webform-document-file {
   margin: 0;
   padding-left: 15px;
 }
 @media only screen and (max-width: 991px) {
-  #webform-submission-contact-add-form .webform-document-file {
+  .webform-submission-form .webform-document-file {
     padding-left: 0;
   }
 }
-#webform-submission-contact-add-form .webform-document-file input {
+.webform-submission-form .webform-document-file input {
   display: inline-block;
   width: auto;
   margin: 0 0 0 10px;
@@ -1304,14 +1316,14 @@ footer li:before {
   text-decoration: underline;
   border: none;
 }
-#webform-submission-contact-add-form .webform-document-file input.js-hide {
+.webform-submission-form .webform-document-file input.js-hide {
   display: none;
 }
-#webform-submission-contact-add-form .webform-document-file label.btn-add-attachment {
+.webform-submission-form .webform-document-file label.btn-add-attachment {
   font-size: 16px;
   cursor: pointer;
 }
-#webform-submission-contact-add-form .webform-document-file label.btn-add-attachment:before {
+.webform-submission-form .webform-document-file label.btn-add-attachment:before {
   content: "+";
   border: 2px solid;
   border-radius: 5px;
@@ -1324,16 +1336,16 @@ footer li:before {
   margin-right: 10px;
   vertical-align: middle;
 }
-#webform-submission-contact-add-form .webform-document-file a {
+.webform-submission-form .webform-document-file a {
   color: black;
   font-size: 14px;
 }
-#webform-submission-contact-add-form div[role=alert] {
+.webform-submission-form div[role=alert] {
   color: #b2271b;
   padding: 0 30px;
   font-size: 14px;
   margin-top: 20px;
 }
-#webform-submission-contact-add-form #edit-intro-contactform {
+.webform-submission-form #edit-intro-contactform {
   margin: 30px 0;
 }

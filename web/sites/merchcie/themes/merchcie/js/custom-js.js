@@ -100,7 +100,7 @@ jQuery(document).ready(function ($) {
 
     // Move hidden text block 1
     $('.js-interviews-1 .listing-interviews > .container > .row').append($(".js-hidden-listing-text-1 > div"));
-    $('.js-interviews-2 .listing-interviews > .container > .row > div:nth-child(2)').after($(".js-hidden-listing-text-2 > div"));
+    $('.js-interviews-2 .listing-interviews > .container > .row > div:nth-child(8)').after($(".js-hidden-listing-text-2 > div"));
 
     // Ajust height based on previous block
     var heightPrevBlock = 0;

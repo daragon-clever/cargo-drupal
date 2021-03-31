@@ -1,13 +1,11 @@
-{% set imagePath = '/sites/merchcie/themes/merchcie/images/TEMP/notreorga/' %}
-
 <div id="notre-organisation">
+    <!--INTRO-->
     <div class="bg-color1">
         <div class="container">
             <div class="row">
                 <div class="col main-big-title">
                     <h1 class="text-white">
-                        Parce que votre projet est unique,
-                        <span class="text-color2">notre solution le sera aussi !</span>
+                        {{ content.field_orga_intro }}
                     </h1>
                     <span class="line-vertical dot-pattern-color2"></span>
                 </div>
@@ -15,32 +13,21 @@
         </div>
     </div>
 
+    <!--CONTENT 1-->
     <div class="c1">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-12 col-lg-7">
                     <h2 class="text-color2 before-line line-color2">
-                        Une expertise au service de vos projets
+                        {{ content.field_orga_c1_title }}
                     </h2>
                     <div class="txt">
-                        <p>
-                            En confiant vos projets de merchandising opérationnel à <span class="text-color2">Merch & Cie</span>,
-                            vous avez la garantie de disposer d’une <span
-                                    class="text-color2">équipe de professionnels</span> réactive et sympathique
-                            entièrement dédiée à l’atteinte rapide de vos objectifs.
-                        </p>
-                        <p>
-                            Grâce à un <span class="text-color2">réseau réparti sur tout le territoire</span> national
-                            et plus de 200 partenaires, <span class="text-color2">Merch & Cie</span> est capable de
-                            prendre en charge vos <span
-                                    class="text-color2">opérations locales, régionales ou nationales</span>
-                            avec la même réactivité.
-                        </p>
+                        {{ content.field_orga_c1_text }}
                     </div>
                 </div>
                 <div class="col-12 col-lg-5">
                     <div class="img-wrapper">
-                        <img class="img-fluid" src="{{ imagePath }}AMB_Merch2020-5724_PAO.png" alt="">
+                        <img class="img-fluid" src="{{ content.field_orga_c1_img[0] }}" alt="">
                         <div class="dot dot-pattern-color2"></div>
                     </div>
                 </div>
@@ -48,65 +35,35 @@
         </div>
     </div>
 
+    <!--CONTENT 2-->
     <div class="c2 bg-color4 text-center z0">
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <h2 class="text-color3">
-                        Un accompagnement 360°
-                    </h2>
-                    <p>
-                        Toutes nos équipes travaillent main dans la main pour répondre à vos besoins et vous <br>
-                        fournir un accompagnement à 360
-                    </p>
+                    {{ content.field_orga_c2_intro }}
                     <span class="line-vertical dot-pattern-color3"></span>
                 </div>
             </div>
             <div class="row">
-                <div class="item col-12 col-lg-4 offset-lg-2">
-                    <span class="nb">1</span>
-                    <h3>Votre besoin</h3>
-                    <h4 class="text-color2">L'équipe projet</h4>
-                    <p>
-                        mobilise son expérience et sa créativité pour mettre au point des solutions adaptées à vos
-                        besoins, et reste en contact avec vous tout au long de la mission.
-                    </p>
-                </div>
-                <div class="item col-12 col-lg-4">
-                    <span class="nb">2 <small>&</small> 3</span>
-                    <h3>Devis personnalisé <br>& rétro planning</h3>
-                    <h4 class="text-color2">L'équipe commerciale</h4>
-                    <p>
-                        se charge de chiffrer votre projet et réalise un retroplanning adapté à celui-ci.
-                    </p>
-                </div>
-                <div class="item col-12 col-lg-4 offset-lg-2 mt-lg-5">
-                    <span class="nb">4</span>
-                    <h3>Le déploiement</h3>
-                    <h4 class="text-color2">L'équipe opérationnelle</h4>
-                    <p>
-                        de merchandiseurs gère le déploiement de votre projet sur le terrain.
-                    </p>
-                </div>
-                <div class="item col-12 col-lg-4 mt-lg-5">
-                    <span class="nb">5</span>
-                    <h3>Bilan de l'opération</h3>
-                    <p>
-                        Nous faisons un bilan de fin de mission avec vous permettant ainsi de mieux optimiser nos futures missions.
-                    </p>
-                </div>
+                {% for i in 0..3 %}
+                    <div class="item col-12 col-lg-4 {% if i == 0 or i == 2 %}offset-lg-2{% endif %} {% if i > 1 %}mt-lg-5{% endif %}">
+                        {{ content.field_orga_c2_cards[i] }}
+                    </div>
+                {% endfor %}
             </div>
         </div>
     </div>
 
+    <!--CONTENT 3-->
     <div class="c3 text-center z1 know-what">
         <div class="container">
             <div class="row">
                 <div class="col">
                     <h3 class="text-color2">
-                        Envie de savoir ce que nous pouvons <br>vous apporter ?
+                        {{ content.field_orga_c3_title }}
                     </h3>
-                    <a href="#" class="cta bg-color2 text-white">Contactez-nous</a>
+                    <a href="{{ content.field_orga_c3_link[0]['#url'] }}"
+                       class="cta bg-color2 text-white">{{ content.field_orga_c3_link[0]['#title'] }}</a>
                 </div>
             </div>
         </div>

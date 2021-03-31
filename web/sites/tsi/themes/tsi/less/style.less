@@ -8,6 +8,13 @@ html {
 body {
   font-family: 'Aileron Regular', Arial, Helvetica, sans-serif;
   font-size: 18px;
+
+  &.mm-wrapper_opened {
+    .logo-fixed {
+      opacity: 0;
+      z-index: -1;
+    }
+  }
 }
 
 hr.mini {
@@ -209,7 +216,75 @@ h3 {
 .header-wrapper {
   position: relative;
   overflow: hidden;
-  padding-bottom: 30px;
+  padding: 372px 0 30px;
+
+  @media @tablet {
+    padding: 200px 0 30px;
+  }
+
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+
+    &.fixed {
+      background: white;
+      flex-direction: row-reverse;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+
+      @media @phone {
+        justify-content: end;
+      }
+
+      .logo {
+        display: none;
+      }
+
+      .logo-fixed {
+        display: block !important;
+        height: 84px;
+        width: 262px;
+        object-fit: contain;
+        position: fixed;
+        top: 0;
+        left: 5%;
+        transition: 0.3s;
+
+        @media (max-width: 1368px) {
+          position: relative;
+          top: inherit;
+          left: inherit;
+          margin-right: 50px;
+        }
+
+        @media @tablet {
+          margin: 15px 0;
+          height: 50px;
+        }
+      }
+
+      #burger {
+        top: unset;
+
+        &,
+        &:after {
+          border-color: black;
+        }
+      }
+
+      #main-nav {
+        a {
+          color: black;
+        }
+      }
+    }
+  }
 
   .txt {
     margin: 20px auto;
@@ -238,14 +313,6 @@ h3 {
     }
   }
 
-  @media @tablet {
-    img.logo {
-      height: 150px;
-      width: auto;
-      margin-top: 50px;
-    }
-  }
-
   #burger {
     position: absolute;
     top: 20px;
@@ -268,33 +335,27 @@ h3 {
 
 // NAV
 #main-nav {
+  height: 95px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media @tablet {
+    height: inherit;
+    display: block;
+  }
+
   & > ul {
     list-style: none;
-    padding: 50px 0;
+    padding: 0;
+    margin: 0;
     text-align: center;
-    margin-bottom: 30px;
-    transform: translateX(-50px);
-
-    &:hover {
-      ul {
-        max-height: 200px;
-        opacity: 1;
-      }
-    }
 
     & > li {
       margin: 0 15px;
       display: inline-block;
       text-align: center;
       vertical-align: top;
-
-      &:last-child {
-        margin-right: 0;
-      }
-
-      &:first-child {
-        margin-left: 0;
-      }
 
       & > a {
         color: white;
@@ -313,44 +374,6 @@ h3 {
           position: absolute;
           bottom: -8px;
           left: 0;
-        }
-      }
-
-      ul {
-        text-align: left;
-        display: block;
-        margin: 0;
-        padding: 0;
-        transition: all 0.5s ease-in-out;
-        overflow: hidden;
-        opacity: 0;
-        max-height: 0;
-
-        li {
-          margin: 0;
-          display: block;
-          text-align: center;
-
-          &:first-child {
-            margin-top: 30px;
-          }
-
-          a {
-            color: white;
-            text-transform: none;
-            font-family: 'Aileron Regular', Arial, Helvetica, sans-serif;
-
-            &:before {
-              content: "";
-              height: 7px;
-              width: 7px;
-              background: @primary;
-              display: inline-block;
-              vertical-align: middle;
-              margin-right: 7px;
-              margin-top: -2px;
-            }
-          }
         }
       }
     }

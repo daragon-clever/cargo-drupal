@@ -104,13 +104,12 @@ jQuery(document).ready(function ($) {
                 'callback': function (data) {
                     let dataItem = data.edge_owner_to_timeline_media.edges;
                     for (let i = 0; i < dataItem.length; i++) {
-                        $("#js-instagram").append(`
-                            <div>
-                                <a href="${'https://www.instagram.com/p/' + dataItem[i].node.shortcode + '/'}" target="_blank">
-                                    <img src="${dataItem[i].node.thumbnail_src}" />
-                                </a>
-                            </div>
-                        `);
+                        $("#js-instagram").append('' +
+                            '<div>' +
+                                '<a href="https://www.instagram.com/p/' + dataItem[i].node.shortcode + '" target="_blank">' +
+                                    '<img src="' + dataItem[i].node.thumbnail_src + '">' +
+                                '</a>' +
+                            '</div>');
                     }
                     instaSlick();
                 },

@@ -37,7 +37,7 @@
     });
 }(jQuery, window, document));
 
-jQuery(document).ready(function($) {
+jQuery(document).ready(function ($) {
     //// Navigation
     /* Functions */
     var openNav = function () {
@@ -61,7 +61,7 @@ jQuery(document).ready(function($) {
 
     /* Actions */
     var isNavOpen = false;
-    $('.js-toggle-menu').click(function() {
+    $('.js-toggle-menu').click(function () {
         if (isNavOpen === false) {
             openNav();
         } else {
@@ -73,7 +73,7 @@ jQuery(document).ready(function($) {
     if ($('#instagram-feed').length) {
         const instagramFeedWrapper = $("#instagram-feed");
 
-        const slickInstagramFeed = function() {
+        const slickInstagramFeed = function () {
             instagramFeedWrapper.slick({
                 infinite: false,
                 slidesToShow: 4,
@@ -106,23 +106,22 @@ jQuery(document).ready(function($) {
                 let dataItem = data.edge_owner_to_timeline_media.edges;
 
                 for (let i = 0; i < dataItem.length && i < 8; i++) {
-                    instagramFeedWrapper.append(`
-                        <div>
-                            <a href="${'https://www.instagram.com/p/' + dataItem[i].node.shortcode + '/'}" target="_blank">
-                                <img src="${dataItem[i].node.thumbnail_src}" />
-                                <div class="inner-infos d-flex">
-                                    <div>
-                                        <div class="likes">
-                                            ${dataItem[i].node.edge_liked_by.count}
-                                        </div>
-                                        <div class="comments">
-                                            ${dataItem[i].node.edge_media_to_comment.count}
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    `);
+                    instagramFeedWrapper.append('' +
+                        '<div>' +
+                            '<a href="https://www.instagram.com/p/' + dataItem[i].node.shortcode + '" target="_blank">' +
+                                '<img src="' + dataItem[i].node.thumbnail_src + '">' +
+                                '<div class="inner-infos d-flex">' +
+                                    '<div>' +
+                                        '<div class="likes">' +
+                                            dataItem[i].node.edge_liked_by.count +
+                                        '</div>' +
+                                        '<div class="comments">' +
+                                            dataItem[i].node.edge_media_to_comment.count +
+                                        '</div>' +
+                                    '</div>' +
+                                '</div>' +
+                            '</a>' +
+                        '</div>');
                 }
 
                 $(".loading").hide();
@@ -141,10 +140,10 @@ jQuery(document).ready(function($) {
             $(this).next().children("a").attr("href", linkHD);
         });
 
-        $(".thumb a").attr({ "data-toggle":"lightbox" , "data-gallery":"gallery" });
+        $(".thumb a").attr({"data-toggle": "lightbox", "data-gallery": "gallery"});
 
         /* Ekkolightbox */
-        $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+        $(document).on('click', '[data-toggle="lightbox"]', function (event) {
             event.preventDefault();
             $(this).ekkoLightbox();
             $(".ekko-lightbox .modal-body").append("<button type=\"button\" class=\"close\" data-dismiss=\"modal\" " +
@@ -153,13 +152,13 @@ jQuery(document).ready(function($) {
 
         /* Blocs texte */
         var txtBlock = $("#txt-template").html();
-        $( txtBlock ).insertAfter(".item:not(.text):nth-child(1)");
-        $( txtBlock ).insertAfter(".item:not(.text):nth-child(11)");
-        $( txtBlock ).insertAfter(".item:not(.text):nth-child(17)");
-        $( txtBlock ).insertAfter(".item:not(.text):nth-child(25)");
+        $(txtBlock).insertAfter(".item:not(.text):nth-child(1)");
+        $(txtBlock).insertAfter(".item:not(.text):nth-child(11)");
+        $(txtBlock).insertAfter(".item:not(.text):nth-child(17)");
+        $(txtBlock).insertAfter(".item:not(.text):nth-child(25)");
         /* Ajout des différents style pour bloc texte */
-        $(function(){
-            $(".item.text").each(function(i){
+        $(function () {
+            $(".item.text").each(function (i) {
                 $(this).addClass("style-" + i);
             });
         });
@@ -173,8 +172,8 @@ jQuery(document).ready(function($) {
         });
 
         /* Float right big right ones */
-        $(function(){
-            $(".item.big").each(function(i){
+        $(function () {
+            $(".item.big").each(function (i) {
                 if (i % 2 == 1) {
                     $(this).addClass("js-float-right");
                 }
@@ -182,7 +181,20 @@ jQuery(document).ready(function($) {
         });
 
         /* Function shuffle */
-        (function(d){d.fn.shuffle=function(c){c=[];return this.each(function(){c.push(d(this).clone(true))}).each(function(a,b){d(b).replaceWith(c[a=Math.floor(Math.random()*c.length)]);c.splice(a,1)})};d.shuffle=function(a){return d(a).shuffle()}})(jQuery);
+        (function (d) {
+            d.fn.shuffle = function (c) {
+                c = [];
+                return this.each(function () {
+                    c.push(d(this).clone(true))
+                }).each(function (a, b) {
+                    d(b).replaceWith(c[a = Math.floor(Math.random() * c.length)]);
+                    c.splice(a, 1)
+                })
+            };
+            d.shuffle = function (a) {
+                return d(a).shuffle()
+            }
+        })(jQuery);
         // First, shuffle all except text and big one
         $('.item:not(.text):not(.big) .paragraph').shuffle();
         // Then the big ones
@@ -190,7 +202,7 @@ jQuery(document).ready(function($) {
     }
 
     //// Scroll homepage
-    $(window).scroll(function(){
+    $(window).scroll(function () {
         if ($(this).scrollTop() > 50) {
             $('.js-scroll, .header-rs').fadeOut('slow');
         } else {

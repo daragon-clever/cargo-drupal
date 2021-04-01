@@ -70,23 +70,22 @@ jQuery(document).ready(function($) {
                 let dataItem = data.edge_owner_to_timeline_media.edges;
 
                 for (let i = 0; i < dataItem.length && i < 8; i++) {
-                    instagramFeedWrapper.append(`
-                        <div>
-                            <a href="${'https://www.instagram.com/p/' + dataItem[i].node.shortcode + '/'}" target="_blank">
-                                <img src="${dataItem[i].node.thumbnail_src}" />
-                                <div class="inner-infos d-flex">
-                                    <div>
-                                        <div class="likes">
-                                            ${dataItem[i].node.edge_liked_by.count}
-                                        </div>
-                                        <div class="comments">
-                                            ${dataItem[i].node.edge_media_to_comment.count}
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    `);
+                    instagramFeedWrapper.append('' +
+                        '<div>' +
+                            '<a href="https://www.instagram.com/p/' + dataItem[i].node.shortcode + '" target="_blank">' +
+                                '<img src="' + dataItem[i].node.thumbnail_src + '">' +
+                                '<div class="inner-infos d-flex">' +
+                                    '<div>' +
+                                        '<div class="likes">' +
+                                            dataItem[i].node.edge_liked_by.count +
+                                        '<div>' +
+                                        '<div class="comments">' +
+                                            dataItem[i].node.edge_media_to_comment.count +
+                                        '<div>' +
+                                    '<div>' +
+                                '</div>' +
+                            '</a>' +
+                        '</div>');
                 }
 
                 $(".loading").hide();

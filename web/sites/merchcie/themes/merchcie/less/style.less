@@ -331,7 +331,6 @@ body.adminimal-admin-toolbar {
 
   .main-ban {
     padding: 254px 0;
-    //border-top: 2px solid #373754;
     overflow: hidden;
     position: relative;
 
@@ -1336,6 +1335,178 @@ body.adminimal-admin-toolbar {
       img {
         width: 100%;
         object-fit: cover;
+      }
+    }
+  }
+}
+
+// ESPACE PARTENAIRES
+#espace-prestataires {
+  .main-ban {
+    position: relative;
+
+    .left-part {
+      position: relative;
+      z-index: 1;
+      max-width: 645px;
+
+      h1 {
+        font-size: 3.2rem;
+        line-height: 1.3;
+      }
+
+      .dot-bottom {
+        margin-top: 85px;
+        height: 150px;
+        width: 100%;
+        z-index: 0;
+      }
+
+      .btn-wrapper {
+        position: relative;
+        margin-top: 30px;
+
+        &:after {
+          content: "";
+          background: url("../images/picto/deco-arrow.svg") no-repeat center / 100% transparent;
+          width: 118px;
+          height: 118px;
+          filter: @svgColorWhite;
+          position: absolute;
+          bottom: -20px;
+          right: 0;
+          transform-origin: center;
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    .line-vertical {
+      position: absolute;
+      bottom: -43px;
+      left: 50%;
+    }
+  }
+
+  .c1 {
+    padding: 9.5rem 0;
+    font-size: 3.2rem;
+    font-family: 'AvenirBlack', Arial, Helvetica, sans-serif;
+  }
+
+  .c2 {
+    padding: 5rem 0;
+
+    .img-wrapper {
+      position: relative;
+
+      img {
+        z-index: 0;
+      }
+
+      .dot {
+        position: absolute;
+        bottom: -30px;
+        left: -10px;
+        height: 153px;
+        width: 153px;
+        z-index: 1;
+      }
+    }
+
+    .txt {
+      max-width: 655px;
+
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .c3 {
+    padding: 6.5rem 0;
+    position: relative;
+  }
+
+  .c4 {
+    padding: 6.5rem 0;
+
+    .intro {
+      max-width: 655px;
+      margin: 2.4rem auto 5rem;
+    }
+
+    .how-to-item {
+      position: relative;
+
+      .nb {
+        background-color: @color2;
+        border-radius: 100%;
+        height: 64px;
+        width: 64px;
+        font-size: 2.8rem;
+        font-family: 'MerchCieNums', Arial, Helvetica, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 20px;
+      }
+
+      h3 {
+        font-family: 'AvenirBlack', Arial, Helvetica, sans-serif;
+        text-transform: uppercase;
+      }
+
+      p {
+        font-family: 'AvenirBook', Arial, Helvetica, sans-serif;
+        font-size: 2.4rem;
+        line-height: 1.2;
+        margin: 2rem 0;
+      }
+
+      .sign {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          border-radius: 100%;
+          margin-right: 15px;
+        }
+      }
+
+      & + .line {
+        width: 100%;
+        position: absolute;
+        top: 30px;
+        left: 0;
+      }
+    }
+
+    .slick-slide {
+      position: relative;
+
+      &:first-child .line,
+      &:last-child .line {
+        width: 50%;
+      }
+
+      &:first-child .line {
+        left: unset;
+        right: 0;
+      }
+    }
+  }
+
+  .c5 {
+    padding: 5rem 0;
+
+    .txt {
+      max-width: 600px;
+      margin: 0 auto;
+
+      p {
+        margin: 2.4rem 0 4.8rem;
       }
     }
   }

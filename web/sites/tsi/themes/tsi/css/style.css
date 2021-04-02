@@ -1349,3 +1349,25 @@ footer li:before {
 .webform-submission-form #edit-intro-contactform {
   margin: 30px 0;
 }
+#user-login-form {
+  max-width: 650px;
+  margin: 90px auto;
+  border-radius: 5px;
+  box-shadow: 0 40px 30px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+#user-login-form label {
+  font-weight: bold;
+  margin: 20px 0 0;
+}
+#user-login-form input {
+  max-width: 100%;
+}
+#user-login-form input + div {
+  font-size: 1rem;
+  color: lightgrey;
+}
+#user-login-form input.form-submit {
+  margin: 30px auto 0;
+  display: block;
+}

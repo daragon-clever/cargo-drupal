@@ -2,6 +2,7 @@
 let isMobile = window.matchMedia("only screen and (max-width: 767px)").matches;
 let isTablet = window.matchMedia("only screen and (max-width: 990px)").matches;
 
+// MMENU
 if (isTablet) {
     document.addEventListener(
         "DOMContentLoaded", () => {
@@ -16,6 +17,16 @@ if (isTablet) {
 }
 
 jQuery(document).ready(function ($) {
+    // STICKY MENU
+    $(window).scroll(function () {
+        var header = $('header');
+        if ($(window).scrollTop() >= 1) {
+            header.addClass('fixed');
+        } else {
+            header.removeClass('fixed');
+        }
+    });
+
     // FORMULAIRE CONTACT
     if ($('.webform-submission-form').length) {
         // Function

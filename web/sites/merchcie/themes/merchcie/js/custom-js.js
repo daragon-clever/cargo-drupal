@@ -88,6 +88,26 @@ jQuery(document).ready(function ($) {
         ]
     });
 
+    $(".js-how-to").slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        infinite: false,
+        responsive: [
+            {
+                breakpoint: 990,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
+
     // INTERVIEWS CONTENT DISPLAY
     $(".js-interview").click(function () {
         if ($(this).hasClass("current")) {
@@ -98,24 +118,26 @@ jQuery(document).ready(function ($) {
         }
     });
 
-    // Move hidden text block 1
-    $('.js-interviews-1 .listing-interviews > .container > .row').append($(".js-hidden-listing-text-1 > div"));
-    $('.js-interviews-2 .listing-interviews > .container > .row > div:nth-child(8)').after($(".js-hidden-listing-text-2 > div"));
+    if ($("#notre-equipe").length) {
+        // Move hidden text block 1
+        $('.js-interviews-1 .listing-interviews > .container > .row').append($(".js-hidden-listing-text-1 > div"));
+        $('.js-interviews-2 .listing-interviews > .container > .row > div:nth-child(8)').after($(".js-hidden-listing-text-2 > div"));
 
-    // Ajust height based on previous block
-    var heightPrevBlock = 0;
+        // Ajust height based on previous block
+        var heightPrevBlock = 0;
 
-    function calcHeight() {
-        $(".listing-interviews").imagesLoaded(function () {
-            $(".moved-block").each(function () {
-                heightPrevBlock = $(this).prev()[0].children[0].clientHeight;
-                $(this).children('.inner').css("height", heightPrevBlock);
+        function calcHeight() {
+            $(".listing-interviews").imagesLoaded(function () {
+                $(".moved-block").each(function () {
+                    heightPrevBlock = $(this).prev()[0].children[0].clientHeight;
+                    $(this).children('.inner').css("height", heightPrevBlock);
+                });
             });
-        });
-    }
+        }
 
-    calcHeight();
-    $(window).resize(calcHeight);
+        calcHeight();
+        $(window).resize(calcHeight);
+    }
 
     // NOS EXPERTISES - MASONRY
     if ($("#nos-expertises").length) {
@@ -127,4 +149,15 @@ jQuery(document).ready(function ($) {
             });
         });
     }
+
+    // ESPACE PRESTA
+    $('.js-slick-fade-text').slick({
+        arrows: false,
+        infinite: true,
+        speed: 500,
+        fade: true,
+        autoplay: true,
+        autoplaySpeed: 1000,
+        cssEase: 'linear'
+    });
 });

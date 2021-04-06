@@ -348,6 +348,10 @@ body.adminimal-admin-toolbar {
         z-index: 0;
         transform: translateY(100%);
         transform-origin: bottom;
+
+        @media @phone {
+          bottom: -155px;
+        }
       }
 
       &:after {
@@ -361,6 +365,13 @@ body.adminimal-admin-toolbar {
         right: 0;
         transform-origin: center;
         transform: rotate(180deg);
+
+        @media @phone {
+          width: 46px;
+          height: 46px;
+          right: 25px;
+          bottom: 5px;
+        }
       }
     }
 
@@ -368,6 +379,11 @@ body.adminimal-admin-toolbar {
       position: relative;
       z-index: 1;
       text-align: right;
+
+      @media @tablet {
+        margin-top: 95px;
+        z-index: 20;
+      }
     }
 
     .video-wrapper {
@@ -384,6 +400,10 @@ body.adminimal-admin-toolbar {
           object-fit: cover;
           opacity: 0.5;
           transition: 0.5s ease-in-out;
+
+          @media @phone {
+            height: auto;
+          }
         }
       }
 
@@ -429,11 +449,25 @@ body.adminimal-admin-toolbar {
             top: 0;
             left: 0;
             display: none;
+
+            @media @phone {
+              height: 50%;
+              width: 10px;
+            }
           }
 
           &:after {
             left: inherit;
             right: 0;
+
+            @media @phone {
+              right: 10px;
+            }
+          }
+
+          @media @phone {
+            background-size: 40%;
+            margin-right: 5px;
           }
         }
 
@@ -462,6 +496,15 @@ body.adminimal-admin-toolbar {
             opacity: 1;
           }
         }
+
+        @media @phone {
+          bottom: 20px;
+          left: 20px;
+          padding: 18px 10px;
+          height: 30px;
+          font-size: 5px;
+          width: 115px;
+        }
       }
     }
 
@@ -475,11 +518,34 @@ body.adminimal-admin-toolbar {
       border-radius: 333px 0px 0px 0px;
       background-color: @color2;
       z-index: 0;
+
+      @media @phone {
+        top: unset;
+        bottom: 0;
+        height: 41%;
+        width: 58%;
+        z-index: 10;
+        border-radius: 90px 0 0 0;
+      }
+    }
+
+    @media @tablet {
+      padding: 55px 0;
     }
   }
 
   .intro {
     padding: 80px 0;
+
+    @media @tablet {
+      padding: 80px 60px 30px 20px;
+    }
+
+    h3 {
+      @media @phone {
+        font-size: 1.6rem;
+      }
+    }
   }
 
   .c2 {
@@ -504,6 +570,19 @@ body.adminimal-admin-toolbar {
         width: 333px;
         height: 338px;
         filter: @svgColor1;
+
+        @media @tablet {
+          background-size: 30%;
+          right: -140px;
+        }
+
+        @media @smallPhone {
+          background-size: 25%;
+        }
+      }
+
+      @media @phone {
+        right: 15px;
       }
     }
 
@@ -513,6 +592,16 @@ body.adminimal-admin-toolbar {
       object-fit: contain;
       margin-bottom: 24px;
     }
+
+    h4 {
+      @media @phone {
+        font-size: 32px;
+      }
+    }
+
+    @media @phone {
+      padding: 100px 0;
+    }
   }
 
   .c3 {
@@ -520,9 +609,21 @@ body.adminimal-admin-toolbar {
     position: relative;
     margin-top: -130px;
 
+    h2 {
+      @media @phone {
+        font-size: 3.2rem;
+      }
+    }
+
     h3 + .line-vertical {
       height: 50px;
       margin: 15px 0;
+    }
+
+    .line-vertical {
+      @media @phone {
+        margin: 35px 0;
+      }
     }
 
     .cats-row {
@@ -539,6 +640,12 @@ body.adminimal-admin-toolbar {
         left: 30%;
         transform: translateX(-100%);
         z-index: -1;
+
+        @media @phone {
+          height: 150px;
+          top: -35px;
+          left: 50%;
+        }
       }
     }
 
@@ -552,6 +659,19 @@ body.adminimal-admin-toolbar {
       bottom: 0;
       left: 0;
       z-index: -1;
+
+      @media @tablet {
+        height: 985px;
+      }
+
+      @media @phone {
+        height: 825px;
+      }
+    }
+
+    @media @phone {
+      margin-top: -65px;
+      padding-top: 120px;
     }
   }
 
@@ -559,6 +679,12 @@ body.adminimal-admin-toolbar {
     margin-top: 90px;
     margin-bottom: 90px;
     position: relative;
+
+    h3 {
+      @media @phone {
+        font-size: 16px;
+      }
+    }
 
     .js-testimonials-slick {
       &:after {
@@ -573,6 +699,10 @@ body.adminimal-admin-toolbar {
         z-index: -1;
         transition: right;
         transform: translate(100%);
+
+        @media @phone {
+          right: 65%;
+        }
       }
     }
   }
@@ -587,10 +717,32 @@ body.adminimal-admin-toolbar {
   .inner {
     max-width: 715px;
     margin: 0 auto;
+
+    &>div {
+      @media @tablet {
+        text-align: center;
+      }
+
+      img {
+        @media @tablet {
+          width: 75%;
+        }
+      }
+    }
+  }
+
+  h3 {
+    @media @phone {
+      font-size: 16px;
+    }
   }
 
   .line-vertical {
     filter: @svgColorWhite;
+
+    @media @phone {
+      margin: 25px 0;
+    }
   }
 
   .link-more {
@@ -615,6 +767,26 @@ body.adminimal-admin-toolbar {
       color: @color1;
     }
   }
+
+  &:after {
+    @media @tablet {
+      content: "";
+      width: 100vw;
+      height: 200px;
+      background: url("../images/pattern/dot-pattern.svg") repeat top left transparent;
+      filter: invert(27%) sepia(70%) saturate(1561%) hue-rotate(194deg) brightness(93%) contrast(80%);
+      position: absolute;
+      bottom: -100px;
+      right: 150%;
+      z-index: -1;
+      transition: right;
+      transform: translate(100%);
+    }
+  }
+
+  @media @tablet {
+    padding-bottom: 135px;
+  }
 }
 
 // BLOCK NEWSLETTER
@@ -631,6 +803,19 @@ body.adminimal-admin-toolbar {
       filter: @svgColor2;
       margin-top: -11px;
       margin-right: 15px;
+
+      @media @phone {
+        background-size: 55%;
+        background-position-x: left;
+        margin-top: -6px;
+        margin-right: -30px;
+      }
+    }
+
+    h3 {
+      @media @phone {
+        font-size: 16px;
+      }
     }
 
     input {
@@ -650,6 +835,10 @@ body.adminimal-admin-toolbar {
         text-decoration: underline;
       }
     }
+  }
+
+  @media @tablet {
+    padding-top: 140px;
   }
 }
 
@@ -890,10 +1079,12 @@ body.adminimal-admin-toolbar {
           &:nth-child(4n+2) .content-wrapper {
             margin-left: calc(-100% - (calc(@padding * 2)))
           }
+
           // 3eme
           &:nth-child(4n+3) .content-wrapper {
             margin-left: calc(-200% - (calc(@padding * 4)))
           }
+
           // 4eme
           &:nth-child(4n) .content-wrapper {
             margin-left: calc(-300% - (calc(@padding * 6)))
@@ -905,6 +1096,7 @@ body.adminimal-admin-toolbar {
           &:nth-child(3n+2) .content-wrapper {
             margin-left: calc(-100% - (calc(@padding * 2)))
           }
+
           // 3eme
           &:nth-child(3n+3) .content-wrapper {
             margin-left: calc(-200% - (calc(@padding * 4)))
@@ -1315,8 +1507,9 @@ body.adminimal-admin-toolbar {
   .c2 {
     padding: 95px 0;
   }
+
   .c1 {
-    @padding : 8px;
+    @padding: 8px;
 
     .container,
     .grid-item {

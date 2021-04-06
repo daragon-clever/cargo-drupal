@@ -717,7 +717,7 @@ body.adminimal-admin-toolbar {
     max-width: 715px;
     margin: 0 auto;
 
-    &>div {
+    & > div {
       @media @tablet {
         text-align: center;
       }
@@ -1533,7 +1533,7 @@ body.adminimal-admin-toolbar {
   }
 }
 
-// ESPACE PARTENAIRES
+// ESPACE PRESTATAIRES
 #espace-prestataires {
   .main-ban {
     position: relative;
@@ -1657,6 +1657,12 @@ body.adminimal-admin-toolbar {
         margin: 2rem 0;
       }
 
+      &.last-item {
+        p {
+          color: @color2;
+        }
+      }
+
       .sign {
         display: flex;
         justify-content: center;
@@ -1665,6 +1671,10 @@ body.adminimal-admin-toolbar {
         img {
           border-radius: 100%;
           margin-right: 15px;
+        }
+
+        small {
+          font-size: 16px;
         }
       }
 

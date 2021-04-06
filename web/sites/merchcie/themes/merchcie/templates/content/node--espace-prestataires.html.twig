@@ -1,6 +1,3 @@
-<!-- TMP -->
-{% set imagePath = '/sites/merchcie/themes/merchcie/images/TEMP/presta/' %}
-
 <div id="espace-prestataires">
     <!--INTRO-->
     <div class="bg-color1 main-ban z1">
@@ -8,19 +5,13 @@
             <div class="row align-items-end">
                 <div class="col-12 col-lg-6">
                     <div class="left-part">
-                        <h3 class="text-color2">
-                            Merch & Cie
-                        </h3>
-                        <h1 class="text-white">
-                            Des prestataires indépendants sur toute la France pour des missions de comptage,
-                            d’inventaire et
-                            de merchandising
-                        </h1>
+                        {{ content.field_presta_intro_txt }}
                         <div class="btn-wrapper">
-                            <a href="/contact" class="cta bg-color2 text-white">Voir les offres</a>
-                            <a href="/contact" class="ml-5 text-white">
+                            <a href="{{ content.field_presta_intro_links[0]['#url'] }}"
+                               class="cta bg-color2 text-white">{{ content.field_presta_intro_links[0]['#title'] }}</a>
+                            <a href="{{ content.field_presta_intro_links[1]['#url'] }}" class="ml-5 text-white">
                                 <u>
-                                    Candidature spontanée
+                                    {{ content.field_presta_intro_links[1]['#title'] }}
                                 </u>
                             </a>
                         </div>
@@ -28,103 +19,23 @@
                     </div>
                 </div>
                 <div class="col-12 col-lg-6 text-center">
-                    <img class="img-fluid" src="{{ imagePath }}presta_main.jpg" alt="">
+                    <img class="img-fluid" src="{{ content.field_presta_intro_img[0] }}" alt="">
                 </div>
             </div>
         </div>
         <span class="line-vertical dot-pattern-color2"></span>
     </div>
 
+    <!--CONTENT 1-->
     <div class="c1">
         <div class="container">
             <div class="row">
                 <div class="col text-center">
-                    <div>Vous êtes</div>
+                    <div>{{ content.field_presta_c1_txts[0] }}</div>
                     <div class="js-slick-fade-text text-color2">
-                        <div>
-                            Vous êtes organisé(e), rigoureux et itinérant ?
-                        </div>
-                        <div>
-                            Vous êtes dans le domaine de la grande distribution ou <br>souhaitez pouvoir y travailler ?
-                        </div>
-                        <div>
-                            3 - Vous êtes organisé(e), rigoureux et itinérant ?
-                        </div>
-                        <div>
-                            4 - Vous êtes dans le domaine de la grande distribution ou <br>souhaitez pouvoir y
-                            travailler ?
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="c2 bg-color4">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-12 col-lg-5 text-center">
-                    <div class="img-wrapper">
-                        <img class="img-fluid" src="{{ imagePath }}CORP_ImplantationCTKAuch_30A9419_HD.jpg" alt="">
-                        <div class="dot dot-pattern-color2"></div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-7">
-                    <h2 class="text-color2 mb-5">
-                        Un prestataire Merch & Cie, <br>c’est quoi ?
-                    </h2>
-                    <div class="txt">
-                        <p>
-                            <span class="text-color2">Indépendant</span>, il détermine une zone géographique sur
-                            laquelle il a en charge de réaliser
-                            l’ensemble des missions qui lui sont attribuées. Il est <span class="text-color2">expert des divers process de
-                                merchandising</span> et dispose d’un <span
-                                    class="text-color2">excellent relationnel</span>. Il intègre un <span
-                                    class="text-color2">parcours de formation</span> qui a
-                            pour but de le rendre autonome sur chacune de ses missions.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="c3">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <h2 class="text-color2 before-line line-color2">
-                        Témoignages
-                    </h2>
-                    <h3 class="text-color1">
-                        Ce que nos prestataires disent de nous
-                    </h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="js-testimonials-slick">
-                        {% for i in 0..5 %}
+                        {% for i in 1..4 %}
                             <div>
-                                <div class="testimonial-item bg-color2 text-white">
-                                    <blockquote>
-                                        «
-                                        S’ils nous annoncent un travail en 2 jours, ce sera fait. Faire appel à Merch
-                                        &amp;
-                                        Cie, c’est un confort. On sait que les implantations vont être bien faites, on
-                                        n’a
-                                        pas besoin de repasser derrière.
-                                        »
-                                    </blockquote>
-                                    <div>
-                                    <span class="text-hand">
-                                        Florence D.
-                                    </span>
-                                        <small>
-                                            Adhérente Centrakor dans le 65
-                                        </small>
-                                    </div>
-                                </div>
+                                {{ content.field_presta_c1_txts[i] }}
                             </div>
                         {% endfor %}
                     </div>
@@ -133,18 +44,45 @@
         </div>
     </div>
 
+    <!--CONTENT 2-->
+    <div class="c2 bg-color4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-5 text-center">
+                    <div class="img-wrapper">
+                        <img class="img-fluid" src="{{ content.field_presta_c2_img[0] }}" alt="">
+                        <div class="dot dot-pattern-color2"></div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-7">
+                    {{ content.field_presta_c2_txt }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--CONTENT 3 // TEMOIGNAGES-->
+    <div class="c3">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    {{ content.field_presta_c3_intro }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    {{ content.field_presta_c3_temoignages }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--CONTENT 4-->
     <div class="c4 bg-color1 text-center text-white">
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <h2>
-                        Comment ça marche ?
-                    </h2>
-                    <p class="intro">
-                        Nous travaillons main dans la main pour vous attribuer les missions qui correspondent à vos
-                        expertises, votre secteur d’intervention et votre disponibilité. Vous organisez votre planning
-                        dans le respect des process métier et des exigences de nos clients.
-                    </p>
+                    {{ content.field_presta_c4_intro }}
                 </div>
             </div>
             <div class="row">
@@ -152,17 +90,15 @@
                     <div class="js-how-to">
                         {% for i in 0..5 %}
                             <div>
-                                <div class="how-to-item">
+                                <div class="how-to-item {% if i == 5 %}last-item{% endif %}">
                                     <span class="nb">
                                         {{ i+1 }}
                                     </span>
-                                    <h3>Planification</h3>
-                                    <p>
-                                        « Je vous confie les missions adaptées »
-                                    </p>
+                                    {{ content.field_presta_c4_how_txts[i] }}
                                     <div class="sign">
-                                        <img src="https://picsum.photos/45/45" alt="">
-                                        <small>Cindy</small>
+                                        <img src="{{ file_url(content.field_presta_c4_how_imgs['#items'][i].entity.uri.value) }}"
+                                             alt="">
+                                        <small>{{ node.field_presta_c4_how_imgs[i].title }}</small>
                                     </div>
                                 </div>
                                 <span class="line dot-pattern-color2"></span>
@@ -174,24 +110,20 @@
         </div>
     </div>
 
+    <!--CONTENT 5-->
     <div class="c5">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-12 col-lg-6">
                     <a href="#" class="hover-picto-eye">
-                        <img class="img-fluid filter-hover-color1" src="{{ imagePath }}Thumbnail_Hover.png" alt="">
+                        <img class="img-fluid filter-hover-color1" src="{{ content.field_presta_c5_img[0] }}" alt="">
                     </a>
                 </div>
                 <div class="col-12 col-lg-6">
                     <div class="txt">
-                        <h2>Offres de prestation</h2>
-                        <p>
-                            Découvrez toutes les opportunités de missions qui s’offrent à vous.
-                            <br> Être prestataire pour Merch & Cie c’est la garantie d’une activité complète tout au
-                            long de l’année.
-                        </p>
-                        <a href="#" class="link text-color3 after-arrow">
-                            Voir les missions
+                        {{ content.field_presta_c5_txt }}
+                        <a href="{{ content.field_presta_c5_link[0]['#url'] }}" class="link text-color3 after-arrow">
+                            {{ content.field_presta_c5_link[0]['#title'] }}
                         </a>
                     </div>
                 </div>

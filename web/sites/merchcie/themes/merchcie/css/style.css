@@ -1920,6 +1920,9 @@ body.adminimal-admin-toolbar header {
   line-height: 1.2;
   margin: 2rem 0;
 }
+#espace-prestataires .c4 .how-to-item.last-item p {
+  color: #E5530F;
+}
 #espace-prestataires .c4 .how-to-item .sign {
   display: flex;
   justify-content: center;
@@ -1928,6 +1931,9 @@ body.adminimal-admin-toolbar header {
 #espace-prestataires .c4 .how-to-item .sign img {
   border-radius: 100%;
   margin-right: 15px;
+}
+#espace-prestataires .c4 .how-to-item .sign small {
+  font-size: 16px;
 }
 #espace-prestataires .c4 .how-to-item + .line {
   width: 100%;

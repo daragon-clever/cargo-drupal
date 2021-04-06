@@ -1704,3 +1704,132 @@ body.adminimal-admin-toolbar {
     }
   }
 }
+
+// IMPLANTATION
+#implantation {
+  .c2 {
+    margin: 12.5rem 0;
+
+    .inner {
+      padding: 10.1rem 0;
+      max-width: 1325px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      margin: -160px auto 0;
+      letter-spacing: 5px;
+      font-family: 'AvenirHeavy', Arial, Helvetica, sans-serif;
+      text-align: center;
+      position: relative;
+      display: block;
+      width: max-content;
+
+      span {
+        display: block;
+        font-size: 4rem;
+        letter-spacing: 0;
+        margin-bottom: -10px;
+      }
+
+      &:after {
+        content: "";
+        background: url("../images/picto/deco-arrow.svg") no-repeat center / 100% transparent;
+        width: 33px;
+        height: 33px;
+        filter: @svgColor2;
+        position: absolute;
+        bottom: -13px;
+        right: -18px;
+        transform-origin: center;
+        transform: rotate(180deg);
+      }
+    }
+
+    small {
+      display: block;
+    }
+
+    .img-wrapper {
+      display: inline-block;
+      position: relative;
+
+      .dot {
+        width: 180px;
+        height: 175px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateX(-50%);
+        z-index: 0;
+      }
+
+      img {
+        z-index: 1;
+        position: relative;
+      }
+    }
+
+    li {
+      margin-bottom: 15px;
+    }
+
+    .colorful-blocks {
+      margin-bottom: -100px;
+      transform: translatey(50%);
+
+      .inner {
+        padding: 35px;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &.left {
+          .picto {
+            background: url("../images/picto/Check.svg") no-repeat center / contain transparent;
+            height: 48px;
+            width: 65px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 30px;
+          }
+        }
+
+        &.right {
+          .picto {
+            background: url("../images/picto/Chiffre_cle-icon.svg") no-repeat center / contain transparent;
+            height: 57px;
+            width: 52px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 30px;
+          }
+        }
+      }
+    }
+  }
+
+  .c3 {
+    position: relative;
+    overflow: hidden;
+
+    .video-wrapper {
+      max-width: 652px;
+      margin: 0 auto 88px;
+    }
+
+    &:after {
+      z-index: -1;
+      content: "";
+      position:absolute;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1592px;
+      height: 1592px;
+      border-radius: 100%;
+      background: @color4;
+    }
+  }
+}

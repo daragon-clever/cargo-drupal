@@ -26,7 +26,8 @@
                     <div class="grid-item col-12 {% if i == 0 or i == 6 %}col-lg-6{% else %}col-lg-3{% endif %}">
                         <div class="grid-item-content">
                             <a href="{{ content.field_expert_c1_links[i]['#url'] }}">
-                                <img class="{% if i == 2 or i == 3 or i == 4 or i == 7 %}filter-color2{% else %}filter-color1{% endif %} filter-hover-none img-fluid" src="{{ content.field_expert_c1_imgs[i] }}">
+                                <img class="{% if i == 2 or i == 3 or i == 4 or i == 7 %}filter-color2{% else %}filter-color1{% endif %} filter-hover-none img-fluid"
+                                     src="{{ content.field_expert_c1_imgs[i] }}">
                                 <div class="bg-color1 p-4">
                                     <h4 class="text-color-white">
                                         {{ node.field_expert_c1_imgs[i].alt }}
@@ -39,20 +40,5 @@
                 {% endfor %}
             </div>
         </div>
-    </div>
-
-    <!--CONTENT 2-->
-    <div class="c2 text-center z1 bg-color1 text-white know-what">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <h3>
-                        {{ content.field_expert_c2_title }}
-                    </h3>
-                    <a href="{{ content.field_expert_c2_link[0]['#url'] }}" class="cta bg-color2 text-white">{{ content.field_expert_c2_link[0]['#title'] }}</a>
-                </div>
-            </div>
-        </div>
-        <div class="dot-left dot-pattern-color2"></div>
     </div>
 </div>

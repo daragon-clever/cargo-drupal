@@ -1,0 +1,89 @@
+<div id="expertise">
+    <!--INTRO-->
+    <div class="bg-color1 z1">
+        <div class="container">
+            <div class="row">
+                <div class="col main-big-title">
+                    <h1 class="text-white">
+                        <span class="text-color2">{{ content.field_implantation_intro[0] }}</span> <br>
+                        {{ content.field_implantation_intro[1] }}
+                    </h1>
+                    <span class="line-vertical dot-pattern-color2"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--CONTENT 1-->
+    <div class="c1 bg-color4">
+        <div class="inner">
+            <div class="container">
+                <div class="row">
+                    <div class="col text-center">
+                        <h2>
+                        <span class="text-hand">
+                            {{ "Le mot clé"|trans }}
+                        </span>
+                            {{ content.field_implantation_c1_keyword }}
+                        </h2>
+                    </div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-12 col-lg-6">
+                        {{ content.field_implantation_c1_text }}
+                    </div>
+                    <div class="col-12 col-lg-6 text-right">
+                        <div class="img-wrapper">
+                            <img src="{{ content.field_implantation_c1_img[0] }}" alt="">
+                            <div class="dot dot-pattern-color2"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row colorful-blocks">
+                    <div class="col-12 col-lg-6 bg-color2">
+                        <div class="inner left">
+                            <span class="picto"></span>
+                            <div>
+                                <h4>
+                                    {{ content.field_implantation_c1_left_title }}
+                                </h4>
+                                <p>
+                                    {{ content.field_implantation_c1_left_txt }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 bg-color1">
+                        <div class="inner right">
+                            <span class="picto"></span>
+                            <div>
+                                <h4>
+                                    {{ content.field_implantation_c1_right_titl }}
+                                </h4>
+                                <p>
+                                    {{ content.field_implantation_c1_right_txt }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--CONTENT 2-->
+    {% if content.field_implantation_c2_video|render %}
+        <div class="c2">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col">
+                        <h4 class="text-color2 mb-5">L'implantation en vidéo</h4>
+                        <div class="video-wrapper">
+                            {{ content.field_implantation_c2_video }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+</div>

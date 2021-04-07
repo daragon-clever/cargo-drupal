@@ -37,3 +37,6 @@ stylesheets-remove:
   - core/themes/stable/css/system/components/tabledrag.module.css
   - core/themes/stable/css/system/components/tablesort.module.css
   - core/themes/stable/css/system/components/tree-child.module.css
+
+ckeditor_stylesheets:
+  - css/ckeditor.css

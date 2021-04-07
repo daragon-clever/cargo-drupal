@@ -56,10 +56,18 @@ global-styling:
   dependencies:
     - core/jquery
 
-# Highlight
+# Highlight - For UI KIT
 highlight:
   css:
     theme:
       https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.6.0/build/styles/default.min.css: { type: external }
   js:
     https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.6.0/build/highlight.min.js: { type: external }
+
+# Lightbox
+lightbox:
+  css:
+    theme:
+      https://cdn.jsdelivr.net/npm/lightbox2@2.11.3/dist/css/lightbox.min.css: { type: external }
+  js:
+    https://cdn.jsdelivr.net/npm/lightbox2@2.11.3/dist/js/lightbox.min.js: { type: external }

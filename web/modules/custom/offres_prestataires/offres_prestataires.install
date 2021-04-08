@@ -62,26 +62,6 @@ function offres_prestataires_schema()
                     'length' => '255',
                     'not null' => FALSE,
                 ),
-                'contract_length_months' => array(
-                    'type' => 'int',
-                    'size' => 'small',
-                    'not null' => FALSE,
-                ),
-                'contract_length_days' => array(
-                    'type' => 'int',
-                    'size' => 'small',
-                    'not null' => FALSE,
-                ),
-                'contract_start' => array(
-                    'type' => 'varchar',
-                    'mysql_type' => 'datetime',
-                    'not null' => FALSE,
-                ),
-                'contract_end' => array(
-                    'type' => 'varchar',
-                    'mysql_type' => 'datetime',
-                    'not null' => FALSE,
-                ),
                 'domains' => array(
                     'type' => 'varchar',
                     'length' => '255',
@@ -100,14 +80,14 @@ function offres_prestataires_schema()
                     'default' => 0,
                     'description' => '',
                 ),
-                'nbVue' => array(
+                'nb_vue' => array(
                     'type' => 'int',
                     'size' => 'medium',
                     'not null' => TRUE,
                     'default' => 0,
                     'description' => ''
                 ),
-                'nbCandidature' => array(
+                'nb_candidature' => array(
                     'type' => 'int',
                     'size' => 'medium',
                     'not null' => TRUE,

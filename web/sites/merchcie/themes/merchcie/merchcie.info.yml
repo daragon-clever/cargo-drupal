@@ -14,9 +14,6 @@ libraries:
   - merchcie/bootstrap
   - merchcie/slick
   - merchcie/mmenu
-  - merchcie/select2
-  - merchcie/datatables
-  - merchcie/cookiesJS
   - merchcie/global-styling
 
 stylesheets-remove:

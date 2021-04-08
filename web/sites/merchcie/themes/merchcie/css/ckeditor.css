@@ -1,8 +1,11 @@
+.text-color2 {
+  color: #E5530F;
+}
 .text-color3 {
   color: #2863AD;
 }
-.title-upper {
+h4 {
+  font-family: 'AvenirBlack', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
-  font-size: 20px;
+  font-size: 2.4rem;
 }
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNrZWRpdG9yLmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRUE7RUFDRSxjQUFBOztBQUdGO0VBQ0UseUJBQUE7RUFDQSxlQUFBIn0= */

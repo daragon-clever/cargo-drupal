@@ -1,8 +1,5 @@
 {{ attach_library('merchcie/lightbox') }}
 
-<!-- TMP -->
-{% set imagePath = '/sites/merchcie/themes/merchcie/images/TEMP/challenge-implant/' %}
-
 <div id="challenge">
     <!--INTRO-->
     <div class="bg-color1 z1">
@@ -15,48 +12,46 @@
         </div>
     </div>
 
+    <!--CONTENT 1-->
     <div class="c1">
         <div class="container">
             <div class="row text-center">
                 <div class="col-12 col-lg-6 offset-lg-3">
-                    <h4 class="text-hand text-color2">Le challenge</h4>
+                    <h4 class="text-hand text-color2">
+                        {{ "Le challenge"|trans }}
+                    </h4>
                     <div class="bg-color4 block-txt">
                         <p>
-                            Implanter 9 éléments, dont 4 sans planogramme, en 12 heures chrono.
+                            {{ content.field_challenge_c1_intro }}
                         </p>
                     </div>
                 </div>
             </div>
             <div class="row mt-5 text-intro">
                 <div class="col-12 col-lg-6 offset-lg-3">
-                    <p>
-                        A la demande de 2 fournisseurs de ce magasin, nous avons missionné un de nos merchandiseurs
-                        expérimentés pour implanter en un temps record deux rayons : 5 éléments d’outillage avec
-                        planogramme et 4 éléments de luminaire et décoration sans planogramme.
-                    </p>
-                    <p class="text-color2">
-                        <b>
-                            Mission accomplie en 12 heures de travail par Grégoire, à la totale satisfaction du client.
-                        </b>
-                    </p>
+                    {{ content.field_challenge_c1_text }}
                 </div>
             </div>
         </div>
     </div>
 
-    {# Au moins UNE image doit être obligatoire, on s'en sert pour la N1 #}
+    <!--CONTENT 2-->
     <div class="c2 bg-color4">
         <div class="container">
             <div class="row text-center">
                 <div class="col">
-                    <h4 class="text-color2 mb-5">Images du chantier</h4>
+                    <h4 class="text-color2 mb-5">
+                        {{ content.field_challenge_c2_title }}
+                    </h4>
                     <div class="row justify-content-center">
-                        {% for i in 0..3 %}
+                        {% for i in 0..content.field_challenge_c2_imgs['#items']|length-1 %}
                             <div class="col-12 col-lg-3">
-                                <a href="https://picsum.photos/1000/1000" class="hover-picto-eye"
+                                <a href="{{ file_url(content.field_challenge_c2_imgs['#items'][i].entity.uri.value) }}"
+                                   class="hover-picto-eye"
                                    data-lightbox="gallery"
-                                   data-title="Alt de l'image {{ i }}">
-                                    <img class="img-fluid filter-hover-color1" src="https://picsum.photos/1000/1000"
+                                   data-title="{{ node.field_challenge_c2_imgs[i].alt }}">
+                                    <img class="img-fluid filter-hover-color1"
+                                         src="{{ file_url(content.field_challenge_c2_imgs['#items'][i].entity.uri.value) }}"
                                          alt="">
                                 </a>
                             </div>
@@ -67,23 +62,30 @@
         </div>
     </div>
 
-    {# Avis statique, pas issu d'une vue, à renseigner dans l'admin de la page Challenge en cours #}
+    <!--CONTENT 3-->
     <div class="c3">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-lg-6 offset-lg-3">
-                    <h4 class="text-color2 mb-5 text-center">{{ "L'avis du client"|trans }}</h4>
+                    <h4 class="text-color2 mb-5 text-center">
+                        {{ "L'avis du client"|trans }}
+                    </h4>
                     <div class="testimonial-item bg-color2 text-white with-photo">
                         <blockquote class="mb-5">
-                            « Très bon suivi de la part des équipes, réactivité, travail de qualité. A recommander sans
-                            hésiter. »
+                            {{ content.field_challenge_c3_notice }}
                         </blockquote>
                         <div>
-                            <img src="https://picsum.photos/100/100"
-                                 alt="">
+                            {% if content.field_challenge_c3_img[0] is not empty %}
+                                <img src="{{ content.field_challenge_c3_img[0] }}"
+                                     alt="">
+                            {% endif %}
                             <div class="mt-4">
-                                <span class="text-hand">Chloé D.</span>
-                                <small>Responsable communication Egger</small>
+                                <span class="text-hand">
+                                    {{ content.field_challenge_c3_name }}
+                                </span>
+                                <small>
+                                    {{ content.field_challenge_c3_job }}
+                                </small>
                             </div>
                         </div>
                     </div>
@@ -91,7 +93,4 @@
             </div>
         </div>
     </div>
-
-    {# Ici appeler le bloc "Envie de savoir ce que nous pouvons vous apporter ?" #}
-    {# Version "Nous contacter" #}
 </div>

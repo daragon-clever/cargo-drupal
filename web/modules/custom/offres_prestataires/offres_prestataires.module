@@ -1,0 +1,60 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Symfony\Component\Process\Process;
+
+function offres_prestataires_theme($existing, $type, $theme, $path) {
+    return [
+        'offres_prestataires--list' => [
+            'variables' => [
+                'data' => NULL
+            ]
+        ],
+        'offres_prestataires--content' => [
+            'variables' => [
+                'data' => NULL
+            ]
+        ],
+        'offres_prestataires--apply-form' => [
+            'variables' => [
+                'data' => NULL,
+                'form' => NULL
+            ]
+        ]
+    ];
+}
+
+function offres_prestataires_cron()
+{
+    \Drupal::logger('offres_prestataires')->notice('[OFFRES PRESTATAIRES] Lancement cron');
+
+    $url = \Drupal::request()->getHost();
+    $path = dirname(DRUPAL_ROOT);
+
+    $process = new Process( 'php ' . $path . '/vendor/bin/drupal --uri='. $url . ' offres_prestataires:import');
+    $process->run();
+    if (!$process->isSuccessful()) {
+        \Drupal::logger('offres_prestataires')->error('Erreur dans l import des offres => drupal command failed');
+    }
+
+    // Update last run.
+    \Drupal::state()->set('offres_prestataires.last_run', REQUEST_TIME);
+
+    \Drupal::logger('offres_prestataires')->notice('[OFFRES PRESTATAIRES] Cron terminé');
+}
+
+function offres_prestataires_webform_element_hidden_alter(array &$element, FormStateInterface $form_state, array $context)
+{
+    $route_match = \Drupal::service('current_route_match');
+    $param_ref = $route_match->getParameter('ref');
+
+    $offreRepository = \Drupal::service('offres_prestataires.repository');
+    $offerEmploi = current($offreRepository->findBy(['id_scoptalent' => $param_ref]));
+
+    if ($element['#webform_key'] == 'offre') {
+        $element['#value'] = $param_ref;
+    }
+    if ($element['#webform_key'] == 'nom_offre') {
+        $element['#value'] = $offerEmploi->intitulePoste;
+    }
+}

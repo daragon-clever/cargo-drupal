@@ -1,0 +1,150 @@
+<?php
+
+use Symfony\Component\Process\Process;
+use Symfony\Component\Process\Exception\ProcessFailedException;
+
+/**
+ * Schema table
+ */
+function offres_prestataires_schema()
+{
+    if (\Drupal::database()->schema()->tableExists("offres_prestataires") == FALSE) {
+        $schema['offres_prestataires'] = array(
+            'description' => 'Toutes les offres prestataires de la société',
+            'fields' => array(
+                'id' => array(
+                    'type' => 'serial',
+                    'not null' => TRUE,
+                    'description' => 'Primary Key: Unique email ID.',
+                ),
+                'id_scoptalent' => array(
+                    'type' => 'varchar',
+                    'length' => 50,
+                    'not null' => TRUE,
+                    'description' => 'Id on Scoptalent',
+                ),
+                'title' => array(
+                    'type' => 'varchar',
+                    'length' => 255,
+                    'not null' => FALSE,
+                    'description' => 'Offer name',
+                ),
+                'mission_desc' => array(
+                    'type' => 'text',
+                    'not null' => TRUE,
+                ),
+                'business_desc' => array(
+                    'type' => 'text',
+                    'not null' => TRUE,
+                ),
+                'profile_desc' => array(
+                    'type' => 'text',
+                    'not null' => TRUE,
+                ),
+                'last_update_scoptalent' => array(
+                    'type' => 'varchar',
+                    'mysql_type' => 'datetime',
+                    'not null' => FALSE,
+                    'description' => 'Last uptated date on Scoptalent',
+                ),
+                'reference' => array(
+                    'type' => 'varchar',
+                    'length' => '150',
+                    'not null' => FALSE,
+                ),
+                'city' => array(
+                    'type' => 'varchar',
+                    'length' => '150',
+                    'not null' => FALSE,
+                ),
+                'contract_type' => array(
+                    'type' => 'varchar',
+                    'length' => '255',
+                    'not null' => FALSE,
+                ),
+                'contract_length_months' => array(
+                    'type' => 'int',
+                    'size' => 'small',
+                    'not null' => FALSE,
+                ),
+                'contract_length_days' => array(
+                    'type' => 'int',
+                    'size' => 'small',
+                    'not null' => FALSE,
+                ),
+                'contract_start' => array(
+                    'type' => 'varchar',
+                    'mysql_type' => 'datetime',
+                    'not null' => FALSE,
+                ),
+                'contract_end' => array(
+                    'type' => 'varchar',
+                    'mysql_type' => 'datetime',
+                    'not null' => FALSE,
+                ),
+                'domains' => array(
+                    'type' => 'varchar',
+                    'length' => '255',
+                    'not null' => FALSE,
+                ),
+                'jobs_number' => array(
+                    'type' => 'int',
+                    'size' => 'small',
+                    'not null' => FALSE,
+                    'default' => 1,
+                ),
+                'active' => array(
+                    'type' => 'int',
+                    'size' => 'tiny',
+                    'not null' => TRUE,
+                    'default' => 0,
+                    'description' => '',
+                ),
+                'nbVue' => array(
+                    'type' => 'int',
+                    'size' => 'medium',
+                    'not null' => TRUE,
+                    'default' => 0,
+                    'description' => ''
+                ),
+                'nbCandidature' => array(
+                    'type' => 'int',
+                    'size' => 'medium',
+                    'not null' => TRUE,
+                    'default' => 0,
+                    'description' => ''
+                )
+            ),
+            'primary key' => array('id'),
+            'unique keys' => array(
+                'id_scoptalent' => array(
+                    'id_scoptalent',
+                ),
+            ),
+            'indexes' => array(
+                'title' => array('title'),
+                'reference' => array('reference'),
+                'domains' => array('domains'),
+                'mission_desc' => array('mission_desc'),
+                'business_desc' => array('business_desc'),
+                'profile_desc' => array('profile_desc'),
+            ),
+        );
+        return $schema;
+    }
+}
+
+function offres_prestataires_install()
+{
+    $url = \Drupal::request()->getHost();
+    $path = dirname(DRUPAL_ROOT);
+
+    $process = new Process( 'php ' . $path . '/vendor/bin/drupal --uri='. $url . ' offres_prestataires:import');
+    $process->run();
+
+    drupal_flush_all_caches();
+
+    if (!$process->isSuccessful()) {
+        throw new ProcessFailedException($process);
+    }
+}

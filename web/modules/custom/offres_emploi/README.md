@@ -1,18 +1,32 @@
-
 # Module custom "Offres d'emploi"  
   
 Ce module affiche les offres d'emploi de :  
 * toutes les sociétés sur le site Cargo  
 * de la société du site, pour un site précis (ferme Drupal)  
   
-## Installation  
-  
-1. Installez le module.  
-2. Créez un Webform avec pour ID 'postuler_annonce'.  
-3. Pour former la structure du formulaire, commencer par copiez/collez les 2 champs hidden (offre et nom_offre) du YAML d'un site ayant le module actif.  
-4. Dans l'onglet Paramètres, cliquez sur Courriels / Gestionnaires (Handlers).  
-5. Ajouter le handler "OffresEmploiHandler" à ce formulaire. Aucune config à réaliser.  
-  
+## Installation
+
+### Sur le site de Cargo :
+
+Voir ci-dessous.
+
+### Sur un autre site de la ferme :
+
+1. Installez le module.
+2. Vérifiez dans le fichier Helper/OffreEmploiHelperTrait.php qu'il y a bien le site en question
+et qu'il est bien configuré.
+3. Exécutez le cron via l'admin de Drupal.
+4. Récupérer les templates des sites ayant déjà le module d'installer (ex : cogex, groupe cargo).
+Il faut également ajouter l'appel à la librairie datatable dans le theme du site.
+5. Créez un Webform avec pour ID 'postuler_annonce'.
+6. Pour former la structure du formulaire, commencer par copiez/collez les 2 champs hidden (offre et nom_offre) du YAML 
+d'un site ayant le module actif.  
+7. Dans l'onglet Paramètres, cliquez sur Courriels / Gestionnaires (Handlers). Ajouter le handler "OffresEmploiHandler"
+ à ce formulaire. Aucune config à réaliser.
+
+S'il n'y a pas d'annonces qui remontent, vérifier qu'on a bien le fichier .json des offres dans le site
+groupecargo.
+
 ## Developpement  
   
 Un cron qui passe tous les jours pour :  

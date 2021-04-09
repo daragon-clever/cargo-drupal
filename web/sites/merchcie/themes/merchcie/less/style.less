@@ -160,7 +160,7 @@ body.adminimal-admin-toolbar {
 // BREADCRUMBS
 #block-merchcie-breadcrumbs {
   background: @color1;
-  padding-bottom: 1.5rem;
+  padding: 0 1.5rem 1.5rem;
 
   nav {
     max-width: 1630px;
@@ -2671,6 +2671,65 @@ body.adminimal-admin-toolbar {
 
     &__back {
       display: none;
+    }
+  }
+}
+
+// LIVRES BLANCS
+#livresblanc {
+  .c1,
+  .c2 {
+    padding: 9.5rem 0
+  }
+
+  .c1 {
+    font-size: 2.4rem;
+    font-family: 'AvenirBlack', Arial, Helvetica, sans-serif;
+
+    .bloc {
+      max-width: 510px;
+      margin: 30px auto 0;
+      font-family: 'Avenir', Arial, Helvetica, sans-serif;
+
+      span {
+        font-family: 'AvenirBlack', Arial, Helvetica, sans-serif;
+      }
+    }
+  }
+
+  .c2 {
+    h3 {
+      font-family: 'AvenirBlack', Arial, Helvetica, sans-serif;
+    }
+  }
+
+  .c3 {
+    padding: 3rem 0;
+
+    h4 {
+      margin-top: 30px;
+
+      &.main {
+        text-transform: none;
+        margin-bottom: 30px;
+      }
+    }
+
+    .big {
+      color: #707070;
+      font-size: 2.4rem;
+    }
+
+    .bottom-links {
+      padding: 15px 0;
+      font-size: 2.4rem;
+      text-align: center;
+
+      a {
+        color: @color2;
+        font-family: 'AvenirBlack', Arial, Helvetica, sans-serif;
+        text-decoration: underline;
+      }
     }
   }
 }

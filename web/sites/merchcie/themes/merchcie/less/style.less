@@ -1826,7 +1826,7 @@ body.adminimal-admin-toolbar {
     &:after {
       z-index: -1;
       content: "";
-      position:absolute;
+      position: absolute;
       top: 20%;
       left: 50%;
       transform: translateX(-50%);
@@ -2026,7 +2026,8 @@ body.adminimal-admin-toolbar {
             th, td {
               padding: 15px 0;
 
-              @media @phone { //todo: check on mobile device
+              @media @phone {
+                //todo: check on mobile device
                 padding: 20px 0;
                 text-align: center;
                 font-size: 13px;
@@ -2045,7 +2046,8 @@ body.adminimal-admin-toolbar {
         }
 
         thead {
-          @media @phone { //todo: check on mobile device
+          @media @phone {
+            //todo: check on mobile device
             position: absolute;
             top: -9999px;
             left: -9999px;
@@ -2078,7 +2080,8 @@ body.adminimal-admin-toolbar {
             background-color: white !important;
             font-weight: 900;
 
-            @media (max-width: 480px) { //todo: check on mobile device
+            @media (max-width: 480px) {
+              //todo: check on mobile device
               font-weight: normal;
             }
           }
@@ -2173,6 +2176,7 @@ body.adminimal-admin-toolbar {
             color: white !important;
             background: @color1 !important;
           }
+
           &:focus {
             outline: none;
           }
@@ -2481,6 +2485,75 @@ body.adminimal-admin-toolbar {
 
       #edit-checkbox-rgpd--description {
         text-transform: inherit !important;
+      }
+    }
+  }
+}
+
+// NOS CHALLENGES
+#nos-challenges {
+  .c1 {
+    margin-top: 65px;
+
+    .block-txt {
+      padding: 6rem 5rem;
+      margin: -4.5rem auto 0;
+    }
+  }
+
+  .c2 {
+    margin-top: 70px;
+
+    .challenge-item {
+      img {
+        width: 100%;
+        height: 261px;
+        object-fit: cover;
+
+        &:hover {
+          filter: @imgFilterColor1;
+          transition: 0.3s;
+        }
+      }
+
+      .views-field {
+        line-height: 1.3;
+      }
+
+      .views-field-title {
+        margin-top: 15px;
+        margin-bottom: 10px;
+        color: @color2;
+        font-size: 2.4rem;
+        font-family: 'AvenirBlack', Arial, Helvetica, sans-serif;
+        text-transform: uppercase;
+      }
+
+      .views-field-view-node {
+        margin-top: 15px;
+
+        a {
+          color: @color2;
+          text-decoration: none;
+
+          &:after {
+            content: "";
+            background: url("../images/picto/arrow.svg") no-repeat center transparent;
+            height: 13px;
+            width: 36px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 8px;
+            transition: margin-left 0.3s;
+            filter: @svgColor2;
+
+            &:hover {
+              &:after {
+                margin-left: 20px;
+              }
+            }
+          }
+        }
       }
     }
   }

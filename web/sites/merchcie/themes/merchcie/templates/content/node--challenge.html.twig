@@ -63,34 +63,36 @@
     </div>
 
     <!--CONTENT 3-->
-    <div class="c3">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-lg-6 offset-lg-3">
-                    <h4 class="text-color2 mb-5 text-center">
-                        {{ "L'avis du client"|trans }}
-                    </h4>
-                    <div class="testimonial-item bg-color2 text-white with-photo">
-                        <blockquote class="mb-5">
-                            {{ content.field_challenge_c3_notice }}
-                        </blockquote>
-                        <div>
-                            {% if content.field_challenge_c3_img[0] is not empty %}
-                                <img src="{{ content.field_challenge_c3_img[0] }}"
-                                     alt="">
-                            {% endif %}
-                            <div class="mt-4">
+    {% if content.field_challenge_c3_name|render %}
+        <div class="c3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-6 offset-lg-3">
+                        <h4 class="text-color2 mb-5 text-center">
+                            {{ "L'avis du client"|trans }}
+                        </h4>
+                        <div class="testimonial-item bg-color2 text-white with-photo">
+                            <blockquote class="mb-5">
+                                {{ content.field_challenge_c3_notice }}
+                            </blockquote>
+                            <div>
+                                {% if content.field_challenge_c3_img[0]|render %}
+                                    <img src="{{ content.field_challenge_c3_img[0] }}"
+                                         alt="">
+                                {% endif %}
+                                <div class="mt-4">
                                 <span class="text-hand">
                                     {{ content.field_challenge_c3_name }}
                                 </span>
-                                <small>
-                                    {{ content.field_challenge_c3_job }}
-                                </small>
+                                    <small>
+                                        {{ content.field_challenge_c3_job }}
+                                    </small>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    {% endif %}
 </div>

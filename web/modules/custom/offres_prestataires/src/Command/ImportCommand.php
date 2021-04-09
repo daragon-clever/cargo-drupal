@@ -150,10 +150,10 @@ class ImportCommand extends Command
     private function hydrateData($offre): array
     {
         $arrDB = ["id_scoptalent", "title", "mission_desc", "business_desc", "profile_desc",
-            "last_update_scoptalent", "reference", "city", "contract_type",
+            "created_date", "last_update_scoptalent", "reference", "city", "contract_types",
             "domains", "jobs_number"];
         $arrAPI = ["id", "title", "missionDescription", "businessDescription", "profileDescription",
-            "lastPublicationDate", "reference", "region", "contractTypeNames",
+            "openedDate", "lastPublicationDate", "reference", "region", "contractTypeNames",
             "businessDomains", "numberOfJobs"];
 
         $arrLink = array_combine($arrDB, $arrAPI);
@@ -165,7 +165,7 @@ class ImportCommand extends Command
                     $arrInsert[$keyDB] = $this->cleanDescription($offre[$keyAPI]);
                 } elseif (in_array($keyAPI, ["contractTypeNames", "businessDomains"])) {
                     $arrInsert[$keyDB] = $this->convertArray($offre[$keyAPI]);
-                } elseif (in_array($keyAPI, ["lastPublicationDate"])) {
+                } elseif (in_array($keyAPI, ["lastPublicationDate", "openedDate"])) {
                     $arrInsert[$keyDB] = $this->formatDate($offre[$keyAPI]);
                 } else {
                     $arrInsert[$keyDB] = $offre[$keyAPI];

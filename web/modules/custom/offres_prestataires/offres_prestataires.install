@@ -41,6 +41,12 @@ function offres_prestataires_schema()
                     'type' => 'text',
                     'not null' => TRUE,
                 ),
+                'created_date' => array(
+                    'type' => 'varchar',
+                    'mysql_type' => 'datetime',
+                    'not null' => FALSE,
+                    'description' => 'Offer created date on Scoptalent',
+                ),
                 'last_update_scoptalent' => array(
                     'type' => 'varchar',
                     'mysql_type' => 'datetime',
@@ -57,7 +63,7 @@ function offres_prestataires_schema()
                     'length' => '150',
                     'not null' => FALSE,
                 ),
-                'contract_type' => array(
+                'contract_types' => array(
                     'type' => 'varchar',
                     'length' => '255',
                     'not null' => FALSE,

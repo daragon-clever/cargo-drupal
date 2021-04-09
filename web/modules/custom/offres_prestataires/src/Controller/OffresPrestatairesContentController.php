@@ -39,33 +39,41 @@ class OffresPrestatairesContentController extends ControllerBase
     public function content($ref): array
     {
         if ($ref == "all") {
+            $offers = $this->offreRepository->findAllActive();
+            foreach ($offers as $k => $offer) {
+                $offers[$k] = $this->formatDataForFront($offer);
+            }
+
             $build = [
                 '#theme' => 'offres_prestataires--list',
-                '#data' => $this->offreRepository->findAllActive()
+                '#data' => $offers
             ];
         } else {
             $build['#theme'] = "offres_prestataires--content";
 
-//            $offre = $this->offreRepository->findBy(['codeRecrutement' => $ref, 'active' => 1]);
-//
-//            if (empty($offre)) {
-//                $build = [
-//                    '#theme' => 'offres_emploi--annonce',
-//                    '#data' => 'false'
-//                ];
-//            } else {
+            $offre = $this->offreRepository->findBy(['id_scoptalent' => $ref, 'active' => 1]);
+            if (empty($offre)) {
+                $build['#data'] = 'false';
+            } else {
                 //if there's no record in log => increment offer view
-//                if (!$this->loggerFileHelper->searchInCSV($ref)) {
-//                    $this->loggerFileHelper->logIpAddressOnFile($ref);
-//                    $this->offreRepository->updateNbVue($ref);
-//                }
-//                $build = [
-//                    '#theme' => 'offres_emploi--annonce',
-//                    '#data' => $offre[0]
-//                ];
-//            }
+                if (!$this->loggerFileHelper->searchInCSV($ref)) {
+                    $this->loggerFileHelper->logIpAddressOnFile($ref);
+                    $this->offreRepository->updateNbVue($ref);
+                }
+                $build = [
+                    '#theme' => 'offres_prestataires--content',
+                    '#data' => $this->formatDataForFront($offre[0])
+                ];
+            }
         }
 
         return $build;
+    }
+
+    private function formatDataForFront($offer)
+    {
+        if (isset($offer->contract_types)) $offer->contract_types = implode(', ', unserialize($offer->contract_types));
+        if (isset($offer->domains)) $offer->domains = implode(', ', unserialize($offer->domains));
+        return $offer;
     }
 }

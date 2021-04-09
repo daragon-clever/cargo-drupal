@@ -2051,7 +2051,7 @@ body.adminimal-admin-toolbar {
   display: none !important;
 }
 
-//OFFRES D'EMPLOI MODULE
+//OFFRES D'EMPLOI MODULE + OFFRES PRESTATAIRES MODULE
 .value-caracteristic-fct() {
   border: 1px solid @color5;
   border-radius: 0;
@@ -2062,7 +2062,7 @@ body.adminimal-admin-toolbar {
   display: block;
 }
 
-.offres-emploi-module {
+.offres-emploi-module, .offres-prestataires-module {
   margin-top: 70px;
   margin-bottom: 20px;
 
@@ -2407,10 +2407,6 @@ body.adminimal-admin-toolbar {
         .txt-grey {
           color: @color5;
           font-weight: normal;
-        }
-
-        br {
-          display: none;
         }
       }
     }
@@ -2884,4 +2880,8 @@ body.adminimal-admin-toolbar {
       }
     }
   }
+}
+
+.offres-emploi-module #offre .right br {
+  display: none;
 }

@@ -17,7 +17,8 @@ function offres_prestataires_theme($existing, $type, $theme, $path) {
         ],
         'offres_prestataires--apply-form' => [
             'variables' => [
-                'data' => NULL,
+                'offerName' => NULL,
+                'offerRef' => NULL,
                 'form' => NULL
             ]
         ]

@@ -866,6 +866,11 @@ body.adminimal-admin-toolbar {
     bottom: -43px;
     left: 50%;
   }
+
+  @media @phone {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
 }
 
 #pourquoi {
@@ -897,17 +902,45 @@ body.adminimal-admin-toolbar {
         top: -15px;
         left: 50%;
         position: absolute;
+
+        @media @tablet {
+          top: unset;
+          transform: rotate(270deg);
+        }
+
+        @media @phone {
+          left: unset;
+        }
       }
     }
   }
 
   .c2 {
     margin: 50px 0;
+
+    p {
+      @media @tablet {
+        margin-top: 20px;
+      }
+    }
   }
 
   .c3 {
-    .cats-row > div {
-      margin-bottom: 40px;
+    .cats-row {
+      & > div {
+        margin-bottom: 40px;
+      }
+
+      .img-fluid {
+        @media @tablet {
+          object-fit: cover;
+          min-height: 487px;
+        }
+
+        @media @phone {
+          min-height: 218px;
+        }
+      }
     }
   }
 
@@ -940,6 +973,11 @@ body.adminimal-admin-toolbar {
       img {
         z-index: 1;
         position: relative;
+
+        @media @tablet {
+          height: auto;
+          width: 90%;
+        }
       }
 
       &:after {
@@ -952,6 +990,18 @@ body.adminimal-admin-toolbar {
         position: absolute;
         top: -100px;
         right: -100px;
+
+        @media @phone {
+          width: 100px;
+          height: 85px;
+          top: -30px;
+          right: 0;
+        }
+      }
+
+      @media @tablet {
+        margin-top: 85px;
+        text-align: left;
       }
     }
   }

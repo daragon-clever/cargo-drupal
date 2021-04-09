@@ -2,10 +2,10 @@
     <div class="img-wrapper">
         <img class="img-fluid main"
              src="{{ file_url(content.field_interview_imgs['#items'][0].entity.uri.value) }}"
-             alt="">
+             alt="{{ node.field_interview_imgs[0].alt }}">
         <img class="img-fluid hover"
              src="{{ file_url(content.field_interview_imgs['#items'][1].entity.uri.value) }}"
-             alt=""
+             alt="{{ node.field_interview_imgs[1].alt }}"
              style="opacity: 0;">
         <div class="infos">
             <span class="text-hand name">

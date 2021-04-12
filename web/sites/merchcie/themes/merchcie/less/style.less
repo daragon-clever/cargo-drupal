@@ -4,7 +4,6 @@
 
 // HEADER
 header {
-  padding: 30px 0;
   position: fixed;
   top: 0;
   left: 0;
@@ -23,13 +22,16 @@ header {
 
   &.fixed {
     background: white;
-    padding: 15px 0;
 
     .logo-placeholder {
       background-image: url("../images/logo/logo-merchcie_fixed.svg");
     }
 
     nav {
+      & > ul > li {
+        line-height: 90px;
+      }
+
       a {
         color: @color1
       }
@@ -49,9 +51,12 @@ header {
       align-items: center;
       padding: 0;
       margin: 0;
+      max-height: 120px;
 
-      li {
+      & > li {
         padding: 0 24px;
+        line-height: 120px;
+        transition: line-height 0.3s ease-in-out;
 
         &:last-child {
           padding-right: 0;
@@ -60,17 +65,77 @@ header {
         &:first-child {
           padding-left: 0;
         }
+
+        &:hover {
+          max-height: unset;
+
+          ul {
+            opacity: 1;
+            height: auto;
+            transform: none;
+          }
+        }
       }
 
       ul {
         display: flex;
         flex-direction: column;
+        position: absolute;
+        background: @color4;
+        border-bottom: 3px solid @color2;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        opacity: 0;
+        height: 0;
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        transform: translateY(-5px);
+        overflow: hidden;
+
+        li {
+          border-bottom: 1px solid #dfdbd9;
+          padding: 0 !important;
+          margin: 0;
+          line-height: 40px;
+          transition: 0.3s ease-in-out;
+
+          &:last-child {
+            border: none;
+          }
+
+          &:hover {
+            border-color: @color2;
+          }
+
+          a {
+            color: @color1;
+            padding: 0 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-width: 260px;
+
+            &:after {
+              content: "";
+              height: 8px;
+              width: 8px;
+              display: block;
+              border-top: 1px solid;
+              border-right: 1px solid;
+              transform: rotate(45deg);
+              transform-origin: center;
+              margin-left: 30px;
+            }
+          }
+        }
       }
     }
 
     a {
       color: white;
+      display: block;
       transition: color 0.3s ease-in-out;
+      position: relative;
 
       &:hover {
         color: @color2;
@@ -81,12 +146,21 @@ header {
         color: @color2;
         font-family: 'AvenirBlack', Arial, Helvetica, sans-serif;
       }
+
+      &.is-active {
+        color: @color2;
+        border-bottom: 2px solid @color2;
+      }
     }
   }
 }
 
+.header-wrapper + .content {
+  border-top: 1px solid #30304e;
+}
+
 .dialog-off-canvas-main-canvas {
-  padding-top: 115px;
+  padding-top: 120px;
 }
 
 body.adminimal-admin-toolbar {
@@ -165,6 +239,7 @@ body.adminimal-admin-toolbar {
   nav {
     max-width: 1630px;
     margin: 0 auto;
+    padding-top: 15px;
 
     ol, li {
       margin: 0;

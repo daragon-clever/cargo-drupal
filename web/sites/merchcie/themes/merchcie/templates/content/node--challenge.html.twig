@@ -50,9 +50,11 @@
                                    class="hover-picto-eye"
                                    data-lightbox="gallery"
                                    data-title="{{ node.field_challenge_c2_imgs[i].alt }}">
-                                    <img class="img-fluid filter-hover-color1"
-                                         src="{{ file_url(content.field_challenge_c2_imgs['#items'][i].entity.uri.value) }}"
-                                         alt="">
+                                    <span class="img-wrapper">
+                                        <img class="filter-hover-color1"
+                                             src="{{ file_url(content.field_challenge_c2_imgs['#items'][i].entity.uri.value) }}"
+                                             alt="">
+                                    </span>
                                 </a>
                             </div>
                         {% endfor %}

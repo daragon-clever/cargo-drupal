@@ -107,8 +107,6 @@ class ImportCommand extends Command
      */
     private function getAllOffers()
     {
-        $url = Request::REQ_LIST_OFFERS;
-        $body = null;
         $pageNumber = 1;
         $urlParams['pageSize'] = 5;
 
@@ -116,7 +114,7 @@ class ImportCommand extends Command
         for ($currentPage = 1; $currentPage <= $pageNumber; $currentPage++) {
             $urlParams['pageNumber'] = $currentPage;
 
-            $reqResp = $this->requestHelper->callReq($url, $body, $urlParams);
+            $reqResp = $this->requestHelper->getVacanciesList($urlParams);
 
             //Calculate total number of pages on first request call
             if ($currentPage === 1) {
@@ -136,10 +134,7 @@ class ImportCommand extends Command
      */
     private function getOffer($id)
     {
-        $url = Request::REQ_DETAIL_OFFER;
-        $url .= $id;
-
-        return $this->requestHelper->callReq($url);
+        return $this->requestHelper->getVacancyDetails($id);
     }
 
     /**
@@ -182,19 +177,6 @@ class ImportCommand extends Command
             '/ (style=("|\')(.*?)("|\'))|(align=("|\')(.*?)("|\'))|(class=("|\')(.*?)("|\'))/',
             '',
             $description);
-//        $search = [
-//            "",
-//            "",
-//            "",
-//            "&nbsp;"
-//        ];
-//        $replacements = [
-//            "...",
-//            "'",
-//            "oe",
-//            ""
-//        ];
-//        $desc = str_replace($search, $replacements, $desc);
 
         return $desc;
     }

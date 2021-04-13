@@ -207,11 +207,17 @@ body.adminimal-admin-toolbar {
   padding: 60px 0;
   font-size: 1.8rem;
 
+  @media @tablet {
+    text-align: center;
+  }
+
   .logo-placeholder {
     background: url("../images/logo/logo-merchcie.svg") no-repeat center / 100% transparent;
     width: 253px;
     height: 70px;
     display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .logo-linkedin {
@@ -220,7 +226,9 @@ body.adminimal-admin-toolbar {
     height: 46px;
     display: block;
     margin-top: 20px;
-    .dimOpacityOnHover(0.8)
+    .dimOpacityOnHover(0.8);
+    margin-left: auto;
+    margin-right: auto;
   }
 
   ul {
@@ -235,6 +243,16 @@ body.adminimal-admin-toolbar {
       display: inline-block;
       .dimOpacityOnHover(0.8);
       text-decoration: none;
+    }
+
+    @media @tablet {
+      column-count: 1;
+      text-align: center;
+      margin: 50px 0;
+
+      li:nth-child(3) {
+        margin-bottom: 40px;
+      }
     }
   }
 }
@@ -327,6 +345,10 @@ body.adminimal-admin-toolbar {
     left: 50px;
     transform: translateY(-50%);
     transform-origin: center;
+  }
+
+  @media @tablet {
+    display: none;
   }
 }
 
@@ -930,6 +952,11 @@ body.adminimal-admin-toolbar {
 
   img {
     margin-right: -15px;
+
+    @media @tablet {
+      margin-left: -15px;
+      max-width: 100vw;
+    }
   }
 
   @media @tablet {

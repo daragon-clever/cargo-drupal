@@ -66,7 +66,7 @@ body {
   font-size: 1.6rem;
   font-family: 'AvenirBook', Arial, Helvetica, sans-serif;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
   body {
     font-size: 16px;
   }
@@ -134,7 +134,7 @@ h1 {
   font-size: 6.4rem;
   line-height: 1.15;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
   h1 {
     font-size: 3.2rem;
   }
@@ -142,7 +142,7 @@ h1 {
 h2 {
   font-size: 4.8rem;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
   h2 {
     font-size: 2.4rem;
   }
@@ -155,7 +155,7 @@ h3.bold {
   font-family: 'AvenirBlack', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
   h3 {
     font-size: 2.4rem;
   }
@@ -205,7 +205,7 @@ p:last-of-type {
   width: 100vw;
   transform-origin: top left;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
   .before-line:before {
     left: -3px;
     top: 16px;
@@ -229,7 +229,7 @@ p:last-of-type {
   font-size: 4.8rem;
   letter-spacing: 7px;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
   .text-num {
     font-size: 3.2rem;
   }
@@ -239,7 +239,7 @@ p:last-of-type {
   text-transform: none;
   font-size: 6.4rem;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
   .text-hand {
     font-size: 4.8rem;
   }
@@ -293,7 +293,7 @@ p:last-of-type {
 .cta:hover {
   box-shadow: 0 0 30px #E5530F80;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
   .cta {
     margin: 0 auto;
   }
@@ -357,7 +357,7 @@ span.link.text-color4.after-arrow:after {
   left: 20px;
   filter: invert(13%) sepia(10%) saturate(3652%) hue-rotate(202deg) brightness(91%) contrast(96%);
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
   .testimonial-item:before {
     top: 5px;
     left: 5px;
@@ -371,7 +371,7 @@ span.link.text-color4.after-arrow:after {
 .testimonial-item blockquote {
   margin: 0;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
   .testimonial-item blockquote {
     margin-bottom: 25px;
   }
@@ -380,7 +380,7 @@ span.link.text-color4.after-arrow:after {
   font-size: 4.8rem;
   line-height: 0.6;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
   .testimonial-item span {
     font-size: 2.4rem;
   }
@@ -388,7 +388,7 @@ span.link.text-color4.after-arrow:after {
 .testimonial-item small {
   font-size: 1.8rem;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
   .testimonial-item small {
     font-size: 1.2rem;
   }
@@ -412,7 +412,7 @@ span.link.text-color4.after-arrow:after {
   display: flex;
   align-items: center;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
   .testimonial-item {
     padding: 50px 30px 30px;
   }
@@ -429,7 +429,7 @@ span.link.text-color4.after-arrow:after {
 .js-how-to .slick-list .slick-slide {
   padding: 0 15px;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
   .js-testimonials-slick .slick-list,
   .js-how-to .slick-list {
     margin-top: 110px;
@@ -458,7 +458,7 @@ span.link.text-color4.after-arrow:after {
 .js-how-to .slick-next:hover {
   opacity: 1;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
   .js-testimonials-slick .slick-prev,
   .js-how-to .slick-prev,
   .js-testimonials-slick .slick-next,
@@ -472,13 +472,13 @@ span.link.text-color4.after-arrow:after {
   transform-origin: center;
   transform: rotate(180deg);
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
   .js-testimonials-slick .slick-prev,
   .js-how-to .slick-prev {
     right: calc(50% + 44px);
   }
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
   .js-testimonials-slick .slick-next,
   .js-how-to .slick-next {
     right: calc(50% - 44px);

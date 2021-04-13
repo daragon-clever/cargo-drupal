@@ -26,12 +26,13 @@
             <div class="row numbers-infos">
                 <div class="col-12 col-lg-8 offset-lg-2">
                     <div class="row bg-color4">
-                        {% for i in 0..1 %}
-                            <div class="col-12 col-lg-6 nb-wrapper">
-                                {{ content.field_pourquoi_c1_txts[i] }}
-                            </div>
-                        {% endfor %}
+                        <div class="col-12 col-lg-6 nb-wrapper">
+                            {{ content.field_pourquoi_c1_txts[0] }}
+                        </div>
                         <span class="line-vertical dot-pattern-color2"></span>
+                        <div class="col-12 col-lg-6 nb-wrapper">
+                            {{ content.field_pourquoi_c1_txts[1] }}
+                        </div>
                     </div>
                 </div>
             </div>

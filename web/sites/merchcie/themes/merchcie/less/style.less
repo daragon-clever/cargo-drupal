@@ -994,6 +994,11 @@ body.adminimal-admin-toolbar {
       .nb-wrapper {
         padding-top: 70px;
         padding-bottom: 70px;
+
+        @media @tablet {
+          padding-top: 40px;
+          padding-bottom: 40px;
+        }
       }
 
       h4 {
@@ -1013,13 +1018,20 @@ body.adminimal-admin-toolbar {
         position: absolute;
 
         @media @tablet {
-          top: unset;
-          transform: rotate(270deg);
+          position: relative;
+          top: inherit;
+          left: inherit;
+          width: 100%;
+          height: 3px;
+          background-repeat: repeat-x;
         }
+      }
+    }
 
-        @media @phone {
-          left: unset;
-        }
+    @media @tablet {
+      .numbers-infos .bg-color4 {
+        margin-left: 0;
+        margin-right: 0;
       }
     }
   }
@@ -1030,6 +1042,12 @@ body.adminimal-admin-toolbar {
     p {
       @media @tablet {
         margin-top: 20px;
+
+        &:last-child {
+          width: 80%;
+          margin-left: auto;
+          margin-right: auto;
+        }
       }
     }
   }

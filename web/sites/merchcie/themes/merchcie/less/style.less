@@ -1581,11 +1581,19 @@ body.adminimal-admin-toolbar {
   .c2,
   .c3 {
     padding: 95px 0;
+
+    @media @tablet {
+      padding: 50px 0;
+    }
   }
 
   .c1 {
     h2 {
       margin-bottom: 70px;
+
+      @media @tablet {
+        margin-bottom: 30px;
+      }
     }
 
     .txt {
@@ -1606,6 +1614,10 @@ body.adminimal-admin-toolbar {
       img {
         position: relative;
         z-index: 1;
+
+        @media @tablet {
+          max-width: 80%;
+        }
       }
 
       .dot {
@@ -1615,11 +1627,20 @@ body.adminimal-admin-toolbar {
         position: absolute;
         top: 0;
         right: 30px;
+
+        @media @tablet {
+          width: 102px;
+          height: 102px;
+        }
       }
     }
   }
 
   .c2 {
+    @media @tablet {
+      padding: 50px 0 100px
+    }
+
     .nb {
       font-size: 9.6rem;
       color: @color3;
@@ -1714,6 +1735,10 @@ body.adminimal-admin-toolbar {
           height: 92px;
         }
       }
+
+      @media @tablet {
+        margin: 15px 0;
+      }
     }
   }
 }
@@ -1734,6 +1759,12 @@ body.adminimal-admin-toolbar {
     position: absolute;
     bottom: -70px;
     left: 0;
+
+    @media @tablet {
+      width: 180px;
+      height: 80px;
+      bottom: -8px;
+    }
   }
 
   .dot-right {
@@ -1742,6 +1773,15 @@ body.adminimal-admin-toolbar {
     position: absolute;
     top: -80px;
     right: 0;
+
+    @media @tablet {
+      width: 180px;
+      height: 160px;
+    }
+  }
+
+  @media @tablet {
+    padding: 135px 0 !important;
   }
 }
 

@@ -202,7 +202,7 @@ jQuery(document).ready(function($) {
         // Mobile : gestion btn filtres
         $(".js-toggle-filters").on("click", function () {
             $(".js-toggle-filters").toggle();
-            $("#groupe-filtres-offres-emploi").slideToggle();
+            $("#groupe-filtres-offres").slideToggle();
             $(".jobs-list").slideToggle();
         });
 

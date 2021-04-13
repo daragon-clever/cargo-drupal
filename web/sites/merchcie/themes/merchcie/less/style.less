@@ -1492,10 +1492,18 @@ body.adminimal-admin-toolbar {
 
       h2 {
         margin-top: 60px;
+
+        @media @tablet {
+          margin: 20px 0;
+        }
       }
 
       a {
         margin-top: 38px;
+
+        @media @tablet {
+          margin-top: 0;
+        }
       }
     }
 
@@ -1509,10 +1517,18 @@ body.adminimal-admin-toolbar {
         height: 205px;
         width: 335px;
         z-index: 0;
+
+        @media @tablet {
+          height: 117px;
+          width: 198px;
+          left: 0;
+          top: 50px;
+        }
       }
 
       img {
         position: relative;
+        z-index: 1;
       }
     }
 
@@ -1523,6 +1539,18 @@ body.adminimal-admin-toolbar {
       height: 200px;
       width: 275px;
       transform: translateY(-50%);
+      z-index: 0;
+
+      @media @tablet {
+        height: 117px;
+        width: 198px;
+        top: inherit;
+        bottom: 60px;
+      }
+    }
+
+    @media @tablet {
+      text-align: center;
     }
   }
 }

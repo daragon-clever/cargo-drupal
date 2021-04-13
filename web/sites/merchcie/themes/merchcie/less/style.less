@@ -788,12 +788,6 @@ body.adminimal-admin-toolbar {
     margin-bottom: 90px;
     position: relative;
 
-    h3 {
-      @media @phone {
-        font-size: 16px;
-      }
-    }
-
     .js-testimonials-slick {
       &:after {
         content: "";
@@ -836,12 +830,6 @@ body.adminimal-admin-toolbar {
           width: 75%;
         }
       }
-    }
-  }
-
-  h3 {
-    @media @phone {
-      font-size: 16px;
     }
   }
 
@@ -901,6 +889,7 @@ body.adminimal-admin-toolbar {
 .newsletter-block-wrapper {
   .inner {
     max-width: 520px;
+    display: inline-block;
 
     .picto-mail {
       background: url("../images/picto/mail.svg") no-repeat center transparent;
@@ -917,12 +906,6 @@ body.adminimal-admin-toolbar {
         background-position-x: left;
         margin-top: -6px;
         margin-right: -30px;
-      }
-    }
-
-    h3 {
-      @media @phone {
-        font-size: 16px;
       }
     }
 
@@ -943,6 +926,10 @@ body.adminimal-admin-toolbar {
         text-decoration: underline;
       }
     }
+  }
+
+  img {
+    margin-right: -15px;
   }
 
   @media @tablet {

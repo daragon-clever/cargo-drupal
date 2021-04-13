@@ -1,0 +1,6 @@
+offres_emploi.settings:
+  title: 'Cargo - Offres emploi'
+  description: 'Configuration pour le module offre emploi'
+  route_name: offres_emploi.settings
+  parent: system.admin_config_system
+  weight: 99

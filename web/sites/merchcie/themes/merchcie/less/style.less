@@ -13,11 +13,16 @@ header {
   transition: 0.3s ease-in-out;
 
   .logo-placeholder {
-    background: url("../images/logo/logo-merchcie.svg") no-repeat center transparent;
+    background: url("../images/logo/logo-merchcie.svg") no-repeat center / cover transparent;
     width: 200px;
     height: 55px;
     display: block;
     .dimOpacityOnHover(0.8);
+
+    @media @tablet {
+      width: 155px;
+      height: 43px;
+    }
   }
 
   &.fixed {
@@ -153,6 +158,17 @@ header {
       }
     }
   }
+
+  @media @tablet {
+    padding: 15px 0;
+    text-align: center;
+
+    .mmenu-btn-wrapper {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
 }
 
 .header-wrapper + .content {
@@ -161,6 +177,10 @@ header {
 
 .dialog-off-canvas-main-canvas {
   padding-top: 120px;
+
+  @media @tablet {
+    padding-top: 73px;
+  }
 }
 
 body.adminimal-admin-toolbar {
@@ -1819,6 +1839,7 @@ body.adminimal-admin-toolbar {
         position: absolute;
         top: 30px;
         left: 0;
+        z-index: -1;
       }
     }
 

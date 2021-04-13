@@ -1,7 +1,22 @@
-jQuery(document).ready(function ($) {
-    // TEST MOBILE / TAB
-    var isTabletOrLess = window.matchMedia("only screen and (max-width: 991px)").matches;
+// TEST MOBILE / TAB
+var isTabletOrLess = window.matchMedia("only screen and (max-width: 991px)").matches;
 
+// MMENU
+if (isTabletOrLess) {
+    document.addEventListener(
+        "DOMContentLoaded", function () {
+            new Mmenu("#block-navigationprincipale", {
+                "extensions": [
+                    "border-full",
+                    "pagedim-black",
+                    "position-top"
+                ]
+            });
+        }
+    );
+}
+
+jQuery(document).ready(function ($) {
     // STICKY HEADER
     $(window).scroll(function () {
         var header = $('header');

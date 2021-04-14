@@ -1,0 +1,6 @@
+services:
+  offres_prestataires.import:
+    class: Drupal\offres_prestataires\Command\ImportCommand
+    arguments: ['@offres_prestataires.repository']
+    tags:
+      - { name: drupal.command }

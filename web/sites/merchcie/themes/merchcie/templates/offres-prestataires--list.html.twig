@@ -7,8 +7,8 @@
         <div class="row">
             <div class="col main-big-title">
                 <h1 class="text-white">
-                    {{ "Rejoindre"|trans }} <br>
-                    <span class="text-color2">Merch & Cie</span>
+                    {{ "Découvrez nos"|trans }} <br>
+                    <span class="text-color2">{{ "offres de prestations"|trans }}</span>
                 </h1>
                 <span class="line-vertical dot-pattern-color2"></span>
             </div>
@@ -16,7 +16,7 @@
     </div>
 </div>
 
-<div class="offres-emploi-module mb-5">
+<div class="offres-prestataires-module mb-5">
     <div class="container" id="listing-offres">
         <div class="row">
             <div class="col-12 col-md-3 filters">
@@ -36,10 +36,6 @@
                             <span class="title-caracteristic">{{ "Type de contrat"|trans }}</span>
                             <div class="select-option"></div>
                         </div>
-                        <div id="filtre-poste" class="offer-caracteristic">
-                            <span class="title-caracteristic">{{ "Type de poste"|trans }}</span>
-                            <div class="select-option"></div>
-                        </div>
                         <div id="filtre-lieu" class="offer-caracteristic">
                             <span class="title-caracteristic">{{ "Lieu de travail"|trans }}</span>
                             <div class="select-option"></div>
@@ -53,31 +49,29 @@
                 {% endif %}
             </div>
             <div class="col-12 col-md-9 jobs-list">
-                <h4 class="text-color2">{{ "Les postes à pourvoir"|trans }}</h4>
+                <h4 class="text-color2">{{ "Les offres disponibles"|trans }}</h4>
                 <span class="line dot-pattern-color2 w-100"></span>
                 {% if data %}
                     <table id="toutes-les-offres" class="display nowrap w-100">
                         <thead>
-                            <tr>
-                                <th class="all wrap">{{ "Poste"|trans }}</th>
-                                <th class="all">{{ "Type de contrat"|trans }}</th>
-                                <th class="js-hide">{{ "Type de poste"|trans }}</th>
-                                <th class="not-mobile">{{ "Date de début"|trans }}</th>
-                                <th class="not-mobile">{{ "Lieu"|trans }}</th>
-                                <th class="not-mobile js-only-xs"></th>
-                            </tr>
+                        <tr>
+                            <th class="all wrap">{{ "Poste"|trans }}</th>
+                            <th class="all">{{ "Type de contrat"|trans }}</th>
+                            <th class="js-hide">{{ "Date de MAJ"|trans }}</th>
+                            <th class="not-mobile">{{ "Lieu"|trans }}</th>
+                            <th class="not-mobile js-only-xs"></th>
+                        </tr>
                         </thead>
                         <tbody>
-                            {% for offre in data %}
-                                <tr class="clickable-row" data-href="{{ path('offresEmploi.content', {ref: offre.codeRecrutement}) }}">
-                                    <td class="wrap">{{ offre.intitulePoste }}</td>
-                                    <td class="">{{ offre.typeContrat }}</td>
-                                    <td>{{ offre.metier }}</td>
-                                    <td>{{ offre.dateOuverturePoste|date("d/m/Y") }}</td>
-                                    <td>{{ offre.lieuRecrutement }}</td>
-                                    <td><a href="{{ path('offresEmploi.content', {ref: offre.codeRecrutement}) }}" class="text-color2">Voir l'annonce</a></td>
-                                </tr>
-                            {% endfor %}
+                        {% for offre in data %}
+                            <tr class="clickable-row" data-href="{{ path('offresPrestataires.content', {ref: offre.id_scoptalent}) }}">
+                                <td class="wrap">{{ offre.title }}</td>
+                                <td class="">{{ offre.contract_types }}</td>
+                                <td class="">{{ offre.last_update_scoptalent }}</td>
+                                <td>{{ offre.city }}</td>
+                                <td><a href="{{ path('offresPrestataires.content', {ref: offre.id_scoptalent}) }}" class="text-color2">Voir l'annonce</a></td>
+                            </tr>
+                        {% endfor %}
                         </tbody>
                     </table>
                 {% else %}
@@ -85,19 +79,6 @@
                         <p class="error">{{ "Nous n'avons aucune offre pour le moment. Revenez bientôt pour de nouvelles offres."|trans }}</p>
                     </div>
                 {% endif %}
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="c2 mt-5">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <h2 class="before-line line-color2 text-color2">{{ "Nos métiers"|trans }}</h2>
-                <h3>
-                    {{ "Faites connaissance avec une partie de <br> l'équipe"|trans }}
-                </h3>
             </div>
         </div>
     </div>

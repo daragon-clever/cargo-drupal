@@ -1,0 +1,23 @@
+<div id="offres-prestataires-module">
+    {%  if data == 'false' %}
+        <p>L'annonce n'existe pas</p>
+    {% else %}
+        <p>Détail de l'annonce : </p>
+        <ul>
+            <li>{{ data.id }}</li>
+            <li>{{ data.title }}</li>
+            <li>{{ data.missionDescription }}</li>
+            <li>{{ data.businessDescription }}</li>
+            <li>{{ data.profileDescription }}</li>
+            <li>{{ data.lastPublicationDate }}</li>
+            <li>{{ data.reference }}</li>
+            {#<li>{{ data.contractTypeNames }}</li>#}
+            <li>{{ data.region }}</li>
+            <li>{{ data.availabilityDate }}</li>
+            <li>{{ data.shortDescription }}</li>
+            <li>{{ data.openedDate }}</li>
+            <li>{{ data.businessDomains }}</li>
+            <li>{{ data.numberOfJobs }}</li>
+        </ul>
+    {% endif %}
+</div>

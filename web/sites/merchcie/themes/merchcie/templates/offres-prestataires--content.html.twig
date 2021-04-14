@@ -1,0 +1,67 @@
+<div class="offres-prestataires-module">
+    <div class="container" id="offre">
+        {%  if data == 'false' %}
+            <div id="alerte-offres" class="bg-color1 text-white">
+                <p class="error">
+                    L'annonce n'existe pas.
+                    <a href="{{ path('offresPrestataires.content') }}" class="text-color2">Retournez sur la page des offres prestataires.</a>
+                </p>
+            </div>
+        {% else %}
+            <div class="row detail-offre">
+                <div class="col-12 col-sm-3 left order-2 order-sm-1">
+                    <h4 class="text-color2">Contrat / Infos</h4>
+                    <span class="line dot-pattern-color2 w-100"></span>
+
+                    <div class="offer-caracteristic">
+                        <span class="w-100 title-caracteristic">Référence de l'annonce</span>
+                        <span class="w-100 value-caracteristic">#{{ data.reference }}</span>
+                    </div>
+
+                    <div class="offer-caracteristic">
+                        <span class="w-100 title-caracteristic">Type de contrat</span>
+                        <span class="w-100 value-caracteristic">{{ data.contract_types }}</span>
+                    </div>
+
+                    <div class="offer-caracteristic">
+                        <span class="w-100 title-caracteristic">Date de l'annonce</span>
+                        <span class="w-100 value-caracteristic">{{ data.created_date|date("d/m/Y") }}</span>
+                    </div>
+
+                    <div class="offer-caracteristic">
+                        <span class="w-100 title-caracteristic">Lieu de travail</span>
+                        <span class="w-100 value-caracteristic">{{ data.city }}</span>
+                    </div>
+
+                    <a class="cta bg-color2 text-white w-100" href="{{ path('offresPrestataires.apply', {ref: data.id_scoptalent}) }}">
+                        Je postule
+                    </a>
+                    <div class="text-center">
+                        <a class="back d-sm-none text-color2" href="{{ path('offresPrestataires.content') }}">< <span>Retour</span></a>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-9 right order-1 order-sm-2">
+                    <h4 class="text-color2">{{ data.title }}</h4>
+                    <span class="line dot-pattern-color2 w-100"></span>
+
+                    {% if data.business_desc %}
+                        <p>{{ data.business_desc | raw}}</p>
+                    {% endif %}
+                    {% if data.mission_desc %}
+                        <div>
+                            <p><b class="title">Définition des missions</b></p>
+                            <p>{{ data.mission_desc | raw }}</p>
+                        </div>
+                    {% endif %}
+                    {% if data.profile_desc %}
+                        <div>
+                            <p><b class="title">Profil recherché</b></p>
+                            <p>{{ data.profile_desc | raw }}</p>
+                        </div>
+                    {% endif %}
+                    <a class="back d-none d-sm-inline-block text-color2" href="{{ path('offresPrestataires.content') }}">< <span>Retour</span></a>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>

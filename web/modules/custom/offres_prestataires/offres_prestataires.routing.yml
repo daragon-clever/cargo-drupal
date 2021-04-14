@@ -1,0 +1,18 @@
+# LISTES OFFRES PRESTATAIRES + ANNONCE
+offresPrestataires.content:
+  path: '/offres-prestataires/{ref}'
+  defaults:
+    _controller: 'Drupal\offres_prestataires\Controller\OffresPrestatairesContentController::content'
+    ref: 'all'
+    _title: 'Offres prestataires'
+  requirements:
+    _permission: 'access content'
+
+# FORMULAIRE POUR POSTULER
+offresPrestataires.apply:
+  path: '/offres-prestataires/postuler/{ref}'
+  defaults:
+    _controller: 'Drupal\offres_prestataires\Controller\OffresPrestatairesApplyController::apply'
+    _title: 'Offres prestataires'
+  requirements:
+    _permission: 'access content'

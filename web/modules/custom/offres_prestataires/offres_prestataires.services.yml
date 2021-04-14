@@ -1,0 +1,8 @@
+services:
+#  offres_prestataires.helperRequest:
+#    class: Drupal\offres_prestataires\Helper\Request
+  offres_prestataires.repository:
+    class: Drupal\offres_prestataires\OffrePrestataireRepository
+    arguments: ['@database']
+  offres_prestataires.logger:
+    class: Drupal\offres_prestataires\Helper\LoggerFileHelper

@@ -51,6 +51,7 @@ global-styling:
   js:
     js/custom-js.js: {}
     js/module-offres-emploi.js: {}
+    js/module-offres-prestataires.js: {}
   dependencies:
     - core/jquery
 

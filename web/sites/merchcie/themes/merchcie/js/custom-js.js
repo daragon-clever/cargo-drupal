@@ -200,4 +200,11 @@ jQuery(document).ready(function ($) {
         // Required
         $(".required").parent().addClass("required-wrapper");
     }
+
+    // NOS CHALLENGES
+    if( ($('.challenge-item').length)) {
+        $(".views-field-field-challenge-c2-imgs a").addClass('hover-picto-eye');
+        $(".views-field-field-challenge-c2-imgs img").addClass('img-fluid filter-hover-color2');
+        $(".views-field-view-node a").addClass('link text-color2 after-arrow');
+    }
 });

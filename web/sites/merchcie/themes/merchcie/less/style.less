@@ -8,7 +8,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 100;
   background: @color1;
   transition: 0.3s ease-in-out;
 
@@ -2034,10 +2034,18 @@ body.adminimal-admin-toolbar {
   .c1 {
     margin: 12.5rem 0;
 
+    @media @tablet {
+      margin-bottom: 50px;
+    }
+
     .inner {
       padding: 10.1rem 0;
       max-width: 1325px;
       margin: 0 auto;
+
+      @media @tablet {
+        padding: 6rem 0;
+      }
     }
 
     h2 {
@@ -2068,11 +2076,20 @@ body.adminimal-admin-toolbar {
         transform-origin: center;
         transform: rotate(180deg);
       }
+
+      @media @tablet {
+        font-size: 4rem;
+        margin-top: -120px;
+      }
     }
 
     .img-wrapper {
       display: inline-block;
       position: relative;
+
+      @media @tablet {
+        display: block;
+      }
 
       .dot {
         width: 180px;
@@ -2082,11 +2099,24 @@ body.adminimal-admin-toolbar {
         left: 0;
         transform: translateX(-50%);
         z-index: 0;
+
+        @media @tablet {
+          top: 40px;
+          left: 0;
+          height: 100px;
+          width: 100px;
+          transform: none;
+        }
       }
 
       img {
         z-index: 1;
         position: relative;
+
+        @media @tablet {
+          max-width: 80%;
+          margin-top: 40px;
+        }
       }
     }
 
@@ -2113,6 +2143,11 @@ body.adminimal-admin-toolbar {
             display: inline-block;
             vertical-align: middle;
             margin-right: 30px;
+
+            @media @tablet {
+              margin-right: 0;
+              margin-bottom: 30px;
+            }
           }
         }
 
@@ -2124,8 +2159,25 @@ body.adminimal-admin-toolbar {
             display: inline-block;
             vertical-align: middle;
             margin-right: 30px;
+
+            @media @tablet {
+              margin-right: 0;
+              margin-bottom: 30px;
+            }
           }
         }
+
+        @media @tablet {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+
+      @media @tablet {
+        margin-bottom: 0;
+        margin-top: 30px;
+        transform: none;
+        padding: 0 15px;
       }
     }
   }
@@ -2137,6 +2189,10 @@ body.adminimal-admin-toolbar {
     .video-wrapper {
       max-width: 652px;
       margin: 0 auto 88px;
+
+      @media @tablet {
+        margin-bottom: 50px;
+      }
     }
 
     &:after {
@@ -2150,6 +2206,12 @@ body.adminimal-admin-toolbar {
       height: 1592px;
       border-radius: 100%;
       background: @color4;
+
+      @media @tablet {
+        width: 713px;
+        height: 357px;
+        top: 40%;
+      }
     }
   }
 }
@@ -2870,7 +2932,7 @@ body.adminimal-admin-toolbar {
         object-fit: cover;
 
         &:hover {
-          filter: @imgFilterColor1;
+          filter: @imgFilterColor2;
           transition: 0.3s;
         }
       }

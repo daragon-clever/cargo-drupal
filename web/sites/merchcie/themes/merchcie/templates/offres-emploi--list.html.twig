@@ -24,7 +24,7 @@
                 <span class="line dot-pattern-color2 w-100"></span>
 
                 <div class="d-block d-md-none">
-                    <button class="cta-filter top js-toggle-filters">
+                    <button class="cta-filter top js-toggle-filters bg-color2 w-100">
                         {{ "Filtrer"|trans }}
                     </button>
                 </div>
@@ -75,7 +75,7 @@
                                     <td>{{ offre.metier }}</td>
                                     <td>{{ offre.dateOuverturePoste|date("d/m/Y") }}</td>
                                     <td>{{ offre.lieuRecrutement }}</td>
-                                    <td><a href="{{ path('offresEmploi.content', {ref: offre.codeRecrutement}) }}" class="text-color2">Voir l'annonce</a></td>
+                                    <td><a href="{{ path('offresEmploi.content', {ref: offre.codeRecrutement}) }}">Voir l'annonce</a></td>
                                 </tr>
                             {% endfor %}
                         </tbody>

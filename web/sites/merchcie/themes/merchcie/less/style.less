@@ -2433,7 +2433,8 @@ body.adminimal-admin-toolbar {
   display: block;
 }
 
-.offres-emploi-module, .offres-prestataires-module {
+.offres-emploi-module,
+.offres-prestataires-module {
   margin-top: 70px;
   margin-bottom: 20px;
 
@@ -2485,7 +2486,7 @@ body.adminimal-admin-toolbar {
 
   //LISTE
   #listing-offres {
-    font-size: 14px;
+    font-size: 1.4rem;
 
     .filters {
       #searchbox {
@@ -2496,6 +2497,10 @@ body.adminimal-admin-toolbar {
         padding: 10px 0;
         font-weight: 900;
         margin-top: 10px;
+
+        @media @tablet {
+          margin-bottom: 30px;
+        }
 
         &:focus {
           border-color: @color2;
@@ -2534,7 +2539,7 @@ body.adminimal-admin-toolbar {
         }
       }
 
-      .cta-filter { //todo: check on mobile device + add btn merch style
+      .cta-filter {
         color: white;
         border: none;
         box-shadow: none;
@@ -2562,11 +2567,8 @@ body.adminimal-admin-toolbar {
               padding: 15px 0;
 
               @media @phone {
-                //todo: check on mobile device
                 padding: 20px 0;
                 text-align: center;
-                font-size: 13px;
-                min-width: 80px;
 
                 &:first-child {
                   text-align: left;
@@ -2578,14 +2580,29 @@ body.adminimal-admin-toolbar {
               }
             }
           }
+
+          @media @tablet {
+            .clickable-row > .wrap {
+              padding-left: 35px;
+            }
+
+            &.dtr-inline.collapsed > tbody > tr[role="row"] > td:first-child:before {
+              background: @color1;
+              border: none;
+              box-shadow: none;
+              height: 20px;
+              width: 20px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              top: 30%;
+            }
+          }
         }
 
         thead {
           @media @phone {
-            //todo: check on mobile device
-            position: absolute;
-            top: -9999px;
-            left: -9999px;
+            display: none;
           }
 
           tr {
@@ -2614,11 +2631,6 @@ body.adminimal-admin-toolbar {
           td {
             background-color: white !important;
             font-weight: 900;
-
-            @media (max-width: 480px) {
-              //todo: check on mobile device
-              font-weight: normal;
-            }
           }
 
           td.wrap, th.wrap {
@@ -2630,7 +2642,7 @@ body.adminimal-admin-toolbar {
           }
         }
 
-        & > tbody > tr.child ul.dtr-details { //todo: check on mobile device
+        & > tbody > tr.child ul.dtr-details {
           display: block;
           padding: 15px 35px;
           background: whitesmoke;
@@ -2664,7 +2676,7 @@ body.adminimal-admin-toolbar {
 
                 a {
                   width: 100%;
-                  background-color: blue;
+                  background-color: @color1;
                   color: white;
                   border: none;
                   box-shadow: none;
@@ -2740,31 +2752,19 @@ body.adminimal-admin-toolbar {
           text-transform: uppercase;
           margin-top: 30px;
 
-          &:before { //todo: nico à revoir pour faire quelque chose de propre
+          &:before {
+            content: "";
             background: url("../images/offres/picto-checked.png") no-repeat center transparent;
             height: 13px;
             width: 17px;
-            position: absolute;
-            left: 30%;
-            display: block;
-            content: "";
-            top: 20px;
-
-            @media (max-width: 1024px) {
-              left: 22%;
-            }
-            @media (max-width: 768px) {
-              left: 14%;
-            }
-            @media (max-width: 480px) {
-              left: 25%;
-            }
+            display: inline-block;
+            margin-right: 10px;
           }
 
           @media @phone {
             max-width: 260px;
             display: block;
-            margin: 0 auto;
+            margin: 30px auto 15px;
           }
         }
       }
@@ -2894,13 +2894,11 @@ body.adminimal-admin-toolbar {
 
     #edit-piece-jointe {
       .webform-flex--container {
-        margin: 0;
-      }
+        margin: 0 8px;
 
-      .webform-flexbox > .webform-flex > .webform-flex--container {
-        margin: 0 0.5em;
-        //todo: nico si tu arrives à faire un margin 0 à tout sauf à ce selecteur c'est encore mieux
-        //tu peux faire un simulation en ajoutant des PJ et en supprimant les 2 margin du dessus tu comprendras
+        .webform-flex--container {
+          margin: 0;
+        }
       }
 
       label {
@@ -2955,6 +2953,8 @@ body.adminimal-admin-toolbar {
         position: absolute;
         top: 31px;
         height: 50px;
+        white-space: nowrap;
+        line-height: 40px;
       }
 
       input[type=submit] {

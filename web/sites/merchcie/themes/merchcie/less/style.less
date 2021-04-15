@@ -3151,7 +3151,11 @@ body.adminimal-admin-toolbar {
 #livresblanc {
   .c1,
   .c2 {
-    padding: 9.5rem 0
+    padding: 9.5rem 0;
+
+    @media @tablet {
+      padding: 5rem 0;
+    }
   }
 
   .c1 {
@@ -3174,9 +3178,22 @@ body.adminimal-admin-toolbar {
       font-family: 'AvenirBlack', Arial, Helvetica, sans-serif;
     }
 
+    img {
+      max-width: 100%;
+      height: auto;
+
+      @media @tablet {
+        margin-bottom: 30px;
+      }
+    }
+
     form {
       max-width: 600px;
       margin-top: 50px;
+
+      @media @tablet {
+        margin-top: 15px;
+      }
 
       h4,
       h4 + p,
@@ -3194,6 +3211,11 @@ body.adminimal-admin-toolbar {
 
       input.button {
         margin: 30px 0 10px;
+
+        @media @tablet {
+          margin-left: auto;
+          margin-right: auto;
+        }
       }
     }
   }
@@ -3208,6 +3230,11 @@ body.adminimal-admin-toolbar {
         text-transform: none;
         margin-bottom: 30px;
       }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
     }
 
     .big {

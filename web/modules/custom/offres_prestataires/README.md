@@ -19,6 +19,9 @@ Cron qui passe pendant le cron drupal pour mettre à jour les offres de Scoptale
 
 * URL : https://api.scoptalent.com/
 * Documentation : https://api.scoptalent.com/documentation/fr/
+* Clés :
+    * Pour test : **7de8991be6044c7abaa3b4f78a8b32c2**
+    * Pour Merch : **99803e9a45b0430ba683c75fa9827ae4**
 
 ## Config
 

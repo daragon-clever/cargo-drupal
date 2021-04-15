@@ -3,6 +3,8 @@
 namespace Drupal\offres_prestataires\Helper;
 
 use Drupal\Component\Serialization\Json;
+use Symfony\Component\Mime\Part\DataPart;
+use Symfony\Component\Mime\Part\Multipart\FormDataPart;
 
 class Request
 {
@@ -33,9 +35,10 @@ class Request
 
     public function vacancyApply($data)
     {
+        $encodeData = Json::encode($data);
         $url = self::API_URL.self::REQ_APPLY;
-        $config['body'] = Json::encode($data);
-        $config['headers'] = 'Content-Length: ' . strlen(Json::encode($data)); //todo: voir si ça va dans le header + voir content type
+        $config['body'] = $encodeData;
+        $config['headers']['Content-Length'] = strlen($encodeData);
 
         return $this->postReq($url, $config);
     }
@@ -45,19 +48,25 @@ class Request
         $pathToFile = \Drupal::service('file_system')->realpath($filePath);
         if (file_exists($pathToFile)) {
             $url = self::API_URL . self::REQ_FILE_UPLOAD;
-            $config['headers']['Content-Disposition'] = 'attachment; filename='.basename($pathToFile);
-            $config['headers']['Content-Length'] = filesize($pathToFile);
-//            $config['headers']['Content-Type'] = 'multipart/form-data';
-//            $config['headers']['Content-Type'] = 'application/pdf';
-//            $config['headers']['Content-Type'] = 'application/x-www-form-urlencoded';
-//            $config['headers']['Content-Type'] = 'text/plain';
-            $config['headers']['Content-Type'] = 'application/octet-stream';
-//            $config['body'] = fopen($pathToFile, 'r');
-            $config['body'] = file_get_contents($pathToFile);
-//            $config['body'] = readfile($pathToFile);
-//            Content-length
 
-            return $this->postReq($url, $config);
+            $ch = curl_init();
+
+            $cfile = new \CURLFile($pathToFile,'application/pdf', 'lm-test');
+
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, ['Authorization: ApiKey '.self::API_KEY]);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, [$cfile]);
+
+            $resp = curl_exec($ch);
+            $httpCode = (int) curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            curl_close($ch);
+
+            if ($httpCode === 200) {
+                $responseBody = Json::decode($resp);
+                return $responseBody;
+            }
         }
     }
 

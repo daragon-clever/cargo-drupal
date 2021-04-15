@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - webform
+id: search_job_types
+label: 'Search job types'
+likert: false
+category: 'offres_prestations'
+options: |
+  1041 : Implantation
+  1042 : Réassort
+  1043 : 'Pose de PLV / ILV'
+  1044 : 'Montage de linéaires'
+  1045 : Théâtralisation
+  1046 : 'Etats des lieux'
+  1047 : 'Comptage (inventaires)'
+  1048 : 'Prestataire de services aux entreprise'

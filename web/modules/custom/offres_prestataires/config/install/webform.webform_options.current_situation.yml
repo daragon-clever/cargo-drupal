@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - webform
+id: current_situation
+label: 'Current situation'
+likert: false
+category: 'offres_prestations'
+options: |
+  1 : 'En poste'
+  2 : 'Sans emploi'
+  3 : 'En période d''essai'
+  4 : 'En préavis'
+  5 : Freelance
+  6 : 'En formation'
+  7 : 'Temps partiel'
+  8 : Employé
+  9 : 'Ancien employé'
+  10 : Stage
+  11 : 'En alternance'

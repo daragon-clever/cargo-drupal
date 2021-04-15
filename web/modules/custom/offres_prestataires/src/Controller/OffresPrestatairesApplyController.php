@@ -29,7 +29,7 @@ class OffresPrestatairesApplyController extends ControllerBase
     public function apply($ref)
     {
         if (isset($ref)) {
-            $webform = \Drupal::entityTypeManager()->getStorage('webform')->load('candidature_offre_prestataire');
+            $webform = \Drupal::entityTypeManager()->getStorage('webform')->load('candidature_prestataire');
 
             $dataPoste = $this->offreRepository->findBy(['id_scoptalent' => $ref, 'active' => 1]);
 

@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - webform
+id: principal_activities
+label: 'Principal activities'
+likert: false
+category: 'offres_prestations'
+options: |
+  8 : Services
+  316 : Merchandising
+  317 : Commerce
+  318 : 'Animation commerciale'
+  319 : Inventaire
+  320 : Logistique
+  321 : 'Service aux particuliers'
+  322 : 'Promotion des ventes'
+  323 : Autres

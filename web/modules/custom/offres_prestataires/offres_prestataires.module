@@ -48,14 +48,15 @@ function offres_prestataires_webform_element_hidden_alter(array &$element, FormS
 {
     $route_match = \Drupal::service('current_route_match');
     $param_ref = $route_match->getParameter('ref');
+    if (!is_null($param_ref)) {
+        $offreRepository = \Drupal::service('offres_prestataires.repository');
+        $offerEmploi = current($offreRepository->findBy(['id_scoptalent' => $param_ref]));
 
-    $offreRepository = \Drupal::service('offres_prestataires.repository');
-    $offerEmploi = current($offreRepository->findBy(['id_scoptalent' => $param_ref]));
-
-    if ($element['#webform_key'] == 'offre') {
-        $element['#value'] = $param_ref;
-    }
-    if ($element['#webform_key'] == 'nom_offre') {
-        $element['#value'] = $offerEmploi->intitulePoste;
+        if ($element['#webform_key'] == 'offre') {
+            $element['#value'] = $param_ref;
+        }
+        if ($element['#webform_key'] == 'nom_offre') {
+            $element['#value'] = $offerEmploi->title;
+        }
     }
 }

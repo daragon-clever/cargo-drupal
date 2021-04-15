@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - webform
+id: search_contract_types
+label: 'Search contract types'
+likert: false
+category: 'offres_prestations'
+options: |
+  2 : 'CDI - Contrat à durée indéterminée'
+  3 : 'CDD - Contrat à durée déterminée'
+  4 : 'CTT - Contrat de travail temporaire'
+  8 : 'Indépendants/freelances'
+  11 : 'Contrat de portage salarial'
+  37 : CIDD

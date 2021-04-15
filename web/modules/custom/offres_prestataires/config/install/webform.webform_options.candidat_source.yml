@@ -1,0 +1,41 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - webform
+id: candidat_source
+label: 'Candidat source'
+likert: false
+category: 'offres_prestations'
+options: |
+  'Evènements' :
+    115 : 'Job dating'
+    556 : 'Formulaire de contact'
+  'Cooptation' :
+    4 : Non-renseignée
+    563 : Candidats
+    564 : Clients
+    595 : 'Collaborateur du groupe'
+  'Sites d''emplois' :
+    53 : indeed
+    97 : Pole-emploi
+    540 : 'Le bon coin'
+    112 : freelance-info
+    1078 : 'Jobypepper'
+  'Espace carrière' :
+    6 : 'Candidature directe'
+  'Réseaux sociaux' :
+    24 : Facebook
+    26 : LinkedIn
+    28 : Viadeo
+  'Candidats' :
+    565 : Spontanée
+  'RH' :
+    103 : Candidathèque
+    111 : Interne
+  'Non-renseignée' :
+    11 : Non-renseignée
+  'Salariés' :
+    541 : 'Salarié filiale'
+    542 : 'Salarié groupe'

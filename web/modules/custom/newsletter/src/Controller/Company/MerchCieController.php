@@ -66,11 +66,6 @@ class MerchCieController extends AbstractCompanyController
                 'type' => 'varchar',
                 'length' => 255,
                 'description' => 'Company of the person.',
-            ],
-            'subscriptions' => [
-                'type' => 'text',
-                'size' => 'big',
-                'description' => 'Subscriptions list of subscriber',
             ]
         ];
         $array['fields'] = array_merge($array['fields'], $arrayPushData);

@@ -119,18 +119,3 @@ function offres_prestataires_schema()
         return $schema;
     }
 }
-
-function offres_prestataires_install()
-{
-    $url = \Drupal::request()->getHost();
-    $path = dirname(DRUPAL_ROOT);
-
-    $process = new Process( 'php ' . $path . '/vendor/bin/drupal --uri='. $url . ' offres_prestataires:import');
-    $process->run();
-
-    drupal_flush_all_caches();
-
-    if (!$process->isSuccessful()) {
-        throw new ProcessFailedException($process);
-    }
-}

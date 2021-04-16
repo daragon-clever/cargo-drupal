@@ -3284,3 +3284,30 @@ body.adminimal-admin-toolbar {
 .offres-emploi-module #offre .right br {
   display: none;
 }
+
+// SELECT2 GENERAL
+.select2-selection {
+  &__arrow {
+    display: none;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    height : 0;
+    width : 0;
+    border-right : 4px solid transparent;
+    border-bottom : 4px solid darkgrey;
+    border-left : 4px solid transparent;
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    transform-origin: center;
+    transform: rotate(180deg);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &[aria-expanded="true"]:after {
+    transform: rotate(0);
+  }
+}

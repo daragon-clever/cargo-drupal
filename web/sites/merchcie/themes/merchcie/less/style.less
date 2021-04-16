@@ -27,6 +27,7 @@ header {
 
   &.fixed {
     background: white;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
 
     .logo-placeholder {
       background-image: url("../images/logo/logo-merchcie_fixed.svg");
@@ -919,12 +920,22 @@ body.adminimal-admin-toolbar {
       }
     }
 
-    input {
+    input:not(.form-submit) {
       margin: 10px 0;
       background: none;
       border: none;
       border-bottom: 1px solid @color2;
       outline: none;
+    }
+
+    input.form-submit {
+      outline: none;
+      border: none;
+
+      @media @tablet {
+        margin: 15px auto 0;
+        display: block;
+      }
     }
 
     .choice-notice {
@@ -3004,18 +3015,6 @@ body.adminimal-admin-toolbar {
     font-size: 13px;
   }
 
-  .g-recaptcha { //todo: à vérifier
-    transform: scale(0.9);
-
-    & > div {
-      margin: 0 auto;
-    }
-
-    @media @phone {
-      margin-bottom: 10px;
-    }
-  }
-
   .form-item-checkbox-rgpd {
     input {
       width: auto !important;
@@ -3028,6 +3027,18 @@ body.adminimal-admin-toolbar {
         text-transform: inherit !important;
       }
     }
+  }
+}
+
+.g-recaptcha {
+  transform: scale(0.9);
+
+  & > div {
+    margin: 0 auto;
+  }
+
+  @media @tablet {
+    margin-bottom: 10px;
   }
 }
 

@@ -13,7 +13,7 @@ header {
   transition: 0.3s ease-in-out;
 
   .logo-placeholder {
-    background: url("../images/logo/logo-merchcie.svg") no-repeat center / cover transparent;
+    background: url("../images/logo/logo-merchcie.svg") no-repeat center / contain transparent;
     width: 200px;
     height: 55px;
     display: block;
@@ -42,12 +42,36 @@ header {
         color: @color1
       }
     }
+
+    @media @tablet {
+      .mmenu-btn-wrapper {
+        border-color: lightgrey;
+
+        span {
+          &,
+          &:before,
+          &:after {
+            background: @color1;
+          }
+        }
+      }
+    }
   }
 
   .inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media @tablet {
+      min-height: 43px;
+
+      & > a {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
   }
 
   nav {
@@ -166,8 +190,41 @@ header {
 
     .mmenu-btn-wrapper {
       position: absolute;
-      top: 0;
+      top: -15px;
       right: 0;
+      width: 75px;
+      height: 73px;
+      border-left: 1px solid #30304e;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .hamburger {
+        position: relative;
+
+        &,
+        &:before,
+        &:after {
+          width: 25px;
+          display: block;
+          background: white;
+          height: 2px;
+        }
+
+        &:before,
+        &:after {
+          content: "";
+          position: absolute;
+        }
+
+        &:before {
+          top: -8px;
+        }
+
+        &:after {
+          bottom: -8px;
+        }
+      }
     }
   }
 }

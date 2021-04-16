@@ -41,7 +41,8 @@ jQuery(document).ready(function ($) {
     }
 
     // POPUP BOOK
-    $('.js-open-book, #js-popup-book .js-close').click(function () {
+    $('.js-open-book, #js-popup-book .js-close, .white-book-block-wrapper .cta').click(function (e) {
+        e.preventDefault();
         $('#js-popup-book-wrapper').fadeToggle();
     });
 

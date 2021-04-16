@@ -958,6 +958,17 @@ body.adminimal-admin-toolbar {
     }
   }
 
+  .g-recaptcha > div {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 30px;
+
+    @media @tablet {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
   @media @tablet {
     padding-top: 30px;
   }
@@ -3035,8 +3046,6 @@ body.adminimal-admin-toolbar {
 }
 
 .g-recaptcha {
-  transform: scale(0.9);
-
   & > div {
     margin: 0 auto;
   }

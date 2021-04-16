@@ -113,7 +113,7 @@ class ImportCommand extends Command
                         }
                     }
                 }
-                $this->disableAllOffresNotIn($allRefsActive);
+                $this->offreRepository->disable($allRefsActive);
             }
 
             return $this->getIo()->info('[OFFRES EMPLOI] importing offers done with success !');
@@ -201,16 +201,5 @@ class ImportCommand extends Command
     {
         json_decode($data);
         return (json_last_error() === JSON_ERROR_NONE);
-    }
-
-    /**
-     * Disable all offers that not in the data json
-     * @param array $refs
-     */
-    private function disableAllOffresNotIn(array $refs)
-    {
-        if (!empty($refs)) {
-            $this->offreRepository->disable($refs);
-        }
     }
 }

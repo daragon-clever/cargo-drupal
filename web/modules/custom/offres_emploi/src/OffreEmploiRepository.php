@@ -133,11 +133,12 @@ class OffreEmploiRepository
     public function disable(array $entry): int
     {
         try {
-            $count = $this->queryUpdate()
-                        ->fields(['active'=>0])
-                        ->condition('codeRecrutement', $entry, 'NOT IN')
-                        ->execute()
-            ;
+            $query = $this->queryUpdate()
+                ->fields(['active'=>0]);
+            if (!empty($entry)) {
+                $query = $query->condition('codeRecrutement', $entry, 'NOT IN');
+            }
+            $count = $query->execute();
         } catch(\Exception $e) {
             \Drupal::logger('offres_emploi')->error('Disable Offre failed. Message => ' . $e->getMessage());
         }

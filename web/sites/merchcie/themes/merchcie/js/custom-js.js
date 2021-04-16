@@ -8,8 +8,9 @@ if (isTabletOrLess) {
             new Mmenu("#block-navigationprincipale", {
                 "extensions": [
                     "border-full",
-                    "pagedim-black",
-                    "position-top"
+                    "position-front",
+                    "fullscreen",
+                    "position-right"
                 ]
             });
         }
@@ -19,11 +20,12 @@ if (isTabletOrLess) {
 jQuery(document).ready(function ($) {
     // STICKY HEADER
     $(window).scroll(function () {
-        var header = $('header');
         if ($(window).scrollTop() >= 1) {
-            header.addClass('fixed');
+            $('header').addClass('fixed');
+            $('body').addClass('header-is-fixed')
         } else {
-            header.removeClass('fixed');
+            $('header').removeClass('fixed');
+            $('body').removeClass('header-is-fixed')
         }
     });
 

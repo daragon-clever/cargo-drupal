@@ -1,0 +1,133 @@
+<div id="espace-prestataires">
+    <!--INTRO-->
+    <div class="bg-color1 main-ban z1">
+        <div class="container">
+            <div class="row align-items-end">
+                <div class="col-12 col-lg-6">
+                    <div class="left-part">
+                        {{ content.field_presta_intro_txt }}
+                        <div class="btn-wrapper">
+                            <a href="{{ content.field_presta_intro_links[0]['#url'] }}"
+                               class="cta bg-color2 text-white">{{ content.field_presta_intro_links[0]['#title'] }}</a>
+                            <a href="{{ content.field_presta_intro_links[1]['#url'] }}" class="mt-3 mt-lg-0 ml-lg-5 text-white">
+                                <u>
+                                    {{ content.field_presta_intro_links[1]['#title'] }}
+                                </u>
+                            </a>
+                        </div>
+                        <div class="dot-bottom dot-pattern-color3"></div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 text-center">
+                    <img class="img-fluid" src="{{ content.field_presta_intro_img[0] }}" alt="">
+                </div>
+            </div>
+        </div>
+        <span class="line-vertical dot-pattern-color2"></span>
+    </div>
+
+    <!--CONTENT 1-->
+    <div class="c1">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <div>{{ content.field_presta_c1_txts[0] }}</div>
+                    <div class="js-slick-fade-text text-color2">
+                        {% for i in 1..4 %}
+                            <div>
+                                {{ content.field_presta_c1_txts[i] }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--CONTENT 2-->
+    <div class="c2 bg-color4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-5 text-right text-lg-center">
+                    <div class="img-wrapper">
+                        <img class="img-fluid" src="{{ content.field_presta_c2_img[0] }}" alt="">
+                        <div class="dot dot-pattern-color2"></div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-7">
+                    {{ content.field_presta_c2_txt }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--CONTENT 3 // TEMOIGNAGES-->
+    <div class="c3">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    {{ content.field_presta_c3_intro }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    {{ content.field_presta_c3_temoignages }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--CONTENT 4-->
+    <div class="c4 bg-color1 text-center text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    {{ content.field_presta_c4_intro }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="js-how-to">
+                        {% for i in 0..5 %}
+                            <div>
+                                <div class="how-to-item {% if i == 5 %}last-item{% endif %}">
+                                    <span class="nb">
+                                        {{ i+1 }}
+                                    </span>
+                                    {{ content.field_presta_c4_how_txts[i] }}
+                                    <div class="sign">
+                                        <img src="{{ file_url(content.field_presta_c4_how_imgs['#items'][i].entity.uri.value) }}"
+                                             alt="">
+                                        <small>{{ node.field_presta_c4_how_imgs[i].title }}</small>
+                                    </div>
+                                </div>
+                                <span class="line dot-pattern-color2"></span>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--CONTENT 5-->
+    <div class="c5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-6">
+                    <a href="#" class="hover-picto-eye">
+                        <img class="img-fluid filter-hover-color1" src="{{ content.field_presta_c5_img[0] }}" alt="">
+                    </a>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="txt">
+                        {{ content.field_presta_c5_txt }}
+                        <a href="{{ content.field_presta_c5_link[0]['#url'] }}" class="link text-color3 after-arrow">
+                            {{ content.field_presta_c5_link[0]['#title'] }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

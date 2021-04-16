@@ -40,7 +40,8 @@ class OffresEmploiActionController extends ControllerBase
 
             return [
                 '#theme' => 'offres_emploi--form-postuler',
-                '#data' => $dataPoste[0]->intitulePoste,
+                '#offerName' => $dataPoste[0]->intitulePoste,
+                '#offerRef' => $ref,
                 "#form" => $webform->getSubmissionForm()
             ];
         }

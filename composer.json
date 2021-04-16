@@ -105,6 +105,7 @@
         "drupal/views_infinite_scroll": "^1.5",
         "drupal/webform": "^5.1",
         "drupal/yaml_editor": "^1.0",
+        "drupal/youtube": "^1.2",
         "drush/drush": "^9.0.0",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",

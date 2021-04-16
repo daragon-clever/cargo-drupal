@@ -1,0 +1,105 @@
+<div id="homepage">
+    <!-- CONTENT 1-->
+    <div class="bg-color1 main-ban">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-5 left-part">
+                    {{ content.field_hp_c1_intro }}
+                    <div class="dot-bottom dot-pattern-color3"></div>
+                </div>
+                <div class="col-12 col-lg-7 text">
+                    <div class="right-part">
+                        <div class="video-wrapper">
+                            <div class="img-wrapper">
+                                <div class="bg-color2 text-white button-video" id="js-video-btn">
+                                    <span class="picto-play"></span>
+                                    <div>
+                                        <small>
+                                            <b>{{ "Lire la vidéo"|trans }}</b><span id="js-video-time"></span>
+                                        </small>
+                                        <span class="video title">{{ node.field_hp_c1_video_file[0].description }}</span>
+                                    </div>
+                                </div>
+                                <img class="img-fluid" src="{{ content.field_hp_c1_video_thumb[0] }}" alt="">
+                                <video id="js-video" loop controls>
+                                    <source src="{{ content.field_hp_c1_video_file[0]|render|striptags|trim|raw }}"
+                                            type="video/mp4">
+                                    <p>{{ "Votre navigateur ne prend pas en charge les vidéos HTML5."|trans }}</p>
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENT 2-->
+    <div class="container intro">
+        <div class="row">
+            <div class="col">
+                {{ content.field_hp_c2_intro }}
+            </div>
+        </div>
+    </div>
+
+    <div class="container z1 position-relative">
+        <div class="row">
+            <div class="col-12 col-lg-11">
+                <div class="c2">
+                    <div class="offset-bg"></div>
+                    <div class="row text-center">
+                        {% for i in 0..2 %}
+                            <div class="col-12 col-lg-3 {% if i == 1 %}my-5 my-lg-0{% endif %}">
+                                <img src="{{ file_url(content.field_hp_c2_data_img['#items'][i].entity.uri.value) }}"
+                                     alt="">
+                                <h4 class="text-num text-color2">{{ content.field_hp_c2_data_numb[i] }}</h4>
+                                <p class="text-color1">{{ node.field_hp_c2_data_img[i].description }}</p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENT 3-->
+    <div class="bg-color1 c3 z0">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center text-white">
+                    {{ content.field_hp_c3_intro }}
+                    <span class="line-vertical dot-pattern-color-white"></span>
+                </div>
+            </div>
+            <div class="row cats-row">
+                {% for i in 0..2 %}
+                    <div class="col-12 col-lg-4 {% if i == 1 %}my-4 my-lg-0{% endif %}">
+                        <a href="{{ content.field_hp_c3_links[i]['#url'] }}" class="hover-picto-eye">
+                            <img class="img-fluid filter-hover-color1"
+                                 src="{{ file_url(content.field_hp_c3_imgs['#items'][i].entity.uri.value) }}"
+                                 alt="">
+                        </a>
+                        <h4 class="text-color1 mt-4">{{ node.field_hp_c3_imgs[i].title }}</h4>
+                        <a href="{{ content.field_hp_c3_links[i]['#url'] }}"
+                           class="link text-color3 after-arrow">{{ content.field_hp_c3_links[i]['#title'] }}</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENT 4 // TEMOIGNAGES -->
+    <div class="container c4 z1">
+        <div class="row">
+            <div class="col">
+                {{ content.field_hp_c4_intro }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {{ content.field_temoignage_block }}
+            </div>
+        </div>
+    </div>
+</div>

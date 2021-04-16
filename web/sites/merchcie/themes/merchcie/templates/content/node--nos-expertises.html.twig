@@ -1,0 +1,44 @@
+<!-- LIB -->
+{{ attach_library('merchcie/imageloaded') }}
+{{ attach_library('merchcie/masonry') }}
+
+<div id="nos-expertises">
+    <!--INTRO-->
+    <div class="bg-color1">
+        <div class="container">
+            <div class="row">
+                <div class="col main-big-title">
+                    <h1 class="text-white">
+                        {{ content.field_expert_intro }}
+                    </h1>
+                    <span class="line-vertical dot-pattern-color2"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--CONTENT 1-->
+    <div class="c1">
+        <div class="container">
+            <div class="grid js-grid-masonry">
+                <div class="grid-sizer col-12 col-lg-3"></div>
+                {% for i in 0..7 %}
+                    <div class="grid-item col-12 {% if i == 0 or i == 6 %}col-lg-6{% else %}col-lg-3{% endif %}">
+                        <div class="grid-item-content">
+                            <a href="{{ content.field_expert_c1_links[i]['#url'] }}">
+                                <img class="{% if i == 2 or i == 3 or i == 4 or i == 7 %}filter-color2{% else %}filter-color1{% endif %} filter-hover-none img-fluid"
+                                     src="{{ content.field_expert_c1_imgs[i] }}">
+                                <div class="bg-color1 p-4">
+                                    <h4 class="text-color-white">
+                                        {{ node.field_expert_c1_imgs[i].alt }}
+                                    </h4>
+                                    <span class="link text-color4 after-arrow">{{ content.field_expert_c1_links[i]['#title'] }}</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

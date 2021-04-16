@@ -1,0 +1,5 @@
+name: Offres prestataires
+description: Récupérer les offres prestataires et y postuler, grâce à l'API ScopTalent
+core: 8.x
+package: Custom
+type: module

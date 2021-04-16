@@ -1,0 +1,97 @@
+<div id="pourquoi">
+    <!--INTRO-->
+    <div class="bg-color1 z1">
+        <div class="container">
+            <div class="row">
+                <div class="col main-big-title">
+                    <h1 class="text-white">
+                        {{ content.field_pourquoi_intro }}
+                    </h1>
+                    <span class="line-vertical dot-pattern-color2"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--CONTENT 1-->
+    <div class="c1 text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h4 class="text-hand text-color2">
+                        {{ content.field_pourquoi_c1_intro }}
+                    </h4>
+                </div>
+            </div>
+            <div class="row numbers-infos">
+                <div class="col-12 col-lg-8 offset-lg-2">
+                    <div class="row bg-color4">
+                        <div class="col-12 col-lg-6 nb-wrapper">
+                            {{ content.field_pourquoi_c1_txts[0] }}
+                        </div>
+                        <span class="line-vertical dot-pattern-color2"></span>
+                        <div class="col-12 col-lg-6 nb-wrapper">
+                            {{ content.field_pourquoi_c1_txts[1] }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--CONTENT 2-->
+    <div class="c2">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col">
+                    {{ content.field_pourquoi_c2 }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--CONTENT 3-->
+    <div class="c3">
+        <div class="container">
+            <div class="row cats-row">
+                {% for i in 0..2 %}
+                    <div class="col-12 {% if i == 2 %}col-lg-12{% else %}col-lg-6{% endif %}">
+                        <a href="{{ content.field_pourquoi_c3_links[i]['#url'] }}" class="hover-picto-eye">
+                            <img class="img-fluid filter-hover-color1"
+                                 src="{{ file_url(content.field_pourquoi_c3_imgs['#items'][i].entity.uri.value) }}"
+                                 alt="">
+                        </a>
+                        <h4 class="text-color1 mt-4">{{ node.field_pourquoi_c3_imgs[i].title }}</h4>
+                        <a href="{{ content.field_pourquoi_c3_links[i]['#url'] }}"
+                           class="link text-color3 after-arrow">{{ content.field_pourquoi_c3_links[i]['#title'] }}</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!--CONTENT 4-->
+    <div class="c4 bg-color1 text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-8">
+                    <h2 class="before-line line-color-white">
+                        {{ content.field_pourquoi_c4_intro }}
+                    </h2>
+                </div>
+            </div>
+            <div class="row mt-5 z-1">
+                <div class="col-12 col-lg-5">
+                    <div class="inner-txt">
+                        {{ content.field_pourquoi_c4_txt }}
+                    </div>
+                </div>
+                <div class="col-12 col-lg-7 text-center">
+                    <div class="img-wrapper">
+                        {{ content.field_pourquoi_c4_img }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,113 @@
+<div id="qsn">
+    <!--INTRO-->
+    <div class="bg-color1 z1">
+        <div class="container">
+            <div class="row">
+                <div class="col main-big-title">
+                    <h1 class="text-white">
+                        {{ content.field_qsn_intro }}
+                    </h1>
+                    <span class="line-vertical dot-pattern-color2"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--CONTENT 1-->
+    <div class="container c1">
+        <div class="row align-items-center">
+            <div class="col-12 col-lg-6">
+                <div class="inner">
+                    {{ content.field_qsn_c1_txts[0] }}
+                </div>
+            </div>
+            <div class="col-12 col-lg-6">
+                <img class="img-fluid" src="{{ content.field_qsn_c1_imgs[0] }}" alt="">
+            </div>
+        </div>
+        <div class="row align-items-center my-lg-5">
+            <div class="col-12 col-lg-6">
+                <img class="img-fluid" src="{{ content.field_qsn_c1_imgs[1] }}" alt="">
+            </div>
+            <div class="col-12 col-lg-6 text-center">
+                <div class="inner">
+                    {{ content.field_qsn_c1_txts[1] }}
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-12 col-lg-6 text-center">
+                <img class="img-fluid" src="{{ content.field_qsn_c1_imgs[2] }}" alt="">
+            </div>
+            <div class="col-12 col-lg-6">
+                <div class="inner">
+                    {{ content.field_qsn_c1_txts[2] }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--CONTENT 2-->
+    <div class="c2">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-8">
+                    <h2 class="text-color2 before-line line-color2">
+                        {{ content.field_qsn_c2_intro }}
+                    </h2>
+                </div>
+            </div>
+            <div class="row">
+                {% for i in 0..3 %}
+                    <div class="col-12 col-lg-3">
+                        <div class="inner text-center">
+                            {{ content.field_qsn_c2_imgs[i] }}
+                            {{ content.field_qsn_c2_txts[i] }}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!--CONTENT 3-->
+    <div class="c3 bg-color4 text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h2 class="text-color3">
+                        {{ content.field_qsn_c3_intro }}
+                    </h2>
+                    <span class="dot-pattern line-vertical"></span>
+                </div>
+            </div>
+            <div class="row">
+                {% for i in 0..3 %}
+                    <div class="col-12 col-lg-3">
+                        <div class="inner">
+                            {{ content.field_qsn_c3_imgs[i] }}
+                            <h3 class="text-color3 bold">{{ content.field_qsn_c3_txts[i] }}</h3>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!--CONTENT 4 // TEMOIGNAGES-->
+    <div class="container c4">
+        <div class="row">
+            <div class="col">
+                {{ content.field_qsn_c4_intro }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {{ content.field_qsn_c4_temoignages }}
+                <h3 class="bold text-color2 text-center testimonials-outro">
+                    {{ content.field_qsn_c4_outro }}
+                </h3>
+            </div>
+        </div>
+    </div>
+</div>

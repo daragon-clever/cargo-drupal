@@ -1,0 +1,25 @@
+<div id="offres-prestataires-module">
+    {% if data %}
+        <div class="listing">
+            {% for offre in data %}
+                <div class="offer">
+                    <div class="offer-infos">
+                                <span class="offer-title">
+                                    <i>{{ offre.title }}</i>
+                                </span>
+                        <span class="offer-location">
+                                    <i>{{ offre.region }}</i>
+                                </span>
+                    </div>
+                    <div class="offer-link">
+                        <a href="{{ path('offresPrestataires.content', {ref: offre.id}) }}">Voir le détail de l'offre</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div id="alerte-offres-prestataires">
+            Il n'existe aucune offre pour le moment.
+        </div>
+    {% endif %}
+</div>

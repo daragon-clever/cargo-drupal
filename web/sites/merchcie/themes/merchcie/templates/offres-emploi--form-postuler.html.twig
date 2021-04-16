@@ -1,0 +1,35 @@
+<div class="offres-emploi-module">
+    {% if offerName and offerRef and form %}
+        <div id="candidature-offre">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h4 class="text-color2"><span class="pre-title">Offre d'emploi</span> - {{ offerName }}</h4>
+                        <span class="line dot-pattern-color2 w-100"></span>
+                    </div>
+                </div>
+
+                {{ form }}
+
+                <div class="row">
+                    <div class="col">
+                        <a class="back d-block text-color2" href="{{ path('offresEmploi.content', {ref: offerRef}) }}">{{ '< Retour'|t }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div id="alerte-offres" class="bg-color1 text-white">
+                        <p class="error">
+                            L'annonce n'existe pas.
+                            <a href="{{ path('offresEmploi.content') }}" class="text-color2">Retournez sur la page des offres d'emploi.</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+</div>

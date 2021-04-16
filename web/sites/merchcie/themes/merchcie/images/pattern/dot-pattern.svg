@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10"
+     viewBox="0 0 10 10">
+    <defs>
+        <clipPath id="a">
+            <rect class="a" width="10" height="10"/>
+        </clipPath>
+    </defs>
+    <g class="b">
+        <g>
+            <circle class="c" cx="1.513" cy="1.513" r="1.513"/>
+        </g>
+    </g>
+</svg>

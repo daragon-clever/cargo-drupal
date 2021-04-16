@@ -1,0 +1,112 @@
+{{ attach_library('merchcie/imageloaded') }}
+
+<div id="notre-equipe">
+    <!--INTRO-->
+    <div class="bg-color1 z1">
+        <div class="container">
+            <div class="row">
+                <div class="col main-big-title">
+                    <h1 class="text-white">
+                        {{ content.field_equipe_intro }}
+                    </h1>
+                    <span class="line-vertical dot-pattern-color2"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--CONTENT 1-->
+    <div class="c1 text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    {{ content.field_equipe_c1 }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--CONTENT 2 // équipe-->
+    <div class="c2">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h2 class="text-color2 before-line line-color2">
+                        {{ content.field_equipe_c2_intro }}
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="js-interviews-1">
+        {{ content.field_equipes_itws }}
+    </div>
+
+    <div class="js-hidden-listing-text-1" style="display: none;">
+        <div class="col-12 col-md-4 col-lg-6 moved-block">
+            <div class="inner text-white text-center bg-color1">
+                <small class="text-color2">
+                    {{ "Ils préparent"|trans }}
+                </small>
+                <div class="text-hand main">
+                    {{ "Une stratégie <br />sans faille"|trans }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--CONTENT 3 // experts-->
+    <div class="c3">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h2 class="text-color2 before-line line-color2">
+                        {{ content.field_equipe_c3_intro }}
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="js-interviews-2">
+        {{ content.field_equipes_itws_experts }}
+    </div>
+
+    <div class="js-hidden-listing-text-2" style="display: none;">
+        <div class="col-12 col-md-4 col-lg-3 moved-block">
+            <div class="inner text-white text-center bg-color1">
+                <small class="text-color2">
+                    {{ "Ils sont"|trans }}
+                </small>
+                <div class="text-hand main">
+                    {{ "Les rois de <br />l'efficacité"|trans }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--CONTENT 4-->
+    <div class="c4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-6 order-lg-2">
+                    <div class="txt">
+                        <h2 class="text-color2">
+                            {{ content.field_equipe_c4_title }}
+                        </h2>
+                        <a href="{{ content.field_equipe_c4_link[0]['#url'] }}"
+                           class="cta bg-color2 text-white">{{ content.field_equipe_c4_link[0]['#title'] }}</a>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 text-center">
+                    <div class="img-wrapper">
+                        <div class="dot dot-pattern-color2"></div>
+                        <img class="img-fluid" src="{{ content.field_equipe_c4_img[0] }}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dot dot-pattern-color3"></div>
+    </div>
+</div>

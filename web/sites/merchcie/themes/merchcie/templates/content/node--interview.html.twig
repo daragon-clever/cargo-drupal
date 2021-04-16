@@ -1,0 +1,57 @@
+<div class="inner js-interview">
+    <div class="img-wrapper">
+        <img class="img-fluid main"
+             src="{{ file_url(content.field_interview_imgs['#items'][0].entity.uri.value) }}"
+             alt="{{ node.field_interview_imgs[0].alt }}">
+        <img class="img-fluid hover"
+             src="{{ file_url(content.field_interview_imgs['#items'][1].entity.uri.value) }}"
+             alt="{{ node.field_interview_imgs[1].alt }}"
+             style="opacity: 0;">
+        <div class="infos">
+            <span class="text-hand name">
+                {{ node.field_interview_imgs[0].alt }}
+            </span>
+            <span class="job">
+                {{ node.field_interview_imgs[1].alt }}
+            </span>
+            <span class="line dot-pattern-color-white"></span>
+            <span class="link">
+                {{ "Découvrir l'interview"|trans }}
+            </span>
+        </div>
+    </div>
+</div>
+
+<!-- INTERVIEW CONTENT -->
+<div class="content-wrapper js-itw-content" style="display: none">
+    <div class="row">
+        <div class="col-12 col-md-6 text-center">
+            <img class="img-fluid"
+                 src="{% if content.field_interview_imgs['#items']|length <= 2 %}
+                            {{ file_url(content.field_interview_imgs['#items'][1].entity.uri.value) }}
+                        {% else %}
+                            {{ file_url(content.field_interview_imgs['#items'][2].entity.uri.value) }}
+                        {% endif %}"
+                 alt="">
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="text-wrapper bg-color4">
+                <h2 class="text-hand">
+                    {{ node.field_interview_imgs[0].alt }}
+                </h2>
+                <span class="job">
+                    {{ node.field_interview_imgs[1].alt }}
+                </span>
+                <div class="line dot-pattern-color1"></div>
+                <div class="text">
+                    {% if content.field_interview_location|render %}
+                        <div class="location">
+                            {{ content.field_interview_location }}
+                        </div>
+                    {% endif %}
+                    {{ content.field_interview_text }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -36,5 +36,6 @@ en interne (WEB_Api_Contact_Actito).
 * Blog Sitram
 * C'est Deux Euros
 * Comptoir De Famille
-* Yliades
+* Merch&Cie
 * Sitram
+* Yliades

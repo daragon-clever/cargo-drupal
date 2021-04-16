@@ -66,7 +66,7 @@ abstract class AbstractCompanyController extends ControllerBase
         $dataForActito = $this->setDataToSaveOnActito($arrayData);
         $saveActito = $this->savePeopleInActito($dataForActito);
 
-        if ($saveActito && $action == self::ACTION_INSERT) {
+        if ($saveActito) {
             $this->subscriberModel->updateSubscriber($email, ['exported' => 1]);
         }
 

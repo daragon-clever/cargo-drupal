@@ -1,18 +1,14 @@
-# LISTES OFFRES EMPLOI + ANNONCE
-offresEmploi.content:
-  path: '/offres-emploi/{ref}'
+# SETINGS
+offres_emploi.settings:
+  path: '/admin/config/system/offres_emploi/config'
   defaults:
-    _controller: 'Drupal\offres_emploi\Controller\OffresEmploiListController::show'
-    ref: 'all'
-    _title: 'Offres emploi'
+    _form: 'Drupal\offres_emploi\Form\Settings'
+    _title: 'Cargo - Offre emploi configuration'
   requirements:
-    _permission: 'access content'
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: TRUE
 
-# FORMULAIRE POUR POSTULER
-offresEmploi.postuler:
-  path: '/offres-emploi/postuler/{ref}'
-  defaults:
-    _controller: 'Drupal\offres_emploi\Controller\OffresEmploiActionController::apply'
-    _title: 'Offres emploi'
-  requirements:
-    _permission: 'access content'
+# CONFIG DYNAMIC ROUTES
+route_callbacks:
+  - '\Drupal\offres_emploi\Routing\Routes::routes'

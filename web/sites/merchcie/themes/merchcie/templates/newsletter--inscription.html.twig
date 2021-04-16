@@ -1,0 +1,57 @@
+{% if form %}
+    <div class="bg-color4 newsletter-block-wrapper">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-6 text-color1 text-center">
+                    <div class="inner text-left">
+                        <h2 class="text-color2 before-line line-color2">
+                            <span class="picto-mail"></span>
+                            Newsletter
+                        </h2>
+                        <h3>Suivez notre actualité</h3>
+                        <p class="mt-5 mt-lg-4 mb-5">
+                            Tous les mois recevez la newsletter Merch & Cie pour être au courant de nos actualités et pour
+                            ne rater aucun de nos conseils.
+                        </p>
+                        <div class="form">
+                            <div class="d-flex flex-column d-lg-block">
+                                <form {{ form.attributes }} method="{{ form['#method'] }}">
+                                    {{ form.form_build_id }}
+                                    {{ form.form_token }}
+                                    {{ form.form_id }}
+                                    <div class="row">
+                                        <div class="col-12 col-lg">
+                                            {{ form.nom }}
+                                        </div>
+                                        <div class="col-12 col-lg">
+                                            {{ form.prenom }}
+                                        </div>
+                                    </div>
+                                    {{ form.societe }}
+                                    {{ form.mail }}
+                                    <div class="row align-items-center mt-4 mb-5">
+                                        <div class="col-auto">
+                                            {{ form.rgpd_allow }}
+                                        </div>
+                                        <div class="col">
+                                            <p class="choice-notice">
+                                                En renseignant ces informations j’accepte de recevoir chaque mois, la lettre
+                                                d’information de Merch & Cie et je confirme avoir pris connaissance de la
+                                                <a href="#">politique de confidentialité</a>.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    {{ form.captcha }}
+                                    {{ form.actions }}
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 mt-5 mt-lg-0 text-right">
+                    <img class="img-fluid" src="/sites/merchcie/files/2021-03/bg_newsletter.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}

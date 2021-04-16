@@ -19,7 +19,8 @@ function offres_emploi_theme($existing, $type, $theme, $path) {
         ],
         'offres_emploi--form-postuler' => [
             'variables' => [
-                'data' => NULL,
+                'offerName' => NULL,
+                'offerRef' => NULL,
                 'form' => NULL
             ]
         ]

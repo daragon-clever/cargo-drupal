@@ -1,0 +1,16 @@
+<div class="js-testimonials-slick">
+    {% for key, row in rows %}
+        <div>
+            <div class="testimonial-item bg-color2 text-white">
+                <blockquote>
+                    « {{ view.style_plugin.getField(key, 'field_temoignage_text') }} »
+                </blockquote>
+                <div>
+                    <span class="text-hand">
+                            {{ view.style_plugin.getField(key, 'field_temoignage_nom') }}
+                    </span>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>

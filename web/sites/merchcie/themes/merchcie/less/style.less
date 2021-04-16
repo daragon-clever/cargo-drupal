@@ -555,6 +555,10 @@ body.adminimal-admin-toolbar {
     display: flex;
     width: 100%;
     height: 100%;
+
+    @media @tablet {
+      padding: 15px;
+    }
   }
 
   #js-popup-book {
@@ -582,7 +586,14 @@ body.adminimal-admin-toolbar {
       border-radius: 100%;
       cursor: pointer;
       z-index: 1000;
-      .dimOpacityOnHover(0.8)
+      .dimOpacityOnHover(0.8);
+
+      @media @tablet {
+        top: 0;
+        right: 0;
+        width: 50px;
+        height: 50px;
+      }
     }
 
     .inner {
@@ -592,6 +603,31 @@ body.adminimal-admin-toolbar {
 
       h4 + p {
         margin-bottom: 15px;
+      }
+
+      @media @tablet {
+        max-width: inherit;
+        max-height: inherit;
+        width: auto;
+        height: auto;
+        margin: 0;
+        padding: 15px 0;
+      }
+    }
+
+    @media @tablet {
+      height: auto;
+      width: auto;
+      overflow-y: scroll;
+      align-items: start;
+      border-radius: 0;
+      padding: 15px;
+      max-height: 100%;
+      max-width: 100%;
+
+      img {
+        max-height: 150px;
+        width: auto;
       }
     }
   }

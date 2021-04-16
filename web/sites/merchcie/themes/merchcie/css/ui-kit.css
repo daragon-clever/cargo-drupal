@@ -286,7 +286,7 @@ p:last-of-type {
   font-size: 1.6rem;
   line-height: 54px;
   padding: 0 65px;
-  border-radius: 25px;
+  border-radius: 26px;
   transition: box-shadow 0.3s ease-in-out;
   text-align: center;
 }

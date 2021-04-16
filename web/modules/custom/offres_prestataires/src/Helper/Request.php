@@ -3,20 +3,29 @@
 namespace Drupal\offres_prestataires\Helper;
 
 use Drupal\Component\Serialization\Json;
+use Drupal\offres_prestataires\Config\Config;
 use Symfony\Component\Mime\Part\DataPart;
 use Symfony\Component\Mime\Part\Multipart\FormDataPart;
 
 class Request
 {
-//    const API_KEY = "99803e9a45b0430ba683c75fa9827ae4"; //prod
-    const API_KEY = "7de8991be6044c7abaa3b4f78a8b32c2"; //test scoptalent api
-
     const API_URL = "https://api.scoptalent.com";
 
     const REQ_DETAIL_OFFER = "/api/public/vacancies/";
     const REQ_LIST_OFFERS = "/api/public/vacancies";
     const REQ_APPLY = "/api/public/applications/";
     const REQ_FILE_UPLOAD = "/api/public/documents/";
+
+    /**
+     * @var string
+     */
+    private $apiKey;
+
+    public function __construct()
+    {
+        $config = new Config();
+        $this->apiKey = $config->getApiKey();
+    }
 
     public function getVacanciesList(array $params = [])
     {
@@ -55,7 +64,7 @@ class Request
 
             curl_setopt($ch, CURLOPT_URL, $url);
             curl_setopt($ch, CURLOPT_POST, true);
-            curl_setopt($ch, CURLOPT_HTTPHEADER, ['Authorization: ApiKey '.self::API_KEY]);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, ['Authorization: ApiKey '.$this->apiKey]);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($ch, CURLOPT_POSTFIELDS, [$cfile]);
 
@@ -116,7 +125,7 @@ class Request
 
     private function addBaseConfig($config)
     {
-        $config['headers']['Authorization'] = 'ApiKey '.self::API_KEY;
+        $config['headers']['Authorization'] = 'ApiKey '.$this->apiKey;
         if (!isset($config['headers']['Content-Type'])) $config['headers']['Content-Type'] = "application/json";
         return $config;
     }

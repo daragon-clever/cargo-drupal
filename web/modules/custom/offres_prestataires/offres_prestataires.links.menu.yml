@@ -1,0 +1,6 @@
+offres_prestataires.settings:
+  title: 'Cargo - Offres prestataires'
+  description: 'Configuration pour le module offres_prestataires'
+  route_name: offres_prestataires.settings
+  parent: system.admin_config_system
+  weight: 99

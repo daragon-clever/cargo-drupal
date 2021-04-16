@@ -28,9 +28,8 @@
                         {{ "Filtrer"|trans }}
                     </button>
                 </div>
+                <input type="text" id="searchbox" class="w-100" placeholder="Rechercher une offre" />
                 {% if data %}
-                    <input type="text" id="searchbox" class="w-100" placeholder="Rechercher une offre" />
-
                     <div id="groupe-filtres-offres">
                         <div id="filtre-contrat" class="offer-caracteristic">
                             <span class="title-caracteristic">{{ "Type de contrat"|trans }}</span>
@@ -80,9 +79,19 @@
                             {% endfor %}
                         </tbody>
                     </table>
+
+                    <div id="alerte-offres" class="bg-color1 text-white">
+                        <p class="error">
+                            {{ "Aucune offre ne vous correspond mais vous souhaitez quand même nous rejoindre ?"|trans }}
+                            {{ "Envoyez nous une "|trans }}
+                            <a href="/rejoignez-nous/candidature-spontanee" class="text-white">{{ 'candidature spontanée'|trans }}</a>.
+                        </p>
+                    </div>
                 {% else %}
                     <div id="alerte-offres" class="bg-color1 text-white">
-                        <p class="error">{{ "Nous n'avons aucune offre pour le moment. Revenez bientôt pour de nouvelles offres."|trans }}</p>
+                        <p class="error">{{ "Nous n'avons aucune offre pour le moment. Revenez bientôt pour de nouvelles offres ou postulez avec une "|trans }}
+                            <a href="/rejoignez-nous/candidature-spontanee" class="text-white">{{ 'candidature spontanée'|trans }}</a>.
+                        </p>
                     </div>
                 {% endif %}
             </div>

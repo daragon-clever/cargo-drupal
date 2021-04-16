@@ -109,12 +109,10 @@ class MerchCieForm extends FormBase
      */
     public function submitForm(array &$form, FormStateInterface $form_state)
     {
-        $rgpdAllow = $form_state->getValue('rgpd_allow');
         $lastName = $form_state->getValue('nom');
         $firstName = $form_state->getValue('prenom');
         $company = $form_state->getValue('societe');
         $email = $form_state->getValue('mail');
-        $newsletterShop = $offers = ($rgpdAllow === 1) ? 1 : 0;
 
         //data for database and actito
         $data = [

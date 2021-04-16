@@ -13,7 +13,7 @@ header {
   transition: 0.3s ease-in-out;
 
   .logo-placeholder {
-    background: url("../images/logo/logo-merchcie.svg") no-repeat center / cover transparent;
+    background: url("../images/logo/logo-merchcie.svg") no-repeat center / contain transparent;
     width: 200px;
     height: 55px;
     display: block;
@@ -42,12 +42,36 @@ header {
         color: @color1
       }
     }
+
+    @media @tablet {
+      .mmenu-btn-wrapper {
+        border-color: lightgrey;
+
+        span {
+          &,
+          &:before,
+          &:after {
+            background: @color1;
+          }
+        }
+      }
+    }
   }
 
   .inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media @tablet {
+      min-height: 43px;
+
+      & > a {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
   }
 
   nav {
@@ -163,11 +187,153 @@ header {
   @media @tablet {
     padding: 15px 0;
     text-align: center;
+  }
+}
 
-    .mmenu-btn-wrapper {
+@media @tablet {
+  .mmenu-btn-wrapper {
+    position: absolute;
+    top: -15px;
+    right: 0;
+    width: 75px;
+    height: 73px;
+    border-left: 1px solid #30304e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hamburger {
+    position: relative;
+
+    &,
+    &:before,
+    &:after {
+      width: 25px;
+      display: block;
+      background: white;
+      height: 2px;
+      transform-origin: center;
+      transition: 0.3s ease-in-out;
+    }
+
+    &:before,
+    &:after {
+      content: "";
       position: absolute;
-      top: 0;
-      right: 0;
+    }
+
+    &:before {
+      top: -8px;
+    }
+
+    &:after {
+      bottom: -8px;
+    }
+  }
+
+  body.mm-wrapper_opened {
+    .hamburger {
+      transform: rotate(45deg);
+
+      &:after {
+        display: none;
+      }
+
+      &:before {
+        transform: rotate(90deg);
+        top: 0;
+      }
+    }
+  }
+
+  #block-navigationprincipale.mm-menu {
+    @bgColor: @color1;
+    @borderColor: #30304e;
+
+    top: 73px;
+
+    .mm {
+      &-panel,
+      &-navbar {
+        background: @bgColor;
+        transition: 0.3s ease-in-out;
+        color: white;
+      }
+
+      &-panel {
+        border-bottom: 3px solid @color2;
+        transition: 0.3s ease-in-out;
+      }
+
+      &-navbar {
+        border-top: 1px solid @borderColor;
+        border-bottom: 1px solid @borderColor;
+        transition: 0.3s ease-in-out;
+      }
+
+      &-listitem {
+        border-color: @borderColor;
+        transition: 0.3s ease-in-out;
+
+        &__text {
+          color: white;
+          padding: 25px 10px 25px 20px;
+
+          @media (max-width: 350px) {
+            padding: 15px 10px 15px 20px;
+          }
+        }
+      }
+
+      &-btn {
+        border: none;
+
+        &:after, &:before {
+          border-width: 1px;
+          border-color: white;
+          right: 30px;
+          transition: 0.3s ease-in-out;
+        }
+      }
+    }
+
+    #mm-1 {
+      & > ul > li:last-child:after {
+        display: none;
+      }
+
+      .cta {
+        max-width: 245px;
+        margin: 48px auto;
+        padding: 0 25px;
+      }
+    }
+  }
+
+  body.header-is-fixed {
+    #block-navigationprincipale.mm-menu {
+      .mm {
+        &-panel,
+        &-navbar {
+          background: white;
+          color: @color1;
+        }
+
+        &-navbar,
+        &-listitem {
+          border-color: lightgrey;
+        }
+
+        &-btn:after,
+        &-btn:before {
+          border-color: @color1;
+        }
+
+        &-listitem__text {
+          color: @color1;
+        }
+      }
     }
   }
 }
@@ -955,6 +1121,17 @@ body.adminimal-admin-toolbar {
     @media @tablet {
       margin-left: -15px;
       max-width: 100vw;
+    }
+  }
+
+  .g-recaptcha > div {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 30px;
+
+    @media @tablet {
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 
@@ -3035,8 +3212,6 @@ body.adminimal-admin-toolbar {
 }
 
 .g-recaptcha {
-  transform: scale(0.9);
-
   & > div {
     margin: 0 auto;
   }
@@ -3274,4 +3449,31 @@ body.adminimal-admin-toolbar {
 
 .offres-emploi-module #offre .right br {
   display: none;
+}
+
+// SELECT2 GENERAL
+.select2-selection {
+  &__arrow {
+    display: none;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    height : 0;
+    width : 0;
+    border-right : 4px solid transparent;
+    border-bottom : 4px solid darkgrey;
+    border-left : 4px solid transparent;
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    transform-origin: center;
+    transform: rotate(180deg);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &[aria-expanded="true"]:after {
+    transform: rotate(0);
+  }
 }

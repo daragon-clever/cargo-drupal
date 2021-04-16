@@ -8,8 +8,9 @@ if (isTabletOrLess) {
             new Mmenu("#block-navigationprincipale", {
                 "extensions": [
                     "border-full",
-                    "pagedim-black",
-                    "position-top"
+                    "position-front",
+                    "fullscreen",
+                    "position-right"
                 ]
             });
         }
@@ -19,11 +20,12 @@ if (isTabletOrLess) {
 jQuery(document).ready(function ($) {
     // STICKY HEADER
     $(window).scroll(function () {
-        var header = $('header');
         if ($(window).scrollTop() >= 1) {
-            header.addClass('fixed');
+            $('header').addClass('fixed');
+            $('body').addClass('header-is-fixed')
         } else {
-            header.removeClass('fixed');
+            $('header').removeClass('fixed');
+            $('body').removeClass('header-is-fixed')
         }
     });
 
@@ -41,7 +43,8 @@ jQuery(document).ready(function ($) {
     }
 
     // POPUP BOOK
-    $('.js-open-book, #js-popup-book .js-close').click(function () {
+    $('.js-open-book, #js-popup-book .js-close, .white-book-block-wrapper .cta').click(function (e) {
+        e.preventDefault();
         $('#js-popup-book-wrapper').fadeToggle();
     });
 

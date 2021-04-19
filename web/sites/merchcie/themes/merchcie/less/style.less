@@ -687,9 +687,19 @@ body.adminimal-admin-toolbar {
     display: flex;
     align-items: center;
     font-size: 1.4rem;
+    position: relative;
 
     input {
       margin-right: 15px;
+    }
+
+    .description {
+      margin-top: 15px;
+
+      &:before {
+        background: transparent;
+        border-color: white;
+      }
     }
 
     a {
@@ -1177,16 +1187,6 @@ body.adminimal-admin-toolbar {
         display: block;
       }
     }
-
-    .choice-notice {
-      font-size: 1.4rem;
-      line-height: 1;
-
-      a {
-        color: @color1;
-        text-decoration: underline;
-      }
-    }
   }
 
   img {
@@ -1195,6 +1195,29 @@ body.adminimal-admin-toolbar {
     @media @tablet {
       margin-left: -15px;
       max-width: 100vw;
+    }
+  }
+
+  .form-item-rgpd-allow {
+    position: relative;
+
+    input {
+      margin: 0 !important;
+    }
+
+    .description {
+      font-size: 1.4rem;
+      line-height: 1;
+
+      a {
+        color: @color1;
+        text-decoration: underline;
+      }
+
+      &:before {
+        background: transparent;
+        border-color: @color2;
+      }
     }
   }
 
@@ -3275,10 +3298,6 @@ body.adminimal-admin-toolbar {
   }
 
   .form-item-checkbox-rgpd {
-    input {
-      width: auto !important;
-    }
-
     .description {
       text-align: justify;
 
@@ -3287,39 +3306,44 @@ body.adminimal-admin-toolbar {
       }
     }
   }
+}
 
-  // RGPD CHECKBOX
-  input[name="checkbox_rgpd"] {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    width: 30px !important;
-    height: 30px !important;
+// RGPD CHECKBOX
+input[name="checkbox_rgpd"],
+input[name="checkbox"],
+input[name="rgpd_allow"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+  width: 30px !important;
+  height: 30px !important;
 
-    & + .description {
-      display: flex;
+  & + .description {
+    display: flex;
 
-      @media @tablet {
-        padding: 0 8px;
-      }
-
-      &:before {
-        content: "";
-        height: 30px;
-        width: 30px;
-        border-radius: 7px;
-        margin-right: 15px;
-        border: 1px solid lightgrey;
-        flex-shrink: 0;
-        z-index: -1;
-      }
+    @media @tablet {
+      padding: 0 8px;
     }
 
-    &:checked + .description:before {
-      background: url("../images/picto/Check.svg") no-repeat center / contain transparent;
-      background-size: 75%;
-      filter: @svgColor2;
+    &:before {
+      content: "";
+      height: 24px;
+      width: 24px;
+      border-radius: 7px;
+      margin-right: 15px;
+      border: 1px solid lightgrey;
+      flex-shrink: 0;
+      pointer-events: none;
+      background-color: white;
     }
+  }
+
+  &:checked + .description:before {
+    background: url("../images/picto/Check.svg") no-repeat center / contain transparent;
+    background-size: 75%;
+    filter: @svgColor2;
   }
 }
 

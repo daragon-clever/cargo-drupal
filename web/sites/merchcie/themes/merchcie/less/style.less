@@ -447,6 +447,11 @@ body.adminimal-admin-toolbar {
     .dimOpacityOnHover(0.8);
     text-decoration: none;
   }
+
+  @media @tablet {
+    line-height: 1;
+    padding: 15px 0;
+  }
 }
 
 // BREADCRUMBS
@@ -589,8 +594,8 @@ body.adminimal-admin-toolbar {
       .dimOpacityOnHover(0.8);
 
       @media @tablet {
-        top: 0;
-        right: 0;
+        top: 20px;
+        right: 20px;
         width: 50px;
         height: 50px;
       }
@@ -628,6 +633,31 @@ body.adminimal-admin-toolbar {
       img {
         max-height: 150px;
         width: auto;
+        margin-bottom: 30px;
+      }
+
+      input.form-text {
+        width: 100%;
+        padding: 0 15px;
+      }
+    }
+
+    @media @phone {
+      h2 {
+        padding-right: 6.5rem;
+        font-size: 2.2rem;
+        margin-bottom: 3rem;
+        text-align: left;
+      }
+
+      h3 {
+        text-align: left;
+      }
+
+      img,
+      .line-vertical,
+      h4 {
+        display: none;
       }
     }
   }
@@ -698,7 +728,7 @@ body.adminimal-admin-toolbar {
         height: 100vh;
         width: 100%;
         bottom: -50px;
-        left: 0;
+        left: 15px;
         z-index: 0;
         transform: translateY(100%);
         transform-origin: bottom;
@@ -826,17 +856,7 @@ body.adminimal-admin-toolbar {
         }
 
         &.playing {
-          opacity: 0.3;
-
-          .picto-play {
-            background: none;
-            position: relative;
-
-            &:before,
-            &:after {
-              display: block;
-            }
-          }
+          display: none;
         }
 
         small {
@@ -889,14 +909,15 @@ body.adminimal-admin-toolbar {
   }
 
   .intro {
-    padding: 80px 0;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
 
     @media @tablet {
       padding: 80px 60px 30px 20px;
     }
 
     h3 {
-      @media @phone {
+      @media @tablet {
         font-size: 1.6rem;
       }
     }
@@ -972,6 +993,10 @@ body.adminimal-admin-toolbar {
     h3 + .line-vertical {
       height: 50px;
       margin: 15px 0;
+    }
+
+    a:hover {
+      text-decoration: none;
     }
 
     .line-vertical {
@@ -2610,6 +2635,8 @@ body.adminimal-admin-toolbar {
         img {
           border-radius: 100%;
           margin-right: 15px;
+          width: 45px;
+          height: 45px;
         }
 
         small {
@@ -3260,6 +3287,40 @@ body.adminimal-admin-toolbar {
       }
     }
   }
+
+  // RGPD CHECKBOX
+  input[name="checkbox_rgpd"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    width: 30px !important;
+    height: 30px !important;
+
+    & + .description {
+      display: flex;
+
+      @media @tablet {
+        padding: 0 8px;
+      }
+
+      &:before {
+        content: "";
+        height: 30px;
+        width: 30px;
+        border-radius: 7px;
+        margin-right: 15px;
+        border: 1px solid lightgrey;
+        flex-shrink: 0;
+        z-index: -1;
+      }
+    }
+
+    &:checked + .description:before {
+      background: url("../images/picto/Check.svg") no-repeat center / contain transparent;
+      background-size: 75%;
+      filter: @svgColor2;
+    }
+  }
 }
 
 .g-recaptcha {
@@ -3297,14 +3358,9 @@ body.adminimal-admin-toolbar {
         display: flex;
         align-items: center;
 
-        input {
-          height: auto !important;
-        }
-
         .description {
           font-size: 1.2rem;
           line-height: 1.2;
-          margin-left: 20px;
 
           .webform-element-description {
             margin-bottom: 0;

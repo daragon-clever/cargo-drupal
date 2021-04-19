@@ -80,9 +80,12 @@
                                  src="{{ file_url(content.field_hp_c3_imgs['#items'][i].entity.uri.value) }}"
                                  alt="">
                         </a>
-                        <h4 class="text-color1 mt-4">{{ node.field_hp_c3_imgs[i].title }}</h4>
-                        <a href="{{ content.field_hp_c3_links[i]['#url'] }}"
-                           class="link text-color3 after-arrow">{{ content.field_hp_c3_links[i]['#title'] }}</a>
+                        <a href="{{ content.field_hp_c3_links[i]['#url'] }}">
+                            <h4 class="text-color1 mt-4">{{ node.field_hp_c3_imgs[i].title }}</h4>
+                        </a>
+                        <a href="{{ content.field_hp_c3_links[i]['#url'] }}" class="link text-color3 after-arrow">
+                            {{ content.field_hp_c3_links[i]['#title'] }}
+                        </a>
                     </div>
                 {% endfor %}
             </div>

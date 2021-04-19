@@ -55,7 +55,10 @@ class MerchCieForm extends FormBase
             ],
             'rgpd_allow' => [
                 '#type' => 'checkbox',
-                '#title' => ''
+                '#title' => '',
+                '#description' => "<div>En renseignant ces informations j’accepte de recevoir chaque mois, la lettre
+                                    d’information de Merch & Cie et je confirme avoir pris connaissance de la
+                                    <a href='/politique-confidentialite'>politique de confidentialité</a>.</div>"
             ],
             'captcha' => [
                 '#type' => 'captcha',
@@ -89,17 +92,17 @@ class MerchCieForm extends FormBase
         }
 
         $lastName = $form_state->getValue('nom');
-        if(is_null($lastName) || empty($lastName)) {
+        if (is_null($lastName) || empty($lastName)) {
             $form_state->setError($form['nom'], "Votre nom est requis");
         }
 
         $firstName = $form_state->getValue('prenom');
-        if(is_null($firstName) || empty($firstName)) {
+        if (is_null($firstName) || empty($firstName)) {
             $form_state->setError($form['prenom'], "Votre prénom est requis");
         }
 
         $rgpdAllow = $form_state->getValue('rgpd_allow');
-        if($rgpdAllow !== 1) {
+        if ($rgpdAllow !== 1) {
             $form_state->setError($form['rgpd_allow'], 'Veuillez cochez la case');
         }
     }

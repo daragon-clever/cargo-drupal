@@ -1550,10 +1550,26 @@ a.btn-slide-cta {
   }
 
   .recette {
-    padding: 60px 0;
+    & > div {
+      padding-top: 100px;
+      padding-bottom: 160px;
 
-    @media @phone {
-      padding: 30px 0;
+      &:nth-child(even) {
+        background: url("../images/recettes/bg-recettes.jpg") no-repeat center;
+        background-size: cover;
+
+        h3,
+        ul,
+        .title,
+        p {
+          color: white;
+        }
+      }
+
+      @media @tablet {
+        padding-top: 50px;
+        padding-bottom: 80px;
+      }
     }
 
     h3 {
@@ -1597,11 +1613,27 @@ a.btn-slide-cta {
       }
     }
 
-    img {
-      margin-top: 60px;
-    }
-
     .left {
+      .js-open-video {
+        position: relative;
+
+        img {
+          margin-top: 60px;
+          object-fit: cover;
+          width: 360px;
+          height: 360px;
+        }
+
+        .play-btn {
+          position: absolute;
+          height: 132px;
+          width: 112px;
+          left: calc(50% - 56px);
+          top: calc(50% - 28px);
+          background: url("../images/recettes/play-youtube.svg") no-repeat center transparent;
+        }
+      }
+
       .js-hidden-video {
         display: none;
         z-index: 100;
@@ -1626,7 +1658,7 @@ a.btn-slide-cta {
 
         @media @tablet {
           iframe {
-            max-width:90vw;
+            max-width: 90vw;
             max-height: 90vw;
           }
         }
@@ -1717,15 +1749,10 @@ a.btn-slide-cta {
         list-style: none;
         padding: 0;
       }
+    }
 
-      .conseil {
-        margin-top: 30px;
-
-        .title {
-          margin: 0;
-          color: @primaryColor;
-        }
-      }
+    @media @phone {
+      padding: 30px 0;
     }
   }
 }

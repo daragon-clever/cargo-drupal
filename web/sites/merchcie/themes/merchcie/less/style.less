@@ -400,6 +400,12 @@ body.adminimal-admin-toolbar {
     margin-right: auto;
   }
 
+  a {
+    color: white;
+    .dimOpacityOnHover(0.8);
+    text-decoration: none;
+  }
+
   .logo-linkedin {
     background: url("../images/logo/linkedin.svg") no-repeat center transparent;
     width: 188px;
@@ -418,11 +424,8 @@ body.adminimal-admin-toolbar {
     padding: 0;
 
     a {
-      color: white;
       margin: 10px 0;
       display: inline-block;
-      .dimOpacityOnHover(0.8);
-      text-decoration: none;
     }
 
     @media @tablet {
@@ -2474,6 +2477,10 @@ body.adminimal-admin-toolbar {
   .c3 {
     .testimonial-item {
       min-height: unset;
+    }
+
+    blockquote > div {
+      display: inline;
     }
 
     img {

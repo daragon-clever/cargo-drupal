@@ -859,6 +859,14 @@ body.adminimal-admin-toolbar header {
   margin-left: auto;
   margin-right: auto;
 }
+.footer-wrapper a {
+  color: white;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+.footer-wrapper a:hover {
+  opacity: 0.8;
+}
 .footer-wrapper .logo-linkedin {
   background: url("../images/logo/linkedin.svg") no-repeat center transparent;
   width: 188px;
@@ -879,14 +887,8 @@ body.adminimal-admin-toolbar header {
   padding: 0;
 }
 .footer-wrapper ul a {
-  color: white;
   margin: 10px 0;
   display: inline-block;
-  transition: all 0.3s;
-  text-decoration: none;
-}
-.footer-wrapper ul a:hover {
-  opacity: 0.8;
 }
 @media only screen and (max-width: 991px) {
   .footer-wrapper ul {

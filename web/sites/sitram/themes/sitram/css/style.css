@@ -2715,6 +2715,10 @@ ul.check-list li:before {
 #marque.les-engagements ul {
   padding-left: 20px;
 }
+#marque.les-engagements .video-wrapper {
+  margin: 0 auto;
+  max-width: 650px;
+}
 #marque.cuisinons-vrai .intro {
   background-position: top center;
   background-size: auto 234px;

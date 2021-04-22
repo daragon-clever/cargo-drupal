@@ -3427,7 +3427,6 @@ footer .recettes-cta {
 .footer-wrapper .links .social3,
 .footer-wrapper .links .social4 {
   display: block;
-  margin: 15px 0;
   height: 33px;
   width: 33px;
 }
@@ -3440,14 +3439,6 @@ footer .recettes-cta {
     height: 50px;
     width: 50px;
     background-size: contain !important;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .footer-wrapper .links .social1,
-  .footer-wrapper .links .social2,
-  .footer-wrapper .links .social3,
-  .footer-wrapper .links .social4 {
-    margin: 0 10px;
   }
 }
 .footer-wrapper .links .social4 {

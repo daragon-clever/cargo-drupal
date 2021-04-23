@@ -98,3 +98,10 @@ datatables:
     https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js: { type: external }
   dependencies:
     - core/jquery
+
+# Style landing page
+style-lp:
+  header: true
+  css:
+    theme:
+      css/style-lp.css: {}

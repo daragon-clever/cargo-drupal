@@ -1651,6 +1651,11 @@
     ul {
       padding-left: 20px;
     }
+
+    .video-wrapper {
+      margin: 0 auto;
+      max-width: 650px;
+    }
   }
 
   &.cuisinons-vrai {
@@ -2474,17 +2479,25 @@ footer .recettes-cta {
 
     .social1,
     .social2,
-    .social3 {
+    .social3,
+    .social4 {
       display: block;
-      margin: 15px 0;
-      height: 25px;
-      width: 25px;
+      height: 33px;
+      width: 33px;
 
       @media @tablet {
         margin: 0 15px;
         height: 50px;
         width: 50px;
-        background-size: cover !important;
+        background-size: contain !important;
+      }
+    }
+
+    .social4 {
+      width: 26px;
+
+      @media @tablet {
+        width: 70px;
       }
     }
   }
@@ -2503,6 +2516,11 @@ footer .recettes-cta {
 .social3,
 .picto-rs.pinterest {
   background: url("../images/footer/pinterest.svg") no-repeat center transparent;
+}
+
+.social4,
+.picto-rs.youtube {
+  background: url("../images/footer/youtube.svg") no-repeat center transparent;
 }
 
 .copyright {
@@ -3027,6 +3045,21 @@ table.reparateurs {
     width: 80px;
     background-size: cover !important;
     margin-right: 18px;
+
+    &.youtube {
+      width: 115px;
+      background-size: contain !important;
+
+      @media @tablet {
+        width: 85px;
+      }
+    }
+
+    @media @tablet {
+      height: 60px;
+      width: 60px;
+      margin-right: 10px;
+    }
   }
 
   .instagram_gallery,
@@ -3396,6 +3429,7 @@ table.reparateurs {
           .see {
             display: none;
           }
+
           .hide {
             display: block;
           }
@@ -3405,6 +3439,7 @@ table.reparateurs {
           .see {
             display: block;
           }
+
           .hide {
             display: none;
           }

@@ -1,0 +1,49 @@
+{{ attach_library('merchcie/style-lp') }}
+<div id="lp-page">
+    <div class="container-fluid">
+        <div class="row mb-4">
+            <div class="col">
+                <div class="banner text-center">
+                    <img src="{{ file_url(content.field_banniere_image['#items'].0.entity.uri.value) }}"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- INTRO -->
+        <div class="row mb-4">
+            <div class="col">
+                <div class="text-center intro">
+                    <h1>{{ content.field_titre_campagne }}</h1>
+                    {{ content.field_description_campagne }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-grey">
+        <div class="container mw1470">
+            <!-- CONTENT -->
+            <div class="row mb-4">
+                <div class="col-12 col-lg-6">
+                    <div class="visu text-center mb-5 mb-lg-0">
+                        {% if content.field_visuel_campagne['#items'].0.entity.uri.value %}
+                            {{ content.field_visuel_campagne }}
+                        {% endif %}
+                        {% if content.field_video_campagne['#items'].0.entity.uri.value %}
+                            <div class="embed-responsive embed-responsive-1by1">
+                                {{ content.field_video_campagne }}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="form">
+                        {{ content.field_formulaire_campagne }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

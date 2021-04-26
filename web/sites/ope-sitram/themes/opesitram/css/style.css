@@ -1483,12 +1483,24 @@ a.btn-slide-cta {
     overflow: hidden;
   }
 }
-#recettes .recette {
-  padding: 60px 0;
+#recettes .recette > div {
+  padding-top: 100px;
+  padding-bottom: 160px;
 }
-@media only screen and (max-width: 767px) {
-  #recettes .recette {
-    padding: 30px 0;
+#recettes .recette > div:nth-child(even) {
+  background: url("../images/recettes/bg-recettes.jpg") no-repeat center;
+  background-size: cover;
+}
+#recettes .recette > div:nth-child(even) h3,
+#recettes .recette > div:nth-child(even) ul,
+#recettes .recette > div:nth-child(even) .title,
+#recettes .recette > div:nth-child(even) p {
+  color: white;
+}
+@media only screen and (max-width: 991px) {
+  #recettes .recette > div {
+    padding-top: 50px;
+    padding-bottom: 80px;
   }
 }
 #recettes .recette h3 {
@@ -1529,8 +1541,22 @@ a.btn-slide-cta {
     display: none;
   }
 }
-#recettes .recette img {
+#recettes .recette .left .js-open-video {
+  position: relative;
+}
+#recettes .recette .left .js-open-video img {
   margin-top: 60px;
+  object-fit: cover;
+  width: 360px;
+  height: 360px;
+}
+#recettes .recette .left .js-open-video .play-btn {
+  position: absolute;
+  height: 132px;
+  width: 112px;
+  left: calc(50% - 56px);
+  top: calc(50% - 28px);
+  background: url("../images/recettes/play-youtube.svg") no-repeat center transparent;
 }
 #recettes .recette .left .js-hidden-video {
   display: none;
@@ -1641,12 +1667,10 @@ a.btn-slide-cta {
   list-style: none;
   padding: 0;
 }
-#recettes .recette .right .conseil {
-  margin-top: 30px;
-}
-#recettes .recette .right .conseil .title {
-  margin: 0;
-  color: #219b8c;
+@media only screen and (max-width: 767px) {
+  #recettes .recette {
+    padding: 30px 0;
+  }
 }
 .full-black-fixed {
   position: fixed;

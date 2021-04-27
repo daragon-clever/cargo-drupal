@@ -7,3 +7,14 @@ function sitram_page_attachments_alter(array &$attachments) {
         }
     }
 }
+
+function sitram_preprocess_html(&$variables) {
+  $facebook = [
+    '#tag' => 'meta',
+    '#attributes' => [
+      'name' => 'facebook-domain-verification',
+      'content' => 'sr1200tu3vcl2pnuziadz7p8odcllw',
+    ],
+  ];
+  $variables['page']['#attached']['html_head'][] = [$facebook, 'facebook-domain-verification'];
+}

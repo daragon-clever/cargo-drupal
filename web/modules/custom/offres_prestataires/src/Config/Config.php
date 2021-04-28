@@ -10,4 +10,11 @@ class Config
 
         return $config->get('api.key');
     }
+
+    public function getSpontaneousOfferId()
+    {
+        $config = \Drupal::config('offres_prestataires.settings');
+
+        return $config->get('spontaneousOffer.id');
+    }
 }

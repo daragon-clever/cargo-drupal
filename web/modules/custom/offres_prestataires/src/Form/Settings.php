@@ -37,6 +37,11 @@ class Settings extends ConfigFormBase
             '#title' => $this->t('Clé API'),
             '#default_value' => $config->get('api.key'),
         );
+        $form['offres_prestataires_spontaneous_offer_id'] = array(
+            '#type' => 'textfield',
+            '#title' => $this->t('ID de l\'offre spontanée'),
+            '#default_value' => $config->get('spontaneousOffer.id'),
+        );
 
         return parent::buildForm($form, $form_state);
     }
@@ -49,6 +54,7 @@ class Settings extends ConfigFormBase
         $this->configFactory->getEditable('offres_prestataires.settings')
             // Set the submitted configuration setting
             ->set('api.key', $form_state->getValue('offres_prestataires_apikey'))
+            ->set('spontaneousOffer.id', $form_state->getValue('offres_prestataires_spontaneous_offer_id'))
             ->save();
 
         parent::submitForm($form, $form_state);

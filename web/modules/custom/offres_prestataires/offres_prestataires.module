@@ -2,6 +2,7 @@
 
 use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\Process\Process;
+use Drupal\offres_prestataires\Config\Config;
 
 function offres_prestataires_theme($existing, $type, $theme, $path) {
     return [
@@ -47,16 +48,21 @@ function offres_prestataires_cron()
 function offres_prestataires_webform_element_hidden_alter(array &$element, FormStateInterface $form_state, array $context)
 {
     $route_match = \Drupal::service('current_route_match');
-    $param_ref = $route_match->getParameter('ref');
-    if (!is_null($param_ref)) {
-        $offreRepository = \Drupal::service('offres_prestataires.repository');
-        $offerEmploi = current($offreRepository->findBy(['id_scoptalent' => $param_ref]));
+    $ref = $route_match->getParameter('ref');
 
-        if ($element['#webform_key'] == 'offre') {
-            $element['#value'] = $param_ref;
-        }
+    if (is_null($ref)) {
+        $config = new Config();
+        $ref = $config->getSpontaneousOfferId();
+    } else {
+        $offreRepository = \Drupal::service('offres_prestataires.repository');
+        $offerEmploi = current($offreRepository->findBy(['id_scoptalent' => $ref]));
+
         if ($element['#webform_key'] == 'nom_offre') {
             $element['#value'] = $offerEmploi->title;
         }
+    }
+
+    if ($element['#webform_key'] == 'offre') {
+        $element['#value'] = $ref;
     }
 }

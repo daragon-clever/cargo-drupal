@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Drupal\offres_prestataires\Command;
 
+use Drupal\offres_prestataires\Config\Config;
 use Drupal\offres_prestataires\Helper\Request;
 use Drupal\offres_prestataires\OffrePrestataireRepository;
 use Symfony\Component\Console\Input\InputInterface;
@@ -30,6 +31,11 @@ class ImportCommand extends Command
     private $requestHelper;
 
     /**
+     * @var Config
+     */
+    private $config;
+
+    /**
      * @var OffrePrestataireRepository
      */
     private $offreRepository;
@@ -41,6 +47,7 @@ class ImportCommand extends Command
         $this->offreRepository = $offreRepository;
 
         $this->requestHelper = new Request();
+        $this->config = new Config();
     }
 
     /**
@@ -78,22 +85,25 @@ class ImportCommand extends Command
     {
         $offerList = $this->getAllOffers();
         foreach ($offerList as $offer) {
-            $currentOffer = $this->getOffer($offer['id']);
+            if ($offer['id'] != $this->config->getSpontaneousOfferId()) { //exclude spontaneous offer - not import
+                $currentOffer = $this->getOffer($offer['id']);
 
-            $dataHydrated = $this->hydrateData($currentOffer);
-            $dataHydrated['active'] = 1;
+                $dataHydrated = $this->hydrateData($currentOffer);
+                $dataHydrated['active'] = 1;
 
-            $allRefsActive[] = $dataHydrated['id_scoptalent'];
+                $allRefsActive[] = $dataHydrated['id_scoptalent'];
 
-            $offreExist = $this->offreRepository->findBy(['id_scoptalent' => $dataHydrated['id_scoptalent']]);
+                $offreExist = $this->offreRepository->findBy(['id_scoptalent' => $dataHydrated['id_scoptalent']]);
 
-            if ($offreExist) {
-                $this->getIo()->info('[OFFRES PRESTATAIRES] Starting Updating Offer with id_scoptalent: ' . current($offreExist)->id_scoptalent);
-                $this->offreRepository->update($dataHydrated);
-            } else {
-                $this->getIo()->info('[OFFRES PRESTATAIRES] Starting Creating Offer with id_scoptalent: ' . $dataHydrated['id_scoptalent']);
-                $this->offreRepository->insert($dataHydrated);
+                if ($offreExist) {
+                    $this->getIo()->info('[OFFRES PRESTATAIRES] Starting Updating Offer with id_scoptalent: ' . current($offreExist)->id_scoptalent);
+                    $this->offreRepository->update($dataHydrated);
+                } else {
+                    $this->getIo()->info('[OFFRES PRESTATAIRES] Starting Creating Offer with id_scoptalent: ' . $dataHydrated['id_scoptalent']);
+                    $this->offreRepository->insert($dataHydrated);
+                }
             }
+
         }
 
         $this->disableAllOffresNotIn($allRefsActive);

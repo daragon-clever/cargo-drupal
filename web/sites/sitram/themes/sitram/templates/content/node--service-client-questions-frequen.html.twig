@@ -17,7 +17,7 @@
                 <div class="collapsible-faq">
                     <div class="accordion" id="accordion-parent">
                         {% for i in content.field_faq_question_list['#items']|keys %}
-                            <h2 data-toggle="collapse" href="#collapse-{{ i }}" aria-expanded="false"
+                            <h2 class="js-analytics" data-toggle="collapse" href="#collapse-{{ i }}" aria-expanded="false"
                                 aria-controls="collapse-{{ i }}">
                                 {{ content.field_faq_question_list[i] }}
                             </h2>

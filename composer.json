@@ -98,6 +98,8 @@
         "drupal/smtp": "^1.0@RC",
         "drupal/svg_formatter": "^1.8",
         "drupal/svg_image": "^1.9",
+        "drupal/tmgmt": "^1.12",
+        "drupal/tmgmt_textmaster": "^1.2",
         "drupal/translatable_menu_link_uri": "^1.2",
         "drupal/unpublished_node_permissions": "^1.0",
         "drupal/upgrade_status": "^3.4",

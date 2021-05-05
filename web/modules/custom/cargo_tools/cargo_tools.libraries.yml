@@ -1,13 +1,12 @@
-# Imageloaded
-imageloaded:
+# Js-cookie
+js-cookie:
   js:
-    https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js: { type: external}
-  dependencies:
-    - core/jquery
+    https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js: { type: external }
 
+# Js-custom - replace images with placeholders
 imgsizes:
   js:
     js/imgsizes.js: {}
   dependencies:
     - core/jquery
-    - cargo_tools/imageloaded
+    - cargo_tools/js-cookie

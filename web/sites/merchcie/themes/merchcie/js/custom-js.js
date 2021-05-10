@@ -51,27 +51,26 @@ jQuery(document).ready(function ($) {
     // HOMEPAGE
     if ($("#homepage").length) {
         // Main ban video
-        var video = $("#js-video")[0],
+        var video = $("#js-video"),
             minutes,
             seconds,
             videoDuration;
 
-        video.addEventListener('loadedmetadata', getDuration);
+        video[0].addEventListener('loadedmetadata', getDuration);
 
         function getDuration() {
-            videoDuration = video.duration;
+            videoDuration = video[0].duration;
             minutes = parseInt(videoDuration / 60, 10);
             seconds = (videoDuration % 60).toFixed(0);
             $("#js-video-time").html(" | " + minutes + ":" + seconds);
         }
 
         // Fix for Firefox : https://stackoverflow.com/a/33119370
-        if (video.readyState >= 2) {
+        if (video[0].readyState >= 2) {
             getDuration();
         }
 
         $('#js-video-btn').click(function () {
-            var video = $("#js-video");
             video.fadeToggle();
             $(this).hasClass("playing") ? video.get(0).pause() : video.get(0).play();
             $(this).toggleClass("playing");

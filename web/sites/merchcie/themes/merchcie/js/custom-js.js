@@ -71,6 +71,7 @@ jQuery(document).ready(function ($) {
         }
 
         $('#js-video-btn').click(function () {
+            var video = $("#js-video");
             video.fadeToggle();
             $(this).hasClass("playing") ? video.get(0).pause() : video.get(0).play();
             $(this).toggleClass("playing");

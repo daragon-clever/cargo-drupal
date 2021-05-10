@@ -51,12 +51,24 @@ jQuery(document).ready(function ($) {
     // HOMEPAGE
     if ($("#homepage").length) {
         // Main ban video
-        var video = $("#js-video"),
-            videoDuration = video.get(0).duration,
-            minutes = parseInt(videoDuration / 60, 10),
-            seconds = (videoDuration % 60).toFixed(0);
+        var video = $("#js-video")[0],
+            minutes,
+            seconds,
+            videoDuration;
 
-        $("#js-video-time").html(" | " + minutes + ":" + seconds);
+        video.addEventListener('loadedmetadata', getDuration);
+
+        function getDuration() {
+            videoDuration = video.duration;
+            minutes = parseInt(videoDuration / 60, 10);
+            seconds = (videoDuration % 60).toFixed(0);
+            $("#js-video-time").html(" | " + minutes + ":" + seconds);
+        }
+
+        // Fix for Firefox : https://stackoverflow.com/a/33119370
+        if (video.readyState >= 2) {
+            getDuration();
+        }
 
         $('#js-video-btn').click(function () {
             video.fadeToggle();
@@ -204,7 +216,7 @@ jQuery(document).ready(function ($) {
     }
 
     // NOS CHALLENGES
-    if( ($('.challenge-item').length)) {
+    if (($('.challenge-item').length)) {
         $(".views-field-field-challenge-c2-imgs a").addClass('hover-picto-eye');
         $(".views-field-field-challenge-c2-imgs img").addClass('img-fluid filter-hover-color2');
         $(".views-field-view-node a").addClass('link text-color2 after-arrow');

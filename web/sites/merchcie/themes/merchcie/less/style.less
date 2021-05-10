@@ -572,10 +572,8 @@ body.adminimal-admin-toolbar {
   #js-popup-book {
     background: @color1;
     border-radius: 100%;
-    width: 100vh;
-    height: 100vh;
-    max-width: 1230px;
-    max-height: 1230px;
+    width: 1230px;
+    height: 1230px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -611,6 +609,7 @@ body.adminimal-admin-toolbar {
 
       h4 + p {
         margin-bottom: 15px;
+        font-size: 1.6rem;
       }
 
       @media @tablet {
@@ -621,6 +620,16 @@ body.adminimal-admin-toolbar {
         margin: 0;
         padding: 15px 0;
       }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .line-vertical {
+      display: block;
+      margin: 10px auto;
     }
 
     @media @tablet {

@@ -1,7 +1,35 @@
 <div class="container">
+    {% set url = url('<current>') %}
+    {% if nbItem == 6 %}
+        {% set classSet = "col-6 col-md-4 img-wrapper" %}
+    {% else %}
+        {% set classSet = "col-6 col-md-4 col-lg-3 img-wrapper" %}
+    {% endif %}
     <div class="row products">
-        <div class="col">
-            <p class="info-covid">On se retrouve très bientôt dans nos magasins c'est deux euros pour découvrir les arrivages de la semaine.</p>
-        </div>
+        {% for product in products %}
+            <div class="{{ classSet }}">
+                <div class="inner">
+                    {% if product.img %}
+                        {% if not product.desc %}
+                            {% set altSet = product.sku %}
+                        {% else %}
+                            {% set altSet = product.desc %}
+                        {% endif %}
+                        <img src="/sites/cestdeuxeuros/files/dataimages/{{ product.img }}" alt="{{ altSet }}"/>
+                    {% endif %}
+                    {% if 'arrivages/futur_arrivage' not in url|render|render %}
+                        <span>2<small>€</small></span>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+
+        {% if week is defined and week == "S0" %}
+            <div class="{{ classSet }}">
+                <div class="inner txt-block">
+                    {{ 'Retrouvez tous nos produits à 2 euros dans votre magasin'|trans }}
+                </div>
+            </div>
+        {% endif %}
     </div>
 </div>

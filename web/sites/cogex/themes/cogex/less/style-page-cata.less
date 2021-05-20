@@ -1,0 +1,100 @@
+// VARS
+@xs: 767px;
+@sm: 991px;
+@phone: ~"only screen and (max-width: @{xs})";
+@tablet: ~"only screen and (max-width: @{sm})";
+@mainColor : #E30613;
+@grey-darkest: #303030;
+
+// STYLE
+#page-catalogues {
+  padding-top: 5.9rem;
+  padding-left: 13.9rem;
+
+  .description {
+    background-color: @grey-darkest;
+    width: 71.7rem;
+    padding: 7rem;
+    padding-bottom: 5.7rem;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 4rem;
+      height: 0.1rem;
+      background-color: #ffffff;
+      top: 5.5rem;
+      left: 7rem;
+    }
+
+    * {
+      color: white;
+    }
+
+    h1 {
+      margin: 0;
+      color: #ffffff;
+      font-size: 2.1rem;
+      line-height: 1.33;
+      text-transform: uppercase;
+      font-family: 'Titillium-bold';
+    }
+
+    p {
+      margin: 0;
+      margin-top: 1rem;
+      color: #ffffff;
+      font-size: 1.4rem;
+      line-height: 1.71;
+      font-weight: bold;
+    }
+  }
+
+  .pdf-list {
+    display: flex;
+    //justify-content: space-between;
+    margin: 2.6rem 0;
+    //align-items: center;
+    flex-wrap: wrap;
+
+    .pdf-item {
+      flex: 1 1 33%;
+      //text-align: center;
+      //margin: 40px 0;
+
+      .dl-pdf {
+        //display: block;
+
+        .book {
+          //position: relative;
+
+          &::before {
+            content: '';
+            background: url("../images/picto-pdf.png") no-repeat center transparent;
+            position: absolute;
+            display: block;
+            height: 45px;
+            width: 36px;
+            top: -20px;
+            right: 10px;
+          }
+
+          //&::after {
+          //  position: absolute;
+          //  top: 2%;
+          //  height: 96%;
+          //  content: ' ';
+          //  z-index: -1;
+          //  width: 3%;
+          //  left: 99.5%;
+          //  background-color: #EFEFEF;
+          //  box-shadow: inset 0 0 5px #aaa;
+          //  -moz-transform: rotateY(20deg);
+          //  -webkit-transform: perspective(100) rotateY(20deg);
+          //}
+        }
+      }
+    }
+  }
+}

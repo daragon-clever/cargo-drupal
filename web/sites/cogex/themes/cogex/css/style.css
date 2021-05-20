@@ -3255,7 +3255,8 @@ Add border radius to elements
   .c-header__nav-container {
     display: flex;
     justify-content: flex-end;
-    padding: 2rem; }
+    padding: 2rem;
+    margin-top: 100px; }
     @media only screen and (max-width: 992px) {
       .c-header__nav-container {
         max-height: 0;
@@ -3331,6 +3332,26 @@ Add border radius to elements
       .c-header__nav-item--active .c-header__nav-main-link::after {
         height: 0.2rem;
         background-color: #E30613; }
+    .c-header__nav-item .espace-pro {
+      position: relative; }
+      .c-header__nav-item .espace-pro .cata-link {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        text-align: center; }
+      .c-header__nav-item .espace-pro .logout-link {
+        position: absolute;
+        font-weight: bold;
+        margin-left: 25px;
+        text-decoration: none; }
+        .c-header__nav-item .espace-pro .logout-link:hover {
+          color: inherit; }
+        .c-header__nav-item .espace-pro .logout-link::before {
+          content: url("../images/picto-logout.svg");
+          position: absolute;
+          width: 10px;
+          height: 10px;
+          margin-left: -15px; }
   .c-header__nav-main-link {
     position: relative;
     font-size: 1.6rem;

@@ -76,3 +76,21 @@ style-lp:
   css:
     theme:
       css/style-lp.css: {}
+
+# Style page catalogues
+style-cata:
+  header: true
+  css:
+    theme:
+      css/style-page-cata.css: {}
+
+# Pop-up
+style-popup:
+  header: true
+  js:
+    js/popup.js: {}
+  dependencies:
+    - core/jquery
+  css:
+    theme:
+      css/style-popup.css: {}

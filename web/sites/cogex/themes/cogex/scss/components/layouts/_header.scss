@@ -81,6 +81,7 @@
     display: flex;
     justify-content: flex-end;
     padding: 2rem;
+    margin-top: 100px; //todo: temp !!!!!!!
 
     @media only screen and (max-width: $bp-tablet) {
       //display: none;
@@ -224,6 +225,34 @@
         &::after {
           height: 0.2rem;
           background-color: $primary;
+        }
+      }
+    }
+
+    .espace-pro {
+      position: relative;
+
+      .cata-link {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        text-align: center;
+      }
+      .logout-link { //todo: nico, à centrer verticaliment
+        position: absolute;
+        font-weight: bold;
+        margin-left: 25px; //todo: nico, voir si meilleur solution
+        text-decoration: none;
+
+        &:hover {
+          color: inherit;
+        }
+        &::before {
+          content: url("../images/picto-logout.svg");
+          position: absolute;
+          width: 10px;
+          height: 10px;
+          margin-left: -15px; //todo: nico, voir si meilleur solution
         }
       }
     }

@@ -1,0 +1,58 @@
+#page-catalogues {
+  padding-top: 5.9rem;
+  padding-left: 13.9rem;
+}
+#page-catalogues .description {
+  background-color: #303030;
+  width: 71.7rem;
+  padding: 7rem;
+  padding-bottom: 5.7rem;
+}
+#page-catalogues .description::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 4rem;
+  height: 0.1rem;
+  background-color: #ffffff;
+  top: 5.5rem;
+  left: 7rem;
+}
+#page-catalogues .description * {
+  color: white;
+}
+#page-catalogues .description h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 2.1rem;
+  line-height: 1.33;
+  text-transform: uppercase;
+  font-family: 'Titillium-bold';
+}
+#page-catalogues .description p {
+  margin: 0;
+  margin-top: 1rem;
+  color: #ffffff;
+  font-size: 1.4rem;
+  line-height: 1.71;
+  font-weight: bold;
+}
+#page-catalogues .pdf-list {
+  display: flex;
+  margin: 2.6rem 0;
+  flex-wrap: wrap;
+}
+#page-catalogues .pdf-list .pdf-item {
+  flex: 1 1 33%;
+}
+#page-catalogues .pdf-list .pdf-item .dl-pdf .book::before {
+  content: '';
+  background: url("../images/picto-pdf.png") no-repeat center transparent;
+  position: absolute;
+  display: block;
+  height: 45px;
+  width: 36px;
+  top: -20px;
+  right: 10px;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInN0eWxlLXBhZ2UtY2F0YS5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQVNBO0VBQ0UsbUJBQUE7RUFDQSxxQkFBQTs7QUFGRixnQkFJRTtFQUNFLHlCQUFBO0VBQ0EsY0FBQTtFQUNBLGFBQUE7RUFDQSxzQkFBQTs7QUFFQSxnQkFORixhQU1HO0VBQ0MsU0FBUyxFQUFUO0VBQ0EsY0FBQTtFQUNBLGtCQUFBO0VBQ0EsV0FBQTtFQUNBLGNBQUE7RUFDQSx5QkFBQTtFQUNBLFdBQUE7RUFDQSxVQUFBOztBQWxCTixnQkFJRSxhQWlCRTtFQUNFLFlBQUE7O0FBdEJOLGdCQUlFLGFBcUJFO0VBQ0UsU0FBQTtFQUNBLGNBQUE7RUFDQSxpQkFBQTtFQUNBLGlCQUFBO0VBQ0EseUJBQUE7RUFDQSxhQUFhLGdCQUFiOztBQS9CTixnQkFJRSxhQThCRTtFQUNFLFNBQUE7RUFDQSxnQkFBQTtFQUNBLGNBQUE7RUFDQSxpQkFBQTtFQUNBLGlCQUFBO0VBQ0EsaUJBQUE7O0FBeENOLGdCQTRDRTtFQUNFLGFBQUE7RUFFQSxnQkFBQTtFQUVBLGVBQUE7O0FBakRKLGdCQTRDRSxVQU9FO0VBQ0UsYUFBQTs7QUFVSSxnQkFsQlIsVUFPRSxVQUtFLFFBR0UsTUFHRztFQUNDLFNBQVMsRUFBVDtFQUNBLGdCQUFnQix1REFBaEI7RUFDQSxrQkFBQTtFQUNBLGNBQUE7RUFDQSxZQUFBO0VBQ0EsV0FBQTtFQUNBLFVBQUE7RUFDQSxXQUFBIn0= */

@@ -47,38 +47,37 @@ category: 02-molecules
   padding-right: 3rem;
 
   .tns-controls button {
-    background: transparent;
-    color: transparent;
-    border: 0;
-    outline: 0;
+    background: url(../images/slick-arrow.svg) no-repeat center / 100% transparent;
+    border-radius: 100%;
+    height: 30px;
+    width: 30px;
+    z-index: 100;
+    transform: translateY(-50%);
+    border: none;
+
+    &:hover {
+      opacity: 0.8;
+    }
 
     &::before {
-      font-family: 'Font Awesome 5 Free';
-      content: '\f053';
-      color: $black;
-      font-weight: 600;
-      font-size: 1.3rem;
-      vertical-align: middle;
-      color: $grey-darkest;
+      display: none;
+    }
+
+    &[data-controls="prev"] {
+      transform: rotateY(-180deg) translate(0, -50%);
     }
   }
 
   .tns-controls button:first-child {
     position: absolute;
     top: 50%;
-    left: 0;
-    transform: translateY(-50%);
+    left: -25px;
   }
 
   .tns-controls button:last-child {
     position: absolute;
     top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-
-    &::before {
-      content: '\f054';
-    }
+    right: -25px;
   }
 
   &__slider-element {

@@ -66,9 +66,20 @@ datatables:
   dependencies:
     - core/jquery
 
+# CookieJS
 cookiesJS:
   js:
     https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js: { type: external }
+
+# Plugin Slick
+slick:
+  js:
+    https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js: { type: external }
+  dependencies:
+    - core/jquery
+  css:
+    theme:
+      https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css: { type: external }
 
 # Style landing page
 style-lp:

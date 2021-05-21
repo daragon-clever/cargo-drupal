@@ -12,6 +12,7 @@ libraries:
   - cogex/global-styling
   - cogex/bootstrap
   - cogex/aos
+  - cogex/slick
   - cogex/choicesjs
   - cogex/font-awesome-free
   - cogex/slick-carousel

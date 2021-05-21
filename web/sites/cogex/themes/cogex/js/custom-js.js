@@ -2,6 +2,14 @@ jQuery(document).ready(function($) {
     // TEST MOBILE
     var isMobile = window.matchMedia("only screen and (max-width: 767px)").matches;
 
+    // NEW HP SLIDER
+    $(".js-slider-4-elements").slick({
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        arrows: true,
+    });
+
     // JOIN US
     if ($('.joinus-portraits').length) {
         var thumbItem = $('.thumbs .item');

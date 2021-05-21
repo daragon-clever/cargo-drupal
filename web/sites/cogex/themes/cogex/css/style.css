@@ -4802,30 +4802,27 @@ category: 02-molecules
   padding-left: 3rem;
   padding-right: 3rem; }
   .c-slider .tns-controls button {
-    background: transparent;
-    color: transparent;
-    border: 0;
-    outline: 0; }
+    background: url(../images/slick-arrow.svg) no-repeat center/100% transparent;
+    border-radius: 100%;
+    height: 30px;
+    width: 30px;
+    z-index: 100;
+    transform: translateY(-50%);
+    border: none; }
+    .c-slider .tns-controls button:hover {
+      opacity: 0.8; }
     .c-slider .tns-controls button::before {
-      font-family: 'Font Awesome 5 Free';
-      content: '\f053';
-      color: #000000;
-      font-weight: 600;
-      font-size: 1.3rem;
-      vertical-align: middle;
-      color: #303030; }
+      display: none; }
+    .c-slider .tns-controls button[data-controls="prev"] {
+      transform: rotateY(-180deg) translate(0, -50%); }
   .c-slider .tns-controls button:first-child {
     position: absolute;
     top: 50%;
-    left: 0;
-    transform: translateY(-50%); }
+    left: -25px; }
   .c-slider .tns-controls button:last-child {
     position: absolute;
     top: 50%;
-    right: 0;
-    transform: translateY(-50%); }
-    .c-slider .tns-controls button:last-child::before {
-      content: '\f054'; }
+    right: -25px; }
   .c-slider__slide-content {
     width: 100%; }
     .c-slider__slide-content img {
@@ -4845,15 +4842,6 @@ category: 02-molecules
   .c-slick-slider .slick-current {
     transform: scale(1);
     filter: grayscale(0%); }
-  .c-slick-slider .slick-prev:before, .c-slick-slider .slick-next:before {
-    color: #303030;
-    font-weight: 600;
-    font-family: 'Font Awesome 5 Free';
-    font-size: 1.6rem; }
-  .c-slick-slider .slick-prev:before {
-    content: '\f053'; }
-  .c-slick-slider .slick-next:before {
-    content: '\f054'; }
   .c-slick-slider .slick-dots {
     padding-left: 0; }
     .c-slick-slider .slick-dots li {
@@ -4883,6 +4871,37 @@ category: 02-molecules
         right: -5px; }
       .c-slick-slider .slick-prev:before, .c-slick-slider .slick-next:before {
         font-size: 1.4rem; } }
+
+.slick-wrapper {
+  width: 100%; }
+
+.js-slider-4-elements {
+  display: none; }
+  .js-slider-4-elements .slick-initialized {
+    display: block; }
+  .js-slider-4-elements img {
+    margin: 0 auto; }
+
+.slick-prev,
+.slick-next {
+  background: url(../images/slick-arrow.svg) no-repeat center/100% transparent;
+  border-radius: 100%;
+  height: 30px;
+  width: 30px;
+  z-index: 100; }
+  .slick-prev:hover,
+  .slick-next:hover {
+    opacity: 0.8; }
+  .slick-prev:before,
+  .slick-next:before {
+    display: none; }
+
+.slick-prev {
+  transform: rotateY(-180deg) translate(0, -50%);
+  left: -35px; }
+
+.slick-next {
+  right: -35px; }
 
 .c-mobile-slick-slider {
   margin: auto;

@@ -3255,8 +3255,7 @@ Add border radius to elements
   .c-header__nav-container {
     display: flex;
     justify-content: flex-end;
-    padding: 2rem;
-    margin-top: 100px; }
+    padding: 2rem; }
     @media only screen and (max-width: 992px) {
       .c-header__nav-container {
         max-height: 0;
@@ -3352,6 +3351,11 @@ Add border radius to elements
           width: 10px;
           height: 10px;
           margin-left: -15px; }
+        @media only screen and (max-width: 992px) {
+          .c-header__nav-item .espace-pro .logout-link {
+            position: revert;
+            display: block;
+            text-align: center; } }
   .c-header__nav-main-link {
     position: relative;
     font-size: 1.6rem;

@@ -81,7 +81,6 @@
     display: flex;
     justify-content: flex-end;
     padding: 2rem;
-    margin-top: 100px; //todo: temp !!!!!!!
 
     @media only screen and (max-width: $bp-tablet) {
       //display: none;
@@ -238,7 +237,7 @@
         padding-right: 0;
         text-align: center;
       }
-      .logout-link { //todo: nico, à centrer verticaliment
+      .logout-link { //todo: nico, à centrer verticaliment + voir mobile comment tu le vois
         position: absolute;
         font-weight: bold;
         margin-left: 25px; //todo: nico, voir si meilleur solution
@@ -253,6 +252,12 @@
           width: 10px;
           height: 10px;
           margin-left: -15px; //todo: nico, voir si meilleur solution
+        }
+
+        @media only screen and (max-width: $bp-tablet) {
+          position: revert;
+          display: block;
+          text-align: center;
         }
       }
     }

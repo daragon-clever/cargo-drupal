@@ -36,7 +36,7 @@
         {% for item in items %}
 
             <div class="c-header__nav-item">
-                <a href="{{ item.url }}" class="c-header__nav-main-link">{{ item.title }}</a>
+                {{ link(item.title, item.url, { class: ['c-header__nav-main-link', item.attributes.class] }) }}
                 <button class="c-header__mobile-toggle-button"></button>
 
                 {% if item.below %}
@@ -63,13 +63,16 @@
     {% else %}
 
         <ul class="c-header__nav-sublist">
-
             {% for item in items %}
                 <li>
-                    <a href="{{ item.url }}" class="c-header__nav-sublink">{{ item.title }}</a>
-                </li>
-            {% endfor %}
+                    {{ link(item.title, item.url, { class: ['c-header__nav-sublink', item.attributes.class] }) }}
 
+                    {% if item.below %}
+                        {{ menus.menu_links(item.below, attributes, menu_level + 2, logged_in) }}
+                    {% endif %}
+                </li>
+
+            {% endfor %}
         </ul>
 
     {% endif %}

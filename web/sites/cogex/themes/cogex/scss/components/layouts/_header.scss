@@ -299,11 +299,40 @@
     transition: max-height 0.3s ease-out;
 
     li {
-      margin: 0;
-      margin-top: 1.4rem;
+      margin: 1.4rem 0 0;
 
       &:first-child {
-        padding-top: 2rem;        
+        padding-top: 2rem;
+      }
+
+      // Fixed fake cat
+      a.menu-icon-32,
+      a.menu-icon-33 {
+        text-transform: uppercase;
+        font-weight: bold;
+        pointer-events: none;
+
+        &:hover {
+          color: black;
+          cursor: default;
+        }
+
+        &:after {
+          content: "";
+          width: 40px;
+          height: 1px;
+          margin: 10px 0;
+          background: lightgray;
+          display: block;
+        }
+      }
+
+      // level 2
+      ul {
+        li:first-child {
+          padding-top: 0;
+          margin-top: 0;
+        }
       }
     }
   }

@@ -3381,10 +3381,29 @@ Add border radius to elements
     overflow: hidden;
     transition: max-height 0.3s ease-out; }
     .c-header__nav-sublist li {
-      margin: 0;
-      margin-top: 1.4rem; }
+      margin: 1.4rem 0 0; }
       .c-header__nav-sublist li:first-child {
         padding-top: 2rem; }
+      .c-header__nav-sublist li a.menu-icon-32,
+      .c-header__nav-sublist li a.menu-icon-33 {
+        text-transform: uppercase;
+        font-weight: bold;
+        pointer-events: none; }
+        .c-header__nav-sublist li a.menu-icon-32:hover,
+        .c-header__nav-sublist li a.menu-icon-33:hover {
+          color: black;
+          cursor: default; }
+        .c-header__nav-sublist li a.menu-icon-32:after,
+        .c-header__nav-sublist li a.menu-icon-33:after {
+          content: "";
+          width: 40px;
+          height: 1px;
+          margin: 10px 0;
+          background: lightgray;
+          display: block; }
+      .c-header__nav-sublist li ul li:first-child {
+        padding-top: 0;
+        margin-top: 0; }
   .c-header__nav-sublink {
     color: #000000;
     text-decoration: none; }

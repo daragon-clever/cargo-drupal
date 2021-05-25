@@ -5020,6 +5020,26 @@ category: 02-molecules
         .c-product-title__title::after {
           display: none; } }
 
+.c-product-big-title {
+  font-family: 'Titillium-bold', Arial, Helvetica, sans-serif;
+  font-size: 36px;
+  color: #E30613;
+  text-transform: uppercase; }
+  .c-product-big-title:after {
+    content: "";
+    display: block;
+    margin: 15px 0 50px;
+    width: 50px;
+    background: #aaa;
+    height: 1px; }
+  @media (max-width: 768px) {
+    .c-product-big-title {
+      font-size: 27px;
+      text-align: center;
+      margin: 30px 0 0; }
+      .c-product-big-title:after {
+        margin: 15px auto 0; } }
+
 /*
 
 ---

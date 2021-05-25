@@ -10,6 +10,19 @@ jQuery(document).ready(function($) {
         arrows: true,
     });
 
+    // EASIER READ MORE/LESS
+    $( "button#js-more-less" ).click(function() {
+        let $this = $(this);
+        $this.prev().slideToggle( "fast" );
+        $this.toggleClass("open");
+
+        if ($this.hasClass("open")) {
+            $this.html("Fermer");
+        } else {
+            $this.html("Lire plus");
+        }
+    });
+
     // JOIN US
     if ($('.joinus-portraits').length) {
         var thumbItem = $('.thumbs .item');

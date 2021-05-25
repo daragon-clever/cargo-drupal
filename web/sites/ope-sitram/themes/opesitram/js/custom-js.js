@@ -72,51 +72,52 @@ jQuery(document).ready(function ($) {
 
         // INSTAGRAM-FEED + SLICK
         if ($('#js-instagram').length) {
-            const instaSlick = function () {
-                $("#js-instagram").slick({
-                    infinite: false,
-                    dots: false,
-                    slidesToShow: 4,
-                    slidesToScroll: 4,
-                    responsive: [
-                        {
-                            breakpoint: 990,
-                            settings: {
-                                slidesToShow: 3,
-                                slidesToScroll: 3
-                            }
-                        },
-                        {
-                            breakpoint: 767,
-                            settings: {
-                                slidesToShow: 1,
-                                slidesToScroll: 1,
-                                centerMode: true,
-                                centerPadding: 0
-                            }
-                        }
-                    ]
-                });
-            }
-
-            new InstagramFeed({
-                'username': 'sitram_fr',
-                'callback': function (data) {
-                    let dataItem = data.edge_owner_to_timeline_media.edges;
-                    for (let i = 0; i < dataItem.length; i++) {
-                        $("#js-instagram").append('' +
-                            '<div>' +
-                                '<a href="https://www.instagram.com/p/' + dataItem[i].node.shortcode + '" target="_blank">' +
-                                    '<img src="' + dataItem[i].node.thumbnail_src + '">' +
-                                '</a>' +
-                            '</div>');
-                    }
-                    instaSlick();
-                },
-                'on_error': function () {
-                    $('#js-instagram').html('<a href="https://www.instagram.com/sitram_fr" target="_blank"><img class="mw-100" src="/sites/ope-sitram/themes/opesitram/images/footer/fake-insta.png" /></a>')
-                }
-            });
+            $('#js-instagram').html('<a href="https://www.instagram.com/sitram_fr" target="_blank"><img class="mw-100" src="/sites/ope-sitram/themes/opesitram/images/footer/fake-insta.png" /></a>')
+            // const instaSlick = function () {
+            //     $("#js-instagram").slick({
+            //         infinite: false,
+            //         dots: false,
+            //         slidesToShow: 4,
+            //         slidesToScroll: 4,
+            //         responsive: [
+            //             {
+            //                 breakpoint: 990,
+            //                 settings: {
+            //                     slidesToShow: 3,
+            //                     slidesToScroll: 3
+            //                 }
+            //             },
+            //             {
+            //                 breakpoint: 767,
+            //                 settings: {
+            //                     slidesToShow: 1,
+            //                     slidesToScroll: 1,
+            //                     centerMode: true,
+            //                     centerPadding: 0
+            //                 }
+            //             }
+            //         ]
+            //     });
+            // }
+            //
+            // new InstagramFeed({
+            //     'username': 'sitram_fr',
+            //     'callback': function (data) {
+            //         let dataItem = data.edge_owner_to_timeline_media.edges;
+            //         for (let i = 0; i < dataItem.length; i++) {
+            //             $("#js-instagram").append('' +
+            //                 '<div>' +
+            //                     '<a href="https://www.instagram.com/p/' + dataItem[i].node.shortcode + '" target="_blank">' +
+            //                         '<img src="' + dataItem[i].node.thumbnail_src + '">' +
+            //                     '</a>' +
+            //                 '</div>');
+            //         }
+            //         instaSlick();
+            //     },
+            //     'on_error': function () {
+            //         $('#js-instagram').html('<a href="https://www.instagram.com/sitram_fr" target="_blank"><img class="mw-100" src="/sites/ope-sitram/themes/opesitram/images/footer/fake-insta.png" /></a>')
+            //     }
+            // });
         }
 
         // POPUP VIDEO

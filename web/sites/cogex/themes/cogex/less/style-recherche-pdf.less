@@ -1,0 +1,167 @@
+// VARS
+@sm: 991px;
+@tablet: ~"only screen and (max-width: @{sm})";
+@mainColor : #E30613;
+@grey-darkest: #303030;
+@greyBook: #707070;
+
+div[role=alert] {
+  display: none;
+  margin: 0 13.9rem 3rem;
+  padding: 15px;
+  background-color: #FEF3D1;
+  color: #806420;
+  text-align: center;
+  font-family: "Titillium-semi-bold";
+
+  @media @tablet {
+    margin: 1rem 0 4rem;
+  }
+}
+
+#module-search-pdf {
+  margin-bottom: 50px;
+
+  .banner {
+    position: relative;
+    padding-top: 5.9rem;
+    padding-bottom: 5.9rem;
+    padding-left: 13.9rem;
+
+    @media @tablet {
+      padding: 0;
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      width: 28.6rem;
+      height: 18.3rem;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: @mainColor;
+
+      @media @tablet {
+        display: none;
+      }
+    }
+
+    &-content {
+      position: relative;
+      width: 71.7rem;
+      padding: 7rem;
+      padding-bottom: 5.7rem;
+      background-color: @grey-darkest;
+
+      @media @tablet {
+        width: 100%;
+        padding: 0 1.5rem;
+        padding-top: 7rem;
+        padding-bottom: 4rem;
+        text-align: center;
+      }
+
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 4rem;
+        height: 0.1rem;
+        background-color: white;
+        top: 5.5rem;
+        left: 7rem;
+
+        @media @tablet {
+          left: 0;
+          right: 0;
+          margin: auto;
+        }
+      }
+
+      * {
+        color: white;
+      }
+
+      h1 {
+        margin: 0 0 16px;
+        font-size: 2.1rem;
+        line-height: 1.33;
+        text-transform: uppercase;
+        font-family: 'Titillium-bold';
+      }
+
+      p {
+        margin: 0;
+        color: white;
+        font-size: 14px;
+        line-height: 24px;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+
+    .box-img, .box-chercher {
+      flex: 1 1 50%;
+      margin-bottom: 50px;
+    }
+
+    .box-img {
+      text-align: center;
+
+      img {
+        max-width: 100%;
+      }
+    }
+
+    .box-chercher form {
+      position: relative;
+      max-width: 370px;
+      margin: auto;
+      background-color: #eee;
+      padding: 50px;
+
+      &::before {
+        content: '';
+        background: url("../images/picto-pdf.svg") no-repeat center transparent;
+        position: absolute;
+        display: block;
+        height: 41px;
+        width: 27px;
+        top: -20px;
+        right: -13px;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      label {
+        color: #232323;
+        font-family: "Titillium-semi-bold";
+        margin-bottom: 5px;
+        padding: 0;
+      }
+
+      input {
+        background-color: transparent;
+        border: 0;
+        border-bottom: 1px solid #cecece;
+        padding: 8px 0;
+      }
+
+      button[type=submit] {
+        margin-top: 10px;
+        width: 100%;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
+        border-radius: 0px;
+        text-transform: initial;
+      }
+    }
+  }
+}

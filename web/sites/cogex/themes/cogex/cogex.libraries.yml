@@ -94,3 +94,10 @@ style-popup:
   css:
     theme:
       css/style-popup.css: {}
+
+# Style recherche pdf
+style-recherche-pdf:
+  header: true
+  css:
+    theme:
+      css/style-recherche-pdf.css: {}

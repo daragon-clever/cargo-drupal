@@ -40,10 +40,11 @@ class RechercheController extends ControllerBase
      *
      * @return array
      */
-    public function displayForm()
+    public function displayForm($type = null)
     {
         return [
-            '#theme' => 'recherche_pdf--recherche'
+            '#theme' => 'recherche_pdf--recherche',
+            '#type' => $type
         ];
     }
 

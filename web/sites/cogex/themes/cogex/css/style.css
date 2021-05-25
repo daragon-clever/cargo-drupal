@@ -3380,17 +3380,17 @@ Add border radius to elements
       margin: 1.4rem 0 0; }
       .c-header__nav-sublist li:first-child {
         padding-top: 2rem; }
-      .c-header__nav-sublist li a.menu-icon-32,
-      .c-header__nav-sublist li a.menu-icon-33 {
+      .c-header__nav-sublist li a.menu-icon-37,
+      .c-header__nav-sublist li a.menu-icon-38 {
         text-transform: uppercase;
         font-weight: bold;
         pointer-events: none; }
-        .c-header__nav-sublist li a.menu-icon-32:hover,
-        .c-header__nav-sublist li a.menu-icon-33:hover {
+        .c-header__nav-sublist li a.menu-icon-37:hover,
+        .c-header__nav-sublist li a.menu-icon-38:hover {
           color: black;
           cursor: default; }
-        .c-header__nav-sublist li a.menu-icon-32:after,
-        .c-header__nav-sublist li a.menu-icon-33:after {
+        .c-header__nav-sublist li a.menu-icon-37:after,
+        .c-header__nav-sublist li a.menu-icon-38:after {
           content: "";
           width: 40px;
           height: 1px;

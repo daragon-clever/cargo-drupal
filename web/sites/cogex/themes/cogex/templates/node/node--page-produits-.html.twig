@@ -97,7 +97,7 @@
                     {{ content['field_section_' ~ i ~ '_title'] }}
 
                 </div>
-                <div class="c-product-description">
+                <div class="c-product-description {% if i is even %}c-product-description--align-right{% endif %}">
                     <div class="c-product-description__description-column">
 
                         <img src="{{ file_url(content['field_section_' ~ i ~ '_logo']['#items'].entity.uri.value) }}" class="c-product-description__logo"/>
@@ -142,7 +142,7 @@
                     {{ content['field_section_' ~ i ~ '_title'] }}
 
                 </div>
-                <div class="c-product-description">
+                <div class="c-product-description {% if i is even %}c-product-description--align-right{% endif %}">
                     <div class="c-product-description__description-column">
 
                         <img src="{{ file_url(content['field_section_' ~ i ~ '_logo']['#items'].entity.uri.value) }}" class="c-product-description__logo"/>

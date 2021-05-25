@@ -14,7 +14,6 @@ jQuery(document).ready(function ($) {
         // gestion bouton off
         $('body').prepend('<div class="js-off-button" style="position: fixed; bottom: 50px; left: 50px; background-color: red; z-index: 10; padding: 10px 25px; cursor: pointer">IMGSIZES OFF</div>');
         $('.js-off-button').click(function () {
-            $(this).css("display", 'none');
             Cookies.remove('dimsCookie');
             window.location = window.location.href.split("?")[0];
         })

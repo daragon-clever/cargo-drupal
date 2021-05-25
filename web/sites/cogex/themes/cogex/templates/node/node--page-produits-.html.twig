@@ -86,291 +86,95 @@
 
     <div class="container">
 
-        <!-- Section 1 -->
-        <div class="c-product-title">
-
-            {{ content.field_section_1_title }}
-
+        <div class="c-product-big-title">
+            {{ "Solutions techniques"|trans }}
         </div>
 
-        <div class="c-product-description">
-            <div class="c-product-description__description-column">
+        {% for i in 1..5 %}
+            {% if content['field_section_' ~ i ~ '_title']|render %}
+                <div class="c-product-title {% if i is even %}c-product-title--align-right{% endif %}">
 
-                <img src="{{ file_url(content.field_section_1_logo['#items'].entity.uri.value) }}" class="c-product-description__logo"/>
-
-                {{ content.field_section_1_text }}
-
-            </div>
-
-            <div class="c-product-description__pictures-column">
-                <!-- Desktop version -->
-                <div class="c-product-description__pictures-container">
-
-                    {% for picture in content.field_section_1_pictures['#items'] %}
-                        <img src="{{ file_url(picture.entity.uri.value) }}" class="c-product-description__picture" data-aos="fade-up">
-                    {% endfor %}
+                    {{ content['field_section_' ~ i ~ '_title'] }}
 
                 </div>
+                <div class="c-product-description">
+                    <div class="c-product-description__description-column">
 
-                <!-- Mobile version -->
-                <div class="c-mobile-slick-slider">
+                        <img src="{{ file_url(content['field_section_' ~ i ~ '_logo']['#items'].entity.uri.value) }}" class="c-product-description__logo"/>
 
-                    {% for picture in content.field_section_1_pictures['#items'] %}
-                        <div class="c-mobile-slick-slider__slide">
-                            <img src="{{ file_url(picture.entity.uri.value) }}" />
+                        {{ content['field_section_' ~ i ~ '_text'] }}
+
+                    </div>
+
+                    <div class="c-product-description__pictures-column">
+                        <!-- Desktop version -->
+                        <div class="c-product-description__pictures-container">
+
+                            {% for picture in content['field_section_' ~ i ~ '_pictures']['#items'] %}
+                                <img src="{{ file_url(picture.entity.uri.value) }}" class="c-product-description__picture" data-aos="fade-up">
+                            {% endfor %}
+
                         </div>
-                    {% endfor %}
 
-                </div>
-            </div>
-        </div>
+                        <!-- Mobile version -->
+                        <div class="c-mobile-slick-slider">
 
-        <!-- Section 2 -->
+                            {% for picture in content['field_section_' ~ i ~ '_pictures']['#items'] %}
+                                <div class="c-mobile-slick-slider__slide">
+                                    <img src="{{ file_url(picture.entity.uri.value) }}" />
+                                </div>
+                            {% endfor %}
 
-        <div class="c-product-title c-product-title--align-right">
-
-            {{ content.field_section_2_title }}
-
-        </div>
-
-        <div class="c-product-description c-product-description--align-right">
-            <div class="c-product-description__description-column">
-
-                <img src="{{ file_url(content.field_section_2_logo['#items'].entity.uri.value) }}" class="c-product-description__logo"/>
-
-                {{ content.field_section_2_text }}
-
-            </div>
-
-            <div class="c-product-description__pictures-column">
-
-                <!-- Desktop version -->
-                <div class="c-product-description__pictures-container">
-
-                    {% for picture in content.field_section_2_pictures['#items'] %}
-                        <img src="{{ file_url(picture.entity.uri.value) }}" class="c-product-description__picture" data-aos="fade-up">
-                    {% endfor %}
-
-                </div>
-
-                <!-- Mobile version -->
-                <div class="c-mobile-slick-slider">
-
-                    {% for picture in content.field_section_2_pictures['#items'] %}
-                        <div class="c-mobile-slick-slider__slide">
-                            <img src="{{ file_url(picture.entity.uri.value) }}" />
                         </div>
-                    {% endfor %}
-
+                    </div>
                 </div>
-            </div>
+            {% endif %}
+        {% endfor %}
+
+        <div class="c-product-big-title">
+            {{ "Solutions grand public"|trans }}
         </div>
 
-        <!-- Section 3 -->
+        {% for i in 6..10 %}
+            {% if content['field_section_' ~ i ~ '_title']|render %}
+                <div class="c-product-title {% if i is even %}c-product-title--align-right{% endif %}">
 
-        <div class="c-product-title">
-
-            {{ content.field_section_3_title }}
-
-        </div>
-
-        <div class="c-product-description">
-            <div class="c-product-description__description-column">
-
-                <img src="{{ file_url(content.field_section_3_logo['#items'].entity.uri.value) }}" class="c-product-description__logo"/>
-
-                {{ content.field_section_3_text }}
-
-            </div>
-
-            <div class="c-product-description__pictures-column">
-
-                <!-- Desktop version -->
-                <div class="c-product-description__pictures-container">
-
-                    {% for picture in content.field_section_3_pictures['#items'] %}
-                        <img src="{{ file_url(picture.entity.uri.value) }}" class="c-product-description__picture" data-aos="fade-up">
-                    {% endfor %}
+                    {{ content['field_section_' ~ i ~ '_title'] }}
 
                 </div>
+                <div class="c-product-description">
+                    <div class="c-product-description__description-column">
 
-                <!-- Mobile version -->
-                <div class="c-mobile-slick-slider">
+                        <img src="{{ file_url(content['field_section_' ~ i ~ '_logo']['#items'].entity.uri.value) }}" class="c-product-description__logo"/>
 
-                    {% for picture in content.field_section_3_pictures['#items'] %}
-                        <div class="c-mobile-slick-slider__slide">
-                            <img src="{{ file_url(picture.entity.uri.value) }}" />
+                        {{ content['field_section_' ~ i ~ '_text'] }}
+
+                    </div>
+
+                    <div class="c-product-description__pictures-column">
+                        <!-- Desktop version -->
+                        <div class="c-product-description__pictures-container">
+
+                            {% for picture in content['field_section_' ~ i ~ '_pictures']['#items'] %}
+                                <img src="{{ file_url(picture.entity.uri.value) }}" class="c-product-description__picture" data-aos="fade-up">
+                            {% endfor %}
+
                         </div>
-                    {% endfor %}
 
-                </div>
-            </div>
-        </div>
+                        <!-- Mobile version -->
+                        <div class="c-mobile-slick-slider">
 
-        <!-- Section 4 -->
+                            {% for picture in content['field_section_' ~ i ~ '_pictures']['#items'] %}
+                                <div class="c-mobile-slick-slider__slide">
+                                    <img src="{{ file_url(picture.entity.uri.value) }}" />
+                                </div>
+                            {% endfor %}
 
-        <div class="c-product-title c-product-title--align-right">
-
-            {{ content.field_section_4_title }}
-
-        </div>
-
-        <div class="c-product-description c-product-description--align-right">
-            <div class="c-product-description__description-column">
-
-                <img src="{{ file_url(content.field_section_4_logo['#items'].entity.uri.value) }}" class="c-product-description__logo"/>
-
-                {{ content.field_section_4_text }}
-
-            </div>
-
-            <div class="c-product-description__pictures-column">
-
-                <!-- Desktop version -->
-                <div class="c-product-description__pictures-container">
-
-                    {% for picture in content.field_section_4_pictures['#items'] %}
-                        <img src="{{ file_url(picture.entity.uri.value) }}" class="c-product-description__picture" data-aos="fade-up">
-                    {% endfor %}
-
-                </div>
-
-                <!-- Mobile version -->
-                <div class="c-mobile-slick-slider">
-
-                    {% for picture in content.field_section_4_pictures['#items'] %}
-                        <div class="c-mobile-slick-slider__slide">
-                            <img src="{{ file_url(picture.entity.uri.value) }}" />
                         </div>
-                    {% endfor %}
-
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <!-- Section 5 -->
-
-        <div class="c-product-title">
-
-            {{ content.field_section_5_title }}
-
-        </div>
-
-        <div class="c-product-description">
-
-            <div class="c-product-description__description-column">
-
-                <img src="{{ file_url(content.field_section_5_logo['#items'].entity.uri.value) }}" class="c-product-description__logo"/>
-
-                {{ content.field_section_5_text }}
-
-            </div>
-
-            <div class="c-product-description__pictures-column">
-
-                <!-- Desktop version -->
-                <div class="c-product-description__pictures-container">
-
-                    {% for picture in content.field_section_5_pictures['#items'] %}
-                        <img src="{{ file_url(picture.entity.uri.value) }}" class="c-product-description__picture" data-aos="fade-up">
-                    {% endfor %}
-
-                </div>
-
-                <!-- Mobile version -->
-                <div class="c-mobile-slick-slider">
-
-                    {% for picture in content.field_section_5_pictures['#items'] %}
-                        <div class="c-mobile-slick-slider__slide">
-                            <img src="{{ file_url(picture.entity.uri.value) }}" />
-                        </div>
-                    {% endfor %}
-
-                </div>
-            </div>
-        </div>
-
-        <!-- Section 6 -->
-
-        <div class="c-product-title c-product-title--align-right">
-
-            {{ content.field_section_6_title }}
-
-        </div>
-
-        <div class="c-product-description c-product-description--align-right">
-            <div class="c-product-description__description-column">
-
-                <img src="{{ file_url(content.field_section_6_logo['#items'].entity.uri.value) }}" class="c-product-description__logo"/>
-
-                {{ content.field_section_6_text }}
-
-            </div>
-
-            <div class="c-product-description__pictures-column">
-
-                <!-- Desktop version -->
-                <div class="c-product-description__pictures-container">
-
-                    {% for picture in content.field_section_6_pictures['#items'] %}
-                        <img src="{{ file_url(picture.entity.uri.value) }}" class="c-product-description__picture" data-aos="fade-up">
-                    {% endfor %}
-
-                </div>
-
-                <!-- Mobile version -->
-                <div class="c-mobile-slick-slider">
-
-                    {% for picture in content.field_section_6_pictures['#items'] %}
-                        <div class="c-mobile-slick-slider__slide">
-                            <img src="{{ file_url(picture.entity.uri.value) }}" />
-                        </div>
-                    {% endfor %}
-
-                </div>
-            </div>
-        </div>
-
-        <!-- Section 7 -->
-
-        <div class="c-product-title">
-
-            {{ content.field_section_7_title }}
-
-        </div>
-
-        <div class="c-product-description">
-            <div class="c-product-description__description-column">
-
-                <img src="{{ file_url(content.field_section_7_logo['#items'].entity.uri.value) }}" class="c-product-description__logo"/>
-
-                {{ content.field_section_7_text }}
-
-            </div>
-
-            <div class="c-product-description__pictures-column">
-
-                <!-- Desktop version -->
-                <div class="c-product-description__pictures-container">
-
-                    {% for picture in content.field_section_7_pictures['#items'] %}
-                        <img src="{{ file_url(picture.entity.uri.value) }}" class="c-product-description__picture" data-aos="fade-up">
-                    {% endfor %}
-
-                </div>
-
-                <!-- Mobile version -->
-                <div class="c-mobile-slick-slider">
-
-                    {% for picture in content.field_section_7_pictures['#items'] %}
-                        <div class="c-mobile-slick-slider__slide">
-                            <img src="{{ file_url(picture.entity.uri.value) }}" />
-                        </div>
-                    {% endfor %}
-
-                </div>
-            </div>
-        </div>
+            {% endif %}
+        {% endfor %}
     </div>
 
 {% endblock mainContent %}

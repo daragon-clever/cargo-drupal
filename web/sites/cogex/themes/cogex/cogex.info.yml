@@ -12,6 +12,7 @@ libraries:
   - cogex/global-styling
   - cogex/bootstrap
   - cogex/aos
+  - cogex/slick
   - cogex/choicesjs
   - cogex/font-awesome-free
   - cogex/slick-carousel
@@ -19,8 +20,10 @@ libraries:
   - cogex/select2
   - cogex/datatables
   - cogex/cookiesJS
+  - cogex/style-popup
 
 regions:
   header: 'Header'
+  loginpopup: 'Login Popup'
   content: 'Main content'
   footer: 'Footer'

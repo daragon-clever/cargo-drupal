@@ -78,7 +78,8 @@
             <div class="c-page-banner-home__mask"></div>
 
             {% for picture in content.field_slideshow_pictures['#items'] %}
-                <div class="c-page-banner-home__picture" style="background-image: url('{{ file_url(picture.entity.uri.value) }}')"></div>
+                <div class="c-page-banner-home__picture"
+                     style="background-image: url('{{ file_url(picture.entity.uri.value) }}')"></div>
             {% endfor %}
 
             <div class="c-banner-card-home" {{ attributes }}>
@@ -92,16 +93,23 @@
     <div class="c-page-section">
         <div class="container">
 
-            <img src="{{ file_url(content.field_section_1_pictogram['#items'].entity.uri.value) }}" class="c-page-section__icon">
+            <img src="{{ file_url(content.field_section_1_pictogram['#items'].entity.uri.value) }}"
+                 class="c-page-section__icon">
 
             {{ content.field_section_1_text }}
 
             <!-- Desktop version: classic display -->
             <div class="c-page-section__pictures-container">
 
-                {% for picture in content.field_section_1_pictures['#items'] %}
-                    <img src="{{ file_url(picture.entity.uri.value) }}" class="c-page-section__picture" data-aos="fade-up">
-                {% endfor %}
+                <div class="slick-wrapper">
+                    <div class="hp js-slider-4-elements" data-aos="fade-up">
+                        {% for picture in content.field_section_1_pictures['#items'] %}
+                            <div>
+                                <img src="{{ file_url(picture.entity.uri.value) }}"/>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
 
             </div>
 
@@ -111,7 +119,7 @@
 
                     {% for picture in content.field_section_1_pictures['#items'] %}
                         <div class="c-mobile-slick-slider__slide">
-                            <img src="{{ file_url(picture.entity.uri.value) }}" />
+                            <img src="{{ file_url(picture.entity.uri.value) }}"/>
                         </div>
                     {% endfor %}
 
@@ -119,7 +127,8 @@
             </div>
 
             <div class="c-page-section__button-container">
-                <a href="{{ content.field_section_1_link[0]['#url'] }}" class="c-button c-button--primary">{{ content.field_section_1_link[0]['#title'] }}</a>
+                <a href="{{ content.field_section_1_link[0]['#url'] }}"
+                   class="c-button c-button--primary">{{ content.field_section_1_link[0]['#title'] }}</a>
             </div>
         </div>
     </div>
@@ -127,7 +136,8 @@
     <div class="c-page-section">
         <div class="container">
 
-            <img src="{{ file_url(content.field_section_2_pictogram['#items'].entity.uri.value) }}" class="c-page-section__icon">
+            <img src="{{ file_url(content.field_section_2_pictogram['#items'].entity.uri.value) }}"
+                 class="c-page-section__icon">
 
             {{ content.field_section_2_text }}
 
@@ -135,7 +145,8 @@
             <div class="c-page-section__pictures-container">
 
                 {% for picture in content.field_section_2_pictures['#items'] %}
-                    <img src="{{ file_url(picture.entity.uri.value) }}" class="c-page-section__picture" data-aos="fade-up">
+                    <img src="{{ file_url(picture.entity.uri.value) }}" class="c-page-section__picture"
+                         data-aos="fade-up">
                 {% endfor %}
 
             </div>
@@ -146,7 +157,7 @@
 
                     {% for picture in content.field_section_2_pictures['#items'] %}
                         <div class="c-mobile-slick-slider__slide">
-                            <img src="{{ file_url(picture.entity.uri.value) }}" />
+                            <img src="{{ file_url(picture.entity.uri.value) }}"/>
                         </div>
                     {% endfor %}
 
@@ -154,7 +165,8 @@
             </div>
 
             <div class="c-page-section__button-container">
-                <a href="{{ content.field_section_2_link[0]['#url'] }}" class="c-button c-button--primary">{{ content.field_section_2_link[0]['#title'] }}</a>
+                <a href="{{ content.field_section_2_link[0]['#url'] }}"
+                   class="c-button c-button--primary">{{ content.field_section_2_link[0]['#title'] }}</a>
             </div>
         </div>
     </div>
@@ -162,14 +174,16 @@
     <div class="c-page-section">
         <div class="container">
 
-            <img src="{{ file_url(content.field_section_3_pictogram['#items'].entity.uri.value) }}" class="c-page-section__icon">
+            <img src="{{ file_url(content.field_section_3_pictogram['#items'].entity.uri.value) }}"
+                 class="c-page-section__icon">
 
             {{ content.field_section_3_text }}
 
             <!-- Desktop version: classic display -->
             <div class="c-page-section__pictures-container">
                 {% for picture in content.field_section_3_pictures['#items'] %}
-                    <img src="{{ file_url(picture.entity.uri.value) }}" class="c-page-section__picture" data-aos="fade-up">
+                    <img src="{{ file_url(picture.entity.uri.value) }}" class="c-page-section__picture"
+                         data-aos="fade-up">
                 {% endfor %}
             </div>
 
@@ -179,7 +193,7 @@
 
                     {% for picture in content.field_section_3_pictures['#items'] %}
                         <div class="c-mobile-slick-slider__slide">
-                            <img src="{{ file_url(picture.entity.uri.value) }}" />
+                            <img src="{{ file_url(picture.entity.uri.value) }}"/>
                         </div>
                     {% endfor %}
 
@@ -187,7 +201,8 @@
             </div>
 
             <div class="c-page-section__button-container">
-                <a href="{{ content.field_section_3_link[0]['#url'] }}" class="c-button c-button--primary">{{ content.field_section_3_link[0]['#title'] }}</a>
+                <a href="{{ content.field_section_3_link[0]['#url'] }}"
+                   class="c-button c-button--primary">{{ content.field_section_3_link[0]['#title'] }}</a>
             </div>
         </div>
     </div>

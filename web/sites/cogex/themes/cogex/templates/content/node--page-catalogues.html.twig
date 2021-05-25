@@ -1,0 +1,32 @@
+{{ attach_library('cogex/style-cata') }}
+<div class="container">
+    <div id="page-catalogues">
+        <div class="banner">
+            <div class="banner-content">
+                {{ content.field_description_page|raw }}
+            </div>
+        </div>
+
+        <div class="pdf-list">
+            {% set imgArr = [] %}
+            {% for img in content.field_image_pdf['#items'] %}
+                {% set imgArr = imgArr|merge([file_url(img.entity.uri.value)]) %}
+            {% endfor %}
+
+            {% set pdfArr = [] %}
+            {% for pdf in content.field_pdf_catalogue['#items'] %}
+                {% set pdfArr = pdfArr|merge([file_url(pdf.entity.uri.value)]) %}
+            {% endfor %}
+
+            {% for i in 0..(imgArr|length - 1) %}
+                <div class="pdf-item">
+                    <a class="dl-pdf" href="{{ pdfArr[i] }}" target="_blank">
+                        <div class="book">
+                            <img src="{{ imgArr[i] }}" />
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

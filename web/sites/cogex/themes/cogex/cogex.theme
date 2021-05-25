@@ -6,6 +6,21 @@ use Drupal\file\Entity\File;
 
 function cogex_form_alter(&$form, &$form_state, $form_id) {
     $form['#attributes']['class'][] = 'c-form';
+
+    if ($form_id == "user_login_form") {
+        $form['name']['#attributes'] = array(
+            'placeholder' => array (
+                 t('Nom d\'utilisateur')
+            )
+        );
+        $form['pass']['#attributes'] = array(
+            'placeholder' => array (
+                 t('Mot de passe')
+            )
+        );
+        $form['actions']['submit']['#attributes']['class'][] = 'c-button';
+        $form['actions']['submit']['#attributes']['class'][] = 'c-button--primary';
+    }
 }
 
 /**

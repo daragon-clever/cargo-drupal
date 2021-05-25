@@ -1,0 +1,28 @@
+{% if page.loginpopup %}
+    <div id="login-popup" class="popup">
+        <div class="popup-overlay popup-toggle"></div>
+        <div class="popup-content">
+            <div class="popup-close popup-toggle"></div>
+            <div class="popup-title">
+                Accédez aux catalogues
+            </div>
+            <div class="popup-body">
+                <p>Pour accéder aux contenus de l'Espace Pro, merci de vous identifier.</p>
+                <div class="login-form">
+                    {{ page.loginpopup }}
+                </div>
+            </div>
+            <div class="popup-footer">
+                <p class="align-item">Vous n'avez pas d'identifiants ?</p>
+                <div class="align-item">
+                    <!--TODO : ajouter un objet au formulaire de contact-->
+                    <a href="/contact?objet=demande_acces" title="Demandez des accès">
+                        <button class="c-button c-button--primary">
+                            Demandez des accès
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}

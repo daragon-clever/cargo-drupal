@@ -2,6 +2,27 @@ jQuery(document).ready(function($) {
     // TEST MOBILE
     var isMobile = window.matchMedia("only screen and (max-width: 767px)").matches;
 
+    // NEW HP SLIDER
+    $(".js-slider-4-elements").slick({
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        arrows: true,
+    });
+
+    // EASIER READ MORE/LESS
+    $( "button#js-more-less" ).click(function() {
+        let $this = $(this);
+        $this.prev().slideToggle( "fast" );
+        $this.toggleClass("open");
+
+        if ($this.hasClass("open")) {
+            $this.html("Fermer");
+        } else {
+            $this.html("Lire plus");
+        }
+    });
+
     // JOIN US
     if ($('.joinus-portraits').length) {
         var thumbItem = $('.thumbs .item');

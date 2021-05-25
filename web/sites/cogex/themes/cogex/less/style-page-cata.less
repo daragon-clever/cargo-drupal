@@ -1,0 +1,115 @@
+// VARS
+@xs: 767px;
+@sm: 991px;
+@phone: ~"only screen and (max-width: @{xs})";
+@tablet: ~"only screen and (max-width: @{sm})";
+@mainColor : #E30613;
+@grey-darkest: #303030;
+
+// STYLE
+#page-catalogues {
+  .banner {
+    position: relative;
+    padding-top: 5.9rem;
+    padding-bottom: 5.9rem;
+    padding-left: 13.9rem;
+
+    &:before {
+      content: '';
+      display: block;
+      width: 28.6rem;
+      height: 18.3rem;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: #E30613;
+    }
+
+    &-content {
+      position: relative;
+      width: 71.7rem;
+      padding: 7rem;
+      padding-bottom: 5.7rem;
+      background-color: #303030;
+
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 4rem;
+        height: 0.1rem;
+        background-color: #ffffff;
+        top: 5.5rem;
+        left: 7rem;
+      }
+
+      * {
+        color: white;
+      }
+
+      h1 {
+        margin: 0 0 16px;
+        font-size: 2.1rem;
+        line-height: 1.33;
+        text-transform: uppercase;
+        font-family: 'Titillium-bold';
+      }
+
+      p {
+        margin: 0;
+        color: #ffffff;
+        font-size: 14px;
+        line-height: 24px;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .pdf-list {
+    display: flex;
+    margin: 2.6rem 0;
+    flex-wrap: wrap;
+
+    .pdf-item {
+      flex: 1 1 33%;
+      margin: 34px 0;
+
+      .dl-pdf {
+        display: block;
+        position: relative;
+
+        .book {
+          position: relative;
+          width: max-content;
+          margin: 0 auto;
+          box-shadow: 0px 0px 15px #0000004D;
+
+          &::before {
+            content: '';
+            background: url("../images/picto-pdf.svg") no-repeat center transparent;
+            position: absolute;
+            display: block;
+            height: 41px;
+            width: 27px;
+            top: -20px;
+            right: -13px;
+          }
+
+          &:after {
+            display: block;
+            background: #FFFFFF 0% 0% no-repeat padding-box;
+            content: "";
+            width: 7px;
+            height: 100%;
+            position: absolute;
+            right: -7px;
+            top: 0;
+            z-index: -1;
+            border: 2px solid #707070;
+            border-left: none;
+          }
+        }
+      }
+    }
+  }
+}

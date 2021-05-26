@@ -46,7 +46,16 @@
   &__pictures-container {
     margin: 2.6rem 0;
     display: flex;
-    justify-content: space-between; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .flex {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 80%;
+    }
   }
 
   &__title {

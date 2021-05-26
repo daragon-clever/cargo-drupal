@@ -113,20 +113,11 @@
                 {{ content.field_section_1_text }}
 
                 <!-- Desktop version -->
-                <div class="c-expertise-section__pictures-container">
+                <div class="c-slick-slider">
 
                     {% for picture in content.field_section_1_pictures['#items'] %}
-                        <img src="{{ file_url(picture.entity.uri.value) }}" data-aos="fade-up">
-                    {% endfor %}
-
-                </div>
-
-                <!-- Mobile version -->
-                <div class="c-mobile-slick-slider">
-
-                    {% for picture in content.field_section_1_pictures['#items'] %}
-                        <div class="c-mobile-slick-slider__slide">
-                            <img src="{{ file_url(picture.entity.uri.value) }}" />
+                        <div class="c-slick-slider__slide">
+                            <img src="{{ file_url(picture.entity.uri.value) }}">
                         </div>
                     {% endfor %}
 
@@ -147,21 +138,36 @@
                 <!-- Desktop version -->
                 <div class="c-expertise-section__pictures-container">
 
-                    {% for picture in content.field_section_2_pictures['#items']|slice(0, 3) %}
-                        <img src="{{ file_url(picture.entity.uri.value) }}" data-aos="fade-up">
-                    {% endfor %}
+                    <div class="flex">
+                        <div data-aos="fade-up">
+                            {{ content.field_section_2_pictures[0] }}
+                        </div>
+                        <div data-aos="fade-up">
+                            {{ content.field_section_2_pictures[1] }}
+                        </div>
+                        <div data-aos="fade-up">
+                            {{ content.field_section_2_pictures[2] }}
+                        </div>
+                    </div>
+
+                    <div data-aos="fade-up">
+                        {{ content.field_section_2_pictures[3] }}
+                    </div>
+
+                    <div class="flex">
+                        <div data-aos="fade-up">
+                            {{ content.field_section_2_pictures[4] }}
+                        </div>
+                        <div data-aos="fade-up">
+                            {{ content.field_section_2_pictures[5] }}
+                        </div>
+                    </div>
+
+                    <div data-aos="fade-up">
+                        {{ content.field_section_2_pictures[6] }}
+                    </div>
 
                 </div>
-
-                {% if content.field_section_2_pictures['#items']|length > 3 %}
-                    <div class="c-expertise-section__pictures-container">
-
-                        {% for picture in content.field_section_2_pictures['#items']|slice(3, 6) %}
-                            <img src="{{ file_url(picture.entity.uri.value) }}" data-aos="fade-up">
-                        {% endfor %}
-
-                    </div>
-                {% endif %}
 
                 <!-- Mobile version -->
                 <div class="c-mobile-slick-slider">

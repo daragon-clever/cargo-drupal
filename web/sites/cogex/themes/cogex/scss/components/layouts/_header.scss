@@ -204,7 +204,7 @@
   }
 
   &__nav-item {
-    min-width: 16rem;
+    min-width: 14rem;
     position: relative;
 
     & + .c-header__nav-item {
@@ -232,21 +232,23 @@
         padding-right: 0;
         text-align: center;
       }
-      .logout-link { //todo: nico, à centrer verticaliment + voir mobile comment tu le vois
+      .logout-link {
         position: absolute;
         font-weight: bold;
-        margin-left: 25px; //todo: nico, voir si meilleur solution
+        top: 12px;
+        right: -110px;
         text-decoration: none;
 
         &:hover {
           color: inherit;
         }
+
         &::before {
           content: url("../images/picto-logout.svg");
           position: absolute;
           width: 10px;
           height: 10px;
-          margin-left: -15px; //todo: nico, voir si meilleur solution
+          left: -15px;
         }
 
         @media only screen and (max-width: $bp-tablet) {

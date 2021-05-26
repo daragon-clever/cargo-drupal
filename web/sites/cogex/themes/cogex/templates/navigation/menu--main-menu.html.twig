@@ -42,23 +42,20 @@
                 {% if item.below %}
                     {{ menus.menu_links(item.below, attributes, menu_level + 1, logged_in) }}
                 {% endif %}
-
             </div>
 
         {% endfor %}
 
-        {#<div class="c-header__nav-item">
-            {% if logged_in %}
-                <div class="espace-pro">
+        <div class="c-header__nav-item">
+            <div class="espace-pro">
+                {% if logged_in %}
                     <a class="c-button c-button--primary cata-link" href="/catalogues">Catalogues</a>
                     <a href="/membercog/logout" class="logout-link">Déconnexion</a>
-                </div>
-            {% else %}
-                <div class="espace-pro">
+                {% else %}
                     <button class="c-button c-button--primary cata-link popup-toggle">Espace pro</button>
-                </div>
-            {% endif %}
-        </div>#}
+                {% endif %}
+            </div>
+        </div>
 
     {% else %}
 

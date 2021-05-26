@@ -22,7 +22,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: #00000070;
+    background: rgba(0, 0, 0, 0.44);
     transition: visibility 0s linear 0.3s, opacity 0.3s;
   }
 
@@ -41,7 +41,7 @@
   }
 
   p {
-    font-family: "Titillium-semi-bold";
+    font-family: "Titillium-semi-bold", Arial, Helvetica, sans-serif;
     font-size: 16px;
     margin: 0;
   }
@@ -60,7 +60,6 @@
     background-color: white;
     margin: auto;
     padding: 50px 70px;
-    overflow: auto;
 
     @media @tablet {
       max-width: 90%;
@@ -68,24 +67,29 @@
     }
   }
 
-  &-close { //todo: voir avec nico le problème d'index ou autre (box sizing) ?
+  &-close {
     top: -45px;
     right: -45px;
     width: 45px;
     height: 45px;
-    background-color: @main-color;
-    background-image: url("../images/picto-close-popup.svg");
-    background-size: 50%;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: url("../images/picto-close-popup.svg") no-repeat center / 50% @main-color;
     position: absolute;
     z-index: 500;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    @media @tablet {
+      right: 0;
+    }
   }
 
   &-title {
     color: @main-color;
     text-transform: uppercase;
-    font-family: "Titillium-semi-bold";
+    font-family: "Titillium-semi-bold", Arial, Helvetica, sans-serif;
     font-size: 24px;
     position: relative;
 

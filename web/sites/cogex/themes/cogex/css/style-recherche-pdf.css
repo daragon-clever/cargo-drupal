@@ -1,0 +1,72 @@
+div[role=alert] {
+  display: none;
+  margin: 0 13.9rem 3rem;
+  padding: 15px;
+  background-color: #FEF3D1;
+  color: #806420;
+  text-align: center;
+  font-family: "Titillium-semi-bold";
+}
+@media only screen and (max-width: 991px) {
+  div[role=alert] {
+    margin: 1rem 0 4rem;
+  }
+}
+#module-search-pdf {
+  margin-bottom: 50px;
+}
+#module-search-pdf .content {
+  display: flex;
+  flex-wrap: wrap;
+}
+#module-search-pdf .content .box-img,
+#module-search-pdf .content .box-chercher {
+  flex: 1 1 50%;
+  margin-bottom: 50px;
+}
+#module-search-pdf .content .box-img {
+  text-align: center;
+}
+#module-search-pdf .content .box-img img {
+  max-width: 100%;
+}
+#module-search-pdf .content .box-chercher form {
+  position: relative;
+  max-width: 370px;
+  margin: auto;
+  background-color: #eee;
+  padding: 50px;
+}
+#module-search-pdf .content .box-chercher form::before {
+  content: '';
+  background: url("../images/picto-pdf.svg") no-repeat center transparent;
+  position: absolute;
+  display: block;
+  height: 41px;
+  width: 27px;
+  top: -20px;
+  right: -13px;
+}
+#module-search-pdf .content .box-chercher form .form-group {
+  margin-bottom: 15px;
+}
+#module-search-pdf .content .box-chercher form label {
+  color: #232323;
+  font-family: "Titillium-semi-bold";
+  margin-bottom: 5px;
+  padding: 0;
+}
+#module-search-pdf .content .box-chercher form input {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid #cecece;
+  padding: 8px 0;
+}
+#module-search-pdf .content .box-chercher form button[type=submit] {
+  margin-top: 10px;
+  width: 100%;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  text-transform: initial;
+}

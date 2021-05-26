@@ -81,7 +81,6 @@
     display: flex;
     justify-content: flex-end;
     padding: 2rem;
-    //margin-top: 100px; //todo: temp !!!!!!!
 
     @media only screen and (max-width: $bp-tablet) {
       max-height: 0;
@@ -205,7 +204,7 @@
   }
 
   &__nav-item {
-    min-width: 16rem;
+    min-width: 14rem;
     position: relative;
 
     & + .c-header__nav-item {
@@ -224,33 +223,41 @@
       }
     }
 
-    //.espace-pro {
-    //  position: relative;
-    //
-    //  .cata-link {
-    //    width: 100%;
-    //    padding-left: 0;
-    //    padding-right: 0;
-    //    text-align: center;
-    //  }
-    //  .logout-link { //todo: nico, à centrer verticaliment
-    //    position: absolute;
-    //    font-weight: bold;
-    //    margin-left: 25px; //todo: nico, voir si meilleur solution
-    //    text-decoration: none;
-    //
-    //    &:hover {
-    //      color: inherit;
-    //    }
-    //    &::before {
-    //      content: url("../images/picto-logout.svg");
-    //      position: absolute;
-    //      width: 10px;
-    //      height: 10px;
-    //      margin-left: -15px; //todo: nico, voir si meilleur solution
-    //    }
-    //  }
-    //}
+    .espace-pro {
+      position: relative;
+
+      .cata-link {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        text-align: center;
+      }
+      .logout-link {
+        position: absolute;
+        font-weight: bold;
+        top: 12px;
+        right: -110px;
+        text-decoration: none;
+
+        &:hover {
+          color: inherit;
+        }
+
+        &::before {
+          content: url("../images/picto-logout.svg");
+          position: absolute;
+          width: 10px;
+          height: 10px;
+          left: -15px;
+        }
+
+        @media only screen and (max-width: $bp-tablet) {
+          position: revert;
+          display: block;
+          text-align: center;
+        }
+      }
+    }
   }
 
   &__nav-main-link {

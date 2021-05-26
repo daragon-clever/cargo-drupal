@@ -6,6 +6,14 @@ recherchePdf.form:
   requirements:
     _permission: 'access content'
 
+recherchePdfType.form:
+  path: '/recherche-pdf/{type}'
+  defaults:
+    _title: 'Espace de téléchargement PDF'
+    _controller: '\Drupal\recherche_pdf\Controller\RechercheController::displayForm'
+  requirements:
+    _permission: 'access content'
+
 resultSearch.form:
   path: '/fiche-pdf/{action}'
   defaults:

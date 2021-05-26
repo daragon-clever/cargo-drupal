@@ -3,7 +3,10 @@ function recherche_pdf_theme()
 {
     return [
         'recherche_pdf--recherche' => [
-            'template' => "recherche-pdf--recherche"
+            'template' => "recherche-pdf--recherche",
+            'variables' => [
+                'type' => ''
+            ]
         ],
         'recherche_pdf--liste' => [
             'template' => "recherche-pdf--liste",

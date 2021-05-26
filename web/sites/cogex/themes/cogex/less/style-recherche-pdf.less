@@ -1,16 +1,18 @@
 // VARS
 @sm: 991px;
 @tablet: ~"only screen and (max-width: @{sm})";
-@mainColor : #E30613;
-@grey-darkest: #303030;
-@greyBook: #707070;
+@colorBgAlert: #FEF3D1;
+@colorTxtAlert: #806420;
+@colorBgForm: #eee;
+@darkGrey: #232323;
+@lightGrey: #cecece;
 
 div[role=alert] {
   display: none;
   margin: 0 13.9rem 3rem;
   padding: 15px;
-  background-color: #FEF3D1;
-  color: #806420;
+  background-color: @colorBgAlert;
+  color: @colorTxtAlert;
   text-align: center;
   font-family: "Titillium-semi-bold";
 
@@ -21,85 +23,6 @@ div[role=alert] {
 
 #module-search-pdf {
   margin-bottom: 50px;
-
-  .banner {
-    position: relative;
-    padding-top: 5.9rem;
-    padding-bottom: 5.9rem;
-    padding-left: 13.9rem;
-
-    @media @tablet {
-      padding: 0;
-    }
-
-    &:before {
-      content: '';
-      display: block;
-      width: 28.6rem;
-      height: 18.3rem;
-      position: absolute;
-      top: 0;
-      right: 0;
-      background-color: @mainColor;
-
-      @media @tablet {
-        display: none;
-      }
-    }
-
-    &-content {
-      position: relative;
-      width: 71.7rem;
-      padding: 7rem;
-      padding-bottom: 5.7rem;
-      background-color: @grey-darkest;
-
-      @media @tablet {
-        width: 100%;
-        padding: 0 1.5rem;
-        padding-top: 7rem;
-        padding-bottom: 4rem;
-        text-align: center;
-      }
-
-      &:after {
-        content: '';
-        display: block;
-        position: absolute;
-        width: 4rem;
-        height: 0.1rem;
-        background-color: white;
-        top: 5.5rem;
-        left: 7rem;
-
-        @media @tablet {
-          left: 0;
-          right: 0;
-          margin: auto;
-        }
-      }
-
-      * {
-        color: white;
-      }
-
-      h1 {
-        margin: 0 0 16px;
-        font-size: 2.1rem;
-        line-height: 1.33;
-        text-transform: uppercase;
-        font-family: 'Titillium-bold';
-      }
-
-      p {
-        margin: 0;
-        color: white;
-        font-size: 14px;
-        line-height: 24px;
-        font-weight: bold;
-      }
-    }
-  }
 
   .content {
     display: flex;
@@ -122,7 +45,7 @@ div[role=alert] {
       position: relative;
       max-width: 370px;
       margin: auto;
-      background-color: #eee;
+      background-color: @colorBgForm;
       padding: 50px;
 
       &::before {
@@ -141,7 +64,7 @@ div[role=alert] {
       }
 
       label {
-        color: #232323;
+        color: @darkGrey;
         font-family: "Titillium-semi-bold";
         margin-bottom: 5px;
         padding: 0;
@@ -150,7 +73,7 @@ div[role=alert] {
       input {
         background-color: transparent;
         border: 0;
-        border-bottom: 1px solid #cecece;
+        border-bottom: 1px solid @lightGrey;
         padding: 8px 0;
       }
 

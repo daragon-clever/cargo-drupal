@@ -1,91 +1,10 @@
 // VARS
 @sm: 991px;
 @tablet: ~"only screen and (max-width: @{sm})";
-@mainColor : #E30613;
-@grey-darkest: #303030;
 @greyBook: #707070;
 
 // STYLE
 #page-catalogues {
-  .banner {
-    position: relative;
-    padding-top: 5.9rem;
-    padding-bottom: 5.9rem;
-    padding-left: 13.9rem;
-
-    @media @tablet {
-      padding: 0;
-    }
-
-    &:before {
-      content: '';
-      display: block;
-      width: 28.6rem;
-      height: 18.3rem;
-      position: absolute;
-      top: 0;
-      right: 0;
-      background-color: @mainColor;
-
-      @media @tablet {
-        display: none;
-      }
-    }
-
-    &-content {
-      position: relative;
-      width: 71.7rem;
-      padding: 7rem;
-      padding-bottom: 5.7rem;
-      background-color: @grey-darkest;
-
-      @media @tablet {
-        width: 100%;
-        padding: 0 1.5rem;
-        padding-top: 7rem;
-        padding-bottom: 4rem;
-        text-align: center;
-      }
-
-      &:after {
-        content: '';
-        display: block;
-        position: absolute;
-        width: 4rem;
-        height: 0.1rem;
-        background-color: white;
-        top: 5.5rem;
-        left: 7rem;
-
-        @media @tablet {
-          left: 0;
-          right: 0;
-          margin: auto;
-        }
-      }
-
-      * {
-        color: white;
-      }
-
-      h1 {
-        margin: 0 0 16px;
-        font-size: 2.1rem;
-        line-height: 1.33;
-        text-transform: uppercase;
-        font-family: 'Titillium-bold';
-      }
-
-      p {
-        margin: 0;
-        color: white;
-        font-size: 14px;
-        line-height: 24px;
-        font-weight: bold;
-      }
-    }
-  }
-
   .pdf-list {
     display: flex;
     margin: 2.6rem 0;

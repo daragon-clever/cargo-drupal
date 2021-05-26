@@ -78,7 +78,7 @@
                 {{ content.field_join_intro }}
             </div>
             <div class="thumbs">
-                {% for i in 0..7 %}
+                {% for i in 0..11 %}
                     <div class="item {% if i is even %}even{% else %}odd{% endif %}" id="js-job-{{ i }}">
                         <div class="inner">
                             <a href="#js-anchor">
@@ -97,7 +97,7 @@
                 {% endfor %}
             </div>
             <div class="itw-content" id="js-anchor">
-                {% for i in 0..7 %}
+                {% for i in 0..11 %}
                     <div class="item txt" id="text-js-job-{{ i }}">
                         <div class="img-wrapper">
                             <img src="{{ content.field_join_full_portrait[i] }}" alt="" />

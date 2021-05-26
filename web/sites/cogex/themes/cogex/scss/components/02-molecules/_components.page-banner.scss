@@ -75,6 +75,14 @@ category: 02-molecules
 
   }
 
+  &--offers {
+    min-height: 380px;
+
+    .c-page-banner__picture {
+      background-image: url("../images/Hero_nous-rejoindre.jpg");
+    }
+  }
+
   &__content-wrapper {
     position: relative;
     padding-top: 5.9rem;

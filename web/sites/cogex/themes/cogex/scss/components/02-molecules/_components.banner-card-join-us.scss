@@ -22,7 +22,8 @@ category: 02-molecules
 ```
 
 */
-.c-banner-card-join-us {
+.c-banner-card-join-us,
+.c-banner-card-offers {
   position: absolute;
   top: 5.9rem;
   left: 13.9rem;
@@ -172,5 +173,4 @@ category: 02-molecules
     }
 
   }
-
 }

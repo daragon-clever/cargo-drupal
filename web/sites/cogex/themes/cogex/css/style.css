@@ -3606,11 +3606,16 @@ input[type="email"],
 input[type="password"],
 input[type="tel"],
 input[type="number"],
-input[type="search"], .choices .choices__inner, .choices .choices__item.choices__item--choice, .c-header__nav-main-link, .c-header__nav-sublink, .c-footer__section-button, .c-footer__section-link, .c-footer__txtbottom, .c-banner-card-home__content, .c-banner-card-company__content, .c-banner-card-company__hidden-content, .c-banner-card-form__content, .c-banner-card-expertise__content, .c-banner-card-expertise__hidden-content, .c-banner-card-products__content, .c-banner-card-join-us__content p, .c-banner-card-join-us__hidden-content p, .c-product-title__title, .c-page-section__subtitle, .c-page-section__description, .c-product-description__description, .c-expertise-section__description, .c-expertise-section__description-hidden, .c-expertise-section__read-more-button, .c-expertise-section__read-less-button, .c-expertise-section__responsive-read-more-button, .c-expertise-section__link {
+input[type="search"], .choices .choices__inner, .choices .choices__item.choices__item--choice, .c-header__nav-main-link, .c-header__nav-sublink, .c-footer__section-button, .c-footer__section-link, .c-footer__txtbottom, .c-banner-card-home__content, .c-banner-card-company__content, .c-banner-card-company__hidden-content, .c-banner-card-form__content, .c-banner-card-expertise__content, .c-banner-card-expertise__hidden-content, .c-banner-card-products__content, .c-banner-card-join-us__content p,
+.c-banner-card-offers__content p, .c-banner-card-join-us__hidden-content p,
+.c-banner-card-offers__hidden-content p, .c-product-title__title, .c-page-section__subtitle, .c-page-section__description, .c-product-description__description, .c-expertise-section__description, .c-expertise-section__description-hidden, .c-expertise-section__read-more-button, .c-expertise-section__read-less-button, .c-expertise-section__responsive-read-more-button, .c-expertise-section__link {
   font-family: 'Titillium-semi-bold';
   color: #000000; }
 
-.c-text-bold, .c-button, .c-banner-card-home__title, .c-banner-card-company__title, .c-banner-card-company__read-more-button, .c-banner-card-company__read-less-button, .c-banner-card-form__title, .c-banner-card-expertise__title, .c-banner-card-expertise__read-more-button, .c-banner-card-expertise__read-less-button, .c-banner-card-products__title, .c-banner-card-join-us__title, .c-banner-card-join-us__read-more-button, .c-banner-card-join-us__read-less-button, .c-statistic-section-title__title, .c-statistic-section-separator__title, .c-discover-section-title__title, .c-page-section__title, .c-expertise-section__title, .c-expertise-section__responsive-read-more-button, .c-form__title {
+.c-text-bold, .c-button, .c-banner-card-home__title, .c-banner-card-company__title, .c-banner-card-company__read-more-button, .c-banner-card-company__read-less-button, .c-banner-card-form__title, .c-banner-card-expertise__title, .c-banner-card-expertise__read-more-button, .c-banner-card-expertise__read-less-button, .c-banner-card-products__title, .c-banner-card-join-us__title,
+.c-banner-card-offers__title, .c-banner-card-join-us__read-more-button,
+.c-banner-card-offers__read-more-button, .c-banner-card-join-us__read-less-button,
+.c-banner-card-offers__read-less-button, .c-statistic-section-title__title, .c-statistic-section-separator__title, .c-discover-section-title__title, .c-page-section__title, .c-expertise-section__title, .c-expertise-section__responsive-read-more-button, .c-form__title {
   font-family: 'Titillium-bold';
   color: #000000; }
 
@@ -4153,7 +4158,8 @@ category: 02-molecules
 ```
 
 */
-.c-banner-card-join-us {
+.c-banner-card-join-us,
+.c-banner-card-offers {
   position: absolute;
   top: 5.9rem;
   left: 13.9rem;
@@ -4164,16 +4170,20 @@ category: 02-molecules
   opacity: 0.9;
   z-index: 1;
   transition: all 0.3s ease-in-out; }
-  .c-banner-card-join-us--opened {
+  .c-banner-card-join-us--opened,
+  .c-banner-card-offers--opened {
     opacity: 1;
     box-shadow: 0 0 5rem 0.2rem rgba(0, 0, 0, 0.1); }
-    .c-banner-card-join-us--opened .c-banner-card-join-us__read-more-button {
+    .c-banner-card-join-us--opened .c-banner-card-join-us__read-more-button,
+    .c-banner-card-offers--opened .c-banner-card-join-us__read-more-button {
       display: none; }
-    .c-banner-card-join-us--opened .c-banner-card-join-us__hidden-content {
+    .c-banner-card-join-us--opened .c-banner-card-join-us__hidden-content,
+    .c-banner-card-offers--opened .c-banner-card-join-us__hidden-content {
       display: block;
       max-height: 100vh;
       transition: max-height 0.5s ease-in; }
-  .c-banner-card-join-us::after {
+  .c-banner-card-join-us::after,
+  .c-banner-card-offers::after {
     content: '';
     display: block;
     position: absolute;
@@ -4182,73 +4192,90 @@ category: 02-molecules
     background-color: #303030;
     top: 5.6rem;
     left: 6.8rem; }
-  .c-banner-card-join-us__title {
+  .c-banner-card-join-us__title,
+  .c-banner-card-offers__title {
     margin: 0;
     color: #303030;
     font-size: 2.1rem;
     line-height: 1.33;
     text-transform: uppercase; }
-  .c-banner-card-join-us__content {
+  .c-banner-card-join-us__content,
+  .c-banner-card-offers__content {
     margin: 0;
     margin-top: 1rem; }
-    .c-banner-card-join-us__content p {
+    .c-banner-card-join-us__content p,
+    .c-banner-card-offers__content p {
       margin: 0;
       color: #303030;
       font-size: 1.4rem;
       line-height: 1.71; }
-  .c-banner-card-join-us__read-more-button {
+  .c-banner-card-join-us__read-more-button,
+  .c-banner-card-offers__read-more-button {
     padding: 0;
     background: none;
     border: none;
     outline: 0;
     color: #E30613;
     text-decoration: underline; }
-  .c-banner-card-join-us__read-less-button {
+  .c-banner-card-join-us__read-less-button,
+  .c-banner-card-offers__read-less-button {
     padding: 0;
     background: none;
     border: none;
     outline: 0;
     color: #E30613;
     text-decoration: underline; }
-  .c-banner-card-join-us__hidden-content {
+  .c-banner-card-join-us__hidden-content,
+  .c-banner-card-offers__hidden-content {
     margin: 0;
     max-height: 0;
     transition: max-height 0.3s ease-out;
     overflow: hidden; }
-    .c-banner-card-join-us__hidden-content p {
+    .c-banner-card-join-us__hidden-content p,
+    .c-banner-card-offers__hidden-content p {
       margin: 0;
       color: #303030;
       font-size: 1.4rem;
       line-height: 1.71; }
-  .c-banner-card-join-us__button-container {
+  .c-banner-card-join-us__button-container,
+  .c-banner-card-offers__button-container {
     margin-top: 2.1rem;
     text-align: center; }
-  .c-banner-card-join-us__link {
+  .c-banner-card-join-us__link,
+  .c-banner-card-offers__link {
     text-align: center;
     margin-top: 10px; }
   @media only screen and (max-width: 992px) {
-    .c-banner-card-join-us {
+    .c-banner-card-join-us,
+    .c-banner-card-offers {
       position: static;
       width: 100%;
       padding: 0 15px;
       padding-top: 5rem;
       padding-bottom: 4rem;
       opacity: 1; }
-      .c-banner-card-join-us::after {
+      .c-banner-card-join-us::after,
+      .c-banner-card-offers::after {
         left: 1.5rem;
         top: 3rem;
         width: 5rem; }
-      .c-banner-card-join-us .c-button {
+      .c-banner-card-join-us .c-button,
+      .c-banner-card-offers .c-button {
         width: 100%; }
-      .c-banner-card-join-us__content p {
+      .c-banner-card-join-us__content p,
+      .c-banner-card-offers__content p {
         margin-top: 2.6rem; }
-      .c-banner-card-join-us__hidden-content {
+      .c-banner-card-join-us__hidden-content,
+      .c-banner-card-offers__hidden-content {
         display: block;
         max-height: 100vh;
         transition: max-height 0.5s ease-in; }
-        .c-banner-card-join-us__hidden-content p {
+        .c-banner-card-join-us__hidden-content p,
+        .c-banner-card-offers__hidden-content p {
           margin-top: 2.6rem; }
-      .c-banner-card-join-us__read-more-button, .c-banner-card-join-us__read-less-button {
+      .c-banner-card-join-us__read-more-button, .c-banner-card-join-us__read-less-button,
+      .c-banner-card-offers__read-more-button,
+      .c-banner-card-offers__read-less-button {
         display: none; } }
 
 /*
@@ -4306,6 +4333,10 @@ category: 02-molecules
       background-color: #E30613; } }
   .c-page-banner--join-us .c-page-banner__picture {
     background-image: url("../images/img-nousrejoindre.jpg"); }
+  .c-page-banner--offers {
+    min-height: 380px; }
+    .c-page-banner--offers .c-page-banner__picture {
+      background-image: url("../images/Hero_nous-rejoindre.jpg"); }
   .c-page-banner__content-wrapper {
     position: relative;
     padding-top: 5.9rem;
@@ -4832,7 +4863,6 @@ category: 02-molecules
     height: auto;
     display: block; }
   .c-slick-slider .slick-slide {
-    filter: grayscale(100%);
     transform: scale(0.9);
     transition: all 0.3s ease; }
   .c-slick-slider .slick-current {
@@ -4870,6 +4900,11 @@ category: 02-molecules
 
 .slick-wrapper {
   width: 100%; }
+
+.slick-track {
+  display: flex !important;
+  justify-content: center;
+  align-items: center; }
 
 .js-slider-4-elements {
   display: none; }
@@ -5434,7 +5469,14 @@ category: 03-organisms
   .c-expertise-section__pictures-container {
     margin: 2.6rem 0;
     display: flex;
-    justify-content: space-between; }
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    .c-expertise-section__pictures-container .flex {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 80%; }
   .c-expertise-section__title {
     position: relative;
     margin: 0;

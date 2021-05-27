@@ -1,12 +1,13 @@
-footer {
-  
-}
-
 .c-footer {
   box-shadow: 0 -10px 20px #0000000f;
   z-index: 10;
   position: relative;
 
+  .c-footer__logos-wrapper {
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 0;
+  }
 
   // Tablet/mobile version.
   @media only screen and (max-width: $bp-tablet) {
@@ -19,14 +20,6 @@ footer {
 
     .c-footer__logos-container {
       border-bottom: none;
-    }
-
-    .c-footer__logos-wrapper {
-      margin-left: -15px;
-      margin-right: -15px;
-      overflow: hidden;
-      white-space: nowrap;
-      font-size: 0;
     }
 
     .c-footer__infos-container {
@@ -101,7 +94,7 @@ footer {
     display: inline-block;
 
     img {
-      margin: 0 35px;
+      margin: 0 25px;
     }
   }
 

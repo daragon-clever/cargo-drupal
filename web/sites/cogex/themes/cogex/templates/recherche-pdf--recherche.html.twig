@@ -63,9 +63,29 @@
 </div>
 
 <script>
-    /*Redirect after DL*/
-    var pathname = window.location.pathname;
-    $(".urlRedirect").attr("value",pathname);
+    jQuery(document).ready(function($) {
+        /*Redirect after DL*/
+        var pathname = window.location.pathname;
+        $(".urlRedirect").attr("value",pathname);
+
+        console.log('move');
+        moveAlert();
+
+        /*Move alert*/
+        function moveAlert()
+        {
+            setTimeout(function() {
+                var divAlert = $("div[role='alert']");
+                if (divAlert.length) {
+                    $(divAlert).insertBefore($('.content'));
+                    divAlert.show();
+                } else {
+                    console.log('on rappel la fonction');
+                    moveAlert();
+                }
+            }, 1000);
+        }
+    });
 
     /*Check data*/
     function validateFormDet() {
@@ -88,18 +108,4 @@
             return true;
         }
     }
-    /*Move alert*/
-    function moveAlert($) {
-        if ($("div[role='alert']").length) {
-            var myDiv = $("div[role='alert']");
-            $(myDiv).insertBefore($('.content'));
-            $("div[role='alert']").show();
-        } else {
-            setTimeout(moveAlert(), 1000);
-        }
-    }
-
-    jQuery(document).ready(function($) {
-        moveAlert($);
-    });
 </script>

@@ -3606,7 +3606,7 @@ Add border radius to elements
   .c-footer__infos-container {
     padding: 2.3rem 0;
     display: flex;
-    justify-content: space-between; }
+    justify-content: space-evenly; }
   .c-footer__section-button {
     background: none;
     border: none;

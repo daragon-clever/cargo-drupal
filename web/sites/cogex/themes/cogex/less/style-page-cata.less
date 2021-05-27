@@ -11,18 +11,36 @@
     flex-wrap: wrap;
 
     .pdf-item {
-      flex: 1 1 33%;
+      width: 33%;
       margin: 34px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @media (max-width: 990px) {
+        width: 50%;
+      }
+
+      @media (max-width: 767px) {
+        width: 100%;
+      }
 
       .dl-pdf {
         display: block;
         position: relative;
+        width: 100%;
 
         .book {
           position: relative;
           width: max-content;
+          max-width: 100%;
           margin: 0 auto;
           box-shadow: 0px 0px 15px #0000004D;
+
+          img {
+            max-width: 100%;
+            height: auto;
+          }
 
           &::before {
             content: '';

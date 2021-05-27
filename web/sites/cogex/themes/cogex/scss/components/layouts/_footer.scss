@@ -88,6 +88,8 @@
   &__logos-wrapper {
     text-align: center;
     padding: 2.1rem 0;
+    display: flex;
+    align-items: center;
   }
 
   &__logo {
@@ -95,32 +97,10 @@
 
     img {
       margin: 0 25px;
+      height: auto;
+      max-width: 115px;
+      max-height: 35px;
     }
-  }
-
-  &__logo-1 {
-    width: 8.7rem;
-    height: auto;
-  }
-
-  &__logo-2 {
-    width: 8.3rem;
-    height: auto;
-  }
-
-  &__logo-3 {
-    width: 10.1rem;
-    height: auto;
-  }
-
-  &__logo-4 {
-    width: 6.8rem;
-    height: auto;
-  }
-
-  &__logo-5 {
-    width: 10.4rem;
-    height: auto;
   }
 
   &__company-logo {
@@ -135,10 +115,6 @@
     padding: 2.3rem 0;
     display: flex;
     justify-content: space-evenly;
-  }
-
-  &__info-section {
-
   }
 
   &__section-button {

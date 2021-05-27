@@ -85,7 +85,5 @@ jQuery(document).ready(function($) {
         setInterval(move , 2000 / frame);
     }
 
-    if (isMobile) {
-        scrollMove('.c-footer__logos-wrapper', 60 , 1 );
-    }
+    scrollMove('.c-footer__logos-wrapper', 60 , 1 );
 });

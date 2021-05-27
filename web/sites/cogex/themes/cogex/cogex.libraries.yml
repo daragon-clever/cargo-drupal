@@ -95,6 +95,13 @@ style-cata:
     theme:
       css/style-page-cata.css: {}
 
+# Style page catalogues
+style-espace-conso:
+  header: true
+  css:
+    theme:
+      css/style-espace-conso.css: {}
+
 # Pop-up
 style-popup:
   header: true

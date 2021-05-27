@@ -131,10 +131,10 @@ class ImportCommand extends Command
     {
         $arrDB = ["codeRecrutement", "intitulePoste", "dateCreationDemande", "dateOuverturePoste", "filialeSociete",
             "typeContrat", "dureeContrat", "categorie", "metier", "lieuRecrutement", "descriptionEntreprise", "descriptionMission",
-            "descriptionProfil"];
+            "descriptionProfil", "sirh_id"];
         $arrJSON = ["CodeRecrutement", "IntitulePosteARecruter", "DateDemande", "DateEmbaucheSouhaite", "SocieteRecrutement",
             "TypeContrat", "DureeDuContrat", "Categorie", "Metier", "LieuRecrutement", "DescriptionEntreprise", "DescriptionMission",
-            "DescriptionProfil"];
+            "DescriptionProfil", "IdReferenceSIRH"]; //Manquant dans le nouveau JSON : DateEmbaucheSouhaite + Categorie + Metier + LieuRecrutement
 
         $arrLink = array_combine($arrDB, $arrJSON);
 

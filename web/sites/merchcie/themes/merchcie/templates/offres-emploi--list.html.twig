@@ -29,7 +29,7 @@
                     </button>
                 </div>
                 <input type="text" id="searchbox" class="w-100" placeholder="Rechercher une offre" />
-                {% if data %}
+                {% if offers %}
                     <div id="groupe-filtres-offres">
                         <div id="filtre-contrat" class="offer-caracteristic">
                             <span class="title-caracteristic">{{ "Type de contrat"|trans }}</span>
@@ -54,7 +54,7 @@
             <div class="col-12 col-md-9 jobs-list">
                 <h4 class="text-color2">{{ "Les postes à pourvoir"|trans }}</h4>
                 <span class="line dot-pattern-color2 w-100"></span>
-                {% if data %}
+                {% if offers %}
                     <table id="toutes-les-offres" class="display w-100">
                         <thead>
                             <tr>
@@ -67,14 +67,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {% for offre in data %}
-                                <tr class="clickable-row" data-href="{{ path('offresEmploi.content', {ref: offre.codeRecrutement}) }}">
-                                    <td class="wrap">{{ offre.intitulePoste }}</td>
-                                    <td class="">{{ offre.typeContrat }}</td>
-                                    <td>{{ offre.metier }}</td>
-                                    <td>{{ offre.dateOuverturePoste|date("d/m/Y") }}</td>
-                                    <td>{{ offre.lieuRecrutement }}</td>
-                                    <td><a href="{{ path('offresEmploi.content', {ref: offre.codeRecrutement}) }}">Voir l'annonce</a></td>
+                            {% for offer in offers %}
+                                <tr class="clickable-row" data-href="{{ path('offresEmploi.content', {ref: offer.codeRecrutement}) }}">
+                                    <td class="wrap">{{ offer.intitulePoste }}</td>
+                                    <td class="">{{ offer.typeContrat }}</td>
+                                    <td>{{ offer.metier }}</td>
+                                    <td>{{ offer.dateOuverturePoste|date("d/m/Y") }}</td>
+                                    <td>{{ offer.lieuRecrutement }}</td>
+                                    <td><a href="{{ path('offresEmploi.content', {ref: offer.codeRecrutement}) }}">Voir l'annonce</a></td>
                                 </tr>
                             {% endfor %}
                         </tbody>

@@ -1,28 +1,23 @@
 # Module custom "Offres d'emploi"  
   
-Ce module affiche les offres d'emploi de :  
-* toutes les sociétés sur le site Cargo  
-* de la société du site, pour un site précis (ferme Drupal)  
+Ce module affiche les offres d'emploi de la société. On est ensuite redirigé vers le site SIRH de la 
+société pour postuler à l'annonce.
+
+Sites utilisant ce module :
+- Groupe Cargo (Drupal)
+- Merch&Cie (Drupal)
+- Gers Equipement (Drupal)
+- Cogex (Drupal)
+- Centrakor (Magento)
   
-## Installation
-
-### Sur le site de Cargo :
-
-Voir ci-dessous.
-
-### Sur un autre site de la ferme :
+## Installation du module
 
 1. Installez le module.
 2. Vérifiez dans le fichier Helper/OffreEmploiHelperTrait.php qu'il y a bien le site en question
 et qu'il est bien configuré.
 3. Exécutez le cron via l'admin de Drupal.
-4. Récupérer les templates des sites ayant déjà le module d'installer (ex : cogex, groupe cargo).
+4. Récupérer les templates des sites ayant déjà le module d'installer.
 Il faut également ajouter l'appel à la librairie datatable dans le theme du site.
-5. Créez un Webform avec pour ID 'postuler_annonce'.
-6. Pour former la structure du formulaire, commencer par copiez/collez les 2 champs hidden (offre et nom_offre) du YAML 
-d'un site ayant le module actif.  
-7. Dans l'onglet Paramètres, cliquez sur Courriels / Gestionnaires (Handlers). Ajouter le handler "OffresEmploiHandler"
- à ce formulaire. Aucune config à réaliser.
 
 S'il n'y a pas d'annonces qui remontent, vérifier qu'on a bien le fichier .json des offres dans le site
 groupecargo.
@@ -39,7 +34,6 @@ Ce cron s'exécute en même temps que tous les autres crons du site
 Pour surcharger le thème, il faut créer un nouveau fichier à la racine du dossier "templates" du site :  
 * offres-emploi--list.html.twig : affiche tous les postes en attente de recrutement  
 * offres-emploi--annonce.html.twig : affiche toutes les informations d'un seul poste  
-* offres-emploi--form-postuler.html.twig : affiche le formulaire pour postuler à l'offre  
   
 ## Le module  
   
@@ -48,7 +42,6 @@ Pour surcharger le thème, il faut créer un nouveau fichier à la racine du dos
 Les URL sont les suivantes :  
 * /offres-emploi : visualiser toutes les offres d'emploi  
 * /offres-emploi/`{{ref_du_poste}}` : afficher le contenu d'une offre en particulier  
-* /offres-emploi/postuler/`{{ref_du_poste}}` : afficher un formulaire pour postuler à l'annonce  
   
 ### Les filtres  
   
@@ -98,4 +91,4 @@ Endpoint de l'api sont :
  
  
 Un filtre existe pour filtrer seulement les offres d'une société en rajoutant un param name, exemple (?name=gersequipement)
-Ne pas activer l'api que dans le site groupe cargo. 
+Activer l'API **uniquement** sur le site groupe cargo. 

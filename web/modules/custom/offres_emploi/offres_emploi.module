@@ -2,26 +2,22 @@
 
 use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\Process\Process;
+use Drupal\offres_emploi\Config\Config;
 
 
 function offres_emploi_theme($existing, $type, $theme, $path) {
+    $conf = new config();
     return [
         'offres_emploi--list' => [
             'variables' => [
-                'data' => NULL,
+                'offers' => NULL,
                 'filter' => NULL
             ]
         ],
         'offres_emploi--annonce' => [
             'variables' => [
-                'data' => NULL,
-            ]
-        ],
-        'offres_emploi--form-postuler' => [
-            'variables' => [
-                'offerName' => NULL,
-                'offerRef' => NULL,
-                'form' => NULL
+                'offer' => NULL,
+                'sirh_url' => $conf->getSirhUrl(),
             ]
         ]
     ];
@@ -50,21 +46,29 @@ function offres_emploi_cron()
     \Drupal::logger('offres_emploi')->notice('[OFFRES EMPLOI] Cron terminé');
 }
 
-function offres_emploi_webform_element_hidden_alter(array &$element, FormStateInterface $form_state, array $context)
+//run update.php to execute this update
+function offres_emploi_update_8101(&$sandbox)
 {
-    $route_match = \Drupal::service('current_route_match');
-    $param_ref = $route_match->getParameter('ref');
+    $table = "offres_emploi";
+    $schema = \Drupal::database()->schema();
+    if ($schema->tableExists($table)) {
+        //drop column
+        $oldColumn = "nbCandidature";
 
-    $offreRepository = \Drupal::service('offres_emploi.repository');
-    $offerEmploi = current($offreRepository->findBy(['codeRecrutement' => $param_ref]));
+        $schemaOldFieldExist = $schema->fieldExists($table, $oldColumn);
+        if ($schemaOldFieldExist) $schema->dropField($table, $oldColumn);
+        \Drupal::logger($table)->notice('[UPDATE] Suppression colonne '.$oldColumn.' OK');
 
-    if ($element['#webform_key'] == 'offre') {
-        $element['#value'] = $param_ref;
-    }
-    if ($element['#webform_key'] == 'nom_offre') {
-        $element['#value'] = $offerEmploi->intitulePoste;
-    }
-    if ($element['#webform_key'] == 'filiale_societe') {
-        $element['#value'] = $offerEmploi->filialeSociete;
+        //add column
+        $newColumn = "sirh_id";
+        $spec = [
+            'type' => 'int',
+            'size' => 'medium',
+            'description' => 'Sirh id - to redirect',
+        ];
+
+        $schemaNewFieldExist = $schema->fieldExists($table, $newColumn);
+        if (!$schemaNewFieldExist) $schema->addField($table, $newColumn, $spec);
+        \Drupal::logger($table)->notice('[UPDATE] Ajout colonne '.$newColumn.' OK');
     }
 }

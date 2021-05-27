@@ -1,6 +1,6 @@
 <div class="offres-emploi-module">
     <div class="container" id="offre">
-        {%  if data == 'false' %}
+        {%  if offer == 'false' %}
             <div id="alerte-offres" class="bg-color1 text-white">
                 <p class="error">
                     L'annonce n'existe pas.
@@ -15,48 +15,50 @@
 
                     <div class="offer-caracteristic">
                         <span class="w-100 title-caracteristic">Référence de l'annonce</span>
-                        <span class="w-100 value-caracteristic">#{{ data.codeRecrutement }}</span>
+                        <span class="w-100 value-caracteristic">#{{ offer.codeRecrutement }}</span>
                     </div>
 
                     <div class="offer-caracteristic">
                         <span class="w-100 title-caracteristic">Type de contrat</span>
-                        <span class="w-100 value-caracteristic">{{ data.typeContrat }}</span>
+                        <span class="w-100 value-caracteristic">{{ offer.typeContrat }}</span>
                     </div>
 
                     <div class="offer-caracteristic">
                         <span class="w-100 title-caracteristic">Date de l'annonce</span>
-                        <span class="w-100 value-caracteristic">{{ data.dateCreationDemande|date("d/m/Y") }}</span>
+                        <span class="w-100 value-caracteristic">{{ offer.dateCreationDemande|date("d/m/Y") }}</span>
                     </div>
 
                     <div class="offer-caracteristic">
                         <span class="w-100 title-caracteristic">Lieu de travail</span>
-                        <span class="w-100 value-caracteristic">{{ data.lieuRecrutement }}</span>
+                        <span class="w-100 value-caracteristic">{{ offer.lieuRecrutement }}</span>
                     </div>
 
-                    <a class="cta bg-color2 text-white w-100" href="{{ path('offresEmploi.postuler', {ref: data.codeRecrutement}) }}">
-                        Je postule
-                    </a>
+                    {% if offer.sirh_id %}
+                        <a class="cta bg-color2 text-white w-100" href="{{ sirh_url }}{{ offer.sirh_id }}" target="_blank">
+                            Je postule
+                        </a>
+                    {% endif %}
                     <div class="text-center">
                         <a class="back d-sm-none text-color2" href="{{ path('offresEmploi.content') }}">< <span>Retour</span></a>
                     </div>
                 </div>
                 <div class="col-12 col-sm-9 right order-1 order-sm-2">
-                    <h4 class="text-color2">Offre d'emploi - {{ data.intitulePoste }}</h4>
+                    <h4 class="text-color2">Offre d'emploi - {{ offer.intitulePoste }}</h4>
                     <span class="line dot-pattern-color2 w-100"></span>
 
-                    {% if data.descriptionEntreprise %}
-                        <p>{{ data.descriptionEntreprise | raw}}</p>
+                    {% if offer.descriptionEntreprise %}
+                        <p>{{ offer.descriptionEntreprise | raw}}</p>
                     {% endif %}
-                    {% if data.descriptionMission %}
+                    {% if offer.descriptionMission %}
                         <div>
                             <p><b class="title">Définition des missions</b></p>
-                            <p>{{ data.descriptionMission | raw }}</p>
+                            <p>{{ offer.descriptionMission | raw }}</p>
                         </div>
                     {% endif %}
-                    {% if data.descriptionProfil %}
+                    {% if offer.descriptionProfil %}
                         <div>
                             <p><b class="title">Profil recherché</b></p>
-                            <p>{{ data.descriptionProfil | raw }}</p>
+                            <p>{{ offer.descriptionProfil | raw }}</p>
                         </div>
                     {% endif %}
                     <a class="back d-none d-sm-inline-block text-color2" href="{{ path('offresEmploi.content') }}">< <span>Retour</span></a>

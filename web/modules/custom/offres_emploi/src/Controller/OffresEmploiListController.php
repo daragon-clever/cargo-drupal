@@ -9,7 +9,6 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\offres_emploi\Helper\OffreEmploiHelperTrait;
 use Drupal\offres_emploi\OffreEmploiRepository;
 
-
 class OffresEmploiListController extends ControllerBase
 {
 
@@ -35,13 +34,14 @@ class OffresEmploiListController extends ControllerBase
         );
     }
 
-
-    public function __construct(OffreEmploiRepository $offreRepository, LoggerFileHelper $loggerFileHelper)
+    public function __construct(
+        OffreEmploiRepository $offreRepository,
+        LoggerFileHelper $loggerFileHelper
+    )
     {
         $this->offreRepository = $offreRepository;
         $this->loggerFileHelper = $loggerFileHelper;
     }
-
 
     /**
      * @param $ref
@@ -52,7 +52,7 @@ class OffresEmploiListController extends ControllerBase
         if ($ref == "all") {
             $build = [
                 '#theme' => 'offres_emploi--list',
-                '#data' => $this->offreRepository->findAllActive()
+                '#offers' => $this->offreRepository->findAllActive(),
             ];
         } else {
             $offre = $this->offreRepository->findBy(['codeRecrutement' => $ref, 'active' => 1]);
@@ -60,7 +60,7 @@ class OffresEmploiListController extends ControllerBase
             if (empty($offre)) {
                 $build = [
                     '#theme' => 'offres_emploi--annonce',
-                    '#data' => 'false'
+                    '#offer' => 'false'
                 ];
             } else {
                 //if there's no record in log => increment offer view
@@ -70,7 +70,7 @@ class OffresEmploiListController extends ControllerBase
                 }
                 $build = [
                     '#theme' => 'offres_emploi--annonce',
-                    '#data' => $offre[0]
+                    '#offer' => (array)$offre[0]
                 ];
             }
         }

@@ -1,7 +1,8 @@
-{%  if data == 'false' %}
-    <p>L'annonce n'existe pas</p>
+{%  if offer == 'false' %}
+    <p>L'annonce n'existe pas.</p>
 {% else %}
-    {% for key, value in data %}
+    <h1>{{ offer.intitulePoste }}</h1>
+    {% for key, value in offer %}
         {% if key in ['descriptionEntreprise','descriptionMission','descriptionProfil'] %}
             <b>{{ key }}</b> : {{ value | raw }}
         {% else %}
@@ -9,5 +10,10 @@
         {% endif %}
         <br />
     {% endfor %}
-    <a href="/offres-emploi/postuler/{{ data.codeRecrutement }}"><button>POSTULER</button></a>
+
+    {% if offer.sirh_id %}
+        <a href="{{ sirh_url }}{{ offer.sirh_id }}" target="_blank"><button>Postuler</button></a>
+    {% endif %}
+
+    <a href="{{ path('offresEmploi.content') }}">< Retour</a>
 {% endif %}

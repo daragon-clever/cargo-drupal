@@ -98,6 +98,11 @@ function offres_emploi_schema()
                     'type' => 'text',
                     'not null' => TRUE,
                 ),
+                'sirh_id' => array(
+                    'type' => 'int',
+                    'size' => 'medium',
+                    'description' => 'Sirh id - to redirect',
+                ),
                 'active' => array(
                     'type' => 'int',
                     'size' => 'tiny',
@@ -106,13 +111,6 @@ function offres_emploi_schema()
                     'description' => '',
                 ),
                 'nbVue' => array(
-                    'type' => 'int',
-                    'size' => 'medium',
-                    'not null' => TRUE,
-                    'default' => 0,
-                    'description' => ''
-                ),
-                'nbCandidature' => array(
                     'type' => 'int',
                     'size' => 'medium',
                     'not null' => TRUE,

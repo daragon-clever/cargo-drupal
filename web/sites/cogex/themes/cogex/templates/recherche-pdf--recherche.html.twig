@@ -68,7 +68,6 @@
         var pathname = window.location.pathname;
         $(".urlRedirect").attr("value",pathname);
 
-        console.log('move');
         moveAlert();
 
         /*Move alert*/
@@ -80,7 +79,6 @@
                     $(divAlert).insertBefore($('.content'));
                     divAlert.show();
                 } else {
-                    console.log('on rappel la fonction');
                     moveAlert();
                 }
             }, 1000);

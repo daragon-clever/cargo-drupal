@@ -92,7 +92,12 @@ category: 02-molecules
     }
   }
 
-  &__picture {
+  @keyframes appear {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  &__picture-fixed {
     position: absolute;
     top: 0;
     left: 0;
@@ -100,28 +105,10 @@ category: 02-molecules
     bottom: 0;
     width: 100%;
     height: 100%;
-    background-image: url("../images/img-header-01.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    opacity: 0;
-    transition: all 1s ease-in-out;
-  }
-
-  &__picture--active {
-    opacity: 1;
-  }
-
-  .c-page-banner-home__picture--1 {
-    background-image: url("../images/img-header-01.png");
-  }
-
-  .c-page-banner-home__picture--2 {
-    background-image: url("../images/img-header-02.png");
-  }
-
-  .c-page-banner-home__picture--3 {
-    background-image: url("../images/img-nousrejoindre.jpg");
+    animation: 1s appear;
   }
 
   .c-banner-card-home {

@@ -78,7 +78,7 @@
             <div class="c-page-banner-home__mask"></div>
 
             {% for picture in content.field_slideshow_pictures['#items'] %}
-                <div class="c-page-banner-home__picture"
+                <div class="c-page-banner-home__picture-fixed"
                      style="background-image: url('{{ file_url(picture.entity.uri.value) }}')"></div>
             {% endfor %}
 

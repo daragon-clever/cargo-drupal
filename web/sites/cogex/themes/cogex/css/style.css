@@ -3581,26 +3581,16 @@ Add border radius to elements
     border-bottom: 0.1rem solid #D6D6D6; }
   .c-footer__logos-wrapper {
     text-align: center;
-    padding: 2.1rem 0; }
+    padding: 2.1rem 0;
+    display: flex;
+    align-items: center; }
   .c-footer__logo {
     display: inline-block; }
     .c-footer__logo img {
-      margin: 0 25px; }
-  .c-footer__logo-1 {
-    width: 8.7rem;
-    height: auto; }
-  .c-footer__logo-2 {
-    width: 8.3rem;
-    height: auto; }
-  .c-footer__logo-3 {
-    width: 10.1rem;
-    height: auto; }
-  .c-footer__logo-4 {
-    width: 6.8rem;
-    height: auto; }
-  .c-footer__logo-5 {
-    width: 10.4rem;
-    height: auto; }
+      margin: 0 25px;
+      height: auto;
+      max-width: 115px;
+      max-height: 35px; }
   .c-footer__company-logo + .c-footer__company-logo {
     margin-left: 7rem; }
   .c-footer__infos-container {

@@ -4543,13 +4543,12 @@ category: 02-molecules
       .c-page-banner-home .c-banner-card-home {
         position: relative;
         transform: none; }
-      .c-page-banner-home .c-page-banner-home__picture {
+      .c-page-banner-home .c-page-banner-home__picture-fixed {
         position: static;
-        width: 100%; }
-      .c-page-banner-home .c-page-banner-home__picture--active {
+        width: 100%;
         min-height: 40rem; } }
   @media only screen and (max-width: 480px) {
-    .c-page-banner-home .c-page-banner-home__picture--active {
+    .c-page-banner-home .c-page-banner-home__picture-fixed {
       min-height: 20rem; } }
 
 /*
@@ -5790,9 +5789,6 @@ form .select2-container .select2-selection--single .select2-selection__rendered 
   @media only screen and (max-width: 992px) {
     .c-main-content {
       padding-top: 7rem; } }
-
-html {
-  scroll-behavior: smooth; }
 
 .joinus-portraits .txt-intro {
   font-family: 'Titillium-semi-bold', Arial, Helvetica, sans-serif;

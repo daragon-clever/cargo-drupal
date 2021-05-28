@@ -133,20 +133,16 @@ category: 02-molecules
       transform: none;
     }
 
-    .c-page-banner-home__picture {
+    .c-page-banner-home__picture-fixed {
       position: static;
       width: 100%;
-    }
-
-    .c-page-banner-home__picture--active {
       min-height: 40rem;
     }
-    
   }
 
   // Mobile version.
   @media only screen and (max-width: $bp-mobile) {
-    .c-page-banner-home__picture--active {
+    .c-page-banner-home__picture-fixed {
       min-height: 20rem;
     }
   }

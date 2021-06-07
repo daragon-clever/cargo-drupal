@@ -3,7 +3,7 @@
 {% else %}
     <h1>{{ offer.intitulePoste }}</h1>
     {% for key, value in offer %}
-        {% if key in ['descriptionEntreprise','descriptionMission','descriptionProfil'] %}
+        {% if key in ['descriptionEntreprise'] %}
             <b>{{ key }}</b> : {{ value | raw }}
         {% else %}
             <b>{{ key }}</b> : {{ value }}

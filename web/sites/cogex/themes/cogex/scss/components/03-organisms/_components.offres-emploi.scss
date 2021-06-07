@@ -453,12 +453,36 @@ $dark-grey-offres-emploi: #5e5e5e;
     .right {
       margin-bottom: 80px;
 
-      b.title {
-        text-transform: uppercase;
-      }
+      .desc {
+        * {
+          font-size: 16px !important;
+          font-family: inherit !important;
+        }
 
-      br {
-        display: none;
+        #ads {
+          display: none;
+        }
+
+        strong {
+          text-transform: uppercase;
+          color: black !important;
+          font-family: 'Titillium-bold' !important;
+          border-bottom: 1px solid;
+          margin-bottom: 1rem;
+          font-weight: bold;
+          text-decoration: none;
+          display: block;
+          width: max-content;
+
+          strong {
+            border: none;
+            margin: 0;
+          }
+        }
+
+        u {
+          text-decoration: none;
+        }
       }
     }
 

@@ -6226,10 +6226,26 @@ html {
         top: 4px; }
   #offre .detail-offre .right {
     margin-bottom: 80px; }
-    #offre .detail-offre .right b.title {
-      text-transform: uppercase; }
-    #offre .detail-offre .right br {
+    #offre .detail-offre .right .desc * {
+      font-size: 16px !important;
+      font-family: inherit !important; }
+    #offre .detail-offre .right .desc #ads {
       display: none; }
+    #offre .detail-offre .right .desc strong {
+      text-transform: uppercase;
+      color: black !important;
+      font-family: 'Titillium-bold' !important;
+      border-bottom: 1px solid;
+      margin-bottom: 1rem;
+      font-weight: bold;
+      text-decoration: none;
+      display: block;
+      width: max-content; }
+      #offre .detail-offre .right .desc strong strong {
+        border: none;
+        margin: 0; }
+    #offre .detail-offre .right .desc u {
+      text-decoration: none; }
   #offre .detail-offre a.back {
     color: #E30613;
     text-decoration: none;

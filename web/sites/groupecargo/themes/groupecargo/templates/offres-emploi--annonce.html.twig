@@ -35,20 +35,8 @@
                     <h1>Offre d'emploi - {{ offer.intitulePoste }}</h1>
 
                     {% if offer.descriptionEntreprise %}
-                    <div class="txt-grey">
+                    <div class="desc">
                         <p>{{ offer.descriptionEntreprise | raw}}</p>
-                    </div>
-                    {% endif %}
-                    {% if offer.descriptionMission %}
-                    <div>
-                        <p><b class="title">Définition du poste :</b></p>
-                        <p>{{ offer.descriptionMission | raw }}</p>
-                    </div>
-                    {% endif %}
-                    {% if offer.descriptionProfil %}
-                    <div>
-                        <p><b class="title">Profil recherché :</b></p>
-                        <p>{{ offer.descriptionProfil | raw }}</p>
                     </div>
                     {% endif %}
                     <a class="back d-none d-sm-inline-block" href="{{ path('offresEmploi.content') }}">< Retour</a>

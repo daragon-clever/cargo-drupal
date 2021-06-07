@@ -9,20 +9,8 @@
 
                     <div class="text-jutify content-offer-item">
                         {% if offer.descriptionEntreprise %}
-                            <div class="txt-grey">
+                            <div class="desc">
                                 <p>{{ offer.descriptionEntreprise | raw }}</p>
-                            </div>
-                        {% endif %}
-                        {% if offer.descriptionMission %}
-                            <div>
-                                <p><b class="title">Définition du poste :</b></p>
-                                <p>{{ offer.descriptionMission | raw }}</p>
-                            </div>
-                        {% endif %}
-                        {% if offer.descriptionProfil %}
-                            <div>
-                                <p><b class="title">Profil recherché :</b></p>
-                                <p>{{ offer.descriptionProfil | raw }}</p>
                             </div>
                         {% endif %}
                     </div>
@@ -41,9 +29,6 @@
 
                     <span class="info-title">Lieu de travail</span>
                     <span class="info-content">{{ offer.lieuRecrutement }}</span>
-
-                    <span class="info-title">Entreprise</span>
-                    <span class="info-content">{{ offer.filialeSociete }}</span>
 
                     {% if offer.sirh_id %}
                         <a class="btn-cta" href="{{ sirh_url }}{{ offer.sirh_id }}" target="_blank"><button>{{ 'Je postule'|t }}</button></a>

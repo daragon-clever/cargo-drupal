@@ -47,18 +47,8 @@
                     <span class="line dot-pattern-color2 w-100"></span>
 
                     {% if offer.descriptionEntreprise %}
-                        <p>{{ offer.descriptionEntreprise | raw}}</p>
-                    {% endif %}
-                    {% if offer.descriptionMission %}
-                        <div>
-                            <p><b class="title">Définition des missions</b></p>
-                            <p>{{ offer.descriptionMission | raw }}</p>
-                        </div>
-                    {% endif %}
-                    {% if offer.descriptionProfil %}
-                        <div>
-                            <p><b class="title">Profil recherché</b></p>
-                            <p>{{ offer.descriptionProfil | raw }}</p>
+                        <div class="desc">
+                            {{ offer.descriptionEntreprise | raw}}
                         </div>
                     {% endif %}
                     <a class="back d-none d-sm-inline-block text-color2" href="{{ path('offresEmploi.content') }}">< <span>Retour</span></a>

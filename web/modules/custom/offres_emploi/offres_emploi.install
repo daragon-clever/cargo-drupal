@@ -90,18 +90,9 @@ function offres_emploi_schema()
                     'type' => 'text',
                     'not null' => TRUE,
                 ),
-                'descriptionMission' => array(
-                    'type' => 'text',
-                    'not null' => TRUE,
-                ),
-                'descriptionProfil' => array(
-                    'type' => 'text',
-                    'not null' => TRUE,
-                ),
                 'sirh_id' => array(
                     'type' => 'int',
                     'size' => 'medium',
-                    'description' => 'Sirh id - to redirect',
                 ),
                 'active' => array(
                     'type' => 'int',
@@ -137,8 +128,6 @@ function offres_emploi_schema()
                 'typeContrat' => array('typeContrat'),
                 'metier' => array('metier'),
                 'descriptionEntreprise' => array('descriptionEntreprise'),
-                'descriptionMission' => array('descriptionMission'),
-                'descriptionProfil' => array('descriptionProfil'),
             ),
         );
         return $schema;

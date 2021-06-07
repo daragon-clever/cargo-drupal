@@ -1,14 +1,14 @@
 # Module custom "Offres d'emploi"  
   
-Ce module affiche les offres d'emploi de la société. On est ensuite redirigé vers le site SIRH de la 
-société pour postuler à l'annonce.
+Ce module affiche les offres d'emploi de la société. On est ensuite redirigé vers le site SIRH Cargo
+pour postuler à l'annonce sélectionnée.
 
 Sites utilisant ce module :
-- Groupe Cargo (Drupal)
-- Merch&Cie (Drupal)
-- Gers Equipement (Drupal)
-- Cogex (Drupal)
-- Centrakor (Magento)
+- Groupe Cargo (Drupal - via ce module)
+- Merch&Cie (Drupal - via ce module)
+- Gers Equipement (Drupal - via ce module)
+- Cogex (Drupal - via ce module)
+- Centrakor (Magento - via l'API de ce module + le module Magento)
   
 ## Installation du module
 
@@ -16,11 +16,12 @@ Sites utilisant ce module :
 2. Vérifiez dans le fichier Helper/OffreEmploiHelperTrait.php qu'il y a bien le site en question
 et qu'il est bien configuré.
 3. Exécutez le cron via l'admin de Drupal.
-4. Récupérer les templates des sites ayant déjà le module d'installer.
+4. Configurer l'url du site SIRH dans l'admin.
+5. Récupérer les templates des sites ayant déjà le module d'installer.
 Il faut également ajouter l'appel à la librairie datatable dans le theme du site.
 
 S'il n'y a pas d'annonces qui remontent, vérifier qu'on a bien le fichier .json des offres dans le site
-groupecargo.
+groupecargo (groupecargo/files/data/).
 
 ## Developpement  
   
@@ -52,26 +53,34 @@ Les filtres disponibles sont : (/offres-emploi?`{{filtre}}`=`{{value}}`)
 * lieu  
   
 ### Commandes  
-* offre_emploi:import (pour importer toutes les offres d'emploi)
-* docker-compose run --rm php vendor/bin/drupal --uri=web.gersequipement.svd1pweb-stm.ressinfo.ad offres_emploi:import
 
+* ``offre_emploi:import`` (pour importer toutes les offres d'emploi)
+    * Pour l'exécuter sur VM : (se trouver dans le dossier multisites du site)
+    ``docker-compose run --rm php vendor/bin/drupal --uri=web.gersequipement.svd1pweb-stm.ressinfo.ad offres_emploi:import``
 
 ### Api Rest
 
-##Installation
+## Installation
 
 Pour le bon déroulement de l'installation, il faut installer dans l'ordre:
  - Le module Consumer
  - Ximple_oauth
  - Offres_Emploi
 
-##Configuration
+## Configuration
 
-Pour configurer l'api il faut :
- - se rendre ici admger/config/people/simple_oauth et créer les certifs
- - Créer un Consumer admger/config/services/consumer
- - Dans la configuration de REST resources (admger/config/services/rest) => Activer la ressource et mettre les params suivants: ['methodes => Get, 'Formats de requêtes acceptés' => json, 'Authentication providers' => oauth2 et cookie]
- - Créer un compte (Consommateur d'Api') et donner lui accés à l'api dans les droit
+Pour configurer l'api il faut : (uniquement sur le site groupecargo)
+ - admcar/config/services/rest :
+    * activer **Get List of job offers for CARGO**
+    * mettre les params suivants: ['methodes => Get, 'Formats de requêtes acceptés' => json, 'Authentication providers' => oauth2 et cookie]
+ - admcar/config/people/simple_oauth :
+    * générer les certifs
+    * chemins sur VM : **"../certificates/public.key"** et **"../certificates/private.key"**
+ - admcar/people :
+    * créer un utilisateur qui va consommer l'API
+ - admcar/config/services/consumer :
+    * ajouter un consumer (consommateur d'API)
+    * lui donner accès à l'api dans les droits
 
 ##Call Api
 

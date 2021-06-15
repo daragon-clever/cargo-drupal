@@ -53,7 +53,7 @@ function offres_emploi_schema()
                 ),
                 'typeContrat' => array(
                     'type' => 'varchar',
-                    'length' => 25,
+                    'length' => 150,
                     'not null' => TRUE,
                     'default' => '',
                     'description' => '',

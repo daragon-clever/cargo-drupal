@@ -43,16 +43,20 @@ function offres_emploi_cron()
     \Drupal::logger('offres_emploi')->notice('[OFFRES EMPLOI] Cron terminé');
 }
 
-//run update.php to execute this update
+
+//run update.php to execute update
 function offres_emploi_update_8101(&$sandbox)
 {
     $update = new OffresEmploiUpdate();
     $update->update8101();
 }
-
-//run update.php to execute this update
 function offres_emploi_update_8102(&$sandbox)
 {
     $update = new OffresEmploiUpdate();
     $update->update8102();
+}
+function offres_emploi_update_8103(&$sandbox)
+{
+    $update = new OffresEmploiUpdate();
+    $update->update8103();
 }

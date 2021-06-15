@@ -2080,6 +2080,12 @@ h2.title-txt {
 #ope-mkt .content-1 a {
   color: #159ed4;
 }
+#ope-mkt a.cta {
+  margin: 30px auto 0;
+}
+#ope-mkt a.cta:hover {
+  opacity: 0.8;
+}
 #ope-mkt .product-wrapper {
   color: #666;
   font-size: 0.875rem;

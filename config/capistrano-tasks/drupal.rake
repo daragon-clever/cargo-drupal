@@ -105,13 +105,20 @@ namespace :drupal do
       on roles(:app) do
         within fetch(:drupal_path) do
           execute :drush, '-l blog-sitram -y updatedb'
+          execute :drush, '-l cestdeuxeuros -y updatedb'
+          execute :drush, '-l cogex -y updatedb'
+          execute :drush, '-l cogex-epi -y updatedb'
           execute :drush, '-l comptoirdefamille -y updatedb'
           execute :drush, '-l facom -y updatedb'
+          execute :drush, '-l gersequipement -y updatedb'
           execute :drush, '-l groupecargo -y updatedb'
+          execute :drush, '-l merchcie -y updatedb'
+          execute :drush, '-l ope-sitram -y updatedb'
           execute :drush, '-l ostaria -y updatedb'
+          execute :drush, '-l sitram -y updatedb'
+          execute :drush, '-l tsi -y updatedb'
           execute :drush, '-l turbocar -y updatedb'
           execute :drush, '-l yliades -y updatedb'
-          execute :drush, '-l sitram -y updatedb'
         end
       end
     end

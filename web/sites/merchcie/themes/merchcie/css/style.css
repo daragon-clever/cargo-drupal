@@ -3826,9 +3826,6 @@ input[name="rgpd_allow"]:checked + .description:before {
   font-family: 'AvenirBlack', Arial, Helvetica, sans-serif;
   text-decoration: underline;
 }
-.offres-emploi-module #offre .right br {
-  display: none;
-}
 .select2-selection__arrow {
   display: none;
 }

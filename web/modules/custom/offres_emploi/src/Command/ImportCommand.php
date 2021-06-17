@@ -95,7 +95,8 @@ class ImportCommand extends Command
             if (is_array($data) && !empty($data)) {
                 $allRefsActive = [];
                 foreach ($data as $offre) {
-                    if ($offre['SocieteRecrutement'] === self::$nameCompany[$this->siteName] || $this->siteName === self::NAME_CARGO_DIRECTORY_PROJECT) {
+                    if (strtolower($offre['SocieteRecrutement']) === strtolower(self::$nameCompany[$this->siteName])
+                        || $this->siteName === self::NAME_CARGO_DIRECTORY_PROJECT) {
 
                         $dataHydrated = $this->hydrateData($offre);
                         $dataHydrated['active'] = 1;
@@ -130,18 +131,18 @@ class ImportCommand extends Command
     private function hydrateData($offre): array
     {
         $arrDB = ["codeRecrutement", "intitulePoste", "dateCreationDemande", "dateOuverturePoste", "filialeSociete",
-            "typeContrat", "dureeContrat", "categorie", "metier", "lieuRecrutement", "descriptionEntreprise", "descriptionMission",
-            "descriptionProfil"];
+            "typeContrat", "dureeContrat", "categorie", "metier", "lieuRecrutement", "descriptionEntreprise",
+            "sirh_id"];
         $arrJSON = ["CodeRecrutement", "IntitulePosteARecruter", "DateDemande", "DateEmbaucheSouhaite", "SocieteRecrutement",
-            "TypeContrat", "DureeDuContrat", "Categorie", "Metier", "LieuRecrutement", "DescriptionEntreprise", "DescriptionMission",
-            "DescriptionProfil"];
+            "TypeContrat", "DureeDuContrat", "Categorie", "Metier", "LieuRecrutement", "DescriptionEntreprise",
+            "IdReferenceSIRH"];
 
         $arrLink = array_combine($arrDB, $arrJSON);
 
         $arrInsert = [];
         foreach ($arrLink as $keyDB => $keyJSON) {
             if (isset($offre[$keyJSON])) {
-                if (in_array($keyJSON, ["DescriptionEntreprise", "DescriptionMission", "DescriptionProfil"])) {
+                if (in_array($keyJSON, ["DescriptionEntreprise"])) {
                     $arrInsert[$keyDB] = $this->cleanDescription($offre[$keyJSON]);
                 } else {
                     $arrInsert[$keyDB] = $offre[$keyJSON];
@@ -159,10 +160,6 @@ class ImportCommand extends Command
      */
     private function cleanDescription($descriptionTxt): string
     {
-        $desc = preg_replace(
-            '/ (style=("|\')(.*?)("|\'))|(align=("|\')(.*?)("|\'))/',
-            '',
-            $descriptionTxt);
         $search = [
             "",
             "",
@@ -175,7 +172,7 @@ class ImportCommand extends Command
             "oe",
             ""
         ];
-        $desc = str_replace($search, $replacements, $desc);
+        $desc = str_replace($search, $replacements, $descriptionTxt);
 
         return $desc;
     }

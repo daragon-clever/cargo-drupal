@@ -11,7 +11,7 @@
 
             <input type="text" id="searchbox" class="c-text-semi-bold" placeholder="Rechercher une offre" />
 
-            {% if data %}
+            {% if offers %}
                 <div id="groupe-filtres-offres-emploi">
                     <div id="filtre-contrat" class="filtres-offres-emploi">
                         <span class="type c-text-bold">Type de contrat</span>
@@ -35,7 +35,7 @@
         </div>
         <div class="col-12 col-md-9 jobs-list">
             <h3 class="c-text-bold">Les postes à pourvoir</h3>
-            {% if data %}
+            {% if offers %}
                 <div id="alerte-offres"></div>
                 <table id="toutes-les-offres" class="display">
                     <thead>
@@ -49,14 +49,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {% for offre in data %}
-                            <tr class="clickable-row c-text-bold" data-href="/offres-emploi/{{ offre.codeRecrutement }}">
-                                <td class="wrap">{{ offre.intitulePoste }}</td>
-                                <td class="">{{ offre.typeContrat }}</td>
-                                <td>{{ offre.metier }}</td>
-                                <td>{{ offre.dateOuverturePoste|date("d/m/Y") }}</td>
-                                <td>{{ offre.lieuRecrutement }}</td>
-                                <td><a href="/offres-emploi/{{ offre.codeRecrutement }}">Voir l'annonce</a></td>
+                        {% for offer in offers %}
+                            <tr class="clickable-row c-text-bold" data-href="{{ path('offresEmploi.content', {ref: offer.codeRecrutement}) }}">
+                                <td class="wrap">{{ offer.intitulePoste }}</td>
+                                <td class="">{{ offer.typeContrat }}</td>
+                                <td>{{ offofferre.metier }}</td>
+                                <td>{{ offer.dateOuverturePoste|date("d/m/Y") }}</td>
+                                <td>{{ offer.lieuRecrutement }}</td>
+                                <td><a href="{{ path('offresEmploi.content', {ref: offer.codeRecrutement}) }}">Voir l'annonce</a></td>
                             </tr>
                         {% endfor %}
                     </tbody>

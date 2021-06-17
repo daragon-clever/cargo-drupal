@@ -1,10 +1,10 @@
 <div id="offre">
     <div class="container">
-        {%  if data == 'false' %}
+        {%  if offer == 'false' %}
             <div id="alerte-offres" class="c-text-bold">
                 <p class="error">
                     L'annonce n'existe pas.
-                    <a href="/offres-emploi">Retournez sur la page des offres d'emploi.</a>
+                    <a href="{{ path('offresEmploi.content') }}">Retournez sur la page des offres d'emploi.</a>
                 </p>
             </div>
         {% else %}
@@ -13,43 +13,36 @@
                 <h2 class="h3-like c-text-bold">Contrat / Infos</h2>
 
                 <span class="info-title c-text-bold">Référence de l'annonce</span>
-                <span class="info-content">#{{ data.codeRecrutement }}</span>
+                <span class="info-content">#{{ offer.codeRecrutement }}</span>
 
                 <span class="info-title c-text-bold">Type de contrat</span>
-                <span class="info-content">{{ data.typeContrat }}</span>
+                <span class="info-content">{{ offer.typeContrat }}</span>
 
                 <span class="info-title c-text-bold">Date de l'annonce</span>
-                <span class="info-content">{{ data.dateCreationDemande|date("d/m/Y") }}</span>
+                <span class="info-content">{{ offer.dateCreationDemande|date("d/m/Y") }}</span>
 
                 <span class="info-title c-text-bold">Lieu de travail</span>
-                <span class="info-content">{{ data.lieuRecrutement }}</span>
+                <span class="info-content">{{ offer.lieuRecrutement }}</span>
 
-                <a class="btn-cta" href="/offres-emploi/postuler/{{ data.codeRecrutement }}">
-                    <button id="btn-postuler"><span class="c-text-bold">Je postule</span></button>
-                </a>
+                {% if offer.sirh_id %}
+                    <a class="btn-cta" href="{{ sirh_url }}{{ offer.sirh_id }}" target="_blank">
+                        <button id="btn-postuler"><span class="c-text-bold">Je postule</span></button>
+                    </a>
+                {% endif %}
+
                 <div class="text-center">
-                    <a class="back d-sm-none c-text-bold" href="/offres-emploi">< <span>Retour</span></a>
+                    <a class="back d-sm-none c-text-bold" href="{{ path('offresEmploi.content') }}">< <span>Retour</span></a>
                 </div>
             </div>
             <div class="col-12 col-sm-9 right order-1 order-sm-2">
-                <h1 class="h3-like c-text-bold">Offre d'emploi - {{ data.intitulePoste }}</h1>
+                <h1 class="h3-like c-text-bold">Offre d'emploi - {{ offer.intitulePoste }}</h1>
 
-                {% if data.descriptionEntreprise %}
-                <p>{{ data.descriptionEntreprise | raw}}</p>
+                {% if offer.descriptionEntreprise %}
+                    <div class="desc">
+                        <p>{{ offer.descriptionEntreprise | raw}}</p>
+                    </div>
                 {% endif %}
-                {% if data.descriptionMission %}
-                <div>
-                    <p><b class="title c-text-bold">Définition des missions</b></p>
-                    <p>{{ data.descriptionMission | raw }}</p>
-                </div>
-                {% endif %}
-                {% if data.descriptionProfil %}
-                <div>
-                    <p><b class="title c-text-bold">Profil recherché</b></p>
-                    <p>{{ data.descriptionProfil | raw }}</p>
-                </div>
-                {% endif %}
-                <a class="back d-none d-sm-inline-block c-text-bold" href="/offres-emploi">< <span>Retour</span></a>
+                <a class="back d-none d-sm-inline-block c-text-bold" href="{{ path('offresEmploi.content') }}">< <span>Retour</span></a>
             </div>
         </div>
         {% endif %}

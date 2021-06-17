@@ -28,18 +28,6 @@ class Routes
         );
         $route_collection->add('offresEmploi.content', $contentRoute);
 
-        $applyRoute = new Route(
-            sprintf('/%s/postuler/{ref}', empty($config->getRoutingBase()) ? self::DEFAULT_BASE_URL : $config->getRoutingBase()),
-            [
-                '_controller' => 'Drupal\offres_emploi\Controller\OffresEmploiActionController::apply',
-                '_title' => 'Offres emploi'
-            ],
-            [
-                '_permission'  => 'access content',
-            ]
-        );
-        $route_collection->add('offresEmploi.postuler', $applyRoute);
-
         return $route_collection;
     }
 }

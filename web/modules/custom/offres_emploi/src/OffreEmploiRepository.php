@@ -87,26 +87,6 @@ class OffreEmploiRepository
     }
 
     /**
-     * Increment the Number of Candidature
-     * @param $ref
-     * @return int
-     */
-    public function updateNbCandidature($ref): int
-    {
-        try {
-            $count = $this->queryUpdate()
-                ->expression('nbCandidature', 'nbCandidature + 1')
-                ->condition('codeRecrutement', $ref)
-                ->execute()
-            ;
-        } catch(\Exception $e) {
-            \Drupal::logger('offres_emploi')->error('Update Number Candidature failed. Message => ' . $e->getMessage());
-        }
-
-        return intval($count) ?? 0;
-    }
-
-    /**
      * Delete an entry
      * @param array $entry
      */

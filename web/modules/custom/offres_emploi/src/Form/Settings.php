@@ -38,6 +38,12 @@ class Settings extends ConfigFormBase
             '#default_value' => $config->get('routing.base'),
         );
 
+        $form['offres_emploi_sirh'] = array(
+            '#type' => 'textfield',
+            '#title' => $this->t('Url SIRH'),
+            '#default_value' => $config->get('sirh.url'),
+        );
+
         return parent::buildForm($form, $form_state);
     }
 
@@ -49,6 +55,7 @@ class Settings extends ConfigFormBase
         $this->configFactory->getEditable('offres_emploi.settings')
             // Set the submitted configuration setting
             ->set('routing.base', $form_state->getValue('offres_emploi_url'))
+            ->set('sirh.url', $form_state->getValue('offres_emploi_sirh'))
             ->save();
 
         parent::submitForm($form, $form_state);

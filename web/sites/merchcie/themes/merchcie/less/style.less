@@ -3079,14 +3079,35 @@ body.adminimal-admin-toolbar {
       }
 
       .right {
-        b.title {
-          text-transform: uppercase;
-          border-bottom: 1px solid;
-        }
+        .desc {
+          * {
+            font-size: 16px !important;
+            font-family: inherit !important;
+          }
 
-        .txt-grey {
-          color: @color5;
-          font-weight: normal;
+          #ads {
+            display: none;
+          }
+
+          strong {
+            text-transform: uppercase;
+            color: #232323 !important;
+            border-bottom: 1px solid;
+            margin-bottom: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            display: block;
+            width: max-content;
+
+            strong {
+              border: none;
+              margin: 0;
+            }
+          }
+
+          u {
+            text-decoration: none;
+          }
         }
       }
     }

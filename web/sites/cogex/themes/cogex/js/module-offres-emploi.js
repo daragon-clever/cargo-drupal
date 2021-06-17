@@ -26,13 +26,13 @@ jQuery(document).ready(function($) {
         };
         myTable[2] = {
             field_name: 'Type de poste',
-            cookie_name: 'lieuDeTravail',
+            cookie_name: 'typeDePoste',
             id_selector: 'filtre-poste',
             filter_param: 'type_metier'
         };
         myTable[4] = {
             field_name: 'Lieu',
-            cookie_name: 'typeDePoste',
+            cookie_name: 'lieuDeTravail',
             id_selector: 'filtre-lieu',
             filter_param: 'lieu'
         };

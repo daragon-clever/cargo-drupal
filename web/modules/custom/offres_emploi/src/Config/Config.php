@@ -10,4 +10,10 @@ class Config
 
         return $config->get('routing.base');
     }
+    public function getSirhUrl()
+    {
+        $config = \Drupal::config('offres_emploi.settings');
+
+        return $config->get('sirh.url');
+    }
 }

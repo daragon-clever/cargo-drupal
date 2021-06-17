@@ -1,2 +1,4 @@
 routing:
   base: 'offres-emploi'
+sirh:
+  url: ''

@@ -91,3 +91,11 @@ command: mysqld --tc-heuristic-recover=ROLLBACK
 Depuis le dossier /multisites/[site_name]:
 
 `php vendor/bin/drupal --uri=web.gersequipement.svd1pweb-stm.ressinfo.ad`
+
+# Installation nouveau Drupal
+
+Se baser sur ce qui a été fait pour les autres sites.
+
+*a completer*
+- ajouter une ligne dans le fichier drupal.rake pour automatiser l'update au déploiement
+- ajouter des lignes dans le fichier deploy.rb pour gérer les dossiers en shared

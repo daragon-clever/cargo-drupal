@@ -97,5 +97,4 @@ Depuis le dossier /multisites/[site_name]:
 Se baser sur ce qui a été fait pour les autres sites.
 
 *a completer*
-- ajouter une ligne dans le fichier drupal.rake pour automatiser l'update au déploiement
 - ajouter des lignes dans le fichier deploy.rb pour gérer les dossiers en shared

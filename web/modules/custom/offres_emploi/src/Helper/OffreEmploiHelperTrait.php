@@ -21,7 +21,7 @@ trait OffreEmploiHelperTrait
         'groupecargo' => 'CARGO',
         'cogex' => 'COGEX',
         'ruecab' => 'RUECAB',
-        'gersequipement' => 'GERS EQUIPEMENT',
+        'gersequipement' => 'GERS-EQUIPEMENT',
         'turbocar' => 'TURBOCAR',
     ];
 

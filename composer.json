@@ -9,20 +9,8 @@
             "role": ""
         }
     ],
-    "repositories": {
-        "assets": {
-            "type": "composer",
-            "url": "https://asset-packagist.org"
-        },
-        "0": {
-            "type": "composer",
-            "url": "https://packagist.org"
-        },
-        "1": {
-            "type": "composer",
-            "url": "https://packages.drupal.org/8"
-        },
-        "2": {
+    "repositories": [
+        {
             "type": "package",
             "package": {
                 "name": "ajaxorg/ace-builds",
@@ -34,15 +22,14 @@
                 }
             }
         },
-        "3": {
-            "type": "vcs",
-            "url": "git@github.com:PoleWebCargo/WEB_Drupal_Module_Synapse.git"
+        {
+            "type": "composer",
+            "url": "https://repo.packagist.com/cargo-grp/"
         },
-        "4": {
-            "type": "vcs",
-            "url": "git@github.com:PoleWebCargo/WEB_Common_Module_Synapse_Client.git"
+        {
+            "packagist.org": false
         }
-    },
+    ],
     "require": {
         "cargo/drupal_synapse": "^2.0.0",
         "composer/installers": "^1.2",
@@ -122,10 +109,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
-        "sort-packages": true,
-        "github-oauth": {
-            "github.com": "199f4c0232861e4dbdd3d146c7099b2c03090cc1"
-        }
+        "sort-packages": true
     },
     "autoload": {
         "classmap": [

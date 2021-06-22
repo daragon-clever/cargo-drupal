@@ -8,19 +8,22 @@ function offres_prestataires_theme($existing, $type, $theme, $path) {
     return [
         'offres_prestataires--list' => [
             'variables' => [
-                'data' => NULL
+                'data' => NULL,
+                'type' => NULL
             ]
         ],
         'offres_prestataires--content' => [
             'variables' => [
-                'data' => NULL
+                'data' => NULL,
+                'type' => NULL
             ]
         ],
         'offres_prestataires--apply-form' => [
             'variables' => [
                 'offerName' => NULL,
                 'offerRef' => NULL,
-                'form' => NULL
+                'form' => NULL,
+                'type' => NULL
             ]
         ]
     ];
@@ -55,10 +58,10 @@ function offres_prestataires_webform_element_hidden_alter(array &$element, FormS
         $ref = $config->getSpontaneousOfferId();
     } else {
         $offreRepository = \Drupal::service('offres_prestataires.repository');
-        $offerEmploi = current($offreRepository->findBy(['id_scoptalent' => $ref]));
+        $offerPresta = current($offreRepository->findBy(['id_scoptalent' => $ref, 'active' => 1]));
 
         if ($element['#webform_key'] == 'nom_offre') {
-            $element['#value'] = $offerEmploi->title;
+            $element['#value'] = $offerPresta->title;
         }
     }
 

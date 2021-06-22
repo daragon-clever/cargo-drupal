@@ -64,13 +64,17 @@
                         </thead>
                         <tbody>
                         {% for offre in data %}
-                            <tr class="clickable-row" data-href="{{ path('offresPrestataires.content', {ref: offre.id_scoptalent}) }}">
-                                <td class="control"></td>
+                            {% if (type == "terrain") %}
+                                {% set offerPath = 'offresPrestataires.contentTerrain' %}
+                            {% else %}
+                                {% set offerPath = 'offresPrestataires.content' %}
+                            {% endif %}
+                            <tr class="clickable-row" data-href="{{ path(offerPath, {ref: offre.id_scoptalent}) }}">
                                 <td class="wrap">{{ offre.title }}</td>
                                 <td class="">{{ offre.contract_types }}</td>
                                 <td class="">{{ offre.last_update_scoptalent }}</td>
                                 <td>{{ offre.city }}</td>
-                                <td><a href="{{ path('offresPrestataires.content', {ref: offre.id_scoptalent}) }}" class="text-color2">Voir l'annonce</a></td>
+                                <td><a href="{{ path(offerPath, {ref: offre.id_scoptalent}) }}" class="text-color2">Voir l'annonce</a></td>
                             </tr>
                         {% endfor %}
                         </tbody>

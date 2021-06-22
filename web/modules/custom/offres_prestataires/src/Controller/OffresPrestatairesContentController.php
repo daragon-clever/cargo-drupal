@@ -10,6 +10,17 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class OffresPrestatairesContentController extends ControllerBase
 {
+    const TERRAIN_OFFERS = [
+        "CDD - Contrat à durée déterminée",
+        "CDI - Contrat à durée indéterminée",
+        "CIDD - Contrat d'intervention à durée déterminée",
+        "CTT - Contrat de travail temporaire"
+    ];
+    const PRESTA_OFFERS = [
+        "Contrat de portage salarial",
+        "Indépendants/freelances"
+    ];
+
     /**
      * @var OffrePrestataireRepository
      */
@@ -36,18 +47,28 @@ class OffresPrestatairesContentController extends ControllerBase
         $this->loggerFileHelper = $loggerFileHelper;
     }
 
-    public function content($ref): array
+    public function content($ref, $type): array
     {
-        if ($ref == "all") {
-            $offers = $this->offreRepository->findAllActive();
-            foreach ($offers as $k => $offer) {
-                $offers[$k] = $this->formatDataForFront($offer);
-            }
+        $build['#type'] = $type;
 
-            $build = [
-                '#theme' => 'offres_prestataires--list',
-                '#data' => $offers
-            ];
+        if ($ref == "all") {
+            $build['#theme'] = 'offres_prestataires--list';
+
+            if ($type == "presta") {
+                $prestaFilter = ['contract_types' => self::PRESTA_OFFERS];
+                $offers = $this->offreRepository->findByMany($prestaFilter);
+                foreach ($offers as $k => $offer) {
+                    $offers[$k] = $this->formatDataForFront($offer);
+                }
+                $build['#data'] = $offers;
+            } elseif ($type == "terrain") {
+                $terrainFilter = ['contract_types' => self::TERRAIN_OFFERS];
+                $offers = $this->offreRepository->findByMany($terrainFilter);
+                foreach ($offers as $k => $offer) {
+                    $offers[$k] = $this->formatDataForFront($offer);
+                }
+                $build['#data'] = $offers;
+            }
         } else {
             $build['#theme'] = "offres_prestataires--content";
 
@@ -60,10 +81,7 @@ class OffresPrestatairesContentController extends ControllerBase
                     $this->loggerFileHelper->logIpAddressOnFile($ref);
                     $this->offreRepository->updateNbVue($ref);
                 }
-                $build = [
-                    '#theme' => 'offres_prestataires--content',
-                    '#data' => $this->formatDataForFront($offre[0])
-                ];
+                $build['#data'] = $this->formatDataForFront($offre[0]);
             }
         }
 
@@ -72,7 +90,6 @@ class OffresPrestatairesContentController extends ControllerBase
 
     private function formatDataForFront($offer)
     {
-        if (isset($offer->contract_types)) $offer->contract_types = implode(', ', unserialize($offer->contract_types));
         if (isset($offer->domains)) $offer->domains = implode(', ', unserialize($offer->domains));
         return $offer;
     }

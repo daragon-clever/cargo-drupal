@@ -26,9 +26,9 @@ class OffresPrestatairesApplyController extends ControllerBase
         $this->offreRepository = $offreRepository;
     }
 
-    public function apply($ref)
+    public function apply($type, $ref = null)
     {
-        if (isset($ref)) {
+        if (isset($ref) && !is_null($ref)) {
             $webform = \Drupal::entityTypeManager()->getStorage('webform')->load('candidature_prestataire');
 
             $dataPoste = $this->offreRepository->findBy(['id_scoptalent' => $ref, 'active' => 1]);
@@ -37,7 +37,8 @@ class OffresPrestatairesApplyController extends ControllerBase
                 '#theme' => 'offres_prestataires--apply-form',
                 '#offerName' => $dataPoste[0]->title,
                 '#offerRef' => $ref,
-                "#form" => $webform->getSubmissionForm()
+                "#form" => $webform->getSubmissionForm(),
+                '#type' => $type
             ];
         }
     }

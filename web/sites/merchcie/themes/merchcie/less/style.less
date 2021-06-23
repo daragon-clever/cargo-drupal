@@ -2879,23 +2879,21 @@ body.adminimal-admin-toolbar {
                 padding: 20px 0;
                 text-align: center;
 
-                &:first-child {
+                &:nth-child(2) {
                   text-align: left;
                 }
 
-                &:first-letter {
-                  margin-left: 2rem;
+                &.control {
+                  min-width: 30px;
+                  max-width: 30px;
+                  width: 30px;
                 }
               }
             }
           }
 
           @media @tablet {
-            .clickable-row > .wrap {
-              padding-left: 35px;
-            }
-
-            &.dtr-inline.collapsed > tbody > tr[role="row"] > td:first-child:before {
+            &.dtr-column.collapsed > tbody > tr[role="row"] > td:first-child:before {
               background: @color1;
               border: none;
               box-shadow: none;
@@ -2905,6 +2903,8 @@ body.adminimal-admin-toolbar {
               justify-content: center;
               align-items: center;
               top: 30%;
+              left: 0;
+              margin: 0;
             }
           }
         }

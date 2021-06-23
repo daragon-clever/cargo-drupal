@@ -54,6 +54,7 @@
                     <table id="toutes-les-offres" class="display w-100">
                         <thead>
                         <tr>
+                            <th class="control"></th>
                             <th class="all wrap">{{ "Poste"|trans }}</th>
                             <th class="all">{{ "Type de contrat"|trans }}</th>
                             <th class="js-hide">{{ "Date de MAJ"|trans }}</th>
@@ -64,6 +65,7 @@
                         <tbody>
                         {% for offre in data %}
                             <tr class="clickable-row" data-href="{{ path('offresPrestataires.content', {ref: offre.id_scoptalent}) }}">
+                                <td class="control"></td>
                                 <td class="wrap">{{ offre.title }}</td>
                                 <td class="">{{ offre.contract_types }}</td>
                                 <td class="">{{ offre.last_update_scoptalent }}</td>

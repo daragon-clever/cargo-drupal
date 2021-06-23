@@ -54,7 +54,7 @@ jQuery(document).ready(function($) {
                     type: 'column',
                     target: 'tr'
                 }
-            },//responsive
+            },
 
             //filters
             initComplete: function () {

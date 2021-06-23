@@ -41,6 +41,7 @@
                     <table id="toutes-les-offres" class="display nowrap">
                         <thead>
                         <tr>
+                            <th class="control"></th>
                             <th class="all wrap">{{ 'Poste'|t }}</th>
                             <th class="all">{{ 'Type de contrat'|t }}</th>
                             <th class="js-hide">{{ 'Type de poste'|t }}</th>
@@ -52,6 +53,7 @@
                         <tbody>
                             {% for offer in offers %}
                                 <tr class="clickable-row" data-href="{{ path('offresEmploi.content', {'ref': offer.codeRecrutement}) }}">
+                                    <td class="control"></td>
                                     <td class="wrap">{{ offer.intitulePoste }}</td>
                                     <td class="">{{ offer.typeContrat }}</td>
                                     <td>{{ offer.metier }}</td>

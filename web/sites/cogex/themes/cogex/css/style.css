@@ -5972,11 +5972,7 @@ form .select2-container .select2-selection--single .select2-selection__rendered 
     border: 0;
     border-bottom: 1px solid #cecece;
     color: #5e5e5e;
-    margin: 30px 0 5px 0;
-    /*&::placeholder{
-        color: $dark-grey-offres-emploi;
-        font-family: "Titillium-semi-bold";
-      }*/ }
+    margin: 30px 0 5px 0; }
     .listing-offres .filters #searchbox::placeholder {
       color: #5e5e5e;
       font-family: "Titillium-semi-bold"; }
@@ -6047,7 +6043,13 @@ form .select2-container .select2-selection--single .select2-selection__rendered 
       .listing-offres .jobs-list table#toutes-les-offres.dataTable thead th, .listing-offres .jobs-list table#toutes-les-offres.dataTable thead td, .listing-offres .jobs-list table#toutes-les-offres.dataTable tbody th, .listing-offres .jobs-list table#toutes-les-offres.dataTable tbody td, .listing-offres .jobs-list table#toutes-les-offres.dataTable tfoot th, .listing-offres .jobs-list table#toutes-les-offres.dataTable tfoot td {
         text-align: center;
         font-size: 14px;
-        min-width: 80px; } }
+        min-width: 80px; }
+        .listing-offres .jobs-list table#toutes-les-offres.dataTable thead th.control, .listing-offres .jobs-list table#toutes-les-offres.dataTable thead td.control, .listing-offres .jobs-list table#toutes-les-offres.dataTable tbody th.control, .listing-offres .jobs-list table#toutes-les-offres.dataTable tbody td.control, .listing-offres .jobs-list table#toutes-les-offres.dataTable tfoot th.control, .listing-offres .jobs-list table#toutes-les-offres.dataTable tfoot td.control {
+          min-width: 30px;
+          max-width: 30px;
+          width: 30px; }
+        .listing-offres .jobs-list table#toutes-les-offres.dataTable thead th:nth-child(2), .listing-offres .jobs-list table#toutes-les-offres.dataTable thead td:nth-child(2), .listing-offres .jobs-list table#toutes-les-offres.dataTable tbody th:nth-child(2), .listing-offres .jobs-list table#toutes-les-offres.dataTable tbody td:nth-child(2), .listing-offres .jobs-list table#toutes-les-offres.dataTable tfoot th:nth-child(2), .listing-offres .jobs-list table#toutes-les-offres.dataTable tfoot td:nth-child(2) {
+          text-align: left; } }
   .listing-offres .jobs-list table#toutes-les-offres.dataTable.no-footer, .listing-offres .jobs-list table#toutes-les-offres.dataTable thead th, .listing-offres .jobs-list table#toutes-les-offres.dataTable thead td {
     border-color: #cecece;
     color: #5e5e5e; }
@@ -6073,47 +6075,45 @@ form .select2-container .select2-selection--single .select2-selection__rendered 
       color: #E30613; }
   .listing-offres .jobs-list table#toutes-les-offres.dataTable a {
     color: #232323; }
-  .listing-offres .jobs-list table#toutes-les-offres.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > td:first-child, .listing-offres .jobs-list table#toutes-les-offres.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] th:first-child {
-    text-align: left;
-    padding-left: 20px; }
-    .listing-offres .jobs-list table#toutes-les-offres.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > td:first-child:before, .listing-offres .jobs-list table#toutes-les-offres.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] th:first-child:before {
-      top: 18px;
-      left: 0;
-      height: 15px;
-      width: 15px;
-      background: #E30613;
-      box-shadow: none;
-      border: none;
-      line-height: 16px; }
-  .listing-offres .jobs-list table#toutes-les-offres.dataTable.dtr-inline.collapsed > tbody > tr.child td {
+  .listing-offres .jobs-list table#toutes-les-offres.dataTable.dtr-column.collapsed > tbody > tr[role="row"] > td:first-child:before, .listing-offres .jobs-list table#toutes-les-offres.dataTable.dtr-column.collapsed > tbody > tr[role="row"] th:first-child:before {
+    top: 18px;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background: #E30613;
+    box-shadow: none;
+    border: none;
+    line-height: 16px;
+    margin: 0; }
+  .listing-offres .jobs-list table#toutes-les-offres.dataTable.dtr-column.collapsed > tbody > tr.child td {
     border: 0 !important;
     padding: 0px; }
-  .listing-offres .jobs-list table#toutes-les-offres.dataTable.dtr-inline.collapsed > tbody > tr.child ul.dtr-details {
+  .listing-offres .jobs-list table#toutes-les-offres.dataTable.dtr-column.collapsed > tbody > tr.child ul.dtr-details {
     background-color: #f6f6f6 !important;
     margin-bottom: 15px;
     display: block;
     padding: 5px; }
-    .listing-offres .jobs-list table#toutes-les-offres.dataTable.dtr-inline.collapsed > tbody > tr.child ul.dtr-details li {
+    .listing-offres .jobs-list table#toutes-les-offres.dataTable.dtr-column.collapsed > tbody > tr.child ul.dtr-details li {
       border-bottom: 1px solid #d4d4d4;
       margin: 0; }
-      .listing-offres .jobs-list table#toutes-les-offres.dataTable.dtr-inline.collapsed > tbody > tr.child ul.dtr-details li span {
+      .listing-offres .jobs-list table#toutes-les-offres.dataTable.dtr-column.collapsed > tbody > tr.child ul.dtr-details li span {
         min-width: unset; }
-        .listing-offres .jobs-list table#toutes-les-offres.dataTable.dtr-inline.collapsed > tbody > tr.child ul.dtr-details li span.dtr-title:after {
+        .listing-offres .jobs-list table#toutes-les-offres.dataTable.dtr-column.collapsed > tbody > tr.child ul.dtr-details li span.dtr-title:after {
           content: ":";
           display: inline-block;
           margin-left: 3px; }
-      .listing-offres .jobs-list table#toutes-les-offres.dataTable.dtr-inline.collapsed > tbody > tr.child ul.dtr-details li:last-child {
+      .listing-offres .jobs-list table#toutes-les-offres.dataTable.dtr-column.collapsed > tbody > tr.child ul.dtr-details li:last-child {
         padding-bottom: 0; }
-        .listing-offres .jobs-list table#toutes-les-offres.dataTable.dtr-inline.collapsed > tbody > tr.child ul.dtr-details li:last-child .dtr-data {
+        .listing-offres .jobs-list table#toutes-les-offres.dataTable.dtr-column.collapsed > tbody > tr.child ul.dtr-details li:last-child .dtr-data {
           width: 100%;
           display: block;
           background-color: #E30613; }
-      .listing-offres .jobs-list table#toutes-les-offres.dataTable.dtr-inline.collapsed > tbody > tr.child ul.dtr-details li:first-child {
+      .listing-offres .jobs-list table#toutes-les-offres.dataTable.dtr-column.collapsed > tbody > tr.child ul.dtr-details li:first-child {
         padding-top: 0; }
       @media (max-width: 767px) {
-        .listing-offres .jobs-list table#toutes-les-offres.dataTable.dtr-inline.collapsed > tbody > tr.child ul.dtr-details li:last-child .dtr-title {
+        .listing-offres .jobs-list table#toutes-les-offres.dataTable.dtr-column.collapsed > tbody > tr.child ul.dtr-details li:last-child .dtr-title {
           display: none; }
-        .listing-offres .jobs-list table#toutes-les-offres.dataTable.dtr-inline.collapsed > tbody > tr.child ul.dtr-details li:last-child a {
+        .listing-offres .jobs-list table#toutes-les-offres.dataTable.dtr-column.collapsed > tbody > tr.child ul.dtr-details li:last-child a {
           width: 100%;
           color: white;
           border: none;
@@ -6127,7 +6127,7 @@ form .select2-container .select2-selection--single .select2-selection__rendered 
           text-decoration: none;
           text-transform: uppercase; } }
   @media (max-width: 767px) {
-    .listing-offres .jobs-list table#toutes-les-offres.dataTable.dtr-inline.collapsed > tbody thead {
+    .listing-offres .jobs-list table#toutes-les-offres.dataTable.dtr-column.collapsed > tbody thead {
       position: absolute;
       top: -9999px;
       left: -9999px; } }

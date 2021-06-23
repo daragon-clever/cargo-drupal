@@ -49,7 +49,12 @@ jQuery(document).ready(function($) {
             pagingType: "numbers",
             pageLength: 10,
             order:[3,'desc'],//order by date
-            responsive: true,//responsive
+            responsive: {
+                details: {
+                    type: 'column',
+                    target: 'tr'
+                }
+            },
 
             //filters
             initComplete: function () {

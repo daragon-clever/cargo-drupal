@@ -48,8 +48,13 @@ jQuery(document).ready(function($) {
             },
             pagingType: "numbers",
             pageLength: 10,
-            order:[3,'desc'],//order by date
-            responsive: true,//responsive
+            order:[3,'desc'], //order by date
+            responsive: {
+                details: {
+                    type: 'column',
+                    target: 'tr'
+                }
+            },//responsive
 
             //filters
             initComplete: function () {

@@ -2168,7 +2168,7 @@ footer {
       font-size: 13px;
       min-width: 80px;
 
-      &:first-child {
+      &:nth-child(2) {
         text-align: left;
       }
     }
@@ -2187,8 +2187,8 @@ footer {
     white-space: unset !important;
   }
 
-  table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > td:first-child:before,
-  table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > th:first-child:before {
+  table.dataTable.dtr-column.collapsed > tbody > tr[role="row"] > td.control:before,
+  table.dataTable.dtr-column.collapsed > tbody > tr[role="row"] > th.control:before {
     top: 18px;
     left: 0;
     height: 15px;
@@ -2197,6 +2197,14 @@ footer {
     box-shadow: none;
     border: none;
     line-height: 16px;
+    margin: 0 auto;
+    display: inline-block;
+  }
+
+  table.dataTable .control {
+    min-width: 30px;
+    max-width: 30px;
+    width: 30px;
   }
 
   table.dataTable>tbody>tr.child ul.dtr-details {

@@ -451,6 +451,9 @@ a:hover {
 .container.max-1065 {
   max-width: 1065px;
 }
+.container.max-1080 {
+  max-width: 1080px;
+}
 .container.max-1165 {
   max-width: 1165px;
 }
@@ -4421,5 +4424,48 @@ table.reparateurs tbody .tel {
 @media only screen and (max-width: 767px) {
   #op-commerciale .reseaux img {
     margin: 10px 25px;
+  }
+}
+#conserves img {
+  max-width: 100%;
+  height: auto;
+}
+#conserves h1 {
+  line-height: 1.2;
+}
+#conserves h4 {
+  font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
+  margin-bottom: 10px;
+}
+#conserves .content1 p {
+  margin-bottom: 15px;
+}
+#conserves .content1 ul {
+  padding-left: 0;
+  list-style: none;
+}
+#conserves .content1 ul li {
+  position: relative;
+  padding-left: 45px;
+  margin-bottom: 20px;
+}
+#conserves .content1 ul li:before {
+  content: "";
+  height: 30px;
+  width: 30px;
+  background: url("../images/check-circle.svg") no-repeat center / contain transparent;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 5px;
+}
+#conserves .content2 {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+@media only screen and (max-width: 991px) {
+  #conserves .content2 {
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
 }

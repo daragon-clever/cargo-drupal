@@ -1,0 +1,196 @@
+<div id="conserves">
+    <div id="ban-intro" class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <!-- BANNER -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col ban">
+                            {{ content.field_conserves_banner }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container max-1080">
+                    <!-- INTRO -->
+                    <div class="row">
+                        <div class="col text-center">
+                            <h1>{{ content.field_conserves_title }}</h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        {% for i in 0..1 %}
+                            <div class="col col-lg-6">
+                                {{ content.field_conserves_intro[i] }}
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    <hr class="my-5">
+
+                    <!-- CONTENT 1 -->
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <div class="pr-lg-4">
+                                {{ content.field_conserves_c1_txts[0] }}
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            {{ content.field_conserves_c1_txts[1] }}
+                            <div class="mt-3">
+                                {{ content.field_conserves_c1_imgs[0] }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-5 align-items-center">
+                        <div class="col-lg-6 order-lg-2">
+                            <div class="pl-lg-4">
+                                {{ content.field_conserves_c1_txts[2] }}
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mt-4 mt-lg-0">
+                            {{ content.field_conserves_c1_imgs[1] }}
+                        </div>
+                    </div>
+                    <div class="row content1 my-5 align-items-end">
+                        <div class="col-lg-6">
+                            <div class="pr-lg-4">
+                                {{ content.field_conserves_c1_txts[3] }}
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            {{ content.field_conserves_c1_imgs[3] }}
+                        </div>
+                    </div>
+                    <div class="row content1 mt-5 mb-4 align-items-start">
+                        <div class="col-lg-6 order-lg-2">
+                            <div class="pl-lg-4">
+                                {{ content.field_conserves_c1_txts[4] }}
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            {{ content.field_conserves_c1_imgs[2] }}
+                        </div>
+                    </div>
+                    <div class="row mt-5 mt-lg-0">
+                        <div class="col">
+                            {{ content.field_conserves_c1_txts[5] }}
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        {% for i in 6..7 %}
+                            <div class="col-lg-6">
+                                {{ content.field_conserves_c1_txts[i] }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- CONTENT 2 -->
+                <div class="container content2 bg-verylightgrey mt-5">
+                    <div class="row">
+                        <div class="col">
+                            <div class="container max-1080">
+                                <div class="row">
+                                    <div class="col">
+                                        {{ content.field_conserves_c2_title }}
+                                    </div>
+                                </div>
+                                <div class="row mt-5">
+                                    {% for i in 0..1 %}
+                                        <div class="col-lg-6">
+                                            {{ content.field_conserves_c2_txts[i] }}
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENT 3 -->
+        <div class="row bg-img-blue mt-5">
+            <div class="col">
+                <div class="container">
+                    <div class="row">
+                        <div class="col text-center text-white my-5">
+                            {{ content.field_conserves_c3_title }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        {% for i in 0..1 %}
+                            <div class="col-sm-6 {% if i is odd %}mt-4 mt-md-0{% endif %}">
+                                {{ content.field_conserves_c3_imgs[i] }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="container max-1080">
+                    <div class="row my-5">
+                        <div class="col">
+                            {{ content.field_conserves_c3_intro }}
+                        </div>
+                    </div>
+                </div>
+                <div class="container mt-3">
+                    <div class="row">
+                        {% for i in 0..2 %}
+                            <div class="col-lg-4 {% if i is even %}bg-verylightgrey{% endif %}">
+                                <div class="p-5">
+                                    {{ content.field_conserves_c3_txts[i] }}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="container max-1080 my-5">
+                    <div class="row">
+                        <div class="col">
+                            {{ content.field_conserves_c3_outro }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENT 4 -->
+        <div class="row bg-verylightgrey py-4">
+            <div class="col">
+                <div class="container max-1080">
+                    <div class="row">
+                        <div class="col">
+                            {{ content.field_conserves_c4_title }}
+                        </div>
+                    </div>
+                    <div class="row pb-5">
+                        {% for i in 0..1 %}
+                            <div class="col-lg-6">
+                                {{ content.field_conserves_c4_txts[i] }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENT 5 -->
+        <div class="row my-5">
+            <div class="col">
+                <div class="container max-1080">
+                    <div class="row my-lg-5 align-items-start">
+                        <div class="col-lg-6">
+                            <div class="pr-lg-5">
+                                {{ content.field_conserves_c5_txt }}
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mt-5 mt-lg-0">
+                            {{ content.field_conserves_c5_img }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -3566,3 +3566,58 @@ table.reparateurs {
     }
   }
 }
+
+// FAIRE SES CONSERVES
+#conserves {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  h1 {
+    line-height: 1.2;
+  }
+
+  h4 {
+    font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
+    margin-bottom: 10px;
+  }
+
+  .content1 {
+    p {
+      margin-bottom: 15px;
+    }
+
+    ul {
+      padding-left: 0;
+      list-style: none;
+
+      li {
+        position: relative;
+        padding-left: 45px;
+        margin-bottom: 20px;
+
+        &:before {
+          content: "";
+          height: 30px;
+          width: 30px;
+          background: url("../images/check-circle.svg") no-repeat center / contain transparent;
+          display: inline-block;
+          position: absolute;
+          left: 0;
+          top: 5px;
+        }
+      }
+    }
+  }
+
+  .content2 {
+    padding-top: 90px;
+    padding-bottom: 90px;
+
+    @media @tablet {
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+  }
+}

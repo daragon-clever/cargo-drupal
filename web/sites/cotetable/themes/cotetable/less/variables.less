@@ -1,0 +1,19 @@
+// Media queries
+@xs: 767px;
+@sm: 991px;
+@phone:  ~"only screen and (max-width: @{xs})";
+@tablet: ~"only screen and (max-width: @{sm})";
+
+// Colors
+@color1: #888B8D;
+@color2: #C3C5C6;
+@color3: #E7E8E8;
+@color4: #F3F3F3;
+
+// Functions
+.dimOpacityOnHover (@opacity) {
+  transition: all 0.3s;
+  &:hover {
+    opacity: @opacity;
+  }
+}

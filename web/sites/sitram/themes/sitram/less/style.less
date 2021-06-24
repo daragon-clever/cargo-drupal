@@ -3570,7 +3570,7 @@ table.reparateurs {
 // FAIRE SES CONSERVES
 #conserves {
   img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
   }
 
@@ -3584,14 +3584,6 @@ table.reparateurs {
   }
 
   .content1 {
-    img {
-      margin-top: 25px;
-
-      @media @phone {
-        margin-top: 10px;
-      }
-    }
-
     p {
       margin-bottom: 15px;
     }
@@ -3620,18 +3612,12 @@ table.reparateurs {
   }
 
   .content2 {
-    padding: 90px 0;
+    padding-top: 90px;
+    padding-bottom: 90px;
 
     @media @tablet {
-      padding: 60px 0;
+      padding-top: 60px;
+      padding-bottom: 60px;
     }
-  }
-
-  .content4 {
-    padding: 20px 0;
-  }
-
-  .content5 h2 {
-    margin-bottom: 45px;
   }
 }

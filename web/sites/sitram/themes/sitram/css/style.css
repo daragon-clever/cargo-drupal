@@ -4427,7 +4427,7 @@ table.reparateurs tbody .tel {
   }
 }
 #conserves img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
 }
 #conserves h1 {
@@ -4436,14 +4436,6 @@ table.reparateurs tbody .tel {
 #conserves h4 {
   font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
   margin-bottom: 10px;
-}
-#conserves .content1 img {
-  margin-top: 25px;
-}
-@media only screen and (max-width: 767px) {
-  #conserves .content1 img {
-    margin-top: 10px;
-  }
 }
 #conserves .content1 p {
   margin-bottom: 15px;
@@ -4468,16 +4460,12 @@ table.reparateurs tbody .tel {
   top: 5px;
 }
 #conserves .content2 {
-  padding: 90px 0;
+  padding-top: 90px;
+  padding-bottom: 90px;
 }
 @media only screen and (max-width: 991px) {
   #conserves .content2 {
-    padding: 60px 0;
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
-}
-#conserves .content4 {
-  padding: 20px 0;
-}
-#conserves .content5 h2 {
-  margin-bottom: 45px;
 }

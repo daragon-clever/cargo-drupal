@@ -1,2 +1,39 @@
 @import 'variables';
 @import 'font';
+
+#ui-kit {
+  max-width: 1280px;
+  margin: 0 auto;
+
+  .colors {
+    column-gap: 15px;
+
+    & > div {
+      flex: 1;
+      height: 50px;
+    }
+  }
+}
+
+h1 { font-size: 40px; }
+h2 { font-size: 24px; }
+
+.bg {
+  &-color1 { background: @color1; }
+  &-color2 { background: @color2; }
+  &-color3 { background: @color3; }
+  &-color4 { background: @color4; }
+}
+
+.color1 { color: @color1; }
+.color2 { color: @color2; }
+.color3 { color: @color3; }
+.color4 { color: @color4; }
+
+.circle-logo {
+  background: url("../images/logo/cote_table-circle.svg") no-repeat center transparent;
+}
+
+.long-logo {
+  background: url("../images/logo/cote_table-long.svg") no-repeat center transparent;
+}

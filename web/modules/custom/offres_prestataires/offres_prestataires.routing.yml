@@ -9,21 +9,44 @@ offres_prestataires.settings:
   options:
     _admin_route: TRUE
 
-# LISTES OFFRES PRESTATAIRES + ANNONCE
+# Liste offres prestataires + annonce
 offresPrestataires.content:
   path: '/offres-prestataires/{ref}'
   defaults:
     _controller: 'Drupal\offres_prestataires\Controller\OffresPrestatairesContentController::content'
     ref: 'all'
+    type: 'presta'
     _title: 'Offres prestataires'
   requirements:
     _permission: 'access content'
 
-# FORMULAIRE POUR POSTULER
+# Liste offres prestataires + annonce - TERRAIN
+offresPrestataires.contentTerrain:
+  path: '/offres-prestataires-terrain/{ref}'
+  defaults:
+    _controller: 'Drupal\offres_prestataires\Controller\OffresPrestatairesContentController::content'
+    ref: 'all'
+    type: 'terrain'
+    _title: 'Offres terrain'
+  requirements:
+    _permission: 'access content'
+
+# Formulaire pour postuler
 offresPrestataires.apply:
   path: '/offres-prestataires/postuler/{ref}'
   defaults:
     _controller: 'Drupal\offres_prestataires\Controller\OffresPrestatairesApplyController::apply'
+    type: 'presta'
     _title: 'Offres prestataires'
+  requirements:
+    _permission: 'access content'
+
+# Formulaire pour postuler - TERRAIN
+offresPrestataires.applyTerrain:
+  path: '/offres-prestataires-terrain/postuler/{ref}'
+  defaults:
+    _controller: 'Drupal\offres_prestataires\Controller\OffresPrestatairesApplyController::apply'
+    type: 'terrain'
+    _title: 'Offres terrain'
   requirements:
     _permission: 'access content'

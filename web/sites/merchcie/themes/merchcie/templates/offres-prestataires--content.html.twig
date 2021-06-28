@@ -1,10 +1,18 @@
 <div class="offres-prestataires-module">
     <div class="container" id="offre">
+        {% if (type == "terrain") %}
+            {% set offersPath = 'offresPrestataires.contentTerrain' %}
+            {% set offerApply = 'offresPrestataires.applyTerrain' %}
+        {% else %}
+            {% set offersPath = 'offresPrestataires.content' %}
+            {% set offerApply = 'offresPrestataires.apply' %}
+        {% endif %}
+
         {%  if data == 'false' %}
             <div id="alerte-offres" class="bg-color1 text-white">
                 <p class="error">
                     L'annonce n'existe pas.
-                    <a href="{{ path('offresPrestataires.content') }}" class="text-color2">Retournez sur la page des offres prestataires.</a>
+                    <a href="{{ path(offersPath) }}" class="text-color2">Retournez sur la page des offres prestataires.</a>
                 </p>
             </div>
         {% else %}
@@ -41,12 +49,12 @@
                         </div>
                     {% endif %}
 
-                    <a class="cta bg-color2 text-white w-100" href="{{ path('offresPrestataires.apply', {ref: data.id_scoptalent}) }}">
+                    <a class="cta bg-color2 text-white w-100" href="{{ path(offerApply, {ref: data.id_scoptalent}) }}">
                         Je postule
                     </a>
 
                     <div class="text-center">
-                        <a class="back d-sm-none text-color2" href="{{ path('offresPrestataires.content') }}">< <span>Retour</span></a>
+                        <a class="back d-sm-none text-color2" href="{{ path(offersPath) }}">< <span>Retour</span></a>
                     </div>
                 </div>
                 <div class="col-12 col-sm-9 right order-1 order-sm-2">
@@ -71,7 +79,7 @@
                         </div>
                     {% endif %}
 
-                    <a class="back d-none d-sm-inline-block text-color2" href="{{ path('offresPrestataires.content') }}">< <span>Retour</span></a>
+                    <a class="back d-none d-sm-inline-block text-color2" href="{{ path(offersPath) }}">< <span>Retour</span></a>
                 </div>
             </div>
         {% endif %}

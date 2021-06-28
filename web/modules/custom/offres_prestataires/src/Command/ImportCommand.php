@@ -168,8 +168,10 @@ class ImportCommand extends Command
             if (isset($offre[$keyAPI])) {
                 if (in_array($keyAPI, ["missionDescription", "businessDescription", "profileDescription"])) {
                     $arrInsert[$keyDB] = $this->cleanDescription($offre[$keyAPI]);
-                } elseif (in_array($keyAPI, ["contractTypeNames", "businessDomains"])) {
+                } elseif (in_array($keyAPI, ["businessDomains"])) {
                     $arrInsert[$keyDB] = $this->convertArray($offre[$keyAPI]);
+                } elseif(in_array($keyAPI, ["contractTypeNames"])) {
+                    $arrInsert[$keyDB] = $this->getFirstArrayItem($offre[$keyAPI]);
                 } elseif (in_array($keyAPI, ["lastPublicationDate", "openedDate"])) {
                     $arrInsert[$keyDB] = $this->formatDate($offre[$keyAPI]);
                 } else {
@@ -194,6 +196,11 @@ class ImportCommand extends Command
     private function convertArray($array)
     {
         return serialize($array);
+    }
+
+    private function getFirstArrayItem($array)
+    {
+        return $array[0];
     }
 
     private function formatDate($date)

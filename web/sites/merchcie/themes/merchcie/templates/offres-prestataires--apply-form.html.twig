@@ -1,4 +1,10 @@
 <div class="offres-prestataires-module">
+    {% if (type == "terrain") %}
+        {% set offerPath = 'offresPrestataires.contentTerrain' %}
+    {% else %}
+        {% set offerPath = 'offresPrestataires.content' %}
+    {% endif %}
+
     {% if offerName and offerRef and form %}
         <div id="candidature-offre">
             <div class="container">
@@ -14,7 +20,7 @@
                 <div class="row">
                     <div class="col">
                         <a class="back d-block text-color2"
-                           href="{{ path('offresPrestataires.content', {ref: offerRef}) }}">{{ '< Retour'|t }}</a>
+                           href="{{ path(offerPath, {ref: offerRef}) }}">{{ '< Retour'|t }}</a>
                     </div>
                 </div>
             </div>
@@ -26,7 +32,7 @@
                     <div id="alerte-offres" class="bg-color1 text-white">
                         <p class="error">
                             L'annonce n'existe pas.
-                            <a href="{{ path('offresPrestataires.content') }}" class="text-color2">Retournez sur la page des
+                            <a href="{{ path(offerPath) }}" class="text-color2">Retournez sur la page des
                                 offres d'emploi.</a>
                         </p>
                     </div>

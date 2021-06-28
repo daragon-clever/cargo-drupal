@@ -2,13 +2,21 @@
 {{ attach_library('merchcie/select2') }}
 {{ attach_library('merchcie/cookiesJS') }}
 
+{% if (type == "terrain") %}
+    {% set offerPath = 'offresPrestataires.contentTerrain' %}
+    {% set pageTitle = "offres terrain" %}
+{% else %}
+    {% set offerPath = 'offresPrestataires.content' %}
+    {% set pageTitle = "offres de prestations" %}
+{% endif %}
+
 <div class="bg-color1 z1">
     <div class="container">
         <div class="row">
             <div class="col main-big-title">
                 <h1 class="text-white">
                     {{ "Découvrez nos"|trans }} <br>
-                    <span class="text-color2">{{ "offres de prestations"|trans }}</span>
+                    <span class="text-color2">{{ pageTitle|trans }}</span>
                 </h1>
                 <span class="line-vertical dot-pattern-color2"></span>
             </div>
@@ -64,13 +72,12 @@
                         </thead>
                         <tbody>
                         {% for offre in data %}
-                            <tr class="clickable-row" data-href="{{ path('offresPrestataires.content', {ref: offre.id_scoptalent}) }}">
-                                <td class="control"></td>
+                            <tr class="clickable-row" data-href="{{ path(offerPath, {ref: offre.id_scoptalent}) }}">
                                 <td class="wrap">{{ offre.title }}</td>
                                 <td class="">{{ offre.contract_types }}</td>
                                 <td class="">{{ offre.last_update_scoptalent }}</td>
                                 <td>{{ offre.city }}</td>
-                                <td><a href="{{ path('offresPrestataires.content', {ref: offre.id_scoptalent}) }}" class="text-color2">Voir l'annonce</a></td>
+                                <td><a href="{{ path(offerPath, {ref: offre.id_scoptalent}) }}" class="text-color2">Voir l'annonce</a></td>
                             </tr>
                         {% endfor %}
                         </tbody>
@@ -87,6 +94,15 @@
                     <div id="alerte-offres" class="bg-color1 text-white">
                         <p class="error">{{ "Nous n'avons aucune offre pour le moment. Revenez bientôt pour de nouvelles offres ou postulez avec une "|trans }}
                             <a href="/espace-prestataires/candidature-spontanee" class="text-white">{{ 'candidature spontanée'|trans }}</a>.
+                        </p>
+                    </div>
+                {% endif %}
+                {% if type == "terrain" %}
+                    <div id="alerte-offres" class="bg-color1 text-white">
+                        <p class="error">
+                            <a href="{{ path('offresEmploi.content') }}" class="text-white">
+                                {{ "Vous souhaitez travailler au siège, venez découvrir nos offres en cliquant ici." | trans }}
+                            </a>
                         </p>
                     </div>
                 {% endif %}

@@ -2953,11 +2953,11 @@ body.adminimal-admin-toolbar header {
 }
 .offres-emploi-module .offer-caracteristic .value-caracteristic,
 .offres-prestataires-module .offer-caracteristic .value-caracteristic {
+  height: auto;
+  min-height: 50px;
+  padding: 15px 20px;
   border: 1px solid #CECECE;
   border-radius: 0;
-  height: 50px;
-  line-height: 50px;
-  padding-left: 20px;
   color: #5E5E5E;
   display: block;
 }
@@ -3018,11 +3018,9 @@ body.adminimal-admin-toolbar header {
 .offres-emploi-module #listing-offres .filters #groupe-filtres-offres .offer-caracteristic .select2-container .select2-selection--single,
 .offres-prestataires-module #listing-offres .filters #groupe-filtres-offres .offer-caracteristic .select2-container .select2-selection--single {
   outline: none;
+  height: 50px;
   border: 1px solid #CECECE;
   border-radius: 0;
-  height: 50px;
-  line-height: 50px;
-  padding-left: 20px;
   color: #5E5E5E;
   display: block;
 }

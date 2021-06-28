@@ -12,7 +12,12 @@
                                 </span>
                     </div>
                     <div class="offer-link">
-                        <a href="{{ path('offresPrestataires.content', {ref: offre.id}) }}">Voir le détail de l'offre</a>
+                        {% if (type == "terrain") %}
+                            {% set offerPath = 'offresPrestataires.contentTerrain' %}
+                        {% else %}
+                            {% set offerPath = 'offresPrestataires.content' %}
+                        {% endif %}
+                        <a href="{{ path(offerPath, {ref: offre.id}) }}">Voir le détail de l'offre</a>
                     </div>
                 </div>
             {% endfor %}

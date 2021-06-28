@@ -48,7 +48,7 @@ jQuery(document).ready(function($) {
             },
             pagingType: "numbers",
             pageLength: 10,
-            order:[3,'desc'], //order by date
+            order:[4,'desc'], //order by date
             responsive: {
                 details: {
                     type: 'column',
@@ -59,17 +59,17 @@ jQuery(document).ready(function($) {
             //filters
             initComplete: function () {
                 //create filter on 3 columns
-                this.api().columns([1,2,4]).every( function () {
+                this.api().columns([2,3,5]).every( function () {
                     switch (this[0][0]) {
-                        case 1:
+                        case 2:
                             var selector = '#filtre-contrat .select-option';
                             var nameCookies = 'typeDeContrat';
                             break;
-                        case 2:
+                        case 3:
                             var selector = '#filtre-poste .select-option';
                             var nameCookies = 'typeDePoste';
                             break;
-                        case 4:
+                        case 5:
                             var selector = '#filtre-lieu .select-option';
                             var nameCookies = 'lieuDeTravail';
                             break;
@@ -101,15 +101,15 @@ jQuery(document).ready(function($) {
                     })();
 
                 } );
-                this.api().columns([1,2,4]).every( function () {
+                this.api().columns([2,3,5]).every( function () {
                     var priority = "cookies";
                     switch (this[0][0]) {
-                        case 1:
+                        case 2:
                             var selector = '#filtre-contrat .select-option';
                             var filter = $.urlParam('type_contrat');
                             var cookies = Cookies.get('typeDeContrat');
                             break;
-                        case 2:
+                        case 3:
                             var selector = '#filtre-poste .select-option';
                             var filter = $.urlParam('type_metier');
                             var cookies = Cookies.get('typeDePoste');
@@ -120,7 +120,7 @@ jQuery(document).ready(function($) {
                             }
                             Cookies.set('oldParam', replaceSpecialChar(filter), { expires : expireCookiesTime });
                             break;
-                        case 4:
+                        case 5:
                             var selector = '#filtre-lieu .select-option';
                             var filter = $.urlParam('lieu');
                             var cookies = Cookies.get('lieuDeTravail');
@@ -159,15 +159,15 @@ jQuery(document).ready(function($) {
             table.on('draw', function () {
                 table.columns().indexes().each( function ( idx ) {
                     switch (idx) {
-                        case 1:
+                        case 2:
                             var selector = '#filtre-contrat .select-option';
                             var filter = $.urlParam('type_contrat');//get url param value
                             break;
-                        case 2:
+                        case 3:
                             var selector = '#filtre-poste .select-option';
                             var filter = $.urlParam('type_metier');
                             break;
-                        case 4:
+                        case 5:
                             var selector = '#filtre-lieu .select-option';
                             var filter = $.urlParam('lieu');
                             break;

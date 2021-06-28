@@ -48,7 +48,7 @@ jQuery(document).ready(function($) {
             },
             pagingType: "numbers",
             pageLength: 10,
-            order:[2,'desc'],//order by date
+            order:[3,'desc'],//order by date
             responsive: {
                 details: {
                     type: 'column',
@@ -59,13 +59,13 @@ jQuery(document).ready(function($) {
             //filters
             initComplete: function () {
                 //create filter on 3 columns
-                this.api().columns([1,3]).every( function () {
+                this.api().columns([2,4]).every( function () {
                     switch (this[0][0]) {
-                        case 1:
+                        case 2:
                             var selector = '#filtre-contrat .select-option';
                             var nameCookies = 'typeDeContrat';
                             break;
-                        case 3:
+                        case 4:
                             var selector = '#filtre-lieu .select-option';
                             var nameCookies = 'lieuDeTravail';
                             break;
@@ -97,15 +97,15 @@ jQuery(document).ready(function($) {
                     })();
 
                 } );
-                this.api().columns([1,3]).every( function () {
+                this.api().columns([2,4]).every( function () {
                     var priority = "cookies";
                     switch (this[0][0]) {
-                        case 1:
+                        case 2:
                             var selector = '#filtre-contrat .select-option';
                             var filter = $.urlParam('type_contrat');
                             var cookies = Cookies.get('typeDeContrat');
                             break;
-                        case 3:
+                        case 4:
                             var selector = '#filtre-lieu .select-option';
                             var filter = $.urlParam('lieu');
                             var cookies = Cookies.get('lieuDeTravail');
@@ -144,11 +144,11 @@ jQuery(document).ready(function($) {
             table.on('draw', function () {
                 table.columns().indexes().each( function ( idx ) {
                     switch (idx) {
-                        case 1:
+                        case 2:
                             var selector = '#filtre-contrat .select-option';
                             var filter = $.urlParam('type_contrat');//get url param value
                             break;
-                        case 3:
+                        case 4:
                             var selector = '#filtre-lieu .select-option';
                             var filter = $.urlParam('lieu');
                             break;

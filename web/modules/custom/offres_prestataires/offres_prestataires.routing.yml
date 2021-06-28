@@ -27,7 +27,7 @@ offresPrestataires.contentTerrain:
     _controller: 'Drupal\offres_prestataires\Controller\OffresPrestatairesContentController::content'
     ref: 'all'
     type: 'terrain'
-    _title: 'Offres prestataires terrain'
+    _title: 'Offres terrain'
   requirements:
     _permission: 'access content'
 
@@ -47,6 +47,6 @@ offresPrestataires.applyTerrain:
   defaults:
     _controller: 'Drupal\offres_prestataires\Controller\OffresPrestatairesApplyController::apply'
     type: 'terrain'
-    _title: 'Offres prestataires terrain'
+    _title: 'Offres terrain'
   requirements:
     _permission: 'access content'

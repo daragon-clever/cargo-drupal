@@ -2953,13 +2953,13 @@ body.adminimal-admin-toolbar header {
 }
 .offres-emploi-module .offer-caracteristic .value-caracteristic,
 .offres-prestataires-module .offer-caracteristic .value-caracteristic {
-  border: 1px solid #CECECE;
-  border-radius: 0;
   height: auto;
   min-height: 50px;
+  padding: 15px 20px;
+  border: 1px solid #CECECE;
+  border-radius: 0;
   color: #5E5E5E;
   display: block;
-  padding: 15px 20px;
 }
 .offres-emploi-module #alerte-offres,
 .offres-prestataires-module #alerte-offres {
@@ -3018,13 +3018,11 @@ body.adminimal-admin-toolbar header {
 .offres-emploi-module #listing-offres .filters #groupe-filtres-offres .offer-caracteristic .select2-container .select2-selection--single,
 .offres-prestataires-module #listing-offres .filters #groupe-filtres-offres .offer-caracteristic .select2-container .select2-selection--single {
   outline: none;
+  height: 50px;
   border: 1px solid #CECECE;
   border-radius: 0;
-  height: auto;
-  min-height: 50px;
   color: #5E5E5E;
   display: block;
-  padding: 15px 20px;
 }
 .offres-emploi-module #listing-offres .filters #groupe-filtres-offres .offer-caracteristic .select2-container .select2-selection--single:focus,
 .offres-prestataires-module #listing-offres .filters #groupe-filtres-offres .offer-caracteristic .select2-container .select2-selection--single:focus {

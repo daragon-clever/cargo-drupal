@@ -21,6 +21,7 @@ INET_ADDR="172.17.0.1"
 DOCKER_TERM_OPTS="-it --init"
 DOCKER_PHP="php";
 DOCKER_COMPOSER="composer";
+COMPOSER_AUTH=\''{"http-basic":{"repo.packagist.com":{"username":"token","password":"d84aa5a819bf0df1f7226bb9d3dc3d003f4b4d8c0ebf4a8245af58605c33"}}}'\';
 
 function dockerBuild() {
     if [[ $PWD/ = $PREV_ROOT_DIR/* ]]; then
@@ -67,6 +68,7 @@ function composer() {
             $(makeEnv) \
             -v $VOLUME_PATH../../../:/var/www/html \
             -w /var/www/html \
+            -e COMPOSER_AUTH="$COMPOSER_AUTH" \
             -e COMPOSER_HOME=/home/composer/composer \
             --entrypoint=/usr/local/bin/php \
             php-cli-drupal \

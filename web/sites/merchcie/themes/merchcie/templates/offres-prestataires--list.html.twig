@@ -73,6 +73,7 @@
                         <tbody>
                         {% for offre in data %}
                             <tr class="clickable-row" data-href="{{ path(offerPath, {ref: offre.id_scoptalent}) }}">
+                                <th class="control"></th>
                                 <td class="wrap">{{ offre.title }}</td>
                                 <td class="">{{ offre.contract_types }}</td>
                                 <td class="">{{ offre.last_update_scoptalent }}</td>

@@ -18,19 +18,19 @@ jQuery(document).ready(function($) {
 
         //variables
         var myTable = [];
-        myTable[1] = {
+        myTable[2] = {
             field_name: 'Type de contrat',
             cookie_name: 'typeDeContrat',
             id_selector: 'filtre-contrat',
             filter_param: 'type_contrat'
         };
-        myTable[2] = {
+        myTable[3] = {
             field_name: 'Type de poste',
             cookie_name: 'typeDePoste',
             id_selector: 'filtre-poste',
             filter_param: 'type_metier'
         };
-        myTable[4] = {
+        myTable[5] = {
             field_name: 'Lieu',
             cookie_name: 'lieuDeTravail',
             id_selector: 'filtre-lieu',
@@ -71,7 +71,7 @@ jQuery(document).ready(function($) {
             },
             pagingType: "numbers",
             pageLength: 10,
-            order:[3,'desc'],//order by date - column n°3
+            order:[4,'desc'],//order by date - column n°3
             responsive: {
                 details: {
                     type: 'column',
@@ -82,7 +82,7 @@ jQuery(document).ready(function($) {
             //filters
             initComplete: function () {
                 //create filter on 3 columns
-                this.api().columns([1,2,4]).every( function () {
+                this.api().columns([2,3,5]).every( function () {
                     var column = this;
                     var colNumb = this[0][0];
 
@@ -117,7 +117,7 @@ jQuery(document).ready(function($) {
                 } );
 
                 //get url params to filter
-                this.api().columns([1,2,4]).every( function () {
+                this.api().columns([2,3,5]).every( function () {
                     var priorityCookie = true;
                     var colNumb = this[0][0];
 
@@ -125,7 +125,7 @@ jQuery(document).ready(function($) {
                     var filter = (myTable[colNumb]) ? $.urlParam(myTable[colNumb].filter_param) : undefined;
                     var cookies = (myTable[colNumb]) ? Cookies.get(myTable[colNumb].cookie_name) : undefined;
 
-                    if (colNumb === 2) {
+                    if (colNumb === 3) {
                         var oldParam = Cookies.get('oldParam');
                         if (oldParam != replaceSpecialChar(filter)) {
                             var priorityCookie = false;
@@ -164,15 +164,15 @@ jQuery(document).ready(function($) {
             table.on('draw', function () {
                 table.columns().indexes().each( function ( idx ) {
                     switch (idx) {
-                        case 1:
+                        case 2:
                             var selector = '#filtre-contrat .select-option';
                             var filter = $.urlParam('type_contrat');//get url param value
                             break;
-                        case 2:
+                        case 3:
                             var selector = '#filtre-poste .select-option';
                             var filter = $.urlParam('type_metier');
                             break;
-                        case 4:
+                        case 5:
                             var selector = '#filtre-lieu .select-option';
                             var filter = $.urlParam('lieu');
                             break;

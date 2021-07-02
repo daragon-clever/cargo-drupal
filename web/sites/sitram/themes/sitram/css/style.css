@@ -1907,7 +1907,7 @@ ul.check-list li:before {
   object-fit: cover;
   font-family: 'object-fit: cover;';
   height: 197px;
-  transition: transform 0.3s ease;
+  transition: transform .3s ease;
 }
 .recette-item img:hover {
   transform: scale(1.1);
@@ -3355,7 +3355,7 @@ footer .recettes-cta {
 }
 .footer-wrapper .logos-wrapper .logo1 {
   width: 127px;
-  background: url("../images/footer/logo-footer-sitram-marque.svg") no-repeat center transparent;
+  background: url("../images/SITRAM-Logo.svg") no-repeat center transparent;
 }
 .footer-wrapper .logos-wrapper .logo2 {
   width: 105px;
@@ -3420,7 +3420,6 @@ footer .recettes-cta {
 }
 .footer-wrapper .links p {
   font-size: 14px;
-  line-height: 1;
   color: #434343;
   margin-top: 10px;
   margin-bottom: 0;

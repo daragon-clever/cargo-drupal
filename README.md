@@ -98,3 +98,27 @@ Se baser sur ce qui a été fait pour les autres sites.
 
 *a completer*
 - ajouter des lignes dans le fichier deploy.rb pour gérer les dossiers en shared
+
+## Configure XDEBUG
+
+* Dans PhpStorm
+	* Languages & Frameworks >  Php > Debug
+		* Xdebug: Debug port à **9003**
+		* Ne pas séléctionner:
+		    * `Ignore External connections...`
+			* `Force break at first line...` (les deux options)	    
+	* Languages & Frameworks >  Php > Servers
+		* Ajouter un nouveau serveur `drupal`
+			* Host: localhost
+			* Port: 80
+			* Debugger: Xdebug
+		* Cocher `Use Path mapping`
+		    * A droite de la racine de votre projet (ex: `D:\CARGO\drupal`) ajoutez le chemin correspondant au chemin du projet dans le container php (`/var/www/html`)
+	* En haut à droite de PhpStorm cliquez sur "Edit Configuration"
+		* Ajouter un Php Remote Debug
+			* Name: `drupal`
+			* Sélectionner `Filter debug connection by IDE key`
+			* Server: Sélectionner `drupal`
+			* IDE key: `idekey`
+
+Vous pouvez maintenant activer XDebug sur Phpstorm (le petit téléphonne)

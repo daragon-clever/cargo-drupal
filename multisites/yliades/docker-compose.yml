@@ -22,6 +22,8 @@ services:
       volumes:
         - "$PWD../../../:/var/www/html"
         - "$PWD../../../docker/php/www.conf:/usr/local/etc/php-fpm.d/www.conf"
+      environment:
+        PHP_IDE_CONFIG: "serverName=drupal"
       networks:
         webgateway:
           aliases:

@@ -22,6 +22,7 @@ DOCKER_TERM_OPTS="-it --init"
 DOCKER_PHP="php";
 DOCKER_COMPOSER="composer";
 COMPOSER_AUTH=\''{"http-basic":{"repo.packagist.com":{"username":"token","password":"d84aa5a819bf0df1f7226bb9d3dc3d003f4b4d8c0ebf4a8245af58605c33"}}}'\';
+SSH_CLIENT_IP=$(echo ${SSH_CLIENT} | awk '{ print $1}')
 
 function dockerBuild() {
     if [[ $PWD/ = $PREV_ROOT_DIR/* ]]; then
@@ -44,6 +45,8 @@ function php() {
             --network=host \
             --network=webgateway \
             $(makeEnv) \
+            -e XDEBUG_CONFIG=\"client_host=${SSH_CLIENT_IP}\" \
+            -e PHP_IDE_CONFIG=\"serverName=drupal\" \
             -v $VOLUME_PATH../../../:/var/www/html \
             -w /var/www/html \
             --entrypoint=/usr/local/bin/php \

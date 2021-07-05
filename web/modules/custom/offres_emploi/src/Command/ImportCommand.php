@@ -95,8 +95,9 @@ class ImportCommand extends Command
             if (is_array($data) && !empty($data)) {
                 $allRefsActive = [];
                 foreach ($data as $offre) {
-                    if (strtolower($offre['SocieteRecrutement']) === strtolower(self::$nameCompany[$this->siteName])
-                        || $this->siteName === self::NAME_CARGO_DIRECTORY_PROJECT) {
+                    if ((is_array(self::$nameCompany[$this->siteName]) && in_array(strtolower($offre['SocieteRecrutement']), array_map('strtolower', self::$nameCompany[$this->siteName])))
+                        || (!is_array(self::$nameCompany[$this->siteName]) && strtolower($offre['SocieteRecrutement']) === strtolower(self::$nameCompany[$this->siteName]))
+                        || ($this->siteName === self::NAME_CARGO_DIRECTORY_PROJECT)) {
 
                         $dataHydrated = $this->hydrateData($offre);
                         $dataHydrated['active'] = 1;

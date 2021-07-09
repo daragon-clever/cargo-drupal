@@ -1,0 +1,144 @@
+<div id="homepage">
+    <!-- INTRO -->
+    <div class="intro opacity-img">
+        <video id="js-video" muted loop autoplay>
+            <source src="{{ content.field_hp_intro_video_file[0]|render|striptags|trim|raw }}"
+                    type="video/mp4">
+        </video>
+        <div class="video-text">
+            {{ content.field_hp_intro_txt }}
+        </div>
+        <div class="anchor-section">
+            <a href="#anchor-content-1">
+                <div class="anchor">
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- CONTENT 1 -->
+    <div class="container content-1" id="anchor-content-1">
+        <div class="row my-5">
+            <div class="col">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="content-1-intro">
+                        {{ content.field_hp_c1_start }}
+                    </div>
+                    <div>
+                        <span class="circle-logo opacity-light"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="grid-wrapper-1">
+                    {% for i in 0..2 %}
+                        <div class="grid-item-{{ i }}">
+                            <a href="{{ content.field_hp_c1_links[i]['#url'] }}">
+                                <div class="card-custom image-scale fade-title opacity-img-hover">
+                                    <img src="{{ content.field_hp_c1_imgs[i] }}"
+                                         alt="{{ node.field_hp_c1_imgs[i].alt }}">
+                                    <h4>{{ content.field_hp_c1_links[i]['#title'] }}</h4>
+                                </div>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col">
+                <div class="grid-wrapper-2">
+                    {% for i in 3..6 %}
+                        <div class="grid-item-{{ i }}">
+                            <a href="{{ content.field_hp_c1_links[i]['#url'] }}">
+                                <div class="card-custom image-scale fade-title opacity-img-hover">
+                                    <img src="{{ content.field_hp_c1_imgs[i] }}"
+                                         alt="{{ node.field_hp_c1_imgs[i].alt }}">
+                                    <h4>{{ content.field_hp_c1_links[i]['#title'] }}</h4>
+                                </div>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENT 2-->
+    <div class="container-fluid bg-color3 content-2">
+        <div class="row">
+            <div class="col">
+                <div class="container max-1180">
+                    <div class="row">
+                        <div class="col">
+                            <div class="collection">
+                                {{ content.field_hp_c2_intro }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            {{ content.field_hp_c2_img[0] }}
+                        </div>
+                        <div class="col-lg-6">
+                            {{ content.field_hp_c2_txt }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENT 3-->
+    <div class="container content-3 max-1180">
+        <div class="row">
+            <div class="col-lg-6">
+                {{ content.field_hp_c3_txt }}
+            </div>
+            <div class="col-lg-6">
+                {{ content.field_hp_c3_img[0] }}
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENT 4-->
+    <div class="container-fluid bg-color3">
+        <div class="row">
+            <div class="col">
+                <div class="container max-1180 content-4">
+                    <div class="row g-0 align-items-center">
+                        <div class="col-lg-6">
+                            <a href="{{ content.field_hp_c4_link[0]['#url'] }}">
+                                <div class="c4-img image-scale">
+                                    {{ content.field_hp_c4_img[0] }}
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="ou-acheter bg-color4">
+                                {{ content.field_hp_c4_txt }}
+                                <span class="map-pin"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENT 5-->
+    <div class="container content-5">
+        <div class="row gutters-custom align-items-center">
+            <div class="col-lg-6">
+                {{ content.field_hp_c5_imgs[0] }}
+                {{ content.field_hp_c5_txts[0] }}
+            </div>
+            <div class="col-lg-6">
+                {{ content.field_hp_c5_imgs[1] }}
+                {{ content.field_hp_c5_txts[1] }}
+            </div>
+        </div>
+    </div>
+</div>

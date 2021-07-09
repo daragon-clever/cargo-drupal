@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="49.325" height="48.082" viewBox="0 0 49.325 48.082">
+  <defs>
+    <filter id="Tracé_44" x="8.162" y="0" width="33" height="48.082" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feFlood flood-opacity="0.8"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Tracé_45" x="0" y="6.92" width="49.325" height="41.162" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-2"/>
+      <feFlood flood-opacity="0.8"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Icon_feather-arrow-down" data-name="Icon feather-arrow-down" transform="translate(9.621 9)">
+    <g transform="matrix(1, 0, 0, 1, -9.62, -9)" filter="url(#Tracé_44)">
+      <path id="Tracé_44-2" data-name="Tracé 44" d="M18,7.5V22.582" transform="translate(6.66 9)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -9.62, -9)" filter="url(#Tracé_45)">
+      <path id="Tracé_45-2" data-name="Tracé 45" d="M22.582,18l-7.541,7.541L7.5,18" transform="translate(9.62 6.04)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+    </g>
+  </g>
+</svg>

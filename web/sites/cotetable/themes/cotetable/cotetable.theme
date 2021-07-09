@@ -7,3 +7,11 @@ function cotetable_page_attachments_alter(array &$attachments) {
         }
     }
 }
+
+function cotetable_theme_suggestions_page_alter(&$suggestions, $variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node instanceof \Drupal\node\NodeInterface) {
+    $suggestions[] = 'page__' . $node->bundle();
+    $suggestions[] = 'page__node_' . $node->bundle();
+  }
+}

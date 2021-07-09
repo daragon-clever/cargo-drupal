@@ -18,17 +18,6 @@ if (isTabletOrLess) {
 }
 
 jQuery(document).ready(function ($) {
-    // STICKY HEADER
-    $(window).scroll(function () {
-        if ($(window).scrollTop() >= 1) {
-            $('header').addClass('fixed');
-            $('body').addClass('header-is-fixed')
-        } else {
-            $('header').removeClass('fixed');
-            $('body').removeClass('header-is-fixed')
-        }
-    });
-
     // FORMS
     if ($('.webform-submission-form').length) {
         // Function
@@ -52,5 +41,31 @@ jQuery(document).ready(function ($) {
         });
         // Required
         $(".required").parent().addClass("required-wrapper");
+    }
+
+    // SLIDER UNIVERS-SINGLE
+    if ($('#univers-single').length) {
+        let slider = $(".js-slider-univers > div");
+        slider.slick({
+            infinite: true,
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            responsive: [
+                {
+                    breakpoint: 992,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        });
     }
 });

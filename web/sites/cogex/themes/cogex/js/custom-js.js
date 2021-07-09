@@ -86,4 +86,28 @@ jQuery(document).ready(function($) {
     }
 
     scrollMove('.c-footer__logos-wrapper', 60 , 1 );
+
+    /*** Recherche PDF ***/
+    //todo: à revoir
+    if ($("#page-espace-conso").length) {
+        var pathname = window.location.pathname;
+        $(".urlRedirect").attr("value",pathname);
+
+        var cookieName = "choice-usr-typeProd";
+        var selectId = "#select-form-display";
+
+        $('.form-item-block').hide();
+
+        $(selectId).change(function() {
+            var selectedOption = $(this).val();
+            $('.form-item-block').hide();
+            if ($('#'+selectedOption).length != 0) $('#'+selectedOption).show();
+
+            Cookies.set(cookieName, selectedOption, { expires : 1 });
+        });
+
+        var cookieUsrChoice = Cookies.get(cookieName);
+        if (cookieUsrChoice != 'null') $(selectId).val(cookieUsrChoice).trigger('change');
+    }
+    /*** Fin recherche PDF ***/
 });

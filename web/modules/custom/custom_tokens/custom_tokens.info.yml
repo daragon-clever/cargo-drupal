@@ -1,5 +1,5 @@
 name: Custom Tokens
 type: module
 description: 'Module to create custom tokens'
-package: Custom
+package: cargo
 core: 8.x

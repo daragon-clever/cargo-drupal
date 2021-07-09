@@ -14,8 +14,8 @@ use Drupal\Core\Session\AccountInterface;
 /**
  * @Block(
  *   id = "c2e_products_block",
- *   admin_label = @Translation("Produits C2E"),
- *   category = @Translation("Produits C2E")
+ *   admin_label = @Translation("Cargo - Produits C2E"),
+ *   category = @Translation("Cargo - c2e_produits")
  * )
  */
 class ProductBlock extends BlockBase implements BlockPluginInterface

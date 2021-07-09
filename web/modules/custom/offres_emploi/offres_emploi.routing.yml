@@ -1,4 +1,4 @@
-# SETINGS
+# SETTINGS
 offres_emploi.settings:
   path: '/admin/config/system/offres_emploi/config'
   defaults:

@@ -8,13 +8,16 @@
 @lightGrey: #cecece;
 
 div[role=alert] {
-  display: none;
   margin: 0 13.9rem 3rem;
   padding: 15px;
   background-color: @colorBgAlert;
   color: @colorTxtAlert;
   text-align: center;
   font-family: "Titillium-semi-bold";
+
+  ul {
+    list-style: none;
+  }
 
   @media @tablet {
     margin: 1rem 0 4rem;

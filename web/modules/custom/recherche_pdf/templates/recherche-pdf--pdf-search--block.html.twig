@@ -1,0 +1,22 @@
+<div>
+    <p>Block recherche PDF</p>
+    {% if form %}
+        {{ form }}
+
+        {% if form.lot['#required'] == 1 %}
+            <script type="text/javascript">
+                var formId = '#{{ form.form_id["#value"] }}';
+                jQuery(formId).submit(function() {
+                    jQuery("<input />").attr("type", "hidden")
+                        .attr("name", "lot_req")
+                        .attr("value", "1")
+                        .appendTo(formId);
+                    return true;
+                });
+            </script>
+        {% endif %}
+
+    {% elseif error %}
+        <span>{{ error }}</span>
+    {% endif %}
+</div>

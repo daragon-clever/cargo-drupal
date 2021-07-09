@@ -7,6 +7,7 @@
             </div>
         </div>
 
+        {#faire le js au clic sur l'img que ça trigger le select#}
         <div class="pages-list">
             {% for i in 0..5 %}
                 <div class="item">
@@ -16,6 +17,21 @@
                         </span>
                         {{ content.field_conso_img[i] }}
                     </a>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div>
+            <select name="form-item-title" id="select-form-display">
+                <option value="make-choice">--Choisir un type de recherche--</option>
+                {% for i in 0..content.field_formulaire_recherche_pdf['#items']|length-1 %}
+                    <option value="form-item-block-{{ i }}">{{ content.field_formulaire_recherche_pdf[i]['#configuration'].label }}</option>
+                {% endfor %}
+            </select>
+
+            {% for i in 0..content.field_formulaire_recherche_pdf['#items']|length-1 %}
+                <div class="form-item-block" id="form-item-block-{{ i }}" class="form-item-block">
+                    {{ content.field_formulaire_recherche_pdf[i] }}
                 </div>
             {% endfor %}
         </div>

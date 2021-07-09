@@ -1,19 +1,22 @@
 <?php
+
 function recherche_pdf_theme()
 {
     return [
-        'recherche_pdf--recherche' => [
-            'template' => "recherche-pdf--recherche",
+        'pdf-search--block' => [
+            'template' => "recherche-pdf--pdf-search--block",
             'variables' => [
-                'type' => ''
-            ]
+                'form' => NULL,
+                'error' => NULL,
+            ],
+            'render element' => 'form',
         ],
-        'recherche_pdf--liste' => [
-            'template' => "recherche-pdf--liste",
+        'pdf-list--page' => [
+            'template' => "recherche-pdf--pdf-list--page",
             'variables' => [
-                'rslt' => []
-            ]
-        ]
+                'pdfFiles' => NULL,
+            ],
+        ],
     ];
 }
 
@@ -24,5 +27,6 @@ function recherche_pdf_mail($key, &$message, $params)
     $message['subject'] = $params['subject'];
     $message['body'][] = $params['message'];
 }
+
 
 ?>

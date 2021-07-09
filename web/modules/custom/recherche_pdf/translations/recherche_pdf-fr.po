@@ -1,0 +1,23 @@
+msgid "Sku is required"
+msgstr "Le sku est obligatoire"
+
+msgid "Lot is required"
+msgstr "Le lot est obligatoire"
+
+msgid "Configuration error"
+msgstr "Erreur de configuration"
+
+msgid "Download"
+msgstr "Télécharger"
+
+msgid "Error during file download"
+msgstr "Erreur pendant le téléchargement du fichier"
+
+msgid "File(s) not found"
+msgstr "Fichier(s) introuvable(s)"
+
+msgid "Try again with another reference."
+msgstr "Veuillez réessayer avec une autre référene."
+
+msgid "This search form are not configured yet. Please try again later."
+msgstr "Ce formulaire n'est pas encore configuré. Veuillez réessayer plus tard."

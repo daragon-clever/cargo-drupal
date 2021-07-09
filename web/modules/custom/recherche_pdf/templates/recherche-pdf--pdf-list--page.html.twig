@@ -1,0 +1,31 @@
+<div>
+    <p>Liste fichiers PDF</p>
+    {% if pdfFiles %}
+        {% set myVal = 0 %}
+        <table>
+            <thead>
+            <tr>
+                <th>Nom du fichier</th>
+                <th>Téléchargement</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for file in pdfFiles %}
+                <tr>
+                    <td>{{ file.name }}</td>
+                    <td>
+                        <form action="{{ path('recherche_pdf.dlFileOnly') }}" method="post" id="dl-file{{ myVal }}" style="display: none;">
+                            <input type="hidden" id="url" name="url" value="{{ file.url }}">
+                            <input type="hidden" id="name" name="name" value="{{ file.name }}">
+                            <button type="submit"></button>
+                        </form>
+                        <a href="{{ file.url }}"target="_blank">Afficher le PDF</a> |
+                        <span onclick="document.getElementById('dl-file{{ myVal }}').submit();">Télécharger</span>
+                    </td>
+                </tr>
+                {% set myVal = myVal + 1 %}
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+</div>

@@ -1,7 +1,7 @@
 name: Offres emploi
 description: Récupérer les offres d'emploie de chaque société
 core: 8.x
-package: Custom
+package: cargo
 type: module
 dependencies:
   - drupal:rest

@@ -4468,3 +4468,6 @@ table.reparateurs tbody .tel {
     padding-bottom: 60px;
   }
 }
+body.lang-en a.ou-acheter {
+  display: none !important;
+}

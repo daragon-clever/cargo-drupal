@@ -17,9 +17,5 @@ function sitram_preprocess_html(&$variables) {
     ],
   ];
   $variables['page']['#attached']['html_head'][] = [$facebook, 'facebook-domain-verification'];
-}
-
-function sitram_preprocess_node(&$variables) {
-  $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
-  $variables['language'] = $language;
+  $variables['language'] = \Drupal::languageManager()->getCurrentLanguage()->getId();
 }

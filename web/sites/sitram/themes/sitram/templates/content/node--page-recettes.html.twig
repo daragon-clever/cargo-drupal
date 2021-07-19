@@ -32,7 +32,12 @@
 
                         <!-- Type -->
                         {% for field in node.field_filtre_type %}
-                            <span>{{ field.entity.label }}</span>
+                            {% if field.entity.hastranslation(language) %}
+                                {% set fieldLabel = field.entity.translation(language).label %}
+                            {% else %}
+                                {% set fieldLabel = field.entity.label %}
+                            {% endif %}
+                            <span>{{ fieldLabel }}</span>
                         {% endfor %}
 
                         <!-- Difficulté -->
@@ -42,7 +47,12 @@
 
                         <!-- Ustensiles -->
                         {% for field in node.field_filtre_ustensile %}
-                            <span>{{ field.entity.label }}</span>
+                            {% if field.entity.hastranslation(language) %}
+                                {% set fieldLabel = field.entity.translation(language).label %}
+                            {% else %}
+                                {% set fieldLabel = field.entity.label %}
+                            {% endif %}
+                            <span>{{ fieldLabel }}</span>
                         {% endfor %}
                     </div>
 
@@ -106,7 +116,7 @@
                                 </div>
                                 <div class="mt-5">
                                     <h3>
-                                        <span>{{ (node.field_filtre_ustensile.getvalue|length > 1) ? 'Ustensiles'|trans : 'Ustensile'|trans }}</span>
+                                        <span>{{ (node.field_filtre_ustensile.getvalue|length > 1) ? 'Utensils'|trans : 'Utensil'|trans }}</span>
                                     </h3>
                                     <div class="js-ustensiles-slider slider">
                                         {{ content.field_filtre_ustensile }}
@@ -123,10 +133,10 @@
                                     <div class="d-flex justify-content-lg-between justify-content-center align-items-center flex-column flex-md-row">
                                         <div class="position-relative">
                                             <div class="js-partager button-cta"><span
-                                                        class="share">{{ 'Partager'|trans }}</span></div>
+                                                        class="share">{{ 'Share'|trans }}</span></div>
                                             <div class="popup py-4 px-2 px-lg-4" style="display: none">
                                                 <span class="cross js-close"></span>
-                                                <h4 class="text-center mt-0">{{ 'Partager cette recette'|trans }}</h4>
+                                                <h4 class="text-center mt-0">{{ 'Share this recipe'|trans }}</h4>
                                                 <div class="social-buttons">
                                                     <div class="whatsapp" data-social="whatsapp"></div>
                                                     <div class="js-messenger messenger d-lg-none"><i class="fab fa-facebook-messenger fa-3x"></i>
@@ -137,14 +147,14 @@
                                                 <div class="copy-link d-flex flex-column flex-md-row align-items-center mt-5 mb-3 mx-3 mx-lg-4">
                                                     <input type="text" class="form-control" value="" id="js-copy-input">
                                                     <div class="button-cta url"
-                                                         id="js-copy-button">{{ 'Copier le lien'|trans }}</div>
+                                                         id="js-copy-button">{{ 'Copy link'|trans }}</div>
                                                     <span class="js-copy-confirm confirm"
-                                                          style="display: none">{{ 'Lien copié'|trans }}</span>
+                                                          style="display: none">{{ 'Copied link'|trans }}</span>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="js-print button-cta"><span
-                                                    class="print">{{ 'Imprimer'|trans }}</span>
+                                                    class="print">{{ 'Print'|trans }}</span>
                                         </div>
                                     </div>
                                 </div>

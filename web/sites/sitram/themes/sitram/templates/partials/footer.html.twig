@@ -1,9 +1,9 @@
 {% if page.footer %}
     {{ page.footer }}
     <div class="copyright text-center bg-blue">
-        {{ '© ' }}{{ "now"|date('Y') }}{{ ' Tous droits réservés '|trans }}
+        {{ '© ' }}{{ "now"|date('Y') }}{{ ' All rights reserved '|trans }}
         <br class="d-lg-none" />
-        <a href="/service-client/mentions-legales">{{ 'Mentions légales '|trans }}</a> -
-        <a href="/service-client/confidentialite">{{ 'Politique de confidentialité '|trans }}</a>
+        <a href="{{ '/en/customer-service/legal-notice'|trans }}">{{ 'Legal notice '|trans }}</a> -
+        <a href="{{ '/en/customer-service/privacy'|trans }}">{{ 'Confidentiality '|trans }}</a>
     </div>
 {% endif %}

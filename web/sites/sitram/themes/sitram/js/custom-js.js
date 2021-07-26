@@ -1,5 +1,16 @@
 let isTabletOrLess = window.matchMedia("only screen and (max-width: 991px)").matches;
 if (isTabletOrLess) {
+    // Move language switcher
+    jQuery(document).ready(function ($) {
+        const languageSwitchLink = $("ul.links li:not('.is-active')");
+        const mainNav = $("#mm-1 > ul");
+
+        languageSwitchLink.addClass('mm-listitem js-switchLangLink');
+        languageSwitchLink.children().addClass('mm-listitem__text');
+        languageSwitchLink.appendTo(mainNav);
+    });
+
+    // MMenu
     document.addEventListener(
         "DOMContentLoaded", function () {
             new Mmenu("#block-sitram-main-menu", {
@@ -269,4 +280,3 @@ jQuery(document).ready(function ($) {
         })
     }
 });
-

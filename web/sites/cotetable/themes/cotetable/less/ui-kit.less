@@ -194,19 +194,29 @@ h2 {
   }
 }
 
-.button-grey {
+.cta-button {
   padding: 13px 37px;
   background-color: @color1;
   border-radius: 2px;
-  border: 1px solid #888B8D00;
-  color: @color3;
+  border: 1px solid @color1;
   text-decoration: none;
   text-align: center;
   cursor: pointer;
   display: inline-block;
   font-family: 'ITC Avant Garde Pro Bold', Arial, Helvetica, sans-serif;
+  font-weight: 100;
+  min-width: 190px;
+
+  &.grey-btn {
+    color: @color3;
+  }
+
+  &.white-btn {
+    color: white;
+  }
 
   &:hover {
-    .dimOpacityOnHover(0.8);
+    color: @color1;
+    background-color: transparent;
   }
 }

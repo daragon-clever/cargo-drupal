@@ -88,26 +88,38 @@ jQuery(document).ready(function($) {
     scrollMove('.c-footer__logos-wrapper', 60 , 1 );
 
     /*** Recherche PDF ***/
-    //todo: à revoir
     if ($("#page-espace-conso").length) {
-        var pathname = window.location.pathname;
-        $(".urlRedirect").attr("value",pathname);
+        //add style
+        $('#select-container select').select2();
+        $('form input[type=submit]').addClass('c-button c-button--primary');
 
-        var cookieName = "choice-usr-typeProd";
+        var cookieName = "pdfsearch-choice-usr";
         var selectId = "#select-form-display";
+        var searchFormContainerClass = ".search-form-item";
 
-        $('.form-item-block').hide();
+        $(searchFormContainerClass).hide();
 
         $(selectId).change(function() {
             var selectedOption = $(this).val();
-            $('.form-item-block').hide();
-            if ($('#'+selectedOption).length != 0) $('#'+selectedOption).show();
+            $(searchFormContainerClass).hide(); //hide form display
+            if ($('#'+selectedOption).length != 0) $('#'+selectedOption).show(); //display if form container exist
 
-            Cookies.set(cookieName, selectedOption, { expires : 1 });
+            Cookies.set(cookieName, selectedOption, { expires : 1 }); //save current select value
         });
 
         var cookieUsrChoice = Cookies.get(cookieName);
-        if (cookieUsrChoice != 'null') $(selectId).val(cookieUsrChoice).trigger('change');
+        if (cookieUsrChoice != undefined) $(selectId).val(cookieUsrChoice).trigger('change'); //set select value with cookie (last search)
     }
     /*** Fin recherche PDF ***/
 });
+
+function triggerChangeCustom(valueOfSelect)
+{
+    var selectId = "#select-form-display";
+    jQuery(selectId).val(valueOfSelect).trigger('change'); //change value of select
+
+    jQuery('html, body').animate({
+        scrollTop: jQuery('#'+valueOfSelect).offset().top //scroll to the form
+    }, 1000);
+}
+

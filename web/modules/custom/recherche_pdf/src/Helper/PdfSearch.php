@@ -49,6 +49,7 @@ class PdfSearch
             $params = [
                 'product_sku' => $this->sku,
                 'product_lot' => $this->lot,
+                'product_type' => $this->entityConfig['PRODUCT_TYPE'],
                 'lang' => strtoupper(\Drupal::languageManager()->getCurrentLanguage()->getId()),
                 'entity_id' => $this->entityConfig['ID_SOC'],
                 'default_pdf' => $this->entityConfig['DEFAULT_PDF'],

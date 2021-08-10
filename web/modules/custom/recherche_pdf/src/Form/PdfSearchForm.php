@@ -111,14 +111,16 @@ class PdfSearchForm extends FormBase
 
         $form['sku'] = [
             '#type' => 'textfield',
-            '#placeholder' => t(isset($args['sku_txt']) && !empty($args['sku_txt']) ? $args['sku_txt'] : 'Sku'),
+            '#title' => t(isset($args['sku_txt']) && !empty($args['sku_txt']) ? $args['sku_txt'] : 'Sku'),
+            '#placeholder' => t(isset($args['sku_placeholder']) && !empty($args['sku_placeholder']) ? $args['sku_placeholder'] : 'Sku'),
             '#required' => TRUE,
         ];
 
         if ($this->lotInputDisplay) {
             $form['lot'] = [
                 '#type' => 'textfield',
-                '#placeholder' => t(isset($args['lot_txt']) && !empty($args['lot_txt']) ? $args['lot_txt'] : 'Lot'),
+                '#title' => t(isset($args['lot_txt']) && !empty($args['lot_txt']) ? $args['lot_txt'] : 'Lot'),
+                '#placeholder' => t(isset($args['lot_placeholder']) && !empty($args['lot_placeholder']) ? $args['lot_placeholder'] : 'Lot'),
                 '#required' => $this->lotInputReq,
             ];
         }

@@ -24,7 +24,8 @@ class Config
 
     public static function qrcodeConfig()
     {
-        $return['TBC'] = self::formatCompanyConfigArray(37, 'http://fiches.turbocar-entretien.com');
+        $return['TBCNOT'] = self::formatCompanyConfigArray(37, 'http://fiches.turbocar-entretien.com', 'Not');
+        $return['TBCDET'] = self::formatCompanyConfigArray(37, 'http://fiches.turbocar-entretien.com', 'Det');
         $return['FCA'] = self::formatCompanyConfigArray(47, 'http://fiches.facom-colle-adhesif.com');
         $return['CGXEPI'] = self::formatCompanyConfigArray(51, 'http://ficheepi.cogex-outillage.com');
         $return['GE'] = self::formatCompanyConfigArray(1, 'http://fiche.gers-equipement.fr');
@@ -36,6 +37,7 @@ class Config
     private static function formatCompanyConfigArray(
         int $entityId,
         string $filesUrl,
+        string $specialProductType = null,
         string $defaultLg = null,
         string $defaultPdf = null
     )
@@ -43,6 +45,7 @@ class Config
         return [
             'ID_SOC' => $entityId,
             'URL_SITE' => $filesUrl,
+            'PRODUCT_TYPE' => $specialProductType,
             'DEFAULT_LG' => !empty($defaultLg) ? $defaultLg : self::DEFAULT_LG,
             'DEFAULT_PDF' => !empty($defaultPdf) ? $defaultPdf : self::DEFAULT_PDF,
         ];

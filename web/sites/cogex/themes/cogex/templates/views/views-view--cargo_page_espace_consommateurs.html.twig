@@ -1,0 +1,45 @@
+{{ attach_library('cogex/style-espace-conso') }}
+
+{%
+  set classes = [
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  <div class="container">
+    <div id="page-espace-conso">
+        {{ title_prefix }}
+        {{ title }}
+        {{ title_suffix }}
+
+        {% if header %}
+            <div class="banner">
+                <div class="banner-content">
+                    {{ header }}
+                </div>
+            </div>
+        {% endif %}
+
+        {{ exposed }}
+        {{ attachment_before }}
+
+        {% if rows -%}
+            {{ rows }}
+        {% elseif empty -%}
+            {{ empty }}
+        {% endif %}
+        {{ pager }}
+
+        {{ attachment_after }}
+        {{ more }}
+
+        {% if footer %}
+          <footer>
+              {{ footer }}
+          </footer>
+        {% endif %}
+
+        {{ feed_icons }}
+    </div>
+  </div>
+</div>

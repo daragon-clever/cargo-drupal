@@ -22,6 +22,7 @@ class PdfRequest
         return [
             'RefProd' => $config['product_sku'],
             'LotProd' => $config['product_lot'],
+            'TypeProd' => $config['product_type'],
             'LANG' => $config['lang'],
             'ID_SOC' => $config['entity_id'],
             'DEFAULT_PDF' => $config['default_pdf'],

@@ -1,0 +1,67 @@
+{#LISTING#}
+{% set formPrefixContainerId = "form-item-block-" %}
+
+<div id="searchpdf-listing-container">
+    {% for k, row in rows %}
+        {% set formContainerId = formPrefixContainerId~(k+1) %}
+
+        <div class="item">
+            {% if row.content['#row']._entity.field_url_de_redirection.uri %}
+                <a href="{{ row.content['#row']._entity.field_url_de_redirection.uri }}" target="_blank">
+                    {{ view.style_plugin.getField(k, 'field_image_type_fiche') }}
+                    <span class="text">{{ view.style_plugin.getField(k, 'title') }}</span>
+                </a>
+            {% else %}
+                <div onclick="triggerChangeCustom('{{ formContainerId }}')">
+                    {{ view.style_plugin.getField(k, 'field_image_type_fiche') }}
+                    <span class="text">{{ view.style_plugin.getField(k, 'title') }}</span>
+                </div>
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>
+
+<div id="search-form-container">
+    {#INFO#}
+    <div id="box-info">
+        {{ "Sélectionnez le document que vous souhaitez télécharger :"|trans }}
+    </div>
+
+    {#SELECT#}
+    <div id="select-container">
+        <select name="form-item-title" id="select-form-display">
+            <option value="make-choice">--Choisir un type de recherche--</option>{#todo: revoir le txt + la gestion#}
+            {% for k, row in rows %}
+                {% set formContainerId = formPrefixContainerId~(k+1) %}
+
+                {% if row.content['#row']._entity.field_form_recherche_pdf.settings['label'] %}
+                    <option value="{{ formContainerId }}">{{ row.content['#row']._entity.field_form_recherche_pdf.settings['label'] }}</option>
+                {% endif %}
+            {% endfor %}
+        </select>
+    </div>
+
+    {#FORMS#}
+    <div id="form-container">
+        {% for k, row in rows %}
+            {% set formContainerId = formPrefixContainerId~(k+1) %}
+
+            {% if row.content['#row']._entity.field_form_recherche_pdf.settings['label'] %}
+                {#<div class="form-item-block" id="{{ formContainerId }}">#}
+                <div id="{{ formContainerId }}" class="search-form-item"> {#todo: pour dev visible#}
+                    {#IMG#}
+                    <div class="img-search-form">
+                        {{ view.style_plugin.getField(k, 'field_image_explication_recherch') }}
+                    </div>
+
+                    {#FORM#}
+                    <div>
+                        <div class="form-search-form">
+                            {{ view.style_plugin.getField(k, 'field_form_recherche_pdf') }}
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>

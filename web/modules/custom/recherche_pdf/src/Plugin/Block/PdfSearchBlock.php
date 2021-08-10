@@ -63,7 +63,7 @@ class PdfSearchBlock extends BlockBase implements BlockPluginInterface
         ];
         $form['display_lot'] = [
             '#type' => 'checkbox',
-            '#title' => t('Activer la recherche avec avec un n° de lot'),
+            '#title' => t('Activer la recherche avec un n° de lot'),
             '#description' => t('(en plus du sku)'),
             '#default_value' => isset($config['display_lot']) ? $config['display_lot'] : 0,
         ];
@@ -89,10 +89,22 @@ class PdfSearchBlock extends BlockBase implements BlockPluginInterface
             '#default_value' => isset($config['sku_txt']) ? $config['sku_txt'] : '',
             '#description' => t('Valeur par défaut "Sku". Si site multilangue : mettre en anglais et traduire en franças dans les traductions du site.'),
         ];
+        $form['sku_placeholder'] = [
+            '#type' => 'textfield',
+            '#title' => t('Placeholder pour le sku'),
+            '#default_value' => isset($config['sku_placeholder']) ? $config['sku_placeholder'] : '',
+            '#description' => t('Valeur par défaut "Sku". Si site multilangue : mettre en anglais et traduire en franças dans les traductions du site.'),
+        ];
         $form['lot_txt'] = [
             '#type' => 'textfield',
             '#title' => t('Texte pour le n° de lot'),
             '#default_value' => isset($config['lot_txt']) ? $config['lot_txt'] : '',
+            '#description' => t('Valeur par défaut "Lot". Si site multilangue : mettre en anglais et traduire en franças dans les traductions du site.'),
+        ];
+        $form['lot_placeholder'] = [
+            '#type' => 'textfield',
+            '#title' => t('Placeholder pour le n° de lot'),
+            '#default_value' => isset($config['lot_placeholder']) ? $config['lot_placeholder'] : '',
             '#description' => t('Valeur par défaut "Lot". Si site multilangue : mettre en anglais et traduire en franças dans les traductions du site.'),
         ];
         $form['submit_txt'] = [
@@ -118,7 +130,9 @@ class PdfSearchBlock extends BlockBase implements BlockPluginInterface
         $this->configuration['submit_redirect_list'] = $form_state->getValue('submit_redirect_list');
         $this->configuration['custom_form_id'] = $form_state->getValue('custom_form_id');
         $this->configuration['sku_txt'] = $form_state->getValue('sku_txt');
+        $this->configuration['sku_placeholder'] = $form_state->getValue('sku_placeholder');
         $this->configuration['lot_txt'] = $form_state->getValue('lot_txt');
+        $this->configuration['lot_placeholder'] = $form_state->getValue('lot_placeholder');
         $this->configuration['submit_txt'] = $form_state->getValue('submit_txt');
     }
 

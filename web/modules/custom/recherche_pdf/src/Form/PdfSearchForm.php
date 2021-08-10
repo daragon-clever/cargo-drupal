@@ -134,7 +134,7 @@ class PdfSearchForm extends FormBase
             '#type' => 'actions',
             'submit' => [
                 '#type' => 'submit',
-                '#value' => t(isset($args['submit_txt']) && !empty($args['submit_txt']) ? $args['submit_txt'] : 'Download'),
+                '#value' => t(isset($args['submit_txt']) && !empty($args['submit_txt']) ? $args['submit_txt'] : 'recherche_pdf Download'),
             ]
         ];
 

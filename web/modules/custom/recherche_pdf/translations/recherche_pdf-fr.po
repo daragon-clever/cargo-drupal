@@ -7,7 +7,7 @@ msgstr "Le lot est obligatoire"
 msgid "Configuration error"
 msgstr "Erreur de configuration"
 
-msgid "Download"
+msgid "recherche_pdf Download"
 msgstr "Télécharger"
 
 msgid "Error during file download"

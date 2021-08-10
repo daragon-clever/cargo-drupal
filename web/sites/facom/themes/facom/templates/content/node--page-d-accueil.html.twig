@@ -1,8 +1,10 @@
 <div id="homepage-content">
     <div class="bg" style="background: url('{{ content.field_hp_background[0] }}') no-repeat center #141414">
         <div class="input-wrapper">
-            {% include directory ~ '/templates/recherche-pdf--recherche.html.twig' %}
-            <a href="#" title="Aide" data-toggle="modal" data-target="#modal-help">{{ 'Aide'|trans }}</a>
+            {{ content.field_formulaire_recherche_pdf }}
+            <div>
+                <a href="#" title="Aide" data-toggle="modal" data-target="#modal-help">{{ 'Aide'|trans }}</a>
+            </div>
         </div>
     </div>
     <script>

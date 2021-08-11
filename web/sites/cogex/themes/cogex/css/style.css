@@ -3696,7 +3696,7 @@ input[type="search"], .choices .choices__inner, .choices .choices__item.choices_
 .c-text-bold, .c-button, .c-banner-card-home__title, .c-banner-card-company__title, .c-banner-card-company__read-more-button, .c-banner-card-company__read-less-button, .c-banner-card-form__title, .c-banner-card-expertise__title, .c-banner-card-expertise__read-more-button, .c-banner-card-expertise__read-less-button, .c-banner-card-products__title, .c-banner-card-join-us__title,
 .c-banner-card-offers__title, .c-banner-card-join-us__read-more-button,
 .c-banner-card-offers__read-more-button, .c-banner-card-join-us__read-less-button,
-.c-banner-card-offers__read-less-button, .c-statistic-section-title__title, .c-statistic-section-separator__title, .c-discover-section-title__title, .c-page-section__title, .c-expertise-section__title, .c-expertise-section__responsive-read-more-button, .c-form__title {
+.c-banner-card-offers__read-less-button, .c-statistic-section-title__title, .c-statistic-section-separator__title, .c-discover-section-title__title, .c-fondation-entreprise-section-title__title, .c-page-section__title, .c-expertise-section__title, .c-expertise-section__responsive-read-more-button, .c-form__title {
   font-family: 'Titillium-bold';
   color: #000000; }
 
@@ -5151,6 +5151,54 @@ category: 02-molecules
       .c-product-big-title:after {
         margin: 15px auto 0; } }
 
+.c-fondation-entreprise-section-title {
+  width: fit-content;
+  margin-top: 3.2rem;
+  padding-top: 4.1rem;
+  padding-bottom: 2.1rem;
+  padding-left: 4.1rem;
+  padding-right: 4.1rem;
+  background-color: #E30613;
+  position: relative; }
+  .c-fondation-entreprise-section-title::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 2.5rem;
+    left: 4rem;
+    height: 0.1rem;
+    width: 5rem;
+    background-color: #ffffff; }
+  .c-fondation-entreprise-section-title::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-10px, 10px);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #E30613; }
+  .c-fondation-entreprise-section-title__title {
+    margin: 0;
+    font-size: 2.1rem;
+    line-height: 1.57;
+    text-transform: uppercase;
+    color: #ffffff; }
+  @media only screen and (max-width: 992px) {
+    .c-fondation-entreprise-section-title {
+      margin-top: 0;
+      width: 100%;
+      padding-top: 3.7rem;
+      padding-left: 3.6rem;
+      padding-right: 3.6rem; }
+      .c-fondation-entreprise-section-title__title {
+        font-size: 1.8rem; }
+      .c-fondation-entreprise-section-title::before {
+        left: 3.6rem; } }
+
 /*
 
 ---
@@ -6242,3 +6290,9 @@ form .select2-container .select2-selection--single .select2-selection__rendered 
         margin-top: 40px; } }
     #offre .detail-offre a.back span {
       border-bottom: 1px solid; }
+
+.c-fondation-entreprise-wrapper {
+  margin: 25px 0 140px; }
+  .c-fondation-entreprise-wrapper img {
+    width: 100%;
+    height: auto; }

@@ -60,11 +60,14 @@ class PdfSearch
 
             $returnData = $this->formatReturnData($pdfGet);
             if (empty($returnData)) {
-                $txtError = t('File(s) not found').". Sku : ".$this->sku.".";
-                if (!empty($this->lot)) $txtError .= " Lot : ".$this->lot.".";
+                //mail alert
+                $txtErrorMail = sprintf("Aucun fihier trouvé pour le sku %s", $this->sku);
+                if (!empty($this->lot)) $txtErrorMail .= sprintf(" et lot %s", $this->lot);
+                $this->sendMail($txtErrorMail);
 
-                $this->sendMail($txtError);
-                throw new \Exception($txtError." ".t('Try again with another reference.'));
+                //front alert
+                $txtErrorFront = t("The product for reference @sku cannot be found.", ['@sku' => $this->sku]);
+                throw new \Exception( $txtErrorFront);
             } else {
                 return $returnData; //success
             }
@@ -133,11 +136,10 @@ class PdfSearch
         $reply = false;
         $send = true;
 
-        $paramMail['cc'] = Config::EMAIL_TEAM;
         $paramMail['from'] = Config::EMAIL_TEAM;
         $paramMail['subject'] = "[recherche_pdf] Erreur lors d'une recherche PDF";
         $paramMail['message'] = $body;
 
-        $mailManager->mail($module, $key, Config::API_URL, $langcode, $paramMail, $reply, $send);
+        $mailManager->mail($module, $key, Config::EMAIL_TEAM, $langcode, $paramMail, $reply, $send);
     }
 }

@@ -1,26 +1,26 @@
 msgid "Sku is required"
-msgstr "Sku is required"
+msgstr "Sku is vereist"
 
 msgid "Lot is required"
-msgstr "Lot is required"
+msgstr "Lot is vereist"
 
 msgid "Configuration error"
-msgstr "Configuration error"
+msgstr "Configuratiefout"
 
 msgid "recherche_pdf Download"
 msgstr "Download"
 
 msgid "Error during file download"
-msgstr "Error during file download"
+msgstr "Fout tijdens downloaden van bestand"
 
 msgid "File(s) not found"
-msgstr "File(s) not found"
+msgstr "Bestand(en) niet gevonden"
 
 msgid "Try again with another reference."
-msgstr "Try again with another reference."
+msgstr "Probeer het opnieuw met een andere referentie."
 
 msgid "This search form are not configured yet. Please try again later."
-msgstr "This search form are not configured yet. Please try again later."
+msgstr "Dit zoekformulier is nog niet geconfigureerd. Probeer het later opnieuw."
 
 msgid "The product for reference @sku cannot be found."
-msgstr "The product for reference @sku cannot be found."
+msgstr "Het product voor referentie @sku kan niet worden gevonden."

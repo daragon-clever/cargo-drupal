@@ -21,3 +21,6 @@ msgstr "Veuillez réessayer avec une autre référene."
 
 msgid "This search form are not configured yet. Please try again later."
 msgstr "Ce formulaire n'est pas encore configuré. Veuillez réessayer plus tard."
+
+msgid "The product for reference @sku cannot be found."
+msgstr "Le produit pour la référence @sku est introuvable."

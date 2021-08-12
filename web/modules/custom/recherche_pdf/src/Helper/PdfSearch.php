@@ -61,7 +61,7 @@ class PdfSearch
             $returnData = $this->formatReturnData($pdfGet);
             if (empty($returnData)) {
                 //mail alert
-                $txtErrorMail = sprintf("Aucun fihier trouvé pour le sku %s", $this->sku);
+                $txtErrorMail = sprintf("Aucun fichier trouvé pour le sku %s", $this->sku);
                 if (!empty($this->lot)) $txtErrorMail .= sprintf(" et lot %s", $this->lot);
                 $this->sendMail($txtErrorMail);
 

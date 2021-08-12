@@ -1,5 +1,7 @@
-name: recherche PDF
-description: Effectuer une recherche de PDF sur l'outil CARGO
+name: Recherche PDF
+description: Effectuer une recherche de PDF sur l'outil CARGO admin.url-qrcodes
 core: 8.x
-package: Custom
+package: cargo
 type: module
+'interface translation project': recherche_pdf
+'interface translation server pattern': 'modules/custom/recherche_pdf/translations/recherche_pdf-%language.po'

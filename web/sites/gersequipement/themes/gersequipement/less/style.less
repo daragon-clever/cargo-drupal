@@ -2177,7 +2177,7 @@ footer {
   max-width: 700px;
   margin: 30px auto;
 
-  button {
+  button, input[type=submit] {
     line-height: 40px;
     font-size: @fs-14;
     display: block;
@@ -2217,7 +2217,7 @@ footer {
   }
 
   form#recherchepdf-form {
-    input {
+    input:not([type=submit]) {
       line-height: 40px;
       font-size: @fs-14;
       display: block;
@@ -2225,6 +2225,7 @@ footer {
       border: 1px solid #303030;
       padding: 0 15px;
       margin-top: .25rem;
+      margin-bottom: 15px;
     }
   }
 }
@@ -2265,8 +2266,13 @@ footer {
     display: flex;
   }
 
-  span.link {
-    color: @pink;
+  a.link, a.link:hover, a.link:focus, a.link:active {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .link {
+    color: @pink !important;
     cursor: pointer;
 
     &:hover {

@@ -12,8 +12,10 @@
                         </div>
                         <div class="col-xs-12 col-lg-6 text-align-left">
                             <div class="input-wrapper">
-                                {% include directory ~ '/templates/recherche-pdf--recherche.html.twig' %}
-                                <a href="#" title="Aide" data-toggle="modal" data-target="#modal-help">{{ 'Aide'|trans }}</a>
+                                {{ content.field_formulaire_recherche_pdf }}
+                                <div>
+                                    <a href="#" title="Aide" data-toggle="modal" data-target="#modal-help">{{ 'Aide'|trans }}</a>
+                                </div>
                             </div>
                         </div>
                     </div>

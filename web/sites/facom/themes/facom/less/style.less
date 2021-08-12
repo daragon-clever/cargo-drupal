@@ -253,34 +253,47 @@ div[role="contentinfo"] {
       padding: 30px;
       height: 100px;
 
+      & > div {
+        display: inline-block;
+      }
+
       #recherchepdf-form {
-        font-size: 0;
-        display: inline;
-        vertical-align: middle;
-        padding: 0;
+        label {
+          display: none;
+        }
 
         input {
+          height: 40px;
           border: none;
+        }
+
+        input:not([type=submit]) {
           line-height: 40px;
-          vertical-align: middle;
           padding: 0 15px;
           width: 220px;
           font-size: 14px;
-          height: 40px;
 
           @media @phone {
             width: calc(100% - 95px);
           }
         }
 
-        button {
+        input[type=submit] {
           background: url("../images/picto-loupe.png") no-repeat center @red;
-          height: 40px;
           width: 40px;
-          border: none;
-          vertical-align: middle;
           cursor: pointer;
+          font-size: 0;
+          margin-left: -5px;
           .dimOpacityOnHover(0.8)
+        }
+
+        & > div {
+          display: inline-block;
+          vertical-align: middle;
+        }
+
+        .form-text {
+          margin-top: 0;
         }
       }
 
@@ -288,8 +301,7 @@ div[role="contentinfo"] {
         color: white;
         text-decoration: none !important;
         font-size: 16px;
-        margin-left: 15px;
-        display: inline-block;
+        margin-left: 10px;
         vertical-align: middle;
         .dimOpacityOnHover(0.8);
 

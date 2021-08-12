@@ -1,0 +1,2 @@
+msgid "recherche_pdf Download"
+msgstr "Download"

@@ -1,0 +1,50 @@
+<div id="liste-pdf">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h3>{{ 'PDF trouvés'|trans }}</h3>
+            </div>
+            <div class="col-12">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>{{ 'Fichier(s)'|trans }}</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% if pdfFiles %}
+                        {% for k, file in pdfFiles %}
+                            <tr>
+                                <td>{{ file.name }}</td>
+                                <td class="to-dl">
+                                    <form action="{{ path('recherche_pdf.dlFileOnly') }}" method="post"
+                                          class="dl-file-form" id="dl-file{{ k }}">
+                                        <input type="hidden" id="url" name="url" value="{{ file.url }}">
+                                        <input type="hidden" id="name" name="name" value="{{ file.name }}">
+                                        <button type="submit"></button>
+                                    </form>
+                                    <a class="link" href="{{ file.url }}"target="_blank">{{ 'Afficher le PDF'|trans }}</a> |
+                                    <span class="link" onclick="document.getElementById('dl-file{{ k }}').submit();">{{ 'Télécharger'|trans }}</span>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    {% else %}
+                        <tr>
+                            <td colspan="2" id="no-product">{{ 'Pas de produits'|trans }}</td>
+                        </tr>
+                    {% endif %}
+                    </tbody>
+                </table>
+                <div>
+                    <span class="expl">DCA = {{ 'Déclaration de conformité alimentaire'|trans }}</span>
+                    <span class="expl">DCE = {{ 'Déclaration de conformité électrique'|trans }}</span>
+                    <span class="expl">FDS = {{ 'Fiche de données de sécurité'|trans }}</span>
+                </div>
+            </div>
+            <div class="col-12">
+                <button onclick="window.history.back();">{{ 'Effectuer une autre recherche'|trans }}</button>
+            </div>
+        </div>
+    </div>
+</div>

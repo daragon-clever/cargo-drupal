@@ -8,8 +8,8 @@ use Drupal\newsletter\Controller\NewsletterController;
 /**
  * @Block(
  *   id = "inscription_block",
- *   admin_label = @Translation("Inscription newsletter"),
- *   category = @Translation("Newsletter")
+ *   admin_label = @Translation("Cargo - Inscription newsletter"),
+ *   category = @Translation("Cargo - newsletter")
  * )
  */
 class InscriptionBlock extends BlockBase

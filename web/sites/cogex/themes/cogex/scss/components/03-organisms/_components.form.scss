@@ -84,7 +84,7 @@
 
 }
 
-form .select2-container--default {
+body .select2-container--default {
   &.select2-container--open .select2-selection--single::after {
     content: '\f077';
   }
@@ -128,13 +128,13 @@ form .select2-container--default {
 
 }
 
-form .select2-container--default .select2-selection--single .select2-selection__arrow {
+body .select2-container--default .select2-selection--single .select2-selection__arrow {
   display: none;
 }
 
 
 
-form .select2-container .select2-selection--single .select2-selection__rendered {
+body .select2-container .select2-selection--single .select2-selection__rendered {
   display: inline-block;
   padding: 4px 16px 4px 4px;
   padding-left: 0;

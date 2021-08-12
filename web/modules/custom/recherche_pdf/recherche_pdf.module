@@ -22,11 +22,10 @@ function recherche_pdf_theme()
 
 function recherche_pdf_mail($key, &$message, $params)
 {
-    $message['headers']['Cc'] = $params['cc'];
+    if (isset($params['cc'])) $message['headers']['Cc'] = $params['cc'];
     $message['from'] = $params['from'];
     $message['subject'] = $params['subject'];
     $message['body'][] = $params['message'];
 }
-
 
 ?>

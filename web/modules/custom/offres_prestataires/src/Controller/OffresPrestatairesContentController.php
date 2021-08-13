@@ -56,6 +56,7 @@ class OffresPrestatairesContentController extends ControllerBase
 
             if ($type == "presta") {
                 $prestaFilter = ['contract_types' => self::PRESTA_OFFERS];
+                $prestaFilter['active'] = 1;
                 $offers = $this->offreRepository->findByMany($prestaFilter);
                 foreach ($offers as $k => $offer) {
                     $offers[$k] = $this->formatDataForFront($offer);
@@ -63,6 +64,7 @@ class OffresPrestatairesContentController extends ControllerBase
                 $build['#data'] = $offers;
             } elseif ($type == "terrain") {
                 $terrainFilter = ['contract_types' => self::TERRAIN_OFFERS];
+                $terrainFilter['active'] = 1;
                 $offers = $this->offreRepository->findByMany($terrainFilter);
                 foreach ($offers as $k => $offer) {
                     $offers[$k] = $this->formatDataForFront($offer);

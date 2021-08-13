@@ -55,6 +55,7 @@ jQuery(document).ready(function($) {
                     target: 'tr'
                 }
             },
+            stateSave: true,
 
             //filters
             initComplete: function () {

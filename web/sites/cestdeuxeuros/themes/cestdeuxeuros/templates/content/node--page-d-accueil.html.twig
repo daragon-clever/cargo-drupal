@@ -1,13 +1,35 @@
 <div id="homepage">
+    {% set banMobile = content.field_hp_banner_img[1] %}
+    {% set video = content.field_banniere_video[0] %}
     <!-- BANNIÈRE -->
-    <div class="relative-slider">
-        {{ content.field_hp_banner_img }}
-        <div class="absolute-banner">
-            <div class="content-banner">
-                {{ content.field_hp_banner_txt }}
+    {% if video %}
+        <div class="text-center">
+            <div class="d-inline-block ban-video">
+                <a href="{{ node.field_banniere_lien[0].url }}">
+                    <video playsinline autoplay muted loop>
+                        <source src="{{ content.field_banniere_video[0]|render|striptags|trim|raw }}" type="video/mp4">
+                    </video>
+                </a>
             </div>
         </div>
-    </div>
+    {% else %}
+        <div class="{% if banMobile %}d-none d-sm-block{% else %}d-block{% endif %} text-center">
+            <span class="d-inline-block">
+                <a href="{{ node.field_banniere_lien[0].url }}">
+                    {{ content.field_hp_banner_img[0] }}
+                </a>
+            </span>
+        </div>
+        {% if banMobile %}
+            <div class="d-block d-sm-none text-center">
+                <span class="d-inline-block">
+                    <a href="{{ node.field_banniere_lien[0].url }}">
+                        {{ content.field_hp_banner_img[1] }}
+                    </a>
+                </span>
+            </div>
+        {% endif %}
+    {% endif %}
 
     <!-- CONTENT 1 -->
     <div class="container">

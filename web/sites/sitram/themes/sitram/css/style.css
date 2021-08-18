@@ -1413,7 +1413,7 @@ ul.check-list li:before {
   z-index: 10;
   background: white;
   display: block;
-  list-style: disc;
+  list-style: none;
   transition: opacity 0.3s ease-in-out;
   padding: 20px 35px;
   opacity: 0;
@@ -1423,6 +1423,8 @@ ul.check-list li:before {
   margin: 8px 0;
   border: none;
   white-space: nowrap;
+  list-style: disc;
+  display: list-item;
 }
 .header-wrapper nav > ul a.ou-acheter {
   display: inline-block;
@@ -1907,7 +1909,7 @@ ul.check-list li:before {
   object-fit: cover;
   font-family: 'object-fit: cover;';
   height: 197px;
-  transition: transform 0.3s ease;
+  transition: transform .3s ease;
 }
 .recette-item img:hover {
   transform: scale(1.1);
@@ -4468,7 +4470,7 @@ table.reparateurs tbody .tel {
     padding-bottom: 60px;
   }
 }
-body.lang-en a.ou-acheter {
+body.lang-en a.hidden-link {
   display: none !important;
 }
 .nav-wrapper > div {

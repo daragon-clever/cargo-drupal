@@ -60,3 +60,6 @@ msgstr "Votre adresse e-mail"
 msgid "Enter your e-mail address"
 msgstr "Saisir votre adresse e-mail"
 
+msgid "E-mail address"
+msgstr "Adresse e-mail"
+

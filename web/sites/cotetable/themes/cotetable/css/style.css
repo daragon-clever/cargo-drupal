@@ -1827,3 +1827,19 @@ nav.pager ul li a {
   margin: 24px auto 16px;
   display: block;
 }
+#mentions-legales .banner,
+#confidentialite .banner {
+  padding-top: 150px;
+  padding-bottom: 70px;
+  text-align: center;
+}
+#mentions-legales h2,
+#confidentialite h2 {
+  text-transform: uppercase;
+}
+@media only screen and (max-width: 991px) {
+  #mentions-legales br,
+  #confidentialite br {
+    display: initial;
+  }
+}

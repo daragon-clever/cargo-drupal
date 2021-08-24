@@ -35,14 +35,6 @@ global-styling:
   dependencies:
     - core/jquery
 
-# Highlight - For UI KIT
-highlight:
-  css:
-    theme:
-      https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.6.0/build/styles/default.min.css: { type: external }
-  js:
-    https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.6.0/build/highlight.min.js: { type: external }
-
 # Cookie JS
 cookiesJS:
   js:

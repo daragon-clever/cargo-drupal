@@ -73,24 +73,26 @@ h2 {
 }
 
 .long-logo {
-  background: url("../images/logo/cote_table-long-grey.svg") no-repeat center transparent;
+  background: url("../images/logo/cote_table-long.svg") no-repeat center transparent;
   display: inline-block;
 }
 
 .collection {
   text-align: center;
+  color: @color1;
 
   h4 {
     font-family: 'ITC Avant Garde Pro Md', Arial, Helvetica, sans-serif;
     text-transform: uppercase;
     margin-top: 0;
     margin-bottom: 15px;
+    font-size: 16px;
   }
 
   h3.text-hand {
-    color: @color1;
     margin: 0;
     font-weight: 100;
+    line-height: 1;
   }
 }
 
@@ -98,6 +100,7 @@ h2 {
   font-size: 64px;
   font-family: "The Braggest Regular", Arial, Helvetica, sans-serif;
   font-weight: 100;
+  color: @color1;
 }
 
 .card-custom {
@@ -105,20 +108,18 @@ h2 {
   border: 1px solid #888B8D33;
   border-radius: 2px;
   height: 100%;
-
-  img {
-    max-width: 100%;
-    display: block;
-    object-fit: cover;
-    height: 100%;
-  }
 }
 
 .image-scale {
   overflow: hidden;
+  margin: 0 auto;
 
   img {
     transition: .3s all ease-in-out;
+    display: block;
+    height: 100%;
+    max-width: 100%;
+    object-fit: cover;
   }
 
   &:hover img {
@@ -206,6 +207,7 @@ h2 {
   font-family: 'ITC Avant Garde Pro Bold', Arial, Helvetica, sans-serif;
   font-weight: 100;
   min-width: 190px;
+  font-size: 14px;
 
   &.grey-btn {
     color: @color3;

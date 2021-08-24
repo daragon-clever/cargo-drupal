@@ -1,22 +1,26 @@
-{% set imgPath = "sites/cotetable/themes/cotetable/images/TEMP/" %}
-
 <div id="univers">
-    <!-- BANNIÈRE -->
+    <!-- BANNER -->
     <div class="intro">
         <div class="opacity-img">
             {{ content.field_univers_banner_img }}
         </div>
-        <div class="intro-text container">
-            <div class="row">
-                <div class="col">
-                    {{ content.field_univers_banner_txt }}
+        <div class="absolute-banner">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="content-banner">
+                            <div>
+                                {{ content.field_univers_banner_txt }}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- CONTENT 1 -->
-    <div class="container my-5 content-1">
+    <div class="container my-5 c1">
         <div class="row">
             <div class="col">
                 <div class="collection my-3">
@@ -24,31 +28,37 @@
                 </div>
             </div>
         </div>
-        <div class="row my-5">
+        <div class="row mt-5">
             <div class="col">
-                <div class="cards-grid">
-                    {% for i in 0..6 %}
-                        <a href="{{ content.field_univers_c1_links[i]['#url'] }}">
-                            <div class="card-custom image-scale fade-title opacity-img-hover">
-                                <img src="{{ content.field_univers_c1_imgs[i] }}"
-                                     alt="{{ node.field_univers_c1_imgs[i].alt }}">
-                                <h4>{{ content.field_univers_c1_links[i]['#title'] }}</h4>
-                            </div>
-                        </a>
+                <div class="grid-wrapper-1">
+                    {% for i in 0..2 %}
+                        <div class="grid-item-{{ i }}">
+                            <a href="{{ content.field_univers_c1_links[i]['#url'] }}">
+                                <div class="card-custom image-scale fade-title opacity-img-hover">
+                                    <img src="{{ content.field_univers_c1_imgs[i] }}"
+                                         alt="{{ node.field_univers_c1_imgs[i].alt }}">
+                                    <h4>{{ content.field_univers_c1_links[i]['#title'] }}</h4>
+                                </div>
+                            </a>
+                        </div>
                     {% endfor %}
-                    <div class="single-card">
-                        <h2>{{ content.field_univers_c1_card_title }}</h2>
-                        <span class="circle-logo"></span>
-                        <a href="{{ content.field_univers_c1_card_btn_link[0]['#url'] }}" class="button-grey">{{ content.field_univers_c1_card_btn_link[0]['#title'] }}</a>
-                    </div>
                 </div>
-
             </div>
         </div>
-        <div class="row my-5">
+        <div class="row mt-3">
             <div class="col">
-                <div class="content-1-text">
-                    {{ content.field_univers_c1_text }}
+                <div class="grid-wrapper-2">
+                    {% for i in 3..6 %}
+                        <div class="grid-item-{{ i }}">
+                            <a href="{{ content.field_univers_c1_links[i]['#url'] }}">
+                                <div class="card-custom image-scale fade-title opacity-img-hover">
+                                    <img src="{{ content.field_univers_c1_imgs[i] }}"
+                                         alt="{{ node.field_univers_c1_imgs[i].alt }}">
+                                    <h4>{{ content.field_univers_c1_links[i]['#title'] }}</h4>
+                                </div>
+                            </a>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>

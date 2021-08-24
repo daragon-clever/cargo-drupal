@@ -15,16 +15,17 @@
  * @see template_preprocess_views_view_unformatted()
  */
 #}
-
-<div class="row">
-    {% for row in rows %}
-        {% set row_classes = [
-            default_row_class ? 'col-12 col-sm-6 col-lg-3 mb-5',
-        ] %}
-        <div{{ row.attributes.addClass(row_classes) }}>
-            <div class="challenge-item">
-                {{- row.content -}}
+<div class="container liste-articles">
+    <div class="row">
+        {% for row in rows %}
+            {% set row_classes = [
+                default_row_class ? 'col-auto',
+            ] %}
+            <div{{ row.attributes.addClass(row_classes) }}>
+                <div class="article-item">
+                    {{- row.content -}}
+                </div>
             </div>
-        </div>
-    {% endfor %}
+        {% endfor %}
+    </div>
 </div>

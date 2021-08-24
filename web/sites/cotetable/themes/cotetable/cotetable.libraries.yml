@@ -47,3 +47,10 @@ highlight:
 cookiesJS:
   js:
     https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js: { type: external }
+
+# Goodshare
+goodshare:
+  js:
+    https://cdn.jsdelivr.net/npm/goodshare.js@6/goodshare.min.js: { type: external }
+  dependencies:
+    - core/jquery

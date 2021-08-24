@@ -5,13 +5,14 @@ var isTabletOrLess = window.matchMedia("only screen and (max-width: 991px)").mat
 if (isTabletOrLess) {
     document.addEventListener(
         "DOMContentLoaded", function () {
-            new Mmenu("#block-navigationprincipale", {
+            new Mmenu("#block-cotetable-main-menu", {
                 "extensions": [
                     "border-full",
                     "position-front",
                     "fullscreen",
                     "position-right"
-                ]
+                ],
+                "autoHeight": true
             });
         }
     );
@@ -58,17 +59,19 @@ jQuery(document).ready(function ($) {
     });
 
     // SCROLL BUTTON
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 80) {
-            $('.scroll-js').fadeIn('slow');
-        } else {
-            $('.scroll-js').fadeOut('slow');
-        }
-    });
-    $('.scroll-js').on('click', function (){
-        document.body.scrollTop = 0; // For Safari
-        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-    })
+    if (!isTabletOrLess) {
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 80) {
+                $('.scroll-js').fadeIn('slow');
+            } else {
+                $('.scroll-js').fadeOut('slow');
+            }
+        });
+        $('.scroll-js').on('click', function () {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        })
+    }
 
     // FORMS
     if ($('.webform-submission-form').length) {

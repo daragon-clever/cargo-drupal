@@ -6,10 +6,12 @@
                     <a href="{{ url('<front>') }}" title="Accueil">
                         <span class="long-logo"></span>
                     </a>
-                    {{ page.navigation }}
-                    <a class="mmenu-btn-wrapper d-lg-none" href="#block-navigationprincipale">
-                        <span class="hamburger"></span>
-                    </a>
+                    {% if page.navigation %}
+                        {{ page.navigation }}
+                        <a class="mmenu-btn-wrapper d-lg-none" href="#block-cotetable-main-menu">
+                            <span class="hamburger"></span>
+                        </a>
+                    {% endif %}
                 </div>
             </div>
         </div>

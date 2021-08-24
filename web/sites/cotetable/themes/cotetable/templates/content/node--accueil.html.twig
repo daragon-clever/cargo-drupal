@@ -1,30 +1,30 @@
 <div id="homepage">
     <!-- INTRO -->
-    <div class="intro opacity-img">
-        <video id="js-video" muted loop autoplay>
+    <div class="intro-hp opacity-img">
+        <video muted loop autoplay>
             <source src="{{ content.field_hp_intro_video_file[0]|render|striptags|trim|raw }}"
                     type="video/mp4">
         </video>
-        <div class="video-text">
+        <div class="collection video-text">
             {{ content.field_hp_intro_txt }}
         </div>
         <div class="anchor-section">
-            <a href="#anchor-content-1">
+            <a href="#anchor-c1">
                 <div class="anchor">
                 </div>
             </a>
         </div>
     </div>
 
-    <!-- CONTENT 1 -->
-    <div class="container content-1" id="anchor-content-1">
+    <!-- CONTENT 1 // UNIVERS -->
+    <div class="container c1" id="anchor-c1">
         <div class="row my-5">
             <div class="col">
                 <div class="d-flex justify-content-between align-items-center">
-                    <div class="content-1-intro">
+                    <div class="collection">
                         {{ content.field_hp_c1_start }}
                     </div>
-                    <div>
+                    <div class="mt-4 mt-lg-0">
                         <span class="circle-logo opacity-light"></span>
                     </div>
                 </div>
@@ -67,8 +67,8 @@
     </div>
 
     <!-- CONTENT 2-->
-    <div class="container-fluid bg-color3 content-2">
-        <div class="row">
+    <div class="container-fluid bg-color3 c2">
+        <div class="row g-0">
             <div class="col">
                 <div class="container max-1180">
                     <div class="row">
@@ -78,7 +78,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row mt-5 mt-lg-0">
                         <div class="col-lg-6">
                             {{ content.field_hp_c2_img[0] }}
                         </div>
@@ -92,7 +92,7 @@
     </div>
 
     <!-- CONTENT 3-->
-    <div class="container content-3 max-1180">
+    <div class="container c3 max-1180">
         <div class="row">
             <div class="col-lg-6">
                 {{ content.field_hp_c3_txt }}
@@ -104,20 +104,20 @@
     </div>
 
     <!-- CONTENT 4-->
-    <div class="container-fluid bg-color3">
-        <div class="row">
+    <div class="container-fluid c4 bg-color3">
+        <div class="row g-0">
             <div class="col">
-                <div class="container max-1180 content-4">
-                    <div class="row g-0 align-items-center">
+                <div class="container bg-color4 max-1180">
+                    <div class="row align-items-center">
                         <div class="col-lg-6">
                             <a href="{{ content.field_hp_c4_link[0]['#url'] }}">
-                                <div class="c4-img image-scale">
+                                <div class="image-scale">
                                     {{ content.field_hp_c4_img[0] }}
                                 </div>
                             </a>
                         </div>
                         <div class="col-lg-6">
-                            <div class="ou-acheter bg-color4">
+                            <div class="ou-acheter">
                                 {{ content.field_hp_c4_txt }}
                                 <span class="map-pin"></span>
                             </div>
@@ -129,15 +129,31 @@
     </div>
 
     <!-- CONTENT 5-->
-    <div class="container content-5">
-        <div class="row gutters-custom align-items-center">
-            <div class="col-lg-6">
-                {{ content.field_hp_c5_imgs[0] }}
-                {{ content.field_hp_c5_txts[0] }}
-            </div>
-            <div class="col-lg-6">
-                {{ content.field_hp_c5_imgs[1] }}
-                {{ content.field_hp_c5_txts[1] }}
+    <div class="container-fluid c5">
+        <div class="row g-0">
+            <div class="col">
+                <div class="container max-1180">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <a href="{{ content.field_hp_c5_links[0]['#url'] }}">
+                                <div class="card-custom image-scale">
+                                    {{ content.field_hp_c5_imgs[0] }}
+                                </div>
+                            </a>
+                            {{ content.field_hp_c5_txts[0] }}
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="float-end mt-5 mt-lg-0">
+                                <a href="{{ content.field_hp_c5_links[1]['#url'] }}">
+                                    <div class="card-custom image-scale">
+                                        {{ content.field_hp_c5_imgs[1] }}
+                                    </div>
+                                </a>
+                                {{ content.field_hp_c5_txts[1] }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

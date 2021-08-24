@@ -58,7 +58,14 @@ jQuery(document).ready(function ($) {
         }, 500)
     });
 
-    // SCROLL BUTTON
+    // MESSAGE BANNER
+    if ($('.message-site .visually-hidden')) {
+        setTimeout(() => {
+            $('.message-site').fadeOut('slow');
+        }, 3000)
+    }
+
+    // BACK TO TOP BUTTON
     if (!isTabletOrLess) {
         $(window).scroll(function () {
             if ($(this).scrollTop() > 80) {

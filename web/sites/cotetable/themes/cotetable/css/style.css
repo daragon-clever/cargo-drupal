@@ -986,9 +986,6 @@ h4 {
   z-index: 10;
   position: relative;
 }
-#homepage .c4 .image-scale img {
-  margin: 0 auto;
-}
 #homepage .c4 .ou-acheter {
   position: relative;
   z-index: 10;
@@ -1894,4 +1891,236 @@ nav.pager ul li a {
   #confidentialite br {
     display: initial;
   }
+}
+#store-locator-wrapper .banner {
+  height: 175px;
+  position: relative;
+}
+@media only screen and (max-width: 991px) {
+  #store-locator-wrapper .banner {
+    height: 70px;
+  }
+}
+#store-locator-wrapper .banner:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 325px;
+  background-color: #E7E8E8;
+  left: 0;
+  bottom: -325px;
+  z-index: -10;
+}
+#store-locator-wrapper .store-locator {
+  background-color: white;
+  box-shadow: 0 0 60px #A5A5A529;
+  margin-bottom: 64px;
+}
+#store-locator-wrapper .store-locator .p-custom {
+  padding-left: 112px;
+}
+@media only screen and (max-width: 991px) {
+  #store-locator-wrapper .store-locator .p-custom {
+    padding-left: 0;
+    padding-top: 48px;
+  }
+}
+#store-locator-wrapper .store-locator h1 {
+  margin-top: 0;
+  font-size: 32px;
+  line-height: 40px;
+  margin-bottom: 15px;
+  max-width: 350px;
+}
+#store-locator-wrapper .store-locator h3 {
+  margin-top: 0;
+  font-size: 16px;
+  margin-bottom: 25px;
+  max-width: 300px;
+}
+#store-locator-wrapper .store-locator h2 {
+  font-size: 20px;
+}
+#store-locator-wrapper .store-locator .search-wrapper {
+  position: relative;
+}
+#store-locator-wrapper .store-locator .search-wrapper .search-input {
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: 1px solid #888B8D;
+  font-family: 'ITC Avant Garde Pro Bk', Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: #888B8D;
+  vertical-align: bottom;
+  width: 335px;
+  padding-bottom: 12px;
+  margin-right: 8px;
+}
+#store-locator-wrapper .store-locator .search-wrapper .search-input::placeholder {
+  color: #888B8D;
+  opacity: 0.5;
+}
+@media only screen and (max-width: 991px) {
+  #store-locator-wrapper .store-locator .search-wrapper .search-input {
+    margin-bottom: 32px;
+  }
+}
+#store-locator-wrapper .store-locator .search-wrapper .btn-submit {
+  cursor: pointer;
+  transition: all 0.3s;
+  border: 1px solid #888B8D;
+  vertical-align: middle;
+  background-color: #888B8D;
+  width: 100px;
+  height: 64px;
+  border-radius: 2px;
+}
+#store-locator-wrapper .store-locator .search-wrapper .btn-submit:hover {
+  opacity: 0.7;
+}
+#store-locator-wrapper .store-locator .search-wrapper .btn-submit img {
+  height: 28px;
+  width: 28px;
+}
+#store-locator-wrapper .store-locator .search-wrapper .locate-me {
+  background: url('../images/storelocator/location.svg') no-repeat center transparent;
+  border: 1px solid #888B8D;
+  vertical-align: middle;
+  cursor: pointer;
+  width: 64px;
+  height: 64px;
+  margin-left: 8px;
+  border-radius: 2px;
+  font-size: 0;
+  transition: all 0.3s;
+}
+#store-locator-wrapper .store-locator .search-wrapper .locate-me:hover {
+  opacity: 0.7;
+}
+@media only screen and (max-width: 991px) {
+  #store-locator-wrapper .store-locator .search-wrapper {
+    margin-top: 48px;
+  }
+}
+#store-locator-wrapper .store-locator img.map {
+  padding: 26px 0;
+  display: block;
+}
+#store-locator-wrapper .store-locator .row:nth-child(2) {
+  border-top: 1px solid #E7E8E8;
+}
+#store-locator-wrapper .store-locator .store-locator-response {
+  max-height: 800px;
+  overflow-y: auto;
+}
+#store-locator-wrapper .store-locator .store-locator-response .infos-wrapper {
+  padding: 20px 16px;
+  border-bottom: 1px solid #E7E8E8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#store-locator-wrapper .store-locator .store-locator-response .infos-wrapper:hover {
+  background-color: #E7E8E8;
+}
+#store-locator-wrapper .store-locator .store-locator-response .infos-wrapper .info-mag {
+  max-width: 50%;
+}
+#store-locator-wrapper .store-locator .store-locator-response .infos-wrapper .info-mag a {
+  text-decoration: none;
+  color: #888B8D;
+  font-family: 'ITC Avant Garde Pro Bk', Arial, Helvetica, sans-serif;
+}
+#store-locator-wrapper .store-locator .store-locator-response .infos-wrapper .info-mag a .name {
+  font-size: 16px;
+  font-weight: 600;
+}
+@media only screen and (max-width: 767px) {
+  #store-locator-wrapper .store-locator .store-locator-response .infos-wrapper .info-mag a br {
+    display: initial;
+  }
+}
+#store-locator-wrapper .store-locator .store-locator-response .infos-wrapper .info-mag .address,
+#store-locator-wrapper .store-locator .store-locator-response .infos-wrapper .info-mag .phone {
+  font-size: 14px;
+}
+#store-locator-wrapper .store-locator .store-locator-response .infos-wrapper .links {
+  display: flex;
+}
+#store-locator-wrapper .store-locator .store-locator-response .infos-wrapper .links a {
+  text-decoration: none;
+}
+#store-locator-wrapper .store-locator .store-locator-response .infos-wrapper .links a div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 25px;
+}
+#store-locator-wrapper .store-locator .store-locator-response .infos-wrapper .links a div:last-child {
+  margin-right: 0;
+}
+#store-locator-wrapper .store-locator .store-locator-response .infos-wrapper .links a div img {
+  width: 30px;
+  height: 30px;
+}
+#store-locator-wrapper .store-locator .store-locator-response .infos-wrapper .links a div span {
+  padding-top: 5px;
+  font-family: 'ITC Avant Garde Pro Bk', Arial, Helvetica, sans-serif;
+  color: #888B8D;
+  font-size: 14px;
+}
+@media only screen and (max-width: 767px) {
+  #store-locator-wrapper .store-locator .store-locator-response .infos-wrapper .links {
+    margin-top: 16px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  #store-locator-wrapper .store-locator .store-locator-response .infos-wrapper {
+    align-items: center;
+    padding-left: 0;
+  }
+}
+#store-locator-wrapper .store-locator .store-locator-response #js-map-container > div {
+  min-height: 400px;
+  margin-top: 30px;
+}
+@media only screen and (max-width: 991px) {
+  #store-locator-wrapper .store-locator .store-locator-response {
+    max-height: unset;
+  }
+}
+#store-locator-wrapper .store-locator #storelocator-map {
+  height: 800px;
+}
+#store-locator-wrapper .store-locator #storelocator-map .store-locator-map-info-window {
+  padding: 20px;
+}
+#store-locator-wrapper .store-locator #js-map-container .gm-style-iw.gm-style-iw-c {
+  padding: 12px !important;
+  max-width: 250px !important;
+}
+#store-locator-wrapper .store-locator #js-map-container > div {
+  margin-bottom: 32px;
+}
+#store-locator-wrapper .store-locator #storelocator-map .title,
+#store-locator-wrapper .store-locator #js-map-container .title {
+  font-size: 16px;
+  text-align: center;
+  font-weight: 600;
+  font-family: 'ITC Avant Garde Pro Bk', Arial, Helvetica, sans-serif;
+}
+#store-locator-wrapper .store-locator #storelocator-map .address-street,
+#store-locator-wrapper .store-locator #js-map-container .address-street,
+#store-locator-wrapper .store-locator #storelocator-map .address-city,
+#store-locator-wrapper .store-locator #js-map-container .address-city {
+  font-size: 14px;
+  text-align: center;
+}
+#store-locator-wrapper .store-locator #storelocator-map .opening-hours,
+#store-locator-wrapper .store-locator #js-map-container .opening-hours,
+#store-locator-wrapper .store-locator #storelocator-map .to-store,
+#store-locator-wrapper .store-locator #js-map-container .to-store {
+  display: none;
 }

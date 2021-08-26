@@ -724,6 +724,9 @@ h4 {
   left: 50%;
   top: 0;
   transform: translateX(-50%);
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
 }
 #homepage .intro-hp .collection.video-text {
   position: absolute;
@@ -2123,4 +2126,34 @@ nav.pager ul li a {
 #store-locator-wrapper .store-locator #storelocator-map .to-store,
 #store-locator-wrapper .store-locator #js-map-container .to-store {
   display: none;
+}
+#user-login-form {
+  max-width: 100%;
+  width: 500px;
+  margin: 150px auto;
+  padding: 30px;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+}
+#user-login-form input {
+  width: 100%;
+}
+#user-login-form .description {
+  font-size: 13px;
+}
+#user-login-form > div {
+  margin-top: 15px;
+}
+#user-login-form input.button {
+  font-size: 18px;
+  line-height: 40px;
+  margin: 30px auto 0;
+  display: block;
+  border: none;
+  background: #888B8D;
+  color: white;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+#user-login-form input.button:hover {
+  opacity: 0.8;
 }

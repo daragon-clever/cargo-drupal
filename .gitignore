@@ -2,7 +2,7 @@
 /.idea/
 
 # Ignore configuration files that may contain sensitive information.
-/web/sites/*/*settings*.php
+/web/sites/*/settings.php
 /web/sites/example.sites.php
 /web/sites/sites.php
 

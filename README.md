@@ -126,3 +126,23 @@ Se baser sur ce qui a été fait pour les autres sites.
 			* IDE key: `idekey`
 
 Vous pouvez maintenant activer XDebug sur Phpstorm (le petit téléphonne)
+
+# Activation debugger Twig, en local
+
+Le debugger des templates Twig est *false* par défaut, pour l'activer en local :
+* Décommenter le bloc suivant dans le fichier `web/sites/*/settings.php` :
+```php
+if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {'   
+   include $app_root . '/' . $site_path . '/settings.local.php';
+}
+```
+* Dupliquer et renommer le fichier `web/sites/example.settings.local.php` en `web/sites/*/settings.local.php` et ne garder **<ins>que</ins>** les lignes suivantes :
+```php
+<?php
+
+/**
+ * Enable local development services.
+ */
+$settings['container_yamls'][] = DRUPAL_ROOT . '/sites/development.services.yml';
+```
+* *Pour plus de détails sur la gestion du cache : https://www.drupal.org/node/2598914*

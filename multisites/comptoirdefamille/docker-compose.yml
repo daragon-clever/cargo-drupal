@@ -69,20 +69,6 @@ services:
         traefik.docker.network: "webgateway"
         traefik.enable: true
 
-  mail:
-      image: mailhog/mailhog
-      networks:
-        webgateway:
-          aliases:
-            - mail_cdf
-        internal:
-          aliases:
-            - mail_internal
-      labels:
-        traefik.docker.network: "webgateway"
-        traefik.enable: true
-        traefik.port: 8025
-
   bundle:
       build: ../../docker/deployment
       working_dir: /project

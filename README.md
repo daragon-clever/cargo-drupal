@@ -74,6 +74,10 @@ Commande disponible :
         * Entrez le nom du site en local
         * Entrez l'action souhaitée (1, 2, etc)
 
+# Accès à MailHog
+
+Pour vérifer l'envoi des mails, se connecter à l'interface depuis sa VM : http://web.mailhog.{{ DEVENV }}.ressinfo.ad/ (exemple : http://web.mailhog.svd1pweb-stm.ressinfo.ad/)
+
 # Résolution de problèmes:
 
 ## Base de donnée

@@ -1,0 +1,19 @@
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="inner">
+                    <a href="{{ url('<front>') }}" title="Accueil">
+                        <span class="long-logo"></span>
+                    </a>
+                    {% if page.navigation %}
+                        {{ page.navigation }}
+                        <a class="mmenu-btn-wrapper d-lg-none" href="#block-cotetable-main-menu">
+                            <span class="hamburger"></span>
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

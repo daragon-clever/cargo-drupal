@@ -5,6 +5,7 @@ use Drupal\newsletter\Model\Subscriber;
 function newsletter_schema()
 {
     $newsletterController = new NewsletterController();
+    \Drupal::logger('newsletter')->notice($newsletterController->currentCompany);
     $base = $newsletterController->getCompanyController();
 
     if (isset($base)) {

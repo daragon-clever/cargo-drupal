@@ -1,0 +1,24 @@
+<div id="loader">
+    <div class="header-wrapper custom-color">
+        {% include directory ~ '/templates/partials/header.html.twig' %}
+    </div>
+
+    <div class="content">
+        {% if page.highlighted %}
+            <div class="message-site">
+                {{ page.highlighted }}
+            </div>
+        {% endif %}
+        {% if page.content %}
+            {{ page.content }}
+            <div class="scroll-js scroll-button"></div>
+        {% endif %}
+    </div>
+
+    {% include directory ~ '/templates/partials/footer.html.twig' %}
+
+    <div class="loader-content">
+        <img src="/sites/cotetable/themes/cotetable/images/logo/cote_table-circle.svg" alt=""/>
+        <div class="bar" id="bar-js"></div>
+    </div>
+</div>

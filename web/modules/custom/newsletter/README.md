@@ -35,6 +35,7 @@ en interne (WEB_Api_Contact_Actito).
 
 * Blog Sitram
 * C'est Deux Euros
+* Côté Table
 * Comptoir De Famille
 * Merch&Cie
 * Sitram

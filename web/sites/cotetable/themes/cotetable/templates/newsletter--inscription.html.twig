@@ -1,0 +1,34 @@
+<div id="block-newsletter">
+    <div class="container max-1180">
+        <div class="row newsletter-content">
+            <div class="col-lg-6 my-auto">
+                <span class="circle-logo opacity-verylight"></span>
+                <h2>{{ "Côté Table<br> newsletter"|trans|raw }}</h2>
+                <p>{{ "Receive the Côté Table newsletter to be<br> always up to date on decoration trends"|trans|raw }}</p>
+            </div>
+            <div class="col-lg-6 my-auto">
+                {% if form %}
+                    <form {{form.attributes }} method="{{ form['#method'] }}">
+                        {{ form.form_build_id }}
+                        {{ form.form_token }}
+                        {{ form.form_id }}
+
+                        {{ form.msg }}
+
+                        {{ form.mail }}
+                        <div class="d-flex align-items-lg-start my-4 relative">
+                            <div class="rgpd">
+                                {{ form.rgpd_allow }}
+                            </div>
+                        </div>
+                        <div class="captcha">
+                            {{ form.captcha }}
+                        </div>
+
+                        {{ form.actions.submit }}
+                    </form>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

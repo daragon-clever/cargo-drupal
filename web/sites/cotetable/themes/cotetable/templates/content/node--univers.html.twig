@@ -1,0 +1,66 @@
+<div id="univers">
+    <!-- BANNER -->
+    <div class="intro">
+        <div class="opacity-img">
+            {{ content.field_univers_banner_img }}
+        </div>
+        <div class="absolute-banner">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="content-banner">
+                            <div>
+                                {{ content.field_univers_banner_txt }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENT 1 -->
+    <div class="container my-5 c1">
+        <div class="row">
+            <div class="col">
+                <div class="collection my-3">
+                    {{ content.field_univers_c1_intro }}
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col">
+                <div class="grid-wrapper-1">
+                    {% for i in 0..2 %}
+                        <div class="grid-item-{{ i }}">
+                            <a href="{{ content.field_univers_c1_links[i]['#url'] }}">
+                                <div class="card-custom image-scale fade-title opacity-img-hover">
+                                    <img src="{{ content.field_univers_c1_imgs[i] }}"
+                                         alt="{{ node.field_univers_c1_imgs[i].alt }}">
+                                    <h4>{{ content.field_univers_c1_links[i]['#title'] }}</h4>
+                                </div>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col">
+                <div class="grid-wrapper-2">
+                    {% for i in 3..6 %}
+                        <div class="grid-item-{{ i }}">
+                            <a href="{{ content.field_univers_c1_links[i]['#url'] }}">
+                                <div class="card-custom image-scale fade-title opacity-img-hover">
+                                    <img src="{{ content.field_univers_c1_imgs[i] }}"
+                                         alt="{{ node.field_univers_c1_imgs[i].alt }}">
+                                    <h4>{{ content.field_univers_c1_links[i]['#title'] }}</h4>
+                                </div>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

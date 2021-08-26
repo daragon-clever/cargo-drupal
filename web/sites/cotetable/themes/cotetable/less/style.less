@@ -608,6 +608,9 @@ br {
       left: 50%;
       top: 0;
       transform: translateX(-50%);
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
     }
 
     .collection.video-text {
@@ -2198,5 +2201,39 @@ nav.pager {
         display: none;
       }
     }
+  }
+}
+
+
+// LOGIN FORM
+#user-login-form {
+  max-width: 100%;
+  width: 500px;
+  margin: 150px auto;
+  padding: 30px;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+
+  input {
+    width: 100%;
+  }
+
+  .description {
+    font-size: 13px;
+  }
+
+  & > div {
+    margin-top: 15px;
+  }
+
+  input.button {
+    font-size: 18px;
+    line-height: 40px;
+    margin: 30px auto 0;
+    display: block;
+    border: none;
+    background: @color1;
+    color: white;
+    .dimOpacityOnHover(0.8);
+    cursor: pointer;
   }
 }

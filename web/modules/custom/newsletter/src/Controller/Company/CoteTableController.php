@@ -18,4 +18,15 @@ class CoteTableController extends AbstractCompanyController
 
         return $dataForActito;
     }
+
+    protected function displayMsg(string $return): array
+    {
+        $displayMsgReturn = parent::displayMsg($return);
+
+        if ($return == parent::ACTION_INSERT) {
+            $displayMsgReturn['msg'] = $this->t("Thank you for subscribing to the newsletter");
+        }
+
+        return $displayMsgReturn;
+    }
 }

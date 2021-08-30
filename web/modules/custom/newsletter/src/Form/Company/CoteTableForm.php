@@ -31,7 +31,7 @@ class CoteTableForm extends FormBase
         $form['rgpd_allow'] = [
             '#type' => 'checkbox',
             '#title' => '',
-            '#description' => "<div>En renseignant ces informations j’accepte de recevoir chaque mois, la lettre
+            '#description' => "<div>En renseignant ces informations, j’accepte de recevoir la lettre
                                     d’information de Côté Table et je confirme avoir pris connaissance de la
                                     <a href='/confidentialite'>politique de confidentialité</a>.</div>"
         ];

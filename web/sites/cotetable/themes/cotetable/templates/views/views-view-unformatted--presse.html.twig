@@ -19,7 +19,7 @@
     <div class="row">
         {% for row in rows %}
             {% set row_classes = [
-                default_row_class ? 'col-auto',
+                default_row_class ? 'col-12 col-md-6 col-lg-4',
             ] %}
             <div{{ row.attributes.addClass(row_classes) }}>
                 <div class="article-item">

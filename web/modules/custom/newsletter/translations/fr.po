@@ -63,3 +63,5 @@ msgstr "Saisir votre adresse e-mail"
 msgid "E-mail address"
 msgstr "Adresse e-mail"
 
+msgid "Thank you for subscribing to the newsletter"
+msgstr "Merci de votre inscription à la newsletter"

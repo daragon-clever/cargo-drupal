@@ -9,8 +9,8 @@ use Drupal\newsletter\Model\Subscriber;
 
 abstract class AbstractCompanyController extends ControllerBase
 {
-    private const ACTION_INSERT = 'insert';
-    private const ACTION_UPDATE = 'update';
+    protected const ACTION_INSERT = 'insert';
+    protected const ACTION_UPDATE = 'update';
     public const TYPE_MSG_STATUS = "status";
     public const TYPE_MSG_ERROR = "error";
 
@@ -159,7 +159,7 @@ abstract class AbstractCompanyController extends ControllerBase
         }
     }
 
-    private function displayMsg(string $return): array
+    protected function displayMsg(string $return): array
     {
         switch ($return) {
             case self::ACTION_INSERT:

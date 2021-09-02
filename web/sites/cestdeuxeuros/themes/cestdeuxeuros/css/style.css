@@ -281,6 +281,11 @@ p {
     text-align: center;
   }
 }
+.ban-video video {
+  width: 100%;
+  max-width: 1920px;
+  max-height: 480px;
+}
 .header-wrapper {
   font-weight: bold;
   position: fixed;

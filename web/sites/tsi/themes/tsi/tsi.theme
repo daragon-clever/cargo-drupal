@@ -7,3 +7,16 @@ function tsi_page_attachments_alter(array &$attachments) {
         }
     }
 }
+
+function tsi_preprocess_html(&$variables) {
+    // Setup Google Webmasters Verification Meta Tag
+    $google_site_verification = [
+        '#tag' => 'meta',
+        '#attributes' => [
+            'name' => 'google-site-verification',
+            'content' => 'S2t1Y1ZhT5MslVXUO7Y4pK0i6BskPZBARrEmMVACrPQ',
+        ],
+    ];
+    // Add Google Webmasters Verification Meta Tag to head
+    $variables['page']['#attached']['html_head'][] = [$google_site_verification, 'google-site-verification'];
+}

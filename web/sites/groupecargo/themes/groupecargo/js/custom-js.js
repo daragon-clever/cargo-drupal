@@ -206,6 +206,12 @@ jQuery(document).ready(function($) {
                 $(".job").hide();
                 $(newJobContent).fadeIn("slow");
                 $("html, body").animate({ scrollTop: 0 }, "slow");
+
+                let interviews = newJobContent.find('.interviews-wrapper > div');
+                $('.slick-initialized').slick('unslick');
+                if (interviews) {
+                    $(interviews).slick();
+                }
             }
         });
 

@@ -151,6 +151,17 @@ function gavias_great_preprocess_html(&$variables) {
   }else{
     $variables['attributes']['class'][] = 'not-preloader';
   }
+
+  // Setup Google Webmasters Verification Meta Tag
+  $google_site_verification = [
+      '#tag' => 'meta',
+      '#attributes' => [
+          'name' => 'google-site-verification',
+          'content' => 'IFSewrb3TIE0cfZhj8iT81xasAS3vWbQsImaJb7VP7o',
+      ],
+  ];
+  // Add Google Webmasters Verification Meta Tag to head
+  $variables['page']['#attached']['html_head'][] = [$google_site_verification, 'google-site-verification'];
 }
 
 /**

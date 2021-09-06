@@ -52,7 +52,7 @@ h2 {
   filter: opacity(8%);
 }
 .long-logo {
-  background: url("../images/logo/cote_table-long.svg") no-repeat center transparent;
+  background: url("../images/logo/cote_table-long-white.svg") no-repeat center transparent;
   display: inline-block;
 }
 .collection {
@@ -500,7 +500,7 @@ h4 {
     border-bottom: 1px solid #C3C5C6;
   }
   body.mm-wrapper header .long-logo {
-    background: url("../images/logo/cote_table-long-grey.svg") no-repeat center transparent;
+    background: url("../images/logo/cote_table-long-black.svg") no-repeat center transparent;
   }
   body.mm-wrapper header .hamburger,
   body.mm-wrapper header .hamburger:before,
@@ -599,7 +599,7 @@ h4 {
   color: #888B8D;
 }
 .header-wrapper.custom-color .inner .long-logo {
-  background: url("../images/logo/cote_table-long-grey.svg") no-repeat center transparent;
+  background: url("../images/logo/cote_table-long-black.svg") no-repeat center transparent;
 }
 .header-wrapper.custom-color .inner #block-cotetable-main-menu ul li a.espace-presse:before {
   background: url("../images/presse-picto-grey.svg") no-repeat center transparent;
@@ -642,8 +642,8 @@ h4 {
   opacity: 1;
 }
 .header-wrapper header .inner .long-logo {
-  height: 35px;
-  width: 221px;
+  height: 36px;
+  width: 225px;
 }
 .header-wrapper header .inner #block-cotetable-main-menu {
   position: static;

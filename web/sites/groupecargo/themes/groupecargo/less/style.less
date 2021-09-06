@@ -1455,6 +1455,7 @@ footer {
         top: 15px;
         right: 20px;
         cursor: pointer;
+        z-index: 1000;
         .dimOpacityOnHover(0.8);
 
         @media @phone {
@@ -1564,6 +1565,45 @@ footer {
         }
       }
 
+      .slick-arrow {
+        position: absolute;
+        bottom: -50px;
+        width: 40px;
+        height: 40px;
+        background: #F7E2A1;
+        z-index: 10;
+        border: none;
+        font-size: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:before {
+          content: "";
+          display: block;
+          height: 10px;
+          width: 10px;
+          border-top: 2px solid black;
+          border-right: 2px solid black;
+          transform: rotate(-135deg);
+          margin-left: 5px;
+        }
+
+        &.slick-prev {
+          left: 0;
+        }
+
+        &.slick-next {
+          left: 40px;
+          transform: rotate(180deg);
+        }
+
+        &.slick-disabled {
+          opacity: 0.7;
+        }
+      }
+
       .more-content {
         display: block;
       }
@@ -1576,6 +1616,38 @@ footer {
 
       @media @phone {
         padding: 15px;
+      }
+    }
+  }
+
+  .js-title-jobs {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 20px 0 10px 110px;
+  }
+
+  .js-thumbs-wrapper {
+    img {
+      width: 90px;
+      height: 90px;
+      object-fit: cover;
+      border: 2px solid white;
+      margin: 10px;
+    }
+
+    .slick-track {
+      margin-left: -10px;
+      margin-right: 0;
+    }
+
+    .item-thumbs {
+      opacity: 0.8;
+      transition: opacity 0.3s ease-in-out;
+      cursor: pointer;
+
+      &.slick-current,
+      &:hover {
+        opacity: 1;
       }
     }
   }

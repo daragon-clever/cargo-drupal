@@ -1,4 +1,4 @@
-jQuery(document).ready(function($) {
+jQuery(document).ready(function ($) {
     // TEST MOBILE / TAB
     var isMobile = window.matchMedia("only screen and (max-width: 767px)").matches;
     var isTabletOrLess = window.matchMedia("only screen and (max-width: 991px)").matches;
@@ -6,18 +6,18 @@ jQuery(document).ready(function($) {
     // NAV
     var timerNav;
     $("#header-wrapper nav").hover(
-        function() {
-            timerNav = setTimeout(function() {
+        function () {
+            timerNav = setTimeout(function () {
                 $("#header-wrapper").addClass("menu-hover");
             }, 400);
         },
-        function() {
+        function () {
             $("#header-wrapper").removeClass("menu-hover");
             clearTimeout(timerNav);
         }
     );
 
-    if ( isTabletOrLess ) {
+    if (isTabletOrLess) {
         // NAV MOBILE
         var $menu = $("#block-groupecargo-main-menu").mmenu({
             "extensions": [
@@ -35,17 +35,17 @@ jQuery(document).ready(function($) {
         var $icon = $(".navbar-toggler");
         var API = $menu.data("mmenu");
 
-        API.bind( "open:start", function() {
-            setTimeout(function() {
-                $icon.addClass( "is-active" );
-                $icon.on("click",function() {
+        API.bind("open:start", function () {
+            setTimeout(function () {
+                $icon.addClass("is-active");
+                $icon.on("click", function () {
                     API.close();
                 })
             }, 100);
         });
-        API.bind( "close:start", function() {
-            setTimeout(function() {
-                $icon.removeClass( "is-active" );
+        API.bind("close:start", function () {
+            setTimeout(function () {
+                $icon.removeClass("is-active");
             }, 100);
         });
     }
@@ -53,19 +53,22 @@ jQuery(document).ready(function($) {
     // HOMEPAGE - GALLERY RANDOM
     // Tableau des images de la banque
     var ids = [];
+
     function initArray() {
-        $(".img-bank img").each(function() {
+        $(".img-bank img").each(function () {
             ids.push($(this).attr("src"));
         });
     }
+
     initArray();
+
     // Fn - Changement du visuel
     function changeSrc() {
         // Prendre une div au hasard sur les 7
         var cells = $(".galery .block-img");
         var randomId = (Math.floor(Math.random() * cells.length));
         // Prendre une image au hasard de la banque
-        var randomImgFromBank = ids[Math.floor(Math.random()*ids.length)];
+        var randomImgFromBank = ids[Math.floor(Math.random() * ids.length)];
         // Si l'image est déjà présente, relancer la fonction
         if ($(".galery img[src='" + randomImgFromBank + "']:visible").length > 0) {
             changeSrc();
@@ -73,26 +76,27 @@ jQuery(document).ready(function($) {
             // Prendre une div au hasard sur les 7
             var cell = cells.eq(randomId);
             // Changement l'image hidden de cette div
-            cell.find("img:hidden").each(function() {
+            cell.find("img:hidden").each(function () {
                 $(this).attr("src", randomImgFromBank);
             });
             // toggleFade les images
             cell.find("img").fadeToggle(2000);
         }
     }
+
     // Lancer la fonction toutes les x secondes
-    setInterval(function() {
+    setInterval(function () {
         changeSrc();
     }, 2000);
 
-    if ( isMobile ) {
+    if (isMobile) {
         // Galery homepage
         $(".galery .js-remove-mobile").remove();
         // Slick homepage + marchés
         $(".js-galery-slick").slick({
             slidesToShow: 1,
             slidesToScroll: 1,
-            arrows:false,
+            arrows: false,
             centerMode: true
         });
     }
@@ -115,31 +119,33 @@ jQuery(document).ready(function($) {
     }
 
     // HOMEPAGE - SCROLL GALLERY LOGO
-    function scrollMove( ele ,frame ,step ) {
+    function scrollMove(ele, frame, step) {
         var step = step || 1;
         var $item = $(ele).children();
-        var w = 0 ;
+        var w = 0;
         $item.each(function () {
             w += $(this).width();
         });
 
-        $(ele).html( $(ele).html() + $(ele).html() );
+        $(ele).html($(ele).html() + $(ele).html());
 
         var $items = $(ele);
 
         var temp = 0;
+
         function move() {
-            if ( temp > w ){
+            if (temp > w) {
                 temp = 0
             } else {
-                temp = temp + step ;
+                temp = temp + step;
             }
-            $items.scrollLeft( temp );
+            $items.scrollLeft(temp);
         }
-        setInterval(move , 800 / frame);
+
+        setInterval(move, 800 / frame);
     }
 
-    scrollMove('.items', 60 , 1 );
+    scrollMove('.items', 60, 1);
 
     // HOMEPAGE - FULLWIDH BG IMAGES - HIGHLIGHT BLOCK TXT GALLERY RANDOM
     if ($(".full-width-bg .imgs-bg").length) {
@@ -159,10 +165,10 @@ jQuery(document).ready(function($) {
     }
 
     // ANCHORS SMOOTH
-    $(function() {
+    $(function () {
         // ON LOAD
         function smoothScrollTo(target) {
-            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
 
             if (target.length) {
                 $('html,body').animate({
@@ -170,22 +176,23 @@ jQuery(document).ready(function($) {
                 }, 1500);
             }
         }
+
         if (location.hash) {
             window.scrollTo(0, 0);
             target = location.hash.split('#');
-            smoothScrollTo($('#'+target[1]));
+            smoothScrollTo($('#' + target[1]));
         }
 
         // ON CLICK
-        $("a[href*='#']:not([href='#'])").click(function() {
+        $("a[href*='#']:not([href='#'])").click(function () {
             if (
                 location.hostname == this.hostname
-                && this.pathname.replace(/^\//,"") == location.pathname.replace(/^\//,"")
+                && this.pathname.replace(/^\//, "") == location.pathname.replace(/^\//, "")
             ) {
                 var anchor = $(this.hash);
-                anchor = anchor.length ? anchor : $("[name=" + this.hash.slice(1) +"]");
-                if ( anchor.length ) {
-                    $("html, body").animate( { scrollTop: anchor.offset().top }, 1500);
+                anchor = anchor.length ? anchor : $("[name=" + this.hash.slice(1) + "]");
+                if (anchor.length) {
+                    $("html, body").animate({scrollTop: anchor.offset().top}, 1500);
                 }
             }
         });
@@ -194,25 +201,96 @@ jQuery(document).ready(function($) {
     // NAV PAGE METIER
     if ($("#jobs").length) {
 
-        var jobsNavItem = $(".navigation a");
+        // Slide Up all the interviews
+        const closeAllInterviewsContent = function () {
+            $(".js-read-more").removeClass("opened").prev().slideUp();
+        };
+
+        const jobsNavItem = $(".navigation a");
+
+        const handleMultipleInterviews = function (interviewWrapper, jobContent) {
+            if (interviewWrapper.length && interviewWrapper[0].children.length > 1) {
+                const avatar = jobContent.find('.testimonial > div > img');
+                const thumbsWrapper = jobContent.find('.js-thumbs-wrapper');
+
+                // Show title
+                jobContent.find('.js-title-jobs').show();
+
+                if (avatar.length > 1) {
+                    // Reset
+                    $('.slick-initialized').each(function () {
+                        $(this).slick('unslick')
+                    });
+                    thumbsWrapper.empty();
+
+                    // Fill with thumbs
+                    for (let i = 0; i < avatar.length; i++) {
+                        const element = $('<div class="item-thumbs"></div>');
+                        $(avatar[i])
+                            .clone()
+                            .appendTo(element);
+                        element.appendTo(thumbsWrapper)
+                    }
+
+                    // Slick the thumbs
+                    $(thumbsWrapper).slick({
+                        slidesToShow: 6,
+                        slidesToScroll: 6,
+                        infinite: false,
+                        asNavFor: interviewWrapper,
+                        focusOnSelect: true,
+                        arrows: false,
+                        responsive: [
+                            {
+                                breakpoint: 1024,
+                                settings: {
+                                    slidesToShow: 4,
+                                    slidesToScroll: 4
+                                }
+                            },
+                            {
+                                breakpoint: 768,
+                                settings: {
+                                    slidesToShow: 3,
+                                    slidesToScroll: 3
+                                }
+                            }
+                        ]
+                    });
+                }
+
+                // Slick the interviews
+                $(interviewWrapper).slick({
+                    infinite: false,
+                    asNavFor: thumbsWrapper,
+                })
+            }
+        };
 
         jobsNavItem.on("click", function (e) {
             e.preventDefault();
+            closeAllInterviewsContent();
+
             if (!$(this).hasClass("current")) {
-                var eltPosition = $(this).parent().index();
-                var newJobContent = $("#jobs .job:nth-child(" + (eltPosition + 2) + ")");
+                const eltPosition = $(this).parent().index();
+                const newJobContent = $("#jobs .job:nth-child(" + (eltPosition + 2) + ")");
+
                 jobsNavItem.removeClass("current");
                 $(this).addClass("current");
                 $(".job").hide();
                 $(newJobContent).fadeIn("slow");
-                $("html, body").animate({ scrollTop: 0 }, "slow");
+                $("html, body").animate({scrollTop: 0}, "slow");
 
-                let interviews = newJobContent.find('.interviews-wrapper > div');
-                $('.slick-initialized').slick('unslick');
-                if (interviews) {
-                    $(interviews).slick();
-                }
+                const interviewWrapper = newJobContent.find('.js-interviews-wrapper > div');
+                handleMultipleInterviews(interviewWrapper, newJobContent);
             }
+        });
+
+        // Close all the interviews content on change slide
+        $(".js-interviews-wrapper > div").on('beforeChange', function (slick) {
+            console.log(slick);
+            closeAllInterviewsContent();
+            $('html, body').animate({scrollTop: $(slick.target).offset().top -100}, 'slow');
         });
 
         $(".cross-close").on("click", function () {
@@ -225,25 +303,29 @@ jQuery(document).ready(function($) {
         function getParameterByName(name, url) {
             if (!url) url = window.location.href;
             name = name.replace(/[\[\]]/g, '\\$&');
-            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
                 results = regex.exec(url);
             if (!results) return null;
             if (!results[2]) return '';
             return decodeURIComponent(results[2].replace(/\+/g, ' '));
         }
-        var anchor = getParameterByName('content');
+
+        const anchor = getParameterByName('content');
         if (anchor) {
+            const jobContent = $(".job#js-content-" + anchor);
             $(("a#js-link-" + anchor)).addClass("current");
             $(".job").hide();
-            $(".job#js-content-" + anchor).fadeIn("slow");
-        }
-    }
+            jobContent.fadeIn("slow");
 
-    // PAGE METIER RESOLUTION HEIGHT = SHORT
-    if ($("#jobs").length) {
+            // If multiple interview
+            const interviewWrapper = $('.job#js-content-' + anchor + ' .js-interviews-wrapper > div');
+            handleMultipleInterviews(interviewWrapper, jobContent);
+        }
+
+        // PAGE METIER RESOLUTION HEIGHT = SHORT
         if (!isTabletOrLess) {
-            var navHeight = $("#jobs > .navigation").height();
-            var windowHeight = $(window).height();
+            const navHeight = $("#jobs > .navigation").height();
+            const windowHeight = $(window).height();
 
             if ((navHeight) > windowHeight) {
                 $("#jobs > .navigation .inner").addClass("short").height(windowHeight - 270);
@@ -280,7 +362,7 @@ jQuery(document).ready(function($) {
     }
 
     // LIRE PLUS
-    if ( isMobile ) {
+    if (isMobile) {
         $(".js-slide-toggle").on("click", function () {
             $(this).prev().slideToggle();
             $(".js-slide-toggle span").toggle();
@@ -288,12 +370,12 @@ jQuery(document).ready(function($) {
     }
 
     // SWITCH LANGUE
-    $('a.language-link.is-active').on("click", function(e) {
+    $('a.language-link.is-active').on("click", function (e) {
         e.preventDefault();
     });
 
     var listLangWrapper = $('#block-selecteurdelangue .links');
-    listLangWrapper.on("click", function() {
+    listLangWrapper.on("click", function () {
         $(this).toggleClass("open");
     });
     $('#block-selecteurdelangue li.is-active').prependTo(listLangWrapper);

@@ -1,0 +1,47 @@
+<div class="row align-items-center mea-wrapper">
+    <div class="js-scroll"></div>
+    <div class="col-12 col-lg-9 img-wrapper" nvs-animation-delay="500" nvs-animation-type="in-left">
+        <a href="{{ content.field_hp_links[0]['#url'] }}" title="{{ content.field_hp_links[0]['#title'] }}">
+            <img class="img-fluid" src="{{ file_url(content.field_hp_imgs['#items'].0.entity.uri.value) }}">
+        </a>
+    </div>
+    <div class="col-12 col-lg-3 txt-wrapper" nvs-animation-delay="500" nvs-animation-type="in-right">
+        <div class="inner">
+            {{ content.field_hp_txts[0] }}
+        </div>
+    </div>
+</div>
+<div class="row align-items-center flex-column-reverse flex-lg-row mea-wrapper">
+    <div class="col-12 col-lg-3 txt-wrapper" nvs-animation-delay="500" nvs-animation-type="in-left">
+        <div class="inner">
+            {{ content.field_hp_txts[1] }}
+        </div>
+    </div>
+    <div class="col-12 col-lg-9 img-wrapper" nvs-animation-delay="500" nvs-animation-type="in-right">
+        <a href="{{ content.field_hp_links[1]['#url'] }}" title="{{ content.field_hp_links[1]['#title'] }}">
+            <img class="img-fluid" src="{{ file_url(content.field_hp_imgs['#items'].1.entity.uri.value) }}">
+        </a>
+    </div>
+</div>
+<div class="row align-items-center mea-wrapper">
+    <div class="col-12 col-lg-9 img-wrapper" nvs-animation-delay="500" nvs-animation-type="in-left">
+        <a href="{{ content.field_hp_links[2]['#url'] }}" title="{{ content.field_hp_links[2]['#title'] }}">
+            <img class="img-fluid" src="{{ file_url(content.field_hp_imgs['#items'].2.entity.uri.value) }}">
+        </a>
+    </div>
+    <div class="col-12 col-lg-3 txt-wrapper" nvs-animation-delay="500" nvs-animation-type="in-right">
+        <div class="inner">
+            {{ content.field_hp_txts[2] }}
+        </div>
+    </div>
+</div>
+
+<div class="hp-insta">
+    <div class="row text-center">
+        <div class="col title">
+            <div class="logo-insta"></div>
+            <h3><span>{{ content.field_hp_insta_txt }}</span></h3>
+        </div>
+    </div>
+    <div id="instagram-feed" class="row" nvs-animation-delay="500" nvs-animation-type="in-left"></div>
+</div>

@@ -175,31 +175,31 @@
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 300;
-  src: url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmSU5fBBc9.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fBBc9.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Mu4mxP.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu4mxP.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 500;
-  src: url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmEU9fBBc9.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmEU9fBBc9.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 700;
-  src: url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmWUlfBBc9.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmWUlfBBc9.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 900;
-  src: url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmYUtfBBc9.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmYUtfBBc9.ttf) format('truetype');
 }
 .container {
   width: 100%;
@@ -678,19 +678,7 @@ header .inner .menu-link.active {
   margin-top: 30px;
   padding-top: 30px;
 }
-.mea-wrapper {
-  margin-bottom: 20px;
-}
-.mea-wrapper:last-child {
-  margin-bottom: 0;
-}
-.mea-wrapper .img-wrapper a {
-  transition: opacity 0.3s;
-}
-.mea-wrapper .img-wrapper a:hover {
-  opacity: 0.8;
-}
-.mea-wrapper .js-scroll:after {
+.js-scroll:after {
   content: 'scroll';
   text-align: center;
   display: block;
@@ -707,17 +695,29 @@ header .inner .menu-link.active {
   animation: mover 1s infinite  alternate;
 }
 @media (min-width: 2000px) {
-  .mea-wrapper .js-scroll:after {
+  .js-scroll:after {
     display: none;
   }
 }
 @media (max-width: 1024px) {
-  .mea-wrapper .js-scroll:after {
+  .js-scroll:after {
     display: none;
   }
 }
-.mea-wrapper .js-scroll:after:first-line {
+.js-scroll:after:first-line {
   font-size: 50px;
+}
+.mea-wrapper {
+  margin-bottom: 20px;
+}
+.mea-wrapper:last-child {
+  margin-bottom: 0;
+}
+.mea-wrapper .img-wrapper a {
+  transition: opacity 0.3s;
+}
+.mea-wrapper .img-wrapper a:hover {
+  opacity: 0.8;
 }
 .mea-wrapper .txt-wrapper .inner {
   max-width: 315px;

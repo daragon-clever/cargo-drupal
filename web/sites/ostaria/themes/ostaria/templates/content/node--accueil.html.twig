@@ -1,0 +1,28 @@
+<div class="js-scroll"></div>
+
+{% for i in 0..content.field_hp_imgs['#items']|length-1 %}
+    <div class="row align-items-center mea-wrapper {% if i is odd %}flex-lg-row-reverse{% endif %}">
+        <div class="col-12 col-lg-9 img-wrapper" nvs-animation-delay="500"
+             nvs-animation-type="{% if i is odd %}in-right{% else %}in-left{% endif %}">
+            <a href="{{ content.field_hp_links[i]['#url'] }}" title="{{ content.field_hp_links[i]['#title'] }}">
+                <img class="img-fluid" src="{{ file_url(content.field_hp_imgs['#items'][i].entity.uri.value) }}">
+            </a>
+        </div>
+        <div class="col-12 col-lg-3 txt-wrapper" nvs-animation-delay="500"
+             nvs-animation-type="{% if i is odd %}in-left{% else %}in-right{% endif %}">
+            <div class="inner">
+                {{ content.field_hp_txts[i] }}
+            </div>
+        </div>
+    </div>
+{% endfor %}
+
+<div class="hp-insta">
+    <div class="row text-center">
+        <div class="col title">
+            <div class="logo-insta"></div>
+            <h3><span>{{ content.field_hp_insta_txt }}</span></h3>
+        </div>
+    </div>
+    <div id="instagram-feed" class="row" nvs-animation-delay="500" nvs-animation-type="in-left"></div>
+</div>

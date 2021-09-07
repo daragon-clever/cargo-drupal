@@ -460,6 +460,32 @@ header {
   margin-top: 30px;
   padding-top: 30px;
 }
+.js-scroll:after {
+  content: 'scroll';
+  text-align: center;
+  display: block;
+  width: 50px;
+  height: 50px;
+  color: @mainColor;
+  position: fixed;
+  bottom: 50px;
+  right: 13%;
+  background: url("../images/home/scroll_arrow.svg") no-repeat center bottom;
+  background-size: 15%;
+  filter: @filterColor;
+  -webkit-animation: mover 1s infinite  alternate;
+  animation: mover 1s infinite  alternate;
+  @media (min-width: 2000px) {
+    display: none;
+  }
+  @media (max-width: 1024px) {
+    display: none;
+  }
+
+  &:first-line {
+    font-size: 50px;
+  }
+}
 ///////////////////////////// HOME /////////////////////////////
 .mea-wrapper {
   margin-bottom: 20px;
@@ -468,32 +494,6 @@ header {
   }
   .img-wrapper a {
     .dimOpacityOnHover(0.8);
-  }
-  .js-scroll:after {
-    content: 'scroll';
-    text-align: center;
-    display: block;
-    width: 50px;
-    height: 50px;
-    color: @mainColor;
-    position: fixed;
-    bottom: 50px;
-    right: 13%;
-    background: url("../images/home/scroll_arrow.svg") no-repeat center bottom;
-    background-size: 15%;
-    filter: @filterColor;
-    -webkit-animation: mover 1s infinite  alternate;
-    animation: mover 1s infinite  alternate;
-    @media (min-width: 2000px) {
-      display: none;
-    }
-    @media (max-width: 1024px) {
-      display: none;
-    }
-
-    &:first-line {
-      font-size: 50px;
-    }
   }
   .txt-wrapper {
     .inner {

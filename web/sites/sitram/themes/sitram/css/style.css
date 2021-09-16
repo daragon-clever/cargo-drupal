@@ -1909,7 +1909,7 @@ ul.check-list li:before {
   object-fit: cover;
   font-family: 'object-fit: cover;';
   height: 197px;
-  transition: transform .3s ease;
+  transition: transform 0.3s ease;
 }
 .recette-item img:hover {
   transform: scale(1.1);

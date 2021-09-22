@@ -128,8 +128,6 @@ jQuery(document).ready(function($) {
                     }
                     var select = $(selector + " select");
 
-
-
                     //priorité cookies
                     if (priority == "cookies" && cookies != ""
                         && $(selector + ' option[data-clean="' + cookies + '"]').length
@@ -185,6 +183,11 @@ jQuery(document).ready(function($) {
                     }
                 } );
 
+                //Counter : offers number
+                var counter = table.rows({search:'applied'}).count()
+                $('#nb-postes-ouverts').html(counter);
+                if (counter <= 1) $('#nb-postes-ouverts-txt').html("poste ouvert");
+
                 // Select2 filters
                 $('.select-option select').select2({
                     minimumResultsForSearch: Infinity
@@ -215,8 +218,6 @@ jQuery(document).ready(function($) {
         $("#searchbox").keyup(function() {
             table.search(this.value).draw();
         });
-
-
 
         //replace array of characters by "-" + remove accent and set lower case
         function replaceSpecialChar(str) {

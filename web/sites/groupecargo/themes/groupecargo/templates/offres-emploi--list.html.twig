@@ -35,8 +35,8 @@
         </div>
 
         <div class="col-12 col-md-9 jobs-list">
-            <h3>Les postes à pourvoir</h3>
             {% if offers %}
+                <h3>Les postes à pourvoir ({{ offers|length }} postes ouverts)</h3>
                 <div id="alerte-offres"></div>
                 <table id="toutes-les-offres" class="display nowrap">
                     <thead>

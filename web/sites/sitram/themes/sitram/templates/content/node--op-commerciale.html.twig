@@ -118,6 +118,7 @@
     {% endif %}
 
     <!-- MAGASINS PARTICIPANTS-->
+    {% if node.field_op_om_departements|length %}
     <div class="magasins-participants my-5">
         <div class="container bg-img-blue">
             <div class="row">
@@ -159,6 +160,7 @@
             </div>
         </div>
     </div>
+    {% endif %}
 
     <!-- RESEAUX -->
     <div class="reseaux my-5 bg-verylightgrey">

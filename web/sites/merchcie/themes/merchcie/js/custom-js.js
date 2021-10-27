@@ -144,6 +144,9 @@ jQuery(document).ready(function ($) {
         } else {
             $(".js-interview").removeClass("current");
             $(this).addClass("current");
+            // scroll to content
+            const contentTopPosition = Number($(this).next().offset().top - 150);
+            window.scrollTo(0, contentTopPosition);
         }
     });
 

@@ -2013,6 +2013,12 @@ body.adminimal-admin-toolbar header {
   opacity: 0;
   transition: 0.5s;
 }
+@media only screen and (max-width: 991px) {
+  .listing-interviews .inner .img-wrapper .infos {
+    opacity: 1;
+    bottom: 0;
+  }
+}
 .listing-interviews .inner .img-wrapper .infos .line {
   margin: 10px auto;
 }

@@ -21,6 +21,7 @@ libraries:
   - cogex/datatables
   - cogex/cookiesJS
   - cogex/style-popup
+  - cogex/style-common
 
 regions:
   header: 'Header'

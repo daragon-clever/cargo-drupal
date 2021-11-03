@@ -81,6 +81,13 @@ slick:
     theme:
       https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css: { type: external }
 
+# Style LESS
+style-common:
+  header: true
+  css:
+    theme:
+      css/style-common.css: {}
+
 # Style landing page
 style-lp:
   header: true

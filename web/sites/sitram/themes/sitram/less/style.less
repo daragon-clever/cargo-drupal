@@ -3211,6 +3211,10 @@ table.reparateurs {
       font-family: @Cardenio;
       font-size: 48px;
       color: @primaryColor;
+
+      @media @tablet {
+        font-size: 25px;
+      }
     }
   }
 
@@ -3563,6 +3567,61 @@ table.reparateurs {
 
       @media @phone {
         margin: 10px 25px;
+      }
+    }
+  }
+
+  &.carrefour-11-2021 {
+    .content-2 {
+      .container:before {
+        display: none;
+      }
+
+      &.bg-img-wood {
+        background: transparent;
+        position: relative;
+
+        &:before {
+          content: "";
+          background: @secondaryColor;
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 445px;
+          width: 100%;
+          z-index: 0;
+        }
+      }
+
+      .item {
+        max-width: 390px;
+        background: white;
+        display: block;
+        margin: 0 auto;
+
+        @media @tablet {
+          padding: 0 30px;
+        }
+      }
+
+      h4 span {
+        color: @secondaryColor;
+        font-weight: bold;
+        font-size: 30px;
+      }
+    }
+
+    .content-3 {
+      .container:before {
+        display: none;
+      }
+
+      @media @tablet {
+        padding: 0 30px;
+
+        h3 {
+          font-size: 35px;
+        }
       }
     }
   }

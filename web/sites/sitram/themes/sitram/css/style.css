@@ -4112,6 +4112,11 @@ table.reparateurs tbody .tel {
   color: #003663;
 }
 @media only screen and (max-width: 991px) {
+  #op-commerciale .intro h3 {
+    font-size: 25px;
+  }
+}
+@media only screen and (max-width: 991px) {
   #op-commerciale .content-1 h2 {
     text-align: center;
   }
@@ -4425,6 +4430,50 @@ table.reparateurs tbody .tel {
 @media only screen and (max-width: 767px) {
   #op-commerciale .reseaux img {
     margin: 10px 25px;
+  }
+}
+#op-commerciale.carrefour-11-2021 .content-2 .container:before {
+  display: none;
+}
+#op-commerciale.carrefour-11-2021 .content-2.bg-img-wood {
+  background: transparent;
+  position: relative;
+}
+#op-commerciale.carrefour-11-2021 .content-2.bg-img-wood:before {
+  content: "";
+  background: #741030;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 445px;
+  width: 100%;
+  z-index: 0;
+}
+#op-commerciale.carrefour-11-2021 .content-2 .item {
+  max-width: 390px;
+  background: white;
+  display: block;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 991px) {
+  #op-commerciale.carrefour-11-2021 .content-2 .item {
+    padding: 0 30px;
+  }
+}
+#op-commerciale.carrefour-11-2021 .content-2 h4 span {
+  color: #741030;
+  font-weight: bold;
+  font-size: 30px;
+}
+#op-commerciale.carrefour-11-2021 .content-3 .container:before {
+  display: none;
+}
+@media only screen and (max-width: 991px) {
+  #op-commerciale.carrefour-11-2021 .content-3 {
+    padding: 0 30px;
+  }
+  #op-commerciale.carrefour-11-2021 .content-3 h3 {
+    font-size: 35px;
   }
 }
 #conserves img {

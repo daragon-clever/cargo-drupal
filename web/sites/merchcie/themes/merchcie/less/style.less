@@ -3649,3 +3649,60 @@ input[name="rgpd_allow"] {
     transform: rotate(0);
   }
 }
+
+// BANDEAU LOGO
+#trust {
+  h2 {
+    font-size: 32px;
+  }
+
+  & > div {
+    margin-top: -44px;
+  }
+
+  @keyframes bannermove {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(-50%, 0);
+    }
+  }
+
+  .js-logos-wrapper {
+    height: 80px;
+    position: relative;
+    overflow: hidden;
+    max-width: 1605px;
+    margin: 25px auto;
+    display: block;
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      position:absolute;
+      top: 0;
+      left: 0;
+      overflow:hidden;
+      white-space: nowrap;
+      animation: bannermove 50s linear infinite;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      li {
+        position: relative;
+        height: 100%;
+
+        img {
+          height: 100%;
+          object-fit: contain;
+          margin: 0 40px;
+          max-width: 150px;
+        }
+      }
+    }
+  }
+}

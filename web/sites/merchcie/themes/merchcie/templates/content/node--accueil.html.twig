@@ -105,4 +105,23 @@
             </div>
         </div>
     </div>
+
+    <!-- BANDEAU LOGO -->
+    <div id="trust" class="text-center">
+        <h2 class="text-blue text-center">{{ "Ils nous ont fait confiance"|trans }}</h2>
+        <span class="line-vertical dot-pattern-color1 d-block mx-auto"></span>
+        <div class="bg-color4 py-5 ">
+            <div class="js-logos-wrapper">
+                <ul>
+                    <!-- Print it 2 times for CSS loop -->
+                    {% for field in content.field_hp_gallery_logo['#items'] %}
+                        <li><img alt="{{ field.alt }}" src="{{ file_url(field.entity.fileuri) }}"/></li>
+                    {% endfor %}
+                    {% for field in content.field_hp_gallery_logo['#items'] %}
+                        <li><img alt="{{ field.alt }}" src="{{ file_url(field.entity.fileuri) }}"/></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>

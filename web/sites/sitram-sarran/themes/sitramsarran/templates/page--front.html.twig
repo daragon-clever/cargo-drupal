@@ -1,0 +1,21 @@
+<div id="menu">
+  <div class="container">
+    {{ page.navigation }}
+  </div>
+</div>
+
+<div class="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+{% if page.content %}
+  {{ page.content }}
+{% endif %}
+
+<div class="bg_primary py-5 text-center" id="footer">
+  {% if page.footer %}
+    {{ page.footer }}
+  {% endif %}
+</div>

@@ -1,0 +1,32 @@
+######## Plugin & Framework ########
+
+# Bootstrap 4
+bootstrap:
+  header: true
+  css:
+    theme:
+      bootstrap4/css/bootstrap.min.css: {}
+  js:
+    bootstrap4/js/bootstrap.bundle.min.js: {}
+
+owl-carousel:
+  header: true
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js: { type: external }
+  dependencies:
+    - core/jquery
+  css:
+    theme:
+      https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css: { type: external }
+      https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css: { type: external }
+
+# Style général
+global-styling:
+  header: true
+  css:
+    theme:
+      css/style.css: {}
+  js:
+    js/custom-js.js: {}
+  dependencies:
+    - core/jquery

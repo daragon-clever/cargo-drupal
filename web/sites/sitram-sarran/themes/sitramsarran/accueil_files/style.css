@@ -1,0 +1,331 @@
+/* VARIABLES */
+@import '../bootstrap4/css/bootstrap.min.css';
+/* VARIABLES */
+@font-face {
+  font-family: 'Myriad Pro Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Myriad Pro Regular'), url('../fonts/MYRIADPRO-REGULAR.woff') format('woff');
+}
+@font-face {
+  font-family: 'Myriad Pro Condensed';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Myriad Pro Condensed'), url('../fonts/MYRIADPRO-COND.woff') format('woff');
+}
+@font-face {
+  font-family: 'Myriad Pro Condensed Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Myriad Pro Condensed Italic'), url('../fonts/MYRIADPRO-CONDIT.woff') format('woff');
+}
+@font-face {
+  font-family: 'Myriad Pro Light';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Myriad Pro Light'), url('../fonts/MyriadPro-Light.woff') format('woff');
+}
+@font-face {
+  font-family: 'Myriad Pro Semibold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Myriad Pro Semibold'), url('../fonts/MYRIADPRO-SEMIBOLD.woff') format('woff');
+}
+@font-face {
+  font-family: 'Myriad Pro Semibold Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Myriad Pro Semibold Italic'), url('../fonts/MYRIADPRO-SEMIBOLDIT.woff') format('woff');
+}
+@font-face {
+  font-family: 'Myriad Pro Bold Condensed';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Myriad Pro Bold Condensed'), url('../fonts/MYRIADPRO-BOLDCOND.woff') format('woff');
+}
+@font-face {
+  font-family: 'Myriad Pro Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Myriad Pro Bold'), url('../fonts/MYRIADPRO-BOLD.woff') format('woff');
+}
+@font-face {
+  font-family: 'Myriad Pro Bold Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Myriad Pro Bold Italic'), url('../fonts/MYRIADPRO-BOLDIT.woff') format('woff');
+}
+@font-face {
+  font-family: 'Myriad Pro Bold Condensed Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Myriad Pro Bold Condensed Italic'), url('../fonts/MYRIADPRO-BOLDCONDIT.woff') format('woff');
+}
+/* RESET */
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+a:hover,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-decoration: none;
+  list-style: none;
+  max-width: 100%;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* ALL */
+/* TAGS */
+body {
+  font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
+}
+ul {
+  list-style: none;
+}
+h1 {
+  font: normal normal normal 40px/50px 'Myriad Pro Semibold';
+  text-transform: uppercase;
+}
+h2 {
+  font: normal normal normal 27px/40px 'Myriad Pro Semibold';
+  text-transform: uppercase;
+}
+p {
+  font: normal normal normal 22px/30px 'Myriad Pro Light';
+}
+p.bold {
+  font: italic normal bold 22px/30px 'Myriad Pro Bold';
+}
+/* TOOLS */
+.bg_primary {
+  background-color: #7E142D;
+}
+.bg_white {
+  background-color: #fff;
+}
+.radius_small {
+  border-radius: 5px;
+}
+.radius_medium {
+  border-radius: 10px;
+}
+.radius_big {
+  border-radius: 40px;
+}
+.radius_round {
+  border-radius: 50%;
+}
+.shadow_down {
+  box-shadow: 0px 0px 20px #00000029;
+}
+.shadow_up {
+  box-shadow: 0px -20px 20px #00000029 29;
+}
+/* HEADER */
+#menu {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+}
+#menu > div {
+  height: 150px;
+}
+#menu nav {
+  height: 150px;
+}
+#menu nav ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+}
+#menu nav ul li {
+  margin-left: 50px;
+}
+#menu nav ul li a {
+  position: relative;
+  font-size: 24px;
+  line-height: 30px;
+  color: #7E142D;
+  font-family: 'Myriad Pro Semibold';
+  text-transform: uppercase;
+}
+#menu nav ul li a:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 50%;
+  background-color: #fff;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 500ms;
+}
+#menu nav ul li a.active:after,
+#menu nav ul li a:hover:after {
+  opacity: 1;
+}
+/* PAGES */
+/* ACCUEIL */
+.home-header {
+  position: relative;
+  max-height: 100vh;
+}
+.home-header img {
+  object-fit: cover;
+}
+.home-header .home-header-info {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  display: flex;
+}
+.home-header .home-header-left {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+}
+.home-header .home-header-left img {
+  width: 50%;
+  margin: 0 auto;
+}
+.home-header .home-header-left img.citation {
+  width: 100%;
+}
+.home-header .home-header-left img.signature {
+  width: 70%;
+  margin: 25px auto;
+}
+.home-header .home-header-right {
+  width: 25%;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}

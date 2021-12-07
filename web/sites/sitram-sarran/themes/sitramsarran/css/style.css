@@ -1,0 +1,1167 @@
+/* VARIABLES */
+@import '../bootstrap4/css/bootstrap.min.css';
+/* VARIABLES */
+@font-face {
+  font-family: 'Myriad Pro Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Myriad Pro Regular'), url('../fonts/MYRIADPRO-REGULAR.woff') format('woff');
+}
+@font-face {
+  font-family: 'Myriad Pro Condensed';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Myriad Pro Condensed'), url('../fonts/MYRIADPRO-COND.woff') format('woff');
+}
+@font-face {
+  font-family: 'Myriad Pro Condensed Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Myriad Pro Condensed Italic'), url('../fonts/MYRIADPRO-CONDIT.woff') format('woff');
+}
+@font-face {
+  font-family: 'Myriad Pro Light';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Myriad Pro Light'), url('../fonts/MyriadPro-Light.woff') format('woff');
+}
+@font-face {
+  font-family: 'Myriad Pro Semibold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Myriad Pro Semibold'), url('../fonts/MYRIADPRO-SEMIBOLD.woff') format('woff');
+}
+@font-face {
+  font-family: 'Myriad Pro Semibold Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Myriad Pro Semibold Italic'), url('../fonts/MYRIADPRO-SEMIBOLDIT.woff') format('woff');
+}
+@font-face {
+  font-family: 'Myriad Pro Bold Condensed';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Myriad Pro Bold Condensed'), url('../fonts/MYRIADPRO-BOLDCOND.woff') format('woff');
+}
+@font-face {
+  font-family: 'Myriad Pro Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Myriad Pro Bold'), url('../fonts/MYRIADPRO-BOLD.woff') format('woff');
+}
+@font-face {
+  font-family: 'Myriad Pro Bold Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Myriad Pro Bold Italic'), url('../fonts/MYRIADPRO-BOLDIT.woff') format('woff');
+}
+@font-face {
+  font-family: 'Myriad Pro Bold Condensed Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Myriad Pro Bold Condensed Italic'), url('../fonts/MYRIADPRO-BOLDCONDIT.woff') format('woff');
+}
+@font-face {
+  font-family: 'urwgrotesktbolconregular';
+  src: url('../fonts/urwgroteskt-boldcond-webfont.woff2') format('woff2'), url('../fonts/urwgroteskt-boldcond-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+/* RESET */
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+a:hover,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-decoration: none;
+  list-style: none;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* ALL */
+* {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  outline: none;
+}
+/* TAGS */
+body {
+  font-family: "Myriad Pro Semibold", Arial, Helvetica, sans-serif;
+}
+ul {
+  list-style: none;
+}
+h1 {
+  font: normal normal normal 40px/50px 'urwgrotesktbolconregular';
+  text-transform: uppercase;
+}
+h2 {
+  font: normal normal normal 27px/40px 'Myriad Pro Semibold';
+  text-transform: uppercase;
+}
+.h1 {
+  font: normal normal normal 40px/50px 'urwgrotesktbolconregular';
+  text-transform: uppercase;
+}
+.h2 {
+  font: normal normal normal 27px/40px 'Myriad Pro Semibold';
+  text-transform: uppercase;
+}
+p,
+.p {
+  font: normal normal normal 22px/30px 'Myriad Pro Light';
+}
+p.bold,
+.p.bold {
+  font: normal normal bold 22px/30px 'Myriad Pro Bold';
+}
+p.small,
+.p.small {
+  font: normal normal normal 18px/22px 'Myriad Pro Light';
+}
+b {
+  font-family: 'Myriad Pro Semibold';
+}
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+.picto-big {
+  width: 100px;
+  height: auto;
+}
+.picto-small {
+  width: 50px;
+  height: auto;
+}
+/* TOOLS */
+.bg_primary,
+.bg_primary:hover {
+  background-color: #7E142D;
+}
+.bg_white,
+.bg_white:hover {
+  background-color: #fff;
+}
+.bg_dark,
+.bg_dark:hover {
+  background-color: #292929;
+}
+.bg_green,
+.bg_green:hover {
+  background-color: #255C50;
+}
+.text_primary,
+.text_primary:hover {
+  color: #7E142D;
+}
+.text_white,
+.text_white:hover {
+  color: #fff;
+}
+.text_dark,
+.text_dark:hover {
+  color: #292929;
+}
+.text_crossed {
+  text-decoration: line-through;
+}
+.text_italic {
+  font-style: italic;
+}
+.radius_small {
+  border-radius: 5px;
+}
+.radius_medium {
+  border-radius: 10px;
+}
+.radius_big {
+  border-radius: 40px;
+}
+.radius_round {
+  border-radius: 50%;
+}
+.shadow_down {
+  box-shadow: 0px 0px 20px #00000029;
+}
+.shadow_up {
+  box-shadow: 0px -20px 20px #00000029 29;
+}
+.border_white {
+  border: 1px solid #FFF;
+}
+.border_gray {
+  border: 1px solid #C3C3C3;
+}
+.round_number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  width: 70px;
+}
+.border_sides_primary {
+  border-left: 1px solid #7E142D;
+  border-right: 1px solid #7E142D;
+}
+.border_sides_white {
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+}
+.border_left_primary {
+  border-left: 1px solid #7E142D;
+}
+.border_left_white {
+  border-left: 1px solid #fff;
+}
+/* BURGER */
+.hamburger {
+  display: none;
+}
+@media only screen and (max-width: 992px) {
+  .hamburger {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: #7E142D;
+    z-index: 11;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .hamburger span {
+    width: 30px;
+    height: 2px;
+    border-radius: 3px;
+    background-color: #fff;
+    transition: all 250ms;
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+  .hamburger span:nth-child(3n-1) {
+    margin: 5px 0;
+  }
+  .hamburger.active span:nth-child(3n-2) {
+    transform: rotate(-45deg) translate(-5px, 5px);
+  }
+  .hamburger.active span:nth-child(3n-1) {
+    opacity: 0;
+  }
+  .hamburger.active span:nth-child(3n) {
+    transform: rotate(45deg) translate(-5px, -5px);
+  }
+}
+/* HEADER */
+#menu {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  height: 150px;
+}
+#menu > div {
+  height: 150px;
+}
+#menu nav {
+  height: 150px;
+}
+#menu nav ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+}
+#menu nav ul li {
+  margin-left: 50px;
+}
+#menu nav ul li a {
+  position: relative;
+  font-size: 24px;
+  line-height: 30px;
+  color: #7E142D;
+  font-family: 'Myriad Pro Semibold';
+  text-transform: uppercase;
+}
+#menu nav ul li a:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 50%;
+  background-color: #fff;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 500ms;
+}
+#menu nav ul li a.is-active:after,
+#menu nav ul li a:hover:after {
+  opacity: 1;
+}
+@media only screen and (max-width: 992px) {
+  #menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: auto;
+    background: rgba(255, 255, 255, 0.9);
+    transition: all 500ms;
+    transform: translateX(100vw);
+  }
+  #menu.active {
+    transform: translateX(0);
+  }
+  #menu > div {
+    height: auto;
+  }
+  #menu nav {
+    height: 100vh;
+  }
+  #menu nav ul {
+    flex-direction: column;
+    justify-content: center;
+  }
+  #menu nav ul li {
+    margin-left: 0;
+    margin-bottom: 50px;
+  }
+}
+/* HEADER */
+.container {
+  max-width: 1920px;
+}
+@media only screen and (max-width: 1920px) {
+  .container {
+    max-width: 1400px;
+  }
+}
+@media only screen and (max-width: 1400px) {
+  .container {
+    max-width: 992px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .container {
+    max-width: 768px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .container {
+    max-width: 100%;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .row.p-5 {
+    padding: 20px !important;
+  }
+}
+/* FOOTER */
+#footer nav {
+  margin-top: 50px;
+}
+#footer nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+#footer nav ul li {
+  margin: 0 15px;
+}
+#footer nav ul li a,
+#footer nav ul li a:hover {
+  text-transform: uppercase;
+  color: #fff;
+  font-family: 'Myriad Pro Light';
+}
+@media only screen and (max-width: 992px) {
+  #footer nav ul {
+    display: block;
+  }
+  #footer nav ul li {
+    margin-bottom: 20px;
+  }
+}
+.video_control {
+  position: relative;
+  /*&:before {
+    content: '';
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url('/sites/sitram-sarran/themes/sitramsarran/images/Pictos_Icons/Icon feather-arrow-right-circle.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    opacity: 1;
+    transition: all 250ms;
+  }*/
+  /*&:after {
+    content: '';
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    background-image: url('/sites/sitram-sarran/themes/sitramsarran/images/Pictos_Icons/Icon feather-arrow-right-circle.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    opacity: 0;
+    transition: all 250ms;
+  }*/
+}
+.video_control.playing {
+  /*&:before {
+      opacity: 0;
+    }
+    &:after {
+      opacity: 1;
+    }*/
+}
+.video_control.touched {
+  /*&:before {
+      display: none;
+    }*/
+}
+.video_control video {
+  width: 100%;
+}
+/* PAGES */
+/* ACCUEIL */
+.home-header {
+  max-height: 100vh;
+  position: relative;
+  height: 100vh;
+  background-image: url(/sites/sitram-sarran/themes/sitramsarran/images/Banniere/Michel-Sarran_HeroBG-Overlay.jpg);
+}
+.home-header img {
+  object-fit: cover;
+  width: 100%;
+}
+.home-header .home-header-info {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  display: flex;
+}
+.home-header .home-header-left {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+.home-header .home-header-left img {
+  width: 50%;
+  margin: 0 auto;
+}
+.home-header .home-header-left img.citation {
+  width: 100%;
+}
+.home-header .home-header-left img.signature {
+  width: 70%;
+  margin: 25px auto;
+}
+.home-header .home-header-right {
+  width: 25%;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+@media only screen and (max-width: 768px) {
+  .home-header {
+    background-image: url(/sites/sitram-sarran/themes/sitramsarran/images/Banniere/Michel-Sarran_HeroBG-Overlay-Mobile.jpg);
+    aspect-ratio: 1;
+    height: auto;
+  }
+  .home-header .container {
+    max-width: calc(100vw - 40px);
+  }
+  .home-header .home-header-left {
+    position: relative;
+    transform: unset;
+    top: unset;
+    width: 40%;
+  }
+  .home-header .home-header-right {
+    position: relative;
+    transform: unset;
+    top: unset;
+    width: 40%;
+  }
+}
+#section_carrefour {
+  padding-bottom: 250px!important;
+  background-image: url(/sites/sitram-sarran/themes/sitramsarran/images/Pictos_Icons/Handrawn_Arrow-White.svg);
+  background-position: left 75px bottom 80px;
+  background-repeat: no-repeat;
+  background-size: 150px auto;
+  position: relative;
+}
+#section_carrefour:before {
+  content: '';
+  width: 10px;
+  height: 50px;
+  background-color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}
+@media only screen and (max-width: 1400px) {
+  #section_carrefour {
+    background-size: 75px auto;
+    background-position: left 75px bottom 200px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #section_carrefour {
+    padding: 20px 20px 100px 20px!important;
+    background-size: 60px auto;
+    background-position: left 20px bottom 100px;
+  }
+  #section_carrefour .container {
+    display: block!important;
+    text-align: center;
+    padding: 50px 0!important;
+  }
+  #section_carrefour .container .col-4 {
+    max-width: 100%;
+    display: block!important;
+  }
+  #section_carrefour .container .col-4:nth-child(3n-1) {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  #section_carrefour .container .col-4 img {
+    width: 75%!important;
+  }
+  #section_decouvrir {
+    text-align: left!important;
+    padding-top: 50px!important;
+  }
+  .video_control,
+  .w-75 {
+    width: 100%!important;
+  }
+  .steps > .d-flex {
+    display: block!important;
+    padding: 0;
+    margin-bottom: 50px!important;
+  }
+  .steps > .d-flex .number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #section_drive .pl-5 {
+    padding-left: 0!important;
+  }
+  #section_drive .d-flex {
+    display: block!important;
+  }
+  #section_drive .d-flex img {
+    width: 200px;
+    display: block;
+    margin: 0 auto 50px auto;
+  }
+}
+#section_collection {
+  position: relative;
+}
+#section_collection:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-image: url(/sites/sitram-sarran/themes/sitramsarran/images/Banniere/Michel-Sarran_HeroBG-Overlay-cropped.jpg);
+  background-position: right top;
+  background-size: cover;
+  opacity: .1;
+}
+#section_collection .owl-nav {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 35%;
+  display: flex;
+  justify-content: space-between;
+}
+#section_collection .owl-nav button img {
+  width: 50px;
+  height: auto;
+}
+#section_collection .owl-dots {
+  margin: 100px 0 50px 0;
+}
+#section_collection .owl-dots .owl-dot span {
+  width: 25px;
+  height: 25px;
+  background: #fff;
+  border: 1px solid #7E142D;
+}
+#section_collection .owl-dots .owl-dot:hover span,
+#section_collection .owl-dots .owl-dot.active span {
+  background: #7E142D;
+  border: 1px solid #7E142D;
+}
+#section_collection #slider_collection {
+  padding: 100px 0;
+}
+#section_collection #collection_discover {
+  bottom: 250px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  width: 100%;
+}
+@media only screen and (max-width: 768px) {
+  #section_collection h2 {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  #section_collection #slider_collection .d-flex {
+    display: block!important;
+    text-align: center!important;
+  }
+}
+#section_offre {
+  margin-top: -300px !important;
+  position: relative;
+}
+@media only screen and (max-width: 768px) {
+  #section_offre {
+    margin-top: -100px !important;
+  }
+}
+#section_store_locator .image_marker {
+  width: 50px;
+}
+@media only screen and (max-width: 768px) {
+  #section_communaute {
+    padding-top: 50px!important;
+    padding-bottom: 50px!important;
+  }
+  #section_communaute .container {
+    text-align: center;
+  }
+  #section_communaute .w-75,
+  #section_communaute .w-50,
+  #section_communaute .d-flex {
+    width: 100%!important;
+    display: block!important;
+    padding: 0!important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    margin-left: 0!important;
+    border: none!important;
+    margin-right: 0!important;
+  }
+  #section_communaute .rs-logos .d-flex:not(:first-of-type) {
+    display: inline!important;
+  }
+  #section_communaute .rs-logos img {
+    margin: 0 15px;
+  }
+  #section_communaute .d-flex {
+    margin-bottom: 50px!important;
+  }
+  #section_communaute .d-flex:last-of-type {
+    margin-bottom: 0px!important;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #section_communaute .col-3 {
+    width: 100%!important;
+    max-width: 100%!important;
+  }
+  #section_communaute div {
+    margin: 0!important;
+  }
+  #section_communaute img,
+  #section_communaute p.bold {
+    margin-bottom: 25px;
+  }
+  #section_communaute #slider_instagram .owl-nav {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+  }
+  #section_communaute #slider_instagram .owl-nav button span {
+    font-size: 50px;
+    color: #7E142D;
+  }
+}
+.products .product h3 span {
+  font-size: 25px;
+  font-family: "Myriad Pro Light";
+}
+.products .product .price {
+  font-size: 30px;
+  font-style: normal;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+.products .product .text_crossed {
+  font-size: 22px;
+}
+.products .product .conseil {
+  font-family: "Myriad Pro Light";
+  line-height: 25px;
+}
+.product-horizontal {
+  margin-bottom: 50px;
+  position: relative;
+}
+.product-horizontal .product-horizontal-photo {
+  width: 50%;
+}
+.product-horizontal .product-horizontal-description {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: calc(50% - 100px);
+  z-index: -1;
+  padding-left: 125px;
+  border-radius: 10px;
+  border: 1px solid #C3C3C3;
+  padding-right: 50px;
+}
+.product-horizontal .product-horizontal-description .price {
+  font-style: normal;
+}
+#section_sauteuse .description {
+  height: 250px;
+}
+#section_ustensile .description {
+  height: 250px;
+}
+#section_ustensile .container:nth-child(2n-1) .description {
+  height: 175px;
+}
+@media only screen and (max-width: 768px) {
+  #section_poeles .d-flex,
+  #section_casserole .d-flex,
+  #section_sauteuse .d-flex,
+  #section_faitout .d-flex,
+  #section_ustensile .d-flex,
+  #section_planche .d-flex,
+  #section_poivre_sel .d-flex,
+  #section_fsc .d-flex {
+    display: block!important;
+  }
+  #section_poeles .w-50,
+  #section_casserole .w-50,
+  #section_sauteuse .w-50,
+  #section_faitout .w-50,
+  #section_ustensile .w-50,
+  #section_planche .w-50,
+  #section_poivre_sel .w-50,
+  #section_fsc .w-50 {
+    width: 100%!important;
+  }
+  #section_poeles .container,
+  #section_casserole .container,
+  #section_sauteuse .container,
+  #section_faitout .container,
+  #section_ustensile .container,
+  #section_planche .container,
+  #section_poivre_sel .container,
+  #section_fsc .container {
+    display: flex!important;
+    flex-direction: column;
+  }
+  #section_poeles .container .col-4,
+  #section_casserole .container .col-4,
+  #section_sauteuse .container .col-4,
+  #section_faitout .container .col-4,
+  #section_ustensile .container .col-4,
+  #section_planche .container .col-4,
+  #section_poivre_sel .container .col-4,
+  #section_fsc .container .col-4,
+  #section_poeles .container .col-5,
+  #section_casserole .container .col-5,
+  #section_sauteuse .container .col-5,
+  #section_faitout .container .col-5,
+  #section_ustensile .container .col-5,
+  #section_planche .container .col-5,
+  #section_poivre_sel .container .col-5,
+  #section_fsc .container .col-5,
+  #section_poeles .container .col-2,
+  #section_casserole .container .col-2,
+  #section_sauteuse .container .col-2,
+  #section_faitout .container .col-2,
+  #section_ustensile .container .col-2,
+  #section_planche .container .col-2,
+  #section_poivre_sel .container .col-2,
+  #section_fsc .container .col-2,
+  #section_poeles .container .col-6,
+  #section_casserole .container .col-6,
+  #section_sauteuse .container .col-6,
+  #section_faitout .container .col-6,
+  #section_ustensile .container .col-6,
+  #section_planche .container .col-6,
+  #section_poivre_sel .container .col-6,
+  #section_fsc .container .col-6 {
+    width: 100%;
+    flex: unset;
+    max-width: 100%;
+  }
+  #section_poeles .container .border_sides_primary,
+  #section_casserole .container .border_sides_primary,
+  #section_sauteuse .container .border_sides_primary,
+  #section_faitout .container .border_sides_primary,
+  #section_ustensile .container .border_sides_primary,
+  #section_planche .container .border_sides_primary,
+  #section_poivre_sel .container .border_sides_primary,
+  #section_fsc .container .border_sides_primary {
+    border-top: 1px solid #7E142D;
+    border-bottom: 1px solid #7E142D;
+    border-left: unset;
+    border-right: unset;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+  #section_poeles .container .border_left_white,
+  #section_casserole .container .border_left_white,
+  #section_sauteuse .container .border_left_white,
+  #section_faitout .container .border_left_white,
+  #section_ustensile .container .border_left_white,
+  #section_planche .container .border_left_white,
+  #section_poivre_sel .container .border_left_white,
+  #section_fsc .container .border_left_white {
+    border-left: none;
+    border-top: 1px solid #fff;
+    margin: 25px 0;
+    padding: 25px 0;
+  }
+  #section_poeles .container .border_left_primary,
+  #section_casserole .container .border_left_primary,
+  #section_sauteuse .container .border_left_primary,
+  #section_faitout .container .border_left_primary,
+  #section_ustensile .container .border_left_primary,
+  #section_planche .container .border_left_primary,
+  #section_poivre_sel .container .border_left_primary,
+  #section_fsc .container .border_left_primary {
+    border-left: none;
+    border-top: 1px solid #7E142D;
+    margin: 25px 0;
+    padding: 25px 0;
+  }
+  #section_poeles .cuisson_logo,
+  #section_casserole .cuisson_logo,
+  #section_sauteuse .cuisson_logo,
+  #section_faitout .cuisson_logo,
+  #section_ustensile .cuisson_logo,
+  #section_planche .cuisson_logo,
+  #section_poivre_sel .cuisson_logo,
+  #section_fsc .cuisson_logo {
+    flex-direction: row!important;
+    display: flex!important;
+    margin-top: 25px;
+    padding: 0;
+  }
+  #section_poeles .cuisson_logo > div,
+  #section_casserole .cuisson_logo > div,
+  #section_sauteuse .cuisson_logo > div,
+  #section_faitout .cuisson_logo > div,
+  #section_ustensile .cuisson_logo > div,
+  #section_planche .cuisson_logo > div,
+  #section_poivre_sel .cuisson_logo > div,
+  #section_fsc .cuisson_logo > div {
+    width: 100%;
+    flex: 1;
+    padding-left: .25rem;
+    padding-right: .25rem;
+  }
+  #section_poeles .cuisson_logo > div img,
+  #section_casserole .cuisson_logo > div img,
+  #section_sauteuse .cuisson_logo > div img,
+  #section_faitout .cuisson_logo > div img,
+  #section_ustensile .cuisson_logo > div img,
+  #section_planche .cuisson_logo > div img,
+  #section_poivre_sel .cuisson_logo > div img,
+  #section_fsc .cuisson_logo > div img {
+    width: 100%!important;
+  }
+  #section_poeles .description,
+  #section_casserole .description,
+  #section_sauteuse .description,
+  #section_faitout .description,
+  #section_ustensile .description,
+  #section_planche .description,
+  #section_poivre_sel .description,
+  #section_fsc .description {
+    height: auto!important;
+    margin-bottom: 25px;
+  }
+  #section_poeles .products .product:nth-child(2n),
+  #section_casserole .products .product:nth-child(2n),
+  #section_sauteuse .products .product:nth-child(2n),
+  #section_faitout .products .product:nth-child(2n),
+  #section_ustensile .products .product:nth-child(2n),
+  #section_planche .products .product:nth-child(2n),
+  #section_poivre_sel .products .product:nth-child(2n),
+  #section_fsc .products .product:nth-child(2n) {
+    margin-top: 100px;
+  }
+  #section_poeles .product-horizontal,
+  #section_casserole .product-horizontal,
+  #section_sauteuse .product-horizontal,
+  #section_faitout .product-horizontal,
+  #section_ustensile .product-horizontal,
+  #section_planche .product-horizontal,
+  #section_poivre_sel .product-horizontal,
+  #section_fsc .product-horizontal {
+    padding-top: 0!important;
+  }
+  #section_poeles .product-horizontal-photo,
+  #section_casserole .product-horizontal-photo,
+  #section_sauteuse .product-horizontal-photo,
+  #section_faitout .product-horizontal-photo,
+  #section_ustensile .product-horizontal-photo,
+  #section_planche .product-horizontal-photo,
+  #section_poivre_sel .product-horizontal-photo,
+  #section_fsc .product-horizontal-photo,
+  #section_poeles .product-horizontal-description,
+  #section_casserole .product-horizontal-description,
+  #section_sauteuse .product-horizontal-description,
+  #section_faitout .product-horizontal-description,
+  #section_ustensile .product-horizontal-description,
+  #section_planche .product-horizontal-description,
+  #section_poivre_sel .product-horizontal-description,
+  #section_fsc .product-horizontal-description {
+    position: relative;
+    width: 100%;
+    order: 2;
+  }
+  #section_poeles .product-horizontal-description,
+  #section_casserole .product-horizontal-description,
+  #section_sauteuse .product-horizontal-description,
+  #section_faitout .product-horizontal-description,
+  #section_ustensile .product-horizontal-description,
+  #section_planche .product-horizontal-description,
+  #section_poivre_sel .product-horizontal-description,
+  #section_fsc .product-horizontal-description {
+    order: 1;
+    left: 0;
+    padding: 25px 25px 100px 25px;
+  }
+  #section_poeles .product-horizontal-photo,
+  #section_casserole .product-horizontal-photo,
+  #section_sauteuse .product-horizontal-photo,
+  #section_faitout .product-horizontal-photo,
+  #section_ustensile .product-horizontal-photo,
+  #section_planche .product-horizontal-photo,
+  #section_poivre_sel .product-horizontal-photo,
+  #section_fsc .product-horizontal-photo {
+    margin-top: -50px;
+  }
+  #section_poeles .product-horizontal-photo .product-horizontal-photo-description,
+  #section_casserole .product-horizontal-photo .product-horizontal-photo-description,
+  #section_sauteuse .product-horizontal-photo .product-horizontal-photo-description,
+  #section_faitout .product-horizontal-photo .product-horizontal-photo-description,
+  #section_ustensile .product-horizontal-photo .product-horizontal-photo-description,
+  #section_planche .product-horizontal-photo .product-horizontal-photo-description,
+  #section_poivre_sel .product-horizontal-photo .product-horizontal-photo-description,
+  #section_fsc .product-horizontal-photo .product-horizontal-photo-description {
+    flex-direction: row;
+    display: flex!important;
+    padding: 25px;
+    padding-left: 20px!important;
+    padding-right: 20px!important;
+  }
+  #section_poeles .product-horizontal-photo .product-horizontal-photo-description img,
+  #section_casserole .product-horizontal-photo .product-horizontal-photo-description img,
+  #section_sauteuse .product-horizontal-photo .product-horizontal-photo-description img,
+  #section_faitout .product-horizontal-photo .product-horizontal-photo-description img,
+  #section_ustensile .product-horizontal-photo .product-horizontal-photo-description img,
+  #section_planche .product-horizontal-photo .product-horizontal-photo-description img,
+  #section_poivre_sel .product-horizontal-photo .product-horizontal-photo-description img,
+  #section_fsc .product-horizontal-photo .product-horizontal-photo-description img {
+    margin: 0;
+    width: 75px!important;
+  }
+  #section_poeles .product-horizontal-photo .product-horizontal-photo-description .pl-5,
+  #section_casserole .product-horizontal-photo .product-horizontal-photo-description .pl-5,
+  #section_sauteuse .product-horizontal-photo .product-horizontal-photo-description .pl-5,
+  #section_faitout .product-horizontal-photo .product-horizontal-photo-description .pl-5,
+  #section_ustensile .product-horizontal-photo .product-horizontal-photo-description .pl-5,
+  #section_planche .product-horizontal-photo .product-horizontal-photo-description .pl-5,
+  #section_poivre_sel .product-horizontal-photo .product-horizontal-photo-description .pl-5,
+  #section_fsc .product-horizontal-photo .product-horizontal-photo-description .pl-5 {
+    padding-left: 25px!important;
+  }
+  #section_poeles .product-horizontal-photo .product-horizontal-photo-description p,
+  #section_casserole .product-horizontal-photo .product-horizontal-photo-description p,
+  #section_sauteuse .product-horizontal-photo .product-horizontal-photo-description p,
+  #section_faitout .product-horizontal-photo .product-horizontal-photo-description p,
+  #section_ustensile .product-horizontal-photo .product-horizontal-photo-description p,
+  #section_planche .product-horizontal-photo .product-horizontal-photo-description p,
+  #section_poivre_sel .product-horizontal-photo .product-horizontal-photo-description p,
+  #section_fsc .product-horizontal-photo .product-horizontal-photo-description p {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  #section_planche .picto-big {
+    margin-top: 25px;
+  }
+  #section_fsc {
+    text-align: center;
+  }
+  #section_fsc img {
+    margin-bottom: 25px;
+  }
+  #section_fsc .pl-5 {
+    padding-left: 0!important;
+  }
+}

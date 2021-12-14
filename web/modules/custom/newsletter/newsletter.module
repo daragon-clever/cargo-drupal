@@ -1,19 +1,22 @@
 <?php
-use Drupal\newsletter\Controller\NewsletterController;
-use Drupal\newsletter\Model\Subscriber;
+
+use Drupal\newsletter\NewsletterSubscriberRepository;
+use Drupal\newsletter\SchemaTable\SchemaTableController;
+use Drupal\newsletter\Update\UpdateController;
 
 function newsletter_schema()
 {
-    $newsletterController = new NewsletterController();
-    \Drupal::logger('newsletter')->notice($newsletterController->currentCompany);
-    $base = $newsletterController->getCompanyController();
+    $schemaTableController = new SchemaTableController();
 
-    if (isset($base)) {
-        if (\Drupal::database()->schema()->tableExists(Subscriber::TABLE_SUBSCRIBER) == FALSE) {
-            $schema[Subscriber::TABLE_SUBSCRIBER] = $base->setSchemaTableSubscriber();
+    \Drupal::logger('newsletter')->notice($schemaTableController->currentSitename);
+
+    $schemaTable = $schemaTableController->getSchemaTable();
+
+    if (isset($schemaTable)) {
+        if (\Drupal::database()->schema()->tableExists(NewsletterSubscriberRepository::TABLE_NAME) == FALSE) {
+            $schema[NewsletterSubscriberRepository::TABLE_NAME] = $schemaTable->createNewsletterSubscriberSchemaTable();
+            if (!empty($schema)) return $schema;
         }
-
-        if (isset($schema) && !empty($schema)) return $schema;
     }
 }
 
@@ -30,38 +33,30 @@ function newsletter_theme($existing, $type, $theme, $path) {
     ];
 }
 
-//run update.php to execute this update
 function newsletter_update_8101(&$sandbox)
 {
-    $newsletterController = new NewsletterController();
-    $base = $newsletterController->getCompanyController();
-
-    if (isset($base)) {
-        if (\Drupal::database()->schema()->tableExists("newsletter_subscription")) {
-            if (method_exists($base, 'setUpdate8101')) {
-                \Drupal::logger('newsletter')->notice('[UPDATE] Déplacement des données de la table newsletter_subscription à la colonne dans la table newsletter_susbcriber.subscriptions');
-                $base->setUpdate8101("newsletter_subscription");
-            }
-
-            //delete table subscription
-            \Drupal::database()->schema()->dropTable("newsletter_subscription");
-            \Drupal::logger('newsletter')->notice('[UPDATE] Suppression de l\'ancienne table newsletter_subscription');
-        }
-    }
+    $updateController = new UpdateController();
+    $update = $updateController->getUpdate();
+    $update->setUpdate('8101');
 }
 
-//run update.php to execute this update
 function newsletter_update_8102(&$sandbox)
 {
-    $newsletterController = new NewsletterController();
-    $base = $newsletterController->getCompanyController();
+    $updateController = new UpdateController();
+    $update = $updateController->getUpdate();
+    $update->setUpdate('8102');
+}
 
-    if (isset($base)) {
-        if (\Drupal::database()->schema()->tableExists(Subscriber::TABLE_SUBSCRIBER)) {
-            if (method_exists($base, 'setUpdate8102')) {
-                \Drupal::logger('newsletter')->notice('[UPDATE] Ajout colonne pour le n° de mobile - C2E');
-                $base->setUpdate8102();
-            }
-        }
-    }
+function newsletter_update_8103(&$sandbox)
+{
+    $updateController = new UpdateController();
+    $update = $updateController->getUpdate();
+    $update->setUpdate('8103');
+}
+
+function newsletter_update_8104(&$sandbox)
+{
+    $updateController = new UpdateController();
+    $update = $updateController->getUpdate();
+    $update->setUpdate('8104');
 }

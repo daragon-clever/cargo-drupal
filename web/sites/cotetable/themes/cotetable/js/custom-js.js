@@ -130,4 +130,12 @@ jQuery(document).ready(function ($) {
             ]
         });
     }
+
+    //NEWSLETTER
+    $('.newsletter-content').ready(function() {
+        var divDescTxt = $('.newsletter-content .description-txt');
+        divDescTxt.hide();
+        var textRgpd = divDescTxt.html();
+        $('.newsletter-content .description').html(textRgpd);
+    });
 });

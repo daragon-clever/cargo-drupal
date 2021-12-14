@@ -6,14 +6,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-msgid "You have just signed up for the newsletter"
-msgstr "Vous venez de vous inscrire à la newsletter"
-
-msgid "You have just updated your newsletter preferences"
-msgstr "Vous venez de mettre à jour vos préférences newsletter"
-
-msgid "Error"
-msgstr "Erreur"
+msgid "Sign up"
+msgstr "S'inscrire"
 
 msgid "Email is required"
 msgstr "Email obligatoire"
@@ -21,11 +15,35 @@ msgstr "Email obligatoire"
 msgid "Email is malformed"
 msgstr "Email incorrect"
 
+msgid "Email"
+msgstr "Email"
+
+msgid "Lastname"
+msgstr "Nom"
+
+msgid "Firstname"
+msgstr "Prénom"
+
+msgid "Mobile phone"
+msgstr "N° de mobile"
+
+msgid "I sign up"
+msgstr "Je m'inscris"
+
 msgid "Lastname is required"
-msgstr "Nom obligatoire"
+msgstr "Votre nom est requis"
 
 msgid "Firstname is required"
-msgstr "Prénom obligatoire"
+msgstr "Votre prénom est requis"
+
+msgid "Phone number is required"
+msgstr "Votre n° de mobile est requis"
+
+msgid "Phone number is malformed"
+msgstr "Votre n° de mobile ne semble pas valide"
+
+msgid "Check the RGPD box"
+msgstr "Veuillez cochez la case RGPD"
 
 msgid "Enter your e-mail address"
 msgstr "Entrez votre adresse e-mail"
@@ -33,14 +51,20 @@ msgstr "Entrez votre adresse e-mail"
 msgid "Send"
 msgstr "Envoyer"
 
-msgid "Sign up"
-msgstr "S'inscrire"
+msgid "E-mail address"
+msgstr "Adresse e-mail"
 
-msgid "All the brands"
-msgstr "Toutes les marques"
+msgid "Email address"
+msgstr "Adresse email"
 
-msgid "Brands is required"
-msgstr "Selectionnez au minimum une marque"
+msgid "Company"
+msgstr "Société"
+
+msgid "I subscribe"
+msgstr "Je m'abonne"
+
+msgid "Your e-mail address"
+msgstr "Votre adresse e-mail"
 
 msgid "Your Name"
 msgstr "Votre Nom"
@@ -54,14 +78,17 @@ msgstr "Votre Prénom"
 msgid "Enter your firstname"
 msgstr "Saisir votre prénom"
 
-msgid "Your e-mail address"
-msgstr "Votre adresse e-mail"
+msgid "Sign up"
+msgstr "S'inscrire"
 
-msgid "Enter your e-mail address"
-msgstr "Saisir votre adresse e-mail"
+msgid "All the brands"
+msgstr "Toutes les marques"
 
-msgid "E-mail address"
-msgstr "Adresse e-mail"
+msgid "Brands is required"
+msgstr "Selectionnez au minimum une marque"
+
+msgid "You have just updated your newsletter preferences"
+msgstr "Vous venez de mettre à jour vos préférences newsletter"
 
 msgid "Thank you for subscribing to the newsletter"
 msgstr "Merci de votre inscription à la newsletter"

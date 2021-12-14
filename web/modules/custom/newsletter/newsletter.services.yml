@@ -1,0 +1,4 @@
+services:
+  newsletter.repository:
+    class: Drupal\newsletter\NewsletterSubscriberRepository
+    arguments: ['@database']

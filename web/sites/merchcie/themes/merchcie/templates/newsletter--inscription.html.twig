@@ -28,10 +28,17 @@
                                         </div>
                                     </div>
                                     {{ form.societe }}
-                                    {{ form.mail }}
+                                    {{ form.email }}
                                     <div class="row align-items-center mt-4 mb-5">
-                                        <div class="col d-flex">
+                                        <div class="col d-flex newsletter-container">
                                             {{ form.rgpd_allow }}
+                                            <div class="description-txt">
+                                                <div>
+                                                    En renseignant ces informations j’accepte de recevoir chaque mois, la lettre
+                                                    d’information de Merch & Cie et je confirme avoir pris connaissance de la
+                                                    <a href='/politique-confidentialite'>politique de confidentialité</a>.
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     {{ form.captcha }}

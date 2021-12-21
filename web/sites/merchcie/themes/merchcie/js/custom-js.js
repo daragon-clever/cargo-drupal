@@ -224,4 +224,12 @@ jQuery(document).ready(function ($) {
         $(".views-field-field-challenge-c2-imgs img").addClass('img-fluid filter-hover-color2');
         $(".views-field-view-node a").addClass('link text-color2 after-arrow');
     }
+
+    //NEWSLETTER
+    $('.newsletter-block-wrapper').ready(function() {
+        var divDescTxt = $('.newsletter-block-wrapper .description-txt');
+        divDescTxt.hide();
+        var textRgpd = divDescTxt.html();
+        $('.newsletter-block-wrapper .description').html(textRgpd);
+    });
 });

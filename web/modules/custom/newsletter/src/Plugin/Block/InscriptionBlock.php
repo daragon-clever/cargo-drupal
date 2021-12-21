@@ -1,9 +1,8 @@
 <?php
 namespace Drupal\newsletter\Plugin\Block;
 
-
 use Drupal\Core\Block\BlockBase;
-use Drupal\newsletter\Controller\NewsletterController;
+use Drupal\newsletter\Form\FormController;
 
 /**
  * @Block(
@@ -15,34 +14,20 @@ use Drupal\newsletter\Controller\NewsletterController;
 class InscriptionBlock extends BlockBase
 {
     /**
-     * @var NewsletterController
-     */
-    protected $newsletterController;
-
-    public function __construct(
-        array $configuration,
-        $plugin_id,
-        $plugin_definition
-    )
-    {
-        parent::__construct($configuration, $plugin_id, $plugin_definition);
-        $this->newsletterController = new NewsletterController();
-    }
-
-    /**
-     * Load template of form according to company
+     * Load template of form according to current website
      *
      * {@inheritdoc}
      */
     public function build()
     {
-        $myForm = $this->newsletterController->getCompanyForm();
+        $formController = new FormController();
+        $form = $formController->getForm();
 
-        $array['#theme'] = "inscription";
-        if (!is_null($myForm)) {
-            $array['#form'] = $myForm;
+        $theme['#theme'] = "inscription";
+        if (!is_null($form)) {
+            $theme['#form'] = $form;
         }
 
-        return $array;
+        return $theme;
     }
 }

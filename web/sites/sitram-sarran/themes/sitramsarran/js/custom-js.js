@@ -1,65 +1,83 @@
-jQuery(document).ready(function ($) {
-
-  $('.hamburger').click(function() {
-    $('.hamburger').toggleClass('active');
-    $('#menu').toggleClass('active');
-  });
+(function($) {
 
   var isTabletOrLess = window.matchMedia("only screen and (max-width: 991px)").matches;
 
-  $('#slider_collection').owlCarousel({
-    loop: true,
-    margin: 0,
-    responsiveClass: true,
-    items:1,
-    nav:true,
-    navText : [
-      "<img src=\"/sites/sitram-sarran/themes/sitramsarran/images/Pictos_Icons/Icon feather-arrow-left-circle.svg\"/>",
-      "<img src=\"/sites/sitram-sarran/themes/sitramsarran/images/Pictos_Icons/Icon feather-arrow-right-circle.svg\"/>",
-    ]
-  });
-
-  if (isTabletOrLess) {
-    $('#slider_instagram').owlCarousel({
-      loop:true,
-      margin:0,
-      nav:true,
-      dots: false,
-      autoPlay: 2500,
-      responsive:{
-        0:{
-          items:1
-        }
-      }
+  function initBurger() {
+    $('.hamburger').click(function() {
+      $('.hamburger').toggleClass('active');
+      $('#menu').toggleClass('active');
     });
   }
 
-  $('.video_control').click(function() {
-    if (!$(this).hasClass('playing')) {
-      $('.video_control video').get(0).play();
-    } else {
-      $('.video_control video').get(0).pause();
-    }
-    $(this).toggleClass('playing');
-    $(this).toggleClass('touched');
-  });
-
-  /*if (isTabletOrLess) {
-    productsSlider.slick({
-      infinite: true,
-      dots: true,
-      adaptiveHeight: true
+  function initSliderCollection() {
+    $('#slider_collection').owlCarousel({
+      loop: true,
+      margin: 0,
+      responsiveClass: true,
+      items:1,
+      nav:true,
+      navText : [
+        "<img src=\"/sites/sitram-sarran/themes/sitramsarran/images/Pictos_Icons/Icon feather-arrow-left-circle.svg\"/>",
+        "<img src=\"/sites/sitram-sarran/themes/sitramsarran/images/Pictos_Icons/Icon feather-arrow-right-circle.svg\"/>",
+      ]
     });
-  }*/
+  }
 
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
+  function initVideoElement() {
+    $('.video_control').click(function() {
+      if (!$(this).hasClass('playing')) {
+        $('.video_control video').get(0).play();
+      } else {
+        $('.video_control video').get(0).pause();
+      }
+      $(this).toggleClass('playing');
+      $(this).toggleClass('touched');
+    });
+  }
 
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-        behavior: 'smooth'
+  function initCarouselInstagramOnMobiles() {
+    console.log(isTabletOrLess);
+    if (isTabletOrLess) {
+      $('#slider_instagram').owlCarousel({
+        loop:true,
+        margin:0,
+        nav:true,
+        dots: false,
+        autoPlay: 2500,
+        responsive:{
+          0:{
+            items:1
+          }
+        }
+      });
+    }
+  }
+
+  function initSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
       });
     });
+  }
+
+  jQuery(document).ready(function () {
+    initBurger();
+    initSliderCollection();
+    initCarouselInstagramOnMobiles();
+    initVideoElement();
+    initSmoothScroll();
   });
 
-});
+  jQuery(window).resize(function () {
+
+    isTabletOrLess = window.matchMedia("only screen and (max-width: 991px)").matches;
+
+    initCarouselInstagramOnMobiles();
+  });
+
+} (jQuery));

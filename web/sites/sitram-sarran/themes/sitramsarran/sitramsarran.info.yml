@@ -5,13 +5,10 @@ core: 8.x
 
 regions:
   navigation: 'Navigation'
-  highlighted: 'Highlighted'
   content: 'Content'
-  footer: 'Footer'
-  txtfooter: 'Zone texte sous le footer'
-  contenthp1: 'Contenu HP - 1ère partie'
-  contenthp2: 'Contenu HP - 2ème partie'
   synapse: 'Emplacement Store Locator'
+  socials: 'Socials'
+  footer: 'Footer'
 
 libraries:
   - sitramsarran/bootstrap

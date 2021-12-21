@@ -136,16 +136,16 @@
         },
         {
             "name": "cargo/common-marketing-automation",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "git@github.com:PoleWebCargo/WEB_Common_Module_MarketingAutomation.git",
-                "reference": "8ccefe4167e3e0c83f3fe3542d93bd9778f8e5aa"
+                "reference": "b6899d813ff2c6039d0c75bf4b26a904341968e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PoleWebCargo/WEB_Common_Module_MarketingAutomation/zipball/8ccefe4167e3e0c83f3fe3542d93bd9778f8e5aa",
-                "reference": "8ccefe4167e3e0c83f3fe3542d93bd9778f8e5aa",
+                "url": "https://api.github.com/repos/PoleWebCargo/WEB_Common_Module_MarketingAutomation/zipball/b6899d813ff2c6039d0c75bf4b26a904341968e5",
+                "reference": "b6899d813ff2c6039d0c75bf4b26a904341968e5",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -166,10 +166,10 @@
             ],
             "description": "Module utilisé pour alimenter Sarbacane grâce aux données de nos sites WEB.",
             "support": {
-                "source": "https://github.com/PoleWebCargo/WEB_Common_Module_MarketingAutomation/tree/v1.0.0",
+                "source": "https://github.com/PoleWebCargo/WEB_Common_Module_MarketingAutomation/tree/v1.0.1",
                 "issues": "https://github.com/PoleWebCargo/WEB_Common_Module_MarketingAutomation/issues"
             },
-            "time": "2021-12-14T16:14:44+00:00"
+            "time": "2021-12-21T10:57:33+00:00"
         },
         {
             "name": "cargo/common-synapse-client",
@@ -218,16 +218,16 @@
         },
         {
             "name": "cargo/drupal_marketing_automation_core",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "git@github.com:PoleWebCargo/WEB_Drupal_Module_MarketingAutomation_Core.git",
-                "reference": "4e0e7192a72c0de3f0186029b56dc96c658dcaa2"
+                "reference": "107a0c72f981b45fcf9e40e257abad301d7bb283"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PoleWebCargo/WEB_Drupal_Module_MarketingAutomation_Core/zipball/4e0e7192a72c0de3f0186029b56dc96c658dcaa2",
-                "reference": "4e0e7192a72c0de3f0186029b56dc96c658dcaa2",
+                "url": "https://api.github.com/repos/PoleWebCargo/WEB_Drupal_Module_MarketingAutomation_Core/zipball/107a0c72f981b45fcf9e40e257abad301d7bb283",
+                "reference": "107a0c72f981b45fcf9e40e257abad301d7bb283",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -251,10 +251,10 @@
             ],
             "description": "Module utilisé pour alimenter Sarbacane grâce aux données de nos sites WEB.",
             "support": {
-                "source": "https://github.com/PoleWebCargo/WEB_Drupal_Module_MarketingAutomation_Core/tree/v1.0.0",
+                "source": "https://github.com/PoleWebCargo/WEB_Drupal_Module_MarketingAutomation_Core/tree/v1.0.1",
                 "issues": "https://github.com/PoleWebCargo/WEB_Drupal_Module_MarketingAutomation_Core/issues"
             },
-            "time": "2021-12-14T16:13:44+00:00"
+            "time": "2021-12-21T11:02:29+00:00"
         },
         {
             "name": "cargo/drupal_synapse",

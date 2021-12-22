@@ -17,6 +17,7 @@
 web/sites/ostaria/files/inline-images
 web/sites/*/files/translations/
 web/sites/turbocar/files/translations/mandrill-8\.x-1\.0\.fr\.po
+web/sites/sitram-sarran/themes/sitramsarran/accueil_files
 
 # Ignore default text files
 /web/robots.txt

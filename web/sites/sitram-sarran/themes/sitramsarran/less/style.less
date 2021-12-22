@@ -640,6 +640,104 @@ b {
   .image_marker {
     width: 50px;
   }
+  .container {
+    max-width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .col-12 {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  #block-searchuiforthestorelocator {
+    .results-wrapper {
+      margin-top: 50px;
+      .store-locator-response {
+        max-height: 50vh;
+        overflow: scroll;
+        padding: 0 50px;
+        .js-store-block {
+
+          margin-bottom: 20px;
+
+          &>div {
+            display: flex;
+          }
+
+          .infos-wrapper {
+            width: 100%;
+            padding-right: 25px;
+            text-align: left;
+          }
+
+          .links {
+            width: 200px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+
+            a {
+              border-radius: 5px;
+              padding: 20px 45px 20px 14px;
+              color: #7E142D;
+              background-image: url('/sites/sitram-sarran/themes/sitramsarran/images/Pictos_Icons/Store_Locator/Icon map-location-arrow.svg');
+              background-position: right 15px center;
+              background-size: 20px auto;
+              background-repeat: no-repeat;
+              background-color: #fff;
+              display: inline-block;
+            }
+          }
+
+          .title a {
+            font: normal normal bold 24px/30px 'Myriad Pro Bold';
+            color: #fff;
+            text-align: left;
+            margin-bottom: 5px;
+          }
+          .address {
+            font: normal normal normal 16px/20px 'Myriad Pro Light';
+            color: #fff;
+            text-align: left;
+          }
+        }
+      }
+      #storelocator-map {
+        height: 50vh;
+      }
+    }
+  }
+}
+
+@media @smMediaQuery {
+  #section_store_locator {
+    .image_marker {}
+    .container {}
+    .col-12 {}
+    #block-searchuiforthestorelocator {
+      .results-wrapper {
+        .store-locator-response {
+          .js-store-block {
+            &>div {
+            }
+            .infos-wrapper {
+            }
+            .links {
+              a {
+              }
+            }
+
+            .title a {
+            }
+            .address {
+            }
+          }
+        }
+        #storelocator-map {
+        }
+      }
+    }
+  }
 }
 
 @media @smMediaQuery {
@@ -713,24 +811,33 @@ b {
 .products {
   .product {
     h3 {
+      line-height: 24px;
       span {
-        font-size: 25px;
+        font-size: 20px;
         font-family: "Myriad Pro Light";
       }
     }
     .price {
       font-size: 30px;
       font-style: normal;
-      margin-bottom: 10px;
+      margin-bottom: 0;
       display: inline-block;
+      font: normal normal bold 25px/25px 'Myriad Pro Bold';
     }
     .text_crossed {
-      font-size: 22px;
+      font-size: 18px;
     }
     .conseil {
       font-family: "Myriad Pro Light";
       line-height: 25px;
+      font-size: 20px;
     }
+  }
+}
+
+.oekotex {
+  img {
+    height: 90px;
   }
 }
 
@@ -889,6 +996,92 @@ b {
     }
     .pl-5 {
       padding-left: 0!important;
+    }
+  }
+}
+
+.storelocator-ban {
+  margin-top: 50px;
+  img, h2 {
+    display: none;
+  }
+  div {
+    .store-locator-field-wrapper {
+      input[name="search-string"] {
+        font: normal normal normal 26px/26px 'Myriad Pro Regular';
+        border-radius: 10px;
+        background-color: transparent;
+        color: #fff;
+        border: 1px solid #fff;
+        font-size: 25px;
+        height: 70px;
+        width: 350px;
+        padding-left: 25px;
+        &::placeholder {
+          color: #fff;
+        }
+      }
+      .btn.submit {
+        transform: translate(-25px, -2px);
+        width: 90px;
+        height: 70px;
+        border: none;
+        border-radius: 10px;
+        background-image: url('/sites/sitram-sarran/themes/sitramsarran/images/Pictos_Icons/Store_Locator/picto-find.svg');
+        background-position: center;
+        background-size: 50px auto;
+        background-repeat: no-repeat;
+        background-color: #fff;
+      }
+    }
+    #js-search-around {
+      .locate-me {
+        height: 70px;
+        background-color: #fff;
+        border-radius: 10px;
+        border: 1px solid #fff;
+        font-size: 20px;
+        padding: 0 100px 0 25px;
+        background-image: url('/sites/sitram-sarran/themes/sitramsarran/images/Pictos_Icons/Store_Locator/Icon metro-my-location.svg');
+        background-position: right 25px center;
+        background-size: 35px auto;
+        background-repeat: no-repeat;
+        font: normal normal normal 26px/26px 'Myriad Pro Regular';
+        color: @primaryColor;
+      }
+    }
+  }
+}
+
+@media @smMediaQuery {
+  .storelocator-ban {
+    img, h2 {
+    }
+    div {
+      .store-locator-field-wrapper {
+        display: flex;
+        transform: translate(12.5px, 0px);
+        lign-items: center;
+        justify-content: center;
+        input[name="search-string"] {
+          &::placeholder {
+          }
+        }
+        .btn.submit {
+          transform: translate(-25px, 0px);
+        }
+      }
+      #js-search-around {
+        margin-top: 25px;
+        display: block;
+        .locate-me {
+          display: block;
+          width: ~"calc(100% - 25px)";
+          margin: 0 auto;
+          text-align: left;
+          max-width: 350px;
+        }
+      }
     }
   }
 }

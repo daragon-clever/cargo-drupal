@@ -1,4 +1,9 @@
 # DRUPAL
+# À Propos
+
+Ce document décris l'environnement de développement des équipes Cargo, les autres intervenants doivent se réferer à la documentation [CleverAge](./cleverage/README.md)
+
+# Création d'un nouveau site Drupal dans la ferme
 
 ## Installation du projet
 
@@ -10,6 +15,21 @@
 - Docker (sur VM)
 - Composer (sur VM)
 - Fichier `/multisites/{{ SITENAME }}/.rvmc` et `/bin/cli-setup.sh` à mettre au format LF
+
+# Installation Drupal avec Docker (multi site)
+* Créer un dossier sur son ordinateur ( par exemple : `D:/CARGO/WWW/drupal` )
+* Dans le dossier, entrer la ligne de commande suivante : `git clone https://github.com/PoleWebCargo/drupal.git`
+* Dupliquer et renommer le fichier `docker-compose.yml.dist` en `docker-compose.yml`
+* Installer les dépendances : `docker-compose run --rm php composer install`
+* Dupliquer et renommer le fichier `web/sites/*/settings.php.dist` en `web/sites/*/settings.php` :
+	* '**database**' => '`{{ MYSQL_DATABASE }}`',
+	* '**username**' => '`{{ MYSQL_USER }}`',
+	* '**password**' => '`{{ MYSQL_PASSWORD }}`',
+	* '**prefix**' => '',
+	* '**host**' => '`{{ MYSQL_HOST }}`',
+	* '**port**' => '3306',
+	* '**namespace**' => 'Drupal\\Core\\Database\\Driver\\mysql',
+	* '**driver**' => 'mysql'
 
 **A remplacer :** avec ses propres informations
 
@@ -53,6 +73,7 @@ Configuration PhpStorm du déploiement automatique sur la VM :
     - Cocher "Upload external changes"
 
 ### 4. Installation des dépendances :
+# Mise à jour de Drupal :
 
 - via ligne de commande et composer : `composer install`
 - option `-vvv` pour avoir une vision du proccess  
@@ -113,6 +134,16 @@ Configuration PhpStorm du déploiement automatique sur la VM :
 
 [Voir la procédure ici](./Nouveau-drupal.md)
 
+En cas d'arrêt forcé de mysql et si ce dernier ne rédémarre pas correctement, ajouter cette commande dans le
+`docker-compose.yml` du site en question dans le service DB
+```bash
+command: mysqld --tc-heuristic-recover=ROLLBACK
+```
+
+#Lancer une command Drupal
+
+Depuis le dossier /multisites/[site_name]:
+
 ### Dump de sa BDD en local :
 
 - passer le fichier `bin/local-dump.sh` en **LF**
@@ -132,7 +163,7 @@ Configuration PhpStorm du déploiement automatique sur la VM :
 		* Xdebug: Debug port à **9003**
 		* Ne pas séléctionner:
 		    * `Ignore External connections...`
-			* `Force break at first line...` (les deux options)	    
+			* `Force break at first line...` (les deux options)
 	* Languages & Frameworks >  Php > Servers
 		* Ajouter un nouveau serveur `drupal`
 			* Host: localhost
@@ -153,7 +184,7 @@ Vous pouvez maintenant activer XDebug sur Phpstorm (le petit téléphonne)
 
 * Décommenter le bloc suivant dans le fichier `web/sites/*/settings.php` :
 ```php
-if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {'   
+if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {'
    include $app_root . '/' . $site_path . '/settings.local.php';
 }
 ```
@@ -185,3 +216,4 @@ Lors de l'installation de modules, il arrive que Drupal se mette en erreur sans 
 voir la table watchdog pour en savoir un peu plus sur l'erreur générée.
 
 On peut aussi lancer un update.php.
+* *Pour plus de détails sur la gestion du cache : https://www.drupal.org/node/2598914*

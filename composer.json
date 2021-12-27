@@ -156,6 +156,11 @@
             "drush/contrib/{$name}": [
                 "type:drupal-drush"
             ]
+        },
+        "drupal-scaffold": {
+            "file-mapping": {
+                "[project-root]/.editorconfig": false
+            }
         }
     }
 }

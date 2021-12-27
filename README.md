@@ -1,21 +1,25 @@
+# À Propos
+
+Ce document décris l'environnement de développement des équipes Cargo, les autres intervenants doivent se réferer à la documentation [CleverAge](./cleverage/README.md)
+
 # Création d'un nouveau site Drupal dans la ferme
 
 [Voir la procédure ici](./Nouveau-drupal.md)
 
 
-# Installation Drupal avec Docker (multi site)  
-* Créer un dossier sur son ordinateur ( par exemple : `D:/CARGO/WWW/drupal` )  
-* Dans le dossier, entrer la ligne de commande suivante : `git clone https://github.com/PoleWebCargo/drupal.git`  
+# Installation Drupal avec Docker (multi site)
+* Créer un dossier sur son ordinateur ( par exemple : `D:/CARGO/WWW/drupal` )
+* Dans le dossier, entrer la ligne de commande suivante : `git clone https://github.com/PoleWebCargo/drupal.git`
 * Dupliquer et renommer le fichier `docker-compose.yml.dist` en `docker-compose.yml`
 * Installer les dépendances : `docker-compose run --rm php composer install`
 * Dupliquer et renommer le fichier `web/sites/*/settings.php.dist` en `web/sites/*/settings.php` :
-	* '**database**' => '`{{ MYSQL_DATABASE }}`',  
-	* '**username**' => '`{{ MYSQL_USER }}`',  
-	* '**password**' => '`{{ MYSQL_PASSWORD }}`',  
-	* '**prefix**' => '',  
-	* '**host**' => '`{{ MYSQL_HOST }}`',  
-	* '**port**' => '3306',  
-	* '**namespace**' => 'Drupal\\Core\\Database\\Driver\\mysql',  
+	* '**database**' => '`{{ MYSQL_DATABASE }}`',
+	* '**username**' => '`{{ MYSQL_USER }}`',
+	* '**password**' => '`{{ MYSQL_PASSWORD }}`',
+	* '**prefix**' => '',
+	* '**host**' => '`{{ MYSQL_HOST }}`',
+	* '**port**' => '3306',
+	* '**namespace**' => 'Drupal\\Core\\Database\\Driver\\mysql',
 	* '**driver**' => 'mysql'
 
 # Mettre à jour les médias et la base de données depuis la prépod
@@ -44,7 +48,7 @@
 
 * changer à nouveau  `$settings['update_free_access'] = TRUE;` à `FALSE` dans settings.php
 
-# Mise à jour de Drupal : 
+# Mise à jour de Drupal :
 
 Depuis le dossier /multisites/[site_name]:
 
@@ -84,7 +88,7 @@ Pour vérifer l'envoi des mails, se connecter à l'interface depuis sa VM : http
 
 ### Corruption après un arrêt forcé
 
-En cas d'arrêt forcé de mysql et si ce dernier ne rédémarre pas correctement, ajouter cette commande dans le 
+En cas d'arrêt forcé de mysql et si ce dernier ne rédémarre pas correctement, ajouter cette commande dans le
 `docker-compose.yml` du site en question dans le service DB
 ```bash
 command: mysqld --tc-heuristic-recover=ROLLBACK
@@ -110,7 +114,7 @@ Se baser sur ce qui a été fait pour les autres sites.
 		* Xdebug: Debug port à **9003**
 		* Ne pas séléctionner:
 		    * `Ignore External connections...`
-			* `Force break at first line...` (les deux options)	    
+			* `Force break at first line...` (les deux options)
 	* Languages & Frameworks >  Php > Servers
 		* Ajouter un nouveau serveur `drupal`
 			* Host: localhost
@@ -132,7 +136,7 @@ Vous pouvez maintenant activer XDebug sur Phpstorm (le petit téléphonne)
 Le debugger des templates Twig est *false* par défaut, pour l'activer en local :
 * Décommenter le bloc suivant dans le fichier `web/sites/*/settings.php` :
 ```php
-if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {'   
+if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {'
    include $app_root . '/' . $site_path . '/settings.local.php';
 }
 ```

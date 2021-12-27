@@ -4,18 +4,19 @@ RUN curl -s https://getcomposer.org/installer | php -- --install-dir=/usr/local/
 
 RUN apt-get update
 
-RUN apt-get install -y git zlib1g-dev rsync
+RUN apt-get install -y git zlib1g-dev rsync unzip
 RUN docker-php-ext-install zip pdo_mysql
 
-RUN apt-get install -y libicu-dev libpng-dev
-RUN docker-php-ext-install gd intl
+RUN apt-get install -y libicu-dev libpng-dev libjpeg62-turbo-dev
+RUN docker-php-ext-configure gd --with-jpeg-dir && \
+  docker-php-ext-install gd intl
 
 RUN rm -rf /var/lib/apt/lists/*
 
 RUN pecl channel-update pecl.php.net
 
 RUN curl -Lsf 'https://storage.googleapis.com/golang/go1.8.3.linux-amd64.tar.gz' | tar -C '/usr/local' -xvzf -
-ENV PATH /usr/local/go/bin:$PATH
+ENV PATH /usr/local/go/bin:$PATH:/var/www/html/vendor/bin
 RUN go get github.com/mailhog/mhsendmail
 RUN cp /root/go/bin/mhsendmail /usr/bin/mhsendmail
 

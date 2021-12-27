@@ -1,0 +1,9 @@
+tls:
+  stores:
+    default:
+      defaultCertificate:
+        certFile: /etc/ssl/private/tls.crt
+        keyFile: /etc/ssl/private/tls.key
+  certificates:
+    - certFile: /etc/ssl/private/tls.crt
+      keyFile: /etc/ssl/private/tls.key

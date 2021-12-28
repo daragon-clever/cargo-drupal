@@ -423,6 +423,12 @@ b {
   opacity: 0;
   transition: opacity 500ms;
 }
+#menu nav ul li a:not(.is-active):hover {
+  color: #fff;
+}
+#menu nav ul li a:not(.is-active):hover:after {
+  background-color: #7E142D;
+}
 #menu nav ul li a.is-active:after,
 #menu nav ul li a:hover:after {
   opacity: 1;
@@ -1301,3 +1307,19 @@ b {
     max-width: 350px;
   }
 }
+.user-login-form {
+  margin: 200px auto;
+  width: 500px;
+  max-width: calc(100% - 50px);
+}
+.owl-theme .owl-nav [class*=owl-]:hover {
+  background: none;
+  outline: none;
+}
+::-webkit-scrollbar {
+  width: 0;
+  /* Remove scrollbar space */
+  background: transparent;
+  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */

@@ -204,6 +204,13 @@ b {
             transition: opacity 500ms;
           }
 
+          &:not(.is-active):hover {
+            color: #fff;
+            &:after {
+              background-color: @primaryColor;
+            }
+          }
+
           &.is-active:after,
           &:hover:after {
             opacity: 1;
@@ -1084,4 +1091,24 @@ b {
       }
     }
   }
+}
+
+.user-login-form {
+  margin: 200px auto;
+  width: 500px;
+  max-width: ~"calc(100% - 50px)";
+}
+
+.owl-theme .owl-nav [class*=owl-]:hover {
+  background: none;
+  outline: none;
+}
+
+::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  //background: #FF0000;
 }

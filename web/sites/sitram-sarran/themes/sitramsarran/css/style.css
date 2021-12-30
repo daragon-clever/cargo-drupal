@@ -1241,8 +1241,8 @@ b {
 .storelocator-ban {
   margin-top: 50px;
 }
-.storelocator-ban img,
-.storelocator-ban h2 {
+.storelocator-ban div.col-12.no-padding img,
+.storelocator-ban div.col-12.no-padding h2 {
   display: none;
 }
 .storelocator-ban div .store-locator-field-wrapper input[name="search-string"] {

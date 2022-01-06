@@ -1,0 +1,22 @@
+uuid: af82a9bd-56a0-4dbc-815c-d46bcf175627
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - cleverdrop
+_core:
+  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
+id: cleverdrop_breadcrumbs
+theme: cleverdrop
+region: header
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: 'Fils d''ariane'
+  provider: system
+  label_display: '0'
+visibility: {  }

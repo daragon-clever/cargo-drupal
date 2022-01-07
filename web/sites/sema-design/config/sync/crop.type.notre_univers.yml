@@ -1,0 +1,12 @@
+uuid: 629cf1ce-777e-492a-9d75-f8775f0e6b5f
+langcode: fr
+status: true
+dependencies: {  }
+id: notre_univers
+label: 'Notre univers'
+description: ''
+aspect_ratio: '9:16'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

@@ -3,6 +3,7 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - field.field.node.homepage.field_paragraph_brand_history
     - field.field.node.homepage.field_paragraph_label_block
     - field.field.node.homepage.field_paragraph_our_universe
     - field.field.node.homepage.field_paragraph_slider_hp
@@ -15,6 +16,15 @@ targetEntityType: node
 bundle: homepage
 mode: default
 content:
+  field_paragraph_brand_history:
+    type: entity_reference_revisions_entity_view
+    weight: 105
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
   field_paragraph_label_block:
     type: entity_reference_revisions_entity_view
     weight: 103

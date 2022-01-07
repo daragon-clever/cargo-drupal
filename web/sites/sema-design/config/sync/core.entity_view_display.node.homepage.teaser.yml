@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.homepage.field_paragraph_brand_history
     - field.field.node.homepage.field_paragraph_label_block
     - field.field.node.homepage.field_paragraph_our_universe
     - field.field.node.homepage.field_paragraph_slider_hp
@@ -21,6 +22,7 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_paragraph_brand_history: true
   field_paragraph_label_block: true
   field_paragraph_our_universe: true
   field_paragraph_slider_hp: true

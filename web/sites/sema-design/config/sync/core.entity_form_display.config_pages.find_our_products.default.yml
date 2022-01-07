@@ -1,0 +1,42 @@
+uuid: a0aad6d5-61df-464d-a72f-b354b33ee891
+langcode: fr
+status: true
+dependencies:
+  config:
+    - config_pages.type.find_our_products
+    - field.field.config_pages.find_our_products.field_cta
+    - field.field.config_pages.find_our_products.field_description
+    - field.field.config_pages.find_our_products.field_title
+  module:
+    - link
+id: config_pages.find_our_products.default
+targetEntityType: config_pages
+bundle: find_our_products
+mode: default
+content:
+  field_cta:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_description:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  label: true

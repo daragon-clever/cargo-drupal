@@ -1,0 +1,19 @@
+uuid: 4cb66bb8-8423-40f2-a5d4-90f594a59255
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_second_description
+    - paragraphs.paragraphs_type.brand_history
+id: paragraph.brand_history.field_second_description
+field_name: field_second_description
+entity_type: paragraph
+bundle: brand_history
+label: Description
+description: "Nous préconisons 400 caractères, espaces compris\r\n"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

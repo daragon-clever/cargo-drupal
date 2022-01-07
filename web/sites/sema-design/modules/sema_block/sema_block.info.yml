@@ -1,0 +1,5 @@
+name: Sema blocks
+type: module
+description: Provide blocs for Sema Design
+core: 8.x
+package: Sema-design

@@ -1,0 +1,28 @@
+uuid: f3379876-e64d-4260-a1eb-c304d3d80e80
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.menu_link_content.social-networks.field_social
+    - system.menu.social-networks
+  module:
+    - options
+id: menu_link_content.social-networks.default
+targetEntityType: menu_link_content
+bundle: social-networks
+mode: default
+content:
+  children:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_social:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden:
+  langcode: true

@@ -1,4 +1,4 @@
-uuid: d5961811-560d-427b-a786-870811634d99
+uuid: 747177fb-8474-4d4e-877f-37338c1dada1
 langcode: fr
 status: true
 dependencies:
@@ -8,17 +8,15 @@ dependencies:
     - system
   theme:
     - cleverdrop
-_core:
-  default_config_hash: 8zRjTNbfNAJ94lQpZDu6MkyD87GYJ2zpH9VQPVmRbcM
-id: cleverdrop_footer
+id: pieddepage
 theme: cleverdrop
-region: header
+region: footer
 weight: 0
 provider: null
 plugin: 'system_menu_block:footer'
 settings:
   id: 'system_menu_block:footer'
-  label: 'Menu Pied de page'
+  label: 'Pied de page'
   provider: system
   label_display: '0'
   level: 1

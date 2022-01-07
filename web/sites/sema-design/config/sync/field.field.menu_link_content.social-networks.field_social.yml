@@ -1,0 +1,21 @@
+uuid: 68911f8f-0390-4085-ba60-d2dbd1d5d9cc
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.menu_link_content.field_social
+    - system.menu.social-networks
+  module:
+    - options
+id: menu_link_content.social-networks.field_social
+field_name: field_social
+entity_type: menu_link_content
+bundle: social-networks
+label: 'Réseau social'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

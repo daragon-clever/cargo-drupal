@@ -20,13 +20,15 @@ class find_our_products extends BlockBase {
    * {@inheritdoc}
    */
   public function build() {
-
+    $datas = [];
 
     $myConfigPage = \Drupal\config_pages\Entity\ConfigPages::config('find_our_products');
-    $datas['description'] = $myConfigPage->get('field_description')->value;
-    $datas['title'] = $myConfigPage->get('field_title')->value;
-    $datas['cta_link'] = $myConfigPage->get('field_cta')->uri;
-    $datas['cta'] = $myConfigPage->get('field_cta')->title;
+    if (!empty($myConfigPage)) {
+      $datas['description'] = $myConfigPage->get('field_description')->value;
+      $datas['title'] = $myConfigPage->get('field_title')->value;
+      $datas['cta_link'] = $myConfigPage->get('field_cta')->uri;
+      $datas['cta'] = $myConfigPage->get('field_cta')->title;
+    }
 
     return [
       '#theme' => 'sema_block__find_our_products',

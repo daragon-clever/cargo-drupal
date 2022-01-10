@@ -9,7 +9,7 @@ dependencies:
     - field.field.paragraph.our_universe.field_our_universe_left_picture
     - field.field.paragraph.our_universe.field_our_universe_top_r_picture
     - field.field.paragraph.our_universe.field_title
-    - image.style.crop_our_universe
+    - image.style.crop_thumbnail
     - paragraphs.paragraphs_type.our_universe
   module:
     - image_widget_crop
@@ -40,8 +40,8 @@ content:
     settings:
       show_default_crop: true
       warn_multiple_usages: true
-      preview_image_style: crop_our_universe
-      crop_preview_image_style: crop_our_universe
+      preview_image_style: crop_thumbnail
+      crop_preview_image_style: crop_thumbnail
       crop_list:
         - notre_univers
       crop_types_required:
@@ -56,8 +56,8 @@ content:
     settings:
       show_default_crop: true
       warn_multiple_usages: true
-      preview_image_style: crop_our_universe
-      crop_preview_image_style: crop_our_universe
+      preview_image_style: crop_thumbnail
+      crop_preview_image_style: crop_thumbnail
       crop_list:
         - notre_univers
       crop_types_required:
@@ -72,8 +72,8 @@ content:
     settings:
       show_default_crop: true
       warn_multiple_usages: true
-      preview_image_style: crop_our_universe
-      crop_preview_image_style: crop_our_universe
+      preview_image_style: crop_thumbnail
+      crop_preview_image_style: crop_thumbnail
       crop_list:
         - notre_univers
       crop_types_required:

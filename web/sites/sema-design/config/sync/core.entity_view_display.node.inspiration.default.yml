@@ -1,0 +1,51 @@
+uuid: ee729e06-a9c5-4218-91fa-53d2dcc1685e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.inspiration.field_paragraph_contents_table
+    - field.field.node.inspiration.field_paragraph_main_visual
+    - field.field.node.inspiration.field_paragraph_moodboard
+    - node.type.inspiration
+  module:
+    - entity_reference_revisions
+    - user
+id: node.inspiration.default
+targetEntityType: node
+bundle: inspiration
+mode: default
+content:
+  field_paragraph_contents_table:
+    type: entity_reference_revisions_entity_view
+    weight: 102
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_paragraph_main_visual:
+    type: entity_reference_revisions_entity_view
+    weight: 101
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_paragraph_moodboard:
+    type: entity_reference_revisions_entity_view
+    weight: 103
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

@@ -10,6 +10,7 @@ dependencies:
     - field.field.paragraph.brand_history.field_second_picture
     - field.field.paragraph.brand_history.field_second_title
     - field.field.paragraph.brand_history.field_title
+    - image.style.crop_histoire_de_la_marque
     - paragraphs.paragraphs_type.brand_history
   module:
     - image
@@ -42,7 +43,7 @@ content:
     weight: 3
     label: visually_hidden
     settings:
-      image_style: ''
+      image_style: crop_histoire_de_la_marque
       image_link: ''
     third_party_settings: {  }
     type: image
@@ -58,7 +59,7 @@ content:
     weight: 6
     label: visually_hidden
     settings:
-      image_style: ''
+      image_style: crop_histoire_de_la_marque
       image_link: ''
     third_party_settings: {  }
     type: image

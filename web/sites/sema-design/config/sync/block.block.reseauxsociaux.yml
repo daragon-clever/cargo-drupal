@@ -11,7 +11,7 @@ dependencies:
 id: reseauxsociaux
 theme: cleverdrop
 region: footer
-weight: 0
+weight: -2
 provider: null
 plugin: 'system_menu_block:social-networks'
 settings:

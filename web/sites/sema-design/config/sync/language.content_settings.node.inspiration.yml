@@ -1,0 +1,11 @@
+uuid: 1ea0bdf2-70d8-4f4d-ac6e-5b53d703bb60
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.inspiration
+id: node.inspiration
+target_entity_type_id: node
+target_bundle: inspiration
+default_langcode: site_default
+language_alterable: false

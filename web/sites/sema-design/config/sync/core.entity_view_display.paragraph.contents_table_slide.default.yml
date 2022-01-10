@@ -1,0 +1,33 @@
+uuid: 18267ecc-e3f2-4719-98ff-d3cc5c2fb511
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.contents_table_slide.field_picture
+    - field.field.paragraph.contents_table_slide.field_title
+    - paragraphs.paragraphs_type.contents_table_slide
+  module:
+    - image
+id: paragraph.contents_table_slide.default
+targetEntityType: paragraph
+bundle: contents_table_slide
+mode: default
+content:
+  field_picture:
+    weight: 0
+    label: visually_hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_title:
+    weight: 1
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

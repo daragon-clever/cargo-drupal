@@ -1,0 +1,42 @@
+uuid: ec46373d-8654-4f11-bb6a-26f1e9680c0a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.main_visual.field_on_title
+    - field.field.paragraph.main_visual.field_picture
+    - field.field.paragraph.main_visual.field_title
+    - paragraphs.paragraphs_type.main_visual
+  module:
+    - image
+id: paragraph.main_visual.default
+targetEntityType: paragraph
+bundle: main_visual
+mode: default
+content:
+  field_on_title:
+    weight: 1
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_picture:
+    weight: 0
+    label: visually_hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_title:
+    weight: 2
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

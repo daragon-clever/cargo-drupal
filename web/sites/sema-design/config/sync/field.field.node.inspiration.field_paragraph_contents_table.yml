@@ -1,0 +1,49 @@
+uuid: 9260e14c-1695-4421-9f28-15cc2a48500d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraph_contents_table
+    - node.type.inspiration
+    - paragraphs.paragraphs_type.contents_table
+  module:
+    - entity_reference_revisions
+id: node.inspiration.field_paragraph_contents_table
+field_name: field_paragraph_contents_table
+entity_type: node
+bundle: inspiration
+label: 'Table des matières'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      contents_table: contents_table
+    target_bundles_drag_drop:
+      brand_history:
+        weight: 9
+        enabled: false
+      contents_table:
+        enabled: true
+        weight: 10
+      contents_table_slide:
+        weight: 8
+        enabled: false
+      label_block:
+        weight: 11
+        enabled: false
+      main_visual:
+        weight: 12
+        enabled: false
+      our_universe:
+        weight: 13
+        enabled: false
+      slider_homepage:
+        weight: 14
+        enabled: false
+field_type: entity_reference_revisions

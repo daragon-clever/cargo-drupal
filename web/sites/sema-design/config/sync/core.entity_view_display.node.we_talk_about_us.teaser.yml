@@ -1,0 +1,27 @@
+uuid: 0f710f07-22b5-4c16-9011-de6b245685e4
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.we_talk_about_us.field_paragraph_introduction
+    - field.field.node.we_talk_about_us.field_paragraph_main_visual
+    - field.field.node.we_talk_about_us.field_paragraph_partnership
+    - node.type.we_talk_about_us
+  module:
+    - user
+id: node.we_talk_about_us.teaser
+targetEntityType: node
+bundle: we_talk_about_us
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_paragraph_introduction: true
+  field_paragraph_main_visual: true
+  field_paragraph_partnership: true
+  langcode: true

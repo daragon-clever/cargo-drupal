@@ -1,0 +1,10 @@
+uuid: 56d7daa1-83b1-4e83-8c09-c2000102a9ac
+langcode: fr
+status: true
+dependencies: {  }
+id: introduction
+label: 'Bloc d''introduction'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

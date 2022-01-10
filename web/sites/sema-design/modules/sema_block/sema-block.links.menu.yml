@@ -1,0 +1,4 @@
+sema_block.menu:
+  title: 'Sema-Design'
+  parent: system.admin
+  description: 'Description of link goes here.'

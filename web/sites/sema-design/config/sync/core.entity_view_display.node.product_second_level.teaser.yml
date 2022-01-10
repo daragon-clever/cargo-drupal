@@ -1,0 +1,27 @@
+uuid: 6701fb75-a584-47d6-8a9f-32109e60d0d8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.product_second_level.field_paragraph_main_visual
+    - field.field.node.product_second_level.field_paragraph_product_family
+    - field.field.node.product_second_level.field_paragraph_sliders_product
+    - node.type.product_second_level
+  module:
+    - user
+id: node.product_second_level.teaser
+targetEntityType: node
+bundle: product_second_level
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_paragraph_main_visual: true
+  field_paragraph_product_family: true
+  field_paragraph_sliders_product: true
+  langcode: true

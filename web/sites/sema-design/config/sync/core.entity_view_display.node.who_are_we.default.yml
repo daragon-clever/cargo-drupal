@@ -1,0 +1,71 @@
+uuid: 9740b32e-12f0-4666-81b2-27d5852bafd0
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.who_are_we.field_paragraph_label_block
+    - field.field.node.who_are_we.field_paragraph_main_visual
+    - field.field.node.who_are_we.field_paragraph_slider
+    - field.field.node.who_are_we.field_paragraph_team_intro
+    - field.field.node.who_are_we.field_paragraph_visuals_video
+    - node.type.who_are_we
+  module:
+    - entity_reference_revisions
+    - user
+id: node.who_are_we.default
+targetEntityType: node
+bundle: who_are_we
+mode: default
+content:
+  field_paragraph_label_block:
+    weight: 102
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  field_paragraph_main_visual:
+    weight: 101
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  field_paragraph_slider:
+    type: entity_reference_revisions_entity_view
+    weight: 106
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_paragraph_team_intro:
+    type: entity_reference_revisions_entity_view
+    weight: 103
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_paragraph_visuals_video:
+    type: entity_reference_revisions_entity_view
+    weight: 104
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

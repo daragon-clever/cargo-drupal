@@ -1,0 +1,21 @@
+uuid: ff69507a-8b7a-4c76-a04c-f020d5b783fa
+langcode: fr
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - node
+    - paragraphs
+id: node.field_paragraph_introduction
+field_name: field_paragraph_introduction
+entity_type: node
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

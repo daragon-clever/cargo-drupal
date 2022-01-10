@@ -1,0 +1,35 @@
+uuid: 9e1d7486-e078-4d69-baab-d4e7049b2b25
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.products_slider_slide.field_picture
+    - field.field.paragraph.products_slider_slide.field_title
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.products_slider_slide
+  module:
+    - image
+id: paragraph.products_slider_slide.default
+targetEntityType: paragraph
+bundle: products_slider_slide
+mode: default
+content:
+  field_picture:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,29 @@
+uuid: 40646e09-b521-41d3-8497-74dd5c3d0e65
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.press_release.field_description
+    - field.field.paragraph.press_release.field_title
+    - paragraphs.paragraphs_type.press_release
+id: paragraph.press_release.default
+targetEntityType: paragraph
+bundle: press_release
+mode: default
+content:
+  field_description:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_title:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

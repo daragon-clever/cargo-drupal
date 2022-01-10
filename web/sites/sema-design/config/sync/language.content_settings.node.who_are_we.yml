@@ -1,0 +1,11 @@
+uuid: c95eab9d-25fc-4c37-a587-a45743da12d0
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.who_are_we
+id: node.who_are_we
+target_entity_type_id: node
+target_bundle: who_are_we
+default_langcode: site_default
+language_alterable: false

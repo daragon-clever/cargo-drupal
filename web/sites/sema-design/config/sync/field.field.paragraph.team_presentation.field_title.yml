@@ -1,0 +1,19 @@
+uuid: 69ed77ba-1dbb-4f11-bae9-d07e7652629f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.team_presentation
+id: paragraph.team_presentation.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: team_presentation
+label: Titre
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

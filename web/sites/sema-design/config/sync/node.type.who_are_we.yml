@@ -1,0 +1,18 @@
+uuid: f0eb9a04-f43e-445b-a6c7-788d5fe06a68
+langcode: fr
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Qui sommes-nous'
+type: who_are_we
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

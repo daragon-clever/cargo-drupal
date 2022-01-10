@@ -1,0 +1,79 @@
+uuid: 3f366522-610e-498b-806d-548ee872dba7
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraph_sliders_product
+    - node.type.product_second_level
+    - paragraphs.paragraphs_type.products_slider
+  module:
+    - entity_reference_revisions
+id: node.product_second_level.field_paragraph_sliders_product
+field_name: field_paragraph_sliders_product
+entity_type: node
+bundle: product_second_level
+label: 'Slider produits'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      products_slider: products_slider
+    target_bundles_drag_drop:
+      brand_history:
+        weight: 18
+        enabled: false
+      contents_table:
+        weight: 19
+        enabled: false
+      contents_table_slide:
+        weight: 20
+        enabled: false
+      introduction:
+        weight: 21
+        enabled: false
+      label_block:
+        weight: 22
+        enabled: false
+      main_visual:
+        weight: 23
+        enabled: false
+      moodboard:
+        weight: 24
+        enabled: false
+      our_universe:
+        weight: 25
+        enabled: false
+      partnership:
+        weight: 26
+        enabled: false
+      press_release:
+        weight: 27
+        enabled: false
+      product_family:
+        weight: 30
+        enabled: false
+      products_slider:
+        enabled: true
+        weight: 28
+      products_slider_slide:
+        weight: 29
+        enabled: false
+      slider_homepage:
+        weight: 31
+        enabled: false
+      team_presentation:
+        weight: 32
+        enabled: false
+      visuals_and_video:
+        weight: 33
+        enabled: false
+      who_are_we_slider:
+        weight: 34
+        enabled: false
+field_type: entity_reference_revisions

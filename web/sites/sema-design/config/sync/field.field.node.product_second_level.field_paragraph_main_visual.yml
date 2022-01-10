@@ -1,0 +1,70 @@
+uuid: 1536eeaa-98ef-4a09-b4ab-3934d398b267
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraph_main_visual
+    - node.type.product_second_level
+    - paragraphs.paragraphs_type.main_visual
+  module:
+    - entity_reference_revisions
+id: node.product_second_level.field_paragraph_main_visual
+field_name: field_paragraph_main_visual
+entity_type: node
+bundle: product_second_level
+label: 'Visuel principal'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      main_visual: main_visual
+    target_bundles_drag_drop:
+      brand_history:
+        weight: 15
+        enabled: false
+      contents_table:
+        weight: 16
+        enabled: false
+      contents_table_slide:
+        weight: 17
+        enabled: false
+      introduction:
+        weight: 18
+        enabled: false
+      label_block:
+        weight: 19
+        enabled: false
+      main_visual:
+        enabled: true
+        weight: 20
+      moodboard:
+        weight: 21
+        enabled: false
+      our_universe:
+        weight: 22
+        enabled: false
+      partnership:
+        weight: 23
+        enabled: false
+      press_release:
+        weight: 24
+        enabled: false
+      slider_homepage:
+        weight: 25
+        enabled: false
+      team_presentation:
+        weight: 26
+        enabled: false
+      visuals_and_video:
+        weight: 27
+        enabled: false
+      who_are_we_slider:
+        weight: 28
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,22 @@
+uuid: 670e7628-23ba-4167-9b22-0a8586409b30
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_color
+    - paragraphs.paragraphs_type.product_family
+  module:
+    - color_field
+id: paragraph.product_family.field_color
+field_name: field_color
+entity_type: paragraph
+bundle: product_family
+label: 'Couleur de fond'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

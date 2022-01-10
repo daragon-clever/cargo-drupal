@@ -23,9 +23,9 @@ third_party_settings:
       format_type: tabs
       region: content
       format_settings:
+        direction: vertical
         id: ''
         classes: ''
-        direction: horizontal
       label: zone_inspiration
     group_main_visual:
       children:

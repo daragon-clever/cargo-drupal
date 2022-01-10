@@ -1,0 +1,58 @@
+uuid: 81d67b5a-5f2c-47c5-baed-b190673bd857
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraph_visuals_video
+    - node.type.who_are_we
+    - paragraphs.paragraphs_type.visuals_and_video
+  module:
+    - entity_reference_revisions
+id: node.who_are_we.field_paragraph_visuals_video
+field_name: field_paragraph_visuals_video
+entity_type: node
+bundle: who_are_we
+label: 'Bloc visuels et vidéo'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      visuals_and_video: visuals_and_video
+    target_bundles_drag_drop:
+      brand_history:
+        weight: 11
+        enabled: false
+      contents_table:
+        weight: 12
+        enabled: false
+      contents_table_slide:
+        weight: 13
+        enabled: false
+      label_block:
+        weight: 14
+        enabled: false
+      main_visual:
+        weight: 15
+        enabled: false
+      moodboard:
+        weight: 16
+        enabled: false
+      our_universe:
+        weight: 17
+        enabled: false
+      slider_homepage:
+        weight: 18
+        enabled: false
+      team_presentation:
+        weight: 19
+        enabled: false
+      visuals_and_video:
+        enabled: true
+        weight: 20
+field_type: entity_reference_revisions

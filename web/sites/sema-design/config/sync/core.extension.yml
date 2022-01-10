@@ -47,6 +47,7 @@ module:
   rename_admin_paths: 0
   search: 0
   sema_block: 0
+  sema_core: 0
   shortcut: 0
   system: 0
   taxonomy: 0
@@ -67,6 +68,7 @@ theme:
   bartik: 0
   seven: 0
   cleverdrop: 0
+  adminimal_theme: 0
 profile: minimal
 _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc

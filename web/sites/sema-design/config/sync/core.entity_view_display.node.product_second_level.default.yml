@@ -1,0 +1,51 @@
+uuid: a45959c6-9581-4f4e-9df0-d2f14ae5d6b6
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.product_second_level.field_paragraph_main_visual
+    - field.field.node.product_second_level.field_paragraph_product_family
+    - field.field.node.product_second_level.field_paragraph_sliders_product
+    - node.type.product_second_level
+  module:
+    - entity_reference_revisions
+    - user
+id: node.product_second_level.default
+targetEntityType: node
+bundle: product_second_level
+mode: default
+content:
+  field_paragraph_main_visual:
+    weight: 101
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  field_paragraph_product_family:
+    type: entity_reference_revisions_entity_view
+    weight: 103
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_paragraph_sliders_product:
+    type: entity_reference_revisions_entity_view
+    weight: 104
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

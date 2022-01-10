@@ -1,0 +1,52 @@
+uuid: 1db03484-6b96-47c2-8496-2c5adaa24d1c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraph_moodboard
+    - node.type.inspiration
+    - paragraphs.paragraphs_type.moodboard
+  module:
+    - entity_reference_revisions
+id: node.inspiration.field_paragraph_moodboard
+field_name: field_paragraph_moodboard
+entity_type: node
+bundle: inspiration
+label: Moodboard
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      moodboard: moodboard
+    target_bundles_drag_drop:
+      brand_history:
+        weight: 9
+        enabled: false
+      contents_table:
+        weight: 10
+        enabled: false
+      contents_table_slide:
+        weight: 11
+        enabled: false
+      label_block:
+        weight: 12
+        enabled: false
+      main_visual:
+        weight: 13
+        enabled: false
+      moodboard:
+        enabled: true
+        weight: 14
+      our_universe:
+        weight: 15
+        enabled: false
+      slider_homepage:
+        weight: 16
+        enabled: false
+field_type: entity_reference_revisions

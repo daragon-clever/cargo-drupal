@@ -1,0 +1,19 @@
+uuid: edbe12d0-ed98-4bac-9a68-d40f8428ca54
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_description
+    - paragraphs.paragraphs_type.contents_table
+id: paragraph.contents_table.field_description
+field_name: field_description
+entity_type: paragraph
+bundle: contents_table
+label: Description
+description: 'Nous préconisons 300 caractères, espaces compris'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

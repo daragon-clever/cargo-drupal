@@ -8,8 +8,8 @@ dependencies:
     - cleverdrop
 id: trouveznosproduits
 theme: cleverdrop
-region: header
-weight: 0
+region: footer
+weight: -4
 provider: null
 plugin: find_our_products
 settings:

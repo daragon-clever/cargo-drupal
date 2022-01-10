@@ -14,7 +14,7 @@ dependencies:
     - paragraphs.paragraphs_type.brand_history
   module:
     - field_group
-    - image
+    - image_widget_crop
     - link
 third_party_settings:
   field_group:
@@ -88,10 +88,18 @@ content:
   field_picture:
     weight: 4
     settings:
-      progress_indicator: throbber
+      show_default_crop: true
+      warn_multiple_usages: true
       preview_image_style: thumbnail
+      crop_preview_image_style: crop_thumbnail
+      crop_list:
+        - brand_history
+      crop_types_required:
+        - brand_history
+      progress_indicator: throbber
+      show_crop_area: false
     third_party_settings: {  }
-    type: image_image
+    type: image_widget_crop
     region: content
   field_second_description:
     weight: 6
@@ -104,10 +112,18 @@ content:
   field_second_picture:
     weight: 7
     settings:
-      progress_indicator: throbber
+      show_default_crop: true
+      warn_multiple_usages: true
       preview_image_style: thumbnail
+      crop_preview_image_style: crop_thumbnail
+      crop_list:
+        - brand_history
+      crop_types_required:
+        - brand_history
+      progress_indicator: throbber
+      show_crop_area: false
     third_party_settings: {  }
-    type: image_image
+    type: image_widget_crop
     region: content
   field_second_title:
     weight: 5

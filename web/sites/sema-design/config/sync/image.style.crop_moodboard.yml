@@ -1,0 +1,17 @@
+uuid: 14f2c206-869c-4b4b-b16a-1705eac42a5b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - crop.type.moodboard
+  module:
+    - crop
+name: crop_moodboard
+label: 'Crop - Moodboard'
+effects:
+  02b6f1e0-c7f7-4f36-bb28-63af54d463d4:
+    uuid: 02b6f1e0-c7f7-4f36-bb28-63af54d463d4
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: moodboard

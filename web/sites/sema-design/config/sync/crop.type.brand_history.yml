@@ -1,0 +1,12 @@
+uuid: b44563a7-e159-4735-bc75-97d1ecb2313b
+langcode: fr
+status: true
+dependencies: {  }
+id: brand_history
+label: 'Histoire de la marque'
+description: ''
+aspect_ratio: '9:16'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

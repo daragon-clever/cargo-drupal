@@ -1,0 +1,12 @@
+uuid: 5d180fd7-2cb0-47ce-9b0c-2fd853a70501
+langcode: fr
+status: true
+dependencies: {  }
+id: moodboard
+label: Moodboard
+description: ''
+aspect_ratio: '9:16'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

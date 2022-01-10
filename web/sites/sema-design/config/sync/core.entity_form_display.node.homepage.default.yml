@@ -21,7 +21,7 @@ third_party_settings:
         - group_our_universe
         - group_brand_history
       parent_name: ''
-      weight: 0
+      weight: 1
       format_type: tabs
       region: content
       format_settings:
@@ -208,7 +208,7 @@ content:
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: 1
+    weight: 0
     region: content
     settings:
       size: 60

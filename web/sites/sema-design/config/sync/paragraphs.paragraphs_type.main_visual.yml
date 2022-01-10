@@ -1,0 +1,10 @@
+uuid: 2dac445e-f583-4d09-b25f-89ac91029e92
+langcode: fr
+status: true
+dependencies: {  }
+id: main_visual
+label: 'Visuel principal'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

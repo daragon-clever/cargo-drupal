@@ -1,0 +1,32 @@
+uuid: 7b42c493-6343-44d8-8159-a86b49f1b5da
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.contents_table.field_description
+    - field.field.paragraph.contents_table.field_paragraph_slides
+    - paragraphs.paragraphs_type.contents_table
+  module:
+    - entity_reference_revisions
+id: paragraph.contents_table.default
+targetEntityType: paragraph
+bundle: contents_table
+mode: default
+content:
+  field_description:
+    weight: 0
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_paragraph_slides:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: visually_hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }

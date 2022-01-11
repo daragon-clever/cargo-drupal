@@ -7,7 +7,7 @@ dependencies:
     - field.field.paragraph.products_slider.field_title
     - paragraphs.paragraphs_type.products_slider
   module:
-    - entity_reference_revisions
+    - paragraphs
 id: paragraph.products_slider.default
 targetEntityType: paragraph
 bundle: products_slider
@@ -16,12 +16,21 @@ content:
   field_paragraph_slides:
     weight: 1
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      title: Paragraphe
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: products_slider_slide
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
     third_party_settings: {  }
-    type: entity_reference_revisions_autocomplete
+    type: paragraphs
     region: content
   field_title:
     weight: 0

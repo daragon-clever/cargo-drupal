@@ -1,0 +1,60 @@
+.Dropdown-btn {
+  display: flex;
+  width: 100%;
+
+  // Case Dropdowns only exists on mobile
+  /*
+    DOM structure
+    <p class="fvDropdown-title" />
+    <button class="fvDropdown-btn is-mobileOnly" />
+    <div class="fvDropdown-panel" />
+  */
+  &.is-mobileOnly {
+    @include media-breakpoint-up('md') {
+      display: none;
+
+      + .Dropdown-panel {
+        display: block;
+      }
+    }
+  }
+}
+
+.Dropdown-ctnr {
+  position: relative;
+}
+
+.Dropdown-arrow {
+  display: flex;
+  margin-left: auto;
+  transform: rotateZ(90deg);
+  transition: transform $transition;
+
+  svg {
+    fill: $text-color;
+    height: em(16px, 14px);
+    width: em(16px, 14px);
+  }
+
+  .Dropdown-btn.is-active & {
+    transform: rotateZ(-90deg);
+  }
+}
+
+.Dropdown-panel {
+  display: none;
+
+  &.is-open {
+    display: block;
+  }
+}
+
+// Use before button in onlyMobile dropdown case
+// Replaces the button
+.Dropdown-title {
+  display: none;
+
+  @include media-breakpoint-up('md') {
+    display: flex;
+  }
+}

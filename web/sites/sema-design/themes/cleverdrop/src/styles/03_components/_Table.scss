@@ -1,0 +1,51 @@
+.Table {
+  width: 100%;
+  font-weight: inherit;
+  font-style: inherit;
+  padding: 0;
+  border: 0;
+  border-collapse: collapse;
+  outline: 0;
+  margin: 0;
+}
+
+.Table-row {
+  position: relative;
+  display: flex;
+  font-size: em(14px, 16px);
+
+  &:nth-child(odd) {
+    background-color: $wild-sand;
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      display: inline-block;
+      content: '';
+      width: em(200px);
+      background-color: $wild-sand;
+    }
+
+    &::before {
+      left: 0;
+      transform: translateX(-100%);
+    }
+
+    &::after {
+      right: 0;
+      transform: translateX(100%);
+    }
+  }
+
+  th {
+    @include u-fontSemiBold;
+  }
+
+  th,
+  td {
+    flex-basis: 50%;
+    padding: em(8px, 14px) em(8px, 14px) em(8px, 14px) em(2px, 14px);
+  }
+}

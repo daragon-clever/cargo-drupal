@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.inspiration.field_metatags
     - field.field.node.inspiration.field_paragraph_contents_table
     - field.field.node.inspiration.field_paragraph_main_visual
     - field.field.node.inspiration.field_paragraph_moodboard
@@ -21,6 +22,7 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_metatags: true
   field_paragraph_contents_table: true
   field_paragraph_main_visual: true
   field_paragraph_moodboard: true

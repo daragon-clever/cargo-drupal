@@ -3,6 +3,7 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - field.field.node.homepage.field_metatags
     - field.field.node.homepage.field_paragraph_brand_history
     - field.field.node.homepage.field_paragraph_label_block
     - field.field.node.homepage.field_paragraph_our_universe
@@ -10,12 +11,20 @@ dependencies:
     - node.type.homepage
   module:
     - entity_reference_revisions
+    - metatag
     - user
 id: node.homepage.default
 targetEntityType: node
 bundle: homepage
 mode: default
 content:
+  field_metatags:
+    weight: 106
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
   field_paragraph_brand_history:
     type: entity_reference_revisions_entity_view
     weight: 105

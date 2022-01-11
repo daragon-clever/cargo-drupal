@@ -3,18 +3,27 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - field.field.node.we_talk_about_us.field_metatags
     - field.field.node.we_talk_about_us.field_paragraph_introduction
     - field.field.node.we_talk_about_us.field_paragraph_main_visual
     - field.field.node.we_talk_about_us.field_paragraph_partnership
     - node.type.we_talk_about_us
   module:
     - entity_reference_revisions
+    - metatag
     - user
 id: node.we_talk_about_us.default
 targetEntityType: node
 bundle: we_talk_about_us
 mode: default
 content:
+  field_metatags:
+    weight: 104
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
   field_paragraph_introduction:
     type: entity_reference_revisions_entity_view
     weight: 102

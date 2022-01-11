@@ -1,0 +1,21 @@
+uuid: adf81349-a6ce-4363-afdd-375242044f00
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_metatags
+    - node.type.product_second_level
+  module:
+    - metatag
+id: node.product_second_level.field_metatags
+field_name: field_metatags
+entity_type: node
+bundle: product_second_level
+label: Metatags
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

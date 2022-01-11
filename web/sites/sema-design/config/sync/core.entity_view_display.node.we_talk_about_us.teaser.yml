@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.we_talk_about_us.field_metatags
     - field.field.node.we_talk_about_us.field_paragraph_introduction
     - field.field.node.we_talk_about_us.field_paragraph_main_visual
     - field.field.node.we_talk_about_us.field_paragraph_partnership
@@ -21,6 +22,7 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_metatags: true
   field_paragraph_introduction: true
   field_paragraph_main_visual: true
   field_paragraph_partnership: true

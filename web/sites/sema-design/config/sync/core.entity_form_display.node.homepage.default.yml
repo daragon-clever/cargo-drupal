@@ -3,6 +3,7 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - field.field.node.homepage.field_metatags
     - field.field.node.homepage.field_paragraph_brand_history
     - field.field.node.homepage.field_paragraph_label_block
     - field.field.node.homepage.field_paragraph_our_universe
@@ -10,6 +11,7 @@ dependencies:
     - node.type.homepage
   module:
     - field_group
+    - metatag
     - paragraphs
     - path
 third_party_settings:
@@ -96,6 +98,13 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_metatags:
+    weight: 26
+    settings:
+      sidebar: true
+    third_party_settings: {  }
+    type: metatag_firehose
+    region: content
   field_paragraph_brand_history:
     type: paragraphs
     weight: 12

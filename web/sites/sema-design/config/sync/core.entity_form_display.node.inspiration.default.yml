@@ -3,12 +3,14 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - field.field.node.inspiration.field_metatags
     - field.field.node.inspiration.field_paragraph_contents_table
     - field.field.node.inspiration.field_paragraph_main_visual
     - field.field.node.inspiration.field_paragraph_moodboard
     - node.type.inspiration
   module:
     - field_group
+    - metatag
     - paragraphs
     - path
 third_party_settings:
@@ -80,6 +82,13 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_metatags:
+    weight: 26
+    settings:
+      sidebar: true
+    third_party_settings: {  }
+    type: metatag_firehose
+    region: content
   field_paragraph_contents_table:
     type: paragraphs
     weight: 3

@@ -3,12 +3,14 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - field.field.node.product_second_level.field_metatags
     - field.field.node.product_second_level.field_paragraph_main_visual
     - field.field.node.product_second_level.field_paragraph_product_family
     - field.field.node.product_second_level.field_paragraph_sliders_product
     - node.type.product_second_level
   module:
     - field_group
+    - metatag
     - paragraphs
     - path
 third_party_settings:
@@ -80,6 +82,13 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_metatags:
+    weight: 26
+    settings:
+      sidebar: true
+    third_party_settings: {  }
+    type: metatag_firehose
+    region: content
   field_paragraph_main_visual:
     weight: 11
     settings:

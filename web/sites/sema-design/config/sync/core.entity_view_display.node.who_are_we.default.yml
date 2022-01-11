@@ -3,6 +3,7 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - field.field.node.who_are_we.field_metatags
     - field.field.node.who_are_we.field_paragraph_label_block
     - field.field.node.who_are_we.field_paragraph_main_visual
     - field.field.node.who_are_we.field_paragraph_slider
@@ -11,12 +12,20 @@ dependencies:
     - node.type.who_are_we
   module:
     - entity_reference_revisions
+    - metatag
     - user
 id: node.who_are_we.default
 targetEntityType: node
 bundle: who_are_we
 mode: default
 content:
+  field_metatags:
+    weight: 107
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
   field_paragraph_label_block:
     weight: 102
     label: above

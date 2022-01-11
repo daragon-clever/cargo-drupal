@@ -244,6 +244,10 @@ p.small,
 b {
   font-family: 'Myriad Pro Semibold';
 }
+.dialog-off-canvas-main-canvas {
+  width: 100%;
+  overflow: hidden;
+}
 .row {
   margin-left: 0;
   margin-right: 0;
@@ -433,6 +437,16 @@ b {
 #menu nav ul li a:hover:after {
   opacity: 1;
 }
+#menu nav ul li:nth-child(3) a:after {
+  opacity: 0;
+}
+#menu nav ul li:nth-child(3):hover a {
+  color: #fff;
+}
+#menu nav ul li:nth-child(3):hover a:after {
+  opacity: 1;
+  background-color: #7E142D;
+}
 @media only screen and (max-width: 992px) {
   #menu {
     position: fixed;
@@ -575,6 +589,9 @@ b {
   height: 100vh;
   background-image: url(/sites/sitram-sarran/themes/sitramsarran/images/Banniere/Michel-Sarran_HeroBG-Overlay.jpg);
 }
+.home-header.collection-header {
+  background-image: url(/sites/sitram-sarran/themes/sitramsarran/images/Banniere/Michel-Sarran_Coll-HeroBG-Overlay.jpg);
+}
 .home-header img {
   object-fit: cover;
   width: 100%;
@@ -616,6 +633,9 @@ b {
     aspect-ratio: 1;
     height: auto;
   }
+  .home-header.collection-header {
+    background-image: url(/sites/sitram-sarran/themes/sitramsarran/images/Banniere/Michel-Sarran_Coll-HeroBG-Overlay-Mobile.jpg);
+  }
   .home-header .container {
     max-width: calc(100vw - 40px);
   }
@@ -641,6 +661,7 @@ b {
   position: relative;
 }
 #section_carrefour:before {
+  display: none;
   content: '';
   width: 10px;
   height: 50px;
@@ -697,6 +718,9 @@ b {
     justify-content: center;
     margin-bottom: 25px;
   }
+}
+#section_drive {
+  display: none;
 }
 @media only screen and (max-width: 768px) {
   #section_drive .pl-5 {

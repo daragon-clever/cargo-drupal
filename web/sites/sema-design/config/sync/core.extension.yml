@@ -50,7 +50,6 @@ module:
   rdf: 0
   recaptcha: 0
   rename_admin_paths: 0
-  search: 0
   sema_block: 0
   sema_core: 0
   shortcut: 0
@@ -59,7 +58,6 @@ module:
   text: 0
   token: 0
   toolbar: 0
-  tour: 0
   twig_extensions: 0
   twig_tweak: 0
   user: 0

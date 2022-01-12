@@ -1,9 +1,9 @@
-uuid: c52030ee-d2e7-4b5a-ba81-850a531bb748
+uuid: 9e929922-048a-4caf-8b8c-5bb31c9c737b
 langcode: fr
 status: true
 dependencies: {  }
-id: find_our_products
-label: 'Trouvez nos produits'
+id: page_404
+label: 'Page 404'
 context:
   show_warning: true
   group:
@@ -11,7 +11,7 @@ context:
   fallback:
     language: ''
 menu:
-  path: /admin/sema-design/find-our-products
+  path: /admin/sema-design/404
   weight: 0
   description: ''
 token: false

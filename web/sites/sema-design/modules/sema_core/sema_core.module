@@ -6,6 +6,20 @@
  */
 
 /**
+ * Implements hook_theme().
+ */
+function sema_core_theme($existing, $type, $theme, $path) {
+  return [
+    'sema_core__404' => [
+      'template' => 'sema-core--404',
+      'variables' => [
+        'content' => [],
+      ],
+    ],
+  ];
+}
+
+/**
  * Implements hook_form_alter().
  */
 function sema_core_form_node_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
@@ -33,3 +47,4 @@ function _sema_core_node_who_we_are_validate(&$form, \Drupal\Core\Form\FormState
     $form_state->setErrorByName('field_paragraph_slider', t('3 Slides minimum'));
   }
 }
+

@@ -14,7 +14,7 @@
 @import '01_tools/unit-converter';
 @import '00_config/variables-colors';
 @import '00_config/variables-layout';
-@import '00_config/mediaqueries';
+@import '00_config/breakpoints';
 
 // Necessary tools (needed in config)
 // ----------------
@@ -31,12 +31,6 @@
 
 @import '00_config/webfonts';
 
-// Tools, snippets (config needed)
-// ---------------
-// Defaults mixin and functions, fonts and icons utilities
-@import '01_tools/snippets';
-
-//@import '01_tools/spacer';
 
 // -------------------------------//
 // ATOMIC DESIGN FILES STRUCTURE  //
@@ -70,3 +64,7 @@
 // // Overrides, specific styles for special pages or context
 // // (should be empty, it's a last resort folder !)
 // @import '06_overrides/**/*.scss';
+
+// Tools, snippets (config needed)
+// ---------------
+@import '01_tools/snippets';

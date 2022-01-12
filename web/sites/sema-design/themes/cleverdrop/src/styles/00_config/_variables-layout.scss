@@ -14,30 +14,22 @@ $rtfSelector: '.u-isRtf' !default;
 // Base
 $root-fontSize: 16px !default;
 
-$global-fontFamily: Montserrat, Helvetica, Arial, 'Trebuchet MS', sans-serif !default;
+$main-fontFamily: "Cormorant Garamond", Arial, 'Trebuchet MS', sans-serif !default;
+$secondary-fontFamily: "Work Sans", $main-fontFamily !default;
+$tertiary-fontFamily: "Quentin", Arial, sans-serif !default;
 $global-fontWeightBase: 200 !default;
 
 
 // Layout variables
 // ----------------
 $site-width: rem(1920px) !default;
-$site-inner-width: rem(1254px) !default;
+$site-inner-width: rem(1440px) !default;
 $site-inner-small-width: rem(1126px) !default;
 
 // Grid
 $nb-cols: 12 !default;
-$colSize: rem(88px);
-
-$grid-col: (
-  xs: rem(40px),
-  md: rem(50px),
-) !default;
-
-$grid-gutter: (
-  xs: rem(30px),
-  md: rem(50px),
-) !default;
-
+$col-size: rem(97px);
+$gutter-size: rem(20px);
 
 // ### Grid breakpoints
 // Define the minimum dimensions at which your layout will change,
@@ -47,12 +39,9 @@ $page-padding: (
   md: rem(50px),
 ) !default;
 
-$global-grid-breakpoints: (
+$grid-breakpoints: (
   xs: 0,
-  sm: 375px,
   md: 769px,
-  l: 1025px,
-  xl: 1300px,
 ) !default;
 
 //

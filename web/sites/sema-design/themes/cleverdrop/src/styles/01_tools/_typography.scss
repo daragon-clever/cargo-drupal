@@ -2,143 +2,48 @@
 /// Collection of typography tools.
 ////
 
-/// Enable or disable font smoothing.
-///
-/// @param {String} $state 'on' - Enable font smoothing with 'on'.
-@mixin font-smoothing($value: 'on') {
-  @if $value == 'on' {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  @else {
-    -webkit-font-smoothing: subpixel-antialiased;
-    -moz-osx-font-smoothing: auto;
-  }
+$cormorant-garamond-regular: 400 !default;
+$cormorant-garamond-bold: 700 !default;
+$work-sans-regular: 400 !default;
+$quentin-regular: 400 !default;
+
+
+// Main font
+@mixin u-cormorantRegular {
+  font-family: $main-fontFamily;
+  font-weight: $cormorant-garamond-regular;
 }
 
-@mixin editorial-content($selector: $rtfSelector) {
-  #{$rtfSelector} {
-    @content;
-  }
+.u-cormorantRegular {
+  @include u-cormorantRegular;
 }
 
-$montserrat-regular: 400 !default;
-$montserrat-medium: 500 !default;
-$montserrat-semiBold: 600 !default;
-$montserrat-bold: 700 !default;
-$montserrat-extrabold: 800 !default;
-
-%u-fontSmoothing {
-  @include font-smoothing('on');
+@mixin u-cormorantBold {
+  font-family: $main-fontFamily;
+  font-weight: $cormorant-garamond-bold;
 }
 
-%u-fontNoSmoothing {
-  @include font-smoothing('off');
+.u-cormorantBold {
+  @include u-cormorantBold;
 }
 
-%u-fontRegular {
-  font-family: $global-fontFamily;
-  font-weight: $montserrat-regular;
+// Secondary font
+@mixin u-workSansRegular {
+  font-family: $secondary-fontFamily;
+  font-weight: $work-sans-regular;
 }
 
-.u-fontRegular {
-  @extend %u-fontRegular !optional;
+.u-workSansRegular {
+  @include u-workSansRegular;
 }
 
-%u-fontMedium {
-  font-family: $global-fontFamily;
-  font-weight: $montserrat-medium;
+
+// Tertiary font
+@mixin u-quentinRegular {
+  font-family: $tertiary-fontFamily;
+  font-weight: $quentin-regular;
 }
 
-.u-fontMedium {
-  @extend %u-fontMedium !optional;
-}
-
-// @todo : remove
-%u-fontMed {
-  font-family: $global-fontFamily;
-  font-weight: $montserrat-medium;
-}
-
-/* stylelint-disable-next-line */
-@mixin u-fontMed {
-  font-family: $global-fontFamily;
-  font-weight: $montserrat-medium;
-}
-
-.u-fontMed {
-  @extend %u-fontMedium !optional;
-}
-
-%u-fontSemiBold {
-  font-family: $global-fontFamily;
-  font-weight: $montserrat-semiBold;
-}
-
-/* stylelint-disable-next-line */
-@mixin u-fontSemiBold {
-  font-family: $global-fontFamily;
-  font-weight: $montserrat-semiBold;
-}
-
-.u-fontSemiBold {
-  @extend %u-fontSemiBold !optional;
-}
-
-%u-fontBold {
-  font-family: $global-fontFamily;
-  font-weight: $montserrat-bold;
-}
-
-/* stylelint-disable-next-line */
-@mixin u-fontBold {
-  font-family: $global-fontFamily;
-  font-weight: $montserrat-bold;
-}
-
-.u-fontBold {
-  @extend %u-fontBold !optional;
-}
-
-/* stylelint-disable-next-line */
-@mixin u-fontExtraBold {
-  font-family: $global-fontFamily;
-  font-weight: $montserrat-extrabold;
-}
-
-.u-fontExtraBold {
-  @extend %u-fontExtraBold !optional;
-}
-
-%u-fontResetWeight {
-  font-weight: inherit !important;
-  font-weight: unset !important;
-}
-
-.u-fontResetWeight {
-  @extend %u-fontResetWeight !optional;
-}
-
-/* stylelint-disable-next-line */
-@mixin u-fontRegular {
-  font-family: $global-fontFamily;
-  font-weight: $montserrat-regular;
-}
-
-/* stylelint-disable-next-line */
-@mixin u-fontMedium {
-  font-family: $global-fontFamily;
-  font-weight: $montserrat-medium;
-}
-
-/* stylelint-disable-next-line */
-@mixin u-fontSemiBold {
-  font-family: $global-fontFamily;
-  font-weight: $montserrat-semiBold;
-}
-
-/* stylelint-disable-next-line */
-@mixin u-fontBold {
-  font-family: $global-fontFamily;
-  font-weight: $montserrat-bold;
+.u-quentinRegular {
+  @include u-quentinRegular;
 }

@@ -54,7 +54,7 @@ $disabled-text-color: $silver-chalice;
 .Checkbox[type='checkbox']:checked + label,
 .Radio[type='radio']:not(:checked) + label,
 .Radio[type='radio']:checked + label {
-  @include u-fontMedium;
+  @include u-cormorantRegular;
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -199,7 +199,7 @@ $disabled-text-color: $silver-chalice;
   width: auto;
   padding: 0;
   margin: 0;
-  @include u-fontSemiBold;
+  @include u-cormorantBold;
   font-size: em(12px);
   text-align: left;
   color: $blue-charcoal;

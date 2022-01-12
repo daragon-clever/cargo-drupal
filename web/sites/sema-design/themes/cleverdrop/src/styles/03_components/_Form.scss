@@ -9,7 +9,7 @@ $error-color: $alert !default;
 }
 
 .FormField {
-  @include u-fontMedium;
+  @include u-cormorantRegular;
   display: flex;
   flex-direction: column;
 }
@@ -21,7 +21,7 @@ $error-color: $alert !default;
 }
 
 .FormLabel {
-  @include u-fontSemiBold;
+  @include u-cormorantBold;
   height: auto;
   width: auto;
   padding: 0;

@@ -1,68 +1,49 @@
-uuid: aa2ddd28-5ce4-4c76-ae4c-e5944a958a9b
+uuid: cd11bc87-4075-481a-a717-44d7890558aa
 langcode: fr
 status: true
 dependencies:
   config:
-    - field.field.node.product_second_level.field_metatags
-    - field.field.node.product_second_level.field_paragraph_main_visual
-    - field.field.node.product_second_level.field_paragraph_product_family
-    - field.field.node.product_second_level.field_paragraph_sliders_product
-    - field.field.node.product_second_level.field_visual_product
-    - image.style.thumbnail
-    - node.type.product_second_level
+    - field.field.node.product.field_paragraph_main_visual
+    - field.field.node.product.field_paragraph_our_products
+    - field.field.node.product.field_paragraph_presentation
+    - node.type.product
   module:
     - field_group
-    - image
-    - metatag
     - paragraphs
     - path
 third_party_settings:
   field_group:
     group_product:
       children:
-        - group_main_visual
-        - group_products_family
-        - group_products_slider
+        - group_visual
+        - group_presentation
+        - group_products
       parent_name: ''
-      weight: 2
+      weight: 1
       format_type: tabs
       region: content
       format_settings:
+        id: ''
+        classes: ''
         direction: vertical
-        id: ''
-        classes: ''
-      label: product
-    group_main_visual:
+      label: Produit
+    group_presentation:
       children:
-        - field_paragraph_main_visual
-      parent_name: group_product
-      weight: 2
-      format_type: tab
-      region: content
-      format_settings:
-        id: ''
-        classes: ''
-        description: ''
-        formatter: open
-        required_fields: true
-      label: 'Visuel principal'
-    group_products_family:
-      children:
-        - field_paragraph_product_family
+        - field_paragraph_presentation
       parent_name: group_product
       weight: 3
       format_type: tab
       region: content
       format_settings:
-        id: ''
-        classes: ''
         description: ''
         formatter: closed
         required_fields: true
-      label: 'Famille de produits'
-    group_products_slider:
+        id: ''
+        classes: ''
+      label: 'Bloc de présentation'
+    group_products:
       children:
-        - field_paragraph_sliders_product
+        - field_paragraph_our_products
       parent_name: group_product
       weight: 4
       format_type: tab
@@ -73,27 +54,34 @@ third_party_settings:
         description: ''
         formatter: closed
         required_fields: true
-      label: 'Slider produits'
-id: node.product_second_level.default
+      label: 'Mise en avant produits'
+    group_visual:
+      children:
+        - field_paragraph_main_visual
+      parent_name: group_product
+      weight: 2
+      format_type: tab
+      region: content
+      format_settings:
+        description: ''
+        formatter: open
+        required_fields: true
+        id: ''
+        classes: ''
+      label: 'Visuel principal'
+id: node.product.default
 targetEntityType: node
-bundle: product_second_level
+bundle: product
 mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 5
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_metatags:
-    weight: 10
-    settings:
-      sidebar: true
-    third_party_settings: {  }
-    type: metatag_firehose
-    region: content
   field_paragraph_main_visual:
-    weight: 11
+    weight: 12
     settings:
       title: Paragraphe
       title_plural: Paragraphs
@@ -103,15 +91,14 @@ content:
       closed_mode_threshold: 0
       add_mode: dropdown
       form_display_mode: default
-      default_paragraph_type: main_visual
+      default_paragraph_type: ''
       features:
-        add_above: '0'
-        collapse_edit_all: '0'
-        duplicate: '0'
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
     third_party_settings: {  }
     type: paragraphs
     region: content
-  field_paragraph_product_family:
+  field_paragraph_our_products:
     type: paragraphs
     weight: 12
     settings:
@@ -123,16 +110,16 @@ content:
       closed_mode_threshold: 0
       add_mode: dropdown
       form_display_mode: default
-      default_paragraph_type: product_family
+      default_paragraph_type: our_products
       features:
         add_above: '0'
         collapse_edit_all: '0'
         duplicate: '0'
     third_party_settings: {  }
     region: content
-  field_paragraph_sliders_product:
+  field_paragraph_presentation:
     type: paragraphs
-    weight: 13
+    weight: 11
     settings:
       title: Paragraphe
       title_plural: Paragraphs
@@ -142,31 +129,23 @@ content:
       closed_mode_threshold: 0
       add_mode: dropdown
       form_display_mode: default
-      default_paragraph_type: products_slider
+      default_paragraph_type: presentation_block
       features:
         add_above: '0'
         collapse_edit_all: '0'
         duplicate: '0'
     third_party_settings: {  }
     region: content
-  field_visual_product:
-    weight: 1
-    settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
-    third_party_settings: {  }
-    type: image_image
-    region: content
   langcode:
     type: language_select
-    weight: 3
+    weight: 5
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   path:
     type: path
-    weight: 8
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -174,21 +153,21 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 6
+    weight: 8
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 9
+    weight: 11
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 7
+    weight: 9
     region: content
     third_party_settings: {  }
   title:
@@ -201,7 +180,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 4
+    weight: 6
     settings:
       match_operator: CONTAINS
       size: 60

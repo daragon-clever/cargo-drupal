@@ -1,0 +1,32 @@
+uuid: 5f30dd99-ffb9-483b-a601-98410614c04c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.presentation_block.field_description
+    - field.field.paragraph.presentation_block.field_title
+    - paragraphs.paragraphs_type.presentation_block
+id: paragraph.presentation_block.default
+targetEntityType: paragraph
+bundle: presentation_block
+mode: default
+content:
+  field_description:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,34 @@
+uuid: 785e0e84-bc55-45dd-87c0-f3a6aa409f34
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.our_products.field_products
+    - field.field.paragraph.our_products.field_title
+    - paragraphs.paragraphs_type.our_products
+id: paragraph.our_products.default
+targetEntityType: paragraph
+bundle: our_products
+mode: default
+content:
+  field_products:
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

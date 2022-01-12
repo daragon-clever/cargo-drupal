@@ -1,0 +1,82 @@
+uuid: 3c4d54b9-7514-45d5-93fe-be5714e28645
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraph_presentation
+    - node.type.product
+    - paragraphs.paragraphs_type.presentation_block
+  module:
+    - entity_reference_revisions
+id: node.product.field_paragraph_presentation
+field_name: field_paragraph_presentation
+entity_type: node
+bundle: product
+label: 'Bloc présentation'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      presentation_block: presentation_block
+    target_bundles_drag_drop:
+      brand_history:
+        weight: 20
+        enabled: false
+      contents_table:
+        weight: 21
+        enabled: false
+      contents_table_slide:
+        weight: 22
+        enabled: false
+      introduction:
+        weight: 23
+        enabled: false
+      label_block:
+        weight: 24
+        enabled: false
+      main_visual:
+        weight: 25
+        enabled: false
+      moodboard:
+        weight: 26
+        enabled: false
+      our_universe:
+        weight: 27
+        enabled: false
+      partnership:
+        weight: 28
+        enabled: false
+      presentation_block:
+        enabled: true
+        weight: 19
+      press_release:
+        weight: 29
+        enabled: false
+      product_family:
+        weight: 30
+        enabled: false
+      products_slider:
+        weight: 31
+        enabled: false
+      products_slider_slide:
+        weight: 32
+        enabled: false
+      slider_homepage:
+        weight: 33
+        enabled: false
+      team_presentation:
+        weight: 34
+        enabled: false
+      visuals_and_video:
+        weight: 35
+        enabled: false
+      who_are_we_slider:
+        weight: 36
+        enabled: false
+field_type: entity_reference_revisions

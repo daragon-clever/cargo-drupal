@@ -1,0 +1,10 @@
+uuid: 69f34c71-77b6-4808-a75b-0daa81cf32cb
+langcode: fr
+status: true
+dependencies: {  }
+id: presentation_block
+label: 'Bloc présentation'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

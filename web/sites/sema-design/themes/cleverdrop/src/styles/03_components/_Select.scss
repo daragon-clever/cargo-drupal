@@ -38,7 +38,7 @@
 }
 
 .Select {
-  @include u-fontMedium;
+  @include u-cormorantRegular;
   appearance: none;
   min-height: em(40px, 14px);
   font-family: inherit;
@@ -63,7 +63,7 @@
   }
 
   option {
-    @include u-fontMedium;
+    @include u-cormorantRegular;
     font-size: em(14px);
     background-color: $body-bg;
   }

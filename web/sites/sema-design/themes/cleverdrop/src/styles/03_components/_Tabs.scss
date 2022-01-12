@@ -12,7 +12,7 @@
 }
 
 .Tabs-link {
-  @include u-fontMedium;
+  @include u-cormorantRegular;
   text-decoration: none;
   color: $manatee;
   padding: em(16px) em(24px);

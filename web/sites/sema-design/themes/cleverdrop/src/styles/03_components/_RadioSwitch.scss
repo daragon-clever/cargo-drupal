@@ -23,7 +23,7 @@ $radio-switch-radius: 10em;
 }
 
 .RadioSwitch-link {
-  @include u-fontSemiBold;
+  @include u-cormorantBold;
   position: relative;
   display: block;
   width: 100%;
@@ -50,7 +50,7 @@ $radio-switch-radius: 10em;
 }
 
 .RadioSwitch-label {
-  @include u-fontSemiBold;
+  @include u-cormorantBold;
   position: relative;
   display: block;
   text-align: center;

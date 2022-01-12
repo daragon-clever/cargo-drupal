@@ -1,0 +1,7 @@
+uuid: ef6ccb44-9cbc-4767-8a1f-9acbb1353442
+langcode: fr
+status: false
+dependencies: {  }
+formId: node_inspiration_form
+captchaType: default
+label: null

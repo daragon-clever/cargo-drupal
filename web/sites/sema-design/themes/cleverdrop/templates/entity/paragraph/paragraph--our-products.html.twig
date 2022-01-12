@@ -1,0 +1,21 @@
+{% set classes = [
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished'
+] %}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+      {{ content.field_title }}
+      {% for i in content.field_products['#items']|keys %}
+        {% if i < 2 %}
+          {# Push format big #}
+          {{ content.field_products[i] }}
+        {% else %}
+          {{ content.field_products[i] }}
+        {% endif %}
+      {% endfor %}
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

@@ -1,0 +1,21 @@
+api:
+  url: ''
+  token: ''
+routing:
+  listing: liste-des-magasins
+  item: votre-magasin
+google_api:
+  key: ''
+search_form:
+  default_radius: 100
+behavior:
+  load_map_on_first_result: false
+  disable_url_history: false
+  disable_close_map: false
+style:
+  icon_url: null
+  map: null
+google_places_country_restrictions: fr
+_core:
+  default_config_hash: fEBzCmOv_EvdMoHDnTohopzEPZ8jyjLYkHC62huxd98
+langcode: fr

@@ -8,19 +8,30 @@ dependencies:
     - field.field.node.product_second_level.field_paragraph_main_visual
     - field.field.node.product_second_level.field_paragraph_product_family
     - field.field.node.product_second_level.field_paragraph_sliders_product
+    - field.field.node.product_second_level.field_visual_product
     - node.type.product_second_level
   module:
+    - image
     - user
 id: node.product_second_level.teaser
 targetEntityType: node
 bundle: product_second_level
 mode: teaser
 content:
+  field_visual_product:
+    type: image
+    weight: 1
+    region: content
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
   links:
-    weight: 100
+    weight: 0
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden:
   field_metatags: true
   field_paragraph_main_visual: true

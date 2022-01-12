@@ -7,9 +7,11 @@ dependencies:
     - field.field.node.product_second_level.field_paragraph_main_visual
     - field.field.node.product_second_level.field_paragraph_product_family
     - field.field.node.product_second_level.field_paragraph_sliders_product
+    - field.field.node.product_second_level.field_visual_product
     - node.type.product_second_level
   module:
     - entity_reference_revisions
+    - image
     - metatag
     - user
 id: node.product_second_level.default
@@ -18,15 +20,15 @@ bundle: product_second_level
 mode: default
 content:
   field_metatags:
-    weight: 105
-    label: above
+    type: metatag_empty_formatter
+    weight: 2
+    region: content
+    label: visually_hidden
     settings: {  }
     third_party_settings: {  }
-    type: metatag_empty_formatter
-    region: content
   field_paragraph_main_visual:
-    weight: 101
-    label: above
+    weight: 1
+    label: visually_hidden
     settings:
       view_mode: default
       link: ''
@@ -35,26 +37,35 @@ content:
     region: content
   field_paragraph_product_family:
     type: entity_reference_revisions_entity_view
-    weight: 103
-    label: above
+    weight: 3
+    region: content
+    label: visually_hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    region: content
   field_paragraph_sliders_product:
     type: entity_reference_revisions_entity_view
-    weight: 104
-    label: above
+    weight: 4
+    region: content
+    label: visually_hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
+  field_visual_product:
+    weight: 5
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
     region: content
   links:
-    weight: 100
+    weight: 0
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden:
   langcode: true

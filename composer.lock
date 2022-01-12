@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f3f6519638dd56b01732f01efa9e0f5d",
+    "content-hash": "ea824e14d88eab73a4d439386b0dfa20",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -258,16 +258,16 @@
         },
         {
             "name": "cargo/drupal_synapse",
-            "version": "v2.2.2",
+            "version": "v2.2.3",
             "source": {
                 "type": "git",
                 "url": "git@github.com:PoleWebCargo/WEB_Drupal_Module_Synapse.git",
-                "reference": "97f25801be234a1b1794b72c99cf82ceb57d56b9"
+                "reference": "00f37d398645eec1f56139ed0cb32d739bba336d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PoleWebCargo/WEB_Drupal_Module_Synapse/zipball/97f25801be234a1b1794b72c99cf82ceb57d56b9",
-                "reference": "97f25801be234a1b1794b72c99cf82ceb57d56b9",
+                "url": "https://api.github.com/repos/PoleWebCargo/WEB_Drupal_Module_Synapse/zipball/00f37d398645eec1f56139ed0cb32d739bba336d",
+                "reference": "00f37d398645eec1f56139ed0cb32d739bba336d",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -298,10 +298,10 @@
             "description": "Module to connect and use the synapse API (Store Locator)",
             "homepage": "https://github.com/PoleWebCargo/WEB_Drupal_Module_Synapse",
             "support": {
-                "source": "https://github.com/PoleWebCargo/WEB_Drupal_Module_Synapse/tree/v2.2.2",
+                "source": "https://github.com/PoleWebCargo/WEB_Drupal_Module_Synapse/tree/v2.2.3",
                 "issues": "https://github.com/PoleWebCargo/WEB_Drupal_Module_Synapse/issues"
             },
-            "time": "2021-09-03T13:50:29+00:00"
+            "time": "2022-01-12T13:14:36+00:00"
         },
         {
             "name": "chi-teck/drupal-code-generator",

@@ -1,0 +1,29 @@
+uuid: aacb54f9-6092-4d6a-babf-90ba42da6451
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.text_area.field_description
+    - field.field.paragraph.text_area.field_title
+    - paragraphs.paragraphs_type.text_area
+id: paragraph.text_area.default
+targetEntityType: paragraph
+bundle: text_area
+mode: default
+content:
+  field_description:
+    weight: 1
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_title:
+    weight: 0
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

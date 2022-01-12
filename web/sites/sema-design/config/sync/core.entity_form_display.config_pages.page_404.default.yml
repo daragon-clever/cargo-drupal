@@ -1,0 +1,53 @@
+uuid: 5eaa8cf2-af9e-4ab6-a7c5-1008e76e95fd
+langcode: fr
+status: true
+dependencies:
+  config:
+    - config_pages.type.page_404
+    - field.field.config_pages.page_404.field_cta
+    - field.field.config_pages.page_404.field_subtitle
+    - field.field.config_pages.page_404.field_title
+    - field.field.config_pages.page_404.field_visuel
+    - image.style.thumbnail
+  module:
+    - image
+    - link
+id: config_pages.page_404.default
+targetEntityType: config_pages
+bundle: page_404
+mode: default
+content:
+  field_cta:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_subtitle:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_visuel:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+hidden:
+  label: true

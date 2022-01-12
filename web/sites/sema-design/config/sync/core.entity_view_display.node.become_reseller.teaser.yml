@@ -1,0 +1,25 @@
+uuid: 8a3305bb-33c3-4781-884b-183de21fc422
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.become_reseller.field_paragraph_main_visual
+    - field.field.node.become_reseller.field_paragraph_text_area
+    - node.type.become_reseller
+  module:
+    - user
+id: node.become_reseller.teaser
+targetEntityType: node
+bundle: become_reseller
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_paragraph_main_visual: true
+  field_paragraph_text_area: true
+  langcode: true

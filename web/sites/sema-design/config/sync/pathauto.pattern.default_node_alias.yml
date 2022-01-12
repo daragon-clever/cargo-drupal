@@ -1,0 +1,29 @@
+uuid: bd5c8b92-76ad-4b36-84a0-eecdf7e50e07
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+id: default_node_alias
+label: 'Default node alias'
+type: 'canonical_entities:node'
+pattern: '[node:title]'
+selection_criteria:
+  ca841b95-be71-476d-a56f-7697270375ff:
+    id: node_type
+    bundles:
+      become_reseller: become_reseller
+      homepage: homepage
+      inspiration: inspiration
+      page: page
+      product: product
+      product_second_level: product_second_level
+      we_talk_about_us: we_talk_about_us
+      who_are_we: who_are_we
+    negate: false
+    context_mapping:
+      node: node
+    uuid: ca841b95-be71-476d-a56f-7697270375ff
+selection_logic: and
+weight: -5
+relationships: {  }

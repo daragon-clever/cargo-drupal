@@ -4,7 +4,7 @@
 
 // Global config
 // -------------
-$assets-url: '/assets/' !default;
+$assets-url: '../assets/' !default;
 $transition: 0.3s !default;
 // Sélecteur qui indique que le contenu est riche/contribué et non un élément de design.
 $rtfSelector: '.u-isRtf' !default;

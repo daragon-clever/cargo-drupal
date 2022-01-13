@@ -7,7 +7,7 @@ $radio-switch-radius: 10em;
   display: inline-flex;
   width: max-content;
   padding: $radio-switch-padding;
-  background-color: $alabaster;
+  background-color: var(--black);
   border-radius: $radio-switch-radius;
 }
 
@@ -31,7 +31,7 @@ $radio-switch-radius: 10em;
   text-align: center;
   text-decoration: none;
   line-height: calc($radio-switch-height - 2*$radio-switch-padding);
-  color: $black;
+  color: var(--text-color);
   padding: em(5px, 14px) em(20px, 14px);
   border-radius: $radio-switch-radius;
   transition: color $transition, background-color $transition;
@@ -44,8 +44,8 @@ $radio-switch-radius: 10em;
   }
 
   &[aria-current='true'] {
-    color: $white;
-    background-color: $apple;
+    color: var(--white);
+    background-color: var(--black);
   }
 }
 
@@ -62,14 +62,14 @@ $radio-switch-radius: 10em;
   z-index: 1;
 
   .RadioSwitch-input:checked ~ & {
-    color: $white;
+    color: var(--white);
   }
 }
 
 .RadioSwitch-input {
   &:checked {
     + .RadioSwitch-label {
-      background-color: $apple;
+      background-color: var(--black);
     }
   }
 

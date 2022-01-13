@@ -1,19 +1,18 @@
 %slider-btn {
-  
+
   position: absolute;
   top: 50%;
   display: none;
   height: em(40px);
   width: em(40px);
-  background-color: $primary-color;
-  border: 1px solid $viridian;
+  background-color: var(--black);
   border-radius: 100% !important;
   transform: translateY(-50%);
   transition: background-color $transition;
 
   &:hover,
   &:focus {
-    background-color: $deep-teal;
+    background-color: var(--white);
   }
 
   &.is-disabled {
@@ -22,7 +21,7 @@
 
   svg {
     width: em(16px);
-    fill: $white;
+    fill: var(--white);
   }
 
   @include media-breakpoint-up('md') {
@@ -119,75 +118,12 @@
   svg {
     transform: rotate(180deg);
   }
-
-  &.is-small {
-    left: 0;
-    justify-content: flex-start;
-    background-image: linear-gradient(to left, transparent 30%, $wild-sand 65%);
-  }
 }
 
 .Slider-btnNext {
   right: em(16px);
-
-  &.is-small {
-    right: 0;
-    justify-content: flex-end;
-    background-image: linear-gradient(to right, transparent 30%, $wild-sand 65%);
-  }
 }
 
-.Slider-scrollbar {
-  @include media-breakpoint-up('md') {
-    position: relative;
-    height: em(4px);
-    width: 99%;
-    background-color: $alto;
-    border-radius: em(10px);
-    margin: 0 auto;
-
-    &::before,
-    &::after {
-      position: absolute;
-      display: block;
-      content: '';
-      height: 10px;
-      width: 100%;
-      background: transparent;
-    }
-
-    &::before {
-      top: 0;
-      transform: translateY(-100%);
-    }
-
-    &::after {
-      bottom: 0;
-      transform: translateY(100%);
-    }
-
-    &:hover {
-      cursor: grab;
-    }
-  }
-}
-
-.Slider-scrollbar-drag {
-  position: relative;
-  height: 100%;
-  background-color: $primary-color;
-  border-radius: em(10px);
-
-  &::before {
-    position: absolute;
-    top: em(-5px);
-    right: 0;
-    bottom: em(-5px);
-    left: 0;
-    display: block;
-    content: '';
-  }
-}
 
 .Slider-pagination {
   text-align: center;
@@ -201,14 +137,14 @@
   display: inline-block;
   height: em(8px);
   width: em(8px);
-  background-color: $alto;
+  background-color: var(--black);
   border-radius: 100%;
   cursor: pointer;
   transition: background-color $transition;
 
   &:hover,
   &:focus {
-    background-color: $viridian;
+    background-color: var(--white);
   }
 
   + .Slider-bullet {
@@ -216,6 +152,6 @@
   }
 
   &.is-active {
-    background-color: $primary-color;
+    background-color: var(--black);
   }
 }

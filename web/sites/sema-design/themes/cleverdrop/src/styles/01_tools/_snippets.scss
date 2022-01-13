@@ -66,28 +66,29 @@
 // // ------------------------------
 // // Clearfix
 // .u-clearfix { clear: both; }
+
 // // Nowrap
 // .u-nowrap { white-space: nowrap; }
+
 // // Text-align
-.u-textRight { text-align: right; }
-.u-textLeft { text-align: left; }
-.u-textCenter { text-align: center; }
+// .u-textRight { text-align: right; }
+// .u-textLeft { text-align: left; }
+// .u-textCenter { text-align: center; }
+
 // // Text style
 // .u-textUpper { text-transform: uppercase; }
 // .u-textItalic { font-style: italic; }
+
 // // Text weight
-// // .u-text-bold { @extend %webfont-bold; }
-// .u-textBlack { @extend %webfont-black; }
-// .u-textRegular { @extend %webfont; }
+// // .u-textBold { font-weight: 700; }
+// .u-textRegular { font-weight: 500 }
 
 // // Colors
-// .u-textWhite { color: $white; }
-// .u-textTabasco { color: $tabasco; }
-// .u-textBlueChill { color: $blue-chill; }
+// .u-textWhite { color: var(--white); }
 
 // // Font size
-.u-fsSmall { font-size: em(14px); }
-.u-fsMedium { font-size: em(18px); }
+// .u-fsSmall { font-size: em(14px); }
+// .u-fsMedium { font-size: em(18px); }
 // .u-fsBig { font-size: rem(30px); }
 
 // // Layout
@@ -120,9 +121,9 @@
 //   flex-wrap: wrap;
 // }
 
-.u-center {
-  margin: auto !important;
-}
+// .u-center {
+//   margin: auto !important;
+// }
 
 // .u-mbSmall {
 //   margin-bottom: rem(20px);
@@ -164,134 +165,16 @@
   align-self: center;
 }
 
-$restrained-width: em(980px, 16px);
-$restrainedSmall-width: em(712px, 16px);
-
-.u-constrained {
-  display: block;
-  width: 100%;
-  max-width: $restrained-width !important;
-  margin: 0 auto;
-}
-
-.u-constrainedSmall {
-  display: block;
-  width: 100%;
-  max-width: $restrainedSmall-width !important;
-  margin: 0 auto;
-}
-
-// .u-constrainedXSmall {
-//   width: 100%;
-//   max-width: $restrainedXSmall-width !important;
-// }
-
-// .u-rowLayout {
-//   display: flex;
-//   flex-direction: column;
-
-//   @include media-breakpoint-up('md') {
-//     flex-direction: row;
-//   }
-// }
-
-// .u-reverseRow {
-//   flex-direction: column-reverse;
-
-//   @include media-breakpoint-up('md') {
-//     flex-direction: row-reverse;
-//   }
-// }
-
-// .u-colLayout {
-//   display: flex;
-//   flex-direction: column;
-// }
-
-// .u-reverseCol {
-//   flex-direction: column-reverse;
-// }
-
-// .u-colMain {
-//   @include media-breakpoint-up('md') {
-//     flex-grow: 1;
-//     flex-shrink: 1;
-//   }
-// }
-
-// %u-col {
-//   margin-top: rem(20px);
-
-//   @include media-breakpoint-up('md') {
-//     flex-shrink: 0;
-//     margin-top: 0;
-//     margin-left: rem(20px);
-
-//     .u-reverseRow & {
-//       margin-right: rem(20px);
-//     }
-//   }
-// }
-
-// .u-colSmall {
-//   @extend %u-col;
-
-//   @include media-breakpoint-up('md') {
-//     flex-basis: rem(280px);
-//   }
-// }
-
-// .u-colMedium {
-//   @extend %u-col;
-
-//   @include media-breakpoint-up('md') {
-//     flex-basis: rem(340px);
-//   }
-// }
-
-// .u-colLarge {
-//   @extend %u-col;
-
-//   @include media-breakpoint-up('md') {
-//     flex-basis: rem(500px);
-//   }
-// }
-
-// .u-colOffset {
-//   @include media-breakpoint-up('md') {
-//     margin-top: rem(-240px) !important;
-//   }
-// }
-
-@mixin u-box-shadow {
-  box-shadow: 0 0 8px 1px rgba($black, 0.2);
-}
-
-@mixin u-img-gradient {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: block;
-  content: '';
-  background-image: linear-gradient(to right, $tiber 10%, transparent);
-
-  @include media-breakpoint-up('md') {
-    background-image: linear-gradient(to right, $tiber 30%, transparent);
-  }
-}
-
 .u-valid {
-  color: $valid;
+  color: var(--valid);
 }
 
 .u-warning {
-  color: $warning;
+  color: var(--warning);
 }
 
 .u-alert {
-  color: $alert;
+  color: var(--alert);
 }
 
 .u-underline {
@@ -300,23 +183,11 @@ $restrainedSmall-width: em(712px, 16px);
 
 // Backgrounds
 
-.u-bgWhite {
-  background-color: $white;
-}
+// .u-bgWhite {
+//   background-color: var(--white);
+// }
 
 /*.u-bgBlack {
-  background-color: $black;
-}
-
-.u-bgPurple {
-  background-color: $smoky;
-}
-
-.u-bgGreen {
-  background-color: $apple;
-}
-
-.u-bgPurpleLight {
-  background-color: $catskill-white;
+  background-color: var(--black);
 }
 */

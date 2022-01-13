@@ -15,7 +15,7 @@
   font-size: em(14px);
   text-align: left;
   text-decoration: none;
-  color: $text-color-darken;
+  color: var(--text-color);
   padding: em(12px) em(16px);
   box-sizing: border-box;
   transition: color $transition, background-color $transition;

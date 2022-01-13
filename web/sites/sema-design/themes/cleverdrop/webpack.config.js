@@ -1,6 +1,6 @@
 const path = require('path')
 const globImporter = require('node-sass-glob-importer')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
+const CopyPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const StylelintWebpackPlugin = require('stylelint-webpack-plugin')
 
@@ -72,6 +72,17 @@ module.exports = (env, argv) => [{
       emitWarning: true,
       files: '**/*.scss'
     }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, "src/assets/"),
+          to: path.resolve(__dirname, "public/assets"),
+          globOptions: {
+            ignore: path.resolve(__dirname, "src/assets/svg")
+          }
+        },
+      ]
+    })
   ],
 }, {
   name: 'js',
@@ -93,19 +104,3 @@ module.exports = (env, argv) => [{
     ]
   }
 }]
-// }, {
-//   name: 'assets',
-//   plugins: [
-//     new CopyWebpackPlugin({
-//       patterns: [
-//         {
-//           from: path.resolve(__dirname, "src/assets/"),
-//           to: path.resolve(__dirname, "public/assets"),
-//           globOptions: {
-//             ignore: path.resolve(__dirname, "src/assets/svg")
-//           }
-//         },
-//       ]
-//     }),
-//   ]
-// }]

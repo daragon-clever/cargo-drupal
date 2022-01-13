@@ -3,7 +3,7 @@
 $grid-even-color: transparent, !default;
 $grid-odd-color: rgba(126, 195, 241, 0.15) !default;
 $col-size: calc(100%/#{$nb-cols}) !default;
-$page-bg-color: $white !default;
+$page-bg-color: var(--white) !default;
 
 .Page-wpr {
   overflow-x: hidden;

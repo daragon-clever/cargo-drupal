@@ -15,69 +15,20 @@ $l: lightgreen !default;
 // -----------
 // List all colors right here
 // Variables named using "Name that color" (http://chir.ag/projects/name-that-color/)
-$white: #fff !default;
-$black: #000 !default;
 
-// Grey variants
-$alabaster: #fafafa !default;
-$wild-sand: #f5f5f5 !default;
-$gallery: #eee !default;
-$alto: #e0e0e0 !default;
-$silver-chalice: #9e9e9e !default;
-$french-gray: #c0c0c6 !default;
-$boulder: #787878 !default;
-$manatee: #98989e;
-$river-bed: #424b5a;
-$blue-charcoal: #020e22;
-$abbey: #464650;
+:root {
+  --white: #ffffff;
+  --black: #000000;
 
-// Client validated colors :
-$harp: #e7f3e7 !default;
-$mystic: #edf3f2 !default;
-$celadon: #bae8bb !default;
-$emerald: #42c457 !default;
-$apple: #369a38 !default; // Fv color
-$forest-green: #309630 !default;
-$viridian: #3f8882 !default;
-$blue-stone: #005b56 !default;
-$deep-teal: #00312d !default;
-$tiber: #082831 !default;
-$school-bus-yellow: #ffdb0a !default;
-$sunglow: #ffce36 !default;
-$yellow-orange: #fca846 !default;
-$bridesmaid: #fef5eb !default;
-$pippin: #ffdede !default;
-$guardsman-red: #d90000 !default;
+  // main colors
+  --body-bg: var(--white);
+  --text-color: var(--black);
 
-// Message colors
-$alert: $guardsman-red !default;
-$alert-border: $guardsman-red !default;
-$alert-bg: $pippin !default;
-$alert-rgb: '217, 0, 0' !default;
-$valid: $forest-green !default;
-$valid-border: $celadon !default;
-$valid-bg: $harp !default;
-$valid-rgb: '48, 150, 48' !default;
-$warning: $yellow-orange !default;
-$warning-border: $yellow-orange !default;
-$warning-bg: $bridesmaid !default;
-$warning-rgb: '252, 150, 31' !default;
-$info: $blue-charcoal !default;
-$info-border: $alto !default;
-$info-bg: $alabaster !default;
-$info-rgb: '250, 250, 250' !default;
+  // backgrounds
+  --pampas: #efebe8;
 
-
-// Layout color
-// ------------
-// Put the colors listed in use
-// /!\ Don't use color name for your variables here
-$body-bg: $white;
-$text-color: $blue-charcoal;
-$text-color-lighten: $river-bed;
-$text-color-darken: $blue-charcoal;
-
-$brand-color: $apple;
-$primary-color: $blue-stone;
-$primary-color-lighten: $viridian;
-$primary-color-darken: $deep-teal;
+  // Message colors
+  --alert: #d90000;
+  --valid: #309630;
+  --warning: #fca846;
+}

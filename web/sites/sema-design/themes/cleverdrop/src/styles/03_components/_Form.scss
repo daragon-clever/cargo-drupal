@@ -1,8 +1,6 @@
 $inter-field-gap: rem(20px) !default;
-$error-color: $alert !default;
 
 .Form {
-
   display: grid;
   grid-gap: em(16px);
   width: 100%;
@@ -28,7 +26,7 @@ $error-color: $alert !default;
   margin: 0;
   font-size: em(12px);
   text-align: left;
-  color: $blue-charcoal;
+  color: var(--text-color);
   margin-bottom: em(8px, 12px);
 }
 
@@ -58,5 +56,5 @@ $error-color: $alert !default;
 }
 
 .FormError {
-  color: $error-color;
+  color: var(--alert);
 }

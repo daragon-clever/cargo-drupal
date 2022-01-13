@@ -4,9 +4,9 @@
 $checkbox-outer-size: em(18px, 16px);
 $checkbox-inner-size: em(10px, 16px);
 $border-width: em(2px, 16px);
-$disabled-bg-color: $wild-sand;
-$disabled-border-color: $alto;
-$disabled-text-color: $silver-chalice;
+$disabled-bg-color: var(--black);
+$disabled-border-color: var(--black);
+$disabled-text-color: var(--black);
 
 .CheckboxSet,
 .RadioSet {
@@ -59,7 +59,7 @@ $disabled-text-color: $silver-chalice;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  color: $blue-charcoal;
+  color: var(--black);
   padding-left: em(32px, 16px);
   cursor: pointer;
 }
@@ -75,7 +75,7 @@ $disabled-text-color: $silver-chalice;
   content: '';
   height: $checkbox-outer-size;
   width: $checkbox-outer-size;
-  border: 2px solid $manatee;
+  border: 2px solid var(--black);
   border-radius: 4px;
   cursor: pointer;
   transition: box-shadow $transition;
@@ -94,7 +94,7 @@ $disabled-text-color: $silver-chalice;
 .Radio[type='radio']:checked:focus + label::before,
 .Radio[type='radio']:not(:checked):hover + label::before,
 .Radio[type='radio']:checked:hover + label::before {
-  box-shadow: 0 0 2px 2px rgba($primary-color, 0.2);
+  box-shadow: 0 0 2px 2px var(--black);
 }
 
 .Checkbox[type='checkbox']:not(:checked):focus + label::after,
@@ -112,7 +112,6 @@ $disabled-text-color: $silver-chalice;
   position: absolute;
   display: block;
   content: '';
-  background-color: $primary-color;
   border-radius: 50%;
   opacity: 0;
   transition: opacity $transition;
@@ -141,7 +140,7 @@ $disabled-text-color: $silver-chalice;
   left: em(6px);
   height: $checkbox-inner-size;
   width: $checkbox-inner-size;
-  background-color: $white;
+  background-color: var(--white);
   opacity: 1;
 }
 
@@ -160,8 +159,8 @@ $disabled-text-color: $silver-chalice;
 
 .Checkbox[type='checkbox']:checked + label::before,
 .Radio[type='radio']:checked + label::before {
-  background-color: $primary-color;
-  border-color: $primary-color;
+  background-color: var(--black);
+  border-color: var(--black);
 }
 
 // DISABLES STYLES
@@ -202,6 +201,6 @@ $disabled-text-color: $silver-chalice;
   @include u-cormorantBold;
   font-size: em(12px);
   text-align: left;
-  color: $blue-charcoal;
+  color: var(--black);
   margin-bottom: em(8px, 12px);
 }

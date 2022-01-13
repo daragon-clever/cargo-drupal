@@ -20,7 +20,7 @@
   flex-shrink: 0;
   width: max-content;
   min-width: em(200px);
-  color: $blue-charcoal;
+  color: var(--black);
 
   svg {
     position: absolute;
@@ -45,26 +45,26 @@
   font-size: em(14px, 16px);
   color: currentColor;
   padding: em(8px) em(24px) em(8px) em(8px);
-  border: 1px solid $alto;
+  border: 1px solid var(--black);
   border-radius: em(4px);
 
 
   &:focus {
-    box-shadow: 0 0 2px 2px rgba($primary-color, 0.2);
+    box-shadow: 0 0 2px 2px var(--black);
   }
 
   &:disabled {
-    color: $silver-chalice;
+    color: var(--black);
     cursor: not-allowed;
 
     + svg {
-      color: $silver-chalice;
+      color: var(--black);
     }
   }
 
   option {
     @include u-cormorantRegular;
     font-size: em(14px);
-    background-color: $body-bg;
+    background-color: var(--body-bg);
   }
 }

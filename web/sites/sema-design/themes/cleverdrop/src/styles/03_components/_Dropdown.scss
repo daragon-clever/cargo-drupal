@@ -31,7 +31,7 @@
   transition: transform $transition;
 
   svg {
-    fill: $text-color;
+    fill: var(--text-color);
     height: em(16px, 14px);
     width: em(16px, 14px);
   }

@@ -1,0 +1,6 @@
+<button class="CtaSecondary">
+  <span class="CtaSecondary-text">{{ text }}</span>
+  {% if icon %}
+    {% include directory ~ '/src/assets/svg/' ~ icon ~ '.svg' %}
+  {% endif %}
+</button>

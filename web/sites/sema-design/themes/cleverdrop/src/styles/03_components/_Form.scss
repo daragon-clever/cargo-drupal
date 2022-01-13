@@ -1,0 +1,60 @@
+$inter-field-gap: rem(20px) !default;
+
+.Form {
+  display: grid;
+  grid-gap: em(16px);
+  width: 100%;
+}
+
+.FormField {
+  @include u-cormorantRegular;
+  display: flex;
+  flex-direction: column;
+}
+
+.FieldWpr {
+  display: flex;
+  width: 100%;
+  margin-top: em(15px);
+}
+
+.FormLabel {
+  @include u-cormorantBold;
+  height: auto;
+  width: auto;
+  padding: 0;
+  margin: 0;
+  font-size: em(12px);
+  text-align: left;
+  color: var(--text-color);
+  margin-bottom: em(8px, 12px);
+}
+
+.FieldGroup-content {
+  display: grid;
+  row-gap: rem(15px);
+
+  &.is-2Cols {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    column-gap: $inter-field-gap;
+  }
+
+  .Radio-wpr {
+    margin: 0;
+  }
+}
+
+.FormFieldset-legend {
+  font-size: em(14px);
+  margin-top: em(15px);
+  margin-bottom: em(15px);
+}
+
+.FieldHelper {
+  font-size: em(14px);
+  margin-top: em(5px);
+}
+
+.FormError {
+  color: var(--alert);
+}

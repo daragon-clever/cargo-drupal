@@ -1,0 +1,75 @@
+// Tools : Mixins
+// ==============
+//
+
+// stylelint-disable
+
+// User select
+// ---------------------------------
+// Permettre ou non la sélection de l'élément
+// Permet d'empêcher les boutons ou images d'être copiées avec le contenu
+@mixin user-select($select) {
+  -webkit-user-select: $select;
+  -moz-user-select: $select;
+  -ms-user-select: $select; // IE10+
+  -o-user-select: $select;
+  user-select: $select;
+}
+
+// Text overflow
+// ---------------------------------
+// Afficher des points de suspensions
+// quand le texte déborde du conteneur
+@mixin text-overflow() {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@mixin input-placeholder {
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+  &::-webkit-input-placeholder {
+    @content;
+  }
+}
+
+@mixin appearance ($value) {
+  -webkit-appearance: $value;
+  -moz-appearance: $value;
+  appearance: $value;
+}
+
+@mixin dev-only {
+  @if $env == 'development' {
+    @content
+  }
+}
+
+
+/// Enable or disable font smoothing.
+///
+/// @param {String} $state 'on' - Enable font smoothing with 'on'.
+@mixin font-smoothing($value: 'on') {
+  @if $value == 'on' {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  @else {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
+}
+
+@mixin editorial-content($selector: $rtfSelector) {
+  #{$rtfSelector} {
+    @content;
+  }
+}

@@ -1,0 +1,75 @@
+.CtaPrimary {
+  @include u-workSansRegular;
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  font-size: rem(13px);
+  color: var(--text-color);
+  padding: em(14px, 13px) em(30px, 13px);
+  background-color: transparent;
+  border: 1px solid var(--text-color);
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: color $transition, background-color $transition, border $transition;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--white);
+    background-color: var(--black);
+  }
+
+  &:active {
+    color: var(--white);
+    background-color: var(--black);
+  }
+
+  // &.is-disabled, // handle <a> tag used as button
+  // &:disabled {
+  //   color: $primary-disabled-text-color;
+  //   background-color: $primary-disabled-bg-color;
+  //   cursor: not-allowed;
+  // };
+
+  &.is-alt {
+    color: var(--white);
+    background-color: var(--black);
+
+    &:hover,
+    &:focus-visible {
+      color: var(--black);
+      background-color: transparent;
+    }
+  }
+}
+
+
+.CtaSecondary {
+  @include u-workSansRegular;
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-decoration: underline;
+  font-size: rem(13px);
+  color: var(--text-color);
+  background: none;
+  border: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: color $transition, background-color $transition, border $transition;
+
+  &:hover,
+  &:focus-visible {
+    text-decoration: none;
+  }
+
+  svg {
+    display: flex;
+    width: em(15px, 13px);
+    margin-left: em(20px, 13px);
+  }
+}

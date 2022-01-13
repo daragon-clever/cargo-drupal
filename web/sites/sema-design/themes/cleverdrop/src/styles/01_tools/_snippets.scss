@@ -1,0 +1,193 @@
+// Tools : Snippets
+// ================
+//
+
+// Accessibilité
+// -------------
+// Masquer le contenu de façon accessible :
+%u-srOnly {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  margin: -1px;
+  clip: rect(0, 0, 0, 0);
+}
+
+.u-srOnly {
+  @extend %u-srOnly;
+}
+
+.u-hide {
+  display: none !important;
+}
+
+@include media-breakpoint-up('l') {
+  .u-hideL {
+    display: none !important;
+  }
+}
+
+@include media-breakpoint-up('md') {
+  .u-hideMd {
+    display: none !important;
+  }
+}
+
+@include media-breakpoint-down('sm') {
+  .u-hideDownSm {
+    display: none !important;
+  }
+}
+
+@include media-breakpoint-down('md') {
+  .u-hideDownMd {
+    display: none !important;
+  }
+}
+
+@include media-breakpoint-down('xs') {
+  .u-hideXs {
+    display: none !important;
+  }
+}
+
+// No JS
+@mixin no-js {
+  .#{$class-no-js} & {
+    @content;
+  }
+}
+
+
+// // Classes utilitaires, shortcuts
+// // ------------------------------
+// // Clearfix
+// .u-clearfix { clear: both; }
+
+// // Nowrap
+// .u-nowrap { white-space: nowrap; }
+
+// // Text-align
+// .u-textRight { text-align: right; }
+// .u-textLeft { text-align: left; }
+// .u-textCenter { text-align: center; }
+
+// // Text style
+// .u-textUpper { text-transform: uppercase; }
+// .u-textItalic { font-style: italic; }
+
+// // Text weight
+// // .u-textBold { font-weight: 700; }
+// .u-textRegular { font-weight: 500 }
+
+// // Colors
+// .u-textWhite { color: var(--white); }
+
+// // Font size
+// .u-fsSmall { font-size: em(14px); }
+// .u-fsMedium { font-size: em(18px); }
+// .u-fsBig { font-size: rem(30px); }
+
+// // Layout
+// // ---------
+// .u-dInline {
+//   display: inline !important;
+// }
+
+// .u-dBlock {
+//   display: block;
+// }
+
+.u-dFlex {
+  display: flex;
+}
+
+.u-dNone {
+  display: none !important;
+}
+
+// .u-fdCol {
+//   flex-direction: column;
+// }
+
+// .u-flexShrink0 {
+//   flex-shrink: 0;
+// }
+
+// .u-flexWrap {
+//   flex-wrap: wrap;
+// }
+
+// .u-center {
+//   margin: auto !important;
+// }
+
+// .u-mbSmall {
+//   margin-bottom: rem(20px);
+// }
+
+// .u-mbMedium {
+//   margin-bottom: rem(40px);
+// }
+
+// .u-mtSmall {
+//   margin-top: rem(20px);
+// }
+
+// .u-mtMedium {
+//   margin-top: rem(40px);
+// }
+
+// .u-spaceBtw {
+//   justify-content: space-between;
+// }
+
+// .u-justifyEnd {
+//   justify-content: flex-end !important;
+// }
+
+// .u-alignCenter {
+//   align-items: center;
+// }
+
+// .u-alignEnd {
+//   align-items: flex-end;
+// }
+
+// .u-alignSelfStart {
+//   align-self: flex-start;
+// }
+
+.u-alignSelfCenter {
+  align-self: center;
+}
+
+.u-valid {
+  color: var(--valid);
+}
+
+.u-warning {
+  color: var(--warning);
+}
+
+.u-alert {
+  color: var(--alert);
+}
+
+.u-underline {
+  text-decoration: underline;
+}
+
+// Backgrounds
+
+// .u-bgWhite {
+//   background-color: var(--white);
+// }
+
+/*.u-bgBlack {
+  background-color: var(--black);
+}
+*/

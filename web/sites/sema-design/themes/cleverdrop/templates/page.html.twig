@@ -1,9 +1,21 @@
-<header>
-    {{ page.header }}
+<header class="Header">
+  {{ page.header }}
+  {% include directory ~ '/templates/atoms/primary-cta.twig' with {
+    text: 'Primary Cta'
+  } %}
+  {% include directory ~ '/templates/atoms/primary-cta.twig' with {
+    text: 'Primary Cta',
+    theme: 'alt'
+  } %}
+
+  {% include directory ~ '/templates/atoms/secondary-cta.twig' with {
+    text: 'Secondary Cta',
+    icon: 'arrow-right'
+  } %}
 </header>
 <main>
-    {{ page.content }}
+  {{ page.content }}
 </main>
-<footer>
+<footer class="Footer">
     {{ page.footer }}
 </footer>

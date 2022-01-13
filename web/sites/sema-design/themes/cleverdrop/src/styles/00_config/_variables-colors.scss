@@ -1,0 +1,34 @@
+// Config : Colors variables
+// =========================
+//
+
+// Debug
+// ------
+// background color debugging ftw
+/* stylelint-disable */
+$p: peachpuff !default;
+$r: rebeccapurple !default;
+$l: lightgreen !default;
+/* stylelint-enable */
+
+// Colors list
+// -----------
+// List all colors right here
+// Variables named using "Name that color" (http://chir.ag/projects/name-that-color/)
+
+:root {
+  --white: #ffffff;
+  --black: #000000;
+
+  // main colors
+  --body-bg: var(--white);
+  --text-color: var(--black);
+
+  // backgrounds
+  --pampas: #efebe8;
+
+  // Message colors
+  --alert: #d90000;
+  --valid: #309630;
+  --warning: #fca846;
+}

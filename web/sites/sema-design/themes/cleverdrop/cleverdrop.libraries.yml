@@ -3,3 +3,8 @@ common-styles:
   css:
     component:
       css/admin_ui/tabs.css: {}
+    theme:
+      public/css/main.css: {}
+
+  js:
+    public/js/script.js: {}

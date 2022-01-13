@@ -1,0 +1,157 @@
+%slider-btn {
+
+  position: absolute;
+  top: 50%;
+  display: none;
+  height: em(40px);
+  width: em(40px);
+  background-color: var(--black);
+  border-radius: 100% !important;
+  transform: translateY(-50%);
+  transition: background-color $transition;
+
+  &:hover,
+  &:focus {
+    background-color: var(--white);
+  }
+
+  &.is-disabled {
+    display: none;
+  }
+
+  svg {
+    width: em(16px);
+    fill: var(--white);
+  }
+
+  @include media-breakpoint-up('md') {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.Slider {
+
+  position: relative;
+  padding-left: em(8px);
+  overflow: hidden;
+  margin: 0 0 0 map-get($section-padding, xs);
+
+  &.is-hero {
+    margin: auto;
+
+    .Slider-btnPrev:not(.is-disabled),
+    .Slider-btnNext:not(.is-disabled) {
+      @include media-breakpoint-up('md') {
+        display: flex;
+      }
+    }
+
+    .Slider-wrapper {
+      padding-top: 0;
+    }
+  }
+
+  @include media-breakpoint-up('md') {
+    padding: 0 map-get($section-padding, md) em(5px);
+    margin: auto;
+
+    &:hover {
+      .Slider-btnPrev:not(.is-disabled),
+      .Slider-btnNext:not(.is-disabled) {
+        display: flex;
+      }
+    }
+  }
+}
+
+.Slider-wrapper {
+  display: flex;
+  // column-gap: em(16px);
+  align-items: center;
+  padding-top: em(8px);
+  margin-bottom: em(32px);
+
+  &.has-noMargin {
+    margin-bottom: em(6px);
+  }
+}
+
+.Slider-slide {
+  flex-shrink: 0;
+  align-self: stretch;
+  display: flex;
+  touch-action: pan-y;
+
+  // &:not(:last-child) {
+  //   padding-right: em(16px);
+  // }
+
+  .is-unregular & {
+    align-self: initial;
+  }
+}
+
+.Slider-btnPrev,
+.Slider-btnNext {
+  @extend %slider-btn;
+
+  &.is-small {
+    height: 100%;
+    width: em(50px);
+    background-color: unset;
+    border: 0;
+    border-radius: 0 !important;
+
+    svg {
+      height: em(16px);
+      width: em(16px);
+      fill: currentColor;
+    }
+  }
+}
+
+.Slider-btnPrev {
+  left: em(16px);
+
+  svg {
+    transform: rotate(180deg);
+  }
+}
+
+.Slider-btnNext {
+  right: em(16px);
+}
+
+
+.Slider-pagination {
+  text-align: center;
+
+  @include media-breakpoint-up('md') {
+    display: none;
+  }
+}
+
+.Slider-bullet {
+  display: inline-block;
+  height: em(8px);
+  width: em(8px);
+  background-color: var(--black);
+  border-radius: 100%;
+  cursor: pointer;
+  transition: background-color $transition;
+
+  &:hover,
+  &:focus {
+    background-color: var(--white);
+  }
+
+  + .Slider-bullet {
+    margin-left: em(8px);
+  }
+
+  &.is-active {
+    background-color: var(--black);
+  }
+}

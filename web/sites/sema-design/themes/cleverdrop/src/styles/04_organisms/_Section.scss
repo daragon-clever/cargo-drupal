@@ -1,0 +1,12 @@
+.Section {
+  &.has-altBg {
+    background-color: var(--alt-bg);
+  }
+}
+
+.Section-inner {
+  padding: 0 $gutter-size;
+  max-width: $site-inner-width;
+  width: 100%;
+  margin: 0 auto;
+}

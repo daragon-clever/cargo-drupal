@@ -1,3 +1,41 @@
 // Atoms : Titles
 // ==============
 //
+
+.Title-1 {
+  @include u-cormorantRegular;
+  font-size: rem(65px);
+  color: var(--white);
+
+  @include media-breakpoint-down('md') {
+    font-size: rem(35px);
+  }
+}
+
+h1 {
+  @extend .Title-1;
+}
+
+.Title-2 {
+  @include u-cormorantRegular;
+  font-size: rem(45px);
+  color: var(--text-color);
+
+  @include media-breakpoint-down('md') {
+    font-size: rem(35px);
+  }
+}
+
+h2 {
+  @extend .Title-2;
+}
+
+.Title-3 {
+  @include u-quentinRegular;
+  font-size: rem(30px);
+  color: var(--text-color);
+}
+
+h3 {
+  @extend .Title-3;
+}

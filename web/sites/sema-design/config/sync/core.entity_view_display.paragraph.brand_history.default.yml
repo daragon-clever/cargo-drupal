@@ -3,6 +3,7 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - field.field.paragraph.brand_history.field_color
     - field.field.paragraph.brand_history.field_cta
     - field.field.paragraph.brand_history.field_description
     - field.field.paragraph.brand_history.field_picture
@@ -13,6 +14,7 @@ dependencies:
     - image.style.crop_histoire_de_la_marque
     - paragraphs.paragraphs_type.brand_history
   module:
+    - color_field
     - image
     - link
 id: paragraph.brand_history.default
@@ -20,6 +22,15 @@ targetEntityType: paragraph
 bundle: brand_history
 mode: default
 content:
+  field_color:
+    weight: 7
+    label: above
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    type: color_field_formatter_text
+    region: content
   field_cta:
     weight: 2
     label: visually_hidden

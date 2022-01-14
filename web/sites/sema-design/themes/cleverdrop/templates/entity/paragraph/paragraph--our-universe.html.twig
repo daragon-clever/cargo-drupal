@@ -1,20 +1,26 @@
 {%
   set classes = [
-  'paragraph',
-  'paragraph--type--' ~ paragraph.bundle|clean_class,
-  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-  not paragraph.isPublished() ? 'paragraph--unpublished'
+  'OurUniverse'
 ]
 %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
-      {{ content.field_title }}
-      {{ content.field_our_universe_top_r_picture }}
-      {{ content.field_our_universe_left_picture }}
-      {{ content.field_our_universe_bttm_r_p }}
-      {{ content.field_description }}
-      {{ content.field_cta }}
+    <div class="Section has-altBg">
+      <div class="Section-inner">
+        <h2>{{ content.field_title }}</h2>
+        {{ content.field_our_universe_top_r_picture }}
+        {{ content.field_our_universe_left_picture }}
+        {{ content.field_our_universe_bttm_r_p }}
+        <div class="OurUniverse-text">
+          {{ content.field_description }}
+        </div>
+        {{ content.field_cta }}
+        {% include directory ~ '/templates/ui/atoms/primary-cta.twig' with {
+          text: 'Primary Cta',
+        } %}
+      </div>
+    </div>
     {% endblock %}
   </div>
 {% endblock paragraph %}

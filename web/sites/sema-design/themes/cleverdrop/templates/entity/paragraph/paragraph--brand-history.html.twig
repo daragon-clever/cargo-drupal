@@ -7,15 +7,29 @@
 ]
 %}
 {% block paragraph %}
-  <div{{ attributes.addClass(classes) }}>
+  <section{{ attribut es.addClass(classes) }} class="BrandHistory">
     {% block content %}
-      {{ content.field_title }}
-      {{ content.field_description }}
-      {{ content.field_picture }}
-      {{ content.field_second_title }}
-      {{ content.field_second_description }}
-      {{ content.field_second_picture }}
-      {{ content.field_cta }}
+    <div class="Section" style="--bgColor: #272D25;">
+      <div class="Section-inner">
+        <div class="BrandHistory-content">
+          <h2 class="BrandHistory-title">{{ content.field_title }}</h2>
+          {{ content.field_description }}
+          {{ content.field_cta }}
+          {% include directory ~ '/templates/ui/atoms/primary-cta.twig' with {
+            text: 'Primary Cta',
+            theme: 'alt'
+          } %}
+        </div>
+      </div>
+    </div>
     {% endblock %}
-  </div>
+    <div class="Section" style="--bgColor: #272D25;">
+      <div class="Section-inner">
+        .BrandHistory
+        <h3>{{ content.field_second_title }}</h3>
+        div.BrandHistory{{ content.field_second_description }}
+        {{ content.field_second_picture }}
+      </div>
+    </div>
+  </section>
 {% endblock paragraph %}

@@ -9,41 +9,41 @@ $quentin-regular: 400 !default;
 
 
 // Main font
-@mixin u-cormorantRegular {
+@mixin u-cormorant-regular {
   font-family: $main-fontFamily;
   font-weight: $cormorant-garamond-regular;
 }
 
 .u-cormorantRegular {
-  @include u-cormorantRegular;
+  @include u-cormorant-regular;
 }
 
-@mixin u-cormorantBold {
+@mixin u-cormorant-bold {
   font-family: $main-fontFamily;
   font-weight: $cormorant-garamond-bold;
 }
 
 .u-cormorantBold {
-  @include u-cormorantBold;
+  @include u-cormorant-bold;
 }
 
 // Secondary font
-@mixin u-workSansRegular {
+@mixin u-work-sans-regular {
   font-family: $secondary-fontFamily;
   font-weight: $work-sans-regular;
 }
 
 .u-workSansRegular {
-  @include u-workSansRegular;
+  @include u-work-sans-regular;
 }
 
 
 // Tertiary font
-@mixin u-quentinRegular {
+@mixin u-quentin-regular {
   font-family: $tertiary-fontFamily;
   font-weight: $quentin-regular;
 }
 
 .u-quentinRegular {
-  @include u-quentinRegular;
+  @include u-quentin-regular;
 }

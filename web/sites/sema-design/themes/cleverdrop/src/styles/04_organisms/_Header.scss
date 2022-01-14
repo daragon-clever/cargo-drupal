@@ -1,4 +1,9 @@
 .Header {
-  background-color: red;
+  position: sticky;
+  top: 0;
+  min-height: rem(50px);
+  background-color: $header-color;
+  backdrop-filter: blur(4px);
+  z-index: 99;
 }
 

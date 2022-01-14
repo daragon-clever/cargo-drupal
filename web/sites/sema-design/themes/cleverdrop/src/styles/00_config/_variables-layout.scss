@@ -14,9 +14,9 @@ $rtfSelector: '.u-isRtf' !default;
 // Base
 $root-fontSize: 16px !default;
 
-$main-fontFamily: "Cormorant Garamond", Arial, 'Trebuchet MS', sans-serif !default;
-$secondary-fontFamily: "Work Sans", $main-fontFamily !default;
-$tertiary-fontFamily: "Quentin", Arial, sans-serif !default;
+$main-fontFamily: 'Cormorant Garamond', Arial, 'Trebuchet MS', sans-serif !default;
+$secondary-fontFamily: 'Work Sans', $main-fontFamily !default;
+$tertiary-fontFamily: 'Quentin', Arial, sans-serif !default;
 $global-fontWeightBase: 200 !default;
 
 
@@ -45,8 +45,8 @@ $grid-breakpoints: (
 
 //
 $section-padding: (
-  xs: em(16px),
-  md: em(62px),
+  xs: rem(16px),
+  md: rem(16px),
 ) !default;
 
 

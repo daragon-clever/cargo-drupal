@@ -1,5 +1,5 @@
 .CtaPrimary {
-  @include u-workSansRegular;
+  @include u-work-sans-regular;
   position: relative;
   display: inline-flex;
   justify-content: center;
@@ -47,7 +47,7 @@
 
 
 .CtaSecondary {
-  @include u-workSansRegular;
+  @include u-work-sans-regular;
   position: relative;
   display: inline-flex;
   justify-content: center;
@@ -57,7 +57,7 @@
   font-size: rem(13px);
   color: var(--text-color);
   background: none;
-  border: none;
+  border: 0;
   box-sizing: border-box;
   cursor: pointer;
   transition: color $transition, background-color $transition, border $transition;

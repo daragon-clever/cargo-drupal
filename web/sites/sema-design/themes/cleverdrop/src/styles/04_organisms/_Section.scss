@@ -1,11 +1,21 @@
 .Section {
+  --bgColor: var(--main-bg);
+  --foregroundColor: var(--text-color);
+  color: var(--foregroundColor);
+  background-color: var(--bgColor);
+
   &.has-altBg {
-    background-color: var(--alt-bg);
+    --bgColor: var(--alt-bg)
+  }
+
+  &.has-lightForeground {
+    --foregroundColor: var(--white);
   }
 }
 
 .Section-inner {
-  padding: 0 $gutter-size;
+  padding-right: map-get($section-padding, xs);
+  padding-left: map-get($section-padding, xs);
   max-width: $site-inner-width;
   width: 100%;
   margin: 0 auto;

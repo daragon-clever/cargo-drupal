@@ -1,0 +1,19 @@
+{%
+  set classes = [
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished'
+]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+      {{ content.field_title }}
+      {{ content.field_description }}
+      {% for i in content.field_social['#items']|keys %}
+        {{ content.field_social[i] }}
+      {% endfor %}
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

@@ -1,0 +1,88 @@
+uuid: 778eea2e-8202-4d48-ac5b-92f66135e216
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraph_main_visual
+    - node.type.contact
+    - paragraphs.paragraphs_type.main_visual
+  module:
+    - entity_reference_revisions
+id: node.contact.field_paragraph_main_visual
+field_name: field_paragraph_main_visual
+entity_type: node
+bundle: contact
+label: 'Visuel principal'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      main_visual: main_visual
+    target_bundles_drag_drop:
+      brand_history:
+        weight: 21
+        enabled: false
+      contents_table:
+        weight: 22
+        enabled: false
+      contents_table_slide:
+        weight: 23
+        enabled: false
+      introduction:
+        weight: 24
+        enabled: false
+      label_block:
+        weight: 25
+        enabled: false
+      main_visual:
+        enabled: true
+        weight: 26
+      moodboard:
+        weight: 27
+        enabled: false
+      our_products:
+        weight: 28
+        enabled: false
+      our_universe:
+        weight: 29
+        enabled: false
+      partnership:
+        weight: 30
+        enabled: false
+      presentation_block:
+        weight: 31
+        enabled: false
+      press_release:
+        weight: 32
+        enabled: false
+      product_family:
+        weight: 35
+        enabled: false
+      products_slider:
+        weight: 33
+        enabled: false
+      products_slider_slide:
+        weight: 34
+        enabled: false
+      slider_homepage:
+        weight: 36
+        enabled: false
+      team_presentation:
+        weight: 37
+        enabled: false
+      text_area:
+        weight: 38
+        enabled: false
+      visuals_and_video:
+        weight: 39
+        enabled: false
+      who_are_we_slider:
+        weight: 40
+        enabled: false
+field_type: entity_reference_revisions

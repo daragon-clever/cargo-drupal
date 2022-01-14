@@ -1,0 +1,91 @@
+uuid: 1691e44f-2645-4ccb-a77e-0d5cc22c361d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraph_particular
+    - node.type.contact
+    - paragraphs.paragraphs_type.particular
+  module:
+    - entity_reference_revisions
+id: node.contact.field_paragraph_particular
+field_name: field_paragraph_particular
+entity_type: node
+bundle: contact
+label: 'Section Particulier'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      particular: particular
+    target_bundles_drag_drop:
+      brand_history:
+        weight: 22
+        enabled: false
+      contents_table:
+        weight: 23
+        enabled: false
+      contents_table_slide:
+        weight: 24
+        enabled: false
+      introduction:
+        weight: 25
+        enabled: false
+      label_block:
+        weight: 26
+        enabled: false
+      main_visual:
+        weight: 27
+        enabled: false
+      moodboard:
+        weight: 28
+        enabled: false
+      our_products:
+        weight: 29
+        enabled: false
+      our_universe:
+        weight: 30
+        enabled: false
+      particular:
+        enabled: true
+        weight: 31
+      partnership:
+        weight: 32
+        enabled: false
+      presentation_block:
+        weight: 33
+        enabled: false
+      press_release:
+        weight: 34
+        enabled: false
+      product_family:
+        weight: 37
+        enabled: false
+      products_slider:
+        weight: 35
+        enabled: false
+      products_slider_slide:
+        weight: 36
+        enabled: false
+      slider_homepage:
+        weight: 38
+        enabled: false
+      team_presentation:
+        weight: 39
+        enabled: false
+      text_area:
+        weight: 40
+        enabled: false
+      visuals_and_video:
+        weight: 41
+        enabled: false
+      who_are_we_slider:
+        weight: 42
+        enabled: false
+field_type: entity_reference_revisions

@@ -3,6 +3,7 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - field.field.paragraph.brand_history.field_color
     - field.field.paragraph.brand_history.field_cta
     - field.field.paragraph.brand_history.field_description
     - field.field.paragraph.brand_history.field_picture
@@ -13,6 +14,7 @@ dependencies:
     - image.style.thumbnail
     - paragraphs.paragraphs_type.brand_history
   module:
+    - color_field
     - field_group
     - image_widget_crop
     - link
@@ -35,6 +37,7 @@ third_party_settings:
       children:
         - field_title
         - field_description
+        - field_color
         - field_cta
         - field_picture
       parent_name: group_history
@@ -69,8 +72,22 @@ targetEntityType: paragraph
 bundle: brand_history
 mode: default
 content:
-  field_cta:
+  field_color:
     weight: 3
+    settings:
+      show_input: '1'
+      palette: ''
+      show_buttons: '1'
+      cancel_text: Annuler
+      choose_text: Choisir
+      allow_empty: '1'
+      show_palette: '0'
+      show_palette_only: '0'
+    third_party_settings: {  }
+    type: color_field_widget_spectrum
+    region: content
+  field_cta:
+    weight: 4
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -86,7 +103,7 @@ content:
     type: string_textarea
     region: content
   field_picture:
-    weight: 4
+    weight: 5
     settings:
       show_default_crop: true
       warn_multiple_usages: true

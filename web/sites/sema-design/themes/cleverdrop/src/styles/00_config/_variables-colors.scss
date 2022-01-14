@@ -19,13 +19,14 @@ $l: lightgreen !default;
 :root {
   --white: #ffffff;
   --black: #000000;
+  --pampas: #efebe8;
 
   // main colors
   --body-bg: var(--white);
   --text-color: var(--black);
 
-  // backgrounds
-  --pampas: #efebe8;
+  // Backgrounds
+  --alt-bg: var(var(--pampas));
 
   // Message colors
   --alert: #d90000;

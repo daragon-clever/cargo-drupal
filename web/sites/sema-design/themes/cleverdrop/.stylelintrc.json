@@ -10,6 +10,7 @@
         "message":
         "Selector should be follow the SUIT CSS naming conventions: see https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md (selector-class-pattern)"
       }
-    ]
+    ],
+    "order/properties-alphabetical-order": null
   }
 }

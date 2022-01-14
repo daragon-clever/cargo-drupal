@@ -11,7 +11,7 @@
 }
 
 .Tabs-link {
-  @include u-cormorantRegular;
+  @include u-cormorant-regular;
   text-decoration: none;
   color: var(--black);
   padding: em(16px) em(24px);

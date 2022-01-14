@@ -1,0 +1,42 @@
+.BrandHistory {
+  display: flex;
+  flex-direction: column;
+  column-gap: $gutter-size;
+  row-gap: rem(35px);
+  justify-content: space-between;
+  padding-top: rem(35px);
+  padding-bottom: rem(35px);
+
+  @include media-breakpoint-up('md') {
+    flex-direction: row;
+    padding-top: rem(120px);
+    padding-bottom: rem(120px);
+  }
+}
+
+.BrandHistory-content {
+  @include media-breakpoint-up('md') {
+    max-width: 4 * $col-size + 3 * $gutter-size;
+    width: 100%;
+  }
+}
+
+.BrandHistory-text {
+  margin-bottom: rem(35px);
+}
+
+.BrandHistory-firstImg {
+  position: relative;
+  max-width: 4 * $col-size + 3 * $gutter-size;
+  width: 100%;
+
+  img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}

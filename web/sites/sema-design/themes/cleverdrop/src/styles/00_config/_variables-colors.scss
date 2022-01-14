@@ -16,9 +16,16 @@ $l: lightgreen !default;
 // List all colors right here
 // Variables named using "Name that color" (http://chir.ag/projects/name-that-color/)
 
+$mine-shaft: hsla(0, 0%, 21%, 0.14);
+
+// Usage
+$header-color: $mine-shaft !default;
+
+
+
 :root {
-  --white: #ffffff;
-  --black: #000000;
+  --white: #fff;
+  --black: #000;
   --pampas: #efebe8;
 
   // main colors
@@ -26,7 +33,8 @@ $l: lightgreen !default;
   --text-color: var(--black);
 
   // Backgrounds
-  --alt-bg: var(var(--pampas));
+  --main-bg: var(--white);
+  --alt-bg: var(--pampas);
 
   // Message colors
   --alert: #d90000;

@@ -15,7 +15,7 @@
   // HTML TAG
   // --------
   strong {
-    @include u-cormorantBold;
+    @include u-cormorant-bold;
   }
 
   a {
@@ -54,7 +54,7 @@
 
     li {
       &::before {
-        @include u-cormorantBold;
+        @include u-cormorant-bold;
         content: counter(decilist);
         font-size: em(14px, 12px);
         color: var(--black);

@@ -1,3 +1,8 @@
-<button class="CtaPrimary{{ theme ? ' is-' ~ theme : ''}}">
+{% set tag = url ? 'a' : 'button' %}
+
+<{{tag}}
+  class="CtaPrimary{{ theme ? ' is-' ~ theme : ''}}"
+  {% if url %}href="{{url}}"{% endif %}
+>
   <span class="CtaPrimary-text">{{ text }}</span>
-</button>
+</{{tag}}>

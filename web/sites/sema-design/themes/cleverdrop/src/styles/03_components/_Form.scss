@@ -7,7 +7,7 @@ $inter-field-gap: rem(20px) !default;
 }
 
 .FormField {
-  @include u-cormorantRegular;
+  @include u-cormorant-regular;
   display: flex;
   flex-direction: column;
 }
@@ -19,7 +19,7 @@ $inter-field-gap: rem(20px) !default;
 }
 
 .FormLabel {
-  @include u-cormorantBold;
+  @include u-cormorant-bold;
   height: auto;
   width: auto;
   padding: 0;

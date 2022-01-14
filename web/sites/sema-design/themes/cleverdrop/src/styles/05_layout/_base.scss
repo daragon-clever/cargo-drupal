@@ -5,18 +5,8 @@ $grid-odd-color: rgba(126, 195, 241, 0.15) !default;
 $col-size: calc(100%/#{$nb-cols}) !default;
 $page-bg-color: var(--white) !default;
 
-.Page-wpr {
-  overflow-x: hidden;
-}
-
 .Page {
-  position: relative;
-  max-width: $site-width;
-  background-color: $page-bg-color;
-  // removed for header sticky. if necessary, add another container to Page
-  // overflow: hidden;
-  margin: 0 auto;
-
+  font-size: rem(18px);
   // stylelint-disable
   @include dev-only {
     .has-grid &::before {

@@ -4,23 +4,24 @@ namespace Drupal\newsletter\Form;
 
 use Drupal\Core\Form\FormStateInterface;
 
-class CoteTableForm extends AbstractForm
+class SemaDesignForm extends AbstractForm
 {
     public function getFormId()
     {
-        return 'cote-table-newsletter';
+        return 'semadesign-newsletter';
     }
 
     public function buildForm(array $form, FormStateInterface $form_state)
     {
         $form = parent::buildForm($form, $form_state);
 
-        $form['email']['#placeholder'] = $this->t("E-mail address");
+        $form['email']['#placeholder'] = $this->t("Your e-mail address");
         $form['rgpd_allow'] = [
             '#type' => 'checkbox',
             '#title' => '',
             '#description' => ' '
         ];
+        $form['actions']['submit']['#value'] = $this->t("I sign up");
 
         return $form;
     }

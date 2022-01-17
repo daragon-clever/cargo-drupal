@@ -27,6 +27,9 @@ class FormController extends NewsletterInitConfig
             case self::SITENAME_YLIADES:
                 $form = \Drupal::formBuilder()->getForm(YliadesForm::class);
                 break;
+            case self::SITENAME_SEMA_DESIGN:
+                $form = \Drupal::formBuilder()->getForm(SemaDesignForm::class);
+                break;
             default:
                 $form = null;
         }

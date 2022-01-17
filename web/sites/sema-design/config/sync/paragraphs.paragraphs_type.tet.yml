@@ -1,0 +1,10 @@
+uuid: 8b3991f9-702e-494e-8d91-804b80e0f8cd
+langcode: fr
+status: true
+dependencies: {  }
+id: tet
+label: tet
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

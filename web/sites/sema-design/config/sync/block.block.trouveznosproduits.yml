@@ -16,6 +16,6 @@ settings:
   id: find_our_products
   label: 'Trouvez nos produits'
   provider: sema_block
-  label_display: visible
+  label_display: '0'
   find_our_products: null
 visibility: {  }

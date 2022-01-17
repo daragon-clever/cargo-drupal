@@ -1,0 +1,19 @@
+uuid: df505b84-f6cc-41eb-b127-f727f50a218d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - config_pages.type.page_newsletter
+    - field.storage.config_pages.field_description
+id: config_pages.page_newsletter.field_description
+field_name: field_description
+entity_type: config_pages
+bundle: page_newsletter
+label: Description
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,9 @@
+{% if content is not empty %}
+  {{ content.title }}
+  {{ content.cta }}
+  {{ content.cta_link }}
+  {% for i in content.insta %}
+    {{ i }}
+  {% endfor %}
+
+{% endif %}

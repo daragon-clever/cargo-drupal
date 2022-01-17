@@ -1,14 +1,14 @@
-uuid: 325d86b5-5247-413e-a6b4-1c26f33c7879
+uuid: 28d7e224-a8a7-437f-844f-4d40316f6e34
 langcode: fr
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_title
-    - paragraphs.paragraphs_type.press_release
-id: paragraph.press_release.field_title
+    - paragraphs.paragraphs_type.press_element
+id: paragraph.press_element.field_title
 field_name: field_title
 entity_type: paragraph
-bundle: press_release
+bundle: press_element
 label: Titre
 description: ''
 required: true

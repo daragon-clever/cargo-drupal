@@ -1,0 +1,8 @@
+uuid: b3cc30fc-ca52-43bf-86e3-5dd2ff602755
+langcode: fr
+status: true
+dependencies: {  }
+id: release_date
+label: 'Date de parution'
+locked: false
+pattern: 'F Y'

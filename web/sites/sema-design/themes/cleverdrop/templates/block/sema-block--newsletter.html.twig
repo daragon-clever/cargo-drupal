@@ -1,0 +1,13 @@
+{% if content is not empty %}
+  {{ content.title }}
+  {{ content.description }}
+  {{ content.cta }}
+  {{ content.cta_link }}
+  {{ content.partnership_title }}
+  {{ content.background }}
+  {{ content.logo }}
+
+  {{ drupal_block('inscription_block') }}
+
+
+{% endif %}

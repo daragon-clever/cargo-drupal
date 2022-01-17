@@ -1,4 +1,4 @@
-uuid: c3d17c88-94e9-432b-b5d5-b37110ac7e46
+uuid: 755b7a43-d5dd-40ab-8828-84ffc7f2dfd5
 langcode: fr
 status: true
 dependencies:
@@ -6,15 +6,15 @@ dependencies:
     - sema_block
   theme:
     - cleverdrop
-id: trouveznosproduits
+id: semadesignblocknewsletter
 theme: cleverdrop
 region: footer
-weight: -5
+weight: -4
 provider: null
-plugin: find_our_products
+plugin: sema_newsletter
 settings:
-  id: find_our_products
-  label: 'Trouvez nos produits'
+  id: sema_newsletter
+  label: 'Sema-Design Block Newsletter'
   provider: sema_block
   label_display: visible
   find_our_products: null

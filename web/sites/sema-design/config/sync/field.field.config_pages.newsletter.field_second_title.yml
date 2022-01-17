@@ -1,0 +1,19 @@
+uuid: b04b3860-b3ff-4a17-bb5f-62b4140f175c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - config_pages.type.newsletter
+    - field.storage.config_pages.field_second_title
+id: config_pages.newsletter.field_second_title
+field_name: field_second_title
+entity_type: config_pages
+bundle: newsletter
+label: Titre
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

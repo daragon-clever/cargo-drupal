@@ -1,4 +1,4 @@
-uuid: 755b7a43-d5dd-40ab-8828-84ffc7f2dfd5
+uuid: 2b7c197e-c339-4e5d-949a-09dad5a3cb95
 langcode: fr
 status: true
 dependencies:
@@ -6,15 +6,15 @@ dependencies:
     - sema_block
   theme:
     - cleverdrop
-id: semadesignblocknewsletter
+id: semadesignblockinstagram
 theme: cleverdrop
 region: footer
-weight: -3
+weight: -4
 provider: null
-plugin: sema_newsletter
+plugin: sema_instagram
 settings:
-  id: sema_newsletter
-  label: 'Sema-Design Block Newsletter'
+  id: sema_instagram
+  label: 'Sema-Design Block Instagram'
   provider: sema_block
   label_display: '0'
   find_our_products: null

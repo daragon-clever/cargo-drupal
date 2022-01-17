@@ -1,0 +1,36 @@
+uuid: 8f607468-0492-44c1-be8f-13482f59e185
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.post_instagram.field_cta
+    - field.field.paragraph.post_instagram.field_picture
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.post_instagram
+  module:
+    - image
+    - link
+id: paragraph.post_instagram.default
+targetEntityType: paragraph
+bundle: post_instagram
+mode: default
+content:
+  field_cta:
+    weight: 1
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_picture:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+hidden:
+  created: true
+  status: true

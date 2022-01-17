@@ -1,0 +1,17 @@
+uuid: 56139cbb-b336-4cd2-ab59-f56a9c3cca11
+langcode: fr
+status: true
+dependencies: {  }
+id: page_newsletter
+label: 'Page Newsletter'
+context:
+  show_warning: true
+  group:
+    language: false
+  fallback:
+    language: ''
+menu:
+  path: /admin/sema-design/page_newsletter
+  weight: 0
+  description: ''
+token: false

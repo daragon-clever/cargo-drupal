@@ -5,3 +5,11 @@ sema_core.404:
     _title: '404'
   requirements:
     _permission: 'access content'
+
+sema_core.newsletter:
+  path: '/newsletter'
+  defaults:
+    _controller: '\Drupal\sema_core\Controller\NewsletterController::newsletter'
+    _title: 'newsletter'
+  requirements:
+    _permission: 'access content'

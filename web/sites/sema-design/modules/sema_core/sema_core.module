@@ -16,6 +16,12 @@ function sema_core_theme($existing, $type, $theme, $path) {
         'content' => [],
       ],
     ],
+    'sema_core__newsletter' => [
+      'template' => 'sema-core--newsletter',
+      'variables' => [
+        'content' => [],
+      ],
+    ],
   ];
 }
 

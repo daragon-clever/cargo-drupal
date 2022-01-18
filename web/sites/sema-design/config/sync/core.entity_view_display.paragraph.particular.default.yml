@@ -3,23 +3,24 @@ langcode: fr
 status: true
 dependencies:
   config:
-    - field.field.paragraph.particular.field_description
+    - field.field.paragraph.particular.field_rte
     - field.field.paragraph.particular.field_social
     - field.field.paragraph.particular.field_title
     - paragraphs.paragraphs_type.particular
   module:
     - link
+    - text
 id: paragraph.particular.default
 targetEntityType: paragraph
 bundle: particular
 mode: default
 content:
-  field_description:
-    weight: 1
+  field_rte:
+    weight: 3
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    type: text_default
     region: content
   field_social:
     weight: 2

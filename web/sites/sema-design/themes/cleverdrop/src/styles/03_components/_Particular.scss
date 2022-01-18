@@ -1,0 +1,42 @@
+.Particular {
+  display: flex;
+  flex-direction: row;
+  padding-top: 120px;
+  padding-bottom: 75px;
+}
+.Particular-right {
+  @include u-cormorant-regular;
+  font-size: 18px;
+  width: 100%;
+  padding-left: 45px;
+  a {
+    color: var(--text-color);
+    text-transform: capitalize;
+  }
+  .Particular-link {
+    a {
+      display: inline-block;
+      font-size: 13px;
+      &:not(:first-child) {
+        margin-left: 30px;
+      }
+      &:after {
+        content : '';
+        background: url(/sites/sema-design/themes/cleverdrop/src/assets/svg/arrow-right.svg);
+        background-repeat : no-repeat;
+        padding: 3px 8px;
+        display: inline-block;
+        margin-left: 11px;
+      }
+    }
+  }
+}
+
+.Particular-left {
+  text-align: right;
+  max-width: 3 * $col-size + 2 * $gutter-size;
+  width: 100%;
+  @include u-quentin-regular;
+  font-size: 30px;
+
+}

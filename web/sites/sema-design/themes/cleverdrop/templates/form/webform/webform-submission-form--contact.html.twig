@@ -1,0 +1,54 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a webform submission form.
+ *
+ * Available variables:
+ * - form: The webform submission form.
+ *
+ * @ingroup themeable
+ */
+#}
+<div class="ContactForm-form">
+  {{ form.form_build_id }}
+  {{ form.form_token }}
+  {{ form.form_id }}
+  <div class="ContactForm-full">
+    {{ form.elements.objet }}
+  </div>
+  <div>
+    {{ form.elements.name }}
+  </div>
+  <div>
+    {{ form.elements.lastname }}
+  </div>
+  <div class="ContactForm-full">
+    {{ form.elements.society }}
+  </div>
+  <div>
+    {{ form.elements.adress.city }}
+  </div>
+  <div>
+    {{ form.elements.adress.postal_code }}
+  </div>
+  <div>
+    {{ form.elements.phone }}
+  </div>
+  <div>
+    {{ form.elements.email }}
+  </div>
+  <div class="ContactForm-full">
+    {{ form.elements.message }}
+  </div>
+  <div class="ContactForm-full">
+    {{ form.elements.interest_by }}
+  </div>
+  <hr>
+  <div class="ContactForm-full">
+    {{ form.elements.gdpr }}
+  </div>
+  <div class="ContactForm-full">
+    {{ form.elements.captcha }}
+  </div>
+</div>
+

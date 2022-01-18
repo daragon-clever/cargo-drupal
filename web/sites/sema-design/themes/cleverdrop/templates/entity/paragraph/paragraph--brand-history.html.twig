@@ -7,7 +7,7 @@
   <section{{ attributes.addClass(classes) }}>
     {% block content %}
     <div class="Section">
-      <div class="Section-inner BrandHistory">
+      <div class="Section-inner BrandHistory is-top">
         <div class="BrandHistory-content">
           <h2 class="BrandHistory-title">{{ content.field_title }}</h2>
           <div class="BrandHistory-text">
@@ -25,14 +25,16 @@
     </div>
     {% endblock %}
     <div class="Section has-lightForeground" style="--bgColor: {{ content.field_color[0]['#markup'] }};">
-      <div class="Section-inner">
+      <div class="Section-inner BrandHistory is-bottom">
+        <div class="BrandHistory-secondImg">
+          {{ content.field_second_picture }}
+        </div>
         <div class="BrandHistory-content">
         <h3>{{ content.field_second_title }}</h3>
           <div class="BrandHistory-text">
             {{ content.field_second_description }}
           </div>
         </div>
-        {{ content.field_second_picture }}
       </div>
     </div>
   </section>

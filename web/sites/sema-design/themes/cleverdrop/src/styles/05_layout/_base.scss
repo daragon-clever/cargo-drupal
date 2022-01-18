@@ -6,22 +6,25 @@ $col-size: calc(100%/#{$nb-cols}) !default;
 $page-bg-color: var(--white) !default;
 
 .Page {
+  position: relative;
   font-size: rem(18px);
   // stylelint-disable
   @include dev-only {
     .has-grid &::before {
       position: absolute;
       top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
+      left: 50%;
       display: block;
+      height: 100%;
+      width: 100%;
+      max-width: rem(1400px);
       content: '';
-      background-image: repeating-linear-gradient(to right, $grid-odd-color, $grid-odd-color $col-size, $grid-even-color $col-size, $grid-even-color calc(100%/#{$nb-cols} * 2));
+      background-image: repeating-linear-gradient(to right,  $grid-odd-color $col-size, $grid-even-color calc(100%/#{$nb-cols}));
       background-size: 100%;
       user-select: none;
       z-index: 999;
       pointer-events: none;
+      transform: translateX(-50%);
     }
   }
 }

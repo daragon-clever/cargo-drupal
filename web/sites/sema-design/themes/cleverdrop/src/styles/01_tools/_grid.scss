@@ -1,0 +1,14 @@
+@mixin enable-grid() {
+  display: grid;
+  grid-template-columns: repeat($nb-cols-mobile, 1fr);
+  column-gap: $gutter-size;
+
+  @include media-breakpoint-up('md') {
+    grid-template-columns: repeat($nb-cols, 1fr);
+  }
+}
+
+@mixin make-cols($size: 6, $offset: 0) {
+  grid-column: auto/span $size;
+  grid-column-start: $offset + 1;
+}

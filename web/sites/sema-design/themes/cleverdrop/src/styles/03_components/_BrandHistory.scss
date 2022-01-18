@@ -1,40 +1,86 @@
 .BrandHistory {
-  display: flex;
-  flex-direction: column;
-  column-gap: $gutter-size;
-  row-gap: rem(35px);
-  justify-content: space-between;
+  @include enable-grid;
+  row-gap: rem(60px);
   padding-top: rem(35px);
   padding-bottom: rem(35px);
+  
+
+  &.is-top {
+    @include media-breakpoint-down('md') {
+      padding-bottom: rem(48px);
+    }
+  }
+
+  &.is-bottom {
+    @include media-breakpoint-down('md') {
+      padding-bottom: rem(60px);
+    }
+
+    @include media-breakpoint-up('md') {
+      align-items: flex-end;
+    }
+  }
 
   @include media-breakpoint-up('md') {
-    flex-direction: row;
     padding-top: rem(120px);
     padding-bottom: rem(120px);
   }
 }
 
 .BrandHistory-content {
-  @include media-breakpoint-up('md') {
-    max-width: 4 * $col-size + 3 * $gutter-size;
-    width: 100%;
+  .is-top & {
+    @include make-cols(2);
+
+    @include media-breakpoint-up('md') {
+      @include make-cols(4, 1);
+    }
+  }
+
+  .is-bottom & {
+    @include make-cols(2);
+    
+    @include media-breakpoint-up('md') {
+      @include make-cols(4, 5);
+    }
   }
 }
 
-.BrandHistory-text {
+.BrandHistory-text:not(:last-child) {
   margin-bottom: rem(35px);
 }
 
 .BrandHistory-firstImg {
   position: relative;
-  max-width: 4 * $col-size + 3 * $gutter-size;
-  width: 100%;
+  @include make-cols(1);
+
+  @include media-breakpoint-up('md') {
+    @include make-cols(4, 6);
+  }
 
   img {
     position: absolute;
     top: 0;
     right: 0;
     left: 0;
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.BrandHistory-secondImg {
+  @include make-cols(1, 1);
+  position: relative;
+
+  @include media-breakpoint-down('md') {
+    margin-top: rem(-82px);
+  }
+
+  @include media-breakpoint-up('md') {
+    @include make-cols(3, 1);
+  }
+
+  img {
     display: block;
     width: 100%;
     height: auto;

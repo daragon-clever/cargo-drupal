@@ -22,21 +22,18 @@ $global-fontWeightBase: 200 !default;
 
 // Layout variables
 // ----------------
-$site-width: rem(1920px) !default;
+$site-width: rem(1440px) !default;
 $site-inner-width: rem(1190px) !default;
 
 // Grid
 $nb-cols: 12 !default;
+$nb-cols-mobile: 2 !default;
 $col-size: rem(97px);
 $gutter-size: rem(20px);
 
 // ### Grid breakpoints
 // Define the minimum dimensions at which your layout will change,
 // adapting to different screen sizes, for use in media queries.
-$page-padding: (
-  xs: rem(15px),
-  md: rem(50px),
-) !default;
 
 $grid-breakpoints: (
   xs: 0,
@@ -46,7 +43,7 @@ $grid-breakpoints: (
 //
 $section-padding: (
   xs: rem(16px),
-  md: rem(16px),
+  md: rem(20px),
 ) !default;
 
 

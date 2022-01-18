@@ -1,3 +1,7 @@
+.BrandHistory-wpr {
+  overflow: hidden
+}
+
 .BrandHistory {
   @include enable-grid;
   row-gap: rem(60px);
@@ -12,6 +16,19 @@
   }
 
   &.is-bottom {
+    .RightBrush {
+      position: absolute;
+      right: 0;
+      width: 25%;
+      fill: var(--white);
+      opacity: 0.2;
+      z-index: 1;
+
+      use {
+        transform: rotate(-26deg) translateY(rem(20px));
+      }
+    }
+
     @include media-breakpoint-down('md') {
       padding-bottom: rem(60px);
     }
@@ -53,10 +70,6 @@
   position: relative;
   @include make-cols(1);
 
-  @include media-breakpoint-up('md') {
-    @include make-cols(4, 6);
-  }
-
   img {
     position: absolute;
     top: 0;
@@ -66,11 +79,43 @@
     width: 100%;
     height: auto;
   }
+  
+  svg {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 55%;
+    fill: var(--ebb);
+    transform: translate(25%, -34%) rotate(26deg);
+    opacity: 0.8;
+    z-index: 1;
+  }
+
+  @include media-breakpoint-up('md') {
+    @include make-cols(4, 6);
+  }
 }
 
 .BrandHistory-secondImg {
   @include make-cols(1, 1);
   position: relative;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  svg {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 55%;
+    fill: var(--ebb);
+    transform: translate(-18%, 34%) rotateX(1.5turn) rotateZ(-25deg);
+    opacity: 0.8;
+    z-index: 1;
+  }
 
   @include media-breakpoint-down('md') {
     margin-top: rem(-82px);
@@ -78,11 +123,5 @@
 
   @include media-breakpoint-up('md') {
     @include make-cols(3, 1);
-  }
-
-  img {
-    display: block;
-    width: 100%;
-    height: auto;
   }
 }

@@ -1,12 +1,14 @@
-uuid: 36343b09-994d-4d47-ba26-92bc32949ddb
+uuid: dceee248-5b01-4ef4-bd8b-5e01a52781ff
 langcode: fr
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_description
+    - field.storage.paragraph.field_rte
     - paragraphs.paragraphs_type.particular
-id: paragraph.particular.field_description
-field_name: field_description
+  module:
+    - text
+id: paragraph.particular.field_rte
+field_name: field_rte
 entity_type: paragraph
 bundle: particular
 label: Description
@@ -16,4 +18,4 @@ translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: string_long
+field_type: text_long

@@ -1,0 +1,45 @@
+.MainVisual-wpr .MainVisual {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 500px;
+}
+
+.MainVisual-background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+
+  img {
+    object-fit: cover;
+    width: -webkit-fill-available;//temp
+
+  }
+}
+
+.MainVisual-overContent {
+  display: inline-block;
+  text-align: center;
+  z-index: 1;
+
+  .MainVisual-title {
+    font-size: 65px;
+    @include u-cormorant-regular;
+    color: var(--white);
+  }
+
+  .MainVisual-onTitle {
+    font-size: 35px;
+    @include u-quentin-regular;
+    color: var(--white);
+  }
+}
+
+#block-cleverdrop-local-tasks {
+  display: none !important;
+}

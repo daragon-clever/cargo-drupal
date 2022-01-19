@@ -1,0 +1,10 @@
+uuid: 67094af0-b339-49e1-8f6a-9367a8416fcc
+langcode: fr
+status: true
+dependencies: {  }
+id: section_professionnel
+label: 'Section Professionnel'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

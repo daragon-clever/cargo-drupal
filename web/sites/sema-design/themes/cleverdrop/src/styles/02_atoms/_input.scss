@@ -4,8 +4,16 @@ select, input, textarea {
   margin-bottom: 30px;
   padding-left: 30px;
   padding-right: 30px;
+  @include u-work-sans-regular;
 }
 
 label {
   display: block;
+}
+
+input[type=submit] {
+  color: var(--white);
+  background-color: var(--black);
+  height: 50px;
+  width: 213px;
 }

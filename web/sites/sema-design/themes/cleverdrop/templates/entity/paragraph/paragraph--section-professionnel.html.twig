@@ -1,0 +1,19 @@
+{% set classes = [
+  'Profesional-wrp'
+] %}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+      <div class="Section">
+        <div class="Section-inner Profesional">
+          <div class="Particular-left">
+            {{ content.field_title }}
+          </div>
+          <div class="Profesional-right">
+            {{ content.field_description }}
+          </div>
+        </div>
+      </div>
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

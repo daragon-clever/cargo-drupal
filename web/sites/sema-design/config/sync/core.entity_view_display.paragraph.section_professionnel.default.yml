@@ -1,0 +1,29 @@
+uuid: 002cd722-79a3-4c1a-a95f-904536fdc6f5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.section_professionnel.field_description
+    - field.field.paragraph.section_professionnel.field_title
+    - paragraphs.paragraphs_type.section_professionnel
+id: paragraph.section_professionnel.default
+targetEntityType: paragraph
+bundle: section_professionnel
+mode: default
+content:
+  field_description:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_title:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

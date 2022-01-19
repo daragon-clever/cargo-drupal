@@ -29,6 +29,12 @@
     {% endblock %}
     <div class="Section has-lightForeground" style="--bgColor: {{ content.field_color[0]['#markup'] }};">
       <div class="Section-inner BrandHistory is-bottom">
+        <svg viewBox="0 0 100 100" class="LeftBrush" aria-hidden="true">
+          <use xlink:href="#sema-brush"></use>
+        </svg>
+        <svg viewBox="0 0 100 100" class="RightBrush" aria-hidden="true">
+          <use xlink:href="#sema-brush"></use>
+        </svg>
         <div class="BrandHistory-secondImg">
           {{ content.field_second_picture }}
           <svg viewBox="0 0 100 100" class="Brush" aria-hidden="true">
@@ -41,9 +47,6 @@
             {{ content.field_second_description }}
           </div>
         </div>
-        <svg viewBox="0 0 100 100" class="RightBrush" aria-hidden="true">
-          <use xlink:href="#sema-brush"></use>
-        </svg>
       </div>
     </div>
   </section>

@@ -60,7 +60,7 @@ $disabled-text-color: var(--black);
   flex-wrap: wrap;
   align-items: center;
   color: var(--black);
-  padding-left: em(32px, 16px);
+  padding-left: em(42px, 16px);
   cursor: pointer;
 }
 
@@ -69,8 +69,8 @@ $disabled-text-color: var(--black);
 .Radio[type='radio']:not(:checked) + label::before,
 .Radio[type='radio']:checked + label::before {
   position: absolute;
-  top: -2px;
-  left: -4px;
+  top: 0;
+  left: 0;
   display: block;
   content: '';
   height: $checkbox-outer-size;
@@ -120,8 +120,8 @@ $disabled-text-color: var(--black);
 
 
 .Checkbox[type='checkbox'] + label::after {
-  top: -2px;
-  left: -3px;
+  top: 0;
+  left: 0;
   height: $checkbox-outer-size;
   width: $checkbox-outer-size;
   position: absolute;
@@ -146,8 +146,8 @@ $disabled-text-color: var(--black);
 }
 
 .Checkbox[type='checkbox']:checked + label::after {
-  top: -2px;
-  left: -3px;
+  top: 0;
+  left: 0;
   height: $checkbox-outer-size;
   width: $checkbox-outer-size;
   background-color: transparent;

@@ -41,14 +41,17 @@
     {{ form.elements.message }}
   </div>
   <div class="ContactForm-full">
-    {{ form.elements.interest_by }}
+    {{ form.elements.interested_by }}
   </div>
-  <hr>
-  <div class="ContactForm-full">
+  <hr class="ContactForm-hr">
+  <div class="ContactForm-rgpd ContactForm-full">
     {{ form.elements.gdpr }}
   </div>
   <div class="ContactForm-full">
     {{ form.elements.captcha }}
+  </div>
+  <div class="ContactForm-submit">
+    {{ form.elements.actions  }}
   </div>
 </div>
 

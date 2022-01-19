@@ -31,6 +31,9 @@
     font-size: 65px;
     @include u-cormorant-regular;
     color: var(--white);
+    @include media-breakpoint-down('md') {
+      font-size: 35px;
+    }
   }
 
   .MainVisual-onTitle {

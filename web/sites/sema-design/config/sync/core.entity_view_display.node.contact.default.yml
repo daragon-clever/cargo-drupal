@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.contact.field_paragraph_main_visual
     - field.field.node.contact.field_paragraph_particular
+    - field.field.node.contact.field_paragraph_professionnel
     - field.field.node.contact.field_webform
     - node.type.contact
   module:
@@ -28,6 +29,15 @@ content:
   field_paragraph_particular:
     type: entity_reference_revisions_entity_view
     weight: 102
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_paragraph_professionnel:
+    type: entity_reference_revisions_entity_view
+    weight: 104
     label: above
     settings:
       view_mode: default

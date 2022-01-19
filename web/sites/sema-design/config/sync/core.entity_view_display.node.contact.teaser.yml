@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.contact.field_paragraph_main_visual
     - field.field.node.contact.field_paragraph_particular
+    - field.field.node.contact.field_paragraph_professionnel
     - field.field.node.contact.field_webform
     - node.type.contact
   module:
@@ -23,5 +24,6 @@ content:
 hidden:
   field_paragraph_main_visual: true
   field_paragraph_particular: true
+  field_paragraph_professionnel: true
   field_webform: true
   langcode: true

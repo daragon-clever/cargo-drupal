@@ -1,0 +1,19 @@
+uuid: 735901c0-d78d-42bd-8653-9096b7e67ba6
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_subtitle
+    - paragraphs.paragraphs_type.our_universe
+id: paragraph.our_universe.field_subtitle
+field_name: field_subtitle
+entity_type: paragraph
+bundle: our_universe
+label: 'Sous titre'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

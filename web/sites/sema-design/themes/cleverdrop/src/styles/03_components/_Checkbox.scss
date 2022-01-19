@@ -1,7 +1,7 @@
 // Checkbox btn
 // ===========
 
-$checkbox-outer-size: em(18px, 16px);
+$checkbox-outer-size: 24px;
 $checkbox-inner-size: em(10px, 16px);
 $border-width: em(2px, 16px);
 $disabled-bg-color: var(--black);
@@ -54,7 +54,7 @@ $disabled-text-color: var(--black);
 .Checkbox[type='checkbox']:checked + label,
 .Radio[type='radio']:not(:checked) + label,
 .Radio[type='radio']:checked + label {
-  @include u-cormorant-regular;
+  @include u-work-sans-regular;
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -69,16 +69,17 @@ $disabled-text-color: var(--black);
 .Radio[type='radio']:not(:checked) + label::before,
 .Radio[type='radio']:checked + label::before {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: -2px;
+  left: -4px;
   display: block;
   content: '';
   height: $checkbox-outer-size;
   width: $checkbox-outer-size;
-  border: 2px solid var(--black);
-  border-radius: 4px;
+  border: 0;
+  border-radius: 0;
   cursor: pointer;
   transition: box-shadow $transition;
+  background-color: var(--white);
 }
 
 .Radio[type='radio']:not(:checked) + label::before,
@@ -119,8 +120,8 @@ $disabled-text-color: var(--black);
 
 
 .Checkbox[type='checkbox'] + label::after {
-  top: $border-width;
-  left: $border-width;
+  top: -2px;
+  left: -3px;
   height: $checkbox-outer-size;
   width: $checkbox-outer-size;
   position: absolute;
@@ -145,8 +146,8 @@ $disabled-text-color: var(--black);
 }
 
 .Checkbox[type='checkbox']:checked + label::after {
-  top: $border-width;
-  left: $border-width;
+  top: -2px;
+  left: -3px;
   height: $checkbox-outer-size;
   width: $checkbox-outer-size;
   background-color: transparent;

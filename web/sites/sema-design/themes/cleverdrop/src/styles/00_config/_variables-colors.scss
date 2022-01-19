@@ -28,6 +28,8 @@ $header-color: $mine-shaft !default;
   --black: #000;
   --pampas: #efebe8;
   --ebb: #e8e3df;
+  --beige: #f3f0ed;
+  --lite-grey: #d8d8d8;
 
   // main colors
   --body-bg: var(--white);
@@ -36,6 +38,7 @@ $header-color: $mine-shaft !default;
   // Backgrounds
   --main-bg: var(--white);
   --alt-bg: var(--pampas);
+  --lite-bg: var(--beige);
 
   // Message colors
   --alert: #d90000;

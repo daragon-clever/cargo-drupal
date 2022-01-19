@@ -1,44 +1,52 @@
-.Particular, .Profesional {
+.Section-inner.Particular,
+.Section-inner.Profesional {
+  max-width: 940px;
+}
+.Particular,
+.Profesional {
   display: flex;
   flex-direction: row;
   padding-top: 120px;
   padding-bottom: 75px;
+  max-width: 940px;
+
   @include media-breakpoint-down('md') {
     flex-direction: column;
     padding-top: 30px;
   }
-
 }
 
-.Particular:after {
-  content: "";
-  background: url('/sites/sema-design/themes/cleverdrop/src/svg/taches.svg');
-}
-
-.Particular-right, .Profesional-right {
+.Particular-right,
+.Profesional-right {
   @include u-cormorant-regular;
   font-size: 18px;
   width: 100%;
   padding-left: 45px;
+  z-index: 1;
+
   @include media-breakpoint-down('md') {
     padding-left: 0;
     padding-top: 27px;
   }
-    a {
+
+  a {
     color: var(--text-color);
     text-transform: capitalize;
   }
+
   .Particular-link {
     a {
       display: inline-block;
       font-size: 13px;
+
       &:not(:first-child) {
         margin-left: 30px;
       }
-      &:after {
-        content : '';
-        background: url(/sites/sema-design/themes/cleverdrop/src/assets/svg/arrow-right.svg);
-        background-repeat : no-repeat;
+
+      &::after {
+        content: '';
+        background: url('/sites/sema-design/themes/cleverdrop/src/assets/svg/arrow-right.svg');
+        background-repeat: no-repeat;
         padding: 3px 8px;
         display: inline-block;
         margin-left: 11px;
@@ -47,13 +55,43 @@
   }
 }
 
-.Particular-left, .Profesional-left {
+.Particular-left,
+.Profesional-left {
   text-align: left;
   max-width: 2 * $col-size + 2 * $gutter-size;
   width: 100%;
   @include u-quentin-regular;
   font-size: 30px;
 }
+
 .Profesional-wrp .Section {
-  background-color: #F3F0ED;
+  background-color: var(--lite-bg);
+}
+
+.Profesional::after {
+  content: '';
+  background-color: var(--white);
+  position: absolute;
+  right: 0;
+  padding: 110px 45px;
+  background-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  mask-image: url('/sites/sema-design/themes/cleverdrop/src/assets/svg/taches.svg');
+}
+
+.Particular-wrp {
+  position: relative;
+}
+
+.Particular::after {
+  content: '';
+  background-color: var(--ebb);
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 110px 96px;
+  background-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  mask-image: url('/sites/sema-design/themes/cleverdrop/src/assets/svg/brush.svg');
+  transform: scale(1, -1);
 }

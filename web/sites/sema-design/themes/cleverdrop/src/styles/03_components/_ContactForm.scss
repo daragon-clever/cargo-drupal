@@ -1,5 +1,8 @@
+.ContactForm-wrp {
+  position: relative;
+}
 .Section.ContactForm {
-  background-color: #F3F0ED;
+  background-color: var(--lite-bg);
   padding-bottom: 90px;
 
   label {
@@ -9,6 +12,10 @@
   }
 }
 
+.Section-inner.ContactForm {
+  max-width: 940px;
+}
+
 .ContactForm-form {
   flex-direction: row;
   width: 100%;
@@ -16,16 +23,18 @@
   display: inline-flex;
   gap: 20px;
   @include media-breakpoint-down('md') {
-    gap: 0px;
+    gap: 0;
   }
 
-  & > div:not(.ContactForm-full) {
-    width: 49%;
+  > div:not(.ContactForm-full) {
+    z-index: 1;
+    width: 48.5%;
     @include media-breakpoint-down('md') {
       width: 100%;
     }
 
-    input:not(input[type=submit]), select {
+    input:not(input[type=submit]),
+    select {
       width: 100%;
     }
   }
@@ -36,24 +45,30 @@
     padding: 14px;
   }
 
-  #edit-interested-by--wrapper legend {
+  .ContactForm-interestedBy legend {
     margin-bottom: 13px;
     @include u-work-sans-regular;
   }
 
-  #edit-interested-by {
-    display: flex;
-    @include media-breakpoint-down('md') {
-      flex-wrap: wrap;
-      .Checkbox-wpr {
-        flex: 50%;
-        margin-right: 0;
-      }
+}
+
+.ContactForm-interestedBy .webform-options-display-one-column {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  @include media-breakpoint-down('md') {
+    flex-wrap: wrap;
+
+    .Checkbox-wpr {
+      flex: 50%;
+      margin-right: 0;
     }
   }
 }
 
 .ContactForm-half {
+  z-index: 1;
   gap: 20px;
   width: 50%;
 
@@ -63,14 +78,15 @@
 }
 
 .ContactForm-full {
+  z-index: 1;
   width: 100%;
 
   input {
-    width: 100%;
+    width: 99%;
   }
 
   select {
-    width: 49%;
+    width: 48.5%;
     @include media-breakpoint-down('md') {
       width: 100%;
     }
@@ -79,23 +95,34 @@
 
 .ContactForm-full-noinput {
   width: 100%;
-
+  z-index: 1;
 }
 
 .ContactForm-hr {
-  border: 1px solid #D8D8D8;
+  border: 1px solid var(--lite-grey);
   width: 100%;
 }
 
 .ContactForm-rgpd {
-  label {
-    width: 0;
-    overflow: hidden;
-  }
 
   .webform-element-description {
     @include u-work-sans-regular;
     font-size: 14px;
-    padding-left: 15px;
+    padding-left: 0;
   }
+}
+
+.ContactForm-wrp::after {
+  content: '';
+  background-color: var(--white);
+  opacity: 0.7;
+  position: absolute;
+  left: -74px;
+  bottom: 37%;
+  padding: 110px 129px;
+  background-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  mask-image: url('/sites/sema-design/themes/cleverdrop/src/assets/svg/brush.svg');
+  transform: scale(-1, 1);
+  transform: rotate(379deg);
 }

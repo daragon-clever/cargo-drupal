@@ -1,0 +1,102 @@
+.OurUniverse {
+  padding-top: rem(35px);
+  padding-bottom: rem(35px);
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: rem(280px);
+    background-color: var(--white);
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.OurUniverse--inner {
+  @include enable-grid;
+  row-gap: rem(60px);
+  position: relative;
+}
+
+.OurUniverse-left {
+  @include make-cols(4);
+
+  @include media-breakpoint-up('md') {
+    @include make-cols(4, 1);
+    padding-right: rem(45px);
+  }
+}
+
+.OurUniverse-leftImg {
+  @include media-breakpoint-down('md') {
+    width: calc(50% - 10px);
+  }
+}
+
+.OurUniverse-right {
+  @include make-cols(4);
+  position: relative;
+
+  @include media-breakpoint-up('md') {
+    @include make-cols(6);
+  }
+}
+
+.OurUniverse-content {
+
+  @include media-breakpoint-up('md') {
+    margin-top: rem(50px);
+    margin-left: calc(2 * (100% - 5 * 20px) / 6 + 65px);
+  }
+
+}
+
+.OurUniverse-text {
+  margin-bottom: rem(35px);
+}
+
+.OurUniverse-rightImg {
+
+  @include media-breakpoint-down('md') {
+    position: absolute;
+    bottom: calc(100%);
+    right: 0;
+    left: 50%;
+    column-gap: $gutter-size;
+    transform: translateY(-50%);
+  }
+
+  @include media-breakpoint-up('md') {
+    @include enable-grid(6);
+    position: relative;
+  }
+}
+
+.OurUniverse-rightImgTop {
+  width: 80%;
+  margin-left: auto;
+
+  @include media-breakpoint-up('md') {
+    @include make-cols(3, 1);
+  }
+}
+
+.OurUniverse-rightImgBottom {
+  position: absolute;
+  top: 90%;
+  width: calc((100% - 20px) / 2); // two cols grid + gutter
+  border-top: rem(10px) solid var(--bgColor);
+  border-right: rem(10px) solid var(--bgColor);
+
+  @include media-breakpoint-up('md') {
+    width: calc(2 * (100% - 5 * 20px) / 6 + 20px); // two cols grid + gutter
+  }
+}

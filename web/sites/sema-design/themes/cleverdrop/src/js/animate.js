@@ -9,8 +9,8 @@ class Animate {
    */
   constructor(element) {
     this.element = element
+    console.log(element)
     this.options = this.parseAttribute()
-
     this.onIntersection = this.onIntersection.bind(this)
     const observer = new IntersectionObserver(this.onIntersection, this.options)
     observer.observe(element)
@@ -18,7 +18,6 @@ class Animate {
 
   parseAttribute () {
     const defautlOptions = {
-      rootMargin: "0px",
     }
 
     if(this.element.dataset.animate.startsWith('{')) {
@@ -27,6 +26,7 @@ class Animate {
         ...JSON.parse(this.element.dataset.animate)
       }
     }
+
     return defautlOptions
   }
 
@@ -35,10 +35,8 @@ class Animate {
    */
   onIntersection (entries) {
     for (const entry of entries) {
-      if (entry.isIntersecting) {
+      if (entry.isIntersecting && !entry.target.classList.contains('is-animate')) {
         this.isIntersecting(entry)
-      } else {
-        console.log('coucou')
       }
     }
   }
@@ -48,6 +46,7 @@ class Animate {
    * @param {IntersectionObserverEntry} entry 
    */
   isIntersecting (entry) {
+    console.log('coucou')
     entry.target.classList.add('is-animate')
   }
 

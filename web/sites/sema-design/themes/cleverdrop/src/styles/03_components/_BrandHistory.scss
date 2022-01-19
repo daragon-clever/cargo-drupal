@@ -73,15 +73,15 @@
 
 .BrandHistory-content {
   .is-top & {
-    @include make-cols(2);
+    @include make-cols(4);
 
     @include media-breakpoint-up('md') {
-      @include make-cols(4, 1);
+      @include make-cols(4, 2);
     }
   }
 
   .is-bottom & {
-    @include make-cols(2);
+    @include make-cols(4);
     
     @include media-breakpoint-up('md') {
       @include make-cols(4, 5);
@@ -95,7 +95,7 @@
 
 .BrandHistory-firstImg {
   position: relative;
-  @include make-cols(1);
+  @include make-cols(2);
 
   img {
     position: absolute;
@@ -140,7 +140,7 @@
 }
 
 .BrandHistory-secondImg {
-  @include make-cols(1, 1);
+  @include make-cols(2, 2);
   position: relative;
 
   img {

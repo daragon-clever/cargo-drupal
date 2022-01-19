@@ -31,6 +31,7 @@
     .RightBrush {
       right: 0;
       bottom: 0;
+      overflow: visible;
 
       use {
         transform: rotate(-26deg) translateY(rem(50px));
@@ -123,7 +124,7 @@
       transform: translate(25%, -34%) rotate(26deg);
       opacity: 0.8;
       z-index: 1;
-      clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
+      clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
       transition: clip-path 0.5s;
       animation-fill-mode: forwards;
 
@@ -161,6 +162,13 @@
       transform: translate(-18%, 34%) rotateX(1.5turn) rotateZ(-25deg);
       opacity: 0.8;
       z-index: 1;
+      clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+      transition: clip-path 0.5s;
+      animation-fill-mode: forwards;
+
+      .is-animate & {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+      }
     }
   }
 

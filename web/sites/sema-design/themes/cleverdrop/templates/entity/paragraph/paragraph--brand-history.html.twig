@@ -10,13 +10,17 @@
       <div class="Section-inner BrandHistory is-top" data-animate='{"rootMargin": "-20%"}'>
         <div class="BrandHistory-content">
           <h2 class="BrandHistory-title">{{ content.field_title }}</h2>
-          <div class="BrandHistory-text">
-            {{ content.field_description }}
-          </div>
-          {% include directory ~ '/templates/ui/atoms/primary-cta.twig' with {
-            text: content.field_cta[0]['#title'],
-            url: content.field_cta[0]['#url'],
-          } %}
+          {% if content.field_description %}
+            <div class="BrandHistory-text">
+              {{ content.field_description }}
+            </div>
+          {% endif %}
+          {% if content.field_cta %}
+            {% include directory ~ '/templates/ui/atoms/primary-cta.twig' with {
+              text: content.field_cta[0]['#title'],
+              url: content.field_cta[0]['#url'],
+            } %}
+          {% endif %}
         </div>
         <div class="BrandHistory-firstImg">
           <svg viewBox="0 0 100 100" class="Brush" aria-hidden="true">
@@ -43,9 +47,11 @@
         </div>
         <div class="BrandHistory-content">
         <h3>{{ content.field_second_title }}</h3>
+        {% if content.field_second_description %}
           <div class="BrandHistory-text">
             {{ content.field_second_description }}
           </div>
+        {% endif %}
         </div>
       </div>
     </div>

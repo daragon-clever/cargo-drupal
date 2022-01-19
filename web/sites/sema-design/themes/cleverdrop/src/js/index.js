@@ -1,1 +1,1 @@
-console.log('coucou')
+import './animate'

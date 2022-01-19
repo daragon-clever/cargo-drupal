@@ -7,7 +7,7 @@
   <section{{ attributes.addClass(classes) }}>
     {% block content %}
     <div class="Section">
-      <div class="Section-inner BrandHistory is-top">
+      <div class="Section-inner BrandHistory is-top" data-animate='{"rootMargin": "-20%"}'>
         <div class="BrandHistory-content">
           <h2 class="BrandHistory-title">{{ content.field_title }}</h2>
           <div class="BrandHistory-text">
@@ -27,8 +27,8 @@
       </div>
     </div>
     {% endblock %}
-    <div class="Section has-lightForeground" style="--bgColor: {{ content.field_color[0]['#markup'] }};">
-      <div class="Section-inner BrandHistory is-bottom">
+    <div class="Section has-lightForeground" style="--bgColor: {{ content.field_color[0]['#markup'] }};" >
+      <div class="Section-inner BrandHistory is-bottom" data-animate='{"rootMargin": "-20%"}'>
         <svg viewBox="0 0 100 100" class="LeftBrush" aria-hidden="true">
           <use xlink:href="#sema-brush"></use>
         </svg>

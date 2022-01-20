@@ -1,16 +1,17 @@
 {%
   set classes = [
-  'paragraph',
-  'paragraph--type--' ~ paragraph.bundle|clean_class,
-  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-  not paragraph.isPublished() ? 'paragraph--unpublished'
+  'FollowInstagramPost',
 ]
 %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
-    {% block content %}
-      {{ content.field_cta }}
-      {{ content.field_picture }}
-    {% endblock %}
+    <a href="{{ content.field_cta[0]["#markup"] }}" class="FollowInstagramPost-link">
+      <span class="u-srOnly">Voir le post</span>
+      {% block content %}
+        <div class="FollowInstagramPost-img">
+          {{ content.field_picture }}
+        </div>
+      {% endblock %}
+    </a>
   </div>
 {% endblock paragraph %}

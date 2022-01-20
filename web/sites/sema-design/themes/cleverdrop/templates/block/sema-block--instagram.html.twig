@@ -1,9 +1,22 @@
 {% if content is not empty %}
-  {{ content.title }}
-  {{ content.cta }}
-  {{ content.cta_link }}
-  {% for i in content.insta %}
-    {{ i }}
-  {% endfor %}
+<div class="Section FollowInstagram">
+    <div class="Section-inner FollowInstagram-inner">
+        <h2 class="FollowInstagram-title">{{ content.title }}</h2>
+        <div class="Slider FollowInstagram-gallery js-instagram-slider">
+            <div class="Slider-wrapper">
+                {% for i in content.insta %}
+                    <div class="Slider-slide">{{ i }}</div>
+                {% endfor %}
+            </div>
+            <div class="Slider-scrollbar"></div>
+        </div>
+        {% if content.cta and content.cta_link %}
+            {% include directory ~ '/templates/ui/atoms/primary-cta.twig' with {
+            text: content.cta,
+            url: content.cta_link,
+            } %}
+        {% endif %}
+    </div>
+</div>
 
 {% endif %}

@@ -3,6 +3,7 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - field.field.paragraph.our_universe.field_color
     - field.field.paragraph.our_universe.field_cta
     - field.field.paragraph.our_universe.field_description
     - field.field.paragraph.our_universe.field_our_universe_bttm_r_p
@@ -13,6 +14,7 @@ dependencies:
     - image.style.crop_our_universe
     - paragraphs.paragraphs_type.our_universe
   module:
+    - color_field
     - image
     - link
 id: paragraph.our_universe.default
@@ -20,6 +22,15 @@ targetEntityType: paragraph
 bundle: our_universe
 mode: default
 content:
+  field_color:
+    weight: 8
+    label: above
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    type: color_field_formatter_text
+    region: content
   field_cta:
     weight: 6
     label: visually_hidden

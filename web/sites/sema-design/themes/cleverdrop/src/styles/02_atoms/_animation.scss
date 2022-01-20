@@ -1,11 +1,10 @@
 .ImageAnimationWpr {
-  --sailColor: var(--white);
-  background-color: var(--sailColor);
+  background-color: var(--sail-color);
 
   img {
     clip-path: polygon(0 0, 0 0, 100% 0, 100% 0);
     animation-fill-mode: forwards;
-    transition: clip-path 0.5s;
+    transition: clip-path 0.8s;
   }
 
   &.is-animate img {

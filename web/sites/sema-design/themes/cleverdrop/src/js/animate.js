@@ -9,7 +9,6 @@ class Animate {
    */
   constructor(element) {
     this.element = element
-    console.log(element)
     this.options = this.parseAttribute()
     this.onIntersection = this.onIntersection.bind(this)
     const observer = new IntersectionObserver(this.onIntersection, this.options)
@@ -46,7 +45,6 @@ class Animate {
    * @param {IntersectionObserverEntry} entry 
    */
   isIntersecting (entry) {
-    console.log('coucou')
     entry.target.classList.add('is-animate')
   }
 

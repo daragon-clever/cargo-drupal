@@ -6,11 +6,14 @@
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
-    <div class="Section has-altBg OurUniverse">
+    <div class="Section has-altBg OurUniverse" style="--sail-color: {{content.field_color[0]['#markup']}};">
       <div class="Section-inner OurUniverse--inner">
         <div class="OurUniverse-left">
           <h2 class="OurUniverse-title">{{ content.field_title }}</h2>
           <div class="ImageAnimationWpr OurUniverse-leftImg" data-animate>
+            <svg viewBox="0 0 100 100" class="Brush" aria-hidden="true">
+              <use xlink:href="#sema-brush"></use>
+            </svg>
             {{ content.field_our_universe_left_picture }}
           </div>
         </div>
@@ -41,6 +44,7 @@
           </div>
         </div>
       </div>
+      {% include directory ~ '/src/assets/svg/stains.svg' %}
     </div>
     {% endblock %}
   </div>

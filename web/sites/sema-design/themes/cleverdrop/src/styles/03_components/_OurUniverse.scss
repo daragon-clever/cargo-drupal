@@ -20,14 +20,18 @@
   }
 
   & > svg {
-    position: absolute;
-    right: 0;
-    top: 40%;
-    height: rem(190px);
-    width: rem(92px);
-    fill: var(--white);
-    opacity: 0.7;
-    pointer-events: none;
+    display: none;
+
+    @include media-breakpoint-up('md') {
+      position: absolute;
+      right: 0;
+      top: 40%;
+      height: rem(190px);
+      width: rem(92px);
+      fill: var(--white);
+      opacity: 0.7;
+      pointer-events: none;
+    }
   }
 }
 
@@ -124,17 +128,7 @@
   position: absolute;
   top: 90%;
   width: calc((100% - rem(20px)) / 2); // two cols grid + gutter
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    transform: translate(rem(10px), rem(-10px));
-    background-color: var(--bgColor);
-  }
+  box-shadow: rem(10px) rem(-10px) 0px 0px var(--bgColor);
 
   @include media-breakpoint-up('md') {
     width: calc(2 * (100% - 5 * rem(20px)) / 6 + rem(20px)); // two cols grid + gutter

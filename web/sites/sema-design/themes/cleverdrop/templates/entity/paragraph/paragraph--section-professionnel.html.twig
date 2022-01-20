@@ -2,6 +2,7 @@
   'Profesional-wrp'
 ] %}
 {% block paragraph %}
+  {% if content.title is not empty or content.field_description[0] is not empty %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
       <div class="Section">
@@ -16,4 +17,5 @@
       </div>
     {% endblock %}
   </div>
+  {% endif %}
 {% endblock paragraph %}

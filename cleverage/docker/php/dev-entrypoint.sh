@@ -31,6 +31,8 @@ if [ "${1:-}" == "php-fpm" ]; then
     s#^(;)?(php_admin_value\[error_log\] =.*)#\2#g;
     s#^(;)?(php_admin_flag\[log_errors\] =.*)#\2#g;' \
     /usr/local/etc/php-fpm.d/www.conf
+  #Export bin paths
+  export PATH="$PATH:/var/www/html/vendor/bin"
 fi
 
 # exécute la commande

@@ -1,20 +1,26 @@
 {%
   set classes = [
-  'paragraph',
-  'paragraph--type--' ~ paragraph.bundle|clean_class,
-  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-  not paragraph.isPublished() ? 'paragraph--unpublished'
+  'HomeBanner'
 ]
 %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
-      {{ content.field_subtitle }}
-      {{ content.field_on_title }}
-      {{ content.field_title }}
-      {% for i in content.field_picture_slide['#items']|keys %}
-        {{ content.field_picture_slide[i] }}
-      {% endfor %}
+      <div class="HomeBanner-slider Slider js-home-banner">
+        <div class="Slider-wrapper">
+          {% for i in content.field_picture_slide['#items']|keys %}
+          <div class="Slider-slide HomeBanner-slide">
+            {{ content.field_picture_slide[i] }}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="HomeBanner-content">
+        <span class="HomeBanner-ontitle">{{ content.field_on_title }}</span>
+        <h2 class="HomeBanner-title">{{ content.field_title }}</h2>
+        <span class="HomeBanner-subtitle">{{ content.field_subtitle }}</span>
+      </div>
     {% endblock %}
   </div>
 {% endblock paragraph %}

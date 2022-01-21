@@ -107,4 +107,23 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     )
   )
+
+  const HomeBanner = document.querySelectorAll('.js-home-banner')
+
+  Array.prototype.map.call(HomeBanner,
+    el => new Slider(
+      el,
+      Selectors,
+      {
+        ...CommonSliderOptions,
+        autoplay: {
+          delay: 4000,
+        },
+        keyboard: {
+          enabled: false,
+        },
+        effect: "creative",
+      }
+    )
+  )
 })

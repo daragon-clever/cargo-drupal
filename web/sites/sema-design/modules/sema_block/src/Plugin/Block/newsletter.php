@@ -29,7 +29,7 @@ class newsletter extends BlockBase {
       $datas['title'] = $myConfigPage->get('field_title')->value;
       $datas['cta_link'] = $myConfigPage->get('field_cta')->uri;
       $datas['cta'] = $myConfigPage->get('field_cta')->title;
-      $datas['partnership_title'] = $myConfigPage->get('field_second_title')->title;
+      $datas['partnership_title'] = $myConfigPage->get('field_second_title')->value;
       $datas['logo'] = $myConfigPage->get('field_logo')->entity->url();
       $datas['background'] = $myConfigPage->get('field_visuel')->entity->url();
     }

@@ -4,12 +4,6 @@
 .Section.ContactForm {
   background-color: var(--lite-bg);
   padding-bottom: 90px;
-
-  label {
-    @include u-work-sans-regular;
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
 }
 
 .Section-inner.ContactForm {

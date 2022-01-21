@@ -1,0 +1,6 @@
+.NewsletterBlock {
+  @include media-breakpoint-up('md') {
+    display: flex;
+    min-height: rem(400px);
+  }
+}

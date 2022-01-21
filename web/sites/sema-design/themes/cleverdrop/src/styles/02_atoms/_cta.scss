@@ -13,7 +13,7 @@
   border: 1px solid var(--text-color);
   box-sizing: border-box;
   cursor: pointer;
-  transition: color $transition, background-color $transition, border $transition;
+  transition: color $transition, background-color $transition, border-color $transition;
 
   &:hover,
   &:focus-visible {
@@ -33,7 +33,7 @@
   //   cursor: not-allowed;
   // };
 
-  &.is-alt {
+  &.is-primary {
     color: var(--white);
     background-color: var(--black);
 
@@ -41,6 +41,18 @@
     &:focus-visible {
       color: var(--black);
       background-color: transparent;
+    }
+  }
+
+  &.is-secondary {
+    color: var(--white);
+    border-color: var(--white);
+    background-color:transparent;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--black);
+      background-color: var(--white);
     }
   }
 }

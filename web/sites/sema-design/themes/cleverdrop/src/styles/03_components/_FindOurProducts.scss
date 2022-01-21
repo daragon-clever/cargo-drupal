@@ -45,11 +45,14 @@
 .ProductStorePoint {
   --point-delay: 0s;
   opacity: 0;
-  animation: point 0.5s;
-  transition: opacity, transform;
-  animation-fill-mode: forwards;
-  animation-delay: var(--point-delay);
-  mix-blend-mode: multiply;
+
+  .is-animate & {
+    animation: point 0.5s;
+    transition: opacity, transform;
+    animation-fill-mode: forwards;
+    animation-delay: var(--point-delay);
+    mix-blend-mode: multiply;
+  }
 }
 
 @keyframes point {

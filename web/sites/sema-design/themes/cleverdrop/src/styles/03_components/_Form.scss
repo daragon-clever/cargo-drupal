@@ -19,15 +19,15 @@ $inter-field-gap: rem(20px) !default;
 }
 
 .FormLabel {
-  @include u-cormorant-bold;
+  @include u-work-sans-regular;
   height: auto;
   width: auto;
   padding: 0;
   margin: 0;
-  font-size: em(12px);
+  font-size: rem(14px);
   text-align: left;
   color: var(--text-color);
-  margin-bottom: em(8px, 12px);
+  margin-bottom: rem(10px);
 }
 
 .FieldGroup-content {

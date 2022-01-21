@@ -59,6 +59,7 @@ $disabled-text-color: var(--black);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  font-size: rem(14px);
   color: var(--black);
   padding-left: em(42px, 16px);
   cursor: pointer;

@@ -1,32 +1,22 @@
-<div id="block-newsletter">
+<div id="block-newsletter" class="NewsletterSubscribeForm">
+    {% if form %}
+        <form {{form.attributes }} method="{{ form['#method'] }}">
+            {{ form.form_build_id }}
+            {{ form.form_token }}
+            {{ form.form_id }}
 
-                {% if form %}
-                    <form {{form.attributes }} method="{{ form['#method'] }}">
-                        {{ form.form_build_id }}
-                        {{ form.form_token }}
-                        {{ form.form_id }}
+            {{ form.msg }}
 
-                        {{ form.msg }}
-
-                        {{ form.email }}
-                        <div class="d-flex align-items-lg-start my-4 relative">
-                            <div class="rgpd">
-                                {{ form.rgpd_allow }}
-                                <div class="description-txt">
-                                    <div>
-                                        En renseignant ces informations, j’accepte de recevoir la lettre
-                                        d’information de Côté Table et je confirme avoir pris connaissance de la
-                                        <a href='/confidentialite'>politique de confidentialité</a>.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="captcha">
-                            {{ form.captcha }}
-                        </div>
-
-                        {{ form.actions.submit }}
-                    </form>
-                {% endif %}
-
+            <div class="NewsletterSubscribeForm-fields">
+                {{ form.email }}
+                {{ form.actions.submit }}
+            </div>
+            <div class="captcha">
+                {{ form.captcha }}
+            </div>
+             <div class="NewsletterSubscribeForm-rpdg">
+                {{ form.rgpd_allow }}
+            </div>
+        </form>
+    {% endif %}
 </div>

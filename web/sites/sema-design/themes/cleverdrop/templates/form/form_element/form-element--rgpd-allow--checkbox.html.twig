@@ -1,0 +1,22 @@
+<div class="Checkbox-wpr">
+  {% if label_display in ['before', 'invisible'] %}
+    {{ label }}
+  {% endif %}
+  {{ prefix }}
+  {% if description_display == 'before' and description.content %}
+    {{ description.content }}
+  {% endif %}
+  {{ children }}
+  <label for="edit-rgpd-allow">
+    En renseignant ces informations, j’accepte de recevoir la lettre
+    d’information de Côté Table et je confirme avoir pris connaissance de la
+    politique de confidentialité.
+  </label>
+  {{ suffix }}
+  {% if label_display == 'after' %}
+    {{ label }}
+  {% endif %}
+  {% if description_display in ['after', 'invisible'] and description.content %}
+    {{ description.content }}
+  {% endif %}
+</div>

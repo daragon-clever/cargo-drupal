@@ -1,0 +1,23 @@
+uuid: 484ffa7c-5d88-45b4-8617-2910dade45d5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cta
+    - paragraphs.paragraphs_type.highlighting_collections
+  module:
+    - link
+id: paragraph.highlighting_collections.field_cta
+field_name: field_cta
+entity_type: paragraph
+bundle: highlighting_collections
+label: CTA
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

@@ -1,0 +1,22 @@
+uuid: 07148e44-b69e-4eba-b2c1-ab6e176e4e70
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_color
+    - paragraphs.paragraphs_type.highlighting_collections
+  module:
+    - color_field
+id: paragraph.highlighting_collections.field_color
+field_name: field_color
+entity_type: paragraph
+bundle: highlighting_collections
+label: 'Fond coloré'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

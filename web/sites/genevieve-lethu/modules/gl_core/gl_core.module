@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ * Module file for gl_core.
+ */
+
+function gl_core_preprocess_paragraph__left_handed(&$vars) {
+  $original = $vars['content']['field_description']['0']['#context']['value'];
+  if (strlen($original) > 500) {
+    $string = wordwrap($original, strlen($original)/2, "%%", true);
+    $columns = explode("%%", $string);
+    // if last word is out of range for word wrap
+    if (count($columns) > 2) {
+      $columns[1] .=  ' ' . $columns[2];
+    }
+    unset($columns[2]);
+    $vars['content']['column'] = $columns;
+  }
+
+}

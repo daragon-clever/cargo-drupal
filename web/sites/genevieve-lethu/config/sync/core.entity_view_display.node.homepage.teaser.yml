@@ -1,0 +1,43 @@
+uuid: 95935f21-2aa7-417d-a2cd-55d73baa2950
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.homepage.field_metatags
+    - field.field.node.homepage.field_paragraph_brand
+    - field.field.node.homepage.field_paragraph_brand_intro
+    - field.field.node.homepage.field_paragraph_highlighting
+    - field.field.node.homepage.field_paragraph_instagram
+    - field.field.node.homepage.field_paragraph_quote
+    - field.field.node.homepage.field_paragraph_quote_2
+    - field.field.node.homepage.field_paragraph_quote_3
+    - field.field.node.homepage.field_paragraph_quote_4
+    - field.field.node.homepage.field_paragraph_quote_5
+    - field.field.node.homepage.field_paragraph_video
+    - node.type.homepage
+  module:
+    - user
+id: node.homepage.teaser
+targetEntityType: node
+bundle: homepage
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_metatags: true
+  field_paragraph_brand: true
+  field_paragraph_brand_intro: true
+  field_paragraph_highlighting: true
+  field_paragraph_instagram: true
+  field_paragraph_quote: true
+  field_paragraph_quote_2: true
+  field_paragraph_quote_3: true
+  field_paragraph_quote_4: true
+  field_paragraph_quote_5: true
+  field_paragraph_video: true
+  langcode: true

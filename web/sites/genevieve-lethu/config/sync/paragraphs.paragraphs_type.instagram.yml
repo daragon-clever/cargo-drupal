@@ -1,0 +1,10 @@
+uuid: 59361f45-9660-42a4-8e63-419de200e184
+langcode: fr
+status: true
+dependencies: {  }
+id: instagram
+label: Instagram
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

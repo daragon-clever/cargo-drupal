@@ -1,0 +1,46 @@
+uuid: fe528c37-ab59-4d4d-88b6-00e690682eee
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraph_brand_intro
+    - node.type.homepage
+    - paragraphs.paragraphs_type.brand_presentation
+  module:
+    - entity_reference_revisions
+id: node.homepage.field_paragraph_brand_intro
+field_name: field_paragraph_brand_intro
+entity_type: node
+bundle: homepage
+label: 'Présentation de la marque'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      brand_presentation: brand_presentation
+    target_bundles_drag_drop:
+      background_quote:
+        weight: 7
+        enabled: false
+      brand:
+        weight: 8
+        enabled: false
+      brand_presentation:
+        enabled: true
+        weight: 9
+      highlighting_collections:
+        weight: 10
+        enabled: false
+      quote:
+        weight: 11
+        enabled: false
+      video:
+        weight: 12
+        enabled: false
+field_type: entity_reference_revisions

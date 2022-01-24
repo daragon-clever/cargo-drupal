@@ -1,0 +1,10 @@
+uuid: 4c9bc228-698f-4358-81af-f7c159e97816
+langcode: fr
+status: true
+dependencies: {  }
+id: brand
+label: Marque
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

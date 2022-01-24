@@ -1,0 +1,23 @@
+uuid: 5997344a-a598-44ce-8530-a34bf56609c9
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cta
+    - paragraphs.paragraphs_type.brand_presentation
+  module:
+    - link
+id: paragraph.brand_presentation.field_cta
+field_name: field_cta
+entity_type: paragraph
+bundle: brand_presentation
+label: CTA
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

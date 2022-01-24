@@ -1,0 +1,30 @@
+uuid: e7c59263-55f2-4526-ae24-53aa4addf146
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.contact.field_webform
+    - node.type.contact
+  module:
+    - user
+    - webform
+id: node.contact.default
+targetEntityType: node
+bundle: contact
+mode: default
+content:
+  field_webform:
+    weight: 101
+    label: above
+    settings:
+      source_entity: true
+    third_party_settings: {  }
+    type: webform_entity_reference_entity_view
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

@@ -1,0 +1,29 @@
+uuid: 98ba51aa-bc5c-420c-a2bc-d8f1b85313f7
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.left_handed.field_description
+    - field.field.paragraph.left_handed.field_title
+    - paragraphs.paragraphs_type.left_handed
+id: paragraph.left_handed.default
+targetEntityType: paragraph
+bundle: left_handed
+mode: default
+content:
+  field_description:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_title:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

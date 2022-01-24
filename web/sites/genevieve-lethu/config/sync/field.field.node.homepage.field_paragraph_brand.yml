@@ -1,0 +1,46 @@
+uuid: 42f34c66-2d85-47f4-8b41-43ee715814b5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraph_brand
+    - node.type.homepage
+    - paragraphs.paragraphs_type.brand
+  module:
+    - entity_reference_revisions
+id: node.homepage.field_paragraph_brand
+field_name: field_paragraph_brand
+entity_type: node
+bundle: homepage
+label: 'Bloc marque'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      brand: brand
+    target_bundles_drag_drop:
+      background_quote:
+        weight: 7
+        enabled: false
+      brand:
+        enabled: true
+        weight: 8
+      brand_presentation:
+        weight: 9
+        enabled: false
+      highlighting_collections:
+        weight: 10
+        enabled: false
+      quote:
+        weight: 11
+        enabled: false
+      video:
+        weight: 12
+        enabled: false
+field_type: entity_reference_revisions

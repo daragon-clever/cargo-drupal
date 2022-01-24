@@ -1,0 +1,10 @@
+uuid: fa630074-959d-4801-865e-dd4410650ff1
+langcode: fr
+status: true
+dependencies: {  }
+id: word_cloud
+label: 'Nuage de mots'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

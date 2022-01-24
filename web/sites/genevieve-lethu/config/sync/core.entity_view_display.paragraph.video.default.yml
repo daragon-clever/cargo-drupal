@@ -1,0 +1,34 @@
+uuid: 19d4fd48-a2a0-44e2-bf67-d3b2f1b2b422
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.video.field_overlay
+    - field.field.paragraph.video.field_video
+    - paragraphs.paragraphs_type.video
+  module:
+    - file
+    - image
+id: paragraph.video.default
+targetEntityType: paragraph
+bundle: video
+mode: default
+content:
+  field_overlay:
+    weight: 1
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_video:
+    weight: 0
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+hidden: {  }

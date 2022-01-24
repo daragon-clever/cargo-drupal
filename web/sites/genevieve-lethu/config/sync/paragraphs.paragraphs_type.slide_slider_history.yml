@@ -1,0 +1,10 @@
+uuid: 159b8e1b-e9f7-43b0-86d5-2775e98e9b81
+langcode: fr
+status: true
+dependencies: {  }
+id: slide_slider_history
+label: 'Slide - Slider historique'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

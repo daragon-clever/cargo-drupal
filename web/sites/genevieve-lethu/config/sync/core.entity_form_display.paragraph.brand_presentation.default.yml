@@ -1,0 +1,63 @@
+uuid: 4bfd87e6-2da3-4f23-a045-4c4e173eda54
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.brand_presentation.field_cta
+    - field.field.paragraph.brand_presentation.field_description
+    - field.field.paragraph.brand_presentation.field_picture
+    - field.field.paragraph.brand_presentation.field_picture_second
+    - field.field.paragraph.brand_presentation.field_title
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.brand_presentation
+  module:
+    - image
+    - link
+id: paragraph.brand_presentation.default
+targetEntityType: paragraph
+bundle: brand_presentation
+mode: default
+content:
+  field_cta:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_description:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_picture:
+    weight: 3
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_picture_second:
+    weight: 4
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

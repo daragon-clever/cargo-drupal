@@ -1,0 +1,21 @@
+{%
+  set classes = [
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished'
+]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+      {{ content.field_subtitle }}
+      {{ content.field_title }}
+      {{ content.field_desktop_background_picture }}
+      {{ content.field_mobile_background_picture }}
+      {{ content.field_picture_second }} {# Visuel flottant bas #}
+      {{ content.field_picture_third }} {# Visuel flottant bas mobile #}
+      {{ content.field_picture }} {# Visuel flottant haut #}
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

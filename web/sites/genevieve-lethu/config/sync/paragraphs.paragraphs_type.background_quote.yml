@@ -1,0 +1,10 @@
+uuid: 989d8981-4e21-4f38-a8ff-a1062e15c7a6
+langcode: fr
+status: true
+dependencies: {  }
+id: background_quote
+label: 'Citation avec fond'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

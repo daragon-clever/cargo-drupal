@@ -1,0 +1,19 @@
+uuid: c27ac11a-aa22-4a97-845b-81c2c459eb50
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_description
+    - paragraphs.paragraphs_type.highlighting_collections
+id: paragraph.highlighting_collections.field_description
+field_name: field_description
+entity_type: paragraph
+bundle: highlighting_collections
+label: Description
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

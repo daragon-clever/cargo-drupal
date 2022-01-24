@@ -1,0 +1,19 @@
+uuid: cb5a061a-069e-4c98-9507-60ee252b2a90
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text
+    - paragraphs.paragraphs_type.background_quote
+id: paragraph.background_quote.field_text
+field_name: field_text
+entity_type: paragraph
+bundle: background_quote
+label: Citation
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

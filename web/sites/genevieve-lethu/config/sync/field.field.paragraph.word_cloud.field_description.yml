@@ -1,0 +1,19 @@
+uuid: d39c1b70-ccc3-47ed-a8f3-41c4bb741426
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_description
+    - paragraphs.paragraphs_type.word_cloud
+id: paragraph.word_cloud.field_description
+field_name: field_description
+entity_type: paragraph
+bundle: word_cloud
+label: Description
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

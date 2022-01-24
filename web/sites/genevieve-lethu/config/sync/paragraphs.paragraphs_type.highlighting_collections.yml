@@ -1,0 +1,10 @@
+uuid: ad26d4cd-4abc-4d20-b8d7-ad32f1ed6736
+langcode: fr
+status: true
+dependencies: {  }
+id: highlighting_collections
+label: 'Mise en avant collections'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

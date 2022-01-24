@@ -1,0 +1,8 @@
+uuid: e2a6675c-b44a-4d55-874e-03171fce8975
+langcode: fr
+status: true
+dependencies: {  }
+name: 'RTE  lite'
+format: rte_lite
+weight: 0
+filters: {  }

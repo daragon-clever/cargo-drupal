@@ -1,0 +1,35 @@
+uuid: 145218a5-6bf6-4cd7-940e-85c2ae9a2078
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.brand.field_main_picture
+    - field.field.node.brand.field_metatags
+    - field.field.node.brand.field_paragraph_centred_text
+    - field.field.node.brand.field_paragraph_cloud_word
+    - field.field.node.brand.field_paragraph_highlighting
+    - field.field.node.brand.field_paragraph_left_handed
+    - field.field.node.brand.field_paragraph_slider_history
+    - node.type.brand
+  module:
+    - user
+id: node.brand.teaser
+targetEntityType: node
+bundle: brand
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_main_picture: true
+  field_metatags: true
+  field_paragraph_centred_text: true
+  field_paragraph_cloud_word: true
+  field_paragraph_highlighting: true
+  field_paragraph_left_handed: true
+  field_paragraph_slider_history: true
+  langcode: true

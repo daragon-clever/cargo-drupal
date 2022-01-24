@@ -1,0 +1,30 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a webform submission form.
+ *
+ * Available variables:
+ * - form: The webform submission form.
+ *
+ * @ingroup themeable
+ */
+#}
+{# do not remove #}
+{{ form.form_build_id }}
+{{ form.form_token }}
+{{ form.form_id }}
+{# do not remove #}
+
+{{ form.elements.firstname }}
+{{ form.elements.lastname }}
+{{ form.elements.enterprise }}
+{{ form.elements.adresse.city }}
+{{ form.elements.adresse.postal_code }}
+{{ form.elements.phone }}
+{{ form.elements.email }}
+{{ form.elements.message }}
+{{ form.elements.gdpr }}
+{{ form.elements.captcha }}
+{{ form.elements.actions  }}
+
+

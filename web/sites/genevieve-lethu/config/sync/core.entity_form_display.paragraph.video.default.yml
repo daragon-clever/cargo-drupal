@@ -1,0 +1,35 @@
+uuid: 890b974b-d405-4fa7-a739-69eb0dc0bbb0
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.video.field_overlay
+    - field.field.paragraph.video.field_video
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.video
+  module:
+    - file
+    - image
+id: paragraph.video.default
+targetEntityType: paragraph
+bundle: video
+mode: default
+content:
+  field_overlay:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_video:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+hidden:
+  created: true
+  status: true

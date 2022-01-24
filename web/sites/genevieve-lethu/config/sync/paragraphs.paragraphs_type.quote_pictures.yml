@@ -1,0 +1,10 @@
+uuid: 156f75b5-fc8b-4160-ba4e-e75390a10c92
+langcode: fr
+status: true
+dependencies: {  }
+id: quote_pictures
+label: 'Citation avec images'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

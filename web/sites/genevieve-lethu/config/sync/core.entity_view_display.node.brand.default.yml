@@ -1,0 +1,90 @@
+uuid: d0c78574-46f4-4305-869f-08fcb47e400f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.brand.field_main_picture
+    - field.field.node.brand.field_metatags
+    - field.field.node.brand.field_paragraph_centred_text
+    - field.field.node.brand.field_paragraph_cloud_word
+    - field.field.node.brand.field_paragraph_highlighting
+    - field.field.node.brand.field_paragraph_left_handed
+    - field.field.node.brand.field_paragraph_slider_history
+    - node.type.brand
+  module:
+    - entity_reference_revisions
+    - metatag
+    - user
+id: node.brand.default
+targetEntityType: node
+bundle: brand
+mode: default
+content:
+  field_main_picture:
+    type: entity_reference_revisions_entity_view
+    weight: 101
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_metatags:
+    weight: 107
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
+  field_paragraph_centred_text:
+    type: entity_reference_revisions_entity_view
+    weight: 102
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_paragraph_cloud_word:
+    type: entity_reference_revisions_entity_view
+    weight: 105
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_paragraph_highlighting:
+    weight: 106
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  field_paragraph_left_handed:
+    type: entity_reference_revisions_entity_view
+    weight: 104
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_paragraph_slider_history:
+    type: entity_reference_revisions_entity_view
+    weight: 103
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

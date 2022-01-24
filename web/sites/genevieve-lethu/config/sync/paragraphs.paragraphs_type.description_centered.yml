@@ -1,0 +1,10 @@
+uuid: e17b1222-2065-4f98-b346-7fc94df32065
+langcode: fr
+status: true
+dependencies: {  }
+id: description_centered
+label: 'Description centré'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,38 @@
+uuid: e5c7efd1-a5b9-43b8-8349-e175354325cd
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_picture
+    - paragraphs.paragraphs_type.slide_slider_history
+  module:
+    - image
+id: paragraph.slide_slider_history.field_picture
+field_name: field_picture
+entity_type: paragraph
+bundle: slide_slider_history
+label: Visuel
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

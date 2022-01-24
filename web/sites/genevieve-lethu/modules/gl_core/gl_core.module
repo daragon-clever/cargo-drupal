@@ -17,5 +17,6 @@ function gl_core_preprocess_paragraph__left_handed(&$vars) {
     unset($columns[2]);
     $vars['content']['column'] = $columns;
   }
-
 }
+
+

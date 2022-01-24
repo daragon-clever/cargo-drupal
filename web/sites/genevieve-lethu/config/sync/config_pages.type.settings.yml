@@ -1,0 +1,17 @@
+uuid: a0fb585a-f348-4885-9f3b-86480ab6601a
+langcode: fr
+status: true
+dependencies: {  }
+id: settings
+label: 'Geneviève Lethu'
+context:
+  show_warning: true
+  group:
+    language: false
+  fallback:
+    language: ''
+menu:
+  path: /admin/genevieve-lethu
+  weight: -50
+  description: ''
+token: false

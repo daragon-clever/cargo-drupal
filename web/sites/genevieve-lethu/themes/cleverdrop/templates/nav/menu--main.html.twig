@@ -34,10 +34,9 @@ We call a macro which calls itself to render the full tree.
       {% if menu_level == 0 %}
         <ul{{ attributes }}>
       {% endif %}
-
       {% if items|length < 5 %}
-        {% for item in items %}
-          {% if loop.index <= 2 %}
+        {% for name, item in items %}
+          {% if name != 'logo' and loop.index <= 2 %}
             <li{{ item.attributes }}>
               {{ link(item.title, item.url) }}
             </li>
@@ -46,8 +45,8 @@ We call a macro which calls itself to render the full tree.
       {% endif %}
 
       {% if items|length >= 5 %}
-        {% for item in items %}
-          {% if loop.index <= 3 %}
+        {% for name, item in items %}
+          {% if name != 'logo' and loop.index <= 3 %}
             <li{{ item.attributes }}>
               {{ link(item.title, item.url) }}
             </li>
@@ -58,6 +57,7 @@ We call a macro which calls itself to render the full tree.
       </ul>
 
 
+    {{ items['logo'] }}
     LOGO Genevieve
 
 
@@ -67,8 +67,8 @@ We call a macro which calls itself to render the full tree.
       {% endif %}
 
       {% if items|length > 2 and  items|length < 5 %}
-        {% for item in items %}
-          {% if loop.index > 2 and loop.index < 5  %}
+        {% for name, item in items %}
+          {% if name != 'logo' and loop.index > 2 and loop.index < 5  %}
             <li{{ item.attributes }}>
               {{ link(item.title, item.url) }}
             </li>
@@ -77,8 +77,8 @@ We call a macro which calls itself to render the full tree.
       {% endif %}
 
     {% if items|length >= 5 %}
-      {% for item in items %}
-        {% if loop.index > 3 and loop.index < 7 %}
+      {% for name, item in items %}
+        {% if name != 'logo' and loop.index > 3 and loop.index < 7 %}
           <li{{ item.attributes }}>
             {{ link(item.title, item.url) }}
           </li>

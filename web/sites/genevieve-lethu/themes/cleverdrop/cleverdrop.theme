@@ -4,16 +4,31 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Render\Element;
 use Drupal\image\Plugin\Field\FieldType\ImageItem;
 
-function cleverdrop_theme_registry_alter(&$theme_registry) {
-  $theme_registry['image_formatter']['variables']['view_mode'] = NULL;
+function cleverdrop_preprocess_menu(&$variables, $hook)
+{
+  if ($hook == 'menu__footer' || $hook == 'menu__main') {
+    $myConfigPage = \Drupal\config_pages\Entity\ConfigPages::config('settings');
+    $variables['items']['logo'] = NULL;
+    if (!empty($myConfigPage)) {
+      if ($hook == 'menu__footer') {
+        $variables['items']['logo'] = $myConfigPage->get('field_logo_footer')->view();
+      }
+      if ($hook == 'menu__main') {
+        $variables['items']['logo'] = $myConfigPage->get('field_logo_header')->view();
+      }
+    }
+  }
 }
 
-function cleverdrop_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
+
+function cleverdrop_form_system_theme_settings_alter(&$form, FormStateInterface $form_state)
+{
   // @todo create a form with relevant settings
   $form = [];
 }
 
-function cleverdrop_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+function cleverdrop_form_alter(&$form, FormStateInterface $form_state, $form_id)
+{
   if (isset($form['#entity_builders'])) {
 
     _cleverdrop_process_field_container($form, $form_id);
@@ -32,7 +47,8 @@ function cleverdrop_form_alter(&$form, FormStateInterface $form_state, $form_id)
  * @param $element
  * @param $form_id
  */
-function _cleverdrop_set_element_form_id(&$element, $form_id) {
+function _cleverdrop_set_element_form_id(&$element, $form_id)
+{
   foreach (Element::children($element) as $element_key) {
     $element[$element_key]['#parent_form_id'] = $form_id;
     $element[$element_key]['#element_name'] = $element_key;
@@ -48,7 +64,8 @@ function _cleverdrop_set_element_form_id(&$element, $form_id) {
  * @param array $suggestions
  * @param array $variables
  */
-function cleverdrop_theme_suggestions_form_alter(array &$suggestions, array $variables) {
+function cleverdrop_theme_suggestions_form_alter(array &$suggestions, array $variables)
+{
   $form_id = $variables['element']['#form_id'];
 
   if ('views_exposed_form' === $form_id) {
@@ -67,7 +84,8 @@ function cleverdrop_theme_suggestions_form_alter(array &$suggestions, array $var
  * @param array $suggestions
  * @param array $variables
  */
-function cleverdrop_theme_suggestions_form_element_alter(array &$suggestions, array $variables) {
+function cleverdrop_theme_suggestions_form_element_alter(array &$suggestions, array $variables)
+{
 
   $element = $variables['element'];
   if (isset($element['#parent_form_id'])) {
@@ -122,7 +140,8 @@ function cleverdrop_theme_suggestions_form_element_alter(array &$suggestions, ar
  * @param array $suggestions
  * @param array $variables
  */
-function cleverdrop_theme_suggestions_form_element_label_alter(array &$suggestions, array $variables) {
+function cleverdrop_theme_suggestions_form_element_label_alter(array &$suggestions, array $variables)
+{
 
   $element = $variables['element'];
   if (isset($element['#array_parents'])) {
@@ -148,7 +167,7 @@ function cleverdrop_theme_suggestions_form_element_label_alter(array &$suggestio
     if (isset($parents) && is_array($parents) && count($parents) > 0) {
 
       foreach ($parents as $parent_id) {
-        
+
         $suggestions[] = 'form_element_label__' . str_replace('-', '_', $parent_id) . '__' . $element_id;
       }
     }
@@ -163,7 +182,8 @@ function cleverdrop_theme_suggestions_form_element_label_alter(array &$suggestio
  * @param array $suggestions
  * @param array $variables
  */
-function cleverdrop_theme_suggestions_fieldset_alter(array &$suggestions, array $variables) {
+function cleverdrop_theme_suggestions_fieldset_alter(array &$suggestions, array $variables)
+{
   if (isset($variables['element']['#name'])) {
 
     $name_attribute = $variables['element']['#name'];
@@ -210,7 +230,8 @@ function cleverdrop_theme_suggestions_fieldset_alter(array &$suggestions, array 
  * @param array $suggestions
  * @param array $variables
  */
-function cleverdrop_theme_suggestions_checkboxes_alter(array &$suggestions, array $variables) {
+function cleverdrop_theme_suggestions_checkboxes_alter(array &$suggestions, array $variables)
+{
   if (isset($variables['element']['#name'])) {
 
     $name_attribute = $variables['element']['#name'];
@@ -237,7 +258,8 @@ function cleverdrop_theme_suggestions_checkboxes_alter(array &$suggestions, arra
  * @param array $suggestions
  * @param array $variables
  */
-function cleverdrop_theme_suggestions_input_alter(array &$suggestions, array $variables) {
+function cleverdrop_theme_suggestions_input_alter(array &$suggestions, array $variables)
+{
 
   if (isset($variables['element']['#parent_form_id'])) {
 
@@ -279,7 +301,8 @@ function cleverdrop_theme_suggestions_input_alter(array &$suggestions, array $va
  * @param array $suggestions
  * @param array $variables
  */
-function cleverdrop_theme_suggestions_select_alter(array &$suggestions, array $variables) {
+function cleverdrop_theme_suggestions_select_alter(array &$suggestions, array $variables)
+{
   if (isset($variables['element']['#parent_form_id'])) {
 
     $form_id = $variables['element']['#parent_form_id'];
@@ -320,7 +343,8 @@ function cleverdrop_theme_suggestions_select_alter(array &$suggestions, array $v
  * @param array $suggestions
  * @param array $variables
  */
-function cleverdrop_theme_suggestions_textarea_alter(array &$suggestions, array $variables) {
+function cleverdrop_theme_suggestions_textarea_alter(array &$suggestions, array $variables)
+{
   if (isset($variables['element']['#parent_form_id'])) {
 
     $form_id = $variables['element']['#parent_form_id'];
@@ -361,7 +385,8 @@ function cleverdrop_theme_suggestions_textarea_alter(array &$suggestions, array 
  * @param array $suggestions
  * @param array $variables
  */
-function cleverdrop_theme_suggestions_views_view_alter(array &$suggestions, array $variables) {
+function cleverdrop_theme_suggestions_views_view_alter(array &$suggestions, array $variables)
+{
   $base = 'views_view';
   /** @var \Drupal\views\Entity\View $view */
   $view = $variables['view'];
@@ -381,7 +406,8 @@ function cleverdrop_theme_suggestions_views_view_alter(array &$suggestions, arra
  * @param array $suggestions
  * @param array $variables
  */
-function cleverdrop_theme_suggestions_views_view_list_alter(array &$suggestions, array $variables) {
+function cleverdrop_theme_suggestions_views_view_list_alter(array &$suggestions, array $variables)
+{
   $base = 'views_view_list';
 
   /** @var \Drupal\views\Entity\View $view */
@@ -402,7 +428,8 @@ function cleverdrop_theme_suggestions_views_view_list_alter(array &$suggestions,
  * @param array $suggestions
  * @param array $variables
  */
-function cleverdrop_theme_suggestions_views_view_unformatted_alter(array &$suggestions, array $variables) {
+function cleverdrop_theme_suggestions_views_view_unformatted_alter(array &$suggestions, array $variables)
+{
   $base = 'views_view_unformatted';
 
   /** @var \Drupal\views\Entity\View $view */
@@ -415,7 +442,8 @@ function cleverdrop_theme_suggestions_views_view_unformatted_alter(array &$sugge
   $suggestions[] = $base . '__' . $id . '__' . $display;
 }
 
-function cleverdrop_preprocess_field(&$variables) {
+function cleverdrop_preprocess_field(&$variables)
+{
   $element = &$variables['element'];
   if ('image' === $variables['field_type']) {
 
@@ -427,7 +455,8 @@ function cleverdrop_preprocess_field(&$variables) {
   }
 }
 
-function cleverdrop_preprocess_form_element(&$variables) {
+function cleverdrop_preprocess_form_element(&$variables)
+{
   if (isset($variables['label']) && !isset($variables['label']['#array_parents'])) {
     if (isset($variables['element']) && isset($variables['element']['#array_parents'])) {
       $variables['label']['#array_parents'] = $variables['element']['#array_parents'];
@@ -435,7 +464,8 @@ function cleverdrop_preprocess_form_element(&$variables) {
   }
 }
 
-function cleverdrop_theme_suggestions_field_alter(array &$suggestions, array $variables) {
+function cleverdrop_theme_suggestions_field_alter(array &$suggestions, array $variables)
+{
   $base = 'field';
   $element = $variables['element'];
   $entity_type = $element['#entity_type'];
@@ -454,7 +484,8 @@ function cleverdrop_theme_suggestions_field_alter(array &$suggestions, array $va
   $suggestions[] = $base . '__' . $field_name . '__' . $entity_type . '__' . $bundle . '__' . $view_mode;
 }
 
-function cleverdrop_theme_suggestions_image_formatter_alter(array &$suggestions, array $variables) {
+function cleverdrop_theme_suggestions_image_formatter_alter(array &$suggestions, array $variables)
+{
   $base = 'image_formatter';
   $view_mode = isset($variables['view_mode']) ? $variables['view_mode'] : 'default';
   /** @var ImageItem $item */
@@ -473,8 +504,9 @@ function cleverdrop_theme_suggestions_image_formatter_alter(array &$suggestions,
   $suggestions[] = $base . '__' . $field_name . '__' . $entity_type . '__' . $bundle . '__' . $view_mode;
 }
 
-function _cleverdrop_process_field_container(&$form, $form_id) {
-  foreach(Element::children($form) as $key) {
+function _cleverdrop_process_field_container(&$form, $form_id)
+{
+  foreach (Element::children($form) as $key) {
 
     if (
       isset($form[$key]['widget'])
@@ -492,7 +524,8 @@ function _cleverdrop_process_field_container(&$form, $form_id) {
   }
 }
 
-function _clever_drop_form_action_pre_render($element) {
+function _clever_drop_form_action_pre_render($element)
+{
   unset($element['#type']);
   unset($element['#theme_wrappers']);
   $element['#theme'] = 'actions_wrapper';
@@ -500,7 +533,8 @@ function _clever_drop_form_action_pre_render($element) {
   return $element;
 }
 
-function _clever_drop_form_widget_pre_render($element) {
+function _clever_drop_form_widget_pre_render($element)
+{
   unset($element['#type']);
   unset($element['#theme_wrappers']);
   $element['#theme'] = 'widget_wrapper';
@@ -508,7 +542,8 @@ function _clever_drop_form_widget_pre_render($element) {
   return $element;
 }
 
-function cleverdrop_theme_suggestions_item_list_alter(array &$suggestions, array $variables) {
+function cleverdrop_theme_suggestions_item_list_alter(array &$suggestions, array $variables)
+{
   if (
     isset($variables['context'])
     && is_string($variables['context'])

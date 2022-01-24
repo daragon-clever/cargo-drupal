@@ -31,14 +31,19 @@ We call a macro which calls itself to render the full tree.
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %}
+
+      {{ items['logo'] }}
+
       <ul{{ attributes }}>
-        {% for item in items %}
+        {% for name, item in items %}
+          {% if name != 'logo' %}
           <li{{ item.attributes }}>
             {{ link(item.title, item.url) }}
             {% if item.below %}
               {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
             {% endif %}
           </li>
+          {% endif %}
         {% endfor %}
       </ul>
     {% endif %}

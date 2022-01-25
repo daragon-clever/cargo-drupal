@@ -1,5 +1,5 @@
 uuid: f919cb35-b768-4e31-8c07-42336e2a7001
-name: côtétable
+name: semadesign
 mail: sema@sema.cargo.local
 slogan: ''
 page:
@@ -12,3 +12,4 @@ langcode: fr
 default_langcode: fr
 _core:
   default_config_hash: yTxtFqBHnEWxQswuWvkjE8mKw2t8oKuCL1q8KnfHuGE
+mail_notification: ''

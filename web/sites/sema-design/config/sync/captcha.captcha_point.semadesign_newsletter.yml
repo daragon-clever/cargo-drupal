@@ -1,0 +1,7 @@
+uuid: 738e1cfb-52a8-4b8c-93fd-325f5b80e8bc
+langcode: fr
+status: true
+dependencies: {  }
+formId: semadesign_newsletter
+captchaType: recaptcha_v3/contact
+label: semadesign-newsletter

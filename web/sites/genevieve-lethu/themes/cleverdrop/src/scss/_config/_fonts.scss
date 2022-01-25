@@ -1,0 +1,71 @@
+// Config : Webfonts
+// =================
+// Fonts import, placeholders
+
+
+@font-face {
+  font-family: 'Bodoni';
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+  src: local('Bodoni'), local('bodoni-regular'),
+    url('../assets/fonts/bodoni-regular.woff2') format('woff2'),
+    url('../assets/fonts/bodoni-regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Bodoni';
+  font-display: swap;
+  font-weight: 700;
+  font-style: normal;
+  src: local('Bodoni Bold'), local('bodoni-Bold'),
+    url('../assets/fonts/bodoni-bold.woff2') format('woff2'),
+    url('../assets/fonts/bodoni-bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Bodoni';
+  font-display: swap;
+  font-weight: 700;
+  font-style: italic;
+  src: local('Bodoni BoldItalic'), local('bodoni-BoldItalic'),
+    url('../assets/fonts/bodoni-boldItalic.woff2') format('woff2'),
+    url('../assets/fonts/bodoni-boldItalic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Bodoni';
+  font-display: swap;
+  font-weight: 400;
+  font-style: italic;
+  src: local('Bodoni Italic'), local('bodoni-Italic'),
+    url('../assets/fonts/bodoni-Italic.woff2') format('woff2'),
+    url('../assets/fonts/bodoni-Italic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  font-display: swap;
+  font-weight: 300;
+  font-style: normal;
+  src: local('Ubuntu Light'), local('Ubuntu-Light'),
+    url('../assets/fonts/Ubuntu-Light.woff2') format('woff2'),
+    url('../assets/fonts/Ubuntu-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  font-display: swap;
+  font-weight: 700;
+  font-style: normal;
+  src: local('Ubuntu Bold'), local('Ubuntu-Bold'),
+    url('../assets/fonts/Ubuntu-Bold.woff2') format('woff2'),
+    url('../assets/fonts/Ubuntu-Bold.woff') format('woff');
+}
+
+
+$font-default-sans: Arial, sans-serif;
+$font-default-serif: Georgia, serif;
+
+$font-base: Ubuntu, $font-default-sans !default;
+$font-variant: Bodoni, $font-default-serif !default;

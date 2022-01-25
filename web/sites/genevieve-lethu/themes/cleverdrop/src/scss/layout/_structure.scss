@@ -1,0 +1,25 @@
+/* -------------------------------------------------------------------------- *\
+  # MAIN LAYOUT
+\* -------------------------------------------------------------------------- */
+
+// | Layout
+//
+// Grid system and global styles for site structure:
+// --> body, header, footer, globalWrapper, mainContainer
+//
+// Styleguide Layout
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: $font-base;
+  font-weight: 300;
+  font-size: rem($body-font-size);
+  line-height: unitless-line-height(16px, 25px);
+  color: var(--theme);
+  background-color: var(--white);
+  margin: 0;
+  -moz-osx-font-smoothing: grayscale;
+}

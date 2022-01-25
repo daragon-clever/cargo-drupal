@@ -1,0 +1,35 @@
+/// Extended link
+ //
+ // Extend : link / button / submit to target parent area.
+ // * **u-extendedLink-target** - Target the parent for extend link area
+ // * **u-extendedLink** - Target the link to extend
+ //
+ // markup:
+ // <div class="u-extendedLink-target" style="height:200px;width:150px;border:1px solid silver;text-align:center;">
+ //   <a href="#" class="u-extendedLink">Link</a>
+ // </div>
+ //
+ // Styleguide Utilities.extendedLink
+
+.u-extendedLink {
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: block;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  &-target {
+    position: relative !important; // To breaks static position on .contextual-region
+  }
+
+  &-passOver {
+    position: relative;
+    z-index: 2;
+  }
+}

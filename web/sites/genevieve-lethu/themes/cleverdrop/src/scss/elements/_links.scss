@@ -1,0 +1,33 @@
+/* -------------------------------------------------------------------------- *\
+  # LINKS
+\* -------------------------------------------------------------------------- */
+
+// Links: Default styles
+//
+// markup:
+// <p><a href="#">Link</a></p>
+//
+// Styleguide Elements.links
+
+/**
+ * Default styles for simple hyperlinks.
+ */
+
+a {
+    color: inherit;
+
+    // Apply style on all links, but add a custom class to keep the default behaviour when needed
+    &:not(.hover-unstyled):hover,
+    &:not(.focus-unstyled):focus {
+      text-decoration: none;
+    }
+
+    &:focus {
+        outline: rem(1px) dashed currentColor;
+    }
+
+    /* Fix to allow "click" on external SVG in Microsoft EDGE */
+    svg > use {
+        pointer-events: none;
+    }
+}

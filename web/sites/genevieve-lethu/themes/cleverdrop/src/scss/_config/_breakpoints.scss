@@ -1,0 +1,38 @@
+
+/// Media queries
+ //
+ // Config of _Sass-mq_
+ // https://github.com/sass-mq/sass-mq
+ //
+ // Breakpoint:
+ // * **sm:** 499px,
+ // * **md:** 749px,
+ // * **lg:** 999px,
+ // * **xl:** 1199px
+ //
+ // Mediaqueries:
+ // * **from:** sm
+ // * **from:** md
+ // * **from:** lg
+ // * **from:** xl
+ //
+ // StyleGuide Config.Media-queries
+
+@import '~sass-mq';
+
+$mq-breakpoints: (
+  sm  : 499px, // 31.1875rem
+  md  : 749px, // 46.8125rem
+  lg  : 999px, // 62.4375rem
+  xl  : 1199px // 74.9375rem
+);
+
+// To get breakpoints into grid partial
+@function breakpoint($key) {
+  @if map-has-key($mq-breakpoints, $key) {
+    @return map-get($mq-breakpoints, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $mq-breakpoints.";
+  @return null;
+}

@@ -1,0 +1,39 @@
+/* -------------------------------------------------------------------------- *\
+  # CONFIG
+\* -------------------------------------------------------------------------- */
+
+// Project-level settings and setup.
+
+/// Prefix project
+//
+// Config projet
+//
+// $project-prefix - `"Replace with right name"` is prefix of classe names of this project.
+//
+// (You can work out this context whith the `@at-root{}` block.)
+$prefix: 'gl';
+
+// Typography
+
+/// Reference font-size
+/// Should not differ from the assumed browser default (typically `16px`).
+/// We use it as a reference for our `rem` calculations.
+/// @type Number (unit)
+$base-font-size: 16px !default;
+
+/// `body` font-size
+/// Should match the most frequent value in the design.
+/// Applied on the `body` and used as a reference for default `em` calculations.
+/// @type Number (unit)
+$body-font-size: $base-font-size !default;
+
+
+/// Viewport limits
+//
+// min & max viewport limits width
+//
+// * **$vw-min:** Min to fill
+// * **$vw-max:** Max to fill
+
+$vw-min: 320px !default;
+$vw-max: 1400px !default;

@@ -20,7 +20,7 @@
 
 @mixin heading-primary {
     @include font(variant, bold);
-    @include fluid-type(rem(320px), rem(map-get($grid-breakpoints, "xl")), rem(24px), rem($h1-font-size));
+    @include fluid-type(rem($vw-min), rem(map-get($mq-breakpoints, "xl")), rem(24px), rem($h1-font-size));
 
     line-height: unitless-line-height($h1-font-size, $h1-line-height);
 }
@@ -31,7 +31,7 @@ h1 {
 
 @mixin heading-secondary {
     @include font(variant, bold);
-    @include fluid-type(rem(320px), rem(map-get($grid-breakpoints, "xl")), rem(20px), rem($h2-font-size));
+    @include fluid-type(rem($vw-min), rem(map-get($mq-breakpoints, "xl")), rem(20px), rem($h2-font-size));
 
     line-height: unitless-line-height($h2-font-size, $h2-line-height);
 }
@@ -42,7 +42,7 @@ h2 {
 
 @mixin heading-tertiary {
     @include font(variant, bold);
-    @include fluid-type(rem(320px), rem(map-get($grid-breakpoints, "xl")), rem(20px), rem($h3-font-size));
+    @include fluid-type(rem($vw-min), rem(map-get($mq-breakpoints, "xl")), rem(20px), rem($h3-font-size));
 
     line-height: unitless-line-height($h3-font-size, $h3-line-height);
 }
@@ -64,6 +64,7 @@ h4 {
 
 @mixin heading-quinary {
     font-size: rem($h5-font-size);
+    line-height: unitless-line-height($h5-font-size, $h5-line-height);
 }
 
 h5 {
@@ -72,6 +73,7 @@ h5 {
 
 @mixin heading-senary {
     font-size: rem($h6-font-size);
+    line-height: unitless-line-height($h6-font-size, $h6-line-height);
 }
 
 h6 {

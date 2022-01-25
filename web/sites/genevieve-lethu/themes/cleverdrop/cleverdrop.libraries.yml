@@ -1,5 +1,7 @@
 common-styles:
-  version: VERSION
+  version: 0.1.0
   css:
-    component:
-      css/admin_ui/tabs.css: {}
+    theme:
+      public/css/styles.css: {}
+  js:
+    public/js/script.js: {}

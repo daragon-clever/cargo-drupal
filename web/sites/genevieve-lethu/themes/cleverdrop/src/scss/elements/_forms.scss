@@ -1,0 +1,142 @@
+/* -------------------------------------------------------------------------- *\
+  # FORM FIELDS
+\* -------------------------------------------------------------------------- */
+
+// Forms: Default style
+//
+// markup:
+// <label for="input_example">Label example</label>
+// <input type="text" id="input_example" value="Simple input" /><br><br>
+// <label><input type="radio" value="Radio input" /> Label</label>
+// <label><input type="checkbox" value="Checkbox input" /> Label</label>
+// <input disabled type="text" value=""><br><br>
+// <textarea>Textarea example</textarea><br><br>
+// <select>
+//   <option>choix 1</option>
+//   <option>choix 2</option>
+//   <option>choix 3</option>
+// </select>
+//
+// Styleguide Elements.form
+
+$label-font-size: 16px;
+
+label,
+legend {
+    font-family: $font-base;
+    font-size: em($label-font-size, $body-font-size);
+    line-height: unitless-line-height($label-font-size, 21px);
+}
+
+label {
+    display: table;
+    margin-bottom: em(10px, $label-font-size);
+    cursor: pointer;
+}
+
+legend {
+    display: block;
+    padding-bottom: em(10px, $label-font-size);
+    width: 100%;
+}
+
+fieldset {
+    border: none;
+}
+
+input,
+textarea,
+select {
+    border: rem(1px) solid $ebony-clay;
+    width: 100%;
+    font-size: rem($input-font-size);
+    border-radius: rem($border-radius);
+    transition: border .15s ease-in, box-shadow .15s ease-in;
+
+    &:focus {
+        border-color: $boston-blue;
+        box-shadow: 0 0 0 rem(1px) $boston-blue;
+        outline: none;
+        transition-timing-function: ease-out, ease-out;
+    }
+
+    &:disabled {
+        border-color: $theme-disabled-border;
+        color: $theme-disabled-color;
+        background-color: $theme-disabled-background;
+    }
+
+    // Remove default box-shadow around `:invalid` fields
+    &:not(:focus):invalid {
+        box-shadow: none;
+    }
+
+    &::placeholder {
+        color: $dove-gray;
+        opacity: 1;
+    }
+
+    &.is-invalid {
+        border-color: $crimson;
+        color: $crimson;
+
+        &:focus {
+            box-shadow: 0 0 0 rem(1px) $crimson;
+        }
+    }
+}
+
+input,
+select {
+    padding: 0 em(15px, $input-font-size);
+    height: em($input-height, $input-font-size);
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: rem(8px);
+    padding: 0;
+    width: auto;
+    height: auto;
+}
+
+select {
+    display: inline-block;
+    margin: 0;
+    padding-right: em(40px, $input-font-size);
+    width: auto;
+    max-width: 100%; // useful when width is set to anything other than 100%
+    appearance: none;
+    background-color: $theme-hue-light;
+    // note: bg image below uses 2 urls. The first is an svg data uri for the arrow icon, and the second is the gradient.
+    background-image:
+        svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 8"><path fill="#{$theme-color}"  d="M5.4837529 7.269258l4.791543-5c.0785351-.082187.0773047-.211582-.0032617-.291543l-1.249961-1.25C8.9821904.687833 8.9280889.66586 8.8719365.666658 8.815374.6675 8.7620732.691094 8.7234209.731993L5.333206 4.32168 1.9429912.731993C1.9043389.691094 1.8510381.6675 1.7944756.666658c-.0561524-.000798-.1102735.021175-.1501367.061057l-1.249961 1.25C.3536943 2.018399.33334 2.071719.33334 2.12502c0 .051875.0191239.10377.0577762.144238l4.791543 5c.0394726.040899.0935937.064082.1505468.064082.0569727 0 .1110938-.023183.1505469-.064082z"/></svg>'),
+        linear-gradient(to bottom, $theme-hue-light 0%, $theme-hue-light 100%);
+    background-repeat: no-repeat, repeat;
+    // arrow icon position (center inside the right padding of the select, 50% vertical), then gradient position
+    background-position: right em((40px - 12px) / 2, $input-font-size) top 50%, 0 0;
+    // icon size, then gradient
+    background-size: em(12px, $input-font-size) auto, 100%;
+
+    // Hide arrow icon in IE browsers
+    &::-ms-expand {
+        display: none;
+    }
+
+    // Hide dotted line in Firefox
+    &:-moz-focusring {
+        color: transparent;
+        text-shadow: 0 0 0 $theme-color;
+    }
+
+    &:disabled {
+        background-image:
+            svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 8"><path fill="#{$theme-disabled-color}"  d="M5.4837529 7.269258l4.791543-5c.0785351-.082187.0773047-.211582-.0032617-.291543l-1.249961-1.25C8.9821904.687833 8.9280889.66586 8.8719365.666658 8.815374.6675 8.7620732.691094 8.7234209.731993L5.333206 4.32168 1.9429912.731993C1.9043389.691094 1.8510381.6675 1.7944756.666658c-.0561524-.000798-.1102735.021175-.1501367.061057l-1.249961 1.25C.3536943 2.018399.33334 2.071719.33334 2.12502c0 .051875.0191239.10377.0577762.144238l4.791543 5c.0394726.040899.0935937.064082.1505468.064082.0569727 0 .1110938-.023183.1505469-.064082z"/></svg>'),
+            linear-gradient(to bottom, $theme-disabled-background 0%, $theme-disabled-background 100%);
+    }
+}
+
+textarea {
+    padding: em(10px, $input-font-size) em(15px, $input-font-size);
+    resize: vertical;
+}

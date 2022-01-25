@@ -1,0 +1,15 @@
+// Animation of appearance of images, slide from bottom to top
+
+.imgAnimation {
+  background-color: var(--light);
+
+  img {
+    clip-path: polygon(0 0, 0 0, 100% 0, 100% 0);
+    animation-fill-mode: forwards;
+    transition: clip-path 0.8s;
+  }
+
+  &.is-animate img {
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
+  }
+}

@@ -3,6 +3,7 @@ langcode: fr
 status: true
 dependencies:
   module:
+    - ctools
     - sema_block
   theme:
     - cleverdrop
@@ -18,4 +19,12 @@ settings:
   provider: sema_block
   label_display: '0'
   find_our_products: null
-visibility: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      homepage: homepage
+      product: product
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

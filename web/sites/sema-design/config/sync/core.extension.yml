@@ -19,7 +19,6 @@ module:
   ctools: 0
   datetime: 0
   dblog: 0
-  drupal_marketing_automation_core: 0
   drupal_synapse: 0
   dynamic_page_cache: 0
   editor: 0

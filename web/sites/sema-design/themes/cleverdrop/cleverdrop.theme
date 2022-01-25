@@ -4,6 +4,19 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Render\Element;
 use Drupal\image\Plugin\Field\FieldType\ImageItem;
 
+function cleverdrop_preprocess_menu(&$variables, $hook)
+{
+  if ($hook == 'menu__main') {
+    $myConfigPage = \Drupal\config_pages\Entity\ConfigPages::config('sema_design');
+    $variables['items']['logo'] = NULL;
+    if (!empty($myConfigPage)) {
+      if ($hook == 'menu__main') {
+        $variables['items']['logo'] = $myConfigPage->get('field_logo_header')->view();
+      }
+    }
+  }
+}
+
 function cleverdrop_theme_registry_alter(&$theme_registry) {
   $theme_registry['image_formatter']['variables']['view_mode'] = NULL;
 }

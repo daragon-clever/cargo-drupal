@@ -54,6 +54,7 @@ module:
   sema_block: 0
   sema_core: 0
   shortcut: 0
+  svg_image: 0
   system: 0
   taxonomy: 0
   text: 0

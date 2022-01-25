@@ -1,0 +1,19 @@
+uuid: 32e21797-7193-425a-a4c4-a231e03b7d6e
+langcode: fr
+status: true
+dependencies:
+  module:
+    - config_pages
+    - link
+id: config_pages.field_instagram
+field_name: field_instagram
+entity_type: config_pages
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

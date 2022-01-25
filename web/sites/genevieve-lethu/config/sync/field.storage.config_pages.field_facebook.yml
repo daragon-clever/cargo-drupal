@@ -1,0 +1,19 @@
+uuid: 795fe07e-8152-43a8-a4cc-24e8552477c3
+langcode: fr
+status: true
+dependencies:
+  module:
+    - config_pages
+    - link
+id: config_pages.field_facebook
+field_name: field_facebook
+entity_type: config_pages
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

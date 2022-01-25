@@ -1,0 +1,29 @@
+{% if content is not empty %}
+  <div class="Section has-altBg NewsletterBlock">
+    <div class="NewsletterSubscribe">
+        <div class="NewsletterSubscribe-content">
+            <h2 class="NewsletterSubscribe-title">{{ content.title }}</h2>
+            <div class="NewsletterSubscribe-text">
+                {{ content.description }}
+            </div>
+            {{ drupal_block('inscription_block') }}
+        </div>
+    </div>
+    <div class="NewsletterPartner">
+        <div class="NewsletterPartner-bg">
+            <img src="{{ content.background }}" alt="">
+        </div>
+        <div class="NewsletterPartner-content">
+            <img class="NewsletterPartner-logo" src="{{ content.logo }}" alt="">
+            <h2 class="NewsletterPartner-title">{{ content.partnership_title }}</h2>
+            {% if content.cta and content.cta_link %}
+            {% include directory ~ '/templates/ui/atoms/primary-cta.twig' with {
+                text: content.cta,
+                url: content.cta_link,
+                theme: 'secondary'
+            } %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endif %}

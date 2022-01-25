@@ -1,0 +1,69 @@
+uuid: 4d7f3a4c-bf71-4638-aa4e-be1db4d2635d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - config_pages.type.block_newsletter
+    - field.field.config_pages.block_newsletter.field_background_quote
+    - field.field.config_pages.block_newsletter.field_description
+    - field.field.config_pages.block_newsletter.field_facebook
+    - field.field.config_pages.block_newsletter.field_instagram
+    - field.field.config_pages.block_newsletter.field_pinterest
+    - field.field.config_pages.block_newsletter.field_title
+  module:
+    - link
+id: config_pages.block_newsletter.default
+targetEntityType: config_pages
+bundle: block_newsletter
+mode: default
+content:
+  field_background_quote:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_description:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_facebook:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_instagram:
+    weight: 4
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_pinterest:
+    weight: 5
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  label: true

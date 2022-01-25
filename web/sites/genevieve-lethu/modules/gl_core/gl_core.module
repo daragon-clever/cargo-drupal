@@ -19,4 +19,17 @@ function gl_core_preprocess_paragraph__left_handed(&$vars) {
   }
 }
 
-
+/**
+ * Implements hook_theme().
+ */
+function gl_core_theme($existing, $type, $theme, $path)
+{
+  return [
+    'gl_core__newsletter' => [
+      'template' => 'gl-core--newsletter',
+      'variables' => [
+        'content' => [],
+      ],
+    ],
+  ];
+}

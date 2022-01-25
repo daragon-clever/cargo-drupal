@@ -1,0 +1,23 @@
+uuid: 13b365fc-63d6-4c18-be7d-5af0190c56d1
+langcode: fr
+status: true
+dependencies:
+  config:
+    - config_pages.type.block_newsletter
+    - field.storage.config_pages.field_facebook
+  module:
+    - link
+id: config_pages.block_newsletter.field_facebook
+field_name: field_facebook
+entity_type: config_pages
+bundle: block_newsletter
+label: Facebook
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

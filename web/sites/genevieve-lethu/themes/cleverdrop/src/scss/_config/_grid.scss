@@ -5,9 +5,9 @@
 // |         | normal  | from sm | from md | from lg | from xl |
 // |:--------|--------:|--------:|--------:|--------:|--------:|
 // | break   |       0 |   499px |   749px |  999px  |  1199px |
-// | gutter  |    14px |    14px |    20px |    30px |    30px |
+// | gutter  |    20px |    20px |    20px |    20px |    20px |
 // | columns |      12 |      12 |      12 |      12 |      12 |
-// | margin  |    10px |    10px |    30px |    60px |    60px |
+// | margin  |    30px |    20px |    20px |    20px |    20px |
 //
 // Styleguide Config.Grid
 
@@ -21,7 +21,7 @@ $grid-from-l-gutter: 20px !default;
 
 // Set a margin for the container sides.
 // Default
-$grid-margin: 20px !default;
+$grid-margin: 30px !default;
 
 // From 749px
 $grid-from-m-margin: 20px !default;

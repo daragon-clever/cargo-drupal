@@ -14,8 +14,7 @@ html {
 }
 
 body {
-  font-family: $font-base;
-  font-weight: 300;
+  @include font(base, light);
   font-size: rem($body-font-size);
   line-height: unitless-line-height(16px, 25px);
   color: var(--theme);

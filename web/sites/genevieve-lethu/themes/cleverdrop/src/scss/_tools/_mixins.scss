@@ -1,6 +1,6 @@
 /* -------------------------------------------------------------------------- *\
 
-   # MIXINS
+  # MIXINS
 
 \* -------------------------------------------------------------------------- */
 
@@ -280,7 +280,7 @@
 }
 
 
-// # _Reset_ (and override version)
+// # Reset
 @mixin reset {
   margin:  0;
   padding: 0;
@@ -289,17 +289,8 @@
   list-style-type: none; // for lists
 }
 
-@mixin reset-i {
-  margin:  0 !important;
-  padding: 0 !important;
-  border:  0 !important;
-  background-color: transparent !important; // for buttons
-  list-style-type: none !important; // for lists
-}
 
-
-// # Hide content (and override version)
-
+// # Hide content
 // https://developer.yahoo.com/blogs/ydn/clip-hidden-content-better-accessibility-53456.html
 @mixin visually-hidden {
   position: absolute;
@@ -315,22 +306,8 @@
   opacity: .001;
 }
 
-@mixin visually-hidden-i {
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  padding: 0 !important;
-  border:  0 !important;
-  height:  1px !important;
-  width:   1px !important;
-  overflow: hidden !important;
-  clip: rect(1px  1px  1px  1px) !important;
-  clip: rect(1px, 1px, 1px, 1px) !important;
-  opacity: 0.001 !important;
-}
 
-
-// reverse visually-hidden (and override version)
+// reverse visually-hidden
 @mixin visually-visible {
   position:  static;
   height:      auto;
@@ -340,11 +317,77 @@
   opacity:        1;
 }
 
-@mixin visually-visible-i {
-  position:  static !important;
-  height:      auto !important;
-  width:       auto !important;
-  clip:        auto !important;
-  overflow: visible !important;
-  opacity:        1 !important;
+/// Generate fluid type with `clamp()`
+///
+/// source: https://chriskirknielsen.com/blog/modern-fluid-typography-with-clamp/
+///
+/// @param {number} $min-vw - Minimum viewport size at which we want the minimum font-size value
+/// @param {number} $max-vw - Maximum viewport size at which we want the maximum font-size value
+/// @param {number} $min-value - Minimum font-size value
+/// @param {number} $max-value - Maximum font-size value
+///
+/// @example scss - Usage
+///   .foo {
+///     @include fluid-type(rem(320px), rem(map-get($grid-breakpoints, "xl")), rem(24px), rem(38px));
+///   }
+/// @example css - Result
+///   .foo {
+///     font-size: 1.5rem;
+///     font-size: clamp(1.5rem, 1.1818181818rem + 1.5909090909vw, 2.375rem);
+///   }
+///
+@mixin fluid-type($min-vw, $max-vw, $min-value, $max-value) {
+  $factor: calc(1 / ($max-vw - $min-vw) * ($max-value - $min-value));
+  $calc-value: unquote("#{ $min-value - ($min-vw * $factor) } + #{ 100vw * $factor }");
+
+  font-size: $min-value; // Fallback for older browsers
+  font-size: clamp(#{ if($min-value > $max-value, $max-value, $min-value) }, #{ $calc-value }, #{ if($min-value > $max-value, $min-value, $max-value) });
 }
+
+/// Mixins to help generating typographical rules.
+///
+/// `font-family` declaration
+///
+/// Call the font defined in the project configuration
+///
+/// @param {String} $group - Name of the group (base or variant)
+/// @param {String} $id - Name of the variation (e.g.: bold, italic, etc...)
+///
+/// @example scss - Usage
+///   .foo {
+///     @include font(base);
+///   }
+///   .bar {
+///     @include font(base, bold-italic);
+///   }
+///   .baz {
+///     @include font(variant);
+///   }
+///
+/// @example css - Result
+///   .foo {
+///     font-family:'robotoregular', Arial, sans-serif;
+///     font-weight:normal;
+///     font-style:normal;
+///   }
+///   .bar {
+///     font-family:'robotobold_italic', Arial, sans-serif;
+///     font-weight:normal;
+///     font-style:normal;
+///   }
+///   .baz {
+///     font-family:'amerika_sansregular', serif;
+///     font-weight:normal;
+///     font-style:normal;
+///   }
+///
+@mixin font($group, $id:regular, $force-specificity: "") {
+  @each $font in $font-stack {
+      @if ($group==map-get($font, group) and $id==map-get($font, id)) {
+          font-family: map-get($font, font) #{$force-specificity};
+          font-weight: map-get($font, weight) #{$force-specificity};
+          font-style: map-get($font, style) #{$force-specificity};
+      }
+  }
+}
+

@@ -14,7 +14,7 @@ entity_type: node
 bundle: inspiration
 label: 'Table des matières'
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -34,16 +34,70 @@ settings:
       contents_table_slide:
         weight: 8
         enabled: false
+      introduction:
+        weight: 29
+        enabled: false
       label_block:
         weight: 11
         enabled: false
       main_visual:
         weight: 12
         enabled: false
+      moodboard:
+        weight: 32
+        enabled: false
+      our_products:
+        weight: 33
+        enabled: false
       our_universe:
         weight: 13
         enabled: false
+      particular:
+        weight: 35
+        enabled: false
+      partnership:
+        weight: 36
+        enabled: false
+      post_instagram:
+        weight: 37
+        enabled: false
+      presentation_block:
+        weight: 38
+        enabled: false
+      press_element:
+        weight: 39
+        enabled: false
+      press_release:
+        weight: 40
+        enabled: false
+      product_family:
+        weight: 43
+        enabled: false
+      products_slider:
+        weight: 41
+        enabled: false
+      products_slider_slide:
+        weight: 42
+        enabled: false
+      section_professionnel:
+        weight: 44
+        enabled: false
       slider_homepage:
         weight: 14
+        enabled: false
+      team_presentation:
+        weight: 46
+        enabled: false
+      tet:
+        weight: 47
+        enabled: false
+      text_area:
+        weight: 48
+        enabled: false
+      visuals_and_video:
+        weight: 49
+        enabled: false
+      who_are_we_slider:
+        weight: 50
         enabled: false
 field_type: entity_reference_revisions

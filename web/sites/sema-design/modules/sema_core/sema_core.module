@@ -54,3 +54,7 @@ function _sema_core_node_who_we_are_validate(&$form, \Drupal\Core\Form\FormState
   }
 }
 
+function sema_core_page_attachments(array &$page) {
+
+    $page['#attached']['library'][] = 'sema_core/sema_core';
+}

@@ -3,14 +3,29 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - field.field.paragraph.text_area.field_cta
     - field.field.paragraph.text_area.field_description
     - field.field.paragraph.text_area.field_title
     - paragraphs.paragraphs_type.text_area
+  module:
+    - link
 id: paragraph.text_area.default
 targetEntityType: paragraph
 bundle: text_area
 mode: default
 content:
+  field_cta:
+    weight: 2
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
   field_description:
     weight: 1
     label: visually_hidden

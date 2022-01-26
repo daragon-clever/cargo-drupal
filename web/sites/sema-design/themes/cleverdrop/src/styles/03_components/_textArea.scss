@@ -1,0 +1,75 @@
+.TextArea-wrp {
+  overflow: hidden;
+  position: relative;
+}
+
+.Section-inner.TextArea {
+  display: flex;
+  flex-direction: row;
+  padding-top: 120px;
+  padding-bottom: 75px;
+  max-width: 940px;
+
+  @include media-breakpoint-down('md') {
+    flex-direction: column;
+    padding-top: 30px;
+  }
+}
+
+.TextArea-left {
+  text-align: left;
+  max-width: 2 * $col-size + 2 * $gutter-size;
+  width: 100%;
+  @include u-quentin-regular;
+  font-size: 30px;
+}
+
+.TextArea-right {
+  @include u-cormorant-regular;
+  font-size: 18px;
+  width: 100%;
+  padding-left: 45px;
+  z-index: 1;
+
+  > p {
+    margin-bottom: 60px;
+  }
+  @include media-breakpoint-down('md') {
+    padding-left: 0;
+
+    > p {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.TextArea::after {
+  content: '';
+  background-color: var(--ebb);
+  position: absolute;
+  left: 0;
+  top: 138px;
+  padding: 110px 45px;
+  background-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  transform: scaleX(-1);
+  mask-image: url('/sites/sema-design/themes/cleverdrop/src/assets/svg/taches.svg');
+
+  @include media-breakpoint-down('md') {
+    display: none;
+  }
+}
+
+
+.TextArea::before {
+  content: '';
+  background-color: var(--ebb);
+  position: absolute;
+  right: -55px;
+  top: 78px;
+  padding: 68px 145px;
+  background-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  mask-image: url('/sites/sema-design/themes/cleverdrop/src/assets/svg/brush.svg');
+  transform: rotate(350deg) scaleY(-1);
+}

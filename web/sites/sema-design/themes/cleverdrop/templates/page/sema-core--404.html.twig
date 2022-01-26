@@ -1,8 +1,26 @@
 {% if content is not empty %}
-  {{ content.title }}
-  {{ content.subtitle }}
-  {{ content.cta }}
-  {{ content.cta_link }}
-  {{ content.picture }}
+  <div class="Section NotFound">
+    {{ content.picture }}
+    <div class="NotFound-over">
+      <div class="NotFound-ontitle">
+        {{ content.on_title }}
+      </div>
+      <div class="NotFound-title">
+        {{ content.title }}
+      </div>
+      <div class="NotFound-subtitle">
+        {{ content.subtitle }}
+      </div>
+      <div class="NotFound-cta">
+        {% if content.cta_link %}
+          {% include directory ~ '/templates/ui/atoms/primary-cta.twig' with {
+            text: content.cta,
+            url: content.cta_link,
+          } %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
 {% endif %}
 

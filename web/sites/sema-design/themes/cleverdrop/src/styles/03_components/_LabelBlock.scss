@@ -15,17 +15,17 @@
   .LeftBrush,
   .RightBrush {
     display: none;
+    position: absolute;
+    top: 50%;
+    width: rem(320px);
+    fill: var(--ebb);
+    opacity: 0.5;
+    transform: translateY(-50%);
+    transition: clip-path 0.5s;
+    animation-fill-mode: forwards;
 
     @include media-breakpoint-up('md') {
       display: block;
-      position: absolute;
-      top: 50%;
-      width: rem(320px);
-      fill: var(--ebb);
-      opacity: 0.5;
-      transform: translateY(-50%);
-      transition: clip-path 0.5s;
-      animation-fill-mode: forwards;
     }
   }
 

@@ -1,16 +1,18 @@
 {%
   set classes = [
-  'paragraph',
-  'paragraph--type--' ~ paragraph.bundle|clean_class,
-  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-  not paragraph.isPublished() ? 'paragraph--unpublished'
+  'Slider-slide',
+  'ContentsTable-slide'
 ]
 %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
-      {{ content.field_title }}
-      {{ content.field_picture }}
+      <div class="ContentsTable-img-wrp">
+        {{ content.field_picture }}
+      </div>
+      <h3 class="ContentsTable-title">
+        {{ content.field_title }}
+      </h3>
     {% endblock %}
   </div>
 {% endblock paragraph %}

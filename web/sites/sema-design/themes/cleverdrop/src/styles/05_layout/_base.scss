@@ -21,8 +21,8 @@ $page-bg-color: var(--white) !default;
       content: '';
       background-image: repeating-linear-gradient(
         to right,
-        $grid-even-color, $grid-even-color $gutter-size / 2,
-        $grid-odd-color $gutter-size / 2, $grid-odd-color calc(($gutter-size / 2) + (((100% - $gutter-size * ($nb-cols - 1)) / $nb-cols))),
+        $grid-even-color, $grid-even-color math.div($gutter-size, 2),
+        $grid-odd-color math.div($gutter-size, 2), $grid-odd-color calc(($gutter-size / 2) + (((100% - $gutter-size * ($nb-cols - 1)) / $nb-cols))),
         $grid-even-color calc(($gutter-size / 2) + ((100% - $gutter-size * ($nb-cols - 1)) / $nb-cols)), $grid-even-color calc(($gutter-size / 2) + ((100% - $gutter-size * ($nb-cols - 1)) / $nb-cols) + $gutter-size / 2));
       background-size: 100%;
       user-select: none;

@@ -24,11 +24,11 @@
   display: none !important;
 }
 
-@include media-breakpoint-up('l') {
-  .u-hideL {
-    display: none !important;
-  }
-}
+// @include media-breakpoint-up('l') {
+//   .u-hideL {
+//     display: none !important;
+//   }
+// }
 
 @include media-breakpoint-up('md') {
   .u-hideMd {
@@ -36,11 +36,11 @@
   }
 }
 
-@include media-breakpoint-down('sm') {
-  .u-hideDownSm {
-    display: none !important;
-  }
-}
+// @include media-breakpoint-down('sm') {
+//   .u-hideDownSm {
+//     display: none !important;
+//   }
+// }
 
 @include media-breakpoint-down('md') {
   .u-hideDownMd {
@@ -48,11 +48,11 @@
   }
 }
 
-@include media-breakpoint-down('xs') {
-  .u-hideXs {
-    display: none !important;
-  }
-}
+// @include media-breakpoint-down('xs') {
+//   .u-hideXs {
+//     display: none !important;
+//   }
+// }
 
 // No JS
 @mixin no-js {

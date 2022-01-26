@@ -1,8 +1,11 @@
-<nav{{ attributes.removeAttribute('id') }}>
+<nav class="MainNav">
   {{ title_prefix }}
   {% if label %}
     <h2{{ title_attributes }}>{{ label }}</h2>
   {% endif %}
   {{ title_suffix }}
   {{ content }}
+  <button class="OpenMenu u-hideMd">
+    <span class="u-srOnly">Ouvrir le menu</span>
+  </button>
 </nav>

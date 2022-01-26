@@ -17,6 +17,7 @@ class ErrorController extends ControllerBase {
     if (!empty($myConfigPage)) {
       $datas['subtitle'] = $myConfigPage->get('field_subtitle')->value;
       $datas['title'] = $myConfigPage->get('field_title')->value;
+      $datas['on_title'] = $myConfigPage->get('field_on_title')->value;
       $datas['cta_link'] = $myConfigPage->get('field_cta')->uri;
       $datas['cta'] = $myConfigPage->get('field_cta')->title;
       $datas['picture'] = $myConfigPage->get('field_visuel')->view();

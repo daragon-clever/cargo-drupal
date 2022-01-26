@@ -2,6 +2,7 @@
 .Section-inner.Profesional {
   max-width: 940px;
 }
+
 .Particular,
 .Profesional {
   display: flex;
@@ -87,11 +88,11 @@
   content: '';
   background-color: var(--ebb);
   position: absolute;
-  right: 0;
-  top: 0;
-  padding: 110px 96px;
+  right: -55px;
+  top: 65px;
+  padding: 68px 145px;
   background-repeat: no-repeat;
   mask-repeat: no-repeat;
   mask-image: url('/sites/sema-design/themes/cleverdrop/src/assets/svg/brush.svg');
-  transform: scale(1, -1);
+  transform: scale(1, -1) rotate(15deg);
 }

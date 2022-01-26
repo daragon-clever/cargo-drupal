@@ -5,13 +5,14 @@ dependencies:
   config:
     - config_pages.type.page_404
     - field.field.config_pages.page_404.field_cta
+    - field.field.config_pages.page_404.field_on_title
     - field.field.config_pages.page_404.field_subtitle
     - field.field.config_pages.page_404.field_title
     - field.field.config_pages.page_404.field_visuel
     - image.style.thumbnail
   module:
-    - image
     - link
+    - svg_image
 id: config_pages.page_404.default
 targetEntityType: config_pages
 bundle: page_404
@@ -24,6 +25,14 @@ content:
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
+    region: content
+  field_on_title:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
   field_subtitle:
     weight: 2

@@ -1,0 +1,21 @@
+uuid: 85746ad7-fbde-43f0-a055-d44f75b3d2d1
+langcode: fr
+status: true
+dependencies:
+  module:
+    - config_pages
+id: config_pages.field_on_title
+field_name: field_on_title
+entity_type: config_pages
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -116,6 +116,7 @@ window.addEventListener('DOMContentLoaded', () => {
       Selectors,
       {
         ...CommonSliderOptions,
+        speed: 0,
         autoplay: {
           delay: 4000,
         },

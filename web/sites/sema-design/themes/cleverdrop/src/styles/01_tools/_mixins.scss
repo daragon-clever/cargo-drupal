@@ -73,3 +73,12 @@
     @content;
   }
 }
+
+@mixin btn-reset {
+  @include appearance(none);
+  text-decoration: none;
+  color: inherit;
+  padding: 0;
+  background: none;
+  border: 0;
+}

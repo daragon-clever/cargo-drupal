@@ -1,5 +1,5 @@
 .FindOurProduct {
-  background-image: repeating-linear-gradient(to right, var(--pampas), var(--pampas) $gutter-size/2, var(--pampas-alt) $gutter-size/2, var(--pampas-alt) $gutter-size);
+  background-image: repeating-linear-gradient(to right, var(--pampas), var(--pampas) math.div($gutter-size, 2), var(--pampas-alt) math.div($gutter-size, 2), var(--pampas-alt) $gutter-size);
 }
 
 .FindOurProduct-inner {
@@ -60,6 +60,7 @@
     opacity: 0;
     transform: translateY(-50px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);

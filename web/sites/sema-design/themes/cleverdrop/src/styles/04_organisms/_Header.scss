@@ -1,9 +1,27 @@
 .Header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  min-height: rem(50px);
+  right: 0;
+  left: 0;
   background-color: $header-color;
   backdrop-filter: blur(4px);
   z-index: 99;
+}
+
+.Header-inner {
+  display: flex;
+  width: 100%;
+  min-height: rem(60px);
+  max-width: $site-width;
+  padding-top: rem(10px);
+  padding-right: map-get($section-padding, xs);
+  padding-bottom: rem(10px);
+  padding-left: map-get($section-padding, xs);
+  margin: 0 auto;
+
+  @include media-breakpoint-up('md') {
+    padding-right: map-get($section-padding, md);
+    padding-left: map-get($section-padding, md);
+  }
 }
 

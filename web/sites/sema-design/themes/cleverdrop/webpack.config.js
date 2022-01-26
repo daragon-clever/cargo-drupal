@@ -77,9 +77,6 @@ module.exports = (env, argv) => [{
         {
           from: path.resolve(__dirname, "src/assets/"),
           to: path.resolve(__dirname, "public/assets"),
-          globOptions: {
-            ignore: path.resolve(__dirname, "src/assets/svg")
-          }
         },
       ]
     })

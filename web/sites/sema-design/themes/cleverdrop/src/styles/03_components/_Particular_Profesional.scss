@@ -46,7 +46,7 @@
 
       &::after {
         content: '';
-        background: url('/sites/sema-design/themes/cleverdrop/src/assets/svg/arrow-right.svg');
+        background: url('/sites/sema-design/themes/cleverdrop/public/assets/svg/arrow-right.svg');
         background-repeat: no-repeat;
         padding: 3px 8px;
         display: inline-block;
@@ -77,7 +77,7 @@
   padding: 110px 45px;
   background-repeat: no-repeat;
   mask-repeat: no-repeat;
-  mask-image: url('/sites/sema-design/themes/cleverdrop/src/assets/svg/taches.svg');
+  mask-image: url('/sites/sema-design/themes/cleverdrop/public/assets/svg/stains.svg');
 }
 
 .Particular-wrp {
@@ -93,6 +93,6 @@
   padding: 68px 145px;
   background-repeat: no-repeat;
   mask-repeat: no-repeat;
-  mask-image: url('/sites/sema-design/themes/cleverdrop/src/assets/svg/brush.svg');
-  transform: scale(1, -1) rotate(15deg);
+  mask-image: url('/sites/sema-design/themes/cleverdrop/public/assets/svg/brush.svg');
+  transform: scale(1, -1);
 }

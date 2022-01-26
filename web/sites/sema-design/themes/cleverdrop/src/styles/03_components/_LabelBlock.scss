@@ -6,6 +6,7 @@
     .LeftBrush {
       clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
     }
+
     .RightBrush {
       clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
     }
@@ -33,7 +34,7 @@
     transform: translateY(-50%);
 
     use {
-      transform: translateX(-30%)
+      transform: translateX(-30%);
     }
   }
 
@@ -43,7 +44,7 @@
     transform: translateY(-50%) rotateX(180deg);
 
     use {
-      transform: translateX(30%)
+      transform: translateX(30%);
     }
   }
 }
@@ -63,7 +64,7 @@
     position: absolute;
     bottom: rem(30px);
     left: 50%;
-    content: "";
+    content: '';
     display: block;
     height: rem(25px);
     width: rem(25px);

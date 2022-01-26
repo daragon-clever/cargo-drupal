@@ -1,3 +1,16 @@
 .Logo {
   display: flex;
+  position: absolute;
+  height: rem(40px);
+  width: rem(40px);
+  transform: scale(2.425) translateY(8px); // scale -> 97px; translate env 20px
+  transform-origin: 0 0;
+  transition: transform 0.3s;
+
+  .Header.is-sticky & {
+    transform: scale(1) translateY(0); // 40px
+  }
+
+  @include media-breakpoint-up('md') {
+  }
 }

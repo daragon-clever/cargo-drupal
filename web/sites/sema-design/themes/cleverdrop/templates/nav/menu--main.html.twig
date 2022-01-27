@@ -36,41 +36,49 @@ We call a macro which calls itself to render the full tree.
         <span class="u-srOnly">Accueil</span>
         {{ items['logo'] }}
       </a>
-      <ul{{ attributes }} class="MainMenu">
-        {% for name, item in items %}
-        {% set id = item.original_link.metadata['entity_id'] %}
-
-          {% if name != 'logo' %}
-            <li{{ item.attributes }} class="MainMenu-item">
-              {% if item.below %}
-                <button id="menu-item-{{id}}" class="MainMenu-btn u-hideDownMd" data-submenu-btn>{{ link(item.title, item.url) }}</button>
-                {{ menus.menu_links(directory, item.below, attributes, menu_level + 1, id, item.title) }}
-              {% else %}
-                {{ link(item.title, item.url) }}
+      <div class="MainMenu-wpr" aria-labelledby="mobile-menu-btn">
+        <div class="MainMenu-inner">
+          <ul{{ attributes }} class="MainMenu">
+            {% for name, item in items %}
+            {% set id = item.original_link.metadata['entity_id'] %}
+              {% if name != 'logo' %}
+                <li{{ item.attributes }} class="MainMenu-item">
+                  {% if item.below %}
+                    <button id="menu-item-{{id}}" class="MainMenu-btn" data-submenu-btn>
+                      {{ link(item.title, item.url) }}
+                      {% include directory ~ '/src/assets/svg/chevron.svg' %}
+                    </button>
+                    {{ menus.menu_links(directory, item.below, attributes, menu_level + 1, id, item.title) }}
+                  {% else %}
+                    {{ link(item.title, item.url) }}
+                  {% endif %}
+                </li>
               {% endif %}
-            </li>
-          {% endif %}
-        {% endfor %}
-      </ul>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
     {% else %}
       <div class="MainSubMenu-wpr" aria-labelledby="menu-item-{{id}}">
-        <button class="MainSubMenu-closeBtn" data-close="menu-item-{{id}}">
-          {% include directory ~ '/src/assets/svg/chevron.svg' %}
-          {{parent_title}}
-        </button>
-        <ul class="MainSubMenu">
-          {% for name, item in items %}
-          {% set id = item.original_link.metadata['entity_id'] %}
-            <li{{ item.attributes }} class="MainSubMenu-item">
-              {% if item.below %}
-                <button class="MainSubMenu-btn" data-submenu-btn>{{ link(item.title, item.url) }}</button>
-                {{ menus.menu_links(directory, item.below, attributes, menu_level + 1, id, item.title) }}
-              {% else %}
-                {{ link(item.title, item.url) }}
-              {% endif %}
-            </li>
-          {% endfor %}
-        </ul>
+        <div class="MainSubMenu-inner">
+          <button class="MainSubMenu-closeBtn" data-close="menu-item-{{id}}">
+            {% include directory ~ '/src/assets/svg/chevron.svg' %}
+            {{parent_title}}
+          </button>
+          <ul class="MainSubMenu">
+            {% for name, item in items %}
+            {% set id = item.original_link.metadata['entity_id'] %}
+              <li{{ item.attributes }} class="MainSubMenu-item">
+                {% if item.below %}
+                  <button class="MainSubMenu-btn" data-submenu-btn>{{ link(item.title, item.url) }}</button>
+                  {{ menus.menu_links(directory, item.below, attributes, menu_level + 1, id, item.title) }}
+                {% else %}
+                  {{ link(item.title, item.url) }}
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
       </div>
     {% endif %}
   {% endif %}

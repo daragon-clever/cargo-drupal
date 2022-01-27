@@ -1,14 +1,20 @@
-import { isMobile } from '../helpers/breakpoints'
+// import { isMobile } from '../helpers/breakpoints'
+
+/**
+ * Adding animation class on element
+ * @property {HTMLElement} element
+ * @property {{clickOutside: boolean, openBackdrop: boolean}} options
+ */
 export default class Dropdown {
   constructor (element, options) {
     this._element = element
     this._panel = document.querySelector(`[aria-labelledby="${element.getAttribute('id')}"]`)
     this._groupBtns = document.querySelectorAll(`[data-dropdown-group="${element.dataset.dropdownGroup}"]`)
     this._closeBtn = document.querySelectorAll(`[data-close="${element.id}"]`)
-    this.backdrop = document.querySelector('.fvBackdrop')
+    this.backdrop = document.querySelector('.Backdrop')
     this.options = {
       clickOutside: element.dataset.dropdownOutside === "true" ? true : false,
-      openBackDrop: element.dataset.dropdownBackdrop === "true" ? true : false,
+      openBackdrop: element.dataset.dropdownBackdrop === "true" ? true : false,
       ...options
     }
 
@@ -59,6 +65,10 @@ export default class Dropdown {
       document.addEventListener('click', this.clickOutside, false)
     }
 
+    if (this.options.openBackdrop) {
+      this.backdrop.backdrop.open()
+    }
+
     if (this.options.onOpen) {
       this.options.onOpen()
     }
@@ -71,6 +81,10 @@ export default class Dropdown {
 
     if (this.options.clickOutside) {
       document.removeEventListener('click', this.clickOutside)
+    }
+
+    if (this.options.openBackdrop) {
+      this.backdrop.backdrop.close()
     }
 
     if (this.options.onClose) {

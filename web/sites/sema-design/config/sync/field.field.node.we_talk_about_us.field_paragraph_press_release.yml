@@ -1,21 +1,21 @@
-uuid: 31eada32-59cb-4ec3-9aa8-ccfe8f5d5620
+uuid: 6f79f5a0-7127-41db-b493-0a6a4f7ac02a
 langcode: fr
 status: true
 dependencies:
   config:
     - field.storage.node.field_paragraph_press_release
-    - node.type.inspiration
+    - node.type.we_talk_about_us
     - paragraphs.paragraphs_type.press_release
   module:
     - entity_reference_revisions
-id: node.inspiration.field_paragraph_press_release
+id: node.we_talk_about_us.field_paragraph_press_release
 field_name: field_paragraph_press_release
 entity_type: node
-bundle: inspiration
+bundle: we_talk_about_us
 label: 'Parution presse'
 description: ''
 required: true
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -26,69 +26,75 @@ settings:
       press_release: press_release
     target_bundles_drag_drop:
       brand_history:
-        weight: 23
-        enabled: false
-      contents_table:
-        weight: 24
-        enabled: false
-      contents_table_slide:
         weight: 25
         enabled: false
-      introduction:
+      contents_table:
         weight: 26
         enabled: false
-      label_block:
+      contents_table_slide:
         weight: 27
         enabled: false
-      main_visual:
+      introduction:
         weight: 28
         enabled: false
-      moodboard:
+      label_block:
         weight: 29
         enabled: false
-      our_products:
+      main_visual:
         weight: 30
         enabled: false
-      our_universe:
+      moodboard:
         weight: 31
         enabled: false
-      particular:
+      our_products:
         weight: 32
         enabled: false
-      partnership:
+      our_universe:
         weight: 33
         enabled: false
-      presentation_block:
+      particular:
         weight: 34
         enabled: false
-      press_element:
+      partnership:
         weight: 35
+        enabled: false
+      post_instagram:
+        weight: 36
+        enabled: false
+      presentation_block:
+        weight: 37
+        enabled: false
+      press_element:
+        weight: 38
         enabled: false
       press_release:
         enabled: true
-        weight: 36
-      product_family:
         weight: 39
-        enabled: false
-      products_slider:
-        weight: 37
-        enabled: false
-      products_slider_slide:
-        weight: 38
-        enabled: false
-      slider_homepage:
-        weight: 40
-        enabled: false
-      team_presentation:
-        weight: 41
-        enabled: false
-      text_area:
+      product_family:
         weight: 42
         enabled: false
-      visuals_and_video:
+      products_slider:
+        weight: 40
+        enabled: false
+      products_slider_slide:
+        weight: 41
+        enabled: false
+      section_professionnel:
         weight: 43
         enabled: false
-      who_are_we_slider:
+      slider_homepage:
         weight: 44
+        enabled: false
+      team_presentation:
+        weight: 45
+        enabled: false
+      text_area:
+        weight: 46
+        enabled: false
+      visuals_and_video:
+        weight: 47
+        enabled: false
+      who_are_we_slider:
+        weight: 48
         enabled: false
 field_type: entity_reference_revisions

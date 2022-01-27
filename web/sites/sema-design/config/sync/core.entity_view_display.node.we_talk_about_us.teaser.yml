@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.we_talk_about_us.field_paragraph_introduction
     - field.field.node.we_talk_about_us.field_paragraph_main_visual
     - field.field.node.we_talk_about_us.field_paragraph_partnership
+    - field.field.node.we_talk_about_us.field_paragraph_press_release
     - node.type.we_talk_about_us
   module:
     - user
@@ -26,4 +27,5 @@ hidden:
   field_paragraph_introduction: true
   field_paragraph_main_visual: true
   field_paragraph_partnership: true
+  field_paragraph_press_release: true
   langcode: true

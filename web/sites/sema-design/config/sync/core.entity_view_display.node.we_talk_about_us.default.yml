@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.we_talk_about_us.field_paragraph_introduction
     - field.field.node.we_talk_about_us.field_paragraph_main_visual
     - field.field.node.we_talk_about_us.field_paragraph_partnership
+    - field.field.node.we_talk_about_us.field_paragraph_press_release
     - node.type.we_talk_about_us
   module:
     - entity_reference_revisions
@@ -50,6 +51,15 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    region: content
+  field_paragraph_press_release:
+    weight: 105
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
     region: content
   links:
     weight: 100

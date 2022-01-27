@@ -1,0 +1,13 @@
+{#
+/**
+* @file
+* Locations page
+*
+* @ingroup themeable
+*/
+#}
+
+<div id="js-store-locator-locations">
+    {{ drupal_block('drupal_synapse_search_location_block', {query: query, searchFormDefaultRadius: searchFormDefaultRadius}) }}
+    {{ drupal_block('drupal_synapse_listing_block') }}
+</div>

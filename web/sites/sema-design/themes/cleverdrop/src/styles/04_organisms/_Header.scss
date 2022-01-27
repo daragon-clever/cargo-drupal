@@ -5,7 +5,12 @@
   left: 0;
   background-color: $header-color;
   backdrop-filter: blur(4px);
+  transition: background-color 0.3s;
   z-index: 99;
+
+  &.is-sticky {
+    background-color: var(--white);
+  }
 }
 
 .Header-inner {

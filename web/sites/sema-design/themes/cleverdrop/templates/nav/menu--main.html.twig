@@ -32,9 +32,8 @@ We call a macro which calls itself to render the full tree.
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %}
-      <a href="/" class="Logo">
+      <a href="/" class="Logo" style="--logo-url: url({{ items['logo'] }})">
         <span class="u-srOnly">Accueil</span>
-        {{ items['logo'] }}
       </a>
       <div class="MainMenu-wpr" aria-labelledby="mobile-menu-btn">
         <div class="MainMenu-inner">

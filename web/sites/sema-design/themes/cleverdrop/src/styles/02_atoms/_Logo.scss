@@ -3,11 +3,16 @@
   position: absolute;
   height: rem(34px);
   width: rem(34x);
+  background-color: var(--white);
   transform: scale(1.7) translateY(8px); // scale -> 97px; translate env 20px
   transform-origin: 0 0;
-  transition: transform 0.3s;
+  transition: transform 0.3s, background-color 0.3s;
+  mask-repeat: no-repeat;
+  mask-image: var(--logo-url);
+  mask-size: 100%;
 
   .Header.is-sticky & {
+    background-color: var(--text-color);
     transform: scale(1) translateY(0); // 40px
   }
 

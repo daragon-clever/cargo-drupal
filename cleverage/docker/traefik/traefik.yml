@@ -19,7 +19,6 @@ providers:
 entryPoints:
   web:
     address: ":80"
-    # @TODO enable this once 443 port is routed on the AWS virtual machine
     http:
       redirections:
         entryPoint:

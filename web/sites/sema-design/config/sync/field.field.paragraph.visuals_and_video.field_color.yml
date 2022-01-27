@@ -1,0 +1,22 @@
+uuid: f4a65bfa-564a-410c-9605-c349d51fafe0
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_color
+    - paragraphs.paragraphs_type.visuals_and_video
+  module:
+    - color_field
+id: paragraph.visuals_and_video.field_color
+field_name: field_color
+entity_type: paragraph
+bundle: visuals_and_video
+label: 'Couleur de fond'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

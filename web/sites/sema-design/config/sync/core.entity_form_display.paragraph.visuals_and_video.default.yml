@@ -3,6 +3,7 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - field.field.paragraph.visuals_and_video.field_color
     - field.field.paragraph.visuals_and_video.field_description
     - field.field.paragraph.visuals_and_video.field_picture
     - field.field.paragraph.visuals_and_video.field_second_picture
@@ -11,12 +12,27 @@ dependencies:
     - image.style.thumbnail
     - paragraphs.paragraphs_type.visuals_and_video
   module:
-    - image
+    - color_field
+    - svg_image
 id: paragraph.visuals_and_video.default
 targetEntityType: paragraph
 bundle: visuals_and_video
 mode: default
 content:
+  field_color:
+    weight: 5
+    settings:
+      show_input: '1'
+      palette: ''
+      show_buttons: '1'
+      cancel_text: Annuler
+      choose_text: Choisir
+      allow_empty: '1'
+      show_palette: '0'
+      show_palette_only: '0'
+    third_party_settings: {  }
+    type: color_field_widget_spectrum
+    region: content
   field_description:
     weight: 1
     settings:

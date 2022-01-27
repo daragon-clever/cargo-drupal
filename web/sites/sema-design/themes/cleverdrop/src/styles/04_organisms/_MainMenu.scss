@@ -103,6 +103,10 @@
   @include media-breakpoint-up('md') {
     column-gap: rem(35px);
     color: var(--white);
+
+    .is-sticky & {
+      color: var(--text-color);
+    }
   }
 }
 

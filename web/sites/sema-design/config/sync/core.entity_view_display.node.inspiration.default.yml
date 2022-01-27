@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.inspiration.field_paragraph_contents_table
     - field.field.node.inspiration.field_paragraph_main_visual
     - field.field.node.inspiration.field_paragraph_moodboard
-    - field.field.node.inspiration.field_paragraph_press_release
     - node.type.inspiration
   module:
     - entity_reference_revisions
@@ -46,15 +45,6 @@ content:
   field_paragraph_moodboard:
     type: entity_reference_revisions_entity_view
     weight: 103
-    label: above
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    region: content
-  field_paragraph_press_release:
-    type: entity_reference_revisions_entity_view
-    weight: 105
     label: above
     settings:
       view_mode: default

@@ -8,7 +8,6 @@ dependencies:
     - field.field.node.inspiration.field_paragraph_contents_table
     - field.field.node.inspiration.field_paragraph_main_visual
     - field.field.node.inspiration.field_paragraph_moodboard
-    - field.field.node.inspiration.field_paragraph_press_release
     - node.type.inspiration
   module:
     - user
@@ -27,5 +26,4 @@ hidden:
   field_paragraph_contents_table: true
   field_paragraph_main_visual: true
   field_paragraph_moodboard: true
-  field_paragraph_press_release: true
   langcode: true

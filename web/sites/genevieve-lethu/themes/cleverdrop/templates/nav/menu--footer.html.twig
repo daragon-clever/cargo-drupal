@@ -30,11 +30,13 @@ We call a macro which calls itself to render the full tree.
 {% macro menu_links(items, attributes, menu_level) %}
   {% import _self as menus %}
   {% if items %}
+  <div class="row footer-wrapper">
     {% if menu_level == 0 %}
+      <div class="col-12 col-lg-3 footer-logo">
+        <a href="/">{{ items['logo'] }}</a>
+      </div>
 
-      {{ items['logo'] }}
-
-      <ul{{ attributes }}>
+      <ul class="col-12 col-lg-8 footer-nav">
         {% for name, item in items %}
           {% if name != 'logo' %}
           <li{{ item.attributes }}>
@@ -48,4 +50,5 @@ We call a macro which calls itself to render the full tree.
       </ul>
     {% endif %}
   {% endif %}
+  </div>
 {% endmacro %}

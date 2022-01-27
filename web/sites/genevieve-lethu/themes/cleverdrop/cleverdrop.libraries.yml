@@ -4,4 +4,4 @@ common-styles:
     theme:
       public/css/styles.css: {}
   js:
-    public/js/script.js: {}
+    public/js/scripts.js: {}

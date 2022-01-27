@@ -88,7 +88,7 @@ module.exports = (env, argv) => [{
 }, {
   name: 'scripts',
   entry: {
-    scrpits: './src/js/scripts.js'
+    scripts: './src/js/scripts.js'
   },
   output: {
     path: path.resolve(__dirname, 'public/js'),

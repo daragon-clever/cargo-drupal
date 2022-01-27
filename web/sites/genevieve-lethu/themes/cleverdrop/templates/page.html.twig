@@ -1,11 +1,19 @@
 {#% include directory ~ '/templates/helper-grid/helper-grid.html.twig' %#}
 
-<header>
-    {{ page.header }}
+<header class="header">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-xl-10">
+        {{ page.header }}
+      </div>
+    </div>
+  </div>
 </header>
 <main>
     {{ page.content }}
 </main>
-<footer>
+<footer class="footer">
+  <div class="container">
     {{ page.footer }}
+  </div>
 </footer>

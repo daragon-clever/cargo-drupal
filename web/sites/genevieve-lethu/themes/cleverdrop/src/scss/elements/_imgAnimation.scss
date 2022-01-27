@@ -1,7 +1,7 @@
 // Animation of appearance of images, slide from bottom to top
 
 .imgAnimation {
-  background-color: var(--light);
+  background-color: $light;
 
   img {
     clip-path: polygon(0 0, 0 0, 100% 0, 100% 0);

@@ -11,14 +11,24 @@
 
 html {
   overflow-x: hidden;
+
+  &.is-fixed {
+    @include mq($until: lg) {
+      overflow: hidden;
+    }
+  }
 }
 
 body {
   @include font(base, light);
   font-size: rem($body-font-size);
   line-height: unitless-line-height(16px, 25px);
-  color: var(--theme);
-  background-color: var(--white);
+  color: $theme;
+  background-color: $white;
   margin: 0;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.contextual-region {
+  position: static; // Override relative position on native Drupal markup
 }

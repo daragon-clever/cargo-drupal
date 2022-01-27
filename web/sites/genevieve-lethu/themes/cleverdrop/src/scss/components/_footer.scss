@@ -1,0 +1,62 @@
+.footer {
+  background-color: $light;
+  border-top: 4px solid darken($light, 20%);
+
+  &-wrapper {
+    @include mq($from: lg) {
+      height: rem(78px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &-logo {
+    text-align: center;
+    padding: rem(20px) 0;
+
+    img {
+      max-width: rem(140px);
+    }
+
+    @include mq($from: lg) {
+      text-align: left;
+      padding: 0;
+
+      img {
+        max-width: rem(200px);
+      }
+    }
+  }
+
+  &-nav {
+    text-align: center;
+
+    @include mq($from: lg) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    > li {
+      margin-bottom: rem(25px);
+
+      @include mq($from: lg) {
+        margin-bottom: 0;
+      }
+    }
+
+    a {
+      @include font(base, bold);
+      font-size: rem(11px);
+      color: $theme-secondary;
+      text-transform: uppercase;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+    }
+  }
+}

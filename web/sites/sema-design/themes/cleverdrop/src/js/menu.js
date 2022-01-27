@@ -1,28 +1,36 @@
 import Dropdown from './components/dropdown'
 
 window.addEventListener('DOMContentLoaded', () => {
-  // MENU
-  const menuToggles = document.querySelectorAll('[data-menu-toggle="menuToggle"]')
-  Array.prototype.map.call(menuToggles, toggle => {
-    if(toggle) {
-      toggle.dropdown = new Dropdown(toggle, {
-        clickOutside: '.fvMainMenu',
-        onOpen: () => {
-          const backdrop = document.querySelector('.fvBackdrop')
-          backdrop.backdrop.open()
-        },
-        onClose: () => {
-          const backdrop = document.querySelector('.fvBackdrop')
-          backdrop.backdrop.close()
-        }
-      })
-    }
-  })
 
-  const MainMenuBtns = document.querySelectorAll('[data-submenu-btn]')
+  // Mobile menu
+  const MainMenuBtns = document.querySelectorAll('[data-mobile-menu]')
   Array.prototype.map.call(MainMenuBtns, btn => {
     btn.dropdown = new Dropdown(btn, {
-      clickOutside: true,
+      clickOutside: '.MainMenu-inner',
+      onOpen: () => {
+        const body = document.querySelector('body')
+        body.classList.add('has-backdrop')
+      },
+      onClose: () => {
+        const body = document.querySelector('body')
+        body.classList.remove('has-backdrop')
+      }
+    })
+  })
+
+  // SubMenus open
+  const MainSubMenuBtns = document.querySelectorAll('[data-submenu-btn]')
+  Array.prototype.map.call(MainSubMenuBtns, btn => {
+    btn.dropdown = new Dropdown(btn, {
+      clickOutside: '.MainSubMenu-inner',
+      onOpen: () => {
+        const body = document.querySelector('body')
+        body.classList.add('has-backdrop')
+      },
+      onClose: () => {
+        const body = document.querySelector('body')
+        body.classList.remove('has-backdrop')
+      }
     })
   })
 })

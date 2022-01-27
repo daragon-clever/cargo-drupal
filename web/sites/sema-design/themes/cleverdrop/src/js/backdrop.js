@@ -1,17 +1,14 @@
-export default class Backdrop {
-  constructor (element, options) {
+/**
+ * Adding animation class on element
+ * @property {HTMLElement} element
+ */
+class Backdrop {
+  /**
+   * @param {HTMLElement} element
+   */
+  constructor (element) {
     this._element = element
     this._body = document.querySelector('body')
-
-    element.addEventListener('backdrop:open', e => {
-      e.preventDefault()
-      this.open()
-    })
-
-    element.addEventListener('backdrop:close', e => {
-      e.preventDefault()
-      this.close()
-    })
   }
 
   open({ higher, top } = {}) {
@@ -26,4 +23,18 @@ export default class Backdrop {
     this._element.classList.remove('is-higher')
     this._body.classList.remove('backdrop-open')
   }
+
+  /**
+   * 
+   * @returns {Backdrop[]}
+   */
+   static bind () {
+    return Array.from(document.querySelectorAll('[data-backdrop]')).map(
+      (element) => {
+        return element.backdrop = new Backdrop(element)
+      }
+    )
+  }
 }
+
+Backdrop.bind()

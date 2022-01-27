@@ -1,9 +1,9 @@
 .Logo {
   display: flex;
   position: absolute;
-  height: rem(40px);
-  width: rem(40px);
-  transform: scale(2.425) translateY(8px); // scale -> 97px; translate env 20px
+  height: rem(34px);
+  width: rem(34x);
+  transform: scale(1.7) translateY(8px); // scale -> 97px; translate env 20px
   transform-origin: 0 0;
   transition: transform 0.3s;
 
@@ -12,5 +12,8 @@
   }
 
   @include media-breakpoint-up('md') {
+    height: rem(40px);
+    width: rem(40px);
+    transform: scale(2.425) translateY(8px); // scale -> 97px; translate env 20px
   }
 }

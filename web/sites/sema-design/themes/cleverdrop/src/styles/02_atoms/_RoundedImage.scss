@@ -1,0 +1,19 @@
+.RoundedImage {
+  overflow: hidden;
+  width: rem(40px);
+  height: rem(40px);
+  border-radius: rem(40px);
+
+  @include media-breakpoint-up('md') {
+    width: rem(77px);
+    height: rem(77px);
+    border-radius: rem(77px);
+  }
+
+  img {
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}

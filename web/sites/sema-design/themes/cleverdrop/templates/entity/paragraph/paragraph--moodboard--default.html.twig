@@ -6,10 +6,29 @@
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
-      <div class="MoodBoard MoodBoardAlternative" style="--sail-color: {{content.field_color[0]['#markup']}};">
+      <div class="MoodBoard" style="--sail-color: {{content.field_color[0]['#markup']}};">
         <div class="Section-inner MoodBoard--inner">
           <h2 class="MoodBoard-title">{{ content.field_title }}</h2>
           <div class="MoodBoard-left">
+            <div class="ImageAnimationWpr MoodBoard-leftImg" data-animate>
+              <div class="BrushesImageWpr">
+                <ul class="Brushes">
+                  {% for i in content.field_traces_paint['#items']|keys %}
+                    <li style="color: {{ content.field_traces_paint[i] }}">
+                      {% include directory ~ '/src/assets/svg/brush-' ~ i ~ '.svg' %}
+                    </li>
+                  {% endfor %}
+                </ul>
+                <div class="FirstImg">
+                  {{ content.field_picture }}
+                </div>
+              </div>
+              <p class="MoodBoard-text">
+                {{ content.field_description }}
+              </p>
+            </div>
+          </div>
+          <div class="MoodBoard-right">
             <div class="ImageList" data-animate>
               {% for i in content.field_rounded_pictures['#items']|keys %}
                 <div class="RoundedImage">
@@ -28,25 +47,6 @@
                 <li>{{ content.field_keywords[i] }}</li>
               {% endfor %}
             </ul>
-          </div>
-          <div class="MoodBoard-right">
-            <div class="ImageAnimationWpr MoodBoard-leftImg" data-animate>
-              <div class="BrushesImageWpr">
-                <ul class="Brushes">
-                  {% for i in content.field_traces_paint['#items']|keys %}
-                    <li style="color: {{ content.field_traces_paint[i] }}">
-                      {% include directory ~ '/src/assets/svg/brush-' ~ i ~ '.svg' %}
-                    </li>
-                  {% endfor %}
-                </ul>
-                <div class="FirstImg">
-                  {{ content.field_picture }}
-                </div>
-              </div>
-              <p class="MoodBoard-text">
-                {{ content.field_description }}
-              </p>
-            </div>
           </div>
         </div>
       </div>

@@ -5,8 +5,10 @@ dependencies:
   config:
     - field.field.node.page.body
     - field.field.node.page.field_metatags
+    - field.field.node.page.field_paragraph_main_visual
     - node.type.page
   module:
+    - entity_reference_revisions
     - metatag
     - text
     - user
@@ -30,6 +32,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: metatag_empty_formatter
+    region: content
+  field_paragraph_main_visual:
+    weight: 103
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
     region: content
   links:
     weight: 101

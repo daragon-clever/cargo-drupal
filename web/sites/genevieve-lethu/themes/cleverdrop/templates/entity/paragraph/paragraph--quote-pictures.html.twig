@@ -3,16 +3,24 @@
   'paragraph',
   'paragraph--type--' ~ paragraph.bundle|clean_class,
   view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-  not paragraph.isPublished() ? 'paragraph--unpublished'
+  not paragraph.isPublished() ? 'paragraph--unpublished',
+  'u-bg-yellow',
+  'triangleBorder-top',
+  'triangleBorder-bottom'
 ]
 %}
 {% block paragraph %}
-  <div{{ attributes.addClass(classes) }}>
+  <div{{ attributes.addClass(classes) }} style="background-image: url('{{ content.field_picture.url }}');">
     {% block content %}
-      {{ content.field_text }}
-      {{ content.field_author }}
-      {{ content.field_picture_second }} {# assiette picture #}
-      {{ content.field_picture }} {# background picture #}
+    <div class="row justify-content-end">
+      <blockquote class="col-12 col-md-7 --withBg --sameColor --left">
+        {{ content.field_text }}
+        <cite>{{ content.field_author }}</cite>
+      </blockquote>
+      <div class="col-12 col-md-4">
+        {{ content.field_picture_second }}
+      </div>
+    </div>
     {% endblock %}
   </div>
 {% endblock paragraph %}

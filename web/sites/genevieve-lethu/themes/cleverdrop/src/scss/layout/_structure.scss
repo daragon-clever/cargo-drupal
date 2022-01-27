@@ -22,7 +22,7 @@ html {
 body {
   @include font(base, light);
   font-size: rem($body-font-size);
-  line-height: unitless-line-height(16px, 25px);
+  line-height: unitless-line-height(25px, 16px);
   color: $theme;
   background-color: $white;
   margin: 0;

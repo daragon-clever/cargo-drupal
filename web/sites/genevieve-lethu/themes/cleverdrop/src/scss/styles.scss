@@ -34,6 +34,8 @@
 @import "elements/links";
 @import "elements/svg";
 @import "elements/headings";
+@import "elements/blockquote";
+@import "elements/triangleBorder";
 
 /* -------------------------------------------------------------------------- *\
   # COMPONENTS
@@ -47,3 +49,5 @@
 \* -------------------------------------------------------------------------- */
 @import "utilities/extendedlink";
 @import "utilities/mask";
+@import "utilities/fitScreen";
+@import "utilities/bg";

@@ -1,0 +1,29 @@
+ /// Background
+ //
+ // markup:
+ // <div class="u-bg-theme"><div>
+ //
+ // Styleguide Elements.bg
+
+
+.u-bg {
+  &-themeSecondary {
+    background-color: $theme-secondary;
+
+    &::before,
+    &::after {
+      content: "";
+      color: $theme-secondary; // For triangleBorder.scss can take the current background color
+    }
+  }
+
+  &-yellow {
+    background-color: $hokey-pokey;
+
+    &::before,
+    &::after {
+      content: "";
+      color: $hokey-pokey; // For triangleBorder.scss can take the current background color
+    }
+  }
+}

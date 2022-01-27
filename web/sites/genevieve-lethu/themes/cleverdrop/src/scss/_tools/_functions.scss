@@ -183,6 +183,6 @@
 ///     line-height: 1.66667;
 ///   }
 ///
-@function unitless-line-height($font-size, $line-height) {
+@function unitless-line-height($line-height, $font-size) {
     @return strip-unit(calc($line-height / $font-size));
 }

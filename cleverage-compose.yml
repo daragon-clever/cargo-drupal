@@ -89,6 +89,7 @@ services:
     environment:
       COMPOSE_PROJECT_NAME: "${COMPOSE_PROJECT_NAME}"
       TRAEFIK_DOMAIN: "${TRAEFIK_DOMAIN}"
+      TRAEFIK_BEHIND_PROXY: "${TRAEFIK_BEHIND_PROXY:-false}"
       DEBUG: "true"
     entrypoint: ["/opt/traefik/dev-entrypoint.sh"]
     command: "traefik --configfile /etc/traefik.yml"

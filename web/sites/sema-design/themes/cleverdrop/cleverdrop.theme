@@ -11,7 +11,8 @@ function cleverdrop_preprocess_menu(&$variables, $hook)
     $variables['items']['logo'] = NULL;
     if (!empty($myConfigPage)) {
       if ($hook == 'menu__main') {
-        $variables['items']['logo'] = $myConfigPage->get('field_logo_header')->view();
+        $variables['items']['logo'] = $myConfigPage->get('field_logo_header');
+        $variables['items']['logo'] = file_create_url($variables['items']['logo'][0]->entity->getFileUri());
       }
     }
   }

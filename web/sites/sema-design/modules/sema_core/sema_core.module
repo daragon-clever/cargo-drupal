@@ -54,7 +54,24 @@ function _sema_core_node_who_we_are_validate(&$form, \Drupal\Core\Form\FormState
   }
 }
 
+/**
+ * Implements hook_page_attachements().
+ */
 function sema_core_page_attachments(array &$page) {
-
     $page['#attached']['library'][] = 'sema_core/sema_core';
+}
+
+function sema_core_theme_registry_alter(&$theme_registry) {
+  $theme_registry['search_location_block']['variables']['sema'] = NULL;
+}
+
+function sema_core_preprocess_block(&$variables) {
+  if($variables['plugin_id'] == 'drupal_synapse_search_location_block') {
+    $myConfigPage = \Drupal\config_pages\Entity\ConfigPages::config('page_find_our_products');
+    if (!empty($myConfigPage)) {
+      $variables['content']['#sema']['description'] = $myConfigPage->get('field_description')->value;
+      $variables['content']['#sema']['title'] = $myConfigPage->get('field_title')->value;
+      $variables['content']['#sema']['mainPicture'] = $myConfigPage->get('field_main_picture')->view();
+    }
+  }
 }

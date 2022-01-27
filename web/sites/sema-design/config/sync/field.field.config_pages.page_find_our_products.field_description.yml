@@ -1,0 +1,19 @@
+uuid: b39a0bd1-9624-4371-a312-b9a07355388d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - config_pages.type.page_find_our_products
+    - field.storage.config_pages.field_description
+id: config_pages.page_find_our_products.field_description
+field_name: field_description
+entity_type: config_pages
+bundle: page_find_our_products
+label: Description
+description: 'Nous préconisons 110 caractères, espaces compris'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

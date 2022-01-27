@@ -1,9 +1,0 @@
-sarbacaneconfig:
-  api_url: 'https://sarbacaneapis.com/v1/'
-  account_id: 60dedcc911ce621bb2fb4a09
-  api_key: 2x3iUPlAQ1m2c4vyfJZPbA
-  contact_list_id: ''
-  unsubscribe_list_id: ''
-_core:
-  default_config_hash: 72x__NNDXEJufEPPY6An2sT2RIP5c7D7emrho4NKgKs
-langcode: fr

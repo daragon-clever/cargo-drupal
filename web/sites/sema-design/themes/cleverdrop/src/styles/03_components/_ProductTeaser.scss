@@ -1,0 +1,43 @@
+.ProductTeaser {
+  position: relative;
+
+  @include media-breakpoint-up('md') {
+    flex: calc(100%/3 - $gutter-size) 1 1;
+    min-width: rem(350px);
+  
+    &:nth-child(-n+2) {
+      flex: calc(50% - math.div($gutter-size, 2)) 1 1;
+    }
+  }
+}
+
+.ProductTeaser-title {
+  font-size: rem(25px);
+  margin-bottom: 0;
+}
+
+.ProductTeaser-img {
+  margin-bottom: rem(25px);
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: auto;
+    transition: transform 2s;
+
+    .ProductTeaser:hover & {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.ProductTeaser-link {
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}

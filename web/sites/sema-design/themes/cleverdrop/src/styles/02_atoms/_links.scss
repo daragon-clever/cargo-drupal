@@ -1,3 +1,18 @@
 .Link {
+  @include u-work-sans-regular;
+  font-size: rem(14px);
   display: inline-flex;
+  color: var(--text-color);
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  svg {
+    height: re(6px);
+    width: rem(15px);
+    fill: currentColor;
+    margin-left: rem(10px);
+  }
 }

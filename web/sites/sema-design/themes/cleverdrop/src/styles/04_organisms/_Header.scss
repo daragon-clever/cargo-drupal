@@ -11,6 +11,10 @@
   &.is-sticky {
     background-color: var(--white);
   }
+  
+  .adminimal-admin-toolbar & {
+    top: 39px;
+  }
 }
 
 .Header-inner {

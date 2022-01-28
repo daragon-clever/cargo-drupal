@@ -32,8 +32,9 @@ We call a macro which calls itself to render the full tree.
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %}
-      <a href="/" class="Logo" style="--logo-url: url({{ items['logo'] }})">
+      <a href="/" class="Logo">
         <span class="u-srOnly">Accueil</span>
+        {% include directory ~ '/src/assets/svg/sema-logo.svg' %}
       </a>
       <div class="MainMenu-wpr" aria-labelledby="mobile-menu-btn">
         <div class="MainMenu-inner">

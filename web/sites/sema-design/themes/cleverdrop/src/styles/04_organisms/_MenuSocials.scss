@@ -1,0 +1,33 @@
+.MenuSocials {
+  display: flex;
+  column-gap: rem(15px);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.MenuSocials-link {
+  display: flex;
+  column-gap: rem(15px);
+  transition: opacity 0.3s;
+
+  svg {
+    fill: var(--text-color);
+  }
+
+
+  &:hover,
+  &:focus-visible {
+    opacity: 0.8;
+  }
+
+  @include media-breakpoint-down('md') {
+    height: rem(40px);
+    width: rem(40px);
+  }
+
+  @include media-breakpoint-up('md') {
+    height: rem(30px);
+    width: rem(30px);
+  }
+}

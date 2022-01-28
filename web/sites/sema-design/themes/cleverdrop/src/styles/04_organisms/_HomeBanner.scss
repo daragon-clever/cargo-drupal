@@ -33,23 +33,29 @@
 
 .HomeBanner-slide {
   height: 100%;
-  
+}
+
+.HomeBanner-slideImg {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  background-color: var(--black);
+  opacity: 0;
+  transition: opacity 1.875s cubic-bezier(0.33, 0, 0.2, 1);
+  animation: zoomOut 4s linear forwards;
+
   img {
     display: block;
     height: 100%;
     width: 100%;
+    opacity: 0.8;
     object-fit: cover;
-    opacity: 0;
-    transition: opacity 1.875s cubic-bezier(0.33, 0, 0.2, 1);
-    animation: zoomOut 4s linear forwards;
   }
 
-  &.is-active {
-    img {
-      opacity: 1;
-      transform: scale(1.25);
-      animation: zoomIn 4s linear forwards;
-    }
+  .is-active & {
+    opacity: 1;
+    transform: scale(1.25);
+    animation: zoomIn 4s linear forwards;
   }
 }
 

@@ -11,27 +11,19 @@ use Drupal\Core\Session\AccountInterface;
  * Provides a block with a simple text.
  *
  * @Block(
- *   id = "find_our_products",
- *   admin_label = @Translation("Trouvez nos produits"),
+ *   id = "menu_footer",
+ *   admin_label = @Translation("Social and links menu"),
  * )
  */
-class find_our_products extends BlockBase {
+class footerMenu extends BlockBase {
   /**
    * {@inheritdoc}
    */
   public function build() {
     $datas = [];
 
-    $myConfigPage = \Drupal\config_pages\Entity\ConfigPages::config('find_our_products');
-    if (!empty($myConfigPage)) {
-      $datas['description'] = $myConfigPage->get('field_description')->value;
-      $datas['title'] = $myConfigPage->get('field_title')->value;
-      $datas['cta_link'] = $myConfigPage->get('field_cta')->uri;
-      $datas['cta'] = $myConfigPage->get('field_cta')->title;
-    }
-
     return [
-      '#theme' => 'sema_block__find_our_products',
+      '#theme' => 'sema_block__menu_footer',
       '#content' => $datas
     ];
   }

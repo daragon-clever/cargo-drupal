@@ -14,10 +14,13 @@
   right: 0;
   left: 0;
   bottom: 0;
+  background-color: var(--black);
+  pointer-events: none;
 
   img {
     height: 100%;
     width: 100%;
+    opacity: 0.8;
     object-fit: cover;
   }
 }
@@ -26,20 +29,20 @@
   display: inline-block;
   text-align: center;
   z-index: 1;
+}
 
-  .MainVisual-title {
-    font-size: 65px;
-    @include u-cormorant-regular;
-    color: var(--white);
-    @include media-breakpoint-down('md') {
-      font-size: 35px;
-    }
-  }
+.MainVisual-title {
+  @include u-cormorant-regular;
+  font-size: 65px;
+  color: var(--white);
 
-  .MainVisual-onTitle {
+  @include media-breakpoint-down('md') {
     font-size: 35px;
-    @include u-quentin-regular;
-    color: var(--white);
   }
 }
 
+.MainVisual-onTitle {
+  @include u-quentin-regular;
+  font-size: 35px;
+  color: var(--white);
+}

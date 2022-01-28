@@ -31,5 +31,11 @@ function sema_block_theme($existing, $type, $theme, $path)
         'content' => [],
       ],
     ],
+    'sema_block__menu_footer' => [
+      'template' => 'sema-block--menu-footer',
+      'variables' => [
+        'content' => [],
+      ],
+    ],
   ];
 }

@@ -14,3 +14,8 @@
     grid-column-start: $offset + 1;
   }
 }
+
+@mixin make-container($col-nb: 6) {
+  max-width: $col-nb * $col-size + ($col-nb - 1) * $gutter-size;
+  margin: auto;
+}

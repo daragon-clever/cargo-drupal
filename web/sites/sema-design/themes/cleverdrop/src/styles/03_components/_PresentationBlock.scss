@@ -1,0 +1,71 @@
+.PresentationBlock {
+  position: relative;
+
+  &.is-animate {
+    .LeftBrush {
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+
+    .RightBrush {
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+  }
+
+  .LeftBrush,
+  .RightBrush {
+    position: absolute;
+    width: rem(320px);
+    fill: var(--white);
+    opacity: 0.5;
+    transform: translateY(-50%);
+    transition: clip-path 0.5s;
+    animation-fill-mode: forwards;
+
+    @include media-breakpoint-up('md') {
+      display: block;
+    }
+  }
+
+  .LeftBrush {
+    top: 20%;
+    clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+    transform: translateY(-50%) rotateX(180deg);
+
+    use {
+      transform: translateX(-30%);
+    }
+
+    @include media-breakpoint-down('md') {
+      display: none;
+    }
+  }
+
+  .RightBrush {
+    right: 0;
+    bottom: -50%;
+    clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
+
+    use {
+      transform: translateX(30%);
+    }
+  }
+}
+
+.PresentationBlock--inner {
+  @include make-container(6);
+  position: relative;
+  
+  @include media-breakpoint-down('md') {
+    text-align: center;
+    padding-top: rem(50px);
+    padding: rem(50px) map-get($section-padding, xs);
+  }
+
+  @include media-breakpoint-up('md') {
+    padding: rem(120px) map-get($section-padding, md);
+  }
+}
+
+.PresentationBlock-title {
+  text-align: center;
+}

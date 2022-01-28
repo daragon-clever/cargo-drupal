@@ -10,9 +10,6 @@
     margin-left: auto;
     margin-top: auto;
     margin-bottom: auto;
-
-    &.is-active {
-    }
   }
 }
 
@@ -42,14 +39,25 @@
     top: rem(8px);
   }
 
+  .is-sticky & {
+    background-color: var(--text-color);
+
+    &::before,
+    &::after {
+      background-color: var(--text-color);
+    }
+  }
+
   .is-active & {
     background-color: transparent;
 
     &::before {
+      background-color: var(--white);
       transform: rotateZ(45deg) scaleX(1.25) translate(5px, 5px);
     }
   
     &::after {
+      background-color: var(--white);
       transform: rotateZ(-45deg) scaleX(1.25) translate(5px, -5px);
     }
   }

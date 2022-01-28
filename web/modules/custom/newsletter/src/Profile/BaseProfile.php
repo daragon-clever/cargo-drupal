@@ -3,6 +3,7 @@
 namespace Drupal\newsletter\Profile;
 
 use Drupal\Core\Datetime\DrupalDateTime;
+use Drupal\newsletter\Helper\DataFormatHelper;
 use Drupal\newsletter\NewsletterSubscriberRepository;
 
 class BaseProfile implements ProfileInterface
@@ -35,15 +36,14 @@ class BaseProfile implements ProfileInterface
     public function saveNewsletterContact(array $dataReceived)
     {
         $subscriber = $this->subscriberRepository->getSubscriberByEmail($dataReceived['email']);
-        if (empty($subscriber)) {
+        if (!$this->isValidSubscriber($subscriber)) {
             $subscriberForDb = $this->formatSubscriberForInsert($dataReceived);
-            $this->subscriberRepository->insert($subscriberForDb);
-            $subscriber = $this->subscriberRepository->getSubscriberByEmail($dataReceived['email']);
+            $idSubscriber = $this->subscriberRepository->insert($subscriberForDb);
+            $subscriber = $this->subscriberRepository->getSubscriber($idSubscriber);
         } else {
             $this->isUpdated = true;
             $subscriberForDb = $this->formatSubscriberForUpdate($dataReceived);
-            $this->subscriberRepository->updateByEmail($subscriberForDb);
-            $subscriber = $this->subscriberRepository->getSubscriberByEmail($dataReceived['email']);
+            $subscriber = $this->subscriberRepository->update($subscriberForDb, $subscriber['id']);
         }
 
         return $subscriber;
@@ -53,8 +53,6 @@ class BaseProfile implements ProfileInterface
     {
         $subscriberForInsert = [
             "email" => $dataReceived['email'],
-            "created_at" => $this->date->format("Y-m-d H:i:s"),
-            "updated_at" => $this->date->format("Y-m-d H:i:s"),
             "active" => 1,
         ];
         $moreData = $this->addDataOnSubscriberBeforeInsert($dataReceived);
@@ -70,7 +68,6 @@ class BaseProfile implements ProfileInterface
     {
         $subscriberForUpdate = [
             'email' => $dataReceived['email'],
-            "updated_at" => $this->date->format("Y-m-d H:i:s"),
             "active" => 1,
         ];
         $moreData = $this->addDataOnSubscriberBeforeUpdate($dataReceived);
@@ -90,5 +87,10 @@ class BaseProfile implements ProfileInterface
             $msg = t("Thank you for subscribing to the newsletter");
         }
         return $msg;
+    }
+
+    private function isValidSubscriber($subscriber)
+    {
+        return !empty($subscriber) && isset($subscriber['id']) && (int)$subscriber['id'] > 0;
     }
 }

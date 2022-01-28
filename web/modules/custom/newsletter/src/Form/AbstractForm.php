@@ -83,10 +83,7 @@ abstract class AbstractForm extends FormBase
 
         /** @var ProfileInterface $profile */
         $profile = $this->initProfile(); //init company profile
-        $subscriber = $profile->saveNewsletterContact($data); //save subscriber on db
-
-        $event = new NewsletterSaveEvent($subscriber); //create and dispatch event for other module
-        \Drupal::service('event_dispatcher')->dispatch($event::EVENT_NAME, $event);
+        $profile->saveNewsletterContact($data); //save subscriber on db
 
         $txtReturn = $profile->getTxtReturn(); //return txt to display
 

@@ -5,6 +5,8 @@ namespace Drupal\newsletter;
 use Drupal\Core\Database\Connection;
 use Drupal\Core\Database\Query\SelectInterface;
 use Drupal\Core\Database\Query\Update;
+use Drupal\Core\Datetime\DrupalDateTime;
+use Drupal\newsletter\Event\NewsletterSaveEvent;
 
 class NewsletterSubscriberRepository
 {
@@ -53,7 +55,7 @@ class NewsletterSubscriberRepository
             \Drupal::logger('newsletter')->error('Get failed. Message => ' . $e->getMessage());
         }
 
-        return !empty($subscriber) ? $subscriber : null;
+        return !empty($subscriber) ? (array)$subscriber : null;
     }
 
     /**
@@ -67,13 +69,12 @@ class NewsletterSubscriberRepository
                 ->condition('email', $email)
                 ->range(0, 1)
                 ->execute()
-                ->fetchAssoc()
-            ;
+                ->fetchAssoc();
         } catch(\Exception $e) {
             \Drupal::logger('newsletter')->error('Get failed. Message => ' . $e->getMessage());
         }
 
-        return !empty($subscriber) ? $subscriber : null;
+        return !empty($subscriber) ? (array)$subscriber : null;
     }
 
     public function getSubscribersByCondition(string $conditionName, $conditionValue, string $operator = null)
@@ -97,55 +98,79 @@ class NewsletterSubscriberRepository
      */
     public function insert(array $entry): ?int
     {
+        $entry['created_at'] = $this->createCurrentDatetime();
+        $entry['updated_at'] = $this->createCurrentDatetime();
+
+        $returnValue = null;
         try {
-            $return_value = $this->connection->insert(self::TABLE_NAME)
+            $returnValue = $this->connection->insert(self::TABLE_NAME)
                 ->fields($entry)
                 ->execute();
         } catch(\Exception $e) {
             \Drupal::logger('newsletter')->error('Insert failed. Message => ' . $e->getMessage());
         }
 
-        return intval($return_value) ?? null;
+        if (intval($returnValue)) {
+            $subscriber = $this->getSubscriber($returnValue);
+            $this->dispatchNewsletterSaveEvent($subscriber);
+
+            return (int)$returnValue;
+        }
     }
 
     /**
      * @param array $entry
      * @param int $id
-     * @return int
+     * @return array|null
      */
-    public function update(array $entry, int $id): int
+    public function update(array $entry, int $id): ?array
     {
+        $entry['updated_at'] = $this->createCurrentDatetime();
+
+        $count = null;
         try {
             $count = $this->queryUpdate()
                 ->fields($entry)
                 ->condition('id', $id)
-                ->execute()
-            ;
+                ->execute();
         } catch(\Exception $e) {
             \Drupal::logger('newsletter')->error('Update failed. Message => ' . $e->getMessage());
         }
 
-        return intval($count) ?? 0;
+        \Drupal::logger('newsletter')->notice($count);
+        if (intval($count) && $count >= 1) {
+            $subscriber = $this->getSubscriber($id);
+            $this->dispatchNewsletterSaveEvent($subscriber);
+
+            return $subscriber;
+        }
     }
 
     /**
      * @param array $entry
-     * @return int
+     * @return array|null
      */
-    public function updateByEmail(array $entry): int
+    public function updateByEmail(array $entry): ?array
     {
+        $entry['updated_at'] = $this->createCurrentDatetime();
+
+        $count = null;
         try {
             $count = $this->queryUpdate()
                 ->fields($entry)
                 ->condition('email', $entry['email'])
-                ->execute()
-            ;
+                ->execute();
         } catch(\Exception $e) {
             \Drupal::logger('newsletter')->error('Update failed. Message => ' . $e->getMessage());
         }
 
+        \Drupal::logger('newsletter')->notice($count);
+        if (intval($count) && $count >= 1) {
+            $subscriber = $this->getSubscriberByEmail($entry['email']);
+            $this->dispatchNewsletterSaveEvent($subscriber);
 
-        return intval($count) ?? 0;
+            return $subscriber;
+        }
     }
 
     /**
@@ -163,5 +188,17 @@ class NewsletterSubscriberRepository
     {
         return $this->connection->select(self::TABLE_NAME)
             ->fields(self::TABLE_NAME);
+    }
+
+    private function createCurrentDatetime()
+    {
+        $date = new DrupalDateTime();
+        return $date->format("Y-m-d H:i:s");
+    }
+
+    private function dispatchNewsletterSaveEvent($subscriber)
+    {
+        $event = new NewsletterSaveEvent($subscriber); //create and dispatch event for other module
+        \Drupal::service('event_dispatcher')->dispatch($event::EVENT_NAME, $event);
     }
 }

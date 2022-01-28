@@ -26,20 +26,21 @@
 We call a macro which calls itself to render the full tree.
 @see https://twig.symfony.com/doc/1.x/tags/macro.html
 #}
-{{ menus.menu_links(items, attributes, 0) }}
-{% macro menu_links(items, attributes, menu_level) %}
+{{ menus.menu_links(directory, items, attributes, 0) }}
+{% macro menu_links(directory, items, attributes, menu_level) %}
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %}
-<ul{{ attributes }}>
+<ul{{ attributes }} class="MenuSocials">
   {% else %}
   <ul>
     {% endif %}
     {% for item in items %}
-      <li{{ item.attributes }}>
-        {{ link(item.title, item.url) }}
-        {# Bind css on this var for social icon #}
-        {{ item.entity.field_social.value }}
+      <li{{ item.attributes }} class="MenuSocials-item">
+        <a href="{{ item.url }}" class="MenuSocials-link">
+          <span class="u-srOnly">{{ item.title }}</span>
+          {% include directory ~ '/src/assets/svg/' ~ item.entity.field_social.value ~ '.svg' %}
+        </a>
       </li>
     {% endfor %}
   </ul>

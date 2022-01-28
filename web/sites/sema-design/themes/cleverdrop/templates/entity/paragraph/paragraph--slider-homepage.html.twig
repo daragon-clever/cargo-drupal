@@ -10,7 +10,9 @@
         <div class="Slider-wrapper">
           {% for i in content.field_picture_slide['#items']|keys %}
           <div class="Slider-slide HomeBanner-slide">
-            {{ content.field_picture_slide[i] }}
+            <div class="HomeBanner-slideImg">
+              {{ content.field_picture_slide[i] }}
+            </div>
           </div>
           {% endfor %}
         </div>

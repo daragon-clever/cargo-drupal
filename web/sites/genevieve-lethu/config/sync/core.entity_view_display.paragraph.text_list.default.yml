@@ -1,0 +1,44 @@
+uuid: cefdc6c3-fe53-4d76-833e-7320536eb3ee
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.text_list.field_cta
+    - field.field.paragraph.text_list.field_rte_lite
+    - field.field.paragraph.text_list.field_test_list
+    - paragraphs.paragraphs_type.text_list
+  module:
+    - link
+    - text
+id: paragraph.text_list.default
+targetEntityType: paragraph
+bundle: text_list
+mode: default
+content:
+  field_cta:
+    weight: 2
+    label: visually_hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_rte_lite:
+    weight: 0
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_test_list:
+    weight: 1
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+hidden: {  }

@@ -1,0 +1,38 @@
+uuid: 8e5821f9-d443-4685-94a2-f66482e06f62
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_desktop_background_picture
+    - paragraphs.paragraphs_type.main_picture_2
+  module:
+    - image
+id: paragraph.main_picture_2.field_desktop_background_picture
+field_name: field_desktop_background_picture
+entity_type: paragraph
+bundle: main_picture_2
+label: 'Visuel arrière plan'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

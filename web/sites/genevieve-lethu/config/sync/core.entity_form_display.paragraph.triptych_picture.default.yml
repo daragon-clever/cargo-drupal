@@ -1,0 +1,44 @@
+uuid: 8d549dc0-d4de-44b9-87a3-37199f92b2d3
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.triptych_picture.field_picture
+    - field.field.paragraph.triptych_picture.field_picture_second
+    - field.field.paragraph.triptych_picture.field_picture_third
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.triptych_picture
+  module:
+    - image
+id: paragraph.triptych_picture.default
+targetEntityType: paragraph
+bundle: triptych_picture
+mode: default
+content:
+  field_picture:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_picture_second:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_picture_third:
+    weight: 2
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+hidden:
+  created: true
+  status: true

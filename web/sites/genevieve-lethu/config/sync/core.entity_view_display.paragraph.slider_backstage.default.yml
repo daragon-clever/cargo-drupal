@@ -1,0 +1,33 @@
+uuid: 164c95c1-ee4c-43cb-a5ac-f17d0e3ea3f4
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.slider_backstage.field_slide
+    - field.field.paragraph.slider_backstage.field_title
+    - paragraphs.paragraphs_type.slider_backstage
+  module:
+    - entity_reference_revisions
+id: paragraph.slider_backstage.default
+targetEntityType: paragraph
+bundle: slider_backstage
+mode: default
+content:
+  field_slide:
+    weight: 1
+    label: visually_hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  field_title:
+    weight: 0
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

@@ -1,0 +1,18 @@
+{%
+  set classes = [
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished'
+]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+      {% for i in content.field_slide['#items']|keys %}
+        {{ content.field_slide[i] }}
+      {% endfor %}
+      {{ content.field_rte_lite }}
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

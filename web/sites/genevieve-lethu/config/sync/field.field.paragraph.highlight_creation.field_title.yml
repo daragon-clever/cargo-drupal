@@ -1,0 +1,19 @@
+uuid: bcf97d59-7f2c-441b-98ab-6d8e025fc0c0
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.highlight_creation
+id: paragraph.highlight_creation.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: highlight_creation
+label: Titre
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

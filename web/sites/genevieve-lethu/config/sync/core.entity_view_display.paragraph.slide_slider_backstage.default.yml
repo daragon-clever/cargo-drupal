@@ -1,0 +1,42 @@
+uuid: fa7bba18-e0e3-4264-9884-faacb8bc6efc
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.slide_slider_backstage.field_picture
+    - field.field.paragraph.slide_slider_backstage.field_text
+    - field.field.paragraph.slide_slider_backstage.field_title
+    - paragraphs.paragraphs_type.slide_slider_backstage
+  module:
+    - image
+id: paragraph.slide_slider_backstage.default
+targetEntityType: paragraph
+bundle: slide_slider_backstage
+mode: default
+content:
+  field_picture:
+    weight: 0
+    label: visually_hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_text:
+    weight: 1
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_title:
+    weight: 2
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

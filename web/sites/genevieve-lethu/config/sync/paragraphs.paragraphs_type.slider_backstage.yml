@@ -1,0 +1,10 @@
+uuid: ae0643c0-fabb-444b-82db-01645d71afeb
+langcode: fr
+status: true
+dependencies: {  }
+id: slider_backstage
+label: 'Slider backstage'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

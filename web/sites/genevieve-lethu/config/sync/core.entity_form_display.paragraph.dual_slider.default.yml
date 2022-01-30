@@ -1,0 +1,46 @@
+uuid: 4d32ff7f-b47f-41fd-954c-c797a2a3c7ef
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.dual_slider.field_rte_lite
+    - field.field.paragraph.dual_slider.field_slide
+    - paragraphs.paragraphs_type.dual_slider
+  module:
+    - paragraphs
+    - text
+id: paragraph.dual_slider.default
+targetEntityType: paragraph
+bundle: dual_slider
+mode: default
+content:
+  field_rte_lite:
+    weight: 0
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_slide:
+    weight: 1
+    settings:
+      title: Paragraphe
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: slide_dual_slider
+      features:
+        add_above: '0'
+        collapse_edit_all: '0'
+        duplicate: '0'
+    third_party_settings: {  }
+    type: paragraphs
+    region: content
+hidden:
+  created: true
+  status: true

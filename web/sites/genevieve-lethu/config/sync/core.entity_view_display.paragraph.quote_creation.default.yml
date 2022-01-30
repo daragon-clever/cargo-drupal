@@ -1,0 +1,41 @@
+uuid: e71418d0-d049-42ac-b49f-0060427c374a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.quote_creation.field_author
+    - field.field.paragraph.quote_creation.field_description
+    - field.field.paragraph.quote_creation.field_picture
+    - paragraphs.paragraphs_type.quote_creation
+  module:
+    - image
+id: paragraph.quote_creation.default
+targetEntityType: paragraph
+bundle: quote_creation
+mode: default
+content:
+  field_author:
+    weight: 2
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_description:
+    weight: 1
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_picture:
+    weight: 0
+    label: visually_hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden: {  }

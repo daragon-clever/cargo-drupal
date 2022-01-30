@@ -1,0 +1,82 @@
+uuid: d9b6daa9-3d2a-4f47-b0ff-eac58cf9fe93
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraph_moodboard
+    - node.type.collection
+    - paragraphs.paragraphs_type.moodboard
+  module:
+    - entity_reference_revisions
+id: node.collection.field_paragraph_moodboard
+field_name: field_paragraph_moodboard
+entity_type: node
+bundle: collection
+label: Moodboard
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      moodboard: moodboard
+    target_bundles_drag_drop:
+      background_quote:
+        weight: 19
+        enabled: false
+      brand:
+        weight: 20
+        enabled: false
+      brand_presentation:
+        weight: 21
+        enabled: false
+      description_centered:
+        weight: 22
+        enabled: false
+      dual_slider:
+        weight: 23
+        enabled: false
+      highlighting_collections:
+        weight: 24
+        enabled: false
+      instagram:
+        weight: 25
+        enabled: false
+      left_handed:
+        weight: 26
+        enabled: false
+      main_picture:
+        weight: 27
+        enabled: false
+      main_picture_2:
+        weight: 28
+        enabled: false
+      moodboard:
+        enabled: true
+        weight: 29
+      quote:
+        weight: 30
+        enabled: false
+      quote_pictures:
+        weight: 31
+        enabled: false
+      slide_dual_slider:
+        weight: 33
+        enabled: false
+      slide_slider_history:
+        weight: 34
+        enabled: false
+      slider_history:
+        weight: 32
+        enabled: false
+      video:
+        weight: 35
+        enabled: false
+      word_cloud:
+        weight: 36
+        enabled: false
+field_type: entity_reference_revisions

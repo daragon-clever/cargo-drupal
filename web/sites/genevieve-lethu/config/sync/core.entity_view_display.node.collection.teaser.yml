@@ -1,0 +1,27 @@
+uuid: f3d79a98-aac2-43eb-9347-1d1f04c210c6
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.collection.field_main_picture
+    - field.field.node.collection.field_paragraph_dual_slider
+    - field.field.node.collection.field_paragraph_moodboard
+    - node.type.collection
+  module:
+    - user
+id: node.collection.teaser
+targetEntityType: node
+bundle: collection
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_main_picture: true
+  field_paragraph_dual_slider: true
+  field_paragraph_moodboard: true
+  langcode: true

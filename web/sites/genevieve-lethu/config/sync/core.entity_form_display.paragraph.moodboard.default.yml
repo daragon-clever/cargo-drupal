@@ -1,0 +1,99 @@
+uuid: ac0d19d7-866f-414a-aa67-f8a9552dab6f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.moodboard.field_color
+    - field.field.paragraph.moodboard.field_picture
+    - field.field.paragraph.moodboard.field_picture_fifth
+    - field.field.paragraph.moodboard.field_picture_fourth
+    - field.field.paragraph.moodboard.field_picture_second
+    - field.field.paragraph.moodboard.field_picture_seventh
+    - field.field.paragraph.moodboard.field_picture_sixth
+    - field.field.paragraph.moodboard.field_picture_third
+    - field.field.paragraph.moodboard.field_title
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.moodboard
+  module:
+    - color_field
+    - image
+id: paragraph.moodboard.default
+targetEntityType: paragraph
+bundle: moodboard
+mode: default
+content:
+  field_color:
+    weight: 2
+    settings:
+      placeholder_color: ''
+      placeholder_opacity: ''
+    third_party_settings: {  }
+    type: color_field_widget_default
+    region: content
+  field_picture:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_picture_fifth:
+    weight: 6
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_picture_fourth:
+    weight: 5
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_picture_second:
+    weight: 3
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_picture_seventh:
+    weight: 8
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_picture_sixth:
+    weight: 7
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_picture_third:
+    weight: 4
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

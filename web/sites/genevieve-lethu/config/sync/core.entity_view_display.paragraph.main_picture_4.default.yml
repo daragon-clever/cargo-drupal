@@ -1,0 +1,24 @@
+uuid: e7b8e72c-29e7-4a71-b63d-5117189758b3
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.main_picture_4.field_picture
+    - paragraphs.paragraphs_type.main_picture_4
+  module:
+    - image
+id: paragraph.main_picture_4.default
+targetEntityType: paragraph
+bundle: main_picture_4
+mode: default
+content:
+  field_picture:
+    weight: 0
+    label: visually_hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden: {  }

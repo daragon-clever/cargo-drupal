@@ -1,0 +1,85 @@
+uuid: 67228a31-b799-4ae2-9039-496c88b10a29
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_main_picture
+    - node.type.listing_stories_of_tables
+    - paragraphs.paragraphs_type.main_picture_3
+  module:
+    - entity_reference_revisions
+id: node.listing_stories_of_tables.field_main_picture
+field_name: field_main_picture
+entity_type: node
+bundle: listing_stories_of_tables
+label: 'Visuel principal'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      main_picture_3: main_picture_3
+    target_bundles_drag_drop:
+      background_quote:
+        weight: 20
+        enabled: false
+      brand:
+        weight: 21
+        enabled: false
+      brand_presentation:
+        weight: 22
+        enabled: false
+      description_centered:
+        weight: 23
+        enabled: false
+      dual_slider:
+        weight: 24
+        enabled: false
+      highlighting_collections:
+        weight: 25
+        enabled: false
+      instagram:
+        weight: 26
+        enabled: false
+      left_handed:
+        weight: 27
+        enabled: false
+      main_picture:
+        weight: 28
+        enabled: false
+      main_picture_2:
+        weight: 29
+        enabled: false
+      main_picture_3:
+        enabled: true
+        weight: 30
+      moodboard:
+        weight: 31
+        enabled: false
+      quote:
+        weight: 32
+        enabled: false
+      quote_pictures:
+        weight: 33
+        enabled: false
+      slide_dual_slider:
+        weight: 35
+        enabled: false
+      slide_slider_history:
+        weight: 36
+        enabled: false
+      slider_history:
+        weight: 34
+        enabled: false
+      video:
+        weight: 37
+        enabled: false
+      word_cloud:
+        weight: 38
+        enabled: false
+field_type: entity_reference_revisions

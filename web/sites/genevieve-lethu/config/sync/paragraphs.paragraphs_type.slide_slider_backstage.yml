@@ -1,0 +1,10 @@
+uuid: 31744a1d-f640-4789-b934-d26c9a4a37e1
+langcode: fr
+status: true
+dependencies: {  }
+id: slide_slider_backstage
+label: 'Slide - Slider backstage'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

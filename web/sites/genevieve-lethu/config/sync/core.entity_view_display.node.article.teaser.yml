@@ -1,0 +1,33 @@
+uuid: ade6081a-7d3d-4e07-ad7d-14bae1a4bee8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.article.field_main_picture
+    - field.field.node.article.field_paragraph_centred_text
+    - field.field.node.article.field_paragraph_quote_5
+    - field.field.node.article.field_paragraph_video
+    - field.field.node.article.field_paragraphe_text_list
+    - field.field.node.article.field_triptych_picture
+    - node.type.article
+  module:
+    - user
+id: node.article.teaser
+targetEntityType: node
+bundle: article
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_main_picture: true
+  field_paragraph_centred_text: true
+  field_paragraph_quote_5: true
+  field_paragraph_video: true
+  field_paragraphe_text_list: true
+  field_triptych_picture: true
+  langcode: true

@@ -1,0 +1,33 @@
+uuid: 18c77989-8540-4a27-8e78-9f02aec0fad5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.visuel_full.field_picture
+    - field.field.paragraph.visuel_full.field_title
+    - paragraphs.paragraphs_type.visuel_full
+  module:
+    - image
+id: paragraph.visuel_full.default
+targetEntityType: paragraph
+bundle: visuel_full
+mode: default
+content:
+  field_picture:
+    weight: 0
+    label: visually_hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_title:
+    weight: 1
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

@@ -10,7 +10,9 @@
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
       {{ content.field_title }}
-      {{ content.field_slide }}
+      {% for i in content.field_slide['#items']|keys %}
+        {{ content.field_slide[i] }}
+      {% endfor %}
     {% endblock %}
   </div>
 {% endblock paragraph %}

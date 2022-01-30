@@ -1,0 +1,21 @@
+uuid: cb806d66-976d-4598-855d-b805771bf9b5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_rte_lite
+    - paragraphs.paragraphs_type.text_list
+  module:
+    - text
+id: paragraph.text_list.field_rte_lite
+field_name: field_rte_lite
+entity_type: paragraph
+bundle: text_list
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

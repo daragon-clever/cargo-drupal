@@ -1,0 +1,52 @@
+uuid: c6b77ea6-5b93-4eef-b90a-ef91205290fc
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.highlight_creation.field_color
+    - field.field.paragraph.highlight_creation.field_description
+    - field.field.paragraph.highlight_creation.field_picture_limit_3
+    - field.field.paragraph.highlight_creation.field_title
+    - paragraphs.paragraphs_type.highlight_creation
+  module:
+    - color_field
+    - image
+id: paragraph.highlight_creation.default
+targetEntityType: paragraph
+bundle: highlight_creation
+mode: default
+content:
+  field_color:
+    weight: 0
+    label: visually_hidden
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    type: color_field_formatter_text
+    region: content
+  field_description:
+    weight: 2
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_picture_limit_3:
+    weight: 3
+    label: visually_hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_title:
+    weight: 1
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

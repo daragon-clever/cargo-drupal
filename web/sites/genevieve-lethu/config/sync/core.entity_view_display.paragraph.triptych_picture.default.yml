@@ -1,0 +1,44 @@
+uuid: 664b4fde-1906-4194-90cf-2d83d8c24fbd
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.triptych_picture.field_picture
+    - field.field.paragraph.triptych_picture.field_picture_second
+    - field.field.paragraph.triptych_picture.field_picture_third
+    - paragraphs.paragraphs_type.triptych_picture
+  module:
+    - image
+id: paragraph.triptych_picture.default
+targetEntityType: paragraph
+bundle: triptych_picture
+mode: default
+content:
+  field_picture:
+    weight: 0
+    label: visually_hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_picture_second:
+    weight: 1
+    label: visually_hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_picture_third:
+    weight: 2
+    label: visually_hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden: {  }

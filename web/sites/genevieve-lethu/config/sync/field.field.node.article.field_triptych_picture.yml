@@ -1,0 +1,88 @@
+uuid: 2d8af2d8-7ebe-4d11-b82d-03ae1122056e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_triptych_picture
+    - node.type.article
+    - paragraphs.paragraphs_type.triptych_picture
+  module:
+    - entity_reference_revisions
+id: node.article.field_triptych_picture
+field_name: field_triptych_picture
+entity_type: node
+bundle: article
+label: 'Visuel triptyque'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      triptych_picture: triptych_picture
+    target_bundles_drag_drop:
+      background_quote:
+        weight: 22
+        enabled: false
+      brand:
+        weight: 23
+        enabled: false
+      brand_presentation:
+        weight: 24
+        enabled: false
+      description_centered:
+        weight: 25
+        enabled: false
+      dual_slider:
+        weight: 26
+        enabled: false
+      highlighting_collections:
+        weight: 27
+        enabled: false
+      instagram:
+        weight: 28
+        enabled: false
+      left_handed:
+        weight: 29
+        enabled: false
+      main_picture:
+        weight: 30
+        enabled: false
+      main_picture_2:
+        weight: 31
+        enabled: false
+      main_picture_3:
+        weight: 32
+        enabled: false
+      moodboard:
+        weight: 33
+        enabled: false
+      quote:
+        weight: 34
+        enabled: false
+      quote_pictures:
+        weight: 35
+        enabled: false
+      slide_dual_slider:
+        weight: 36
+        enabled: false
+      slide_slider_history:
+        weight: 37
+        enabled: false
+      slider_history:
+        weight: 38
+        enabled: false
+      triptych_picture:
+        enabled: true
+        weight: 21
+      video:
+        weight: 39
+        enabled: false
+      word_cloud:
+        weight: 40
+        enabled: false
+field_type: entity_reference_revisions

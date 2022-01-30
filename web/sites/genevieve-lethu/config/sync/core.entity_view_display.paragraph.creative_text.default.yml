@@ -1,0 +1,41 @@
+uuid: 4e8f7cae-3199-414a-a394-ed1ab911957c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.creative_text.field_color
+    - field.field.paragraph.creative_text.field_description
+    - field.field.paragraph.creative_text.field_title
+    - paragraphs.paragraphs_type.creative_text
+  module:
+    - color_field
+id: paragraph.creative_text.default
+targetEntityType: paragraph
+bundle: creative_text
+mode: default
+content:
+  field_color:
+    weight: 0
+    label: visually_hidden
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    type: color_field_formatter_text
+    region: content
+  field_description:
+    weight: 2
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_title:
+    weight: 1
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

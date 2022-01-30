@@ -1,0 +1,11 @@
+uuid: 8ca1d1e2-fcc3-4a52-8c61-a5254972679d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.heart_of_creation
+id: node.heart_of_creation
+target_entity_type_id: node
+target_bundle: heart_of_creation
+default_langcode: site_default
+language_alterable: false

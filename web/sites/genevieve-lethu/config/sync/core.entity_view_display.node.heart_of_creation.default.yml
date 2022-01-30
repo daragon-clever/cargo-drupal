@@ -1,0 +1,101 @@
+uuid: 468f2fd4-bd27-42c5-8202-6b0186248fcf
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.heart_of_creation.field_main_picture
+    - field.field.node.heart_of_creation.field_paragraph_collection
+    - field.field.node.heart_of_creation.field_paragraph_creation
+    - field.field.node.heart_of_creation.field_paragraph_creative_text
+    - field.field.node.heart_of_creation.field_paragraph_picture_full
+    - field.field.node.heart_of_creation.field_paragraph_quote
+    - field.field.node.heart_of_creation.field_paragraph_slider_backstage
+    - field.field.node.heart_of_creation.field_paragraph_travel
+    - node.type.heart_of_creation
+  module:
+    - entity_reference_revisions
+    - user
+id: node.heart_of_creation.default
+targetEntityType: node
+bundle: heart_of_creation
+mode: default
+content:
+  field_main_picture:
+    weight: 101
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  field_paragraph_collection:
+    type: entity_reference_revisions_entity_view
+    weight: 105
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_paragraph_creation:
+    type: entity_reference_revisions_entity_view
+    weight: 104
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_paragraph_creative_text:
+    type: entity_reference_revisions_entity_view
+    weight: 102
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_paragraph_picture_full:
+    type: entity_reference_revisions_entity_view
+    weight: 107
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_paragraph_quote:
+    weight: 106
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  field_paragraph_slider_backstage:
+    type: entity_reference_revisions_entity_view
+    weight: 108
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_paragraph_travel:
+    type: entity_reference_revisions_entity_view
+    weight: 103
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

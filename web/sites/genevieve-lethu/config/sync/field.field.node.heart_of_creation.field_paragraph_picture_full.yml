@@ -1,0 +1,121 @@
+uuid: 2b14a755-7645-4189-b796-7d9e63af3d22
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraph_picture_full
+    - node.type.heart_of_creation
+    - paragraphs.paragraphs_type.visuel_full
+  module:
+    - entity_reference_revisions
+id: node.heart_of_creation.field_paragraph_picture_full
+field_name: field_paragraph_picture_full
+entity_type: node
+bundle: heart_of_creation
+label: paragraph_picture_full
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      visuel_full: visuel_full
+    target_bundles_drag_drop:
+      background_quote:
+        weight: 32
+        enabled: false
+      brand:
+        weight: 33
+        enabled: false
+      brand_presentation:
+        weight: 34
+        enabled: false
+      creative_text:
+        weight: 35
+        enabled: false
+      description_centered:
+        weight: 36
+        enabled: false
+      dual_slider:
+        weight: 37
+        enabled: false
+      highlight_collection:
+        weight: 39
+        enabled: false
+      highlight_creation:
+        weight: 40
+        enabled: false
+      highlighting_collections:
+        weight: 38
+        enabled: false
+      instagram:
+        weight: 41
+        enabled: false
+      left_handed:
+        weight: 42
+        enabled: false
+      main_picture:
+        weight: 43
+        enabled: false
+      main_picture_2:
+        weight: 44
+        enabled: false
+      main_picture_3:
+        weight: 45
+        enabled: false
+      main_picture_4:
+        weight: 46
+        enabled: false
+      moodboard:
+        weight: 47
+        enabled: false
+      quote:
+        weight: 48
+        enabled: false
+      quote_creation:
+        weight: 49
+        enabled: false
+      quote_pictures:
+        weight: 50
+        enabled: false
+      slide_dual_slider:
+        weight: 53
+        enabled: false
+      slide_slider_backstage:
+        weight: 54
+        enabled: false
+      slide_slider_history:
+        weight: 55
+        enabled: false
+      slider_backstage:
+        weight: 51
+        enabled: false
+      slider_history:
+        weight: 52
+        enabled: false
+      text_list:
+        weight: 56
+        enabled: false
+      travel:
+        weight: 57
+        enabled: false
+      triptych_picture:
+        weight: 58
+        enabled: false
+      video:
+        weight: 59
+        enabled: false
+      video_article:
+        weight: 60
+        enabled: false
+      visuel_full:
+        enabled: true
+        weight: 61
+      word_cloud:
+        weight: 62
+        enabled: false
+field_type: entity_reference_revisions

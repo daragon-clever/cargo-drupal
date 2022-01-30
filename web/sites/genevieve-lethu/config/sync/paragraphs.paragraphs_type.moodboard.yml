@@ -1,0 +1,10 @@
+uuid: 1db1d459-327f-427c-9177-e0bb1e503eb8
+langcode: fr
+status: true
+dependencies: {  }
+id: moodboard
+label: Moodboard
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

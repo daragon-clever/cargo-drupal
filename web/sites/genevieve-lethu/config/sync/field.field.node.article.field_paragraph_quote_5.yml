@@ -1,0 +1,91 @@
+uuid: b8e574df-b1ba-4f6e-8285-840db8451916
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraph_quote_5
+    - node.type.article
+    - paragraphs.paragraphs_type.quote_pictures
+  module:
+    - entity_reference_revisions
+id: node.article.field_paragraph_quote_5
+field_name: field_paragraph_quote_5
+entity_type: node
+bundle: article
+label: 'Citation n°5'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      quote_pictures: quote_pictures
+    target_bundles_drag_drop:
+      background_quote:
+        weight: 23
+        enabled: false
+      brand:
+        weight: 24
+        enabled: false
+      brand_presentation:
+        weight: 25
+        enabled: false
+      description_centered:
+        weight: 26
+        enabled: false
+      dual_slider:
+        weight: 27
+        enabled: false
+      highlighting_collections:
+        weight: 28
+        enabled: false
+      instagram:
+        weight: 29
+        enabled: false
+      left_handed:
+        weight: 30
+        enabled: false
+      main_picture:
+        weight: 31
+        enabled: false
+      main_picture_2:
+        weight: 32
+        enabled: false
+      main_picture_3:
+        weight: 33
+        enabled: false
+      moodboard:
+        weight: 34
+        enabled: false
+      quote:
+        weight: 35
+        enabled: false
+      quote_pictures:
+        enabled: true
+        weight: 36
+      slide_dual_slider:
+        weight: 37
+        enabled: false
+      slide_slider_history:
+        weight: 38
+        enabled: false
+      slider_history:
+        weight: 39
+        enabled: false
+      text_list:
+        weight: 22
+        enabled: false
+      triptych_picture:
+        weight: 40
+        enabled: false
+      video:
+        weight: 41
+        enabled: false
+      word_cloud:
+        weight: 42
+        enabled: false
+field_type: entity_reference_revisions

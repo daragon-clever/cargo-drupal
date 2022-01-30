@@ -1,0 +1,51 @@
+uuid: 4d8bd065-b603-4ed0-8e4a-911c49fb1b41
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.main_picture_3.field_description
+    - field.field.paragraph.main_picture_3.field_desktop_background_picture
+    - field.field.paragraph.main_picture_3.field_mobile_background_picture
+    - field.field.paragraph.main_picture_3.field_title
+    - paragraphs.paragraphs_type.main_picture_3
+  module:
+    - image
+id: paragraph.main_picture_3.default
+targetEntityType: paragraph
+bundle: main_picture_3
+mode: default
+content:
+  field_description:
+    weight: 3
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_desktop_background_picture:
+    weight: 0
+    label: visually_hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_mobile_background_picture:
+    weight: 1
+    label: visually_hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_title:
+    weight: 2
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

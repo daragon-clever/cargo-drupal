@@ -1,0 +1,19 @@
+uuid: 9f38d8fd-dd94-4626-9fe4-fd90e9269003
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.travel
+id: paragraph.travel.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: travel
+label: Titre
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

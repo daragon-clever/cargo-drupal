@@ -1,0 +1,10 @@
+uuid: ff50b978-c4b8-44d0-a415-0ece397890cf
+langcode: fr
+status: true
+dependencies: {  }
+id: triptych_picture
+label: 'Visuel triptyque'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

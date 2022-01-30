@@ -1,0 +1,10 @@
+uuid: a7a4cc66-96ce-4c20-ab73-aa829819c759
+langcode: fr
+status: true
+dependencies: {  }
+id: main_picture_3
+label: 'Visuel principal (type 3)'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

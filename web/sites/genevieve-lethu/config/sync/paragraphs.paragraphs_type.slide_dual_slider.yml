@@ -1,0 +1,10 @@
+uuid: ab4a8ba1-e5eb-44fa-a013-c8283509b80e
+langcode: fr
+status: true
+dependencies: {  }
+id: slide_dual_slider
+label: 'Slide - Double Slider'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

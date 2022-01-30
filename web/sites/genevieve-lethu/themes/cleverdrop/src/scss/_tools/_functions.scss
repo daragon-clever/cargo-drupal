@@ -108,7 +108,7 @@
     $encoded:'';
     $slice: 2000;
     $index: 0;
-    $loops: ceil(str-length($svg)/$slice);
+    $loops: ceil(calc(str-length($svg)/$slice));
 
     @for $i from 1 through $loops {
         $chunk: str-slice($svg, $index, $index + $slice - 1);
@@ -183,6 +183,6 @@
 ///     line-height: 1.66667;
 ///   }
 ///
-@function unitless-line-height($font-size, $line-height) {
+@function unitless-line-height($line-height, $font-size) {
     @return strip-unit(calc($line-height / $font-size));
 }

@@ -52,6 +52,12 @@ if [ "${1:-}" = "traefik" ]; then
     cat /opt/traefik/traefik.yml \
       | sed -E "s#%COMPOSE_PROJECT_NAME%#${COMPOSE_PROJECT_NAME}#g;
         s#%TRAEFIK_DOMAIN%#${TRAEFIK_DOMAIN}#g" > /etc/traefik.yml
+    # désactive la redirection 301 en https lorsque Traefik
+    # est derrière un reverse proxy qui fait déjà la terminaison TLS
+    # en supprimant les lignes 22 à 27 du fichier /etc/traefik.yml
+    if [ "${TRAEFIK_BEHIND_PROXY:-"false"}" == "true" ]; then
+      sed -i '22,27d;' /etc/traefik.yml
+    fi
   fi
 fi
 

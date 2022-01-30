@@ -24,7 +24,7 @@ if [ "${1:-}" == "nginx" ]; then
 
   # Correction erreur HTTP 413 – Request Entity Too Large
   if ! grep -q client_max_body_size /etc/nginx/nginx.conf; then
-    sed -Ei '/^( )*include \/etc\/nginx\/conf\.d.*/i \    client_max_body_size 200M;' \
+    sed -Ei '/^( )*include \/etc\/nginx\/conf\.d.*/i \    client_max_body_size 200M; \nfastcgi_buffers 8 16k; \nfastcgi_buffer_size 32k;\n' \
       /etc/nginx/nginx.conf
   fi
 fi

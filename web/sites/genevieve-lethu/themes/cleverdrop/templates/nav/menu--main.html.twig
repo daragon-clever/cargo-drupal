@@ -26,67 +26,61 @@
 We call a macro which calls itself to render the full tree.
 @see https://twig.symfony.com/doc/1.x/tags/macro.html
 #}
-{{ menus.menu_links(items, attributes, 0) }}
-{% macro menu_links(items, attributes, menu_level) %}
+{{ menus.menu_links(directory, items, attributes, 0) }}
+{% macro menu_links(directory, items, attributes, menu_level) %}
   {% import _self as menus %}
   {% if items %}
 
-      {% if menu_level == 0 %}
-        <ul{{ attributes }}>
-      {% endif %}
-      {% if items|length < 5 %}
+  <div class="header-nav js-header-nav">
+    <ul class="header-section">
+      {% if items|length < 6 %}
         {% for name, item in items %}
           {% if name != 'logo' and loop.index <= 2 %}
-            <li{{ item.attributes }}>
-              {{ link(item.title, item.url) }}
-            </li>
+            <li>{{ link(item.title, item.url) }}</li>
           {% endif %}
         {% endfor %}
       {% endif %}
 
-      {% if items|length >= 5 %}
+      {% if items|length >= 6 %}
         {% for name, item in items %}
           {% if name != 'logo' and loop.index <= 3 %}
-            <li{{ item.attributes }}>
-              {{ link(item.title, item.url) }}
-            </li>
+            <li>{{ link(item.title, item.url) }}</li>
           {% endif %}
         {% endfor %}
       {% endif %}
+    </ul>
 
-      </ul>
+    <div class="header-logo">
+      <a href="/">{{ items['logo'] }}</a>
+    </div>
 
-
-    {{ items['logo'] }}
-    LOGO Genevieve
-
-
-
-      {% if menu_level == 0 %}
-        <ul{{ attributes }}>
-      {% endif %}
-
-      {% if items|length > 2 and  items|length < 5 %}
+    <ul class="header-section">
+      {% if items|length > 2 and  items|length < 6 %}
         {% for name, item in items %}
           {% if name != 'logo' and loop.index > 2 and loop.index < 5  %}
-            <li{{ item.attributes }}>
-              {{ link(item.title, item.url) }}
-            </li>
+            <li>{{ link(item.title, item.url) }}</li>
           {% endif %}
         {% endfor %}
       {% endif %}
 
-    {% if items|length >= 5 %}
-      {% for name, item in items %}
-        {% if name != 'logo' and loop.index > 3 and loop.index < 7 %}
-          <li{{ item.attributes }}>
-            {{ link(item.title, item.url) }}
-          </li>
-        {% endif %}
-      {% endfor %}
-    {% endif %}
+      {% if items|length >= 6 %}
+        {% for name, item in items %}
+          {% if name != 'logo' and loop.index > 3 and loop.index < 8 %}
+            <li>{{ link(item.title, item.url) }}</li>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    </ul>
+  </div>
 
-      </ul>
+  <button class="header-cta js-header-cta">
+    <svg class="header-cta-close" width="22" height="22" focusable="false" aria-hidden="true">
+      <use xlink:href="/{{ directory ~ '/public/assets/sprite.svg#menu' }}" />
+    </svg>
+    <svg class="header-cta-open" width="22" height="22" focusable="false" aria-hidden="true">
+      <use xlink:href="/{{ directory ~ '/public/assets/sprite.svg#cross' }}" />
+    </svg>
+  </button>
 
   {% endif %}
 

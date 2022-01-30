@@ -25,7 +25,7 @@ label,
 legend {
     font-family: $font-base;
     font-size: em($label-font-size, $body-font-size);
-    line-height: unitless-line-height($label-font-size, 21px);
+    line-height: unitless-line-height(21px, $label-font-size);
 }
 
 label {

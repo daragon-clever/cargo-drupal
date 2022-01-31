@@ -7,4 +7,5 @@ require('./lib/swiper');
 require('./components/animate');
 require('./components/slider');
 require('./components/menu');
+require('./components/videoPlayer');
 

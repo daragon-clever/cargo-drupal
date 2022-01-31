@@ -1,0 +1,110 @@
+.TeamPresentation {
+  overflow: hidden;
+  padding-top: rem(60px);
+  padding-bottom: rem(35px);
+  position: relative;
+  background-color: var(--pampas);
+
+  @include media-breakpoint-up('md') {
+    padding-top: rem(100px);
+    padding-bottom: rem(80px);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: rem(295px);
+    background-color: var(--white);
+
+    @include media-breakpoint-up('md') {
+      height: rem(290px);
+    }
+  }
+
+  .LeftBrush {
+    fill: var(--white);
+    display: none;
+    transform: translateY(-100%) rotateX(0) rotate(27deg);
+    width: rem(300px);
+    position: absolute;
+    bottom: calc(-100% + rem(40px));
+    left: rem(-100px);
+    opacity: .7;
+    z-index: 0;
+
+    @include media-breakpoint-up('md') {
+      display: block;
+    }
+  }
+
+  .RightMarks {
+    width: rem(210px);
+    position: absolute;
+    top: rem(480px);
+    right: rem(-50px);
+
+    @include media-breakpoint-up('md') {
+      width: rem(190px);
+      top: rem(370px);
+    }
+  }
+}
+
+.TeamPresentation--inner {
+  @include enable-grid;
+  row-gap: rem(60px);
+  position: relative;
+}
+
+.TeamPresentation-title {
+  @include make-cols(4);
+  margin-bottom: 0;
+
+  @include media-breakpoint-up('md') {
+    @include make-cols(4, 1);
+  }
+}
+
+.TeamPresentation-img {
+  @include make-cols(4);
+  position: relative;
+
+  @include media-breakpoint-up('md') {
+    @include make-cols(10, 1);
+  }
+
+  img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    max-height: rem(405px);
+    object-fit: cover;
+
+    @include media-breakpoint-up('md') {
+      max-height: rem(505px);
+    }
+  }
+}
+
+.TeamPresentation-subtitle {
+  @include make-cols(4);
+  z-index: 1;
+  margin-bottom: 0;
+
+  @include media-breakpoint-up('md') {
+    @include make-cols(9, 2);
+  }
+}
+
+.TeamPresentation-description {
+  @include make-cols(4);
+  z-index: 1;
+
+  @include media-breakpoint-up('md') {
+    @include make-cols(8, 2);
+  }
+}

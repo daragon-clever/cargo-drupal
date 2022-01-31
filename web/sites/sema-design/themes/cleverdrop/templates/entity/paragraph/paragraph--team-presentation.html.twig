@@ -1,18 +1,33 @@
 {%
   set classes = [
-  'paragraph',
-  'paragraph--type--' ~ paragraph.bundle|clean_class,
-  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-  not paragraph.isPublished() ? 'paragraph--unpublished'
+  'TeamPresentation-wpr'
 ]
 %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
-      {{ content.field_title }}
-      {{ content.field_description }}
-      {{ content.field_subtitle }}
-      {{ content.field_picture }}
+    <div class="TeamPresentation" style="--sail-color: {{content.field_color[0]['#markup']}};">
+      <div class="Section-inner TeamPresentation--inner">
+        <h2 class="TeamPresentation-title">
+          {{ content.field_title }}
+        </h2>
+        <div class="TeamPresentation-img">
+          {{ content.field_picture }}
+          <svg viewBox="0 0 100 100" class="LeftBrush" aria-hidden="true">
+            <use xlink:href="#sema-brush"></use>
+          </svg>
+        </div>
+        <h3 class="TeamPresentation-subtitle">
+          {{ content.field_subtitle }}
+        </h3>
+        <p class="TeamPresentation-description">
+          {{ content.field_description }}
+        </p>
+      </div>
+      <svg viewBox="0 0 100 100" class="RightMarks" aria-hidden="true">
+        <use xlink:href="#sema-marks"></use>
+      </svg>
+    </div>
     {% endblock %}
   </div>
 {% endblock paragraph %}

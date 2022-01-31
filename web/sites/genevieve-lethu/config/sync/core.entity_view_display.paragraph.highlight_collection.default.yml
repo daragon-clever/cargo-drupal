@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.highlight_collection.field_color
+    - field.field.paragraph.highlight_collection.field_color_back
     - field.field.paragraph.highlight_collection.field_description
     - field.field.paragraph.highlight_collection.field_picture
     - field.field.paragraph.highlight_collection.field_picture_second
@@ -11,7 +12,7 @@ dependencies:
     - paragraphs.paragraphs_type.highlight_collection
   module:
     - color_field
-    - image
+    - svg_image
 id: paragraph.highlight_collection.default
 targetEntityType: paragraph
 bundle: highlight_collection
@@ -20,6 +21,15 @@ content:
   field_color:
     weight: 0
     label: visually_hidden
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    type: color_field_formatter_text
+    region: content
+  field_color_back:
+    weight: 5
+    label: above
     settings:
       format: hex
       opacity: true

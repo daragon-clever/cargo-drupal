@@ -1,109 +1,131 @@
-# Création d'un nouveau site Drupal dans la ferme
+# DRUPAL
+
+## Installation du projet
+
+**Pré-requis :**
+
+- Git (GitKraken)
+- Logiciel développement (PhpStorm)
+- Ligne de commande (Terminus, Termius, etc)
+- Docker (sur VM)
+- Composer (sur VM)
+- Fichier `/multisites/{{ SITENAME }}/.rvmc` et `/bin/cli-setup.sh` à mettre au format LF
+
+**A remplacer :** avec ses propres informations
+
+- {{ LOCATION }} correspond au chemin local des fichiers du projet
+- {{ VM }} correspond au numéro de la VM
+- {{ SITENAME }} correspond au projet que vous souhaitez actuellement installer
+
+Lancer toutes les commandes suivantes depuis le dossier : `multisites/[SITENAME]`
+
+### 1. Clôner le dépôt en local :
+
+- via ligne de commande : `git clone https://github.com/PoleWebCargo/drupal.git`
+- via Gitkraken : **"Clone a repo"**
+
+Il n'y a pas besoin de cloner le dépôt pour chaque site.
+
+### 2. Ouvrir le projet :
+
+- Dupliquer le fichier `/docker-compose.yml.dist` en `/docker-compose.yml`.
+- Dupliquer le fichier `/web/sites/sites.php.dist` en `/web/sites/sites.php`.
+    - c'est ici qu'on relie l'URL du projet à son dossier (dossier theme)
+- Dupliquer le fichier `/web/sites/{{ SITENAME }}/settings.php.dist` en `/web/sites/{{ SITENAME }}/settings.php`.
+    - c'est ici que se trouve la conexion à la BDD du projet {{ SITENAME }}
+
+### 3. Déployer tous les fichiers sur l'environnement de développement :
+
+Configuration PhpStorm du déploiement automatique sur la VM :
+- **Tools > Deployment > Configuration**
+    - Onglet **"Connection"** :
+        * SFTP host : **svd{{ VM }}pweb-stm.ressinfo.ad**
+        * Port : **22**
+        * Root path : **/root/DEV/**
+        * User name : **root**
+        * Auth type : **Key pair (OpenSSH or PuTTY)**
+        * Private key file : **{{ LOCATION }}\drupal\docker\deployment\.sshlocal\id_rsa**
+    - Onglet **"Mappings"** :
+        * Local Path : {{ LOCATION }}**\drupal**
+        * Deployment Path : **/drupal**
+- **Tools > Deployment > Options...**
+    - "Upload changed files automatically to the default server" : **Always**
+    - Cocher "Upload external changes"
+
+### 4. Installation des dépendances :
+
+- via ligne de commande et composer : `composer install`
+- option `-vvv` pour avoir une vision du proccess  
+
+### 5. Lancer le projet :
+
+- Lancer l'application via `docker-compose up -d`
+- option `--build` pour recharger l'image Docker
+
+### 6. Télécharger la BDD et les images :
+
+- Récupérer les fichiers et la BDD :
+    - passer le fichier `bin/synchfiles.sh` en **LF**
+    - `docker-compose run --rm php bash bin/synchfiles.sh`
+        - entrer le nom du site actuel {{ SITENAME }} - nom qui correspond au nommage du dossier theme
+        - demander le nom de la BDD correspond au site {{ SITENAME }}, au pôle Web Cargo
+        - demander l'user et le mdp de la BDD au pôle Web Cargo
+- Appliquer le dump de la BDD :
+    - passer le fichier `bin/synchbd.sh` en **LF**
+    - `docker-compose exec db /bin/bash /var/www/html/bin/synchbd.sh`
+        - entrer le nom de la base de données du site actuel {{ SITENAME }}
+
+## Commandes Composer
+
+- Installation d'une extension Drupal : `composer require 'NOM_DU_MODULE'`
+    - **Attention : il ne faut pas passer par les .zip via l'interface mais bien par composer**
+- Lister les modules qui ne sont plus à jours (entre la VM et le composer.lock) : `composer outdated`
+- MAJ des dépendances avec les nouvelles versions disponibles : `composer update`
+    - MAJ des modules externe Cargo uniquement : `composer update "cargo/*"`
+- Installer les dépendances en fonction des versions présentes dans le composer.lock :  `composer install`
+
+## URLs en lien avec le projet :
+
+- Site : **http://web.{{ SITENAME}}.svd{{ VM }}pweb-stm.ressinfo.ad/**
+- Admin du site : cela dépend du projet - à vérifier dans le fichier d'accès/urls sur le Drive
+- PhpMyAdmin : **http://phpmyadmin.{{ SITENAME }}.svd{{ VM }}pweb-stm.ressinfo.ad**
+    - root : root
+- Mail : **http://web.mailhog.svd{{ VM }}pweb-stm.ressinfo.ad/**
+
+## Divers
+
+### Utiles :
+
+- URL de MAJ BDD : `http://web.{{ SITENAME }}.svd{{ VM }}pweb-stm.ressinfo.ad/update.php`
+- URL d'installation Drupal : `http://web.{{ SITENAME }}.svd{{ VM }}pweb-stm.ressinfo.ad/core/install.php`
+- Rendre l'update de la BDD possible : dans settings.php du site {{ SITENAME }}, changer 
+`$settings['update_free_access'] = FALSE;` en `$settings['update_free_access'] = TRUE;`
+- Activer le debug Twig : dans **services.yml** du site {{ SITENAME }}, changer
+`twig.config: debug: false` à `twig.config: debug: true`
+- lancer une commande CLI : `php vendor/bin/drupal --uri=web.{{ SITENAME }}.svd{{ VM }}pweb-stm.ressinfo.ad`
+
+### A savoir sur certains modules :
+
+- le module newsletter, drupal_marketing_automation_core, synapse : sont gérés en interne 
+(ainsi que la plupart des modules dans le dossier /modules/custom)
+
+### Création d'un nouveau site Drupal dans la ferme :
 
 [Voir la procédure ici](./Nouveau-drupal.md)
 
+### Dump de sa BDD en local :
 
-# Installation Drupal avec Docker (multi site)  
-* Créer un dossier sur son ordinateur ( par exemple : `D:/CARGO/WWW/drupal` )  
-* Dans le dossier, entrer la ligne de commande suivante : `git clone https://github.com/PoleWebCargo/drupal.git`  
-* Dupliquer et renommer le fichier `docker-compose.yml.dist` en `docker-compose.yml`
-* Installer les dépendances : `docker-compose run --rm php composer install`
-* Dupliquer et renommer le fichier `web/sites/*/settings.php.dist` en `web/sites/*/settings.php` :
-	* '**database**' => '`{{ MYSQL_DATABASE }}`',  
-	* '**username**' => '`{{ MYSQL_USER }}`',  
-	* '**password**' => '`{{ MYSQL_PASSWORD }}`',  
-	* '**prefix**' => '',  
-	* '**host**' => '`{{ MYSQL_HOST }}`',  
-	* '**port**' => '3306',  
-	* '**namespace**' => 'Drupal\\Core\\Database\\Driver\\mysql',  
-	* '**driver**' => 'mysql'
+- passer le fichier `bin/local-dump.sh` en **LF**
+- lancer : `docker-compose exec db /bin/bash /var/www/html/bin/local-dump.sh`
+    - Entrer le nom du site {{ SITENAME }}
+    - Entrer l'action souhaitée (1, 2, etc)
 
-# Mettre à jour les médias et la base de données depuis la prépod
+### Déploiement (old) :
 
-* Depuis le dossier /multisites/[site_name]:
+- `docker-compose run --rm bundle exec cap preproduction deploy` pour déployer en `preproduction`
+    - on passe par Jenkins à présent
 
-* Lancer l'application : `docker-compose up -d`
-
-* exécuter les commandes
-    * 1/ `docker-compose run --rm php bash bin/synchfiles.sh`
-        * Entrez le nom du site en local et en distant
-        * Entrez le nom et le mot de passe de l'utilisateur de la base de données préprod
-    * 2/ `docker-compose exec db /bin/bash /var/www/html/bin/synchbd.sh`
-        * Entrez le nom de la base pour le site
-        * Entrez les identifiantes de la base (locale) pour le site
-
-* NB : si une erreur se produit "synchfiles non trouvé", c'est que vous n'êtes pas au bon endroit pour exécuter ce script. Il faut bien se placer dans /multisites/[site_name] pour exécuter le docker-compose du projet.
-
-# Finaliser l'installation
-
-* Dupliquer et renommer le fichier `web/sites/site.php.dist` en `web/sites/site.php` et changer les information avec les données de votre site
-
-* changer `$settings['update_free_access'] = FALSE;` à `TRUE` dans settings.php
-
-* accéder au site web `http://web.[nom du site].svdXpweb-stm.ressinfo.ad/core/install.php` et suivre les étapes
-
-* changer à nouveau  `$settings['update_free_access'] = TRUE;` à `FALSE` dans settings.php
-
-# Mise à jour de Drupal : 
-
-Depuis le dossier /multisites/[site_name]:
-
-* `composer outdated` : liste des modules qui ne sont plus à jours (entre VM et composer.lock)
-* `composer update` : met à jour les dépendances avec les nouvelles versions dispo
-* `composer install` : prend les version qui se trouve sur le composer.lock
-
-# Mise à jour d'un module Drupal :
-
-Depuis le dossier /multisites/[site_name]:
-
-* `composer require 'NOMDUMODULE'`
-
-## Déploiement
-
-* `docker-compose run --rm bundle install` pour s’assurer d’avoir toutes les dépendances à jour
-* `docker-compose run --rm bundle exec cap preproduction deploy` pour déployer en `preproduction`
-* `docker-compose run --rm bundle exec cap -T` pour lister toutes les tâches disponibles
-* `docker-compose run --rm bundle exec cap preproduction "symfony:console['cache:clear']"`
-
-# Actions sur la base de données en local
-
-Depuis le dossier /multisites/[site_name] :
-
-Commande disponible :
-    * `docker-compose exec db /bin/bash /var/www/html/bin/local-dump.sh`
-        * Entrez le nom du site en local
-        * Entrez l'action souhaitée (1, 2, etc)
-
-# Accès à MailHog
-
-Pour vérifer l'envoi des mails, se connecter à l'interface depuis sa VM : http://web.mailhog.{{ DEVENV }}.ressinfo.ad/ (exemple : http://web.mailhog.svd1pweb-stm.ressinfo.ad/)
-
-# Résolution de problèmes:
-
-## Base de donnée
-
-### Corruption après un arrêt forcé
-
-En cas d'arrêt forcé de mysql et si ce dernier ne rédémarre pas correctement, ajouter cette commande dans le 
-`docker-compose.yml` du site en question dans le service DB
-```bash
-command: mysqld --tc-heuristic-recover=ROLLBACK
-```
-
-#Lancer une command Drupal
-
-Depuis le dossier /multisites/[site_name]:
-
-`php vendor/bin/drupal --uri=web.gersequipement.svd1pweb-stm.ressinfo.ad`
-
-# Installation nouveau Drupal
-
-Se baser sur ce qui a été fait pour les autres sites.
-
-*a completer*
-- ajouter des lignes dans le fichier deploy.rb pour gérer les dossiers en shared
-
-## Configure XDEBUG
+### Configure XDEBUG
 
 * Dans PhpStorm
 	* Languages & Frameworks >  Php > Debug
@@ -127,9 +149,8 @@ Se baser sur ce qui a été fait pour les autres sites.
 
 Vous pouvez maintenant activer XDebug sur Phpstorm (le petit téléphonne)
 
-# Activation debugger Twig, en local
+### Gestion du cache Drupal :
 
-Le debugger des templates Twig est *false* par défaut, pour l'activer en local :
 * Décommenter le bloc suivant dans le fichier `web/sites/*/settings.php` :
 ```php
 if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {'   
@@ -145,4 +166,15 @@ if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {'
  */
 $settings['container_yamls'][] = DRUPAL_ROOT . '/sites/development.services.yml';
 ```
-* *Pour plus de détails sur la gestion du cache : https://www.drupal.org/node/2598914*
+* Pour plus de détails sur la gestion du cache : [https://www.drupal.org/node/2598914](https://www.drupal.org/node/2598914)
+
+## Bugs déjà rencontrés :
+
+### BDD : corruption après un arrêt forcé
+
+En cas d'arrêt forcé de mysql et si ce dernier ne rédémarre pas correctement, ajouter cette commande dans le 
+`docker-compose.yml` du site en question dans le service DB
+
+```bash
+command: mysqld --tc-heuristic-recover=ROLLBACK
+```

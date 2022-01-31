@@ -1,0 +1,75 @@
+.WhoAreWe {
+  padding-top: rem(60px);
+  padding-bottom: rem(60px);
+  position: relative;
+  background-color: var(--sail-color);
+
+  @include media-breakpoint-up('md') {
+    padding-top: rem(80px);
+    padding-bottom: rem(190px);
+  }
+
+  .LeftBrush {
+    display: none;
+
+    @include media-breakpoint-up('md') {
+      display: block;
+      position: absolute;
+      fill: var(--white);
+      width: rem(330px);
+      transform: rotate(30deg);
+      bottom: 0;
+      left: rem(-70px);
+      z-index: 1;
+      opacity: .7;
+    }
+  }
+}
+
+.WhoAreWe--inner {
+  @include enable-grid;
+  row-gap: rem(60px);
+  position: relative;
+  align-items: end;
+}
+
+.WhoAreWe-text-wpr {
+  @include make-cols(4);
+  position: relative;
+
+  @include media-breakpoint-up('md') {
+    @include make-cols(4, 1);
+    margin-bottom: rem(60px);
+  }
+}
+
+.WhoAreWe-rte {
+  a {
+    color: var(--black);
+  }
+}
+
+.WhoAreWe-slider-wpr {
+  @include make-cols(4);
+
+  @include media-breakpoint-up('md') {
+    @include make-cols(6, 6);
+    margin-top: rem(-130px);
+  }
+}
+
+.WhoAreWe-slide {
+  max-height: rem(290px);
+
+  @include media-breakpoint-up('md') {
+    max-height: rem(500px);
+  }
+
+  img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

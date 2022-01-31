@@ -160,4 +160,37 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     )
   )
+
+  const WhoAreWe = document.querySelectorAll('.js-who-are-we')
+
+  Array.prototype.map.call(WhoAreWe,
+    el => new Slider(
+      el,
+      Selectors,
+      {
+        ...CommonSliderOptions,
+        ...ScrollbarSliderOptions,
+        pagination: {
+          el: ".Slider-pagination",
+          type: 'bullets',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".Slider-button-next",
+          prevEl: ".Slider-button-prev",
+        },
+        breakpoints: {
+          0: {
+            slidesPerView: 1.5,
+            loop: true,
+          },
+          // when window width is >= 769px
+          769: {
+            slidesPerView: 2,
+            loop: true,
+          },
+        }
+      }
+    )
+  )
 })

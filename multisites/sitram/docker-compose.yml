@@ -9,7 +9,7 @@ services:
       networks:
         webgateway:
           aliases:
-            - web_fcm
+            - web_sitr
         internal:
           aliases:
             - web_internal
@@ -27,7 +27,7 @@ services:
       networks:
         webgateway:
           aliases:
-            - php_fcm
+            - php_sitr
         internal:
           aliases:
             - php_internal
@@ -45,7 +45,7 @@ services:
       networks:
         webgateway:
           aliases:
-            - db_fcm
+            - db_sitr
         internal:
           aliases:
             - db_internal
@@ -62,7 +62,7 @@ services:
       networks:
         webgateway:
           aliases:
-            - phpmyadmin_fcm
+            - phpmyadmin_sitr
         internal:
           aliases:
             - phpmyadmin_internal

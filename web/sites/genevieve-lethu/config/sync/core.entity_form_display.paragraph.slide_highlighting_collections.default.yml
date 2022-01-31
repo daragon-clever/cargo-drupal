@@ -1,0 +1,42 @@
+uuid: 9120788a-3583-4d66-8acf-fcf91c98f1b7
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.slide_highlighting_collections.field_color
+    - field.field.paragraph.slide_highlighting_collections.field_picture
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.slide_highlighting_collections
+  module:
+    - color_field
+    - svg_image
+id: paragraph.slide_highlighting_collections.default
+targetEntityType: paragraph
+bundle: slide_highlighting_collections
+mode: default
+content:
+  field_color:
+    weight: 0
+    settings:
+      show_input: '1'
+      palette: ''
+      show_buttons: '1'
+      cancel_text: Annuler
+      choose_text: Choisir
+      allow_empty: '1'
+      show_palette: '0'
+      show_palette_only: '0'
+    third_party_settings: {  }
+    type: color_field_widget_spectrum
+    region: content
+  field_picture:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+hidden:
+  created: true
+  status: true

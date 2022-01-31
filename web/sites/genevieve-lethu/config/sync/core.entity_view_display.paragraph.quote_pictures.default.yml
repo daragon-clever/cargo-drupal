@@ -4,12 +4,15 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.quote_pictures.field_author
+    - field.field.paragraph.quote_pictures.field_color
     - field.field.paragraph.quote_pictures.field_picture
     - field.field.paragraph.quote_pictures.field_picture_second
+    - field.field.paragraph.quote_pictures.field_picture_third
     - field.field.paragraph.quote_pictures.field_text
     - paragraphs.paragraphs_type.quote_pictures
   module:
-    - image
+    - color_field
+    - svg_image
 id: paragraph.quote_pictures.default
 targetEntityType: paragraph
 bundle: quote_pictures
@@ -22,6 +25,15 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_color:
+    weight: 5
+    label: above
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    type: color_field_formatter_text
     region: content
   field_picture:
     weight: 2
@@ -36,6 +48,19 @@ content:
     weight: 3
     label: visually_hidden
     settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_picture_third:
+    weight: 4
+    label: above
+    settings:
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
       image_style: ''
       image_link: ''
     third_party_settings: {  }

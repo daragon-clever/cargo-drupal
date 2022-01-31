@@ -1,0 +1,124 @@
+uuid: 74977a4c-f4ce-4a6c-b16f-967539204283
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_slide
+    - paragraphs.paragraphs_type.highlighting_collections
+    - paragraphs.paragraphs_type.slide_highlighting_collections
+  module:
+    - entity_reference_revisions
+id: paragraph.highlighting_collections.field_slide
+field_name: field_slide
+entity_type: paragraph
+bundle: highlighting_collections
+label: Slide
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      slide_highlighting_collections: slide_highlighting_collections
+    target_bundles_drag_drop:
+      background_quote:
+        weight: 34
+        enabled: false
+      brand:
+        weight: 35
+        enabled: false
+      brand_presentation:
+        weight: 36
+        enabled: false
+      creative_text:
+        weight: 37
+        enabled: false
+      description_centered:
+        weight: 38
+        enabled: false
+      dual_slider:
+        weight: 39
+        enabled: false
+      highlight_collection:
+        weight: 40
+        enabled: false
+      highlight_creation:
+        weight: 41
+        enabled: false
+      highlighting_collections:
+        weight: 42
+        enabled: false
+      instagram:
+        weight: 43
+        enabled: false
+      left_handed:
+        weight: 44
+        enabled: false
+      main_picture:
+        weight: 45
+        enabled: false
+      main_picture_2:
+        weight: 46
+        enabled: false
+      main_picture_3:
+        weight: 47
+        enabled: false
+      main_picture_4:
+        weight: 48
+        enabled: false
+      moodboard:
+        weight: 49
+        enabled: false
+      quote:
+        weight: 50
+        enabled: false
+      quote_creation:
+        weight: 51
+        enabled: false
+      quote_pictures:
+        weight: 52
+        enabled: false
+      slide_dual_slider:
+        weight: 53
+        enabled: false
+      slide_highlighting_collections:
+        enabled: true
+        weight: 33
+      slide_slider_backstage:
+        weight: 54
+        enabled: false
+      slide_slider_history:
+        weight: 55
+        enabled: false
+      slider_backstage:
+        weight: 56
+        enabled: false
+      slider_history:
+        weight: 57
+        enabled: false
+      text_list:
+        weight: 58
+        enabled: false
+      travel:
+        weight: 59
+        enabled: false
+      triptych_picture:
+        weight: 60
+        enabled: false
+      video:
+        weight: 61
+        enabled: false
+      video_article:
+        weight: 62
+        enabled: false
+      visuel_full:
+        weight: 63
+        enabled: false
+      word_cloud:
+        weight: 64
+        enabled: false
+field_type: entity_reference_revisions

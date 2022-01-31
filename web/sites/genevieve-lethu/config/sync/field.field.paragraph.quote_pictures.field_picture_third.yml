@@ -1,19 +1,19 @@
-uuid: 205fa97b-7e1c-44a0-8771-4cd67a1c6e93
+uuid: fafc78a2-71fe-41b6-a776-fc251ea67042
 langcode: fr
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_picture
-    - paragraphs.paragraphs_type.highlighting_collections
+    - field.storage.paragraph.field_picture_third
+    - paragraphs.paragraphs_type.quote_pictures
   module:
     - image
-id: paragraph.highlighting_collections.field_picture
-field_name: field_picture
+id: paragraph.quote_pictures.field_picture_third
+field_name: field_picture_third
 entity_type: paragraph
-bundle: highlighting_collections
-label: Visuel
+bundle: quote_pictures
+label: 'Visuel assiette 2'
 description: ''
-required: true
+required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''

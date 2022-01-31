@@ -4,13 +4,16 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.quote_pictures.field_author
+    - field.field.paragraph.quote_pictures.field_color
     - field.field.paragraph.quote_pictures.field_picture
     - field.field.paragraph.quote_pictures.field_picture_second
+    - field.field.paragraph.quote_pictures.field_picture_third
     - field.field.paragraph.quote_pictures.field_text
     - image.style.thumbnail
     - paragraphs.paragraphs_type.quote_pictures
   module:
-    - image
+    - color_field
+    - svg_image
 id: paragraph.quote_pictures.default
 targetEntityType: paragraph
 bundle: quote_pictures
@@ -24,6 +27,20 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
+  field_color:
+    weight: 5
+    settings:
+      show_input: '1'
+      palette: ''
+      show_buttons: '1'
+      cancel_text: Annuler
+      choose_text: Choisir
+      allow_empty: '1'
+      show_palette: '0'
+      show_palette_only: '0'
+    third_party_settings: {  }
+    type: color_field_widget_spectrum
+    region: content
   field_picture:
     weight: 2
     settings:
@@ -34,6 +51,14 @@ content:
     region: content
   field_picture_second:
     weight: 3
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_picture_third:
+    weight: 4
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail

@@ -5,6 +5,10 @@
  * Module file for gl_core.
  */
 
+/**
+ * Implements hook_preprocess_tamplate().
+ * @param $vars
+ */
 function gl_core_preprocess_paragraph__left_handed(&$vars) {
   $original = $vars['content']['field_description']['0']['#context']['value'];
   if (strlen($original) > 500) {
@@ -32,4 +36,28 @@ function gl_core_theme($existing, $type, $theme, $path)
       ],
     ],
   ];
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function gl_core_form_node_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if ($form_id === 'node_heart_of_creation_edit_form' || $form_id == 'node_heart_of_creation_form') {
+    // Add simple validation function for 3 minimum slides. Contraints can be use too
+    $form['#validate'][] = '_gl_core_node_heart_of_creation_validate';
+  }
+}
+
+/**
+ * Custom validate function.
+ */
+function _gl_core_node_heart_of_creation_validate(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  $values = $form_state->getValues();
+  if (!empty($values['field_paragraph_collection'][0]['subform']['field_description'][0]['value'])) {
+    if (strlen($values['field_paragraph_collection'][0]['subform']['field_description'][0]['value']) > 460) {
+      $form_state->setErrorByName('field_paragraph_collection][0][subform][field_description][0', t('460 Caractères maximum.'));
+
+    }
+  }
+
 }

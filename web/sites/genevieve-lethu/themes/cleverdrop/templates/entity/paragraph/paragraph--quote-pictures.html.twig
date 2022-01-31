@@ -13,12 +13,16 @@
   <div{{ attributes.addClass(classes) }} style="background-image: url('{{ content.field_picture.url }}');">
     {% block content %}
     <div class="row justify-content-end">
+      {{ content.field_color }}
       <blockquote class="col-12 col-md-7 --withBg --sameColor --left">
         {{ content.field_text }}
+        toto
+        {{ dump(file_url(content.field_picture[0]['#item'].entity.fileUri)) }}
         <cite>{{ content.field_author }}</cite>
       </blockquote>
       <div class="col-12 col-md-4">
         {{ content.field_picture_second }}
+        {{ content.field_picture_third }}
       </div>
     </div>
     {% endblock %}

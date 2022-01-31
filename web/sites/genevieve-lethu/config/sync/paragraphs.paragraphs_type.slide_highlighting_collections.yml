@@ -1,0 +1,10 @@
+uuid: b8dbd864-93e6-4335-b875-383e5ac157f0
+langcode: fr
+status: true
+dependencies: {  }
+id: slide_highlighting_collections
+label: 'Slide - Mise en avant collections'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

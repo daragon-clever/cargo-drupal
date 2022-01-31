@@ -3,36 +3,19 @@ langcode: fr
 status: true
 dependencies:
   config:
-    - field.field.paragraph.highlighting_collections.field_color
     - field.field.paragraph.highlighting_collections.field_cta
     - field.field.paragraph.highlighting_collections.field_description
-    - field.field.paragraph.highlighting_collections.field_picture
+    - field.field.paragraph.highlighting_collections.field_slide
     - field.field.paragraph.highlighting_collections.field_title
-    - image.style.thumbnail
     - paragraphs.paragraphs_type.highlighting_collections
   module:
-    - color_field
-    - image
     - link
+    - paragraphs
 id: paragraph.highlighting_collections.default
 targetEntityType: paragraph
 bundle: highlighting_collections
 mode: default
 content:
-  field_color:
-    weight: 3
-    settings:
-      show_input: '1'
-      palette: ''
-      show_buttons: '1'
-      cancel_text: Annuler
-      choose_text: Choisir
-      allow_empty: '1'
-      show_palette: '0'
-      show_palette_only: '0'
-    third_party_settings: {  }
-    type: color_field_widget_spectrum
-    region: content
   field_cta:
     weight: 2
     settings:
@@ -49,13 +32,23 @@ content:
     third_party_settings: {  }
     type: string_textarea
     region: content
-  field_picture:
-    weight: 4
+  field_slide:
+    weight: 3
     settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
+      title: Paragraphe
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
     third_party_settings: {  }
-    type: image_image
+    type: paragraphs
     region: content
   field_title:
     weight: 0

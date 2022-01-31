@@ -3,30 +3,19 @@ langcode: fr
 status: true
 dependencies:
   config:
-    - field.field.paragraph.highlighting_collections.field_color
     - field.field.paragraph.highlighting_collections.field_cta
     - field.field.paragraph.highlighting_collections.field_description
-    - field.field.paragraph.highlighting_collections.field_picture
+    - field.field.paragraph.highlighting_collections.field_slide
     - field.field.paragraph.highlighting_collections.field_title
     - paragraphs.paragraphs_type.highlighting_collections
   module:
-    - color_field
-    - image
+    - entity_reference_revisions
     - link
 id: paragraph.highlighting_collections.default
 targetEntityType: paragraph
 bundle: highlighting_collections
 mode: default
 content:
-  field_color:
-    weight: 3
-    label: visually_hidden
-    settings:
-      format: hex
-      opacity: true
-    third_party_settings: {  }
-    type: color_field_formatter_text
-    region: content
   field_cta:
     weight: 2
     label: visually_hidden
@@ -46,14 +35,14 @@ content:
     third_party_settings: {  }
     type: basic_string
     region: content
-  field_picture:
-    weight: 4
-    label: visually_hidden
+  field_slide:
+    weight: 3
+    label: above
     settings:
-      image_style: ''
-      image_link: ''
+      view_mode: default
+      link: ''
     third_party_settings: {  }
-    type: image
+    type: entity_reference_revisions_entity_view
     region: content
   field_title:
     weight: 0

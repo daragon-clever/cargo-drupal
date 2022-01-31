@@ -1,0 +1,36 @@
+/// Display
+//
+// * .u-d-block - display: block;
+// * .u-d-none - display: none;
+// * .u-d-inline - display: inline;
+// * .u-d-inlineBlock -  display: inline-block;
+// * .u-d-inlineFlex -  display: inline-flex;
+// * .u-d-flex - display: flex;
+//
+// Styleguide Utilities.display
+
+.d {
+  &-block {
+    display: block;
+  }
+
+  &-none {
+    display: none;
+  }
+
+  &-inline {
+    display: inline;
+  }
+
+  &-inlineBlock {
+    display: inline-block;
+  }
+
+  &-inlineFlex {
+    display: inline-flex;
+  }
+
+  &-flex {
+    display: flex;
+  }
+}

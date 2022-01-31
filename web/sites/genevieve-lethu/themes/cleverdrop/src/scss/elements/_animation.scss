@@ -1,0 +1,36 @@
+/* -------------------------------------------------------------------------- *\
+  # ANIMATIONS
+\* -------------------------------------------------------------------------- */
+
+.animation {
+  &-shutter {
+    background-color: $light;
+
+    img {
+      clip-path: polygon(0 0, 0 0, 100% 0, 100% 0);
+      animation-fill-mode: forwards;
+      transition: clip-path 0.8s;
+    }
+
+    &.is-animate img {
+      clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
+    }
+  }
+
+  &-slide {
+    &-betweenRT {
+      position: absolute;
+      transform: translateY(50%);
+      bottom: 0;
+      right: rem(-40px);
+      z-index: 1;
+
+      @include mq($from: lg) {
+        bottom: auto;
+        top: 0;
+        right: rem(30px);
+        transform: translateY(-50%);
+      }
+    }
+  }
+}

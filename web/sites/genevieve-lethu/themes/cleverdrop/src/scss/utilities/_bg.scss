@@ -6,7 +6,23 @@
  // Styleguide Elements.bg
 
 
-.u-bg {
+.bg {
+  &-imgContrib {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  &-colorContrib {
+    background-color: var(--colorContrib);
+
+    &::before,
+    &::after {
+      content: "";
+      color: var(--colorContrib); // For triangleBorder.scss can take the current background color
+    }
+  }
+
   &-themeSecondary {
     background-color: $theme-secondary;
 
@@ -14,16 +30,6 @@
     &::after {
       content: "";
       color: $theme-secondary; // For triangleBorder.scss can take the current background color
-    }
-  }
-
-  &-yellow {
-    background-color: $hokey-pokey;
-
-    &::before,
-    &::after {
-      content: "";
-      color: $hokey-pokey; // For triangleBorder.scss can take the current background color
     }
   }
 }

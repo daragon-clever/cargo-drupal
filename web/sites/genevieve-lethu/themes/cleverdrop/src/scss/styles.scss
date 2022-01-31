@@ -30,7 +30,7 @@
 /* -------------------------------------------------------------------------- *\
   # ELEMENTS
 \* -------------------------------------------------------------------------- */
-@import "elements/imgAnimation";
+@import "elements/animation";
 @import "elements/links";
 @import "elements/svg";
 @import "elements/headings";
@@ -47,7 +47,9 @@
 /* -------------------------------------------------------------------------- *\
   # UTILITIES
 \* -------------------------------------------------------------------------- */
-@import "utilities/extendedlink";
+@import "utilities/extendedLink";
 @import "utilities/mask";
 @import "utilities/fitScreen";
 @import "utilities/bg";
+@import "utilities/display";
+@import "utilities/pos";

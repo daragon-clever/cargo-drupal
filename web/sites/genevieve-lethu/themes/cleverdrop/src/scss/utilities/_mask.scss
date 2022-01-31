@@ -1,14 +1,14 @@
 /// Mask
 //
-// * .u-mask - visually hidden for accessibility
-// * .u-unmask - remove all propriety to show again the content
+// * .mask - visually hidden for accessibility
+// * .unmask - remove all propriety to show again the content
 //
 // Styleguide Utilities.mask
 
-.u-mask {
+.mask {
   @include visually-hidden;
 }
 
-.u-unmask {
+.unmask {
   @include visually-visible;
 }

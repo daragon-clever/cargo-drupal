@@ -29,8 +29,12 @@ $height-header: 60px;
     top: 100%;
     left: 0;
     right: 0;
-    height: calc(100vh - $height-header);
+    height: 0;
     overflow-y: auto;
+
+    &.is-open {
+      height: calc(100vh - $height-header);
+    }
 
     @include mq($from: lg) {
       flex-direction: row;

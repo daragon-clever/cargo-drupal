@@ -40,6 +40,7 @@
         "drupal/admin_toolbar": "^2.0",
         "drupal/adminimal_admin_toolbar": "^1.7",
         "drupal/adminimal_theme": "^1.4",
+        "drupal/allowed_formats": "^1.4",
         "drupal/antibot": "^1.2",
         "drupal/asset_injector": "^2.2",
         "drupal/backup_migrate": "^4.0",

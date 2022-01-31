@@ -6,7 +6,12 @@ dependencies:
     - field.storage.paragraph.field_rte_lite
     - paragraphs.paragraphs_type.description_centered
   module:
+    - allowed_formats
     - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - rte_lite
 id: paragraph.description_centered.field_rte_lite
 field_name: field_rte_lite
 entity_type: paragraph

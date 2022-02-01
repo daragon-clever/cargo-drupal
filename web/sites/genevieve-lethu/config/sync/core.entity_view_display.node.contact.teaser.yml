@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.contact.field_metatags
     - field.field.node.contact.field_webform
     - node.type.contact
   module:
@@ -19,5 +20,6 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_metatags: true
   field_webform: true
   langcode: true

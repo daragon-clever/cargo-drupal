@@ -3,9 +3,11 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - field.field.node.contact.field_metatags
     - field.field.node.contact.field_webform
     - node.type.contact
   module:
+    - metatag
     - path
     - webform
 id: node.contact.default
@@ -19,6 +21,13 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_metatags:
+    weight: 122
+    settings:
+      sidebar: true
+    third_party_settings: {  }
+    type: metatag_firehose
+    region: content
   field_webform:
     weight: 121
     settings:

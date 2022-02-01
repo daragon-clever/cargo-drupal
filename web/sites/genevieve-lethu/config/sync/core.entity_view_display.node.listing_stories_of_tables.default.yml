@@ -4,9 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.node.listing_stories_of_tables.field_main_picture
+    - field.field.node.listing_stories_of_tables.field_metatags
     - node.type.listing_stories_of_tables
   module:
     - entity_reference_revisions
+    - metatag
     - user
 id: node.listing_stories_of_tables.default
 targetEntityType: node
@@ -21,6 +23,13 @@ content:
       link: ''
     third_party_settings: {  }
     type: entity_reference_revisions_entity_view
+    region: content
+  field_metatags:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
     region: content
   links:
     weight: 100

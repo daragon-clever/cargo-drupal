@@ -3,9 +3,11 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - field.field.node.contact.field_metatags
     - field.field.node.contact.field_webform
     - node.type.contact
   module:
+    - metatag
     - user
     - webform
 id: node.contact.default
@@ -13,6 +15,13 @@ targetEntityType: node
 bundle: contact
 mode: default
 content:
+  field_metatags:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
   field_webform:
     weight: 101
     label: above

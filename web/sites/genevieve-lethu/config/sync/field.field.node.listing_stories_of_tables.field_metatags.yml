@@ -1,0 +1,21 @@
+uuid: 540d58c0-55e7-4f29-82c3-4ce422dfce3b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_metatags
+    - node.type.listing_stories_of_tables
+  module:
+    - metatag
+id: node.listing_stories_of_tables.field_metatags
+field_name: field_metatags
+entity_type: node
+bundle: listing_stories_of_tables
+label: Metatags
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

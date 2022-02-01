@@ -4,9 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.node.listing_stories_of_tables.field_main_picture
+    - field.field.node.listing_stories_of_tables.field_metatags
     - node.type.listing_stories_of_tables
   module:
     - field_group
+    - metatag
     - paragraphs
     - path
 third_party_settings:
@@ -65,6 +67,13 @@ content:
         duplicate: duplicate
     third_party_settings: {  }
     type: paragraphs
+    region: content
+  field_metatags:
+    weight: 26
+    settings:
+      sidebar: true
+    third_party_settings: {  }
+    type: metatag_firehose
     region: content
   langcode:
     type: language_select

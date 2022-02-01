@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.heart_of_creation.field_main_picture
+    - field.field.node.heart_of_creation.field_metatags
     - field.field.node.heart_of_creation.field_paragraph_collection
     - field.field.node.heart_of_creation.field_paragraph_creation
     - field.field.node.heart_of_creation.field_paragraph_creative_text
@@ -27,6 +28,7 @@ content:
     region: content
 hidden:
   field_main_picture: true
+  field_metatags: true
   field_paragraph_collection: true
   field_paragraph_creation: true
   field_paragraph_creative_text: true

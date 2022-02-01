@@ -4,11 +4,13 @@ status: true
 dependencies:
   config:
     - field.field.node.collection.field_main_picture
+    - field.field.node.collection.field_metatags
     - field.field.node.collection.field_paragraph_dual_slider
     - field.field.node.collection.field_paragraph_moodboard
     - node.type.collection
   module:
     - entity_reference_revisions
+    - metatag
     - user
 id: node.collection.default
 targetEntityType: node
@@ -23,6 +25,13 @@ content:
       link: ''
     third_party_settings: {  }
     type: entity_reference_revisions_entity_view
+    region: content
+  field_metatags:
+    weight: 104
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
     region: content
   field_paragraph_dual_slider:
     type: entity_reference_revisions_entity_view

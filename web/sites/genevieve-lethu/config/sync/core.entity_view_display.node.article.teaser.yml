@@ -4,28 +4,81 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.article.field_categorie
+    - field.field.node.article.field_color
     - field.field.node.article.field_main_picture
+    - field.field.node.article.field_metatags
     - field.field.node.article.field_paragraph_centred_text
     - field.field.node.article.field_paragraph_quote_5
     - field.field.node.article.field_paragraph_video
     - field.field.node.article.field_paragraphe_text_list
+    - field.field.node.article.field_picture
+    - field.field.node.article.field_resume
     - field.field.node.article.field_triptych_picture
     - node.type.article
   module:
+    - entity_reference_revisions
+    - svg_image
     - user
 id: node.article.teaser
 targetEntityType: node
 bundle: article
 mode: teaser
 content:
-  links:
-    weight: 100
+  field_categorie:
+    type: entity_reference_label
+    weight: 1
+    region: content
+    label: visually_hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+  field_main_picture:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    region: content
+    label: visually_hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  field_paragraph_centred_text:
+    type: entity_reference_revisions_entity_view
+    weight: 2
+    region: content
+    label: visually_hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  field_picture:
+    type: image
+    weight: 4
+    region: content
+    label: above
+    settings:
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+  field_resume:
+    type: basic_string
+    weight: 3
+    region: content
+    label: visually_hidden
     settings: {  }
     third_party_settings: {  }
+  links:
+    weight: 5
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
-  field_main_picture: true
-  field_paragraph_centred_text: true
+  field_color: true
+  field_metatags: true
   field_paragraph_quote_5: true
   field_paragraph_video: true
   field_paragraphe_text_list: true

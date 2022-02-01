@@ -3,6 +3,7 @@ module:
   admin_toolbar_tools: 0
   adminimal_admin_toolbar: 0
   allowed_formats: 0
+  better_exposed_filters: 0
   big_pipe: 0
   block: 0
   breakpoint: 0
@@ -44,11 +45,13 @@ module:
   svg_image: 0
   system: 0
   tacjs: 0
+  taxonomy: 0
   text: 0
   token: 0
   toolbar: 0
   twig_tweak: 0
   user: 0
+  views_ui: 0
   webform: 0
   webform_ui: 0
   pathauto: 1

@@ -3,17 +3,26 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - field.field.node.article.field_categorie
+    - field.field.node.article.field_color
     - field.field.node.article.field_main_picture
+    - field.field.node.article.field_metatags
     - field.field.node.article.field_paragraph_centred_text
     - field.field.node.article.field_paragraph_quote_5
     - field.field.node.article.field_paragraph_video
     - field.field.node.article.field_paragraphe_text_list
+    - field.field.node.article.field_picture
+    - field.field.node.article.field_resume
     - field.field.node.article.field_triptych_picture
+    - image.style.thumbnail
     - node.type.article
   module:
+    - color_field
     - field_group
+    - metatag
     - paragraphs
     - path
+    - svg_image
 third_party_settings:
   field_group:
     group_zone_article:
@@ -24,8 +33,9 @@ third_party_settings:
         - group_article_text_list
         - group_article_citation
         - group_article_video
+        - group_teaser
       parent_name: ''
-      weight: 1
+      weight: 3
       format_type: tabs
       region: content
       format_settings:
@@ -117,6 +127,23 @@ third_party_settings:
         formatter: closed
         required_fields: true
       label: Vidéo
+    group_teaser:
+      children:
+        - field_picture
+        - field_categorie
+        - field_color
+        - field_resume
+      parent_name: group_zone_article
+      weight: 21
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: 'Mis en avant'
 id: node.article.default
 targetEntityType: node
 bundle: article
@@ -124,10 +151,30 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 5
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_categorie:
+    weight: 27
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_color:
+    weight: 28
+    settings:
+      show_input: '1'
+      palette: ''
+      show_buttons: '1'
+      cancel_text: Annuler
+      choose_text: Choisir
+      allow_empty: '1'
+      show_palette: '0'
+      show_palette_only: '0'
+    third_party_settings: {  }
+    type: color_field_widget_spectrum
+    region: content
   field_main_picture:
     weight: 10
     settings:
@@ -145,6 +192,13 @@ content:
         duplicate: duplicate
     third_party_settings: {  }
     type: paragraphs
+    region: content
+  field_metatags:
+    weight: 11
+    settings:
+      sidebar: true
+    third_party_settings: {  }
+    type: metatag_firehose
     region: content
   field_paragraph_centred_text:
     weight: 11
@@ -218,6 +272,22 @@ content:
         duplicate: duplicate
     third_party_settings: {  }
     region: content
+  field_picture:
+    weight: 26
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_resume:
+    weight: 29
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
   field_triptych_picture:
     type: paragraphs
     weight: 12
@@ -238,14 +308,14 @@ content:
     region: content
   langcode:
     type: language_select
-    weight: 3
+    weight: 4
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   path:
     type: path
-    weight: 8
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -253,21 +323,21 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 6
+    weight: 7
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 9
+    weight: 10
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 7
+    weight: 8
     region: content
     third_party_settings: {  }
   title:
@@ -280,7 +350,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 4
+    weight: 5
     settings:
       match_operator: CONTAINS
       size: 60

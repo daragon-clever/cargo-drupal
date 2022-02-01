@@ -39,12 +39,33 @@ function gl_core_theme($existing, $type, $theme, $path)
 }
 
 /**
- * Implements hook_form_alter().
+ * Implements hook_node_form_alter().
  */
 function gl_core_form_node_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
   if ($form_id === 'node_heart_of_creation_edit_form' || $form_id == 'node_heart_of_creation_form') {
     // Add simple validation function for 3 minimum slides. Contraints can be use too
     $form['#validate'][] = '_gl_core_node_heart_of_creation_validate';
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ * @param $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ * @param $form_id
+ */
+function gl_core_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if ($form_id == 'views_exposed_form' && $form['#id'] == 'views-exposed-form-featured-articles-block-1') {
+    // Remove terms who havn't results
+    $filters = $form['field_categorie_target_id']['#options'];
+    foreach ($filters as $id => $filter) {
+      $nodes = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
+        'field_categorie' => $id,
+      ]);
+      if (empty($nodes)) {
+        unset($form['field_categorie_target_id']['#options'][$id]);
+      }
+    }
   }
 }
 

@@ -4,11 +4,13 @@ status: true
 dependencies:
   config:
     - field.field.node.collection.field_main_picture
+    - field.field.node.collection.field_metatags
     - field.field.node.collection.field_paragraph_dual_slider
     - field.field.node.collection.field_paragraph_moodboard
     - node.type.collection
   module:
     - field_group
+    - metatag
     - paragraphs
     - path
 third_party_settings:
@@ -98,6 +100,13 @@ content:
         duplicate: '0'
     third_party_settings: {  }
     type: paragraphs
+    region: content
+  field_metatags:
+    weight: 26
+    settings:
+      sidebar: true
+    third_party_settings: {  }
+    type: metatag_firehose
     region: content
   field_paragraph_dual_slider:
     type: paragraphs

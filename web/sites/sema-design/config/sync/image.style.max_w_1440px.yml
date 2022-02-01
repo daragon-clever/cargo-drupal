@@ -1,0 +1,15 @@
+uuid: e9ea87a6-9607-411d-b070-7df424dc4d20
+langcode: fr
+status: true
+dependencies: {  }
+name: max_w_1440px
+label: 'MAX W 1440px'
+effects:
+  efe96d1f-0054-4768-9c1f-0e2b18f7984c:
+    uuid: efe96d1f-0054-4768-9c1f-0e2b18f7984c
+    id: image_scale
+    weight: 1
+    data:
+      width: 1440
+      height: null
+      upscale: false

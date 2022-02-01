@@ -24,7 +24,7 @@ content:
     region: content
   field_main_visual:
     type: paragraphs
-    weight: 1
+    weight: 0
     settings:
       title: Paragraphe
       title_plural: Paragraphs
@@ -42,7 +42,7 @@ content:
     third_party_settings: {  }
     region: content
   field_title:
-    weight: 0
+    weight: 1
     settings:
       size: 60
       placeholder: ''

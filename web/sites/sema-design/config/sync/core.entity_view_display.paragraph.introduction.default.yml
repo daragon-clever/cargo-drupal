@@ -7,9 +7,10 @@ dependencies:
     - field.field.paragraph.introduction.field_picture
     - field.field.paragraph.introduction.field_second_picture
     - field.field.paragraph.introduction.field_title
+    - image.style.large
     - paragraphs.paragraphs_type.introduction
   module:
-    - image
+    - svg_image
 id: paragraph.introduction.default
 targetEntityType: paragraph
 bundle: introduction
@@ -26,8 +27,12 @@ content:
     weight: 2
     label: visually_hidden
     settings:
-      image_style: ''
+      image_style: large
       image_link: ''
+      svg_render_as_image: true
+      svg_attributes:
+        width: null
+        height: null
     third_party_settings: {  }
     type: image
     region: content
@@ -35,8 +40,12 @@ content:
     weight: 3
     label: visually_hidden
     settings:
-      image_style: ''
+      image_style: large
       image_link: ''
+      svg_render_as_image: true
+      svg_attributes:
+        width: null
+        height: null
     third_party_settings: {  }
     type: image
     region: content

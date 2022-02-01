@@ -11,12 +11,12 @@ dependencies:
     - field.field.paragraph.our_universe.field_our_universe_top_r_picture
     - field.field.paragraph.our_universe.field_subtitle
     - field.field.paragraph.our_universe.field_title
-    - image.style.crop_our_universe
+    - image.style.portrait_max_h_700px
     - paragraphs.paragraphs_type.our_universe
   module:
     - color_field
-    - image
     - link
+    - svg_image
 id: paragraph.our_universe.default
 targetEntityType: paragraph
 bundle: our_universe
@@ -54,8 +54,12 @@ content:
     weight: 3
     label: visually_hidden
     settings:
-      image_style: crop_our_universe
+      image_style: portrait_max_h_700px
       image_link: ''
+      svg_render_as_image: true
+      svg_attributes:
+        width: null
+        height: null
     third_party_settings: {  }
     type: image
     region: content
@@ -63,8 +67,12 @@ content:
     weight: 0
     label: visually_hidden
     settings:
-      image_style: crop_our_universe
+      image_style: portrait_max_h_700px
       image_link: ''
+      svg_render_as_image: true
+      svg_attributes:
+        width: null
+        height: null
     third_party_settings: {  }
     type: image
     region: content
@@ -72,8 +80,12 @@ content:
     weight: 1
     label: visually_hidden
     settings:
-      image_style: crop_our_universe
+      image_style: portrait_max_h_700px
       image_link: ''
+      svg_render_as_image: true
+      svg_attributes:
+        width: null
+        height: null
     third_party_settings: {  }
     type: image
     region: content

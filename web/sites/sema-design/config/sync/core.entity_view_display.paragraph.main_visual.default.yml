@@ -6,9 +6,10 @@ dependencies:
     - field.field.paragraph.main_visual.field_on_title
     - field.field.paragraph.main_visual.field_picture
     - field.field.paragraph.main_visual.field_title
+    - image.style.picture_full
     - paragraphs.paragraphs_type.main_visual
   module:
-    - image
+    - svg_image
 id: paragraph.main_visual.default
 targetEntityType: paragraph
 bundle: main_visual
@@ -26,8 +27,12 @@ content:
     weight: 0
     label: visually_hidden
     settings:
-      image_style: ''
+      image_style: picture_full
       image_link: ''
+      svg_render_as_image: true
+      svg_attributes:
+        width: null
+        height: null
     third_party_settings: {  }
     type: image
     region: content

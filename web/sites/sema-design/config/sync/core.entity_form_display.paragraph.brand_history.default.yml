@@ -11,13 +11,13 @@ dependencies:
     - field.field.paragraph.brand_history.field_second_picture
     - field.field.paragraph.brand_history.field_second_title
     - field.field.paragraph.brand_history.field_title
-    - image.style.thumbnail
+    - image.style.portrait_max_h_700px
     - paragraphs.paragraphs_type.brand_history
   module:
     - color_field
     - field_group
-    - image_widget_crop
     - link
+    - svg_image
 third_party_settings:
   field_group:
     group_history:
@@ -105,18 +105,10 @@ content:
   field_picture:
     weight: 5
     settings:
-      show_default_crop: true
-      warn_multiple_usages: true
-      preview_image_style: thumbnail
-      crop_preview_image_style: crop_thumbnail
-      crop_list:
-        - brand_history
-      crop_types_required:
-        - brand_history
+      preview_image_style: portrait_max_h_700px
       progress_indicator: throbber
-      show_crop_area: false
     third_party_settings: {  }
-    type: image_widget_crop
+    type: image_image
     region: content
   field_second_description:
     weight: 6
@@ -129,18 +121,10 @@ content:
   field_second_picture:
     weight: 7
     settings:
-      show_default_crop: true
-      warn_multiple_usages: true
-      preview_image_style: thumbnail
-      crop_preview_image_style: crop_thumbnail
-      crop_list:
-        - brand_history
-      crop_types_required:
-        - brand_history
+      preview_image_style: portrait_max_h_700px
       progress_indicator: throbber
-      show_crop_area: false
     third_party_settings: {  }
-    type: image_widget_crop
+    type: image_image
     region: content
   field_second_title:
     weight: 5

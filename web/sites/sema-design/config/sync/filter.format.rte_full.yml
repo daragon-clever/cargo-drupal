@@ -1,0 +1,8 @@
+uuid: 0f9ea72f-d070-4782-926a-976ba29fcdb2
+langcode: fr
+status: true
+dependencies: {  }
+name: RTE
+format: rte_full
+weight: 0
+filters: {  }

@@ -14,11 +14,11 @@ dependencies:
     - field.field.paragraph.moodboard.field_title
     - field.field.paragraph.moodboard.field_traces_paint
     - field.field.paragraph.moodboard.paragraph_view_mode
-    - image.style.crop_our_universe
+    - image.style.medium
     - paragraphs.paragraphs_type.moodboard
   module:
     - color_field
-    - image
+    - svg_image
 id: paragraph.moodboard.preview
 targetEntityType: paragraph
 bundle: moodboard
@@ -48,38 +48,11 @@ content:
     third_party_settings: {  }
     type: string
     region: content
-  field_picture:
-    weight: 3
-    label: visually_hidden
-    settings:
-      image_style: crop_our_universe
-      image_link: ''
-    third_party_settings: {  }
-    type: image
-    region: content
   field_rounded_pictures:
     weight: 6
     label: visually_hidden
     settings:
       image_style: medium
-      image_link: ''
-    third_party_settings: {  }
-    type: image
-    region: content
-  field_second_picture:
-    weight: 4
-    label: visually_hidden
-    settings:
-      image_style: crop_our_universe
-      image_link: ''
-    third_party_settings: {  }
-    type: image
-    region: content
-  field_third_picture:
-    weight: 5
-    label: visually_hidden
-    settings:
-      image_style: crop_our_universe
       image_link: ''
     third_party_settings: {  }
     type: image
@@ -102,4 +75,7 @@ content:
     type: color_field_formatter_text
     region: content
 hidden:
+  field_picture: true
+  field_second_picture: true
+  field_third_picture: true
   paragraph_view_mode: true

@@ -15,8 +15,8 @@ dependencies:
     - paragraphs.paragraphs_type.our_universe
   module:
     - color_field
-    - image_widget_crop
     - link
+    - svg_image
 id: paragraph.our_universe.default
 targetEntityType: paragraph
 bundle: our_universe
@@ -55,50 +55,26 @@ content:
   field_our_universe_bttm_r_p:
     weight: 2
     settings:
-      show_default_crop: true
-      warn_multiple_usages: true
       preview_image_style: crop_thumbnail
-      crop_preview_image_style: crop_thumbnail
-      crop_list:
-        - notre_univers
-      crop_types_required:
-        - notre_univers
       progress_indicator: throbber
-      show_crop_area: false
     third_party_settings: {  }
-    type: image_widget_crop
+    type: image_image
     region: content
   field_our_universe_left_picture:
     weight: 0
     settings:
-      show_default_crop: true
-      warn_multiple_usages: true
       preview_image_style: crop_thumbnail
-      crop_preview_image_style: crop_thumbnail
-      crop_list:
-        - notre_univers
-      crop_types_required:
-        - notre_univers
       progress_indicator: throbber
-      show_crop_area: false
     third_party_settings: {  }
-    type: image_widget_crop
+    type: image_image
     region: content
   field_our_universe_top_r_picture:
     weight: 1
     settings:
-      show_default_crop: true
-      warn_multiple_usages: true
       preview_image_style: crop_thumbnail
-      crop_preview_image_style: crop_thumbnail
-      crop_list:
-        - notre_univers
-      crop_types_required:
-        - notre_univers
       progress_indicator: throbber
-      show_crop_area: false
     third_party_settings: {  }
-    type: image_widget_crop
+    type: image_image
     region: content
   field_subtitle:
     weight: 6

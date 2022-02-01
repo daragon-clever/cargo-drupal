@@ -1,0 +1,15 @@
+uuid: 7864bf0f-a2a7-4f96-9202-12f2a3c013a3
+langcode: fr
+status: true
+dependencies: {  }
+name: picture_full
+label: 'Picture full (MAX W 1920px)'
+effects:
+  05f99792-1679-4712-94be-5fcf421bacdc:
+    uuid: 05f99792-1679-4712-94be-5fcf421bacdc
+    id: image_scale
+    weight: 1
+    data:
+      width: 1920
+      height: null
+      upscale: false

@@ -10,9 +10,10 @@ dependencies:
     - field.field.config_pages.newsletter.field_second_title
     - field.field.config_pages.newsletter.field_title
     - field.field.config_pages.newsletter.field_visuel
+    - image.style.picture_full_max_w_800px_
   module:
-    - image
     - link
+    - svg_image
 id: config_pages.newsletter.default
 targetEntityType: config_pages
 bundle: newsletter
@@ -43,6 +44,10 @@ content:
     settings:
       image_style: ''
       image_link: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
     third_party_settings: {  }
     type: image
     region: content
@@ -66,8 +71,12 @@ content:
     weight: 1
     label: above
     settings:
-      image_style: ''
+      image_style: picture_full_max_w_800px_
       image_link: ''
+      svg_render_as_image: true
+      svg_attributes:
+        width: null
+        height: null
     third_party_settings: {  }
     type: image
     region: content

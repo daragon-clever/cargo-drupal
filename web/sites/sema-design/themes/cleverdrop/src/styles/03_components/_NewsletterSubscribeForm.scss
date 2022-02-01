@@ -4,21 +4,33 @@
   input {
     margin-bottom: 0;
   }
-  
+
   [type='email'] {
     width: 100%;
+
+    .NewsletterBlock-alt & {
+      border: 1px solid var(--black);
+    }
+  }
+
+  [type='submit'] {
+    .NewsletterBlock-alt & {
+      @include media-breakpoint-down('md') {
+        width: 100%;
+      }
+    }
   }
 }
 
 .NewsletterSubscribeForm-fields {
   display: flex;
-  
+
   @include media-breakpoint-down('md') {
     flex-direction: column;
     row-gap: rem(20px);
     align-items: center;
   }
-  
+
   @include media-breakpoint-up('md') {
     flex-direction: row;
   }

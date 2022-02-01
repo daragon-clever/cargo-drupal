@@ -56,6 +56,7 @@ module:
   shortcut: 0
   svg_image: 0
   system: 0
+  tacjs: 0
   taxonomy: 0
   text: 0
   token: 0

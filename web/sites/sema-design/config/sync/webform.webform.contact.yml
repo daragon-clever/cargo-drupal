@@ -17,7 +17,7 @@ id: contact
 title: Contact
 description: 'Basic email contact webform.'
 category: ''
-elements: "objet:\n  '#type': select\n  '#title': 'Objet *'\n  '#options':\n    commercial: 'Je souhaite être recontacté par un commercial'\n    pro: 'Je souhaite accéder à la boutique professionnelle'\n    catalogue: 'Je souhaite recevoir vos catalogues'\n    sav: 'Je souhaite contacter le SAV'\n    other: 'Autre sujet'\n  '#empty_option': 'Sélectionner un sujet'\n  '#required': true\nname:\n  '#type': textfield\n  '#title': 'Votre nom *'\n  '#required': true\n  '#default_value': '[current-user:display-name]'\nlastname:\n  '#type': textfield\n  '#title': 'Votre prénom *'\n  '#required': true\n  '#multiple__no_items_message': 'Aucun &eacute;l&eacute;ment saisi. Veuillez ajouter des &eacute;l&eacute;ments ci-dessous.'\nsociety:\n  '#type': textfield\n  '#title': 'Société *'\n  '#required': true\n  '#multiple__no_items_message': 'Aucun &eacute;l&eacute;ment saisi. Veuillez ajouter des &eacute;l&eacute;ments ci-dessous.'\nadress:\n  '#type': webform_address\n  '#title': 'Adresse *'\n  '#required': true\n  '#multiple__no_items_message': 'Aucun &eacute;l&eacute;ment saisi. Veuillez ajouter des &eacute;l&eacute;ments ci-dessous.'\n  '#address__access': false\n  '#address_2__access': false\n  '#city__title': 'Ville  *'\n  '#city__required': true\n  '#state_province__access': false\n  '#postal_code__title': 'Code postal  *'\n  '#postal_code__required': true\n  '#country__access': false\nphone:\n  '#type': tel\n  '#title': 'Téléphone *'\n  '#required': true\n  '#pattern': '[0-9]{10}'\n  '#multiple__no_items_message': 'Aucun &eacute;l&eacute;ment saisi. Veuillez ajouter des &eacute;l&eacute;ments ci-dessous.'\nemail:\n  '#type': email\n  '#title': 'Adresse email *'\n  '#required': true\n  '#default_value': '[current-user:mail]'\n  '#multiple__no_items_message': 'Aucun &eacute;l&eacute;ment saisi. Veuillez ajouter des &eacute;l&eacute;ments ci-dessous.'\nmessage:\n  '#type': textarea\n  '#title': 'Votre message *'\n  '#required': true\n  '#multiple__no_items_message': 'Aucun &eacute;l&eacute;ment saisi. Veuillez ajouter des &eacute;l&eacute;ments ci-dessous.'\n  '#test': 'Please ignore this email.'\ninterested_by:\n  '#type': checkboxes\n  '#title': 'Je suis intéressé(e) par'\n  '#options':\n    art: 'Les arts de la table'\n    textile: 'Le textile'\n    decoration: 'La décoration'\n    luminaire: 'Le luminaire'\n    meuble: 'Le meuble'\n    accessoires: 'Les accessoires'\n    autre: Autre\ngdpr:\n  '#type': checkbox\n  '#title': 'En soumettant ce formulaire, j''accepte que les informations saisies dans ce formulaire soient utilisées, exploitées, traitées pour permettre de me recontacter dans le cadre de la relation commerciale qui découle de cette prise de contact.'\n  '#required': true\ncaptcha:\n  '#type': captcha\n  '#captcha_type': recaptcha_v3/contact\n  '#captcha_admin_mode': true\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit__label': Envoyer"
+elements: "objet:\n  '#type': select\n  '#title': 'Objet *'\n  '#options':\n    commercial: 'Je souhaite être recontacté par un commercial'\n    revendeur: 'Je souhaite devenir revendeur'\n    pro: 'Je souhaite accéder à la boutique professionnelle'\n    catalogue: 'Je souhaite recevoir vos catalogues'\n    sav: 'Je souhaite contacter le SAV'\n    other: 'Autre sujet'\n  '#empty_option': 'Sélectionner un sujet'\n  '#required': true\nname:\n  '#type': textfield\n  '#title': 'Votre nom *'\n  '#required': true\n  '#default_value': '[current-user:display-name]'\nlastname:\n  '#type': textfield\n  '#title': 'Votre prénom *'\n  '#required': true\n  '#multiple__no_items_message': 'Aucun &eacute;l&eacute;ment saisi. Veuillez ajouter des &eacute;l&eacute;ments ci-dessous.'\nsociety:\n  '#type': textfield\n  '#title': 'Société *'\n  '#required': true\n  '#multiple__no_items_message': 'Aucun &eacute;l&eacute;ment saisi. Veuillez ajouter des &eacute;l&eacute;ments ci-dessous.'\nadress:\n  '#type': webform_address\n  '#title': 'Adresse *'\n  '#required': true\n  '#multiple__no_items_message': 'Aucun &eacute;l&eacute;ment saisi. Veuillez ajouter des &eacute;l&eacute;ments ci-dessous.'\n  '#address__access': false\n  '#address_2__access': false\n  '#city__title': 'Ville  *'\n  '#city__required': true\n  '#state_province__access': false\n  '#postal_code__title': 'Code postal  *'\n  '#postal_code__required': true\n  '#country__access': false\nphone:\n  '#type': tel\n  '#title': 'Téléphone *'\n  '#required': true\n  '#pattern': '[0-9]{10}'\n  '#multiple__no_items_message': 'Aucun &eacute;l&eacute;ment saisi. Veuillez ajouter des &eacute;l&eacute;ments ci-dessous.'\nemail:\n  '#type': email\n  '#title': 'Adresse email *'\n  '#required': true\n  '#default_value': '[current-user:mail]'\n  '#multiple__no_items_message': 'Aucun &eacute;l&eacute;ment saisi. Veuillez ajouter des &eacute;l&eacute;ments ci-dessous.'\nmessage:\n  '#type': textarea\n  '#title': 'Votre message *'\n  '#required': true\n  '#multiple__no_items_message': 'Aucun &eacute;l&eacute;ment saisi. Veuillez ajouter des &eacute;l&eacute;ments ci-dessous.'\n  '#test': 'Please ignore this email.'\ninterested_by:\n  '#type': checkboxes\n  '#title': 'Je suis intéressé(e) par'\n  '#options':\n    art: 'Les arts de la table'\n    textile: 'Le textile'\n    decoration: 'La décoration'\n    luminaire: 'Le luminaire'\n    meuble: 'Le meuble'\n    accessoires: 'Les accessoires'\n    autre: Autre\ngdpr:\n  '#type': checkbox\n  '#title': 'En soumettant ce formulaire, j''accepte que les informations saisies dans ce formulaire soient utilisées, exploitées, traitées pour permettre de me recontacter dans le cadre de la relation commerciale qui découle de cette prise de contact.'\n  '#required': true\ncaptcha:\n  '#type': captcha\n  '#captcha_type': recaptcha_v3/contact\n  '#captcha_admin_mode': true\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit__label': Envoyer"
 css: ''
 javascript: ''
 settings:
@@ -117,7 +117,7 @@ settings:
   draft_loaded_message: ''
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
-  confirmation_type: url_message
+  confirmation_type: message
   confirmation_title: ''
   confirmation_message: '<span style="font-size:10pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Calibri,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Votre message a bien &eacute;t&eacute; pris en compte. Nous vous r&eacute;pondrons dans les plus brefs d&eacute;lais. Merci.</span></span></span></span></span></span>'
   confirmation_url: '<front>'
@@ -423,6 +423,48 @@ handlers:
       bcc_mail: ''
       bcc_options: {  }
       from_mail: _default
+      from_options: {  }
+      from_name: '[webform_submission:values:name:raw]'
+      subject: '[webform_submission:values:objet:raw]'
+      body: "<p>Les valeurs soumises sont :</p>\r\n{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}\r\n"
+      excluded_elements:
+        gdpr: gdpr
+        captcha: captcha
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: true
+      theme_name: ''
+      parameters: {  }
+      debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+  commercial_1:
+    id: email
+    label: Revendeur
+    notes: ''
+    handler_id: commercial_1
+    status: true
+    conditions:
+      enabled:
+        ':input[name="objet"]':
+          value: revendeur
+    weight: 6
+    settings:
+      states:
+        - completed
+      to_mail: ccostes@clever-age.com
+      to_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: '[webform_submission:values:email:raw]'
       from_options: {  }
       from_name: '[webform_submission:values:name:raw]'
       subject: '[webform_submission:values:objet:raw]'

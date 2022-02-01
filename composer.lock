@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "85edad5859c6f1daeacdf40e9b5fd1b5",
+    "content-hash": "f89cc19a3d093e17ffb59c1f20a8cf05",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2919,6 +2919,73 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/adminimal_theme",
                 "issues": "https://www.drupal.org/project/issues/adminimal_theme"
+            }
+        },
+        {
+            "name": "drupal/allowed_formats",
+            "version": "1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/allowed_formats.git",
+                "reference": "8.x-1.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/allowed_formats-8.x-1.4.zip",
+                "reference": "8.x-1.4",
+                "shasum": "6c73fd69781e8a7c3ebc394ce74f981b6da50eae",
+                "mirrors": [
+                    {
+                        "url": "https://repo.packagist.com/cargo-grp/dists/%package%/%version%/r%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.4",
+                    "datestamp": "1643490593",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://repo.packagist.com/cargo-grp/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Northern Commerce (formerly Digital Echidna)",
+                    "homepage": "https://www.drupal.org/northern-commerce-formerly-digital-echidna",
+                    "role": "Supporting organization"
+                },
+                {
+                    "name": "Jordan Thompson (nord102)",
+                    "homepage": "https://www.drupal.org/u/nord102",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Wunder",
+                    "homepage": "https://www.drupal.org/wunder",
+                    "role": "Supporting organization"
+                },
+                {
+                    "name": "Florian Loretan (floretan)",
+                    "homepage": "https://www.drupal.org/u/floretan",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Limit which text formats are available for each field instance.",
+            "homepage": "https://www.drupal.org/project/allowed_formats",
+            "support": {
+                "source": "http://cgit.drupalcode.org/allowed_formats",
+                "issues": "https://www.drupal.org/project/issues/allowed_formats"
             }
         },
         {
@@ -7340,6 +7407,84 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/svg_image",
                 "issues": "http://drupal.org/project/svg_image"
+            }
+        },
+        {
+            "name": "drupal/tacjs",
+            "version": "6.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/tacjs.git",
+                "reference": "8.x-6.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/tacjs-8.x-6.0.zip",
+                "reference": "8.x-6.0",
+                "shasum": "d99fc1c61f4d25c4d6a0dcba05e8e5e1a4728018",
+                "mirrors": [
+                    {
+                        "url": "https://repo.packagist.com/cargo-grp/dists/%package%/%version%/r%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-6.0",
+                    "datestamp": "1614333713",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://repo.packagist.com/cargo-grp/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "a.boutakaoua",
+                    "homepage": "https://www.drupal.org/user/3587144"
+                },
+                {
+                    "name": "amina ihfa",
+                    "homepage": "https://www.drupal.org/user/3659843"
+                },
+                {
+                    "name": "asmaakhalfi",
+                    "homepage": "https://www.drupal.org/user/3587145"
+                },
+                {
+                    "name": "boulaffasae",
+                    "homepage": "https://www.drupal.org/user/3584750"
+                },
+                {
+                    "name": "chaimaariz",
+                    "homepage": "https://www.drupal.org/user/3549766"
+                },
+                {
+                    "name": "k.asmouh",
+                    "homepage": "https://www.drupal.org/user/3135943"
+                },
+                {
+                    "name": "netsliver",
+                    "homepage": "https://www.drupal.org/user/3082011"
+                },
+                {
+                    "name": "z.yakoubi",
+                    "homepage": "https://www.drupal.org/user/3621406"
+                }
+            ],
+            "description": "Comply to the European cookie law using tarteaucitron.js",
+            "homepage": "https://www.drupal.org/project/tacjs",
+            "support": {
+                "source": "https://git.drupalcode.org/project/tacjs"
             }
         },
         {

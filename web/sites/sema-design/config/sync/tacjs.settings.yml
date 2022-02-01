@@ -1,0 +1,29 @@
+langcode: fr
+dialog:
+  privacyUrl: ''
+  hashtag: '#tarteaucitron'
+  cookieName: tarteaucitron
+  orientation: bottom
+  bodyPosition: bottom
+  showAlertSmall: false
+  cookieslist: false
+  showIcon: true
+  iconPosition: BottomRight
+  adblocker: false
+  DenyAllCta: true
+  AcceptAllCta: true
+  highPrivacy: true
+  handleBrowserDNTRequest: true
+  removeCredit: false
+  moreInfoLink: true
+  useExternalCss: true
+  useExternalJs: true
+  cookieDomain: ''
+  readmoreLink: ''
+  mandatory: true
+  closePopup: false
+services:
+  ferank: true
+_core:
+  default_config_hash: xzeezcsAPtyHMVFt3HatD1y8pwTpg5qoVsd2ap5OgwY
+expire: null

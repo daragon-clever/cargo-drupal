@@ -1,0 +1,540 @@
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v29/KFOiCnqEu92Fr1Mu51QrIzc.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v29/KFOjCnqEu92Fr1Mu51TjARc9.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v29/KFOkCnqEu92Fr1Mu52xP.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v29/KFOjCnqEu92Fr1Mu51S7ABc9.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v29/KFOjCnqEu92Fr1Mu51TzBhc9.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v29/KFOjCnqEu92Fr1Mu51TLBBc9.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v29/KFOkCnqEu92Fr1MmgWxP.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmSU5vAw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v29/KFOmCnqEu92Fr1Me5Q.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmEU9vAw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmWUlvAw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmYUtvAw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/oswald/v40/TK3_WkUHHAIjg75cFRf3bXL8LICs13FvgUE.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/oswald/v40/TK3_WkUHHAIjg75cFRf3bXL8LICs169vgUE.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/oswald/v40/TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvgUE.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/oswald/v40/TK3_WkUHHAIjg75cFRf3bXL8LICs18NvgUE.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/oswald/v40/TK3_WkUHHAIjg75cFRf3bXL8LICs1y9ogUE.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/oswald/v40/TK3_WkUHHAIjg75cFRf3bXL8LICs1xZogUE.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v29/KFOiCnqEu92Fr1Mu51QrIzc.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v29/KFOjCnqEu92Fr1Mu51TjARc9.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v29/KFOkCnqEu92Fr1Mu52xP.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v29/KFOjCnqEu92Fr1Mu51S7ABc9.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v29/KFOjCnqEu92Fr1Mu51TzBhc9.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v29/KFOjCnqEu92Fr1Mu51TLBBc9.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v29/KFOkCnqEu92Fr1MmgWxP.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmSU5vAw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v29/KFOmCnqEu92Fr1Me5Q.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmEU9vAw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmWUlvAw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmYUtvAw.ttf) format('truetype');
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #1c1c1c;
+  font-family: 'Roboto';
+}
+p {
+  color: #fff;
+  font-size: 16px;
+  line-height: 32px;
+  font-weight: 400;
+}
+h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 50px;
+  line-height: 50px;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+}
+h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 36px;
+  margin-bottom: 30px;
+  font-weight: 500;
+  color: #fff;
+  text-transform: uppercase;
+}
+h3 {
+  color: #333333;
+  font-size: 36px;
+  text-transform: uppercase;
+  font-family: 'Oswald', sans-serif;
+  margin-bottom: 30px;
+  line-height: 40px;
+}
+img {
+  max-width: 100%;
+}
+.ares_btn {
+  line-height: 44px;
+  margin-top: 30px;
+  background: #1c1c1c;
+  padding: 0 30px;
+  color: #fff;
+  display: inline-block;
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: .6px;
+  text-decoration: none;
+}
+.ares_btn:before,
+.ares_btn:after {
+  content: '';
+  width: 3px;
+  height: 3px;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  position: absolute;
+}
+.ares_btn:before {
+  left: 7px;
+  top: 7px;
+}
+.ares_btn:after {
+  right: 7px;
+  bottom: 7px;
+}
+.justify_end {
+  justify-content: flex-end;
+}
+.absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.bg-common {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.text-center {
+  text-align: center;
+}
+.ares_header {
+  background-image: url(/sites/promodis-ares/themes/promodisares/img/bg_header.jpeg);
+}
+.ares_header .ares_header_top {
+  position: relative;
+}
+.ares_header .ares_header_top .ares_header_top_bg {
+  width: 85%;
+}
+.ares_header .ares_header_top .ares_header_top_logo {
+  width: 33%;
+}
+.ares_header .ares_header_bottom .ares_header_bottom_wrapper {
+  height: 400px;
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  position: relative;
+}
+.ares_header .ares_header_bottom .ares_header_bottom_wrapper:before {
+  content: '';
+  height: 90px;
+  width: 3px;
+  background: white;
+  position: absolute;
+  left: 50%;
+  top: -50px;
+  transform: translateX(-50%);
+}
+.ares_header .ares_header_bottom .ares_header_bottom_wrapper .ares_header_letter {
+  width: 25%;
+}
+.ares_header .ares_header_bottom .ares_header_bottom_wrapper .ares_header_letter .ares_header_letter_wrapper p {
+  font-size: 30px;
+  margin-top: 30px;
+  font-weight: 400;
+}
+.ares_columns {
+  display: flex;
+  margin-bottom: 50px;
+}
+.ares_columns .ares_column {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+.ares_columns .ares_column.ares_column_image .ares_column_wrapper {
+  display: flex;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.ares_columns .ares_column.ares_column_image .ares_column_wrapper .ares_column_wrapper_bg {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  right: 0;
+  z-index: 0;
+  transform: translateY(-50%);
+  min-width: 100%;
+  min-height: 100%;
+  max-width: unset;
+}
+.ares_columns .ares_column.ares_column_image .ares_column_wrapper .ares_column_wrapper_img {
+  z-index: 1;
+}
+.ares_columns .ares_column.ares_column_text .ares_column_wrapper {
+  padding: 0 50px;
+}
+#ares_columns_1 .ares_column.ares_column_image .ares_column_wrapper {
+  justify-content: flex-end;
+}
+#ares_columns_1 .ares_column.ares_column_image .ares_column_wrapper .ares_column_wrapper_bg {
+  clip-path: polygon(0 0, calc(100% - 50px) 0, calc(100% - 50px) 100%, 0 100%);
+  left: unset;
+}
+#ares_columns_3 .ares_column.ares_column_image .ares_column_wrapper {
+  justify-content: center;
+}
+#ares_columns_3 .ares_column.ares_column_image .ares_column_wrapper .ares_column_wrapper_bg {
+  min-height: unset;
+  max-width: 100%;
+}
+#ares_columns_0 {
+  background-image: url(/sites/promodis-ares/themes/promodisares/img/logo_bg.svg);
+  background-repeat: no-repeat;
+  background-position: right -250px bottom 100px;
+}
+.ares_cover {
+  height: 500px;
+  overflow: hidden;
+}
+.ares_cover img {
+  width: 100%;
+}
+.ares_quote {
+  text-align: center;
+  padding: 50px 0;
+}
+.ares_quote h2,
+.ares_quote p {
+  max-width: 550px;
+  display: block;
+  margin: 0 auto;
+}
+.ares_quote h2 {
+  margin-bottom: 25px;
+}
+.ares_categories {
+  background: url(/sites/promodis-ares/themes/promodisares/img/categories_bg.jpeg) no-repeat top -100px left transparent;
+}
+.ares_h1 {
+  margin: 50px 0 100px 0;
+}
+.ares_h1 .ares_h1_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ares_h1 .ares_h1_wrapper img {
+  margin-right: 25px;
+}
+.ares_categories_wrapper {
+  margin: 0 25px;
+}
+.ares_categories_wrapper .ares_categories_row {
+  display: flex;
+  margin-bottom: 35px;
+  gap: 35px;
+  overflow: hidden;
+}
+.ares_categories_wrapper .ares_categories_row .ares_categories_item {
+  position: relative;
+  background-color: #fff;
+  flex: 1;
+  display: flex;
+}
+.ares_categories_wrapper .ares_categories_row .ares_categories_item:before {
+  content: "";
+  width: 100%;
+  height: 70%;
+  background: transparent linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 100%) 0 0 no-repeat padding-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.ares_categories_wrapper .ares_categories_row .ares_categories_item img {
+  width: 100%;
+  height: auto;
+}
+.ares_categories_wrapper .ares_categories_row .ares_categories_item .ares_categories_item_wrapper {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  right: 25%;
+}
+.ares_categories_wrapper .ares_categories_row.ares_categories_row_70_30 .ares_categories_item:nth-child(1) {
+  flex: 0 0 60%;
+}
+.ares_categories_wrapper .ares_categories_row.ares_categories_row_70_30 .ares_categories_item:nth-child(2) {
+  flex: 0 0 40%;
+}
+.ares_categories_wrapper .ares_categories_row.ares_categories_row_30_70 .ares_categories_item:nth-child(1) {
+  flex: 0 0 40%;
+}
+.ares_categories_wrapper .ares_categories_row.ares_categories_row_30_70 .ares_categories_item:nth-child(2) {
+  flex: 0 0 60%;
+}
+.fadein-animation {
+  transition: all 500ms;
+  opacity: 0;
+  transform: translateY(-100px);
+}
+.fadein-animation.fadein-animation-start {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media screen and (max-width: 992px) {
+  .ares_header .ares_header_top .ares_header_top_bg {
+    width: 100%;
+  }
+  .ares_header .ares_header_top .ares_header_top_logo {
+    width: 80%;
+    max-width: 60%;
+  }
+  .ares_header .ares_header_bottom {
+    margin-top: 100px;
+  }
+  .ares_header .ares_header_bottom .ares_header_bottom_wrapper {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+  }
+  .ares_header .ares_header_bottom .ares_header_bottom_wrapper:before {
+    height: 45px;
+    top: -75px;
+  }
+  .ares_header .ares_header_bottom .ares_header_bottom_wrapper .ares_header_letter .ares_header_letter_wrapper {
+    margin-bottom: 25px;
+  }
+  .ares_columns {
+    flex-direction: column;
+  }
+  .ares_columns .ares_column.ares_column_image {
+    order: 1;
+  }
+  .ares_columns .ares_column.ares_column_text {
+    order: 2;
+  }
+  .ares_quote {
+    padding: 25px 10px;
+  }
+  .ares_cover {
+    height: auto;
+    padding: 0 25px;
+  }
+  .ares_h1 .ares_h1_wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+  .ares_h1 .ares_h1_wrapper img {
+    margin-right: 0;
+  }
+  .ares_categories_wrapper .ares_categories_row {
+    flex-direction: column;
+  }
+  .ares_categories_wrapper .ares_categories_row .ares_categories_item .ares_categories_item_wrapper {
+    top: 0;
+  }
+  .ares_categories_wrapper .ares_categories_row .ares_categories_item .ares_btn {
+    margin-top: 0;
+  }
+  .ares_categories_wrapper .ares_categories_row .ares_categories_item h3 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+}

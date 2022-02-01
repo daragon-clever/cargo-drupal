@@ -1,0 +1,18 @@
+######## Plugin & Framework ########
+
+waypoint:
+  header: true
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/waypoints/3.0.0/noframework.waypoints.min.js: { type: external }
+    https://cdnjs.cloudflare.com/ajax/libs/waypoints/3.0.0/shortcuts/inview.min.js: { type: external }
+
+# Style général
+global-styling:
+  header: true
+  css:
+    theme:
+      css/style.css: {}
+  js:
+    js/custom-js.js: {}
+  dependencies:
+    - core/jquery

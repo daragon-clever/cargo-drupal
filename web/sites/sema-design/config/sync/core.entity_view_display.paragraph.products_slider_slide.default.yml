@@ -5,9 +5,10 @@ dependencies:
   config:
     - field.field.paragraph.products_slider_slide.field_picture
     - field.field.paragraph.products_slider_slide.field_title
+    - image.style.portrait_max_h_700px
     - paragraphs.paragraphs_type.products_slider_slide
   module:
-    - image
+    - svg_image
 id: paragraph.products_slider_slide.default
 targetEntityType: paragraph
 bundle: products_slider_slide
@@ -17,8 +18,12 @@ content:
     weight: 1
     label: above
     settings:
-      image_style: ''
+      image_style: portrait_max_h_700px
       image_link: ''
+      svg_render_as_image: true
+      svg_attributes:
+        width: null
+        height: null
     third_party_settings: {  }
     type: image
     region: content

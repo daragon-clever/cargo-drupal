@@ -9,6 +9,7 @@ dependencies:
     - field.field.config_pages.page_404.field_subtitle
     - field.field.config_pages.page_404.field_title
     - field.field.config_pages.page_404.field_visuel
+    - image.style.picture_full
   module:
     - link
     - svg_image
@@ -57,8 +58,12 @@ content:
     weight: 3
     label: above
     settings:
-      image_style: ''
+      image_style: picture_full
       image_link: ''
+      svg_render_as_image: true
+      svg_attributes:
+        width: null
+        height: null
     third_party_settings: {  }
     type: image
     region: content

@@ -11,12 +11,12 @@ dependencies:
     - field.field.paragraph.brand_history.field_second_picture
     - field.field.paragraph.brand_history.field_second_title
     - field.field.paragraph.brand_history.field_title
-    - image.style.crop_histoire_de_la_marque
+    - image.style.portrait_max_h_700px
     - paragraphs.paragraphs_type.brand_history
   module:
     - color_field
-    - image
     - link
+    - svg_image
 id: paragraph.brand_history.default
 targetEntityType: paragraph
 bundle: brand_history
@@ -54,8 +54,12 @@ content:
     weight: 3
     label: visually_hidden
     settings:
-      image_style: crop_histoire_de_la_marque
+      image_style: portrait_max_h_700px
       image_link: ''
+      svg_render_as_image: true
+      svg_attributes:
+        width: null
+        height: null
     third_party_settings: {  }
     type: image
     region: content
@@ -70,8 +74,12 @@ content:
     weight: 6
     label: visually_hidden
     settings:
-      image_style: crop_histoire_de_la_marque
+      image_style: portrait_max_h_700px
       image_link: ''
+      svg_render_as_image: true
+      svg_attributes:
+        width: null
+        height: null
     third_party_settings: {  }
     type: image
     region: content

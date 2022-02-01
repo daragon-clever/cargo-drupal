@@ -1,7 +1,7 @@
 <?php
 
 namespace Drupal\sema_block\Plugin\Block;
-
+use Drupal\image\Entity\ImageStyle;
 use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -31,7 +31,7 @@ class newsletter extends BlockBase {
       $datas['cta'] = $myConfigPage->get('field_cta')->title;
       $datas['partnership_title'] = $myConfigPage->get('field_second_title')->value;
       $datas['logo'] = $myConfigPage->get('field_logo')->entity->url();
-      $datas['background'] = $myConfigPage->get('field_visuel')->entity->url();
+      $datas['background'] = ImageStyle::load('picture_full_max_w_800px_')->buildUrl($myConfigPage->get('field_visuel')->entity->getFileUri());
     }
 
     return [

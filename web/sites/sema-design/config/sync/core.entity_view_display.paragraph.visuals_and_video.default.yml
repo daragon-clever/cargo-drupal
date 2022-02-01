@@ -9,6 +9,7 @@ dependencies:
     - field.field.paragraph.visuals_and_video.field_second_picture
     - field.field.paragraph.visuals_and_video.field_title
     - field.field.paragraph.visuals_and_video.field_youtube
+    - image.style.portrait_max_h_700px
     - paragraphs.paragraphs_type.visuals_and_video
   module:
     - color_field
@@ -38,8 +39,12 @@ content:
     weight: 2
     label: visually_hidden
     settings:
-      image_style: ''
+      image_style: portrait_max_h_700px
       image_link: ''
+      svg_render_as_image: true
+      svg_attributes:
+        width: null
+        height: null
     third_party_settings: {  }
     type: image
     region: content
@@ -47,8 +52,12 @@ content:
     weight: 3
     label: visually_hidden
     settings:
-      image_style: ''
+      image_style: portrait_max_h_700px
       image_link: ''
+      svg_render_as_image: true
+      svg_attributes:
+        width: null
+        height: null
     third_party_settings: {  }
     type: image
     region: content

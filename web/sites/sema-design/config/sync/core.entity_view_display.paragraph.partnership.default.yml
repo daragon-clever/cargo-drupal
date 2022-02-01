@@ -13,10 +13,11 @@ dependencies:
     - field.field.paragraph.partnership.field_subtitle
     - field.field.paragraph.partnership.field_third_picture
     - field.field.paragraph.partnership.field_title
+    - image.style.portrait_max_h_700px
     - paragraphs.paragraphs_type.partnership
   module:
     - color_field
-    - image
+    - svg_image
 id: paragraph.partnership.default
 targetEntityType: paragraph
 bundle: partnership
@@ -42,8 +43,12 @@ content:
     weight: 7
     label: above
     settings:
-      image_style: ''
+      image_style: portrait_max_h_700px
       image_link: ''
+      svg_render_as_image: true
+      svg_attributes:
+        width: null
+        height: null
     third_party_settings: {  }
     type: image
     region: content
@@ -51,8 +56,12 @@ content:
     weight: 3
     label: visually_hidden
     settings:
-      image_style: ''
+      image_style: portrait_max_h_700px
       image_link: ''
+      svg_render_as_image: true
+      svg_attributes:
+        width: null
+        height: null
     third_party_settings: {  }
     type: image
     region: content
@@ -67,8 +76,12 @@ content:
     weight: 5
     label: above
     settings:
-      image_style: ''
+      image_style: portrait_max_h_700px
       image_link: ''
+      svg_render_as_image: true
+      svg_attributes:
+        width: null
+        height: null
     third_party_settings: {  }
     type: image
     region: content
@@ -92,8 +105,12 @@ content:
     weight: 6
     label: above
     settings:
-      image_style: ''
+      image_style: portrait_max_h_700px
       image_link: ''
+      svg_render_as_image: true
+      svg_attributes:
+        width: null
+        height: null
     third_party_settings: {  }
     type: image
     region: content

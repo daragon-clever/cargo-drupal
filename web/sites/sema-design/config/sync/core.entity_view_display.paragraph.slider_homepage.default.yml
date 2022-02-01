@@ -7,9 +7,10 @@ dependencies:
     - field.field.paragraph.slider_homepage.field_picture_slide
     - field.field.paragraph.slider_homepage.field_subtitle
     - field.field.paragraph.slider_homepage.field_title
+    - image.style.picture_full
     - paragraphs.paragraphs_type.slider_homepage
   module:
-    - image
+    - svg_image
 id: paragraph.slider_homepage.default
 targetEntityType: paragraph
 bundle: slider_homepage
@@ -27,8 +28,12 @@ content:
     weight: 0
     label: visually_hidden
     settings:
-      image_style: ''
+      image_style: picture_full
       image_link: ''
+      svg_render_as_image: true
+      svg_attributes:
+        width: null
+        height: null
     third_party_settings: {  }
     type: image
     region: content

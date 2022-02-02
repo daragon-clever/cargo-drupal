@@ -8,4 +8,16 @@
   &-rel {
     position: relative;
   }
+
+  &-center-both {
+    @include center-both;
+  }
+
+  &-center-v {
+    @include center-v;
+  }
+
+  &-center-h {
+    @include center-h;
+  }
 }

@@ -18,64 +18,64 @@
 * Simple default styles for headings 1 through 6.
 */
 
-@mixin heading-primary {
-@include font(variant, bold);
-@include fluid-type(rem($vw-min), rem(map-get($mq-breakpoints, "xl")), rem(24px), rem($h1-font-size));
+h1, h2, h3, h4, h5, h6 {
+  @include font(variant, bold);
+  color: $theme-secondary;
+}
 
-line-height: unitless-line-height($h1-line-height, $h1-font-size);
+@mixin heading-primary {
+  @include fluid-type(rem($vw-min), rem(map-get($mq-breakpoints, "xl")), rem(24px), rem($h1-font-size));
+
+  line-height: unitless-line-height($h1-line-height, $h1-font-size);
 }
 
 h1 {
-@include heading-primary;
+  @include heading-primary;
 }
 
 @mixin heading-secondary {
-@include font(variant, bold);
-@include fluid-type(rem($vw-min), rem(map-get($mq-breakpoints, "xl")), rem(20px), rem($h2-font-size));
+  @include fluid-type(rem($vw-min), rem(map-get($mq-breakpoints, "xl")), rem(20px), rem($h2-font-size));
 
-line-height: unitless-line-height($h2-line-height, $h2-font-size);
+  line-height: unitless-line-height($h2-line-height, $h2-font-size);
 }
 
 h2 {
-@include heading-secondary;
+  @include heading-secondary;
 }
 
 @mixin heading-tertiary {
-@include font(variant, bold);
-@include fluid-type(rem($vw-min), rem(map-get($mq-breakpoints, "xl")), rem(20px), rem($h3-font-size));
+  @include fluid-type(rem($vw-min), rem(map-get($mq-breakpoints, "xl")), rem(20px), rem($h3-font-size));
 
-line-height: unitless-line-height($h3-line-height, $h3-font-size);
+  line-height: unitless-line-height($h3-line-height, $h3-font-size);
 }
 
 h3 {
-@include heading-tertiary;
+  @include heading-tertiary;
 }
 
 @mixin heading-quaternary {
-@include font(variant, bold);
-
-font-size: rem($h4-font-size);
-line-height: unitless-line-height($h4-line-height, $h4-font-size);
+  font-size: rem($h4-font-size);
+  line-height: unitless-line-height($h4-line-height, $h4-font-size);
 }
 
 h4 {
-@include heading-quaternary;
+  @include heading-quaternary;
 }
 
 @mixin heading-quinary {
-font-size: rem($h5-font-size);
-    line-height: unitless-line-height($h5-line-height, $h5-font-size);
+  font-size: rem($h5-font-size);
+  line-height: unitless-line-height($h5-line-height, $h5-font-size);
 }
 
 h5 {
-    @include heading-quinary;
+  @include heading-quinary;
 }
 
 @mixin heading-senary {
-    font-size: rem($h6-font-size);
-    line-height: unitless-line-height($h6-line-height, $h6-font-size);
+  font-size: rem($h6-font-size);
+  line-height: unitless-line-height($h6-line-height, $h6-font-size);
 }
 
 h6 {
-    @include heading-senary;
+  @include heading-senary;
 }

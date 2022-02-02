@@ -5,102 +5,50 @@
 // Rather for an action outside the page, for links with href.
 //
 // markup:
-// <button class="vlj-cta {{modifier_class}}">Button</button>
-// <a href="#" class="vlj-cta {{modifier_class}}">Link</a>
-// <input type="submit" class="vlj-cta {{modifier_class}}" value="Input" />
+// <button class="cta {{modifier_class}}">Button</button>
+// <a href="#" class="cta {{modifier_class}}">Link</a>
+// <input type="submit" class="cta {{modifier_class}}" value="Input" />
 //
 // Styleguide Elements.cta
 
 // Primary CTA is the default state
-&-cta {
+.cta {
+  @include font(script, regular);
   box-sizing: border-box;
-  padding: rem(15px) rem(30px);
-  border: 1px solid transparent;
+  padding: rem(12px) rem(20px);
+  box-shadow: inset 0 0 0 1px $theme-light;
   display: inline-block;
   vertical-align: top;
-  font-family: $font-variant-bold;
-  font-size: rem(14px);
+  font-size: rem(20px);
   line-height: 1.2;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 60em;
   cursor: pointer;
-  color: color(white);
-  background-color: var(--theme-color);
+  color: $theme-secondary;
+  background-color: transparent;
   transition: color .3s ease-in-out, background-color .4s ease-in-out, box-shadow .4s ease-in-out;
   appearance: none;
 
   &:hover,
   &:focus {
-    background-color: var(--theme-color-dark);
-    color: color(white);
+    background-color: $theme-secondary;
+    box-shadow: inset 0 0 0 1px $theme-secondary;
+    color: $white;
   }
 
   &:focus-visible {
-    outline: 1px dashed var(--theme-color);
+    outline: 1px dashed $theme;
   }
 
-  &.__secondary {
-    color: var(--theme-color);
-    background-color: color(white);
+  &.--secondary {
+    color: $white;
     box-shadow: inset 0 0 0 1px currentColor;
 
     &:hover,
     &:focus {
-      color: color(white);
-      background-color: var(--theme-color-dark);
+      color: $theme;
+      background-color: $white;
+      box-shadow: inset 0 0 0 1px $white;
     }
-  }
-
-  &.__tertiary {
-    padding: rem(10px);
-    font-family: $font-variant-reg;
-    color: color(storm);
-    background-color: color(white);
-    box-shadow: inset 0 0 0 1px color(alto);
-
-    @include mq($from: M) {
-      padding: rem(10px) rem(20px);
-    }
-
-    &:hover,
-    &:focus {
-      color: var(--theme-color);
-      box-shadow: inset 0 0 0 1px var(--theme-color);
-    }
-  }
-
-  &.__small {
-    padding: rem(10px) rem(20px);
-  }
-
-  // CTA with icon on left
-  &.__icon {
-    > svg {
-      display: inline-block;
-      vertical-align: middle;
-      fill: color(alto);
-      margin-right: rem(8px);
-
-      // Bookmark active color variant
-      .action-unflag & {
-        fill: var(--theme-color);
-      }
-    }
-
-    // Hide useless ajax throbber
-    ~ .ajax-progress {
-      display: none;
-    }
-  }
-
-  .ajax-progress {
-    display: none;
-  }
-
-  &.__disabled,
-  &[disabled] {
-    opacity: .4;
-    cursor: default;
-    pointer-events: none;
   }
 }

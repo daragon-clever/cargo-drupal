@@ -97,9 +97,9 @@ $gutter-breakpoints:
   .col-#{$i} {
     @include flex-grow(0);
     @include flex-shrink(0);
-    @include flex-basis(calc(100% / $grid-columns * $i));
+    @include flex-basis(calc((100% / $grid-columns) * $i));
     box-sizing: border-box;
-    max-width: calc(100% / $grid-columns * $i);
+    max-width: calc((100% / $grid-columns) * $i);
     padding-right: $half-gutter-width;
     padding-left: $half-gutter-width;
 
@@ -138,7 +138,7 @@ $gutter-breakpoints:
     @if $i == 0 {
       margin-left: 0;
     } @else {
-      margin-left: calc(100% / $grid-columns * $i);
+      margin-left: calc((100% / $grid-columns) * $i);
     }
   }
 }
@@ -201,14 +201,14 @@ $name: s;
       .col-#{$name}-#{$i} {
         @include flex-grow(0);
         @include flex-shrink(0);
-        @include flex-basis(calc(100% / $grid-columns * $i));
+        @include flex-basis(calc((100% / $grid-columns) * $i));
         box-sizing: border-box;
-        max-width: calc(100% / $grid-columns * $i);
+        max-width: calc((100% / $grid-columns) * $i);
       }
     }
 
     @for $i from 1 through $grid-columns {
-      .col-#{$name}-offset-#{$i} {
+      .offset-#{$name}-#{$i} {
         @include flex-grow(0);
         @include flex-shrink(0);
         box-sizing: border-box;
@@ -216,7 +216,7 @@ $name: s;
         @if $i == 0 {
           margin-left: 0;
         } @else {
-          margin-left: calc(100% / $grid-columns * $i);
+          margin-left: calc((100% / $grid-columns) * $i);
         }
       }
     }
@@ -283,7 +283,7 @@ $name: s;
     }
 
     @for $i from 1 through $grid-columns {
-      .col-#{$name}-offset-#{$i} {
+      .offset-#{$name}-#{$i} {
         padding-right: $gutter;
         padding-left: $gutter;
       }

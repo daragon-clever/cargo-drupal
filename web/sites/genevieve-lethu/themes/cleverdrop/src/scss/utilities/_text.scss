@@ -1,0 +1,21 @@
+/// Text properties
+//
+// * .text-center - text-align: center;
+// * .text-end - text-align: right;
+// * .text-start - text-align: left;
+//
+// Styleguide Utilities.text
+
+.text {
+  &-center {
+    text-align: center;
+  }
+
+  &-end {
+    text-align: right;
+  }
+
+  &-start {
+    text-align: left;
+  }
+}

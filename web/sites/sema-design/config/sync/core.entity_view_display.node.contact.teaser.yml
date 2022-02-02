@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.contact.field_metatags
     - field.field.node.contact.field_paragraph_main_visual
     - field.field.node.contact.field_paragraph_particular
     - field.field.node.contact.field_paragraph_professionnel
@@ -22,6 +23,7 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_metatags: true
   field_paragraph_main_visual: true
   field_paragraph_particular: true
   field_paragraph_professionnel: true

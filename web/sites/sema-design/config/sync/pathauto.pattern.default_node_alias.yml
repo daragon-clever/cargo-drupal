@@ -9,10 +9,11 @@ label: 'Default node alias'
 type: 'canonical_entities:node'
 pattern: '[node:title]'
 selection_criteria:
-  ca841b95-be71-476d-a56f-7697270375ff:
+  bebf1ed8-e9b5-47c3-976b-d4de81840c46:
     id: node_type
     bundles:
       become_reseller: become_reseller
+      contact: contact
       homepage: homepage
       inspiration: inspiration
       page: page
@@ -23,7 +24,7 @@ selection_criteria:
     negate: false
     context_mapping:
       node: node
-    uuid: ca841b95-be71-476d-a56f-7697270375ff
+    uuid: bebf1ed8-e9b5-47c3-976b-d4de81840c46
 selection_logic: and
 weight: -5
 relationships: {  }

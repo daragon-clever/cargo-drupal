@@ -441,3 +441,25 @@ img {
 	}
 
 }
+
+footer {
+	color: white;
+	padding: 20px 0;
+	text-align: center;
+	font-size: 12px;
+	a {
+		&:link, &:visited, &:hover, &:active {
+			color: white;
+			text-decoration: none;
+		}
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+
+	@media screen and (max-width: 992px) {
+		.mobile-block {
+			display: block;
+		}
+	}
+}

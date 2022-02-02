@@ -3,6 +3,7 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - field.field.node.contact.field_metatags
     - field.field.node.contact.field_paragraph_main_visual
     - field.field.node.contact.field_paragraph_particular
     - field.field.node.contact.field_paragraph_professionnel
@@ -10,6 +11,7 @@ dependencies:
     - node.type.contact
   module:
     - entity_reference_revisions
+    - metatag
     - user
     - webform
 id: node.contact.default
@@ -17,6 +19,13 @@ targetEntityType: node
 bundle: contact
 mode: default
 content:
+  field_metatags:
+    weight: 105
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
   field_paragraph_main_visual:
     weight: 101
     label: above

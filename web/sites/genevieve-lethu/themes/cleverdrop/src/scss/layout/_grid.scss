@@ -54,17 +54,17 @@ $gutter-breakpoints:
 }
 
 .container {
-  max-width: calc(#{rem($vw-max)} - ($grid-margin * 2));
+  max-width: calc(#{rem($vw-max)} - (#{rem($grid-margin)} * 2));
   padding: 0 rem($grid-margin);
   margin: 0 auto;
 
   @include mq($from: md) {
-    max-width: calc(#{rem($vw-max)} - ($grid-from-m-margin * 2));
+    max-width: calc(#{rem($vw-max)} - (#{rem($grid-from-m-margin)} * 2));
     padding: 0 rem($grid-from-m-margin);
   }
 
   @include mq($from: xl) {
-    max-width: calc(#{rem($vw-max)} - ($grid-from-xl-margin * 2));
+    max-width: calc(#{rem($vw-max)} - (#{rem($grid-from-xl-margin)} * 2));
     padding: 0 rem($grid-from-xl-margin);
   }
 }

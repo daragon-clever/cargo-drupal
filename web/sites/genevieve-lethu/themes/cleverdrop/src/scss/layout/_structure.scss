@@ -29,11 +29,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.main {
-  max-width: rem($vw-max);
-  margin: 0 auto;
-}
-
 .contextual-region {
   position: static; // Override relative position on native Drupal markup
 }

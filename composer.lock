@@ -136,16 +136,16 @@
         },
         {
             "name": "cargo/common-marketing-automation",
-            "version": "v1.1.1",
+            "version": "v1.1.2",
             "source": {
                 "type": "git",
                 "url": "git@github.com:PoleWebCargo/WEB_Common_Module_MarketingAutomation.git",
-                "reference": "12639544c762c7bff0c8acae142db5856235582e"
+                "reference": "851131044c8e4faa583c2b989b373c1e99c03592"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PoleWebCargo/WEB_Common_Module_MarketingAutomation/zipball/12639544c762c7bff0c8acae142db5856235582e",
-                "reference": "12639544c762c7bff0c8acae142db5856235582e",
+                "url": "https://api.github.com/repos/PoleWebCargo/WEB_Common_Module_MarketingAutomation/zipball/851131044c8e4faa583c2b989b373c1e99c03592",
+                "reference": "851131044c8e4faa583c2b989b373c1e99c03592",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -166,10 +166,10 @@
             ],
             "description": "Module commun utilisé dans les modules pour alimenter Sarbacane.",
             "support": {
-                "source": "https://github.com/PoleWebCargo/WEB_Common_Module_MarketingAutomation/tree/v1.1.1",
+                "source": "https://github.com/PoleWebCargo/WEB_Common_Module_MarketingAutomation/tree/v1.1.2",
                 "issues": "https://github.com/PoleWebCargo/WEB_Common_Module_MarketingAutomation/issues"
             },
-            "time": "2022-01-25T10:59:09+00:00"
+            "time": "2022-02-02T16:18:15+00:00"
         },
         {
             "name": "cargo/common-synapse-client",

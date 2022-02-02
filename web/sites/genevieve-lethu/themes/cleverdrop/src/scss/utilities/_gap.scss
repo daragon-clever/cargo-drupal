@@ -1,0 +1,33 @@
+/// Gap between blocks
+//
+// * .gap-y - gap top and bottom
+// * .gap-t - gap only on top
+// * .gap-b - gap only on bottom
+//
+// Styleguide Utilities.gap
+
+.gap {
+  &-y {
+    padding: rem(50px) 0;
+
+    @include mq($from: md) {
+      padding: rem(80px) 0;
+    }
+  }
+
+  &-t {
+    padding-top: rem(50px);
+
+    @include mq($from: md) {
+      padding-top: rem(80px)
+    }
+  }
+
+  &-b {
+    padding-bottom: rem(50px);
+
+    @include mq($from: md) {
+      padding-bottom: rem(80px)
+    }
+  }
+}

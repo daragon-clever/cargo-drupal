@@ -1,5 +1,5 @@
 .helper-grid {
-  max-width: 1400px;
+  max-width: 1440px;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -16,7 +16,7 @@
   background-position: 0 0;
   background-size: 100px 24px;
   background-repeat: repeat;
-  padding: 0 10px;
+  padding: 0 30px;
 }
 
 .helper-grid span {
@@ -30,7 +30,7 @@
 
 @media (min-width:46.8125em) {
   .helper-grid {
-    padding: 0 30px;
+    padding: 0 20px;
   }
 }
 
@@ -42,12 +42,12 @@
 
 @media (min-width:62.4375em) {
   .helper-grid span {
-    max-width: calc((100% / 12) - 30px);
+    max-width: calc((100% / 12) - 20px);
   }
 }
 
 @media (min-width:74.9375em) {
   .helper-grid {
-    padding: 0 60px;
+    padding: 0 20px;
   }
 }

@@ -1,0 +1,23 @@
+uuid: 1f1dac65-b808-422d-ac3c-8f91c1195168
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cta
+    - node.type.homepage
+  module:
+    - link
+id: node.homepage.field_cta
+field_name: field_cta
+entity_type: node
+bundle: homepage
+label: CTA
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

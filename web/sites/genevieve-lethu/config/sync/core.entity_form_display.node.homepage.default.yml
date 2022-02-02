@@ -3,6 +3,7 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - field.field.node.homepage.field_cta
     - field.field.node.homepage.field_metatags
     - field.field.node.homepage.field_paragraph_brand
     - field.field.node.homepage.field_paragraph_brand_intro
@@ -17,6 +18,7 @@ dependencies:
     - node.type.homepage
   module:
     - field_group
+    - link
     - metatag
     - paragraphs
     - path
@@ -34,6 +36,7 @@ third_party_settings:
         - group_citation_4
         - group_citation_5
         - group_instagram
+        - group_hightlighted
       parent_name: ''
       weight: 1
       format_type: tabs
@@ -183,6 +186,20 @@ third_party_settings:
         formatter: closed
         required_fields: true
       label: Instagram
+    group_hightlighted:
+      children:
+        - field_cta
+      parent_name: group_hp
+      weight: 28
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: 'Mise en avant articles'
 id: node.homepage.default
 targetEntityType: node
 bundle: homepage
@@ -194,6 +211,14 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_cta:
+    weight: 29
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
   field_metatags:
     weight: 28
     settings:

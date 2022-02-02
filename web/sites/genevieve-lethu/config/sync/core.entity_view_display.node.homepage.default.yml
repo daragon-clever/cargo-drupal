@@ -3,6 +3,7 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - field.field.node.homepage.field_cta
     - field.field.node.homepage.field_metatags
     - field.field.node.homepage.field_paragraph_brand
     - field.field.node.homepage.field_paragraph_brand_intro
@@ -17,6 +18,7 @@ dependencies:
     - node.type.homepage
   module:
     - entity_reference_revisions
+    - link
     - metatag
     - user
 id: node.homepage.default
@@ -24,6 +26,18 @@ targetEntityType: node
 bundle: homepage
 mode: default
 content:
+  field_cta:
+    weight: 112
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
   field_metatags:
     weight: 111
     label: above

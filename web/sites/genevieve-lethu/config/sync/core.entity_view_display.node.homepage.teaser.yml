@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.homepage.field_cta
     - field.field.node.homepage.field_metatags
     - field.field.node.homepage.field_paragraph_brand
     - field.field.node.homepage.field_paragraph_brand_intro
@@ -29,6 +30,7 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_cta: true
   field_metatags: true
   field_paragraph_brand: true
   field_paragraph_brand_intro: true

@@ -193,4 +193,37 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     )
   )
+
+  const PressRelease = document.querySelectorAll('.js-press-release')
+
+  Array.prototype.map.call(PressRelease,
+    el => new Slider(
+      el,
+      Selectors,
+      {
+        ...CommonSliderOptions,
+        ...ScrollbarSliderOptions,
+        pagination: {
+          el: ".Slider-pagination",
+          type: 'bullets',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".Slider-button-next",
+          prevEl: ".Slider-button-prev",
+        },
+        breakpoints: {
+          0: {
+            slidesPerView: 1.5,
+            slidesPerGroup: 1,
+          },
+          // when window width is >= 769px
+          769: {
+            slidesPerView: 3,
+            slidesPerGroup: 3,
+          },
+        }
+      }
+    )
+  )
 })

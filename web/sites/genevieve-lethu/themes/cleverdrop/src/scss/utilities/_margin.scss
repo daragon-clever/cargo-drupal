@@ -1,0 +1,44 @@
+/// Margin
+//
+// Styleguide Utilities.margin
+
+.m {
+  &-0 {
+    margin: 0;
+  }
+
+  // left
+  &s-1 {
+    margin-left: calc(#{$base-font-size} / 2);
+  }
+
+  &s-2 {
+    margin-left: $base-font-size;
+  }
+
+  &s-3 {
+    margin-left: calc(#{$base-font-size} * 2);
+  }
+
+  &s-4 {
+    margin-left: calc(#{$base-font-size} * 4);
+  }
+
+  // right
+  &e-1 {
+    margin-right: calc(#{$base-font-size} / 2);
+  }
+
+  &e-2 {
+    margin-right:$base-font-size;
+  }
+
+  &e-3 {
+    margin-right: calc(#{$base-font-size} * 2);
+  }
+
+  &e-4 {
+    margin-right: calc(#{$base-font-size} * 4);
+  }
+}
+

@@ -9,6 +9,10 @@
     position: relative;
   }
 
+  &-abs {
+    position: absolute;
+  }
+
   &-center-both {
     @include center-both;
   }

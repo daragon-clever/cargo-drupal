@@ -1,0 +1,90 @@
+/* -------------------------------------------------------------------------- *\
+  # BRAND BLOCK
+\* -------------------------------------------------------------------------- */
+
+.brand {
+  background-color: $light;
+
+  img {
+    display: block;
+  }
+
+  &-list {
+    position: absolute;
+    left: -150%;
+    right: rem(30px);
+    top: rem(50px);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    @include mq($from: md) {
+      @include center-v;
+      left: -50%;
+      right: -30%;
+    }
+
+    & > li {
+      margin-left: rem(20px);
+      width: rem(190px);
+
+      @include mq($from: md) {
+        width: auto;
+      }
+    }
+  }
+
+  &-col {
+    &:first-of-type {
+      min-height: rem(200px);
+
+      @include mq($from: md) {
+        min-height: 0;
+      }
+    }
+
+    &:last-of-type {
+      display: flex;
+      align-items: center;
+      padding-top: rem(90px);
+      padding-bottom: rem(40px);
+      position: relative;
+
+      &::before {
+        content: "";
+        background-color: $light;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        z-index: 0;
+      }
+
+      @include mq($from: md) {
+        min-height: rem(610px);
+        padding-top: 0;
+        padding-bottom: 0;
+        margin: 0;
+
+        &::before {
+          background-clip: content-box;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  &-offset {
+    position: relative;
+
+    @include mq($from: md) {
+      margin-left: 30%;
+      margin-right: 15%;
+    }
+  }
+}

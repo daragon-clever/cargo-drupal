@@ -23,6 +23,16 @@
     }
   }
 
+  &-theme {
+    background-color: $theme;
+
+    &::before,
+    &::after {
+      content: "";
+      color: $theme; // For triangleBorder.scss can take the current background color
+    }
+  }
+
   &-themeSecondary {
     background-color: $theme-secondary;
 

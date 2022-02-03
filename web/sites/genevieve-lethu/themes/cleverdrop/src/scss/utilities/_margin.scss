@@ -7,6 +7,40 @@
     margin: 0;
   }
 
+  // top
+  &t-1 {
+    margin-top: calc(#{$base-font-size} / 2);
+  }
+
+  &t-2 {
+    margin-top: $base-font-size;
+  }
+
+  &t-3 {
+    margin-top: calc(#{$base-font-size} * 2);
+  }
+
+  &t-4 {
+    margin-top: calc(#{$base-font-size} * 4);
+  }
+
+  // bottom
+  &b-1 {
+    margin-bottom: calc(#{$base-font-size} / 2);
+  }
+
+  &b-2 {
+    margin-bottom: $base-font-size;
+  }
+
+  &b-3 {
+    margin-bottom: calc(#{$base-font-size} * 2);
+  }
+
+  &b-4 {
+    margin-bottom: calc(#{$base-font-size} * 4);
+  }
+
   // left
   &s-1 {
     margin-left: calc(#{$base-font-size} / 2);

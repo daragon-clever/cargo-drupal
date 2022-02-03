@@ -9,3 +9,4 @@ require('./components/slider');
 require('./components/menu');
 require('./components/videoPlayer');
 
+require('./slider');

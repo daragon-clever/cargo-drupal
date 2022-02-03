@@ -34,7 +34,7 @@ h1 {
 }
 
 @mixin heading-secondary {
-  @include fluid-type(rem($vw-min), rem(map-get($mq-breakpoints, "xl")), rem(20px), rem($h2-font-size));
+  @include fluid-type(rem($vw-min), rem(map-get($mq-breakpoints, "xl")), rem(22px), rem($h2-font-size));
 
   line-height: unitless-line-height($h2-line-height, $h2-font-size);
 }

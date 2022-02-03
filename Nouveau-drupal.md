@@ -14,7 +14,7 @@ Pour l'installation d'un nouveau site dans la ferme, on va se baser sur un site 
 
 1. Dans le dossier `/multisites`, créer un dossier `{{ PROJECT_NAME }}` en dupliquant le dossier d'un site déjà existant.
     - Dans ce dossier, il y 3 fichiers :
-        - **.env** : `COMPOSE_PROJECT_NAME={{ SITENAME }}`
+        - **.env** : `COMPOSE_PROJECT_NAME={{ PROJECT_NAME }}`
             - on n'est pas obligé de lui donné le même nom que 
         - **.rvmc** : on touche pas
         - **docker-compose.yml**
@@ -46,10 +46,13 @@ http://web.{{ SITENAME }}.[...].ad/
 
 5. Une fois le site up et Drupal installé, se rendre sur l'URL du projet et installer les modules utilisées couramment 
 sur les autres sites (Adminimal, Google, ...)
+    - Ace Editor
+    - Webform
+    - (liste à compléter)
 
 ## Déploiement
 
-### Dossiers et fichiers à pousser
+### Dossiers et fichiers à pousser :
 
 - fichier `config/deploy.rb` : ajouter le nom du nouveau site `{{ PROJECT_NAME }}` aux mêmes endroits que les autres sites
     - permet de gérer les dossiers en shared
@@ -58,6 +61,18 @@ sur les autres sites (Adminimal, Google, ...)
     - désactiver l'update depuis la preprod et la prod sur le fichier `settings.php`
     - désactiver le debug twig sur le fichier `services.yml`
 
-### Serveur
+### Configuration en admin :
+
+- s'il y a des formulaires :
+    - configurer recaptcha
+    - configurer honeypot
+    - configurer antibot
+- configurer Google Analytics (via l'extension)
+- renommer les chemins d'administration (via l'extension)
+- configurer le texte pour les cookies RGPD (via l'extension)
+- décocher : "Agréger les fichiers CSS" et "Agréger les fichiers JavaScript"
+
+
+### Serveurs preprod/prod :
 
 - voir avec Sébastien pour configurer le déploiement côté serveur, la configuration de la preprod, la configuration de la prod

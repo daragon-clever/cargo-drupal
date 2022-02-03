@@ -178,3 +178,10 @@ En cas d'arrêt forcé de mysql et si ce dernier ne rédémarre pas correctement
 ```bash
 command: mysqld --tc-heuristic-recover=ROLLBACK
 ```
+
+### Erreur Drupal 
+
+Lors de l'installation de modules, il arrive que Drupal se mette en erreur sans raison. Il faut aller
+voir la table watchdog pour en savoir un peu plus sur l'erreur générée.
+
+On peut aussi lancer un update.php.

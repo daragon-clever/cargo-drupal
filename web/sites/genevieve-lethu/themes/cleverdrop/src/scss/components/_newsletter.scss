@@ -8,6 +8,7 @@
     left: 0;
     font-size: rem(90px);
     @include font(variant);
+    font-style: italic;
     color: $green-secondary;
     white-space: nowrap;
     overflow: hidden;
@@ -47,6 +48,7 @@
     color: $white;
     background: transparent;
     padding: 0px 18px;
+    width: 70%;
     @include font(variant, 100);
     font-size: rem(12px);
 
@@ -55,9 +57,6 @@
       @include font(base, 100);
     }
 
-    @include mq($until: sm) {
-      width: 40%;
-    }
   }
   .form-submit {
     background: $white;
@@ -65,12 +64,12 @@
     height: 50px;
     border-radius: 0px 50px 50px 0px;
     min-width: 107px;
+    width: 30%;
     color: $aqua-deep;
   }
 
   &-fields {
     display: inline-flex;
-    flex-wrap: wrap;
     justify-content: center;
   }
 

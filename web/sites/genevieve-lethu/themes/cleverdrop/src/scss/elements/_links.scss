@@ -39,3 +39,13 @@ a {
   @include font(base);
   font-size: rem(12px);
 }
+
+.rounded-effect {
+  background: $jade;
+  color : $white;
+}
+
+@keyframes transition {
+  from {background-color: red;}
+  to {background-color: blue;}
+}

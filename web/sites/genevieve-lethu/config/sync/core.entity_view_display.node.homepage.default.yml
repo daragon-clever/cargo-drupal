@@ -3,8 +3,8 @@ langcode: fr
 status: true
 dependencies:
   config:
-    - field.field.node.homepage.field_cta
     - field.field.node.homepage.field_metatags
+    - field.field.node.homepage.field_paragraph_articles_blog
     - field.field.node.homepage.field_paragraph_brand
     - field.field.node.homepage.field_paragraph_brand_intro
     - field.field.node.homepage.field_paragraph_highlighting
@@ -15,12 +15,9 @@ dependencies:
     - field.field.node.homepage.field_paragraph_quote_4
     - field.field.node.homepage.field_paragraph_quote_5
     - field.field.node.homepage.field_paragraph_video
-    - field.field.node.homepage.field_resume
-    - field.field.node.homepage.field_title
     - node.type.homepage
   module:
     - entity_reference_revisions
-    - link
     - metatag
     - user
 id: node.homepage.default
@@ -28,24 +25,21 @@ targetEntityType: node
 bundle: homepage
 mode: default
 content:
-  field_cta:
-    weight: 112
-    label: above
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    type: link
-    region: content
   field_metatags:
     weight: 111
     label: above
     settings: {  }
     third_party_settings: {  }
     type: metatag_empty_formatter
+    region: content
+  field_paragraph_articles_blog:
+    type: entity_reference_revisions_entity_view
+    weight: 115
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
     region: content
   field_paragraph_brand:
     type: entity_reference_revisions_entity_view
@@ -136,21 +130,6 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    region: content
-  field_resume:
-    weight: 114
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: basic_string
-    region: content
-  field_title:
-    weight: 113
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
     region: content
   links:
     weight: 100

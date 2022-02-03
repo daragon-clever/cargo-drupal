@@ -4,8 +4,8 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.homepage.field_cta
     - field.field.node.homepage.field_metatags
+    - field.field.node.homepage.field_paragraph_articles_blog
     - field.field.node.homepage.field_paragraph_brand
     - field.field.node.homepage.field_paragraph_brand_intro
     - field.field.node.homepage.field_paragraph_highlighting
@@ -16,8 +16,6 @@ dependencies:
     - field.field.node.homepage.field_paragraph_quote_4
     - field.field.node.homepage.field_paragraph_quote_5
     - field.field.node.homepage.field_paragraph_video
-    - field.field.node.homepage.field_resume
-    - field.field.node.homepage.field_title
     - node.type.homepage
   module:
     - user
@@ -32,8 +30,8 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
-  field_cta: true
   field_metatags: true
+  field_paragraph_articles_blog: true
   field_paragraph_brand: true
   field_paragraph_brand_intro: true
   field_paragraph_highlighting: true
@@ -44,6 +42,4 @@ hidden:
   field_paragraph_quote_4: true
   field_paragraph_quote_5: true
   field_paragraph_video: true
-  field_resume: true
-  field_title: true
   langcode: true

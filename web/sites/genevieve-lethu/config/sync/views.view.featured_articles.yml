@@ -182,7 +182,7 @@ display:
           exposed: true
           expose:
             operator_id: field_categorie_target_id_op
-            label: Catégories
+            label: ''
             description: ''
             use_operator: false
             operator: field_categorie_target_id_op
@@ -257,6 +257,22 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: 'Aucun résultat'
+            format: rte_full
+          plugin_id: text
+      defaults:
+        empty: false
     cache_metadata:
       max-age: -1
       contexts:

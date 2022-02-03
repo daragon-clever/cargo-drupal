@@ -4,26 +4,29 @@
 ] %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
-    <div class="OurProducts-deco">
-      <svg viewBox="0 0 100 100" class="LeftBrush" aria-hidden="true">
-        <use xlink:href="#sema-brush"></use>
-      </svg>
-      <div class="Stains">
-        {% include directory ~ '/src/assets/svg/stains.svg' %}
-      </div>
-    </div>
+
     {% block content %}
       <div class="OurProducts-inner Section-inner">
         <h2 class="OurProducts-title">{{ content.field_title }}</h2>
+        <div class="OurProducts-list has-two-cols">
+          <div class="OurProducts-deco is-top">
+            <div class="Stains">
+              {% include directory ~ '/src/assets/svg/stains.svg' %}
+            </div>
+          </div>
+          {% for i in content.field_products['#items']|keys|slice(0, 2) %}
+            {{ content.field_products[i] }}
+          {% endfor %}
+        </div>
         <div class="OurProducts-list">
-        {% for i in content.field_products['#items']|keys %}
-          {% if i < 2 %}
-            {# Push format big #}
+          <div class="OurProducts-deco is-bottom">
+            <svg viewBox="0 0 100 100" class="LeftBrush" aria-hidden="true">
+              <use xlink:href="#sema-brush"></use>
+            </svg>
+          </div>
+          {% for i in content.field_products['#items']|keys|slice(2, length) %}
             {{ content.field_products[i] }}
-          {% else %}
-            {{ content.field_products[i] }}
-          {% endif %}
-        {% endfor %}
+          {% endfor %}
         </div>
       </div>
     {% endblock %}

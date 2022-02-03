@@ -1,5 +1,6 @@
 .OurProducts {
   position: relative;
+  overflow: hidden
 }
 
 .OurProducts-inner {
@@ -14,35 +15,50 @@
 }
 
 .OurProducts-list {
-  display: flex;
+  position: relative;
+  display: grid;
   flex-wrap: wrap;
   column-gap: $gutter-size;
   row-gap: rem(30px);
 
+  + .OurProducts-list {
+    padding-top: rem(30px);
+  }
+  
   @include media-breakpoint-up('md') {
     row-gap: rem(60px);
+    grid-template-columns: repeat(3, 1fr);
+
+    &.has-two-cols {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    + .OurProducts-list {
+      padding-top: rem(60px);
+    }
   }
 }
 
 .OurProducts-deco {
+  --deco-overflow: #{map-get($section-padding, xs)} * 2;
   position: absolute;
-  top: 20%;
   left: 0;
   right: 0;
-  bottom: 30%;
   background-color: var(--alt-bg);
   pointer-events: none;
+  width: 100vw;
+  left: 50%;
+  transform: translate(-50%);
 
   .LeftBrush {
     position: absolute;
-    top: 20%;
+    bottom: 20%;
     width: rem(320px);
     fill: var(--white);
     opacity: 0.5;
-    transform: translateY(-50%) rotateX(180deg);
 
     use {
-      transform: translateX(-30%);
+      transform: rotate(26deg);
     }
 
     @include media-breakpoint-down('md') {
@@ -60,5 +76,19 @@
     fill: var(--white);
     opacity: 0.7;
     pointer-events: none;
+  }
+
+  &.is-top {
+    top: 20%;
+    bottom: 0;
+  }
+
+  &.is-bottom {
+    top: 0;
+    bottom: 50%;
+  }
+
+  @include media-breakpoint-up('md') {
+    --deco-overflow: #{map-get($section-padding, md)} * 2;
   }
 }

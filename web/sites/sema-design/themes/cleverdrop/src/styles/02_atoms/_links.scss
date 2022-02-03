@@ -1,18 +1,25 @@
 .Link {
   @include u-work-sans-regular;
-  font-size: rem(14px);
   display: inline-flex;
+  align-items: center;
+  font-size: rem(14px);
   color: var(--text-color);
   text-decoration: underline;
 
-  &:hover {
+  &:hover,
+  &:focus-visible {
     text-decoration: none;
+
+    svg {
+      transform: translateX(rem(5px));
+    }
   }
 
   svg {
-    height: re(6px);
+    height: rem(6px);
     width: rem(15px);
     fill: currentColor;
     margin-left: rem(10px);
+    transition: transform 0.3s;
   }
 }

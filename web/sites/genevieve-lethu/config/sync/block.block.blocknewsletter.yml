@@ -8,7 +8,7 @@ dependencies:
     - cleverdrop
 id: blocknewsletter
 theme: cleverdrop
-region: footer
+region: content
 weight: 0
 provider: null
 plugin: gl_newsletter

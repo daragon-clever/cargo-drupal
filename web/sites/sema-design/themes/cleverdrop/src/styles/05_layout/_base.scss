@@ -8,6 +8,8 @@ $page-bg-color: var(--white) !default;
 .Page {
   position: relative;
   font-size: rem(18px);
+  overflow: hidden;
+  
   // stylelint-disable
   @include dev-only {
     .has-grid &::before {

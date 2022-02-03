@@ -62,6 +62,10 @@
   @include make-cols(4);
   position: relative;
 
+  @include media-breakpoint-down('md') {
+    display: flex;
+  }
+
   @include media-breakpoint-up('md') {
     @include make-cols(6, 6);
     @include enable-grid;
@@ -69,6 +73,11 @@
 }
 
 .Introduction-FirstImg {
+  @include media-breakpoint-down('md') {
+    width: 50%;
+    margin-right: rem(20px);
+  }
+
   @include media-breakpoint-up('md') {
     @include make-cols(6);
     position: relative;
@@ -77,6 +86,10 @@
 }
 
 .Introduction-SecondImg {
+  @include media-breakpoint-down('md') {
+    width: 50%;
+  }
+
   @include media-breakpoint-up('md') {
     @include make-cols(6, 6);
   }

@@ -21,6 +21,12 @@
       content: "";
       color: var(--colorContrib); // For triangleBorder.scss can take the current background color
     }
+
+    &-before {
+      &::before {
+        background-color: var(--colorContrib);
+      }
+    }
   }
 
   &-theme {

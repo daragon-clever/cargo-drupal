@@ -1,3 +1,7 @@
+.PressRelease-wpr {
+  overflow: hidden;
+}
+
 .PressRelease {
   padding-top: rem(35px);
   padding-bottom: rem(35px);
@@ -8,26 +12,13 @@
     padding-top: rem(80px);
     padding-bottom: rem(80px);
   }
-
-  /*&::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: rem(295px);
-    background-color: var(--white);
-
-    @include media-breakpoint-up('md') {
-      height: rem(290px);
-    }
-  }*/
 }
 
 .PressRelease--inner {
   @include enable-grid;
   row-gap: rem(60px);
   position: relative;
+  z-index: 1;
 
   @include media-breakpoint-up('md') {
     align-items: center;
@@ -107,5 +98,47 @@
     height: 100%;
     width: 100%;
     object-fit: cover;
+  }
+}
+
+.LeftBrush {
+  display: none;
+
+  @include media-breakpoint-up('md') {
+    display: block;
+    position: absolute;
+    top: rem(-70px);
+    left: rem(-80px);
+    width: rem(320px);
+    fill: var(--white);
+    opacity: .5;
+    transform: rotateX(180deg) rotate(15deg);
+  }
+}
+
+.RightBrush {
+  position: absolute;
+  bottom: rem(-60px);
+  right: rem(-190px);
+  width: rem(320px);
+  fill: var(--white);
+  opacity: .5;
+
+  @include media-breakpoint-up('md') {
+    bottom: rem(-40px);
+    right: rem(-60px);
+    transform: rotate(-15deg);
+  }
+}
+
+.RightMarks {
+  position: absolute;
+  top: rem(40px);
+  right: rem(-55px);
+  z-index: 0;
+  width: rem(220px);
+
+  @include media-breakpoint-up('md') {
+
   }
 }

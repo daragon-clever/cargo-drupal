@@ -7,6 +7,9 @@
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
       <div class="PressRelease">
+        <svg viewBox="0 0 100 100" class="LeftBrush" aria-hidden="true">
+          <use xlink:href="#sema-brush"></use>
+        </svg>
         <div class="Section-inner PressRelease--inner">
           <div class="PressRelease-Left">
             <h2 class="PressRelease-title">
@@ -35,6 +38,12 @@
             </p>
           </div>
         </div>
+        <svg viewBox="0 0 100 100" class="RightBrush" aria-hidden="true">
+          <use xlink:href="#sema-brush"></use>
+        </svg>
+        <svg viewBox="0 0 100 100" class="RightMarks" aria-hidden="true">
+          <use xlink:href="#sema-marks"></use>
+        </svg>
       </div>
     {% endblock %}
   </div>

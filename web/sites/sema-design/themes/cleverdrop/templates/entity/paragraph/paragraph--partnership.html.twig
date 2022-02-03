@@ -1,23 +1,69 @@
 {%
   set classes = [
-  'paragraph',
-  'paragraph--type--' ~ paragraph.bundle|clean_class,
-  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-  not paragraph.isPublished() ? 'paragraph--unpublished'
+  'Partnership-wpr'
 ]
 %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
-      {{ content.field_color }}
-      {{ content.field_description }}
-      {{ content.field_subtitle }}
-      {{ content.field_title }}
-      {{ content.field_picture }}
-      {{ content.field_second_description }}
-      {{ content.field_second_subtitle }}
-      {{ content.field_second_picture }}
-      {{ content.field_third_picture }}
+    <div class="Partnership">
+      <div class="Partnership-top">
+        <div class="Section-inner Partnership--inner">
+          <div class="Partnership--inner-top-wpr">
+            <div class="Partnership-topLeft">
+              <h2 class="Partnership-title">
+                {{ content.field_title }}
+              </h2>
+              <p class="Partnership-text">
+                {{ content.field_description }}
+              </p>
+            </div>
+            <div class="Partnership-topRight">
+              <h3 class="Partnership-subtitle">
+                {{ content.field_subtitle }}
+              </h3>
+              <div class="Partnership-img">
+                <svg viewBox="0 0 100 100" class="Brush" aria-hidden="true">
+                  <use xlink:href="#sema-brush"></use>
+                </svg>
+                {{ content.field_picture }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="Partnership-bottom" style="--sail-color: {{content.field_color[0]['#markup']}};">
+        <div class="Section-inner Partnership--inner">
+          <div class="Partnership--inner-bottom-wpr">
+            <div class="Partnership-bottomLeft">
+              <div class="Partnership-img-second">
+                <svg viewBox="0 0 100 100" class="Brush" aria-hidden="true">
+                  <use xlink:href="#sema-brush"></use>
+                </svg>
+                {{ content.field_second_picture }}
+              </div>
+              <div class="Partnership-img-third">
+                {{ content.field_third_picture }}
+              </div>
+              <div class="Partnership-img-fourth">
+                {{ content.field_fourth_picture }}
+              </div>
+            </div>
+            <div class="Partnership-bottomRight">
+              <h3 class="Partnership-subtitle">
+                {{ content.field_second_subtitle }}
+              </h3>
+              <p class="Partnership-text">
+                {{ content.field_second_description }}
+              </p>
+            </div>
+          </div>
+        </div>
+        <svg viewBox="0 0 100 100" class="RightBrush" aria-hidden="true">
+          <use xlink:href="#sema-brush"></use>
+        </svg>
+      </div>
+    </div>
     {% endblock %}
   </div>
 {% endblock paragraph %}

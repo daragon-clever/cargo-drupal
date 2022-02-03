@@ -1,7 +1,1 @@
-<?xml version="1.0" encoding="utf-8"?>
-<svg width="31px" height="31px" viewBox="0 0 31 31" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
-  <g id="Facebook" transform="translate(0.5 0.5)">
-    <path d="M0 15C0 6.71573 6.71573 0 15 0C23.2843 0 30 6.71573 30 15C30 23.2843 23.2843 30 15 30C6.71573 30 0 23.2843 0 15Z" id="Fond" fill="none" fill-rule="evenodd" stroke="#FFFFFF" stroke-width="1" />
-    <path d="M15.9872 23.5L15.9872 15.249L18.206 15.249L18.5 12.4057L15.9872 12.4057L15.9909 10.9826C15.9909 10.241 16.0596 9.84365 17.0972 9.84365L18.4843 9.84365L18.4843 7L16.2652 7C13.5997 7 12.6615 8.37932 12.6615 10.6989L12.6615 12.406L11 12.406L11 15.2494L12.6615 15.2494L12.6615 23.5L15.9872 23.5Z" id="F_logo" fill="#FFFFFF" fill-rule="evenodd" stroke="none" />
-  </g>
-</svg>
+<svg viewBox="0 0 31 31" xmlns="http://www.w3.org/2000/svg"><path d="M.5 15.5c0-8.2843 6.7157-15 15-15s15 6.7157 15 15-6.7157 15-15 15-15-6.7157-15-15Z" fill="none" stroke="#FFF"/><path d="M16.4872 24v-8.251h2.2188L19 12.9057h-2.5128l.0037-1.4231c0-.7416.0687-1.139 1.1063-1.139h1.3871V7.5h-2.2191c-2.6655 0-3.6037 1.3793-3.6037 3.6989v1.7071H11.5v2.8434h1.6615V24h3.3257Z" fill="#FFF" fill-rule="evenodd"/></svg>

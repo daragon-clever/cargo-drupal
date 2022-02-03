@@ -14,7 +14,6 @@ export const Selectors = {
 
 // COMMON OPTIONS FOR ALL SLIDERS
 export const CommonSliderOptions = {
-  spaceBetween: 20,
   keyboard: {
     enabled: true,
     onlyInViewport: true,
@@ -22,10 +21,13 @@ export const CommonSliderOptions = {
   containerModifierClass: Classes.SLIDER_PREFIX + '-',
   wrapperClass: Classes.SLIDER_PREFIX + '-wrapper',
   slideActiveClass: 'is-active',
+  slideDuplicateActiveClass: 'is-active',
   slideBlankClass: Classes.SLIDER_PREFIX + '-slideInvisibleBlank',
   slideClass: Classes.SLIDER_PREFIX + '-slide',
   slidePrevClass: Classes.SLIDER_PREFIX + '-slide-prev',
+  slideDuplicatePrevClass: Classes.SLIDER_PREFIX + '-slide-duplicate-prev',
   slideNextClass: Classes.SLIDER_PREFIX + '-slide-next',
+  slideDuplicateNextClass: Classes.SLIDER_PREFIX + '-slide-duplicate-next',
   slideVisibleClass: Classes.SLIDER_PREFIX + '-slide-visible',
   a11y: {
     notificationClass: Classes.SLIDER_PREFIX + '-notification',
@@ -94,6 +96,8 @@ window.addEventListener('DOMContentLoaded', () => {
       Selectors,
       {
         ...CommonSliderOptions,
+        ...PaginatedSliderOptions,
+        spaceBetween: 20,
         breakpoints: {
           0: {
             slidesPerView: 1.4,
@@ -109,22 +113,20 @@ window.addEventListener('DOMContentLoaded', () => {
     )
   )
 
-  const HomeBanner = document.querySelectorAll('.js-home-banner')
+  const collections = document.querySelectorAll('.js-collections-slider')
 
-  Array.prototype.map.call(HomeBanner,
+  Array.prototype.map.call(collections,
     el => new Slider(
       el,
       Selectors,
       {
         ...CommonSliderOptions,
-        autoplay: {
-          delay: 4000,
-        },
-        keyboard: {
-          enabled: false,
-        },
-        effect: "creative",
-      }
-    )
+        ...NavigationSliderOptions,
+        ...PaginatedSliderOptions,
+        loop: true,
+        effect: 'fade',
+        speed: 1000,
+      },
+    ),
   )
 })

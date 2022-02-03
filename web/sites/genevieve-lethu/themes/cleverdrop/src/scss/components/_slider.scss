@@ -1,5 +1,5 @@
 /* -------------------------------------------------------------------------- *\
-  # sLIDER
+  # SLIDER
 \* -------------------------------------------------------------------------- */
 
 .slider {
@@ -32,6 +32,44 @@
     align-self: stretch;
     display: flex;
     touch-action: pan-y;
+  }
+
+  &-btnNext,
+  &-btnPrev {
+    border-radius: 50%;
+    width: rem(50px);
+    height: rem(50px);
+    background-color: $theme-secondary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-btnPrev {
+    margin-bottom: rem(10px);
+  }
+
+  &-pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: rem(30px);
+  }
+
+  &-bullet {
+    box-sizing: border-box;
+    display: block;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid $white;
+    width: rem(10px);
+    height: rem(10px);
+    margin: 0 rem(4px);
+    transition: background-color ease-in .2s;
+    cursor: pointer;
+
+    &.is-active {
+      background-color: $white;
+    }
   }
 
   &-scrollbar {
@@ -68,48 +106,25 @@
       }
     }
 
+    &-drag {
+      position: relative;
+      height: 100%;
+      background-color: $black;
+      border-radius: em(10px);
+
+      &::before {
+        position: absolute;
+        top: em(-5px);
+        right: 0;
+        bottom: em(-5px);
+        left: 0;
+        display: block;
+        content: '';
+      }
+    }
+
     @include mq($from: md) {
       display: none;
-    }
-  }
-
-  &-pagination {
-    display: flex;
-    justify-content: center;
-    margin-top: rem(30px);
-  }
-
-  &-bullet {
-    box-sizing: border-box;
-    display: block;
-    border-radius: 50%;
-    background-color: transparent;
-    border: 1px solid $white;
-    width: rem(10px);
-    height: rem(10px);
-    margin: 0 rem(4px);
-    transition: background-color ease-in .2s;
-    cursor: pointer;
-
-    &.is-active {
-      background-color: $white;
-    }
-  }
-
-  &-scrollbar-drag {
-    position: relative;
-    height: 100%;
-    background-color: $black;
-    border-radius: em(10px);
-
-    &::before {
-      position: absolute;
-      top: em(-5px);
-      right: 0;
-      bottom: em(-5px);
-      left: 0;
-      display: block;
-      content: '';
     }
   }
 }

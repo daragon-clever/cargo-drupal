@@ -4,17 +4,15 @@
   'paragraph--type--' ~ paragraph.bundle|clean_class,
   view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   not paragraph.isPublished() ? 'paragraph--unpublished',
-  'row',
-  'justify-content-center'
+  'bg-colorContrib-before',
+  'fitScreen-bg',
+  'sliderCollection-slide'
 ]
 %}
 {% block paragraph %}
-  <div{{ attributes.addClass(classes) }}>
-    <blockquote class="col-12 col-md-8">
+  <div{{ attributes.addClass(classes) }} style="--colorContrib:{{ content.field_color }}">
     {% block content %}
       {{ content.field_picture }}
-      {{ content.field_color }}>
     {% endblock %}
-    </blockquote>
   </div>
 {% endblock paragraph %}

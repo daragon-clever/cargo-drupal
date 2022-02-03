@@ -1,0 +1,95 @@
+.newsletterBlock {
+  padding-top: 80px;
+  padding-bottom: 100px;
+  overflow: hidden;
+  &-quote {
+    position: absolute;
+    right: 0;
+    left: 0;
+    font-size: rem(90px);
+    @include font(variant);
+    color: $green-secondary;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+  }
+  &-over {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.newsletterHead {
+  text-align: center;
+  color: $white;
+
+  &-title {
+    color: $white;
+    @include font(variant, 700);
+    font-size: rem(26px);
+  }
+  &-text {
+    font-family: $font-base;
+    font-size: rem(16px);
+  }
+
+  margin-bottom: 40px;
+}
+
+.newsletterForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .form-email {
+    border-radius: 50px 0px 0px 50px;
+    border: 1px solid $white;
+    color: $white;
+    background: transparent;
+    padding: 0px 18px;
+    @include font(variant, 100);
+    font-size: rem(12px);
+
+    &::placeholder {
+      color: $white;
+      @include font(base, 100);
+    }
+
+    @include mq($until: sm) {
+      width: 40%;
+    }
+  }
+  .form-submit {
+    background: $white;
+    border: 1px solid white;
+    height: 50px;
+    border-radius: 0px 50px 50px 0px;
+    min-width: 107px;
+    color: $aqua-deep;
+  }
+
+  &-fields {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &-rpdg {
+    max-width: 540px;
+    color: $white;
+    margin-top: 20px;
+    display: flex;
+    align-items: baseline;
+    label {
+      padding-left: 15px;
+    }
+  }
+}
+
+.newsletterSocial {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  gap: 20px;
+}

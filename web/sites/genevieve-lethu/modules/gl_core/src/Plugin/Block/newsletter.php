@@ -26,8 +26,8 @@ class newsletter extends BlockBase {
     if (!empty($myConfigPage)) {
       $datas['description'] = $myConfigPage->get('field_description')->value;
       $datas['title'] = $myConfigPage->get('field_title')->value;
-      $datas['printerest'] = $myConfigPage->get('field_pinterest')->uri;
-      $datas['instagral'] = $myConfigPage->get('field_instagram')->uri;
+      $datas['pinterest'] = $myConfigPage->get('field_pinterest')->uri;
+      $datas['instagram'] = $myConfigPage->get('field_instagram')->uri;
       $datas['facebook'] = $myConfigPage->get('field_facebook')->uri;
       $datas['background_quote'] = $myConfigPage->get('field_background_quote')->value;
     }

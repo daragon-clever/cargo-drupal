@@ -8,5 +8,22 @@
 {{ content.field_paragraph_quote_4 }}
 {{ content.field_paragraph_quote_5 }}
 {{ content.field_paragraph_instagram }}
-{{ drupal_view('featured_articles', 'block_2') }}
-{{ content.field_cta }} {# lien section histoire #}
+
+<div class="blogList-header">
+  <div class="container">
+    <h2 class="blogList-header-title">
+      {{ content.field_title }}
+    </h2>
+    <p class="blogList-header-description">
+      {{ content.field_resume }} {# lien section histoire #}
+    </p>
+  </div>
+</div>
+<div class="blogList-homepage">
+  {{ drupal_view('featured_articles', 'block_2') }}
+</div>
+<div class="blogList-footer">
+  <div class="container">
+    {{ content.field_cta }}
+  </div>
+</div>

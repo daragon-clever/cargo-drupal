@@ -15,6 +15,8 @@ dependencies:
     - field.field.node.homepage.field_paragraph_quote_4
     - field.field.node.homepage.field_paragraph_quote_5
     - field.field.node.homepage.field_paragraph_video
+    - field.field.node.homepage.field_resume
+    - field.field.node.homepage.field_title
     - node.type.homepage
   module:
     - field_group
@@ -188,6 +190,8 @@ third_party_settings:
       label: Instagram
     group_hightlighted:
       children:
+        - field_title
+        - field_resume
         - field_cta
       parent_name: group_hp
       weight: 28
@@ -212,7 +216,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_cta:
-    weight: 29
+    weight: 32
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -405,6 +409,22 @@ content:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
     third_party_settings: {  }
+    region: content
+  field_resume:
+    weight: 31
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_title:
+    weight: 30
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
   langcode:
     type: language_select

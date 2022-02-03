@@ -31,3 +31,11 @@ a {
         pointer-events: none;
     }
 }
+
+.rounded {
+  border: 1px solid $jade;
+  border-radius: 50px;
+  padding: 9px 20px;
+  @include font(base);
+  font-size: rem(12px);
+}

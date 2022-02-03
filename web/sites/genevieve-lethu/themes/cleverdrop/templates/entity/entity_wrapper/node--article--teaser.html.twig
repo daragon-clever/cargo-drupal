@@ -1,18 +1,26 @@
-<article{{ attributes }}>
-  {{ label }} {# titre #}
-  {{ content.field_picture }} {# titre #}
-  {{ content.field_color }}
+<article class="articleTeaser">
+  {{ content.field_picture }}
 
-  {# Description #}
-  {% if content.field_resume[0]['#context']['value'] is not empty %}
-    {{ content.field_resume[0]['#context']['value']|truncate(90, false, '...')|striptags|raw }}
-  {% else %}
-    {{ content.field_paragraph_centred_text[0]['#paragraph'].field_rte_lite.value|striptags|truncate(90, true, '...')|raw|nl2br }}
-  {% endif %}
-  {# fin description #}
-
-  {# tags #}
+  <div class="articleTeaser-tags">
   {% for i in content.field_categorie['#items']|keys %}
-    {{ content.field_categorie[i] }}
+    <span class="articleTeaser-tag">{{ content.field_categorie[i] }}</span>
   {% endfor %}
+  </div>
+
+  <h3 class="articleTeaser-title" style="color: {{ content.field_color[0]['#markup'] }}">
+    {{ label }}
+  </h3>
+
+  <p class="articleTeaser-description">
+    {% if content.field_resume[0]['#context']['value'] is not empty %}
+      {{ content.field_resume[0]['#context']['value']|truncate(90, false, '...')|striptags|raw }}
+    {% else %}
+      {{ content.field_paragraph_centred_text[0]['#paragraph'].field_rte_lite.value|striptags|truncate(90, true, '...')|raw|nl2br }}
+    {% endif %}
+  </p>
+
+  <div class="articleTeaser-read ">
+    <a href="{{ url }}">{{ "Lire la suite"|t }}</a>
+  </div>
+
 </article>

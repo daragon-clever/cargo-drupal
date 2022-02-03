@@ -16,6 +16,8 @@ dependencies:
     - field.field.node.homepage.field_paragraph_quote_4
     - field.field.node.homepage.field_paragraph_quote_5
     - field.field.node.homepage.field_paragraph_video
+    - field.field.node.homepage.field_resume
+    - field.field.node.homepage.field_title
     - node.type.homepage
   module:
     - user
@@ -42,4 +44,6 @@ hidden:
   field_paragraph_quote_4: true
   field_paragraph_quote_5: true
   field_paragraph_video: true
+  field_resume: true
+  field_title: true
   langcode: true

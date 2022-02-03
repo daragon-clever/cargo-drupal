@@ -17,6 +17,7 @@ dependencies:
     - field.field.node.article.field_triptych_picture
     - node.type.article
   module:
+    - color_field
     - entity_reference_revisions
     - svg_image
     - user
@@ -32,6 +33,15 @@ content:
     label: visually_hidden
     settings:
       link: false
+    third_party_settings: {  }
+  field_color:
+    type: color_field_formatter_text
+    weight: 6
+    region: content
+    label: visually_hidden
+    settings:
+      format: hex
+      opacity: true
     third_party_settings: {  }
   field_main_picture:
     type: entity_reference_revisions_entity_view
@@ -55,7 +65,7 @@ content:
     type: image
     weight: 4
     region: content
-    label: above
+    label: visually_hidden
     settings:
       svg_attributes:
         width: null
@@ -77,7 +87,6 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
-  field_color: true
   field_metatags: true
   field_paragraph_quote_5: true
   field_paragraph_video: true

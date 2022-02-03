@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1eaff61bebe2cc96cf3687f544ba7378",
+    "content-hash": "47a5522d9e35d45b083e1921bb9c7672",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3721,6 +3721,77 @@
                 "source": "https://github.com/hechoendrupal/drupal-console-extend-plugin/tree/0.9.5"
             },
             "time": "2020-11-18T00:15:28+00:00"
+        },
+        {
+            "name": "drupal/console-fr",
+            "version": "v1.0.0-rc1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hechoendrupal/drupal-console-fr.git",
+                "reference": "b86f89372b981c5846513429997bbb4032c000e9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hechoendrupal/drupal-console-fr/zipball/b86f89372b981c5846513429997bbb4032c000e9",
+                "reference": "b86f89372b981c5846513429997bbb4032c000e9",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://repo.packagist.com/cargo-grp/dists/%package%/%version%/r%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "type": "drupal-console-language",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "notification-url": "https://repo.packagist.com/cargo-grp/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "David Flores",
+                    "email": "dmousex@gmail.com",
+                    "homepage": "http://dmouse.net"
+                },
+                {
+                    "name": "Jesus Manuel Olivas",
+                    "email": "jesus.olivas@gmail.com",
+                    "homepage": "http://jmolivas.com"
+                },
+                {
+                    "name": "Drupal Console Contributors",
+                    "homepage": "https://github.com/hechoendrupal/DrupalConsole/graphs/contributors"
+                },
+                {
+                    "name": "Eduardo Garcia",
+                    "email": "enzo@enzolutions.com",
+                    "homepage": "http://enzolutions.com/"
+                },
+                {
+                    "name": "Omar Aguirre",
+                    "email": "omersguchigu@gmail.com"
+                }
+            ],
+            "description": "Drupal Console French Language",
+            "homepage": "http://drupalconsole.com/",
+            "keywords": [
+                "console",
+                "development",
+                "drupal",
+                "symfony"
+            ],
+            "support": {
+                "docs": "https://hechoendrupal.gitbooks.io/drupal-console/",
+                "forum": "https://gitter.im/hechoendrupal/DrupalConsole",
+                "issues": "https://github.com/hechoendrupal/drupal-console-fr/issues",
+                "source": "https://github.com/hechoendrupal/drupal-console-fr/tree/v1.0.0-rc1"
+            },
+            "time": "2016-10-10T20:35:06+00:00"
         },
         {
             "name": "drupal/consumers",
@@ -17039,6 +17110,7 @@
         "drupal/block_field": 15,
         "drupal/captcha": 10,
         "drupal/console-extend-plugin": 20,
+        "drupal/console-fr": 5,
         "drupal/entity_pager": 10,
         "drupal/languageicons": 10,
         "drupal/pdfpreview": 5,

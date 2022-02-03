@@ -3,17 +3,33 @@
   'paragraph',
   'paragraph--type--' ~ paragraph.bundle|clean_class,
   view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-  not paragraph.isPublished() ? 'paragraph--unpublished'
+  not paragraph.isPublished() ? 'paragraph--unpublished',
+  'bg-theme',
+  'gap-y',
+  'onBottomUntil-md',
 ]
 %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
+    <div class="container">
     {% block content %}
-      {{ content.field_title }}
-      {{ content.field_cta }}
-      {% for i in content.field_picture_limit_4['#items']|keys %}
-        {{ content.field_picture_limit_4[i] }}
-      {% endfor %}
+      <div class="row mb-3 mt-3">
+        <div class="col-12 col-md-8 offset-md-2 d-flex justify-content-between align-items-center">
+          <h2 class="text-white">{{ content.field_title }}</h2>
+          <p class="d-flex justify-content-center justify-content-start-md onBottomUntil-md-el"><a href="{{ content.field_cta[0]['#url'] }}" class="cta --secondary">{{ content.field_cta[0]['#title'] }}</a></p>
+        </div>
+      </div>
+      <div class="slider js-slider js-instagram-slider --noPagination-md">
+        <div class="slider-wrapper">
+        {% for i in content.field_picture_limit_4['#items']|keys %}
+          <div class="slider-slide">
+            {{ content.field_picture_limit_4[i] }}
+          </div>
+        {% endfor %}
+        </div>
+        <div class="slider-pagination"></div>
+      </div>
+    </div>
     {% endblock %}
   </div>
 {% endblock paragraph %}

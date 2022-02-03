@@ -5,8 +5,10 @@
 // Styleguide Utilities.fitScreen
 
 .fitScreen {
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
+  @include mq($until: md) {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+  }
 
   &-bg {
     position: relative;

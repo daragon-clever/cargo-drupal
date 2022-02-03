@@ -8,26 +8,26 @@
 
 .gap {
   &-y {
-    padding: rem(50px) 0;
+    padding: rem($gap-between-min) 0;
 
     @include mq($from: md) {
-      padding: rem(80px) 0;
+      padding: rem($gap-between-max) 0;
     }
   }
 
   &-t {
-    padding-top: rem(50px);
+    padding-top: rem($gap-between-min);
 
     @include mq($from: md) {
-      padding-top: rem(80px)
+      padding-top: rem($gap-between-max)
     }
   }
 
   &-b {
-    padding-bottom: rem(50px);
+    padding-bottom: rem($gap-between-min);
 
     @include mq($from: md) {
-      padding-bottom: rem(80px)
+      padding-bottom: rem($gap-between-max)
     }
   }
 }

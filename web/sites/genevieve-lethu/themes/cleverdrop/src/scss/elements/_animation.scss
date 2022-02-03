@@ -25,6 +25,10 @@
       right: rem(-40px);
       z-index: 1;
 
+      img {
+        width: rem(160px);
+      }
+
       @include mq($from: lg) {
         bottom: auto;
         top: 0;

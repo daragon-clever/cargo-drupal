@@ -30,15 +30,15 @@ $flexboxgrid-breakpoints:
 
 $gutter-compensation: calc($grid-gutter * .5 * -1);
 $gutter-from-m-compensation: calc($grid-from-m-gutter * .5 * -1);
-$gutter-from-l-compensation: calc($grid-from-l-gutter * .5 * -1);
+$gutter-from-l-compensation: calc($grid-from-xl-gutter * .5 * -1);
 
 $half-gutter-width: calc($grid-gutter * .5);
 $half-gutter-from-m-width: calc($grid-from-m-gutter * .5);
-$half-gutter-from-l-width: calc($grid-from-l-gutter * .5);
+$half-gutter-from-xl-width: calc($grid-from-xl-gutter * .5);
 
 $gutter-breakpoints:
   md em(breakpoint(md)) $half-gutter-from-m-width,
-  lg em(breakpoint(lg)) $half-gutter-from-l-width !default;
+  lg em(breakpoint(lg)) $half-gutter-from-xl-width !default;
 
 
 .container-fluid {
@@ -54,17 +54,15 @@ $gutter-breakpoints:
 }
 
 .container {
-  max-width: calc(#{rem($vw-max)} - (#{rem($grid-margin)} * 2));
+  max-width: rem($vw-max);
   padding: 0 rem($grid-margin);
   margin: 0 auto;
 
   @include mq($from: md) {
-    max-width: calc(#{rem($vw-max)} - (#{rem($grid-from-m-margin)} * 2));
     padding: 0 rem($grid-from-m-margin);
   }
 
   @include mq($from: xl) {
-    max-width: calc(#{rem($vw-max)} - (#{rem($grid-from-xl-margin)} * 2));
     padding: 0 rem($grid-from-xl-margin);
   }
 }
@@ -109,8 +107,8 @@ $gutter-breakpoints:
     }
 
     @include mq($from: lg) {
-      padding-right: $half-gutter-from-l-width;
-      padding-left: $half-gutter-from-l-width;
+      padding-right: $half-gutter-from-xl-width;
+      padding-left: $half-gutter-from-xl-width;
     }
   }
 }
@@ -131,8 +129,8 @@ $gutter-breakpoints:
     }
 
     @include mq($from: lg) {
-      padding-right: $half-gutter-from-l-width;
-      padding-left: $half-gutter-from-l-width;
+      padding-right: $half-gutter-from-xl-width;
+      padding-left: $half-gutter-from-xl-width;
     }
 
     @if $i == 0 {

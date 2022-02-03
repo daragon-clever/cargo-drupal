@@ -47,6 +47,7 @@
 
       -ms-overflow-style: none;
       scrollbar-width: none;
+
       &::-webkit-scrollbar {
         width: 0px;
         background: transparent;
@@ -71,7 +72,7 @@
           margin-left: 50px;
         }
 
-          input {
+        input {
           display: none;
 
           &:checked + label {
@@ -82,6 +83,7 @@
 
         label {
           @extend .rounded;
+
           &:hover {
             cursor: pointer;
             @extend .rounded-effect;
@@ -157,6 +159,7 @@
       @extend .rounded;
       @include font(script);
       font-size: rem(20px);
+
       &:hover {
         @extend .rounded-effect;
       }

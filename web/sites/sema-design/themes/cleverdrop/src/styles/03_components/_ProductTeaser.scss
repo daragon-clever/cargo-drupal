@@ -1,14 +1,5 @@
 .ProductTeaser {
   position: relative;
-
-  @include media-breakpoint-up('md') {
-    flex: calc(100%/3 - $gutter-size) 1 1;
-    min-width: rem(350px);
-  
-    &:nth-child(-n+2) {
-      flex: calc(50% - math.div($gutter-size, 2)) 1 1;
-    }
-  }
 }
 
 .ProductTeaser-title {

@@ -102,11 +102,11 @@
     width: rem(18px);
   }
 
-  &.swiper-button-disabled {
+  &.swiper-button-disabled { // stylelint-disable-line
     cursor: not-allowed;
 
     svg {
-      opacity: .4;
+      opacity: 0.4;
     }
   }
 }
@@ -116,7 +116,7 @@
   align-items: center;
   justify-content: center;
 
-  .swiper-pagination-bullet {
+  .swiper-pagination-bullet { // stylelint-disable-line
     width: rem(6px);
     height: rem(6px);
     border-radius: rem(6px);
@@ -129,7 +129,7 @@
       margin-right: 0;
     }
 
-    &.swiper-pagination-bullet-active {
+    &.swiper-pagination-bullet-active { // stylelint-disable-line
       background: var(--text-color);
     }
   }

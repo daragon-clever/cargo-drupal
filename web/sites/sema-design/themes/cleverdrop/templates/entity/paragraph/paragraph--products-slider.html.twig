@@ -1,16 +1,40 @@
 {%
   set classes = [
-  'paragraph',
-  'paragraph--type--' ~ paragraph.bundle|clean_class,
-  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-  not paragraph.isPublished() ? 'paragraph--unpublished'
+  'ProductSlider',
+  'Section',
+  'has-noBg'
 ]
 %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
-      {{ content.field_title }}
-      {{ content.field_paragraph_slides }} {# display sub paragraph paragraph--products-slider-slide #}
+      <svg viewBox="0 0 100 100" class="RightBrush" aria-hidden="true">
+        <use xlink:href="#sema-brush"></use>
+      </svg>
+      <div class="Section-inner ProductSlider-inner">
+        <div class="ProductSlider-left">
+          <h2>{{ content.field_title }}</h2>
+          <ul class="ProductSliderThumbs" data-control-id="product-slider-{{ paragraph.id() }}">
+            {% for key, item in content.field_paragraph_slides if key|first != '#'%}
+              <li class="ProductSliderThumbs-item">
+                <span class="ProductSliderThumbs-label" data-slide="{{ key }}">{{ content.field_paragraph_slides[key]['#paragraph'].field_title.value }}</span>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="ProductSlider-right">
+          <div id="product-slider-{{ paragraph.id() }}" class="js-product-slider ProductSliderImgs">
+            <div class="ProductSlider-wrapper">
+              {% for key, item in content.field_paragraph_slides if key|first != '#'%}
+              <div class="ProductSlider-slide">
+                {{ content.field_paragraph_slides[key] }}
+              </div>
+              {% endfor %}
+            </div>
+            <div class="Slider-scrollbar"></div>
+          </div>
+        </div>
+      </div>
     {% endblock %}
   </div>
 {% endblock paragraph %}

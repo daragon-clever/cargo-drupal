@@ -2,7 +2,10 @@
   --bgColor: var(--main-bg);
   --foregroundColor: var(--text-color);
   color: var(--foregroundColor);
-  background-color: var(--bgColor);
+
+  &:not(.has-noBg) {
+    background-color: var(--bgColor);
+  }
 
   &.has-altBg {
     --bgColor: var(--alt-bg);

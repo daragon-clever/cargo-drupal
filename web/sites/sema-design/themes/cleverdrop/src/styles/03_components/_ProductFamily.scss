@@ -1,55 +1,48 @@
-.BrandHistory-wpr {
-  overflow: hidden;
+.ProductFamily {
+  background: var(--altBg);
 
   .Section {
-    position: relative;
+    position: relative
+  }
 
-    .LeftBrush,
-    .RightBrush {
-      position: absolute;
-      width: 80%;
-      fill: var(--white);
-      opacity: 0.2;
-      z-index: 0;
-      pointer-events: none;
-    }
+  .Stains,
+  .RightBrush {
+    position: absolute;
+    fill: var(--white);
+    opacity: 0.2;
+    z-index: 0;
+    pointer-events: none;
+  }
 
-    .RightBrush {
+  .RightBrush {
+    display: none;
+
+    @include media-breakpoint-up('md') {
+      display: block;
       right: 0;
       bottom: 0;
+      width: 25%;
       overflow: visible;
 
       use {
         transform: rotate(-26deg) translateY(rem(50px));
       }
-
-      @include media-breakpoint-up('md') {
-        width: 25%;
-      }
     }
+  }
 
-    .LeftBrush {
-      top: 0;
-      left: 0;
-
-      use {
-        transform: rotateX(180deg) rotateZ(-10deg) rotateY(180deg) translateY(rem(-20px)) translateX(rem(20px));
-        transform-origin: 50%;
-      }
-
-      @include media-breakpoint-up('md') {
-        display: none;
-      }
-    }
+  .Stains {
+    top: 10%;
+    right: 0;
+    width: rem(90px);
   }
 }
 
-.BrandHistory {
+.ProductFamily-inner {
   @include enable-grid;
   row-gap: rem(60px);
   padding-top: rem(35px);
   padding-bottom: rem(35px);
-  
+
 
   &.is-top {
     @include media-breakpoint-down('md') {
@@ -58,6 +51,8 @@
   }
 
   &.is-bottom {
+    position: relative;
+
     @include media-breakpoint-down('md') {
       padding-bottom: rem(60px);
     }
@@ -73,7 +68,7 @@
   }
 }
 
-.BrandHistory-content {
+.ProductFamily-content {
   .is-top & {
     @include make-cols(4);
 
@@ -91,11 +86,11 @@
   }
 }
 
-.BrandHistory-text:not(:last-child) {
+.ProductFamily-text:not(:last-child) {
   margin-bottom: rem(35px);
 }
 
-.BrandHistory-firstImg {
+.ProductFamily-firstImg {
   position: relative;
   @include make-cols(2);
 
@@ -141,7 +136,7 @@
   }
 }
 
-.BrandHistory-secondImg {
+.ProductFamily-secondImg {
   @include make-cols(2, 2);
   position: relative;
 

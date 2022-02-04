@@ -1,4 +1,6 @@
+import debounce from 'lodash.debounce'
 import Slider from './components/slider'
+import { isDesktop } from './helpers/breakpoints'
 
 export const Classes = {
   SLIDER_PREFIX: 'Slider',
@@ -226,4 +228,60 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     )
   )
+
+
+  /**
+   * Product slider
+   */
+  const initProductSlider = () => {
+    const ProductSlider = document.querySelectorAll('.js-product-slider')
+
+    Array.prototype.map.call(ProductSlider,
+      el => {
+        if (el.swiper) el.swiper.destroy()
+
+        if (isDesktop()) {
+          new Slider(
+            el,
+            Selectors,
+            {
+              ...CommonSliderOptions,
+              ...ScrollbarSliderOptions,
+              wrapperClass: 'ProductSlider-wrapper',
+              slideClass: 'ProductSlider-slide',
+              spaceBetween: 0,
+              effect: "creative",
+            }
+          )
+    
+          const thumbs = document.querySelector(`[data-control-id="${el.id}"]`)
+    
+          if (thumbs) {
+            Array.prototype.map.call(thumbs.querySelectorAll(`[data-slide]`), thumb => {
+              thumb.addEventListener('mouseover', e => {
+                e.preventDefault()
+                el.swiper.slideTo(thumb.dataset.slide)
+              })
+            })
+          }
+        } else {
+          new Slider(
+            el,
+            Selectors,
+            {
+              ...CommonSliderOptions,
+              ...ScrollbarSliderOptions,
+              wrapperClass: 'ProductSlider-wrapper',
+              slideClass: 'ProductSlider-slide',
+              slidesPerView: "auto",
+            },
+          )
+        }
+      }
+    )
+  }
+
+  window.addEventListener('resize', debounce(initProductSlider, 200))
+
+  initProductSlider()
 })

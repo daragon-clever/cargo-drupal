@@ -38,6 +38,7 @@ a {
   padding: 9px 20px;
   @include font(base);
   font-size: rem(12px);
+  transition: color .3s ease-in-out, background-color .4s ease-in-out;
 }
 
 .rounded-effect {

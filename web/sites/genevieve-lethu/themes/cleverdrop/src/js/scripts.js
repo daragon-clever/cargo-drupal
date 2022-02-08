@@ -1,12 +1,10 @@
 'use strict';
 
 // Library
-require('./lib/swiper');
+// require('./lib/swiper');
 
 // Components
 require('./components/animate');
-require('./components/slider');
 require('./components/menu');
 require('./components/videoPlayer');
-
-require('./slider');
+require('./components/carousel');

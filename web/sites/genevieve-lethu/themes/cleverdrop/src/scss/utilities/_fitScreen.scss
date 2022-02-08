@@ -5,9 +5,14 @@
 // Styleguide Utilities.fitScreen
 
 .fitScreen {
-  @include mq($until: md) {
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+
+  &-md {
+    @include mq($until: md) {
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+    }
   }
 
   &-bg {

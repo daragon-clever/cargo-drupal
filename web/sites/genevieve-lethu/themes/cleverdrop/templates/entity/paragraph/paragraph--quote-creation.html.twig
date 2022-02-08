@@ -10,7 +10,7 @@
 ]
 %}
 {% block paragraph %}
-  <div{{ attributes.addClass(classes) }} style="background-image: url('{{ file_url(content.field_picture[0]['#item'].entity.fileUri) }}'); --colorContrib:{{ content.field_color }}">
+  <div{{ attributes.addClass(classes) }} style="background-image: url('{{ file_url(content.field_picture[0]['#item'].entity.fileUri) }}'); --colorContrib:{{ content.field_color[0]['#markup'] }}">
     <div class="container">
       <div class="row justify-content-center">
       {% block content %}

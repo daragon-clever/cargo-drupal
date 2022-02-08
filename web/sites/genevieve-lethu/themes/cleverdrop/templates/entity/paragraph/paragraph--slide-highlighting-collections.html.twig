@@ -6,11 +6,11 @@
   not paragraph.isPublished() ? 'paragraph--unpublished',
   'bg-colorContrib-before',
   'fitScreen-bg',
-  'sliderCollection-slide'
+  'slider-inner'
 ]
 %}
 {% block paragraph %}
-  <div{{ attributes.addClass(classes) }} style="--colorContrib:{{ content.field_color }}">
+  <div{{ attributes.addClass(classes) }} style="--colorContrib:{{ content.field_color[0]['#markup'] }}">
     {% block content %}
       {{ content.field_picture }}
     {% endblock %}

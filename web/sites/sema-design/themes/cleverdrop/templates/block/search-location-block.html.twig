@@ -9,42 +9,55 @@
 */
 #}
 
-<div id="store-locator-wrapper">
-fgfgd
+{%
+  set classes = [
+  'StoreLocator-wpr'
+]
+%}
+
+<div id="store-locator-wrapper"{{ attributes.addClass(classes) }}>
 {{ sema.mainPicture }}
-{{ sema.description }}
-{{ sema.title }}
 
-  <input
-    name="search-string"
-    placeholder="Indiquer un emplacement"
-    class="search-input"
-    id="js-search-input"
-    value="{{ query }}"
-  />
-  <input
-    name="preloaded-search-string"
-    type="hidden"
-    id="js-preloaded"
-  />
-  <button class="btn-submit">
-    <img src="/sites/cotetable/themes/cotetable/images/storelocator/search.svg"
-         alt="{{ "Recherche store locator"|trans }}"/>
-  </button>
-  <span id="js-search-around">
-                            <button id="js-search-button" class="locate-me">Me localiser</button>
-                            <input name="search-radius" id="js-search-radius" type="hidden"
-                                   value="{{ searchFormDefaultRadius }}">
-                            <input name="offset-radius" type="hidden" id="js-offset-radius" value="0">
-                            <input name="search-geolocation" id="js-search-geolocation" type="hidden">
-                            <input name="store-detail-path" id="js-store-detail-path" type="hidden">
-                        </span>
+  <section class="Section StoreLocator">
+    <div class="Section-inner">
+      <div class="StoreLocator-content">
+        <div class="StoreLocator-text">
+          <h2 class="StoreLocator-title">{{ sema.title }}</h2>
+          <p class="StoreLocator-description">{{ sema.description }}</p>
+        </div>
+        <div class="StoreLocator-search">
+          <input
+            name="search-string"
+            placeholder="{{ 'Votre ville, code postal, département…'|t }}"
+            class="search-input"
+            id="js-search-input"
+            value="{{ query }}"
+          />
+          <input
+            name="preloaded-search-string"
+            type="hidden"
+            id="js-preloaded"
+          />
 
-  <div class="row">
-    <div id="js-ajax-response" class="store-locator-response col-lg-5"></div>
-    <div class="col-lg-7 d-none d-lg-block">
-      <div id="storelocator-map"></div>
+          <input type="submit" id="js-search-button" class="btn-submit" value="{{ "Rechercher"|t }}">
+          <span id="js-search-around">
+            <input name="search-radius" id="js-search-radius" type="hidden"
+                   value="{{ searchFormDefaultRadius }}">
+            <input name="offset-radius" type="hidden" id="js-offset-radius" value="0">
+            <input name="search-geolocation" id="js-search-geolocation" type="hidden">
+            <input name="store-detail-path" id="js-store-detail-path" type="hidden">
+          </span>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+  </section>
+
+  <section class="Section StoreLocator StoreLocator-results">
+    <div class="Section-inner">
+      <div class="StoreLocator-results-content">
+        <div id="storelocator-map" class="StoreLocator-map"></div>
+        <ul id="js-ajax-response" class="StoreLocator-list"></ul>
+      </div>
+    </div>
+  </section>
 </div>

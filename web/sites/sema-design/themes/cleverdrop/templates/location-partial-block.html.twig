@@ -10,64 +10,15 @@
 #}
 
 {% set storeUrl = "/%s/%s/%s"|format(routingItemKey, location.externalId, location.name|url_encode) %}
-<div class="js-store-block">
-    <div>
-        <div class="infos-wrapper">
-            <div class="info-mag">
-                <a class="d-none d-lg-block"
-                   id='js-action-map'
-                   href='#'
-                   location-id='{{ location.id }}'
-                   location-latitude='{{ location.address.geoLocation.latitude }}'
-                   location-longitude='{{ location.address.geoLocation.longitude }}'
-                   location-path='{{ storeUrl }}'
-                   location-map-target='storelocator-map'
-                >
-                    <span class="name">{{ location.getName }}</span><br>
-                    <span class="address">{{ "%s %s %s %s %s"|format(location.address.line1, location.address.line2, location.address.line3,
-                            location.address.postCode, location.address.city) }}</span>
-                </a>
-                <a class="d-lg-none"
-                   id='js-action-map'
-                   href='#'
-                   location-id='{{ location.id }}'
-                   location-latitude='{{ location.address.geoLocation.latitude }}'
-                   location-longitude='{{ location.address.geoLocation.longitude }}'
-                   location-path='{{ storeUrl }}'
-                >
-                    <span class="name">{{ location.getName }}</span><br>
-                    <span class="address">{{ "%s %s %s %s %s"|format(location.address.line1, location.address.line2, location.address.line3,
-                        location.address.postCode, location.address.city) }}</span>
-                </a>
-                <div class="phone">
-                    {% if location.getWebContact.getPhoneNumber.getNationalNumber %}
-                        <span>{{ location.getWebContact.getPhoneNumber.getNationalNumber }}</span>
-                    {% endif %}
-                </div>
-            </div>
-            <div class="links">
-                {% if location.getUrl %}
-                    <a href='{{ "%s"|format(location.getUrl) }}' target="_blank">
-                        <div>
-                            <img src="/sites/cotetable/themes/cotetable/images/storelocator/link.svg"
-                                 alt="{{ "Site web point de vente"|trans }}">
-                            <span>{{ "Site web"|trans }}</span>
-                        </div>
-                    </a>
-                {% endif %}
-                <a href='https://www.google.com/maps/dir/?api=1&destination={{ "%s,%s"|format(location.address.geoLocation.latitude, location.address.geoLocation.longitude) }}'
-                   target="_blank">
-                    <div>
-                        <img src="/sites/cotetable/themes/cotetable/images/storelocator/car.svg"
-                             alt="{{ "Itinéraire point de vente"|trans }}">
-                        <span>{{ "Directions"|trans }}</span>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Pour mobile -->
-<div id="js-map-container">
-    <div id="map_target_{{ location.id }}" style="display:none;"></div>
-</div>
+<a class="StoreLocator-link"
+   id='js-action-map'
+   href='#'
+   location-id='{{ location.id }}'
+   location-latitude='{{ location.address.geoLocation.latitude }}'
+   location-longitude='{{ location.address.geoLocation.longitude }}'
+   location-path='{{ storeUrl }}'
+   location-map-target='storelocator-map'>
+  <span class="StoreLocator-link-name">{{ location.getName }}</span><br>
+  <span class="StoreLocator-link-address">{{ "%s %s %s %s %s"|format(location.address.line1, location.address.line2, location.address.line3,
+      location.address.postCode, location.address.city) }}</span>
+</a>

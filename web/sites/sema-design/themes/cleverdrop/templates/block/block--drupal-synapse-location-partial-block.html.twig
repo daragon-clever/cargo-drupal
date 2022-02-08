@@ -1,0 +1,11 @@
+{%
+  set classes = [
+  'StoreLocator-item'
+]
+%}
+
+<li{{ attributes.addClass(classes) }}>
+  {% block content %}
+    {{ content }}
+  {% endblock %}
+</li>

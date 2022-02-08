@@ -14,7 +14,7 @@ entity_type: paragraph
 bundle: press_release
 label: Presse
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -58,6 +58,9 @@ settings:
       partnership:
         weight: 33
         enabled: false
+      post_instagram:
+        weight: 36
+        enabled: false
       presentation_block:
         weight: 34
         enabled: false
@@ -75,6 +78,9 @@ settings:
         enabled: false
       products_slider_slide:
         weight: 38
+        enabled: false
+      section_professionnel:
+        weight: 43
         enabled: false
       slider_homepage:
         weight: 40

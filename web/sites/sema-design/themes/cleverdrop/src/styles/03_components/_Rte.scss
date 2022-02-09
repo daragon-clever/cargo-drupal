@@ -1,0 +1,29 @@
+.Rte-content {
+  padding: rem(50px) 0;
+
+  pre {
+    overflow: auto;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  table td,
+  table th {
+    border: 1px solid var(--ebb);
+    padding: 8px;
+  }
+
+  table tr:nth-child(even) {
+    background-color: var(--pampas);
+  }
+
+  table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: var(--pampas);
+  }
+}

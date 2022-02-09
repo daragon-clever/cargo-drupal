@@ -10,6 +10,11 @@
 {% block paragraph %}
 <div{{ attributes.addClass(classes) }}>
   {% block content %}
+  <div class="row justify-content-center mt-2">
+    <blockquote class="col-12 col-lg-8 col-lg-6">
+      {{ content.field_rte_lite }}
+    </blockquote>
+  </div>
   <div class="fitScreen">
     <div class="triangleBorder-bottom bg-colorContrib" style="--colorContrib:#F0EDE0">
       <div class="row justify-content-center gap-y">

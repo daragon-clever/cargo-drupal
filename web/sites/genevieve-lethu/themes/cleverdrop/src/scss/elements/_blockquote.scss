@@ -2,25 +2,35 @@
   # BLOCKQUOTE
 \* -------------------------------------------------------------------------- */
 
-$blockquote-font-size: 40px;
+$blockquote-font-size-md: 40px;
+$blockquote-font-size: 30px;
 
 blockquote {
   @include font(variant, italic);
   font-size: rem($blockquote-font-size);
-  line-height: unitless-line-height(45px, 40px);
+  line-height: unitless-line-height(50px, $blockquote-font-size);
   text-align: center;
   color: $theme-secondary;
   position: relative;
   padding-top: rem(35px);
   margin: rem(80px) 0;
 
+  @include mq($from: md) {
+    font-size: rem($blockquote-font-size-md);
+    line-height: unitless-line-height(50px, $blockquote-font-size-md);
+  }
+
   cite {
     @include font(base, bold);
-    font-size: em(12px, $blockquote-font-size);
     text-transform: uppercase;
     color: $yellow;
     display: block;
     margin-top: em(25px, 12px);
+    font-size: em(12px, $blockquote-font-size);
+
+    @include mq($from: md) {
+      font-size: em(12px, $blockquote-font-size-md);
+    }
 
     &::before {
       content: "";
@@ -35,6 +45,10 @@ blockquote {
       left: 50%;
       margin-left: rem(-10px);
     }
+  }
+
+  p {
+    margin: 0;
   }
 
   // VARIANT

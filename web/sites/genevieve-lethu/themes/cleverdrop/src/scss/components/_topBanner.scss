@@ -1,0 +1,59 @@
+/* -------------------------------------------------------------------------- *\
+  # TOP BANNER PAGE
+\* -------------------------------------------------------------------------- */
+
+.topBanner {
+  @include aspect-ratio(500px, 680px, '.topBanner-ratio');
+  position: relative;
+
+  @include mq($from: sm) {
+    @include aspect-ratio(1440px, 555px, '.topBanner-ratio');
+  }
+
+  &::after {
+    content: "";
+    background: url('../assets/brush.png') no-repeat left bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: rem(70px);
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+
+  &-title {
+    @include center-v;
+    left: rem(30px);
+    right: rem(30px);
+    color: $white;
+    text-align: center;
+    font-size: rem(40px);
+
+    @include mq($from: sm) {
+      margin-top: rem(-40px);
+    }
+  }
+
+  &-img {
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &-paralax1 {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 50%);
+    z-index: $zindex-nav;
+
+    @include mq($from: md) {
+      transform: translate(-50%, 40%);
+    }
+  }
+}

@@ -3,17 +3,32 @@
   'paragraph',
   'paragraph--type--' ~ paragraph.bundle|clean_class,
   view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-  not paragraph.isPublished() ? 'paragraph--unpublished'
+  not paragraph.isPublished() ? 'paragraph--unpublished',
+  'topBanner',
+  'fitScreen'
 ]
 %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
-      {{ content.field_title }}
-      {{ content.field_desktop_background_picture }}
-      {{ content.field_mobile_background_picture }}
-      {{ content.field_picture }} {# Visuel n°2 Desktop	 #}
-      {{ content.field_picture_second }} {# Visuel n°2 Mobile	#}
+      <div class="topBanner-ratio">
+        <h1 class="topBanner-title">{{ content.field_title }}</h1>
+        <div class="topBanner-img">
+          <picture>
+            <source srcset="{{ file_url(content.field_desktop_background_picture[0]['#item'].entity.fileUri) }}" media="(min-width: 31.1875rem)">
+
+            <img src="{{ file_url(content.field_mobile_background_picture[0]['#item'].entity.fileUri) }}" alt="" />
+          </picture>
+        </div>
+        <div class="topBanner-paralax1">
+          <img
+            srcset="{{ file_url(content.field_picture[0]['#item'].entity.fileUri) }} 220w,
+                    {{ file_url(content.field_picture_second[0]['#item'].entity.fileUri) }} 120w"
+            sizes="(min-width: 46.8125rem) 220px, 120px"
+            src="{{ file_url(content.field_picture_second[0]['#item'].entity.fileUri) }}"
+            alt="">
+        </div>
+      </div>
     {% endblock %}
   </div>
 {% endblock paragraph %}

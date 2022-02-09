@@ -5,10 +5,11 @@ dependencies:
   config:
     - field.field.paragraph.creative_text.field_color
     - field.field.paragraph.creative_text.field_description
-    - field.field.paragraph.creative_text.field_title
+    - field.field.paragraph.creative_text.field_rte_lite
     - paragraphs.paragraphs_type.creative_text
   module:
     - color_field
+    - text
 id: paragraph.creative_text.default
 targetEntityType: paragraph
 bundle: creative_text
@@ -36,13 +37,13 @@ content:
     third_party_settings: {  }
     type: string_textarea
     region: content
-  field_title:
+  field_rte_lite:
     weight: 1
     settings:
-      size: 60
+      rows: 5
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
+    type: text_textarea
     region: content
 hidden:
   created: true

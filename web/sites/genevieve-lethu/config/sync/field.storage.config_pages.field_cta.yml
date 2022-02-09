@@ -1,0 +1,19 @@
+uuid: 2ed11feb-4521-4c98-8a31-bc8f7bcd7ccf
+langcode: fr
+status: true
+dependencies:
+  module:
+    - config_pages
+    - link
+id: config_pages.field_cta
+field_name: field_cta
+entity_type: config_pages
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

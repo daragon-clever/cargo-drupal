@@ -1,14 +1,14 @@
-uuid: aa28e76a-c9cf-4424-a0ff-cc6087ec4ead
+uuid: 6299e8ba-1cd4-4893-88e9-7b1d8735795e
 langcode: fr
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_title
-    - paragraphs.paragraphs_type.creative_text
-id: paragraph.creative_text.field_title
+    - config_pages.type.page_404
+    - field.storage.config_pages.field_title
+id: config_pages.page_404.field_title
 field_name: field_title
-entity_type: paragraph
-bundle: creative_text
+entity_type: config_pages
+bundle: page_404
 label: Titre
 description: ''
 required: true

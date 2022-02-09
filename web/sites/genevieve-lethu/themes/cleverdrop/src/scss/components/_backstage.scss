@@ -1,0 +1,30 @@
+.backstage {
+  background: $theme;
+  padding-top: 30px;
+  padding-bottom: 60px;
+
+  &-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  &-over {
+    position: absolute;
+    z-index: 1;
+    h2 {
+      @include font(variant, bold);
+      font-style: italic;
+      font-size: rem(40px);
+      color: $theme;
+      background: url("/sites/genevieve-lethu/themes/cleverdrop/src/assets/backstageBrush.png");
+      background-repeat: no-repeat;
+      width: 447px;
+      text-align: center;
+      height: 102px;
+      line-height: 102px;
+    }
+  }
+}

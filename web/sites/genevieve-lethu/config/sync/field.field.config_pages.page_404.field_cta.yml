@@ -1,0 +1,23 @@
+uuid: 89176fea-d6af-4a0b-849c-e18c5a79bd73
+langcode: fr
+status: true
+dependencies:
+  config:
+    - config_pages.type.page_404
+    - field.storage.config_pages.field_cta
+  module:
+    - link
+id: config_pages.page_404.field_cta
+field_name: field_cta
+entity_type: config_pages
+bundle: page_404
+label: CTA
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

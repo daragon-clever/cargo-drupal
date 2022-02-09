@@ -1,20 +1,32 @@
 {%
   set classes = [
   'paragraph',
+  'highlightCollection',
+  'bg-colorContrib',
+  'pos-rel',
   'paragraph--type--' ~ paragraph.bundle|clean_class,
   view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   not paragraph.isPublished() ? 'paragraph--unpublished'
 ]
 %}
 {% block paragraph %}
-  <div{{ attributes.addClass(classes) }}>
+  <div{{ attributes.addClass(classes) }} style="--colorContrib:{{ content.field_color[0]['#markup'] }};">
     {% block content %}
-      {{ content.field_description }}
-      {{ content.field_color }}
-      {{ content.field_color_back }} {# coleur de fond derriere l'image #}
-      {{ content.field_title }}
-      {{ content.field_picture }} {#  Visuel n°1	 #}
-      {{ content.field_picture_second }}{# Visuel n°2	  #}
+      <img class="highlightCollection-multipleBrushes" src="/sites/genevieve-lethu/themes/cleverdrop/src/assets/multipleBrush.png" alt="">
+      <div class="highlightCollection-left">
+        <div class="highlightCollection-leftInner">
+          <h2 class="highlightCollection-title">{{ content.field_title }}</h2>
+          <p class="highlightCollection-description">
+            {{ content.field_description }}
+          </p>
+        </div>
+      </div>
+      <div class="highlightCollection-right" style="background-color: {{ content.field_color_back[0]['#markup'] }};">
+        {{ content.field_picture_second }}{# Visuel n°2	  #}
+      </div>
+      <div class="highlightCollection-center">
+        {{ content.field_picture }} {#  Visuel n°1	 #}
+      </div>
     {% endblock %}
   </div>
 {% endblock paragraph %}

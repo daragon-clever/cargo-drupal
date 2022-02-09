@@ -1,17 +1,26 @@
-{%
-  set classes = [
+{% set classes = [
   'paragraph',
+  'triangleBorder-top',
+  'triangleBorder-bottom',
+  'bg-colorContrib',
   'paragraph--type--' ~ paragraph.bundle|clean_class,
   view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   not paragraph.isPublished() ? 'paragraph--unpublished'
-]
-%}
+] %}
 {% block paragraph %}
-  <div{{ attributes.addClass(classes) }}>
+  <div{{ attributes.addClass(classes) }} style="--colorContrib:{{ content.field_color[0]['#markup'] }};">
     {% block content %}
-      {{ content.field_title }}
-      {{ content.field_color }}
-      {{ content.field_description }}
+      <div class="container creativeText">
+        <div class="row">
+          <div class="col-sm-12 col-md-4 offset-md-1 creativeText-title">
+            <h1>{{ content.field_rte_lite }}</h1>
+            <img src="/sites/genevieve-lethu/themes/cleverdrop/src/assets/brush_text.png" alt="">
+          </div>
+          <div class="col-sm-12 col-md-5 offset-md-1 creativeText-description">
+            {{ content.field_description }}
+          </div>
+        </div>
+      </div>
     {% endblock %}
   </div>
 {% endblock paragraph %}

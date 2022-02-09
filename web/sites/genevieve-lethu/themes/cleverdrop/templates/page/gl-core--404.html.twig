@@ -1,0 +1,19 @@
+{% if content is not empty %}
+  <div class="Section NotFound">
+    {{ content.picture }}
+    <div class="NotFound-over">
+      <div class="NotFound-title">
+        {{ content.title }}
+      </div>
+      <div class="NotFound-subtitle">
+        {{ content.subtitle }}
+      </div>
+      <div class="NotFound-cta">
+        {{ content.cta }}
+        {{ content.cta_link }}
+      </div>
+    </div>
+  </div>
+
+{% endif %}
+

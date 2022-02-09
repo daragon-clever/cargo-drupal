@@ -1,0 +1,86 @@
+.highlightCreation {
+  padding-top: 100px;
+  position: relative;
+
+  &-upSection {
+    position: relative;
+    z-index: 3;
+    padding-bottom: 100px;
+  }
+
+  &-title {
+    @include font(variant);
+    font-size: rem(26px);
+    font-weight: bold;
+    max-width: 447px;
+    border-bottom: 1px solid $theme-light;
+    padding-bottom: 30px;
+  }
+
+  &-description {
+    @include font(base, light);
+    font-size: rem(16px);
+    color: $theme;
+  }
+
+  &-pictures {
+    position: relative;
+    padding-top: 60px;
+    display: flex;
+    gap: 18px;
+
+    img {
+      max-height: 561px;
+      z-index: 1;
+    }
+  }
+
+  &-paintStainGreen {
+    position: absolute;
+    z-index: 0;
+    height: 96px;
+    width: 96px;
+    left: 50%;
+    top: 10px;
+  }
+
+
+  &-footer {
+    position: relative;
+    height: 219px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+
+      &.paintStainLast {
+        left: 2%;
+        height: 96px;
+        width: 96px;
+        bottom: 30px;
+        top: unset;
+      }
+      &.brushCreation {
+        left: unset;
+        right: 0;
+        z-index: 3;
+        width: 329px;
+        height: 220px;
+      }
+    }
+  }
+
+  &-whitebg {
+    position: absolute;
+    bottom: 0;
+    background: $white;
+    height: 160px;
+    width: 100%;
+  }
+}

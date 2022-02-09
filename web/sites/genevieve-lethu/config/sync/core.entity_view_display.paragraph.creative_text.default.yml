@@ -5,10 +5,11 @@ dependencies:
   config:
     - field.field.paragraph.creative_text.field_color
     - field.field.paragraph.creative_text.field_description
-    - field.field.paragraph.creative_text.field_title
+    - field.field.paragraph.creative_text.field_rte_lite
     - paragraphs.paragraphs_type.creative_text
   module:
     - color_field
+    - text
 id: paragraph.creative_text.default
 targetEntityType: paragraph
 bundle: creative_text
@@ -30,12 +31,11 @@ content:
     third_party_settings: {  }
     type: basic_string
     region: content
-  field_title:
-    weight: 1
-    label: visually_hidden
-    settings:
-      link_to_entity: false
+  field_rte_lite:
+    weight: 3
+    label: above
+    settings: {  }
     third_party_settings: {  }
-    type: string
+    type: text_default
     region: content
 hidden: {  }

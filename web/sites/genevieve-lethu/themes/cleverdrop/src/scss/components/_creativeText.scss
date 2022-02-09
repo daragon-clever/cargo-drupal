@@ -1,0 +1,40 @@
+.creativeText {
+  padding-top: 100px;
+  padding-bottom: 134px;
+  @include mq($until: md) {
+    padding-top: 40px;
+    padding-bottom: 80px;
+  }
+
+  &-title {
+    position: relative;
+
+
+    h1 {
+      @include font(variant);
+      font-size: rem(40px);
+      color: $white;
+
+      p {
+        margin: 0;
+      }
+    }
+
+    img {
+      position: absolute;
+      bottom: 0;
+      @include mq($until: md) {
+        bottom: -15px;
+      }
+    }
+  }
+
+  &-description {
+    @include font(base, light);
+    font-size: rem(16px);
+    color: $white;
+    @include mq($until: md) {
+      margin-top: 50px;
+    }
+  }
+}

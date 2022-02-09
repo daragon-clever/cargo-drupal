@@ -1,20 +1,43 @@
 {%
   set classes = [
   'paragraph',
+  'bg-colorContrib',
+  'highlightCreation',
   'paragraph--type--' ~ paragraph.bundle|clean_class,
   view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   not paragraph.isPublished() ? 'paragraph--unpublished'
 ]
 %}
 {% block paragraph %}
-  <div{{ attributes.addClass(classes) }}>
+
+
+  <div{{ attributes.addClass(classes) }} style="--colorContrib:{{ content.field_color[0]['#markup'] }};">
     {% block content %}
-      {{ content.field_description }}
-      {{ content.field_color }}
-      {{ content.field_title }}
-      {% for i in content.field_picture_limit_3['#items']|keys %}
-        {{ content.field_picture_limit_3[i] }}
-      {% endfor %}
+      <div class="container highlightCreation-upSection">
+        <div class="row">
+          <div class="col-md-4 offset-1">
+            <h2 class="highlightCreation-title">{{ content.field_title }}</h2>
+          </div>
+          <div class="col-md-5 offset-1">
+            <p class="highlightCreation-description">{{ content.field_description }}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-10 offset-1 highlightCreation-pictures">
+            <img class="highlightCreation-paintStainGreen" src="/sites/genevieve-lethu/themes/cleverdrop/src/assets/paintStainCreation.png" alt="">
+            {% for i in content.field_picture_limit_3['#items']|keys %}
+              {{ content.field_picture_limit_3[i] }}
+            {% endfor %}
+          </div>
+          <div class="col-md-1"></div>
+        </div>
+      </div>
     {% endblock %}
+    <div class="highlightCreation-footer">
+      <img src="/sites/genevieve-lethu/themes/cleverdrop/src/assets/creativeBrush.png" alt="">
+      <div class="highlightCreation-whitebg"></div>
+      <img class="paintStainLast" src="/sites/genevieve-lethu/themes/cleverdrop/src/assets/paintStain2.png" alt="">
+      <img class="brushCreation" src="/sites/genevieve-lethu/themes/cleverdrop/src/assets/brushCreation.png" alt="">
+    </div>
   </div>
 {% endblock paragraph %}

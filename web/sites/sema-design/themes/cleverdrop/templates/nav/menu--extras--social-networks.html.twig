@@ -37,7 +37,7 @@ We call a macro which calls itself to render the full tree.
     {% endif %}
     {% for item in items %}
       <li{{ item.attributes }} class="MenuSocials-item">
-        <a href="{{ item.url }}" class="MenuSocials-link">
+        <a target="_blank" href="{{ item.url }}" class="MenuSocials-link">
           <span class="u-srOnly">{{ item.title }}</span>
           {% include directory ~ '/src/assets/svg/' ~ item.entity.field_social.value ~ '.svg' %}
         </a>

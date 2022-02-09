@@ -16,7 +16,8 @@
   img {
     display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
   }
 
   > svg {
@@ -72,6 +73,7 @@
 
   @include media-breakpoint-down('md') {
     width: calc(50% - 10px);
+    max-height: rem(580px);
   }
 }
 
@@ -122,6 +124,7 @@
 
   @include media-breakpoint-up('md') {
     @include make-cols(3, 1);
+    max-height: rem(480px);
   }
 }
 
@@ -134,5 +137,6 @@
 
   @include media-breakpoint-up('md') {
     width: calc(2 * (100% - 5 * rem(20px)) / 6 + rem(20px)); // two cols grid + gutter
+    max-height: rem(325px);
   }
 }

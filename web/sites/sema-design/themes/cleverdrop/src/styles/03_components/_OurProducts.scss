@@ -1,6 +1,6 @@
 .OurProducts {
   position: relative;
-  overflow: hidden
+  overflow: hidden;
 }
 
 .OurProducts-inner {
@@ -29,7 +29,7 @@
     row-gap: rem(60px);
     grid-template-columns: repeat(3, 1fr);
 
-    &.has-two-cols {
+    &.has-twoCols {
       grid-template-columns: repeat(2, 1fr);
     }
     

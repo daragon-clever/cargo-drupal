@@ -78,7 +78,7 @@
     @include make-cols(4);
 
     @include media-breakpoint-up('md') {
-      @include make-cols(4, 2);
+      @include make-cols(4, 1);
     }
   }
 
@@ -137,7 +137,8 @@
   }
 
   @include media-breakpoint-up('md') {
-    @include make-cols(4, 6);
+    @include make-cols(4, 7);
+    min-height: rem(220px);
   }
 }
 

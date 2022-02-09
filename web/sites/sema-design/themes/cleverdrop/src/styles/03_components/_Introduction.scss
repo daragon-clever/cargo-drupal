@@ -40,6 +40,14 @@
       z-index: 1;
     }
   }
+
+  img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 .Introduction--inner {
@@ -93,12 +101,4 @@
   @include media-breakpoint-up('md') {
     @include make-cols(6, 6);
   }
-}
-
-img {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }

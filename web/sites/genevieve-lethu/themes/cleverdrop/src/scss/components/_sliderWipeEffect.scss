@@ -54,6 +54,7 @@
         @include mq($until: md) {
           margin-left: rem(10px);
           margin-right: rem(10px);
+          margin-bottom: 0;
         }
       }
 
@@ -79,10 +80,12 @@
         justify-content: flex-start;
         display: block;
         margin-bottom: 0;
+        margin-left: rem(30px);
       }
 
       @include mq($from: lg) {
         bottom: 6%;
+        margin-left: 0;
       }
 
       @include mq($from: xl) {

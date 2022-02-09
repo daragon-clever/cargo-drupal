@@ -50,9 +50,9 @@
           padding: rem(50px) rem(30px) rem(100px);
 
           @include mq($from: md) {
-            margin-left: rem(20px);
+            margin-left: rem(30px);
             width: 80%;
-            padding: 0px;
+            padding: rem(20px) 0;
           }
 
           @include mq($from: lg) {
@@ -69,12 +69,6 @@
 
       img {
         width: 100%;
-      }
-    }
-
-    &-pager {
-      @include mq($from: md, $until: lg) {
-        margin-left: rem(20px);
       }
     }
   }

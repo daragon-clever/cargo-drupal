@@ -1,3 +1,23 @@
+.StoreLocator {
+  position: relative;
+
+  .Brush {
+    display: none;
+
+    @include media-breakpoint-up('md') {
+      display: block;
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      right: rem(-50px);
+      width: rem(300px);
+      transform: rotateX(180deg) rotate(15deg);
+      fill: var(--ebb);
+      opacity: .5;
+    }
+  }
+}
+
 .StoreLocator-content {
   @include enable-grid;
   row-gap: rem(50px);
@@ -90,12 +110,12 @@
 
 .StoreLocator-map {
   width: 100vw;
-  height: 100vw;
+  max-height: 100vw;
   background: var(--lite-grey);
 
   @include media-breakpoint-up('md') {
     width: 60%;
-    height: rem(600px);
+    max-height: rem(600px);
     order: 2;
   }
 
@@ -116,6 +136,14 @@
       height: rem(17px) !important;
     }
   }
+
+  .store-locator-map-info-window .title {
+    margin-bottom: rem(10px);
+  }
+
+  .store-locator-map-info-window .to-store {
+    display: none;
+  }
 }
 
 .StoreLocator-list {
@@ -127,7 +155,7 @@
 
   @include media-breakpoint-up('md') {
     width: 40%;
-    height: rem(600px);
+    max-height: rem(600px);
     overflow: auto;
     padding: 0 rem(20px);
     order: 1;

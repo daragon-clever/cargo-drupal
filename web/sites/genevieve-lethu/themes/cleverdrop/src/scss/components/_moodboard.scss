@@ -1,0 +1,65 @@
+/* -------------------------------------------------------------------------- *\
+  # MOODBOARD
+\* -------------------------------------------------------------------------- */
+
+.moodboard {
+  position: relative;
+  min-height: rem(850px);
+
+  &-title {
+    color: white;
+    text-align: center;
+  }
+
+  &-img1,
+  &-img2,
+  &-img3,
+  &-img6 {
+    @include aspect-ratio(240px, 300px, 'img');
+    width: percentage(calc(240 / 1440));
+    position: absolute;
+  }
+
+  &-img4,
+  &-img5,
+  &-img7 {
+    @include aspect-ratio(330px, 330px, 'img');
+    width: percentage(calc(330 / 1440));
+    position: absolute;
+  }
+
+  &-img1 {
+    width: percentage(calc(125 / 1440));
+    height: auto;
+    top: 0;
+    left: 0;
+  }
+  &-img2 {
+    left: 0;
+    top: 30%;
+  }
+  &-img3 {
+    left: 13%;
+    top: 4%;
+  }
+  &-img4 {
+    left: 32%;
+    top: 20%;
+  }
+  &-img5 {
+    width: percentage(calc(240 / 1440));
+    height: auto;
+    left: 59%;
+    top: 26%;
+  }
+  &-img6 {
+    width: percentage(calc(215 / 1440));
+    height: auto;
+    left: 72%;
+    top: 0;
+  }
+  &-img7 {
+    bottom: 22%;
+    left: 72%;
+  }
+}

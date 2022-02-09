@@ -1,0 +1,99 @@
+/* -------------------------------------------------------------------------- *\
+  # SLIDER WITH SPECIAL WIPE EFFECT
+\* -------------------------------------------------------------------------- */
+
+.sliderWipeEffect {
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+
+  .slider {
+    @include mq($from: md) {
+      &-slide {
+        &.is-active {
+          animation: 1s wipe-effect;
+
+          @keyframes wipe-effect {
+            0% {
+              clip-path: polygon(50% 0%, 50% 100%, 50% 100%, 50% 0%, 100% 0%, 100% 100%, 100% 100%, 100% 0%);
+            }
+            100% {
+              clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 50% 0%, 50% 0%, 50% 100%, 100% 100%, 100% 0%);
+            }
+          }
+        }
+      }
+    }
+
+    &-inner {
+      width: 100%;
+
+      img {
+        display: block;
+      }
+
+      @include mq($from: md) {
+        display: flex;
+        justify-content: flex-end;
+
+        img {
+          width: 50%;
+        }
+      }
+    }
+
+    &-nav {
+      position: relative;
+      z-index: $zindex-nav;
+      display: flex;
+      justify-content: center;
+      margin-bottom: rem(-25px);
+
+      .slider-btnNext,
+      .slider-btnPrev {
+        @include mq($until: md) {
+          margin-left: rem(10px);
+          margin-right: rem(10px);
+        }
+      }
+
+      @include mq($from: md) {
+        @include center-both;
+        display: block;
+        margin-bottom: 0;
+      }
+    }
+
+    &-pager {
+      position: relative;
+      z-index: $zindex-nav;
+      display: flex;
+      justify-content: center;
+      margin-bottom: rem(30px);
+
+      @include mq($from: md) {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 4%;
+        justify-content: flex-start;
+        display: block;
+        margin-bottom: 0;
+      }
+
+      @include mq($from: lg) {
+        bottom: 6%;
+      }
+
+      @include mq($from: xl) {
+        bottom: 10%;
+      }
+
+      .slider-pagination {
+        margin-top: 0;
+        justify-content: flex-start;
+      }
+    }
+  }
+}
+

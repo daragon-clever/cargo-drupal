@@ -182,6 +182,13 @@
             text-decoration: none;
           }
 
+          &.is-active {
+            a {
+              font-weight: bold;
+              text-decoration: underline;
+            }
+          }
+
           &.pager__item--next, &.pager__item--previous {
             a {
               &:after {

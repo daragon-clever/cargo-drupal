@@ -4,17 +4,18 @@
   'paragraph--type--' ~ paragraph.bundle|clean_class,
   view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   not paragraph.isPublished() ? 'paragraph--unpublished',
-  'row',
-  'justify-content-center'
+  'container',
 ]
 %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
-    <blockquote class="col-12 col-md-8">
-    {% block content %}
-      {{ content.field_text }}
-      <cite>{{ content.field_author }}</cite>
-    {% endblock %}
-    </blockquote>
+    <div class="row justify-content-center">
+      <blockquote class="col-12 col-md-8">
+      {% block content %}
+        {{ content.field_text }}
+        <cite>{{ content.field_author }}</cite>
+      {% endblock %}
+      </blockquote>
+    </div>
   </div>
 {% endblock paragraph %}

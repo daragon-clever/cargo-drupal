@@ -1,0 +1,153 @@
+/* -------------------------------------------------------------------------- *\
+  # GALLERIE WITH THUMBS
+\* -------------------------------------------------------------------------- */
+
+.imageGallery {
+  position: relative;
+  overflow: visible;
+  max-width: $vw-max;
+  margin: 0 auto;
+
+  &-ratio {
+    @include mq($until: md) {
+      @include aspect-ratio(320px, 260px, '.slider-pager, .slider-nav');
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      .slider-pager .row {
+        margin-top: rem(-80px);
+      }
+
+      .slider-btnPrev,
+      .slider-btnNext {
+        margin-top: rem(-28px);
+      }
+    }
+  }
+
+  .slider {
+    &-inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      @include mq($from: md) {
+        flex-direction: row;
+      }
+
+      &-col {
+        display: flex;
+
+        @include mq($from: md) {
+          flex: 1;
+        }
+
+        &-text {
+          color: $white;
+          align-self: center;
+          padding: rem(50px) rem(30px) rem(100px);
+
+          @include mq($from: md) {
+            margin-left: rem(20px);
+            width: 80%;
+            padding: 0px;
+          }
+
+          @include mq($from: lg) {
+            margin-left: 17%;
+            width: 60%;
+          }
+
+          @include mq($from: xl) {
+            margin-left: 34%;
+            width: 50%;
+          }
+        }
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+
+    &-pager {
+      @include mq($from: md, $until: lg) {
+        margin-left: rem(20px);
+      }
+    }
+  }
+
+
+  // THUMBS CAROUSEL
+  &-thumbs {
+    position: relative;
+    overflow: visible;
+    max-width: rem(200px);
+    margin: 0 auto;
+
+    &::before {
+      content: "";
+      background: url('../assets/brush_trace.png') no-repeat center center;
+      width: rem(278px);
+      height: rem(141px);
+      display: block;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      left: 50%;
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: $theme-secondary;
+      padding: 0 rem(15px);
+    }
+
+    &-category {
+      @include font(base, bold);
+      text-transform: uppercase;
+      font-size: rem(12px);
+      margin: rem(20px) 0 rem(5px);
+    }
+
+    &-title {
+      @include font(variant, italic);
+      font-size: rem(20px);
+      margin: 0;
+    }
+
+    .slider {
+      &-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto rem(60px);
+      }
+
+      &-btnNext,
+      &-btnPrev {
+        margin: 0;
+      }
+
+      &-slide {
+        display: block;
+
+        &:not(.swiper-slide-duplicate).is-active {
+          &::after {
+            content: "";
+            display: block;
+            height: rem(1px);
+            width: 60%;
+            margin: rem(25px) auto 0;
+            background-color: $theme-secondary;
+          }
+        }
+      }
+    }
+  }
+}
+

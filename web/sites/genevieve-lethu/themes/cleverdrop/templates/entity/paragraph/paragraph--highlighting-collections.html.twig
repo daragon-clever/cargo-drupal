@@ -10,17 +10,17 @@
 {% block paragraph %}
 <div{{ attributes.addClass(classes) }}>
   {% block content %}
-  <div class="sliderCollection">
-    <div class="sliderCollection-text">
+  <div class="collectionsBlock fitScreen-md">
+    <div class="collectionsBlock-text">
       <div class="row">
-        <div class="col-12 col-md-3 offset-md-2">
+        <div class="col-12 col-md-5 col-xl-3 offset-xl-2">
           <h2 class="text-white">{{ content.field_title }}</h2>
           <p>{{ content.field_description }}</p>
           <p class="d-flex justify-content-center justify-content-start-md"><a href="{{ content.field_cta[0]['#url'] }}" class="cta --secondary">{{ content.field_cta[0]['#title'] }}</a></p>
         </div>
       </div>
     </div>
-    <div class="slider js-collections-slider">
+    <div class="slider sliderWipeEffect js-collections-slider">
       <div class="slider-wrapper">
         {% for i in content.field_slide['#items']|keys %}
         <div class="slider-slide">
@@ -28,7 +28,15 @@
         </div>
         {% endfor %}
       </div>
-      <div class="sliderCollection-nav">
+      <div class="slider-pager">
+        <div class="row">
+          <div class="col-12 col-md-3 offset-md-2">
+            <div class="slider-pagination">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slider-nav">
         <div class="slider-btnPrev">
           <svg width="22" height="22" focusable="false" aria-hidden="true">
             <use xlink:href="/{{ directory ~ '/public/assets/sprite.svg#arrow-prev' }}" />
@@ -38,14 +46,6 @@
           <svg width="22" height="22" focusable="false" aria-hidden="true">
             <use xlink:href="/{{ directory ~ '/public/assets/sprite.svg#arrow-next' }}" />
           </svg>
-        </div>
-      </div>
-      <div class="sliderCollection-pagination">
-        <div class="row">
-          <div class="col-12 col-md-3 offset-md-2">
-            <div class="slider-pagination">
-            </div>
-          </div>
         </div>
       </div>
     </div>

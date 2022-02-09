@@ -106,6 +106,10 @@
     @include media-breakpoint-down('md') {
       z-index: 1;
     }
+
+    @include media-breakpoint-up('md') {
+      max-height: rem(670px);
+    }
   }
   
   svg {

@@ -19,7 +19,7 @@
       bottom: 0;
       overflow: visible;
 
-      use {
+      use { // stylelint-disable-line
         transform: rotate(-26deg) translateY(rem(50px));
       }
 
@@ -32,7 +32,7 @@
       top: 0;
       left: 0;
 
-      use {
+      use { // stylelint-disable-line
         transform: rotateX(180deg) rotateZ(-10deg) rotateY(180deg) translateY(rem(-20px)) translateX(rem(20px));
         transform-origin: 50%;
       }

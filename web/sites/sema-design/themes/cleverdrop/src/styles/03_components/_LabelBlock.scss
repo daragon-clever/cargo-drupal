@@ -59,6 +59,7 @@
   width: 100%;
   border-radius: 0 0 rem(300px) rem(300px);
   margin: auto;
+  z-index: 1;
 
   &::after {
     position: absolute;

@@ -1,37 +1,35 @@
 {%
   set classes = [
-  'Introduction-wpr'
+  'Introduction'
 ]
 %}
 {% block paragraph %}
-  <div{{ attributes.addClass(classes) }}>
-    {% block content %}
-    <div class="Introduction">
-      <svg viewBox="0 0 100 100" class="LeftBrush" aria-hidden="true">
-        <use xlink:href="#sema-brush"></use>
-      </svg>
-      <div class="Section-inner Introduction--inner">
-        <div class="IntroductionLeft">
-          <h3 class="Introduction-title">
-            {{ content.field_title }}
-          </h3>
-          <p class="Introduction-text">
-            {{ content.field_description }}
-          </p>
+  {% block content %}
+  <div{{ attributes.addClass(classes) }} data-animate='{"rootMargin": "-20%"}'>
+    <svg viewBox="0 0 100 100" class="LeftBrush" aria-hidden="true">
+      <use xlink:href="#sema-brush"></use>
+    </svg>
+    <div class="Section-inner Introduction--inner">
+      <div class="IntroductionLeft">
+        <h3 class="Introduction-title">
+          {{ content.field_title }}
+        </h3>
+        <p class="Introduction-text">
+          {{ content.field_description }}
+        </p>
+      </div>
+      <div class="IntroductionRight">
+        <div class="Introduction-FirstImg">
+          {{ content.field_picture }}
         </div>
-        <div class="IntroductionRight">
-          <div class="Introduction-FirstImg">
-            {{ content.field_picture }}
-          </div>
-          <div class="Introduction-SecondImg">
-            {{ content.field_second_picture }}
-          </div>
+        <div class="Introduction-SecondImg">
+          {{ content.field_second_picture }}
         </div>
       </div>
-      <svg viewBox="0 0 100 100" class="RightBrush" aria-hidden="true">
-        <use xlink:href="#sema-brush"></use>
-      </svg>
     </div>
-    {% endblock %}
+    <svg viewBox="0 0 100 100" class="RightBrush" aria-hidden="true">
+      <use xlink:href="#sema-brush"></use>
+    </svg>
   </div>
+  {% endblock %}
 {% endblock paragraph %}

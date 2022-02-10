@@ -1,19 +1,17 @@
-.Partnership-wpr {
-  @include media-breakpoint-down('md') {
-    overflow: hidden;
-  }
-
-  @include media-breakpoint-up('md') {
-    margin-bottom: rem(80px);
-  }
-}
-
 .Partnership {
   img {
     display: block;
     height: 100%;
     width: 100%;
     object-fit: cover;
+  }
+
+  @include media-breakpoint-down('md') {
+    overflow: hidden;
+  }
+
+  @include media-breakpoint-up('md') {
+    margin-bottom: rem(80px);
   }
 }
 
@@ -57,7 +55,7 @@
 
 .Partnership-bottom {
   position: relative;
-  background-color: var(--sail-color);
+  background-color: var(--bgColor);
   padding-top: rem(330px);
 
   @include media-breakpoint-up('md') {

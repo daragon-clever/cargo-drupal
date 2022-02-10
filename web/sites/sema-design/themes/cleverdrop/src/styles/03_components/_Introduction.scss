@@ -3,11 +3,16 @@
   padding-bottom: rem(60px);
   position: relative;
   overflow: hidden;
-  background-color: var(--sail-color);
+  background-color: var(--main-bg);
 
-  @include media-breakpoint-up('md') {
-    padding-top: rem(80px);
-    padding-bottom: rem(80px);
+  &.is-animate {
+    .LeftBrush {
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+
+    .RightBrush {
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
   }
 
   .LeftBrush,
@@ -15,6 +20,8 @@
     display: none;
     fill: var(--ebb);
     opacity: .5;
+    transition: clip-path 0.5s;
+    animation-fill-mode: forwards;
   }
 
   .LeftBrush {
@@ -26,6 +33,7 @@
       top: rem(40px);
       left: rem(-50px);
       pointer-events: none;
+      clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
     }
   }
 
@@ -39,6 +47,7 @@
       right: rem(-50px);
       z-index: 1;
       pointer-events: none;
+      clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
     }
   }
 
@@ -48,6 +57,11 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  @include media-breakpoint-up('md') {
+    padding-top: rem(80px);
+    padding-bottom: rem(80px);
   }
 }
 

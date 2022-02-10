@@ -1,42 +1,40 @@
 {%
   set classes = [
-  'WhoAreWe-wpr'
+  'WhoAreWe'
 ]
 %}
 {% block paragraph %}
-  <div{{ attributes.addClass(classes) }}>
+  <div{{ attributes.addClass(classes) }} style="--bgColor: {{content.field_color[0]['#markup']}};">
     {% block content %}
-      <div class="WhoAreWe" style="--sail-color: {{content.field_color[0]['#markup']}};">
-        <svg viewBox="0 0 100 100" class="LeftBrush" aria-hidden="true">
-          <use xlink:href="#sema-brush"></use>
-        </svg>
-        <div class="Section-inner WhoAreWe--inner">
-          <div class="WhoAreWe-text-wpr">
-            <h2 class="WhoAreWe-title">
-              {{ content.field_title }}
-            </h2>
-            <div class="WhoAreWe-rte">
-              {{ content.field_rte }}
-            </div>
+      <svg viewBox="0 0 100 100" class="LeftBrush" aria-hidden="true">
+        <use xlink:href="#sema-brush"></use>
+      </svg>
+      <div class="Section-inner WhoAreWe--inner">
+        <div class="WhoAreWe-text-wpr">
+          <h2 class="WhoAreWe-title">
+            {{ content.field_title }}
+          </h2>
+          <div class="WhoAreWe-rte">
+            {{ content.field_rte }}
           </div>
-          <div class="WhoAreWe-slider-wpr">
-            <div class="Slider js-who-are-we">
-              <div class="Slider-wrapper">
-                {% for i in content.field_slide['#items']|keys %}
-                  <div class="Slider-slide WhoAreWe-slide">
-                    {{ content.field_slide[i] }}
-                  </div>
-                {% endfor %}
-              </div>
-              <div class="SliderNavigation-wrp">
-                <button class="Slider-button-prev">
-                  {% include directory ~ '/src/assets/svg/arrow-left.svg' %}
-                </button>
-                <div class="Slider-pagination"></div>
-                <button class="Slider-button-next">
-                  {% include directory ~ '/src/assets/svg/arrow-right.svg' %}
-                </button>
-              </div>
+        </div>
+        <div class="WhoAreWe-slider-wpr">
+          <div class="Slider js-who-are-we">
+            <div class="Slider-wrapper">
+              {% for i in content.field_slide['#items']|keys %}
+                <div class="Slider-slide WhoAreWe-slide">
+                  {{ content.field_slide[i] }}
+                </div>
+              {% endfor %}
+            </div>
+            <div class="SliderNavigation-wrp">
+              <button class="Slider-button-prev">
+                {% include directory ~ '/src/assets/svg/arrow-left.svg' %}
+              </button>
+              <div class="Slider-pagination"></div>
+              <button class="Slider-button-next">
+                {% include directory ~ '/src/assets/svg/arrow-right.svg' %}
+              </button>
             </div>
           </div>
         </div>

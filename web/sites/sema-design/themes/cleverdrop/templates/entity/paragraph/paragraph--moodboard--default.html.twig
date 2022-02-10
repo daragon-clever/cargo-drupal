@@ -6,7 +6,7 @@
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
-      <div class="MoodBoard" style="--sail-color: {{content.field_color[0]['#markup']}};">
+      <div class="MoodBoard" style="--bgColor: {{content.field_color[0]['#markup']}};">
         <div class="Section-inner MoodBoard--inner">
           <h2 class="MoodBoard-title">{{ content.field_title }}</h2>
           <div class="MoodBoard-left">

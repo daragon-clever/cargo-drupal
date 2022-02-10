@@ -82,6 +82,7 @@
     
     @include media-breakpoint-up('md') {
       @include make-cols(4, 5);
+      margin-top: rem(100px);
     }
   }
 }
@@ -134,7 +135,7 @@
 
   @include media-breakpoint-up('md') {
     @include make-cols(4, 7);
-    min-height: rem(220px);
+    min-height: rem(350px);
   }
 }
 

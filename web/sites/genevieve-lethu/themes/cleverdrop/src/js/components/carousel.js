@@ -1,4 +1,4 @@
-import Swiper from 'swiper/bundle'
+import {Swiper, zoom} from 'swiper/bundle'
 
 const prefixClass = 'slider'
 
@@ -102,12 +102,20 @@ function carousel() {
     ...navParams,
     ...paginatedParams,
     loop: true,
+    spaceBetween: 20,
     loopFillGroupWithBlank: false,
-    centeredSlidesBounds: true,
     centeredSlides: true,
     slidesPerView: 5.2,
     speed: 700,
     watchSlidesProgress: true,
+    zoom: {
+      maxRatio: 5,
+      zoomedSlideClass: 'zooooooooooooooo',
+    },
+  });
+  backstageCollections.on('slideChange', function (e) {
+    e.zoom.in();
+    console.log(e);
   });
 
   const galleryThumbs = new Swiper(".js-imageGallery-thumbs", {
@@ -133,12 +141,12 @@ function carousel() {
 
   let targetForInfos = document.getElementById('slider-infos');
   let onLoadInfo = document.querySelector('.js-imageGallery-thumbs .slider-slide:not(.swiper-slide-duplicate).is-active')
-  let text = onLoadInfo.getAttribute('aria-label')
-  let result = text.replace('/', '––');
+  /*  let text = onLoadInfo.getAttribute('aria-label')*/
+  /*  let result = text.replace('/', '––');*/
 
-  targetForInfos.innerHTML = result;
+  /*  targetForInfos.innerHTML = result;*/
 
-  galleryThumbs.on('slideChange', function() {
+  galleryThumbs.on('slideChange', function () {
     let index_currentSlide = galleryThumbs.realIndex;
     let index_activeSlide = galleryThumbs.activeIndex;
     gallery.slideToLoop(index_currentSlide, 1000, false);
@@ -148,7 +156,7 @@ function carousel() {
     targetForInfos.innerHTML = result;
   });
 
-  gallery.on('slideChange', function() {
+  gallery.on('slideChange', function () {
     let index_currentSlide = gallery.realIndex;
     galleryThumbs.slideToLoop(index_currentSlide, 1000, false);
   });

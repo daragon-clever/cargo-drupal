@@ -39,3 +39,24 @@ function sema_block_theme($existing, $type, $theme, $path)
     ],
   ];
 }
+
+
+/**
+ * Implements hook_preprocess_block().
+ * @param $variables
+ */
+function sema_block_preprocess_block(&$variables)
+{
+  if ($variables['plugin_id'] == 'drupal_synapse_search_location_block') {
+    $myConfigPage = \Drupal\config_pages\Entity\ConfigPages::config('page_find_our_products');
+    if (!empty($myConfigPage)) {
+      $variables['content']['#sema']['description'] = $myConfigPage->get('field_description')->value;
+      $variables['content']['#sema']['title'] = $myConfigPage->get('field_title')->value;
+
+      $view_builder = \Drupal::entityTypeManager()
+        ->getViewBuilder($myConfigPage->get('field_main_picture')->entity->getEntityTypeId());
+
+      $variables['content']['#sema']['mainPicture'] = $view_builder->view($myConfigPage->get('field_main_picture')->entity, 'default');
+    }
+  }
+}

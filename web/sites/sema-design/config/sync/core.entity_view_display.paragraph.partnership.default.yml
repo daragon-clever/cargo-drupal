@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.partnership.field_color
+    - field.field.paragraph.partnership.field_color_second
     - field.field.paragraph.partnership.field_description
     - field.field.paragraph.partnership.field_fourth_picture
     - field.field.paragraph.partnership.field_picture
@@ -13,7 +14,6 @@ dependencies:
     - field.field.paragraph.partnership.field_subtitle
     - field.field.paragraph.partnership.field_third_picture
     - field.field.paragraph.partnership.field_title
-    - field.field.paragraph.partnership.field_traces_paint
     - image.style.portrait_max_h_700px
     - paragraphs.paragraphs_type.partnership
   module:
@@ -27,6 +27,15 @@ content:
   field_color:
     weight: 4
     label: visually_hidden
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    type: color_field_formatter_text
+    region: content
+  field_color_second:
+    weight: 10
+    label: above
     settings:
       format: hex
       opacity: true
@@ -122,14 +131,5 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
-  field_traces_paint:
-    weight: 10
-    label: above
-    settings:
-      format: hex
-      opacity: true
-    third_party_settings: {  }
-    type: color_field_formatter_text
     region: content
 hidden: {  }

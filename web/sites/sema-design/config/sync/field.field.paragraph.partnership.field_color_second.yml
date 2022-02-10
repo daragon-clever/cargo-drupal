@@ -1,20 +1,20 @@
-uuid: e9450f5c-5bf9-4d3e-aed7-d763142517b8
+uuid: e9feb87d-8c99-4a75-8761-a0023ec1eedf
 langcode: fr
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_traces_paint
+    - field.storage.paragraph.field_color_second
     - paragraphs.paragraphs_type.partnership
   module:
     - color_field
-id: paragraph.partnership.field_traces_paint
-field_name: field_traces_paint
+id: paragraph.partnership.field_color_second
+field_name: field_color_second
 entity_type: paragraph
 bundle: partnership
-label: 'Couleur de fond des images'
+label: 'Couleur de fond'
 description: ''
 required: true
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

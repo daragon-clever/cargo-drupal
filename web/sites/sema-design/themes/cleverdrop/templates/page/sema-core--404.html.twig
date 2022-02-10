@@ -15,7 +15,7 @@
         {% if content.cta_link %}
           {% include directory ~ '/templates/ui/atoms/primary-cta.twig' with {
             text: content.cta,
-            url: content.cta_link,
+            url: (content.cta_link != 'internal:/') ? content.cta_link : '/',
             theme: 'secondary'
           } %}
         {% endif %}

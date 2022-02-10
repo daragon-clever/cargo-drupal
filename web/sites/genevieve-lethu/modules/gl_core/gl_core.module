@@ -35,6 +35,12 @@ function gl_core_theme($existing, $type, $theme, $path)
         'content' => [],
       ],
     ],
+    'gl_core__404' => [
+      'template' => 'gl-core--404',
+      'variables' => [
+        'content' => [],
+      ],
+    ],
   ];
 }
 

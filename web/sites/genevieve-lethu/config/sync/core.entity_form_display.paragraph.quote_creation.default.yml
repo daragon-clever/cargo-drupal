@@ -4,12 +4,14 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.quote_creation.field_author
+    - field.field.paragraph.quote_creation.field_color
     - field.field.paragraph.quote_creation.field_description
     - field.field.paragraph.quote_creation.field_picture
     - image.style.thumbnail
     - paragraphs.paragraphs_type.quote_creation
   module:
-    - image
+    - color_field
+    - svg_image
 id: paragraph.quote_creation.default
 targetEntityType: paragraph
 bundle: quote_creation
@@ -22,6 +24,20 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_color:
+    weight: 3
+    settings:
+      show_input: '1'
+      palette: ''
+      show_buttons: '1'
+      cancel_text: Annuler
+      choose_text: Choisir
+      show_palette: '0'
+      show_palette_only: '0'
+      allow_empty: '0'
+    third_party_settings: {  }
+    type: color_field_widget_spectrum
     region: content
   field_description:
     weight: 1

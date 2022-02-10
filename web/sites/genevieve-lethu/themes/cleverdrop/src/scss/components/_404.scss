@@ -1,0 +1,44 @@
+.NotFound {
+  position: relative;
+  margin-bottom: -8px;
+  img {
+    width: 100vw;
+    object-fit: cover;
+    height: 100%;
+  }
+}
+
+.NotFound-over {
+  background: rgba(0,0,0,0.2);
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 7px;
+  z-index: 2;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.NotFound-title {
+  font-size: 65px;
+  @include font(variant, bold);
+  color: $white;
+}
+
+.NotFound-subtitle {
+  font-size: 65px;
+  @include font(variant, italic);
+  color: $white;
+}
+
+.NotFound-cta a {
+  @include font(script, italic);
+  color: $white;
+  margin-top: 30px;
+  border-color: $white;
+  box-shadow: inset 0 0 0 1px $white;
+}

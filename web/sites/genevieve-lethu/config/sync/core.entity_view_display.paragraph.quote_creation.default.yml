@@ -4,11 +4,13 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.quote_creation.field_author
+    - field.field.paragraph.quote_creation.field_color
     - field.field.paragraph.quote_creation.field_description
     - field.field.paragraph.quote_creation.field_picture
     - paragraphs.paragraphs_type.quote_creation
   module:
-    - image
+    - color_field
+    - svg_image
 id: paragraph.quote_creation.default
 targetEntityType: paragraph
 bundle: quote_creation
@@ -21,6 +23,15 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_color:
+    weight: 3
+    label: above
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    type: color_field_formatter_text
     region: content
   field_description:
     weight: 1

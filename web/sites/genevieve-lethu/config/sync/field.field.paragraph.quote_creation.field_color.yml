@@ -1,0 +1,22 @@
+uuid: af253ec7-9f3d-4843-97fe-880c6bca1d88
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_color
+    - paragraphs.paragraphs_type.quote_creation
+  module:
+    - color_field
+id: paragraph.quote_creation.field_color
+field_name: field_color
+entity_type: paragraph
+bundle: quote_creation
+label: 'Fond coloré'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

@@ -1,5 +1,5 @@
 {% if content is not empty %}
-  <div class="Section NotFound">
+  <div class="NotFound">
     {{ content.picture }}
     <div class="NotFound-over">
       <div class="NotFound-title">
@@ -9,8 +9,7 @@
         {{ content.subtitle }}
       </div>
       <div class="NotFound-cta">
-        {{ content.cta }}
-        {{ content.cta_link }}
+        <a class="cta" href="{{ (content.cta_link != 'internal:/') ? content.cta_link : '/' }}">{{ content.cta }}</a>
       </div>
     </div>
   </div>

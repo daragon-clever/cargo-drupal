@@ -1,0 +1,31 @@
+.SystemMessages {
+  position: absolute;
+  top: rem(100px);
+  left: 50%;
+  width: 100%;
+  max-width: rem(500px);
+  transform: translate(-50%);
+  z-index: 10;
+}
+
+.SystemMessages-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: rem(10px);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+} 
+
+.SystemMessage {
+  @include u-work-sans-regular;
+  font-size: rem(14px);
+  background: var(--body-bg);
+  padding: rem(10px) rem(20px) rem(10px) rem(25px);
+  box-shadow: inset 5px 0px 0px 0px currentColor;
+
+  &.is-alert {
+    color: var(--alert);
+  }
+}
+

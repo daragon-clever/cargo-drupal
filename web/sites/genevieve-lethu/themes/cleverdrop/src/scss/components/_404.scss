@@ -4,7 +4,7 @@
   img {
     width: 100vw;
     object-fit: cover;
-    height: 100%;
+    height: 100vh;
   }
 }
 
@@ -21,16 +21,17 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .NotFound-title {
-  font-size: 65px;
+  font-size: rem(65px);
   @include font(variant, bold);
   color: $white;
 }
 
 .NotFound-subtitle {
-  font-size: 65px;
+  font-size: rem(65px);
   @include font(variant, italic);
   color: $white;
 }

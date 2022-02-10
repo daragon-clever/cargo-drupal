@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - sema_block
+    - user
   theme:
     - cleverdrop
 id: socialandlinksmenu
@@ -18,4 +19,13 @@ settings:
   provider: sema_block
   label_display: '0'
   find_our_products: null
-visibility: {  }
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      anonymous: anonymous
+      authenticated: authenticated
+      administrator: administrator
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

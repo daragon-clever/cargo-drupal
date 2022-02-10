@@ -3,6 +3,12 @@
   padding-top: 30px;
   padding-bottom: 60px;
 
+  @include mq($until: md) {
+    .container {
+      padding: 0;
+    }
+  }
+
   &-wrapper {
     display: flex;
     justify-content: center;
@@ -14,6 +20,10 @@
   &-over {
     position: absolute;
     z-index: 1;
+    @include mq($until: md) {
+      width: 100%;
+    }
+
     h2 {
       @include font(variant, bold);
       font-style: italic;
@@ -25,6 +35,12 @@
       text-align: center;
       height: 102px;
       line-height: 102px;
+      @include mq($until: md) {
+        background-size: contain;
+        background-position: center;
+        width: 65%;
+        margin: 0 auto;
+      }
     }
   }
 }

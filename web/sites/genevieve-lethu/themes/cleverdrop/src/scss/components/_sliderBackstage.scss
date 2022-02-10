@@ -1,0 +1,49 @@
+.sliderBackstage {
+  background: $theme;
+  text-align: center;
+
+  &-title {
+    color: $white;
+    font-size: rem(26px);
+  }
+
+  .js-backstage-slider {
+    overflow: visible;
+    min-height: 760px;
+
+    .slider-wrapper {
+      gap: 20px;
+    }
+
+    img {
+      max-height: 280px;
+      width: auto;
+      transition: max-height 0.2s ease-in-out;
+    }
+
+    .slider-slide {
+      align-items: center;
+      min-height: 660px;
+      width: auto !important;
+    }
+
+    .is-active img {
+      max-width: 100%;
+      max-height: 560px;
+      transition: max-height 0.5s ease-in-out;
+    }
+  }
+
+  &-slideStep {
+    @include font(base, bold);
+    font-size: rem(12px);
+    color: $white;
+    padding-top: 30px;
+  }
+
+  &-slideTitle {
+    @include font(variant, italic);
+    font-size: rem(20px);
+    color: $white;
+  }
+}

@@ -5,7 +5,11 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-height: 580px;
+  @include mq($until: lg) {
+    max-height: unset;
+    flex-direction: column;
+  }
+
 
   &-left {
     display: flex;
@@ -17,9 +21,24 @@
 
   &-leftInner {
     padding-top: 180px;
-    padding-left: 146px;
     padding-bottom: 145px;
     padding-right: 230px;
+
+      @include mq($until: lg) {
+      padding-top: 40px;
+      padding-left: 30px;
+      padding-bottom: 40px;
+      padding-right: 30px;
+    }
+    @include mq($until: lg) {
+      padding-bottom: 340px;
+    }
+    @include mq($until: xl) {
+      padding-left: 30px;
+    }
+    @include mq($from: xl) {
+      padding-left: 146px;
+    }
   }
 
   &-right {
@@ -28,6 +47,9 @@
     flex-basis: 100%;
     flex: 1;
     align-self: stretch;
+    @include mq($until: lg) {
+      flex: unset;
+    }
 
     img {
       object-fit: cover;
@@ -40,6 +62,9 @@
     position: absolute;
     top: 0;
     right: 50%;
+    @include mq($until: lg) {
+      display: none;
+    }
   }
 
   &-title {

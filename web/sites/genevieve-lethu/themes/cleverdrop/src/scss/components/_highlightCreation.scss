@@ -6,6 +6,9 @@
     position: relative;
     z-index: 3;
     padding-bottom: 100px;
+    @include mq($until:md) {
+      padding-bottom: 200px;
+    }
   }
 
   &-title {
@@ -42,6 +45,9 @@
     width: 96px;
     left: 50%;
     top: 10px;
+    @include mq($until: md) {
+      display: none;
+    }
   }
 
 
@@ -51,6 +57,7 @@
     position: absolute;
     bottom: 0;
     width: 100%;
+    overflow: hidden;
 
     img {
       position: absolute;
@@ -58,6 +65,10 @@
       left: 0;
       right: 0;
       width: 100%;
+      @include mq($until: md) {
+        top: unset;
+        bottom: 50px;
+      }
 
       &.paintStainLast {
         left: 2%;
@@ -65,13 +76,23 @@
         width: 96px;
         bottom: 30px;
         top: unset;
+        @include mq($until: md) {
+          left: unset;
+          right: 2%;
+        }
       }
+
       &.brushCreation {
         left: unset;
         right: 0;
         z-index: 3;
         width: 329px;
         height: 220px;
+        @include mq($until: md) {
+          left: 5%;
+          right: unset;
+          bottom: -50px;
+        }
       }
     }
   }
@@ -82,5 +103,28 @@
     background: $white;
     height: 160px;
     width: 100%;
+    @include mq($until: md) {
+      height: 60px;
+    }
   }
+
+  .js-highlight-creation-slider {
+    position: relative;
+    z-index: 3;
+
+    .slider-slide {
+      opacity: 1 !important;
+    }
+  }
+
+  .slider-scrollbar {
+    margin-top: 30px;
+
+    .slider-scrollbar-drag {
+      height: 1px;
+      background: $theme;
+      width: 30% !important;
+    }
+  }
+
 }

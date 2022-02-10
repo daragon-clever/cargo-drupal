@@ -72,6 +72,21 @@ function carousel() {
     }
   });
 
+  const sliderCreation = new Swiper(".js-highlight-creation-slider", {
+    ...defaultParams,
+    ...scrollbarParams,
+    spaceBetween: 20,
+    breakpoints: {
+      0: {
+        slidesPerView: 2.2,
+      },
+      749: {
+        slidesPerView: 3,
+      },
+    }
+  });
+
+
   const sliderCollections = new Swiper(".js-collections-slider", {
     ...defaultParams,
     ...navParams,
@@ -80,6 +95,19 @@ function carousel() {
     slidesPerView: 1,
     effect: 'fade',
     speed: 1000,
+  });
+
+  const backstageCollections = new Swiper(".js-backstage-slider", {
+    ...defaultParams,
+    ...navParams,
+    ...paginatedParams,
+    loop: true,
+    loopFillGroupWithBlank: false,
+    centeredSlidesBounds: true,
+    centeredSlides: true,
+    slidesPerView: 5.2,
+    speed: 700,
+    watchSlidesProgress: true,
   });
 
   const galleryThumbs = new Swiper(".js-imageGallery-thumbs", {

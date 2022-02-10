@@ -9,9 +9,13 @@
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
-      {{ content.field_text }} {# Numéro étape	 #}
-      {{ content.field_title }}
       {{ content.field_picture }}
+      <div class="sliderBackstage-slideStep">
+        {{ content.field_text }}
+      </div>
+      <div class="sliderBackstage-slideTitle">
+        {{ content.field_title }}
+      </div>
     {% endblock %}
   </div>
 {% endblock paragraph %}

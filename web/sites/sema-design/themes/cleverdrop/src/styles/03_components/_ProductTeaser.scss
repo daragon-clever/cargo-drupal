@@ -16,6 +16,7 @@
     height: auto;
     transition: transform 2s;
     aspect-ratio: 0.738;
+    object-fit: cover;
 
     .ProductTeaser:hover & {
       transform: scale(1.1);

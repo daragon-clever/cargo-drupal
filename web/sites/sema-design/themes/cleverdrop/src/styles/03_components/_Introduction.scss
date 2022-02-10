@@ -25,7 +25,7 @@
       width: rem(330px);
       top: rem(40px);
       left: rem(-50px);
-      z-index: 1;
+      pointer-events: none;
     }
   }
 
@@ -38,6 +38,7 @@
       bottom: 0;
       right: rem(-50px);
       z-index: 1;
+      pointer-events: none;
     }
   }
 

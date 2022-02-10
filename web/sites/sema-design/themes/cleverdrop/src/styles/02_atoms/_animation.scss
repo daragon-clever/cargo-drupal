@@ -8,6 +8,6 @@
   }
 
   &.is-animate img {
-    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
+    clip-path: polygon(-1% -1%, -1% 101%, 101% 101%, 101% -1%);
   }
 }

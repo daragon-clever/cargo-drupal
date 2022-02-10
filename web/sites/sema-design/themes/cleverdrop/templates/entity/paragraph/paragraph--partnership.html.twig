@@ -1,12 +1,11 @@
 {%
   set classes = [
-  'Partnership-wpr'
+  'Partnership'
 ]
 %}
 {% block paragraph %}
-  <div{{ attributes.addClass(classes) }}>
+  <div{{ attributes.addClass(classes) }} style="--sail-color: {{content.field_color_second[0]['#markup']}};">
     {% block content %}
-    <div class="Partnership">
       <div class="Partnership-top">
         <div class="Section-inner Partnership--inner">
           <div class="Partnership--inner-top-wpr">
@@ -22,7 +21,7 @@
               <h3 class="Partnership-subtitle">
                 {{ content.field_subtitle }}
               </h3>
-              <div class="Partnership-img">
+              <div class="ImageAnimationWpr Partnership-img" data-animate='{"rootMargin": "-30%"}'>
                 <svg viewBox="0 0 100 100" class="Brush" aria-hidden="true">
                   <use xlink:href="#sema-brush"></use>
                 </svg>
@@ -32,20 +31,20 @@
           </div>
         </div>
       </div>
-      <div class="Partnership-bottom" style="--sail-color: {{content.field_color[0]['#markup']}};">
+      <div class="Partnership-bottom" style="--bgColor: {{content.field_color[0]['#markup']}};">
         <div class="Section-inner Partnership--inner">
           <div class="Partnership--inner-bottom-wpr">
             <div class="Partnership-bottomLeft">
-              <div class="Partnership-img-second">
+              <div class="ImageAnimationWpr Partnership-img-second" data-animate='{"rootMargin": "-30%"}'>
                 <svg viewBox="0 0 100 100" class="Brush" aria-hidden="true">
                   <use xlink:href="#sema-brush"></use>
                 </svg>
                 {{ content.field_second_picture }}
               </div>
-              <div class="Partnership-img-third">
+            <div class="ImageAnimationWpr Partnership-img-third" data-animate='{"rootMargin": "-30%"}'>
                 {{ content.field_third_picture }}
               </div>
-              <div class="Partnership-img-fourth">
+              <div class="ImageAnimationWpr Partnership-img-fourth" data-animate='{"rootMargin": "-30%"}'>
                 {{ content.field_fourth_picture }}
               </div>
             </div>
@@ -63,7 +62,6 @@
           <use xlink:href="#sema-brush"></use>
         </svg>
       </div>
-    </div>
     {% endblock %}
   </div>
 {% endblock paragraph %}

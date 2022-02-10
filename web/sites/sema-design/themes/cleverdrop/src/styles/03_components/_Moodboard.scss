@@ -2,7 +2,7 @@
   padding-top: rem(60px);
   padding-bottom: rem(35px);
   position: relative;
-  background-color: var(--sail-color);
+  background-color: var(--bgColor);
 
   @include media-breakpoint-up('md') {
     padding-top: rem(100px);

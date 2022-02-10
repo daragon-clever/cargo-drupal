@@ -139,18 +139,28 @@ function carousel() {
     }
   });
 
+
+  // pagination information on load (currentSlide index –– All slides collection number)
+  function pagerInfo() {
+    let onLoadInfo = document.querySelector('.js-imageGallery-thumbs .slider-slide:not(.swiper-slide-duplicate).is-active')
+    let text = onLoadInfo.getAttribute('aria-label')
+    let result = text.replace('/', '––');
+
+    targetForInfos.innerHTML = result;
+  }
+
   let targetForInfos = document.getElementById('slider-infos');
-  let onLoadInfo = document.querySelector('.js-imageGallery-thumbs .slider-slide:not(.swiper-slide-duplicate).is-active')
-  /*  let text = onLoadInfo.getAttribute('aria-label')*/
-  /*  let result = text.replace('/', '––');*/
+  if (targetForInfos) {
+    pagerInfo();
+  }
 
-  /*  targetForInfos.innerHTML = result;*/
-
+  // Let synchronize both galleryThumbs and gallery slider
   galleryThumbs.on('slideChange', function () {
     let index_currentSlide = galleryThumbs.realIndex;
     let index_activeSlide = galleryThumbs.activeIndex;
     gallery.slideToLoop(index_currentSlide, 1000, false);
 
+    // pagination information incrementation
     let infos = galleryThumbs.slides[index_activeSlide].getAttribute('aria-label');
     let result = infos.replace('/', '––');
     targetForInfos.innerHTML = result;

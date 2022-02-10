@@ -4,10 +4,12 @@
   img {
     width: 100vw;
     object-fit: cover;
+    height: 100vh;
   }
 }
 
 .NotFound-over {
+  background: rgba(0,0,0,0.2);
   position: absolute;
   top: 0;
   right: 0;

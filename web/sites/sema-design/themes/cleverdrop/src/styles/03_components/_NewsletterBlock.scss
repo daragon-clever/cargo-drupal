@@ -4,27 +4,3 @@
     min-height: rem(400px);
   }
 }
-
-.NewsletterBlock-alt {
-  position: relative;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 0;
-    background: var(--white);
-  }
-
-  @include media-breakpoint-up('md') {
-    &::before {
-      top: rem(90px);
-      left: rem(150px);
-      bottom: rem(90px);
-      right: rem(150px);
-    }
-  }
-}

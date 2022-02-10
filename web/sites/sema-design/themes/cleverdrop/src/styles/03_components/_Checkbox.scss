@@ -81,6 +81,10 @@ $disabled-text-color: var(--black);
   cursor: pointer;
   transition: box-shadow $transition;
   background-color: var(--white);
+
+  .NewsletterBlock-alt & {
+    border: 1px solid var(--black);
+  }
 }
 
 .Radio[type='radio']:not(:checked) + label::before,

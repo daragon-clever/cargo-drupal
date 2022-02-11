@@ -89,7 +89,7 @@
 
   &.is-bottom {
     top: 0;
-    bottom: 50%;
+    height: rem(400px);
   }
 
   @include media-breakpoint-up('md') {

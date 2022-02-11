@@ -133,34 +133,49 @@ window.addEventListener('DOMContentLoaded', () => {
   const ContentsTable = document.querySelectorAll('.js-contents-table')
 
   Array.prototype.map.call(ContentsTable,
-    el => new Slider(
-      el,
-      Selectors,
-      {
-        ...CommonSliderOptions,
-        ...ScrollbarSliderOptions,
-        pagination: {
-          el: ".Slider-pagination",
-          type: 'bullets',
-          clickable: true,
-        },
-        navigation: {
-          nextEl: ".Slider-button-next",
-          prevEl: ".Slider-button-prev",
-        },
-        breakpoints: {
-          0: {
-            slidesPerView: 1.5,
-            centeredSlides: true,
+    el => {
+      new Slider(
+        el,
+        Selectors,
+        {
+          ...CommonSliderOptions,
+          ...ScrollbarSliderOptions,
+          pagination: {
+            el: ".Slider-pagination",
+            type: 'bullets',
+            clickable: true,
           },
-          // when window width is >= 769px
-          769: {
-            slidesPerView: 3,
-            centeredSlides: false,
+          navigation: {
+            nextEl: ".Slider-button-next",
+            prevEl: ".Slider-button-prev",
           },
+          breakpoints: {
+            0: {
+              slidesPerView: 1.5,
+              centeredSlides: true,
+            },
+            // when window width is >= 769px
+            769: {
+              slidesPerView: 3,
+              centeredSlides: false,
+            },
+          }
+        }
+      )
+
+      const initSlider = () => {
+        if (isDesktop() && el.querySelectorAll('.ContentsTable-slide').length <= 3) {
+          el.swiper.enabled = false
+          el.classList.add('is-disabled')
+        } else {
+          el.swiper.enabled = true
+          el.classList.remove('is-disabled')
         }
       }
-    )
+    
+      window.addEventListener('resize', debounce(initSlider, 200))
+      initSlider()
+    }
   )
 
   const WhoAreWe = document.querySelectorAll('.js-who-are-we')

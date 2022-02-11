@@ -1,17 +1,26 @@
-.Brushes {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  width: 100%;
-  max-width: rem(95px);
+.Brushes-wpr {
   position: absolute;
-  z-index: 1;
   left: 0;
   bottom: rem(20px);
+  width: 100%;
+  max-width: rem(95px);
+  z-index: 1;
 
   @include media-breakpoint-up('md') {
     left: rem(-115px);
     max-width: rem(165px);
+  }
+}
+
+.Brushes {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+  transition: clip-path 0.5s;
+
+  .is-animate & {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
   }
 
   li {

@@ -125,7 +125,6 @@
       z-index: 2;
       clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
       transition: clip-path 0.5s;
-      animation-fill-mode: forwards;
 
       .is-animate & {
         clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);

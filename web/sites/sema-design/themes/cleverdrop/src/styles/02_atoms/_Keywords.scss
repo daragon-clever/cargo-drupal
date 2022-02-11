@@ -8,16 +8,45 @@
   color: var(--white);
   width: 100%;
 
+  li {
+    position: relative;
+    padding: rem(10px);
+
+    &:not(:last-child) {
+      &::after {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        content: '';
+        height: 1px;
+        width: 100%;
+        background-color: currentColor;
+        transform-origin: 100% 50%;
+      }
+    }
+  }
+
+  &.is-animate {
+    li::after {
+      animation: appear 1s;
+
+      @media (prefers-reduced-motion: reduce) {
+        animation: none;
+      }
+    }
+  }
+
   @include media-breakpoint-up('md') {
     max-width: rem(210px);
   }
+}
 
-  li {
-    padding: rem(10px);
-    border-bottom: 1px solid currentColor;
-
-    &:last-child {
-      border: none;
-    }
+@keyframes appear {
+  from {
+    transform: scale(0);
+  }
+  
+  to {
+    transform: scale(1);
   }
 }

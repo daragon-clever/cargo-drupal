@@ -1,7 +1,7 @@
 .MoodBoard {
+  position: relative;
   padding-top: rem(60px);
   padding-bottom: rem(35px);
-  position: relative;
   background-color: var(--bgColor);
 
   @include media-breakpoint-up('md') {
@@ -27,17 +27,28 @@
     display: block;
     width: 100%;
     height: auto;
+    object-fit: cover;
   }
 
   .FirstImg,
   .SecondImg,
   .ThirdImg {
-    img {
-      @include media-breakpoint-up('md') {
-        transition: all .2s ease-in-out;
+    overflow: hidden;
+    will-change: transform;
 
-        &:hover {
-          transform: scale(1.03);
+    @include media-breakpoint-up('md') {
+      transition: transform 0.2s ease-in-out;
+
+      img {
+        transition: transform 4s ease-in-out;
+        will-change: transform;
+      }
+
+      &.is-animate {
+        transform: scale(1.03);
+
+       &:hover img {
+          transform: scale(1.25);
         }
       }
     }
@@ -50,20 +61,20 @@
 
     @include media-breakpoint-up('md') {
       position: relative;
-      margin-top: rem(90px);
-      left: auto;
       top: auto;
+      left: auto;
+      margin-top: rem(90px);
     }
   }
 
   .SecondImg {
-    padding-left: rem(80px);
+    margin-left: rem(80px);
 
     @include media-breakpoint-up('md') {
       position: absolute;
       top: 0;
       left: 0;
-      padding-left: rem(120px);
+      margin-left: rem(120px);
     }
   }
 
@@ -149,11 +160,6 @@
   @include media-breakpoint-up('md') {
     @include make-cols(4, 7);
   }
-}
-
-.MoodBoard-leftImg,
-.MoodBoard-rightImg {
-  background: transparent;
 }
 
 .MoodBoard-text {

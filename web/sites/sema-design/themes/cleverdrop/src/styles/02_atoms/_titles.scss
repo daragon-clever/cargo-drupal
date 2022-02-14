@@ -18,11 +18,13 @@ h2,
 .Title-2 {
   @include u-cormorant-regular;
   font-size: rem(45px);
+  line-height: rem(55px);
   color: inherit;
   margin-bottom: rem(35px);
 
   @include media-breakpoint-down('md') {
     font-size: rem(35px);
+    line-height: rem(42px);
   }
 }
 

@@ -7,7 +7,7 @@
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
       <div class="Section">
-        <div class="Section-inner ProductFamily-inner is-top" data-animate='{"rootMargin": "-20%"}'>
+        <div class="Section-inner ProductFamily-inner is-top" data-animate='{"threshold": "0.2"}'>
           <div class="ProductFamily-content">
             <h2 class="ProductFamily-title">{{ content.field_title }}</h2>
             <div class="ProductFamily-text">
@@ -29,7 +29,7 @@
         <svg viewBox="0 0 100 100" class="RightBrush" aria-hidden="true">
           <use xlink:href="#sema-brush"></use>
         </svg>
-        <div class="Section-inner ProductFamily-inner is-bottom" data-animate='{"rootMargin": "-20%"}'>
+        <div class="Section-inner ProductFamily-inner is-bottom" data-animate='{"threshold": "0.2"}'>
           <div class="ProductFamily-secondImg">
             {{ content.field_second_picture }}
             <svg viewBox="0 0 100 100" class="Brush" aria-hidden="true">

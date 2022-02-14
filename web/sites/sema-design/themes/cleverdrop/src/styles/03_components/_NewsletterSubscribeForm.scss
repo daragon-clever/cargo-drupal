@@ -38,4 +38,10 @@
 
 .NewsletterSubscribeForm-rpdg {
   margin-top: rem(20px);
+
+  .Checkbox[type=checkbox] + label,
+  .Checkbox[type=checkbox] + label .Link {
+    display: inline-block;
+    font-size: rem(12px);
+  }
 }

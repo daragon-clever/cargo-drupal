@@ -12,7 +12,7 @@
           <div class="MoodBoard-left">
             <div class="MoodBoard-leftImg">
               <div class="BrushesImageWpr">
-                <div class="Brushes-wpr" data-animate='{"rootMargin": "-10%"}'>
+                <div class="Brushes-wpr" data-animate='{"threshold": "0.1"}'>
                   <ul class="Brushes">
                     {% for i in content.field_traces_paint['#items']|keys %}
                       <li style="color: {{ content.field_traces_paint[i] }}">
@@ -44,7 +44,7 @@
             <div class="ThirdImg" data-moodboard-img>
               {{ content.field_third_picture }}
             </div>
-            <ul class="Keywords" data-animate='{"rootMargin": "-10%"}'>
+            <ul class="Keywords" data-animate='{"threshold": "0.1"}'>
               {% for i in content.field_keywords['#items']|keys %}
                 <li>{{ content.field_keywords[i] }}</li>
               {% endfor %}

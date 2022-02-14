@@ -29,6 +29,13 @@
 }
 
 .ProductTeaser-link {
+  text-decoration: none;
+
+  &:hover,
+  &:focus-visible {
+    text-decoration: underline;
+  }
+
   &::before {
     content: '';
     position: absolute;

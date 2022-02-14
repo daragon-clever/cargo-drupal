@@ -87,42 +87,42 @@
   font-style: normal;
   font-weight: 200;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/oswald/v40/TK3_WkUHHAIjg75cFRf3bXL8LICs13FvgUE.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/oswald/v41/TK3_WkUHHAIjg75cFRf3bXL8LICs13FvgUE.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Oswald';
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/oswald/v40/TK3_WkUHHAIjg75cFRf3bXL8LICs169vgUE.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/oswald/v41/TK3_WkUHHAIjg75cFRf3bXL8LICs169vgUE.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Oswald';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/oswald/v40/TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvgUE.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/oswald/v41/TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvgUE.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Oswald';
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/oswald/v40/TK3_WkUHHAIjg75cFRf3bXL8LICs18NvgUE.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/oswald/v41/TK3_WkUHHAIjg75cFRf3bXL8LICs18NvgUE.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Oswald';
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/oswald/v40/TK3_WkUHHAIjg75cFRf3bXL8LICs1y9ogUE.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/oswald/v41/TK3_WkUHHAIjg75cFRf3bXL8LICs1y9ogUE.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Oswald';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/oswald/v40/TK3_WkUHHAIjg75cFRf3bXL8LICs1xZogUE.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/oswald/v41/TK3_WkUHHAIjg75cFRf3bXL8LICs1xZogUE.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Roboto';
@@ -312,6 +312,15 @@ img {
 }
 .ares_header .ares_header_top .ares_header_top_logo {
   width: 33%;
+  opacity: 0;
+  top: 1px;
+  transform: translate(-50%, 0px);
+  transition: all 1000ms;
+}
+.ares_header .ares_header_top .ares_header_top_logo.appears {
+  top: 50%;
+  opacity: 1;
+  transform: translate(-50%, -50%);
 }
 .ares_header .ares_header_bottom .ares_header_bottom_wrapper {
   height: 400px;
@@ -351,21 +360,16 @@ img {
   display: flex;
   position: relative;
   width: 100%;
-  overflow: hidden;
 }
 .ares_columns .ares_column.ares_column_image .ares_column_wrapper .ares_column_wrapper_bg {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  right: 0;
-  z-index: 0;
-  transform: translateY(-50%);
-  min-width: 100%;
-  min-height: 100%;
-  max-width: unset;
+  max-width: 100%;
 }
 .ares_columns .ares_column.ares_column_image .ares_column_wrapper .ares_column_wrapper_img {
   z-index: 1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 100%;
 }
 .ares_columns .ares_column.ares_column_text .ares_column_wrapper {
   padding: 0 50px;
@@ -373,16 +377,26 @@ img {
 #ares_columns_1 .ares_column.ares_column_image .ares_column_wrapper {
   justify-content: flex-end;
 }
-#ares_columns_1 .ares_column.ares_column_image .ares_column_wrapper .ares_column_wrapper_bg {
+#ares_columns_1 .ares_column.ares_column_image .ares_column_wrapper .simpleParallax {
   clip-path: polygon(0 0, calc(100% - 50px) 0, calc(100% - 50px) 100%, 0 100%);
   left: unset;
+}
+#ares_columns_1 .ares_column.ares_column_image .ares_column_wrapper .ares_column_wrapper_img {
+  right: 0;
 }
 #ares_columns_3 .ares_column.ares_column_image .ares_column_wrapper {
   justify-content: center;
 }
+#ares_columns_3 .ares_column.ares_column_image .ares_column_wrapper .simpleParallax {
+  height: 350px;
+}
 #ares_columns_3 .ares_column.ares_column_image .ares_column_wrapper .ares_column_wrapper_bg {
   min-height: unset;
   max-width: 100%;
+}
+#ares_columns_3 .ares_column.ares_column_image .ares_column_wrapper .ares_column_wrapper_img {
+  top: -100px;
+  height: calc(100% + 200px);
 }
 #ares_columns_0 {
   background-image: url(/sites/promodis-ares/themes/promodisares/img/logo_bg.svg);
@@ -392,6 +406,11 @@ img {
 .ares_cover {
   height: 500px;
   overflow: hidden;
+}
+.ares_cover .simpleParallax {
+  width: 1400px;
+  max-width: calc(100% - 200px);
+  margin: 75px auto;
 }
 .ares_cover img {
   width: 100%;
@@ -483,11 +502,20 @@ img {
     width: 100%;
   }
   .ares_header .ares_header_top .ares_header_top_logo {
-    width: 80%;
-    max-width: 60%;
+    width: calc(100% - 100px);
+    max-width: unset;
+    opacity: 0;
+    top: 1px;
+    transform: translate(-50%, 0px);
+    transition: all 1000ms;
+  }
+  .ares_header .ares_header_top .ares_header_top_logo.appears {
+    top: calc(50% + 50px);
+    opacity: 1;
+    transform: translate(-50%, -50%);
   }
   .ares_header .ares_header_bottom {
-    margin-top: 100px;
+    margin-top: 200px;
   }
   .ares_header .ares_header_bottom .ares_header_bottom_wrapper {
     flex-direction: column;
@@ -510,12 +538,19 @@ img {
   .ares_columns .ares_column.ares_column_text {
     order: 2;
   }
+  #ares_columns_3 .ares_column.ares_column_image .ares_column_wrapper .ares_column_wrapper_img {
+    top: -70px;
+    height: calc(100% + 50px);
+  }
   .ares_quote {
     padding: 25px 10px;
   }
   .ares_cover {
     height: auto;
     padding: 0 25px;
+  }
+  .ares_cover .simpleParallax {
+    max-width: calc(100% - 20px);
   }
   .ares_h1 .ares_h1_wrapper {
     flex-direction: column;

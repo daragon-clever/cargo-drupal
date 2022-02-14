@@ -5,6 +5,7 @@ core: 8.x
 
 libraries:
   - promodisares/waypoint
+  - promodisares/simple-parallax
   - promodisares/global-styling
 
 stylesheets-remove:

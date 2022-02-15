@@ -1,0 +1,12 @@
+/// Display in two columns
+//
+// Styleguide Utilities.twoColsDisplay
+
+.columns {
+  &-2 {
+    @include mq($from: sm) {
+      columns: 2;
+      column-gap: rem(20px);
+    }
+  }
+}

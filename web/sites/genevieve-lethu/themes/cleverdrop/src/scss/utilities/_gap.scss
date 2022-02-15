@@ -8,10 +8,12 @@
 
 .gap {
   &-y {
-    padding: rem($gap-between-min) 0;
+    padding-top: rem($gap-between-min);
+    padding-bottom: rem($gap-between-min);
 
     @include mq($from: md) {
-      padding: rem($gap-between-max) 0;
+      padding-top: rem($gap-between-max);
+      padding-bottom: rem($gap-between-max);
     }
   }
 

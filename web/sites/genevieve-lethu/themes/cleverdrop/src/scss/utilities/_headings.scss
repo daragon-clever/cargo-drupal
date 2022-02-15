@@ -1,0 +1,13 @@
+ /// Headings
+ //
+ // Styleguide Elements.headings
+
+
+.headings {
+  &-alternate {
+    @include font(variant, italic);
+    @include fluid-type(rem($vw-min), rem(map-get($mq-breakpoints, "xl")), rem(26px), rem(40px));
+
+    line-height: unitless-line-height(50px, 40px);
+  }
+}

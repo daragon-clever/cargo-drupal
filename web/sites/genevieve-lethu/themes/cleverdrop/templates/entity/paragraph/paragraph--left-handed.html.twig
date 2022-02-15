@@ -3,27 +3,33 @@
   'paragraph',
   'paragraph--type--' ~ paragraph.bundle|clean_class,
   view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-  not paragraph.isPublished() ? 'paragraph--unpublished'
+  not paragraph.isPublished() ? 'paragraph--unpublished',
+  'container',
+  'gap-y'
 ]
 %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
-      {{ content.field_title }}
-
-      {% if content.field_description[0]['#context']['value']|length <= 500 %}
-        <div class="one-column">
-            {{ content.field_description }}
+    <div class="row justify-content-center text-start">
+      <div class="col-12 col-md-10 col-lg-8">
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <h2 class="headings-alternate mb-3">{{ content.field_title }}</h2>
+          </div>
         </div>
-      {% else %}
+      </div>
+    </div>
 
-        <div class="one-column">
-          {{ content.column[0] }}
+    <div class="row justify-content-center text-start">
+      <div class="col-12 col-md-10 col-lg-8">
+          {% if content.field_description[0]['#context']['value']|length <= 500 %}
+            <p>{{ content.field_description }}</p>
+          {% else %}
+            <p class="columns-2">{{ content.field_description }}</p>
+          </div>
         </div>
-        <div class="two-column">
-          {{ content.column[1] }}
-        </div>
-
+      </div>
       {% endif %}
     {% endblock %}
   </div>

@@ -3,13 +3,19 @@
   'paragraph',
   'paragraph--type--' ~ paragraph.bundle|clean_class,
   view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-  not paragraph.isPublished() ? 'paragraph--unpublished'
+  not paragraph.isPublished() ? 'paragraph--unpublished',
+  'richText',
+  'container',
 ]
 %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
-      {{ content.field_rte_lite }}
+    <div class="row justify-content-center gap-y">
+      <div class="col-12 col-md-6 mt-4">
+        {{ content.field_rte_lite }}
+      </div>
+    </div>
     {% endblock %}
   </div>
 {% endblock paragraph %}

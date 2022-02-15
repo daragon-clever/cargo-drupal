@@ -3,14 +3,25 @@
   'paragraph',
   'paragraph--type--' ~ paragraph.bundle|clean_class,
   view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-  not paragraph.isPublished() ? 'paragraph--unpublished'
+  not paragraph.isPublished() ? 'paragraph--unpublished',
+  'bg-colorContrib',
+  'fitScreen',
+  'gap-y',
+  'brushTrace',
+  'brushTrace-top'
 ]
 %}
 {% block paragraph %}
-  <div{{ attributes.addClass(classes) }}>
+  <div{{ attributes.addClass(classes) }} style="--colorContrib: #F0EDE0">
+    <div class="container">
     {% block content %}
-      {{ content.field_text }}
-      {{ content.field_description }}
+    <div class="row justify-content-center text-start">
+      <div class="col-12 col-md-10 col-lg-8 col-xl-5">
+        <h2 class="mb-2 mt-2">{{ content.field_title }}</h2>
+        {{ content.field_description }}
+      </div>
+    </div>
     {% endblock %}
+    </div>
   </div>
 {% endblock paragraph %}

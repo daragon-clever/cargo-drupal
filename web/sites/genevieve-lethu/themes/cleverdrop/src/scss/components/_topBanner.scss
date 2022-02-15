@@ -4,31 +4,31 @@
 
 .topBanner {
   @include aspect-ratio(500px, 680px, '.topBanner-ratio');
-  position: relative;
+  // position: relative;
 
   @include mq($from: sm) {
     @include aspect-ratio(1440px, 555px, '.topBanner-ratio');
   }
 
-  &::after {
-    content: "";
-    background: url('../assets/brush.png') no-repeat left bottom;
-    background-size: 200%;
-    background-position-x: center;
-    background-repeat: no-repeat;
-    height: percentage(calc(70 / 680));
-    display: block;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
+  // &::after {
+    // content: "";
+    // background: url('../assets/brush.png') no-repeat left bottom;
+    // background-size: 200%;
+    // background-position-x: center;
+    // background-repeat: no-repeat;
+    // height: percentage(calc(70 / 680));
+    // display: block;
+    // position: absolute;
+    // bottom: 0;
+    // left: 0;
+    // right: 0;
+    // z-index: 1;
 
-    @include mq($from: sm) {
-      height: percentage(calc(70 / 555));
-      background-size: cover;
-    }
-  }
+    // @include mq($from: sm) {
+      // height: percentage(calc(70 / 555));
+      // background-size: cover;
+    // }
+  // }
 
   &-text {
     @include center-v;

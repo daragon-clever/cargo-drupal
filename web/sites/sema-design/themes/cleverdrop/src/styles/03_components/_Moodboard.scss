@@ -23,6 +23,14 @@
     }
   }
 
+  &.MoodBoardAlternative {
+    &::before {
+      @include media-breakpoint-up('md') {
+        height: rem(555px);
+      }
+    }
+  }
+
   img {
     display: block;
     width: 100%;
@@ -112,7 +120,7 @@
     @include media-breakpoint-up('md') {
       position: absolute;
       right: rem(-30px);
-      bottom: rem(50px);
+      bottom: 0;
     }
   }
 

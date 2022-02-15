@@ -6,6 +6,11 @@ waypoint:
     https://cdnjs.cloudflare.com/ajax/libs/waypoints/3.0.0/noframework.waypoints.min.js: { type: external }
     https://cdnjs.cloudflare.com/ajax/libs/waypoints/3.0.0/shortcuts/inview.min.js: { type: external }
 
+simple-parallax:
+  header: true
+  js:
+    https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js: { type: external }
+
 # Style général
 global-styling:
   header: true

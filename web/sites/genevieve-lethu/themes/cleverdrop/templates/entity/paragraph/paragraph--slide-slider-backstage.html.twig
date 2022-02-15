@@ -3,19 +3,16 @@
   'paragraph',
   'paragraph--type--' ~ paragraph.bundle|clean_class,
   view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-  not paragraph.isPublished() ? 'paragraph--unpublished'
+  not paragraph.isPublished() ? 'paragraph--unpublished',
+  'sliderBackstage-inner'
 ]
 %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
       {{ content.field_picture }}
-      <div class="sliderBackstage-slideStep">
-        {{ content.field_text }}
-      </div>
-      <div class="sliderBackstage-slideTitle">
-        {{ content.field_title }}
-      </div>
+      <h3 class="sliderBackstage-inner-title">{{ content.field_text }}</h3>
+      <p class="sliderBackstage-inner-desc">{{ content.field_title }}</p>
     {% endblock %}
   </div>
 {% endblock paragraph %}

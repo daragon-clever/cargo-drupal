@@ -101,12 +101,11 @@ function carousel() {
     ...defaultParams,
     ...navParams,
     loop: true,
-    spaceBetween: 20,
-    loopFillGroupWithBlank: false,
     centeredSlides: true,
-    slidesPerView: 5.2,
-    speed: 700,
+    slidesPerView: 'auto',
     watchSlidesProgress: true,
+    effect: 'slide',
+    speed: 300,
   });
 
   const historySlider = new Swiper(".js-history-slider", {
@@ -115,6 +114,7 @@ function carousel() {
     loop: true,
     centeredSlides: true,
     slidesPerView: 1,
+    watchSlidesProgress: true,
     breakpoints: {
       0: {
         spaceBetween: 30,
@@ -149,7 +149,7 @@ function carousel() {
 
   // pagination information on load (currentSlide index –– All slides collection number)
   function pagerInfo() {
-    let onLoadInfo = document.querySelector('.js-imageGallery-thumbs .slider-slide:not(.swiper-slide-duplicate).is-active')
+    let onLoadInfo = document.querySelector('.js-withInfo .slider-slide:not(.swiper-slide-duplicate).is-active')
     let text = onLoadInfo.getAttribute('aria-label')
     let result = text.replace('/', '––');
 
@@ -160,6 +160,15 @@ function carousel() {
   if (targetForInfos) {
     pagerInfo();
   }
+
+  backstageCollections.on('slideChange', function () {
+    let index_activeSlide = backstageCollections.activeIndex;
+
+    // pagination information incrementation
+    let infos = backstageCollections.slides[index_activeSlide].getAttribute('aria-label');
+    let result = infos.replace('/', '––');
+    targetForInfos.innerHTML = result;
+  });
 
   // Let synchronize both galleryThumbs and gallery slider
   galleryThumbs.on('slideChange', function () {

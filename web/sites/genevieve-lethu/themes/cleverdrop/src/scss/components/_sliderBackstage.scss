@@ -1,43 +1,71 @@
 .sliderBackstage {
-  background: $theme;
-  text-align: center;
-
-  &-title {
-    color: $white;
-    font-size: rem(26px);
-  }
-
-  .js-backstage-slider {
+  @include mq($from: md) {
     overflow: visible;
-    min-height: 760px;
-
-    .slider-wrapper {
-    }
-
-    img {
-      transition: max-height 0.2s ease-in-out;
-    }
-
-    .slider-slide {
-      align-items: center;
-      min-height: 660px;
-    }
-
-    .is-active {
-
-    }
   }
 
-  &-slideStep {
-    @include font(base, bold);
-    font-size: rem(12px);
-    color: $white;
-    padding-top: 30px;
+  &-inner {
+    margin: rem(160px) auto 0;
+
+    .is-active.slider-slide-visible & {
+      margin-top: 0;
+      // transition: max-width .25s ease-in, margin-top .25s ease-in;
+    }
+
+    @include mq($from: md) {
+      max-width: rem(390px);
+
+      .is-active.slider-slide-visible & {
+        max-width: rem(460px);
+      }
+    }
+
+    @include mq($from: xl) {
+      max-width: rem(215px);
+
+      .is-active.slider-slide-visible & {
+        max-width: rem(445px);
+      }
+    }
+
+    &-title {
+      @include font(variant, regular);
+      font-size: rem(50px);
+      color: $white;
+      margin: rem(20px) 0 rem(10px);
+    }
+
+    &-desc {
+      font-size: rem(16px);
+      color: $white;
+    }
+
+    // &-title,
+    // &-desc {
+    //   opacity: 0;
+    //   transition: opacity .15s ease-in;
+
+    //   .is-active.slider-slide-visible & {
+    //     opacity: 1;
+    //   }
+    // }
   }
 
-  &-slideTitle {
-    @include font(variant, italic);
-    font-size: rem(20px);
-    color: $white;
+  .slider {
+    &-nav {
+      display: flex;
+      justify-content: center;
+      transform: translateY(50%);
+    }
+
+    &-btnPrev,
+    &-btnNext {
+      margin: 0 rem(10px);
+      width: rem(80px);
+      height: rem(80px);
+    }
+
+    &-slide {
+      margin-right: rem(20px);
+    }
   }
 }

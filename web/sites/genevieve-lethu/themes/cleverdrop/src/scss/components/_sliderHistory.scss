@@ -9,7 +9,7 @@
     img {
       transition: width .15s ease-in, margin-top .15s ease-in;
 
-      .is-active & {
+      .is-active.slider-slide-visible & {
         margin-top: 0;
       }
 
@@ -17,7 +17,7 @@
         width: rem(390px);
         margin: rem(30px) auto;
 
-        .is-active & {
+        .is-active.slider-slide-visible & {
           width: rem(460px);
         }
       }
@@ -25,7 +25,7 @@
       @include mq($from: xl) {
         width: rem(290px);
 
-        .is-active & {
+        .is-active.slider-slide-visible & {
           width: rem(350px);
         }
       }
@@ -46,9 +46,9 @@
     &-title,
     &-desc {
       opacity: 0;
-      transition: opacity .3s ease-in;
+      transition: opacity .15s ease-in;
 
-      .is-active & {
+      .is-active.slider-slide-visible & {
         opacity: 1;
       }
     }

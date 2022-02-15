@@ -1,24 +1,23 @@
 {% set classes = [
   'paragraph',
-  'sliderBackstage',
   'paragraph--type--' ~ paragraph.bundle|clean_class,
   view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-  not paragraph.isPublished() ? 'paragraph--unpublished'
+  not paragraph.isPublished() ? 'paragraph--unpublished',
+  'container',
 ] %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
-      <div class="container">
-        <h2 class="sliderBackstage-title">{{ content.field_title }}</h2>
-        <div class="row">
-
-          <div class="col-12 slider js-backstage-slider">
-
-          <div class="slider-wrapper">
+    <div class="bg-theme fitScreen gap-y">
+      <h2 class="text-white text-center mb-3">{{ content.field_title }}</h2>
+      <div class="row justify-content-center">
+        <div class="col-9 col-md-7 col-lg-5 col-xl-4">
+          <div class="slider sliderBackstage js-withInfo js-backstage-slider">
+            <div class="slider-wrapper">
               {% for i in content.field_slide['#items']|keys %}
-                <div class="slider-slide">
-                  {{ content.field_slide[i] }}
-                </div>
+              <div class="slider-slide">
+                {{ content.field_slide[i] }}
+              </div>
               {% endfor %}
             </div>
             <div class="slider-nav">
@@ -37,6 +36,7 @@
           </div>
         </div>
       </div>
+    </div>
     {% endblock %}
   </div>
 {% endblock paragraph %}

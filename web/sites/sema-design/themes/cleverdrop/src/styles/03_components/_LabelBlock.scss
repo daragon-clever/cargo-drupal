@@ -76,6 +76,7 @@
 
   @include media-breakpoint-up('md') {
     transform: translateY(rem(-100px));
+    margin-bottom: rem(-100px);
   }
 }
 

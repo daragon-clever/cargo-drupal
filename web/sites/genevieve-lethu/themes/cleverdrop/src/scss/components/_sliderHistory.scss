@@ -1,0 +1,71 @@
+.sliderHistory {
+  @include mq($from: md) {
+    overflow: visible;
+  }
+
+  &-inner {
+    width: 100%;
+
+    img {
+      transition: width .15s ease-in, margin-top .15s ease-in;
+
+      .is-active & {
+        margin-top: 0;
+      }
+
+      @include mq($from: md) {
+        width: rem(390px);
+        margin: rem(30px) auto;
+
+        .is-active & {
+          width: rem(460px);
+        }
+      }
+
+      @include mq($from: xl) {
+        width: rem(290px);
+
+        .is-active & {
+          width: rem(350px);
+        }
+      }
+    }
+
+    &-title {
+      @include font(variant, regular);
+      font-size: rem(50px);
+      color: $white;
+      margin: rem(20px) 0 rem(10px);
+    }
+
+    &-desc {
+      font-size: rem(16px);
+      color: $white;
+    }
+
+    &-title,
+    &-desc {
+      opacity: 0;
+      transition: opacity .3s ease-in;
+
+      .is-active & {
+        opacity: 1;
+      }
+    }
+  }
+
+  .slider {
+    &-nav {
+      display: flex;
+      justify-content: center;
+      transform: translateY(50%);
+    }
+
+    &-btnPrev,
+    &-btnNext {
+      margin: 0 rem(10px);
+      width: rem(80px);
+      height: rem(80px);
+    }
+  }
+}

@@ -100,7 +100,6 @@ function carousel() {
   const backstageCollections = new Swiper(".js-backstage-slider", {
     ...defaultParams,
     ...navParams,
-    ...paginatedParams,
     loop: true,
     spaceBetween: 20,
     loopFillGroupWithBlank: false,
@@ -108,14 +107,22 @@ function carousel() {
     slidesPerView: 5.2,
     speed: 700,
     watchSlidesProgress: true,
-    zoom: {
-      maxRatio: 5,
-      zoomedSlideClass: 'zooooooooooooooo',
-    },
   });
-  backstageCollections.on('slideChange', function (e) {
-    e.zoom.in();
-    console.log(e);
+
+  const historySlider = new Swiper(".js-history-slider", {
+    ...defaultParams,
+    ...navParams,
+    loop: true,
+    centeredSlides: true,
+    slidesPerView: 1,
+    breakpoints: {
+      0: {
+        spaceBetween: 30,
+      },
+      749: {
+        spaceBetween: 60,
+      },
+    }
   });
 
   const galleryThumbs = new Swiper(".js-imageGallery-thumbs", {

@@ -119,7 +119,7 @@ settings:
   draft_pending_multiple_message: ''
   confirmation_type: message
   confirmation_title: ''
-  confirmation_message: 'Votre message a &eacute;t&eacute; envoy&eacute;'
+  confirmation_message: '<span style="font-size:10pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Calibri,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Votre message a bien &eacute;t&eacute; pris en compte. Nous vous r&eacute;pondrons dans les plus brefs d&eacute;lais. Merci.</span></span></span></span></span></span>'
   confirmation_url: '<front>'
   confirmation_attributes: {  }
   confirmation_back: true

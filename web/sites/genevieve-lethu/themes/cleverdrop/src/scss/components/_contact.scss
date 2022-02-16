@@ -54,9 +54,13 @@
       height: 46px;
       @include font(script);
       font-size: rem(20px);
-
+      transition: background-color 0.3s ease-in-out;
       @include mq($until:md) {
         width: 100%;
+      }
+      &:hover  {
+        background: $theme-light;
+        border: 1px solid $theme-light;
       }
     }
   }

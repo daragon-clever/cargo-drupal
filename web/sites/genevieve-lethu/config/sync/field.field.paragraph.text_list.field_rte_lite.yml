@@ -11,7 +11,7 @@ dependencies:
 third_party_settings:
   allowed_formats:
     allowed_formats:
-      - rte_lite
+      - rte_full
 id: paragraph.text_list.field_rte_lite
 field_name: field_rte_lite
 entity_type: paragraph

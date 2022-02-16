@@ -1,19 +1,19 @@
 .Section-inner.Particular,
 .Section-inner.Profesional {
-  max-width: 940px;
+  max-width: rem(940px);
 }
 
 .Particular,
 .Profesional {
   display: flex;
   flex-direction: row;
-  padding-top: 120px;
-  padding-bottom: 75px;
-  max-width: 940px;
+  padding-top: rem(120px);
+  padding-bottom: rem(75px);
+  max-width: rem(940px);
 
   @include media-breakpoint-down('md') {
     flex-direction: column;
-    padding-top: 30px;
+    padding-top: rem(30px);
   }
 }
 
@@ -22,35 +22,35 @@
   @include u-cormorant-regular;
   font-size: rem(18px);
   width: 100%;
-  padding-left: 45px;
+  padding-left: rem(45px);
   z-index: 1;
 
   @include media-breakpoint-down('md') {
     padding-left: 0;
-    padding-top: 27px;
+    padding-top: rem(27px);
   }
 
   a {
     color: var(--text-color);
-    text-transform: capitalize;
   }
 
   .Particular-link {
     a {
       display: inline-block;
+      text-transform: capitalize;
       font-size: rem(13px);
 
       &:not(:first-child) {
-        margin-left: 30px;
+        margin-left: rem(30px);
       }
 
       &::after {
         content: '';
         background: url('/sites/sema-design/themes/cleverdrop/public/assets/svg/arrow-right.svg');
         background-repeat: no-repeat;
-        padding: 3px 8px;
+        padding: rem(3px) rem(8px);
         display: inline-block;
-        margin-left: 11px;
+        margin-left: rem(11px);
       }
     }
   }
@@ -74,7 +74,7 @@
   background-color: var(--white);
   position: absolute;
   right: 0;
-  padding: 110px 45px;
+  padding: rem(110px) rem(45px);
   background-repeat: no-repeat;
   mask-repeat: no-repeat;
   mask-image: url('/sites/sema-design/themes/cleverdrop/public/assets/svg/stains.svg');
@@ -89,10 +89,10 @@
   content: '';
   background-color: var(--ebb);
   position: absolute;
-  right: -55px;
-  top: 65px;
-  width: 320px;
-  height: 125px;
+  right: rem(-55px);
+  top: rem(65px);
+  width: rem(320px);
+  height: rem(125px);
   background-repeat: no-repeat;
   mask-repeat: no-repeat;
   mask-image: url('/sites/sema-design/themes/cleverdrop/public/assets/svg/brush.svg');

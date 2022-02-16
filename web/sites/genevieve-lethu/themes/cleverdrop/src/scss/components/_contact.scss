@@ -1,0 +1,109 @@
+.contact {
+  &-title {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .contact-subject {
+    span.required {
+      display: none;
+    }
+    label {
+      @include font(variant,bold);
+      font-size: rem(26px);
+    }
+    select {
+      position: relative;
+      background-image: url("data:image/svg+xml;utf8,%3Csvg width='12px' height='8px' viewBox='0 0 12 8' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.26733 6.85077L11.087 2.18173C11.4202 1.85904 11.4202 1.33719 11.087 1.01791L10.2861 0.242035C9.953 -0.0806885 9.41431 -0.0806885 9.08472 0.242035L5.66846 3.55154L2.2522 0.242035C1.91907 -0.0806885 1.38037 -0.0806885 1.05078 0.242035L0.249878 1.01791C-0.083252 1.34064 -0.083252 1.86246 0.249878 2.18173L5.06958 6.85077C5.39563 7.17349 5.9342 7.17349 6.26733 6.85077L6.26733 6.85077Z' id='Chevron' fill='%23003B2E' stroke='none' /%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position-x: 98%;
+      background-position-y: 50%;
+    }
+  }
+
+  .contact-rgpd {
+    label {
+      display: inline;
+    }
+    input {
+      display: inline;
+      width: auto ;
+      height: auto ;
+      margin-bottom: 0;
+      padding-right: 15px;
+    }
+  }
+
+  &-mandatory {
+    margin-bottom: 40px;
+    @include font(base, light);
+    font-size: rem(14px);
+    color: $theme;
+    margin-top: 20px;
+  }
+
+  .contact-submit {
+    margin-top: 40px;
+    margin-bottom: 90px;
+    input {
+      background: $theme;
+      color: $white;
+      border: 1px solid $theme;
+      width: 290px;
+      height: 46px;
+      @include font(script);
+      font-size: rem(20px);
+
+      @include mq($until:md) {
+        width: 100%;
+      }
+    }
+  }
+
+  form {
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  label {
+    display: block;
+    @include font(base, bold);
+    font-size: rem(14px);
+    margin-bottom: 10px;
+  }
+
+  select {
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    appearance:none;
+  }
+
+  input, select, textarea {
+    border-radius: 23px;
+    border: 1px solid $theme-light;
+    width: 100%;
+    height: 46px;
+    margin-bottom: 25px;
+    padding: 0 25px;
+    box-sizing: border-box;
+    @include font(base, bold);
+    font-size: rem(14px);
+    color: $theme;
+    &:active, &:focus, &:focus-visible {
+      outline-color: $theme;
+    }
+  }
+
+  textarea {
+    border-radius: 15px;
+    padding-top: 15px;
+    height: 190px;
+    max-width: 100%;
+  }
+
+  select {
+    background: $light;
+    border-color: $light;
+  }
+}

@@ -14,18 +14,44 @@
 {{ form.form_token }}
 {{ form.form_id }}
 {# do not remove #}
-
-{{ form.elements.objet }}
-{{ form.elements.firstname }}
-{{ form.elements.lastname }}
-{{ form.elements.enterprise }}
-{{ form.elements.adresse.city }}
-{{ form.elements.adresse.postal_code }}
-{{ form.elements.phone }}
-{{ form.elements.email }}
-{{ form.elements.message }}
-{{ form.elements.gdpr }}
-{{ form.elements.captcha }}
-{{ form.elements.actions  }}
+<div class="col-md-12 contact-subject">
+  {{ form.elements.objet }}
+</div>
+<div class="col-md-12">
+  {{ form.elements.firstname }}
+</div>
+<div class="col-md-12">
+  {{ form.elements.lastname }}
+</div>
+<div class="col-md-12">
+  {{ form.elements.enterprise }}
+</div>
+<div class="col-md-12">
+  {{ form.elements.adresse.postal_code }}
+</div>
+<div class="col-md-12">
+  {{ form.elements.adresse.city }}
+</div>
+<div class="col-md-12">
+  {{ form.elements.email }}
+</div>
+<div class="col-md-12">
+  {{ form.elements.phone }}
+</div>
+<div class="col-md-12">
+  {{ form.elements.message }}
+</div>
+<div class="col-md-12 contact-rgpd">
+  {{ form.elements.gdpr }}
+</div>
+<div class="col-md-12 contact-mandatory">
+  {{ "*Champs obligatoires"|t }}
+</div>
+<div class="col-md-12">
+  {{ form.elements.captcha }}
+</div>
+<div class="col-md-12 contact-submit">
+  {{ form.elements.actions }}
+</div>
 
 

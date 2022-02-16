@@ -10,26 +10,6 @@
     @include aspect-ratio(1440px, 555px, '.topBanner-ratio');
   }
 
-  // &::after {
-    // content: "";
-    // background: url('../assets/brush.png') no-repeat left bottom;
-    // background-size: 200%;
-    // background-position-x: center;
-    // background-repeat: no-repeat;
-    // height: percentage(calc(70 / 680));
-    // display: block;
-    // position: absolute;
-    // bottom: 0;
-    // left: 0;
-    // right: 0;
-    // z-index: 1;
-
-    // @include mq($from: sm) {
-      // height: percentage(calc(70 / 555));
-      // background-size: cover;
-    // }
-  // }
-
   &-text {
     @include center-v;
     left: rem(30px);
@@ -94,6 +74,22 @@
 
     @include mq($from: xl) {
       transform: translate(120%, -15%);
+    }
+  }
+
+  &.--breakMd {
+    @include mq($until: md) {
+      @include aspect-ratio(500px, 680px, '.topBanner-ratio');
+    }
+
+    @include mq($from: md) {
+      @include aspect-ratio(1440px, 555px, '.topBanner-ratio');
+    }
+
+    .topBanner-text {
+      @include mq($from: sm) {
+        margin-top: 0;
+      }
     }
   }
 }

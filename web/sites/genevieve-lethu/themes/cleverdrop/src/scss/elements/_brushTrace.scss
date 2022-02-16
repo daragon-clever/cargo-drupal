@@ -16,8 +16,17 @@
     left: 0;
     right: 0;
     z-index: 1;
+  }
 
+  &:not(.--breakMd)::after {
     @include mq($from: sm) {
+      height: percentage(calc(70 / 555));
+      background-size: cover;
+    }
+  }
+
+  &.--breakMd::after {
+    @include mq($from: md) {
       height: percentage(calc(70 / 555));
       background-size: cover;
     }

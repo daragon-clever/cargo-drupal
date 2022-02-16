@@ -6,9 +6,10 @@ dependencies:
     - field.field.paragraph.slide_slider_backstage.field_picture
     - field.field.paragraph.slide_slider_backstage.field_text
     - field.field.paragraph.slide_slider_backstage.field_title
+    - image.style.max_h560
     - paragraphs.paragraphs_type.slide_slider_backstage
   module:
-    - image
+    - svg_image
 id: paragraph.slide_slider_backstage.default
 targetEntityType: paragraph
 bundle: slide_slider_backstage
@@ -18,8 +19,12 @@ content:
     weight: 0
     label: visually_hidden
     settings:
-      image_style: ''
+      image_style: max_h560
       image_link: ''
+      svg_render_as_image: true
+      svg_attributes:
+        width: null
+        height: null
     third_party_settings: {  }
     type: image
     region: content

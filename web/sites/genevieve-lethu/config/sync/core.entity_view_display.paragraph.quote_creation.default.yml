@@ -7,6 +7,7 @@ dependencies:
     - field.field.paragraph.quote_creation.field_color
     - field.field.paragraph.quote_creation.field_description
     - field.field.paragraph.quote_creation.field_picture
+    - image.style.full
     - paragraphs.paragraphs_type.quote_creation
   module:
     - color_field
@@ -44,8 +45,12 @@ content:
     weight: 0
     label: visually_hidden
     settings:
-      image_style: ''
+      image_style: full
       image_link: ''
+      svg_render_as_image: true
+      svg_attributes:
+        width: null
+        height: null
     third_party_settings: {  }
     type: image
     region: content

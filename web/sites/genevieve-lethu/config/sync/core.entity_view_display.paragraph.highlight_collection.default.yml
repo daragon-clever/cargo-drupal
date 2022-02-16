@@ -9,6 +9,7 @@ dependencies:
     - field.field.paragraph.highlight_collection.field_picture
     - field.field.paragraph.highlight_collection.field_picture_second
     - field.field.paragraph.highlight_collection.field_title
+    - image.style.max_w1440
     - paragraphs.paragraphs_type.highlight_collection
   module:
     - color_field
@@ -47,8 +48,12 @@ content:
     weight: 1
     label: visually_hidden
     settings:
-      image_style: ''
+      image_style: large
       image_link: ''
+      svg_render_as_image: true
+      svg_attributes:
+        width: null
+        height: null
     third_party_settings: {  }
     type: image
     region: content
@@ -56,8 +61,12 @@ content:
     weight: 2
     label: visually_hidden
     settings:
-      image_style: ''
+      image_style: max_w1440
       image_link: ''
+      svg_render_as_image: true
+      svg_attributes:
+        width: null
+        height: null
     third_party_settings: {  }
     type: image
     region: content

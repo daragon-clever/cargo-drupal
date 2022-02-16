@@ -1,0 +1,15 @@
+uuid: b63f5552-e32b-40ad-88be-3fefef5be2d7
+langcode: fr
+status: true
+dependencies: {  }
+name: max_h440
+label: 'Max H440'
+effects:
+  6629e19e-a303-4250-864c-9f04f03d71dc:
+    uuid: 6629e19e-a303-4250-864c-9f04f03d71dc
+    id: image_scale
+    weight: 1
+    data:
+      width: null
+      height: 440
+      upscale: false

@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.paragraph.slide_highlighting_collections.field_color
     - field.field.paragraph.slide_highlighting_collections.field_picture
+    - image.style.max_w1440
     - paragraphs.paragraphs_type.slide_highlighting_collections
   module:
     - color_field
@@ -27,12 +28,12 @@ content:
     weight: 1
     label: above
     settings:
+      image_style: max_w1440
+      image_link: ''
+      svg_render_as_image: true
       svg_attributes:
         width: null
         height: null
-      svg_render_as_image: true
-      image_style: ''
-      image_link: ''
     third_party_settings: {  }
     type: image
     region: content

@@ -6,10 +6,11 @@ dependencies:
     - field.field.paragraph.instagram.field_cta
     - field.field.paragraph.instagram.field_picture_limit_4
     - field.field.paragraph.instagram.field_title
+    - image.style.large
     - paragraphs.paragraphs_type.instagram
   module:
-    - image
     - link
+    - svg_image
 id: paragraph.instagram.default
 targetEntityType: paragraph
 bundle: instagram
@@ -31,8 +32,12 @@ content:
     weight: 2
     label: visually_hidden
     settings:
-      image_style: ''
+      image_style: large
       image_link: ''
+      svg_render_as_image: true
+      svg_attributes:
+        width: null
+        height: null
     third_party_settings: {  }
     type: image
     region: content

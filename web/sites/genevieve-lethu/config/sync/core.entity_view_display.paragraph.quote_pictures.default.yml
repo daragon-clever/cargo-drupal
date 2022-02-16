@@ -9,6 +9,7 @@ dependencies:
     - field.field.paragraph.quote_pictures.field_picture_second
     - field.field.paragraph.quote_pictures.field_picture_third
     - field.field.paragraph.quote_pictures.field_text
+    - image.style.large
     - paragraphs.paragraphs_type.quote_pictures
   module:
     - color_field
@@ -39,8 +40,12 @@ content:
     weight: 2
     label: visually_hidden
     settings:
-      image_style: ''
+      image_style: full
       image_link: ''
+      svg_render_as_image: true
+      svg_attributes:
+        width: null
+        height: null
     third_party_settings: {  }
     type: image
     region: content
@@ -48,8 +53,12 @@ content:
     weight: 3
     label: visually_hidden
     settings:
-      image_style: ''
+      image_style: large
       image_link: ''
+      svg_render_as_image: true
+      svg_attributes:
+        width: null
+        height: null
     third_party_settings: {  }
     type: image
     region: content
@@ -57,12 +66,12 @@ content:
     weight: 4
     label: above
     settings:
+      image_style: large
+      image_link: ''
+      svg_render_as_image: true
       svg_attributes:
         width: null
         height: null
-      svg_render_as_image: true
-      image_style: ''
-      image_link: ''
     third_party_settings: {  }
     type: image
     region: content

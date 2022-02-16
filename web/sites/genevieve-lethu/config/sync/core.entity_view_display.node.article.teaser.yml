@@ -15,6 +15,7 @@ dependencies:
     - field.field.node.article.field_picture
     - field.field.node.article.field_resume
     - field.field.node.article.field_triptych_picture
+    - image.style.large
     - node.type.article
   module:
     - color_field
@@ -67,12 +68,12 @@ content:
     region: content
     label: visually_hidden
     settings:
+      image_style: large
+      image_link: ''
+      svg_render_as_image: true
       svg_attributes:
         width: null
         height: null
-      svg_render_as_image: true
-      image_style: ''
-      image_link: ''
     third_party_settings: {  }
   field_resume:
     type: basic_string

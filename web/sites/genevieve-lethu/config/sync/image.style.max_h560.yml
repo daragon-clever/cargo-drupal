@@ -1,0 +1,15 @@
+uuid: 3570b6ed-8eaf-4255-900a-3da4c3bb615e
+langcode: fr
+status: true
+dependencies: {  }
+name: max_h560
+label: 'Max H560'
+effects:
+  c2c399c5-e35a-42ad-b7fc-384db9440bfc:
+    uuid: c2c399c5-e35a-42ad-b7fc-384db9440bfc
+    id: image_scale
+    weight: 1
+    data:
+      width: null
+      height: 560
+      upscale: false

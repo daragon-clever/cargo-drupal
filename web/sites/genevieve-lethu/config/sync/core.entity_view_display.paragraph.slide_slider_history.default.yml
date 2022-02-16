@@ -6,9 +6,10 @@ dependencies:
     - field.field.paragraph.slide_slider_history.field_description
     - field.field.paragraph.slide_slider_history.field_picture
     - field.field.paragraph.slide_slider_history.field_text
+    - image.style.large
     - paragraphs.paragraphs_type.slide_slider_history
   module:
-    - image
+    - svg_image
 id: paragraph.slide_slider_history.default
 targetEntityType: paragraph
 bundle: slide_slider_history
@@ -25,8 +26,12 @@ content:
     weight: 2
     label: visually_hidden
     settings:
-      image_style: ''
+      image_style: large
       image_link: ''
+      svg_render_as_image: true
+      svg_attributes:
+        width: null
+        height: null
     third_party_settings: {  }
     type: image
     region: content

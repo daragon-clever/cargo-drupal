@@ -4,9 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.main_picture_4.field_picture
+    - image.style.full
     - paragraphs.paragraphs_type.main_picture_4
   module:
-    - image
+    - svg_image
 id: paragraph.main_picture_4.default
 targetEntityType: paragraph
 bundle: main_picture_4
@@ -16,8 +17,12 @@ content:
     weight: 0
     label: visually_hidden
     settings:
-      image_style: ''
+      image_style: full
       image_link: ''
+      svg_render_as_image: true
+      svg_attributes:
+        width: null
+        height: null
     third_party_settings: {  }
     type: image
     region: content

@@ -9,7 +9,6 @@
 
   @include media-breakpoint-up('md') {
     width: 50%;
-    max-width: rem(720px);
     padding: rem(40px) map-get($section-padding, md);
   }
 }

@@ -1,0 +1,102 @@
+/* -------------------------------------------------------------------------- *\
+  # TRIPTYCH
+\* -------------------------------------------------------------------------- */
+
+.triptych {
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    background: url('../assets/round-brush.png') no-repeat;
+    background-size: 300px 340px;
+    width: rem(337px);
+    height: rem(401px);
+    display: block;
+    position: absolute;
+    z-index: 0;
+  }
+
+  &::before {
+    top: rem(-155px);
+    left: 50%;
+    margin-left: rem(-730px);
+
+    @include mq($until: md) {
+      top: rem(-30px);
+      left: rem(40px);
+      margin-left: 0;
+    }
+  }
+
+  &::after {
+    top: rem(-155px);
+    right: 50%;
+    margin-right: rem(-690px);
+  }
+
+  img {
+    z-index: 1;
+
+    @include mq($until: md) {
+      position: relative;
+    }
+  }
+
+  &-img1,
+  &-img3 {
+    @include aspect-ratio(330px, 430px, 'img');
+
+    &::after {
+      content: "";
+      background: url('../assets/brush-bg-trace.png') no-repeat;
+      width: rem(290px);
+      height: rem(183px);
+      display: block;
+      position: absolute;
+      z-index: 0;
+      opacity: 0.2;
+    }
+  }
+
+  &-img1 {
+    &::after {
+      bottom: rem(-20px);
+      right: rem(-200px);
+    }
+
+    @include mq($until: md) {
+      margin-bottom: rem(30px);
+
+      &::after {
+        bottom: rem(-150px);
+        right: rem(-20px);
+        transform: rotate(150deg);
+      }
+    }
+  }
+
+  &-img2 {
+    @include aspect-ratio(680px, 430px, 'img');
+
+    @include mq($until: md) {
+      margin-bottom: rem(30px);
+    }
+  }
+
+  &-img3 {
+    &::after {
+      bottom: rem(-95px);
+      right: rem(160px);
+      transform: rotate(180deg) scaleY(-1);
+    }
+
+    @include mq($until: md) {
+      &::after {
+        bottom: rem(-80px);
+        right: rem(-30px);
+        transform: none;
+      }
+    }
+  }
+}

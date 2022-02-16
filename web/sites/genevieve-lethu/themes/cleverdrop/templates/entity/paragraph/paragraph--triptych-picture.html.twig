@@ -3,15 +3,36 @@
   'paragraph',
   'paragraph--type--' ~ paragraph.bundle|clean_class,
   view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-  not paragraph.isPublished() ? 'paragraph--unpublished'
+  not paragraph.isPublished() ? 'paragraph--unpublished',
+  'bg-colorContrib',
+  'fitScreen-bg',
+  'gap-y'
 ]
 %}
 {% block paragraph %}
-  <div{{ attributes.addClass(classes) }}>
+  <div{{ attributes.addClass(classes) }} style="--colorContrib:#D1A559">
     {% block content %}
-      {{ content.field_picture_second }} {# Visuel centré	 #}
-      {{ content.field_picture }} {# Visuel à droite	 #}
-      {{ content.field_picture_third }} {# Visuel à gauche	 #}
+    <div class="triptych">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-3">
+            <div class="triptych-img1">
+              {{ content.field_picture_third }}
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="triptych-img2">
+              {{ content.field_picture_second }}
+            </div>
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="triptych-img3">
+              {{ content.field_picture }}
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
     {% endblock %}
   </div>
 {% endblock paragraph %}

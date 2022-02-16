@@ -51,14 +51,15 @@
   .RightBrush {
     width: rem(310px);
     transform: translateY(0) rotateX(0) rotate(-23deg);
-    top: 0;
-    right: rem(-170px);
+    bottom: rem(60px);
+    right: rem(-150px);
     z-index: 1;
     opacity: .2;
 
     @include media-breakpoint-up('md') {
-      top: rem(-250px);
-      right: rem(-170px);
+      bottom: auto;
+      top: rem(300px);
+      right: rem(-90px);
     }
   }
 

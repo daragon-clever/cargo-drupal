@@ -7,6 +7,9 @@
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
       <div class="VisualsAndVideo" style="--bgColor: {{content.field_color[0]['#markup']}};">
+        <svg viewBox="0 0 100 100" class="RightBrush" aria-hidden="true">
+          <use xlink:href="#sema-brush"></use>
+        </svg>
         <div class="Section-inner VisualsAndVideo--inner">
           <div class="VisualsAndVideo-images-wpr">
             <div class="VisualsAndVideo-firstImage">
@@ -20,9 +23,6 @@
             </svg>
           </div>
           <div class="VisualsAndVideo-text-wpr">
-            <svg viewBox="0 0 100 100" class="RightBrush" aria-hidden="true">
-              <use xlink:href="#sema-brush"></use>
-            </svg>
             <h3 class="VisualsAndVideo-title">
               {{ content.field_title }}
             </h3>

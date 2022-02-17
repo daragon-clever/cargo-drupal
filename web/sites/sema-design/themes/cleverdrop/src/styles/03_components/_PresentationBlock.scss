@@ -18,7 +18,7 @@
     fill: var(--white);
     opacity: 0.5;
     transform: translateY(-50%);
-    transition: clip-path 0.5s;
+    transition: clip-path $brush-animation-duration;
     animation-fill-mode: forwards;
 
     @include media-breakpoint-up('md') {

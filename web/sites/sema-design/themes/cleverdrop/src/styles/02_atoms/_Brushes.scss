@@ -17,7 +17,7 @@
   padding: 0;
   list-style: none;
   clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
-  transition: clip-path 0.5s;
+  transition: clip-path $brush-animation-duration;
 
   .is-animate & {
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);

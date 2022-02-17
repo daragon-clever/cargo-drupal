@@ -26,9 +26,9 @@ export const CommonSliderOptions = {
   slideActiveClass: 'is-active',
   slideBlankClass: Classes.SLIDER_PREFIX + '-slideInvisibleBlank',
   slideClass: Classes.SLIDER_PREFIX + '-slide',
-  slidePrevClass: Classes.SLIDER_PREFIX + '-slide-prev',
-  slideNextClass: Classes.SLIDER_PREFIX + '-slide-next',
-  slideVisibleClass: Classes.SLIDER_PREFIX + '-slide-visible',
+  slidePrevClass: 'is-prev',
+  slideNextClass: 'is-next',
+  slideVisibleClass: 'is-visible',
   a11y: {
     notificationClass: Classes.SLIDER_PREFIX + '-notification',
   },

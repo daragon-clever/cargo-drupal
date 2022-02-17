@@ -108,10 +108,6 @@
   }
 }
 
-.ProductSliderImgs {
-
-}
-
 .ProductSlide {
   width: 70vw;
 
@@ -133,6 +129,14 @@
         animation-name: sail;
         animation-duration: 0.8s;
         transition: clip-path 0.8s;
+      }
+
+      .is-next & {
+        clip-path: polygon(-1% -1%, -1% -1%, 101% -1%, 101% -1%);
+      }
+
+      .is-prev & {
+        clip-path: polygon(-1% -1%, -1% 101%, 101% 101%, 101% -1%);
       }
     }
   }
@@ -185,5 +189,3 @@
     display: none;
   }
 }
-
-

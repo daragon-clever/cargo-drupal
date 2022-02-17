@@ -19,14 +19,14 @@
     background-color: var(--white);
 
     @include media-breakpoint-up('md') {
-      height: rem(485px);
+      height: rem(532px);
     }
   }
 
   &.is-alt {
     &::before {
       @include media-breakpoint-up('md') {
-        height: rem(555px);
+        height: rem(476px);
       }
     }
   }

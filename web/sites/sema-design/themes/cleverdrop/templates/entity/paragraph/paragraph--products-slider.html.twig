@@ -26,7 +26,7 @@
           <div id="product-slider-{{ paragraph.id() }}" class="js-product-slider ProductSliderImgs">
             <div class="ProductSlider-wrapper">
               {% for key, item in content.field_paragraph_slides if key|first != '#'%}
-              <div class="ProductSlider-slide">
+              <div class="ProductSlider-slide{% if key == 0 %} is-active{% endif %}" data-slide-id="{{ key }}">
                 {{ content.field_paragraph_slides[key] }}
               </div>
               {% endfor %}

@@ -48,7 +48,7 @@
 
   .is-animate & {
     animation: point 0.5s;
-    transition: opacity, transform;
+    transition: opacity;
     animation-fill-mode: forwards;
     animation-delay: var(--point-delay);
     mix-blend-mode: multiply;
@@ -58,11 +58,9 @@
 @keyframes point {
   from {
     opacity: 0;
-    transform: translateY(-50px);
   }
 
   to {
     opacity: 1;
-    transform: translateX(0);
   }
 }

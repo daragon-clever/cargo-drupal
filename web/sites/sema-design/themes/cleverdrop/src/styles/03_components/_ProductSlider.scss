@@ -135,9 +135,9 @@
         clip-path: polygon(-1% -1%, -1% -1%, 101% -1%, 101% -1%);
       }
 
-      .is-prev & {
-        clip-path: polygon(-1% -1%, -1% 101%, 101% 101%, 101% -1%);
-      }
+      // .is-prev & {
+      //   clip-path: polygon(-1% -1%, -1% 101%, 101% 101%, 101% -1%);
+      // }
     }
   }
 }
@@ -155,6 +155,10 @@
 .ProductSliderImgs {
   width: 100%;
   overflow: hidden;
+
+  @include media-breakpoint-up('md') {
+    height: 100%;
+  }
 }
 
 .ProductSlider-wrapper {
@@ -178,6 +182,15 @@
 
   @include media-breakpoint-up('md') {
     width: 100%;
+    position: absolute;
+
+    &.is-active {
+      z-index: 2;
+    }
+
+    &.is-prev {
+      z-index: 1;
+    }
   }
 }
 

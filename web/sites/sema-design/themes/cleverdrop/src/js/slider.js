@@ -256,26 +256,24 @@ window.addEventListener('DOMContentLoaded', () => {
         if (el.swiper) el.swiper.destroy()
 
         if (isDesktop()) {
-          new Slider(
-            el,
-            Selectors,
-            {
-              ...CommonSliderOptions,
-              ...ScrollbarSliderOptions,
-              wrapperClass: 'ProductSlider-wrapper',
-              slideClass: 'ProductSlider-slide',
-              spaceBetween: 0,
-              effect: "creative",
-            }
-          )
-    
           const thumbs = document.querySelector(`[data-control-id="${el.id}"]`)
     
           if (thumbs) {
+            let currentActive = document.querySelector(`[data-slide-id].is-active`)
+
             Array.prototype.map.call(thumbs.querySelectorAll(`[data-slide]`), thumb => {
               thumb.addEventListener('mouseover', e => {
                 e.preventDefault()
-                el.swiper.slideTo(thumb.dataset.slide)
+                const slideToAnimate = document.querySelector(`[data-slide-id="${thumb.dataset.slide}"]`)
+                const prev = document.querySelector(`[data-slide-id].is-prev`)
+
+                // reset classes
+                if (prev) prev.classList.remove('is-prev')
+                currentActive.classList.remove('is-active')
+
+                currentActive.classList.add('is-prev')
+                slideToAnimate.classList.add('is-active')
+                currentActive = slideToAnimate
               })
             })
           }

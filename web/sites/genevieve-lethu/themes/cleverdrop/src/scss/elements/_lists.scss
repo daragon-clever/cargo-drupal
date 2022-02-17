@@ -1,0 +1,28 @@
+/* -------------------------------------------------------------------------- *\
+  # LISTS
+\* -------------------------------------------------------------------------- */
+
+// Ordered list
+ol {
+  counter-reset: list;
+
+  > li {
+    @include font(base, medium);
+    padding: rem(20px) 0;
+    color: $theme-secondary;
+    border-bottom: 2px solid transparentize($theme-light, .4);
+
+    &:last-of-type {
+      border-bottom: 0 none;
+    }
+
+    &::before {
+      counter-increment: list;
+      content: counter(list) '. ';
+      top: 0;
+      width: auto;
+      height: auto;
+      background-color: transparent;
+    }
+  }
+}

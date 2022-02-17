@@ -144,17 +144,14 @@ $gutter-breakpoints:
 // Default basic position (all resolutions)
 .justify-content-start {
   @include justify-content(flex-start);
-  text-align: left;
 }
 
 .justify-content-center {
   @include justify-content(center);
-  text-align: center;
 }
 
 .justify-content-end {
   @include justify-content(flex-end);
-  text-align: right;
 }
 
 .justify-content-around {
@@ -221,17 +218,14 @@ $name: s;
 
     .justify-content-start-#{$name} {
       @include justify-content(flex-start);
-      text-align: left;
     }
 
     .justify-content-center-#{$name} {
       @include justify-content(center);
-      text-align: center;
     }
 
     .justify-content-end-#{$name} {
       @include justify-content(flex-end);
-      text-align: right;
     }
 
     .justify-content-around-#{$name} {

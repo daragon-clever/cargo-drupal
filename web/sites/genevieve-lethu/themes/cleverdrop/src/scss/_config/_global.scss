@@ -26,6 +26,7 @@ $base-font-size: 16px !default;
 /// Applied on the `body` and used as a reference for default `em` calculations.
 /// @type Number (unit)
 $body-font-size: $base-font-size !default;
+$body-font-size-small: calc($base-font-size * .88) !default;
 
 
 /// Viewport limits

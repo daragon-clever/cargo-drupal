@@ -3,17 +3,31 @@
   'paragraph',
   'paragraph--type--' ~ paragraph.bundle|clean_class,
   view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-  not paragraph.isPublished() ? 'paragraph--unpublished'
+  not paragraph.isPublished() ? 'paragraph--unpublished',
+  'container',
+  'gap-y'
 ]
 %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
-      {{ content.field_cta }}
-      {{ content.field_rte_lite }}
-      {% for i in content.field_test_list['#items']|keys %}
-        {{ content.field_test_list[i] }}
-      {% endfor %}
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-9">
+          <div class="row justify-content-between align-items-center richText">
+            <div class="col-12 col-md-5">
+              {{ content.field_rte_lite }}
+            </div>
+            <div class="col-12 col-md-5">
+              <ol class="mb-2">
+              {% for i in content.field_test_list['#items']|keys %}
+                  <li>{{ content.field_test_list[i] }}</li>
+              {% endfor %}
+              </ol>
+              <a href="{{ content.field_cta[0]['#url'] }}" class="cta">{{ content.field_cta[0]['#title'] }}</a>
+            </div>
+          </div>
+        </div>
+      </div>
     {% endblock %}
   </div>
 {% endblock paragraph %}

@@ -9,4 +9,14 @@
     color: $theme-secondary;
     line-height: unitless-line-height(60px, 40px);
   }
+
+  strong,
+  b {
+    font-weight: 700;
+  }
+
+  em,
+  i {
+    font-style: italic;
+  }
 }

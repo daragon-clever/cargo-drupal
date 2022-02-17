@@ -21,7 +21,7 @@ html {
 
 body {
   @include font(base, light);
-  font-size: rem($body-font-size);
+  @include fluid-type(rem($vw-min), rem(map-get($mq-breakpoints, "xl")), rem($body-font-size-small), rem($body-font-size));
   line-height: unitless-line-height(25px, 16px);
   color: $theme;
   background-color: $white;

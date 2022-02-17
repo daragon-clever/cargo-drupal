@@ -20,7 +20,7 @@
     display: none;
     fill: var(--ebb);
     opacity: .5;
-    transition: clip-path 0.5s;
+    transition: clip-path $brush-animation-duration;
     animation-fill-mode: forwards;
   }
 

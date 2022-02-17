@@ -124,10 +124,10 @@
       opacity: 0.8;
       z-index: 2;
       clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
-      transition: clip-path 0.5s;
+      transition: clip-path $brush-animation-duration;
 
       .is-animate & {
-        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        clip-path: polygon(-1% -1%, 101% -1%, 101% 101%, -1% 101%);
       }
     }
   }
@@ -162,7 +162,7 @@
       opacity: 0.8;
       z-index: 1;
       clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
-      transition: clip-path 0.5s;
+      transition: clip-path $brush-animation-duration;
       animation-fill-mode: forwards;
 
       .is-animate & {

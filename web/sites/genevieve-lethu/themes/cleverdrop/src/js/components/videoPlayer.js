@@ -25,9 +25,11 @@ const videoPlayer = function() {
     }
   }
 
-  elem.controls.forEach(function(item) {
-    item.addEventListener('click', playPause, false);
-  });
+  if (elem.controls) {
+    elem.controls.forEach(function(item) {
+      item.addEventListener('click', playPause, false);
+    });
+  }
 };
 
 window.addEventListener("DOMContentLoaded", videoPlayer);

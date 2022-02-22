@@ -77,9 +77,6 @@
   // THUMBS CAROUSEL
   &-thumbs {
     position: relative;
-    overflow: visible;
-    max-width: rem(200px);
-    margin: 0 auto;
 
     &::before {
       content: "";
@@ -120,6 +117,7 @@
         justify-content: space-between;
         align-items: center;
         margin: 0 auto rem(60px);
+        max-width: rem(200px);
       }
 
       &-btnNext,

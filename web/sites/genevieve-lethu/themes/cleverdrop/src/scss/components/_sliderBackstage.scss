@@ -1,71 +1,98 @@
 .sliderBackstage {
+  padding-top: rem(20px);
+
   @include mq($from: md) {
-    overflow: visible;
+    background: url('../assets/brush-bg-slider.png') no-repeat top center;
   }
 
   &-inner {
-    margin: rem(160px) auto 0;
+    width: 65%;
+    margin-top: rem(50px);
 
-    .is-active.slider-slide-visible & {
-      margin-top: 0;
-      // transition: max-width .25s ease-in, margin-top .25s ease-in;
-    }
-
-    @include mq($from: md) {
-      max-width: rem(390px);
-
-      .is-active.slider-slide-visible & {
-        max-width: rem(460px);
-      }
+    @include mq($from: sm) {
+      margin-top: rem(65px);
     }
 
     @include mq($from: xl) {
-      max-width: rem(215px);
+      margin-top: rem(100px);
+    }
 
-      .is-active.slider-slide-visible & {
-        max-width: rem(445px);
+    [class*=prev] & {
+      @include mq($from: md) {
+        margin-left: rem(-40px);
+      }
+
+      @include mq($from: xl) {
+        margin-left: rem(-50px);
       }
     }
 
+    [class*=next] & {
+      @include mq($from: md) {
+        margin-right: rem(-40px);
+      }
+
+      @include mq($from: xl) {
+        margin-right: rem(-50px);
+      }
+    }
+
+    &-step {
+      @include font(base, bold);
+      font-size: rem(12px);
+      text-transform: uppercase;
+      color: $white;
+      margin: rem(30px) 0 rem(5px);
+    }
+
     &-title {
-      @include font(variant, regular);
-      font-size: rem(50px);
-      color: $white;
-      margin: rem(20px) 0 rem(10px);
-    }
-
-    &-desc {
-      font-size: rem(16px);
+      @include font(variant, italic);
+      font-size: rem(20px);
       color: $white;
     }
 
-    // &-title,
-    // &-desc {
-    //   opacity: 0;
-    //   transition: opacity .15s ease-in;
+    .is-active.slider-slide-visible & {
+      width: 100%;
+      margin-top: 0;
+    }
 
-    //   .is-active.slider-slide-visible & {
-    //     opacity: 1;
-    //   }
-    // }
+    &-step,
+    &-title {
+      opacity: 0;
+      transition: opacity .15s ease-in;
+
+      .is-active.slider-slide-visible & {
+        opacity: 1;
+      }
+    }
+  }
+
+  #slider-infos {
+    color: $white;
+    margin: 0 rem(25px);
   }
 
   .slider {
     &-nav {
       display: flex;
       justify-content: center;
-      transform: translateY(50%);
+      align-items: center;
+      margin-top: rem(30px);
     }
 
     &-btnPrev,
     &-btnNext {
       margin: 0 rem(10px);
-      width: rem(80px);
-      height: rem(80px);
+      background-color: $white;
+
+      svg {
+        fill: $theme;
+      }
     }
 
     &-slide {
-      margin-right: rem(20px);
+      justify-content: center;
+      text-align: center;
     }
   }
 }

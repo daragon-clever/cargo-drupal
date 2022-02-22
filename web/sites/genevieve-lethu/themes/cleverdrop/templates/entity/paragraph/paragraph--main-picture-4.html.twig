@@ -10,8 +10,10 @@
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
-    <div class="topBanner-img">
-      {{ content.field_picture }}
+    <div class="topBanner-ratio">
+      <div class="topBanner-img">
+        {{ content.field_picture }}
+      </div>
     </div>
     {% endblock %}
   </div>

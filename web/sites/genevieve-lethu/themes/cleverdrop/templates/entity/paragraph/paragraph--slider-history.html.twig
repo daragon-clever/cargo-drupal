@@ -12,8 +12,8 @@
     {% block content %}
     <div class="bg-theme gap-t">
       <h2 class="text-white text-center mb-3">{{ content.field_title }}</h2>
-      <div class="row justify-content-center">
-        <div class="col-9 col-md-7 col-lg-5 col-xl-3">
+      <!-- <div class="row justify-content-center">
+        <div class="col-9 col-md-7 col-lg-5 col-xl-3"> -->
           <div class="slider sliderHistory js-history-slider">
             <div class="slider-wrapper">
               {% for i in content.field_slide['#items']|keys %}
@@ -35,8 +35,8 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        <!-- </div>
+      </div> -->
     </div>
     {% endblock %}
   </div>

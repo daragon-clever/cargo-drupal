@@ -94,7 +94,7 @@ function carousel() {
     loop: true,
     slidesPerView: 1,
     effect: 'fade',
-    speed: 1000,
+    speed: 0,
   });
 
   const backstageCollections = new Swiper(".js-backstage-slider", {
@@ -102,10 +102,23 @@ function carousel() {
     ...navParams,
     loop: true,
     centeredSlides: true,
-    slidesPerView: 'auto',
     watchSlidesProgress: true,
     effect: 'slide',
     speed: 300,
+    breakpoints: {
+      0: {
+        slidesPerView: 1.7,
+      },
+      499: {
+        slidesPerView: 2.2,
+      },
+      749: {
+        slidesPerView: 3.8,
+      },
+      999: {
+        slidesPerView: 4.2,
+      },
+    }
   });
 
   const historySlider = new Swiper(".js-history-slider", {
@@ -113,14 +126,18 @@ function carousel() {
     ...navParams,
     loop: true,
     centeredSlides: true,
-    slidesPerView: 1,
     watchSlidesProgress: true,
     breakpoints: {
       0: {
         spaceBetween: 30,
+        slidesPerView: 1.4,
       },
       749: {
         spaceBetween: 60,
+        slidesPerView: 2.4,
+      },
+      1199: {
+        slidesPerView: 3.7,
       },
     }
   });
@@ -130,7 +147,25 @@ function carousel() {
     ...navParams,
     ...paginatedParams,
     loop: true,
+    centeredSlides: true,
     watchSlidesProgress: true,
+    breakpoints: {
+      0: {
+        slidesPerView: 1.8,
+      },
+      499: {
+        slidesPerView: 3.4,
+      },
+      749: {
+        slidesPerView: 4.4,
+      },
+      999: {
+        slidesPerView: 6.4,
+      },
+      1199: {
+        slidesPerView: 8.4,
+      },
+    }
   });
 
   const gallery = new Swiper(".js-imageGallery", {
@@ -145,6 +180,41 @@ function carousel() {
       swiper: galleryThumbs
     }
   });
+
+
+  sliderCollections.on('slidePrevTransitionStart', function () {
+    document.querySelector('.js-collections-slider').classList.add('effect');
+
+    setTimeout(() => {
+      document.querySelector('.js-collections-slider').classList.remove('effect');
+    }, 1000);
+
+    // let index_previousSlide = sliderCollections.activeIndex + 1;
+
+    // console.log('previous : ', index_previousSlide);
+    // sliderCollections.slides[index_previousSlide].classList.add('effect');
+    // setTimeout(() => {
+    //   sliderCollections.slides[index_previousSlide].classList.remove('effect');
+    // }, 1000);
+  });
+
+
+  // sliderCollections.on('slideNextTransitionStart', function () {
+  //   let index_nextSlide = sliderCollections.activeIndex;
+  //   console.log('next : ', index_nextSlide);
+  //   sliderCollections.slides[index_nextSlide].classList.add('effect');
+  //   setTimeout(() => {
+  //     sliderCollections.slides[index_nextSlide].classList.remove('effect');
+  //   }, 1000);
+  // });
+
+  // sliderCollections.on('slideChangeTransitionEnd', function () {
+  //   for (const slide in sliderCollections.slides) {
+  //     if (sliderCollections.slides[slide].classList.contains('effect')) {
+  //       sliderCollections.slides[slide].classList.remove('effect');
+  //     }
+  //   }
+  // });
 
 
   // pagination information on load (currentSlide index –– All slides collection number)

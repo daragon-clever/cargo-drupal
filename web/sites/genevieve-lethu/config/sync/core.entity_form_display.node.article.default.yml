@@ -5,15 +5,10 @@ dependencies:
   config:
     - field.field.node.article.field_categorie
     - field.field.node.article.field_color
-    - field.field.node.article.field_main_picture
+    - field.field.node.article.field_components
     - field.field.node.article.field_metatags
-    - field.field.node.article.field_paragraph_centred_text
-    - field.field.node.article.field_paragraph_quote_5
-    - field.field.node.article.field_paragraph_video
-    - field.field.node.article.field_paragraphe_text_list
     - field.field.node.article.field_picture
     - field.field.node.article.field_resume
-    - field.field.node.article.field_triptych_picture
     - image.style.thumbnail
     - node.type.article
   module:
@@ -27,12 +22,7 @@ third_party_settings:
   field_group:
     group_zone_article:
       children:
-        - group_article_main_visual
-        - group_article_centered
-        - group_article_triptych
-        - group_article_text_list
-        - group_article_citation
-        - group_article_video
+        - group_components
         - group_teaser
       parent_name: ''
       weight: 3
@@ -43,25 +33,14 @@ third_party_settings:
         classes: ''
         direction: vertical
       label: 'Zone Article'
-    group_article_main_visual:
+    group_teaser:
       children:
-        - field_main_picture
+        - field_picture
+        - field_categorie
+        - field_color
+        - field_resume
       parent_name: group_zone_article
-      weight: 15
-      format_type: tab
-      region: content
-      format_settings:
-        id: ''
-        classes: ''
-        description: ''
-        formatter: open
-        required_fields: true
-      label: 'Visuel principal'
-    group_article_centered:
-      children:
-        - field_paragraph_centred_text
-      parent_name: group_zone_article
-      weight: 16
+      weight: 22
       format_type: tab
       region: content
       format_settings:
@@ -70,52 +49,10 @@ third_party_settings:
         description: ''
         formatter: closed
         required_fields: true
-      label: 'Description centré'
-    group_article_triptych:
+      label: 'Mis en avant'
+    group_components:
       children:
-        - field_triptych_picture
-      parent_name: group_zone_article
-      weight: 17
-      format_type: tab
-      region: content
-      format_settings:
-        id: ''
-        classes: ''
-        description: ''
-        formatter: closed
-        required_fields: true
-      label: 'Visuel triptyque'
-    group_article_text_list:
-      children:
-        - field_paragraphe_text_list
-      parent_name: group_zone_article
-      weight: 18
-      format_type: tab
-      region: content
-      format_settings:
-        id: ''
-        classes: ''
-        description: ''
-        formatter: closed
-        required_fields: true
-      label: 'Paragraphe textuel et Liste numérotées'
-    group_article_citation:
-      children:
-        - field_paragraph_quote_5
-      parent_name: group_zone_article
-      weight: 19
-      format_type: tab
-      region: content
-      format_settings:
-        id: ''
-        classes: ''
-        description: ''
-        formatter: closed
-        required_fields: true
-      label: Citation
-    group_article_video:
-      children:
-        - field_paragraph_video
+        - field_components
       parent_name: group_zone_article
       weight: 20
       format_type: tab
@@ -126,24 +63,7 @@ third_party_settings:
         description: ''
         formatter: closed
         required_fields: true
-      label: Vidéo
-    group_teaser:
-      children:
-        - field_picture
-        - field_categorie
-        - field_color
-        - field_resume
-      parent_name: group_zone_article
-      weight: 21
-      format_type: tab
-      region: content
-      format_settings:
-        id: ''
-        classes: ''
-        description: ''
-        formatter: closed
-        required_fields: true
-      label: 'Mis en avant'
+      label: Composants
 id: node.article.default
 targetEntityType: node
 bundle: article
@@ -175,23 +95,23 @@ content:
     third_party_settings: {  }
     type: color_field_widget_spectrum
     region: content
-  field_main_picture:
-    weight: 10
+  field_components:
+    type: paragraphs
+    weight: 21
     settings:
       title: Paragraphe
       title_plural: Paragraphs
       edit_mode: open
-      closed_mode: summary
-      autocollapse: none
-      closed_mode_threshold: 0
       add_mode: dropdown
       form_display_mode: default
       default_paragraph_type: ''
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
       features:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
     third_party_settings: {  }
-    type: paragraphs
     region: content
   field_metatags:
     weight: 11
@@ -199,78 +119,6 @@ content:
       sidebar: true
     third_party_settings: {  }
     type: metatag_firehose
-    region: content
-  field_paragraph_centred_text:
-    weight: 11
-    settings:
-      title: Paragraphe
-      title_plural: Paragraphs
-      edit_mode: open
-      closed_mode: summary
-      autocollapse: none
-      closed_mode_threshold: 0
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
-      features:
-        collapse_edit_all: collapse_edit_all
-        duplicate: duplicate
-    third_party_settings: {  }
-    type: paragraphs
-    region: content
-  field_paragraph_quote_5:
-    weight: 14
-    settings:
-      title: Paragraphe
-      title_plural: Paragraphs
-      edit_mode: open
-      closed_mode: summary
-      autocollapse: none
-      closed_mode_threshold: 0
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
-      features:
-        collapse_edit_all: collapse_edit_all
-        duplicate: duplicate
-    third_party_settings: {  }
-    type: paragraphs
-    region: content
-  field_paragraph_video:
-    weight: 15
-    settings:
-      title: Paragraphe
-      title_plural: Paragraphs
-      edit_mode: open
-      closed_mode: summary
-      autocollapse: none
-      closed_mode_threshold: 0
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
-      features:
-        collapse_edit_all: collapse_edit_all
-        duplicate: duplicate
-    third_party_settings: {  }
-    type: paragraphs
-    region: content
-  field_paragraphe_text_list:
-    type: paragraphs
-    weight: 13
-    settings:
-      title: Paragraphe
-      title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
-      closed_mode: summary
-      autocollapse: none
-      closed_mode_threshold: 0
-      features:
-        collapse_edit_all: collapse_edit_all
-        duplicate: duplicate
-    third_party_settings: {  }
     region: content
   field_picture:
     weight: 26
@@ -287,24 +135,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
-    region: content
-  field_triptych_picture:
-    type: paragraphs
-    weight: 12
-    settings:
-      title: Paragraphe
-      title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
-      closed_mode: summary
-      autocollapse: none
-      closed_mode_threshold: 0
-      features:
-        collapse_edit_all: collapse_edit_all
-        duplicate: duplicate
-    third_party_settings: {  }
     region: content
   langcode:
     type: language_select
@@ -357,5 +187,10 @@ content:
       placeholder: ''
       match_limit: 10
     region: content
+    third_party_settings: {  }
+  url_redirects:
+    weight: 50
+    region: content
+    settings: {  }
     third_party_settings: {  }
 hidden: {  }

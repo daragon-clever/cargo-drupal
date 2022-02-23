@@ -5,15 +5,10 @@ dependencies:
   config:
     - field.field.node.article.field_categorie
     - field.field.node.article.field_color
-    - field.field.node.article.field_main_picture
+    - field.field.node.article.field_components
     - field.field.node.article.field_metatags
-    - field.field.node.article.field_paragraph_centred_text
-    - field.field.node.article.field_paragraph_quote_5
-    - field.field.node.article.field_paragraph_video
-    - field.field.node.article.field_paragraphe_text_list
     - field.field.node.article.field_picture
     - field.field.node.article.field_resume
-    - field.field.node.article.field_triptych_picture
     - node.type.article
   module:
     - color_field
@@ -42,14 +37,14 @@ content:
     third_party_settings: {  }
     type: color_field_formatter_text
     region: content
-  field_main_picture:
-    weight: 1
-    label: visually_hidden
+  field_components:
+    type: entity_reference_revisions_entity_view
+    weight: 11
+    label: above
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    type: entity_reference_revisions_entity_view
     region: content
   field_metatags:
     weight: 7
@@ -58,57 +53,12 @@ content:
     third_party_settings: {  }
     type: metatag_empty_formatter
     region: content
-  field_paragraph_centred_text:
-    weight: 2
-    label: visually_hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    type: entity_reference_revisions_entity_view
-    region: content
-  field_paragraph_quote_5:
-    weight: 5
-    label: visually_hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    type: entity_reference_revisions_entity_view
-    region: content
-  field_paragraph_video:
-    weight: 6
-    label: visually_hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    type: entity_reference_revisions_entity_view
-    region: content
-  field_paragraphe_text_list:
-    type: entity_reference_revisions_entity_view
-    weight: 4
-    label: visually_hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    region: content
   field_resume:
     weight: 9
     label: visually_hidden
     settings: {  }
     third_party_settings: {  }
     type: basic_string
-    region: content
-  field_triptych_picture:
-    type: entity_reference_revisions_entity_view
-    weight: 3
-    label: visually_hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
     region: content
   links:
     weight: 0

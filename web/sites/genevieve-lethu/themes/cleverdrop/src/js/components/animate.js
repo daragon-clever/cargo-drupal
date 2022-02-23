@@ -41,15 +41,15 @@ class Animate {
   }
 
   /**
-   * 
-   * @param {IntersectionObserverEntry} entry 
+   *
+   * @param {IntersectionObserverEntry} entry
    */
   isIntersecting (entry) {
     entry.target.classList.add('is-animate')
   }
 
   /**
-   * 
+   *
    * @returns {Animate[]}
    */
   static bind () {

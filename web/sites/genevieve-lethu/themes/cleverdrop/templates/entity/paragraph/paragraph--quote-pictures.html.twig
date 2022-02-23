@@ -7,23 +7,24 @@
   'triangleBorder-top',
   'triangleBorder-bottom',
   'bg-imgContrib',
-  'bg-colorContrib'
+  'bg-colorContrib',
+  'animation-quote'
 ]
 %}
 {% block paragraph %}
-  <div{{ attributes.addClass(classes) }} style="background-image: url('{{ file_url(content.field_picture[0]['#item'].entity.fileUri) }}'); --colorContrib:{{ content.field_color[0]['#markup'] }}">
+  <div{{ attributes.addClass(classes) }} style="background-image: url('{{ file_url(content.field_picture[0]['#item'].entity.fileUri) }}'); --colorContrib:{{ content.field_color[0]['#markup'] }}" data-animate='{"threshold": 0.5}'>
     <div class="container">
     {% block content %}
     <div class="row justify-content-end align-items-center pos-rel">
       <blockquote class="col-12 col-md-7 --withBg --sameColor --left">
-        {{ content.field_text }}
+        <div class="animation-quote-text">{{ content.field_text }}</div>
         <cite>{{ content.field_author }}</cite>
       </blockquote>
       <div class="col-12 col-md-4 d-flex">
-        <div>
+        <div class="animation-quote-img">
           {{ content.field_picture_second }}
         </div>
-        <div class="animation-slide-betweenRT">
+        <div class="animation-quote-img-between">
           {{ content.field_picture_third }}
         </div>
       </div>

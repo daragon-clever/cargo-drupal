@@ -1,6 +1,6 @@
 {% if content is not empty %}
-  <div class="newsletterBlock bg-themeSecondary">
-    <div class="newsletterBlock-quote">
+  <div class="newsletterBlock bg-theme">
+    <div class="newsletterBlock-quote animation-newsletter">
       <p>{{ content.background_quote }}</p>
     </div>
     <div class="newsletterBlock-over">
@@ -19,15 +19,15 @@
         <div class="newsletterSocial">
           {% if content.facebook is not empty %}
             <a target="_blank"
-               href="{{ content.facebook }}">{% include directory ~ '/src/assets/svg/Facebook.svg' %}</a>
+              href="{{ content.facebook }}">{% include directory ~ '/src/assets/svg/Facebook.svg' %}</a>
           {% endif %}
           {% if content.instagram is not empty %}
             <a target="_blank"
-               href="{{ content.instagram }}">{% include directory ~ '/src/assets/svg/Instagram.svg' %}</a>
+              href="{{ content.instagram }}">{% include directory ~ '/src/assets/svg/Instagram.svg' %}</a>
           {% endif %}
           {% if content.pinterest is not empty %}
             <a target="_blank"
-               href="{{ content.pinterest }}">{% include directory ~ '/src/assets/svg/Pinterest.svg' %}</a>
+              href="{{ content.pinterest }}">{% include directory ~ '/src/assets/svg/Pinterest.svg' %}</a>
           {% endif %}
         </div>
       </div>

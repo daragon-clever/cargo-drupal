@@ -5,14 +5,15 @@
   view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   not paragraph.isPublished() ? 'paragraph--unpublished',
   'container',
+  'animation-quote'
 ]
 %}
 {% block paragraph %}
-  <div{{ attributes.addClass(classes) }}>
+  <div{{ attributes.addClass(classes) }} data-animate='{"threshold": 0.5}'>
     <div class="row justify-content-center">
       <blockquote class="col-12 col-md-8">
       {% block content %}
-        {{ content.field_text }}
+        <div class="animation-quote-text">{{ content.field_text }}</div>
         <cite>{{ content.field_author }}</cite>
       {% endblock %}
       </blockquote>

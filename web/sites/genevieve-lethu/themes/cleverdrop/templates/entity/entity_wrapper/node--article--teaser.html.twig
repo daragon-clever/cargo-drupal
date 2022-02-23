@@ -1,5 +1,5 @@
-<article class="articleTeaser">
-  {{ content.field_picture }}
+<article class="articleTeaser" data-animate='{"threshold": 0.5}'>
+  <div class="animation-teaser">{{ content.field_picture }}</div>
 
   <div class="articleTeaser-inner">
     <div class="articleTeaser-tags">
@@ -26,5 +26,4 @@
       <a href="{{ url }}">{{ "Lire la suite"|t }}</a>
     </div>
   </div>
-
 </article>

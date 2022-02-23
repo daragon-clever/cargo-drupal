@@ -5,11 +5,12 @@
   view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   not paragraph.isPublished() ? 'paragraph--unpublished',
   'container',
-  'gap-b'
+  'gap-b',
+  'animation-brandPresentation'
 ]
 %}
 {% block paragraph %}
-  <div{{ attributes.addClass(classes) }}>
+  <div{{ attributes.addClass(classes) }} data-animate='{"threshold": 0.5}'>
     {% block content %}
     <div class="row align-items-center">
       <div class="col-12 col-lg-3 offset-lg-2">

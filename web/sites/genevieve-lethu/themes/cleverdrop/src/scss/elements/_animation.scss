@@ -17,26 +17,111 @@
     }
   }
 
-  &-slide {
-    &-betweenRT {
-      position: absolute;
-      transform: translateY(50%);
-      bottom: 0;
-      right: rem(-40px);
-      z-index: 1;
+  &-quote {
+    &-text {
+      opacity: 0;
+      transform: translateY(100%);
+      transition: opacity 1s ease-in, transform 1s ease-in;
+    }
 
-      img {
-        @include mq($until: lg) {
-          width: rem(160px);
+    &.is-animate {
+      .animation-quote-text {
+        opacity: 1;
+        transform: translateY(0);
+        animation: 1.5s quote-effect;
+
+        @keyframes quote-effect {
+          0% {
+            clip-path: polygon(0 0, 0 0, 100% 0, 100% 0);
+          }
+          100% {
+            clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
+          }
         }
       }
+    }
 
-      @include mq($from: lg) {
-        bottom: auto;
-        top: 0;
-        right: rem(30px);
-        transform: translateY(-50%);
+    &-img {
+      transform: translateY(25%);
+      transition: transform 2s ease-in-out;
+
+      .is-animate & {
+        transform: translateY(0);
       }
+
+      &-between {
+        position: absolute;
+        transform: translateY(50%);
+        bottom: 0;
+        right: rem(-40px);
+        z-index: 1;
+
+        img {
+          @include mq($until: lg) {
+            width: rem(160px);
+          }
+        }
+
+        @include mq($from: lg) {
+          bottom: auto;
+          top: 0;
+          right: rem(30px);
+          transform: translateY(-25%);
+          transition: transform 1.5s ease-in-out;
+
+          .is-animate & {
+            transform: translateY(-50%);
+          }
+        }
+      }
+    }
+  }
+
+  &-brand {
+    .brand-list {
+      transform: translate(-10%, -50%);
+      transition: transform 1.5s ease-in-out;
+    }
+
+    &.is-animate .brand-list {
+      transform: translate(0, -50%);
+    }
+  }
+
+  &-brandPresentation {
+    .imgOverlap-above {
+      transform: translate(10%, -50%);
+      transition: transform 1.5s ease-in-out;
+    }
+
+    &.is-animate .imgOverlap-above {
+      transform: translate(0, -50%);
+    }
+  }
+
+  &-newsletter {
+    animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-name: sliding;
+    animation-iteration-count: infinite;
+
+    @keyframes sliding {
+      from {
+        transform: translateX(100%);
+      }
+
+      to {
+        transform: translateX(-100%);
+      }
+    }
+  }
+
+  &-teaser {
+    transform: translateY(10%);
+    transition: transform 1.5s ease-in-out;
+
+    .is-animate & {
+      transform: translateY(0);
     }
   }
 }

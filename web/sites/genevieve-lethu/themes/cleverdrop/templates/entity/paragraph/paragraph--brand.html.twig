@@ -5,11 +5,12 @@
   view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   not paragraph.isPublished() ? 'paragraph--unpublished',
   'brand',
-  'bg-imgContrib'
+  'bg-imgContrib',
+  'animation-brand'
 ]
 %}
 {% block paragraph %}
-  <div{{ attributes.addClass(classes) }} style="background-image: url('{{ file_url(content.field_picture[0]['#item'].entity.fileUri) }}');">
+  <div{{ attributes.addClass(classes) }} style="background-image: url('{{ file_url(content.field_picture[0]['#item'].entity.fileUri) }}');" data-animate='{"threshold": 0.4}'>
     {% block content %}
     <div class="container">
       <div class="row">

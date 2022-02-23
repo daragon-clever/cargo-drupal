@@ -24,7 +24,7 @@
       height: rem(50px);
     }
 
-    &::before {
+    &:not(.on-poster)::before {
       content: "";
       background-color: $theme;
       mask-repeat: no-repeat;

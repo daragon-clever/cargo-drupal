@@ -63,6 +63,7 @@
     top: 0;
     transform: translate(120%, -50%);
     z-index: $zindex-popin;
+    max-width: 150px;
 
     @include mq($until: md) {
       display: none;

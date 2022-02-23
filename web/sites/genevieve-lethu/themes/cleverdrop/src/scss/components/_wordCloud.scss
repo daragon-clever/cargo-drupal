@@ -1,0 +1,63 @@
+/* -------------------------------------------------------------------------- *\
+  # WORD CLOUD
+\* -------------------------------------------------------------------------- */
+
+.wordCloud {
+  margin-top: rem(60px);
+  display: flex;
+  align-items: end;
+
+  &-img {
+    margin: 0 rem(15px) rem(40px);
+  }
+
+  &-cloud {
+    width: rem(450px);
+    text-align: center;
+    margin: 0 rem(20px);
+  }
+
+  &-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    * {
+      margin: 0 rem(15px);
+    }
+  }
+
+  &-1,
+  &-2 {
+    @include font(variant, bold);
+    font-size: rem(48px);
+    line-height: 1.2;
+    opacity: 0;
+  }
+
+  &-3,
+  &-4 {
+    @include font(variant, italic);
+    line-height: 1.2;
+    opacity: 0;
+  }
+
+  &-1 {
+    color: $theme-secondary;
+  }
+
+  &-2 {
+    color: $soft;
+  }
+
+  &-3 {
+    font-size: rem(34px);
+    color: $coral;
+  }
+
+  &-4 {
+    font-size: rem(26px);
+    color: $metal
+  }
+}

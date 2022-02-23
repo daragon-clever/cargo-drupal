@@ -16,9 +16,48 @@
     <div class="container">
     {% block content %}
     <div class="row justify-content-center text-start">
-      <div class="col-12 col-md-10 col-lg-8 col-xl-5">
-        <h2 class="mb-2 mt-2">{{ content.field_title }}</h2>
-        {{ content.field_description }}
+      <div class="col-12 col-md-10 col-lg-8 col-xl-7">
+        <div class="row">
+          <div class="col-12 col-md-9">
+            <h2 class="mb-2 mt-2">{{ content.field_title }}</h2>
+            {{ content.field_description }}
+          </div>
+        </div>
+        <div class="wordCloud animation-wordCloud" data-animate='{"threshold": 0.2}'>
+          <img class="wordCloud-img" src="/sites/genevieve-lethu/themes/cleverdrop/src/assets/small-fork.svg" alt="">
+          <img class="wordCloud-img" src="/sites/genevieve-lethu/themes/cleverdrop/src/assets/big-fork.svg" alt="">
+          <div class="wordCloud-cloud">
+            <div class="wordCloud-4">Art de vivre</div>
+            <div class="wordCloud-row">
+              <div class="wordCloud-1">Histoire</div>
+              <div class="wordCloud-3">Amis</div>
+            </div>
+            <div class="wordCloud-row">
+              <div class="wordCloud-3">Convivialité</div>
+              <div class="wordCloud-2">Vaisselle</div>
+            </div>
+            <div class="wordCloud-row">
+              <div class="wordCloud-4">France éternelle</div>
+              <div class="wordCloud-1">Table</div>
+            </div>
+            <div class="wordCloud-row">
+              <div class="wordCloud-2">Couleur</div>
+              <div class="wordCloud-4">Repas de famille</div>
+            </div>
+            <div class="wordCloud-row">
+              <div class="wordCloud-1">Voyage</div>
+              <div class="wordCloud-2">Création</div>
+            </div>
+            <div class="wordCloud-row">
+              <div class="wordCloud-3">Liberté</div>
+              <div class="wordCloud-1">Partage</div>
+            </div>
+            <div class="wordCloud-4">Authentique</div>
+          </div>
+          <img class="wordCloud-img" src="/sites/genevieve-lethu/themes/cleverdrop/src/assets/big-knife.svg" alt="">
+          <img class="wordCloud-img" src="/sites/genevieve-lethu/themes/cleverdrop/src/assets/small-knife.svg" alt="">
+          <img class="wordCloud-img" src="/sites/genevieve-lethu/themes/cleverdrop/src/assets/spoon.svg" alt="">
+        </div>
       </div>
     </div>
     {% endblock %}

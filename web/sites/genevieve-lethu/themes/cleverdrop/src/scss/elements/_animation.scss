@@ -137,4 +137,51 @@
       transform: translateY(0);
     }
   }
+
+  &-wordCloud {
+    &.is-animate {
+      .wordCloud {
+        &-1,
+        &-2,
+        &-3,
+        &-4 {
+          animation-duration: 4s;
+          animation-name: fading;
+          animation-iteration-count: infinite;
+          animation-direction: alternate;
+          animation-timing-function: linear;
+
+          @keyframes fading {
+            0% {
+              opacity: 0;
+            }
+
+            10% {
+              opacity: 0;
+            }
+
+            90% {
+              opacity: 1;
+            }
+
+            100% {
+              opacity: 1;
+            }
+          }
+        }
+
+        &-2 {
+          animation-delay: 1s;
+        }
+
+        &-3 {
+          animation-delay: 2s;
+        }
+
+        &-4 {
+          animation-delay: 3s;
+        }
+      }
+    }
+  }
 }

@@ -127,6 +127,7 @@ function carousel() {
     loop: true,
     centeredSlides: true,
     watchSlidesProgress: true,
+    autoHeight: true,
     breakpoints: {
       0: {
         spaceBetween: 30,
@@ -139,7 +140,11 @@ function carousel() {
       1199: {
         slidesPerView: 3.7,
       },
-    }
+    },
+    autoplay: {
+      delay: 3500,
+      disableOnInteraction: false,
+    },
   });
 
   const galleryThumbs = new Swiper(".js-imageGallery-thumbs", {

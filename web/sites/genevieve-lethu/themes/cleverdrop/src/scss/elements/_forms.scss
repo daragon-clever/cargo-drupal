@@ -49,7 +49,7 @@ input, select, textarea {
   font-size: rem(14px);
   color: $theme;
   &:active, &:focus, &:focus-visible {
-    outline-color: $theme;
+    outline: none;
   }
 }
 

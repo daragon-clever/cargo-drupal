@@ -1,0 +1,7 @@
+uuid: 65c239a2-b226-4add-9585-31c838e5dfea
+langcode: fr
+status: true
+dependencies: {  }
+formId: cote_table_newsletter
+captchaType: recaptcha_v3/contact
+label: cote-table-newsletter

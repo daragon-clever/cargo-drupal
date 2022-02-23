@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.collection.field_main_picture
     - field.field.node.collection.field_metatags
     - field.field.node.collection.field_paragraph_dual_slider
-    - field.field.node.collection.field_paragraph_moodboard
     - node.type.collection
   module:
     - user
@@ -25,5 +24,4 @@ hidden:
   field_main_picture: true
   field_metatags: true
   field_paragraph_dual_slider: true
-  field_paragraph_moodboard: true
   langcode: true

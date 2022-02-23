@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.paragraph.slide_dual_slider.field_color
     - field.field.paragraph.slide_dual_slider.field_description
+    - field.field.paragraph.slide_dual_slider.field_moodboard
     - field.field.paragraph.slide_dual_slider.field_picture
     - field.field.paragraph.slide_dual_slider.field_picture_second
     - field.field.paragraph.slide_dual_slider.field_text
@@ -13,6 +14,7 @@ dependencies:
     - paragraphs.paragraphs_type.slide_dual_slider
   module:
     - color_field
+    - entity_reference_revisions
     - svg_image
 id: paragraph.slide_dual_slider.default
 targetEntityType: paragraph
@@ -34,6 +36,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: basic_string
+    region: content
+  field_moodboard:
+    type: entity_reference_revisions_entity_view
+    weight: 6
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
     region: content
   field_picture:
     weight: 0

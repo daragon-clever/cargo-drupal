@@ -1,14 +1,13 @@
-uuid: a91e297d-a6b0-4a0c-8c7f-59db39fc3bd2
+uuid: 7b6c2a1d-944f-4f15-bdf0-40d56714b106
 langcode: fr
 status: true
 dependencies:
   module:
     - entity_reference_revisions
-    - node
     - paragraphs
-id: node.field_paragraph_moodboard
-field_name: field_paragraph_moodboard
-entity_type: node
+id: paragraph.field_moodboard
+field_name: field_moodboard
+entity_type: paragraph
 type: entity_reference_revisions
 settings:
   target_type: paragraph

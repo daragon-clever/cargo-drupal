@@ -6,7 +6,6 @@ dependencies:
     - field.field.node.collection.field_main_picture
     - field.field.node.collection.field_metatags
     - field.field.node.collection.field_paragraph_dual_slider
-    - field.field.node.collection.field_paragraph_moodboard
     - node.type.collection
   module:
     - entity_reference_revisions
@@ -36,15 +35,6 @@ content:
   field_paragraph_dual_slider:
     type: entity_reference_revisions_entity_view
     weight: 102
-    label: above
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    region: content
-  field_paragraph_moodboard:
-    type: entity_reference_revisions_entity_view
-    weight: 103
     label: above
     settings:
       view_mode: default

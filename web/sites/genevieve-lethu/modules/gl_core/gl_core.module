@@ -88,3 +88,11 @@ function _gl_core_node_heart_of_creation_validate(&$form, \Drupal\Core\Form\Form
   }
 
 }
+
+/**
+ * Implements hook_page_attachements().
+ */
+function gl_core_page_attachments(array &$page)
+{
+  $page['#attached']['library'][] = 'gl_core/gl_core';
+}

@@ -7,46 +7,39 @@
   flex-direction: column;
   overflow: visible;
 
-  @include mq($from: md) {
-    .effect {
-      .is-active {
-        z-index: 10 !important;
-        animation: 1s wipe-effect;
-      }
+  // @include mq($from: md) {
+  //   .effect {
+  //     z-index: 1 !important;
+  //     animation: 1s wipe-effect;
 
-      [class*=prev] {
-        z-index: 1 !important;
+  //     @keyframes wipe-effect {
+  //       0% {
+  //         clip-path: polygon(50% 0%, 50% 100%, 50% 100%, 50% 0%, 100% 0%, 100% 100%, 100% 100%, 100% 0%);
+  //       }
+  //       100% {
+  //         clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 50% 0%, 50% 0%, 50% 100%, 100% 100%, 100% 0%);
+  //       }
+  //     }
+  //   }
+  // }
 
-        @keyframes wipe-effect {
-          0% {
-            clip-path: polygon(50% 0%, 50% 100%, 50% 100%, 50% 0%, 100% 0%, 100% 100%, 100% 100%, 100% 0%);
-          }
-          100% {
-            clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 50% 0%, 50% 0%, 50% 100%, 100% 100%, 100% 0%);
+  .slider {
+    @include mq($from: md) {
+      &-slide {
+        &.is-active {
+          animation: 1s wipe-effect;
+
+          @keyframes wipe-effect {
+            0% {
+              clip-path: polygon(50% 0%, 50% 100%, 50% 100%, 50% 0%, 100% 0%, 100% 100%, 100% 100%, 100% 0%);
+            }
+            100% {
+              clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 50% 0%, 50% 0%, 50% 100%, 100% 100%, 100% 0%);
+            }
           }
         }
       }
     }
-  }
-
-  .slider {
-    // @include mq($from: md) {
-    //   &-slide {
-    //     &.is-active {
-    //       animation: 1s wipe-effect;
-    //       z-index: 1;
-
-    //       @keyframes wipe-effect {
-    //         0% {
-    //           clip-path: polygon(50% 0%, 50% 100%, 50% 100%, 50% 0%, 100% 0%, 100% 100%, 100% 100%, 100% 0%);
-    //         }
-    //         100% {
-    //           clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 50% 0%, 50% 0%, 50% 100%, 100% 100%, 100% 0%);
-    //         }
-    //       }
-    //     }
-    //   }
-    // }
 
     &-inner {
       width: 100%;

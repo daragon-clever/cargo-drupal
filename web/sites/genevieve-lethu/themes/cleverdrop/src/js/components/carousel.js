@@ -94,7 +94,7 @@ function carousel() {
     loop: true,
     slidesPerView: 1,
     effect: 'fade',
-    speed: 0,
+    speed: 1000,
   });
 
   const backstageCollections = new Swiper(".js-backstage-slider", {
@@ -182,21 +182,15 @@ function carousel() {
   });
 
 
-  sliderCollections.on('slidePrevTransitionStart', function () {
-    document.querySelector('.js-collections-slider').classList.add('effect');
+  // sliderCollections.on('slidePrevTransitionStart', function () {
+  //   let index_previousSlide = sliderCollections.activeIndex;
 
-    setTimeout(() => {
-      document.querySelector('.js-collections-slider').classList.remove('effect');
-    }, 1000);
-
-    // let index_previousSlide = sliderCollections.activeIndex + 1;
-
-    // console.log('previous : ', index_previousSlide);
-    // sliderCollections.slides[index_previousSlide].classList.add('effect');
-    // setTimeout(() => {
-    //   sliderCollections.slides[index_previousSlide].classList.remove('effect');
-    // }, 1000);
-  });
+  //   console.log('previous : ', index_previousSlide);
+  //   sliderCollections.slides[index_previousSlide].classList.add('effect');
+  //   setTimeout(() => {
+  //     sliderCollections.slides[index_previousSlide].classList.remove('effect');
+  //   }, 1000);
+  // });
 
 
   // sliderCollections.on('slideNextTransitionStart', function () {
@@ -206,14 +200,6 @@ function carousel() {
   //   setTimeout(() => {
   //     sliderCollections.slides[index_nextSlide].classList.remove('effect');
   //   }, 1000);
-  // });
-
-  // sliderCollections.on('slideChangeTransitionEnd', function () {
-  //   for (const slide in sliderCollections.slides) {
-  //     if (sliderCollections.slides[slide].classList.contains('effect')) {
-  //       sliderCollections.slides[slide].classList.remove('effect');
-  //     }
-  //   }
   // });
 
 

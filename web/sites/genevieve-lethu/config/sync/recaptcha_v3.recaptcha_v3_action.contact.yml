@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 id: contact
 label: Contact
-threshold: !!float 1
+threshold: 0.5
 challenge: recaptcha/reCAPTCHA

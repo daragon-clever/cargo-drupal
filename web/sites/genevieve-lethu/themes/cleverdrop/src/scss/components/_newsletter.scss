@@ -51,6 +51,7 @@
     width: 70%;
     @include font(variant, 100);
     font-size: rem(12px);
+    height: auto;
 
     &::placeholder {
       color: $white;
@@ -81,6 +82,12 @@
     align-items: baseline;
     label {
       padding-left: 15px;
+      font-weight: normal;
+    }
+    input {
+      width: auto;
+      margin-bottom: 0;
+      height: auto;
     }
   }
 }

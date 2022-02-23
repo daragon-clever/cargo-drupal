@@ -116,7 +116,7 @@ function carousel() {
         slidesPerView: 3.8,
       },
       999: {
-        slidesPerView: 4.2,
+        slidesPerView: 4.3,
       },
     }
   });

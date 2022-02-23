@@ -21,7 +21,7 @@
     &-text {
       opacity: 0;
       transform: translateY(100%);
-      transition: opacity 1s ease-in, transform 1s ease-in;
+      transition: opacity 1.5s linear, transform 1.5s linear;
     }
 
     &.is-animate {
@@ -92,10 +92,23 @@
     .imgOverlap-above {
       transform: translate(10%, -50%);
       transition: transform 1.5s ease-in-out;
+      z-index: 1;
     }
 
-    &.is-animate .imgOverlap-above {
-      transform: translate(0, -50%);
+    .imgOverlap-below {
+      transform: translateY(10%);
+      transition: transform 1.5s ease-in-out;
+      z-index: 0;
+    }
+
+    &.is-animate {
+      .imgOverlap-above {
+        transform: translate(0, -50%);
+      }
+
+      .imgOverlap-below {
+        transform: translateY(0);
+      }
     }
   }
 

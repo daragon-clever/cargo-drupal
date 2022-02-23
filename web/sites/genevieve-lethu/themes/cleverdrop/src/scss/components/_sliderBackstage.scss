@@ -6,34 +6,38 @@
   }
 
   &-inner {
-    width: 65%;
-    margin-top: rem(50px);
+    width: 80%;
+    margin-top: rem(25px);
 
     @include mq($from: sm) {
-      margin-top: rem(65px);
+      margin-top: rem(35px);
+    }
+
+    @include mq($from: lg) {
+      margin-top: rem(40px);
     }
 
     @include mq($from: xl) {
-      margin-top: rem(100px);
+      margin-top: rem(55px);
     }
 
     [class*=prev] & {
       @include mq($from: md) {
-        margin-left: rem(-40px);
+        margin-left: rem(-25px);
       }
 
       @include mq($from: xl) {
-        margin-left: rem(-50px);
+        margin-left: rem(-35px);
       }
     }
 
     [class*=next] & {
       @include mq($from: md) {
-        margin-right: rem(-40px);
+        margin-right: rem(-25px);
       }
 
       @include mq($from: xl) {
-        margin-right: rem(-50px);
+        margin-right: rem(-35px);
       }
     }
 

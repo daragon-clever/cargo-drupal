@@ -31,7 +31,7 @@
         }
     ],
     "require": {
-        "cargo/drupal_marketing_automation_core": "^1.0",
+        "cargo/drupal_marketing_automation_core": "1.1.*",
         "cargo/drupal_synapse": "^2.0.0",
         "composer/installers": "^1.2",
         "cweagans/composer-patches": "^1.7",

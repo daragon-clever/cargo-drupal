@@ -65,3 +65,6 @@ var/logs/capistrano\.log
 
 # Ignore log files
 /web/sites/*/*.log
+
+# Ignore the console/ directory @TODO validate this
+/console

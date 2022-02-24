@@ -10,7 +10,7 @@
 
   &-ratio {
     @include mq($until: md) {
-      @include aspect-ratio(320px, 260px, '.slider-pager, .slider-nav');
+      @include aspect-ratio(320px, 245px, '.slider-pager, .slider-nav');
       position: absolute;
       bottom: 0;
       left: 0;
@@ -39,9 +39,11 @@
 
       &-col {
         display: flex;
+        justify-content: center;
 
         @include mq($from: md) {
           flex: 1;
+          justify-content: flex-start;
         }
 
         &-text {

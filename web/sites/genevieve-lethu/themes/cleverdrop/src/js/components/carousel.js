@@ -180,7 +180,7 @@ function carousel() {
     loop: true,
     slidesPerView: 1,
     effect: 'fade',
-    speed: 0,
+    speed: 1000,
     thumbs: {
       swiper: galleryThumbs
     }

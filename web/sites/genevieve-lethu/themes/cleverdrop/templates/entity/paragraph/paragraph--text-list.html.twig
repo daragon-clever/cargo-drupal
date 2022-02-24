@@ -23,7 +23,9 @@
                   <li>{{ content.field_test_list[i] }}</li>
               {% endfor %}
               </ol>
+              {% if  content.field_cta[0]['#url'] is not empty %}
               <a href="{{ content.field_cta[0]['#url'] }}" class="cta">{{ content.field_cta[0]['#title'] }}</a>
+              {% endif %}
             </div>
           </div>
         </div>

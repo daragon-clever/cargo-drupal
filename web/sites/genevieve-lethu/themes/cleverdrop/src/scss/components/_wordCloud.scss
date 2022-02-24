@@ -7,14 +7,46 @@
   display: flex;
   align-items: end;
 
+  @include mq($until: xl) {
+    justify-content: center;
+  }
+
   &-img {
-    margin: 0 rem(15px) rem(40px);
+    max-height: rem(180px);
+
+    @include mq($until: md) {
+      &:nth-of-type(1),
+      &:nth-of-type(4),
+      &:nth-of-type(5) {
+        display: none;
+      }
+    }
+
+    @include mq($from: sm) {
+      max-height: rem(250px);
+    }
+
+    @include mq($from: md) {
+      max-height: rem(350px);
+      margin: 0 rem(15px) rem(40px);
+    }
   }
 
   &-cloud {
-    width: rem(450px);
+    width: 100%;
+    max-width: rem(320px);
     text-align: center;
-    margin: 0 rem(20px);
+
+    @include mq($from: sm) {
+      width: 80%;
+      max-width: rem(380px);
+    }
+
+    @include mq($from: md) {
+      width: rem(450px);
+      max-width: none;
+      margin: 0 rem(20px);
+    }
   }
 
   &-row {
@@ -31,7 +63,7 @@
   &-1,
   &-2 {
     @include font(variant, bold);
-    font-size: rem(48px);
+    @include fluid-type(rem($vw-min), rem(map-get($mq-breakpoints, "xl")), rem(24px), rem(48px));
     line-height: 1.2;
     opacity: 0;
   }
@@ -52,12 +84,12 @@
   }
 
   &-3 {
-    font-size: rem(34px);
+    @include fluid-type(rem($vw-min), rem(map-get($mq-breakpoints, "xl")), rem(18px), rem(34px));
     color: $coral;
   }
 
   &-4 {
-    font-size: rem(26px);
+    @include fluid-type(rem($vw-min), rem(map-get($mq-breakpoints, "xl")), rem(14px), rem(26px));
     color: $metal
   }
 }

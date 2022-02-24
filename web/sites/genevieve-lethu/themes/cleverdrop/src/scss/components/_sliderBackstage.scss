@@ -8,6 +8,7 @@
   &-inner {
     width: 80%;
     margin-top: rem(25px);
+    transition: width .25s ease-in-out, margin-top .25s ease-in-out;
 
     @include mq($from: sm) {
       margin-top: rem(35px);

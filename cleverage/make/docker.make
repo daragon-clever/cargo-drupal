@@ -1,35 +1,35 @@
-COMPOSE				:= docker-compose
+COMPOSE				:= docker-compose --env-file cleverage.env
 
 # MacOS
 ifeq ($(DOCKER_HOST_PLATFORM),Darwin)
 COMPOSE				:= mutagen-compose
 endif
 
-dc/build: ## Construis une ou plusieurs images
+dc/build:: ## Construis une ou plusieurs images
 	$(COMPOSE) build $(args) $(service)
 
-dc/config: ## Affiche la configuration docker-compose
+dc/config:: ## Affiche la configuration docker-compose
 	$(COMPOSE) config $(args)
 
-dc/services: ## Affiche les noms des services
+dc/services:: ## Affiche les noms des services
 	$(MAKE) dc/config args=--services
 
-dc/up: # Démarre les conteneurs en premier plan
+dc/up:: # Démarre les conteneurs en premier plan
 	$(COMPOSE) up --remove-orphans $(args)
 
-dc/up-d: # Démarre les conteneurs en arrière plan
+dc/up-d:: # Démarre les conteneurs en arrière plan
 	$(MAKE) dc/up args=--detach
 
-dc/ps: # Affiche les conteneurs stoppés et en cours d'exécution
+dc/ps:: # Affiche les conteneurs stoppés et en cours d'exécution
 	$(COMPOSE) ps --all
 
-dc/logs: # Affiche les logs d'un où plusieurs conteneurs
+dc/logs:: # Affiche les logs d'un où plusieurs conteneurs
 	args="$(args)";
 	[ ! -z "$(tail)" ] && args="$${args} --tail $(tail)"
 	[ -z "$(nofollow)" ] && args="$${args} --follow"
 	$(COMPOSE) logs $${args} $(service)
 
-dc/exec: ## Exécute une commande dans un conteneur en cours d'exécution
+dc/exec:: ## Exécute une commande dans un conteneur en cours d'exécution
 	[[ -z "$(service)" || -z "$(cmd)" ]] && { cat <<-'EOF'
 		Usage :
 		    make $(@) service cmd [options]
@@ -52,11 +52,11 @@ dc/exec: ## Exécute une commande dans un conteneur en cours d'exécution
 	[ ! -z "$(workdir)" ] && args="$${args} --workdir $(workdir)"
 	$(COMPOSE) exec $${args} $(service) $(cmd)
 
-dc/stop: # Stoppe les conteneurs
+dc/stop:: # Stoppe les conteneurs
 	$(COMPOSE) stop
 
-dc/down: ## Détruis les conteneurs mais conserve les volumes
+dc/down:: ## Détruis les conteneurs mais conserve les volumes
 	$(COMPOSE) down $(args)
 
-dc/nuke: ## Détruis les conteneurs, volumes et images locales
+dc/nuke:: ## Détruis les conteneurs, volumes et images locales
 	$(MAKE) dc/down args='--volumes --rmi local'

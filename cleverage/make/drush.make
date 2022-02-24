@@ -3,8 +3,8 @@ ifdef DEBUG
 DRUSH_ARGS	+= -vvv
 endif
 
-dr/%: name=$*
-dr/%: # Exécute une commande Drush dans le conteneur php
+dr/%:: name=$*
+dr/%:: # Exécute une commande Drush dans le conteneur php
 	workdir=/var/www/html
 	if [ ! -z "$(site)" ]; then
 		if [ ! -d "web/sites/$(site)" ]; then
@@ -31,7 +31,7 @@ dr/%: # Exécute une commande Drush dans le conteneur php
 		workdir=$${workdir} \
 		cmd="drush $(DRUSH_ARGS) $(name) $(args)"
 
-dr/install: # Installe un où plusieurs sites Drupal avec Drush
+dr/install:: # Installe un où plusieurs sites Drupal avec Drush
 	[ -z "$(sites)" ] && { cat <<-'EOF'
 		Usage :
 		    make $(@) sites [options]
@@ -46,8 +46,10 @@ dr/install: # Installe un où plusieurs sites Drupal avec Drush
 		exit 0
 	}
 	for site in $(sites); do
-		dbName="$$( $(MAKE) dr/core-status site="$${site}" \
-			| grep 'DB name' | sed -E 's#.*:[ ]*([^ ]+).*#\1#gi' )"
+		dbName="$$( $(MAKE) --silent dockerargs=-T \
+			dr/core-status site="$${site}" \
+			| { grep 'DB name' || true; } \
+			| sed -E 's#.*:[ ]*([^ ]+).*#\1#gi' )"
 		if [ -z "$${dbName}" ]; then
 			echo "Erreur : impossible de résoudre le nom de la base de données du site '$${site}'"
 			exit 1

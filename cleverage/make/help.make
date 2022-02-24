@@ -1,5 +1,5 @@
-help/%: name=$*
-help/%: # Affiche l'ensemble des commandes d'un espace de noms
+help/%:: name=$*
+help/%:: # Affiche l'ensemble des commandes d'un espace de noms
 	quantifier=
 	case "$(name)" in
 		main|all)
@@ -24,4 +24,4 @@ help/%: # Affiche l'ensemble des commandes d'un espace de noms
 		color, $$2, icon, (toupper(substr($$1, 1, 1)) substr($$1, 2)), $$3
 	}'
 
-help: help/main # Affiche cette aide
+help:: help/main # Affiche cette aide

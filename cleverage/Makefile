@@ -1,4 +1,4 @@
-MAKE			+= --no-print-directory
+MAKE			:= make --no-print-directory
 SHELL			:= /usr/bin/env
 .SHELLFLAGS		:= bash -Eeuo pipefail
 ifdef DEBUG
@@ -10,50 +10,48 @@ ifndef VERBOSE
 endif
 .DEFAULT_GOAL	:= help
 .ONESHELL:
+.EXPORT_ALL_VARIABLES:
 
-# Créé le fichier .env s'il n'existe pas
-$(shell [ -f .env ] || { \
-	cp cleverage/.env.dist .env; \
+# Créé le fichier cleverage.env s'il n'existe pas
+ifeq ($(wildcard cleverage.env),)
+$(shell \
+	cp cleverage/.env.dist cleverage.env; \
 	PLATFORM="$$( uname -s )"; \
 	sed -Ei 's#^(DOCKER_HOST_PLATFORM=).*#\1'"$${PLATFORM}"'#g; \
 		s#^(DOCKER_HOST_UID=).*#\1'"$$( id -u )"'#g; \
-		s#^(DOCKER_HOST_GID=).*#\1'"$$( id -G | awk '{ print $$NF }' )"'#g' .env; \
+		s#^(DOCKER_HOST_GID=).*#\1'"$$( id -G | awk '{ print $$NF }' )"'#g' cleverage.env; \
 	[ "$$PLATFORM" == "Darwin" ] && \
-		sed -Ei 's#^(COMPOSE_FILE=.*)#\1:cleverage-compose.mac.yml#g' .env; \
-	[ ! -z "$(domain)" ] && sed -Ei 's#^(TRAEFIK_DOMAIN=).*#\1$(domain)#g' .env; \
-})
+		sed -Ei 's#^(COMPOSE_FILE=.*)#\1:cleverage-compose.mac.yml#g' cleverage.env; \
+	[ ! -z "$(domain)" ] && sed -Ei 's#^(TRAEFIK_DOMAIN=).*#\1$(domain)#g' cleverage.env; \
+)
+endif
 
 # Importe les variables d'environnement dans le contexte du Makefile
-include .env
-
-# Exporte les variables d'environnement dans le contexte des commandes Make
-export $(foreach e, $(shell grep -Eio '^([^\#\=]+)' .env), $(e))
+include cleverage.env
 
 # Inclus les autres fichiers make
 include cleverage/make/*.make
 
-# Déclare les commandes make qui ne produisent pas de fichiers
-.PHONY: $(shell grep -Eho '^([^ \#\.A-Z]+):( |$$)' $(MAKEFILE_LIST) | sed 's/:.*/ /g')
+# créé le fichier web/sites/sites.php
+web/sites/sites.php:
+	cat <<-'EOF' > $@
+	<?php
+	$$sites = [
+	];
+	EOF
 
-install: # Installe la stack Docker locale
+install:: web/sites/sites.php # Installe la stack Docker locale
 	$(MAKE) dc/up-d
 	$(MAKE) composer/install
-	if [ ! -f web/sites/sites.php ]; then
-		cat <<-'EOF' > web/sites/sites.php
-		<?php
-		$$sites = [
-		];
-		EOF
-	fi
 	if [ ! -z "$(sites)" ]; then
-		while ! $(MAKE) db/query sql="SELECT TRUE;" &>/dev/null; do
+		while ! $(MAKE) --silent db/query sql="SELECT TRUE;" &>/dev/null; do
 			echo "En attente que le serveur mysql soit prêt..."; sleep 3
 		done
 		$(MAKE) dr/install
 	fi
 
-uninstall: dc/nuke # Désinstalle la stack Docker locale
+uninstall:: dc/nuke # Désinstalle la stack Docker locale
 
-clean: ## Supprimes les fichiers ignorés par Git
+clean:: ## Supprimes les fichiers ignorés par Git
 	args=; [ ! -z "$(dry_run)" ] && args=n
 	git clean -ffdX$${args}

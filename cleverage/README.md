@@ -14,7 +14,7 @@ Cet environnement s'appuie sur des [commandes Make](./doc/Make.md) pour automati
 
 ### Variables d'environnement
 
-Le fichier `.env` contient les [variables d'environnement](./doc/Env.md) utilisées par Docker et Make, il est créé automatiquement lors de l'éxecution de n'importe quelle commande `make`
+Le fichier `cleverage.env` contient les [variables d'environnement](./doc/Env.md) utilisées par Docker et Make, il est créé automatiquement lors de l'éxecution de n'importe quelle commande `make`
 
 ## Pré-requis
 - Les programmes `make`, `bash`, `sed` et `awk`

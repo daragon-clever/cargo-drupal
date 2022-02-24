@@ -30,8 +30,9 @@
   }
   &-title {
     width: 100%;
-    @include font(variant);
+    @include font(variant, bold);
     font-size: rem(22px);
+    font-style: italic;
   }
 
   &-description {

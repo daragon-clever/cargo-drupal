@@ -108,11 +108,10 @@
     overflow: hidden;
 
     &-title {
-      @include font(variant, bold);
+      @include font(variant);
       font-size: rem(26px);
       font-weight: bold;
       margin-bottom: 20px;
-      font-style: italic;
     }
 
     &-description {

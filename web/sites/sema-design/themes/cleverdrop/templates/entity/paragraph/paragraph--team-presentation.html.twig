@@ -1,0 +1,33 @@
+{%
+  set classes = [
+  'TeamPresentation-wpr'
+]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+    <div class="TeamPresentation">
+      <div class="Section-inner TeamPresentation--inner">
+        <h2 class="TeamPresentation-title">
+          {{ content.field_title }}
+        </h2>
+        <div class="TeamPresentation-img">
+          {{ content.field_picture }}
+          <svg viewBox="0 0 100 100" class="LeftBrush" aria-hidden="true">
+            <use xlink:href="#sema-brush"></use>
+          </svg>
+        </div>
+        <h3 class="TeamPresentation-subtitle">
+          {{ content.field_subtitle }}
+        </h3>
+        <p class="TeamPresentation-description">
+          {{ content.field_description }}
+        </p>
+      </div>
+      <svg viewBox="0 0 100 100" class="RightMarks" aria-hidden="true">
+        <use xlink:href="#sema-marks"></use>
+      </svg>
+    </div>
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

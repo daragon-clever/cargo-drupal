@@ -1,0 +1,81 @@
+$radio-switch-width: em(235px);
+$radio-switch-height: em(40px);
+$radio-switch-padding: em(4px);
+$radio-switch-radius: 10em;
+
+.RadioSwitch {
+  display: inline-flex;
+  width: max-content;
+  padding: $radio-switch-padding;
+  background-color: var(--black);
+  border-radius: $radio-switch-radius;
+}
+
+.RadioSwitch-item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include media-breakpoint-down('xs') {
+    flex-basis: 50%;
+  }
+}
+
+.RadioSwitch-link {
+  @include u-cormorant-bold;
+  position: relative;
+  display: block;
+  width: 100%;
+  font-size: em(14px);
+  text-align: center;
+  text-decoration: none;
+  line-height: calc($radio-switch-height - 2*$radio-switch-padding);
+  color: var(--text-color);
+  padding: em(5px, 14px) em(20px, 14px);
+  border-radius: $radio-switch-radius;
+  transition: color $transition, background-color $transition;
+  z-index: 1;
+
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+
+  &[aria-current='true'] {
+    color: var(--white);
+    background-color: var(--black);
+  }
+}
+
+.RadioSwitch-label {
+  @include u-cormorant-bold;
+  position: relative;
+  display: block;
+  text-align: center;
+  line-height: calc($radio-switch-height - 2*$radio-switch-padding);
+  padding: em(5px) em(20px);
+  border-radius: $radio-switch-radius;
+  cursor: pointer;
+  transition: color $transition;
+  z-index: 1;
+
+  .RadioSwitch-input:checked ~ & {
+    color: var(--white);
+  }
+}
+
+.RadioSwitch-input {
+  &:checked {
+    + .RadioSwitch-label {
+      background-color: var(--black);
+    }
+  }
+
+  &:focus {
+    ~ .RadioSwitch-label {
+      text-decoration: underline;
+    }
+  }
+}

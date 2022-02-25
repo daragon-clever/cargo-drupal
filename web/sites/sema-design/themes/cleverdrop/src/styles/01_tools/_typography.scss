@@ -1,0 +1,49 @@
+////
+/// Collection of typography tools.
+////
+
+$cormorant-garamond-regular: 400 !default;
+$cormorant-garamond-bold: 700 !default;
+$work-sans-regular: 400 !default;
+$quentin-regular: 400 !default;
+
+
+// Main font
+@mixin u-cormorant-regular {
+  font-family: $main-fontFamily;
+  font-weight: $cormorant-garamond-regular;
+}
+
+.u-cormorantRegular {
+  @include u-cormorant-regular;
+}
+
+@mixin u-cormorant-bold {
+  font-family: $main-fontFamily;
+  font-weight: $cormorant-garamond-bold;
+}
+
+.u-cormorantBold {
+  @include u-cormorant-bold;
+}
+
+// Secondary font
+@mixin u-work-sans-regular {
+  font-family: $secondary-fontFamily;
+  font-weight: $work-sans-regular;
+}
+
+.u-workSansRegular {
+  @include u-work-sans-regular;
+}
+
+
+// Tertiary font
+@mixin u-quentin-regular {
+  font-family: $tertiary-fontFamily;
+  font-weight: $quentin-regular;
+}
+
+.u-quentinRegular {
+  @include u-quentin-regular;
+}

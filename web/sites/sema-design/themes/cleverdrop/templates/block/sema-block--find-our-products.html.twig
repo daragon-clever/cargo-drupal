@@ -1,0 +1,22 @@
+
+{% if content is not empty %}
+<div class="Section has-altBg FindOurProduct">
+    <div class="Section-inner FindOurProduct-inner">
+        <div class="FindOurProduct-content">
+            <h2>{{ content.title }}</h2>
+            <div class="FindOurProduct-text">
+                {{ content.description }}
+            </div>
+            {% if content.cta and content.cta_link %}
+                {% include directory ~ '/templates/ui/atoms/primary-cta.twig' with {
+                text: content.cta,
+                url: content.cta_link,
+                } %}
+            {% endif %}
+        </div>
+        <div class="FindOurProduct-map" data-animate>
+            {% include directory ~ '/src/assets/svg/map-store.svg' %}
+        </div>
+    </div>
+</div>
+{% endif %}

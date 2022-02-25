@@ -1,0 +1,147 @@
+uuid: 6a88c49d-a287-468e-bc21-1a87d8bc8574
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.brand_history.field_color
+    - field.field.paragraph.brand_history.field_cta
+    - field.field.paragraph.brand_history.field_description
+    - field.field.paragraph.brand_history.field_picture
+    - field.field.paragraph.brand_history.field_second_description
+    - field.field.paragraph.brand_history.field_second_picture
+    - field.field.paragraph.brand_history.field_second_title
+    - field.field.paragraph.brand_history.field_title
+    - image.style.portrait_max_h_700px
+    - paragraphs.paragraphs_type.brand_history
+  module:
+    - color_field
+    - field_group
+    - link
+    - svg_image
+third_party_settings:
+  field_group:
+    group_history:
+      children:
+        - group_top
+        - group_bottom
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        direction: horizontal
+      label: 'Histoire de la marque'
+    group_top:
+      children:
+        - field_title
+        - field_description
+        - field_color
+        - field_cta
+        - field_picture
+      parent_name: group_history
+      weight: 10
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: open
+        required_fields: true
+      label: 'Partie haute'
+    group_bottom:
+      children:
+        - field_second_title
+        - field_second_description
+        - field_second_picture
+      parent_name: group_history
+      weight: 11
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: false
+      label: 'Partie basse'
+id: paragraph.brand_history.default
+targetEntityType: paragraph
+bundle: brand_history
+mode: default
+content:
+  field_color:
+    weight: 3
+    settings:
+      show_input: '1'
+      palette: ''
+      show_buttons: '1'
+      cancel_text: Annuler
+      choose_text: Choisir
+      allow_empty: '1'
+      show_palette: '0'
+      show_palette_only: '0'
+    third_party_settings: {  }
+    type: color_field_widget_spectrum
+    region: content
+  field_cta:
+    weight: 4
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_description:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_picture:
+    weight: 5
+    settings:
+      preview_image_style: portrait_max_h_700px
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_second_description:
+    weight: 6
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_second_picture:
+    weight: 7
+    settings:
+      preview_image_style: portrait_max_h_700px
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_second_title:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

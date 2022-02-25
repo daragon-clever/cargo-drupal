@@ -27,6 +27,9 @@ class UpdateController extends NewsletterInitConfig
             case self::SITENAME_YLIADES:
                 $schemaTable = new YliadesUpdate();
                 break;
+            case self::SITENAME_SEMA_DESIGN:
+                $schemaTable = new BaseUpdate();
+                break;
             default:
                 $schemaTable = null;
         }

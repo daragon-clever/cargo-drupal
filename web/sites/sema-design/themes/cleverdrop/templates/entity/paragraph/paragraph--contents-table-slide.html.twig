@@ -1,0 +1,18 @@
+{%
+  set classes = [
+  'Slider-slide',
+  'ContentsTable-slide'
+]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+      <div class="ContentsTable-img-wrp">
+        {{ content.field_picture }}
+      </div>
+      <h3 class="ContentsTable-title">
+        {{ content.field_title }}
+      </h3>
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

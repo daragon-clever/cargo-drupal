@@ -1,0 +1,66 @@
+{#
+/**
+* @file
+* Search location block
+*
+* @see template_preprocess_block()
+*
+* @ingroup themeable
+*/
+#}
+
+{%
+  set classes = [
+  'StoreLocator-wpr'
+]
+%}
+
+<div id="store-locator-wrapper"{{ attributes.addClass(classes) }}>
+{{ sema.mainPicture }}
+
+  <section class="Section StoreLocator">
+    <div class="Section-inner">
+      <div class="StoreLocator-content">
+        <div class="StoreLocator-text">
+          <h2 class="StoreLocator-title">{{ sema.title }}</h2>
+          <p class="StoreLocator-description">{{ sema.description }}</p>
+        </div>
+        <div class="StoreLocator-search">
+          <input
+            name="search-string"
+            placeholder="{{ 'Votre ville, code postal, département…'|t }}"
+            class="search-input"
+            id="js-search-input"
+            value="{{ query }}"
+          />
+          <input
+            name="preloaded-search-string"
+            type="hidden"
+            id="js-preloaded"
+          />
+
+          <input type="submit" id="js-search-button" class="btn-submit" value="{{ "Rechercher"|t }}">
+          <span id="js-search-around">
+            <input name="search-radius" id="js-search-radius" type="hidden"
+                   value="{{ searchFormDefaultRadius }}">
+            <input name="offset-radius" type="hidden" id="js-offset-radius" value="0">
+            <input name="search-geolocation" id="js-search-geolocation" type="hidden">
+            <input name="store-detail-path" id="js-store-detail-path" type="hidden">
+          </span>
+        </div>
+      </div>
+    </div>
+    <svg viewBox="0 0 100 100" class="Brush" aria-hidden="true">
+      <use xlink:href="#sema-brush"></use>
+    </svg>
+  </section>
+
+  <section class="Section StoreLocator StoreLocator-results">
+    <div class="Section-inner">
+      <div class="StoreLocator-results-content">
+        <div id="storelocator-map" class="StoreLocator-map"></div>
+        <ul id="js-ajax-response" class="StoreLocator-list"></ul>
+      </div>
+    </div>
+  </section>
+</div>

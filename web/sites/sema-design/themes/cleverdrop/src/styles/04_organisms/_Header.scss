@@ -1,0 +1,39 @@
+.Header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: $header-color;
+  backdrop-filter: blur(4px);
+  transition: background-color 0.3s;
+  z-index: 99;
+
+  &.is-sticky {
+    background-color: var(--white);
+  }
+  
+  .adminimal-admin-toolbar & { // stylelint-disable-line
+    top: 39px;
+  }
+}
+
+.Header-inner {
+  display: flex;
+  width: 100%;
+  min-height: rem(44px);
+  max-width: $site-width;
+  padding-top: rem(5px);
+  padding-right: 0;
+  padding-bottom: rem(5px);
+  padding-left: map-get($section-padding, xs);
+  margin: 0 auto;
+
+  @include media-breakpoint-up('md') {
+    min-height: rem(60px);
+    padding-top: rem(10px);
+    padding-right: map-get($section-padding, md);
+    padding-bottom: rem(10px);
+    padding-left: map-get($section-padding, md);
+  }
+}
+

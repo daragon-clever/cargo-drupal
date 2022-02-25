@@ -1,0 +1,63 @@
+// Config : Layout variables
+// =========================
+//
+
+// Global config
+// -------------
+$assets-url: '../assets/' !default;
+$transition: 0.3s !default;
+// Sélecteur qui indique que le contenu est riche/contribué et non un élément de design.
+$rtfSelector: '.u-isRtf' !default;
+
+// Typography
+// ----------
+// Base
+$root-fontSize: 16px !default;
+
+$main-fontFamily: 'Cormorant Garamond', Arial, 'Trebuchet MS', sans-serif !default;
+$secondary-fontFamily: 'Work Sans', $main-fontFamily !default;
+$tertiary-fontFamily: 'Quentin', Arial, sans-serif !default;
+$global-fontWeightBase: 200 !default;
+
+// Animations
+$brush-animation-duration: 1.5s;
+
+
+// Layout variables
+// ----------------
+$site-width: rem(1440px) !default;
+$site-inner-width: rem(1190px) !default;
+
+// Grid
+$nb-cols: 12 !default;
+$nb-cols-mobile: 4 !default;
+$col-size: rem(97px);
+$gutter-size: rem(20px);
+
+// ### Grid breakpoints
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+  xs: 0,
+  md: 769px,
+) !default;
+
+//
+$section-padding: (
+  xs: rem(16px),
+  md: rem(20px),
+) !default;
+
+
+// Z-index directory
+// ------------------
+// Ranked in order of importance
+$zindex-overall: 10 !default;
+$zindex-sidepanel: 6 !default;
+$zindex-header: 190 !default;
+$zindex-backdrop: 181 !default;
+$zindex-backdrop-higher: 191 !default;
+$zindex-popin: 192 !default;
+$zindex-nav: 3 !default;
+$zindex-content: 1 !default;

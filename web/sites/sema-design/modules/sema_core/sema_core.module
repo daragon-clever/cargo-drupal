@@ -1,0 +1,76 @@
+<?php
+
+/**
+ * @file
+ * Module file for sema core.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function sema_core_theme($existing, $type, $theme, $path)
+{
+  return [
+    'sema_core__404' => [
+      'template' => 'sema-core--404',
+      'variables' => [
+        'content' => [],
+      ],
+    ],
+    'sema_core__newsletter' => [
+      'template' => 'sema-core--newsletter',
+      'variables' => [
+        'content' => [],
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function sema_core_form_node_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id)
+{
+  if ($form_id === 'node_who_are_we_edit_form' || $form_id == 'node_who_are_we_form') {
+    // Add simple validation function for 3 minimum slides. Contraints can be use too
+    $form['#validate'][] = '_sema_core_node_who_we_are_validate';
+  }
+}
+
+/**
+ * Custom validate function.
+ */
+function _sema_core_node_who_we_are_validate(&$form, \Drupal\Core\Form\FormStateInterface $form_state)
+{
+
+  $values = $form_state->getValues();
+  $slides = $values['field_paragraph_slider'][0]['subform']['field_slide'];
+  $slide_count = 0;
+
+  foreach ($slides as $index => $slide) {
+    if (!empty($slide['fids'])) {
+      $slide_count++;
+    }
+  }
+  if ($slide_count < 3) {
+    $form_state->setErrorByName('field_paragraph_slider', t('3 Slides minimum'));
+  }
+}
+
+/**
+ * Implements hook_page_attachements().
+ */
+function sema_core_page_attachments(array &$page)
+{
+  $page['#attached']['library'][] = 'sema_core/sema_core';
+}
+
+/**
+ * Implements hook_registry_alter().
+ * @param $theme_registry
+ */
+function sema_core_theme_registry_alter(&$theme_registry)
+{
+  $theme_registry['search_location_block']['variables']['sema'] = NULL;
+}
+

@@ -1,0 +1,17 @@
+{%
+  set classes = [
+  'FollowInstagramPost',
+]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    <a href="{{ content.field_cta[0]["#markup"] }}" class="FollowInstagramPost-link">
+      <span class="u-srOnly">Voir le post</span>
+      {% block content %}
+        <div class="FollowInstagramPost-img">
+          {{ content.field_picture }}
+        </div>
+      {% endblock %}
+    </a>
+  </div>
+{% endblock paragraph %}

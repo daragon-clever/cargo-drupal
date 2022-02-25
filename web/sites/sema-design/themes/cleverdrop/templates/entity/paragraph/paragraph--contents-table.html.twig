@@ -1,0 +1,47 @@
+{%
+  set classes = [
+  'ContentsTable-wpr',
+  'LabelBlock'
+]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }} data-animate>
+    {% block content %}
+      <div class="Section has-altBg ContentsTable">
+        <svg viewBox="0 0 100 100" class="LeftBrush" aria-hidden="true">
+          <use xlink:href="#sema-brush"></use>
+        </svg>
+        <div class="Section-inner ContentsTable--inner">
+          <div class="ContentsTable-left">
+            <div class="Slider js-contents-table">
+              <div class="Slider-wrapper">
+                {% for i in content.field_paragraph_slides['#items']|keys %}
+                  {{ content.field_paragraph_slides[i] }}
+                {% endfor %}
+              </div>
+              <div class="SliderNavigation-wrp">
+                <button class="Slider-button-prev">
+                  {% include directory ~ '/src/assets/svg/arrow-left.svg' %}
+                </button>
+                <div class="Slider-pagination"></div>
+                <button class="Slider-button-next">
+                  {% include directory ~ '/src/assets/svg/arrow-right.svg' %}
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="ContentsTable-right">
+            <div class="ContentsTable-content">
+              <p class="ContentsTable-text">
+                {{ content.field_description }}
+              </p>
+            </div>
+          </div>
+        </div>
+        <svg viewBox="0 0 100 100" class="RightBrush" aria-hidden="true">
+          <use xlink:href="#sema-brush"></use>
+        </svg>
+      </div>
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

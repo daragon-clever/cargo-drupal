@@ -1,0 +1,23 @@
+uuid: 60f0285b-122c-4142-a079-f27887e52e43
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cta
+    - paragraphs.paragraphs_type.post_instagram
+  module:
+    - link
+id: paragraph.post_instagram.field_cta
+field_name: field_cta
+entity_type: paragraph
+bundle: post_instagram
+label: Lien
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

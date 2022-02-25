@@ -1,0 +1,17 @@
+uuid: 9c8c4ed7-e2dd-4d92-a660-0127debebb91
+langcode: fr
+status: true
+dependencies: {  }
+id: newsletter
+label: 'Bloc Newsletter'
+context:
+  show_warning: true
+  group:
+    language: false
+  fallback:
+    language: ''
+menu:
+  path: /admin/sema-design/newsletter
+  weight: 0
+  description: ''
+token: false

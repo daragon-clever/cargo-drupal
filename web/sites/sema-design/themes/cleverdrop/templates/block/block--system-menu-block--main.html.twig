@@ -1,0 +1,12 @@
+<nav class="MainNav">
+  {{ title_prefix }}
+  {% if label %}
+    <h2{{ title_attributes }}>{{ label }}</h2>
+  {% endif %}
+  {{ title_suffix }}
+  {{ content }}
+  <button id="mobile-menu-btn" class="OpenMenu" data-mobile-menu>
+    <span class="u-srOnly">Ouvrir le menu</span>
+    <span class="OpenMenu-icon"></span>
+  </button>
+</nav>

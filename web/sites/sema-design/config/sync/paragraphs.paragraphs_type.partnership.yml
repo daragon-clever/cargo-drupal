@@ -1,0 +1,10 @@
+uuid: 30265f9a-7c7f-4741-a487-80004f7ac0b6
+langcode: fr
+status: true
+dependencies: {  }
+id: partnership
+label: Partenariat
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

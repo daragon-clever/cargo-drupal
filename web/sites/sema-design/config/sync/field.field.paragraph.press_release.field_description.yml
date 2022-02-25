@@ -1,0 +1,19 @@
+uuid: 2e337a69-552c-45d9-9ae5-c5d3306e6ea3
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_description
+    - paragraphs.paragraphs_type.press_release
+id: paragraph.press_release.field_description
+field_name: field_description
+entity_type: paragraph
+bundle: press_release
+label: Description
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

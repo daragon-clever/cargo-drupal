@@ -1,0 +1,24 @@
+{% set classes = [
+  'Particular-wrp'
+] %}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+      <div class="Section">
+        <div class="Section-inner Particular">
+          <div class="Particular-left">
+            {{ content.field_title }}
+          </div>
+          <div class="Particular-right">
+            {{ content.field_rte }}
+            <div class="Particular-link">
+              {% for i in content.field_social['#items']|keys %}
+                {{ content.field_social[i] }}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

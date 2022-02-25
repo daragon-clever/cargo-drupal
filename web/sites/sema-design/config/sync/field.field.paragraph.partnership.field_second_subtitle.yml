@@ -1,0 +1,19 @@
+uuid: 3570d4e4-23c0-46d1-b652-cdf5690f5472
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_second_subtitle
+    - paragraphs.paragraphs_type.partnership
+id: paragraph.partnership.field_second_subtitle
+field_name: field_second_subtitle
+entity_type: paragraph
+bundle: partnership
+label: 'Sous titre'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

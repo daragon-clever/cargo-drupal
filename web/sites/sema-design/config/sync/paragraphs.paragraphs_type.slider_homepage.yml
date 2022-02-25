@@ -1,0 +1,10 @@
+uuid: 9f61f80c-c114-417e-8982-c048baedaee2
+langcode: fr
+status: true
+dependencies: {  }
+id: slider_homepage
+label: 'Slider - Accueil'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

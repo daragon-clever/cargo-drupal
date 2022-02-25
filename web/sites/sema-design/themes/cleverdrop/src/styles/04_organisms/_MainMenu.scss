@@ -1,0 +1,382 @@
+@keyframes panel {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes backdrop {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.MainNav {
+  flex: 1;
+  position: relative;
+  display: flex;
+  
+  @include media-breakpoint-up('md') {
+    justify-content: center;
+    padding: 0 $col-size;
+  }
+}
+
+.MainMenu-wpr {
+  @include media-breakpoint-down('md') {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      content: '';
+      background: hsla(var(--hunter-green-hsl), 0.5);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    &.is-open {
+      display: block;
+
+      &::before {
+        animation: backdrop 0.3s;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+
+  @include media-breakpoint-up('md') {
+    display: flex;
+  }
+}
+
+.MainMenu-inner {
+  display: flex;
+
+  @include media-breakpoint-down('md') {
+    position: relative;
+    width: calc(100% - rem(52px));
+    height: 100%;
+    background: var(--alt-bg);
+    z-index: 1;
+
+    .is-open & {
+      animation: panel 0.3s;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  @include media-breakpoint-up('md') {
+    align-items: center;
+  }
+
+}
+
+.MainMenu {
+  display: flex;
+  padding: 0;
+  list-style: none;
+  margin: 0;
+
+  @include media-breakpoint-down('md') {
+    flex-direction: column;
+    row-gap: rem(5px);
+    width: 100%;
+    color: var(--text-color);
+    padding: rem(50px) rem(40px);
+  }
+
+  @include media-breakpoint-up('md') {
+    column-gap: rem(35px);
+    color: var(--white);
+
+    .is-sticky & {
+      color: var(--text-color);
+    }
+  }
+}
+
+.MainMenu-item {
+  display: flex;
+
+  > a,
+  > button {
+    @include u-work-sans-regular;
+    display: inline-flex;
+    position: relative;
+    color: currentColor;
+    font-size: rem(12px);
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &::after {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      content: '';
+      height: 1px;
+      width: 100%;
+      background-color: currentColor;
+      transform: scaleX(0);
+      transition: transform 0.3s;
+
+      @include media-breakpoint-down('md') {
+        transform-origin: 0 0;
+      }
+    }
+
+    &:hover,
+    &:focus-visible {
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  
+  &:nth-last-child(-n+2) {
+    > a {
+      @include u-cormorant-regular;
+      font-size: rem(18px);
+      text-transform: none;
+    }
+
+    @include media-breakpoint-down('md') {
+      margin-left: rem(35px);
+    }
+
+    @include media-breakpoint-up('md') {
+      > a {
+        font-size: rem(16px);
+      }
+    }
+  }
+
+  &:nth-last-child(2) {
+    display: flex;
+    align-items: center;
+
+    &::before {
+      content: '';
+      height: 1px;
+      width: rem(20px);
+      background-color: currentColor;
+      margin-right: rem(15px);
+    }
+
+    @include media-breakpoint-down('md') {
+      flex-direction: row;
+      margin-top: rem(30px);
+      margin-left: 0;
+    }
+
+    @include media-breakpoint-up('md') {
+      margin-left: auto;
+    }
+  }
+
+  @include media-breakpoint-down('md') {
+    flex-direction: column;
+
+    > a,
+    > button {
+      @include u-work-sans-regular;
+      font-size: rem(14px);
+      padding: rem(5px) 0;
+    }
+  }
+
+  @include media-breakpoint-up('md') {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.MainMenu-btn {
+  @include btn-reset;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+
+  > svg {
+    display: none;
+
+    @include media-breakpoint-down('md') {
+      display: block;
+      height: rem(12px);
+      width: rem(12px);
+      fill: currentColor;
+      margin-left: rem(10px);
+      transform: rotateZ(0.5turn);
+      transition: transform 0.3s;
+    }
+  }
+
+  &.is-active {
+    > svg {
+      transform: rotateZ(0.75turn);
+    }
+  }
+}
+
+.MainSubMenu-wpr {
+  display: none;
+
+  &.is-open {
+    display: block;
+  }
+
+  @include media-breakpoint-up('md') {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      content: '';
+      background: hsla(var(--hunter-green-hsl), 0.5);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    &.is-open {
+      &::before {
+        animation: backdrop 0.3s;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+}
+
+.MainSubMenu-inner {
+  color: var(--text-color);
+
+  @include media-breakpoint-up('md') {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    color: var(--text-color);
+    min-width: rem(400px);
+    padding: rem(55px) rem(120px);
+    background: var(--alt-bg);
+    transition: transform 0.3s;
+    z-index: 1;
+
+    .is-open & {
+      animation: panel 0.3s;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+.MainSubMenu {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3px;
+  list-style: none;
+  padding: 0;
+
+  @include media-breakpoint-down('md') {
+    margin-top: rem(20px);
+  }
+
+  @include media-breakpoint-up('md') {
+    margin-left: rem(42px);
+  }
+}
+
+.MainSubMenu-closeBtn {
+  display: none;
+
+  @include media-breakpoint-up('md') {
+    @include u-work-sans-regular;
+    @include btn-reset;
+    display: flex;
+    align-items: center;
+    font-size: rem(14px);
+    text-transform: uppercase;
+    margin-bottom: rem(30px);
+    cursor: pointer;
+  
+    svg {
+      display: block;
+      height: rem(12px);
+      width: rem(12px);
+      fill: currentColor;
+      margin-right: rem(30px);
+      transition: transform 0.3s;
+    }
+
+    &:hover,
+    &:focus-visible {
+      svg {
+        transform: translateX(rem(10px));
+      }
+    }
+  }
+}
+
+
+.MainSubMenu-item {
+  padding-left: rem(10px);
+
+  &:first-child {
+    font-style: italic;
+    padding-left: 0;
+  }
+
+  a,
+  span {
+    @include u-cormorant-regular;
+    position: relative;
+    color: currentColor;
+    font-size: rem(17px);
+    text-decoration: none;
+
+    &::after {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      content: '';
+      height: 1px;
+      width: 100%;
+      background-color: currentColor;
+      transform: scaleX(0);
+      transition: transform 0.3s;
+
+      @include media-breakpoint-down('md') {
+        transform-origin: 0 0;
+      }
+    }
+
+    &:hover,
+    &:focus-visible {
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+}

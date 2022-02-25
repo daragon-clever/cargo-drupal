@@ -1,0 +1,30 @@
+.Section {
+  --bgColor: var(--main-bg);
+  --foregroundColor: var(--text-color);
+  color: var(--foregroundColor);
+
+  &:not(.has-noBg) {
+    background-color: var(--bgColor);
+  }
+
+  &.has-altBg {
+    --bgColor: var(--alt-bg);
+  }
+
+  &.has-lightForeground {
+    --foregroundColor: var(--white);
+  }
+}
+
+.Section-inner {
+  padding-right: map-get($section-padding, xs);
+  padding-left: map-get($section-padding, xs);
+  max-width: $site-width;
+  width: 100%;
+  margin: 0 auto;
+
+  @include media-breakpoint-up('md') {
+    padding-right: map-get($section-padding, md);
+    padding-left: map-get($section-padding, md);
+  }
+}

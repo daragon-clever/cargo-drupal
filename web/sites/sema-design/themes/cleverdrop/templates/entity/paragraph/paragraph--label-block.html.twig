@@ -1,0 +1,21 @@
+{%
+  set classes = [
+  'LabelBlock'
+]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }} data-animate='{"threshold": "0.5"}'>
+    {% block content %}
+      <svg viewBox="0 0 100 100" class="LeftBrush" aria-hidden="true">
+        <use xlink:href="#sema-brush"></use>
+      </svg>
+      <div class="LabelBlock-content">
+        <h3 class="LabelBlock-title">{{ content.field_title }}</h3>
+        {{ content.field_description }}
+      </div>
+      <svg viewBox="0 0 100 100" class="RightBrush" aria-hidden="true">
+        <use xlink:href="#sema-brush"></use>
+      </svg>
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

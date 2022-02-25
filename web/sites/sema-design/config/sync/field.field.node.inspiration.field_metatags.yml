@@ -1,0 +1,21 @@
+uuid: 348f85de-e56a-4a2c-8151-88cc536cb5de
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_metatags
+    - node.type.inspiration
+  module:
+    - metatag
+id: node.inspiration.field_metatags
+field_name: field_metatags
+entity_type: node
+bundle: inspiration
+label: Metatags
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

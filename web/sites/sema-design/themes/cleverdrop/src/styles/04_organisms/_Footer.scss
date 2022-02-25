@@ -1,0 +1,24 @@
+.Footer {
+  @include u-cormorant-regular;
+}
+
+.FooterBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: $site-inner-width;
+  width: 100%;
+  margin: 0 auto;
+
+  @include media-breakpoint-down('md') {
+    flex-direction: column;
+    row-gap: rem(30px);
+    padding: rem(40px) map-get($section-padding, xs);
+  }
+
+  @include media-breakpoint-up('md') {
+    column-gap: $gutter-size;
+    padding: rem(40px);
+    padding: rem(30px) map-get($section-padding, md);
+  }
+}

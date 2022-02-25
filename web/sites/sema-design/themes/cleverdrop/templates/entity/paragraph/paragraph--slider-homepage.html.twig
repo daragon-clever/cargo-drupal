@@ -1,0 +1,28 @@
+{%
+  set classes = [
+  'HomeBanner'
+]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+      <div class="HomeBanner-slider Slider js-home-banner">
+        <div class="Slider-wrapper">
+          {% for i in content.field_picture_slide['#items']|keys %}
+          <div class="Slider-slide HomeBanner-slide">
+            <div class="HomeBanner-slideImg">
+              {{ content.field_picture_slide[i] }}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="HomeBanner-content">
+        <span class="HomeBanner-ontitle">{{ content.field_on_title }}</span>
+        <h2 class="HomeBanner-title">{{ content.field_title }}</h2>
+        <span class="HomeBanner-subtitle">{{ content.field_subtitle }}</span>
+      </div>
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

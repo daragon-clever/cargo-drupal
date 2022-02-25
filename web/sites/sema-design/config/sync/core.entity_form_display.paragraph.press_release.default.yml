@@ -1,0 +1,54 @@
+uuid: 07e95467-2559-4a63-8505-9fd40b16ad20
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.press_release.field_description
+    - field.field.paragraph.press_release.field_paragraph_press_element
+    - field.field.paragraph.press_release.field_title
+    - paragraphs.paragraphs_type.press_release
+  module:
+    - paragraphs
+id: paragraph.press_release.default
+targetEntityType: paragraph
+bundle: press_release
+mode: default
+content:
+  field_description:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_paragraph_press_element:
+    type: paragraphs
+    weight: 2
+    settings:
+      title: Paragraphe
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: press_element
+      features:
+        add_above: '0'
+        collapse_edit_all: '0'
+        duplicate: '0'
+    third_party_settings: {  }
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,235 @@
+uuid: fe2782b3-d5a2-46c1-bcb6-81968bf982b9
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.we_talk_about_us.field_metatags
+    - field.field.node.we_talk_about_us.field_paragraph_introduction
+    - field.field.node.we_talk_about_us.field_paragraph_main_visual
+    - field.field.node.we_talk_about_us.field_paragraph_partnership
+    - field.field.node.we_talk_about_us.field_paragraph_press_release
+    - node.type.we_talk_about_us
+  module:
+    - field_group
+    - metatag
+    - paragraphs
+    - path
+third_party_settings:
+  field_group:
+    group_on_parle_de_nous:
+      children:
+        - group_main_visual
+        - group_introduction
+        - group_press_release
+        - group_partnership
+      parent_name: ''
+      weight: 1
+      format_type: tabs
+      region: content
+      format_settings:
+        direction: vertical
+        id: ''
+        classes: ''
+      label: 'On parle de nous'
+    group_main_visual:
+      children:
+        - field_paragraph_main_visual
+      parent_name: group_on_parle_de_nous
+      weight: 1
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: open
+        required_fields: true
+      label: 'Visuel principal'
+    group_introduction:
+      children:
+        - field_paragraph_introduction
+      parent_name: group_on_parle_de_nous
+      weight: 2
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: Introduction
+    group_press_release:
+      children:
+        - field_paragraph_press_release
+      parent_name: group_on_parle_de_nous
+      weight: 3
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: 'Parution presse'
+    group_partnership:
+      children:
+        - field_paragraph_partnership
+      parent_name: group_on_parle_de_nous
+      weight: 4
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: Partenariat
+id: node.we_talk_about_us.default
+targetEntityType: node
+bundle: we_talk_about_us
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_metatags:
+    weight: 26
+    settings:
+      sidebar: true
+    third_party_settings: {  }
+    type: metatag_firehose
+    region: content
+  field_paragraph_introduction:
+    type: paragraphs
+    weight: 2
+    settings:
+      title: Paragraphe
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: introduction
+      features:
+        add_above: '0'
+        collapse_edit_all: '0'
+        duplicate: '0'
+    third_party_settings: {  }
+    region: content
+  field_paragraph_main_visual:
+    weight: 3
+    settings:
+      title: Paragraphe
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+    type: paragraphs
+    region: content
+  field_paragraph_partnership:
+    type: paragraphs
+    weight: 4
+    settings:
+      title: Paragraphe
+      title_plural: Paragraphs
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: all
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: partnership
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+    region: content
+  field_paragraph_press_release:
+    weight: 21
+    settings:
+      title: Paragraphe
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: press_release
+      features:
+        add_above: '0'
+        collapse_edit_all: '0'
+        duplicate: '0'
+    third_party_settings: {  }
+    type: paragraphs
+    region: content
+  langcode:
+    type: language_select
+    weight: 5
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 8
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 11
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 9
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 6
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+hidden: {  }

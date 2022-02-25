@@ -1,0 +1,10 @@
+uuid: bec7885a-f517-482c-8a5a-efae6baf1d31
+langcode: fr
+status: true
+dependencies: {  }
+id: label_block
+label: 'Bloc étiquette'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

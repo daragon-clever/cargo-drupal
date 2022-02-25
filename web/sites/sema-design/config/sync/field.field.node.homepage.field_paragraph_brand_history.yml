@@ -1,0 +1,40 @@
+uuid: 8037eb0b-35d1-47cb-afb4-7433b9e36365
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraph_brand_history
+    - node.type.homepage
+    - paragraphs.paragraphs_type.brand_history
+  module:
+    - entity_reference_revisions
+id: node.homepage.field_paragraph_brand_history
+field_name: field_paragraph_brand_history
+entity_type: node
+bundle: homepage
+label: 'Histoire de la marque'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      brand_history: brand_history
+    target_bundles_drag_drop:
+      brand_history:
+        enabled: true
+        weight: 5
+      label_block:
+        weight: 6
+        enabled: false
+      our_universe:
+        weight: 7
+        enabled: false
+      slider_homepage:
+        weight: 8
+        enabled: false
+field_type: entity_reference_revisions

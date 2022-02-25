@@ -1,0 +1,29 @@
+uuid: 3093e884-9606-423f-9a01-57f8a7b710c4
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.inspiration.field_metatags
+    - field.field.node.inspiration.field_paragraph_contents_table
+    - field.field.node.inspiration.field_paragraph_main_visual
+    - field.field.node.inspiration.field_paragraph_moodboard
+    - node.type.inspiration
+  module:
+    - user
+id: node.inspiration.teaser
+targetEntityType: node
+bundle: inspiration
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_metatags: true
+  field_paragraph_contents_table: true
+  field_paragraph_main_visual: true
+  field_paragraph_moodboard: true
+  langcode: true

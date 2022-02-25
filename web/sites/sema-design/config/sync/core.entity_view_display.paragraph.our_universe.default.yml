@@ -1,0 +1,108 @@
+uuid: 69622f3a-eac2-4286-a5b7-1c761e97cb1b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.our_universe.field_color
+    - field.field.paragraph.our_universe.field_cta
+    - field.field.paragraph.our_universe.field_description
+    - field.field.paragraph.our_universe.field_our_universe_bttm_r_p
+    - field.field.paragraph.our_universe.field_our_universe_left_picture
+    - field.field.paragraph.our_universe.field_our_universe_top_r_picture
+    - field.field.paragraph.our_universe.field_subtitle
+    - field.field.paragraph.our_universe.field_title
+    - image.style.portrait_max_h_700px
+    - paragraphs.paragraphs_type.our_universe
+  module:
+    - color_field
+    - link
+    - svg_image
+id: paragraph.our_universe.default
+targetEntityType: paragraph
+bundle: our_universe
+mode: default
+content:
+  field_color:
+    weight: 8
+    label: above
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    type: color_field_formatter_text
+    region: content
+  field_cta:
+    weight: 6
+    label: visually_hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_description:
+    weight: 5
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_our_universe_bttm_r_p:
+    weight: 3
+    label: visually_hidden
+    settings:
+      image_style: portrait_max_h_700px
+      image_link: ''
+      svg_render_as_image: true
+      svg_attributes:
+        width: null
+        height: null
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_our_universe_left_picture:
+    weight: 0
+    label: visually_hidden
+    settings:
+      image_style: portrait_max_h_700px
+      image_link: ''
+      svg_render_as_image: true
+      svg_attributes:
+        width: null
+        height: null
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_our_universe_top_r_picture:
+    weight: 1
+    label: visually_hidden
+    settings:
+      image_style: portrait_max_h_700px
+      image_link: ''
+      svg_render_as_image: true
+      svg_attributes:
+        width: null
+        height: null
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_subtitle:
+    weight: 7
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_title:
+    weight: 4
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

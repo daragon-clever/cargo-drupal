@@ -1,0 +1,32 @@
+uuid: d9e6cb2a-aa0f-4020-a96d-914f5e8fc4a8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.section_professionnel.field_description
+    - field.field.paragraph.section_professionnel.field_title
+    - paragraphs.paragraphs_type.section_professionnel
+id: paragraph.section_professionnel.default
+targetEntityType: paragraph
+bundle: section_professionnel
+mode: default
+content:
+  field_description:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

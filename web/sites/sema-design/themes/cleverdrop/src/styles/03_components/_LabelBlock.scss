@@ -1,0 +1,85 @@
+.LabelBlock {
+  position: relative;
+
+
+  &.is-animate {
+    .LeftBrush {
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+
+    .RightBrush {
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+  }
+
+  .LeftBrush,
+  .RightBrush {
+    display: none;
+    position: absolute;
+    top: 50%;
+    width: rem(320px);
+    fill: var(--ebb);
+    opacity: 0.5;
+    transform: translateY(-50%);
+    transition: clip-path $brush-animation-duration;
+    animation-fill-mode: forwards;
+
+    @include media-breakpoint-up('md') {
+      display: block;
+    }
+  }
+
+  .LeftBrush {
+    clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+    transform: translateY(-50%);
+
+    use {
+      transform: translateX(-30%);
+    }
+  }
+
+  .RightBrush {
+    right: 0;
+    clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
+    transform: translateY(-50%) rotateX(180deg);
+
+    use {
+      transform: translateX(30%);
+    }
+  }
+}
+
+.LabelBlock-content {
+  position: relative;
+  color: var(--black);
+  text-align: center;
+  padding: rem(60px) rem(45px) rem(115px);
+  background-color: var(--alt-bg);
+  max-width: rem(450px);
+  width: 100%;
+  border-radius: 0 0 rem(300px) rem(300px);
+  margin: auto;
+  z-index: 1;
+
+  &::after {
+    position: absolute;
+    bottom: rem(30px);
+    left: 50%;
+    content: '';
+    display: block;
+    height: rem(25px);
+    width: rem(25px);
+    background: var(--white);
+    transform: translateX(-50%);
+    border-radius: 50%;
+  }
+
+  @include media-breakpoint-up('md') {
+    transform: translateY(rem(-100px));
+    margin-bottom: rem(-100px);
+  }
+}
+
+.LabelBlock-title {
+  margin-bottom: rem(50px);
+}

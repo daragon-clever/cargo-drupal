@@ -1,0 +1,30 @@
+select,
+input,
+textarea {
+  @include u-work-sans-regular;
+  height: rem(50px);
+  font-size: rem(14px);
+  padding-right: rem(30px);
+  padding-left: rem(30px);
+  margin-bottom: rem(30px);
+  border: 0;
+  max-width: 100%;
+}
+
+label {
+  display: block;
+}
+
+input[type='submit'] {
+  color: var(--white);
+  background-color: var(--black);
+  border: 1px solid var(--text-color);
+  cursor: pointer;
+  transition: color $transition, background-color $transition, border-color $transition;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--black);
+    background-color: transparent;
+  }
+}

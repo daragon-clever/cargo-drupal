@@ -1,0 +1,23 @@
+uuid: 99d9a627-3031-470c-af14-50a9dbfbc588
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cta
+    - paragraphs.paragraphs_type.our_universe
+  module:
+    - link
+id: paragraph.our_universe.field_cta
+field_name: field_cta
+entity_type: paragraph
+bundle: our_universe
+label: CTA
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

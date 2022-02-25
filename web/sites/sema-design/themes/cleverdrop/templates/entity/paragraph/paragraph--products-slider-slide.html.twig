@@ -1,0 +1,13 @@
+{%
+  set classes = [
+  'ProductSlide'
+]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+      <div class="ProductSlide-img">{{ content.field_picture }}</div>
+      <h3 class="ProductSlide-title">{{ content.field_title }}</h3>
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

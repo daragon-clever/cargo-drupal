@@ -1,0 +1,56 @@
+{%
+  set classes = [
+  'MoodBoard-wpr'
+]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+      <div class="MoodBoard is-alt" data-moodboard style="--bgColor: {{content.field_color[0]['#markup']}};">
+        <div class="Section-inner MoodBoard--inner">
+          <h2 class="MoodBoard-title">{{ content.field_title }}</h2>
+          <div class="MoodBoard-left">
+            <div class="ImageList" data-moodboard-img>
+              {% for i in content.field_rounded_pictures['#items']|keys %}
+                <div class="RoundedImage">
+                  {{ content.field_rounded_pictures[i] }}
+                </div>
+              {% endfor %}
+            </div>
+            <div class="SecondImg" data-moodboard-img>
+              {{ content.field_second_picture }}
+            </div>
+            <div class="ThirdImg" data-moodboard-img>
+              {{ content.field_third_picture }}
+            </div>
+            <ul class="Keywords" data-animate='{"threshold": "0.1"}'>
+              {% for i in content.field_keywords['#items']|keys %}
+                <li>{{ content.field_keywords[i] }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="MoodBoard-right">
+            <div class="BrushesImageWpr">
+                <div class="Brushes-wpr" data-animate='{"threshold": "0.1"}'>
+                    <ul class="Brushes">
+                    {% for i in content.field_traces_paint['#items']|keys %}
+                      <li style="color: {{ content.field_traces_paint[i] }}">
+                        {% include directory ~ '/src/assets/svg/brush-' ~ i ~ '.svg' %}
+                      </li>
+                    {% endfor %}
+                  </ul>
+                </div>
+                <div class="FirstImg" data-moodboard-img>
+                  {{ content.field_picture }}
+                </div>
+              </div>
+              <p class="MoodBoard-text">
+                {{ content.field_description }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

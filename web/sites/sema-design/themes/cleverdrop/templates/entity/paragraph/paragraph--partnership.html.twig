@@ -1,0 +1,67 @@
+{%
+  set classes = [
+  'Partnership'
+]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }} style="--sail-color: {{content.field_color_second[0]['#markup']}};">
+    {% block content %}
+      <div class="Partnership-top">
+        <div class="Section-inner Partnership--inner">
+          <div class="Partnership--inner-top-wpr">
+            <div class="Partnership-topLeft">
+              <h2 class="Partnership-title">
+                {{ content.field_title }}
+              </h2>
+              <p class="Partnership-text">
+                {{ content.field_description }}
+              </p>
+            </div>
+            <div class="Partnership-topRight">
+              <h3 class="Partnership-subtitle">
+                {{ content.field_subtitle }}
+              </h3>
+              <div class="ImageAnimationWpr Partnership-img" data-animate='{"threshold": "0.3"}'>
+                <svg viewBox="0 0 100 100" class="Brush" aria-hidden="true">
+                  <use xlink:href="#sema-brush"></use>
+                </svg>
+                {{ content.field_picture }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="Partnership-bottom" style="--bgColor: {{content.field_color[0]['#markup']}};">
+        <div class="Section-inner Partnership--inner">
+          <div class="Partnership--inner-bottom-wpr">
+            <div class="Partnership-bottomLeft">
+              <div class="ImageAnimationWpr Partnership-img-second" data-animate='{"threshold": "0.3"}'>
+                <svg viewBox="0 0 100 100" class="Brush" aria-hidden="true">
+                  <use xlink:href="#sema-brush"></use>
+                </svg>
+                {{ content.field_second_picture }}
+              </div>
+            <div class="ImageAnimationWpr Partnership-img-third" data-animate='{"threshold": "0.3"}'>
+                {{ content.field_third_picture }}
+              </div>
+              <div class="ImageAnimationWpr Partnership-img-fourth" data-animate='{"threshold": "0.3"}'>
+                {{ content.field_fourth_picture }}
+              </div>
+            </div>
+            <div class="Partnership-bottomRight">
+              <h3 class="Partnership-subtitle">
+                {{ content.field_second_subtitle }}
+              </h3>
+              <p class="Partnership-text">
+                {{ content.field_second_description }}
+              </p>
+            </div>
+          </div>
+        </div>
+        <svg viewBox="0 0 100 100" class="RightBrush" aria-hidden="true">
+          <use xlink:href="#sema-brush"></use>
+        </svg>
+      </div>
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

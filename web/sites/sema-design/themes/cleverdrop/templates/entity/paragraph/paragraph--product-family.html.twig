@@ -1,0 +1,50 @@
+{%
+  set classes = [
+    'ProductFamily'
+]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+      <div class="Section">
+        <div class="Section-inner ProductFamily-inner is-top" data-animate='{"threshold": "0.2"}'>
+          <div class="ProductFamily-content">
+            <h2 class="ProductFamily-title">{{ content.field_title }}</h2>
+            <div class="ProductFamily-text">
+              {{ content.field_description }}
+            </div>
+          </div>
+          <div class="ProductFamily-firstImg">
+            <svg viewBox="0 0 100 100" class="Brush" aria-hidden="true">
+              <use xlink:href="#sema-brush"></use>
+            </svg>
+            {{ content.field_picture }}
+          </div>
+        </div>
+      </div>
+      <div class="Section has-lightForeground" style="--bgColor: {{ content.field_color[0]['#markup'] }};" >
+        <div class="Stains">
+          {% include directory ~ '/src/assets/svg/stains.svg' %}
+        </div>
+        <svg viewBox="0 0 100 100" class="RightBrush" aria-hidden="true">
+          <use xlink:href="#sema-brush"></use>
+        </svg>
+        <div class="Section-inner ProductFamily-inner is-bottom" data-animate='{"threshold": "0.2"}'>
+          <div class="ProductFamily-secondImg">
+            {{ content.field_second_picture }}
+            <svg viewBox="0 0 100 100" class="Brush" aria-hidden="true">
+              <use xlink:href="#sema-brush"></use>
+            </svg>
+          </div>
+          <div class="ProductFamily-content">
+            <h2 class="ProductFamily-title">{{ content.field_second_title }}</h2>
+            <div class="ProductFamily-text">
+              {{ content.field_second_description }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

@@ -1,0 +1,19 @@
+uuid: 32b2095e-1605-46e6-8eeb-66ef493f4439
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_keywords
+    - paragraphs.paragraphs_type.moodboard
+id: paragraph.moodboard.field_keywords
+field_name: field_keywords
+entity_type: paragraph
+bundle: moodboard
+label: 'Mots clés'
+description: "Nous préconisons 12 caractères, espaces compris\r\n"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

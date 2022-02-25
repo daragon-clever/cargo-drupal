@@ -1,0 +1,28 @@
+uuid: 7f51cf12-cec6-4848-a9a7-5cca1b771a81
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_products
+    - node.type.product_second_level
+    - paragraphs.paragraphs_type.our_products
+id: paragraph.our_products.field_products
+field_name: field_products
+entity_type: paragraph
+bundle: our_products
+label: Produits
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      product_second_level: product_second_level
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

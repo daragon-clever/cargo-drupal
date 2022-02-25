@@ -1,0 +1,70 @@
+/**
+  -- DOM structure --
+  <div class="fvFormField">
+    <label class="fvFormLabel" for="exemple-select">
+      Custom select
+    </label>
+    <div class="fvSelect-wpr">
+      <select class="fvSelect" name="exemple-select" id="exemple-select">
+        <option value="select-1">Choix 1</option>
+        { ... }
+      </select>
+      <svg />
+    </div>
+  </div>
+**/
+
+.Select-wpr {
+
+  position: relative;
+  flex-shrink: 0;
+  width: max-content;
+  min-width: em(200px);
+  color: var(--black);
+
+  svg {
+    position: absolute;
+    top: calc(50% - 5px);
+    right: em(8px);
+    height: em(10px);
+    width: em(10px);
+    fill: currentColor;
+    pointer-events: none;
+  }
+
+  &.is-full {
+    width: 100%;
+  }
+}
+
+.Select {
+  @include u-cormorant-regular;
+  appearance: none;
+  min-height: em(40px, 14px);
+  font-family: inherit;
+  font-size: em(14px, 16px);
+  color: currentColor;
+  padding: em(8px) em(24px) em(8px) em(8px);
+  border: 1px solid var(--black);
+  border-radius: em(4px);
+
+
+  &:focus {
+    box-shadow: 0 0 2px 2px var(--black);
+  }
+
+  &:disabled {
+    color: var(--black);
+    cursor: not-allowed;
+
+    + svg {
+      color: var(--black);
+    }
+  }
+
+  option {
+    @include u-cormorant-regular;
+    font-size: em(14px);
+    background-color: var(--body-bg);
+  }
+}

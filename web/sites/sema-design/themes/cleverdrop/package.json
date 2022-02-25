@@ -1,0 +1,41 @@
+{
+  "name": "sema-design",
+  "version": "1.0.0",
+  "engines": {
+    "node": "16.13.2"
+  },
+  "scripts": {
+    "build": "webpack --mode=production",
+    "build:dev": "webpack --mode=development",
+    "watch": "webpack --watch --progress --mode=development",
+    "styles:watch": "webpack --mode=development --watch --progress --config-name=inte",
+    "styles:build": "webpack --mode=production --config-name=styles",
+    "js:watch": "webpack --watch --progress --mode=development --config-name=js",
+    "js:build": "webpack --mode=production --config-name=js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@svgr/webpack": "^6.2.0",
+    "autoprefixer": "^10.4.2",
+    "babel-loader": "^8.2.3",
+    "copy-webpack-plugin": "^9.1.0",
+    "css-loader": "^6.5.1",
+    "mini-css-extract-plugin": "^2.4.6",
+    "node-sass-glob-importer": "^5.3.2",
+    "postcss-loader": "^6.2.1",
+    "sass": "^1.47.0",
+    "sass-loader": "^12.4.0",
+    "stylelint": "^13.7.2",
+    "stylelint-config-sass-guidelines": "^9.0.1",
+    "stylelint-suitcss-rules": "^1.0.2",
+    "stylelint-webpack-plugin": "^2.1.1",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1"
+  },
+  "dependencies": {
+    "lodash.debounce": "^4.0.8",
+    "swiper": "^7.4.1"
+  }
+}

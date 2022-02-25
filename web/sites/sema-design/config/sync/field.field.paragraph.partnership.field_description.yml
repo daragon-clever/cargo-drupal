@@ -1,0 +1,19 @@
+uuid: 93f1062a-6f0a-434e-8bf6-1d65549a9961
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_description
+    - paragraphs.paragraphs_type.partnership
+id: paragraph.partnership.field_description
+field_name: field_description
+entity_type: paragraph
+bundle: partnership
+label: Description
+description: 'Nous préconisons 840 caractères, espaces compris'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

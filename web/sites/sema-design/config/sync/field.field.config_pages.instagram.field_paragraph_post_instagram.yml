@@ -1,0 +1,100 @@
+uuid: 7400f4d2-02dc-4247-a87c-6a5c52cd44e4
+langcode: fr
+status: true
+dependencies:
+  config:
+    - config_pages.type.instagram
+    - field.storage.config_pages.field_paragraph_post_instagram
+    - paragraphs.paragraphs_type.post_instagram
+  module:
+    - entity_reference_revisions
+id: config_pages.instagram.field_paragraph_post_instagram
+field_name: field_paragraph_post_instagram
+entity_type: config_pages
+bundle: instagram
+label: 'Post instagram'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      post_instagram: post_instagram
+    target_bundles_drag_drop:
+      brand_history:
+        weight: 26
+        enabled: false
+      contents_table:
+        weight: 27
+        enabled: false
+      contents_table_slide:
+        weight: 28
+        enabled: false
+      introduction:
+        weight: 29
+        enabled: false
+      label_block:
+        weight: 30
+        enabled: false
+      main_visual:
+        weight: 31
+        enabled: false
+      moodboard:
+        weight: 32
+        enabled: false
+      our_products:
+        weight: 33
+        enabled: false
+      our_universe:
+        weight: 34
+        enabled: false
+      particular:
+        weight: 35
+        enabled: false
+      partnership:
+        weight: 36
+        enabled: false
+      post_instagram:
+        enabled: true
+        weight: 25
+      presentation_block:
+        weight: 37
+        enabled: false
+      press_element:
+        weight: 38
+        enabled: false
+      press_release:
+        weight: 39
+        enabled: false
+      product_family:
+        weight: 40
+        enabled: false
+      products_slider:
+        weight: 41
+        enabled: false
+      products_slider_slide:
+        weight: 42
+        enabled: false
+      slider_homepage:
+        weight: 43
+        enabled: false
+      team_presentation:
+        weight: 44
+        enabled: false
+      tet:
+        weight: 45
+        enabled: false
+      text_area:
+        weight: 46
+        enabled: false
+      visuals_and_video:
+        weight: 47
+        enabled: false
+      who_are_we_slider:
+        weight: 48
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,52 @@
+// Config : Colors variables
+// =========================
+//
+
+// Debug
+// ------
+// background color debugging ftw
+/* stylelint-disable */
+$p: peachpuff !default;
+$r: rebeccapurple !default;
+$l: lightgreen !default;
+/* stylelint-enable */
+
+// Colors list
+// -----------
+// List all colors right here
+// Variables named using "Name that color" (http://chir.ag/projects/name-that-color/)
+
+$mine-shaft: hsla(0, 0%, 21%, 0.14);
+
+// Usage
+$header-color: $mine-shaft !default;
+
+
+
+:root {
+  --white: #fff;
+  --black: #000;
+  --pampas: #efebe8;
+  --ebb: #e8e3df;
+  --pampas-alt: #f3f0ed;
+  --lite-grey: #d8d8d8;
+  --ebb: #eae8e6;
+  --hunter-green: #0f140d;
+  --hunter-green-hsl: 103, 23%, 6%;
+  --hunter-green-rgb: 15, 20, 13;
+
+  // main colors
+  --body-bg: var(--white);
+  --text-color: var(--black);
+  --sail-color: var(--white);
+
+  // Backgrounds
+  --main-bg: var(--white);
+  --alt-bg: var(--pampas);
+  --lite-bg: var(--pampas-alt);
+
+  // Message colors
+  --alert: #d90000;
+  --valid: #309630;
+  --warning: #fca846;
+}

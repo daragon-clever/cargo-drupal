@@ -1,0 +1,43 @@
+{%
+  set classes = [
+  'VisualsAndVideo-wpr'
+]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+      <div class="VisualsAndVideo" style="--bgColor: {{content.field_color[0]['#markup']}};">
+        <svg viewBox="0 0 100 100" class="RightBrush" aria-hidden="true">
+          <use xlink:href="#sema-brush"></use>
+        </svg>
+        <div class="Section-inner VisualsAndVideo--inner">
+          <div class="VisualsAndVideo-images-wpr">
+            <div class="VisualsAndVideo-firstImage">
+              {{ content.field_picture }}
+            </div>
+            <div class="VisualsAndVideo-secondImage">
+              {{ content.field_second_picture }}
+            </div>
+            <svg viewBox="0 0 100 100" class="LeftBrush" aria-hidden="true">
+              <use xlink:href="#sema-brush"></use>
+            </svg>
+          </div>
+          <div class="VisualsAndVideo-text-wpr">
+            <h3 class="VisualsAndVideo-title">
+              {{ content.field_title }}
+            </h3>
+            <p class="VisualsAndVideo-description">
+              {{ content.field_description }}
+            </p>
+          </div>
+          <div class="VisualsAndVideo-video">
+            <iframe width="915" height="515" src="https://www.youtube.com/embed/{{ content.field_youtube[0]["#context"]["value"] }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+        <svg viewBox="0 0 100 100" class="LeftMarks" aria-hidden="true">
+          <use xlink:href="#sema-marks"></use>
+        </svg>
+      </div>
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

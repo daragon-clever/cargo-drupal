@@ -1,0 +1,85 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a menu.
+ *
+ * Available variables:
+ * - menu_name: The machine name of the menu.
+ * - items: A nested list of menu items. Each menu item contains:
+ *   - attributes: HTML attributes for the menu item.
+ *   - below: The menu item child items.
+ *   - title: The menu link title.
+ *   - url: The menu link url, instance of \Drupal\Core\Url
+ *   - localized_options: Menu link localized options.
+ *   - is_expanded: TRUE if the link has visible children within the current
+ *     menu tree.
+ *   - is_collapsed: TRUE if the link has children within the current menu tree
+ *     that are not currently visible.
+ *   - in_active_trail: TRUE if the link is in the active trail.
+ *
+ * @ingroup themeable
+ */
+#}
+{% import _self as menus %}
+
+{#
+We call a macro which calls itself to render the full tree.
+@see https://twig.symfony.com/doc/1.x/tags/macro.html
+#}
+{{ menus.menu_links(directory, items, attributes, 0) }}
+
+{% macro menu_links(directory, items, attributes, menu_level, id, parent_title) %}
+  {% import _self as menus %}
+  {% if items %}
+    {% if menu_level == 0 %}
+      <a href="/" class="Logo">
+        <span class="u-srOnly">Accueil</span>
+        {% include directory ~ '/src/assets/svg/sema-logo.svg' %}
+      </a>
+      <div class="MainMenu-wpr" aria-labelledby="mobile-menu-btn">
+        <div class="MainMenu-inner">
+          <ul{{ attributes }} class="MainMenu">
+            {% for name, item in items %}
+            {% set id = item.original_link.metadata['entity_id'] %}
+              {% if name != 'logo' %}
+                <li{{ item.attributes }} class="MainMenu-item">
+                  {% if item.below %}
+                    <button id="menu-item-{{id}}" class="MainMenu-btn" data-submenu-btn>
+                      {{ link(item.title, item.url) }}
+                      {% include directory ~ '/src/assets/svg/chevron.svg' %}
+                    </button>
+                    {{ menus.menu_links(directory, item.below, attributes, menu_level + 1, id, item.title) }}
+                  {% else %}
+                    {{ link(item.title, item.url) }}
+                  {% endif %}
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    {% else %}
+      <div class="MainSubMenu-wpr" aria-labelledby="menu-item-{{id}}">
+        <div class="MainSubMenu-inner">
+          <button class="MainSubMenu-closeBtn" data-close="menu-item-{{id}}">
+            {% include directory ~ '/src/assets/svg/chevron.svg' %}
+            {{parent_title}}
+          </button>
+          <ul class="MainSubMenu">
+            {% for name, item in items %}
+            {% set id = item.original_link.metadata['entity_id'] %}
+              <li{{ item.attributes }} class="MainSubMenu-item">
+                {% if item.below %}
+                  <button class="MainSubMenu-btn" data-submenu-btn>{{ link(item.title, item.url) }}</button>
+                  {{ menus.menu_links(directory, item.below, attributes, menu_level + 1, id, item.title) }}
+                {% else %}
+                  {{ link(item.title, item.url) }}
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    {% endif %}
+  {% endif %}
+{% endmacro %}

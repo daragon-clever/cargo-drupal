@@ -1,0 +1,140 @@
+.Slider {
+  width: 100%;
+  overflow: hidden;
+}
+
+.Slider-wrapper {
+  display: flex;
+  align-items: center;
+  transition-property: transform;
+}
+
+.Slider-slide {
+  flex-shrink: 0;
+  align-self: stretch;
+  display: flex;
+  touch-action: pan-y;
+}
+
+.Slider-scrollbar {
+  @include media-breakpoint-down('md') {
+    position: relative;
+    height: em(2px);
+    width: 99%;
+    background-color: var(--ebb);
+    border-radius: em(10px);
+    margin: rem(40px) auto 0;
+
+    &::before,
+    &::after {
+      position: absolute;
+      display: block;
+      content: '';
+      height: rem(40px);
+      width: 100%;
+      background: transparent;
+    }
+
+    &::before {
+      top: 0;
+      transform: translateY(-100%);
+    }
+
+    &::after {
+      bottom: 0;
+      transform: translateY(100%);
+    }
+
+    &:hover {
+      cursor: grab;
+    }
+  }
+
+  @include media-breakpoint-up('md') {
+    display: none;
+  }
+
+}
+
+.Slider-scrollbar-drag {
+  position: relative;
+  height: 100%;
+  background-color: var(--black);
+  border-radius: em(10px);
+
+  &::before {
+    position: absolute;
+    top: em(-5px);
+    right: 0;
+    bottom: em(-5px);
+    left: 0;
+    display: block;
+    content: '';
+  }
+}
+
+.SliderNavigation-wrp {
+  margin-top: rem(40px);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: rem(215px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .is-disabled & {
+    display: none;
+  }
+}
+
+.Slider-button-prev,
+.Slider-button-next {
+  position: relative;
+  width: rem(30px);
+  height: rem(30px);
+  border-radius: rem(30px);
+  cursor: pointer;
+  background-color: var(--white);
+  border: 0;
+  padding: 0;
+
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: rem(18px);
+  }
+
+  &.swiper-button-disabled { // stylelint-disable-line
+    cursor: not-allowed;
+
+    svg {
+      opacity: 0.4;
+    }
+  }
+}
+
+.Slider-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .swiper-pagination-bullet { // stylelint-disable-line
+    width: rem(6px);
+    height: rem(6px);
+    border-radius: rem(6px);
+    border: 1px solid var(--text-color);
+    background: transparent;
+    margin-right: rem(10px);
+    cursor: pointer;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &.swiper-pagination-bullet-active { // stylelint-disable-line
+      background: var(--text-color);
+    }
+  }
+}

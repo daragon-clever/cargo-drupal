@@ -1,0 +1,26 @@
+uuid: dceee248-5b01-4ef4-bd8b-5e01a52781ff
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_rte
+    - paragraphs.paragraphs_type.particular
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - basic_html
+id: paragraph.particular.field_rte
+field_name: field_rte
+entity_type: paragraph
+bundle: particular
+label: Description
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

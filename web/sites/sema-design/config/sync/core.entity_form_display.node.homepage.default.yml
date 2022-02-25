@@ -1,0 +1,236 @@
+uuid: 713c0786-1f08-4daa-9da2-0c82caa341d4
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.homepage.field_metatags
+    - field.field.node.homepage.field_paragraph_brand_history
+    - field.field.node.homepage.field_paragraph_label_block
+    - field.field.node.homepage.field_paragraph_our_universe
+    - field.field.node.homepage.field_paragraph_slider_hp
+    - node.type.homepage
+  module:
+    - field_group
+    - metatag
+    - paragraphs
+    - path
+third_party_settings:
+  field_group:
+    group_hp_zones:
+      children:
+        - group_slider
+        - group_label_block
+        - group_our_universe
+        - group_brand_history
+      parent_name: ''
+      weight: 1
+      format_type: tabs
+      region: content
+      format_settings:
+        direction: vertical
+        id: ''
+        classes: ''
+      label: hp_zones
+    group_slider:
+      children:
+        - field_paragraph_slider_hp
+      parent_name: group_hp_zones
+      weight: 13
+      format_type: tab
+      region: content
+      format_settings:
+        description: ''
+        formatter: open
+        id: ''
+        classes: ''
+        required_fields: false
+      label: Slider
+    group_label_block:
+      children:
+        - field_paragraph_label_block
+      parent_name: group_hp_zones
+      weight: 14
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: false
+      label: 'Bloc étiquette'
+    group_our_universe:
+      children:
+        - field_paragraph_our_universe
+      parent_name: group_hp_zones
+      weight: 15
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: false
+      label: 'Notre univers'
+    group_brand_history:
+      children:
+        - field_paragraph_brand_history
+      parent_name: group_hp_zones
+      weight: 16
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: false
+      label: 'Histoire de la marque'
+id: node.homepage.default
+targetEntityType: node
+bundle: homepage
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_metatags:
+    weight: 26
+    settings:
+      sidebar: true
+    third_party_settings: {  }
+    type: metatag_firehose
+    region: content
+  field_paragraph_brand_history:
+    type: paragraphs
+    weight: 12
+    settings:
+      title: Paragraphe
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: brand_history
+      features:
+        add_above: '0'
+        collapse_edit_all: '0'
+        duplicate: '0'
+    third_party_settings: {  }
+    region: content
+  field_paragraph_label_block:
+    type: paragraphs
+    weight: 10
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: label_block
+      features:
+        add_above: '0'
+        collapse_edit_all: '0'
+        duplicate: '0'
+    third_party_settings: {  }
+    region: content
+  field_paragraph_our_universe:
+    type: paragraphs
+    weight: 11
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: our_universe
+      features:
+        add_above: '0'
+        collapse_edit_all: '0'
+        duplicate: '0'
+    third_party_settings: {  }
+    region: content
+  field_paragraph_slider_hp:
+    type: paragraphs
+    weight: 9
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: slider_homepage
+      features:
+        add_above: '0'
+        collapse_edit_all: '0'
+        duplicate: '0'
+    third_party_settings: {  }
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 5
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 8
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 6
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 3
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+hidden: {  }

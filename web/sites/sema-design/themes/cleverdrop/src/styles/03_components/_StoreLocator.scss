@@ -1,0 +1,182 @@
+.StoreLocator {
+  position: relative;
+
+  .Brush {
+    display: none;
+
+    @include media-breakpoint-up('md') {
+      display: block;
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      right: rem(-50px);
+      width: rem(300px);
+      transform: rotateX(180deg) rotate(15deg);
+      fill: var(--ebb);
+      opacity: .5;
+    }
+  }
+}
+
+.StoreLocator-content {
+  @include enable-grid;
+  row-gap: rem(50px);
+  padding: rem(50px) 0;
+
+  @include media-breakpoint-up('md') {
+    padding: rem(70px) 0;
+  }
+}
+
+.StoreLocator-text {
+  @include make-cols(4);
+
+  @include media-breakpoint-up('md') {
+    @include make-cols(4, 1);
+  }
+}
+
+.StoreLocator-search {
+  @include make-cols(4);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  @include media-breakpoint-up('md') {
+    @include make-cols(5, 1);
+    flex-direction: row;
+  }
+
+  input:not(input[type=submit]) {
+    border: 1px solid var(--black);
+    padding: 0 rem(20px);
+    margin-bottom: rem(20px);
+
+    @include media-breakpoint-up('md') {
+      margin-bottom: 0;
+    }
+  }
+
+  input {
+    width: 100%;
+  }
+
+  input[type=submit] {
+    @include media-breakpoint-up('md') {
+      width: auto;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.Section.StoreLocator.StoreLocator-results {
+  position: relative;
+
+  @include media-breakpoint-up('md') {
+    background-color: var(--ebb);
+    padding-bottom: rem(120px);
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: rem(60px);
+      background-color: var(--white);
+    }
+  }
+}
+
+.StoreLocator-results .Section-inner {
+  @include media-breakpoint-down('md') {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.StoreLocator-results-content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: var(--white);
+
+  @include media-breakpoint-up('md') {
+    flex-direction: row;
+    z-index: 1;
+    box-shadow: 0 0 rem(20px) rem(-11px) #0f140d;
+  }
+}
+
+.StoreLocator-map {
+  width: 100vw;
+  max-height: 100vw;
+  background: var(--lite-grey);
+
+  @include media-breakpoint-up('md') {
+    width: 60%;
+    max-height: rem(600px);
+    order: 2;
+  }
+
+  .gm-style-iw-c {
+    @include u-work-sans-regular;
+    font-size: rem(16px);
+    line-height: rem(19px);
+    border-radius: rem(3px);
+    padding: rem(20px) !important;
+  }
+
+  button.gm-ui-hover-effect {
+    top: rem(5px) !important;
+    right: rem(5px) !important;
+
+    img {
+      width: rem(17px) !important;
+      height: rem(17px) !important;
+    }
+  }
+
+  .store-locator-map-info-window .title {
+    margin-bottom: rem(10px);
+  }
+
+  .store-locator-map-info-window .to-store {
+    display: none;
+  }
+}
+
+.StoreLocator-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100vw;
+  background: var(--white);
+
+  @include media-breakpoint-up('md') {
+    width: 40%;
+    max-height: rem(600px);
+    overflow: auto;
+    padding: 0 rem(20px);
+    order: 1;
+  }
+}
+
+.StoreLocator-item {
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  margin: 0 rem(15px);
+
+  @include media-breakpoint-up('md') {
+    margin: 0 rem(20px);
+  }
+}
+
+.StoreLocator-link {
+  @include u-work-sans-regular;
+  font-size: rem(16px);
+  line-height: rem(19px);
+  display: block;
+  padding: rem(40px) 0;
+  color: var(--black);
+  text-decoration: none;
+}

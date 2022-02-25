@@ -1,0 +1,27 @@
+{% set classes = [
+  'TextArea-wrp'
+] %}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    <div class="Section">
+      <div class="Section-inner TextArea">
+        {% block content %}
+        <div class="TextArea-left">
+          {{ content.field_title }}
+        </div>
+        <div class="TextArea-right">
+          <p>
+            {{ content.field_description }}
+          </p>
+          {% if content.field_cta %}
+            {% include directory ~ '/templates/ui/atoms/primary-cta.twig' with {
+              text: content.field_cta[0]['#title'],
+              url: content.field_cta[0]['#url'],
+            } %}
+          {% endif %}
+        </div>
+        {% endblock %}
+      </div>
+    </div>
+  </div>
+{% endblock paragraph %}

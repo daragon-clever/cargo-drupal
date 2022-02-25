@@ -1,0 +1,489 @@
+uuid: 3584a878-034b-4fbf-8167-9d5afc759615
+langcode: fr
+status: open
+dependencies:
+  enforced:
+    module:
+      - webform
+_core:
+  default_config_hash: 050mBs5TCPjBqzJlqEIwYwMCB9PyDKOvw1S3fRJ0m6s
+open: null
+close: null
+weight: 0
+uid: null
+template: false
+archive: false
+id: contact
+title: Contact
+description: 'Basic email contact webform.'
+category: ''
+elements: "objet:\n  '#type': select\n  '#title': 'Objet *'\n  '#options':\n    commercial: 'Je souhaite être recontacté par un commercial'\n    revendeur: 'Je souhaite devenir revendeur'\n    pro: 'Je souhaite accéder à la boutique professionnelle'\n    catalogue: 'Je souhaite recevoir vos catalogues'\n    sav: 'Je souhaite contacter le SAV'\n    other: 'Autre sujet'\n  '#empty_option': 'Sélectionner un sujet'\n  '#required': true\nname:\n  '#type': textfield\n  '#title': 'Votre nom *'\n  '#required': true\n  '#default_value': '[current-user:display-name]'\nlastname:\n  '#type': textfield\n  '#title': 'Votre prénom *'\n  '#required': true\n  '#multiple__no_items_message': 'Aucun &eacute;l&eacute;ment saisi. Veuillez ajouter des &eacute;l&eacute;ments ci-dessous.'\nsociety:\n  '#type': textfield\n  '#title': 'Société *'\n  '#required': true\n  '#multiple__no_items_message': 'Aucun &eacute;l&eacute;ment saisi. Veuillez ajouter des &eacute;l&eacute;ments ci-dessous.'\nadress:\n  '#type': webform_address\n  '#title': 'Adresse *'\n  '#required': true\n  '#multiple__no_items_message': 'Aucun &eacute;l&eacute;ment saisi. Veuillez ajouter des &eacute;l&eacute;ments ci-dessous.'\n  '#address__access': false\n  '#address_2__access': false\n  '#city__title': 'Ville  *'\n  '#city__required': true\n  '#state_province__access': false\n  '#postal_code__title': 'Code postal  *'\n  '#postal_code__required': true\n  '#country__access': false\nphone:\n  '#type': tel\n  '#title': 'Téléphone *'\n  '#required': true\n  '#pattern': '[0-9]{10}'\n  '#multiple__no_items_message': 'Aucun &eacute;l&eacute;ment saisi. Veuillez ajouter des &eacute;l&eacute;ments ci-dessous.'\nemail:\n  '#type': email\n  '#title': 'Adresse email *'\n  '#required': true\n  '#pattern': '(?:[a-z0-9!#$%&''*+\\/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&''*+\\/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])'\n  '#pattern_error': 'Veuillez saisir une adresse email correcte'\n  '#default_value': '[current-user:mail]'\n  '#multiple__no_items_message': 'Aucun &eacute;l&eacute;ment saisi. Veuillez ajouter des &eacute;l&eacute;ments ci-dessous.'\nmessage:\n  '#type': textarea\n  '#title': 'Votre message *'\n  '#required': true\n  '#multiple__no_items_message': 'Aucun &eacute;l&eacute;ment saisi. Veuillez ajouter des &eacute;l&eacute;ments ci-dessous.'\n  '#test': 'Please ignore this email.'\ninterested_by:\n  '#type': checkboxes\n  '#title': 'Je suis intéressé(e) par'\n  '#options':\n    art: 'Les arts de la table'\n    textile: 'Le textile'\n    decoration: 'La décoration'\n    luminaire: 'Le luminaire'\n    meuble: 'Le meuble'\n    accessoires: 'Les accessoires'\n    autre: Autre\ngdpr:\n  '#type': checkbox\n  '#title': 'En soumettant ce formulaire, j''accepte que les informations saisies dans ce formulaire soient utilisées, exploitées, traitées pour permettre de me recontacter dans le cadre de la relation commerciale qui découle de cette prise de contact.'\n  '#required': true\ncaptcha:\n  '#type': captcha\n  '#captcha_type': recaptcha_v3/contact\n  '#captcha_admin_mode': true\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit__label': Envoyer"
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: source_entity_webform
+  form_submit_once: false
+  form_exception_message: ''
+  form_open_message: ''
+  form_close_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_remote_addr: true
+  form_convert_anonymous: false
+  form_prepopulate: true
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_reset: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: true
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_log: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: true
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: message
+  confirmation_title: ''
+  confirmation_message: '<span style="font-size:10pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Calibri,sans-serif"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Votre message a bien &eacute;t&eacute; pris en compte. Nous vous r&eacute;pondrons dans les plus brefs d&eacute;lais. Merci.</span></span></span></span></span></span>'
+  confirmation_url: '<front>'
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers:
+  email_confirmation:
+    id: email
+    label: 'Courriel de confirmation'
+    notes: ''
+    handler_id: email_confirmation
+    status: false
+    conditions: {  }
+    weight: 1
+    settings:
+      states:
+        - completed
+      to_mail: '[webform_submission:values:email:raw]'
+      to_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: _default
+      subject: '[webform_submission:values:subject:raw]'
+      body: '[webform_submission:values:message:value]'
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+  commercial:
+    id: email
+    label: Commercial
+    notes: ''
+    handler_id: commercial
+    status: true
+    conditions:
+      enabled:
+        ':input[name="objet"]':
+          value: commercial
+    weight: 2
+    settings:
+      states:
+        - completed
+      to_mail: ccostes@clever-age.com
+      to_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: '[webform_submission:values:email:raw]'
+      from_options: {  }
+      from_name: '[webform_submission:values:name:raw]'
+      subject: '[webform_submission:values:objet:raw]'
+      body: "<p>Les valeurs soumises sont :</p>\r\n{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}\r\n"
+      excluded_elements:
+        gdpr: gdpr
+        captcha: captcha
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: true
+      theme_name: ''
+      parameters: {  }
+      debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+  pro:
+    id: email
+    label: pro
+    notes: ''
+    handler_id: pro
+    status: true
+    conditions:
+      enabled:
+        ':input[name="objet"]':
+          value: pro
+    weight: 3
+    settings:
+      states:
+        - completed
+      to_mail: ccostes@clever-age.com
+      to_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: '[webform_submission:values:name:raw]'
+      subject: '[webform_submission:values:objet:raw]'
+      body: "<p>Les valeurs soumises sont :</p>\r\n{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}\r\n"
+      excluded_elements:
+        gdpr: gdpr
+        captcha: captcha
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: true
+      theme_name: ''
+      parameters: {  }
+      debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+  catalogues:
+    id: email
+    label: Catalogues
+    notes: ''
+    handler_id: catalogues
+    status: true
+    conditions:
+      enabled:
+        ':input[name="objet"]':
+          value: catalogue
+    weight: 3
+    settings:
+      states:
+        - completed
+      to_mail: ccostes@clever-age.com
+      to_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: '[webform_submission:values:name:raw]'
+      subject: '[webform_submission:values:objet:raw]'
+      body: "<p>Les valeurs soumises sont :</p>\r\n{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}\r\n"
+      excluded_elements:
+        gdpr: gdpr
+        captcha: captcha
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: true
+      theme_name: ''
+      parameters: {  }
+      debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+  sav:
+    id: email
+    label: sav
+    notes: ''
+    handler_id: sav
+    status: true
+    conditions:
+      enabled:
+        ':input[name="objet"]':
+          value: sav
+    weight: 4
+    settings:
+      states:
+        - completed
+      to_mail: ccostes@clever-age.com
+      to_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: '[webform_submission:values:name:raw]'
+      subject: '[webform_submission:values:objet:raw]'
+      body: "<p>Les valeurs soumises sont :</p>\r\n{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}\r\n"
+      excluded_elements:
+        gdpr: gdpr
+        captcha: captcha
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: true
+      theme_name: ''
+      parameters: {  }
+      debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+  other:
+    id: email
+    label: Autre
+    notes: ''
+    handler_id: other
+    status: true
+    conditions:
+      enabled:
+        ':input[name="objet"]':
+          value: other
+    weight: 5
+    settings:
+      states:
+        - completed
+      to_mail: ffernandez@clever-age.com
+      to_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: '[webform_submission:values:name:raw]'
+      subject: '[webform_submission:values:objet:raw]'
+      body: "<p>Les valeurs soumises sont :</p>\r\n{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}\r\n"
+      excluded_elements:
+        gdpr: gdpr
+        captcha: captcha
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: true
+      theme_name: ''
+      parameters: {  }
+      debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+  commercial_1:
+    id: email
+    label: Revendeur
+    notes: ''
+    handler_id: commercial_1
+    status: true
+    conditions:
+      enabled:
+        ':input[name="objet"]':
+          value: revendeur
+    weight: 6
+    settings:
+      states:
+        - completed
+      to_mail: ccostes@clever-age.com
+      to_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: '[webform_submission:values:email:raw]'
+      from_options: {  }
+      from_name: '[webform_submission:values:name:raw]'
+      subject: '[webform_submission:values:objet:raw]'
+      body: "<p>Les valeurs soumises sont :</p>\r\n{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}\r\n"
+      excluded_elements:
+        gdpr: gdpr
+        captcha: captcha
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: true
+      theme_name: ''
+      parameters: {  }
+      debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+variants: {  }

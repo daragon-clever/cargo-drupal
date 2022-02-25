@@ -1,0 +1,60 @@
+uuid: 91b5f288-9d86-4e20-a3f0-4ee6cd6b7394
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.introduction.field_description
+    - field.field.paragraph.introduction.field_picture
+    - field.field.paragraph.introduction.field_second_picture
+    - field.field.paragraph.introduction.field_title
+    - image.style.large
+    - paragraphs.paragraphs_type.introduction
+  module:
+    - svg_image
+id: paragraph.introduction.default
+targetEntityType: paragraph
+bundle: introduction
+mode: default
+content:
+  field_description:
+    weight: 1
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_picture:
+    weight: 2
+    label: visually_hidden
+    settings:
+      image_style: large
+      image_link: ''
+      svg_render_as_image: true
+      svg_attributes:
+        width: null
+        height: null
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_second_picture:
+    weight: 3
+    label: visually_hidden
+    settings:
+      image_style: large
+      image_link: ''
+      svg_render_as_image: true
+      svg_attributes:
+        width: null
+        height: null
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_title:
+    weight: 0
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

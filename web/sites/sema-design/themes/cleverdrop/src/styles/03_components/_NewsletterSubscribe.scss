@@ -1,0 +1,49 @@
+.NewsletterSubscribe {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: rem(40px) map-get($section-padding, xs);
+
+  @include media-breakpoint-up('md') {
+    padding: rem(90px) map-get($section-padding, md);
+  }
+
+  .NewsletterBlock-alt & {
+    background: var(--white);
+
+    @include media-breakpoint-up('md') {
+      max-width: rem(1148px);
+      margin: rem(60px) auto rem(90px);
+      padding: rem(10px) map-get($section-padding, md);
+    }
+  }
+}
+
+.NewsletterSubscribe-content {
+  @include media-breakpoint-up('md') {
+    max-width: rem(446px);
+    margin: auto;
+
+    .NewsletterBlock-alt & {
+      padding: rem(40px) 0;
+    }
+  }
+}
+
+.NewsletterSubscribe-title {
+  font-size: rem(35px);
+  margin-bottom: rem(10px);
+
+  .NewsletterBlock-alt & {
+    text-align: center;
+  }
+}
+
+.NewsletterSubscribe-text {
+  .NewsletterBlock-alt & {
+    text-align: center;
+  }
+}

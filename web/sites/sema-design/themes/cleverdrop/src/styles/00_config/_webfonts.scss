@@ -1,0 +1,46 @@
+// Config : Webfonts
+// =================
+// Fonts import, placeholders
+
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+  src: local('Cormorant Garamond'), local('Cormorant-Garamond'),
+    url('#{$assets-url}fonts/cormorant-garamond-regular.woff2') format('woff2'),
+    url('#{$assets-url}fonts/cormorant-garamond-regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-display: swap;
+  font-weight: 700;
+  font-style: normal;
+  src: local('Cormorant Garamond Bold'), local('Cormorant-Garamond-Bold'),
+    url('#{$assets-url}fonts/cormorant-garamond-bold.woff2') format('woff2'),
+    url('#{$assets-url}fonts/cormorant-garamond-bold.woff') format('woff');
+}
+
+
+@font-face {
+  font-family: 'Work Sans';
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+  src: local('Work Sans'), local('Work-Sans'),
+    url('#{$assets-url}fonts/work-sans-regular.woff2') format('woff2'),
+    url('#{$assets-url}fonts/work-sans-regular.woff') format('woff');
+}
+
+
+@font-face {
+  font-family: 'Quentin';
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+  src: local('Quentin'),
+    url('#{$assets-url}fonts/quentin.woff2') format('woff2'),
+    url('#{$assets-url}fonts/quentin.woff') format('woff');
+}

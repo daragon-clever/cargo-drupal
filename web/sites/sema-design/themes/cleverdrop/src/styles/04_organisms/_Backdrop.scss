@@ -1,0 +1,19 @@
+.Backdrop {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(2px);
+  z-index: $zindex-backdrop;
+
+  &.is-open {
+    display: block;
+  }
+
+  &.is-higher {
+    z-index: $zindex-backdrop-higher;
+  }
+}

@@ -1,0 +1,40 @@
+// Organisms : base layout
+// ================
+$grid-even-color: transparent, !default;
+$grid-odd-color: rgba(126, 195, 241, 0.15) !default;
+$col-size: calc(100%/#{$nb-cols}) !default;
+$page-bg-color: var(--white) !default;
+
+.Page {
+  position: relative;
+  font-size: rem(18px);
+  overflow: hidden;
+  
+  // stylelint-disable
+  @include dev-only {
+    .has-grid &::before {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      display: block;
+      height: 100%;
+      width: 100%;
+      max-width: calc(rem(1400px) + $gutter-size);
+      content: '';
+      background-image: repeating-linear-gradient(
+        to right,
+        $grid-even-color, $grid-even-color math.div($gutter-size, 2),
+        $grid-odd-color math.div($gutter-size, 2), $grid-odd-color calc(($gutter-size / 2) + (((100% - $gutter-size * ($nb-cols - 1)) / $nb-cols))),
+        $grid-even-color calc(($gutter-size / 2) + ((100% - $gutter-size * ($nb-cols - 1)) / $nb-cols)), $grid-even-color calc(($gutter-size / 2) + ((100% - $gutter-size * ($nb-cols - 1)) / $nb-cols) + $gutter-size / 2));
+      background-size: 100%;
+      user-select: none;
+      z-index: 999;
+      pointer-events: none;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.Main {
+  position: relative;
+}

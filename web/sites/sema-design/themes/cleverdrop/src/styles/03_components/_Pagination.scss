@@ -1,0 +1,74 @@
+.Pagination {
+  display: flex;
+  align-items: center;
+  font-size: em(16px);
+  margin: em(24px) auto;
+
+  @include media-breakpoint-up('md') {
+    margin-right: initial;
+  }
+}
+
+.Pagination-pageList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @include media-breakpoint-up('md') {
+    justify-content: flex-start;
+    margin: 0 em(24px);
+  }
+}
+
+.Pagination-prev {
+  margin-right: em(4px);
+
+  svg {
+    transform: rotateZ(180deg);
+  }
+
+  .Pagination-btnLabel {
+    margin-left: em(10px);
+  }
+
+  @include media-breakpoint-down('md') {
+    margin-top: em(4px);
+  }
+}
+
+.Pagination-next {
+  .Pagination-btnLabel {
+    margin-right: em(10px);
+  }
+
+  @include media-breakpoint-down('md') {
+    margin-top: em(4px);
+  }
+}
+
+.Pagination-btnLabel {
+  display: none;
+
+  @include media-breakpoint-up('md') {
+    display: block;
+  }
+}
+
+.Pagination-page {
+  position: relative;
+  color: var(--text-color);
+
+  margin-right: em(4px);
+
+  &[aria-current='page'] {
+    color: var(--text-color);
+  }
+
+  & + & {
+    margin-left: em(4px);
+  }
+
+  @include media-breakpoint-down('md') {
+    margin-top: em(4px);
+  }
+}

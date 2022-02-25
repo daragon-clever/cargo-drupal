@@ -1,0 +1,98 @@
+.OurProducts {
+  position: relative;
+  overflow: hidden;
+}
+
+.OurProducts-inner {
+  @include make-container(10);
+  padding-top: rem(40px);
+  padding-right: map-get($section-padding, xs);
+  padding-bottom: rem(40px);
+  padding-left: map-get($section-padding, xs);
+
+  @include media-breakpoint-up('md') {
+    padding-top: rem(120px);
+    padding-right: map-get($section-padding, md);
+    padding-bottom: rem(120px);
+    padding-left: map-get($section-padding, md);
+  }
+}
+
+.OurProducts-list {
+  position: relative;
+  display: grid;
+  flex-wrap: wrap;
+  column-gap: $gutter-size;
+  row-gap: rem(30px);
+
+  + .OurProducts-list {
+    padding-top: rem(30px);
+  }
+  
+  @include media-breakpoint-up('md') {
+    row-gap: rem(60px);
+    grid-template-columns: repeat(3, 1fr);
+
+    &.has-twoCols {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    + .OurProducts-list {
+      padding-top: rem(60px);
+    }
+  }
+}
+
+.OurProducts-deco {
+  --deco-overflow: #{map-get($section-padding, xs)} * 2;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: var(--alt-bg);
+  pointer-events: none;
+  width: 100vw;
+  left: 50%;
+  transform: translate(-50%);
+
+  .LeftBrush {
+    position: absolute;
+    bottom: 20%;
+    width: rem(320px);
+    fill: var(--white);
+    opacity: 0.5;
+
+    use {
+      transform: rotate(26deg);
+    }
+
+    @include media-breakpoint-down('md') {
+      display: none;
+    }
+  }
+
+  .Stains {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 40%;
+    height: rem(190px);
+    width: rem(92px);
+    fill: var(--white);
+    opacity: 0.7;
+    pointer-events: none;
+  }
+
+  &.is-top {
+    top: 20%;
+    bottom: 0;
+  }
+
+  &.is-bottom {
+    top: 0;
+    height: rem(400px);
+  }
+
+  @include media-breakpoint-up('md') {
+    --deco-overflow: #{map-get($section-padding, md)} * 2;
+  }
+}

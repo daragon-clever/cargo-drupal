@@ -1,0 +1,54 @@
+.MainVisual-wpr .MainVisual {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: rem(310px);
+
+  @include media-breakpoint-up('md') {
+    min-height: rem(620px);
+  }
+}
+
+.MainVisual-background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  pointer-events: none;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.MainVisual-overContent {
+  display: inline-block;
+  text-align: center;
+  z-index: 1;
+  padding: 0 rem(10px);
+}
+
+.MainVisual-title {
+  @include u-cormorant-regular;
+  font-size: rem(65px);
+  color: var(--white);
+
+  h1 {
+    margin-bottom: 0;
+  }
+
+  @include media-breakpoint-down('md') {
+    font-size: rem(35px);
+  }
+}
+
+.MainVisual-onTitle {
+  @include u-quentin-regular;
+  font-size: rem(35px);
+  color: var(--white);
+}

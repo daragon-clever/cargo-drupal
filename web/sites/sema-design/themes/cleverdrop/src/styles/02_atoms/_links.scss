@@ -1,0 +1,25 @@
+.Link {
+  @include u-work-sans-regular;
+  display: inline-flex;
+  align-items: center;
+  font-size: rem(14px);
+  color: var(--text-color);
+  text-decoration: underline;
+
+  &:hover,
+  &:focus-visible {
+    text-decoration: none;
+
+    svg {
+      transform: translateX(rem(5px));
+    }
+  }
+
+  svg {
+    height: rem(6px);
+    width: rem(15px);
+    fill: currentColor;
+    margin-left: rem(10px);
+    transition: transform 0.3s;
+  }
+}

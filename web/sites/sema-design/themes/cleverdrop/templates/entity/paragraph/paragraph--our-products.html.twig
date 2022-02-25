@@ -1,0 +1,34 @@
+{% set classes = [
+  'OurProducts',
+  'Section'
+] %}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+
+    {% block content %}
+      <div class="OurProducts-inner">
+        <h2 class="OurProducts-title">{{ content.field_title }}</h2>
+        <div class="OurProducts-list has-twoCols">
+          <div class="OurProducts-deco is-top">
+            <div class="Stains">
+              {% include directory ~ '/src/assets/svg/stains.svg' %}
+            </div>
+          </div>
+          {% for i in content.field_products['#items']|keys|slice(0, 2) %}
+            {{ content.field_products[i] }}
+          {% endfor %}
+        </div>
+        <div class="OurProducts-list">
+          <div class="OurProducts-deco is-bottom">
+            <svg viewBox="0 0 100 100" class="LeftBrush" aria-hidden="true">
+              <use xlink:href="#sema-brush"></use>
+            </svg>
+          </div>
+          {% for i in content.field_products['#items']|keys|slice(2, length) %}
+            {{ content.field_products[i] }}
+          {% endfor %}
+        </div>
+      </div>
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

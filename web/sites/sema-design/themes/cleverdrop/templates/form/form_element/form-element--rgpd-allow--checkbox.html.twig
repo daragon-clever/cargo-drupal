@@ -1,0 +1,22 @@
+<div class="Checkbox-wpr">
+  {% if label_display in ['before', 'invisible'] %}
+    {{ label }}
+  {% endif %}
+  {{ prefix }}
+  {% if description_display == 'before' and description.content %}
+    {{ description.content }}
+  {% endif %}
+  {{ children }}
+  <label for="edit-rgpd-allow">
+    {{ 'En renseignant ces informations, j’accepte de recevoir la lettre
+    d’information de SEMA Design et je confirme avoir pris connaissance de la
+    <a href="/politique-de-confidentialite" class="Link">politique de confidentialité</a>.'|t }}
+  </label>
+  {{ suffix }}
+  {% if label_display == 'after' %}
+    {{ label }}
+  {% endif %}
+  {% if description_display in ['after', 'invisible'] and description.content %}
+    {{ description.content }}
+  {% endif %}
+</div>

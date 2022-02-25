@@ -1,0 +1,11 @@
+<article class="ProductTeaser">
+  <div class="ProductTeaser-img">
+    {{ content.field_visual_product }}
+  </div>
+  <h1 class="ProductTeaser-title">{{ label }}</h1>
+  {% include directory ~ '/templates/ui/atoms/link.html.twig' with {
+    label: 'Découvrir'|t,
+    url: url,
+    additionnalClasses: 'ProductTeaser-link'
+  } %}
+</article>

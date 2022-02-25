@@ -1,0 +1,42 @@
+.NotFound {
+  position: relative;
+
+  img {
+    width: 100vw;
+    object-fit: cover;
+    height: 100vh;
+  }
+}
+
+.NotFound-over {
+  background: rgba(0,0,0,0.2);
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @include u-cormorant-regular;
+}
+
+.NotFound-ontitle {
+  @include u-quentin-regular;
+  font-size: 35px;
+}
+
+.NotFound-title {
+  font-size: 65px;
+}
+
+.NotFound-subtitle {
+  font-size: 13px;
+}
+
+.NotFound-cta {
+  margin-top: 30px;
+}

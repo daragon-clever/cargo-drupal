@@ -1,0 +1,31 @@
+uuid: e43fad14-8529-488d-a3bd-27dec720be4e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.contact.field_metatags
+    - field.field.node.contact.field_paragraph_main_visual
+    - field.field.node.contact.field_paragraph_particular
+    - field.field.node.contact.field_paragraph_professionnel
+    - field.field.node.contact.field_webform
+    - node.type.contact
+  module:
+    - user
+id: node.contact.teaser
+targetEntityType: node
+bundle: contact
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_metatags: true
+  field_paragraph_main_visual: true
+  field_paragraph_particular: true
+  field_paragraph_professionnel: true
+  field_webform: true
+  langcode: true

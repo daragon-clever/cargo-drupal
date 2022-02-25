@@ -1,0 +1,15 @@
+{% if content is not empty %}
+  {{ content.mainPicture }} {# paragraph main visual #}
+  <div class="Section has-altBg NewsletterBlock NewsletterBlock-alt">
+    <div class="NewsletterSubscribe">
+      <div class="NewsletterSubscribe-content">
+        <h2 class="NewsletterSubscribe-title">{{ content.title }}</h2>
+        <div class="NewsletterSubscribe-text">
+          {{ content.description }}
+        </div>
+        {{ drupal_block('inscription_block') }}
+      </div>
+    </div>
+  </div>
+{% endif %}
+

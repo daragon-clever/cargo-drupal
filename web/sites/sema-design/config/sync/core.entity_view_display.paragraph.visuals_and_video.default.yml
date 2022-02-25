@@ -1,0 +1,80 @@
+uuid: 839d706e-b605-45b0-89ea-c85e9655571e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.visuals_and_video.field_color
+    - field.field.paragraph.visuals_and_video.field_description
+    - field.field.paragraph.visuals_and_video.field_picture
+    - field.field.paragraph.visuals_and_video.field_second_picture
+    - field.field.paragraph.visuals_and_video.field_title
+    - field.field.paragraph.visuals_and_video.field_youtube
+    - image.style.portrait_max_h_700px
+    - paragraphs.paragraphs_type.visuals_and_video
+  module:
+    - color_field
+    - svg_image
+id: paragraph.visuals_and_video.default
+targetEntityType: paragraph
+bundle: visuals_and_video
+mode: default
+content:
+  field_color:
+    weight: 5
+    label: above
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    type: color_field_formatter_text
+    region: content
+  field_description:
+    weight: 1
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_picture:
+    weight: 2
+    label: visually_hidden
+    settings:
+      image_style: portrait_max_h_700px
+      image_link: ''
+      svg_render_as_image: true
+      svg_attributes:
+        width: null
+        height: null
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_second_picture:
+    weight: 3
+    label: visually_hidden
+    settings:
+      image_style: portrait_max_h_700px
+      image_link: ''
+      svg_render_as_image: true
+      svg_attributes:
+        width: null
+        height: null
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_title:
+    weight: 0
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_youtube:
+    weight: 4
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

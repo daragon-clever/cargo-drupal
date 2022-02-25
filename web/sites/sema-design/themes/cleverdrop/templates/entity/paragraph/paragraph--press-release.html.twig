@@ -1,0 +1,48 @@
+{%
+  set classes = [
+  'PressRelease'
+]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+      <svg viewBox="0 0 100 100" class="LeftBrush" aria-hidden="true">
+        <use xlink:href="#sema-brush"></use>
+      </svg>
+      <div class="Section-inner PressRelease--inner">
+        <div class="PressRelease-Left">
+          <h2 class="PressRelease-title">
+            {{ content.field_title }}
+          </h2>
+          <div class="Slider js-press-release">
+            <div class="Slider-wrapper">
+              {% for i in content.field_paragraph_press_element['#items']|keys %}
+                {{ content.field_paragraph_press_element[i] }}
+              {% endfor %}
+            </div>
+            <div class="SliderNavigation-wrp">
+              <button class="Slider-button-prev">
+                {% include directory ~ '/src/assets/svg/arrow-left.svg' %}
+              </button>
+              <div class="Slider-pagination"></div>
+              <button class="Slider-button-next">
+                {% include directory ~ '/src/assets/svg/arrow-right.svg' %}
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="PressRelease-Right">
+          <p class="PressRelease-text">
+            {{ content.field_description }}
+          </p>
+        </div>
+      </div>
+      <svg viewBox="0 0 100 100" class="RightBrush" aria-hidden="true">
+        <use xlink:href="#sema-brush"></use>
+      </svg>
+      <svg viewBox="0 0 100 100" class="RightMarks" aria-hidden="true">
+        <use xlink:href="#sema-marks"></use>
+      </svg>
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

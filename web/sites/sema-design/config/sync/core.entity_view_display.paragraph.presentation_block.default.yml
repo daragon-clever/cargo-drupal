@@ -1,0 +1,29 @@
+uuid: d749b2af-60c1-4104-88a3-be63f6330783
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.presentation_block.field_description
+    - field.field.paragraph.presentation_block.field_title
+    - paragraphs.paragraphs_type.presentation_block
+id: paragraph.presentation_block.default
+targetEntityType: paragraph
+bundle: presentation_block
+mode: default
+content:
+  field_description:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_title:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

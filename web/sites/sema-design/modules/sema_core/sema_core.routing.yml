@@ -1,0 +1,15 @@
+sema_core.404:
+  path: '/404'
+  defaults:
+    _controller: '\Drupal\sema_core\Controller\ErrorController::notFound'
+    _title: '404'
+  requirements:
+    _permission: 'access content'
+
+sema_core.newsletter:
+  path: '/newsletter'
+  defaults:
+    _controller: '\Drupal\sema_core\Controller\NewsletterController::newsletter'
+    _title: 'newsletter'
+  requirements:
+    _permission: 'access content'

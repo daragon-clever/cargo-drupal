@@ -1,0 +1,70 @@
+uuid: f2422bd4-21b2-4a82-b2f0-3c07c8d5fa72
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.contact.field_metatags
+    - field.field.node.contact.field_paragraph_main_visual
+    - field.field.node.contact.field_paragraph_particular
+    - field.field.node.contact.field_paragraph_professionnel
+    - field.field.node.contact.field_webform
+    - node.type.contact
+  module:
+    - entity_reference_revisions
+    - metatag
+    - user
+    - webform
+id: node.contact.default
+targetEntityType: node
+bundle: contact
+mode: default
+content:
+  field_metatags:
+    weight: 105
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
+  field_paragraph_main_visual:
+    weight: 101
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  field_paragraph_particular:
+    type: entity_reference_revisions_entity_view
+    weight: 102
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_paragraph_professionnel:
+    type: entity_reference_revisions_entity_view
+    weight: 104
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_webform:
+    weight: 103
+    label: above
+    settings:
+      source_entity: true
+    third_party_settings: {  }
+    type: webform_entity_reference_entity_view
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

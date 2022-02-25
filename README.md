@@ -1,5 +1,7 @@
 # DRUPAL
 
+Ce document décris l'environnement de développement des équipes Cargo, les autres intervenants doivent se réferer à la documentation [CleverAge](./cleverage/README.md)
+
 ## Installation du projet
 
 **Pré-requis :**
@@ -132,7 +134,7 @@ Configuration PhpStorm du déploiement automatique sur la VM :
 		* Xdebug: Debug port à **9003**
 		* Ne pas séléctionner:
 		    * `Ignore External connections...`
-			* `Force break at first line...` (les deux options)	    
+			* `Force break at first line...` (les deux options)
 	* Languages & Frameworks >  Php > Servers
 		* Ajouter un nouveau serveur `drupal`
 			* Host: localhost
@@ -153,7 +155,7 @@ Vous pouvez maintenant activer XDebug sur Phpstorm (le petit téléphonne)
 
 * Décommenter le bloc suivant dans le fichier `web/sites/*/settings.php` :
 ```php
-if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {'   
+if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {'
    include $app_root . '/' . $site_path . '/settings.local.php';
 }
 ```
@@ -183,5 +185,3 @@ command: mysqld --tc-heuristic-recover=ROLLBACK
 
 Lors de l'installation de modules, il arrive que Drupal se mette en erreur sans raison. Il faut aller
 voir la table watchdog pour en savoir un peu plus sur l'erreur générée.
-
-On peut aussi lancer un update.php.

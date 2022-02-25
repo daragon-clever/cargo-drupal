@@ -1,0 +1,181 @@
+.ProductFamily {
+  background: var(--altBg);
+
+  .Section {
+    position: relative
+  }
+
+  .Stains,
+  .RightBrush {
+    position: absolute;
+    fill: var(--white);
+    opacity: 0.2;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .RightBrush {
+    display: none;
+
+    @include media-breakpoint-up('md') {
+      display: block;
+      right: 0;
+      bottom: 0;
+      width: 25%;
+      overflow: visible;
+
+      use {
+        transform: rotate(-26deg) translateY(rem(50px));
+      }
+    }
+  }
+
+  .Stains {
+    top: 10%;
+    right: 0;
+    width: rem(90px);
+  }
+}
+
+.ProductFamily-inner {
+  @include enable-grid;
+  row-gap: rem(60px);
+  padding-top: rem(35px);
+  padding-bottom: rem(35px);
+
+
+  &.is-top {
+    @include media-breakpoint-down('md') {
+      padding-bottom: rem(48px);
+    }
+  }
+
+  &.is-bottom {
+    position: relative;
+
+    @include media-breakpoint-down('md') {
+      padding-bottom: rem(60px);
+    }
+
+    @include media-breakpoint-up('md') {
+      align-items: flex-end;
+    }
+  }
+
+  @include media-breakpoint-up('md') {
+    padding-top: rem(120px);
+    padding-bottom: rem(120px);
+  }
+}
+
+.ProductFamily-content {
+  .is-top & {
+    @include make-cols(4);
+
+    @include media-breakpoint-up('md') {
+      @include make-cols(4, 1);
+    }
+  }
+
+  .is-bottom & {
+    @include make-cols(4);
+    
+    @include media-breakpoint-up('md') {
+      @include make-cols(4, 5);
+      margin-top: rem(100px);
+    }
+  }
+}
+
+.ProductFamily-text:not(:last-child) {
+  margin-bottom: rem(35px);
+}
+
+.ProductFamily-firstImg {
+  position: relative;
+  @include make-cols(2);
+
+  img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+
+    @include media-breakpoint-up('md') {
+      max-height: rem(670px);
+    }
+  }
+  
+  svg {
+    display: none;
+
+    @include media-breakpoint-up('md') {
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 55%;
+      fill: var(--ebb);
+      transform: translate(25%, -34%) rotate(26deg);
+      opacity: 0.8;
+      z-index: 2;
+      clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+      transition: clip-path $brush-animation-duration;
+
+      .is-animate & {
+        clip-path: polygon(-1% -1%, 101% -1%, 101% 101%, -1% 101%);
+      }
+    }
+  }
+
+  @include media-breakpoint-up('md') {
+    @include make-cols(4, 7);
+    min-height: rem(350px);
+  }
+}
+
+.ProductFamily-secondImg {
+  @include make-cols(2, 2);
+  position: relative;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  svg {
+    display: none;
+
+    @include media-breakpoint-up('md') {
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 55%;
+      fill: var(--ebb);
+      transform: translate(-18%, 34%) rotateX(1.5turn) rotateZ(-25deg);
+      opacity: 0.8;
+      z-index: 1;
+      clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+      transition: clip-path $brush-animation-duration;
+      animation-fill-mode: forwards;
+
+      .is-animate & {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+      }
+    }
+  }
+
+  @include media-breakpoint-down('md') {
+    margin-top: rem(-82px);
+  }
+
+  @include media-breakpoint-up('md') {
+    @include make-cols(3, 1);
+  }
+}

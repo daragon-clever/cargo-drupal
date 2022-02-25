@@ -1,0 +1,4 @@
+sema_core:
+  version: 1.x
+  js:
+    js/sema_core.js: {}

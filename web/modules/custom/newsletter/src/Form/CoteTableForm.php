@@ -3,7 +3,6 @@
 namespace Drupal\newsletter\Form;
 
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\newsletter\Profile\CoteTableProfile;
 
 class CoteTableForm extends AbstractForm
 {

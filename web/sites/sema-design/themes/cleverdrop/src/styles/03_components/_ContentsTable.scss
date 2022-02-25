@@ -1,0 +1,106 @@
+.ContentsTable--inner {
+  @include enable-grid;
+  row-gap: rem(60px);
+  align-items: center;
+  padding-top: rem(60px);
+  padding-bottom: rem(60px);
+  position: relative;
+  z-index: 1;
+
+  @include media-breakpoint-up('md') {
+    padding-top: rem(90px);
+    padding-bottom: rem(90px);
+  }
+}
+
+.ContentsTable-left {
+  @include make-cols(4);
+
+  @include media-breakpoint-up('md') {
+    @include make-cols(6, 1);
+  }
+}
+
+.ContentsTable-right {
+  @include make-cols(4);
+
+  @include media-breakpoint-up('md') {
+    @include make-cols(4, 8);
+    padding-right: rem(45px);
+  }
+}
+
+.ContentsTable-slide {
+  flex-direction: column;
+  align-items: center;
+
+  @include media-breakpoint-up('md') {
+    align-items: end;
+    padding: rem(10px) 0;
+  }
+}
+
+.ContentsTable-img-wrp {
+  max-width: rem(215px);
+  width: 100%;
+  height: rem(180px);
+  margin-bottom: rem(10px);
+
+  @include media-breakpoint-up('md') {
+    transition: all .2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+
+  img {
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.ContentsTable-title {
+  margin-bottom: 0;
+  font-size: rem(30px);
+
+  @include media-breakpoint-up('md') {
+    font-size: rem(25px);
+    line-height: rem(25px);
+  }
+
+  @media (min-width: rem(1320px)) {
+    font-size: rem(30px);
+    line-height: rem(30px);
+  }
+}
+
+.ContentsTable-wpr {
+  &.LabelBlock {
+    .LeftBrush,
+    .RightBrush {
+      fill: var(--white);
+    }
+
+    .LeftBrush {
+      display: none;
+      left: rem(-30px);
+      transform: translateY(-100%) rotateX(180deg) rotate(17deg);
+
+      @include media-breakpoint-up('md') {
+        display: block;
+      }
+    }
+
+    .RightBrush {
+      display: block;
+      transform: translateY(30%) rotateX(0);
+
+      @include media-breakpoint-up('md') {
+        transform: translateY(0) rotateX(0);
+      }
+    }
+  }
+}

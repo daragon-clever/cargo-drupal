@@ -1,0 +1,100 @@
+.Section-inner.Particular,
+.Section-inner.Profesional {
+  max-width: rem(940px);
+}
+
+.Particular,
+.Profesional {
+  display: flex;
+  flex-direction: row;
+  padding-top: rem(120px);
+  padding-bottom: rem(75px);
+  max-width: rem(940px);
+
+  @include media-breakpoint-down('md') {
+    flex-direction: column;
+    padding-top: rem(30px);
+  }
+}
+
+.Particular-right,
+.Profesional-right {
+  @include u-cormorant-regular;
+  font-size: rem(18px);
+  width: 100%;
+  padding-left: rem(45px);
+  z-index: 1;
+
+  @include media-breakpoint-down('md') {
+    padding-left: 0;
+    padding-top: rem(27px);
+  }
+
+  a {
+    color: var(--text-color);
+  }
+
+  .Particular-link {
+    a {
+      display: inline-block;
+      text-transform: capitalize;
+      font-size: rem(13px);
+
+      &:not(:first-child) {
+        margin-left: rem(30px);
+      }
+
+      &::after {
+        content: '';
+        background: url('/sites/sema-design/themes/cleverdrop/public/assets/svg/arrow-right.svg');
+        background-repeat: no-repeat;
+        padding: rem(3px) rem(8px);
+        display: inline-block;
+        margin-left: rem(11px);
+      }
+    }
+  }
+}
+
+.Particular-left,
+.Profesional-left {
+  text-align: left;
+  max-width: 2 * $col-size + 2 * $gutter-size;
+  width: 100%;
+  @include u-quentin-regular;
+  font-size: rem(30px);
+}
+
+.Profesional-wrp .Section {
+  background-color: var(--lite-bg);
+}
+
+.Profesional::after {
+  content: '';
+  background-color: var(--white);
+  position: absolute;
+  right: 0;
+  padding: rem(110px) rem(45px);
+  background-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  mask-image: url('/sites/sema-design/themes/cleverdrop/public/assets/svg/stains.svg');
+}
+
+.Particular-wrp {
+  position: relative;
+  overflow: hidden;
+}
+
+.Particular::after {
+  content: '';
+  background-color: var(--ebb);
+  position: absolute;
+  right: rem(-55px);
+  top: rem(65px);
+  width: rem(320px);
+  height: rem(125px);
+  background-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  mask-image: url('/sites/sema-design/themes/cleverdrop/public/assets/svg/brush.svg');
+  transform: scale(1, -1);
+}

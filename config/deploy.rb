@@ -123,8 +123,8 @@ set :file_permissions_paths, [
     "web/sites/sitram-sarran/private",
     "web/sites/sitram-sarran/files",
     "web/sites/promodis-ares/private",
-    "web/sites/promodis-ares/files"
-    "web/sites/sema-design/private"
+    "web/sites/promodis-ares/files",
+    "web/sites/sema-design/private",
     "web/sites/sema-design/files"
     ]
 

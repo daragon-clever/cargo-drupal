@@ -119,7 +119,11 @@ function carousel() {
       999: {
         slidesPerView: 4.3,
       },
-    }
+    },
+    autoplay: {
+      delay: 3500,
+      disableOnInteraction: false,
+    },
   });
 
   const historySlider = new Swiper(".js-history-slider", {

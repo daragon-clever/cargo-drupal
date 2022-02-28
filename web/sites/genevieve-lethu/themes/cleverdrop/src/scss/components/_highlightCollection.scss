@@ -82,10 +82,9 @@
 
   &-center {
     position: absolute;
-    max-width: 440px;
+    max-width: rem(440px);
     justify-content: center;
     align-items: center;
-    max-height: 440px;
+    max-height: rem(440px);
   }
-
 }

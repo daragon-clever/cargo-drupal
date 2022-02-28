@@ -51,6 +51,10 @@ $moodboard-height-xl: 650px;
   img {
     z-index: 1;
 
+    &:hover {
+      width: 120% !important;
+    }
+
     @include mq($until: md) {
       position: relative;
     }

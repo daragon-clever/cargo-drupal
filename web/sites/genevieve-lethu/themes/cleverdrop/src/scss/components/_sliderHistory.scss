@@ -68,6 +68,9 @@
   }
 
   .slider {
+    &-wrapper {
+      margin-bottom: rem(30px);
+    }
     &-nav {
       display: flex;
       justify-content: center;

@@ -94,7 +94,7 @@ function carousel() {
     loop: true,
     slidesPerView: 1,
     effect: 'fade',
-    speed: 1000,
+    speed: 0,
   });
 
   const backstageCollections = new Swiper(".js-backstage-slider", {
@@ -105,6 +105,7 @@ function carousel() {
     watchSlidesProgress: true,
     effect: 'slide',
     speed: 300,
+    autoHeight: true,
     breakpoints: {
       0: {
         slidesPerView: 1.7,
@@ -154,6 +155,7 @@ function carousel() {
     loop: true,
     centeredSlides: true,
     watchSlidesProgress: true,
+    autoHeight: true,
     breakpoints: {
       0: {
         slidesPerView: 1.8,
@@ -180,32 +182,54 @@ function carousel() {
     loop: true,
     slidesPerView: 1,
     effect: 'fade',
-    speed: 1000,
+    watchSlidesVisibility: true,
+    speed: 0,
     thumbs: {
       swiper: galleryThumbs
     }
   });
 
 
-  // sliderCollections.on('slidePrevTransitionStart', function () {
-  //   let index_previousSlide = sliderCollections.activeIndex;
+  /* *********************************** */
+  /*            CUSTOM HANDLE            */
+  /* *********************************** */
+  sliderCollections.on('slideNextTransitionStart', function () {
+    let index_nextSlide = sliderCollections.activeIndex;
+    console.log('next : ', index_nextSlide);
+    sliderCollections.slides[index_nextSlide].classList.add('effect-next');
+    setTimeout(() => {
+      sliderCollections.slides[index_nextSlide].classList.remove('effect-next');
+    }, 1000);
+  });
 
-  //   console.log('previous : ', index_previousSlide);
-  //   sliderCollections.slides[index_previousSlide].classList.add('effect');
-  //   setTimeout(() => {
-  //     sliderCollections.slides[index_previousSlide].classList.remove('effect');
-  //   }, 1000);
-  // });
+  sliderCollections.on('slidePrevTransitionEnd', function () {
+    let index_prevSlide = sliderCollections.previousIndex;
+    sliderCollections.slides[index_prevSlide].classList.add('effect-prev');
+    setTimeout(() => {
+      sliderCollections.slides[index_prevSlide].classList.remove('effect-prev');
+    }, 1000);
+  });
 
+  gallery.on('slideNextTransitionStart', function () {
+    let index_nextSlide = gallery.activeIndex;
+    gallery.slides[index_nextSlide].classList.add('effect-next');
+    setTimeout(() => {
+      gallery.slides[index_nextSlide].classList.remove('effect-next');
+    }, 1000);
+  });
 
-  // sliderCollections.on('slideNextTransitionStart', function () {
-  //   let index_nextSlide = sliderCollections.activeIndex;
-  //   console.log('next : ', index_nextSlide);
-  //   sliderCollections.slides[index_nextSlide].classList.add('effect');
-  //   setTimeout(() => {
-  //     sliderCollections.slides[index_nextSlide].classList.remove('effect');
-  //   }, 1000);
-  // });
+  gallery.on('slidePrevTransitionEnd', function () {
+    let index_prevSlide = gallery.previousIndex;
+    console.log('prev : ', index_prevSlide);
+    if (index_prevSlide === 0) {
+      index_prevSlide = parseInt(gallery.slides.length - 1);
+      console.log(gallery.slides.length);
+    }
+    gallery.slides[index_prevSlide].classList.add('effect-prev');
+    setTimeout(() => {
+      gallery.slides[index_prevSlide].classList.remove('effect-prev');
+    }, 1000);
+  });
 
 
   // pagination information on load (currentSlide index –– All slides collection number)
@@ -233,14 +257,22 @@ function carousel() {
 
   // Let synchronize both galleryThumbs and gallery slider
   galleryThumbs.on('slideChange', function () {
-    let index_currentSlide = galleryThumbs.realIndex;
     let index_activeSlide = galleryThumbs.activeIndex;
-    gallery.slideToLoop(index_currentSlide, 1000, false);
 
     // pagination information incrementation
     let infos = galleryThumbs.slides[index_activeSlide].getAttribute('aria-label');
     let result = infos.replace('/', '––');
     targetForInfos.innerHTML = result;
+  });
+
+  galleryThumbs.on('slideNextTransitionEnd', function () {
+    let btnNext = document.querySelector('.js-imageGallery .slider-btnNext');
+    btnNext.click();
+  });
+
+  galleryThumbs.on('slidePrevTransitionEnd', function () {
+    let btnPrev = document.querySelector('.js-imageGallery .slider-btnPrev');
+    btnPrev.click();
   });
 
   gallery.on('slideChange', function () {

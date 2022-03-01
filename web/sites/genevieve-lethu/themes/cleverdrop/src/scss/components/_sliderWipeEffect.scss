@@ -38,6 +38,14 @@
   }
 
   .slider {
+    &-slide {
+      pointer-events: none;
+
+      &-visible.is-active {
+        pointer-events: auto;
+      }
+    }
+
     &-inner {
       width: 100%;
 

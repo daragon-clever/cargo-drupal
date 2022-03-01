@@ -53,6 +53,23 @@
   .slider {
     &-slide {
       flex-direction: column;
+      pointer-events: none;
+
+      .moodboard {
+        &-wrapper {
+          pointer-events: none;
+        }
+      }
+
+      &-visible.is-active {
+        pointer-events: auto;
+
+        .moodboard {
+          &-wrapper {
+            pointer-events: auto;
+          }
+        }
+      }
     }
 
     &-inner {

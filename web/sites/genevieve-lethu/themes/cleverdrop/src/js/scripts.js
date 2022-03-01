@@ -5,6 +5,7 @@
 
 // Components
 require('./components/animate');
+require('./components/paralax');
 require('./components/menu');
 require('./components/videoPlayer');
 require('./components/videoYoutube');

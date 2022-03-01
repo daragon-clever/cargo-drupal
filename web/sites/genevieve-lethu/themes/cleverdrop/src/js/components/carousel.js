@@ -199,8 +199,8 @@ function carousel() {
   /* *********************************** */
   sliderCollections.on('slideNextTransitionStart', function () {
     let index_nextSlide = sliderCollections.activeIndex;
-    console.log('next : ', index_nextSlide);
     sliderCollections.slides[index_nextSlide].classList.add('effect-next');
+
     setTimeout(() => {
       sliderCollections.slides[index_nextSlide].classList.remove('effect-next');
     }, 1000);
@@ -209,6 +209,7 @@ function carousel() {
   sliderCollections.on('slidePrevTransitionEnd', function () {
     let index_prevSlide = sliderCollections.previousIndex;
     sliderCollections.slides[index_prevSlide].classList.add('effect-prev');
+
     setTimeout(() => {
       sliderCollections.slides[index_prevSlide].classList.remove('effect-prev');
     }, 1000);
@@ -217,6 +218,7 @@ function carousel() {
   gallery.on('slideNextTransitionStart', function () {
     let index_nextSlide = gallery.activeIndex;
     gallery.slides[index_nextSlide].classList.add('effect-next');
+
     setTimeout(() => {
       gallery.slides[index_nextSlide].classList.remove('effect-next');
     }, 1000);
@@ -224,12 +226,13 @@ function carousel() {
 
   gallery.on('slidePrevTransitionEnd', function () {
     let index_prevSlide = gallery.previousIndex;
-    console.log('prev : ', index_prevSlide);
+
     if (index_prevSlide === 0) {
       index_prevSlide = parseInt(gallery.slides.length - 1);
-      console.log(gallery.slides.length);
     }
+
     gallery.slides[index_prevSlide].classList.add('effect-prev');
+
     setTimeout(() => {
       gallery.slides[index_prevSlide].classList.remove('effect-prev');
     }, 1000);

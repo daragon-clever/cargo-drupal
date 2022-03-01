@@ -95,7 +95,8 @@ $height-header: 60px;
         z-index: 0;
 
         &:hover,
-        &:focus {
+        &:focus,
+        &.is-active {
           color: $white;
 
           &::before {

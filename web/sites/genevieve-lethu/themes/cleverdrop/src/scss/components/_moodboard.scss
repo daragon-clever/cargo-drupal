@@ -37,19 +37,32 @@ $moodboard-height-xl: 650px;
     @include mq($from: xl) {
       min-height: rem($moodboard-height-xl);
     }
+
+    &:hover {
+      img {
+        transform: scale(1.05);
+      }
+    }
   }
 
   &-title {
-    @include mq($until: md) {
-      margin-bottom: rem(40px);
-    }
-
-    color: white;
+    color: $white;
     text-align: center;
+    margin-bottom: rem(40px);
+
+    @include mq($from: md) {
+      margin-bottom: 0;
+      position: absolute;
+      left: 0;
+      right: 0;
+    }
   }
 
   img {
     z-index: 1;
+    display: block;
+    transform: scale(1);
+    transition: transform .35s ease-in;
 
     &:hover {
       width: 120% !important;

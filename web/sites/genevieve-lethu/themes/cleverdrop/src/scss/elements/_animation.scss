@@ -186,18 +186,14 @@
   }
 
   &-moodboard {
-    .moodboard-wrapper {
-       * {
-        transform: translateY(5%);
-        transition: transform 2s ease-in-out;
-      }
+    [class^=moodboard-img] {
+      transform: translateY(5%);
+      transition: transform 2s ease-in-out;
     }
 
     &.is-animate {
-      .moodboard-wrapper {
-         * {
-          transform: translateY(0);
-        }
+      [class^=moodboard-img] {
+        transform: translateY(0);
       }
     }
   }

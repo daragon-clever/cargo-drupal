@@ -18,7 +18,7 @@
       {% if content.field_resume[0]['#context']['value'] is not empty %}
         {{ content.field_resume[0]['#context']['value']|truncate(90, false, '...')|striptags|raw }}
       {% else %}
-        {{ content.field_paragraph_centred_text[0]['#paragraph'].field_rte_lite.value|striptags|truncate(90, true, '...')|raw|nl2br }}
+        {{ resume[0]['value']|striptags|truncate(90, true, '...')|raw|nl2br }}
       {% endif %}
     </p>
 

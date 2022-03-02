@@ -45,3 +45,5 @@ le fichier newsletter.module
 * Merch&Cie
 * Sitram
 * Yliades
+* Sema Design
+* Geneviève Lethu

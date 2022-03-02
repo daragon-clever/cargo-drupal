@@ -3,7 +3,6 @@ langcode: fr
 status: true
 dependencies:
   module:
-    - ctools
     - gl_core
   theme:
     - cleverdrop
@@ -19,12 +18,4 @@ settings:
   provider: gl_core
   label_display: '0'
   find_our_products: null
-visibility:
-  'entity_bundle:node':
-    id: 'entity_bundle:node'
-    bundles:
-      heart_of_creation: heart_of_creation
-      listing_stories_of_tables: listing_stories_of_tables
-    negate: true
-    context_mapping:
-      node: '@node.node_route_context:node'
+visibility: {  }

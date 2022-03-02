@@ -95,6 +95,11 @@
       height: auto;
     }
   }
+
+  label[for="edit-rgpd-allow"]:not(.keep) {
+    display: none;
+  }
+
 }
 
 .newsletterSocial {

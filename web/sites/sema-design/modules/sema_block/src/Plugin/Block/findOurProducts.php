@@ -6,6 +6,7 @@ use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Url;
 
 /**
  * Provides a block with a simple text.
@@ -26,7 +27,7 @@ class findOurProducts extends BlockBase {
     if (!empty($myConfigPage)) {
       $datas['description'] = $myConfigPage->get('field_description')->value;
       $datas['title'] = $myConfigPage->get('field_title')->value;
-      $datas['cta_link'] = $myConfigPage->get('field_cta')->uri;
+      $datas['cta_link'] = Url::fromUri($myConfigPage->get('field_cta')->uri);
       $datas['cta'] = $myConfigPage->get('field_cta')->title;
     }
 

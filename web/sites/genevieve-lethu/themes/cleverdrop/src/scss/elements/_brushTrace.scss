@@ -36,7 +36,7 @@
     &::after {
       background-image: url('../assets/brush-top.png');
       background-position-y: top;
-      top: 0;
+      top: -1px;
     }
   }
 
@@ -44,7 +44,7 @@
     &::after {
       background-image: url('../assets/brush.png');
       background-position-y: bottom;
-      bottom: 0;
+      bottom: -1px;
     }
   }
 }

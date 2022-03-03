@@ -105,12 +105,14 @@
       text-transform: uppercase;
       font-size: rem(12px);
       margin: rem(20px) 0 rem(5px);
+      text-align: center;
     }
 
     &-title {
       @include font(variant, italic);
       font-size: rem(20px);
       margin: 0;
+      text-align: center;
     }
 
     .slider {

@@ -3,11 +3,13 @@
 \* -------------------------------------------------------------------------- */
 
 .topBanner {
-  @include aspect-ratio(500px, 680px, '.topBanner-ratio');
-  // position: relative;
 
-  @include mq($from: sm) {
-    @include aspect-ratio(1440px, 555px, '.topBanner-ratio');
+  &:not(.--noRatio) {
+    @include aspect-ratio(500px, 680px, '.topBanner-ratio');
+
+    @include mq($from: sm) {
+      @include aspect-ratio(1440px, 555px, '.topBanner-ratio');
+    }
   }
 
   &-text {
@@ -38,6 +40,7 @@
       object-fit: cover;
       width: 100%;
       height: 100%;
+      display: block;
     }
   }
 

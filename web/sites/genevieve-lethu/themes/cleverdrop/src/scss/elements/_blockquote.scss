@@ -8,16 +8,17 @@ $blockquote-font-size: 30px;
 blockquote {
   @include font(variant, italic);
   font-size: rem($blockquote-font-size);
-  line-height: unitless-line-height(50px, $blockquote-font-size);
+  line-height: unitless-line-height(36px, $blockquote-font-size);
   text-align: center;
   color: $theme-secondary;
   position: relative;
   padding-top: rem(35px);
-  margin: rem(80px) 0;
+  margin: rem(40px) 0;
 
   @include mq($from: md) {
     font-size: rem($blockquote-font-size-md);
     line-height: unitless-line-height(50px, $blockquote-font-size-md);
+    margin: rem(80px) 0;
   }
 
   cite {

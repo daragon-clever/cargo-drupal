@@ -18,6 +18,16 @@
   }
 
   &-quote {
+    img {
+      @include mq($until: xl) {
+        width: rem(200px);
+      }
+
+      @include mq($until: lg) {
+        width: rem(160px);
+      }
+    }
+
     &-text {
       opacity: 0;
       transform: translateY(100%);
@@ -56,16 +66,10 @@
         right: rem(-40px);
         z-index: 1;
 
-        img {
-          @include mq($until: lg) {
-            width: rem(160px);
-          }
-        }
-
-        @include mq($from: lg) {
+        @include mq($from: md) {
           bottom: auto;
           top: 0;
-          right: rem(30px);
+          right: 0;
           transform: translateY(-25%);
           transition: transform 1.5s ease-in-out;
 

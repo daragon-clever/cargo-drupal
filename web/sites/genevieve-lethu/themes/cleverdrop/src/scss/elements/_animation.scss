@@ -10,6 +10,7 @@
       clip-path: polygon(0 0, 0 0, 100% 0, 100% 0);
       animation-fill-mode: forwards;
       transition: clip-path 1.2s;
+      display: block;
     }
 
     &.is-animate img {

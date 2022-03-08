@@ -19,4 +19,39 @@
   i {
     font-style: italic;
   }
+
+  ul {
+    padding-left: rem(20px);
+    list-style-type: disc;
+    margin: rem(15px) 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @include font(variant, bold);
+    color: $theme-secondary;
+  }
+
+  h1 {
+    @include heading-primary;
+  }
+
+  h2 {
+    @include heading-secondary;
+  }
+
+  h3 {
+    @include heading-tertiary;
+  }
+
+  h4 {
+    @include heading-quaternary;
+  }
+
+  h5 {
+    @include heading-quinary;
+  }
+
+  h6 {
+    @include heading-senary;
+  }
 }

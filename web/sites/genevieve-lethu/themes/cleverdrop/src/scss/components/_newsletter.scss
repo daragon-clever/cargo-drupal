@@ -3,18 +3,25 @@
   padding-bottom: 100px;
   overflow: hidden;
   border-top: 1px solid $theme-light;
+  position: relative;
 
   &-quote {
     position: absolute;
     right: 0;
     left: 0;
-    font-size: rem(90px);
+    top: 21%;
+    font-size: rem(40px);
     @include font(variant);
     font-style: italic;
     color: darken($theme-secondary, 2%);
     white-space: nowrap;
     overflow: hidden;
     display: inline-block;
+
+    @include mq($from: md) {
+      font-size: rem(90px);
+      top: auto;
+    }
   }
 
   &-over {
@@ -63,13 +70,15 @@
 
   }
   .form-submit {
+    box-sizing: border-box;
     background: $white;
-    border: 1px solid white;
-    height: 50px;
-    border-radius: 0px 50px 50px 0px;
-    min-width: 107px;
+    border: rem(1px) solid white;
+    height: rem(50px);
+    border-radius: 0 60em 60em 0;
+    min-width: rem(110px);
     width: 30%;
     color: $aqua-deep;
+    padding: 0 rem(10px);
   }
 
   &-fields {

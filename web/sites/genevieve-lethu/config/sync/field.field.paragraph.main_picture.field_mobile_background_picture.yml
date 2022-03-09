@@ -12,7 +12,7 @@ field_name: field_mobile_background_picture
 entity_type: paragraph
 bundle: main_picture
 label: 'Visuel arrière plan mobile'
-description: ''
+description: 'Dimension recommandée : 320px x 435px'
 required: true
 translatable: false
 default_value: {  }

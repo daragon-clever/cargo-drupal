@@ -12,7 +12,7 @@ field_name: field_overlay
 entity_type: paragraph
 bundle: video_article
 label: Overlay
-description: ''
+description: 'Dimension recommandée : 750px x 580px'
 required: false
 translatable: true
 default_value: {  }

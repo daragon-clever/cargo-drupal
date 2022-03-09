@@ -12,7 +12,7 @@ field_name: field_picture
 entity_type: paragraph
 bundle: main_picture
 label: 'Visuel flottant haut '
-description: ''
+description: 'Dimension recommandée : 150px x 180px'
 required: false
 translatable: true
 default_value: {  }

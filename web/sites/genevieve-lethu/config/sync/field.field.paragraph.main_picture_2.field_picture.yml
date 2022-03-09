@@ -12,7 +12,7 @@ field_name: field_picture
 entity_type: paragraph
 bundle: main_picture_2
 label: 'Visuel n°2 Desktop'
-description: ''
+description: 'Dimension recommandée : 240px x 240px'
 required: false
 translatable: true
 default_value: {  }

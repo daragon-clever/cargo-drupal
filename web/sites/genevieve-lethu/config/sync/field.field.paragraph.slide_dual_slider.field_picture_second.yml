@@ -12,7 +12,7 @@ field_name: field_picture_second
 entity_type: paragraph
 bundle: slide_dual_slider
 label: Visuel
-description: ''
+description: 'Dimension recommandée : 750px x 580px'
 required: true
 translatable: true
 default_value: {  }

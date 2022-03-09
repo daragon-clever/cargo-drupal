@@ -12,7 +12,7 @@ field_name: field_picture
 entity_type: paragraph
 bundle: highlight_collection
 label: 'Visuel n°1 '
-description: ''
+description: 'Dimension recommandée : 460px x 460px'
 required: false
 translatable: true
 default_value: {  }

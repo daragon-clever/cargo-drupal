@@ -12,7 +12,7 @@ field_name: field_picture_second
 entity_type: paragraph
 bundle: brand_presentation
 label: 'Visuel assiette'
-description: ''
+description: 'Dimension recommandée : 330px x 330px'
 required: true
 translatable: false
 default_value: {  }

@@ -12,7 +12,7 @@ field_name: field_picture_second
 entity_type: paragraph
 bundle: moodboard
 label: 'Visuel 2'
-description: ''
+description: 'Dimension recommandée : 240px x 300px'
 required: false
 translatable: true
 default_value: {  }

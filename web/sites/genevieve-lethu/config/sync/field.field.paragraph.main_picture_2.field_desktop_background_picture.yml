@@ -12,7 +12,7 @@ field_name: field_desktop_background_picture
 entity_type: paragraph
 bundle: main_picture_2
 label: 'Visuel arrière plan'
-description: ''
+description: 'Dimension recommandée : 1440px x 555px'
 required: true
 translatable: true
 default_value: {  }

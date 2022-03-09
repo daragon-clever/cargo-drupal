@@ -12,7 +12,7 @@ field_name: field_picture
 entity_type: paragraph
 bundle: triptych_picture
 label: 'Visuel à droite'
-description: ''
+description: 'Dimension recommandée : 500px x 680px'
 required: false
 translatable: true
 default_value: {  }

@@ -12,7 +12,7 @@ field_name: field_picture
 entity_type: paragraph
 bundle: visuel_full
 label: Visuel
-description: ''
+description: 'Dimension recommandée : 1440px x 555px'
 required: true
 translatable: true
 default_value: {  }

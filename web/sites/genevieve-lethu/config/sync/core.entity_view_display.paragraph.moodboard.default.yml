@@ -26,10 +26,14 @@ content:
     weight: 2
     label: visually_hidden
     settings:
-      format: hex
       opacity: true
+      selector: body
+      property: background-color
+      important: '1'
+      advanced: false
+      css: ''
     third_party_settings: {  }
-    type: color_field_formatter_text
+    type: color_field_formatter_css
     region: content
   field_picture:
     weight: 1

@@ -12,7 +12,7 @@ field_name: field_picture_fourth
 entity_type: paragraph
 bundle: moodboard
 label: 'Visuel 4'
-description: ''
+description: 'Dimension recommandée : 330px x 330px'
 required: false
 translatable: false
 default_value: {  }

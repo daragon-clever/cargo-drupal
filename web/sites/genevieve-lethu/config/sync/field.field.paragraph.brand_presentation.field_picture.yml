@@ -12,7 +12,7 @@ field_name: field_picture
 entity_type: paragraph
 bundle: brand_presentation
 label: 'Visuel en arrière plan'
-description: ''
+description: 'Dimension recommandée : 460px x 460px'
 required: true
 translatable: true
 default_value: {  }

@@ -12,7 +12,7 @@ field_name: field_picture
 entity_type: paragraph
 bundle: slide_slider_backstage
 label: Visuel
-description: ''
+description: 'Dimension recommandée : 500px x 680px'
 required: true
 translatable: true
 default_value: {  }

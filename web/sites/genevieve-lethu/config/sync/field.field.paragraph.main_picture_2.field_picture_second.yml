@@ -12,7 +12,7 @@ field_name: field_picture_second
 entity_type: paragraph
 bundle: main_picture_2
 label: 'Visuel n°2 Mobile'
-description: ''
+description: 'Dimension recommandée : 120px x 120px'
 required: false
 translatable: true
 default_value: {  }

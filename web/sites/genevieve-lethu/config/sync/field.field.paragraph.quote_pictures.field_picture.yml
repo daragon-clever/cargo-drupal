@@ -12,7 +12,7 @@ field_name: field_picture
 entity_type: paragraph
 bundle: quote_pictures
 label: 'Visuel d''arrière plan'
-description: ''
+description: 'Dimension recommandée : 1440px x 330px'
 required: true
 translatable: true
 default_value: {  }

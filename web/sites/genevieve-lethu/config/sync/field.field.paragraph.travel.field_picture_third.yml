@@ -12,7 +12,7 @@ field_name: field_picture_third
 entity_type: paragraph
 bundle: travel
 label: 'Visuel 2b'
-description: ''
+description: 'Dimension recommandée : 156px x 54px'
 required: true
 translatable: true
 default_value: {  }

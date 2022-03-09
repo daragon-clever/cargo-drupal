@@ -12,7 +12,7 @@ field_name: field_picture
 entity_type: node
 bundle: article
 label: Image
-description: ''
+description: 'Dimension recommandée : 400px x 500px'
 required: true
 translatable: false
 default_value: {  }

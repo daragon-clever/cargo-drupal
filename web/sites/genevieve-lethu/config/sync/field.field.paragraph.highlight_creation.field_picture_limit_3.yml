@@ -12,7 +12,7 @@ field_name: field_picture_limit_3
 entity_type: paragraph
 bundle: highlight_creation
 label: Visuels
-description: ''
+description: 'Dimension recommandée : 500px x 680px'
 required: true
 translatable: true
 default_value: {  }

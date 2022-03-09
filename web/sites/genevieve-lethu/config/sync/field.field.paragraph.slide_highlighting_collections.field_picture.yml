@@ -12,7 +12,7 @@ field_name: field_picture
 entity_type: paragraph
 bundle: slide_highlighting_collections
 label: Visuel
-description: ''
+description: 'Dimension recommandée : 750px x 580px'
 required: true
 translatable: true
 default_value: {  }

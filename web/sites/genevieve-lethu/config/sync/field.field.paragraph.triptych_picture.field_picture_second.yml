@@ -12,7 +12,7 @@ field_name: field_picture_second
 entity_type: paragraph
 bundle: triptych_picture
 label: 'Visuel centré'
-description: ''
+description: 'Dimension recommandée : 750px x 580px'
 required: true
 translatable: true
 default_value: {  }

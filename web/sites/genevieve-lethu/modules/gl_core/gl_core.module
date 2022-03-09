@@ -111,9 +111,11 @@ function gl_core_preprocess_node(&$variables)
     $resume = null;
     $components = $variables['node']->get('field_components')->getValue();
     foreach ($components as $element) {
-      $p = \Drupal\paragraphs\Entity\Paragraph::load($element['target_id']);
-      if (($p->getType() == 'text_list' || $p->getType() == 'description_centered') && empty($resume)) {
-        $variables['resume'] = $p->field_rte_lite->getValue();
+      if (!empty($element['target_id'])) {
+        $p = \Drupal\paragraphs\Entity\Paragraph::load($element['target_id']);
+        if (($p->getType() == 'text_list' || $p->getType() == 'description_centered') && empty($resume)) {
+          $variables['resume'] = $p->field_rte_lite->getValue();
+        }
       }
     }
   }

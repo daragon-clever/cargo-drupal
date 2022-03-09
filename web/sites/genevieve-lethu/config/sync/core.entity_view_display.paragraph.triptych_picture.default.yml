@@ -3,18 +3,29 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - field.field.paragraph.triptych_picture.field_color
     - field.field.paragraph.triptych_picture.field_picture
     - field.field.paragraph.triptych_picture.field_picture_second
     - field.field.paragraph.triptych_picture.field_picture_third
     - image.style.max_h560
     - paragraphs.paragraphs_type.triptych_picture
   module:
+    - color_field
     - svg_image
 id: paragraph.triptych_picture.default
 targetEntityType: paragraph
 bundle: triptych_picture
 mode: default
 content:
+  field_color:
+    weight: 3
+    label: above
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    type: color_field_formatter_text
+    region: content
   field_picture:
     weight: 0
     label: visually_hidden

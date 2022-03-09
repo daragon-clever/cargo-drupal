@@ -10,7 +10,7 @@
 ]
 %}
 {% block paragraph %}
-  <div{{ attributes.addClass(classes) }} style="--colorContrib:#D1A559">
+  <div{{ attributes.addClass(classes) }} style="--colorContrib:{{ content.field_color[0]['#markup'] }}">
     {% block content %}
     <div class="triptych">
       <div class="container">

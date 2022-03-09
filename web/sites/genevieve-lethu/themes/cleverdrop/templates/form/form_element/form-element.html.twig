@@ -1,15 +1,23 @@
-{% if label_display in ['before', 'invisible'] %}
-  {{ label }}
+<div class="form-element-wrapper {% if errors %}error{% endif %}">
+  {% if label_display in ['before', 'invisible'] %}
+    {{ label }}
+  {% endif %}
+  {{ prefix }}
+  {% if description_display == 'before' and description.content %}
+    {{ description.content }}
+  {% endif %}
+  {{ children }}
+  {{ suffix }}
+  {% if label_display == 'after' %}
+    {{ label }}
+  {% endif %}
+  {% if description_display in ['after', 'invisible'] and description.content %}
+    {{ description.content }}
+  {% endif %}
+</div>
+{% if errors %}
+  <div class="form-item--error-message">
+    {{ errors }}
+  </div>
 {% endif %}
-{{ prefix }}
-{% if description_display == 'before' and description.content %}
-  {{ description.content }}
-{% endif %}
-{{ children }}
-{{ suffix }}
-{% if label_display == 'after' %}
-  {{ label }}
-{% endif %}
-{% if description_display in ['after', 'invisible'] and description.content %}
-  {{ description.content }}
-{% endif %}
+

@@ -42,7 +42,6 @@ input, select, textarea {
   border: 1px solid $theme-light;
   width: 100%;
   height: 46px;
-  margin-bottom: 25px;
   padding: 0 25px;
   box-sizing: border-box;
   @include font(base, bold);
@@ -51,6 +50,17 @@ input, select, textarea {
   &:active, &:focus, &:focus-visible {
     outline: none;
   }
+}
+.form-item--error-message {
+  font-weight: bold;
+  color: red;
+  margin-bottom: 25px;
+  font-size: rem(12px);
+  margin-left: 15px;
+}
+
+.form-element-wrapper:not(.error) {
+  margin-bottom: 25px;
 }
 
 textarea {

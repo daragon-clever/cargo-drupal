@@ -39,6 +39,7 @@
     @include font(variant, 700);
     font-size: rem(26px);
   }
+
   &-text {
     font-family: $font-base;
     font-size: rem(16px);
@@ -58,10 +59,10 @@
     color: $white;
     background: transparent;
     padding: 0px 18px;
-    width: 70%;
+    width: 100%;
     @include font(variant, 100);
     font-size: rem(12px);
-    height: auto;
+    height: 50px;
 
     &::placeholder {
       color: $white;
@@ -69,6 +70,7 @@
     }
 
   }
+
   .form-submit {
     box-sizing: border-box;
     background: $white;
@@ -86,12 +88,15 @@
     justify-content: center;
   }
 
+  .form-element-wrapper {
+    display: flex;
+    align-items: baseline;
+  }
+
   &-rpdg {
     max-width: 540px;
     color: $white;
     margin-top: 20px;
-    display: flex;
-    align-items: baseline;
 
     label {
       padding-left: 15px;

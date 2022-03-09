@@ -110,6 +110,7 @@ function gl_core_preprocess_node(&$variables)
   if ($variables['node']->getType() == 'article') {
     $resume = null;
     $components = $variables['node']->get('field_components')->getValue();
+    $components = array_reverse($components);
     foreach ($components as $element) {
       if (!empty($element['target_id'])) {
         $p = \Drupal\paragraphs\Entity\Paragraph::load($element['target_id']);

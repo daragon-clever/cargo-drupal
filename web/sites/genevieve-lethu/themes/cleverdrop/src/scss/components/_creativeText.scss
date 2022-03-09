@@ -1,14 +1,14 @@
 .creativeText {
-  padding-top: 100px;
-  padding-bottom: 134px;
+  padding-top: rem(100px);
+  padding-bottom: rem(135px);
+
   @include mq($until: md) {
-    padding-top: 40px;
-    padding-bottom: 80px;
+    padding-top: rem(40px);
+    padding-bottom: rem(80px);
   }
 
   &-title {
     position: relative;
-
 
     h1 {
       @include font(variant);
@@ -23,8 +23,9 @@
     img {
       position: absolute;
       bottom: 0;
+
       @include mq($until: md) {
-        bottom: -15px;
+        bottom: rem(-15px);
       }
     }
   }
@@ -33,8 +34,9 @@
     @include font(base, light);
     font-size: rem(16px);
     color: $white;
+
     @include mq($until: md) {
-      margin-top: 50px;
+      margin-top: rem(50px);
     }
   }
 }

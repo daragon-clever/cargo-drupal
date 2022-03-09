@@ -1,7 +1,7 @@
 .backstage {
   background: $theme;
-  padding-top: 30px;
-  padding-bottom: 60px;
+  padding-top: rem(30px);
+  padding-bottom: rem(60px);
 
   @include mq($until: md) {
     .container {
@@ -20,6 +20,7 @@
   &-over {
     position: absolute;
     z-index: 1;
+
     @include mq($until: md) {
       width: 100%;
     }
@@ -29,12 +30,13 @@
       font-style: italic;
       font-size: rem(40px);
       color: $theme;
-      background: url("/sites/genevieve-lethu/themes/cleverdrop/src/assets/backstageBrush.png");
+      background: url("../assets/backstageBrush.png");
       background-repeat: no-repeat;
-      width: 447px;
+      width: rem(447px);
       text-align: center;
-      height: 102px;
-      line-height: 102px;
+      height: rem(102px);
+      line-height: rem(102px);
+
       @include mq($until: md) {
         background-size: contain;
         background-position: center;

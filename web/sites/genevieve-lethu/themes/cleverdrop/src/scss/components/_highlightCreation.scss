@@ -1,13 +1,14 @@
 .highlightCreation {
-  padding-top: 100px;
+  padding-top: rem(100px);
   position: relative;
 
   &-upSection {
     position: relative;
     z-index: 3;
-    padding-bottom: 100px;
-    @include mq($until:md) {
-      padding-bottom: 200px;
+    padding-bottom: rem(100px);
+
+    @include mq($until: md) {
+      padding-bottom: rem(200px);
     }
   }
 
@@ -15,9 +16,9 @@
     @include font(variant);
     font-size: rem(26px);
     font-weight: bold;
-    max-width: 447px;
-    border-bottom: 1px solid $theme-light;
-    padding-bottom: 30px;
+    max-width: rem(445px);
+    border-bottom: rem(1px) solid $theme-light;
+    padding-bottom: rem(30px);
   }
 
   &-description {
@@ -28,12 +29,12 @@
 
   &-pictures {
     position: relative;
-    padding-top: 60px;
+    padding-top: rem(60px);
     display: flex;
-    gap: 18px;
+    gap: rem(18px);
 
     img {
-      max-height: 561px;
+      max-height: rem(561px);
       z-index: 1;
     }
   }
@@ -41,10 +42,11 @@
   &-paintStainGreen {
     position: absolute;
     z-index: 0;
-    height: 96px;
-    width: 96px;
+    height: rem(96px);
+    width: rem(96px);
     left: 50%;
-    top: 10px;
+    top: rem(10px);
+
     @include mq($until: md) {
       display: none;
     }
@@ -53,7 +55,7 @@
 
   &-footer {
     position: relative;
-    height: 219px;
+    height: rem(219px);
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -65,17 +67,19 @@
       left: 0;
       right: 0;
       width: 100%;
+
       @include mq($until: md) {
         top: unset;
-        bottom: 50px;
+        bottom: rem(50px);
       }
 
       &.paintStainLast {
         left: 2%;
-        height: 96px;
-        width: 96px;
-        bottom: 30px;
+        height: rem(96px);
+        width: rem(96px);
+        bottom: rem(30px);
         top: unset;
+
         @include mq($until: md) {
           left: unset;
           right: 2%;
@@ -86,12 +90,13 @@
         left: unset;
         right: 0;
         z-index: 3;
-        width: 329px;
-        height: 220px;
+        width: rem(329px);
+        height: rem(220px);
+
         @include mq($until: md) {
           left: 5%;
           right: unset;
-          bottom: -50px;
+          bottom: rem(-50px);
         }
       }
     }
@@ -101,10 +106,11 @@
     position: absolute;
     bottom: 0;
     background: $white;
-    height: 160px;
+    height: rem(160px);
     width: 100%;
+
     @include mq($until: md) {
-      height: 60px;
+      height: rem(60px);
     }
   }
 
@@ -118,13 +124,12 @@
   }
 
   .slider-scrollbar {
-    margin-top: 30px;
+    margin-top: rem(30px);
 
     .slider-scrollbar-drag {
-      height: 1px;
+      height: rem(1px);
       background: $theme;
       width: 30% !important;
     }
   }
-
 }

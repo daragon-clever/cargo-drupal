@@ -1,24 +1,30 @@
 .contact {
   &-title {
     text-align: center;
-    margin-bottom: 60px;
-    margin-top: 99px;
+    margin-bottom: rem(60px);
+    margin-top: rem(99px);
   }
 
   .contact-subject {
     span.required {
       display: none;
     }
+
     label {
       @include font(variant,bold);
       font-size: rem(26px);
     }
+
     select {
       position: relative;
-      background-image: url("data:image/svg+xml;utf8,%3Csvg width='12px' height='8px' viewBox='0 0 12 8' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.26733 6.85077L11.087 2.18173C11.4202 1.85904 11.4202 1.33719 11.087 1.01791L10.2861 0.242035C9.953 -0.0806885 9.41431 -0.0806885 9.08472 0.242035L5.66846 3.55154L2.2522 0.242035C1.91907 -0.0806885 1.38037 -0.0806885 1.05078 0.242035L0.249878 1.01791C-0.083252 1.34064 -0.083252 1.86246 0.249878 2.18173L5.06958 6.85077C5.39563 7.17349 5.9342 7.17349 6.26733 6.85077L6.26733 6.85077Z' id='Chevron' fill='%23003B2E' stroke='none' /%3E%3C/svg%3E");
+      background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8"><path d="m6.595 6.904 4.82-4.67a.803.803 0 0 0 0-1.163l-.801-.776a.866.866 0 0 0-1.201 0l-3.417 3.31L2.58.295a.866.866 0 0 0-1.201 0l-.801.776a.803.803 0 0 0 0 1.164l4.82 4.669a.862.862 0 0 0 1.197 0Z" fill="#{$theme}"/></svg>');
       background-repeat: no-repeat;
-      background-position-x: 98%;
-      background-position-y: 50%;
+      background-position-x: 95%;
+      background-position-y: 52%;
+
+      @include mq($from: sm) {
+        background-position-x: 97%;
+      }
     }
   }
 
@@ -26,41 +32,45 @@
     label {
       display: inline;
     }
+
     input {
       display: inline;
       width: auto ;
       height: auto ;
       margin-bottom: 0;
-      padding-right: 15px;
+      padding-right: rem(15px);
     }
   }
 
   &-mandatory {
-    margin-bottom: 40px;
     @include font(base, light);
+    margin-bottom: rem(40px);
     font-size: rem(14px);
     color: $theme;
-    margin-top: 20px;
+    margin-top: rem(20px);
   }
 
   .contact-submit {
-    margin-top: 40px;
-    margin-bottom: 90px;
+    margin-top: rem(40px);
+    margin-bottom: rem(90px);
+
     input {
       background: $theme;
       color: $white;
-      border: 1px solid $theme;
-      width: 290px;
-      height: 46px;
+      border: rem(1px) solid $theme;
+      width: rem(290px);
+      height: rem(46px);
       @include font(script);
       font-size: rem(20px);
       transition: background-color 0.3s ease-in-out;
+
       @include mq($until:md) {
         width: 100%;
       }
+
       &:hover  {
         background: $theme-light;
-        border: 1px solid $theme-light;
+        border: rem(1px) solid $theme-light;
       }
     }
   }

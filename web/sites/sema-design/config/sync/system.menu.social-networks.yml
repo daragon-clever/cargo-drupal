@@ -1,8 +1,0 @@
-uuid: 08cac857-bc6c-4fc0-b6aa-b810762cbba4
-langcode: fr
-status: true
-dependencies: {  }
-id: social-networks
-label: 'Réseaux sociaux'
-description: ''
-locked: false

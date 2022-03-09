@@ -5,6 +5,8 @@ common-styles:
       css/admin_ui/tabs.css: {}
     theme:
       public/css/main.css: {}
+      cargo/style.css: {}
 
   js:
     public/js/script.js: {}
+    cargo/js/app.js: {}

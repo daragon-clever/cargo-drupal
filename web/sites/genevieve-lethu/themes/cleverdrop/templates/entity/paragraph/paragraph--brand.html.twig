@@ -5,7 +5,6 @@
   view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   not paragraph.isPublished() ? 'paragraph--unpublished',
   'brand',
-  'bg-imgContrib',
   'animation-brand'
 ]
 %}
@@ -13,8 +12,8 @@
   <div{{ attributes.addClass(classes) }} style="background-image: url('{{ file_url(content.field_picture[0]['#item'].entity.fileUri) }}');" data-animate='{"threshold": 0.4}'>
     {% block content %}
     <div class="container">
-      <div class="row">
-        <div class="col-12 col-md-5 pos-rel brand-col">
+      <div class="row justify-content-end">
+        <div class="col-12 col-md-5 brand-col bg-imgContrib" style="background-image: url('{{ file_url(content.field_picture[0]['#item'].entity.fileUri) }}');">
           <ul class="brand-list">
             {% for i in content.field_picture_limit_3['#items']|keys %}
               <li>{{ content.field_picture_limit_3[i] }}</li>

@@ -84,12 +84,20 @@
 
   &-brand {
     .brand-list {
-      transform: translate(-10%, -50%);
       transition: transform 1.5s ease-in-out;
+      transform: translate(-10%, 0);
+
+      @include mq($from: md) {
+        transform: translate(-10%, -50%);
+      }
     }
 
     &.is-animate .brand-list {
-      transform: translate(0, -50%);
+      transform: translate(0, 0);
+
+      @include mq($from: md) {
+        transform: translate(0, -50%);
+      }
     }
   }
 

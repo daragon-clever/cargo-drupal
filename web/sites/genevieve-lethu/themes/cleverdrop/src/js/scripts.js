@@ -10,3 +10,4 @@ require('./components/menu');
 require('./components/videoPlayer');
 require('./components/videoYoutube');
 require('./components/carousel');
+require('./components/system');

@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   overflow: visible;
-  margin-bottom: calc($moodboard-height + ($gap-between-min * 2));
+  margin-bottom: calc($moodboard-height + ($gap-between-max * 2));
 
   @include mq($from: md) {
     margin-bottom: calc($moodboard-height-md + ($gap-between-max * 2));

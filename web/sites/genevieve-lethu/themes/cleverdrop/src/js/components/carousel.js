@@ -159,7 +159,6 @@ function carousel() {
     loop: true,
     centeredSlides: true,
     watchSlidesProgress: true,
-    autoHeight: true,
     breakpoints: {
       0: {
         slidesPerView: 1.8,

@@ -16,37 +16,35 @@
     </blockquote>
   </div>
   <div class="fitScreen">
-    <div class="triangleBorder-bottom bg-colorContrib gap-y" style="--colorContrib:#F0EDE0">
-      <!-- <div class="row justify-content-center gap-y">
-        <div class="col-12 col-md-3 col-xl-2"> -->
-          <div class="slider imageGallery-thumbs js-withInfo js-imageGallery-thumbs">
-            <div class="slider-nav">
-              <div class="slider-btnPrev">
-                <svg width="22" height="22" focusable="false" aria-hidden="true">
-                  <use xlink:href="/{{ directory ~ '/public/assets/sprite.svg#arrow-prev' }}" />
-                </svg>
-              </div>
-              <div id="slider-infos"></div>
-              <div class="slider-btnNext">
-                <svg width="22" height="22" focusable="false" aria-hidden="true">
-                  <use xlink:href="/{{ directory ~ '/public/assets/sprite.svg#arrow-next' }}" />
-                </svg>
-              </div>
+    <div class="triangleBorder-bottom bg-colorContrib" style="--colorContrib:#F0EDE0">
+      <div class="gap-y">
+        <div class="slider imageGallery-thumbs js-withInfo js-imageGallery-thumbs">
+          <div class="slider-nav">
+            <div class="slider-btnPrev">
+              <svg width="22" height="22" focusable="false" aria-hidden="true">
+                <use xlink:href="/{{ directory ~ '/public/assets/sprite.svg#arrow-prev' }}" />
+              </svg>
             </div>
-            <div class="slider-wrapper">
-              {% for i in content.field_slide['#items']|keys %}
-              <div class="slider-slide">
-                <div class="imageGallery-thumbs-content">
-                  <img src="{{ file_url(content.field_slide[i]['#paragraph'].field_picture.entity.fileUri) }}" alt="">
-                  <p class="imageGallery-thumbs-category">Collection</p>
-                  <p class="imageGallery-thumbs-title">{{ content.field_slide[i]['#paragraph'].field_text.value }}</p>
-                </div>
-              </div>
-              {% endfor %}
+            <div id="slider-infos"></div>
+            <div class="slider-btnNext">
+              <svg width="22" height="22" focusable="false" aria-hidden="true">
+                <use xlink:href="/{{ directory ~ '/public/assets/sprite.svg#arrow-next' }}" />
+              </svg>
             </div>
           </div>
-        <!-- </div>
-      </div> -->
+          <div class="slider-wrapper">
+            {% for i in content.field_slide['#items']|keys %}
+            <div class="slider-slide">
+              <div class="imageGallery-thumbs-content">
+                <img src="{{ file_url(content.field_slide[i]['#paragraph'].field_picture.entity.fileUri) }}" alt="">
+                <p class="imageGallery-thumbs-category">Collection</p>
+                <p class="imageGallery-thumbs-title">{{ content.field_slide[i]['#paragraph'].field_text.value }}</p>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
     </div>
     <div class="slider imageGallery dualSlider js-imageGallery">
       <div class="slider-wrapper">

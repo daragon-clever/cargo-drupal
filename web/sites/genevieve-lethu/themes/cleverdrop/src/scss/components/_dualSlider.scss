@@ -23,7 +23,7 @@
   @include mq($from: md) {
     .effect-prev {
       animation: 1s fade-effect-prev;
-      z-index: 10 !important;
+      z-index: 8 !important;
       opacity: 1 !important;
 
       @keyframes fade-effect-prev {

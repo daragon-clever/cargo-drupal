@@ -28,6 +28,11 @@ body {
   margin: 0;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  padding-top: rem(62px); // Header height until lg
+
+  @include mq($from: lg) {
+    padding-top: rem(68px); // Header height from lg
+  }
 }
 
 .contextual-region {

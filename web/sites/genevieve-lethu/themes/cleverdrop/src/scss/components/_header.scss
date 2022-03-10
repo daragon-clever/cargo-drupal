@@ -7,8 +7,10 @@ $height-header: 60px;
 .header {
   background-color: $light;
   border-top: rem(3px) solid $theme-secondary;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: $zindex-header;
 
   @include mq($from: lg) {
@@ -136,7 +138,7 @@ $height-header: 60px;
     order: 0;
     position: fixed;
     left: rem(30px);
-    top: rem(20px);
+    top: rem(24px);
 
     @include mq($from: lg) {
       margin: 0 rem(30px);

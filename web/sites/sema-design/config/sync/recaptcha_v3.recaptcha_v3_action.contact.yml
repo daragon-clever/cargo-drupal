@@ -1,8 +1,0 @@
-uuid: e40c4008-79ba-4542-9659-30a0f45d97ef
-langcode: fr
-status: true
-dependencies: {  }
-id: contact
-label: contact
-threshold: 0.5
-challenge: recaptcha/reCAPTCHA

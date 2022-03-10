@@ -42,7 +42,8 @@ module.exports = (env, argv) => [{
               additionalData: "$env: " + argv.mode + ";",
               sassOptions: {
                 importer: globImporter()
-              }
+              },
+
             }
           },
         ],

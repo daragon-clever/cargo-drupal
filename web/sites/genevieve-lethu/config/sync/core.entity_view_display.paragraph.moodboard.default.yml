@@ -27,13 +27,9 @@ content:
     label: visually_hidden
     settings:
       opacity: true
-      selector: body
-      property: background-color
-      important: '1'
-      advanced: false
-      css: ''
+      format: hex
     third_party_settings: {  }
-    type: color_field_formatter_css
+    type: color_field_formatter_text
     region: content
   field_picture:
     weight: 1

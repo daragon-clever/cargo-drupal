@@ -207,11 +207,12 @@
       ul {
         li {
           display: inline-block;
+          margin: 0 rem(5px);
 
           a {
             @include font(base, 100);
             color: $theme-secondary;
-            font-size: rem(12px);
+            font-size: rem(14px);
             text-decoration: none;
           }
 
@@ -235,21 +236,17 @@
                 background-repeat: no-repeat;
                 background-size: 40%;
                 background-position: 50% 50%;
-                background-image: sv-url('<svg viewBox="0 0 22 10" xmlns="http://www.w3.org/2000/svg"><path d="M.75 5.75h11.5v4l9-4.5-9-4.5v4H.75z" fill="#{$white}" /></svg>');
-              }
-
-              span {
-                display: none;
+                background-image: svg-url('<svg viewBox="0 0 22 10" xmlns="http://www.w3.org/2000/svg"><path d="M.75 5.75h11.5v4l9-4.5-9-4.5v4H.75z" fill="#{$white}" /></svg>');
               }
             }
           }
 
           &.pager__item--next {
-            margin-left: rem(33px);
+            margin-left: rem(25px);
           }
 
           &.pager__item--previous {
-            margin-right: rem(33px);
+            margin-right: rem(25px);
 
             a:after {
               transform: rotate(180deg);

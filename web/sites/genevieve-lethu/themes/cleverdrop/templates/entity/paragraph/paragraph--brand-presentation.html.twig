@@ -1,0 +1,30 @@
+{%
+  set classes = [
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished',
+  'container',
+  'gap-b',
+  'animation-brandPresentation'
+]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }} data-animate='{"threshold": 0.5}'>
+    {% block content %}
+    <div class="row align-items-center">
+      <div class="col-12 col-lg-3 offset-lg-2">
+        <h2>{{ content.field_title }}</h2>
+        <p>{{ content.field_description }}</p>
+        <p class="d-flex justify-content-center justify-content-start-lg"><a href="{{ content.field_cta[0]['#url'] }}" class="cta">{{ content.field_cta[0]['#title'] }}</a></p>
+      </div>
+      <div class="col-12 col-lg-5 offset-lg-1">
+        <div class="imgOverlap">
+          <div class="imgOverlap-above">{{ content.field_picture_second }}</div>
+          <div class="imgOverlap-below">{{ content.field_picture }}</div>
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

@@ -1,0 +1,205 @@
+/* -------------------------------------------------------------------------- *\
+  # ANIMATIONS
+\* -------------------------------------------------------------------------- */
+
+.animation {
+  &-shutter {
+    background-color: $aqua-deep;
+
+    img {
+      clip-path: polygon(0 0, 0 0, 100% 0, 100% 0);
+      animation-fill-mode: forwards;
+      transition: clip-path 1.2s;
+      display: block;
+    }
+
+    &.is-animate img {
+      clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
+    }
+  }
+
+  &-quote {
+    img {
+      @include mq($until: xl) {
+        width: rem(200px);
+      }
+
+      @include mq($until: lg) {
+        width: rem(160px);
+      }
+    }
+
+    &-text {
+      opacity: 0;
+      transform: translateY(100%);
+      transition: opacity 1.5s linear, transform 1.5s linear;
+    }
+
+    &.is-animate {
+      .animation-quote-text {
+        opacity: 1;
+        transform: translateY(0);
+        animation: 1.5s quote-effect;
+
+        @keyframes quote-effect {
+          0% {
+            clip-path: polygon(0 0, 0 0, 100% 0, 100% 0);
+          }
+          100% {
+            clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
+          }
+        }
+      }
+    }
+
+    &-img {
+      transform: translateY(25%);
+      transition: transform 2s ease-in-out;
+
+      .is-animate & {
+        transform: translateY(0);
+      }
+
+      &-between {
+        position: absolute;
+        transform: translateY(50%);
+        bottom: 0;
+        right: rem(-40px);
+        z-index: 1;
+
+        @include mq($from: md) {
+          bottom: auto;
+          top: 0;
+          right: 0;
+          transform: translateY(-25%);
+          transition: transform 1.5s ease-in-out;
+
+          .is-animate & {
+            transform: translateY(-50%);
+          }
+        }
+      }
+    }
+  }
+
+  &-brand {
+    .brand-list {
+      transition: transform 1.5s ease-in-out;
+      transform: translate(-10%, 0);
+
+      @include mq($from: md) {
+        transform: translate(-10%, -50%);
+      }
+    }
+
+    &.is-animate .brand-list {
+      transform: translate(0, 0);
+
+      @include mq($from: md) {
+        transform: translate(0, -50%);
+      }
+    }
+  }
+
+  &-brandPresentation {
+    .imgOverlap-above {
+      transform: translate(10%, -50%);
+      transition: transform 1.5s ease-in-out;
+      z-index: 1;
+    }
+
+    .imgOverlap-below {
+      transform: translateY(10%);
+      transition: transform 1.5s ease-in-out;
+      z-index: 0;
+    }
+
+    &.is-animate {
+      .imgOverlap-above {
+        transform: translate(0, -50%);
+      }
+
+      .imgOverlap-below {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  &-teaser {
+    transform: translateY(5%);
+    transition: transform 1.5s ease-in-out;
+
+    .is-animate & {
+      transform: translateY(0);
+    }
+  }
+
+  &-wordCloud {
+    &.is-animate {
+      .wordCloud {
+        &-1,
+        &-2,
+        &-3,
+        &-4 {
+          animation-duration: 4s;
+          animation-name: fading;
+          animation-iteration-count: infinite;
+          animation-direction: alternate;
+          animation-timing-function: linear;
+
+          @keyframes fading {
+            0% {
+              opacity: 0;
+            }
+
+            10% {
+              opacity: 0;
+            }
+
+            90% {
+              opacity: 1;
+            }
+
+            100% {
+              opacity: 1;
+            }
+          }
+        }
+
+        &-2 {
+          animation-delay: 1s;
+        }
+
+        &-3 {
+          animation-delay: 2s;
+        }
+
+        &-4 {
+          animation-delay: 3s;
+        }
+      }
+    }
+  }
+
+  &-moodboard {
+    [class^=moodboard-img] {
+      transform: translateY(5%);
+      transition: transform 2s ease-in-out;
+    }
+
+    &.is-animate {
+      [class^=moodboard-img] {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  &-fade {
+    opacity: 0;
+    transition: opacity 3s linear;
+
+    &.is-animate {
+      opacity: 1;
+    }
+  }
+}

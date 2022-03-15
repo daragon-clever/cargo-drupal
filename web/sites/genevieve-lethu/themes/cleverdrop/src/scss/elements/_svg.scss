@@ -1,0 +1,19 @@
+/* -------------------------------------------------------------------------- *\
+  # SVG
+\* -------------------------------------------------------------------------- */
+
+// SVG: Default style
+//
+// markup:
+// <svg focusable="false" aria-hidden="true">
+//   <use xlink:href="/on/demandware.static/Sites-OD_FR-Site/-/fr_FR/v1614098854259/images/sprite.svg#symbol-cross" />
+// </svg>
+// <svg focusable="false" aria-hidden="true">
+//   <use xlink:href="${URLUtils.staticURL('/images/sprite.svg#symbol-cross')}" />
+// </svg>
+//
+// Styleguide Elements.svg
+
+svg {
+    fill: currentColor;
+}

@@ -1,0 +1,40 @@
+/* -------------------------------------------------------------------------- *\
+  # MAIN LAYOUT
+\* -------------------------------------------------------------------------- */
+
+// | Layout
+//
+// Grid system and global styles for site structure:
+// --> body, header, footer, globalWrapper, mainContainer
+//
+// Styleguide Layout
+
+html {
+  overflow-x: hidden;
+
+  &.is-fixed {
+    @include mq($until: lg) {
+      overflow: hidden;
+    }
+  }
+}
+
+body {
+  @include font(base, light);
+  @include fluid-type(rem($vw-min), rem(map-get($mq-breakpoints, "xl")), rem($body-font-size-small), rem($body-font-size));
+  line-height: unitless-line-height(25px, 16px);
+  color: $theme;
+  background-color: $white;
+  margin: 0;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  padding-top: rem(62px); // Header height until lg
+
+  @include mq($from: lg) {
+    padding-top: rem(68px); // Header height from lg
+  }
+}
+
+.contextual-region {
+  position: static; // Override relative position on native Drupal markup
+}

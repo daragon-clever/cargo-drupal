@@ -1,0 +1,57 @@
+/* -------------------------------------------------------------------------- *\
+  # SLIDER HIGHLIGHTING COLLECTION CONTENT
+\* -------------------------------------------------------------------------- */
+
+.collectionsBlock {
+  position: relative;
+  overflow: hidden;
+  margin-left: rem(-$grid-margin);
+  margin-right: rem(-$grid-margin);
+
+  @include mq($from: md) {
+    overflow: visible;
+  }
+
+  .slider {
+    &-wrapper {
+      order: 2;
+    }
+
+    @include mq($from: md) {
+      display: block;
+    }
+
+    &-inner {
+      @include mq($until: md) {
+        &::before {
+          top: -500% !important;
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+        }
+      }
+    }
+  }
+
+  &-text {
+    color: $white;
+    margin: rem(50px) rem(30px) rem(40px);
+    position: relative;
+    z-index: 1;
+
+    @include mq($from: md) {
+      position: absolute;
+      top: rem(20px);
+      bottom: rem(20px);
+      left: 0;
+      z-index: calc($zindex-nav - 1);
+      margin: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    @include mq($from: md, $until: lg) {
+      margin-left: rem(30px);
+    }
+  }
+}
+

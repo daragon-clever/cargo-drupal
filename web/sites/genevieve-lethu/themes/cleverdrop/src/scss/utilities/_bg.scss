@@ -1,0 +1,52 @@
+ /// Background
+ //
+ // markup:
+ // <div class="u-bg-theme"><div>
+ //
+ // Styleguide Elements.bg
+
+
+.bg {
+  &-imgContrib {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  &-colorContrib {
+    background-color: var(--colorContrib);
+
+    &::before,
+    &::after {
+      content: "";
+      color: var(--colorContrib); // For triangleBorder.scss can take the current background color
+    }
+
+    &-before {
+      &::before {
+        content: "";
+        background-color: var(--colorContrib);
+      }
+    }
+  }
+
+  &-theme {
+    background-color: $theme;
+
+    &::before,
+    &::after {
+      content: "";
+      color: $theme; // For triangleBorder.scss can take the current background color
+    }
+  }
+
+  &-themeSecondary {
+    background-color: $theme-secondary;
+
+    &::before,
+    &::after {
+      content: "";
+      color: $theme-secondary; // For triangleBorder.scss can take the current background color
+    }
+  }
+}

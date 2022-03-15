@@ -1,0 +1,35 @@
+{%
+  set classes = [
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished',
+  'container',
+  'gap-y'
+]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-9">
+          <div class="row justify-content-between align-items-center richText">
+            <div class="col-12 col-md-5">
+              {{ content.field_rte_lite }}
+            </div>
+            <div class="col-12 col-md-5">
+              <ol class="mb-2">
+              {% for i in content.field_test_list['#items']|keys %}
+                  <li>{{ content.field_test_list[i] }}</li>
+              {% endfor %}
+              </ol>
+              {% if  content.field_cta[0]['#url'] is not empty %}
+              <a href="{{ content.field_cta[0]['#url'] }}" class="cta">{{ content.field_cta[0]['#title'] }}</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

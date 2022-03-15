@@ -30,6 +30,9 @@ class SchemaTableController extends NewsletterInitConfig
             case self::SITENAME_SEMA_DESIGN:
                 $schemaTable = new BaseSchemaTable();
                 break;
+            case self::SITENAME_GL:
+                $schemaTable = new BaseSchemaTable();
+                break;
             default:
                 $schemaTable = null;
         }

@@ -1,0 +1,81 @@
+/* -------------------------------------------------------------------------- *\
+# HEADINGS
+\* -------------------------------------------------------------------------- */
+
+// Headings: Default styles
+//
+// markup:
+// <h1>Level 1</h1>
+// <h2>Level 2</h2>
+// <h3>Level 3</h3>
+// <h4>Level 4</h4>
+// <h5>Level 5</h5>
+// <h6>Level 6</h6>
+//
+// Styleguide Elements.headings
+
+/**
+* Simple default styles for headings 1 through 6.
+*/
+
+h1, h2, h3, h4, h5, h6 {
+  @include font(variant, bold);
+  color: $theme-secondary;
+}
+
+@mixin heading-primary {
+  @include fluid-type(rem($vw-min), rem(map-get($mq-breakpoints, "xl")), rem(24px), rem($h1-font-size));
+
+  line-height: unitless-line-height($h1-line-height, $h1-font-size);
+}
+
+h1 {
+  @include heading-primary;
+}
+
+@mixin heading-secondary {
+  @include fluid-type(rem($vw-min), rem(map-get($mq-breakpoints, "xl")), rem(22px), rem($h2-font-size));
+
+  line-height: unitless-line-height($h2-line-height, $h2-font-size);
+}
+
+h2 {
+  @include heading-secondary;
+}
+
+@mixin heading-tertiary {
+  @include fluid-type(rem($vw-min), rem(map-get($mq-breakpoints, "xl")), rem(20px), rem($h3-font-size));
+
+  line-height: unitless-line-height($h3-line-height, $h3-font-size);
+}
+
+h3 {
+  @include heading-tertiary;
+}
+
+@mixin heading-quaternary {
+  font-size: rem($h4-font-size);
+  line-height: unitless-line-height($h4-line-height, $h4-font-size);
+}
+
+h4 {
+  @include heading-quaternary;
+}
+
+@mixin heading-quinary {
+  font-size: rem($h5-font-size);
+  line-height: unitless-line-height($h5-line-height, $h5-font-size);
+}
+
+h5 {
+  @include heading-quinary;
+}
+
+@mixin heading-senary {
+  font-size: rem($h6-font-size);
+  line-height: unitless-line-height($h6-line-height, $h6-font-size);
+}
+
+h6 {
+  @include heading-senary;
+}

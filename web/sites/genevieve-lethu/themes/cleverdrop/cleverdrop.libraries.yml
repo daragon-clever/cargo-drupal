@@ -1,0 +1,9 @@
+common-styles:
+  version: 0.1.0
+  css:
+    theme:
+      public/css/styles.css: {}
+      cargo/style.css: {}
+  js:
+    public/js/scripts.js: {}
+    cargo/js/app.js: {}

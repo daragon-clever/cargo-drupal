@@ -1,0 +1,43 @@
+{%
+  set classes = [
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished',
+  'gap-y',
+  'bg-colorContrib-before',
+  'fitScreen-bg',
+  'moodboard',
+  'animation-moodboard'
+]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }} style="--colorContrib:{{ content.field_color[0]['#markup'] }}" data-animate='{"threshold": 0.6}'>
+    {% block content %}
+    <h2 class="moodboard-title">{{ content.field_title }}</h2>
+    <div class="moodboard-wrapper">
+      <div class="moodboard-img1">
+        {{ content.field_picture }}
+      </div>
+      <div class="moodboard-img2">
+        {{ content.field_picture_second }}
+      </div>
+      <div class="moodboard-img3">
+        {{ content.field_picture_third }}
+      </div>
+      <div class="moodboard-img4">
+        {{ content.field_picture_fourth }}
+      </div>
+      <div class="moodboard-img5">
+        {{ content.field_picture_sixth }}
+      </div>
+      <div class="moodboard-img6">
+        {{ content.field_picture_seventh }}
+      </div>
+      <div class="moodboard-img7">
+        {{ content.field_picture_fifth }}
+      </div>
+    </div>
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

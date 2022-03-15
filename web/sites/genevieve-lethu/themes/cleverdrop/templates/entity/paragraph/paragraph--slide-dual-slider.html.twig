@@ -1,0 +1,27 @@
+{%
+  set classes = [
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished',
+  'bg-colorContrib-before',
+  'fitScreen-bg',
+  'slider-inner',
+]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }} style="--colorContrib:{{ content.field_color[0]['#markup'] }}">
+    {% block content %}
+      <div class="slider-inner-col">
+        <div class="slider-inner-col-text">
+          <h2 class="text-white">{{ content.field_title }}</h2>
+          <p>{{ content.field_description }}</p>
+        </div>
+      </div>
+      <div class="slider-inner-col">
+        {{ content.field_picture_second }}
+      </div>
+    {% endblock %}
+  </div>
+  {{ content.field_moodboard }}
+{% endblock paragraph %}

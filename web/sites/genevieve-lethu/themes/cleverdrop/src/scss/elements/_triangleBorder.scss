@@ -1,0 +1,42 @@
+/* -------------------------------------------------------------------------- *\
+  # TRIANGLE BORDER
+\* -------------------------------------------------------------------------- */
+
+.triangleBorder {
+  &-top {
+    position: relative;
+    z-index: 10;
+
+    &::before {
+      content: "";
+      background-color: currentColor;
+      mask-repeat: repeat-x;
+      mask-position: center;
+      mask-size: contain;
+      mask-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13.5 8"><path d="M0 8h13.5L6.7 0z"/></svg>');
+      height: rem(8px);
+      display: block;
+      position: relative;
+      top: rem(-8px);
+    }
+  }
+
+  &-bottom {
+    position: relative;
+    z-index: 10;
+
+    &::after {
+      content: "";
+      background-color: currentColor;
+      mask-repeat: repeat-x;
+      mask-position: center;
+      mask-size: contain;
+      mask-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13.5 8"><path d="M0 8h13.5L6.7 0z"/></svg>');
+      height: rem(8px);
+      display: block;
+      position: relative;
+      bottom: rem(-8px);
+      transform: scale(1, -1);
+    }
+  }
+}

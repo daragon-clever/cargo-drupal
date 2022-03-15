@@ -11,6 +11,7 @@ abstract class NewsletterInitConfig
     protected const SITENAME_SITRAM = "sitram";
     protected const SITENAME_YLIADES = "yliades";
     protected const SITENAME_SEMA_DESIGN = "semadesign";
+    protected const SITENAME_GL = "genevièvelethu";
 
     /**
      * @var string

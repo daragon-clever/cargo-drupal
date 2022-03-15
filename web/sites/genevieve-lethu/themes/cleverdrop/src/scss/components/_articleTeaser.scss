@@ -1,0 +1,60 @@
+.articleTeaser {
+  display: flex;
+  flex-direction: column;
+
+  img {
+    margin-bottom: rem(20px);
+
+    @include mq($until: sm) {
+      width: 100%;
+    }
+  }
+
+  &-tags {
+    display: flex;
+    gap: rem(10px);
+    flex-wrap: wrap;
+    margin-top: rem(15px);
+    margin-bottom: rem(20px);
+    width: 100%;
+
+    @include mq($from: lg) {
+      gap: rem(20px);
+    }
+  }
+
+  &-inner {
+    @include mq($from: lg) {
+      padding: 0 rem(30px);
+    }
+  }
+
+  &-tag {
+    @extend .rounded;
+  }
+
+  &-title {
+    @include font(variant, bold);
+    font-size: rem(22px);
+    font-style: italic;
+  }
+
+  &-description {
+    @include font(base);
+    font-size: rem(16px);
+    font-weight: 300;
+    margin-bottom: rem(20px);
+  }
+
+  &-read {
+    width: 100%;
+    color: $theme-secondary;
+
+    a {
+      @include font(script);
+      font-size: rem(20px);
+      text-decoration: none;
+      border-bottom: rem(1px) solid $theme-secondary;
+    }
+  }
+}

@@ -1,0 +1,7 @@
+gl_core.404:
+  path: '/404'
+  defaults:
+    _controller: '\Drupal\gl_core\Controller\ErrorController::notFound'
+    _title: '404'
+  requirements:
+    _permission: 'access content'

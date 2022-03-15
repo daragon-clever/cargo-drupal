@@ -1,0 +1,25 @@
+ /// Element on bottom until md breakpoint
+ //
+ // markup:
+ // <div class="onBottomUntil-md">
+ // <div classm"onBottomUntil-md-el"></div>
+ // <div>
+ //
+ // Styleguide Elements.onBottomUntil
+
+
+.onBottomUntil {
+  &-md {
+    @include mq($until: md) {
+      position: relative;
+      padding-bottom: calc(#{rem(100px)} + #{rem($gap-between-min)});
+
+      &-el {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: rem($gap-between-min);
+      }
+    }
+  }
+}

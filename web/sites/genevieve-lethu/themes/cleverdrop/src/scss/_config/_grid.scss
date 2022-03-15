@@ -1,0 +1,30 @@
+/// Grid
+//
+// config for grid
+//
+// |         | normal  | from sm | from md | from lg | from xl |
+// |:--------|--------:|--------:|--------:|--------:|--------:|
+// | break   |       0 |   499px |   749px |  999px  |  1199px |
+// | gutter  |    20px |    20px |    20px |    20px |    20px |
+// | columns |      12 |      12 |      12 |      12 |      12 |
+// | margin  |    30px |    20px |    20px |    20px |    20px |
+//
+// Styleguide Config.Grid
+
+// Nb columns
+$grid-columns: 12 !default;
+
+// Set the gutter between columns.
+$grid-gutter: 20px !default;
+$grid-from-m-gutter: 20px !default;
+$grid-from-xl-gutter: 20px !default;
+
+// Set a margin for the container sides.
+// Default
+$grid-margin: 30px !default;
+
+// From 749px
+$grid-from-m-margin: 30px !default;
+
+// From 1199px
+$grid-from-xl-margin: 30px !default;

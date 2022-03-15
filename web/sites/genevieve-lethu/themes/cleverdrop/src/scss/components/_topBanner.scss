@@ -1,0 +1,99 @@
+/* -------------------------------------------------------------------------- *\
+  # TOP BANNER PAGE
+\* -------------------------------------------------------------------------- */
+
+.topBanner {
+
+  &:not(.--noRatio) {
+    @include aspect-ratio(500px, 680px, '.topBanner-ratio');
+
+    @include mq($from: sm) {
+      @include aspect-ratio(1440px, 555px, '.topBanner-ratio');
+    }
+  }
+
+  &-text {
+    @include center-v;
+    left: rem(30px);
+    right: rem(30px);
+    color: $white;
+    text-align: center;
+
+    @include mq($from: sm) {
+      margin-top: rem(-40px);
+    }
+
+    &-title {
+      color: $white;
+      @include fluid-type(rem($vw-min), rem(map-get($mq-breakpoints, "xl")), rem(40px), rem(60px));
+    }
+
+    &-subTitle {
+      @include font(variant, italic);
+      margin: 0;
+      @include fluid-type(rem($vw-min), rem(map-get($mq-breakpoints, "xl")), rem(30px), rem(50px));
+    }
+  }
+
+  &-img {
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  }
+
+  &-paralax1 {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 50%);
+    z-index: $zindex-nav;
+
+    @include mq($from: md) {
+      transform: translate(-50%, 60%);
+    }
+
+    @include mq($from: lg) {
+      transform: translate(-50%, 50%);
+    }
+  }
+
+  &-paralax2 {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(120%, -50%);
+    z-index: $zindex-popin;
+    max-width: 150px;
+
+    @include mq($until: md) {
+      display: none;
+    }
+
+    @include mq($from: md) {
+      transform: translate(200%, -5%);
+    }
+
+    @include mq($from: xl) {
+      transform: translate(120%, -12%);
+    }
+  }
+
+  &.--breakMd {
+    @include mq($until: md) {
+      @include aspect-ratio(500px, 680px, '.topBanner-ratio');
+    }
+
+    @include mq($from: md) {
+      @include aspect-ratio(1440px, 555px, '.topBanner-ratio');
+    }
+
+    .topBanner-text {
+      @include mq($from: sm) {
+        margin-top: 0;
+      }
+    }
+  }
+}

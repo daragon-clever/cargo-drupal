@@ -1,0 +1,50 @@
+{%
+  set classes = [
+  'paragraph',
+  'bg-colorContrib',
+  'highlightCreation',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished'
+]
+%}
+{% block paragraph %}
+
+
+  <div{{ attributes.addClass(classes) }} style="--colorContrib:{{ content.field_color[0]['#markup'] }};">
+    {% block content %}
+      <div class="container highlightCreation-upSection">
+        <div class="row">
+          <div class="col-12 col-md-4 offset-md-1">
+            <h2 class="highlightCreation-title">{{ content.field_title }}</h2>
+          </div>
+          <div class="col-12 col-md-5 offset-m-1">
+            <p class="highlightCreation-description">{{ content.field_description }}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-10 offset-md-1 highlightCreation-pictures">
+            <img class="highlightCreation-paintStainGreen" src="/sites/genevieve-lethu/themes/cleverdrop/src/assets/paintStainCreation.png" alt="">
+            <div class="slider js-highlight-creation-slider">
+              <div class="slider-wrapper">
+                {% for i in content.field_picture_limit_3['#items']|keys %}
+                  <div class="slider-slide">
+                    {{ content.field_picture_limit_3[i] }}
+                  </div>
+                {% endfor %}
+              </div>
+              <div class="slider-pager"></div>
+            </div>
+          </div>
+          <div class="col-md-1"></div>
+        </div>
+      </div>
+    {% endblock %}
+    <div class="highlightCreation-footer">
+      <img src="/sites/genevieve-lethu/themes/cleverdrop/src/assets/creativeBrush.png" alt="">
+      <div class="highlightCreation-whitebg"></div>
+      <img class="paintStainLast animation-fade" data-animate='{"threshold": 0.3}' src="/sites/genevieve-lethu/themes/cleverdrop/src/assets/paintStain2.png" alt="">
+      <img class="brushCreation" src="/sites/genevieve-lethu/themes/cleverdrop/src/assets/brushCreation.png" alt="">
+    </div>
+  </div>
+{% endblock paragraph %}

@@ -1,0 +1,14 @@
+/// Mask
+//
+// * .mask - visually hidden for accessibility
+// * .unmask - remove all propriety to show again the content
+//
+// Styleguide Utilities.mask
+
+.mask {
+  @include visually-hidden;
+}
+
+.unmask {
+  @include visually-visible;
+}

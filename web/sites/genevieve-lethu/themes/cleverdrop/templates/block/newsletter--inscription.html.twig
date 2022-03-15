@@ -1,0 +1,24 @@
+{% if form %}
+  <form {{ form.attributes }} method="{{ form['#method'] }}">
+    {{ form.form_build_id }}
+    {{ form.form_token }}
+    {{ form.form_id }}
+
+    {{ form.msg }}
+
+    <div class="newsletterForm-fields">
+      {{ form.email }}
+      {{ form.actions.submit }}
+    </div>
+    <div class="newsletterForm-captcha">
+      {{ form.captcha }}
+    </div>
+    <div class="newsletterForm-rpdg">
+      {{ form.rgpd_allow }}
+      <label for="edit-rgpd-allow">
+        En renseignant ces informations, j’accepte de recevoir la lettre d’information de Geneviève Lethu et je confirme avoir pris connaissance de la politique de confidentialité.
+      </label>
+
+    </div>
+  </form>
+{% endif %}

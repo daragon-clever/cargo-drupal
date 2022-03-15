@@ -1,0 +1,83 @@
+{%
+  set classes = [
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished',
+  'container'
+]
+%}
+{% block paragraph %}
+<div{{ attributes.addClass(classes) }}>
+  {% block content %}
+  <div class="row justify-content-center mt-2">
+    <blockquote class="col-12 col-lg-8 col-lg-6">
+      {{ content.field_rte_lite }}
+    </blockquote>
+  </div>
+  <div class="fitScreen">
+    <div class="triangleBorder-bottom bg-colorContrib" style="--colorContrib:#F0EDE0">
+      <div class="gap-y">
+        <div class="slider imageGallery-thumbs js-withInfo js-imageGallery-thumbs">
+          <div class="slider-nav">
+            <div class="slider-btnPrev">
+              <svg width="22" height="22" focusable="false" aria-hidden="true">
+                <use xlink:href="/{{ directory ~ '/public/assets/sprite.svg#arrow-prev' }}" />
+              </svg>
+            </div>
+            <div id="slider-infos"></div>
+            <div class="slider-btnNext">
+              <svg width="22" height="22" focusable="false" aria-hidden="true">
+                <use xlink:href="/{{ directory ~ '/public/assets/sprite.svg#arrow-next' }}" />
+              </svg>
+            </div>
+          </div>
+          <div class="slider-wrapper">
+            {% for i in content.field_slide['#items']|keys %}
+            <div class="slider-slide">
+              <div class="imageGallery-thumbs-content">
+                <img src="{{ file_url(content.field_slide[i]['#paragraph'].field_picture.entity.fileUri) }}" alt="">
+                <p class="imageGallery-thumbs-category">Collection</p>
+                <p class="imageGallery-thumbs-title">{{ content.field_slide[i]['#paragraph'].field_text.value }}</p>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slider imageGallery dualSlider js-imageGallery">
+      <div class="slider-wrapper">
+        {% for i in content.field_slide['#items']|keys %}
+        <div class="slider-slide">
+          {{ content.field_slide[i] }}
+        </div>
+        {% endfor %}
+      </div>
+      <div class="imageGallery-ratio">
+        <div class="slider-pager">
+          <div class="row">
+            <div class="col-12 col-md-5 col-lg-4 offset-lg-1 col-xl-3 offset-xl-2">
+              <div class="slider-pagination">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slider-nav">
+          <div class="slider-btnPrev">
+            <svg width="22" height="22" focusable="false" aria-hidden="true">
+              <use xlink:href="/{{ directory ~ '/public/assets/sprite.svg#arrow-prev' }}" />
+            </svg>
+          </div>
+          <div class="slider-btnNext">
+            <svg width="22" height="22" focusable="false" aria-hidden="true">
+              <use xlink:href="/{{ directory ~ '/public/assets/sprite.svg#arrow-next' }}" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+</div>
+{% endblock paragraph %}

@@ -1,0 +1,80 @@
+/* -------------------------------------------------------------------------- *\
+  # FORM FIELDS
+\* -------------------------------------------------------------------------- */
+
+// Forms: Default style
+//
+// markup:
+// <label for="input_example">Label example</label>
+// <input type="text" id="input_example" value="Simple input" /><br><br>
+// <label><input type="radio" value="Radio input" /> Label</label>
+// <label><input type="checkbox" value="Checkbox input" /> Label</label>
+// <input disabled type="text" value=""><br><br>
+// <textarea>Textarea example</textarea><br><br>
+// <select>
+//   <option>choix 1</option>
+//   <option>choix 2</option>
+//   <option>choix 3</option>
+// </select>
+//
+// Styleguide Elements.form
+
+form {
+  width: 100%;
+  max-width: rem(680px);
+  margin: 0 auto;
+}
+
+label {
+  @include font(base, bold);
+  display: block;
+  font-size: rem(14px);
+  margin-bottom: rem(10px);
+}
+
+select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input, select, textarea {
+  @include font(base, bold);
+  border-radius: rem(23px);
+  border: rem(1px) solid $theme-light;
+  width: 100%;
+  height: rem(46px);
+  padding: 0 rem(25px);
+  box-sizing: border-box;
+  font-size: rem(14px);
+  color: $theme;
+
+  &:active, &:focus, &:focus-visible {
+    outline: none;
+  }
+}
+
+.form-item--error-message {
+  font-weight: bold;
+  color: $alert;
+  margin-bottom: rem(25px);
+  font-size: rem(12px);
+  margin-left: rem(15px);
+}
+
+.form-element-wrapper:not(.error) {
+  margin-bottom: rem(25px);
+}
+
+textarea {
+  border-radius: rem(15px);
+  padding-top: rem(15px);
+  height: rem(190px);
+  max-width: 100%;
+}
+
+select {
+  background: $light;
+  border-color: $light;
+  cursor: pointer;
+}

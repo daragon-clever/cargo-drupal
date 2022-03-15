@@ -1,0 +1,130 @@
+.newsletterBlock {
+  padding-top: rem(80px);
+  padding-bottom: rem(100px);
+  overflow: hidden;
+  border-top: rem(1px) solid $theme-light;
+  position: relative;
+
+  &-quote {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 21%;
+    font-size: rem(40px);
+    @include font(variant);
+    font-style: italic;
+    color: darken($theme-secondary, 2%);
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+
+    @include mq($from: md) {
+      font-size: rem(90px);
+      top: auto;
+    }
+  }
+
+  &-over {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.newsletterHead {
+  text-align: center;
+  color: $white;
+
+  &-title {
+    color: $white;
+    @include font(variant, 700);
+    font-size: rem(26px);
+  }
+
+  &-text {
+    font-family: $font-base;
+    font-size: rem(16px);
+  }
+
+  margin-bottom: rem(40px);
+}
+
+.newsletterForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .form-email {
+    border-radius: 60em 0 0 60em;
+    border: rem(1px) solid $white;
+    color: $white;
+    background: transparent;
+    padding: 0 rem(18px);
+    width: 100%;
+    @include font(variant, 100);
+    font-size: rem(12px);
+    height: rem(50px);
+
+    &::placeholder {
+      color: $white;
+      @include font(base, 100);
+    }
+
+  }
+
+  .form-submit {
+    box-sizing: border-box;
+    background: $white;
+    border: rem(1px) solid $white;
+    height: rem(50px);
+    border-radius: 0 60em 60em 0;
+    min-width: rem(110px);
+    width: 30%;
+    color: $aqua-deep;
+    padding: 0 rem(10px);
+  }
+
+  &-fields {
+    display: inline-flex;
+    justify-content: center;
+  }
+
+  .form-element-wrapper {
+    display: flex;
+    align-items: baseline;
+  }
+
+  &-rpdg {
+    max-width: rem(540px);
+    color: $white;
+    margin-top: rem(20px);
+
+    label {
+      padding-left: rem(15px);
+      font-weight: normal;
+    }
+
+    input {
+      width: auto;
+      margin-bottom: 0;
+      height: auto;
+    }
+  }
+
+  label[for="edit-rgpd-allow"]:not(.keep) {
+    display: none;
+  }
+
+}
+
+.newsletterSocial {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: rem(40px);
+  gap: rem(20px);
+
+  a {
+    width: rem(31px);
+    height: rem(31px);
+  }
+}

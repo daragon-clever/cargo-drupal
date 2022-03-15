@@ -1,0 +1,20 @@
+{%
+  set classes = [
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished',
+  'videoPlayer'
+]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+      <h1 class="mask">Geneviève Lethu - histoire de table</h1>
+      <video loop class="js-videoPlayer-container" preload="auto" poster="{{ file_url(content.field_overlay[0]['#item'].entity.fileUri) }}">
+        <source src="{{ file_url(content.field_video[0]['#file'].fileUri) }}" type="video/mp4">
+      </video>
+      <button class="videoPlayer-controls js-videoPlayer-controls on-poster"><span class="mask">Play video</span></button>
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

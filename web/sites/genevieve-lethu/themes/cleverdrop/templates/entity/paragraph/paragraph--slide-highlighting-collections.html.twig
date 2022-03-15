@@ -1,0 +1,18 @@
+{%
+  set classes = [
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished',
+  'bg-colorContrib-before',
+  'fitScreen-bg',
+  'slider-inner'
+]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }} style="--colorContrib:{{ content.field_color[0]['#markup'] }}">
+    {% block content %}
+      {{ content.field_picture }}
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

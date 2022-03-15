@@ -1,0 +1,135 @@
+.highlightCreation {
+  padding-top: rem(100px);
+  position: relative;
+
+  &-upSection {
+    position: relative;
+    z-index: 3;
+    padding-bottom: rem(100px);
+
+    @include mq($until: md) {
+      padding-bottom: rem(200px);
+    }
+  }
+
+  &-title {
+    @include font(variant);
+    font-size: rem(26px);
+    font-weight: bold;
+    max-width: rem(445px);
+    border-bottom: rem(1px) solid $theme-light;
+    padding-bottom: rem(30px);
+  }
+
+  &-description {
+    @include font(base, light);
+    font-size: rem(16px);
+    color: $theme;
+  }
+
+  &-pictures {
+    position: relative;
+    padding-top: rem(60px);
+    display: flex;
+    gap: rem(18px);
+
+    img {
+      max-height: rem(561px);
+      z-index: 1;
+    }
+  }
+
+  &-paintStainGreen {
+    position: absolute;
+    z-index: 0;
+    height: rem(96px);
+    width: rem(96px);
+    left: 50%;
+    top: rem(10px);
+
+    @include mq($until: md) {
+      display: none;
+    }
+  }
+
+
+  &-footer {
+    position: relative;
+    height: rem(219px);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+
+      @include mq($until: md) {
+        top: unset;
+        bottom: rem(50px);
+      }
+
+      &.paintStainLast {
+        left: 2%;
+        height: rem(96px);
+        width: rem(96px);
+        bottom: rem(30px);
+        top: unset;
+
+        @include mq($until: md) {
+          left: unset;
+          right: 2%;
+        }
+      }
+
+      &.brushCreation {
+        left: unset;
+        right: 0;
+        z-index: 3;
+        width: rem(329px);
+        height: rem(220px);
+
+        @include mq($until: md) {
+          left: 5%;
+          right: unset;
+          bottom: rem(-50px);
+        }
+      }
+    }
+  }
+
+  &-whitebg {
+    position: absolute;
+    bottom: 0;
+    background: $white;
+    height: rem(160px);
+    width: 100%;
+
+    @include mq($until: md) {
+      height: rem(60px);
+    }
+  }
+
+  .js-highlight-creation-slider {
+    position: relative;
+    z-index: 3;
+
+    .slider-slide {
+      opacity: 1 !important;
+    }
+  }
+
+  .slider-scrollbar {
+    margin-top: rem(30px);
+
+    .slider-scrollbar-drag {
+      height: rem(1px);
+      background: $theme;
+      width: 30% !important;
+    }
+  }
+}

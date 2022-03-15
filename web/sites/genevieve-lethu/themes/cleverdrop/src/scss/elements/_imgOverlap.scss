@@ -1,0 +1,25 @@
+/* -------------------------------------------------------------------------- *\
+  # IMAGE OVERLAP
+\* -------------------------------------------------------------------------- */
+
+.imgOverlap {
+  position: relative;
+  max-width: rem(600px);
+
+  @include mq($until: lg) {
+    margin: rem(30px) auto 0;
+  }
+
+  &-above {
+    @include center-v;
+    width: 65%;
+
+    @include mq($from: lg) {
+      width: 55%;
+    }
+  }
+
+  &-below {
+    margin-left: 20%;
+  }
+}

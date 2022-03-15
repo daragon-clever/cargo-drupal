@@ -111,12 +111,17 @@
 
         label {
           @extend .rounded;
+          margin-bottom: 0;
 
           &:hover {
             cursor: pointer;
             @extend .rounded-effect;
           }
         }
+      }
+
+      .form-element-wrapper {
+        margin-bottom: 0;
       }
     }
 

@@ -33,6 +33,7 @@
 
   h1 {
     @include heading-primary;
+    @include font(variant, italic);
   }
 
   h2 {

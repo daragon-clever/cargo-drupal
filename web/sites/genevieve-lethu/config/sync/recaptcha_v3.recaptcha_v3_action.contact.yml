@@ -1,8 +1,0 @@
-uuid: 20bedaf6-7ddb-48e2-acb3-d90f4aadde8a
-langcode: fr
-status: true
-dependencies: {  }
-id: contact
-label: Contact
-threshold: 0.7
-challenge: recaptcha/reCAPTCHA

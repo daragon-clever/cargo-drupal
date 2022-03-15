@@ -125,23 +125,6 @@
     }
   }
 
-  &-newsletter {
-    animation-duration: 20s;
-    animation-timing-function: linear;
-    animation-name: sliding;
-    animation-iteration-count: infinite;
-
-    @keyframes sliding {
-      from {
-        transform: translateX(100%);
-      }
-
-      to {
-        transform: translateX(-100%);
-      }
-    }
-  }
-
   &-teaser {
     transform: translateY(5%);
     transition: transform 1.5s ease-in-out;

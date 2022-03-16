@@ -55,11 +55,7 @@ parameters:
     #
     # Not recommended in production environments
     # @default false
-<<<<<<< HEAD
     debug: false
-=======
-    debug: true
->>>>>>> CleverAge/genevieve-lethu
     # Twig auto-reload:
     #
     # Automatically recompile Twig templates whenever the source code changes.
@@ -68,11 +64,7 @@ parameters:
     #
     # Not recommended in production environments
     # @default null
-<<<<<<< HEAD
-    auto_reload: null
-=======
     auto_reload: true
->>>>>>> CleverAge/genevieve-lethu
     # Twig cache:
     #
     # By default, Twig templates will be compiled and stored in the filesystem
@@ -83,11 +75,7 @@ parameters:
     #
     # Not recommended in production environments
     # @default true
-<<<<<<< HEAD
-    cache: true
-=======
     cache: false
->>>>>>> CleverAge/genevieve-lethu
   renderer.config:
     # Renderer required cache contexts:
     #

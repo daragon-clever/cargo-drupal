@@ -4,11 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
     "content-hash": "0034859fc3996b0e0aa241e17055603d",
-=======
-    "content-hash": "f89cc19a3d093e17ffb59c1f20a8cf05",
->>>>>>> CleverAge/genevieve-lethu
     "packages": [
         {
             "name": "alchemy/zippy",

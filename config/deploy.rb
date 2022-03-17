@@ -42,7 +42,8 @@ append :linked_files,
       "web/sites/cotetable/settings.php",
       "web/sites/sitram-sarran/settings.php",
       "web/sites/promodis-ares/settings.php",
-      "web/sites/sema-design/settings.php"
+      "web/sites/sema-design/settings.php",
+      "web/sites/genevieve-lethu/settings.php"
 
 # Default value for linked_dirs is []
 append :linked_dirs,
@@ -83,8 +84,9 @@ append :linked_dirs,
       "web/sites/promodis-ares/private",
       "web/sites/promodis-ares/files",
       "web/sites/sema-design/files",
-      "web/sites/sema-design/private"
-
+      "web/sites/sema-design/private",
+      "web/sites/genevieve-lethu/files",
+      "web/sites/genevieve-lethu/private"
 
 # Configure file permissions
 set :file_permissions_paths, [
@@ -125,7 +127,9 @@ set :file_permissions_paths, [
     "web/sites/promodis-ares/private",
     "web/sites/promodis-ares/files",
     "web/sites/sema-design/private",
-    "web/sites/sema-design/files"
+    "web/sites/sema-design/files",
+    "web/sites/genevieve-lethu/private",
+    "web/sites/genevieve-lethu/files"
     ]
 
 # Default value for default_env is {}

@@ -1,0 +1,76 @@
+/* -------------------------------------------------------------------------- *\
+  # BLOCKQUOTE
+\* -------------------------------------------------------------------------- */
+
+$blockquote-font-size-md: 40px;
+$blockquote-font-size: 30px;
+
+blockquote {
+  @include font(variant, italic);
+  font-size: rem($blockquote-font-size);
+  line-height: unitless-line-height(36px, $blockquote-font-size);
+  text-align: center;
+  color: $theme-secondary;
+  position: relative;
+  padding-top: rem(35px);
+  margin: rem(40px) 0;
+
+  @include mq($from: md) {
+    font-size: rem($blockquote-font-size-md);
+    line-height: unitless-line-height(50px, $blockquote-font-size-md);
+    margin: rem(80px) 0;
+  }
+
+  cite {
+    @include font(base, bold);
+    text-transform: uppercase;
+    color: $yellow;
+    display: block;
+    margin-top: em(25px, 12px);
+    font-size: em(12px, $blockquote-font-size);
+
+    @include mq($from: md) {
+      font-size: em(12px, $blockquote-font-size-md);
+    }
+
+    &::before {
+      content: "";
+      background-color: currentColor;
+      mask-repeat: no-repeat;
+      mask-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 15"><path d="M7.747 0C4.304.931 0 3.578 0 8.873 0 12.99 2.835 15 5.519 15c2.33 0 3.646-1.569 3.646-3.284 0-1.47-1.013-3.089-3.342-3.48-1.722-.246-3.19-.589-3.19-2.256 0-2.255 2.987-4.313 5.418-5.196L7.747 0Zm10.835 0c-3.443.931-7.797 3.578-7.797 8.873 0 4.117 2.886 6.127 5.519 6.127C18.633 15 20 13.431 20 11.716c0-1.47-1.013-3.089-3.392-3.48-1.722-.246-3.14-.589-3.14-2.256 0-2.255 2.988-4.313 5.418-5.196L18.582 0Z"/></svg>');
+      width: rem(20px);
+      height: rem(15px);
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      margin-left: rem(-10px);
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+
+  // VARIANT
+  &.--left {
+    text-align: left;
+
+    cite {
+      &::before {
+        left: rem(10px);
+        margin-left: 0;
+      }
+    }
+  }
+
+  &.--withBg {
+    color: $white;
+
+    &.--sameColor {
+      cite {
+        color: currentColor;
+      }
+    }
+  }
+}

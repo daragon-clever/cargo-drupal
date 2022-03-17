@@ -1,0 +1,58 @@
+/* -------------------------------------------------------------------------- *\
+  # RICHTEXT
+\* -------------------------------------------------------------------------- */
+
+.richText {
+  blockquote {
+    margin: 0;
+    padding: rem(25px) 0;
+    color: $theme-secondary;
+    line-height: unitless-line-height(60px, 40px);
+  }
+
+  strong,
+  b {
+    font-weight: 700;
+  }
+
+  em,
+  i {
+    font-style: italic;
+  }
+
+  ul {
+    padding-left: rem(20px);
+    list-style-type: disc;
+    margin: rem(15px) 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @include font(variant, bold);
+    color: $theme-secondary;
+  }
+
+  h1 {
+    @include heading-primary;
+    @include font(variant, italic);
+  }
+
+  h2 {
+    @include heading-secondary;
+  }
+
+  h3 {
+    @include heading-tertiary;
+  }
+
+  h4 {
+    @include heading-quaternary;
+  }
+
+  h5 {
+    @include heading-quinary;
+  }
+
+  h6 {
+    @include heading-senary;
+  }
+}

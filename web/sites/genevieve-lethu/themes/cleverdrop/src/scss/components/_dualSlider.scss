@@ -1,0 +1,151 @@
+/* -------------------------------------------------------------------------- *\
+  # SLIDER WITH SPECIAL WIPE EFFECT
+\* -------------------------------------------------------------------------- */
+
+.dualSlider {
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+  margin-bottom: calc($moodboard-height + ($gap-between-max * 2));
+
+  @include mq($from: md) {
+    margin-bottom: calc($moodboard-height-md + ($gap-between-max * 2));
+  }
+
+  @include mq($from: lg) {
+    margin-bottom: calc($moodboard-height-lg + ($gap-between-max * 2));
+  }
+
+  @include mq($from: xl) {
+    margin-bottom: calc($moodboard-height-xl + ($gap-between-max * 2));
+  }
+
+  @include mq($from: md) {
+    .effect-prev {
+      animation: 1s fade-effect-prev;
+      z-index: 8 !important;
+      opacity: 1 !important;
+
+      @keyframes fade-effect-prev {
+        0% {
+          clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 50% 0%, 50% 0%, 50% 100%, 100% 100%, 100% 0%);
+        }
+        100% {
+          clip-path: polygon(50% 0%, 50% 100%, 50% 100%, 50% 0%, 100% 0%, 100% 100%, 100% 100%, 100% 0%);
+        }
+      }
+    }
+
+    .effect-next {
+      animation: 1s fade-effect-next;
+
+      @keyframes fade-effect-next {
+        0% {
+          clip-path: polygon(50% 0%, 50% 100%, 50% 100%, 50% 0%, 100% 0%, 100% 100%, 100% 100%, 100% 0%);
+        }
+        100% {
+          clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 50% 0%, 50% 0%, 50% 100%, 100% 100%, 100% 0%);
+        }
+      }
+    }
+  }
+
+  .slider {
+    &-slide {
+      flex-direction: column;
+      pointer-events: none;
+
+      .moodboard {
+        &-wrapper {
+          pointer-events: none;
+        }
+      }
+
+      &-visible.is-active {
+        pointer-events: auto;
+
+        .moodboard {
+          &-wrapper {
+            pointer-events: auto;
+          }
+        }
+      }
+    }
+
+    &-inner {
+      width: 100%;
+      height: 100%;
+
+      img {
+        display: block;
+      }
+
+      @include mq($from: md) {
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+
+    &-nav {
+      z-index: $zindex-nav;
+      display: flex;
+      justify-content: center;
+      margin-bottom: rem(-25px);
+
+      // @include mq($from: md) {
+      //   position: relative;
+      //   z-index: $zindex-nav;
+      //   display: flex;
+      //   justify-content: center;
+      //   margin-bottom: rem(-25px);
+      // }
+
+      .slider-btnNext,
+      .slider-btnPrev {
+        @include mq($until: md) {
+          margin-left: rem(10px);
+          margin-right: rem(10px);
+          margin-bottom: 0;
+        }
+      }
+
+      @include mq($from: md) {
+        @include center-both;
+        display: block;
+        margin-bottom: 0;
+      }
+    }
+
+    &-pager {
+      z-index: $zindex-nav;
+      display: flex;
+      justify-content: center;
+
+      @include mq($from: md) {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 4%;
+        justify-content: flex-start;
+        display: block;
+        margin-bottom: 0;
+        margin-left: rem(30px);
+      }
+
+      @include mq($from: lg) {
+        bottom: 6%;
+        margin-left: 0;
+      }
+
+      @include mq($from: xl) {
+        bottom: 10%;
+      }
+
+      .slider-pagination {
+        margin-top: 0;
+        justify-content: flex-start;
+      }
+    }
+  }
+}
+

@@ -1,0 +1,89 @@
+/* -------------------------------------------------------------------------- *\
+  # SLIDER HIGHLIGHTING COLLECTION CONTENT
+\* -------------------------------------------------------------------------- */
+
+.sliderCollection {
+  position: relative;
+
+  .slider {
+    overflow: visible;
+
+    &-slide {
+      opacity: 0 !important;
+      z-index: 0 !important;
+
+      &[class*=prev],
+      &[class*=next] {
+        opacity: 1 !important; // To make the wipe effect next and prev must to be under the active slide and visible
+        z-index: 1 !important;
+      }
+    }
+
+    &-slide-visible {
+      opacity: 1 !important;
+      z-index: 2 !important;
+
+      &.is-active {
+        .sliderCollection-slide {
+          animation: 1s wipe-effect;
+        }
+      }
+    }
+  }
+
+  &-slide {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+    img {
+      width: 50%;
+    }
+  }
+
+  &-text {
+    @include center-v;
+    left: 0;
+    z-index: calc($zindex-nav - 1);
+    color: $white;
+  }
+
+  &-nav {
+    @include center-both;
+    z-index: $zindex-nav;
+  }
+
+  &-pagination {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    z-index: $zindex-nav;
+
+    @include mq($from: md) {
+      bottom: 5%;
+    }
+
+    @include mq($from: lg) {
+      bottom: 10%;
+    }
+
+    @include mq($from: xl) {
+      bottom: 18%;
+    }
+
+    .slider-pagination {
+      justify-content: flex-start;
+    }
+  }
+
+  @keyframes wipe-effect {
+    0% {
+      clip-path: polygon(50% 0%, 50% 100%, 50% 100%, 50% 0%, 100% 0%, 100% 100%, 100% 100%, 100% 0%);
+    }
+    100% {
+      clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 50% 0%, 50% 0%, 50% 100%, 100% 100%, 100% 0%);
+    }
+  }
+}
+

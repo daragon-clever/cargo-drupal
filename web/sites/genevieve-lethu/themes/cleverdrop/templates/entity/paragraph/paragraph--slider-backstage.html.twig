@@ -1,0 +1,38 @@
+{% set classes = [
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished',
+  'container',
+] %}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+    <div class="bg-theme fitScreen gap-b">
+      <h2 class="text-white text-center mb-3">{{ content.field_title }}</h2>
+      <div class="slider sliderBackstage js-withInfo js-backstage-slider">
+        <div class="slider-wrapper">
+          {% for i in content.field_slide['#items']|keys %}
+          <div class="slider-slide">
+            {{ content.field_slide[i] }}
+          </div>
+          {% endfor %}
+        </div>
+        <div class="slider-nav">
+          <div class="slider-btnPrev">
+            <svg width="22" height="22" focusable="false" aria-hidden="true">
+              <use xlink:href="/{{ directory ~ '/public/assets/sprite.svg#arrow-prev' }}" />
+            </svg>
+          </div>
+          <div id="slider-infos"></div>
+          <div class="slider-btnNext">
+            <svg width="22" height="22" focusable="false" aria-hidden="true">
+              <use xlink:href="/{{ directory ~ '/public/assets/sprite.svg#arrow-next' }}" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

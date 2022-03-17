@@ -1,0 +1,49 @@
+{%
+  set classes = [
+  'paragraph',
+  'bg-imgContrib',
+  'travel',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished'
+]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }} style="background-image: url(/sites/genevieve-lethu/themes/cleverdrop/src/assets/background_travel.png)">
+    {% block content %}
+      <div class="container pos-rel">
+        <img class="paintStain-first" src="/sites/genevieve-lethu/themes/cleverdrop/src/assets/paintStain1.png" alt="">
+        <div class="row">
+          <div class="col-sm-12 col-md-5 pos-rel offset-md-1 travel-right-inner">
+            <div class="travel-wrapper-text">
+              <h2 class="travel-title">{{ content.field_title }}</h2>
+              <p class="travel-description">{{ content.field_description }}</p>
+            </div>
+            <div class="travel-wrapper-picture left">
+              <div class="picture">
+                {{ content.field_picture_fourth }} {# Visuel 3a	 #}
+              </div>
+              <div class="scotch">
+                {{ content.field_picture_fifth }} {# Visuel 3b	 #}
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-5 pos-rel  travel-left-inner">
+            <img class="paintStain-last" src="/sites/genevieve-lethu/themes/cleverdrop/src/assets/paintStain2.png" alt="">
+            <div class="travel-wrapper-picture right">
+              <div class="picture">
+                {{ content.field_picture_second }} {#  Visuel 2a	 #}
+              </div>
+              <div class="scotch">
+                {{ content.field_picture_third }} {# Visuel 2b	 #}
+              </div>
+            </div>
+            <div class="travel-map animation-fade" data-animate='{"threshold": 0.3}'>
+              {{ content.field_picture }} {# Visuel 1	  #}
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

@@ -1,0 +1,55 @@
+/* -------------------------------------------------------------------------- *\
+  # CALL TO ACTION
+\* -------------------------------------------------------------------------- */
+
+// Rather for an action outside the page, for links with href.
+//
+// markup:
+// <button class="cta {{modifier_class}}">Button</button>
+// <a href="#" class="cta {{modifier_class}}">Link</a>
+// <input type="submit" class="cta {{modifier_class}}" value="Input" />
+//
+// Styleguide Elements.cta
+
+// Primary CTA is the default state
+.cta {
+  @include font(script, regular);
+  box-sizing: border-box;
+  padding: rem(12px) rem(20px);
+  box-shadow: inset 0 0 0 1px $theme-light;
+  display: inline-block;
+  vertical-align: top;
+  font-size: rem(20px);
+  line-height: 1.2;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 60em;
+  cursor: pointer;
+  color: $theme-secondary;
+  background-color: transparent;
+  transition: color .3s ease-in-out, background-color .4s ease-in-out, box-shadow .4s ease-in-out;
+  appearance: none;
+
+  &:hover,
+  &:focus {
+    background-color: $theme-light;
+    box-shadow: inset 0 0 0 1px $theme-light;
+    color: $white;
+  }
+
+  &:focus-visible {
+    outline: 1px dashed $theme;
+  }
+
+  &.--secondary {
+    color: $white;
+    box-shadow: inset 0 0 0 1px currentColor;
+
+    &:hover,
+    &:focus {
+      color: $theme;
+      background-color: $white;
+      box-shadow: inset 0 0 0 1px $white;
+    }
+  }
+}

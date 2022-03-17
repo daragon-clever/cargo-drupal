@@ -1,0 +1,48 @@
+.backstage {
+  background: $theme;
+  padding-top: rem(30px);
+  padding-bottom: rem(60px);
+
+  @include mq($until: md) {
+    .container {
+      padding: 0;
+    }
+  }
+
+  &-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  &-over {
+    position: absolute;
+    z-index: 1;
+
+    @include mq($until: md) {
+      width: 100%;
+    }
+
+    h2 {
+      @include font(variant, bold);
+      font-style: italic;
+      font-size: rem(40px);
+      color: $theme;
+      background: url("../assets/backstageBrush.png");
+      background-repeat: no-repeat;
+      width: rem(447px);
+      text-align: center;
+      height: rem(102px);
+      line-height: rem(102px);
+
+      @include mq($until: md) {
+        background-size: contain;
+        background-position: center;
+        width: 65%;
+        margin: 0 auto;
+      }
+    }
+  }
+}

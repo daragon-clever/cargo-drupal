@@ -1,0 +1,11 @@
+/* -------------------------------------------------------------------------- *\
+  # Z-INDEX
+\* -------------------------------------------------------------------------- */
+
+// Gather here all the important z-indexes of the site for better maintainability and readability
+
+$zindex-skipLink         : 500;
+$zindex-popin            : 400;
+$zindex-sticky           : 300;
+$zindex-header           : 200;
+$zindex-nav              : 100;

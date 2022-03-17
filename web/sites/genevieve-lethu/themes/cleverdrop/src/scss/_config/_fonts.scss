@@ -1,0 +1,157 @@
+// Config : Webfonts
+// =================
+// Fonts import, placeholders
+
+
+@font-face {
+  font-family: 'Bodoni';
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+  src: local('Bodoni'), local('bodoni-regular'),
+    url('../assets/fonts/Bodoni-Regular.woff2') format('woff2'),
+    url('../assets/fonts/Bodoni-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Bodoni';
+  font-display: swap;
+  font-weight: 700;
+  font-style: normal;
+  src: local('Bodoni Bold'), local('bodoni-Bold'),
+    url('../assets/fonts/Bodoni-Bold.woff2') format('woff2'),
+    url('../assets/fonts/Bodoni-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Bodoni';
+  font-display: swap;
+  font-weight: 700;
+  font-style: italic;
+  src: local('Bodoni BoldItalic'), local('bodoni-BoldItalic'),
+    url('../assets/fonts/Bodoni-BoldItalic.woff2') format('woff2'),
+    url('../assets/fonts/Bodoni-BoldItalic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Bodoni';
+  font-display: swap;
+  font-weight: 400;
+  font-style: italic;
+  src: local('Bodoni Italic'), local('bodoni-Italic'),
+    url('../assets/fonts/Bodoni-Italic.woff2') format('woff2'),
+    url('../assets/fonts/Bodoni-Italic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  font-display: swap;
+  font-weight: 300;
+  font-style: normal;
+  src: local('Ubuntu Light'), local('Ubuntu-Light'),
+    url('../assets/fonts/Ubuntu-Light.woff2') format('woff2'),
+    url('../assets/fonts/Ubuntu-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  font-display: swap;
+  font-weight: 500;
+  font-style: normal;
+  src: local('Ubuntu Medium'), local('Ubuntu-Medium'),
+    url('../assets/fonts/Ubuntu-Medium.woff2') format('woff2'),
+    url('../assets/fonts/Ubuntu-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  font-display: swap;
+  font-weight: 700;
+  font-style: normal;
+  src: local('Ubuntu Bold'), local('Ubuntu-Bold'),
+    url('../assets/fonts/Ubuntu-Bold.woff2') format('woff2'),
+    url('../assets/fonts/Ubuntu-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'HeadTurn';
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+  src: local('Head Turn'), local('Head-turn'),
+    url('../assets/fonts/Head-turn.woff2') format('woff2'),
+    url('../assets/fonts/Head-turn.woff') format('woff');
+}
+
+$font-base: Ubuntu, Arial, sans-serif !default;
+$font-variant: Bodoni, Georgia, serif !default;
+$font-script: HeadTurn, "Times New Roman", serif !default;
+
+
+// Font stack declaration for the `@mixin font()`
+// Please see `tools/_tools.typography.scss` for more details
+
+///
+/// Intended for the pairing of two families, defined by the following keywords:
+/// - base: main font (i.e.: body copy)
+/// - variant: variant font (i.e.: titles)
+///
+/// Each family has its own variations (weight and style) defined by a second keyword.
+///
+/// @prop {String} group [base | variant] - Group name for the font-family
+/// @prop {String} id - Variation id
+/// @prop {String} font - font-family stack
+/// @prop {String} weight [normal] - font weight
+/// @prop {String} style [normal] - font style
+///
+
+$font-stack: (
+  group : base,
+  id : light,
+  font : ($font-base),
+  weight : 300,
+  style : normal
+),(
+  group : base,
+  id : medium,
+  font : ($font-base),
+  weight : 500,
+  style : normal
+),(
+  group : base,
+  id : bold,
+  font : ($font-base),
+  weight : 700,
+  style : normal
+),(
+  group : variant,
+  id : regular,
+  font : ($font-variant),
+  weight : 400,
+  style : normal
+),(
+  group : variant,
+  id : bold,
+  font : ($font-variant),
+  weight : 700,
+  style : normal
+),(
+  group : variant,
+  id : bold-italic,
+  font : ($font-variant),
+  weight : 700,
+  style : italic
+),(
+  group : variant,
+  id : italic,
+  font : ($font-variant),
+  weight : 400,
+  style : italic
+),(
+  group : script,
+  id : regular,
+  font : ($font-script),
+  weight : 400,
+  style : normal
+);
+

@@ -1,0 +1,52 @@
+/* -------------------------------------------------------------------------- *\
+  # LINKS
+\* -------------------------------------------------------------------------- */
+
+// Links: Default styles
+//
+// markup:
+// <p><a href="#">Link</a></p>
+//
+// Styleguide Elements.links
+
+/**
+ * Default styles for simple hyperlinks.
+ */
+
+a {
+    color: inherit;
+
+    // Apply style on all links, but add a custom class to keep the default behaviour when needed
+    &:not(.hover-unstyled):hover,
+    &:not(.focus-unstyled):focus {
+      text-decoration: none;
+    }
+
+    &:focus {
+        outline: rem(1px) dashed currentColor;
+    }
+
+    /* Fix to allow "click" on external SVG in Microsoft EDGE */
+    svg > use {
+        pointer-events: none;
+    }
+}
+
+.rounded {
+  border: 1px solid $jade;
+  border-radius: 50px;
+  padding: 9px 20px;
+  @include font(base);
+  font-size: rem(12px);
+  transition: color .3s ease-in-out, background-color .4s ease-in-out;
+}
+
+.rounded-effect {
+  background: $jade;
+  color : $white;
+}
+
+@keyframes transition {
+  from {background-color: red;}
+  to {background-color: blue;}
+}

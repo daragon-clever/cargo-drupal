@@ -1,0 +1,33 @@
+/* -------------------------------------------------------------------------- *\
+  # COLORS
+\* -------------------------------------------------------------------------- */
+
+// If you need inspiration, use [name-that-color](http://chir.ag/projects/name-that-color/) to name your colors.
+
+
+$white:         #fff;
+$black:         #000;
+$yellow:        #FEBC1D;
+
+// Message colors
+$alert:         #d90000;
+$valid:         #309630;
+$warning:       #fca846;
+
+// Colors (not for use directly)
+$cloud-burst:  #1C283F;
+$deep-teal:    #003B2E;
+$aqua-deep:    #005844;
+$jade:         #00B373;
+$hokey-pokey:  #CFB023;
+$white-rock:   #F0EDE0;
+$coral:        #A67967;
+$metal:        #747739;
+
+  // Theme colors
+$theme:            $deep-teal;
+$theme-secondary:  $aqua-deep;
+$theme-light:      $jade;
+$emphasis:         $cloud-burst;
+$soft:             $hokey-pokey;
+$light:            $white-rock;

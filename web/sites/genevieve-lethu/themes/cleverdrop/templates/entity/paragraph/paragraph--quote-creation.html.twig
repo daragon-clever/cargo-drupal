@@ -1,0 +1,26 @@
+{%
+  set classes = [
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished',
+  'triangleBorder-bottom',
+  'bg-imgContrib',
+  'bg-colorContrib',
+  'animation-quote'
+]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }} style="background-image: url('{{ file_url(content.field_picture[0]['#item'].entity.fileUri) }}'); --colorContrib:{{ content.field_color[0]['#markup'] }}" data-animate='{"threshold": 0.5}'>
+    <div class="container">
+      <div class="row justify-content-center">
+      {% block content %}
+        <blockquote class="col-12 col-md-8">
+          <div class="animation-quote-text">{{ content.field_description }}</div>
+          <cite>{{ content.field_author }}</cite>
+        </blockquote>
+      {% endblock %}
+      </div>
+    </div>
+  </div>
+{% endblock paragraph %}

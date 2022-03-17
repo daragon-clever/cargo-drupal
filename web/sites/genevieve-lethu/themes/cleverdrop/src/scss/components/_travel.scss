@@ -1,0 +1,134 @@
+.travel {
+  background-position: top !important;
+  padding-top: rem(100px);
+
+  @include mq($until: md) {
+    padding: 0;
+
+    &-right-inner {
+      display: flex;
+      flex-direction: column-reverse;
+      position: relative;
+      align-items: center;
+      top: rem(-100px);
+      z-index: 11;
+    }
+
+    &-left-inner {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+  }
+
+  &-title {
+    @include font(variant);
+    font-size: rem(26px);
+    color: $theme-secondary;
+    font-weight: bold;
+  }
+
+  &-description {
+    margin-top: rem(30px);
+    @include font(base);
+    font-size: rem(16px);
+    color: $theme;
+  }
+
+  &-wrapper-picture {
+    position: relative;
+    display: inline-block;
+    margin-top: rem(50px);
+    z-index: 1;
+    margin-left: 35%;
+
+    @include mq($until: md) {
+      align-items: center;
+      margin-left: 0;
+      width: fit-content;
+    }
+
+    &.left {
+      transform: rotate(350deg);
+
+      @include mq($until: md) {
+        transform: rotate(7deg);
+        margin-bottom: rem(50px);
+      }
+    }
+
+    &.right {
+      transform: rotate(6deg);
+      position: absolute;
+      top: -30%;
+      right: 0;
+      z-index: 12;
+
+      @include mq($until: md) {
+        position: relative;
+        top: 0;
+        transform: rotate(354deg);
+
+      }
+    }
+
+    .picture {
+      @include mq($until: md) {
+        display: inline-block;
+      }
+
+      img {
+        max-height: rem(440px);
+        width: auto;
+        box-shadow: 2px 2px 10px -6px black;
+      }
+    }
+
+    .scotch {
+      position: absolute;
+      top: rem(-40px);
+      z-index: 2;
+      left: 25%;
+    }
+  }
+
+  &-map {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    max-width: rem(679px);
+    height: auto;
+
+    @include mq($until: md) {
+      position: relative;
+    }
+  }
+
+  .paintStain {
+    &-first {
+      position: absolute;
+      top: rem(-60px);
+      left:rem(80px);
+      width: rem(136px);
+      height: rem(136px);
+
+      @include mq($until: md) {
+        display: none;
+      }
+    }
+
+    &-last {
+      position: absolute;
+      bottom: rem(-48px);
+      width: rem(96px);
+      height: rem(96px);
+      right: 0;
+      z-index: 1;
+
+      @include mq($until: md) {
+        right: unset;
+        left: 0;
+      }
+    }
+  }
+}

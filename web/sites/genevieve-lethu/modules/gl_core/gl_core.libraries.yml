@@ -1,0 +1,4 @@
+gl_core:
+  version: 1.x
+  js:
+    js/gl_core.js: {}

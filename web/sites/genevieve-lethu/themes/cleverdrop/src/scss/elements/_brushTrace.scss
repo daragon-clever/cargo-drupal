@@ -1,0 +1,50 @@
+/* -------------------------------------------------------------------------- *\
+  # BRUSH TRACE DECO
+\* -------------------------------------------------------------------------- */
+
+.brushTrace {
+  position: relative;
+
+  &::after {
+    content: "";
+    background-size: 200%;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    height: percentage(calc(70 / 680));
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+
+  &:not(.--breakMd)::after {
+    @include mq($from: sm) {
+      height: percentage(calc(70 / 555));
+      background-size: cover;
+    }
+  }
+
+  &.--breakMd::after {
+    @include mq($from: md) {
+      height: percentage(calc(70 / 555));
+      background-size: cover;
+    }
+  }
+
+  &-top {
+    &::after {
+      background-image: url('../assets/brush-top.png');
+      background-position-y: top;
+      top: -1px;
+    }
+  }
+
+  &-bottom {
+    &::after {
+      background-image: url('../assets/brush.png');
+      background-position-y: bottom;
+      bottom: -1px;
+    }
+  }
+}

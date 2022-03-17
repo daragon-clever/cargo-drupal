@@ -30,6 +30,9 @@ class FormController extends NewsletterInitConfig
             case self::SITENAME_SEMA_DESIGN:
                 $form = \Drupal::formBuilder()->getForm(SemaDesignForm::class);
                 break;
+            case self::SITENAME_GL:
+                $form = \Drupal::formBuilder()->getForm(GenevieveLethuForm::class);
+                break;
             default:
                 $form = null;
         }

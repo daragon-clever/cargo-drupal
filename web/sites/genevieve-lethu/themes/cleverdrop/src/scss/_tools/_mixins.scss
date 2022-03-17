@@ -1,0 +1,393 @@
+/* -------------------------------------------------------------------------- *\
+
+  # MIXINS
+
+\* -------------------------------------------------------------------------- */
+
+// Global mixins available to the entire project. Define file-specific
+// mixins inside the file to which they relate.
+
+///
+/// Generate a triangle/arrow in CSS
+///
+/// Use the `$base-font-size` variable as a reference size for conversion
+///
+/// @param {color} $color - Triangle's color
+/// @param {string} $direction - Triangle's direction (top | right | bottom | left | top-right | right-top | top-left | left-top | bottom-right | right-bottom | bottom-left | left-bottom)
+/// @param {value} $height - Triangle's height
+/// @param {value} $width - Triangle's width
+///
+/// @require $color
+/// @require $direction
+/// @require $height
+///
+/// @example scss - Usage
+///   .foo {
+///     @include css-triangle(red, top, 30px);
+///   }
+///
+///   .bar {
+///     @include css-triangle(green, top-right, 10px, 20px);
+///   }
+///
+/// @example css - Result
+///   .foo {
+///     display: inline-block;
+///     border: 0 solid transparent;
+///     height: 0;
+///     width: 0;
+///     border-bottom-color: red;
+///     border-width: 0 30px 30px;
+///   }
+///
+///   .bar {
+///     display: inline-block;
+///     border: 0 solid transparent;
+///     height: 0;
+///     width: 0;
+///     border-right-color: green;
+///     border-width: 0 20px 10px 0;
+///   }
+
+@mixin css-triangle($color, $direction, $height, $width:null) {
+  display: inline-block;
+  border: 0 solid transparent;
+  height: 0;
+  width: 0;
+
+  // Triangle isocèle
+  @if ($direction=='top') {
+      border-bottom-color: $color;
+
+      @if ($width) {
+          border-width: 0 ($width/2) $height;
+      }
+
+      @else {
+          border-width: 0 $height $height;
+      }
+  }
+
+  @if ($direction=='bottom') {
+      border-top-color: $color;
+
+      @if ($width) {
+          border-width: $height ($width/2) 0;
+      }
+
+      @else {
+          border-width: $height $height 0;
+      }
+  }
+
+  @if ($direction=='right') {
+      border-left-color: $color;
+
+      @if ($width) {
+          border-width: ($height/2) 0 ($height/2) $width;
+      }
+
+      @else {
+          border-width: $height 0 $height $height;
+      }
+  }
+
+  @if ($direction=='left') {
+      border-right-color: $color;
+
+      @if ($width) {
+          border-width: ($height/2) $width ($height/2) 0;
+      }
+
+      @else {
+          border-width: $height $height $height 0;
+      }
+  }
+
+  // Triangle scalène
+  @if ($direction=='top-left'or $direction=='left-top') {
+      border-top-color: $color;
+
+      @if ($width) {
+          border-width: $height $width 0 0;
+      }
+
+      @else {
+          border-width: $height $height 0 0;
+      }
+  }
+
+  @if ($direction=='top-right'or $direction=='right-top') {
+      border-right-color: $color;
+
+      @if ($width) {
+          border-width: 0 $width $height 0;
+      }
+
+      @else {
+          border-width: 0 $height $height 0;
+      }
+  }
+
+  @if ($direction=='bottom-left'or $direction=='left-bottom') {
+      border-left-color: $color;
+
+      @if ($width) {
+          border-width: $height 0 0 $width;
+      }
+
+      @else {
+          border-width: $height 0 0 $height;
+      }
+  }
+
+  @if ($direction=='bottom-right'or $direction=='right-bottom') {
+      border-bottom-color: $color;
+
+      @if ($width) {
+          border-width: 0 0 $height $width;
+      }
+
+      @else {
+          border-width: 0 0 $height $height;
+      }
+  }
+}
+
+///
+/// Center horizontally and vertically an element with unknown dimensions
+///
+/// Beware: you must have a parent container with `position: relative;`.
+///
+/// @example scss - Usage
+///   .foo {
+///     @include center-both;
+///   }
+/// @example css - Result
+///   .foo {
+///     position: absolute;
+///     top: 50%;
+///     left: 50%;
+///     transform: translate(-50%, -50%);
+///   }
+///
+@mixin center-both {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+///
+/// Center vertically an element with unknown dimensions
+///
+/// Beware: you must have a parent container with `position: relative;`.
+///
+/// @example scss - Usage
+///   .foo {
+///     @include center-v;
+///   }
+/// @example css - Result
+///   .foo {
+///     position: absolute;
+///     top: 50%;
+///     transform: translateY(-50%);
+///   }
+///
+@mixin center-v {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+///
+/// Center horizontally an element with unknown dimensions
+///
+/// Beware: you must have a parent container with `position: relative;`.
+///
+/// @example scss - Usage
+///   .foo {
+///     @include center-h;
+///   }
+/// @example css - Result
+///   .foo {
+///     position: absolute;
+///     top: 50%;
+///     transform: translateX(-50%);
+///   }
+///
+@mixin center-h {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/// Maintain aspect ratio
+///
+/// based on : https://css-tricks.com/snippets/sass/maintain-aspect-ratio-mixin/
+///
+///
+/// @param {Number} $width [16] - ratio width
+/// @param {Number} $height [9] - ratio height
+/// @param {Number} $target [iframe | div | img] - the target object to which to apply the ratio
+///
+/// @example scss - Usage
+///   .foo {
+///     @include aspect-ratio(16, 9, img);
+///   }
+/// @example css - Result
+///   .foo {
+///     position: relative;
+///   }
+///   .foo::before {
+///     content: "";
+///     display: block;
+///     max-width: 100%;
+///     height: 0;
+///     overflow: hidden;
+///     padding-bottom: 66.66667%;
+///   }
+///   .foo > img {
+///     position: absolute;
+///     top: 0;
+///     left: 0;
+///     width: 100%;
+///     height: 100%;
+///     border: 0;
+///   }
+///
+
+@mixin aspect-ratio($width, $height, $target) {
+  position: relative;
+
+  &::before {
+      content: "";
+      display: block;
+      max-width: 100%;
+      height: 0;
+      overflow: hidden;
+      padding-bottom: calc(($height / $width) * 100%);
+  }
+
+  > #{$target} {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+  }
+}
+
+
+// # Reset
+@mixin reset {
+  margin:  0;
+  padding: 0;
+  border:  0;
+  background-color: transparent; // for buttons
+  list-style-type: none; // for lists
+}
+
+
+// # Hide content
+// https://developer.yahoo.com/blogs/ydn/clip-hidden-content-better-accessibility-53456.html
+@mixin visually-hidden {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0;
+  border:  0;
+  height:  1px;
+  width:   1px;
+  overflow: hidden;
+  clip: rect(1px  1px  1px  1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  opacity: .001;
+}
+
+
+// reverse visually-hidden
+@mixin visually-visible {
+  position:  static;
+  height:      auto;
+  width:       auto;
+  clip:        auto;
+  overflow: visible;
+  opacity:        1;
+}
+
+/// Generate fluid type with `clamp()`
+///
+/// source: https://chriskirknielsen.com/blog/modern-fluid-typography-with-clamp/
+///
+/// @param {number} $min-vw - Minimum viewport size at which we want the minimum font-size value
+/// @param {number} $max-vw - Maximum viewport size at which we want the maximum font-size value
+/// @param {number} $min-value - Minimum font-size value
+/// @param {number} $max-value - Maximum font-size value
+///
+/// @example scss - Usage
+///   .foo {
+///     @include fluid-type(rem(320px), rem(map-get($grid-breakpoints, "xl")), rem(24px), rem(38px));
+///   }
+/// @example css - Result
+///   .foo {
+///     font-size: 1.5rem;
+///     font-size: clamp(1.5rem, 1.1818181818rem + 1.5909090909vw, 2.375rem);
+///   }
+///
+@mixin fluid-type($min-vw, $max-vw, $min-value, $max-value) {
+  $factor: calc(1 / ($max-vw - $min-vw) * ($max-value - $min-value));
+  $calc-value: unquote("#{ $min-value - ($min-vw * $factor) } + #{ 100vw * $factor }");
+
+  font-size: $min-value; // Fallback for older browsers
+  font-size: clamp(#{ if($min-value > $max-value, $max-value, $min-value) }, #{ $calc-value }, #{ if($min-value > $max-value, $min-value, $max-value) });
+}
+
+/// Mixins to help generating typographical rules.
+///
+/// `font-family` declaration
+///
+/// Call the font defined in the project configuration
+///
+/// @param {String} $group - Name of the group (base or variant)
+/// @param {String} $id - Name of the variation (e.g.: bold, italic, etc...)
+///
+/// @example scss - Usage
+///   .foo {
+///     @include font(base);
+///   }
+///   .bar {
+///     @include font(base, bold-italic);
+///   }
+///   .baz {
+///     @include font(variant);
+///   }
+///
+/// @example css - Result
+///   .foo {
+///     font-family:'robotoregular', Arial, sans-serif;
+///     font-weight:normal;
+///     font-style:normal;
+///   }
+///   .bar {
+///     font-family:'robotobold_italic', Arial, sans-serif;
+///     font-weight:normal;
+///     font-style:normal;
+///   }
+///   .baz {
+///     font-family:'amerika_sansregular', serif;
+///     font-weight:normal;
+///     font-style:normal;
+///   }
+///
+@mixin font($group, $id:regular, $force-specificity: "") {
+  @each $font in $font-stack {
+      @if ($group==map-get($font, group) and $id==map-get($font, id)) {
+          font-family: map-get($font, font) #{$force-specificity};
+          font-weight: map-get($font, weight) #{$force-specificity};
+          font-style: map-get($font, style) #{$force-specificity};
+      }
+  }
+}
+

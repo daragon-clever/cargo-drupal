@@ -1,0 +1,91 @@
+.highlightCollection {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  @include mq($until: lg) {
+    max-height: unset;
+    flex-direction: column;
+  }
+
+  &-left {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+    align-self: stretch;
+  }
+
+  &-leftInner {
+    padding-top: rem(180px);
+    padding-bottom: rem(145px);
+    padding-right: rem(230px);
+
+    @include mq($until: lg) {
+      padding-top: rem(40px);
+      padding-left: rem(30px);
+      padding-bottom: rem(340px);
+      padding-right: rem(30px);
+    }
+
+    @include mq($until: xl) {
+      padding-left: rem(30px);
+    }
+
+    @include mq($from: xl) {
+      padding-left: rem(146px);
+      padding-right: rem(300px);
+    }
+  }
+
+  &-right {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+    align-self: stretch;
+
+    @include mq($until: lg) {
+      flex: unset;
+    }
+
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &-multipleBrushes {
+    position: absolute;
+    top: 0;
+    right: 50%;
+
+    @include mq($until: lg) {
+      display: none;
+    }
+  }
+
+  &-title {
+    @include font(variant, bold);
+    font-size: rem(26px);
+    color: $white;
+  }
+
+  &-description {
+    @include font(base, light);
+    font-size: rem(16px);
+    color: $white;
+  }
+
+  &-center {
+    position: absolute;
+    max-width: rem(440px);
+    justify-content: center;
+    align-items: center;
+    max-height: rem(440px);
+  }
+}

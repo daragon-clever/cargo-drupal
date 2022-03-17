@@ -1,0 +1,33 @@
+{% if content is not empty %}
+  <div class="newsletterBlock bg-theme">
+    <div class="newsletterBlock-over">
+      <div class="container">
+        <div class="newsletterHead">
+          <h2 class="newsletterHead-title">
+            {{ content.title }}
+          </h2>
+          <div class="newsletterHead-text">
+            {{ content.description }}
+          </div>
+        </div>
+        <div class="newsletterForm">
+          {{ drupal_block('inscription_block') }}
+        </div>
+        <div class="newsletterSocial">
+          {% if content.facebook is not empty %}
+            <a target="_blank"
+              href="{{ content.facebook }}">{% include directory ~ '/src/assets/svg/Facebook.svg' %}</a>
+          {% endif %}
+          {% if content.instagram is not empty %}
+            <a target="_blank"
+              href="{{ content.instagram }}">{% include directory ~ '/src/assets/svg/Instagram.svg' %}</a>
+          {% endif %}
+          {% if content.pinterest is not empty %}
+            <a target="_blank"
+              href="{{ content.pinterest }}">{% include directory ~ '/src/assets/svg/Pinterest.svg' %}</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}

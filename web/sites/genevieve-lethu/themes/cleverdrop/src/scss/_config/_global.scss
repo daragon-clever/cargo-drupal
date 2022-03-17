@@ -1,0 +1,63 @@
+/* -------------------------------------------------------------------------- *\
+  # CONFIG
+\* -------------------------------------------------------------------------- */
+
+// Project-level settings and setup.
+
+/// Prefix project
+//
+// Config projet
+//
+// $project-prefix - `"Replace with right name"` is prefix of classe names of this project.
+//
+// (You can work out this context whith the `@at-root{}` block.)
+$prefix: 'gl';
+
+// Typography
+
+/// Reference font-size
+/// Should not differ from the assumed browser default (typically `16px`).
+/// We use it as a reference for our `rem` calculations.
+/// @type Number (unit)
+$base-font-size: 16px !default;
+
+/// `body` font-size
+/// Should match the most frequent value in the design.
+/// Applied on the `body` and used as a reference for default `em` calculations.
+/// @type Number (unit)
+$body-font-size: $base-font-size !default;
+$body-font-size-small: calc($base-font-size * .88) !default;
+
+
+/// Viewport limits
+//
+// min & max viewport limits width
+//
+// * **$vw-min:** Min to fill
+// * **$vw-max:** Max to fill
+
+$vw-min: 320px !default;
+$vw-max: 1440px !default;
+
+/// Headings
+$h1-font-size: 60px;
+$h1-line-height: 72px;
+
+$h2-font-size: 26px;
+$h2-line-height: 35px;
+
+$h3-font-size: 22px;
+$h3-line-height: 30px;
+
+$h4-font-size: 20px;
+$h4-line-height: 28px;
+
+$h5-font-size: 18px;
+$h5-line-height: 26px;
+
+$h6-font-size: 16px;
+$h6-line-height: 24px;
+
+/// Gap between blocks
+$gap-between-max: 80px;
+$gap-between-min: 50px

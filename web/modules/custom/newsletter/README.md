@@ -46,3 +46,4 @@ le fichier newsletter.module
 * Sitram
 * Yliades
 * Sema Design
+* Geneviève Lethu

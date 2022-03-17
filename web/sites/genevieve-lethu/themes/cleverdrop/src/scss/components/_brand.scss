@@ -1,0 +1,97 @@
+/* -------------------------------------------------------------------------- *\
+  # BRAND BLOCK
+\* -------------------------------------------------------------------------- */
+
+.brand {
+  background-color: $light;
+
+  @include mq($until: md) {
+    background-image: none !important; // to break inline rule who provide the contributate image from BO.
+  }
+
+  @include mq($from: md) {
+    background-position: -40vw;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  @include mq($from: lg) {
+    background-position: -20vw;
+  }
+
+  @include mq($from: xl) {
+    background-position: -15vw;
+  }
+
+  .container {
+    @include mq($until: md) {
+      padding: 0;
+    }
+  }
+
+  img {
+    display: block;
+  }
+
+  &-list {
+    position: absolute;
+    left: -150%;
+    right: rem(30px);
+    top: rem(50px);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    @include mq($from: md) {
+      @include center-v;
+      left: -50%;
+      right: -30%;
+    }
+
+    & > li {
+      margin-left: rem(20px);
+      width: rem(190px);
+
+      @include mq($from: md) {
+        width: auto;
+      }
+    }
+  }
+
+  &-col {
+    &:first-of-type {
+      position: relative;
+      min-height: rem(200px);
+
+      @include mq($from: md) {
+        min-height: 0;
+      }
+    }
+
+    &:last-of-type {
+      display: flex;
+      align-items: center;
+      padding-top: rem(90px);
+      padding-bottom: rem(40px);
+
+      @include mq($from: md) {
+        min-height: rem(610px);
+        padding-top: 0;
+        padding-bottom: 0;
+        margin: 0;
+      }
+    }
+  }
+
+  &-offset {
+    position: relative;
+    padding: 0 rem(30px);
+
+    @include mq($from: md) {
+      margin-left: 30%;
+      margin-right: 15%;
+      padding: 0;
+    }
+  }
+}

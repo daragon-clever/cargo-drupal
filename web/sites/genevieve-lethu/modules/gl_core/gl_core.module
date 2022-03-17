@@ -1,0 +1,123 @@
+<?php
+
+/**
+ * @file
+ * Module file for gl_core.
+ */
+
+/**
+ * Implements hook_preprocess_tamplate().
+ * @param $vars
+ */
+function gl_core_preprocess_paragraph__left_handed(&$vars)
+{
+  $original = $vars['content']['field_description']['0']['#context']['value'];
+  if (strlen($original) > 500) {
+    $string = wordwrap($original, strlen($original) / 2, "%%", true);
+    $columns = explode("%%", $string);
+    // if last word is out of range for word wrap
+    if (count($columns) > 2) {
+      $columns[1] .= ' ' . $columns[2];
+    }
+    unset($columns[2]);
+    $vars['content']['column'] = $columns;
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function gl_core_theme($existing, $type, $theme, $path)
+{
+  return [
+    'gl_core__newsletter' => [
+      'template' => 'gl-core--newsletter',
+      'variables' => [
+        'content' => [],
+      ],
+    ],
+    'gl_core__404' => [
+      'template' => 'gl-core--404',
+      'variables' => [
+        'content' => [],
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_node_form_alter().
+ */
+function gl_core_form_node_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id)
+{
+  if ($form_id === 'node_heart_of_creation_edit_form' || $form_id == 'node_heart_of_creation_form') {
+    // Add simple validation function for 3 minimum slides. Contraints can be use too
+    $form['#validate'][] = '_gl_core_node_heart_of_creation_validate';
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ * @param $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ * @param $form_id
+ */
+function gl_core_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id)
+{
+  if ($form_id == 'views_exposed_form' && $form['#id'] == 'views-exposed-form-featured-articles-block-1') {
+    // Remove terms who havn't results
+    $filters = $form['field_categorie_target_id']['#options'];
+    foreach ($filters as $id => $filter) {
+      $nodes = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
+        'field_categorie' => $id,
+      ]);
+      if (empty($nodes)) {
+        unset($form['field_categorie_target_id']['#options'][$id]);
+      }
+    }
+  }
+}
+
+/**
+ * Custom validate function.
+ */
+function _gl_core_node_heart_of_creation_validate(&$form, \Drupal\Core\Form\FormStateInterface $form_state)
+{
+  $values = $form_state->getValues();
+  if (!empty($values['field_paragraph_collection'][0]['subform']['field_description'][0]['value'])) {
+    if (strlen($values['field_paragraph_collection'][0]['subform']['field_description'][0]['value']) > 460) {
+      $form_state->setErrorByName('field_paragraph_collection][0][subform][field_description][0', t('460 Caractères maximum.'));
+
+    }
+  }
+
+}
+
+/**
+ * Implements hook_page_attachements().
+ */
+function gl_core_page_attachments(array &$page)
+{
+  $page['#attached']['library'][] = 'gl_core/gl_core';
+}
+
+/**
+ * Implements hook_preprocess_node().
+ * @param $variables
+ */
+function gl_core_preprocess_node(&$variables)
+{
+  if ($variables['node']->getType() == 'article') {
+    $resume = null;
+    $components = $variables['node']->get('field_components')->getValue();
+    $components = array_reverse($components);
+    foreach ($components as $element) {
+      if (!empty($element['target_id'])) {
+        $p = \Drupal\paragraphs\Entity\Paragraph::load($element['target_id']);
+        if (($p->getType() == 'text_list' || $p->getType() == 'description_centered') && empty($resume)) {
+          $variables['resume'] = $p->field_rte_lite->getValue();
+        }
+      }
+    }
+  }
+}

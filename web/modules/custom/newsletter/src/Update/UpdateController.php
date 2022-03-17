@@ -30,6 +30,9 @@ class UpdateController extends NewsletterInitConfig
             case self::SITENAME_SEMA_DESIGN:
                 $schemaTable = new BaseUpdate();
                 break;
+            case self::SITENAME_GL:
+                $schemaTable = new BaseUpdate();
+                break;
             default:
                 $schemaTable = null;
         }

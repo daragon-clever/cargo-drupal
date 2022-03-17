@@ -1,0 +1,77 @@
+.contact {
+  &-title {
+    text-align: center;
+    margin-bottom: rem(60px);
+    margin-top: rem(99px);
+  }
+
+  .contact-subject {
+    span.required {
+      display: none;
+    }
+
+    label {
+      @include font(variant,bold);
+      font-size: rem(26px);
+    }
+
+    select {
+      position: relative;
+      background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8"><path d="m6.595 6.904 4.82-4.67a.803.803 0 0 0 0-1.163l-.801-.776a.866.866 0 0 0-1.201 0l-3.417 3.31L2.58.295a.866.866 0 0 0-1.201 0l-.801.776a.803.803 0 0 0 0 1.164l4.82 4.669a.862.862 0 0 0 1.197 0Z" fill="#{$theme}"/></svg>');
+      background-repeat: no-repeat;
+      background-position-x: 95%;
+      background-position-y: 52%;
+
+      @include mq($from: sm) {
+        background-position-x: 97%;
+      }
+    }
+  }
+
+  .contact-rgpd {
+    label {
+      display: inline;
+    }
+
+    input {
+      display: inline;
+      width: auto ;
+      height: auto ;
+      margin-bottom: 0;
+      padding-right: rem(15px);
+    }
+  }
+
+  &-mandatory {
+    @include font(base, light);
+    margin-bottom: rem(40px);
+    font-size: rem(14px);
+    color: $theme;
+    margin-top: rem(20px);
+  }
+
+  .contact-submit {
+    margin-top: rem(40px);
+    margin-bottom: rem(90px);
+
+    input {
+      background: $theme;
+      color: $white;
+      border: rem(1px) solid $theme;
+      width: rem(290px);
+      height: rem(46px);
+      @include font(script);
+      font-size: rem(20px);
+      transition: background-color 0.3s ease-in-out;
+
+      @include mq($until:md) {
+        width: 100%;
+      }
+
+      &:hover  {
+        background: $theme-light;
+        border: rem(1px) solid $theme-light;
+      }
+    }
+  }
+}

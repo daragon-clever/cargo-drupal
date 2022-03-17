@@ -1,0 +1,18 @@
+{%
+  set classes = [
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished',
+  'sliderBackstage-inner'
+]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+      {{ content.field_picture }}
+      <p class="sliderBackstage-inner-step">{{ content.field_text }}</p>
+      <h3 class="sliderBackstage-inner-title">{{ content.field_title }}</h3>
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

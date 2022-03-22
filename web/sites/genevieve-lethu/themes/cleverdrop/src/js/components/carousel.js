@@ -24,7 +24,6 @@ const navParams = {
   },
 }
 
-
 // SCROLLBAR OPTIONS
 const scrollbarParams = {
   scrollbar: {
@@ -159,6 +158,7 @@ function carousel() {
     loop: true,
     centeredSlides: true,
     watchSlidesProgress: true,
+    speed: 400,
     breakpoints: {
       0: {
         slidesPerView: 1.8,
@@ -226,6 +226,7 @@ function carousel() {
   gallery.on('slidePrevTransitionEnd', function () {
     let index_prevSlide = gallery.previousIndex;
 
+
     if (index_prevSlide === 0) {
       index_prevSlide = parseInt(gallery.slides.length - 1);
     }
@@ -281,9 +282,15 @@ function carousel() {
     btnPrev.click();
   });
 
-  gallery.on('slideChange', function () {
+
+  gallery.on('slideNextTransitionEnd', function () {
     let index_currentSlide = gallery.realIndex;
-    galleryThumbs.slideToLoop(index_currentSlide, 1000, false);
+    galleryThumbs.slideToLoop(index_currentSlide, 400, false);
+  });
+
+  gallery.on('slidePrevTransitionEnd', function () {
+    let index_currentSlide = gallery.realIndex;
+    galleryThumbs.slideToLoop(index_currentSlide, 400, false);
   });
 }
 

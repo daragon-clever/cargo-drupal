@@ -113,7 +113,7 @@ Configuration PhpStorm du déploiement automatique sur la VM :
 
 ### Création d'un nouveau site Drupal dans la ferme :
 
-[Voir la procédure ici](./Nouveau-drupal.md)
+[Voir la procédure ici](./NOUVEAU-DRUPAL.md)
 
 ### Dump de sa BDD en local :
 

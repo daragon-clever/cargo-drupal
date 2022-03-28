@@ -3787,3 +3787,398 @@ body.lang-en {
     }
   }
 }
+
+#labo {
+  img {
+    width: 100%;
+    height: auto;
+  }
+  #section_1 {
+    div.col-12:first-of-type {
+      padding-right: 125px;
+    }
+  }
+  #section_2 {
+    .poelle {
+      position: relative;
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0; right: 0; top: 0;
+        height: 50%;
+        background-color: #FAFBFC;
+      }
+      .poele_points {
+        position: relative;
+        .poele_points_mobile {
+          display: none;
+        }
+        .poele_point {
+          position: absolute;
+          .poele_point_wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #fff;
+            color: #fff;
+            font-size: 32px;
+            line-height: 1;
+            font-weight: 700;
+            width: 55px;
+            height: 55px;
+            border-radius: 55px;
+            cursor: pointer;
+            position: absolute;
+          }
+          .poele_point_description {
+            display: block;
+            width: 300px;
+            padding: 25px;
+            background-color: #FAFBFC;
+            color: #0a65aa;
+            position: absolute;
+            opacity: 0;
+            transition: all 500ms;
+            h4 {
+              color: #023663;
+              margin: 0 0 10px 0;
+            }
+            p {
+              color: #434343;
+              font-size: 14px;
+              margin: 0;
+            }
+          }
+          .poele_point_wrapper:hover + .poele_point_description {
+            opacity: 1;
+          }
+          &:nth-of-type(3) {
+            left: 25%;
+            top: 45%;
+            .poele_point_wrapper {
+              background-color: #F9AB00;
+              z-index: 11;
+            }
+            .poele_point_description {
+              z-index: 10;
+              bottom: 0;
+              right: 0;
+              transform: translate(25px, 25px);
+            }
+          }
+          &:nth-of-type(4) {
+            bottom: 25%;
+            left: 47%;
+            .poele_point_wrapper {
+              background-color: #005259;
+              z-index: 7;
+            }
+            .poele_point_description {
+              z-index: 6;
+              bottom: 0;
+              left: 0;
+              transform: translate(25px, 25px);
+            }
+          }
+          &:nth-of-type(5) {
+            left: 20%;
+            bottom: 16%;
+            .poele_point_wrapper {
+              background-color: #741030;
+              z-index: 9;
+            }
+            .poele_point_description {
+              z-index: 8;
+              bottom: 0;
+              left: 0;
+              transform: translate(25px, 25px);
+            }
+          }
+          &:nth-of-type(6) {
+            right: 33%;
+            bottom: 75%;
+            .poele_point_wrapper {
+              background-color: #023663;
+              z-index: 5;
+            }
+            .poele_point_description {
+              z-index: 4;
+              bottom: 0;
+              left: 0;
+              transform: translate(25px, 25px);
+            }
+          }
+        }
+      }
+    }
+  }
+  #section_3 {
+    position: relative;
+    overflow: hidden;
+    .bg-img-blue {
+      .container {
+        background-color: #fff;
+      }
+    }
+    .section_3_padding {
+      padding: 50px 100px;
+      h2 {
+        padding-right: 150px;
+      }
+    }
+    hr {
+      margin: 0 100px;
+    }
+    .slider_filters {
+      padding: 0 100px;
+      .col {
+        a {
+          font-size: 24px;
+          line-height: 30px;
+          color: #023663;
+          text-decoration: none;
+          opacity: .2;
+          margin-right: 25px;
+          cursor: pointer;
+          &.active {
+            opacity: 1;
+          }
+        }
+      }
+    }
+    .slider {
+      .slide {
+        display: none;
+        .row:first-of-type {
+          .col:first-of-type {
+            padding-right: 150px;
+            b {
+              font-style: italic;
+            }
+          }
+          .col:last-of-type {
+            padding: 25px 0;
+            img {
+              width: 60%;
+              display: block;
+              margin: 0 auto;
+            }
+          }
+        }
+        &.active {
+          display: block;
+        }
+        .row:first-of-type {
+          padding: 25px 100px;
+        }
+        table {
+          text-align: center;
+          table-layout: fixed;
+          thead {
+            tr {
+              th {
+                border: 1px solid #fff;
+              }
+            }
+          }
+          tbody {
+            tr {
+              td {
+                border: 1px solid #DDDDDD;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  #section_4 {
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 80px;
+      background-color: #FAFBFC;
+    }
+    .labo_video {
+      margin-bottom: 40px;
+      .labo_video_wrapper {
+        iframe, h3, p {
+          width: 100%;
+        }
+        iframe {
+          margin: 0 0 20px 0;
+        }
+        h3 {
+          margin: 0 0 20px 0;
+          padding-right: 75px;
+          color: #023663;
+        }
+        p {
+          margin: 0;
+          padding-right: 75px;
+        }
+      }
+    }
+    .btn_labo {
+      display: block;
+      background-color: #003663;
+      color: #fff;
+      padding: 20px 25px;
+      z-index: 1;
+      margin: 0px auto;
+      text-decoration: none;
+      font-size: 16px;
+      min-width: 33%;
+      border-radius: 5px;
+    }
+  }
+}
+
+@media @tablet {
+  #labo {
+    img {
+    }
+    #section_1 {
+      div.col-12:first-of-type {
+        padding-right: 8px;
+      }
+    }
+    #section_2 {
+      .poelle {
+        &:before {
+        }
+        .poele_points {
+          .poele_points_mobile {
+            display: block;
+          }
+          .poele_points_desktop {
+            display: none;
+          }
+          .poele_point {
+            position: relative;
+            .poele_point_wrapper {
+              font-size: 20px;
+              width: 40px;
+              height: 40px;
+              left: 45px;
+              top: 15px;
+            }
+            .poele_point_description {
+              position: relative;
+              opacity: 1;
+              transform: unset!important;
+              width: 100%;
+              padding: 9px 0 25px 25px;
+              h4 {
+                padding: 0 75px;
+              }
+              p {
+              }
+            }
+            .poele_point_wrapper:hover + .poele_point_description {
+            }
+            &:nth-of-type(3) {
+              left: unset;
+              top: unset;
+            }
+            &:nth-of-type(4) {
+              bottom: unset;
+              left: unset;
+            }
+            &:nth-of-type(5) {
+              left: unset;
+              bottom: unset;
+            }
+            &:nth-of-type(6) {
+              right: unset;
+              bottom: unset;
+            }
+          }
+        }
+      }
+    }
+    #section_3 {
+      .bg-img-blue {
+        .container {
+        }
+      }
+      .section_3_padding {
+        padding: 25px 25px;
+        h2 {
+          padding: 0;
+          margin-bottom: 25px;
+        }
+      }
+      hr {
+        margin: 0 10px;
+      }
+      .slider_filters {
+        padding: 0 10px;
+        .col {
+          a {
+            &.active {
+            }
+          }
+        }
+      }
+      .slider {
+        .slide {
+          .row:first-of-type {
+            padding: 0 10px;
+            .col:first-of-type {
+              b {
+              }
+            }
+            .col:last-of-type {
+              img {
+
+              }
+            }
+          }
+          &.active {
+          }
+          .row:last-of-type {
+            .col:last-of-type {
+              overflow: scroll;
+            }
+          }
+          table {
+            width: 250%;
+            thead {
+              tr {
+                th {
+                }
+              }
+            }
+            tbody {
+              tr {
+                td {
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    #section_4 {
+      &:before {
+      }
+      .labo_video {
+        .labo_video_wrapper {
+          iframe, h3, p {
+          }
+          iframe {
+          }
+          h3 {
+          }
+          p {
+          }
+        }
+      }
+      .btn_labo {
+        width: ~"calc(100% - 20px)";
+      }
+    }
+  }
+}

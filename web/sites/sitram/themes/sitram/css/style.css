@@ -544,7 +544,7 @@ ul.check-list li:before {
 }
 .block-frise-verticale .frise:after {
   content: "";
-  height: calc(100% - 10px);
+  height: calc(90%);
   width: 1px;
   background-color: #741030;
   position: absolute;
@@ -1453,7 +1453,7 @@ ul.check-list li:before {
   background: url("../images/icon-basket.svg") no-repeat center transparent;
   height: 21px;
   width: 24px;
-  top: calc(50% - 12px);
+  top: calc(38%);
   left: 25px;
 }
 .header-wrapper nav > ul a.ou-acheter:hover {
@@ -1477,7 +1477,7 @@ ul.check-list li:before {
     height: 40px;
     width: 40px;
     position: absolute;
-    top: calc(50% - 20px);
+    top: calc(30%);
     right: 15px;
     z-index: 10;
     border-radius: 100%;
@@ -1909,7 +1909,7 @@ ul.check-list li:before {
   object-fit: cover;
   font-family: 'object-fit: cover;';
   height: 197px;
-  transition: transform 0.3s ease;
+  transition: transform .3s ease;
 }
 .recette-item img:hover {
   transform: scale(1.1);
@@ -2095,7 +2095,7 @@ ul.check-list li:before {
   position: absolute;
   height: 16px;
   width: 16px;
-  top: calc(50% - 8px);
+  top: calc(42%);
 }
 #recette-individuelle .button-cta span.share:after {
   background: url("../images/icon-share.svg") no-repeat center transparent;
@@ -3075,7 +3075,7 @@ ul.check-list li:before {
   height: 62px;
 }
 #contact .select2-selection__arrow {
-  top: calc(50% - 13px);
+  top: calc(37%);
   right: 15px;
 }
 #contact .form-item-fichier {
@@ -3600,7 +3600,7 @@ footer .recettes-cta {
   vertical-align: middle;
   background-color: transparent;
   position: absolute;
-  top: calc(50% - 26px);
+  top: calc(24%);
   right: 30px;
   padding: 0;
 }
@@ -3609,7 +3609,7 @@ footer .recettes-cta {
 }
 @media only screen and (max-width: 991px) {
   #storelocator-wrapper .storelocator-ban .store-locator-field-wrapper .btn.submit {
-    top: calc(50% - 13px);
+    top: calc(37%);
     right: 15px;
   }
   #storelocator-wrapper .storelocator-ban .store-locator-field-wrapper .btn.submit img {
@@ -4049,7 +4049,7 @@ table.reparateurs tbody .tel {
   width: 32px;
   display: block;
   position: absolute;
-  top: calc(50% - 16px);
+  top: calc(34%);
   right: 18px;
   background: url("../images/faq-picto-plus.svg") no-repeat center transparent;
 }
@@ -4601,5 +4601,306 @@ body.lang-en a.hidden-link {
   .js-switchLangLink a.language-link img {
     margin-right: 10px;
     border-radius: 100%;
+  }
+}
+#labo img {
+  width: 100%;
+  height: auto;
+}
+#labo #section_1 div.col-12:first-of-type {
+  padding-right: 125px;
+}
+#labo #section_2 .poelle {
+  position: relative;
+}
+#labo #section_2 .poelle:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 50%;
+  background-color: #FAFBFC;
+}
+#labo #section_2 .poelle .poele_points {
+  position: relative;
+}
+#labo #section_2 .poelle .poele_points .poele_points_mobile {
+  display: none;
+}
+#labo #section_2 .poelle .poele_points .poele_point {
+  position: absolute;
+}
+#labo #section_2 .poelle .poele_points .poele_point .poele_point_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
+  color: #fff;
+  font-size: 32px;
+  line-height: 1;
+  font-weight: 700;
+  width: 55px;
+  height: 55px;
+  border-radius: 55px;
+  cursor: pointer;
+  position: absolute;
+}
+#labo #section_2 .poelle .poele_points .poele_point .poele_point_description {
+  display: block;
+  width: 300px;
+  padding: 25px;
+  background-color: #FAFBFC;
+  color: #0a65aa;
+  position: absolute;
+  opacity: 0;
+  transition: all 500ms;
+}
+#labo #section_2 .poelle .poele_points .poele_point .poele_point_description h4 {
+  color: #023663;
+  margin: 0 0 10px 0;
+}
+#labo #section_2 .poelle .poele_points .poele_point .poele_point_description p {
+  color: #434343;
+  font-size: 14px;
+  margin: 0;
+}
+#labo #section_2 .poelle .poele_points .poele_point .poele_point_wrapper:hover + .poele_point_description {
+  opacity: 1;
+}
+#labo #section_2 .poelle .poele_points .poele_point:nth-of-type(3) {
+  left: 25%;
+  top: 45%;
+}
+#labo #section_2 .poelle .poele_points .poele_point:nth-of-type(3) .poele_point_wrapper {
+  background-color: #F9AB00;
+  z-index: 11;
+}
+#labo #section_2 .poelle .poele_points .poele_point:nth-of-type(3) .poele_point_description {
+  z-index: 10;
+  bottom: 0;
+  right: 0;
+  transform: translate(25px, 25px);
+}
+#labo #section_2 .poelle .poele_points .poele_point:nth-of-type(4) {
+  bottom: 25%;
+  left: 47%;
+}
+#labo #section_2 .poelle .poele_points .poele_point:nth-of-type(4) .poele_point_wrapper {
+  background-color: #005259;
+  z-index: 7;
+}
+#labo #section_2 .poelle .poele_points .poele_point:nth-of-type(4) .poele_point_description {
+  z-index: 6;
+  bottom: 0;
+  left: 0;
+  transform: translate(25px, 25px);
+}
+#labo #section_2 .poelle .poele_points .poele_point:nth-of-type(5) {
+  left: 20%;
+  bottom: 16%;
+}
+#labo #section_2 .poelle .poele_points .poele_point:nth-of-type(5) .poele_point_wrapper {
+  background-color: #741030;
+  z-index: 9;
+}
+#labo #section_2 .poelle .poele_points .poele_point:nth-of-type(5) .poele_point_description {
+  z-index: 8;
+  bottom: 0;
+  left: 0;
+  transform: translate(25px, 25px);
+}
+#labo #section_2 .poelle .poele_points .poele_point:nth-of-type(6) {
+  right: 33%;
+  bottom: 75%;
+}
+#labo #section_2 .poelle .poele_points .poele_point:nth-of-type(6) .poele_point_wrapper {
+  background-color: #023663;
+  z-index: 5;
+}
+#labo #section_2 .poelle .poele_points .poele_point:nth-of-type(6) .poele_point_description {
+  z-index: 4;
+  bottom: 0;
+  left: 0;
+  transform: translate(25px, 25px);
+}
+#labo #section_3 {
+  position: relative;
+  overflow: hidden;
+}
+#labo #section_3 .bg-img-blue .container {
+  background-color: #fff;
+}
+#labo #section_3 .section_3_padding {
+  padding: 50px 100px;
+}
+#labo #section_3 .section_3_padding h2 {
+  padding-right: 150px;
+}
+#labo #section_3 hr {
+  margin: 0 100px;
+}
+#labo #section_3 .slider_filters {
+  padding: 0 100px;
+}
+#labo #section_3 .slider_filters .col a {
+  font-size: 24px;
+  line-height: 30px;
+  color: #023663;
+  text-decoration: none;
+  opacity: .2;
+  margin-right: 25px;
+  cursor: pointer;
+}
+#labo #section_3 .slider_filters .col a.active {
+  opacity: 1;
+}
+#labo #section_3 .slider .slide {
+  display: none;
+}
+#labo #section_3 .slider .slide .row:first-of-type .col:first-of-type {
+  padding-right: 150px;
+}
+#labo #section_3 .slider .slide .row:first-of-type .col:first-of-type b {
+  font-style: italic;
+}
+#labo #section_3 .slider .slide .row:first-of-type .col:last-of-type {
+  padding: 25px 0;
+}
+#labo #section_3 .slider .slide .row:first-of-type .col:last-of-type img {
+  width: 60%;
+  display: block;
+  margin: 0 auto;
+}
+#labo #section_3 .slider .slide.active {
+  display: block;
+}
+#labo #section_3 .slider .slide .row:first-of-type {
+  padding: 25px 100px;
+}
+#labo #section_3 .slider .slide table {
+  text-align: center;
+  table-layout: fixed;
+}
+#labo #section_3 .slider .slide table thead tr th {
+  border: 1px solid #fff;
+}
+#labo #section_3 .slider .slide table tbody tr td {
+  border: 1px solid #DDDDDD;
+}
+#labo #section_4 {
+  position: relative;
+}
+#labo #section_4:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 80px;
+  background-color: #FAFBFC;
+}
+#labo #section_4 .labo_video {
+  margin-bottom: 40px;
+}
+#labo #section_4 .labo_video .labo_video_wrapper iframe,
+#labo #section_4 .labo_video .labo_video_wrapper h3,
+#labo #section_4 .labo_video .labo_video_wrapper p {
+  width: 100%;
+}
+#labo #section_4 .labo_video .labo_video_wrapper iframe {
+  margin: 0 0 20px 0;
+}
+#labo #section_4 .labo_video .labo_video_wrapper h3 {
+  margin: 0 0 20px 0;
+  padding-right: 75px;
+  color: #023663;
+}
+#labo #section_4 .labo_video .labo_video_wrapper p {
+  margin: 0;
+  padding-right: 75px;
+}
+#labo #section_4 .btn_labo {
+  display: block;
+  background-color: #003663;
+  color: #fff;
+  padding: 20px 25px;
+  z-index: 1;
+  margin: 0px auto;
+  text-decoration: none;
+  font-size: 16px;
+  min-width: 33%;
+  border-radius: 5px;
+}
+@media only screen and (max-width: 991px) {
+  #labo #section_1 div.col-12:first-of-type {
+    padding-right: 8px;
+  }
+  #labo #section_2 .poelle .poele_points .poele_points_mobile {
+    display: block;
+  }
+  #labo #section_2 .poelle .poele_points .poele_points_desktop {
+    display: none;
+  }
+  #labo #section_2 .poelle .poele_points .poele_point {
+    position: relative;
+  }
+  #labo #section_2 .poelle .poele_points .poele_point .poele_point_wrapper {
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    left: 45px;
+    top: 15px;
+  }
+  #labo #section_2 .poelle .poele_points .poele_point .poele_point_description {
+    position: relative;
+    opacity: 1;
+    transform: unset!important;
+    width: 100%;
+    padding: 9px 0 25px 25px;
+  }
+  #labo #section_2 .poelle .poele_points .poele_point .poele_point_description h4 {
+    padding: 0 75px;
+  }
+  #labo #section_2 .poelle .poele_points .poele_point:nth-of-type(3) {
+    left: unset;
+    top: unset;
+  }
+  #labo #section_2 .poelle .poele_points .poele_point:nth-of-type(4) {
+    bottom: unset;
+    left: unset;
+  }
+  #labo #section_2 .poelle .poele_points .poele_point:nth-of-type(5) {
+    left: unset;
+    bottom: unset;
+  }
+  #labo #section_2 .poelle .poele_points .poele_point:nth-of-type(6) {
+    right: unset;
+    bottom: unset;
+  }
+  #labo #section_3 .section_3_padding {
+    padding: 25px 25px;
+  }
+  #labo #section_3 .section_3_padding h2 {
+    padding: 0;
+    margin-bottom: 25px;
+  }
+  #labo #section_3 hr {
+    margin: 0 10px;
+  }
+  #labo #section_3 .slider_filters {
+    padding: 0 10px;
+  }
+  #labo #section_3 .slider .slide .row:first-of-type {
+    padding: 0 10px;
+  }
+  #labo #section_3 .slider .slide .row:last-of-type .col:last-of-type {
+    overflow: scroll;
+  }
+  #labo #section_3 .slider .slide table {
+    width: 250%;
+  }
+  #labo #section_4 .btn_labo {
+    width: calc(100% - 20px);
   }
 }

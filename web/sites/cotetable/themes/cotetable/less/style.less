@@ -1578,6 +1578,44 @@ nav.pager {
         }
       }
 
+      .ispro {
+        padding-left: 35px;
+        font-size: 14px;
+        line-height: 1.2;
+
+        input[name="is_pro"] {
+          opacity: 0;
+          width: 115px;
+          height: 22px;
+          cursor: pointer;
+          position: absolute;
+          top: 0;
+          left: -52px;
+          z-index: 20;
+
+          &:checked + label:before {
+            background: url("../images/check.svg") no-repeat center transparent;
+            background-size: 15px;
+          }
+        }
+
+        label {
+          line-height: 24px;
+        }
+
+        label:before {
+          content: "";
+          width: 24px;
+          height: 24px;
+          border: 1px solid @color1;
+          border-radius: 5px;
+          background: transparent;
+          position: absolute;
+          left: -3px;
+          top: 0;
+        }
+      }
+
       .g-recaptcha > div {
         @media @tablet {
           margin: 0 auto;

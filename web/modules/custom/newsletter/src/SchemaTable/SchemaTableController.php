@@ -16,7 +16,7 @@ class SchemaTableController extends NewsletterInitConfig
                 $schemaTable = new BaseSchemaTable();
                 break;
             case self::SITENAME_COTE_TABLE:
-                $schemaTable = new BaseSchemaTable();
+                $schemaTable = new CoteTableSchemaTable();
                 break;
             case self::SITENAME_MERCHCIE:
                 $schemaTable = new MerchCieSchemaTable();
@@ -28,7 +28,7 @@ class SchemaTableController extends NewsletterInitConfig
                 $schemaTable = new YliadesSchemaTable();
                 break;
             case self::SITENAME_SEMA_DESIGN:
-                $schemaTable = new BaseSchemaTable();
+                $schemaTable = new SemaDesignSchemaTable();
                 break;
             case self::SITENAME_GL:
                 $schemaTable = new BaseSchemaTable();

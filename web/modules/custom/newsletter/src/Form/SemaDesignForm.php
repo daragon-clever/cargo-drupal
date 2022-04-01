@@ -3,6 +3,7 @@
 namespace Drupal\newsletter\Form;
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\newsletter\Profile\SemaDesignProfile;
 
 class SemaDesignForm extends AbstractForm
 {
@@ -21,6 +22,10 @@ class SemaDesignForm extends AbstractForm
             '#title' => '',
             '#description' => ' '
         ];
+        $form['is_pro'] = [
+            '#type' => 'checkbox',
+            '#title' => 'Vous êtes un professionnel'
+        ];
         $form['actions']['submit']['#value'] = $this->t("I sign up");
 
         return $form;
@@ -34,5 +39,23 @@ class SemaDesignForm extends AbstractForm
         if ($rgpdAllow !== 1) {
             $form_state->setError($form['rgpd_allow'], $this->t("Check the RGPD box"));
         }
+    }
+
+    /**
+     * @param FormStateInterface $form_state
+     * @return array|null
+     */
+    protected function formatReceivedData(FormStateInterface $form_state): ?array
+    {
+        $return = parent::formatReceivedData($form_state);
+
+        $return['is_pro'] = $form_state->getValue('is_pro');
+
+        return $return;
+    }
+
+    protected function initProfile()
+    {
+        return new SemaDesignProfile();
     }
 }

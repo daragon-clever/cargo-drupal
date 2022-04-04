@@ -16,7 +16,7 @@ class UpdateController extends NewsletterInitConfig
                 $schemaTable = new BaseUpdate();
                 break;
             case self::SITENAME_COTE_TABLE:
-                $schemaTable = new BaseUpdate();
+                $schemaTable = new CoteTableUpdate();
                 break;
             case self::SITENAME_MERCHCIE:
                 $schemaTable = new BaseUpdate();
@@ -28,7 +28,7 @@ class UpdateController extends NewsletterInitConfig
                 $schemaTable = new YliadesUpdate();
                 break;
             case self::SITENAME_SEMA_DESIGN:
-                $schemaTable = new BaseUpdate();
+                $schemaTable = new SemaDesignUpdate();
                 break;
             case self::SITENAME_GL:
                 $schemaTable = new BaseUpdate();

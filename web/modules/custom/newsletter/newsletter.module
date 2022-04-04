@@ -60,3 +60,10 @@ function newsletter_update_8104(&$sandbox)
     $update = $updateController->getUpdate();
     $update->setUpdate('8104');
 }
+
+function newsletter_update_8105(&$sandbox)
+{
+    $updateController = new UpdateController();
+    $update = $updateController->getUpdate();
+    $update->setUpdate('8105');
+}

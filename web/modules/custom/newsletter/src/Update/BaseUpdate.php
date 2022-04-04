@@ -35,4 +35,30 @@ class BaseUpdate
             \Drupal::logger('newsletter')->notice("[UPDATE] Suppression de l'ancien champ : " . $oldField);
         }
     }
+
+    /**
+     * Only for Sema & Côté Table
+     */
+    protected function setUpdate8105()
+    {
+        $newColumn = "is_pro";
+        \Drupal::logger('newsletter')->notice("[UPDATE] Ajout d'une nouvelle colonne " . $newColumn
+            . ' dans la table newsletter_susbcriber');
+
+        $connection = \Drupal::database();
+        $schema = $connection->schema();
+
+        //add new collumn
+        $spec = [
+            'type' => 'int',
+            'length' => 11,
+            'not null' => TRUE,
+            'default' => '0',
+            'description' => 'Is a pro person',
+        ];
+        $schemaFieldExist = $schema->fieldExists(NewsletterSubscriberRepository::TABLE_NAME, $newColumn);
+        if (!$schemaFieldExist) $schema->addField(NewsletterSubscriberRepository::TABLE_NAME, $newColumn, $spec);
+
+        \Drupal::logger('newsletter')->notice('[UPDATE] Succès');
+    }
 }

@@ -277,37 +277,6 @@ jQuery(document).ready(function ($) {
                     li[i].style.display = "none";
                 }
             }
-        });
-    }
-
-    //Labo Slider Performance - Durabilité
-    if ($('#labo').length) {
-
-      var slider = $('#labo .slider');
-      var slider_filters = $('#labo .slider_filters a');
-
-      slider_filters.click(function() {
-        var slider_clicked_index = $(this).index();
-        var current_slider_filter = $('#labo .slider_filters a')[slider_clicked_index];
-        var current_slide = $('#labo .slider .slide')[slider_clicked_index];
-
-        $('#labo .slider_filters a').removeClass('active');
-        $(current_slider_filter).addClass('active');
-
-        $('#labo .slider .slide').removeClass('active');
-        $(current_slide).addClass('active');
-      });
-
-      var poele_default_img = $('.poele_points img').prop('src');
-      $('.poele_point_wrapper').mouseenter(function() {
-        var poele_new_img = $(this).data('img');
-        $('.poele_points img').prop('src', poele_new_img);
-        $('.poele_point_wrapper').not(this).hide();
-      });
-      $('.poele_point_wrapper').mouseleave(function() {
-        $('.poele_points img').prop('src', poele_default_img);
-        $('.poele_point_wrapper').not(this).show();
-      });
-
+        })
     }
 });

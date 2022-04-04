@@ -136,16 +136,16 @@
         },
         {
             "name": "cargo/common-marketing-automation",
-            "version": "v1.1.3",
+            "version": "v1.1.4",
             "source": {
                 "type": "git",
                 "url": "git@gitlab.com:cargo-services/pole-web/modules/common/Common_Module_MarketingAutomation.git",
-                "reference": "81a05e3bbf65da24939e88c7fd34528e91bc3c87"
+                "reference": "6ef7d9905ad68c81cf6c4a580a2f698058fde7cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://gitlab.com/api/v4/projects/cargo-services%2Fpole-web%2Fmodules%2Fcommon%2FCommon_Module_MarketingAutomation/repository/archive.zip?sha=81a05e3bbf65da24939e88c7fd34528e91bc3c87",
-                "reference": "81a05e3bbf65da24939e88c7fd34528e91bc3c87",
+                "url": "https://gitlab.com/api/v4/projects/cargo-services%2Fpole-web%2Fmodules%2Fcommon%2FCommon_Module_MarketingAutomation/repository/archive.zip?sha=6ef7d9905ad68c81cf6c4a580a2f698058fde7cc",
+                "reference": "6ef7d9905ad68c81cf6c4a580a2f698058fde7cc",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -166,10 +166,10 @@
             ],
             "description": "Module commun utilisé dans les modules pour alimenter Sarbacane.",
             "support": {
-                "source": "https://gitlab.com/cargo-services/pole-web/modules/common/Common_Module_MarketingAutomation/-/tree/v1.1.3",
+                "source": "https://gitlab.com/cargo-services/pole-web/modules/common/Common_Module_MarketingAutomation/-/tree/v1.1.4",
                 "issues": "https://gitlab.com/cargo-services/pole-web/modules/common/Common_Module_MarketingAutomation/-/issues"
             },
-            "time": "2022-02-17T09:09:24+01:00"
+            "time": "2022-04-04T08:15:38+00:00"
         },
         {
             "name": "cargo/common-synapse-client",
@@ -218,16 +218,16 @@
         },
         {
             "name": "cargo/drupal_marketing_automation_core",
-            "version": "v1.1.3",
+            "version": "v1.1.4",
             "source": {
                 "type": "git",
                 "url": "git@gitlab.com:cargo-services/pole-web/modules/drupal/Drupal_Module_MarketingAutomation_Core.git",
-                "reference": "433b5de868e50e4f2c3fac487370cf238f2c5731"
+                "reference": "676993b478aa01031eceb4836d4cf9971a87403f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://gitlab.com/api/v4/projects/cargo-services%2Fpole-web%2Fmodules%2Fdrupal%2FDrupal_Module_MarketingAutomation_Core/repository/archive.zip?sha=433b5de868e50e4f2c3fac487370cf238f2c5731",
-                "reference": "433b5de868e50e4f2c3fac487370cf238f2c5731",
+                "url": "https://gitlab.com/api/v4/projects/cargo-services%2Fpole-web%2Fmodules%2Fdrupal%2FDrupal_Module_MarketingAutomation_Core/repository/archive.zip?sha=676993b478aa01031eceb4836d4cf9971a87403f",
+                "reference": "676993b478aa01031eceb4836d4cf9971a87403f",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -251,10 +251,10 @@
             ],
             "description": "Module utilisé pour alimenter Sarbacane grâce aux données de nos sites WEB.",
             "support": {
-                "source": "https://gitlab.com/cargo-services/pole-web/modules/drupal/Drupal_Module_MarketingAutomation_Core/-/tree/v1.1.3",
+                "source": "https://gitlab.com/cargo-services/pole-web/modules/drupal/Drupal_Module_MarketingAutomation_Core/-/tree/v1.1.4",
                 "issues": "https://gitlab.com/cargo-services/pole-web/modules/drupal/Drupal_Module_MarketingAutomation_Core/-/issues"
             },
-            "time": "2022-03-18T13:38:54+00:00"
+            "time": "2022-04-04T08:03:57+00:00"
         },
         {
             "name": "cargo/drupal_synapse",
